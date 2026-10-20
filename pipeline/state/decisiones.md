@@ -70,6 +70,10 @@ Formato: `AAAA-MM-DD · agente · decisión · alternativa descartada · por qu�
 8. Diseñador, propuesta para prompt v1.1: datos que desglosan la estructura del modelo (p. ej. tarifa por componente) como recurso `a_solicitud`, no en `enunciado_es` (la corrida real perdió puntos en `genuino` y `ciclo` por eso).
 9. Pendientes técnicos para fase 3: `evaluador.py` y el modelo del codificador del simulador (constante `claude-opus-5-5`) deben leer `pipeline/config.yaml`; agregar `defusedxml` a las dependencias (devops).
 
+## Decisiones del humano previas a la fase 3 (2026-10-20, Carlos)
+
+- **MED01 v1.1 vigente** (`insumos/medios/MED01_medios_v1.1_2026-10-20.yaml`): + La Tercera (feed con cuerpo completo, verificado), Nature News (verificado, filtro DOI d41586), Deutsche Welle en español (por verificar desde Actions); CNN Chile sin feed → solo gnews. Google News RSS es método de acceso de respaldo, no medio. Tres reglas para el explorador en `reglas_explorador` (leer cuerpo desde el enlace; parser tolerante a XML truncado; resolver redirección de gnews). Resuelve el punto 7 de CP2; devops verifica Emol, T13, BBC, DW y gnews desde Actions.
+
 ## Requiere decisión humana
 
 (vacío)

@@ -1,0 +1,137 @@
+# MED01 – Lista blanca de medios (v1.1, 2026-10-20; vigente).
+# v1.0: Emol, CNN Chile, CIPER, Canal 13, Reuters, BBC (decisión de Carlos).
+# v1.1: + La Tercera (verificada: texto completo en el feed), Nature News (verificada), Deutsche Welle en español (por verificar);
+#       CNN Chile sin feed (devuelve HTML) → solo gnews; estado de verificación por medio; dos reglas transversales abajo.
+# Google News RSS NO es un medio: es método de acceso de respaldo con filtro `site:` hacia un medio de esta lista.
+# Reglas: solo resumen propio + enlace; nunca texto literal. Cuotas por área para evitar sesgo temático.
+# `acceso`: rss | api | gnews (Google News RSS filtrado por dominio; sin clave; entrega título, fecha y enlace al medio original)
+# `url_verificar: true` = la URL es la más probable pero el agente devops debe confirmarla; si falla, usar `respaldo`.
+# Reuters no publica RSS abierto desde 2020: se accede vía gnews (site:reuters.com) y el enlace lleva al artículo original.
+
+version: "1.1"
+idiomas: [es, en]
+frecuencia: semanal
+noticias_por_ciclo: {candidatas: 30, seleccionadas: 3}
+
+cuotas_por_area:              # máximo de tareas por área en un ciclo
+  medio_ambiente: 1
+  economia: 1
+  salud: 1
+  ciencia_tecnologia: 1
+  deporte: 1
+  transporte_ciudad: 1
+  sociedad_datos: 1
+
+medios:
+  - id: latercera
+    nombre: La Tercera
+    idioma: es
+    pais: CL
+    acceso: rss
+    url: "https://www.latercera.com/arc/outboundfeeds/rss/?outputType=xml"
+    url_verificar: false
+    verificacion: "2026-10-20: RSS 2.0 operativo, ~14 ítems, cuerpo completo en content:encoded; XML puede llegar truncado"
+    areas: [economia, sociedad_datos, ciencia_tecnologia, medio_ambiente, deporte]
+  - id: emol
+    nombre: Emol / El Mercurio
+    idioma: es
+    pais: CL
+    acceso: rss
+    url: "https://www.emol.com/rss/"
+    url_verificar: true
+    verificacion: "2026-10-20: no verificable desde el entorno de Claude (robots); probar desde Actions"
+    respaldo: {acceso: gnews, url: "https://news.google.com/rss/search?q=site:emol.com&hl=es-419&gl=CL&ceid=CL:es-419"}
+    areas: [economia, sociedad_datos, ciencia_tecnologia, deporte]
+  - id: cnnchile
+    nombre: CNN Chile
+    idioma: es
+    pais: CL
+    acceso: gnews
+    url: "https://news.google.com/rss/search?q=site:cnnchile.com&hl=es-419&gl=CL&ceid=CL:es-419"
+    url_verificar: true
+    verificacion: "2026-10-20: cnnchile.com/feed/ devuelve HTML, no RSS; sin feed conocido"
+    areas: [economia, salud, sociedad_datos, transporte_ciudad]
+  - id: ciper
+    nombre: CIPER Chile
+    idioma: es
+    pais: CL
+    acceso: rss
+    url: "https://www.ciperchile.cl/feed/"
+    url_verificar: false
+    verificacion: "2026-10-20: RSS 2.0 operativo, 16 ítems; description/content:encoded sin cuerpo → leer el enlace"
+    respaldo: {acceso: gnews, url: "https://news.google.com/rss/search?q=site:ciperchile.cl&hl=es-419&gl=CL&ceid=CL:es-419"}
+    areas: [sociedad_datos, economia, medio_ambiente]
+    nota: "Periodismo de datos: alta densidad de cifras y tablas; buena fuente de validación."
+  - id: canal13
+    nombre: Canal 13 / T13
+    idioma: es
+    pais: CL
+    acceso: rss
+    url: "https://www.t13.cl/rss"
+    url_verificar: true
+    verificacion: "2026-10-20: error de conexión desde el entorno de Claude; probar variantes desde Actions"
+    respaldo: {acceso: gnews, url: "https://news.google.com/rss/search?q=site:t13.cl&hl=es-419&gl=CL&ceid=CL:es-419"}
+    areas: [sociedad_datos, deporte, transporte_ciudad, medio_ambiente]
+  - id: reuters
+    nombre: Reuters
+    idioma: en
+    pais: UK
+    acceso: gnews
+    url: "https://news.google.com/rss/search?q=site:reuters.com&hl=en-US&gl=US&ceid=US:en"
+    url_verificar: false
+    areas: [economia, medio_ambiente, ciencia_tecnologia, salud]
+    nota: "Sin RSS público propio desde 2020; gnews entrega el enlace al artículo en reuters.com."
+  - id: bbc
+    nombre: BBC News
+    idioma: en
+    pais: UK
+    acceso: rss
+    url: "https://feeds.bbci.co.uk/news/rss.xml"
+    url_verificar: false
+    secciones:
+      - {area: ciencia_tecnologia, url: "https://feeds.bbci.co.uk/news/science_and_environment/rss.xml"}
+      - {area: salud, url: "https://feeds.bbci.co.uk/news/health/rss.xml"}
+      - {area: economia, url: "https://feeds.bbci.co.uk/news/business/rss.xml"}
+    areas: [ciencia_tecnologia, medio_ambiente, salud, economia, deporte]
+  - id: bbcmundo
+    nombre: BBC Mundo
+    idioma: es
+    pais: UK
+    acceso: rss
+    url: "https://feeds.bbci.co.uk/mundo/rss.xml"
+    url_verificar: false
+    areas: [ciencia_tecnologia, medio_ambiente, salud]
+    nota: "Mismo medio que `bbc`, versión en español; cuenta como BBC a efectos de cuota por medio."
+  - id: dw
+    nombre: Deutsche Welle (español)
+    idioma: es
+    pais: DE
+    acceso: rss
+    url: "https://rss.dw.com/xml/rss-es-all"
+    url_verificar: true
+    secciones:
+      - {area: ciencia_tecnologia, url: "https://rss.dw.com/xml/rss-es-cien"}
+      - {area: economia, url: "https://rss.dw.com/xml/rss-es-eco"}
+    verificacion: "2026-10-20: URLs tomadas de memoria; corporate.dw.com/es/rss/a-68793660 lista los feeds oficiales pero está bloqueada para el entorno de Claude; confirmar desde Actions"
+    areas: [ciencia_tecnologia, medio_ambiente, economia, salud]
+  - id: naturenews
+    nombre: Nature News
+    idioma: en
+    pais: UK
+    acceso: rss
+    url: "https://www.nature.com/nature.rss"
+    url_verificar: false
+    filtro: "solo DOI con prefijo d41586 (periodismo); excluir s41586 (artículos de investigación y correcciones)"
+    verificacion: "2026-10-20: RSS 1.0 operativo, ~60 ítems, resumen (a veces solo título) → leer el enlace; nature.com/nature/articles?type=news&format=rss no respondió"
+    areas: [ciencia_tecnologia, salud, medio_ambiente]
+
+cuota_por_medio: 1            # máximo de tareas por medio en un ciclo
+
+reglas_explorador:
+  - "Leer el cuerpo desde el enlace del medio original siempre (solo La Tercera lo trae en el feed); respetar robots.txt; no almacenar el texto (invariante 3), solo cifras con localizador y resumen propio."
+  - "Parser XML tolerante: La Tercera y Nature entregaron XML truncado al final; descartar el último ítem incompleto en vez de fallar."
+  - "gnews entrega título y enlace a news.google.com: resolver la redirección al medio original antes de leer."
+
+filtro_previo:                # antes de la rúbrica corta (RUB01 §version_corta_filtro)
+  requiere: [al_menos_una_cifra, fecha_dentro_de_14_dias, no_opinion, no_paywall_total]
+  excluye: [sucesos_policiales, politica_partidaria_sin_datos, contenido_sensible_para_menores]
