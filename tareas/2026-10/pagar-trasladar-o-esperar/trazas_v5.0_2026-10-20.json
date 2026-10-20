@@ -1,0 +1,220 @@
+{
+  "tarea_id": "2026-10-pagar-trasladar-o-esperar-v5",
+  "diseno": "diseno_otm",
+  "corridas": 6,
+  "modelo": "claude-sonnet-5-5",
+  "costo_usd": 0.7399,
+  "por_corrida": [
+    {
+      "id": "N1_VV_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N1",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P4-WM",
+        "P2-RM",
+        "P4-WM",
+        "P5-INT",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "costo del queso 100 por caja",
+        "arancel 50% sobre el precio del queso",
+        "margen de 20 sobre 100 (venta a 120)",
+        "devolución repartida con el cliente por contrato"
+      ],
+      "modelo": "aritmético",
+      "respuesta_final": "Cobrar el arancel como recargo aparte en la factura, con cláusula para repartir la devolución si se gana el juicio; recomendación medianamente segura porque depende del plazo del juicio, del flete y del margen (información a pedir), y de si el juicio frena el cobro.",
+      "validacion": false,
+      "archivo": "N1_VV_r1.json",
+      "costo_usd": 0.10584
+    },
+    {
+      "id": "N1_AA_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N1",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P3-MM",
+        "P1-MRS",
+        "P2-RM",
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P3-MM",
+        "P2-RM",
+        "P5-INT",
+        "P3-MM",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "C es el precio en Canadá sin flete",
+        "arancel calculado sobre el valor de la mercancía",
+        "costo con arancel = 1,5·C·Q",
+        "precio = costo con margen m",
+        "probabilidad p de ganar el juicio (ejemplos 0,2 y 0,5)",
+        "se usa el caso sin devolución como base segura",
+        "devolución tratada aparte como ingreso extra posible"
+      ],
+      "modelo": "costo más margen",
+      "respuesta_final": "Usar como costo base 1,5·C·Q (caso en que no se devuelve el arancel), fijar el precio P = (1+m)(1+t)·C·Q con una cláusula contractual que ajuste el precio si cambia el arancel t, y tratar la devolución con intereses como un ingreso extra posible, no incluido en el precio. La recomendación es poco segura porque no se conocen la probabilidad de ganar ni el plazo del juicio; se piden C, Q, m y la tasa de interés.",
+      "validacion": false,
+      "archivo": "N1_AA_r1.json",
+      "costo_usd": 0.124388
+    },
+    {
+      "id": "N2_VV_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N2",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P1-MRS",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "costo de ejemplo 100 dólares por caja",
+        "arancel de 50 dólares por caja",
+        "la devolución llega solo al final del juicio",
+        "el recargo separado en la factura se devuelve a los clientes si hay reembolso",
+        "los clientes podrían no aceptar el recargo",
+        "la importadora tiene un límite de plata para adelantar"
+      ],
+      "modelo": "árbol cualitativo",
+      "respuesta_final": "Cobrar el arancel como recargo aparte en la factura, incluir una cláusula de ajuste en los contratos ante cambio o devolución del arancel; recomendación 'segura en la forma, no en el monto', pidiendo volumen de queso, precio de compra, plata disponible para adelantar y si los clientes aceptan el recargo.",
+      "validacion": true,
+      "archivo": "N2_VV_r1.json",
+      "costo_usd": 0.115692
+    },
+    {
+      "id": "N3_AA_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N3",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P2-RM",
+        "P3-MM",
+        "P2-RM",
+        "P3-MM",
+        "P6-VAL",
+        "P2-RM",
+        "P4-WM",
+        "P5-INT",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "costo sin arancel C, con arancel 1,5C",
+        "probabilidades de los escenarios como variables (p1, p2, p3, q)",
+        "escenarios separados en el tiempo: antes y después del fallo",
+        "fracción t del arancel traspasada al cliente",
+        "arancel retroactivo si se frena el cobro y luego se pierde",
+        "devolución con intereses traspasada al cliente en proporción t"
+      ],
+      "modelo": "valor esperado",
+      "respuesta_final": "Provisionar 0,5C por unidad, incluir en los contratos una cláusula que ajuste el precio al arancel vigente y que traspase también la devolución con intereses en la proporción t, y revisar apenas haya novedades del juicio. Confianza alta en la estructura de la estrategia, baja en el monto porque faltan p1, t y saber si el cobro es retroactivo.",
+      "validacion": true,
+      "archivo": "N3_AA_r1.json",
+      "costo_usd": 0.126064
+    },
+    {
+      "id": "N4_VV_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N4",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P4-WM",
+        "P5-INT",
+        "P6-VAL",
+        "P2-RM",
+        "P4-WM",
+        "P5-INT",
+        "P6-VAL",
+        "P4-WM",
+        "P7-EXP",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "100 mil dólares de compra de queso al mes",
+        "horizonte de tres meses",
+        "margen de 20% sobre venta",
+        "arancel sobre valor de compra",
+        "recargo traslada el arancel completo",
+        "competidores pagan el mismo arancel",
+        "escenarios de volumen 100%, 70% y 50%"
+      ],
+      "modelo": "tabla de escenarios",
+      "respuesta_final": "Recargo separado en la factura con cláusula de devolución si se gana el juicio, registro de todo lo pagado para reclamar reembolso e intereses, y revisión mensual o ante fallo o medida cautelar. Con supuestos de 100 mil de compra mensual y 20% de margen, sin recargo se pierde 25 mil al mes y con recargo se gana 25 mil (sobre el volumen que quede), con 50 mil mensuales de caja adelantada. La seguridad depende del volumen perdido, los contratos, los competidores y el costo de financiar.",
+      "validacion": true,
+      "archivo": "N4_VV_r1.json",
+      "costo_usd": 0.161252
+    },
+    {
+      "id": "N4_AA_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N4",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P2-RM",
+        "P5-INT",
+        "P4-WM",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "arancel t = 0,5 sobre el precio de compra",
+        "reembolso = P·t con interés compuesto (1+i)^T",
+        "costo efectivo esperado = P(1+t) − p·reembolso",
+        "probabilidad de ganar p variada en 0; 0,5; 1",
+        "P = 100 como precio normalizado",
+        "i = 5% y T = 1 año como valores ilustrativos",
+        "el recargo separado solo protege si el cliente efectivamente lo paga"
+      ],
+      "modelo": "valor esperado",
+      "respuesta_final": "Cobrar el arancel como recargo separado del precio base, con cláusula de devolución si hay reembolso, y usar contratos cortos o con revisión mensual. Con P = 100, el costo neto esperado va de 150 (p = 0) a 123,75 (p = 0,5) y a 97,5 (p = 1). Confianza baja: depende de la probabilidad de ganar, del plazo y de si el cliente realmente paga el recargo. Piden además volumen mensual, margen y la disposición del cliente a pagar.",
+      "validacion": true,
+      "archivo": "N4_AA_r1.json",
+      "costo_usd": 0.106692
+    }
+  ],
+  "agregado": {
+    "pct_bloqueo_por_transicion": {},
+    "modelos_observados": {
+      "aritmético": 1,
+      "costo más margen": 1,
+      "árbol cualitativo": 1,
+      "valor esperado": 2,
+      "tabla de escenarios": 1
+    },
+    "pct_validan": 0.67
+  },
+  "fecha": "2026-10-20T21:56:28Z"
+}

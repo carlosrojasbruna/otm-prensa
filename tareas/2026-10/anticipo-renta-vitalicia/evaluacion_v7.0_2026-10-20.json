@@ -1,0 +1,139 @@
+{
+  "tarea_id": "2026-10-anticipo-renta-vitalicia-v7",
+  "fecha": "2026-10-20T23:05:40Z",
+  "rub01": {
+    "version_rubrica": "4.0",
+    "criterios": {
+      "genuino": {
+        "puntaje": 2,
+        "justificacion": "La situación plantea una necesidad real: diseñar la regla de descuento tras la anulación del método oficial. No se entrega ninguna fórmula ni modelo, y los recursos declaran explícitamente que no traen fórmulas.",
+        "cita": "¿Qué regla propondrían para descontar el adelanto de la pensión mensual, cuánto y por cuánto tiempo, y qué tan firme es esa regla?"
+      },
+      "abierta": {
+        "puntaje": 2,
+        "justificacion": "La pregunta admite varios modelos defendibles, como una rebaja vitalicia, una rebaja por plazo fijo o un descuento con o sin mortalidad e interés. Ninguna instrucción posterior encauza el procedimiento.",
+        "cita": "¿Qué regla propondrían para descontar el adelanto de la pensión mensual, cuánto y por cuánto tiempo"
+      },
+      "decisiones": {
+        "puntaje": 2,
+        "justificacion": "Resolver exige solicitar la tabla de mortalidad y las tasas, y suponer la edad, el sexo y el monto de la pensión. También obliga a elegir la tasa de descuento y a interpretar qué significa «no perder dinero en promedio».",
+        "cita": "Pueden pedir información adicional."
+      },
+      "realismo": {
+        "puntaje": 2,
+        "justificacion": "La situación es un hecho real y vigente del sistema de pensiones chileno.",
+        "cita": "la Corte Suprema declaró ilegal un oficio de la CMF, el regulador financiero"
+      },
+      "autenticidad": {
+        "puntaje": 2,
+        "justificacion": "La noticia es el núcleo de la tarea. Se suman datos reales no creados para enseñar: la tabla de mortalidad del regulador, una serie de tasas y certificados de ofertas de aseguradoras.",
+        "cita": "Una noticia de CIPER Chile cuenta que la Corte Suprema declaró ilegal un oficio de la CMF"
+      },
+      "contexto": {
+        "puntaje": 2,
+        "justificacion": "El contexto condiciona las decisiones de modelación: el riesgo de fallecimiento, el valor del dinero en el tiempo y la equidad entre ambas partes. También es necesario para juzgar qué tan firme es la regla.",
+        "cita": "La compañía no quiere perder dinero en promedio, pero tampoco cobrar de más."
+      },
+      "ciclo": {
+        "puntaje": 2,
+        "justificacion": "Responder obliga a comprender el mecanismo, simplificar con supuestos, matematizar un valor presente actuarial, calcular, interpretar la regla y validarla. Ninguna fase queda hecha por el enunciado.",
+        "cita": "cuánto y por cuánto tiempo, y qué tan firme es esa regla?"
+      },
+      "validacion": {
+        "puntaje": 2,
+        "justificacion": "El certificado de ofertas, con la prima, la edad, el sexo y la pensión ofrecida, es evidencia real independiente que no se usó para construir el modelo. Con él se puede contrastar el factor de renta implícito en la regla.",
+        "cita": "entrega, solo después de que el grupo presente su regla, un certificado de ofertas anonimizado"
+      },
+      "nivel": {
+        "puntaje": 2,
+        "justificacion": "El contexto y el lenguaje se explican y son comprensibles para el nivel U. La matemática requerida (probabilidad, esperanza, descuento en el tiempo y modelos discretos) está entre las herramientas esperables de ese nivel según MAR03.",
+        "cita": "renta vitalicia, una pensión que se paga cada mes mientras la persona viva"
+      },
+      "autodiferenciacion": {
+        "puntaje": 2,
+        "justificacion": "Hay una entrada elemental: repartir el adelanto en cuotas, sin interés ni mortalidad. La tarea admite además soluciones mucho más sofisticadas, con mortalidad por sexo, tasas de interés y análisis de sensibilidad.",
+        "cita": "¿Qué regla propondrían para descontar el adelanto de la pensión mensual, cuánto y por cuánto tiempo"
+      },
+      "fecundidad": {
+        "puntaje": 2,
+        "justificacion": "Las reglas propuestas permiten comparar soluciones y discutir su sensibilidad a la tasa y a la tabla. También abren preguntas sobre la equidad por sexo o edad y sobre los límites del promedio frente al riesgo individual.",
+        "cita": "y qué tan firme es esa regla?"
+      },
+      "recursos": {
+        "puntaje": 2,
+        "justificacion": "La información imprescindible (mortalidad, tasas y datos de mercado) puede solicitarse, y lo demás puede suponerse. Ningún material revela el modelo ni indica cómo usar los datos.",
+        "cita": "El equipo docente lo entrega cuando el grupo lo pide; no trae ninguna fórmula ni ejemplo de uso."
+      }
+    },
+    "total": 24,
+    "mejoras": []
+  },
+  "reproducibilidad": {
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.109291,
+        "version_prompt": "1.1"
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.191974,
+        "version_prompt": "1.3"
+      },
+      "ilustrador": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.008104,
+        "version_prompt": "1.0"
+      },
+      "redactor": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.194222,
+        "version_prompt": "1.0"
+      },
+      "redactor_escenarios": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.276554,
+        "version_prompt": "1.0"
+      },
+      "simulador": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.0,
+        "version_prompt": "PROMPTS.md"
+      },
+      "simulador_codificador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.0,
+        "version_prompt": "PROMPTS.md"
+      },
+      "verificador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.18404,
+        "version_prompt": "1.1"
+      }
+    },
+    "version_prompt": {
+      "disenador": "1.1",
+      "evaluador": "1.3",
+      "ilustrador": "1.0",
+      "redactor": "1.0",
+      "redactor_escenarios": "1.0",
+      "simulador": "PROMPTS.md",
+      "simulador_codificador": "PROMPTS.md",
+      "verificador": "1.1"
+    },
+    "version_rubrica": "4.0",
+    "version_MAR03": "1.0",
+    "version_MED01": "1.4",
+    "diseno_simulador": "diseno_otm",
+    "fecha": "2026-10-20T23:20:52Z",
+    "costo_usd": 0.964185
+  }
+}

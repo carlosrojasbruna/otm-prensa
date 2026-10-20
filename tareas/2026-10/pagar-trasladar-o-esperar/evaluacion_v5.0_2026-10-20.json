@@ -1,0 +1,139 @@
+{
+  "tarea_id": "2026-10-pagar-trasladar-o-esperar-v5",
+  "fecha": "2026-10-20T23:03:34Z",
+  "rub01": {
+    "version_rubrica": "4.0",
+    "criterios": {
+      "genuino": {
+        "puntaje": 2,
+        "justificacion": "Se plantea una necesidad real de decisión empresarial bajo incertidumbre judicial. No se entrega ninguna regla, fórmula ni modelo para resolverla.",
+        "cita": "La gerencia debe decidir cómo fijar los precios a sus clientes y cómo manejar sus contratos en los próximos meses."
+      },
+      "abierta": {
+        "puntaje": 2,
+        "justificacion": "La pregunta admite varias estrategias y modelos defendibles: trasladar el arancel, absorberlo, usar contratos ajustables o esperar. No prescribe procedimiento y no hay instrucciones posteriores que encaucen la ruta.",
+        "cita": "Ustedes son el equipo asesor: ¿qué estrategia recomendarían a la gerencia y qué tan segura es esa recomendación?"
+      },
+      "decisiones": {
+        "puntaje": 2,
+        "justificacion": "Resolver exige suponer probabilidades y plazos del juicio, estimar márgenes y la reacción de los clientes, y solicitar información pertinente. Esas decisiones de modelación son sustantivas.",
+        "cita": "Nadie sabe cuándo ni cómo terminará el caso. [...] Pueden pedir información adicional."
+      },
+      "realismo": {
+        "puntaje": 2,
+        "justificacion": "La situación corresponde a un litigio arancelario real. La decisión de precios de un importador es plenamente plausible fuera de la escuela.",
+        "cita": "Un grupo estadounidense de defensa, que ya había ganado antes un juicio contra aranceles amplios, demandó al gobierno por los nuevos aranceles a productos canadienses."
+      },
+      "autenticidad": {
+        "puntaje": 2,
+        "justificacion": "El tema, la demanda y las cifras provienen de un hecho noticioso real y constituyen el núcleo de la tarea. También son auténticas las series públicas de precios e importaciones de R5.",
+        "cita": "El gobierno grava bienes canadienses por un valor de unos 20 mil millones de dólares."
+      },
+      "contexto": {
+        "puntaje": 2,
+        "justificacion": "Los escenarios judiciales, la devolución con intereses y los tipos de contrato condicionan la construcción del modelo. Ese mismo contexto es necesario para interpretar la recomendación y juzgar su seguridad.",
+        "cita": "Los demandantes piden que, si ganan, se devuelva lo pagado con intereses, y que se frene el cobro mientras dura el juicio."
+      },
+      "ciclo": {
+        "puntaje": 2,
+        "justificacion": "Responder obliga a comprender la situación y simplificarla en escenarios y supuestos. Luego hay que matematizar, por ejemplo con valor esperado o árboles de decisión, calcular y volver al contexto para juzgar la robustez de la recomendación; ninguna fase queda hecha por el enunciado.",
+        "cita": "¿qué estrategia recomendarían a la gerencia y qué tan segura es esa recomendación?"
+      },
+      "validacion": {
+        "puntaje": 2,
+        "justificacion": "Hay evidencia independiente, no usada en la construcción del modelo, para contrastar sus predicciones. El desenlace posterior del juicio aporta un segundo contraste.",
+        "cita": "Existen series públicas de precios al consumidor del rubro quesos y de volúmenes importados de queso. [...] Se entrega solo después de que el grupo …"
+      },
+      "nivel": {
+        "puntaje": 2,
+        "justificacion": "El contexto económico y judicial es comprensible y pertinente para universitarios de primeros años. La demanda calza con las herramientas esperables de U según MAR03: probabilidad, decisión bajo incertidumbre, optimización y sensibilidad.",
+        "cita": "¿qué estrategia recomendarían a la gerencia y qué tan segura es esa recomendación?"
+      },
+      "autodiferenciacion": {
+        "puntaje": 2,
+        "justificacion": "Se puede entrar comparando escenarios con aritmética elemental. La tarea admite además soluciones mucho más sofisticadas, como árboles de decisión con probabilidades, modelos de demanda con sustitución y análisis de sensibilidad al plazo y al resultado del juicio.",
+        "cita": "Sus contratos con clientes pueden ser de precio fijo por un periodo o de precio ajustable."
+      },
+      "fecundidad": {
+        "puntaje": 2,
+        "justificacion": "Las distintas estrategias y supuestos permiten comparar soluciones. También abren preguntas sobre los límites del modelo, el valor de esperar o la competencia, y el contraste con datos reales.",
+        "cita": "Los clientes comparan precios con otros proveedores y algunos pueden cambiarse a quesos de otro origen."
+      },
+      "recursos": {
+        "puntaje": 2,
+        "justificacion": "La información necesaria puede solicitarse y está condicionada a que el grupo identifique las variables. Las tarjetas describen el negocio de forma cualitativa sin revelar la estructura del modelo.",
+        "cita": "La gerencia entrega órdenes de magnitud solo si el grupo pregunta por una variable concreta."
+      }
+    },
+    "total": 24,
+    "mejoras": []
+  },
+  "reproducibilidad": {
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.143875,
+        "version_prompt": "1.1"
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.240584,
+        "version_prompt": "1.3"
+      },
+      "ilustrador": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.010998,
+        "version_prompt": "1.0"
+      },
+      "redactor": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.203157,
+        "version_prompt": "1.0"
+      },
+      "redactor_escenarios": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.2426,
+        "version_prompt": "1.0"
+      },
+      "simulador": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.0,
+        "version_prompt": "PROMPTS.md"
+      },
+      "simulador_codificador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.0,
+        "version_prompt": "PROMPTS.md"
+      },
+      "verificador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.162864,
+        "version_prompt": "1.1"
+      }
+    },
+    "version_prompt": {
+      "disenador": "1.1",
+      "evaluador": "1.3",
+      "ilustrador": "1.0",
+      "redactor": "1.0",
+      "redactor_escenarios": "1.0",
+      "simulador": "PROMPTS.md",
+      "simulador_codificador": "PROMPTS.md",
+      "verificador": "1.1"
+    },
+    "version_rubrica": "4.0",
+    "version_MAR03": "1.0",
+    "version_MED01": "1.4",
+    "diseno_simulador": "diseno_otm",
+    "fecha": "2026-10-20T23:17:48Z",
+    "costo_usd": 1.004078
+  }
+}
