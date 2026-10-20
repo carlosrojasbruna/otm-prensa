@@ -1,0 +1,264 @@
+{
+  "tarea_id": "2026-10-anticipo-renta-vitalicia-v5",
+  "diseno": "diseno_otm",
+  "corridas": 6,
+  "modelo": "claude-sonnet-5-5",
+  "costo_usd": 1.1127,
+  "por_corrida": [
+    {
+      "id": "N1_VV_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N1",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P4-WM",
+        "P2-RM",
+        "P4-WM",
+        "P5-INT",
+        "P6-VAL",
+        "P2-RM",
+        "P3-MM",
+        "P6-VAL",
+        "P2-RM",
+        "P3-MM",
+        "P2-RM",
+        "P4-WM",
+        "P3-MM",
+        "P4-WM",
+        "P6-VAL",
+        "P4-WM",
+        "P3-MM",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B34",
+          "turnos": [
+            19,
+            20,
+            21
+          ],
+          "resolucion": "peer"
+        }
+      ],
+      "supuestos": [
+        "10% de todo lo que le van a pagar",
+        "vive 20 años en promedio",
+        "pensión de $400.000",
+        "inicialmente sin interés",
+        "tasa de 3% anual",
+        "cálculo por año en vez de por mes",
+        "descuento mientras viva",
+        "tabla de supervivencia por año"
+      ],
+      "modelo": "serie geométrica",
+      "respuesta_final": "La regla es buscar la rebanada mensual tal que la suma de cada año (÷ 1,03^año × fracción viva) dé el anticipo; con 20 años justos da cerca de 53.800 (con pensión de 400.000). Es firme solo si no cambian la tasa, la tabla ni la interpretación del 10%; el valor es un ejemplo con números inventados.",
+      "validacion": true,
+      "archivo": "N1_VV_r1.json",
+      "costo_usd": 0.337468
+    },
+    {
+      "id": "N1_AA_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N1",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P3-MM",
+        "P2-RM",
+        "P3-MM",
+        "P5-INT",
+        "P4-WM",
+        "P6-VAL",
+        "P4-WM",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "anticipo = 10% de una pensión mensual (A = 0,1·P) en los cálculos",
+        "rebaja mensual constante x durante n meses",
+        "probabilidad de seguir vivo p_k cada mes",
+        "tasa de interés mensual constante r (0,3% de prueba)",
+        "primer cálculo sin mortalidad (p = 1)",
+        "supervivencia mensual de prueba 0,99",
+        "plazo n de 12 meses elegido por la aseguradora"
+      ],
+      "modelo": "anualidad actuarial",
+      "respuesta_final": "Regla: x = A / Σ_{k=1}^{n} p_k/(1+r)^k, con A = 10% de la renta; n lo elige la aseguradora (más meses, rebaja menor). Piden tabla de mortalidad, tasa r y aclarar a qué se aplica el 10%. La regla es sensible a esos datos: con A = 0,1·P, r = 0,3% mensual y n = 12, x ≈ 0,85% de P sin mortalidad y ≈ 0,91% con supervivencia mensual 0,99 (un alza de ~7%).",
+      "validacion": true,
+      "archivo": "N1_AA_r1.json",
+      "costo_usd": 0.172768
+    },
+    {
+      "id": "N2_VV_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N2",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P4-WM",
+        "P2-RM",
+        "P4-WM",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P6-VAL",
+        "P4-WM",
+        "P3-MM",
+        "P4-WM",
+        "P6-VAL",
+        "P4-WM",
+        "P7-EXP"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B12",
+          "turnos": [
+            1,
+            2
+          ],
+          "resolucion": "self"
+        },
+        {
+          "transicion": "B34",
+          "turnos": [
+            9,
+            10
+          ],
+          "resolucion": "peer"
+        }
+      ],
+      "supuestos": [
+        "10% de la pensión mensual",
+        "pensión de $300.000",
+        "vida de 20 años (240 meses)",
+        "interés de 0,3% mensual",
+        "cuota fija mensual",
+        "descuento hasta el fallecimiento",
+        "probabilidades inventadas de vivir 10, 20 o 35 años (25-50-25)"
+      ],
+      "modelo": "anualidad esperada",
+      "respuesta_final": "Cuota mensual = anticipo ÷ promedio ponderado de [(1−(1+i)^−n)/i] según la probabilidad de vivir n meses. Con anticipo de $30.000 (10% de una pensión de $300.000), interés 0,3% mensual y probabilidades inventadas, la rebaja es de ≈ $175 a $196 al mes durante toda la vida; la regla no es firme sin tablas de mortalidad ni tasa real.",
+      "validacion": true,
+      "archivo": "N2_VV_r1.json",
+      "costo_usd": 0.201792
+    },
+    {
+      "id": "N3_AA_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N3",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P3-MM",
+        "P2-RM",
+        "P4-WM",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "anticipo = 10% de una mensualidad (A = 0,1·P)",
+        "descuento mensual constante d = 1% de P",
+        "tasa de interés constante (0,3% y 1% mensual)",
+        "aproximación v≈1 y supervivencia≈1 para orden de magnitud",
+        "mortalidad anual cercana a 2% a los 65 años",
+        "persona de 65 años"
+      ],
+      "modelo": "valor actuarial",
+      "respuesta_final": "La regla es que el anticipo iguale el valor presente esperado de los descuentos, A = d·Σ vᵗ·ₜpₓ. Si A es 10% de una mensualidad y d = 1% de P, n ≈ 10-11 meses, poco sensible a tasa y mortalidad, pero muy sensible a qué es el 10% (si fuera de la pensión anual, n sería unos 120 meses y la tasa y mortalidad pesarían) y al d elegido.",
+      "validacion": true,
+      "archivo": "N3_AA_r1.json",
+      "costo_usd": 0.142004
+    },
+    {
+      "id": "N4_VV_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N4",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P3-MM",
+        "P4-WM",
+        "P5-INT",
+        "P4-WM",
+        "P6-VAL",
+        "P5-INT",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "anticipo = 0,1·R",
+        "tasa de interés constante (3% anual, ≈0,25% mensual)",
+        "descuento mensual d constante durante n meses",
+        "supervivencia cierta en el plazo (primeros cálculos)",
+        "probabilidad de sobrevida mensual constante 0,999",
+        "equilibrio en valor presente esperado"
+      ],
+      "modelo": "valor presente actuarial",
+      "respuesta_final": "Regla: elegir un plazo n y fijar el descuento mensual d tal que 0,1·R = d·Σ(prob. de estar vivo en t /(1+i)^t), es decir, igualar en valor presente esperado el anticipo con los descuentos. Con 3% anual: a 2–3 años d ≈ 0,2–0,4% de R y la regla es bastante firme; a plazos largos (p. ej. 120 meses, d ≈ 0,10% de R) depende de la mortalidad y la tasa, por lo que se da una banda y se pide la tabla de mortalidad real.",
+      "validacion": true,
+      "archivo": "N4_VV_r1.json",
+      "costo_usd": 0.159712
+    },
+    {
+      "id": "N4_AA_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N4",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P3-MM",
+        "P4-WM",
+        "P6-VAL",
+        "P7-EXP",
+        "P6-VAL"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "anticipo igual a 0,1·P (10% de la pensión mensual)",
+        "tasa de interés constante (3% anual)",
+        "tabla de mortalidad para la supervivencia",
+        "descuento mensual constante d durante n meses",
+        "plazo fijado de antemano (n = 12 meses)",
+        "equilibrio solo en promedio sobre muchas pensiones",
+        "nadie se sale antes de terminar el descuento"
+      ],
+      "modelo": "anualidad actuarial",
+      "respuesta_final": "Regla: 0,1·P = d·Σₖ₌₁ⁿ vᵏ·ₖpₓ, fijando n (por ejemplo 12 meses) y despejando d; con i = 3% anual da d ≈ 0,0085·P. La estructura es firme, pero los números dependen de la tasa, de la tabla, de los beneficiarios y de que nadie se salga antes, y solo vale en promedio.",
+      "validacion": true,
+      "archivo": "N4_AA_r1.json",
+      "costo_usd": 0.098964
+    }
+  ],
+  "agregado": {
+    "pct_bloqueo_por_transicion": {
+      "B12": 0.17,
+      "B34": 0.33
+    },
+    "modelos_observados": {
+      "serie geométrica": 1,
+      "anualidad actuarial": 2,
+      "anualidad esperada": 1,
+      "valor actuarial": 1,
+      "valor presente actuarial": 1
+    },
+    "pct_validan": 1.0
+  },
+  "fecha": "2026-10-20T21:35:30Z"
+}

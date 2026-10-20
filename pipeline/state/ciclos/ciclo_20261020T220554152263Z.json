@@ -1,0 +1,114 @@
+{
+  "ciclo_id": "ciclo_20261020T220554152263Z",
+  "inicio": "2026-10-20T22:05:54Z",
+  "fin": "2026-10-20T22:08:41Z",
+  "semana": "2026-W43",
+  "parametros": {
+    "tope_semanal_usd": 25.0,
+    "fraccion_detencion": 0.9,
+    "presupuesto_ciclo_usd": 1.5,
+    "limite_usd": 18.635754,
+    "gasto_semana_previo_usd": 17.135754,
+    "corridas_evaluador": 3,
+    "rango_inestable": 4,
+    "corridas_simulador": 6,
+    "ids": [
+      "2026-10-anticipo-renta-vitalicia-v5"
+    ],
+    "revisor": "Carlos Rojas Bruna"
+  },
+  "detenido_por_tope": false,
+  "eventos": [
+    {
+      "fecha": "2026-10-20T22:05:56Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-anticipo-renta-vitalicia-v5",
+      "de": "evaluada",
+      "a": "revisada"
+    },
+    {
+      "fecha": "2026-10-20T22:05:56Z",
+      "tipo": "simulacion_reutilizada",
+      "tarea_id": "2026-10-anticipo-renta-vitalicia-v5",
+      "origen": "2026-10-anticipo-renta-vitalicia-v2"
+    },
+    {
+      "fecha": "2026-10-20T22:05:57Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-anticipo-renta-vitalicia-v5",
+      "de": "revisada",
+      "a": "simulada"
+    },
+    {
+      "fecha": "2026-10-20T22:07:51Z",
+      "tipo": "agente",
+      "agente": "redactor",
+      "tareas": [
+        "2026-10-anticipo-renta-vitalicia-v5"
+      ],
+      "llamadas": 3,
+      "usd": 0.401322
+    },
+    {
+      "fecha": "2026-10-20T22:07:53Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-anticipo-renta-vitalicia-v5",
+      "de": "simulada",
+      "a": "con_guia"
+    },
+    {
+      "fecha": "2026-10-20T22:07:58Z",
+      "tipo": "agente",
+      "agente": "ilustrador",
+      "tareas": [
+        "2026-10-anticipo-renta-vitalicia-v5"
+      ],
+      "llamadas": 1,
+      "usd": 0.008406
+    },
+    {
+      "fecha": "2026-10-20T22:08:38Z",
+      "tipo": "agente",
+      "agente": "verificador",
+      "tareas": [
+        "2026-10-anticipo-renta-vitalicia-v5"
+      ],
+      "llamadas": 1,
+      "usd": 0.178272
+    },
+    {
+      "fecha": "2026-10-20T22:08:40Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-anticipo-renta-vitalicia-v5",
+      "de": "con_guia",
+      "a": "verificada"
+    },
+    {
+      "fecha": "2026-10-20T22:08:41Z",
+      "tipo": "bibliotecario_dry_run",
+      "tarea_id": "2026-10-anticipo-renta-vitalicia-v5",
+      "ok": true,
+      "ruta": "tareas/2026-10/anticipo-renta-vitalicia-v5/",
+      "rama": "tareas/semana-2026-W43"
+    }
+  ],
+  "expedientes": {
+    "2026-10-anticipo-renta-vitalicia-v5": "verificada"
+  },
+  "noticias": [],
+  "pendientes_humanos": [
+    {
+      "tarea_id": "2026-10-anticipo-renta-vitalicia-v5",
+      "pendiente": "revision_humana_2",
+      "estado": "verificada"
+    }
+  ],
+  "errores": [],
+  "orden": "tramo_b",
+  "gasto": {
+    "ciclo_usd": 0.588,
+    "semana_usd": 17.723754,
+    "limite_usd": 18.635754,
+    "llamadas": 5
+  }
+}

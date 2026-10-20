@@ -1,0 +1,78 @@
+{
+  "tarea_id": "2026-10-anticipo-renta-vitalicia-v5",
+  "aprobado": true,
+  "estado_destino": "verificada",
+  "hallazgos": [
+    {
+      "invariante": "notebook",
+      "severidad": "advertencia",
+      "ubicacion": "guia.materiales.notebook",
+      "descripcion": "notebook escenarios.ipynb no encontrado: ",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "tarea.estudiante.enunciado_es",
+      "descripcion": "un oficio de la CMF fija que el anticipo puede llegar como máximo a 10% de la renta vitalicia — El párrafo 31 dice que el oficio reguló un anticipo de hasta 10% aprobado en el marco del tercer retiro. No dice que el oficio haya fijado ese tope. Además omite que la Suprema declaró ilegal el oficio. Es una sobreinterpretación menor que no cambia la cifra.",
+      "origen": "modelo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "guia.escenarios[E1].que_aprende",
+      "descripcion": "N4_AA_r1 declara que el 10% es de una pensión mensual, que es la interpretación alternativa. — En task_space, la interpretación alternativa es 10% de la pensión de un año, no de una mensualidad. Las corridas usan 0,1·P mensual, una tercera lectura, así que el rótulo es impreciso.",
+      "origen": "modelo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "guia.escenarios[E1].ruta y que_aprende",
+      "descripcion": "Ruta P3-MM→P4-WM→P6-VAL→P7-EXP→P6-VAL; ambas corridas plantean la estructura desde el inicio — La ruta corresponde solo a N4_AA_r1. N4_VV_r1 parte por P1-MRS y sigue otra secuencia (incluye P5-INT). Además usa una sobrevida mensual constante de 0,999, no una tabla de mortalidad. Hay diferencias de detalle entre las dos corridas citadas.",
+      "origen": "modelo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "guia.escenarios[E3].que_aprende",
+      "descripcion": "Comparada con E1 y E4, que usan supervivencia mes a mes — N3_AA_r1 (E4) aproxima la supervivencia como cercana a 1 y usa una mortalidad anual cercana a 2% estimada. N4_VV_r1 usa una sobrevida constante. Decir que E4 usa supervivencia mes a mes sobreinterpreta la traza.",
+      "origen": "modelo"
+    }
+  ],
+  "cifras_contrastadas": [
+    {
+      "indice": 0,
+      "que_es": "monto máximo de anticipo de las rentas vitalicias fijado por el oficio de la CMF",
+      "valor_tarea": "10%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 31"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "10%",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia; modelo: El párrafo 31 indica un anticipo de hasta 10% de las rentas vitalicias, regulado por el oficio de la CMF. Coinciden valor, unidad y significado (tope máximo)."
+    }
+  ],
+  "notebook": {
+    "estado": "no_encontrado",
+    "ruta": "escenarios.ipynb",
+    "salida_resumen": ""
+  },
+  "meta": {
+    "agente": "verificador",
+    "version_prompt": "1.1",
+    "modelo": "claude-opus-5-5",
+    "request_id": "req_011CgEFX6NK41dZzgSJ4d6k4",
+    "fecha": "2026-10-20T22:08:38+00:00",
+    "costo_usd": 0.178272,
+    "modelo_llamado": true,
+    "texto_noticia_recibido": true,
+    "uso": {
+      "input_tokens": 22952,
+      "output_tokens": 4300,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 2320
+    }
+  }
+}
