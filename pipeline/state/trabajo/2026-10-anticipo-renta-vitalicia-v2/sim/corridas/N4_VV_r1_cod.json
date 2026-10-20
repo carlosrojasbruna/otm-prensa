@@ -1,0 +1,118 @@
+{
+  "run": {
+    "id": "N4_VV_r1",
+    "nivel": "N4",
+    "composicion": "VV",
+    "rep": 1,
+    "estilos": [
+      "V",
+      "V"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.059212,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P3-MM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P3-MM",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P4-WM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 6,
+        "fase": "P5-INT",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 8,
+        "fase": "P6-VAL",
+        "fase_secundaria": "EMK",
+        "eventos": []
+      },
+      {
+        "n": 9,
+        "fase": "P5-INT",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 10,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 11,
+        "fase": "OFF",
+        "fase_secundaria": null,
+        "eventos": []
+      }
+    ],
+    "bloqueos": [],
+    "supuestos": [
+      "anticipo = 0,1·R",
+      "tasa de interés constante (3% anual, ≈0,25% mensual)",
+      "descuento mensual d constante durante n meses",
+      "supervivencia cierta en el plazo (primeros cálculos)",
+      "probabilidad de sobrevida mensual constante 0,999",
+      "equilibrio en valor presente esperado"
+    ],
+    "modelo": "valor presente actuarial",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Regla: elegir un plazo n y fijar el descuento mensual d tal que 0,1·R = d·Σ(prob. de estar vivo en t /(1+i)^t), es decir, igualar en valor presente esperado el anticipo con los descuentos. Con 3% anual: a 2–3 años d ≈ 0,2–0,4% de R y la regla es bastante firme; a plazos largos (p. ej. 120 meses, d ≈ 0,10% de R) depende de la mortalidad y la tasa, por lo que se da una banda y se pide la tabla de mortalidad real."
+    },
+    "ruta_principal": "R2",
+    "rutas": [
+      "R2"
+    ]
+  }
+}

@@ -45,6 +45,7 @@ from __future__ import annotations
 import argparse
 import copy
 import json
+import re
 import sys
 import threading
 import traceback
@@ -747,6 +748,8 @@ class Ciclo:
         r = inv.verificar_aislamiento(inv.vista_estudiante(tarea), tarea)   # invariante 6
         if not r:
             raise orq.InvarianteViolada("Invariante 6: la vista de estudiante filtra task_space", r.errores)
+        if previo := self._simulacion_reutilizable(exp):
+            return self._reutilizar_simulacion(exp, previo)
         d = self.rutas.de(exp.tarea_id)
         res, _ = self._medir("simulador", self.agentes.simular, tarea, d, cliente=self.contador,
                              presupuesto_usd=self.contador.restante(), exps=[exp])
@@ -765,6 +768,36 @@ class Ciclo:
         return self._transicionar(exp, "simulada", artefactos={
             "trazas_resumen": trazas, "evaluacion": self._evaluacion_actualizada(exp, trazas)})
 
+    # Lo que el simulador entrega de verdad a los estudiantes simulados: enunciado y foto (sim.py no sirve los
+    # recursos "a solicitud", decisiones.md · Para CP2 punto 2). Si eso no cambió, la simulación sigue valiendo.
+    _VISTA_SIMULADA = ("enunciado_es", "foto_descripcion")
+
+    def _simulacion_reutilizable(self, exp: orq.Expediente) -> orq.Expediente | None:
+        origen = exp.marcas.get("reusar_simulacion_de")
+        if not origen:
+            return None
+        previo = orq.cargar(origen, self.rutas.expedientes)
+        t_new, t_old = exp.artefactos["tarea"]["estudiante"], previo.artefactos["tarea"]["estudiante"]
+        if "trazas_resumen" not in previo.artefactos or any(t_new[k] != t_old[k] for k in self._VISTA_SIMULADA):
+            self.evento("simulacion_no_reutilizable", tarea_id=exp.tarea_id, origen=origen)
+            return None
+        return previo
+
+    def _reutilizar_simulacion(self, exp: orq.Expediente, previo: orq.Expediente) -> orq.Expediente:
+        trazas = copy.deepcopy(previo.artefactos["trazas_resumen"])
+        trazas["tarea_id"] = exp.tarea_id
+        for clave in ("simulador_manifiesto", "dir_transcripciones", "avisos_simulador"):
+            if clave in previo.marcas:
+                exp.marcas[clave] = copy.deepcopy(previo.marcas[clave])
+        # invariante 8: modelos del simulador de la corrida reutilizada; el costo ya se imputó a `origen`
+        for ag in ("simulador", "simulador_codificador"):
+            if ent := previo.marcas.get("agentes", {}).get(ag):
+                exp.marcas.setdefault("agentes", {})[ag] = {**copy.deepcopy(ent), "costo_usd": 0.0, "llamadas": 0}
+        exp.marcas["simulacion_reutilizada_de"] = previo.tarea_id
+        self.evento("simulacion_reutilizada", tarea_id=exp.tarea_id, origen=previo.tarea_id)
+        return self._transicionar(exp, "simulada", artefactos={
+            "trazas_resumen": trazas, "evaluacion": self._evaluacion_actualizada(exp, trazas)})
+
     def _revision_1(self, exp: orq.Expediente) -> dict:
         h = next(h for h in reversed(exp.historial) if h["a"] == "revisada")
         return {"revisor": h["revisor"], "fecha": h["fecha"][:10]}
@@ -775,6 +808,11 @@ class Ciclo:
         trans = cargar_transcripciones(exp.marcas.get("dir_transcripciones") or "")
         contexto = {"puntaje_rub01": art["evaluacion"]["rub01"]["total"], "revision_humana_1": self._revision_1(exp),
                     "fecha": date.today().isoformat(), "version": tarea["version"]}
+        if base := exp.marcas.get("guia_base_de"):  # nueva versión de la tarea: la guía anterior es la base
+            previo = orq.cargar(base, self.rutas.expedientes)
+            if "guia" in previo.artefactos:
+                contexto["guia_base"] = previo.artefactos["guia"]
+                contexto["cambios"] = exp.marcas.get("origen", "")
         if rev2 := exp.marcas.get("revision_2"):  # guía rehecha por la revisión humana 2
             contexto.update({"observaciones_revision": rev2["observaciones"], "version": rev2["version_guia"],
                              "cambios": rev2["cambios"]})
@@ -894,6 +932,48 @@ class Ciclo:
             self._detener(e)
         return self._cerrar()
 
+    def nueva_version(self, mejoras: Mapping[str, list[dict]], *, motivo: str = "revisión humana") -> dict:
+        """Nueva versión de tareas ya trabajadas (`verificada`, `evaluada`, ...): el diseñador itera con
+        `mejoras` [{criterio, mejora_minima}] y la v+1 abre un expediente propio (`<id>-v<n>`), que se evalúa
+        y queda pendiente de la revisión humana 1. Marca `reusar_simulacion_de` (se reutiliza si enunciado y
+        foto no cambian) y `guia_base_de` (el redactor parte de la guía anterior). El expediente anterior no
+        se toca."""
+        self.registro["orden"] = "nueva_version"
+        self.registro["parametros"].update({"ids": list(mejoras), "motivo": motivo})
+        try:
+            self.contador.verificar()
+            for tid, mej in mejoras.items():
+                previo = orq.cargar(tid, self.rutas.expedientes)
+                tarea, noticia = previo.artefactos["tarea"], previo.artefactos.get("noticia")
+                ev = copy.deepcopy(previo.artefactos["evaluacion"])
+                ev["rub01"]["mejoras"] = list(mej)
+                try:
+                    r, llam = self._medir("disenador", self.agentes.iterar, tarea, ev, noticia or tarea["noticia"],
+                                          cliente=self.contador, texto_noticia=self._texto_de(previo))
+                except TopeAlcanzado:
+                    raise
+                except Exception as err:  # noqa: BLE001
+                    self.registro["errores"].append({"tarea_id": tid, "etapa": "nueva_version",
+                                                     "error": f"{type(err).__name__}: {err}"[:500]})
+                    continue
+                nueva = copy.deepcopy(r["tarea"])
+                nueva["id"] = f"{re.sub(r'-v[0-9]+$', '', tid)}-v{nueva['version']}"
+                exp = orq.nuevo_expediente(nueva, noticia)
+                exp.marcas.update({"ciclo_id": self.ciclo_id, "noticia_id": previo.marcas.get("noticia_id"),
+                                   "nivel_objetivo": previo.marcas.get("nivel_objetivo"),
+                                   "origen": f"v{nueva['version']} de {tid} ({motivo})", "version_de": tid,
+                                   "reusar_simulacion_de": tid if "trazas_resumen" in previo.artefactos else None,
+                                   "guia_base_de": tid if "guia" in previo.artefactos else None,
+                                   "atencion_mejoras": r.get("atencion_mejoras", [])})
+                if (texto := self._textos.get(tid)) is not None:
+                    self._textos[exp.tarea_id] = texto
+                self._anotar_agente(exp, "disenador", llam)
+                self._guardar(exp)
+                self.avanzar(exp)
+        except TopeAlcanzado as e:
+            self._detener(e)
+        return self._cerrar()
+
     def rehacer_guia(self, observaciones: Mapping[str, list[str]], *, revisor: str) -> dict:
         """La revisión humana 2 rechaza la guía: `verificada → simulada` y se reescribe desde las mismas trazas
         con las observaciones del revisor (versión de guía + 1). Luego ilustrador, verificador y bibliotecario en
@@ -990,6 +1070,9 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--presupuesto-ciclo", type=float, metavar="USD",
                     help="tope adicional para este ciclo (además del 90 %% del tope semanal)")
     ap.add_argument("--estado", action="store_true", help="lista los expedientes y su estado")
+    ap.add_argument("--nueva-version", metavar="MEJORAS.json",
+                    help="JSON {tarea_id: [{criterio, mejora_minima}]}: v+1 de la tarea; se evalúa y queda "
+                         "pendiente de la revisión humana 1")
     ap.add_argument("--rehacer-guia", metavar="OBSERVACIONES.json",
                     help="revisión humana 2: JSON {tarea_id: [observaciones]}; rehace la guía (exige --revisor)")
     a = ap.parse_args(argv)
@@ -1003,6 +1086,12 @@ def main(argv: list[str] | None = None) -> int:
                                  "error" if m.get("ultimo_error") else None) if x]
             print(f"{d['tarea_id']}: {d['estado']} (evaluaciones {d['iteraciones']}) {' · '.join(extra)}")
         return 0
+    if a.nueva_version:
+        mej = json.loads(Path(a.nueva_version).read_text(encoding="utf-8"))
+        ciclo = Ciclo(rutas=rutas, presupuesto_ciclo_usd=a.presupuesto_ciclo, releer_noticia=True)
+        reg = ciclo.nueva_version(mej)
+        print(_resumen(reg))
+        return 3 if reg["detenido_por_tope"] else 0
     if a.rehacer_guia:
         if not a.revisor:
             ap.error("--rehacer-guia exige --revisor (revisión humana 2)")

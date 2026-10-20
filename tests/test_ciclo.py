@@ -281,6 +281,7 @@ def _agentes_tramo_b(verificaciones: list[bool], redacciones: list):
     def redactar(tarea, trazas, transcripciones, contexto, *, cliente, texto_noticia):
         redacciones.append(contexto)
         g = cargar_ejemplo("guia")
+        g["tarea_id"] = tarea["id"]  # como el redactor real
         g["version"] = tarea["version"]
         g["ficha"]["version"] = tarea["version"]
         g["ficha"]["puntaje_rub01"] = contexto["puntaje_rub01"]
@@ -549,3 +550,63 @@ def test_rehacer_guia_exige_verificada_y_revisor(rutas):
     reg = c.rehacer_guia({TID: ["x"]}, revisor=REVISOR)
     assert "exige `verificada`" in reg["errores"][0]["error"]
     assert orq.cargar(TID, rutas.expedientes).estado == "evaluada"
+
+
+# =========================================================================== nueva versión de una tarea
+def _hasta_verificada(rutas, redacciones):
+    tramo_a(rutas, [rub(OK_23)] * 3)
+    c = nuevo_ciclo(rutas, respuestas_simulador(6), agentes=_agentes_tramo_b([True], redacciones))
+    c.continuar([TID], revisor=REVISOR)
+    assert orq.cargar(TID, rutas.expedientes).estado == "verificada"
+
+
+MEJORAS = [{"criterio": "recursos", "mejora_minima": "marcar el supuesto de R4"}]
+
+
+def test_nueva_version_reutiliza_simulacion_y_guia_base(rutas):
+    redacciones: list = []
+    _hasta_verificada(rutas, redacciones)
+    ag = _agentes_tramo_b([True], redacciones)
+    ag.iterar = iterar_falso
+    sim_llamado = ag.simular.llamado
+    n_sim = sim_llamado["n"]
+    c = nuevo_ciclo(rutas, [rub(OK_23)] * 3, agentes=ag)
+    reg = c.nueva_version({TID: MEJORAS})
+    tid2 = TID + "-v2"
+    assert reg["errores"] == [], reg["errores"]
+    exp2 = orq.cargar(tid2, rutas.expedientes)
+    assert exp2.estado == "evaluada" and exp2.marcas["pendiente"] == "revision_humana_1"
+    assert exp2.artefactos["tarea"]["version"] == 2
+    assert orq.cargar(TID, rutas.expedientes).estado == "verificada"   # la v1 no se toca
+    # tramo B con revisión humana 1: no se re-simula (enunciado y foto iguales) y la guía v1 es la base
+    c2 = nuevo_ciclo(rutas, [], agentes=ag)
+    c2.continuar([tid2], revisor=REVISOR)
+    exp2 = orq.cargar(tid2, rutas.expedientes)
+    assert exp2.estado == "verificada"
+    assert ag.simular.llamado["n"] == n_sim
+    assert exp2.marcas["simulacion_reutilizada_de"] == TID
+    assert exp2.artefactos["trazas_resumen"]["tarea_id"] == tid2
+    assert redacciones[-1]["guia_base"]["tarea_id"] == TID
+    assert exp2.artefactos["evaluacion"]["reproducibilidad"]["agentes"]["simulador"]["costo_usd"] == 0.0
+    validar_artefactos(exp2)
+
+
+def test_nueva_version_con_enunciado_cambiado_vuelve_a_simular(rutas):
+    redacciones: list = []
+    _hasta_verificada(rutas, redacciones)
+    ag = _agentes_tramo_b([True], redacciones)
+
+    def iterar_cambia(tarea, evaluacion, noticia, *, cliente, texto_noticia):
+        r = iterar_falso(tarea, evaluacion, noticia, cliente=cliente, texto_noticia=texto_noticia)
+        r["tarea"]["estudiante"]["enunciado_es"] += " Usen coma decimal."
+        return r
+
+    ag.iterar = iterar_cambia
+    c = nuevo_ciclo(rutas, [rub(OK_23)] * 3 + respuestas_simulador(6), agentes=ag)
+    c.nueva_version({TID: MEJORAS})
+    n_sim = ag.simular.llamado["n"]
+    c2 = nuevo_ciclo(rutas, respuestas_simulador(6), agentes=ag)
+    reg = c2.continuar([TID + "-v2"], revisor=REVISOR)
+    assert ag.simular.llamado["n"] == n_sim + 1
+    assert "simulacion_reutilizada_de" not in orq.cargar(TID + "-v2", rutas.expedientes).marcas
+    assert any(e["tipo"] == "simulacion_no_reutilizable" for e in reg["eventos"])

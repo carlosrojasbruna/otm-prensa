@@ -1,0 +1,486 @@
+{
+  "tarea_id": "2026-10-adelantar-compras-queso-v2",
+  "version": 2,
+  "fecha": "2026-10-20",
+  "ficha": {
+    "titulo": "¿Cuánto queso conviene comprar antes de que rija un arancel?",
+    "noticia": {
+      "medio": "BBC News",
+      "titulo": "Trump sued over Canadian tariffs in latest legal challenge",
+      "fecha": "2026-10-20",
+      "url": "https://www.bbc.co.uk/news/articles/cqrkyj13m588o?at_medium=RSS&at_campaign=rss"
+    },
+    "nivel_principal": "U",
+    "variantes": [
+      "S"
+    ],
+    "contenidos": [
+      "modelo dinámico discreto",
+      "optimización con restricciones",
+      "programación lineal",
+      "sensibilidad de parámetros",
+      "órdenes de magnitud y agregación"
+    ],
+    "tiempo": "2 sesiones de 90 min",
+    "puntaje_rub01": 24,
+    "version": 2,
+    "fecha": "2026-10-20",
+    "cambios": ""
+  },
+  "meta": {
+    "que_observar": "Cómo el grupo convierte una situación de compras ante un arancel anunciado en un modelo de inventario con costos que compiten (arancel evitado frente a almacenamiento y pérdida de queso), y cómo pasa del plan de una importadora a un orden de magnitud en dinero para todo el sector. Interesa ver si separan lo que dice la noticia de lo que es escenario hipotético, si explicitan supuestos antes de calcular y si contrastan su modelo con datos que no usaron para construirlo.",
+    "contenido": "Modelo dinámico discreto de inventario, optimización con restricciones (programación lineal o programación dinámica), sensibilidad de parámetros, órdenes de magnitud y agregación.",
+    "subcompetencias": [
+      "Comprender la situación y distinguir hechos de la noticia de supuestos del escenario (P1-MRS)",
+      "Simplificar: elegir horizonte, un tipo de queso, costo de bodega, fracción de pérdida, demanda y capacidad (P2-RM)",
+      "Matematizar: plantear la recurrencia del inventario, la función de costo con arancel desde el término del periodo de espera y las restricciones (P3-MM)",
+      "Trabajar matemáticamente con planilla, programación lineal o programación dinámica (P4-WM)",
+      "Interpretar el plan en términos de negocio y el efecto agregado como rango con supuestos (P5-INT)",
+      "Validar con series reales de importaciones y revisar supuestos (P6-VAL)",
+      "Comunicar plan, regla de decisión y límites del modelo (P7-EXP)"
+    ],
+    "meta_social": "Trabajo cooperativo en grupos pequeños, con verbalización de los supuestos y justificación de las decisiones de modelación ante otros grupos.",
+    "evidencia": [
+      "Línea de tiempo con compras, inventario y demanda por mes",
+      "Nota que separa hechos de la noticia y supuestos del escenario, con lista de datos pedidos",
+      "Tabla de variables y supuestos escrita antes de calcular",
+      "Recurrencia del inventario, función objetivo, restricciones y expresión del efecto agregado",
+      "Calendario óptimo de compras e inventario, y comparación con la política sin adelantar",
+      "Recomendación escrita con las condiciones que la hacen cambiar, y rango del efecto agregado con sus supuestos",
+      "Gráfico predicho frente a observado y lista de supuestos modificados",
+      "Informe corto con calendario de compras, gráfico de inventario, tabla de sensibilidad y estimación agregada"
+    ]
+  },
+  "analisis_a_priori": {
+    "rutas": [
+      {
+        "id": "R1",
+        "nombre": "Punto de equilibrio por unidad",
+        "nivel": "S2",
+        "modelo": "Comparar el ahorro por unidad al evitar el arancel con el costo de guardarla n meses (almacenamiento más pérdida); hallar el n en que se igualan."
+      },
+      {
+        "id": "R2",
+        "nombre": "Programación lineal del plan de compras",
+        "nivel": "U",
+        "modelo": "Minimizar el costo total sujeto a la dinámica del inventario, capacidad y no negatividad; resolver con planilla o con software."
+      },
+      {
+        "id": "R3",
+        "nombre": "Programación dinámica hacia atrás",
+        "nivel": "U",
+        "modelo": "Función de valor V_k(I) con costo mínimo restante desde el mes k con inventario I; recurrencia hacia atrás con demanda variable."
+      },
+      {
+        "id": "R4",
+        "nombre": "Modelo agregado de muchas importadoras con dimensionamiento",
+        "nivel": "U",
+        "modelo": "Suma de los planes individuales con costo de bodega creciente en el uso de capacidad total; el valor gravado total se reparte en fracción de queso y se convierte a compras mensuales para simular importaciones del sector."
+      }
+    ],
+    "modelo_inadecuado": {
+      "id": "RX",
+      "por_que_falla": "Comprar durante la ventana todo el queso que quepa en la bodega, o aplicar el arancel de 50% a todas las compras del horizonte, ignora que guardar cuesta dinero y que parte del queso se echa a perder, por lo que adelantar sin límite supera el ahorro del arancel evitado. Tampoco distingue entre producto que paga arancel y el que no, ni considera que la demanda limita cuánto se vende. Por último, tomar el valor gravado total como compras adelantadas del queso sobrestima el efecto del sector."
+    },
+    "solucion_referencia": "1) Definir meses k=0,1,...,N; compras x_k, inventario I_k, demanda d_k. 2) Dinámica: I_{k+1}=(1-s)(I_k+x_k-d_k), con 0<=I_k<=C y x_k>=0, s fracción perdida. 3) Costo total: suma de p·x_k·(1+t·1[k>=m]) + h·I_k, con m el mes en que rige el arancel. 4) Regla marginal: guardar una unidad comprada antes de m durante n meses cuesta aproximadamente n(h+s·p) y evita t·p. Conviene adelantar hasta n*=floor(t·p/(h+s·p)). 5) Resolver por programación lineal (planilla con Solver) o por programación dinámica hacia atrás. 6) Obtener el calendario óptimo: durante la ventana comprar lo necesario para cubrir la demanda de los siguientes n* meses, hasta llenar la capacidad C. 7) Sensibilidad en s, h, C y d_k. 8) Efecto agregado: si V es el valor gravado total y f la fracción que es queso, las compras adelantadas del sector rondan f·V·(n*/12) si V se interpreta como anual, acotadas por la capacidad total de bodega. Con muchas firmas haciendo lo mismo la demanda de importaciones sube durante la ventana y cae después, lo que encarece la bodega y reduce el beneficio de adelantar. Resultado: Con el precio normalizado a uno, t igual a cinco décimas y h+s·p igual a una décima por mes, n* es cinco meses. La importadora debería adelantar compras para cubrir cinco meses de demanda (si la capacidad lo permite) y luego volver a comprar según demanda, pagando el arancel. Si la bodega es chica, el límite es C y el beneficio de adelantar baja. Si el queso se pierde rápido, adelantar deja de convenir. A nivel de sector, se espera un aumento de las importaciones antes de que rija el arancel y una caída después. Como ilustración, con una fracción de queso de un uno por ciento del valor gravado interpretado como anual, el adelanto agregado sería del orden de decenas de millones de dólares.",
+    "rango_aceptable": "El horizonte óptimo de adelanto va de pocas semanas, con queso fresco o bodega cara, a varios meses, con queso duro y bodega barata. Se acepta cualquier plan coherente con supuestos explícitos, restricciones respetadas y sensibilidad informal. Para el sector se acepta cualquier estimación de orden de magnitud con fracción de queso, periodo del valor total y número de firmas justificados, que prediga adelanto seguido de caída, con tamaño dependiente de capacidad y vida útil.",
+    "barreras_por_fase": [
+      {
+        "fase": "P1-MRS",
+        "barrera": "Bloqueo probable B12. Es fácil mezclar el arancel que en la noticia ya rige para el queso con el arancel anunciado del escenario hipotético, y leer el periodo de espera de 30 días como un dato de la demanda y no como una ventana de decisión. Algunos grupos pueden ver solo el arancel de 50% y olvidar que guardar queso cuesta y que parte se echa a perder."
+      },
+      {
+        "fase": "P2-RM",
+        "barrera": "Bloqueo probable B23. Cuesta decidir qué simplificar sin dejar fuera lo esencial: el grupo puede querer calcular antes de fijar supuestos, o aceptar ficha R4 y R5 sin traducirlas a variables (costo de bodega por cantidad y tiempo, fracción mensual de pérdida, capacidad, demanda por mes). También es difícil decidir cómo interpretar el valor total gravado y qué fracción es queso. El modelo inadecuado típico es comprar todo lo que quepa en la bodega o aplicar el arancel a todas las compras del horizonte."
+      },
+      {
+        "fase": "P3-MM",
+        "barrera": "Bloqueo probable B34. Plantear el inventario mes a mes con compras, demanda y pérdida, y hacer que el arancel afecte solo las compras que ingresan desde el mes en que rige, no el stock ya comprado. Pueden olvidar la restricción de capacidad y la no negatividad, o no saber cómo expresar la suma de los planes de muchas importadoras."
+      },
+      {
+        "fase": "P4-WM",
+        "barrera": "Bloqueo probable B45. Pasar del planteamiento a una resolución operativa (planilla con Solver, programación lineal o dinámica hacia atrás) puede ser lento si la formulación quedó ambigua. Hay riesgo de obtener un calendario sin reconocer qué lo limita, sea la capacidad o la regla marginal de cuántos meses conviene adelantar, y de calcular el volumen agregado sin fijar antes qué periodo abarca el valor gravado."
+      },
+      {
+        "fase": "P5-INT",
+        "barrera": "Bloqueo probable B56. Los grupos pueden quedarse con un calendario numérico sin traducirlo a una recomendación de negocio ni indicar cuándo cambia (queso que se pierde más rápido, bodega chica). Para el sector, es probable tomar el valor gravado total como compras adelantadas de queso, lo que sobrestima el efecto. La ficha R7 no aclara qué tiempo abarca ese valor, y esa ambigüedad debe resolverla el grupo."
+      },
+      {
+        "fase": "P6-VAL",
+        "barrera": "Bloqueo probable B67. Decidir qué meses comparar alrededor de un anuncio anterior, y qué mirar: tamaño y forma del salto antes del arancel y de la caída después. Hay riesgo de aceptar el modelo porque se parece a la serie, o de descartarlo por una diferencia de tamaño sin identificar qué supuesto la explica."
+      },
+      {
+        "fase": "P7-EXP",
+        "barrera": "El mapa no señala un bloqueo, pero queda el riesgo de redactar el informe sin distinguir qué es dato de la noticia y qué es escenario, o de presentar el efecto agregado como cifra exacta y no como orden de magnitud con sus supuestos."
+      }
+    ]
+  },
+  "organizacion": {
+    "momentos": [
+      {
+        "momento": "Comprensión y trabajo grupal (primera sesión: comprender, simplificar y matematizar)",
+        "tiempo": "35 min",
+        "estudiantes": "Leen el enunciado, separan lo que informa la noticia del escenario de la importadora y dibujan la línea de tiempo con compras, inventario y demanda. Listan los datos que necesitan y los piden como recursos a solicitud (R4 y R5). Escriben la tabla de variables y supuestos antes de calcular.",
+        "docente": "Circula y diagnostica sin intervenir aún: pregunta qué han entendido, qué datos pedirán y qué han decidido dejar fuera. Anota qué grupos mezclan el arancel ya vigente con el anunciado y quiénes no han fijado supuestos. Entrega los recursos a solicitud solo cuando el grupo los pide con una pregunta concreta."
+      },
+      {
+        "momento": "Comprensión y trabajo grupal (primera sesión: matematizar y trabajar)",
+        "tiempo": "45 min",
+        "estudiantes": "Plantean la recurrencia del inventario y la función de costo con el arancel desde el mes en que termina el periodo de espera, con capacidad y no negatividad. Eligen una ruta de resolución (punto de equilibrio por unidad, programación lineal en planilla o programación dinámica) y obtienen un primer calendario de compras.",
+        "docente": "Sigue en modo diagnóstico: pide que cada grupo cuente qué ecuación usa, qué representa cada término y qué ruta eligió. Registra los bloqueos B23, B34 y B45 que observa. No corrige el planteo ni entrega la regla de decisión."
+      },
+      {
+        "momento": "Puesta en común",
+        "tiempo": "10 min",
+        "estudiantes": "Cada grupo presenta en pocas frases sus supuestos principales y la ruta elegida. Los demás preguntan por la diferencia de supuestos.",
+        "docente": "Modera, destaca las diferencias entre las tablas de supuestos y las rutas, y cierra la sesión sin decir cuál es la mejor."
+      },
+      {
+        "momento": "Comprensión y trabajo grupal (segunda sesión: interpretar y dimensionar el sector)",
+        "tiempo": "35 min",
+        "estudiantes": "Completan la resolución, hacen la sensibilidad informal (queso que se pierde más rápido, bodega más chica, demanda distinta) y redactan la recomendación con las condiciones que la hacen cambiar. Para el sector, deciden cómo interpretar el valor gravado total, qué fracción es queso y cuántas importadoras adelantan, y piden R7 si lo necesitan.",
+        "docente": "Circula, pregunta qué cambiaría su plan y qué supuestos usan para pasar de una importadora al sector. Si un grupo está bloqueado, usa primero la ayuda mínima: una pregunta sobre qué han hecho y qué parte no calza, sin entregar la regla, el modelo ni el resultado."
+      },
+      {
+        "momento": "Puesta en común",
+        "tiempo": "25 min",
+        "estudiantes": "Los grupos exponen su plan, la regla con que decidieron cuánto adelantar y el rango del efecto agregado con sus supuestos. Comparan las rutas usadas y explican por qué sus resultados difieren.",
+        "docente": "Organiza el orden de exposición para contrastar rutas y supuestos distintos. Pide justificar cada decisión y marca la diferencia entre dato de la noticia y escenario. No valida resultados todavía."
+      },
+      {
+        "momento": "Validación y cierre",
+        "tiempo": "30 min",
+        "estudiantes": "Con los grupos que ya definieron su estrategia, eligen qué meses comparar alrededor de un anuncio de aranceles anterior y contrastan su modelo con la serie (R6): salto antes, caída después y tamaño. Identifican qué supuesto explica las diferencias y entregan el informe corto.",
+        "docente": "Entrega la tarjeta de contraste R6 solo después de que el grupo definió su estrategia. Pide que expliquen qué predijo su modelo antes de ver los datos. Cierra con la comparación entre rutas y la idea de que el modelo se revisa, sin dar una única respuesta correcta."
+      }
+    ],
+    "agrupamiento": "Grupos pequeños y estables durante las dos sesiones. Favorecen que todos opinen y verbalicen los supuestos, y cada grupo trabaja con su propia tabla de variables.",
+    "roles": "Dentro de cada grupo se rotan: quien registra los supuestos y las decisiones, quien lleva la planilla o el cálculo y quien presenta. El rol de portavoz cambia entre la primera y la segunda sesión para que todos expliquen sus decisiones.",
+    "producciones": [
+      "Nota que separa hechos de la noticia y supuestos del escenario, con lista de datos pedidos",
+      "Tabla de variables y supuestos escrita antes de calcular",
+      "Línea de tiempo con compras, inventario y demanda por mes",
+      "Recurrencia del inventario, función objetivo y restricciones",
+      "Calendario de compras e inventario y comparación con la política sin adelantar",
+      "Recomendación con las condiciones que la hacen cambiar, y rango del efecto agregado con sus supuestos",
+      "Gráfico predicho frente a observado y lista de supuestos modificados",
+      "Informe corto con calendario, gráfico de inventario, tabla de sensibilidad y estimación agregada"
+    ],
+    "tecnologia": "Se permite planilla con Solver o software de programación lineal para resolver el costo mínimo y construir los gráficos (fase P4-WM, y gráficos en P6-VAL y P7-EXP). No se usa para elegir supuestos, decidir qué simplificar ni plantear el modelo: esas decisiones (P2-RM y P3-MM) las toma el grupo y quedan escritas antes de calcular. Una calculadora basta para la ruta de punto de equilibrio."
+  },
+  "escenarios": [
+    {
+      "id": "E1",
+      "nombre": "ruta esperada",
+      "corridas": [
+        "N3_AA_r1",
+        "N1_AA_r1"
+      ],
+      "perfil": "Tramo U, nivel N3, estilo AA (N3_AA_r1); también tramo U, nivel N1, estilo AA (N1_AA_r1).",
+      "ruta": [
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P5-INT",
+        "P3-MM",
+        "P4-WM",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "supuestos": [
+        "arancel de 50% sobre compras posteriores a los 30 días",
+        "costo de bodega h = 2% del precio por mes",
+        "pérdida d = 3% por mes",
+        "capacidad de bodega con tope C",
+        "demanda mensual fija (en el cálculo de 10 meses)",
+        "después del arancel comprar solo lo justo",
+        "queso = 5% de los 20.000 M",
+        "los 20.000 M son anuales",
+        "ahorro del arancel se gana una sola vez por tonelada"
+      ],
+      "modelo": "punto de equilibrio",
+      "bloqueos": [],
+      "que_aprende": "Los grupos plantean en letras el ahorro por unidad frente al costo de guardarla y la pérdida, y obtienen una regla de cuántos meses adelantar (ruta R1). Luego la contrastan con la capacidad de bodega y la demanda variable y reducen el adelanto. En N1_AA_r1 se corrige que el ahorro del arancel se gana una sola vez por unidad, mientras el costo crece con los meses. El curso ve que la regla marginal es un tope y no la recomendación final: la acotan la capacidad y la incertidumbre de la demanda. Ambos grupos declaran como supuestos la fracción de queso y el periodo del valor gravado.",
+      "extracto_dialogo": [
+        {
+          "hablante": "Cami",
+          "texto": "Dale, entonces comprar adelantado k meses conviene si 0,5p > k·(h + d·p), o sea k < 0,5p/(h + d·p). Pero ojo, la bodega tiene tope de capacidad, así que habría que agregar una restricción C y ver qué nos dan de datos para h, d y C."
+        },
+        {
+          "hablante": "Fran",
+          "texto": "Como no nos dan h, d ni C, supongamos h = 2% de p y d = 3% al mes: k < 0,5/(0,02+0,03) = 10 meses. Pero el arancel rige en 30 días y la bodega tiene tope, así que el límite real lo pone C."
+        },
+        {
+          "hablante": "Fran",
+          "texto": "Tienes razón, los 10 meses salen de suponer demanda fija y h y d inventados. Con el tope C y pedidos que cambian, yo adelantaría solo 2 o 3 meses de demanda esperada, y el efecto sería un pico de unos 250 M y una caída parecida después, o sea que se mueve el calendario más que el total anual."
+        }
+      ]
+    },
+    {
+      "id": "E2",
+      "nombre": "llenar la bodega sin comparar",
+      "corridas": [
+        "N1_VV_r1"
+      ],
+      "perfil": "Tramo U, nivel N1, estilo VV. La corrida terminó por máximo de turnos, sin entrega acordada.",
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P4-WM",
+        "P6-VAL",
+        "P4-WM",
+        "P2-RM",
+        "P6-VAL",
+        "P2-RM",
+        "P4-WM",
+        "P5-INT",
+        "P3-MM",
+        "P5-INT",
+        "P6-VAL",
+        "P2-RM",
+        "P5-INT",
+        "P4-WM",
+        "P6-VAL"
+      ],
+      "supuestos": [
+        "demanda de 100 cajas al mes",
+        "bodega con capacidad de 300 cajas",
+        "pérdida de 10% mensual",
+        "precio de 100 dólares por caja",
+        "almacenamiento de 5 dólares por caja al mes",
+        "queso como 1% de los 20 mil millones",
+        "los 20 mil millones podrían ser anuales"
+      ],
+      "modelo": "simulación de inventario",
+      "bloqueos": [],
+      "que_aprende": "El grupo decide de entrada llenar la bodega durante la espera y simula mes a mes pérdidas, costo de bodega y compras con arancel. Es un trabajo cuidadoso, pero nunca prueba cantidades menores. Por eso no puede saber si llenar la bodega es lo mejor, que es el riesgo que describe el modelo inadecuado. Además, al principio toma la fracción de queso del valor gravado como si fuera mensual, y lo corrige al preguntarse por el periodo. El curso aprende a contrastar esta simulación de una sola política con E1 y E3, donde se compara el ahorro con el costo de guardar para fijar un límite.",
+      "extracto_dialogo": [
+        {
+          "hablante": "Fran",
+          "texto": "Dale, 100 cajas al mes y caben 300. Entonces en los 30 días de espera podrían comprar de más para llenar la bodega, ¿no? [dibujo: la bodega con 300 cajas, casi llena], pero el queso se echa a perder, así que no sé cuánto de más conviene."
+        },
+        {
+          "hablante": "Cami",
+          "texto": "Claro, y si tenemos 100 cajas al mes y la bodega aguanta 300, podríamos comprar 200 de más en el mes de espera, pero ¿cuánto se echa a perder? Inventemos que se pierde un 10% por mes, así vemos si con el arancel de 50% igual conviene."
+        },
+        {
+          "hablante": "Cami",
+          "texto": "Mmm, no sé si 1% es mucho, pero me da duda otra cosa: ¿esos 20 mil millones serán de un año o de un mes? Si son de un año, 200 millones al año serían como 17 millones al mes, y el triple del mes de espera no sería 600 millones."
+        },
+        {
+          "hablante": "Fran",
+          "texto": "Uy, tienes razón, no lo había pensado: si es de un año, 200 millones / 12 son unos 17 millones al mes, y el triple serían como 50 millones, no 600. [dibujo: la barra alta bajando de 600 a 50] ¿Le preguntamos a la profe si son 20 mil millones al año?"
+        }
+      ]
+    },
+    {
+      "id": "E3",
+      "nombre": "tanteo del óptimo por costo marginal",
+      "corridas": [
+        "N2_VV_r1"
+      ],
+      "perfil": "Tramo U, nivel N2, estilo VV.",
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P4-WM",
+        "P6-VAL",
+        "P2-RM",
+        "P4-WM",
+        "P5-INT",
+        "P4-WM",
+        "P6-VAL",
+        "P2-RM",
+        "P4-WM",
+        "P6-VAL",
+        "P2-RM",
+        "P4-WM",
+        "P7-EXP"
+      ],
+      "supuestos": [
+        "compra normal 100 cajas al mes",
+        "precio $100 por caja",
+        "arancel de 50% solo a compras después del día 30",
+        "almacenamiento $5 por caja al mes",
+        "pérdida de 10% por mes guardado",
+        "cajas perdidas se reponen con arancel ($150)",
+        "valor gravado de 20 mil millones interpretado como anual",
+        "queso es 2% a 3% del valor gravado"
+      ],
+      "modelo": "costo marginal",
+      "bloqueos": [],
+      "que_aprende": "Sin escribir una fórmula general, el grupo prueba cantidades crecientes con números inventados. Ve que el último bloque comprado cuesta más en bodega y pérdidas de lo que ahorra en arancel, y así encuentra el mejor punto por tanteo. Toma una decisión de modelación explícita: reponer con arancel las cajas perdidas. También separa el valor gravado total de la parte que es queso. Al comparar con E1, el curso ve que el tanteo marginal y la regla algebraica llegan a la misma idea: hay un límite al adelanto. Al comparar con E2, ve por qué hay que comparar varias políticas antes de recomendar una.",
+      "extracto_dialogo": [
+        {
+          "hablante": "Fran",
+          "texto": "Me da lo mismo, $36.000 contra $40.000, así que ahorra $4.000. Pero pasar de 200 a 300 cajas solo sumó $1.000 más (de $3.000 a $4.000), así que me late que más allá ya no conviene; ¿probamos 400 para ver?"
+        },
+        {
+          "hablante": "Cami",
+          "texto": "Hago la de 400: 400 × 100 = $40.000, bodega 100×5 + 100×10 + 100×15 = $3.000, y se pierden 10 + 20 + 30 = 60 cajas × $150 = $9.000. Total $52.000 contra $55.000, o sea ahorra solo $3.000, así que bajó; ¿lo revisamos, por si me equivoqué?"
+        },
+        {
+          "hablante": "Fran",
+          "texto": "Lo revisé: las últimas 100 cajas ahorran $5.000 de arancel, pero cuestan $1.500 de bodega y $4.500 de pérdidas, o sea $1.000 más de lo que ahorran, y por eso baja de $4.000 a $3.000. Entonces con estos números inventados el mejor punto sería unas 300 cajas, aunque falta saber la capacidad real de la bodega."
+        },
+        {
+          "hablante": "Cami",
+          "texto": "Ojo que los 20 mil millones son todos los bienes gravados, no solo queso, así que el queso sería una parte chica. Anotemos: 20.000/12 ≈ 1.700 millones al mes, adelantar 2 meses ≈ 3.400 millones como tope, y pidamos qué porcentaje es queso."
+        }
+      ]
+    },
+    {
+      "id": "E4",
+      "nombre": "capacidad como límite y escalamiento al sector",
+      "corridas": [
+        "N4_VV_r1"
+      ],
+      "perfil": "Tramo U, nivel N4, estilo VV.",
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P4-WM",
+        "P5-INT",
+        "P6-VAL",
+        "P4-WM",
+        "P5-INT",
+        "P6-VAL",
+        "P7-EXP",
+        "P6-VAL"
+      ],
+      "supuestos": [
+        "demanda de 100 t/mes",
+        "precio de 8 mil dólares por tonelada",
+        "capacidad de bodega de 250 t",
+        "merma de 5% mensual",
+        "costo de bodega de 200 dólares por tonelada al mes",
+        "50 importadoras comparables",
+        "queso equivale a unos 2 mil millones del valor gravado",
+        "valor del queso interpretado como anual",
+        "todo el sector adelanta 1,5 meses",
+        "Canadá puede despachar más de lo normal antes del día 30"
+      ],
+      "modelo": "punto de equilibrio",
+      "bloqueos": [],
+      "que_aprende": "Este grupo también recomienda llenar la bodega, como E2, pero lo justifica: el punto de equilibrio permite más meses de los que caben, así que la restricción activa es la capacidad. Corrige que el ahorro se calcula sobre lo comprado de más y no sobre todo el stock. Al pasar al sector, explicita el número de importadoras y el valor anual del queso, y agrega un supuesto que nadie más considera: si Canadá puede despachar ese volumen antes del plazo. El curso compara una misma decisión, llenar la bodega, cuando viene de una regla (E4) y cuando no (E2). También ve que el efecto agregado depende de supuestos declarados.",
+      "extracto_dialogo": [
+        {
+          "hablante": "Fran",
+          "texto": "Supongamos 5% de merma al mes y 200 dólares por tonelada de bodega: cada tonelada guardada pierde unos 600 al mes y ahorra 4.000 de arancel, o sea que conviene hasta casi 7 meses. Así que el tope lo pone la bodega: 250 t le cubren solo 2,5 meses de demanda."
+        },
+        {
+          "hablante": "Fran",
+          "texto": "Ojo, el ahorro es sobre 150 t extra, no 250, porque 100 las compraba igual: unos 500 mil por importadora. Con 50 serían 25 millones, un pico y luego un hueco, minúsculo frente a los 20 mil millones."
+        },
+        {
+          "hablante": "Cami",
+          "texto": "Entonces el orden de magnitud sería unos 250 millones adelantados y unos 100 millones de ahorro neto, pero en el dibujo el hueco compensa el pico, así que en el año el volumen casi no cambia. Habría que decir que supusimos que Canadá puede despachar 2,5 veces lo normal en un mes, y eso quizás no es realista."
+        },
+        {
+          "hablante": "Fran",
+          "texto": "Un detalle antes de entregar: en el dibujo el hueco es de 1,5 meses, no 2,5, porque las 250 t incluyen la demanda del mes del anuncio. Y falta decir que el arancel de 50% igual recortaría las compras después, así que si lo corregimos, DE ACUERDO."
+        }
+      ]
+    }
+  ],
+  "tabla_bloqueos": {},
+  "intervenciones": [
+    {
+      "bloqueo": "B12",
+      "z1_z2": "Pregunten qué han entendido hasta ahora y qué creen que pide la importadora. Reconozcan lo que ya identificaron y pídanles que cuenten con sus palabras qué ocurre cuando termina el periodo de espera.",
+      "z3": "Pídanles que dibujen una línea de tiempo con los meses, las compras, el queso guardado y los pedidos de los clientes. En E2 el dibujo de la bodega casi llena ayudó al grupo a empezar.",
+      "z4": "Pregunten: «¿Qué dice la noticia y qué es el escenario de la importadora? ¿Qué costos compiten durante la ventana de espera?». No nombren el modelo ni la comparación de costos. Que lo escriban en dos listas.",
+      "z5": "Pidan que separen por escrito los hechos de la noticia (el queso ya paga arancel, hay una demanda judicial, hay un periodo de espera) de los supuestos del escenario hipotético. Después pídanles que anoten qué datos necesitan pedir. No les digan cuántos meses conviene adelantar ni cómo calcularlo."
+    },
+    {
+      "bloqueo": "B23",
+      "z1_z2": "Pregunten qué variables han listado y cuáles les faltan. Valoren que quieran calcular, pero pídanles que primero escriban sus supuestos.",
+      "z3": "Sugieran armar una tabla de variables y supuestos antes de calcular: qué se conoce, qué hay que inventar y qué hay que pedir.",
+      "z4": "Pregunten: «¿Qué pasa con el queso guardado de un mes al siguiente? ¿Qué límite físico tiene la bodega?». Que decidan cómo tratar el costo de guardar y la pérdida, sin darles la forma matemática.",
+      "z5": "Ofrezcan los recursos a solicitud R4 (almacenamiento y vida útil) y R5 (demanda de los clientes), solo como órdenes de magnitud. Hagan con ellos un solo mes con números inventados y que repitan el paso para el mes siguiente. No escriban la ecuación del inventario ni la función de costo."
+    },
+    {
+      "bloqueo": "B34",
+      "z1_z2": "Pregunten qué quieren minimizar o comparar y qué han probado con números inventados. Rescaten lo que ya funcione.",
+      "z3": "Pídanles que prueben un caso pequeño con pocos meses y números inventados antes de generalizar con letras.",
+      "z4": "Pregunten: «¿Qué compras pagan arancel y cuáles no? ¿Qué costos aparecen por cada unidad guardada? ¿Qué restricciones tiene el plan?». Que las traduzcan solos a una expresión.",
+      "z5": "Ayuden a ordenar los componentes del costo del plan en una lista (compra, bodega, pérdida, arancel) y a ver qué restricciones tiene. Que ellos armen la expresión. En E3 el grupo comparó dos planes con números concretos sin fórmula general, y esa ruta sirve de apoyo. No entreguen la función objetivo ni la recurrencia."
+    },
+    {
+      "bloqueo": "B45",
+      "z1_z2": "Pregunten qué política de compras han calculado y con qué la compararon. Si solo probaron una, díganlo con calma: así ocurrió en E2.",
+      "z3": "Sugieran una tabla con varias cantidades de adelanto y el costo total de cada una, usando una planilla si la tienen.",
+      "z4": "Pregunten: «Si compran un poco más antes del arancel, ¿cuánto ahorran y cuánto cuesta guardar y perder ese último pedazo? ¿Qué límite aparece primero, el de la regla o el de la bodega?». No den el número de meses ni la fórmula.",
+      "z5": "Propongan que repitan el cálculo con tres o cuatro cantidades crecientes y observen dónde deja de mejorar el costo total, como hizo el grupo de E3. Quien prefiera una herramienta puede usar planilla con Solver. No entreguen el calendario óptimo ni el resultado."
+    },
+    {
+      "bloqueo": "B56",
+      "z1_z2": "Pregunten qué le dirían a la dueña de la importadora y qué parte de su resultado les parece más frágil.",
+      "z3": "Pídanles que escriban su recomendación como una instrucción para la importadora, con las condiciones en que la cambiarían.",
+      "z4": "Pregunten: «¿Qué cambia en su plan si el queso se echa a perder más rápido o la bodega es más chica? Para el sector, ¿qué decidieron sobre el periodo que abarca el valor gravado, la parte que es queso y cuántas importadoras adelantan?». Pueden añadir: «¿Algo del lado del vendedor limita lo que se puede comprar en la ventana?» (idea de E4).",
+      "z5": "Ofrezcan el recurso a solicitud R7, que entrega solo un orden de magnitud y no aclara el periodo del valor gravado. Que el grupo decida cómo interpretarlo y lo escriba como supuesto. Pídanles variar un supuesto a la vez y anotar cómo cambia la recomendación. No den la regla de adelanto ni la estimación del sector."
+    },
+    {
+      "bloqueo": "B67",
+      "z1_z2": "Pregunten cómo saben que su modelo es razonable y qué esperarían ver en el mundo real si lo fuera.",
+      "z3": "Sugieran hacer un gráfico a mano de lo que predice su modelo para las importaciones antes y después del arancel, y dejar espacio para dibujar lo observado.",
+      "z4": "Pregunten: «¿Qué meses compararían y con qué anuncio anterior? ¿Su modelo predice la forma, el tamaño o ambos? Si no calza, ¿qué supuesto cambiarían primero?».",
+      "z5": "Cuando el grupo ya haya definido su estrategia, entreguen la tarjeta R6 sobre las series mensuales oficiales de importaciones. Pídanles que ubiquen en ella los meses que eligieron y listen los supuestos que modificarían. No digan cuánto debería ser el salto ni cómo debería ser la caída."
+    }
+  ],
+  "puesta_en_comun": {
+    "seleccion_y_orden": [
+      "Primero E2 (seleccionar y anticipar): muestra la simulación de una sola política, llenar la bodega. El curso ve que sin comparar cantidades menores no se sabe si es lo mejor, y que la fracción de queso se corrigió al preguntar por el periodo del valor gravado. Así aparece el modelo inadecuado RX sin que lo traiga el docente.",
+      "Segundo E3 (secuenciar): el tanteo con números inventados es accesible y muestra que el último bloque comprado puede costar más de lo que ahorra, y que reponer con arancel lo perdido fue una decisión explícita. Contrasta directamente con E2.",
+      "Tercero E1 (conectar): la regla algebraica de punto de equilibrio formaliza lo que E3 hizo con números. El curso conecta ambas ideas y ve que la regla es un tope que acotan la capacidad y la demanda variable.",
+      "Cuarto E4 (conectar y monitorear): usa la misma decisión de llenar la bodega que E2, pero porque la capacidad es la restricción activa. Es el paso al sector, con supuestos explícitos sobre número de importadoras, valor anual del queso y capacidad del proveedor para despachar. Se compara con E2 la misma decisión con y sin regla que la justifique.",
+      "La ruta propia del docente se presenta al final, si hace falta, como una más. No se privilegia de entrada."
+    ],
+    "preguntas": [
+      "¿Qué supuestos inventaron (pérdida, costo de bodega, capacidad, demanda) y cuáles cambiarían la recomendación si fueran distintos?",
+      "¿Por qué E2 no puede saber si llenar la bodega es lo mejor? ¿Qué comparación le faltó?",
+      "¿En qué se parecen el tanteo de E3 y la regla de E1? ¿Cuál es más eficiente si cambian los datos?",
+      "¿Qué límite aparece primero, el de la regla o el de la bodega? ¿Cómo lo sabe cada grupo?",
+      "¿Qué pasa con el plan si el queso es fresco o si es duro y madura?",
+      "¿Cómo interpretaron el periodo del valor gravado y qué fracción es queso? ¿Cómo cambia el efecto en dinero según esa decisión?",
+      "Si todas las importadoras adelantan, ¿qué pasa con el costo de la bodega y con el beneficio de adelantar? ¿Es un pico sin hueco o el hueco lo compensa?",
+      "¿Qué supuesto de E4 sobre el proveedor nadie más había considerado y qué tan realista es?",
+      "¿Cómo comunicarían qué es dato de la noticia y qué es escenario?"
+    ],
+    "contraste_validacion": "Usen la evidencia independiente de la tarea: series mensuales oficiales de importaciones de queso desde Canadá alrededor de un anuncio de aranceles anterior (tarjeta R6, que se entrega solo después de que el grupo haya definido su estrategia). Cada grupo debe indicar qué meses compara y poner lo que predijo su modelo junto a lo observado. Deben revisar tres cosas: si hay un salto antes del arancel, si hay una caída después, y si el orden de magnitud del cambio es similar. Los datos no se usaron para construir el modelo. Si no calzan, cada grupo nombra el supuesto que modificaría (capacidad, pérdida, demanda, número de importadoras, periodo del valor gravado) y vuelve a predecir. El docente no agrega cifras que no estén en la tarea. Cierren notando que E1 y E4 esperan que el calendario se mueva más que el total, y que la serie real puede confirmarlo o no."
+  },
+  "variantes_y_continuidad": {
+    "uso_variantes": "La variante hacia abajo (tramo S2) conviene si el grupo tiene poca experiencia con inventarios, optimización o planillas, o si se observan bloqueos tempranos (B12, B23) que no se resuelven en la primera sesión. Cambia así: se trabaja un solo tipo de queso, sin pérdida de producto, con capacidad de bodega ilimitada y demanda constante. Se pide determinar durante cuántos meses conviene guardar queso comprado antes del arancel, con una tabla de costos que se entrega al solicitarla. Se elimina la pregunta sobre el comportamiento conjunto de las empresas y el dimensionamiento del efecto en dinero, por lo que desaparece la parte agregada del informe. Esta variante se corresponde con la ruta de punto de equilibrio por unidad. La variante hacia arriba es null: no existe. Si un grupo termina antes, la tarea ya ofrece profundizar dentro de ella, con la programación dinámica con demanda variable o estocástica, el modelo agregado con costo de bodega creciente y la modelación de una devolución del arancel.",
+    "acostumbramiento": "Si el grupo nunca ha modelado, conviene una actividad previa corta con una situación de compra anticipada de un solo producto, sin sector ni arancel real, en la que escriban sus supuestos antes de calcular y comparen con otros grupos por qué sus resultados difieren. También sirve usar primero la variante hacia abajo. Esta tarea no es un diagnóstico: recorre el ciclo completo, incluida la validación con datos externos, por lo que funciona como parte de una secuencia de modelación para nivel universitario, no como primera experiencia. Para un grupo sin experiencia, la variante hacia abajo puede servir de iniciación.",
+    "tarea_siguiente": null
+  },
+  "materiales": {
+    "tarea_pdf": "tarea.pdf",
+    "recursos_tarjetas": "recursos.pdf",
+    "notebook": "escenarios.ipynb",
+    "icono": "icono.svg"
+  },
+  "trazabilidad": {
+    "noticia_url": "https://www.bbc.co.uk/news/articles/cqrkyj13m588o?at_medium=RSS&at_campaign=rss",
+    "diseno": {
+      "modelo": "claude-sonnet-5-5",
+      "version_prompt": "1.0"
+    },
+    "rub01_total": 24,
+    "revision_humana_1": {
+      "revisor": "Carlos Rojas Bruna",
+      "fecha": "2026-10-20"
+    },
+    "simulacion": {
+      "n_grupos": 6,
+      "diseno": "diseno_otm"
+    },
+    "revision_humana_2": null,
+    "commit": null
+  },
+  "modelo_y_prompt": {
+    "redactor": "claude-sonnet-5-5",
+    "redactor_escenarios": "claude-opus-5-5",
+    "version_prompt": "1.0"
+  }
+}

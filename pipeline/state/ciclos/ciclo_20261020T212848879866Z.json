@@ -1,0 +1,177 @@
+{
+  "ciclo_id": "ciclo_20261020T212848879866Z",
+  "inicio": "2026-10-20T21:28:48Z",
+  "fin": "2026-10-20T21:38:44Z",
+  "semana": "2026-W43",
+  "parametros": {
+    "tope_semanal_usd": 25.0,
+    "fraccion_detencion": 0.9,
+    "presupuesto_ciclo_usd": 5.0,
+    "limite_usd": 16.345195,
+    "gasto_semana_previo_usd": 11.345195,
+    "corridas_evaluador": 3,
+    "rango_inestable": 4,
+    "corridas_simulador": 6,
+    "ids": [
+      "2026-10-adelantar-compras-queso-v2",
+      "2026-10-anticipo-renta-vitalicia-v2"
+    ],
+    "revisor": "Carlos Rojas Bruna"
+  },
+  "detenido_por_tope": false,
+  "eventos": [
+    {
+      "fecha": "2026-10-20T21:31:10Z",
+      "tipo": "agente",
+      "agente": "redactor",
+      "tareas": [
+        "2026-10-adelantar-compras-queso-v2"
+      ],
+      "llamadas": 3,
+      "usd": 0.368728
+    },
+    {
+      "fecha": "2026-10-20T21:31:13Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-adelantar-compras-queso-v2",
+      "de": "simulada",
+      "a": "con_guia"
+    },
+    {
+      "fecha": "2026-10-20T21:31:22Z",
+      "tipo": "agente",
+      "agente": "ilustrador",
+      "tareas": [
+        "2026-10-adelantar-compras-queso-v2"
+      ],
+      "llamadas": 2,
+      "usd": 0.015834
+    },
+    {
+      "fecha": "2026-10-20T21:31:56Z",
+      "tipo": "agente",
+      "agente": "verificador",
+      "tareas": [
+        "2026-10-adelantar-compras-queso-v2"
+      ],
+      "llamadas": 1,
+      "usd": 0.142157
+    },
+    {
+      "fecha": "2026-10-20T21:32:00Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-adelantar-compras-queso-v2",
+      "de": "con_guia",
+      "a": "verificada"
+    },
+    {
+      "fecha": "2026-10-20T21:32:03Z",
+      "tipo": "bibliotecario_dry_run",
+      "tarea_id": "2026-10-adelantar-compras-queso-v2",
+      "ok": true,
+      "ruta": "tareas/2026-10/adelantar-compras-queso-v2/",
+      "rama": "tareas/semana-2026-W43"
+    },
+    {
+      "fecha": "2026-10-20T21:32:07Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-anticipo-renta-vitalicia-v2",
+      "de": "evaluada",
+      "a": "revisada"
+    },
+    {
+      "fecha": "2026-10-20T21:35:30Z",
+      "tipo": "agente",
+      "agente": "simulador",
+      "tareas": [
+        "2026-10-anticipo-renta-vitalicia-v2"
+      ],
+      "llamadas": 114,
+      "usd": 1.112667
+    },
+    {
+      "fecha": "2026-10-20T21:35:32Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-anticipo-renta-vitalicia-v2",
+      "de": "revisada",
+      "a": "simulada"
+    },
+    {
+      "fecha": "2026-10-20T21:38:02Z",
+      "tipo": "agente",
+      "agente": "redactor",
+      "tareas": [
+        "2026-10-anticipo-renta-vitalicia-v2"
+      ],
+      "llamadas": 4,
+      "usd": 0.403523
+    },
+    {
+      "fecha": "2026-10-20T21:38:03Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-anticipo-renta-vitalicia-v2",
+      "de": "simulada",
+      "a": "con_guia"
+    },
+    {
+      "fecha": "2026-10-20T21:38:08Z",
+      "tipo": "agente",
+      "agente": "ilustrador",
+      "tareas": [
+        "2026-10-anticipo-renta-vitalicia-v2"
+      ],
+      "llamadas": 1,
+      "usd": 0.012208
+    },
+    {
+      "fecha": "2026-10-20T21:38:41Z",
+      "tipo": "agente",
+      "agente": "verificador",
+      "tareas": [
+        "2026-10-anticipo-renta-vitalicia-v2"
+      ],
+      "llamadas": 1,
+      "usd": 0.136181
+    },
+    {
+      "fecha": "2026-10-20T21:38:43Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-anticipo-renta-vitalicia-v2",
+      "de": "con_guia",
+      "a": "verificada"
+    },
+    {
+      "fecha": "2026-10-20T21:38:44Z",
+      "tipo": "bibliotecario_dry_run",
+      "tarea_id": "2026-10-anticipo-renta-vitalicia-v2",
+      "ok": true,
+      "ruta": "tareas/2026-10/anticipo-renta-vitalicia-v2/",
+      "rama": "tareas/semana-2026-W43"
+    }
+  ],
+  "expedientes": {
+    "2026-10-adelantar-compras-queso-v2": "verificada",
+    "2026-10-anticipo-renta-vitalicia-v2": "verificada"
+  },
+  "noticias": [],
+  "pendientes_humanos": [
+    {
+      "tarea_id": "2026-10-adelantar-compras-queso-v2",
+      "pendiente": "revision_humana_2",
+      "estado": "verificada"
+    },
+    {
+      "tarea_id": "2026-10-anticipo-renta-vitalicia-v2",
+      "pendiente": "revision_humana_2",
+      "estado": "verificada"
+    }
+  ],
+  "errores": [],
+  "orden": "tramo_b",
+  "gasto": {
+    "ciclo_usd": 2.191298,
+    "semana_usd": 13.536493,
+    "limite_usd": 16.345195,
+    "llamadas": 126
+  }
+}

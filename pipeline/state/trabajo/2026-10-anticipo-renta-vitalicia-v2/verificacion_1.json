@@ -1,0 +1,71 @@
+{
+  "tarea_id": "2026-10-anticipo-renta-vitalicia-v2",
+  "aprobado": true,
+  "estado_destino": "verificada",
+  "hallazgos": [
+    {
+      "invariante": "notebook",
+      "severidad": "advertencia",
+      "ubicacion": "guia.materiales.notebook",
+      "descripcion": "notebook escenarios.ipynb no encontrado: ",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "tarea.estudiante.recursos_a_solicitud R4 y guia.puesta_en_comun.contraste_validacion",
+      "descripcion": "Existe una ficha con el descuento mensual y el plazo reales informados públicamente por una aseguradora para un perfil de pensionado. — Ni la noticia ni las trazas respaldan que exista esa información pública; se declara como otra fuente sin contenido verificable. Lo mismo ocurre, en menor grado, con la tabla de mortalidad (R2) y las series de tasas (R3).",
+      "origen": "modelo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "guia.escenarios E1.que_aprende",
+      "descripcion": "N4_VV_r1 agrega una curva de combinaciones descuento-plazo. — La traza muestra valores de descuento para algunos plazos y una banda, no una curva. Es una sobreinterpretación menor.",
+      "origen": "modelo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "guia.escenarios E3.que_aprende",
+      "descripcion": "E1 y E4 usan supervivencia mes a mes. — N3_AA_r1 (E4) aproxima la supervivencia a 1 y toma una mortalidad anual de memoria. N4_VV_r1 (E1) usa una sobrevida mensual constante, no una tabla. La afirmación es imprecisa en el detalle.",
+      "origen": "modelo"
+    }
+  ],
+  "cifras_contrastadas": [
+    {
+      "indice": 0,
+      "que_es": "monto máximo de anticipo de las rentas vitalicias fijado por el oficio de la CMF",
+      "valor_tarea": "10%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 31"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "10%",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia; modelo: Mismo valor, unidad y significado: tope del anticipo fijado por el oficio del regulador."
+    }
+  ],
+  "notebook": {
+    "estado": "no_encontrado",
+    "ruta": "escenarios.ipynb",
+    "salida_resumen": ""
+  },
+  "meta": {
+    "agente": "verificador",
+    "version_prompt": "1.0",
+    "modelo": "claude-opus-5-5",
+    "request_id": "req_011CgEDF7Jh2AhtiPuE8z57B",
+    "fecha": "2026-10-20T21:38:41+00:00",
+    "costo_usd": 0.136181,
+    "modelo_llamado": true,
+    "texto_noticia_recibido": true,
+    "uso": {
+      "input_tokens": 17980,
+      "output_tokens": 3198,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 1503
+    }
+  }
+}

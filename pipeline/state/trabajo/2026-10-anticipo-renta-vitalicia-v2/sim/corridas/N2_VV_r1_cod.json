@@ -1,0 +1,196 @@
+{
+  "run": {
+    "id": "N2_VV_r1",
+    "nivel": "N2",
+    "composicion": "VV",
+    "rep": 1,
+    "estilos": [
+      "V",
+      "V"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.080092,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 2,
+        "fase": "P1-MRS",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P4-WM",
+        "fase_secundaria": "EMK",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P2-RM",
+        "fase_secundaria": "EMK",
+        "eventos": []
+      },
+      {
+        "n": 6,
+        "fase": "P2-RM",
+        "fase_secundaria": "EMK",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P4-WM",
+        "fase_secundaria": "P2-RM",
+        "eventos": []
+      },
+      {
+        "n": 8,
+        "fase": "P2-RM",
+        "fase_secundaria": "EMK",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 9,
+        "fase": "P3-MM",
+        "fase_secundaria": "P4-WM",
+        "eventos": []
+      },
+      {
+        "n": 10,
+        "fase": "P3-MM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 11,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 12,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 13,
+        "fase": "P4-WM",
+        "fase_secundaria": "P3-MM",
+        "eventos": []
+      },
+      {
+        "n": 14,
+        "fase": "P3-MM",
+        "fase_secundaria": null,
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 15,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 16,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 17,
+        "fase": "P6-VAL",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 18,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 19,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 20,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      }
+    ],
+    "bloqueos": [
+      {
+        "codigo": "B12",
+        "turnos": [
+          1,
+          2
+        ],
+        "resolucion": "self",
+        "descripcion": "Ambos dudan si el 10% es de la pensión mensual o del total; A lo destraba en el turno 3 proponiendo suponer que es de la pensión mensual para probar."
+      },
+      {
+        "codigo": "B34",
+        "turnos": [
+          9,
+          10
+        ],
+        "resolucion": "peer",
+        "descripcion": "A no recuerda la fórmula de la cuota fija; B la recuerda vagamente y propone probarla con la calculadora para verificar si tiene sentido."
+      }
+    ],
+    "supuestos": [
+      "10% de la pensión mensual",
+      "pensión de $300.000",
+      "vida de 20 años (240 meses)",
+      "interés de 0,3% mensual",
+      "cuota fija mensual",
+      "descuento hasta el fallecimiento",
+      "probabilidades inventadas de vivir 10, 20 o 35 años (25-50-25)"
+    ],
+    "modelo": "anualidad esperada",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Cuota mensual = anticipo ÷ promedio ponderado de [(1−(1+i)^−n)/i] según la probabilidad de vivir n meses. Con anticipo de $30.000 (10% de una pensión de $300.000), interés 0,3% mensual y probabilidades inventadas, la rebaja es de ≈ $175 a $196 al mes durante toda la vida; la regla no es firme sin tablas de mortalidad ni tasa real."
+    },
+    "ruta_principal": "R2",
+    "rutas": [
+      "R1",
+      "R2"
+    ]
+  }
+}

@@ -1,0 +1,266 @@
+{
+  "run": {
+    "id": "N1_VV_r1",
+    "nivel": "N1",
+    "composicion": "VV",
+    "rep": 1,
+    "estilos": [
+      "V",
+      "V"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.089568,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 2,
+        "fase": "P1-MRS",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 6,
+        "fase": "P2-RM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 8,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 9,
+        "fase": "P5-INT",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 10,
+        "fase": "P6-VAL",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 11,
+        "fase": "P6-VAL",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 12,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 13,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 14,
+        "fase": "P3-MM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 15,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P4-WM",
+        "eventos": []
+      },
+      {
+        "n": 16,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 17,
+        "fase": "P3-MM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 18,
+        "fase": "P2-RM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 19,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": [
+          "PREC"
+        ]
+      },
+      {
+        "n": 20,
+        "fase": "P3-MM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 21,
+        "fase": "P3-MM",
+        "fase_secundaria": "P4-WM",
+        "eventos": []
+      },
+      {
+        "n": 22,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "PREC"
+        ]
+      },
+      {
+        "n": 23,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 24,
+        "fase": "P6-VAL",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 25,
+        "fase": "P4-WM",
+        "fase_secundaria": "P2-RM",
+        "eventos": []
+      },
+      {
+        "n": 26,
+        "fase": "P3-MM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 27,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 28,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 29,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 30,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      }
+    ],
+    "bloqueos": [
+      {
+        "codigo": "B34",
+        "turnos": [
+          19,
+          20,
+          21
+        ],
+        "resolucion": "peer",
+        "descripcion": "No saben cómo sumar los 20 términos descontados; B evoca la fórmula de la serie geométrica sin recordarla bien y A la completa y la aplica."
+      }
+    ],
+    "supuestos": [
+      "10% de todo lo que le van a pagar",
+      "vive 20 años en promedio",
+      "pensión de $400.000",
+      "inicialmente sin interés",
+      "tasa de 3% anual",
+      "cálculo por año en vez de por mes",
+      "descuento mientras viva",
+      "tabla de supervivencia por año"
+    ],
+    "modelo": "serie geométrica",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "La regla es buscar la rebanada mensual tal que la suma de cada año (÷ 1,03^año × fracción viva) dé el anticipo; con 20 años justos da cerca de 53.800 (con pensión de 400.000). Es firme solo si no cambian la tasa, la tabla ni la interpretación del 10%; el valor es un ejemplo con números inventados."
+    },
+    "ruta_principal": "R1",
+    "rutas": [
+      "R1",
+      "R2"
+    ]
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "tarea_id": "2026-10-adelantar-compras-queso-v2",
+  "aprobado": true,
+  "estado_destino": "verificada",
+  "hallazgos": [
+    {
+      "invariante": "notebook",
+      "severidad": "advertencia",
+      "ubicacion": "guia.materiales.notebook",
+      "descripcion": "notebook escenarios.ipynb no encontrado: ",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "guia.escenarios E2, supuestos",
+      "descripcion": "La lista de supuestos de E2 omite que, con arancel, la demanda baja 20% (a 80 cajas) y que el comercio se mide sin el arancel. — La corrida N1_VV_r1 declara esos supuestos y los usa en su respuesta final: el comercio queda en unos 8000 dólares, bajo lo normal, porque la demanda baja. El escenario resume la corrida de forma incompleta, aunque no la contradice.",
+      "origen": "modelo"
+    }
+  ],
+  "cifras_contrastadas": [
+    {
+      "indice": 0,
+      "que_es": "Valor aproximado de los bienes canadienses gravados",
+      "valor_tarea": "$20bn",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 49"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "$20bn",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia; modelo: En el párrafo 49 la fuente da el mismo valor aproximado de los bienes canadienses gravados, en miles de millones de dólares estadounidenses."
+    },
+    {
+      "indice": 1,
+      "que_es": "Arancel que paga una empresa estadounidense sobre queso exportado desde Canadá",
+      "valor_tarea": "50%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 53"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "50%",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia; modelo: En el párrafo 53 la fuente da el mismo porcentaje para el arancel que paga una empresa estadounidense por el queso exportado desde Canadá."
+    },
+    {
+      "indice": 2,
+      "que_es": "Periodo de espera exigido por la Sección 338 antes de imponer aranceles",
+      "valor_tarea": "30-day",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 62"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "30-day",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia; modelo: En el párrafo 62 la fuente da el mismo periodo de espera, en días, exigido por la Sección 338."
+    }
+  ],
+  "notebook": {
+    "estado": "no_encontrado",
+    "ruta": "escenarios.ipynb",
+    "salida_resumen": ""
+  },
+  "meta": {
+    "agente": "verificador",
+    "version_prompt": "1.0",
+    "modelo": "claude-opus-5-5",
+    "request_id": "req_011CgECjGbx57PStNLqzUx26",
+    "fecha": "2026-10-20T21:31:56+00:00",
+    "costo_usd": 0.142157,
+    "modelo_llamado": true,
+    "texto_noticia_recibido": true,
+    "uso": {
+      "input_tokens": 19214,
+      "output_tokens": 3250,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 1503
+    }
+  }
+}
