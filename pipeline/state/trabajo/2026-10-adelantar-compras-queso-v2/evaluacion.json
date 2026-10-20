@@ -1,0 +1,104 @@
+{
+  "tarea_id": "2026-10-adelantar-compras-queso-v2",
+  "fecha": "2026-10-20T21:10:18Z",
+  "rub01": {
+    "version_rubrica": "4.0",
+    "criterios": {
+      "genuino": {
+        "puntaje": 2,
+        "justificacion": "Plantea una necesidad real de decisión para la importadora y no entrega ninguna regla, fórmula ni modelo de inventario listo para aplicar.",
+        "cita": "¿Cómo debería organizar sus compras antes y después de que rija el arancel?"
+      },
+      "abierta": {
+        "puntaje": 2,
+        "justificacion": "Ninguna de las dos preguntas prescribe un procedimiento. Admiten varios modelos defendibles: comparación de escenarios, optimización con restricción de bodega o modelos con demanda variable.",
+        "cita": "Si todas las importadoras del rubro hicieran lo mismo, ¿qué pasaría con el comercio del sector y de qué orden de magnitud sería el efecto …"
+      },
+      "decisiones": {
+        "puntaje": 2,
+        "justificacion": "Resolver la tarea exige suponer costos de almacenamiento, tasas de pérdida y patrones de demanda, elegir el tipo de queso y solicitar información. Además, hay que interpretar el horizonte temporal del valor gravado.",
+        "cita": "Su bodega refrigerada tiene poco espacio y cuesta dinero, parte del queso se echa a perder y los pedidos de sus clientes cambian de mes …"
+      },
+      "realismo": {
+        "puntaje": 2,
+        "justificacion": "El caso es real. El escenario hipotético de acopio previo a un arancel anunciado es claramente plausible en el comercio y no se percibe forzado.",
+        "cita": "Un grupo de defensa de empresas estadounidenses demandó a su gobierno por aplicar aranceles a productos canadienses, entre ellos el queso"
+      },
+      "autenticidad": {
+        "puntaje": 2,
+        "justificacion": "Los datos de la noticia (arancel de 50%, plazo de 30 días, 20 mil millones) son insumos centrales de ambos modelos. La actividad de acopio ante aranceles y las series oficiales de R6 son componentes extraescolares integrados.",
+        "cita": "Según la noticia, el queso exportado desde Canadá paga 50% y los bienes canadienses gravados valen unos 20 mil millones de dólares estadounidenses."
+      },
+      "contexto": {
+        "puntaje": 2,
+        "justificacion": "La vida útil, el espacio de bodega y la estacionalidad de la demanda condicionan las decisiones del modelo. El contexto también es necesario para interpretar la estrategia y contrastarla con las series reales.",
+        "cita": "Los quesos duros maduran y duran mucho más que los frescos. Guardar queso refrigerado cuesta por cantidad y por tiempo, y la bodega tiene un …"
+      },
+      "ciclo": {
+        "puntaje": 2,
+        "justificacion": "Responder obliga a comprender la situación, simplificar mediante supuestos, matematizar un problema de inventario, resolverlo, interpretar la estrategia y validarla con datos. Ninguna fase queda hecha por el enunciado.",
+        "cita": "El grupo debe indicar qué meses comparar (por ejemplo, alrededor de un anuncio de aranceles anterior) con lo que predijo su modelo."
+      },
+      "validacion": {
+        "puntaje": 2,
+        "justificacion": "La tarea ofrece evidencia independiente y no usada en la construcción del modelo, ya que R6 se entrega solo después de definir la estrategia. Así, la predicción puede contrastarse con datos reales.",
+        "cita": "Existen series mensuales de importaciones de queso desde Canadá en organismos oficiales de estadísticas de comercio."
+      },
+      "nivel": {
+        "puntaje": 2,
+        "justificacion": "La optimización con restricciones, los modelos dinámicos discretos y la demanda variable corresponden a las herramientas esperables del nivel U según MAR03. El contexto y el lenguaje son comprensibles.",
+        "cita": "Su bodega refrigerada tiene poco espacio y cuesta dinero, parte del queso se echa a perder"
+      },
+      "autodiferenciacion": {
+        "puntaje": 2,
+        "justificacion": "Hay entrada elemental: comparar el costo de comprar ahora con el de pagar el arancel después. El techo es alto: optimización dinámica con pérdidas, capacidad, demanda estacional o estocástica y efectos agregados.",
+        "cita": "¿Cómo debería organizar sus compras antes y después de que rija el arancel?"
+      },
+      "fecundidad": {
+        "puntaje": 2,
+        "justificacion": "La extensión al agregado sectorial abre preguntas sobre la agregación, sus límites y la interpretación del valor gravado. El contraste con las series reales permite comparar las soluciones de distintos grupos.",
+        "cita": "Si todas las importadoras del rubro hicieran lo mismo, ¿qué pasaría con el comercio del sector y de qué orden de magnitud sería el efecto …"
+      },
+      "recursos": {
+        "puntaje": 2,
+        "justificacion": "La información necesaria puede solicitarse en forma de rangos u órdenes de magnitud, sin revelar la estructura del modelo. El contraste se entrega solo después de que el grupo define su estrategia.",
+        "cita": "Si el grupo pregunta por un tipo de queso, un costo o un plazo concretos, la bodega entrega una estimación de rango."
+      }
+    },
+    "total": 24,
+    "mejoras": []
+  },
+  "reproducibilidad": {
+    "agentes": {
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.252152,
+        "version_prompt": "1.3"
+      },
+      "simulador": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.856241,
+        "version_prompt": "PROMPTS.md"
+      },
+      "simulador_codificador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.429556,
+        "version_prompt": "PROMPTS.md"
+      }
+    },
+    "version_prompt": {
+      "evaluador": "1.3",
+      "simulador": "PROMPTS.md",
+      "simulador_codificador": "PROMPTS.md"
+    },
+    "version_rubrica": "4.0",
+    "version_MAR03": "1.0",
+    "version_MED01": "1.1",
+    "diseno_simulador": "diseno_otm",
+    "fecha": "2026-10-20T21:23:52Z",
+    "costo_usd": 1.537949
+  }
+}

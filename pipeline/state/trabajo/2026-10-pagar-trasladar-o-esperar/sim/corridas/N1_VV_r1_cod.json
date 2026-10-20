@@ -1,0 +1,190 @@
+{
+  "run": {
+    "id": "N1_VV_r1",
+    "nivel": "N1",
+    "composicion": "VV",
+    "rep": 1,
+    "estilos": [
+      "V",
+      "V"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.07672,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 2,
+        "fase": "P1-MRS",
+        "fase_secundaria": "P2-RM",
+        "eventos": []
+      },
+      {
+        "n": 3,
+        "fase": "P2-RM",
+        "fase_secundaria": "EMK",
+        "eventos": []
+      },
+      {
+        "n": 4,
+        "fase": "EMK",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P2-RM",
+        "fase_secundaria": "EMK",
+        "eventos": []
+      },
+      {
+        "n": 6,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P3-MM",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 8,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 9,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 10,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 11,
+        "fase": "P2-RM",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 12,
+        "fase": "P2-RM",
+        "fase_secundaria": "EMK",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 13,
+        "fase": "EMK",
+        "fase_secundaria": "P2-RM",
+        "eventos": []
+      },
+      {
+        "n": 14,
+        "fase": "EMK",
+        "fase_secundaria": "P2-RM",
+        "eventos": []
+      },
+      {
+        "n": 15,
+        "fase": "P2-RM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 16,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 17,
+        "fase": "P5-INT",
+        "fase_secundaria": "P7-EXP",
+        "eventos": []
+      },
+      {
+        "n": 18,
+        "fase": "P6-VAL",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 19,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 20,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      }
+    ],
+    "bloqueos": [
+      {
+        "codigo": "B23",
+        "turnos": [
+          12,
+          13,
+          14
+        ],
+        "resolucion": "unresolved",
+        "descripcion": "Discuten si el reembolso debe pagarse a clientes que ya se fueron; A duda, B dice 'no sé' y se siente injusto, y abandonan el tema pasando a pedir la probabilidad de ganar sin decidirlo."
+      }
+    ],
+    "supuestos": [
+      "costo del queso $100 por caja (inventado)",
+      "precio previo $120, margen $20 por caja",
+      "arancel 50% sobre el costo: costo $150",
+      "trasladar la mitad del arancel: precio $145",
+      "reembolso de $50 repartido mitad cliente, mitad importadora",
+      "intereses repartidos en partes iguales",
+      "solo dos escenarios: ganan o pierden el juicio",
+      "el cliente podría irse si sube el precio (no cuantificado)"
+    ],
+    "modelo": "escenarios aritméticos",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Subir el precio a $145 (trasladar la mitad del arancel) con una cláusula de devolución: si se gana el juicio, el reembolso se reparte mitad y mitad con el cliente. Si ganan, la importadora queda en +$20 por caja como antes; si pierden, pierde $5 por caja. Seguridad media-baja: números de ejemplo (queso a $100), el alza de ~21% puede hacer que el cliente se vaya, y hay que pedir margen real, contratos y probabilidad de ganar."
+    },
+    "ruta_principal": "R1",
+    "rutas": [
+      "R1"
+    ]
+  }
+}

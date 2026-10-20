@@ -1,0 +1,161 @@
+{
+  "run": {
+    "id": "N4_VV_r1",
+    "nivel": "N4",
+    "composicion": "VV",
+    "rep": 1,
+    "estilos": [
+      "V",
+      "V"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.070868,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P2-RM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P4-WM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 6,
+        "fase": "P4-WM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P5-INT",
+        "fase_secundaria": "P4-WM",
+        "eventos": []
+      },
+      {
+        "n": 8,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 9,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 10,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 11,
+        "fase": "P4-WM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 12,
+        "fase": "P5-INT",
+        "fase_secundaria": "P4-WM",
+        "eventos": []
+      },
+      {
+        "n": 13,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 14,
+        "fase": "P6-VAL",
+        "fase_secundaria": "EMK",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 15,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 16,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P7-EXP",
+        "eventos": []
+      }
+    ],
+    "bloqueos": [],
+    "supuestos": [
+      "demanda de 100 t/mes",
+      "precio de 8 mil dólares por tonelada",
+      "capacidad de bodega de 250 t",
+      "merma de 5% mensual",
+      "costo de bodega de 200 dólares por tonelada al mes",
+      "50 importadoras comparables",
+      "queso equivale a unos 2 mil millones del valor gravado",
+      "valor del queso interpretado como anual",
+      "todo el sector adelanta 1,5 meses",
+      "Canadá puede despachar más de lo normal antes del día 30"
+    ],
+    "modelo": "punto de equilibrio",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "La importadora debe comprar hasta llenar la bodega antes de que rija el arancel (unas 250 t en el mes del anuncio), ya que guardar cuesta unos 600 dólares por tonelada al mes y se ahorran 4.000 de arancel, lo que justificaría hasta casi 7 meses; el límite lo pone la capacidad. Luego compra casi nada durante un hueco (corregido a 1,5 meses) y vuelve a comprar según demanda, pagando el arancel, que además recortaría las compras. Si todo el sector lo hace, se adelantan entre 100 y 250 millones de dólares (ahorro neto de unos 100 millones), con un pico seguido de un hueco, de modo que el volumen anual casi no cambia. Esto depende de los supuestos: 100 t/mes, 5% de merma, queso de 2 mil millones al año y capacidad de despacho de Canadá."
+    },
+    "ruta_principal": "R1",
+    "rutas": [
+      "R1",
+      "R4"
+    ]
+  }
+}

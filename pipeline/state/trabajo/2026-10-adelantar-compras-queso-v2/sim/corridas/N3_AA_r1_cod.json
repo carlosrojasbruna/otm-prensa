@@ -1,0 +1,116 @@
+{
+  "run": {
+    "id": "N3_AA_r1",
+    "nivel": "N3",
+    "composicion": "AA",
+    "rep": 1,
+    "estilos": [
+      "A",
+      "A"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.061728,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P2-RM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "STRAT",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P3-MM",
+        "fase_secundaria": "P2-RM",
+        "eventos": []
+      },
+      {
+        "n": 3,
+        "fase": "P3-MM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P4-WM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P5-INT",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 6,
+        "fase": "P3-MM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 8,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 9,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 10,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "ASSUME"
+        ]
+      }
+    ],
+    "bloqueos": [],
+    "supuestos": [
+      "arancel de 50% sobre compras posteriores a los 30 días",
+      "costo de bodega h = 2% del precio por mes",
+      "pérdida d = 3% por mes",
+      "capacidad de bodega con tope C",
+      "demanda mensual fija (en el cálculo de 10 meses)",
+      "después del arancel comprar solo lo justo",
+      "queso = 5% de los 20.000 M",
+      "los 20.000 M son anuales",
+      "el sector adelanta n = 3 meses"
+    ],
+    "modelo": "punto de equilibrio",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Antes del día 30, adelantar compras para cubrir 2-3 meses de demanda esperada sin pasar el tope C de la bodega, y después del arancel comprar solo lo justo cada mes. Si todas las importadoras lo hacen, habría un pico de importaciones de unos 250 millones de dólares seguido de una caída parecida, lo que mueve el calendario más que el total anual. Esto supone que el queso es el 5% de los 20.000 M anuales, h = 2% y d = 3%, y habría que recalcularlo con datos reales."
+    },
+    "ruta_principal": "R1",
+    "rutas": [
+      "R1",
+      "R4"
+    ]
+  }
+}

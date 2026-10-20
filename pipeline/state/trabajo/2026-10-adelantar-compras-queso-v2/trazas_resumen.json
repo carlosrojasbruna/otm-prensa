@@ -1,0 +1,258 @@
+{
+  "tarea_id": "2026-10-adelantar-compras-queso-v2",
+  "diseno": "diseno_otm",
+  "corridas": 6,
+  "modelo": "claude-sonnet-5-5",
+  "costo_usd": 1.2857,
+  "por_corrida": [
+    {
+      "id": "N1_VV_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N1",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P4-WM",
+        "P6-VAL",
+        "P4-WM",
+        "P2-RM",
+        "P6-VAL",
+        "P2-RM",
+        "P4-WM",
+        "P5-INT",
+        "P3-MM",
+        "P5-INT",
+        "P6-VAL",
+        "P2-RM",
+        "P5-INT",
+        "P4-WM",
+        "P6-VAL"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "demanda de 100 cajas al mes",
+        "bodega con capacidad de 300 cajas",
+        "pérdida de 10% mensual",
+        "precio de 100 dólares por caja",
+        "almacenamiento de 5 dólares por caja al mes",
+        "con arancel la demanda baja 20% (80 cajas)",
+        "el comercio se mide sin el arancel",
+        "queso como 1% de los 20 mil millones",
+        "los 20 mil millones podrían ser anuales"
+      ],
+      "modelo": "simulación de inventario",
+      "respuesta_final": "Con 100 cajas al mes, bodega de 300, pérdida de 10% mensual, precio de 100 dólares y almacenamiento de 5 dólares por caja al mes, llenar la bodega en el mes de espera ahorra unos 4500 dólares netos (172 cajas salvadas del arancel, menos 28 perdidas y menos el costo de bodega). Para una importadora el comercio sube a 30 000 dólares en el mes de espera, cae a 2800 el mes siguiente y luego queda en unos 8000 (bajo los 10 000 normales, porque la demanda baja con el arancel). Para el sector, si el queso fuera 1% de los 20 mil millones y ese valor es anual, el mes de espera llegaría a unos 50 millones en vez de unos 17 millones al mes. Quedan pendientes el número de importadoras y el periodo del valor total.",
+      "validacion": true,
+      "archivo": "N1_VV_r1.json",
+      "costo_usd": 0.334852
+    },
+    {
+      "id": "N1_AA_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N1",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P6-VAL",
+        "P2-RM",
+        "P3-MM",
+        "P6-VAL",
+        "P4-WM",
+        "P5-INT",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "compra mensual Q (promedio de la demanda)",
+        "precio p por tonelada",
+        "arancel 50% sobre compras después de la espera",
+        "costo de bodega c por tonelada al mes",
+        "fracción s perdida por mes",
+        "ahorro del arancel se gana una sola vez por tonelada",
+        "c/p = 2% y s = 3% mensual",
+        "capacidad de bodega B",
+        "20 mil millones son valor anual",
+        "fracción de queso f = 5%",
+        "adelanto k = 2 meses"
+      ],
+      "modelo": "punto de equilibrio",
+      "respuesta_final": "Antes de que rija el arancel, adelantar compras por min(k·Q, B), con k < 0,5/(c/p + s) (10 meses con c/p=2% y s=3%, pero limitado por la capacidad y la demanda variable, así que k chico); después comprar solo lo necesario usando el stock. Si todas las importadoras lo hacen, las compras del sector se disparan antes del arancel y caen unos k meses después, con un ahorro neto del orden de decenas de millones de dólares (unos 67 millones, suponiendo f = 5%, k = 2 y 20.000 millones anuales).",
+      "validacion": true,
+      "archivo": "N1_AA_r1.json",
+      "costo_usd": 0.178312
+    },
+    {
+      "id": "N2_VV_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N2",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P4-WM",
+        "P6-VAL",
+        "P2-RM",
+        "P4-WM",
+        "P5-INT",
+        "P4-WM",
+        "P6-VAL",
+        "P2-RM",
+        "P4-WM",
+        "P6-VAL",
+        "P2-RM",
+        "P4-WM",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "compra normal 100 cajas al mes",
+        "precio $100 por caja",
+        "arancel de 50% solo a compras después del día 30",
+        "almacenamiento $5 por caja al mes",
+        "pérdida de 10% por mes guardado",
+        "cajas perdidas se reponen con arancel ($150)",
+        "valor gravado de 20 mil millones interpretado como anual",
+        "adelanto sectorial de 2 meses",
+        "queso es 2% a 3% del valor gravado"
+      ],
+      "modelo": "costo marginal",
+      "respuesta_final": "Conviene adelantar compras antes del día 30, pero no todo; con números inventados el óptimo fueron unas 300 cajas (unos 3 meses de demanda), porque después bodega y pérdidas superan el ahorro del arancel. Si todas lo hacen habría un pico de importaciones antes y un valle después, del orden de 70 a 100 millones de dólares en queso (supuestos: 20 mil millones anuales, queso 2-3%, adelanto de 2 meses). El óptimo depende de la capacidad de bodega, el % de queso y el periodo del valor gravado.",
+      "validacion": true,
+      "archivo": "N2_VV_r1.json",
+      "costo_usd": 0.24298
+    },
+    {
+      "id": "N3_AA_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N3",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P5-INT",
+        "P3-MM",
+        "P4-WM",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "arancel de 50% sobre compras posteriores a los 30 días",
+        "costo de bodega h = 2% del precio por mes",
+        "pérdida d = 3% por mes",
+        "capacidad de bodega con tope C",
+        "demanda mensual fija (en el cálculo de 10 meses)",
+        "después del arancel comprar solo lo justo",
+        "queso = 5% de los 20.000 M",
+        "los 20.000 M son anuales",
+        "el sector adelanta n = 3 meses"
+      ],
+      "modelo": "punto de equilibrio",
+      "respuesta_final": "Antes del día 30, adelantar compras para cubrir 2-3 meses de demanda esperada sin pasar el tope C de la bodega, y después del arancel comprar solo lo justo cada mes. Si todas las importadoras lo hacen, habría un pico de importaciones de unos 250 millones de dólares seguido de una caída parecida, lo que mueve el calendario más que el total anual. Esto supone que el queso es el 5% de los 20.000 M anuales, h = 2% y d = 3%, y habría que recalcularlo con datos reales.",
+      "validacion": true,
+      "archivo": "N3_AA_r1.json",
+      "costo_usd": 0.121428
+    },
+    {
+      "id": "N4_VV_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N4",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P4-WM",
+        "P5-INT",
+        "P6-VAL",
+        "P4-WM",
+        "P5-INT",
+        "P6-VAL",
+        "P7-EXP",
+        "P6-VAL"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "demanda de 100 t/mes",
+        "precio de 8 mil dólares por tonelada",
+        "capacidad de bodega de 250 t",
+        "merma de 5% mensual",
+        "costo de bodega de 200 dólares por tonelada al mes",
+        "50 importadoras comparables",
+        "queso equivale a unos 2 mil millones del valor gravado",
+        "valor del queso interpretado como anual",
+        "todo el sector adelanta 1,5 meses",
+        "Canadá puede despachar más de lo normal antes del día 30"
+      ],
+      "modelo": "punto de equilibrio",
+      "respuesta_final": "La importadora debe comprar hasta llenar la bodega antes de que rija el arancel (unas 250 t en el mes del anuncio), ya que guardar cuesta unos 600 dólares por tonelada al mes y se ahorran 4.000 de arancel, lo que justificaría hasta casi 7 meses; el límite lo pone la capacidad. Luego compra casi nada durante un hueco (corregido a 1,5 meses) y vuelve a comprar según demanda, pagando el arancel, que además recortaría las compras. Si todo el sector lo hace, se adelantan entre 100 y 250 millones de dólares (ahorro neto de unos 100 millones), con un pico seguido de un hueco, de modo que el volumen anual casi no cambia. Esto depende de los supuestos: 100 t/mes, 5% de merma, queso de 2 mil millones al año y capacidad de despacho de Canadá.",
+      "validacion": true,
+      "archivo": "N4_VV_r1.json",
+      "costo_usd": 0.237168
+    },
+    {
+      "id": "N4_AA_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N4",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P2-RM",
+        "P3-MM",
+        "P6-VAL",
+        "P4-WM",
+        "P3-MM",
+        "P6-VAL",
+        "P5-INT",
+        "P4-WM",
+        "P6-VAL",
+        "P4-WM",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "arancel = 50% del precio, ahorro 0,5p por caja",
+        "precio p = 10",
+        "costo de bodega 0,5 por caja al mes",
+        "merma 2% mensual sobre el valor",
+        "capacidad K limita el stock total en bodega",
+        "demanda mensual variable e incierta",
+        "compra adelantada de una vez en la ventana de 30 días",
+        "20 mil millones interpretados como anuales",
+        "el queso es solo una parte del valor gravado"
+      ],
+      "modelo": "punto de equilibrio lineal",
+      "respuesta_final": "Antes del arancel conviene adelantar unos 4 o 5 meses de compra, según la capacidad K y la incertidumbre de la demanda D, y después comprar mes a mes. Si todas lo hacen, habrá un pico de importaciones en los 30 días y un hueco después, con un ahorro tope de unos 2.500 millones y, en queso, cientos de millones, suponiendo que los 20 mil millones son anuales.",
+      "validacion": true,
+      "archivo": "N4_AA_r1.json",
+      "costo_usd": 0.170916
+    }
+  ],
+  "agregado": {
+    "pct_bloqueo_por_transicion": {},
+    "modelos_observados": {
+      "simulación de inventario": 1,
+      "punto de equilibrio": 3,
+      "costo marginal": 1,
+      "punto de equilibrio lineal": 1
+    },
+    "pct_validan": 1.0
+  },
+  "fecha": "2026-10-20T21:23:52Z"
+}

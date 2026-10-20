@@ -1,0 +1,17 @@
+# Corrida N4_AA_r1
+
+Nivel N4 · estilos A/A · rep 1 · 13 turnos · término: acuerdo · modelo claude-sonnet-5-5
+
+**1. Cami:** Yo plantearía primero un modelo simple: sea D la demanda mensual, c el costo de almacenar por caja y p el precio, y comparar comprar adelantado contra pagar 1,5p después del arancel. ¿Te parece si partimos definiendo variables, o antes le pedimos a la profe datos como el precio y la tasa de merma?  
+**2. Fran:** Partamos definiendo variables, y de paso pedimos los datos: precio p, costo de bodega por caja al mes c, tasa de merma m y capacidad máxima K. La condición clave sería que adelantar n meses compensa si p·0,5 > n·(c + m·p), o sea, el ahorro del arancel versus lo que cuesta guardar.  
+**3. Cami:** Ojo que el ahorro por caja es 0,5p, y esa desigualdad solo vale si la merma m es mensual sobre el valor. Además K limita el total en bodega, no por mes; ¿probamos con p = 10 y c = 0,5 para ver cuántos meses conviene?  
+**4. Fran:** Va, con p = 10 el ahorro es 5 por caja, y si la merma es 2% mensual el costo es 0,5 + 0,2 = 0,7 al mes, así que 5 > 0,7n da n < 7,1. Pero eso es un tope, porque K limita cuánto cabe en la bodega.  
+**5. Cami:** Ojo, que ese 0,7n es por caja guardada n meses, así que las cajas para el mes j cuestan 0,7j y conviene adelantar mientras 0,7j < 5, o sea hasta j = 7. El stock máximo sería entonces min(K, 7D), y ahí hay que meter que la demanda D cambia cada mes.  
+**6. Fran:** Ojo, el stock inicial sería la suma D₁ + … + D₇ de lo que compra de golpe en la ventana de 30 días, y eso es lo que K limita, no 7D. Y como D varía y no la conocemos, habría que comprar menos de 7 meses para no quedarse con queso sobrante que se echa a perder.  
+**7. Cami:** Tienes razón, K limita D₁+…+D₇ y no 7D, y como D es incierta yo compraría menos, tipo 4 o 5 meses. Si todas lo hacen, hay un pico de importaciones en los 30 días y un hueco después; ¿los 20 mil millones serán anuales? Porque entonces serían como 1.700 millones al mes.  
+**8. Fran:** Preguntemos si los 20 mil millones son anuales, y ojo que es todo lo gravado, no solo queso. Si lo fueran, adelantar 4 o 5 meses daría un pico de unos 7.600 millones, como cota máxima.  
+**9. Cami:** Ojo, esos 7.600 son lo adelantado y es solo un traslado en el tiempo, porque después viene el hueco. El arancel evitado sería 50% de eso, unos 3.800 millones como tope, y como el queso es solo una parte de los 20 mil millones, el efecto real sería de cientos de millones.  
+**10. Fran:** De acuerdo, pero al tope hay que restarle la bodega: para 4 meses el costo es 0,7·(1+2+3+4) = 7 contra 20 de ahorro por cada 4 cajas, o sea casi 35%. Entonces serían unos 2.500 millones como máximo, y de queso solo cientos de millones. ¿Armamos la respuesta con eso?  
+**11. Cami:** Sí, esa cuenta está bien: 13/20 de 3.800 son unos 2.500 millones como tope, y eso con la demanda conocida. Armemos la respuesta con compra adelantada de 4 o 5 meses, pico y hueco que se compensan, y cientos de millones en queso, aclarando que supusimos los 20 mil millones anuales.  
+**12. Fran:** ENTREGAMOS: Antes del arancel conviene adelantar unos 4 o 5 meses de compra, según K y la incertidumbre de D, y después comprar mes a mes. Si todas lo hacen, habrá un pico en los 30 días y un hueco después, con un ahorro tope de unos 2.500 millones y, en queso, cientos de millones, suponiendo los 20 mil millones anuales.  
+**13. Cami:** DE ACUERDO  

@@ -1,0 +1,82 @@
+{
+  "ciclo_id": "ciclo_20261020T210857536005Z",
+  "inicio": "2026-10-20T21:08:57Z",
+  "fin": "2026-10-20T21:10:22Z",
+  "semana": "2026-W43",
+  "parametros": {
+    "tope_semanal_usd": 25.0,
+    "fraccion_detencion": 0.9,
+    "presupuesto_ciclo_usd": 2.0,
+    "limite_usd": 5.846334,
+    "gasto_semana_previo_usd": 3.846334,
+    "corridas_evaluador": 3,
+    "rango_inestable": 4,
+    "corridas_simulador": 6
+  },
+  "detenido_por_tope": false,
+  "eventos": [
+    {
+      "fecha": "2026-10-20T21:09:26Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-adelantar-compras-queso-v2"
+      ],
+      "llamadas": 1,
+      "usd": 0.11958
+    },
+    {
+      "fecha": "2026-10-20T21:09:52Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-adelantar-compras-queso-v2"
+      ],
+      "llamadas": 1,
+      "usd": 0.067586
+    },
+    {
+      "fecha": "2026-10-20T21:10:18Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-adelantar-compras-queso-v2"
+      ],
+      "llamadas": 1,
+      "usd": 0.064986
+    },
+    {
+      "fecha": "2026-10-20T21:10:22Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-adelantar-compras-queso-v2",
+      "de": "borrador",
+      "a": "evaluada"
+    }
+  ],
+  "expedientes": {
+    "2026-10-adelantar-compras-queso-v2": "evaluada"
+  },
+  "noticias": [
+    {
+      "noticia_id": "2026-10-20-bbc-trump-sued-over-canadian-tariffs-in",
+      "nivel": "U",
+      "resultado": "evaluada",
+      "origen": "iteración humana de 2026-10-adelantar-compras-queso"
+    }
+  ],
+  "pendientes_humanos": [
+    {
+      "tarea_id": "2026-10-adelantar-compras-queso-v2",
+      "pendiente": "revision_humana_1",
+      "estado": "evaluada"
+    }
+  ],
+  "errores": [],
+  "orden": "reserva_v2",
+  "gasto": {
+    "ciclo_usd": 0.496636,
+    "semana_usd": 4.34297,
+    "limite_usd": 5.846334,
+    "llamadas": 4
+  }
+}

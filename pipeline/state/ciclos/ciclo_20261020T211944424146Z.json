@@ -1,0 +1,86 @@
+{
+  "ciclo_id": "ciclo_20261020T211944424146Z",
+  "inicio": "2026-10-20T21:19:44Z",
+  "fin": "2026-10-20T21:26:14Z",
+  "semana": "2026-W43",
+  "parametros": {
+    "tope_semanal_usd": 25.0,
+    "fraccion_detencion": 0.9,
+    "presupuesto_ciclo_usd": 3.0,
+    "limite_usd": 9.61297,
+    "gasto_semana_previo_usd": 6.61297,
+    "corridas_evaluador": 3,
+    "rango_inestable": 4,
+    "corridas_simulador": 6,
+    "ids": [
+      "2026-10-adelantar-compras-queso-v2"
+    ],
+    "revisor": "Carlos Rojas Bruna"
+  },
+  "detenido_por_tope": false,
+  "eventos": [
+    {
+      "fecha": "2026-10-20T21:19:44Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-adelantar-compras-queso-v2",
+      "de": "evaluada",
+      "a": "revisada"
+    },
+    {
+      "fecha": "2026-10-20T21:23:52Z",
+      "tipo": "agente",
+      "agente": "simulador",
+      "tareas": [
+        "2026-10-adelantar-compras-queso-v2"
+      ],
+      "llamadas": 130,
+      "usd": 1.285797
+    },
+    {
+      "fecha": "2026-10-20T21:23:52Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-adelantar-compras-queso-v2",
+      "de": "revisada",
+      "a": "simulada"
+    },
+    {
+      "fecha": "2026-10-20T21:26:14Z",
+      "tipo": "agente",
+      "agente": "redactor",
+      "tareas": [
+        "2026-10-adelantar-compras-queso-v2"
+      ],
+      "llamadas": 3,
+      "usd": 0.381602
+    },
+    {
+      "fecha": "2026-10-20T21:26:14Z",
+      "tipo": "error",
+      "tarea_id": "2026-10-adelantar-compras-queso-v2",
+      "estado": "simulada",
+      "etapa": "simulada",
+      "error": "RedaccionRechazada: sección 'guia' rechazada: guia: intervenciones/0/bloqueo: 'B12 (probable según el mapa del ciclo; la tabla de bloqueos del simulador viene vacía, no hay transiciones observadas)' does not match '^B[1-6][2-7]$' | guia: intervenciones/1/bloqueo: 'B23 (probable según el mapa del ciclo; sin observación en la tabla del simulador)' does not match '^B[1-6][2-7]$' | guia: intervenciones/2/bloqueo: 'B34 (probable según el mapa del ciclo; sin observación en la tabla del simulador)' does not match '^B[1-6][2-7]$' | guia: intervenciones/3/bloqueo: 'B45 (probable según el mapa del ciclo; sin observación en la tabla del simulador)' does not match '^B[1-6][2-7]$' | guia: intervenciones/4/bloqueo: 'B56 (probable según el mapa del ciclo; sin observación en la tabla del simulador)' does not match '^B[1-6][2-7]$' | guia: intervenciones/5/bloqueo: 'B67 (probable según el mapa del ciclo; sin observación en la tabla del simulador)' does not match '^B[1-6][2-7]$'",
+      "traza": "pipeline.agentes.redactor.run.RedaccionRechazada: sección 'guia' rechazada: guia: intervenciones/0/bloqueo: 'B12 (probable según el mapa del ciclo; la tabla de bloqueos del simulador viene vacía, no hay transiciones observadas)' does not match '^B[1-6][2-7]$' | guia: intervenciones/1/bloqueo: 'B23 (probable según el mapa del ciclo; sin observación en la tabla del simulador)' does not match '^B[1-6][2-7]$' | guia: intervenciones/2/bloqueo: 'B34 (probable según el mapa del ciclo; sin observación e"
+    }
+  ],
+  "expedientes": {
+    "2026-10-adelantar-compras-queso-v2": "simulada"
+  },
+  "noticias": [],
+  "pendientes_humanos": [],
+  "errores": [
+    {
+      "tarea_id": "2026-10-adelantar-compras-queso-v2",
+      "estado": "simulada",
+      "etapa": "simulada",
+      "error": "RedaccionRechazada: sección 'guia' rechazada: guia: intervenciones/0/bloqueo: 'B12 (probable según el mapa del ciclo; la tabla de bloqueos del simulador viene vacía, no hay transiciones observadas)' does not match '^B[1-6][2-7]$' | guia: intervenciones/1/bloqueo: 'B23 (probable según el mapa del ciclo; sin observación en la tabla del simulador)' does not match '^B[1-6][2-7]$' | guia: intervenciones/2/bloqueo: 'B34 (probable según el mapa del ciclo; sin observación en la tabla del simulador)' does not match '^B[1-6][2-7]$' | guia: intervenciones/3/bloqueo: 'B45 (probable según el mapa del ciclo; sin observación en la tabla del simulador)' does not match '^B[1-6][2-7]$' | guia: intervenciones/4/bloqueo: 'B56 (probable según el mapa del ciclo; sin observación en la tabla del simulador)' does not match '^B[1-6][2-7]$' | guia: intervenciones/5/bloqueo: 'B67 (probable según el mapa del ciclo; sin observación en la tabla del simulador)' does not match '^B[1-6][2-7]$'"
+    }
+  ],
+  "orden": "tramo_b",
+  "gasto": {
+    "ciclo_usd": 1.667399,
+    "semana_usd": 8.280369,
+    "limite_usd": 9.61297,
+    "llamadas": 133
+  }
+}

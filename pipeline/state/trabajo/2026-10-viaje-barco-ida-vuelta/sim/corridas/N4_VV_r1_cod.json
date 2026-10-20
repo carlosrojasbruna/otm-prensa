@@ -1,0 +1,91 @@
+{
+  "run": {
+    "id": "N4_VV_r1",
+    "nivel": "N4",
+    "composicion": "VV",
+    "rep": 1,
+    "estilos": [
+      "V",
+      "V"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.046808,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "fase_secundaria": "P2-RM",
+        "eventos": []
+      },
+      {
+        "n": 2,
+        "fase": "P2-RM",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P4-WM",
+        "fase_secundaria": "P1-MRS",
+        "eventos": []
+      },
+      {
+        "n": 4,
+        "fase": "P2-RM",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "STRAT",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 6,
+        "fase": "P6-VAL",
+        "fase_secundaria": "EMK",
+        "eventos": []
+      },
+      {
+        "n": 7,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 8,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      }
+    ],
+    "bloqueos": [],
+    "supuestos": [
+      "viaje de ida y vuelta (distancia duplicada)",
+      "rapidez del barco 20 km/h",
+      "jornada de 12 horas",
+      "descarga de 3 horas",
+      "el barco a Rosebank sale desde Shetland"
+    ],
+    "modelo": "lineal",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Suponiendo 20 km/h, jornada de 12 h y 3 h de descarga, Jackdaw necesita pernoctar. Rosebank solo se hace en el día si el barco va a unos 29 km/h o más. Pedimos la velocidad real, las horas de la jornada y el tiempo de descarga."
+    },
+    "ruta_principal": "R3",
+    "rutas": [
+      "R3"
+    ]
+  }
+}

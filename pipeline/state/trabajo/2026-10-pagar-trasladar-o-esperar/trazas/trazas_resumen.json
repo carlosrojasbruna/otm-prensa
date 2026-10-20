@@ -1,0 +1,244 @@
+{
+  "tarea_id": "2026-10-pagar-trasladar-o-esperar",
+  "diseno": "diseno_otm",
+  "corridas": 6,
+  "modelo": "claude-sonnet-5-5",
+  "costo_usd": 0.8885,
+  "por_corrida": [
+    {
+      "id": "N1_VV_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N1",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P2-RM",
+        "P4-WM",
+        "P5-INT",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B23",
+          "turnos": [
+            12,
+            13,
+            14
+          ],
+          "resolucion": "sin_resolver"
+        }
+      ],
+      "supuestos": [
+        "costo del queso $100 por caja (inventado)",
+        "precio previo $120, margen $20 por caja",
+        "arancel 50% sobre el costo: costo $150",
+        "trasladar la mitad del arancel: precio $145",
+        "reembolso de $50 repartido mitad cliente, mitad importadora",
+        "intereses repartidos en partes iguales",
+        "solo dos escenarios: ganan o pierden el juicio",
+        "el cliente podría irse si sube el precio (no cuantificado)"
+      ],
+      "modelo": "escenarios aritméticos",
+      "respuesta_final": "Subir el precio a $145 (trasladar la mitad del arancel) con una cláusula de devolución: si se gana el juicio, el reembolso se reparte mitad y mitad con el cliente. Si ganan, la importadora queda en +$20 por caja como antes; si pierden, pierde $5 por caja. Seguridad media-baja: números de ejemplo (queso a $100), el alza de ~21% puede hacer que el cliente se vaya, y hay que pedir margen real, contratos y probabilidad de ganar.",
+      "validacion": true,
+      "archivo": "N1_VV_r1.json",
+      "costo_usd": 0.20302
+    },
+    {
+      "id": "N1_AA_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N1",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P3-MM",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P3-MM",
+        "P5-INT",
+        "P6-VAL",
+        "P3-MM",
+        "P4-WM",
+        "P5-INT",
+        "P7-EXP",
+        "P6-VAL"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B45",
+          "turnos": [
+            9,
+            10,
+            11
+          ],
+          "resolucion": "peer"
+        }
+      ],
+      "supuestos": [
+        "costo con arancel = 1,5P",
+        "tasa de interés i por todo el período del juicio",
+        "probabilidad de ganar p como variable",
+        "plazos de prueba de 6, 12 y 24 meses con interés compuesto mensual",
+        "precio fijado según el peor caso (perder el juicio)",
+        "devolución a clientes según el contrato",
+        "demanda lineal Q = a − b·precio",
+        "a y b como valores de prueba"
+      ],
+      "modelo": "valor esperado y demanda lineal",
+      "respuesta_final": "Recomiendan fijar el precio en 1,5P + m, con m = (a − 1,5bP)/(2b) obtenido maximizando la ganancia con demanda lineal (solo con valores de prueba), y dejar la posible devolución 0,5P·(1+i) aparte según lo que diga el contrato. La recomendación es poco segura porque depende de a, b, la probabilidad p de ganar y el plazo del juicio. Piden P, cantidad mensual, tasa, meses, p, a, b y si el contrato cobra el arancel aparte.",
+      "validacion": true,
+      "archivo": "N1_AA_r1.json",
+      "costo_usd": 0.176856
+    },
+    {
+      "id": "N2_VV_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N2",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P4-WM",
+        "P5-INT",
+        "P6-VAL",
+        "P7-EXP",
+        "P6-VAL"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "costo de la caja de queso $100 (ejemplo inventado)",
+        "arancel suma $50 por caja",
+        "si ganan se devuelven $50 más intereses; si pierden $0",
+        "la devolución va a la importadora, que pagó en aduana",
+        "se paga el arancel en cada embarque"
+      ],
+      "modelo": "diagrama de escenarios",
+      "respuesta_final": "Recomendamos subir el precio con cláusula de ajuste, para pasar a los clientes una parte si devuelven el arancel. Es provisional y de seguridad baja hasta tener los datos: queso mensual, precio y si los contratos permiten cambiarlo.",
+      "validacion": false,
+      "archivo": "N2_VV_r1.json",
+      "costo_usd": 0.12158
+    },
+    {
+      "id": "N3_AA_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N3",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P3-MM",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P5-INT",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "costo base normalizado c = 100",
+        "arancel t = 0,5",
+        "solo se devuelve el arancel, con intereses",
+        "la devolución llega a la importadora",
+        "plazo hasta el fallo n = 12 meses",
+        "interés sobre la devolución r = 5% anual",
+        "costo de capital k = 10%",
+        "probabilidad de ganar en escenarios 0,2; 0,5 y 0,8",
+        "recargo separado y reembolsable a los clientes"
+      ],
+      "modelo": "valor esperado",
+      "respuesta_final": "Recomiendan cobrar el arancel como recargo separado y reembolsable en la factura: con c = 100, el costo de financiar el arancel adelantado es de unos 5, contra un sobrecosto esperado de 12 a 41 por cada 100 si se absorbe el arancel (p = 0,8 a 0,2; n = 12 meses, r = 5%, k = 10%). La recomendación casi no depende de p; su seguridad depende de cuántos clientes se pierdan (el recargo gana si esa pérdida es menor que unos 21 por cada 100 de costo base). Piden a la gerencia k, el margen y las cláusulas de ajuste de los contratos.",
+      "validacion": true,
+      "archivo": "N3_AA_r1.json",
+      "costo_usd": 0.170352
+    },
+    {
+      "id": "N4_VV_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N4",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P4-WM",
+        "P5-INT",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "100 cajas a $1.000 cada una (cifras inventadas)",
+        "arancel de 50% pagado hoy",
+        "tres escenarios del juicio: se frena el cobro, ganan con devolución con intereses, pierden y el arancel queda como costo",
+        "margen de 20% sobre costo (inventado)",
+        "mantener el margen implica trasladar todo el arancel al precio",
+        "subir 50% el precio puede hacer perder clientes"
+      ],
+      "modelo": "proporcional",
+      "respuesta_final": "Mostrar el arancel como línea aparte en la factura, usar contratos cortos con cláusula de devolución (precisando quién se queda con los intereses) y decidir cuánto del arancel absorber cuando se conozcan la caída de demanda, la caja y el margen. Con números inventados (100 cajas a $1.000, margen 20%) trasladar todo llevaría el precio de $1.200 a $1.800 por caja, lo que puede espantar clientes. Confianza alta en la estructura y baja en el monto a absorber.",
+      "validacion": true,
+      "archivo": "N4_VV_r1.json",
+      "costo_usd": 0.118328
+    },
+    {
+      "id": "N4_AA_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N4",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P3-MM",
+        "P2-RM",
+        "P6-VAL",
+        "P3-MM",
+        "P5-INT",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "costo con arancel 1,5c",
+        "dos escenarios del juicio (gana/pierde) con probabilidad q desconocida",
+        "si ganan se recupera 0,5c por unidad más intereses",
+        "con cláusula el margen es p₀ − c independiente de q",
+        "el cliente acepta el recargo y la demanda no cae (supuesto cuestionado)",
+        "costo de financiar el arancel ≈ 0,5c·r·T"
+      ],
+      "modelo": "valor esperado",
+      "respuesta_final": "Recomiendan una cláusula contractual con recargo arancelario separado de 0,5c por unidad, ajustable o reembolsable según el fallo. Piden volumen, contratos, c, elasticidad, r, T y a quién va el reembolso. Seguridad media: depende de q, de r·T y de que los clientes acepten el recargo; plan B: subir el precio con q estimada.",
+      "validacion": true,
+      "archivo": "N4_AA_r1.json",
+      "costo_usd": 0.098356
+    }
+  ],
+  "agregado": {
+    "pct_bloqueo_por_transicion": {
+      "B23": 0.17,
+      "B45": 0.17
+    },
+    "modelos_observados": {
+      "escenarios aritméticos": 1,
+      "valor esperado y demanda lineal": 1,
+      "diagrama de escenarios": 1,
+      "valor esperado": 2,
+      "proporcional": 1
+    },
+    "pct_validan": 0.83
+  },
+  "fecha": "2026-10-20T21:19:59Z"
+}

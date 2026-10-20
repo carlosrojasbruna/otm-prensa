@@ -1,0 +1,194 @@
+{
+  "ciclo_id": "ciclo_20261020T211720137822Z",
+  "inicio": "2026-10-20T21:17:20Z",
+  "fin": "2026-10-20T21:27:42Z",
+  "semana": "2026-W43",
+  "parametros": {
+    "tope_semanal_usd": 25.0,
+    "fraccion_detencion": 0.9,
+    "presupuesto_ciclo_usd": 6.0,
+    "limite_usd": 12.61297,
+    "gasto_semana_previo_usd": 6.61297,
+    "corridas_evaluador": 3,
+    "rango_inestable": 4,
+    "corridas_simulador": 6,
+    "ids": [
+      "2026-10-pagar-trasladar-o-esperar",
+      "2026-10-viaje-barco-ida-vuelta"
+    ],
+    "revisor": "Carlos Rojas Bruna"
+  },
+  "detenido_por_tope": false,
+  "eventos": [
+    {
+      "fecha": "2026-10-20T21:19:59Z",
+      "tipo": "agente",
+      "agente": "simulador",
+      "tareas": [
+        "2026-10-pagar-trasladar-o-esperar"
+      ],
+      "llamadas": 102,
+      "usd": 0.888522
+    },
+    {
+      "fecha": "2026-10-20T21:19:59Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-pagar-trasladar-o-esperar",
+      "de": "revisada",
+      "a": "simulada"
+    },
+    {
+      "fecha": "2026-10-20T21:22:17Z",
+      "tipo": "agente",
+      "agente": "redactor",
+      "tareas": [
+        "2026-10-pagar-trasladar-o-esperar"
+      ],
+      "llamadas": 3,
+      "usd": 0.338451
+    },
+    {
+      "fecha": "2026-10-20T21:22:17Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-pagar-trasladar-o-esperar",
+      "de": "simulada",
+      "a": "con_guia"
+    },
+    {
+      "fecha": "2026-10-20T21:22:21Z",
+      "tipo": "agente",
+      "agente": "ilustrador",
+      "tareas": [
+        "2026-10-pagar-trasladar-o-esperar"
+      ],
+      "llamadas": 1,
+      "usd": 0.01105
+    },
+    {
+      "fecha": "2026-10-20T21:22:45Z",
+      "tipo": "agente",
+      "agente": "verificador",
+      "tareas": [
+        "2026-10-pagar-trasladar-o-esperar"
+      ],
+      "llamadas": 1,
+      "usd": 0.120483
+    },
+    {
+      "fecha": "2026-10-20T21:22:45Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-pagar-trasladar-o-esperar",
+      "de": "con_guia",
+      "a": "verificada"
+    },
+    {
+      "fecha": "2026-10-20T21:22:45Z",
+      "tipo": "bibliotecario_dry_run",
+      "tarea_id": "2026-10-pagar-trasladar-o-esperar",
+      "ok": true,
+      "ruta": "tareas/2026-10/pagar-trasladar-o-esperar/",
+      "rama": "tareas/semana-2026-W43"
+    },
+    {
+      "fecha": "2026-10-20T21:22:45Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-viaje-barco-ida-vuelta",
+      "de": "evaluada",
+      "a": "revisada"
+    },
+    {
+      "fecha": "2026-10-20T21:25:05Z",
+      "tipo": "agente",
+      "agente": "simulador",
+      "tareas": [
+        "2026-10-viaje-barco-ida-vuelta"
+      ],
+      "llamadas": 99,
+      "usd": 0.869441
+    },
+    {
+      "fecha": "2026-10-20T21:25:05Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-viaje-barco-ida-vuelta",
+      "de": "revisada",
+      "a": "simulada"
+    },
+    {
+      "fecha": "2026-10-20T21:27:16Z",
+      "tipo": "agente",
+      "agente": "redactor",
+      "tareas": [
+        "2026-10-viaje-barco-ida-vuelta"
+      ],
+      "llamadas": 3,
+      "usd": 0.327084
+    },
+    {
+      "fecha": "2026-10-20T21:27:16Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-viaje-barco-ida-vuelta",
+      "de": "simulada",
+      "a": "con_guia"
+    },
+    {
+      "fecha": "2026-10-20T21:27:20Z",
+      "tipo": "agente",
+      "agente": "ilustrador",
+      "tareas": [
+        "2026-10-viaje-barco-ida-vuelta"
+      ],
+      "llamadas": 1,
+      "usd": 0.007126
+    },
+    {
+      "fecha": "2026-10-20T21:27:42Z",
+      "tipo": "agente",
+      "agente": "verificador",
+      "tareas": [
+        "2026-10-viaje-barco-ida-vuelta"
+      ],
+      "llamadas": 1,
+      "usd": 0.107865
+    },
+    {
+      "fecha": "2026-10-20T21:27:42Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-viaje-barco-ida-vuelta",
+      "de": "con_guia",
+      "a": "verificada"
+    },
+    {
+      "fecha": "2026-10-20T21:27:42Z",
+      "tipo": "bibliotecario_dry_run",
+      "tarea_id": "2026-10-viaje-barco-ida-vuelta",
+      "ok": true,
+      "ruta": "tareas/2026-10/viaje-barco-ida-vuelta/",
+      "rama": "tareas/semana-2026-W43"
+    }
+  ],
+  "expedientes": {
+    "2026-10-pagar-trasladar-o-esperar": "verificada",
+    "2026-10-viaje-barco-ida-vuelta": "verificada"
+  },
+  "noticias": [],
+  "pendientes_humanos": [
+    {
+      "tarea_id": "2026-10-pagar-trasladar-o-esperar",
+      "pendiente": "revision_humana_2",
+      "estado": "verificada"
+    },
+    {
+      "tarea_id": "2026-10-viaje-barco-ida-vuelta",
+      "pendiente": "revision_humana_2",
+      "estado": "verificada"
+    }
+  ],
+  "errores": [],
+  "orden": "tramo_b",
+  "gasto": {
+    "ciclo_usd": 2.670022,
+    "semana_usd": 9.282992,
+    "limite_usd": 12.61297,
+    "llamadas": 211
+  }
+}

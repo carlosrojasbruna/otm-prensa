@@ -1,0 +1,110 @@
+{
+  "run": {
+    "id": "N3_AA_r1",
+    "nivel": "N3",
+    "composicion": "AA",
+    "rep": 1,
+    "estilos": [
+      "A",
+      "A"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.056368,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P2-RM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 4,
+        "fase": "P5-INT",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 6,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "ASSUME",
+          "PREC"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P6-VAL",
+        "fase_secundaria": "EMK",
+        "eventos": []
+      },
+      {
+        "n": 8,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 9,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P4-WM",
+        "eventos": []
+      },
+      {
+        "n": 10,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME"
+        ]
+      }
+    ],
+    "bloqueos": [],
+    "supuestos": [
+      "velocidad del barco de 20 km/h",
+      "velocidad del barco de 30 km/h",
+      "viaje de ida y vuelta por la misma distancia",
+      "jornada de 12 horas",
+      "2 horas de descarga",
+      "velocidad constante",
+      "sale desde Aberdeen para Jackdaw y desde Shetland para Rosebank"
+    ],
+    "modelo": "lineal",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Jackdaw: la tripulación debe pasar la noche en el mar (a 30 km/h la navegación de ida y vuelta toma unas 16 h, y para hacerlo en 10 h el barco tendría que ir a unos 48 km/h, cerca de 26 nudos, algo poco realista para un barco de apoyo). Rosebank: se puede hacer en el día si el barco va a unos 26 km/h o más, con una jornada de 12 h y 2 h de descarga. Piden a la empresa la velocidad real del barco y la duración de la jornada. Suponen que el barco sale desde Aberdeen hacia Jackdaw y desde Shetland hacia Rosebank."
+    },
+    "ruta_principal": "R3",
+    "rutas": [
+      "R3"
+    ]
+  }
+}

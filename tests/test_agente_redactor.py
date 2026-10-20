@@ -134,3 +134,16 @@ def test_prompt_tiene_las_secciones():
     p = R.cargar_prompt()
     assert set(p) == {"comun", "base", "escenarios", "intervenciones"}
     assert "solo" in p["escenarios"] and "id de corrida" in p["escenarios"].lower() or "corridas" in p["escenarios"]
+
+
+def test_normalizar_bloqueos_deja_solo_el_codigo():
+    """Caso queso-v2: sin bloqueos observados, el modelo anotó el código con una nota y la guía no validaba."""
+    from pipeline.agentes.redactor.run import normalizar_bloqueos
+
+    s = {"intervenciones": [{"bloqueo": "B12 (probable según el mapa del ciclo; la tabla viene vacía)"},
+                            {"bloqueo": "B67"}]}
+    assert normalizar_bloqueos(s) == []
+    assert [i["bloqueo"] for i in s["intervenciones"]] == ["B12", "B67"]
+
+    malo = {"intervenciones": [{"bloqueo": "B12 o B23"}, {"bloqueo": "simplificar"}]}
+    assert len(normalizar_bloqueos(malo)) == 2

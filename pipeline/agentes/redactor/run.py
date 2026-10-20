@@ -252,6 +252,24 @@ def verificar_escenarios(escenarios: list[dict], trazas: dict, transcripciones: 
     return errores
 
 
+_TRANSICION = re.compile(r"(?<![A-Za-z0-9])B[1-6][2-7](?![0-9])")
+
+
+def normalizar_bloqueos(salida: dict) -> list[str]:
+    """`bloqueo` es un código de transición (B12…B67). Si el modelo agrega una nota ("B12 (probable según el
+    mapa del ciclo…)", visto cuando el simulador no registra bloqueos), se conserva solo el código; si no hay
+    exactamente un código, es error y se reintenta."""
+    errores = []
+    for n, i in enumerate(salida.get("intervenciones", [])):
+        codigos = _TRANSICION.findall(str(i.get("bloqueo", "")))
+        if len(set(codigos)) == 1:
+            i["bloqueo"] = codigos[0]
+        else:
+            errores.append(f"intervenciones[{n}].bloqueo debe ser un solo código de transición (p. ej. B12), "
+                           f"sin texto adicional: {i.get('bloqueo')!r}")
+    return errores
+
+
 def verificar_intervenciones(salida: dict, tarea: dict, trazas: dict, escenarios: list[dict]) -> list[str]:
     errores = []
     observados = {t for t, p in trazas["agregado"]["pct_bloqueo_por_transicion"].items() if p > 0}
@@ -392,7 +410,8 @@ def redactar(tarea: dict, trazas: dict, transcripciones: dict[str, str], context
                 + "\n\n# Escenarios redactados\n" + _j(escenarios))
 
     def v_int(s):
-        return verificar_intervenciones(s, tarea, trazas, escenarios) + cifras_sin_localizador(s, permitidos)
+        errores = normalizar_bloqueos(s)
+        return errores + verificar_intervenciones(s, tarea, trazas, escenarios) + cifras_sin_localizador(s, permitidos)
     inter = _generar("intervenciones", user_int, esquema_intervenciones(), v_int, cuenta, cliente)
 
     # 4. ensamble (lo determinístico lo pone el código)

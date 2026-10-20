@@ -1,0 +1,241 @@
+{
+  "tarea_id": "2026-10-viaje-barco-ida-vuelta",
+  "diseno": "diseno_otm",
+  "corridas": 6,
+  "modelo": "claude-sonnet-5-5",
+  "costo_usd": 0.8696,
+  "por_corrida": [
+    {
+      "id": "N1_VV_r1",
+      "perfil": {
+        "nivel_edad": "P",
+        "nivel": "N1",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P4-WM",
+        "P3-MM",
+        "P2-RM",
+        "P3-MM",
+        "P2-RM",
+        "P4-WM",
+        "P5-INT",
+        "P4-WM",
+        "P6-VAL",
+        "P4-WM",
+        "P7-EXP",
+        "P4-WM",
+        "P7-EXP"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B45",
+          "turnos": [
+            14,
+            15,
+            16
+          ],
+          "resolucion": "peer"
+        }
+      ],
+      "supuestos": [
+        "se cuenta ida y vuelta",
+        "se suma un tiempo de descarga (sin valor)",
+        "velocidad constante inventada (20, 10, 15 y 30 km/h)",
+        "jornada de 8 o 10 horas",
+        "barco a Rosebank sale de Shetland (tentativo)"
+      ],
+      "modelo": "proporcional",
+      "respuesta_final": "Piden la velocidad real, las horas de la jornada, el tiempo de descarga y el puerto de salida. Con 30 km/h, Rosebank (257.4 km ida y vuelta) toma 8 h 35 min más descarga, quizás justo en la jornada; Jackdaw (482.8 km ida y vuelta) toma unas 16 h, por lo que la tripulación dormiría en el mar.",
+      "validacion": true,
+      "archivo": "N1_VV_r1.json",
+      "costo_usd": 0.178496
+    },
+    {
+      "id": "N1_AA_r1",
+      "perfil": {
+        "nivel_edad": "P",
+        "nivel": "N1",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P3-MM",
+        "P2-RM",
+        "P4-WM",
+        "P2-RM",
+        "P4-WM",
+        "P5-INT",
+        "P4-WM",
+        "P5-INT",
+        "P6-VAL",
+        "P4-WM",
+        "P5-INT",
+        "P4-WM",
+        "P5-INT",
+        "P7-EXP",
+        "P6-VAL"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B45",
+          "turnos": [
+            9,
+            10
+          ],
+          "resolucion": "peer"
+        }
+      ],
+      "supuestos": [
+        "ida y vuelta (distancia × 2)",
+        "velocidad de prueba 20 km/h",
+        "velocidad de prueba 40 km/h",
+        "jornada de 8 horas",
+        "falta sumar tiempo de descarga (no cuantificado)"
+      ],
+      "modelo": "proporcional",
+      "respuesta_final": "ENTREGAMOS: Pedimos la velocidad real, las horas de la jornada, el tiempo de descarga y cómo pasar nudos a km/h. Con 40 km/h inventados y jornada de 8 h, Rosebank sí (6 h 26 min) y Jackdaw no (12 h 4 min).",
+      "validacion": true,
+      "archivo": "N1_AA_r1.json",
+      "costo_usd": 0.23564
+    },
+    {
+      "id": "N2_VV_r1",
+      "perfil": {
+        "nivel_edad": "P",
+        "nivel": "N2",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P4-WM",
+        "P2-RM",
+        "P4-WM",
+        "P5-INT",
+        "P4-WM",
+        "P5-INT",
+        "P7-EXP",
+        "P6-VAL"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "viaje de ida y vuelta (doble de la distancia)",
+        "velocidad de 20 km/h",
+        "velocidad de 30 km/h",
+        "jornada de 12 horas",
+        "descarga de menos de 3 horas como condición para Rosebank"
+      ],
+      "modelo": "proporcional",
+      "respuesta_final": "En Jackdaw dormirían en el mar, porque son 482.8 km y a 30 km/h son 16.09 horas. En Rosebank depende de la velocidad y de la descarga; hay que preguntar puerto de salida, velocidad, largo de la jornada y tiempo de descarga.",
+      "validacion": false,
+      "archivo": "N2_VV_r1.json",
+      "costo_usd": 0.154948
+    },
+    {
+      "id": "N3_AA_r1",
+      "perfil": {
+        "nivel_edad": "P",
+        "nivel": "N3",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P4-WM",
+        "P5-INT",
+        "P4-WM",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "velocidad del barco de 20 km/h",
+        "velocidad del barco de 30 km/h",
+        "viaje de ida y vuelta por la misma distancia",
+        "jornada de 12 horas",
+        "2 horas de descarga",
+        "velocidad constante",
+        "sale desde Aberdeen para Jackdaw y desde Shetland para Rosebank"
+      ],
+      "modelo": "lineal",
+      "respuesta_final": "Jackdaw: la tripulación debe pasar la noche en el mar (a 30 km/h la navegación de ida y vuelta toma unas 16 h, y para hacerlo en 10 h el barco tendría que ir a unos 48 km/h, cerca de 26 nudos, algo poco realista para un barco de apoyo). Rosebank: se puede hacer en el día si el barco va a unos 26 km/h o más, con una jornada de 12 h y 2 h de descarga. Piden a la empresa la velocidad real del barco y la duración de la jornada. Suponen que el barco sale desde Aberdeen hacia Jackdaw y desde Shetland hacia Rosebank.",
+      "validacion": true,
+      "archivo": "N3_AA_r1.json",
+      "costo_usd": 0.109668
+    },
+    {
+      "id": "N4_VV_r1",
+      "perfil": {
+        "nivel_edad": "P",
+        "nivel": "N4",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P4-WM",
+        "P2-RM",
+        "P4-WM",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "viaje de ida y vuelta (distancia duplicada)",
+        "rapidez del barco 20 km/h",
+        "jornada de 12 horas",
+        "descarga de 3 horas",
+        "el barco a Rosebank sale desde Shetland"
+      ],
+      "modelo": "lineal",
+      "respuesta_final": "Suponiendo 20 km/h, jornada de 12 h y 3 h de descarga, Jackdaw necesita pernoctar. Rosebank solo se hace en el día si el barco va a unos 29 km/h o más. Pedimos la velocidad real, las horas de la jornada y el tiempo de descarga.",
+      "validacion": true,
+      "archivo": "N4_VV_r1.json",
+      "costo_usd": 0.094008
+    },
+    {
+      "id": "N4_AA_r1",
+      "perfil": {
+        "nivel_edad": "P",
+        "nivel": "N4",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P4-WM",
+        "P3-MM",
+        "P6-VAL",
+        "P5-INT",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "viaje de ida y vuelta (distancia doble)",
+        "velocidad constante (se prueban 20, 30 y 25 km/h)",
+        "jornada de 12 horas",
+        "la descarga usa el tiempo que sobra de la jornada",
+        "barco de carga anda a unos 25 km/h"
+      ],
+      "modelo": "proporcional",
+      "respuesta_final": "Jackdaw no se alcanza en una jornada (con 25 km/h son 19,3 h solo navegando), así que hay que planear que la tripulación pase la noche. Rosebank podría hacerse en el día (10,3 h), pero muy justo, y antes de decidir hay que confirmar la velocidad real, la jornada y cuánto demora la descarga.",
+      "validacion": true,
+      "archivo": "N4_AA_r1.json",
+      "costo_usd": 0.096808
+    }
+  ],
+  "agregado": {
+    "pct_bloqueo_por_transicion": {
+      "B45": 0.33
+    },
+    "modelos_observados": {
+      "proporcional": 4,
+      "lineal": 2
+    },
+    "pct_validan": 0.83
+  },
+  "fecha": "2026-10-20T21:25:05Z"
+}
