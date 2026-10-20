@@ -44,6 +44,15 @@ Formato: `AAAA-MM-DD · agente · decisión · alternativa descartada · por qu�
 - **PLT01 v0.2** creada por el humano (áreas = ids de MED01; estados completos; recursos `de_entrada` dentro de `enunciado_es`). Los agentes de la fase 2 leen v0.2.
 - **Costo:** el gasto real se verifica en la Console; `pipeline/config.yaml` debe leer precios de una tabla editable (`precios_modelos`) y no suponerlos.
 
+## Fase 2
+
+- 2026-10-20 · build-lead · Base común antes de lanzar agent-smith ×7 y sim-integrator: `pipeline/config.yaml` (tabla `precios_modelos` editable, modelos de partida por agente, tope semanal, ruta del simulador, 3 corridas del evaluador) y `pipeline/llm.py` (`llamar(agente, system, user, schema)` + `ClienteFalso` para tests sin red) · que cada agente escriba su cliente · ocho clientes distintos multiplicarían errores de parámetros y de costo; cumple la condición de costo de CP1.
+- 2026-10-20 · build-lead · Precios en `config.yaml` tomados de la tabla oficial de modelos (caché 2026-10-06): Opus 5.5 4/20, Sonnet 5.5 2/10, Haiku 5.5 0,10/0,50 USD/MTok; escritura de caché = 1,25 × input y lectura = 0,1 × input (Opus/Sonnet: 0,20 según la fuente) · mantener el supuesto 5/25 de rubric-encoder · hay fuente; con ella, el gasto de calibración de CP1 (10,73 supuestos) baja a ≈ 8,6 USD. `evaluador.py` sigue con su tabla interna hasta que eval-engineer lo migre a `config.yaml` (fase 3).
+- 2026-10-20 · build-lead · Sonnet 5.5 y Haiku 5.5 rechazan `temperature` distinto del default: la "temperatura 0" del plan para filtro y otros agentes no se puede aplicar; se mide la consistencia entre corridas, como en el evaluador · cambiar de modelo · los modelos de partida los fija GOB01 §3.
+- 2026-10-20 · build-lead · Tope semanal provisional en `config.yaml`: 25 USD (monto [D] de GOB01 §3 aún sin fijar) · no tener tope · lectura conservadora; Carlos lo fija en CP2.
+- 2026-10-20 · build-lead · Test de aceptación de agent-smith: los 5 casos corren sin red con `ClienteFalso` (forma, contrato, invariantes) y además se hace ≥ 1 corrida real por agente con tope de 1 USD por agente · solo pruebas sin red · "los casos pasan" exige ver al menos una salida real del modelo; el tope evita gasto descontrolado.
+- 2026-10-20 · build-lead · Agentes sin contrato propio en `contratos/` (filtro, ilustrador, verificador): el filtro escribe el bloque `filtro` de `noticia`; ilustrador y verificador definen su esquema de salida local en `pipeline/agentes/<nombre>/salida.schema.json` · crear contratos nuevos · los contratos están congelados en CP1; un esquema local no cambia el contrato entre agentes.
+
 ## Requiere decisión humana
 
 (vacío)

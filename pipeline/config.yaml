@@ -1,0 +1,45 @@
+# Configuración global del pipeline OTM-Prensa.
+# La mantiene build-lead; los agentes leen de aquí (vía pipeline/llm.py), no copian valores.
+
+version: "1.0"
+fecha: "2026-10-20"
+
+# Precios USD por millón de tokens (API de primera parte de Anthropic).
+# Fuente: tabla de modelos del skill claude-api (caché 2026-10-06). Escritura de caché = 1,25 × input
+# y lectura = 0,1 × input salvo que la fuente diga otra cosa (Opus y Sonnet 5.5: lectura 0,20).
+# EDITABLE: si la Console muestra otros precios, se corrigen aquí; ningún script los supone.
+precios_modelos:
+  claude-opus-5-5:   {input: 4.00, output: 20.00, cache_write: 5.00,  cache_read: 0.20}
+  claude-sonnet-5-5: {input: 2.00, output: 10.00, cache_write: 2.50,  cache_read: 0.20}
+  claude-haiku-5-5:  {input: 0.10, output: 0.50,  cache_write: 0.125, cache_read: 0.01}
+
+# Modelos de partida por agente (GOB01 §3, plan §Agentes del pipeline). eval-engineer los cambia
+# solo con evidencia en evals/resultados/.
+modelos:
+  explorador:    claude-haiku-5-5
+  filtro:        claude-haiku-5-5
+  disenador:     claude-sonnet-5-5
+  evaluador:     claude-opus-5-5
+  simulador:     claude-sonnet-5-5
+  redactor:      claude-sonnet-5-5
+  redactor_escenarios: claude-opus-5-5
+  ilustrador:    claude-sonnet-5-5
+  verificador:   claude-opus-5-5
+  bibliotecario: claude-haiku-5-5
+
+# Tope de gasto. El orquestador se detiene al 90 % del tope semanal (GOB01 §3).
+# Monto pendiente de decisión de Carlos [D]; valor conservador provisional.
+tope_semanal_usd: 25.0
+fraccion_detencion: 0.9
+
+# Simulador externo (SIM01). No se modifica sim.py salvo llamar() (GOB01 §3).
+simulador:
+  repo: "../../IDEA MODELAMIENTO/simulacion"   # relativo a la raíz de este repo
+  backend: api                                 # api | claude_p (opción local)
+  corridas_por_tarea: 6
+  diseno: diseno_otm
+
+# Evaluador en producción (condición 1 de CP1): 3 corridas, mediana por criterio.
+evaluador:
+  corridas: 3
+  rango_inestable: 4
