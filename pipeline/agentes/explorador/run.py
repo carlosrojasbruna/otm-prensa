@@ -19,11 +19,21 @@ import json
 import re
 import sys
 import unicodedata
+import base64
+import functools
+import urllib.error
 import urllib.request
+import urllib.robotparser
 import xml.etree.ElementTree as ET
+from urllib.parse import urlparse
 from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
 from pathlib import Path
+
+try:  # MED01 v1.1: parser seguro si está instalado; si no, xml.etree estándar (ver DECISIONES.md)
+    from defusedxml import ElementTree as _ET_SEGURO
+except ImportError:  # pragma: no cover
+    _ET_SEGURO = None
 
 RAIZ = Path(__file__).resolve().parents[3]
 if str(RAIZ) not in sys.path:
@@ -41,6 +51,22 @@ VERSION_PROMPT = CFG["version_prompt"]
 PROMPT = (DIR / CFG["prompt"]).read_text(encoding="utf-8")
 AREAS = ["medio_ambiente", "economia", "salud", "ciencia_tecnologia", "deporte", "transporte_ciudad", "sociedad_datos"]
 UA = "OTM-Prensa/1.0 (observatorio academico; PUC Chile)"
+
+# Dominios de los medios de MED01 (para validar que un enlace resuelto pertenece a un medio de la lista).
+# Los más específicos (con ruta) van antes que su dominio general.
+DOMINIOS = {
+    "bbcmundo": ["bbc.com/mundo", "bbc.co.uk/mundo"], "bbc": ["bbc.com", "bbc.co.uk"],
+    "latercera": ["latercera.com"], "emol": ["emol.com"], "cnnchile": ["cnnchile.com"],
+    "ciper": ["ciperchile.cl"], "canal13": ["t13.cl"], "reuters": ["reuters.com"],
+    "dw": ["dw.com"], "naturenews": ["nature.com"],
+}
+# MED01 v1.1: solo La Tercera trae el cuerpo completo en el feed; en el resto se lee el enlace original.
+CUERPO_EN_FEED = {"latercera"}
+
+
+class ErrorLectura(Exception):
+    """No se pudo (o no se puede) leer el enlace original; el mensaje es el motivo de descarte."""
+
 
 ESQUEMA_MODELO = {
     "type": "object",
@@ -70,8 +96,14 @@ ESQUEMA_MODELO = {
 
 
 # ------------------------------------------------------------------ MED01
+def _clave_version(ruta: Path) -> tuple:
+    m = re.search(r"_v(\d+)\.(\d+)_", ruta.name)
+    return (int(m.group(1)), int(m.group(2))) if m else (0, 0)
+
+
 def cargar_med01() -> dict:
-    rutas = sorted((RAIZ / "insumos" / "medios").glob("MED01_*.yaml"))
+    """Versión más alta de MED01 (orden numérico: v1.10 > v1.9)."""
+    rutas = sorted((RAIZ / "insumos" / "medios").glob("MED01_*.yaml"), key=_clave_version)
     return yaml.safe_load(rutas[-1].read_text(encoding="utf-8"))
 
 
@@ -153,16 +185,40 @@ def _local(tag: str) -> str:
     return tag.rsplit("}", 1)[-1]
 
 
+_RE_ITEM = re.compile(r"(?is)<(item|entry)\b.*?</\1\s*>")
+
+
+def _fromstring(datos):
+    return (_ET_SEGURO or ET).fromstring(datos)
+
+
+def _raiz_tolerante(texto: str):
+    """Feed truncado: se conservan solo los ítems completos (se descarta el último, incompleto)."""
+    bloques = [m.group(0) for m in _RE_ITEM.finditer(texto)]
+    if not bloques:
+        raise ET.ParseError("feed ilegible y sin ítems completos")
+    decl = ""
+    tag = re.search(r"(?is)<(rss|rdf:RDF|feed)\b[^>]*>", texto)
+    if tag:
+        decl = " ".join(re.findall(r'xmlns(?::[\w.-]+)?\s*=\s*"[^"]*"', tag.group(0)))
+    return _fromstring(f"<raiz {decl}>" + "".join(bloques) + "</raiz>")
+
+
 def parsear_feed(xml_bytes: bytes | str) -> list[dict]:
-    """RSS 2.0 o Atom -> [{titulo, url, fecha(datetime), cuerpo_html}]. Sin dependencias externas."""
+    """RSS 2.0, RSS 1.0 (RDF) o Atom -> [{titulo, url, fecha(datetime), cuerpo_html, ids}].
+
+    Tolerante a XML truncado (MED01 v1.1): si no parsea entero, usa los ítems completos."""
     if isinstance(xml_bytes, str):
         xml_bytes = xml_bytes.encode("utf-8")
-    raiz = ET.fromstring(xml_bytes)
+    try:
+        raiz = _fromstring(xml_bytes)
+    except ET.ParseError:
+        raiz = _raiz_tolerante(xml_bytes.decode("utf-8", "ignore"))
     out = []
     for it in raiz.iter():
         if _local(it.tag) not in ("item", "entry"):
             continue
-        d: dict = {"titulo": "", "url": "", "fecha": None, "cuerpo_html": ""}
+        d: dict = {"titulo": "", "url": "", "fecha": None, "cuerpo_html": "", "ids": []}
         for ch in it:
             t = _local(ch.tag)
             if t == "title":
@@ -175,19 +231,102 @@ def parsear_feed(xml_bytes: bytes | str) -> list[dict]:
                 d["cuerpo_html"] = ch.text or d["cuerpo_html"]
             elif t in ("description", "summary", "content") and not d["cuerpo_html"]:
                 d["cuerpo_html"] = ch.text or ""
+            elif t in ("guid", "identifier", "doi", "id"):
+                d["ids"].append((ch.text or "").strip())
         if d["titulo"] and d["url"]:
             out.append(d)
     return out
 
 
-def bajar_cuerpo(url: str) -> str:
-    """Mejor esfuerzo: párrafos <p> de la página. Solo en memoria."""
+_CACHE_ROBOTS: dict = {}
+
+
+def robots_permite(url: str, leer=_get, cache: dict | None = None) -> bool:
+    """robots.txt del origen de `url` (urllib.robotparser). 4xx = sin restricciones; cualquier otro
+    fallo al leerlo = no se lee (lectura conservadora)."""
+    cache = _CACHE_ROBOTS if cache is None else cache
+    u = urlparse(url)
+    origen = f"{u.scheme}://{u.netloc}"
+    if origen not in cache:
+        rp = urllib.robotparser.RobotFileParser()
+        try:
+            rp.parse(leer(origen + "/robots.txt").decode("utf-8", "replace").splitlines())
+            cache[origen] = rp
+        except urllib.error.HTTPError as e:
+            if 400 <= e.code < 500:
+                rp.parse([])
+                cache[origen] = rp
+            else:
+                cache[origen] = False
+        except Exception:  # noqa: BLE001
+            cache[origen] = False
+    rp = cache[origen]
+    return bool(rp) and rp.can_fetch("OTM-Prensa", url)
+
+
+def bajar_cuerpo(url: str, leer=_get, cache: dict | None = None) -> str:
+    """Párrafos <p> de la página original, solo en memoria. Respeta robots.txt.
+    Lanza ErrorLectura (con el motivo) si robots.txt lo prohíbe o la página no se puede leer."""
+    if not robots_permite(url, leer, cache):
+        raise ErrorLectura("robots.txt prohíbe (o no permite verificar) la lectura del enlace original")
     try:
-        pag = _get(url).decode("utf-8", "replace")
-    except Exception:  # noqa: BLE001
-        return ""
+        pag = leer(url).decode("utf-8", "replace")
+    except Exception as e:  # noqa: BLE001
+        raise ErrorLectura(f"no se pudo leer el enlace original ({type(e).__name__})") from e
     ps = re.findall(r"(?is)<p[^>]*>(.*?)</p>", pag)
     return "\n".join(f"<p>{p}</p>" for p in ps)
+
+
+# ------------------------------------------------------------------ gnews
+def es_google_news(url: str) -> bool:
+    return urlparse(url).netloc.lower().endswith("news.google.com")
+
+
+def _final_http(url: str) -> str | None:
+    """Sigue redirecciones HTTP; devuelve la URL final o el enlace canónico incrustado en la página."""
+    req = urllib.request.Request(url, headers={"User-Agent": UA})
+    with urllib.request.urlopen(req, timeout=20) as r:  # noqa: S310
+        final = r.geturl()
+        if not es_google_news(final):
+            return final
+        m = re.search(r'data-n-au="([^"]+)"', r.read(200000).decode("utf-8", "replace"))
+        return html.unescape(m.group(1)) if m else None
+
+
+def resolver_gnews(url: str, abrir=_final_http) -> str | None:
+    """Enlace de news.google.com -> URL del medio original, o None si no se puede resolver."""
+    if not es_google_news(url):
+        return url
+    ident = urlparse(url).path.rstrip("/").rsplit("/", 1)[-1]
+    try:  # ids antiguos: base64 con la URL en claro
+        crudo = base64.urlsafe_b64decode(ident + "=" * (-len(ident) % 4))
+        m = re.search(rb"https?://[\x21-\x7e]+", crudo)
+        if m:
+            cand = m.group(0).decode("ascii")
+            if not es_google_news(cand):
+                return cand
+    except Exception:  # noqa: BLE001, S110
+        pass
+    try:
+        r = abrir(url)
+    except Exception:  # noqa: BLE001
+        return None
+    return r if r and not es_google_news(r) else None
+
+
+def medio_de_url(url: str, med: dict) -> dict | None:
+    """Medio de MED01 al que pertenece la URL (por dominio), o None."""
+    u = urlparse(url)
+    host, ruta = u.netloc.lower().split(":")[0], u.path.lower()
+    ids = {m["id"]: m for m in med["medios"]}
+    for mid, doms in DOMINIOS.items():
+        if mid not in ids:
+            continue
+        for d in doms:
+            dh, _, dr = d.partition("/")
+            if (host == dh or host.endswith("." + dh)) and (not dr or ruta.startswith("/" + dr)):
+                return ids[mid]
+    return None
 
 
 def urls_de_medio(medio: dict) -> list[tuple[str, str | None]]:
@@ -202,12 +341,25 @@ def urls_de_medio(medio: dict) -> list[tuple[str, str | None]]:
     return res
 
 
-def recolectar(medio: dict, max_n: int, ahora: datetime, leer=_get) -> list[dict]:
-    """Candidatos recientes (<= dias_maximos) de un medio. `leer(url)->bytes` inyectable para tests."""
-    cands: list[dict] = []
+def _prefijo_doi(medio: dict) -> str | None:
+    m = re.search(r"solo DOI con prefijo (\w+)", medio.get("filtro", ""))
+    return m.group(1) if m else None
+
+
+def recolectar(medio: dict, max_n: int, ahora: datetime, leer=_get, resolver=resolver_gnews,
+               descartes: list | None = None, med: dict | None = None) -> list[dict]:
+    """Candidatos recientes (<= dias_maximos) de un medio. `leer(url)->bytes` y `resolver` inyectables.
+
+    - Filtro DOI (p. ej. Nature: solo d41586) según `filtro` de MED01.
+    - Ítems de news.google.com: se resuelve el enlace al medio original; `url` y `medio_id` son los
+      del original (debe estar en MED01); si no se resuelve, se descarta con motivo en `descartes`."""
+    med = med or cargar_med01()
+    descartes = descartes if descartes is not None else []
+    doi = _prefijo_doi(medio)
+    brutos: list[dict] = []
     vistos: set[str] = set()
     principal_ok = False
-    for i, (url, _area) in enumerate(urls_de_medio(medio)):
+    for url, _area in urls_de_medio(medio):
         es_respaldo = bool(medio.get("respaldo")) and url == medio["respaldo"]["url"]
         if es_respaldo and principal_ok:
             continue
@@ -224,10 +376,32 @@ def recolectar(medio: dict, max_n: int, ahora: datetime, leer=_get) -> list[dict
             f = it["fecha"]
             if f is None or ahora - f > timedelta(days=P["dias_maximos"]) or f > ahora + timedelta(days=1):
                 continue
+            if doi and not any(doi in x for x in [it["url"], *it["ids"]]):
+                continue
             vistos.add(it["url"])
-            cands.append({**it, "medio_id": medio["id"], "medio": medio["nombre"], "idioma": medio["idioma"]})
-    cands.sort(key=lambda c: c["fecha"], reverse=True)
-    return cands[:max_n]
+            brutos.append(it)
+    brutos.sort(key=lambda c: c["fecha"], reverse=True)
+    cands: list[dict] = []
+    for it in brutos:
+        if len(cands) >= max_n:
+            break
+        dest, titulo = medio, it["titulo"]
+        if es_google_news(it["url"]):
+            titulo = re.sub(r"\s+-\s+[^-]{2,40}$", "", titulo)
+            real = resolver(it["url"])
+            if not real:
+                descartes.append({"url": it["url"], "medio_id": medio["id"],
+                                  "motivo": "gnews: no se pudo resolver la redirección al medio original"})
+                continue
+            dest = medio_de_url(real, med)
+            if dest is None:
+                descartes.append({"url": real, "medio_id": medio["id"],
+                                  "motivo": "gnews: el medio original no está en MED01"})
+                continue
+            it = {**it, "url": real}
+        cands.append({**it, "titulo": titulo, "medio_id": dest["id"], "medio": dest["nombre"],
+                      "idioma": dest["idioma"]})
+    return cands
 
 
 # ------------------------------------------------------------------ modelo
@@ -251,9 +425,17 @@ def explorar_noticia(c: dict, *, cliente=None, ahora: datetime | None = None, ba
     ok = inv.medio_en_lista_blanca(c["medio_id"])
     if not ok:
         return fin(motivo="; ".join(ok.errores))
-    parrafos = parrafos_de(c.get("cuerpo_html", ""))
+    # MED01 v1.1: el cuerpo se lee del enlace original; solo La Tercera lo trae completo en el feed.
+    # (`bajar=None` = modo fixture/test: se usa el cuerpo entregado en el candidato.)
+    usar_feed = bajar is None or c["medio_id"] in CUERPO_EN_FEED
+    parrafos = parrafos_de(c.get("cuerpo_html", "")) if usar_feed else []
     if sum(len(p) for p in parrafos) < 400 and bajar:
-        extra = parrafos_de(bajar(c["url"]))
+        try:
+            extra = parrafos_de(bajar(c["url"]))
+        except ErrorLectura as e:
+            if not parrafos:
+                return fin(motivo=str(e))
+            extra = []
         if sum(len(p) for p in extra) > sum(len(p) for p in parrafos):
             parrafos = extra
     if not any(re.search(r"\d", p) for p in parrafos):
@@ -307,14 +489,23 @@ def explorar_noticia(c: dict, *, cliente=None, ahora: datetime | None = None, ba
     return fin(motivo=f"resumen rechazado tras {P['intentos_resumen']} intentos: {aviso}")
 
 
+_AUTO = object()
+
+
 def explorar(medios_ids: list[str] | None = None, max_por_medio: int = 8, *, cliente=None,
-             ahora: datetime | None = None, leer=_get, bajar=bajar_cuerpo, tope_usd: float = 1.0) -> dict:
+             ahora: datetime | None = None, leer=_get, bajar=_AUTO, tope_usd: float = 1.0,
+             resolver=resolver_gnews) -> dict:
     ahora = ahora or datetime.now(timezone.utc)
     med = cargar_med01()
+    if bajar is _AUTO:  # lectura del enlace original con el mismo `leer`, respetando robots.txt
+        bajar = functools.partial(bajar_cuerpo, leer=leer, cache=None if leer is _get else {})
     medios = [m for m in med["medios"] if not medios_ids or m["id"] in medios_ids]
     noticias, descartes, gasto = [], [], 0.0
     for m in medios:
-        for c in recolectar(m, max_por_medio, ahora, leer):
+        desc_rec: list = []
+        cands = recolectar(m, max_por_medio, ahora, leer, resolver, desc_rec, med)
+        descartes += desc_rec
+        for c in cands:
             if gasto >= tope_usd:
                 descartes.append({"url": c["url"], "motivo": "tope de gasto alcanzado"})
                 continue

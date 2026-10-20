@@ -8,7 +8,7 @@ modelo_fuente: pipeline/config.yaml
 temperatura: default                    # no se envía
 contrato_salida: noticia                # contratos/noticia.schema.json
 esquema_modelo: interno                 # subconjunto que llena el modelo; el resto lo completa run.py
-insumos: [MED01 v1.0]
+insumos: [MED01 v1.1]   # siempre la versión más alta presente en insumos/medios/
 parametros:
   max_resumen_palabras: 80
   max_palabras_literales: 25
