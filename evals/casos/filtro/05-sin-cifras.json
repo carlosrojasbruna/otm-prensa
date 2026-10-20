@@ -1,0 +1,47 @@
+{
+  "id": "05-sin-cifras",
+  "descripcion": "Noticia sintética con un tema potencialmente modelable pero sin ninguna cifra.",
+  "noticia": {
+    "id": "2026-10-19-ciper-sequia-riego",
+    "medio_id": "ciper",
+    "medio": "CIPER",
+    "idioma": "es",
+    "titulo": "Ejemplo sintético: agricultores temen una temporada de riego difícil",
+    "fecha": "2026-10-19",
+    "url": "https://www.example.org/sintetico/2026-10-19-ciper-sequia-riego",
+    "area": "medio_ambiente",
+    "resumen_propio": "Ejemplo sintético para pruebas. Agricultores de un valle dicen temer una temporada de riego complicada por la escasez de agua y piden turnos más equitativos. El texto es cualitativo: no entrega caudales, superficies, calendarios ni ninguna cifra.",
+    "cifras": [],
+    "recuperada_en": "2026-10-19T09:00:00Z"
+  },
+  "esperado": {
+    "pasa": false,
+    "total_min": 2,
+    "total_max": 6
+  },
+  "respuesta_falsa": {
+    "criterios": {
+      "genuino": {
+        "justificacion": "Valoración sintética de genuino.",
+        "puntaje": 2
+      },
+      "decisiones": {
+        "justificacion": "Valoración sintética de decisiones.",
+        "puntaje": 1
+      },
+      "realismo": {
+        "justificacion": "Valoración sintética de realismo.",
+        "puntaje": 2
+      },
+      "autenticidad": {
+        "justificacion": "Valoración sintética de autenticidad.",
+        "puntaje": 0
+      },
+      "validacion": {
+        "justificacion": "Valoración sintética de validacion.",
+        "puntaje": 0
+      }
+    },
+    "justificacion_global": "Hay un problema de reparto real, pero sin cifras ni datos no se puede integrar un componente auténtico ni contrastar."
+  }
+}

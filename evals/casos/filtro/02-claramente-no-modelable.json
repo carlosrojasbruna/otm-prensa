@@ -1,0 +1,47 @@
+{
+  "id": "02-claramente-no-modelable",
+  "descripcion": "Noticia sintética sin problema modelable: ceremonia y opinión, sin datos.",
+  "noticia": {
+    "id": "2026-10-16-canal13-premio-homenaje",
+    "medio_id": "canal13",
+    "medio": "Canal 13",
+    "idioma": "es",
+    "titulo": "Ejemplo sintético: homenaje a un exdirector de teatro",
+    "fecha": "2026-10-16",
+    "url": "https://www.example.org/sintetico/2026-10-16-canal13-premio-homenaje",
+    "area": "sociedad_datos",
+    "resumen_propio": "Ejemplo sintético para pruebas. Una crónica breve sobre un homenaje a un exdirector de teatro, con palabras de colegas y un recuerdo de sus obras. No contiene mediciones, comparaciones ni decisiones por tomar.",
+    "cifras": [],
+    "recuperada_en": "2026-10-16T09:00:00Z"
+  },
+  "esperado": {
+    "pasa": false,
+    "total_min": 0,
+    "total_max": 3
+  },
+  "respuesta_falsa": {
+    "criterios": {
+      "genuino": {
+        "justificacion": "Valoración sintética de genuino.",
+        "puntaje": 0
+      },
+      "decisiones": {
+        "justificacion": "Valoración sintética de decisiones.",
+        "puntaje": 0
+      },
+      "realismo": {
+        "justificacion": "Valoración sintética de realismo.",
+        "puntaje": 2
+      },
+      "autenticidad": {
+        "justificacion": "Valoración sintética de autenticidad.",
+        "puntaje": 0
+      },
+      "validacion": {
+        "justificacion": "Valoración sintética de validacion.",
+        "puntaje": 0
+      }
+    },
+    "justificacion_global": "Crónica descriptiva sin pregunta, sin datos ni forma de contrastar; no sirve para modelar."
+  }
+}

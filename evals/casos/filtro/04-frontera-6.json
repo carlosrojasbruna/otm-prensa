@@ -1,0 +1,66 @@
+{
+  "id": "04-frontera-6",
+  "descripcion": "Frontera inferior: total esperado 6, justo bajo el umbral (no pasa).",
+  "noticia": {
+    "id": "2026-10-18-reuters-precio-cobre",
+    "medio_id": "reuters",
+    "medio": "Reuters",
+    "idioma": "es",
+    "titulo": "Ejemplo sintético: el precio del cobre cierra la semana con un alza",
+    "fecha": "2026-10-18",
+    "url": "https://www.example.org/sintetico/2026-10-18-reuters-precio-cobre",
+    "area": "economia",
+    "resumen_propio": "Ejemplo sintético para pruebas. Se informa que el precio del cobre subió durante la semana y se citan el valor de cierre y la variación porcentual. La nota atribuye el alza a la demanda, sin plantear una pregunta que requiera construir un modelo.",
+    "cifras": [
+      {
+        "valor": 4.35,
+        "unidad": "USD/lb",
+        "que_es": "precio de cierre semanal (sintético)",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 1"
+        }
+      },
+      {
+        "valor": 2.1,
+        "unidad": "porcentaje",
+        "que_es": "variación semanal (sintético)",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 1"
+        }
+      }
+    ],
+    "recuperada_en": "2026-10-18T09:00:00Z"
+  },
+  "esperado": {
+    "pasa": false,
+    "total_min": 5,
+    "total_max": 6
+  },
+  "respuesta_falsa": {
+    "criterios": {
+      "genuino": {
+        "justificacion": "Valoración sintética de genuino.",
+        "puntaje": 1
+      },
+      "decisiones": {
+        "justificacion": "Valoración sintética de decisiones.",
+        "puntaje": 1
+      },
+      "realismo": {
+        "justificacion": "Valoración sintética de realismo.",
+        "puntaje": 2
+      },
+      "autenticidad": {
+        "justificacion": "Valoración sintética de autenticidad.",
+        "puntaje": 1
+      },
+      "validacion": {
+        "justificacion": "Valoración sintética de validacion.",
+        "puntaje": 1
+      }
+    },
+    "justificacion_global": "Datos reales pero la nota solo describe el movimiento; hay poco problema abierto y el contraste es solo de plausibilidad."
+  }
+}

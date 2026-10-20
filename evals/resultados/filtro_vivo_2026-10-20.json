@@ -1,0 +1,324 @@
+{
+  "resumen": {
+    "fecha": "2026-10-20",
+    "agente": "filtro",
+    "modelo": "claude-haiku-5-5",
+    "version_prompt": "1.0",
+    "version_rubrica": "4.0",
+    "umbral": 7,
+    "corridas_por_caso": 2,
+    "gasto_total_usd": 0.003242,
+    "acuerdo_decision_entre_corridas": "4/5 casos",
+    "acuerdo_total_exacto_entre_corridas": "2/5 casos",
+    "acuerdo_decision_con_esperado": "9/10 corridas",
+    "total_en_rango_esperado": "6/10 corridas",
+    "nota": "Los modelos 5.5 no aceptan temperature; la consistencia se mide como acuerdo entre corridas."
+  },
+  "casos": [
+    {
+      "caso": "01-claramente-modelable",
+      "esperado": {
+        "pasa": true,
+        "total_min": 8,
+        "total_max": 10
+      },
+      "corridas": [
+        {
+          "puntajes": {
+            "genuino": 2,
+            "decisiones": 2,
+            "realismo": 1,
+            "autenticidad": 2,
+            "validacion": 2
+          },
+          "total": 9,
+          "pasa": true,
+          "justificacion": "Noticia con pregunta real de demanda y tres cifras utilizables; el modelo exige supuestos sobre uso y distancia y admite contraste posterior. Realismo algo limitado por el carácter sintético declarado.",
+          "costo_usd": 0.000672,
+          "request_id": "req_011CgE1FwXxapzZAC49JfhmQ",
+          "uso": {
+            "input_tokens": 551,
+            "output_tokens": 461,
+            "cache_creation_input_tokens": 3094,
+            "cache_read_input_tokens": 0
+          }
+        },
+        {
+          "puntajes": {
+            "genuino": 2,
+            "decisiones": 2,
+            "realismo": 1,
+            "autenticidad": 1,
+            "validacion": 1
+          },
+          "total": 7,
+          "pasa": true,
+          "justificacion": "Noticia con una pregunta modelable de demanda y decisiones de inversión, pero el carácter sintético reduce realismo y autenticidad. La validación depende de datos futuros no mencionados.",
+          "costo_usd": 0.00032,
+          "request_id": "req_011CgE1GLLeZyPh9xyEzAFey",
+          "uso": {
+            "input_tokens": 551,
+            "output_tokens": 468,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 3094
+          }
+        }
+      ],
+      "acuerdo_decision_entre_corridas": true,
+      "acuerdo_total_exacto_entre_corridas": false,
+      "diferencia_max_total": 2,
+      "acuerdo_con_esperado": [
+        true,
+        true
+      ],
+      "total_en_rango_esperado": [
+        true,
+        false
+      ]
+    },
+    {
+      "caso": "02-claramente-no-modelable",
+      "esperado": {
+        "pasa": false,
+        "total_min": 0,
+        "total_max": 3
+      },
+      "corridas": [
+        {
+          "puntajes": {
+            "genuino": 0,
+            "decisiones": 0,
+            "realismo": 1,
+            "autenticidad": 0,
+            "validacion": 0
+          },
+          "total": 1,
+          "pasa": false,
+          "justificacion": "Noticia descriptiva y de homenaje, sin cifras, sin pregunta modelable y sin posibilidad de contraste. Es un ejemplo sintético de prueba y no ofrece potencial para una tarea de modelamiento.",
+          "costo_usd": 0.000271,
+          "request_id": "req_011CgE1GbLZ415sW1Muy1KwS",
+          "uso": {
+            "input_tokens": 226,
+            "output_tokens": 435,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 3094
+          }
+        },
+        {
+          "puntajes": {
+            "genuino": 0,
+            "decisiones": 0,
+            "realismo": 1,
+            "autenticidad": 0,
+            "validacion": 0
+          },
+          "total": 1,
+          "pasa": false,
+          "justificacion": "Noticia descriptiva y sin cifras ni problema cuantitativo. Ninguna pregunta modelable ni datos para contrastar un modelo, por lo que su potencial de modelabilidad es nulo.",
+          "costo_usd": 0.000236,
+          "request_id": "req_011CgE1GqKS6RKASbvsFtnz7",
+          "uso": {
+            "input_tokens": 226,
+            "output_tokens": 365,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 3094
+          }
+        }
+      ],
+      "acuerdo_decision_entre_corridas": true,
+      "acuerdo_total_exacto_entre_corridas": true,
+      "diferencia_max_total": 0,
+      "acuerdo_con_esperado": [
+        true,
+        true
+      ],
+      "total_en_rango_esperado": [
+        true,
+        true
+      ]
+    },
+    {
+      "caso": "03-frontera-7",
+      "esperado": {
+        "pasa": true,
+        "total_min": 7,
+        "total_max": 8
+      },
+      "corridas": [
+        {
+          "puntajes": {
+            "genuino": 2,
+            "decisiones": 2,
+            "realismo": 1,
+            "autenticidad": 1,
+            "validacion": 1
+          },
+          "total": 7,
+          "pasa": true,
+          "justificacion": "Noticia con una pregunta modelable sobre el tiempo de vaciado de la lista, pero con solo dos cifras y sin procedimiento de atención descrito. Es potencial moderado, condicionado a obtener datos adicionales.",
+          "costo_usd": 0.000295,
+          "request_id": "req_011CgE1H4WS9FcLkeBJEEGpQ",
+          "uso": {
+            "input_tokens": 424,
+            "output_tokens": 444,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 3094
+          }
+        },
+        {
+          "puntajes": {
+            "genuino": 2,
+            "decisiones": 2,
+            "realismo": 0,
+            "autenticidad": 1,
+            "validacion": 1
+          },
+          "total": 6,
+          "pasa": false,
+          "justificacion": "Noticia sintética para pruebas: plantea una pregunta modelable con supuestos, pero no es un hecho real, lo que la hace poco apta para una tarea auténtica. Puntaje bajo el umbral.",
+          "costo_usd": 0.000305,
+          "request_id": "req_011CgE1HNNyH8C5FivkYPTuM",
+          "uso": {
+            "input_tokens": 424,
+            "output_tokens": 464,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 3094
+          }
+        }
+      ],
+      "acuerdo_decision_entre_corridas": false,
+      "acuerdo_total_exacto_entre_corridas": false,
+      "diferencia_max_total": 1,
+      "acuerdo_con_esperado": [
+        true,
+        false
+      ],
+      "total_en_rango_esperado": [
+        true,
+        false
+      ]
+    },
+    {
+      "caso": "04-frontera-6",
+      "esperado": {
+        "pasa": false,
+        "total_min": 5,
+        "total_max": 6
+      },
+      "corridas": [
+        {
+          "puntajes": {
+            "genuino": 0,
+            "decisiones": 0,
+            "realismo": 0,
+            "autenticidad": 1,
+            "validacion": 1
+          },
+          "total": 2,
+          "pasa": false,
+          "justificacion": "Noticia descriptiva de resultado cerrado, sin problema que requiera modelar ni decisiones de modelación. Además es un ejemplo sintético, lo que reduce el realismo. Puntaje bajo, no modelable.",
+          "costo_usd": 0.000287,
+          "request_id": "req_011CgE1HdZ2jiimXNqomxUZG",
+          "uso": {
+            "input_tokens": 414,
+            "output_tokens": 430,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 3094
+          }
+        },
+        {
+          "puntajes": {
+            "genuino": 0,
+            "decisiones": 0,
+            "realismo": 0,
+            "autenticidad": 1,
+            "validacion": 0
+          },
+          "total": 1,
+          "pasa": false,
+          "justificacion": "Noticia descriptiva de un cierre de precio y una variación semanal, sintética y sin pregunta que requiera modelar. Sin decisiones de modelación, sin realismo verificable y sin evidencia para contrastar. Potencial de modelamiento muy bajo.",
+          "costo_usd": 0.000285,
+          "request_id": "req_011CgE1HuAsgwASoHR4RAzcz",
+          "uso": {
+            "input_tokens": 414,
+            "output_tokens": 426,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 3094
+          }
+        }
+      ],
+      "acuerdo_decision_entre_corridas": true,
+      "acuerdo_total_exacto_entre_corridas": false,
+      "diferencia_max_total": 1,
+      "acuerdo_con_esperado": [
+        true,
+        true
+      ],
+      "total_en_rango_esperado": [
+        false,
+        false
+      ]
+    },
+    {
+      "caso": "05-sin-cifras",
+      "esperado": {
+        "pasa": false,
+        "total_min": 2,
+        "total_max": 6
+      },
+      "corridas": [
+        {
+          "puntajes": {
+            "genuino": 2,
+            "decisiones": 2,
+            "realismo": 1,
+            "autenticidad": 0,
+            "validacion": 0
+          },
+          "total": 5,
+          "pasa": false,
+          "justificacion": "Noticia sintética y cualitativa con una necesidad modelable de reparto de agua, pero sin cifras ni evidencia para validar un modelo. Puntaje bajo por autenticidad y validación nulas.",
+          "costo_usd": 0.000279,
+          "request_id": "req_011CgE1JBCnjj9HstZnosHq7",
+          "uso": {
+            "input_tokens": 234,
+            "output_tokens": 449,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 3094
+          }
+        },
+        {
+          "puntajes": {
+            "genuino": 2,
+            "decisiones": 2,
+            "realismo": 1,
+            "autenticidad": 0,
+            "validacion": 0
+          },
+          "total": 5,
+          "pasa": false,
+          "justificacion": "Noticia de problema genuino y decisiones abiertas, pero sin cifras, con realismo parcial por ser ejemplo sintético y sin evidencia para validar un modelo. Puntaje bajo y poco modelable.",
+          "costo_usd": 0.000292,
+          "request_id": "req_011CgE1JScyzQGcDQpkZKXWd",
+          "uso": {
+            "input_tokens": 234,
+            "output_tokens": 475,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 3094
+          }
+        }
+      ],
+      "acuerdo_decision_entre_corridas": true,
+      "acuerdo_total_exacto_entre_corridas": true,
+      "diferencia_max_total": 0,
+      "acuerdo_con_esperado": [
+        true,
+        true
+      ],
+      "total_en_rango_esperado": [
+        true,
+        true
+      ]
+    }
+  ]
+}

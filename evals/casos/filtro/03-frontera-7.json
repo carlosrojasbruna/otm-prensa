@@ -1,0 +1,66 @@
+{
+  "id": "03-frontera-7",
+  "descripcion": "Frontera superior: total esperado 7, justo en el umbral (pasa).",
+  "noticia": {
+    "id": "2026-10-17-cnnchile-listas-espera",
+    "medio_id": "cnnchile",
+    "medio": "CNN Chile",
+    "idioma": "es",
+    "titulo": "Ejemplo sintético: crece la espera para una especialidad médica",
+    "fecha": "2026-10-17",
+    "url": "https://www.example.org/sintetico/2026-10-17-cnnchile-listas-espera",
+    "area": "salud",
+    "resumen_propio": "Ejemplo sintético para pruebas. Un hospital informa que la lista de espera para una especialidad aumentó respecto del año anterior y entrega el número de pacientes y los cupos mensuales. No explica cómo se atiende a los pacientes ni cuánto tardaría en vaciarse la lista.",
+    "cifras": [
+      {
+        "valor": 1850,
+        "unidad": "pacientes",
+        "que_es": "personas en lista de espera (sintético)",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 1"
+        }
+      },
+      {
+        "valor": 95,
+        "unidad": "cupos/mes",
+        "que_es": "cupos mensuales (sintético)",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 3"
+        }
+      }
+    ],
+    "recuperada_en": "2026-10-17T09:00:00Z"
+  },
+  "esperado": {
+    "pasa": true,
+    "total_min": 7,
+    "total_max": 8
+  },
+  "respuesta_falsa": {
+    "criterios": {
+      "genuino": {
+        "justificacion": "Valoración sintética de genuino.",
+        "puntaje": 2
+      },
+      "decisiones": {
+        "justificacion": "Valoración sintética de decisiones.",
+        "puntaje": 1
+      },
+      "realismo": {
+        "justificacion": "Valoración sintética de realismo.",
+        "puntaje": 2
+      },
+      "autenticidad": {
+        "justificacion": "Valoración sintética de autenticidad.",
+        "puntaje": 1
+      },
+      "validacion": {
+        "justificacion": "Valoración sintética de validacion.",
+        "puntaje": 1
+      }
+    },
+    "justificacion_global": "Hay una pregunta sobre el tiempo de espera y datos básicos; las decisiones y el contraste son limitados."
+  }
+}

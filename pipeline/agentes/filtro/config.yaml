@@ -1,0 +1,19 @@
+# Configuración del agente filtro (modelabilidad). El modelo y los precios viven en pipeline/config.yaml.
+agente: filtro
+version_prompt: "1.0"
+prompt: prompt.md
+# El modelo se lee de pipeline/config.yaml::modelos.filtro (claude-haiku-5-5 de partida).
+# Regla del plan: sube a claude-sonnet-5-5 si kappa < 0,6 contra la decisión esperada (eval-engineer, con evidencia).
+modelo_escalamiento: claude-sonnet-5-5
+# Los modelos 5.5 no aceptan `temperature`: no hay "temperatura 0". La consistencia se mide como
+# acuerdo de decisión (pasa/no pasa) y de total entre N corridas del mismo caso (evals/resultados/).
+temperatura: null
+max_tokens: 2000
+# Umbral: GOB01 §1 (>= 7/10) == RUB01 v4.0 version_corta_filtro.umbral_propuesto. run.py verifica que coincidan.
+umbral: 7
+puntaje_maximo: 10
+version_rubrica: "4.0"
+criterios: [genuino, decisiones, realismo, autenticidad, validacion]
+# Contrato: no tiene esquema propio; escribe el bloque `filtro` de noticia.
+contrato: "noticia#/properties/filtro"
+contrato_artefacto: noticia
