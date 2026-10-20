@@ -1,0 +1,171 @@
+{
+  "run": {
+    "id": "N1_VV_r1",
+    "nivel": "N1",
+    "composicion": "VV",
+    "rep": 1,
+    "estilos": [
+      "V",
+      "V"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.065612,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 2,
+        "fase": "P1-MRS",
+        "fase_secundaria": null,
+        "eventos": [
+          "DIST",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P2-RM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P4-WM",
+        "fase_secundaria": "P3-MM",
+        "eventos": []
+      },
+      {
+        "n": 5,
+        "fase": "P3-MM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 6,
+        "fase": "P3-MM",
+        "fase_secundaria": "P4-WM",
+        "eventos": []
+      },
+      {
+        "n": 7,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 8,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "PREC"
+        ]
+      },
+      {
+        "n": 9,
+        "fase": "P6-VAL",
+        "fase_secundaria": "EMK",
+        "eventos": []
+      },
+      {
+        "n": 10,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P7-EXP",
+        "eventos": []
+      },
+      {
+        "n": 11,
+        "fase": "P2-RM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "STRAT",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 12,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 13,
+        "fase": "P2-RM",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "DIST",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 14,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P7-EXP",
+        "eventos": []
+      },
+      {
+        "n": 15,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": [
+          "PREC"
+        ]
+      },
+      {
+        "n": 16,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": [
+          "DIST"
+        ]
+      }
+    ],
+    "bloqueos": [
+      {
+        "codigo": "B12",
+        "turnos": [
+          1,
+          2
+        ],
+        "resolucion": "peer",
+        "descripcion": "Ambos dudan sobre qué datos usar y cómo seguir; B propone hacer un dibujo y A lo ejecuta en el turno 3."
+      },
+      {
+        "codigo": "B56",
+        "turnos": [
+          8,
+          9,
+          10
+        ],
+        "resolucion": "peer",
+        "descripcion": "El resultado de casi 1,5 km choca con la foto (cerro empinado vs. triángulo chato); dudan sin avanzar hasta que A reinterpreta la geometría incluyendo el ancho del cerro en el turno 11."
+      }
+    ],
+    "supuestos": [
+      "cable del teleférico recto (diagonal)",
+      "triángulo rectángulo entre altura y horizontal",
+      "el cerro ocupa un ancho de 300-400 m en la base (estimado con la foto)",
+      "el tiempo de escalada no sirve porque no se conoce la velocidad de trepada"
+    ],
+    "modelo": "geométrico (Pitágoras)",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Giuseppe corría unos 1100 m (1489 m del cálculo con Pitágoras menos unos 400 m que ocupa el cerro por abajo, según la foto)."
+    },
+    "ruta_principal": "R3",
+    "rutas": [
+      "R3",
+      "R2"
+    ]
+  }
+}

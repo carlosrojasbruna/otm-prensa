@@ -1,0 +1,80 @@
+{
+  "ruta_principal": {
+    "piloto": "R3",
+    "repro": "R5",
+    "igual": false
+  },
+  "rutas": {
+    "piloto": [
+      "R3",
+      "R5"
+    ],
+    "repro": [
+      "R5",
+      "R3"
+    ]
+  },
+  "bloqueos_piloto": [
+    [
+      "B56",
+      [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "peer"
+    ]
+  ],
+  "bloqueos_repro": [
+    [
+      "B56",
+      [
+        7,
+        8
+      ],
+      "peer"
+    ]
+  ],
+  "n_bloqueos": {
+    "piloto": 1,
+    "repro": 1,
+    "dentro_de_1": true
+  },
+  "ruta_fases": {
+    "piloto": [
+      "P3-MM",
+      "P4-WM",
+      "P3-MM",
+      "P4-WM",
+      "P5-INT",
+      "P1-MRS",
+      "P6-VAL",
+      "P2-RM",
+      "P6-VAL",
+      "P7-EXP"
+    ],
+    "repro": [
+      "P1-MRS",
+      "P3-MM",
+      "P4-WM",
+      "P3-MM",
+      "P4-WM",
+      "P6-VAL",
+      "P2-RM",
+      "P4-WM",
+      "P3-MM",
+      "P4-WM",
+      "P5-INT",
+      "P7-EXP",
+      "P6-VAL"
+    ]
+  },
+  "mensajes": [
+    "N1_AA_r1: ya existe, se omite",
+    "N1_AA_r1: codificada (ruta R5)"
+  ],
+  "costo_usd": 0.0979
+}

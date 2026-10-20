@@ -1,0 +1,250 @@
+{
+  "run": {
+    "id": "N1_AA_r1",
+    "nivel": "N1",
+    "composicion": "AA",
+    "rep": 1,
+    "estilos": [
+      "A",
+      "A"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.097864,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P3-MM",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 4,
+        "fase": "P3-MM",
+        "fase_secundaria": "P4-WM",
+        "eventos": []
+      },
+      {
+        "n": 5,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 6,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "PREC"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P2-RM",
+        "eventos": []
+      },
+      {
+        "n": 8,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "DIST-12"
+        ]
+      },
+      {
+        "n": 9,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "DIST-12",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 10,
+        "fase": "P4-WM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "DIST-12",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 11,
+        "fase": "P3-MM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "DIST-12"
+        ]
+      },
+      {
+        "n": 12,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": [
+          "PREC"
+        ]
+      },
+      {
+        "n": 13,
+        "fase": "P5-INT",
+        "fase_secundaria": "P7-EXP",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 14,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": [
+          "DIST-12",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 15,
+        "fase": "P6-VAL",
+        "fase_secundaria": null,
+        "eventos": [
+          "ASSUME"
+        ]
+      }
+    ],
+    "bloqueos": [
+      {
+        "codigo": "B56",
+        "turnos": [
+          7,
+          8
+        ],
+        "resolucion": "peer",
+        "descripcion": "Tras obtener 1490 m, A duda de que esa sea la distancia hasta el pie del cerro y propone restar algo; B no sabe qué restar ni cómo calcular la escalada sin la velocidad ('no sé cómo sacar'). A lo destraba en el turno 9 al proponer que se suponga una velocidad de escalada."
+      }
+    ],
+    "fenomenos": {
+      "F1": {
+        "codigo": "O",
+        "turnos": [
+          1,
+          4
+        ],
+        "justificacion": "No se quedan en 1,5 km: identifican el cable como hipotenusa y el desnivel como cateto, y aplican Pitágoras."
+      },
+      "F2": {
+        "codigo": "P",
+        "turnos": [
+          8,
+          9,
+          10,
+          11,
+          14
+        ],
+        "justificacion": "El dato de 12 minutos genera confusión y se usa con una velocidad inventada, pero nadie lo descarta argumentando sobre lo que se pregunta."
+      },
+      "F3": {
+        "codigo": "O",
+        "turnos": [],
+        "justificacion": "No hay objeción al ángulo recto ni al uso de Pitágoras; lo asumen desde el turno 1."
+      },
+      "F4": {
+        "codigo": "R",
+        "turnos": [
+          5,
+          6,
+          12
+        ],
+        "justificacion": "Despejan y calculan Pitágoras correctamente, con decimales de metro (1489,2; 357,2) que luego redondean."
+      },
+      "F5": {
+        "codigo": "O",
+        "turnos": [
+          7,
+          11,
+          15
+        ],
+        "justificacion": "Cuestionan que el cateto horizontal llegue bajo la cima y no al pie del cerro, ajustan el modelo y dudan de la razonabilidad del supuesto de 2 km/h. La corrección que hacen, sin embargo, es inadecuada."
+      },
+      "F6": {
+        "codigo": "P",
+        "turnos": [
+          1,
+          2,
+          13
+        ],
+        "justificacion": "Hay algo de planificación (anotar los datos, unificar unidades primero, dejar escrito el supuesto), pero no hay un monitoreo explícito y sostenido."
+      }
+    },
+    "conductas_no_documentadas": [
+      {
+        "tipo": "N",
+        "turnos": [
+          9,
+          10,
+          11,
+          12
+        ],
+        "descripcion": "Usan los 12 minutos con una velocidad de escalada inventada (2 km/h) para estimar el largo de la ladera, calculan su proyección horizontal con un segundo Pitágoras y la restan."
+      },
+      {
+        "tipo": "N",
+        "turnos": [
+          13
+        ],
+        "descripcion": "Redondean 1133 m a unos 1100 m apelando a que la respuesta es aproximada."
+      },
+      {
+        "tipo": "N",
+        "turnos": [
+          1
+        ],
+        "descripcion": "Proponen Pitágoras de inmediato, sin un dibujo ni una discusión explícita de la geometría de la situación."
+      }
+    ],
+    "riesgos": {
+      "X1": {
+        "presente": false,
+        "justificacion": "La reflexión sobre el pie del cerro sale del enunciado y la resuelven con un razonamiento imperfecto. Es verosímil para el par."
+      },
+      "X3": {
+        "presente": false,
+        "justificacion": "Los errores y el lenguaje están vinculados a la tarea y no son exagerados."
+      },
+      "X4": {
+        "presente": false,
+        "justificacion": "La idea de restar la parte del cerro surge del texto ('hasta el pie del cerro y luego lo escalaba'), y no aparecen valores de la solución de referencia como 1,4 km."
+      }
+    },
+    "respuesta_final": {
+      "texto": "Cable = 30 × 0,05 = 1,5 km = 1500 m; horizontal √(1500² − 180²) ≈ 1490 m. Suponiendo 2 km/h, la escalada es de 400 m; su horizontal √(400² − 180²) ≈ 357 m; 1490 − 357 ≈ 1100 m.",
+      "km": 1.1,
+      "supuestos_explicitos": [
+        "Velocidad de escalada de 2 km/h durante los 12 minutos"
+      ]
+    },
+    "ruta_principal": "R5",
+    "rutas": [
+      "R5",
+      "R3"
+    ]
+  }
+}

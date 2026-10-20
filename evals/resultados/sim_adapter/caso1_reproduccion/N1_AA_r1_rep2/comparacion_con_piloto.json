@@ -1,0 +1,65 @@
+{
+  "ruta_principal": {
+    "piloto": "R3",
+    "repro": "R2",
+    "igual": false
+  },
+  "rutas": {
+    "piloto": [
+      "R3",
+      "R5"
+    ],
+    "repro": [
+      "R2"
+    ]
+  },
+  "bloqueos_piloto": [
+    [
+      "B56",
+      [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "peer"
+    ]
+  ],
+  "bloqueos_repro": [],
+  "n_bloqueos": {
+    "piloto": 1,
+    "repro": 0,
+    "dentro_de_1": true
+  },
+  "ruta_fases": {
+    "piloto": [
+      "P3-MM",
+      "P4-WM",
+      "P3-MM",
+      "P4-WM",
+      "P5-INT",
+      "P1-MRS",
+      "P6-VAL",
+      "P2-RM",
+      "P6-VAL",
+      "P7-EXP"
+    ],
+    "repro": [
+      "P3-MM",
+      "P4-WM",
+      "P3-MM",
+      "P4-WM",
+      "P2-RM",
+      "P5-INT",
+      "P6-VAL",
+      "P7-EXP"
+    ]
+  },
+  "mensajes": [
+    "N1_AA_r1: 12 turnos, acuerdo, US$0.055",
+    "N1_AA_r1: codificada (ruta R2)"
+  ],
+  "costo_usd": 0.127
+}

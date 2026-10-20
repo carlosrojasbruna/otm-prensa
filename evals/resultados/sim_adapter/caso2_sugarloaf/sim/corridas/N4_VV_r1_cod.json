@@ -1,0 +1,100 @@
+{
+  "run": {
+    "id": "N4_VV_r1",
+    "nivel": "N4",
+    "composicion": "VV",
+    "rep": 1,
+    "estilos": [
+      "V",
+      "V"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.042368,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P2-RM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P4-WM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P4-WM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P2-RM",
+        "fase_secundaria": "EMK",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P2-RM",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "STRAT",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 6,
+        "fase": "P5-INT",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 8,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      }
+    ],
+    "bloqueos": [],
+    "supuestos": [
+      "cable recto (hipotenusa de un triángulo rectángulo)",
+      "el cerro tiene ancho: se resta la distancia del pie a la vertical de la cima",
+      "ancho del cerro estimado con la foto (unos 200 a 300 m)",
+      "solo se resta la mitad del ancho (unos 125 m)",
+      "tiempo de escalada no se usa"
+    ],
+    "modelo": "geométrico (Pitágoras)",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Cable = 30 km/h × 3 min = 1500 m; base = √(1500² − 180²) ≈ 1489 m; restamos unos 125 m (mitad del ancho del cerro, estimado con la foto), así que Giuseppe corría unos 1360 m, aprox. 1,4 km; los 12 min no se usan."
+    },
+    "ruta_principal": "R3",
+    "rutas": [
+      "R3",
+      "R2"
+    ]
+  }
+}

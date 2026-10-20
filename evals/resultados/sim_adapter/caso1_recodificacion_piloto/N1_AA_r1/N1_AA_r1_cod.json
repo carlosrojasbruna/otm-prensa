@@ -1,0 +1,265 @@
+{
+  "run": {
+    "id": "N1_AA_r1",
+    "nivel": "N1",
+    "composicion": "AA",
+    "rep": 1,
+    "estilos": [
+      "A",
+      "A"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.0944,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P3-MM",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 3,
+        "fase": "P3-MM",
+        "fase_secundaria": "P4-WM",
+        "eventos": []
+      },
+      {
+        "n": 4,
+        "fase": "P4-WM",
+        "fase_secundaria": "P3-MM",
+        "eventos": []
+      },
+      {
+        "n": 5,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": [
+          "PREC"
+        ]
+      },
+      {
+        "n": 6,
+        "fase": "P5-INT",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "DIST-12"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P2-RM",
+        "fase_secundaria": "P1-MRS",
+        "eventos": [
+          "DIST-12"
+        ]
+      },
+      {
+        "n": 8,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "DIST-12"
+        ]
+      },
+      {
+        "n": 9,
+        "fase": "P2-RM",
+        "fase_secundaria": "P1-MRS",
+        "eventos": [
+          "DIST-12",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 10,
+        "fase": "P4-WM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "DIST-12",
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 11,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 12,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P2-RM",
+        "eventos": []
+      },
+      {
+        "n": 13,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 14,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": [
+          "PREC"
+        ]
+      },
+      {
+        "n": 15,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "PREC"
+        ]
+      },
+      {
+        "n": 16,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      }
+    ],
+    "bloqueos": [
+      {
+        "codigo": "B23",
+        "turnos": [
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "resolucion": "peer",
+        "descripcion": "Tras notar que el cateto horizontal llega bajo la cima y no al pie del cerro, intentan descontar la escalada con los 12 minutos; no saben cómo hacerlo sin velocidad ('no sé cómo restar'), A objeta el supuesto de 3 km/h porque la subida va por la ladera, y B destraba proponiendo quedarse con el resultado de Pitágoras como aproximado."
+      }
+    ],
+    "fenomenos": {
+      "F1": {
+        "codigo": "O",
+        "turnos": [
+          1,
+          3,
+          4,
+          5
+        ],
+        "justificacion": "No se detienen en 1,5 km: lo tratan como hipotenusa y aplican Pitágoras con el desnivel, aunque sin dibujo explícito de la situación."
+      },
+      "F2": {
+        "codigo": "P",
+        "turnos": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          12,
+          16
+        ],
+        "justificacion": "B nota que no usaron los 12 minutos; A lo descarta en parte aludiendo a lo que se pregunta, pero luego intentan usarlo y lo abandonan por falta de velocidad, no por la pregunta."
+      },
+      "F3": {
+        "codigo": "O",
+        "turnos": [],
+        "justificacion": "No hay objeción al ángulo recto ni a Pitágoras; asumen el triángulo desde el inicio."
+      },
+      "F4": {
+        "codigo": "R",
+        "turnos": [
+          2,
+          3,
+          4,
+          5,
+          14,
+          15
+        ],
+        "justificacion": "Conversión de unidades y Pitágoras correctos; dan 1,489 km, con precisión de metro."
+      },
+      "F5": {
+        "codigo": "P",
+        "turnos": [
+          8,
+          11,
+          12,
+          15,
+          16
+        ],
+        "justificacion": "Discuten que la distancia llega bajo la cima y que Giuseppe correría algo menos, y cuestionan el supuesto inventado; pero la validación nace del dato de 12 min, no revisan el cable ni la velocidad, y la respuesta no se modifica."
+      },
+      "F6": {
+        "codigo": "P",
+        "turnos": [
+          1,
+          10,
+          11
+        ],
+        "justificacion": "Hay una planificación mínima ('primero hay que sacar...') y un monitoreo puntual del supuesto ('¿es inventar mucho?'), sin dibujo ni plan explícito del proceso."
+      }
+    },
+    "conductas_no_documentadas": [
+      {
+        "tipo": "N",
+        "turnos": [
+          10
+        ],
+        "descripcion": "Inventan una velocidad de escalada (3 km/h) para restar la distancia de la escalada y obtienen 0,889 km."
+      },
+      {
+        "tipo": "N",
+        "turnos": [
+          11,
+          12
+        ],
+        "descripcion": "Notan que la escalada va por la ladera y no en horizontal, por lo que restarla directo no cuadra."
+      },
+      {
+        "tipo": "N",
+        "turnos": [
+          14
+        ],
+        "descripcion": "Error verbal momentáneo al dictar el cálculo ('1,5 km × 0,05'), que se autocorrige."
+      }
+    ],
+    "riesgos": {
+      "X1": {
+        "presente": false,
+        "justificacion": "El razonamiento sobre la escalada es tentativo y con dudas, y es verosímil para estudiantes de 15 años."
+      },
+      "X3": {
+        "presente": false,
+        "justificacion": "El lenguaje y los errores son naturales y están ligados a la tarea."
+      },
+      "X4": {
+        "presente": false,
+        "justificacion": "Pitágoras aparece sin justificación en el turno 1, lo que es algo abrupto, pero es conocimiento escolar previo. La idea de que corría menos surge de una discusión previa sobre los 12 min, no de la nada."
+      }
+    },
+    "respuesta_final": {
+      "texto": "Aproximadamente 1,5 km (30 × 0,05 = 1,5; √(1,5² − 0,18²) ≈ 1,489 km), probablemente un poco menos por la escalada.",
+      "km": 1.5,
+      "supuestos_explicitos": [
+        "La escalada le quita algo de distancia que no se puede calcular sin la velocidad de escalada",
+        "Se responde de forma aproximada porque el problema dice 'aproximadamente'"
+      ]
+    },
+    "ruta_principal": "R3",
+    "rutas": [
+      "R3",
+      "R5"
+    ]
+  }
+}

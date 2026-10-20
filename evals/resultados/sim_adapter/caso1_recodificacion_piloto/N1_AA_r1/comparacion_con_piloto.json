@@ -1,0 +1,77 @@
+{
+  "ruta_principal": {
+    "piloto": "R3",
+    "repro": "R3",
+    "igual": true
+  },
+  "rutas": {
+    "piloto": [
+      "R3",
+      "R5"
+    ],
+    "repro": [
+      "R3",
+      "R5"
+    ]
+  },
+  "bloqueos_piloto": [
+    [
+      "B56",
+      [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "peer"
+    ]
+  ],
+  "bloqueos_repro": [
+    [
+      "B23",
+      [
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "peer"
+    ]
+  ],
+  "n_bloqueos": {
+    "piloto": 1,
+    "repro": 1,
+    "dentro_de_1": true
+  },
+  "ruta_fases": {
+    "piloto": [
+      "P3-MM",
+      "P4-WM",
+      "P3-MM",
+      "P4-WM",
+      "P5-INT",
+      "P1-MRS",
+      "P6-VAL",
+      "P2-RM",
+      "P6-VAL",
+      "P7-EXP"
+    ],
+    "repro": [
+      "P3-MM",
+      "P4-WM",
+      "P3-MM",
+      "P4-WM",
+      "P5-INT",
+      "P2-RM",
+      "P6-VAL",
+      "P2-RM",
+      "P4-WM",
+      "P6-VAL",
+      "P7-EXP"
+    ]
+  },
+  "costo_usd": 0.0944
+}
