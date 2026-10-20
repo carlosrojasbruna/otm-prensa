@@ -1,0 +1,94 @@
+# MED01 – Lista blanca de medios (v1.0, 2026-10-20). Decidido por Carlos: español e inglés; Emol, CNN Chile, CIPER, Canal 13, Reuters, BBC.
+# Reglas: solo resumen propio + enlace; nunca texto literal. Cuotas por área para evitar sesgo temático.
+# `acceso`: rss | api | gnews (Google News RSS filtrado por dominio; sin clave; entrega título, fecha y enlace al medio original)
+# `url_verificar: true` = la URL es la más probable pero el agente devops debe confirmarla; si falla, usar `respaldo`.
+# Reuters no publica RSS abierto desde 2020: se accede vía gnews (site:reuters.com) y el enlace lleva al artículo original.
+
+version: "1.0"
+idiomas: [es, en]
+frecuencia: semanal
+noticias_por_ciclo: {candidatas: 30, seleccionadas: 3}
+
+cuotas_por_area:              # máximo de tareas por área en un ciclo
+  medio_ambiente: 1
+  economia: 1
+  salud: 1
+  ciencia_tecnologia: 1
+  deporte: 1
+  transporte_ciudad: 1
+  sociedad_datos: 1
+
+medios:
+  - id: emol
+    nombre: Emol / El Mercurio
+    idioma: es
+    pais: CL
+    acceso: rss
+    url: "https://www.emol.com/rss/"
+    url_verificar: true
+    respaldo: {acceso: gnews, url: "https://news.google.com/rss/search?q=site:emol.com&hl=es-419&gl=CL&ceid=CL:es-419"}
+    areas: [economia, sociedad_datos, ciencia_tecnologia, deporte]
+  - id: cnnchile
+    nombre: CNN Chile
+    idioma: es
+    pais: CL
+    acceso: rss
+    url: "https://www.cnnchile.com/feed/"
+    url_verificar: true
+    respaldo: {acceso: gnews, url: "https://news.google.com/rss/search?q=site:cnnchile.com&hl=es-419&gl=CL&ceid=CL:es-419"}
+    areas: [economia, salud, sociedad_datos, transporte_ciudad]
+  - id: ciper
+    nombre: CIPER Chile
+    idioma: es
+    pais: CL
+    acceso: rss
+    url: "https://www.ciperchile.cl/feed/"
+    url_verificar: true
+    respaldo: {acceso: gnews, url: "https://news.google.com/rss/search?q=site:ciperchile.cl&hl=es-419&gl=CL&ceid=CL:es-419"}
+    areas: [sociedad_datos, economia, medio_ambiente]
+    nota: "Periodismo de datos: alta densidad de cifras y tablas; buena fuente de validación."
+  - id: canal13
+    nombre: Canal 13 / T13
+    idioma: es
+    pais: CL
+    acceso: rss
+    url: "https://www.t13.cl/rss"
+    url_verificar: true
+    respaldo: {acceso: gnews, url: "https://news.google.com/rss/search?q=site:t13.cl&hl=es-419&gl=CL&ceid=CL:es-419"}
+    areas: [sociedad_datos, deporte, transporte_ciudad, medio_ambiente]
+  - id: reuters
+    nombre: Reuters
+    idioma: en
+    pais: UK
+    acceso: gnews
+    url: "https://news.google.com/rss/search?q=site:reuters.com&hl=en-US&gl=US&ceid=US:en"
+    url_verificar: false
+    areas: [economia, medio_ambiente, ciencia_tecnologia, salud]
+    nota: "Sin RSS público propio desde 2020; gnews entrega el enlace al artículo en reuters.com."
+  - id: bbc
+    nombre: BBC News
+    idioma: en
+    pais: UK
+    acceso: rss
+    url: "https://feeds.bbci.co.uk/news/rss.xml"
+    url_verificar: false
+    secciones:
+      - {area: ciencia_tecnologia, url: "https://feeds.bbci.co.uk/news/science_and_environment/rss.xml"}
+      - {area: salud, url: "https://feeds.bbci.co.uk/news/health/rss.xml"}
+      - {area: economia, url: "https://feeds.bbci.co.uk/news/business/rss.xml"}
+    areas: [ciencia_tecnologia, medio_ambiente, salud, economia, deporte]
+  - id: bbcmundo
+    nombre: BBC Mundo
+    idioma: es
+    pais: UK
+    acceso: rss
+    url: "https://feeds.bbci.co.uk/mundo/rss.xml"
+    url_verificar: false
+    areas: [ciencia_tecnologia, medio_ambiente, salud]
+    nota: "Mismo medio que `bbc`, versión en español; cuenta como BBC a efectos de cuota por medio."
+
+cuota_por_medio: 1            # máximo de tareas por medio en un ciclo
+
+filtro_previo:                # antes de la rúbrica corta (RUB01 §version_corta_filtro)
+  requiere: [al_menos_una_cifra, fecha_dentro_de_14_dias, no_opinion, no_paywall_total]
+  excluye: [sucesos_policiales, politica_partidaria_sin_datos, contenido_sensible_para_menores]

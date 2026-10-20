@@ -1,0 +1,153 @@
+{
+  "id": "RUB01",
+  "nombre": "Rúbrica de calidad de la tarea de modelación",
+  "version": "4.0",
+  "fecha": "2026-10-20",
+  "origen": "Rúbrica v3 (Rojas, 2026-08-25) revisada en v4 por Abiam Muñoz (IPRE Invierno 2026), basada en Borromeo Ferri (2018) cap. 3 y Vos (2011). Codificación JSON sin cambios de contenido respecto del PDF.",
+  "pregunta": "¿Es esta una tarea de modelación matemática (y no un ejercicio contextualizado)?",
+  "escala": {
+    "2": "cumple plenamente",
+    "1": "parcial",
+    "0": "no cumple"
+  },
+  "puntaje_maximo": 24,
+  "umbral_publicacion_propuesto": {
+    "total_min": 20,
+    "ningun_criterio_en": 0,
+    "nota": "Decidido 2026-10-20 (GOB01 v1.0). Verificado contra tareas-oro v0.4."
+  },
+  "criterios": [
+    {
+      "n": 1,
+      "id": "genuino",
+      "nombre": "Problema genuino",
+      "2": "La situación plantea una necesidad a resolver y no entrega una regla, algoritmo o modelo listo para aplicar.",
+      "1": "No entrega la regla completa, pero insinúa de modo fuerte la estructura o el procedimiento.",
+      "0": "La regla/modelo está dado y la tarea se reduce a ejecutarlo."
+    },
+    {
+      "n": 2,
+      "id": "abierta",
+      "nombre": "Pregunta abierta",
+      "2": "Admite decisiones y varios caminos o modelos defendibles; la pregunta no prescribe el procedimiento.",
+      "1": "Existe apertura, pero instrucciones posteriores encauzan hacia una ruta casi única.",
+      "0": "La pregunta es cerrada o prescribe explícitamente el método."
+    },
+    {
+      "n": 3,
+      "id": "decisiones",
+      "nombre": "Decisiones, supuestos y/o información",
+      "2": "Resolver exige seleccionar información, formular supuestos, simplificar, estimar o solicitar/obtener información pertinente.",
+      "1": "Solo hay decisiones menores o supuestos casi automáticos.",
+      "0": "La situación ya está completamente estructurada y no requiere decisiones de modelación."
+    },
+    {
+      "n": 4,
+      "id": "realismo",
+      "nombre": "Realismo",
+      "2": "La situación existe o es claramente plausible en el mundo extra-matemático.",
+      "1": "Es plausible, pero el encuadre se percibe forzado para insertar matemática.",
+      "0": "Es un pseudocontexto inverosímil."
+    },
+    {
+      "n": 5,
+      "id": "autenticidad",
+      "nombre": "Componentes auténticos (Vos)",
+      "2": "Uno o más componentes extraescolares auténticos (tema, datos, recursos o actividad) están integrados de manera sustantiva en la tarea y no fueron creados para enseñar ese contenido.",
+      "1": "Hay una referencia auténtica secundaria o de contraste, pero el núcleo del material fue construido para la actividad.",
+      "0": "No hay componentes auténticos identificables; todo fue fabricado con fines educativos."
+    },
+    {
+      "n": 6,
+      "id": "contexto",
+      "nombre": "Contexto necesario",
+      "2": "El contexto condiciona decisiones de modelación y es necesario también para interpretar o validar.",
+      "1": "El contexto orienta el inicio, pero puede abandonarse una vez formulada la matemática.",
+      "0": "Es decorativo: puede eliminarse sin cambiar la resolución."
+    },
+    {
+      "n": 7,
+      "id": "ciclo",
+      "nombre": "Ciclo de modelación exigido",
+      "2": "La tarea exige de forma no trivial comprender, simplificar/estructurar, matematizar, trabajar matemáticamente, interpretar y validar.",
+      "1": "Alguna fase queda prácticamente hecha por el enunciado o se vuelve trivial.",
+      "0": "Solo se ejercita trabajo intra-matemático o una aplicación rutinaria."
+    },
+    {
+      "n": 8,
+      "id": "validacion",
+      "nombre": "Validación contextual o externa posible",
+      "2": "El modelo puede contrastarse con evidencia independiente: caso nuevo, datos, medición, restricción del contexto o prueba no usada en su construcción.",
+      "1": "Solo permite una comprobación de plausibilidad o consistencia interna limitada.",
+      "0": "No existe evidencia o condición con la cual someter el modelo a prueba."
+    },
+    {
+      "n": 9,
+      "id": "nivel",
+      "nombre": "Significatividad y nivel",
+      "2": "El contexto y lenguaje son comprensibles y pertinentes para el grupo; la demanda matemática es adecuada al nivel objetivo.",
+      "1": "Es comprensible pero poco significativo, o el nivel requiere ajustes menores.",
+      "0": "El contexto/lenguaje o la matemática dejan fuera al grupo objetivo.",
+      "nota": "Se puntúa respecto del nivel de edad declarado por la tarea (MAR03)."
+    },
+    {
+      "n": 10,
+      "id": "autodiferenciacion",
+      "nombre": "Autodiferenciación",
+      "2": "Tiene piso de entrada razonable y techo alto: permite soluciones correctas con distintos grados de sofisticación.",
+      "1": "La diversidad de niveles es limitada: piso alto o techo bajo.",
+      "0": "Solo una ruta estrecha es viable y parte del grupo queda sin entrada o sin desafío."
+    },
+    {
+      "n": 11,
+      "id": "fecundidad",
+      "nombre": "Fecundidad",
+      "2": "Las decisiones, resultados y modelos abren nuevas preguntas y permiten comparar soluciones o límites.",
+      "1": "Hay alguna discusión posterior, pero pocas extensiones sustantivas.",
+      "0": "La tarea se agota al obtener la respuesta."
+    },
+    {
+      "n": 12,
+      "id": "recursos",
+      "nombre": "Información/recursos accesibles y no reveladores",
+      "2": "La información necesaria está disponible, puede obtenerse o solicitarse sin que los materiales revelen el modelo o la regla de solución.",
+      "1": "Hay sobreorientación parcial o alguna información difícil de obtener.",
+      "0": "Falta información imprescindible sin posibilidad de obtenerla, o los materiales entregan la estructura de la solución."
+    }
+  ],
+  "version_corta_filtro": {
+    "uso": "Agente 2 (filtro de modelabilidad). Se aplica a la NOTICIA, no a una tarea: ¿esta noticia permite construir una tarea que cumpla los criterios?",
+    "criterios": [
+      "genuino",
+      "decisiones",
+      "realismo",
+      "autenticidad",
+      "validacion"
+    ],
+    "puntaje_maximo": 10,
+    "umbral_propuesto": 7,
+    "reformulacion_por_criterio": {
+      "genuino": "¿La noticia plantea una necesidad o pregunta real que no viene resuelta por una fórmula o regla explícita?",
+      "decisiones": "¿Construir un modelo exigiría seleccionar datos de la noticia, hacer supuestos o estimar lo que falta?",
+      "realismo": "¿La situación es real y actual (no un ejemplo hipotético dentro de la noticia)?",
+      "autenticidad": "¿La noticia aporta datos, cifras, tablas o una práctica real que puedan integrarse como componente auténtico?",
+      "validacion": "¿Existe o existirá evidencia independiente (datos posteriores, otra fuente, una medición) contra la cual contrastar un modelo?"
+    }
+  },
+  "instrucciones_evaluador": {
+    "entrada": "Tarea completa según PLT01 (enunciado, recursos, nivel declarado, mapa a priori del ciclo).",
+    "salida": "Por criterio: puntaje (0/1/2) y justificación de una o dos oraciones que cite el enunciado o los recursos. Total. Lista de criterios en 0 o 1 con la mejora mínima sugerida.",
+    "reglas": [
+      "Puntuar la TAREA, no la clase: lo que depende de cómo se implementa pertenece a RUB03.",
+      "El criterio 9 se evalúa contra el nivel de edad declarado, no contra un grupo real.",
+      "El criterio 5 cuenta componentes auténticos presentes e integrados; una noticia citada y usada como dato cuenta como componente auténtico.",
+      "No subir puntaje por la calidad de la redacción; no bajarlo por brevedad.",
+      "Ante duda entre dos puntajes, elegir el menor y explicar la duda."
+    ]
+  },
+  "calibracion": {
+    "archivo": "../tareas-oro/puntajes_v0.4_2026-10-20.csv",
+    "kappa_minimo_cp1": 0.7,
+    "nota": "5 de 9 puntajes son provisionales (Claude, 2026-10-20); recalibrar con doble codificación humana"
+  }
+}

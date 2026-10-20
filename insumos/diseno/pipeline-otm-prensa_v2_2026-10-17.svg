@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="2200" viewBox="0 0 1080 2200" font-family="DejaVu Sans, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#374151"/>
+    </marker>
+    <marker id="arrowloop" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b45309"/>
+    </marker>
+    <marker id="arrowloop2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#6d28d9"/>
+    </marker>
+  </defs>
+
+  <rect width="1080" height="2200" fill="#ffffff"/>
+
+  <!-- Título -->
+  <text x="540" y="70" text-anchor="middle" font-size="40" font-weight="bold" fill="#111827">Pipeline OTM-Prensa</text>
+  <text x="540" y="112" text-anchor="middle" font-size="22" fill="#4b5563">Observatorio de Tareas de Modelamiento desde la Prensa</text>
+  <text x="540" y="142" text-anchor="middle" font-size="18" fill="#6b7280">Borrador v2 · 17 oct 2026 · para discusión del equipo</text>
+
+  <!-- ENTRADA: prensa -->
+  <rect x="140" y="180" width="800" height="90" rx="14" fill="#f3f4f6" stroke="#9ca3af" stroke-width="2"/>
+  <text x="540" y="217" text-anchor="middle" font-size="24" font-weight="bold" fill="#111827">Medios de prensa (lista blanca)</text>
+  <text x="540" y="250" text-anchor="middle" font-size="18" fill="#4b5563">RSS / API · solo resumen propio + enlace · cuotas por área temática</text>
+  <line x1="540" y1="270" x2="540" y2="310" stroke="#374151" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- 1 Explorador -->
+  <rect x="140" y="312" width="800" height="120" rx="14" fill="#fff7ed" stroke="#f97316" stroke-width="3"/>
+  <rect x="140" y="312" width="16" height="120" rx="6" fill="#f97316"/>
+  <text x="180" y="352" font-size="24" font-weight="bold" fill="#111827">1 · Explorador de prensa</text>
+  <text x="180" y="384" font-size="18" fill="#4b5563">Corre semanalmente. Busca noticias con cifras, tasas,</text>
+  <text x="180" y="410" font-size="18" fill="#4b5563">tendencias o decisiones cuantificables.</text>
+  <text x="920" y="352" text-anchor="end" font-size="16" fill="#c2410c" font-weight="bold">NUEVO</text>
+  <line x1="540" y1="432" x2="540" y2="472" stroke="#374151" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- 2 Filtro -->
+  <rect x="140" y="474" width="800" height="120" rx="14" fill="#fff7ed" stroke="#f97316" stroke-width="3"/>
+  <rect x="140" y="474" width="16" height="120" rx="6" fill="#f97316"/>
+  <text x="180" y="514" font-size="24" font-weight="bold" fill="#111827">2 · Filtro de modelabilidad</text>
+  <text x="180" y="546" font-size="18" fill="#4b5563">Versión corta de la rúbrica de calidad de tarea.</text>
+  <text x="180" y="572" font-size="18" fill="#4b5563">Selecciona 2–3 noticias por ciclo.</text>
+  <text x="920" y="514" text-anchor="end" font-size="16" fill="#c2410c" font-weight="bold">NUEVO · usa rúbrica existente</text>
+  <line x1="540" y1="594" x2="540" y2="634" stroke="#374151" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- 3 Diseñador -->
+  <rect x="140" y="636" width="800" height="140" rx="14" fill="#fff7ed" stroke="#f97316" stroke-width="3"/>
+  <rect x="140" y="636" width="16" height="140" rx="6" fill="#f97316"/>
+  <text x="180" y="676" font-size="24" font-weight="bold" fill="#111827">3 · Diseñador de tarea</text>
+  <text x="180" y="708" font-size="18" fill="#4b5563">Plantilla alineada al ciclo de Blum &amp; Leiß.</text>
+  <text x="180" y="734" font-size="18" fill="#4b5563">Declara nivel por edad: 10–12 · 13–15 · 16–18 · 18–20</text>
+  <text x="180" y="760" font-size="18" fill="#4b5563">y variantes hacia arriba / hacia abajo.</text>
+  <text x="920" y="676" text-anchor="end" font-size="16" fill="#c2410c" font-weight="bold">NUEVO · usa marco existente</text>
+  <line x1="540" y1="776" x2="540" y2="816" stroke="#374151" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- 4 Evaluador -->
+  <rect x="140" y="818" width="800" height="130" rx="14" fill="#ecfdf5" stroke="#10b981" stroke-width="3"/>
+  <rect x="140" y="818" width="16" height="130" rx="6" fill="#10b981"/>
+  <text x="180" y="858" font-size="24" font-weight="bold" fill="#111827">4 · Evaluador con rúbrica</text>
+  <text x="180" y="890" font-size="18" fill="#4b5563">Puntúa la tarea (7 criterios, umbral 15/21).</text>
+  <text x="180" y="916" font-size="18" fill="#4b5563">Si no alcanza: retroalimenta y devuelve a 3 (máx. 3 vueltas).</text>
+  <text x="920" y="858" text-anchor="end" font-size="16" fill="#047857" font-weight="bold">EXISTENTE</text>
+  <!-- loop 4 -> 3 -->
+  <path d="M940,900 L1000,900 L1000,700 L944,700" fill="none" stroke="#b45309" stroke-width="3" stroke-dasharray="10,7" marker-end="url(#arrowloop)"/>
+  <text x="1020" y="800" font-size="15" fill="#b45309" transform="rotate(-90 1020 800)" text-anchor="middle">rediseño</text>
+  <line x1="540" y1="948" x2="540" y2="988" stroke="#374151" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- Revisión humana 1 -->
+  <rect x="220" y="990" width="640" height="76" rx="38" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/>
+  <text x="540" y="1024" text-anchor="middle" font-size="22" font-weight="bold" fill="#1d4ed8">Revisión humana 1 · aprobar tarea</text>
+  <text x="540" y="1050" text-anchor="middle" font-size="16" fill="#1e40af">docente del equipo · estado: borrador → revisada</text>
+  <line x1="540" y1="1066" x2="540" y2="1106" stroke="#374151" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- 5 Simulador -->
+  <rect x="140" y="1108" width="800" height="150" rx="14" fill="#ecfdf5" stroke="#10b981" stroke-width="3"/>
+  <rect x="140" y="1108" width="16" height="150" rx="6" fill="#10b981"/>
+  <text x="180" y="1148" font-size="24" font-weight="bold" fill="#111827">5 · Simulador multiagente de estudiantes</text>
+  <text x="180" y="1180" font-size="18" fill="#4b5563">N grupos simulados (4–6) con perfiles por nivel y bloqueo típico.</text>
+  <text x="180" y="1206" font-size="18" fill="#4b5563">Entrega trazas: rutas por el ciclo, supuestos emergentes,</text>
+  <text x="180" y="1232" font-size="18" fill="#4b5563">modelos plausibles e inadecuados, qué destrabó a cada grupo.</text>
+  <text x="920" y="1148" text-anchor="end" font-size="16" fill="#047857" font-weight="bold">EXISTENTE (piloto)</text>
+  <line x1="540" y1="1258" x2="540" y2="1298" stroke="#374151" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- 6 Redactor de guía -->
+  <rect x="140" y="1300" width="800" height="150" rx="14" fill="#fff7ed" stroke="#f97316" stroke-width="3"/>
+  <rect x="140" y="1300" width="16" height="150" rx="6" fill="#f97316"/>
+  <text x="180" y="1340" font-size="24" font-weight="bold" fill="#111827">6 · Redactor de guía docente</text>
+  <text x="180" y="1372" font-size="18" fill="#4b5563">Ficha · objetivos por competencia · mapa del ciclo y bloqueos ·</text>
+  <text x="180" y="1398" font-size="18" fill="#4b5563">escenarios derivados de las trazas · preguntas de andamiaje ·</text>
+  <text x="180" y="1424" font-size="18" fill="#4b5563">rúbrica del estudiante · extensiones por nivel · notebook.</text>
+  <text x="920" y="1340" text-anchor="end" font-size="16" fill="#c2410c" font-weight="bold">NUEVO · usa rúbricas existentes</text>
+  <line x1="540" y1="1450" x2="540" y2="1490" stroke="#374151" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- Revisión humana 2 -->
+  <rect x="220" y="1492" width="640" height="76" rx="38" fill="#eff6ff" stroke="#3b82f6" stroke-width="3"/>
+  <text x="540" y="1526" text-anchor="middle" font-size="22" font-weight="bold" fill="#1d4ed8">Revisión humana 2 · aprobar guía</text>
+  <text x="540" y="1552" text-anchor="middle" font-size="16" fill="#1e40af">verificación de cifras y cálculos · estado: revisada → publicada</text>
+  <line x1="540" y1="1568" x2="540" y2="1608" stroke="#374151" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- 7 Bibliotecario -->
+  <rect x="140" y="1610" width="800" height="110" rx="14" fill="#fff7ed" stroke="#f97316" stroke-width="3"/>
+  <rect x="140" y="1610" width="16" height="110" rx="6" fill="#f97316"/>
+  <text x="180" y="1650" font-size="24" font-weight="bold" fill="#111827">7 · Bibliotecario del repositorio</text>
+  <text x="180" y="1682" font-size="18" fill="#4b5563">Rama + commit + pull request · metadatos · catálogo por nivel,</text>
+  <text x="180" y="1708" font-size="18" fill="#4b5563">contenido y tema · versionado.</text>
+  <text x="920" y="1650" text-anchor="end" font-size="16" fill="#c2410c" font-weight="bold">NUEVO</text>
+  <line x1="540" y1="1720" x2="540" y2="1760" stroke="#374151" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- Repositorio -->
+  <rect x="140" y="1762" width="800" height="110" rx="14" fill="#1f2937" stroke="#111827" stroke-width="2"/>
+  <text x="540" y="1800" text-anchor="middle" font-size="24" font-weight="bold" fill="#ffffff">Repositorio abierto (CC BY-NC-SA)</text>
+  <text x="540" y="1830" text-anchor="middle" font-size="17" fill="#d1d5db">/tareas/AAAA-MM/slug/ → tarea.md · guia-docente.md · trazas</text>
+  <text x="540" y="1856" text-anchor="middle" font-size="17" fill="#d1d5db">escenarios.ipynb · evaluacion.json  |  /rubricas · /plantillas · catalogo.md</text>
+
+  <line x1="540" y1="1872" x2="540" y2="1912" stroke="#374151" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- 8 Interfaz docente -->
+  <rect x="140" y="1914" width="800" height="160" rx="14" fill="#f5f3ff" stroke="#7c3aed" stroke-width="3"/>
+  <rect x="140" y="1914" width="16" height="160" rx="6" fill="#7c3aed"/>
+  <text x="180" y="1954" font-size="24" font-weight="bold" fill="#111827">8 · Sitio web para docentes</text>
+  <text x="180" y="1986" font-size="18" fill="#4b5563">Solo material validado (estado: publicada). Búsqueda por nivel,</text>
+  <text x="180" y="2012" font-size="18" fill="#4b5563">contenido y tema · descarga de tarea, guía y notebook.</text>
+  <text x="180" y="2038" font-size="18" fill="#4b5563">★★★★★ ranking por docentes · comentarios de implementación.</text>
+  <text x="180" y="2064" font-size="18" fill="#4b5563">Los comentarios alimentan nuevas versiones de la tarea.</text>
+  <text x="920" y="1954" text-anchor="end" font-size="16" fill="#6d28d9" font-weight="bold">NUEVO · capa interfaz</text>
+  <!-- loop interfaz -> diseñador -->
+  <path d="M940,2000 L1040,2000 L1040,745 L1024,745" fill="none" stroke="#6d28d9" stroke-width="3" stroke-dasharray="10,7"/>
+  <path d="M1024,745 L944,745" fill="none" stroke="#6d28d9" stroke-width="3" stroke-dasharray="10,7" marker-end="url(#arrowloop2)"/>
+  <text x="1062" y="1360" font-size="15" fill="#6d28d9" transform="rotate(-90 1062 1360)" text-anchor="middle">retroalimentación docente → rediseño (v2 de la tarea)</text>
+
+  <!-- Leyenda -->
+  <rect x="140" y="2110" width="22" height="22" rx="4" fill="#f97316"/>
+  <text x="172" y="2128" font-size="17" fill="#374151">Por construir</text>
+  <rect x="330" y="2110" width="22" height="22" rx="4" fill="#10b981"/>
+  <text x="362" y="2128" font-size="17" fill="#374151">Activo existente</text>
+  <rect x="540" y="2110" width="22" height="22" rx="11" fill="#3b82f6"/>
+  <text x="572" y="2128" font-size="17" fill="#374151">Humano en el ciclo</text>
+  <rect x="750" y="2110" width="22" height="22" rx="4" fill="#7c3aed"/>
+  <text x="782" y="2128" font-size="17" fill="#374151">Interfaz</text>
+  <line x1="880" y1="2121" x2="930" y2="2121" stroke="#b45309" stroke-width="3" stroke-dasharray="10,7"/>
+  <text x="940" y="2128" font-size="17" fill="#374151">Iteración</text>
+  <text x="540" y="2175" text-anchor="middle" font-size="15" fill="#9ca3af">Frecuencia propuesta: semanal · 2–3 tareas por ciclo · toda publicación pasa por dos revisiones humanas</text>
+</svg>

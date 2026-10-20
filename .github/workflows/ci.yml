@@ -1,0 +1,18 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  secrets-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Bloquear secretos en el repo
+        run: |
+          if grep -rEn "sk-ant-[A-Za-z0-9_-]{20,}|github_pat_[A-Za-z0-9_]{20,}|ghp_[A-Za-z0-9]{30,}" --exclude-dir=.git . ; then
+            echo "Secreto detectado"; exit 1; fi
+      - name: Validar JSON de insumos
+        run: |
+          python3 - <<'PY'
+          import json,glob,sys
+          for f in glob.glob("insumos/**/*.json",recursive=True)+glob.glob("contratos/*.json"):
+              json.load(open(f)); print("ok",f)
+          PY
