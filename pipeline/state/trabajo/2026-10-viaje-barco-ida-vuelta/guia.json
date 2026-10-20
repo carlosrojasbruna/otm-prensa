@@ -1,6 +1,6 @@
 {
   "tarea_id": "2026-10-viaje-barco-ida-vuelta",
-  "version": 1,
+  "version": 2,
   "fecha": "2026-10-20",
   "ficha": {
     "titulo": "¿Ida y vuelta en un día al mar abierto?",
@@ -22,31 +22,30 @@
     ],
     "tiempo": "2 sesiones de 90 min",
     "puntaje_rub01": 23,
-    "version": 1,
+    "version": 2,
     "fecha": "2026-10-20",
-    "cambios": ""
+    "cambios": "v2: correcciones de la revisión humana 2 (Carlos Rojas Bruna)"
   },
   "meta": {
-    "que_observar": "Que los estudiantes decidan por sí mismos qué cuenta como \"ir y volver en una jornada\" (ida, descarga y vuelta), fijen y justifiquen supuestos sobre la rapidez del barco, la descarga y el largo de la jornada, y que su recomendación para Jackdaw (241.4 km) y Rosebank (128.7 km) dependa de esos supuestos y no de una respuesta única.",
-    "contenido": "Rapidez, distancia y tiempo; proporcionalidad directa; estimación; unidades de tiempo.",
+    "que_observar": "Se quiere observar cómo los estudiantes convierten una pregunta práctica (¿un barco de apoyo puede ir a Jackdaw o a Rosebank, descargar y volver en una misma jornada?) en un modelo de tiempo. Interesa ver si declaran supuestos propios (rapidez del barco, tiempo de descarga, largo de la jornada), si cuentan ida, descarga y vuelta, y si prueban su rapidez con un viaje conocido antes de recomendar.",
+    "contenido": "Rapidez, distancia y tiempo; proporcionalidad directa (tabla de avance por hora o comparación entre los dos viajes); estimación; unidades de tiempo. Distancias de partida: 241,4 km (Jackdaw) y 128,7 km (Rosebank).",
     "subcompetencias": [
-      "Comprender la situación y estructurar el viaje en ida, descarga y vuelta (P1-MRS)",
-      "Simplificar: elegir rapidez, tiempo de descarga y largo de jornada con justificación (P2-RM)",
-      "Matematizar: relacionar distancia, rapidez y tiempo, y sumar ida, vuelta y descarga (P3-MM)",
-      "Trabajar con la relación: calcular tiempos, con tabla si se desea (P4-WM)",
-      "Interpretar los tiempos como recomendación para la empresa (P5-INT)",
-      "Validar la rapidez supuesta con un viaje conocido y revisar la sensibilidad de la recomendación (P6-VAL)",
-      "Comunicar la recomendación con sus supuestos y las condiciones en que cambiaría (P7-EXP)"
+      "Comprender la situación: precisar qué cuenta como ir y volver en una jornada (P1-MRS)",
+      "Simplificar: elegir y justificar rapidez, tiempo de descarga y largo de jornada a partir de las tarjetas (P2-RM)",
+      "Matematizar: relacionar distancia, rapidez y tiempo, incluyendo ida, vuelta y descarga (P3-MM)",
+      "Trabajar matemáticamente: calcular tiempos con tabla o cálculos, con decimales y unidades de tiempo (P4-WM)",
+      "Interpretar: traducir los tiempos a una recomendación para cada yacimiento (P5-INT)",
+      "Validar: contrastar la rapidez supuesta con un viaje conocido y revisar el efecto de un barco más lento (P6-VAL)",
+      "Comunicar: presentar la recomendación con sus supuestos y decir en qué caso cambiaría (P7-EXP)"
     ],
-    "meta_social": "Trabajo cooperativo en pequeños grupos: que cada integrante verbalice y defienda los supuestos elegidos, y que el grupo llegue a una recomendación común para la empresa.",
+    "meta_social": "Trabajo cooperativo en grupos pequeños: que cada integrante explique en voz alta qué supuesto propone y por qué, y que el grupo llegue a una recomendación que todos puedan defender.",
     "evidencia": [
-      "Explicación oral o escrita de qué debe decidir la empresa y qué tiempos intervienen (P1-MRS)",
-      "Lista escrita de supuestos con valores elegidos y su justificación a partir de las tarjetas (P2-RM)",
+      "Hoja de supuestos con los valores elegidos y su justificación a partir de las tarjetas (P2-RM)",
       "Esquema o expresión escrita del tiempo total para cada yacimiento (P3-MM)",
       "Tabla o cálculos con tiempos de ida, de vuelta y total (P4-WM)",
       "Frase de recomendación para la empresa que cita los tiempos calculados (P5-INT)",
-      "Comparación escrita entre el tiempo que da su modelo para un viaje conocido y el tiempo real, y nota sobre qué cambia si baja la rapidez (P6-VAL)",
-      "Informe breve o exposición con tabla, recomendación y supuestos (P7-EXP)"
+      "Comparación escrita entre lo que da su modelo para un viaje conocido y el tiempo real, más una nota sobre qué cambia si baja la rapidez (P6-VAL)",
+      "Informe breve o exposición con la tabla, la recomendación y los supuestos (P7-EXP)"
     ]
   },
   "analisis_a_priori": {
@@ -79,81 +78,90 @@
     "barreras_por_fase": [
       {
         "fase": "P1-MRS",
-        "barrera": "Bloqueo B12. Es probable que lean \"llegar a cada lugar\" y piensen solo en el trayecto de ida, o que no consideren la descarga como parte del tiempo de la jornada. También puede costar distinguir cuál es la costa de salida, porque la noticia solo da la distancia desde Aberdeen y desde las islas Shetland."
+        "barrera": "Bloqueo probable B12. Pueden entender el problema como llegar al yacimiento y no como ir, descargar y volver. También pueden no decidir qué parte del viaje cuenta dentro de la jornada. Esto prepara el modelo inadecuado RX, que cuenta solo la ida. Además, las distancias se miden desde costas distintas (Aberdeen y las islas Shetland), y los grupos pueden no notar que cada yacimiento sale de un punto diferente."
       },
       {
         "fase": "P2-RM",
-        "barrera": "Bloqueo B23. Elegir una rapidez para el barco sin tener un referente: algunos grupos tomarán la de un auto y otros no sabrán qué valor proponer. Tampoco es evidente si el largo de la jornada se cuenta con o sin descanso, ni cuánto dura la descarga. Puede aparecer una lista de supuestos sin valores o sin justificación."
+        "barrera": "Bloqueo probable B23. El enunciado no da rapidez, tiempo de descarga ni largo de jornada, y los grupos pueden esperar que el docente los entregue. Pueden elegir una rapidez de auto en carretera, aunque la tarjeta R2 dice que el barco avanza más despacio. Pueden no decidir si la jornada cuenta con o sin descanso. Pueden olvidar los supuestos de línea recta y rapidez constante. La tarjeta R3 dice que los puertos suelen cerrar de noche, pero esa afirmación no tiene fuente: es un supuesto de la tarjeta, y los grupos pueden discutirlo en vez de aceptarlo como dato."
       },
       {
         "fase": "P3-MM",
-        "barrera": "Bloqueo B34. Es el punto donde se activa el modelo inadecuado: dividir cada distancia por la rapidez y comparar solo ese tiempo con la jornada, olvidando la vuelta y la descarga. Otra dificultad es no saber cómo se pasa de \"tiempo de un tramo\" a \"tiempo del viaje completo\", o sumar tiempos expresados en unidades distintas."
+        "barrera": "Bloqueo probable B34. Les cuesta pasar de los datos sueltos a una relación entre distancia, rapidez y tiempo. Pueden no ver que el tiempo de un tramo sale de repartir la distancia según lo que el barco avanza en una hora. Pueden armar el tiempo total solo con la ida (RX) o sumar la descarga sin contar la vuelta. Quienes usan la tabla por horas (ruta R1) o comparan los dos viajes entre sí (ruta R2) pueden no pasar a un esquema o expresión para el viaje completo."
       },
       {
         "fase": "P4-WM",
-        "barrera": "Bloqueo B45. Dividir con decimales (241.4 y 128.7) y expresar el resultado en horas con parte decimal, sin saber si leerlo como horas y minutos. Quienes siguen la ruta de tabla por horas pueden perder la cuenta al avanzar hora a hora; quienes comparan los dos viajes pueden no darse cuenta de que necesitan igualmente el largo de la jornada para recomendar."
+        "barrera": "Bloqueo probable B45. Los cálculos con 241,4 km y 128,7 km no dan números redondos, y la rapidez elegida puede no dividir en forma exacta. El resultado queda en horas con decimales y cuesta pasarlo a horas y minutos. En la tabla por horas pueden perder la cuenta o dejar de anotar la ida y la vuelta por separado. Quienes prueban varias rapideces pueden mezclar filas de supuestos distintos."
       },
       {
         "fase": "P5-INT",
-        "barrera": "Bloqueo B56. Pasar de una lista de tiempos a una recomendación: quedarse en \"tarda tantas horas\" sin responder \"mismo día o noche en el mar\", o responder sí o no sin vincularlo con el largo de jornada que el propio grupo supuso."
+        "barrera": "Bloqueo probable B56. Pueden quedarse con un número de horas sin convertirlo en una recomendación para cada yacimiento. Pueden comparar el tiempo con una jornada que nunca definieron. También pueden dar una sola recomendación para los dos yacimientos, o una recomendación que no cita los tiempos calculados."
       },
       {
         "fase": "P6-VAL",
-        "barrera": "Bloqueo B56. Validar parece innecesario si ya hay una respuesta. Si el grupo elige un viaje conocido, puede escoger uno cuya rapidez no se parezca a la del barco, o ajustar el dato para que \"calce\". También cuesta revisar cuánto cambia la recomendación si el barco avanza más lento por mar agitado."
-      },
-      {
-        "fase": "P7-EXP",
-        "barrera": "No hay bloqueo previsto en el mapa, pero es probable que presenten solo la recomendación y la tabla, sin decir qué supuestos la sostienen ni en qué caso cambiaría."
+        "barrera": "Bloqueo probable B56. En la tarjeta R4 deben recordar una distancia aproximada y una duración real, y pueden elegir un viaje con paradas o tramos urbanos sin comentarlo. Pueden dar por buena la rapidez al ver una coincidencia parcial, o desechar el modelo por una diferencia sin ajustar la rapidez supuesta. También pueden olvidar revisar si la recomendación cambia con un barco más lento por mar agitado."
       }
     ]
   },
   "organizacion": {
     "momentos": [
       {
-        "momento": "Comprensión y trabajo grupal (sesión 1): lectura, supuestos y modelo",
-        "tiempo": "90 min",
-        "estudiantes": "Leen el enunciado y los datos de partida (R1), explican con sus palabras qué debe decidir la empresa y qué tiempos intervienen. Piden las tarjetas que necesiten (R2, R3) y escriben su lista de supuestos con valores y justificación. Construyen un esquema o expresión del tiempo total para cada yacimiento y empiezan a calcular, con la ruta que elijan.",
-        "docente": "Presenta la situación sin resolverla y aclara que pueden pedir información adicional. Circula, pregunta qué han hecho y qué supuestos están usando, y toma nota de rutas y de quiénes cuentan solo la ida, sin intervenir todavía. Entrega una tarjeta solo si el grupo la pide."
+        "momento": "Comprensión y trabajo grupal (sesión 1): entender la situación y fijar supuestos",
+        "tiempo": "45 min",
+        "estudiantes": "Leen el enunciado y los datos de partida (R1). Explican con sus palabras qué debe decidir la empresa y qué tiempos intervienen. Piden las tarjetas que consideren necesarias y escriben la hoja de supuestos con valores y justificación.",
+        "docente": "Presenta la situación con palabras propias, sin leer la noticia, y deja claro que pueden pedir información adicional. Circula y diagnostica preguntando qué han decidido y por qué; no interviene aún con ayudas. Anota qué tarjetas piden, cuáles no y quién habla en cada grupo. Si un grupo pide la tarjeta R3, recuerda que la afirmación sobre los puertos es un supuesto de la tarjeta que pueden discutir, no un dato."
       },
       {
-        "momento": "Comprensión y trabajo grupal (sesión 2): cálculo, recomendación y calibración",
+        "momento": "Comprensión y trabajo grupal (sesión 1): construir el modelo y empezar a calcular",
         "tiempo": "30 min",
-        "estudiantes": "Terminan tabla o cálculos, redactan la frase de recomendación para cada yacimiento y, si lo piden, usan la tarjeta de calibración (R4) para comparar su modelo con un viaje conocido. Anotan qué cambia si el barco es más lento.",
-        "docente": "Retoma la observación de la sesión anterior. Diagnostica con preguntas (¿qué cuenta su tiempo?, ¿con qué lo compararon?) y, si hace falta ayuda, empieza por la mínima, sin dar la regla, el modelo ni el resultado. Elige qué grupos presentarán, procurando mostrar rutas y supuestos distintos."
+        "estudiantes": "Eligen su ruta (tabla de avance por hora, comparación entre los dos viajes u otra propia) y dejan por escrito un esquema o expresión del tiempo total para cada yacimiento. Empiezan los cálculos.",
+        "docente": "Sigue circulando y diagnosticando: pide que cada grupo explique qué parte del viaje cuenta su esquema. Si un grupo no avanza, ofrece primero la ayuda mínima (una pregunta sobre lo que ya hizo) y nunca entrega la regla, el modelo ni el resultado. Registra qué grupos cuentan solo la ida."
       },
       {
-        "momento": "Puesta en común",
+        "momento": "Puesta en común (sesión 1): supuestos y esquemas",
+        "tiempo": "15 min",
+        "estudiantes": "Dos o tres grupos muestran su hoja de supuestos y su esquema. El resto compara con lo propio y pregunta por qué eligieron esos valores.",
+        "docente": "Elige grupos con supuestos y rutas distintas, incluido, si existe, uno que cuente solo la ida, sin decir que está mal. Pide justificaciones, no resultados. Cierra recordando qué deben tener listo al volver."
+      },
+      {
+        "momento": "Comprensión y trabajo grupal (sesión 2): calcular y recomendar",
         "tiempo": "30 min",
-        "estudiantes": "Grupos seleccionados presentan su tabla o esquema, su recomendación y los supuestos que la sostienen. Comparan las recomendaciones y buscan de qué supuesto depende cada diferencia.",
-        "docente": "Modera, pide que cada grupo diga qué tiempos contó y por qué. Si aparece el modelo que cuenta solo la ida, lo pone en discusión con preguntas (¿qué pasa con el barco después de descargar?) y no lo corrige él mismo. Ordena las presentaciones de modo que se vea la dependencia de los supuestos."
+        "estudiantes": "Retoman su hoja de supuestos y esquema. Completan la tabla o los cálculos con ida, vuelta y total para cada yacimiento y escriben una frase de recomendación que cita los tiempos.",
+        "docente": "Pide a cada grupo que recuerde en voz alta lo que decidió antes. Circula, diagnostica y revisa que la recomendación se compare con la jornada que ellos mismos definieron. No corrige cálculos: pregunta qué significa cada número de su tabla."
+      },
+      {
+        "momento": "Puesta en común (sesión 2): recomendaciones y tiempos",
+        "tiempo": "25 min",
+        "estudiantes": "Los grupos presentan su recomendación para cada yacimiento con los tiempos que la sostienen. Comparan sus supuestos y ven cómo los distintos valores llevan a recomendaciones distintas o iguales.",
+        "docente": "Modera para que se comparen supuestos y no solo resultados. Pone en contraste a un grupo que cuenta ida y vuelta con otro que cuenta solo la ida, si existen, y pregunta qué parte del viaje falta en cada caso. No declara una respuesta única: se acepta cualquier recomendación coherente con los supuestos declarados."
       },
       {
         "momento": "Validación y cierre",
-        "tiempo": "30 min",
-        "estudiantes": "Contrastan las recomendaciones con la comparación del viaje conocido y con la nota sobre mar agitado. Revisan sus supuestos, ajustan lo que corresponda y completan el informe breve con la recomendación, los supuestos y el caso en que cambiaría.",
-        "docente": "Conduce la discusión sobre qué se pudo comprobar y qué sigue siendo un supuesto. Puede entregar, como contraste de la rapidez elegida, un horario real de un barco de apoyo publicado por un operador. Recoge las producciones y cierra con la idea de que la recomendación vale mientras valgan los supuestos."
+        "tiempo": "35 min",
+        "estudiantes": "Con la tarjeta R4 eligen un viaje conocido en bus o auto, comparan el tiempo que daría su modelo con el tiempo real y ajustan la rapidez si hace falta. Revisan qué cambia en su recomendación si el barco es más lento por mar agitado. Redactan el informe breve o preparan una exposición con la tabla, la recomendación y los supuestos, y dicen en qué caso cambiaría.",
+        "docente": "Entrega R4 solo a quien la pida o cuando el grupo ya tenga una recomendación. Pregunta cómo eligieron el viaje y qué diferencias hay con un barco. Si dispone de un horario real publicado por un operador de barcos de apoyo, puede entregarlo al final como contraste de la rapidez elegida. Cierra con una reflexión sobre qué supuestos pesaron más en las recomendaciones."
       }
     ],
-    "agrupamiento": "Grupos pequeños que permitan que todos hablen y escriban. Mantener los mismos grupos en las dos sesiones y mezclar rutas en la puesta en común.",
-    "roles": "Dentro de cada grupo: quien registra los supuestos y su justificación, quien verifica que se cuenten ida, descarga y vuelta, y quien prepara la recomendación para presentarla. Rotar entre las sesiones para que todos verbalicen.",
+    "agrupamiento": "Grupos pequeños de composición estable durante las dos sesiones. En la puesta en común se trabaja con todo el curso. Esto favorece la discusión de supuestos y que cada integrante explique su aporte.",
+    "roles": "Roles rotativos dentro del grupo: quien lee y reformula el problema, quien lleva la hoja de supuestos, quien hace la tabla o los cálculos y quien redacta la recomendación. Al cierre, cualquier integrante puede ser portavoz, para que todos puedan explicar la decisión.",
     "producciones": [
-      "Lista escrita de supuestos con valores y justificación",
+      "Hoja de supuestos con valores elegidos y justificación",
       "Esquema o expresión del tiempo total para cada yacimiento",
       "Tabla o cálculos con tiempos de ida, de vuelta y total",
-      "Frase de recomendación para la empresa para cada yacimiento",
-      "Comparación escrita con un viaje conocido y nota sobre qué cambia si baja la rapidez",
+      "Frase de recomendación para cada yacimiento que cita los tiempos",
+      "Comparación escrita con un viaje conocido y nota sobre lo que cambia si baja la rapidez",
       "Informe breve o exposición con tabla, recomendación y supuestos"
     ],
-    "tecnologia": "Calculadora permitida en la fase de trabajo matemático (P4-WM) para dividir con decimales. Hoja de cálculo opcional para armar la tabla con varias rapideces, también en P4-WM. No se usa para elegir supuestos (P2-RM), decidir el modelo (P3-MM) ni redactar la recomendación (P5-INT, P7-EXP), que son decisiones de los estudiantes."
+    "tecnologia": "Calculadora permitida desde P4-WM para dividir con decimales y para comprobar sumas de tiempos. Una planilla es opcional para armar la tabla con varias rapideces, también desde P4-WM. No se usa tecnología para elegir supuestos (P2-RM), definir la estructura del modelo (P3-MM) ni decidir la recomendación (P5-INT). Hasta terminar la validación, no se busca en internet la rapidez de un barco de apoyo; el contraste con datos reales lo entrega el docente al final."
   },
   "escenarios": [
     {
       "id": "E1",
       "nombre": "ruta esperada",
       "corridas": [
-        "N3_AA_r1"
+        "N3_AA_r1",
+        "N4_VV_r1"
       ],
-      "perfil": "Tramo P, nivel N3, estilo AA.",
+      "perfil": "N3_AA_r1: tramo P, nivel N3, estilo AA. N4_VV_r1: tramo P, nivel N4, estilo VV.",
       "ruta": [
         "P1-MRS",
         "P2-RM",
@@ -170,23 +178,20 @@
         "jornada de 12 horas",
         "2 horas de descarga",
         "velocidad constante",
-        "sale desde Aberdeen para Jackdaw y desde Shetland para Rosebank"
+        "sale desde Aberdeen para Jackdaw y desde Shetland para Rosebank",
+        "descarga de 3 horas"
       ],
       "modelo": "lineal",
       "bloqueos": [],
-      "que_aprende": "Este grupo fija desde el comienzo todos los supuestos que pide la tarea: rapidez, jornada, descarga con valor y puerto de salida. Además invierte la relación y calcula la rapidez que haría falta para que cada viaje quepa en la jornada. Luego juzga si un barco de apoyo puede ir así de rápido. Al compararlo con los demás, el curso ve que declarar un tiempo de descarga concreto permite una recomendación condicionada y clara para Rosebank. También conviene notar que su validación es de plausibilidad de la rapidez y no un contraste con un viaje conocido, como propone la tarea.",
+      "que_aprende": "Estos grupos fijan explícitamente la jornada y la descarga y luego invierten la pregunta: qué rapidez haría falta para que el viaje quepa en el día. Así validan por plausibilidad: para Jackdaw obtienen 48,28 km/h (con 2 h de descarga) y lo descartan porque un barco de apoyo no va tan rápido. Atención docente: en N3_AA_r1 el grupo primero habla de Rosebank 'en el día si va a 30 km/h', pero en su respuesta final corrige el umbral a unos 26 km/h al descontar las 2 h de descarga de la jornada de 12 h. Al comparar con N4_VV_r1, que supone 3 horas de descarga y llega a un umbral de unos 29 km/h, el curso ve que la recomendación sobre Rosebank depende del supuesto de descarga, no solo de la rapidez.",
       "extracto_dialogo": [
-        {
-          "hablante": "Fran",
-          "texto": "Sí, estoy de acuerdo, necesitamos la velocidad del barco y cuánto dura la jornada. Podemos suponer una velocidad, por ejemplo 20 km/h, y calcular t = 241,4 ÷ 20, pero también hay que sumar la vuelta y el tiempo de descarga, ¿no?"
-        },
         {
           "hablante": "Fran",
           "texto": "Sí, con 12 horas de jornada Jackdaw necesita pasar la noche. Para que alcance en 10 h de navegación (dejando 2 h para descargar) tendría que ir a 482,8 ÷ 10 = 48,28 km/h, y un barco de apoyo no va tan rápido, ¿no?"
         },
         {
           "hablante": "Cami",
-          "texto": "Sí, 48,28 km/h son como 26 nudos, y un barco de apoyo normal va más lento, así que Jackdaw necesita pasar la noche. Entonces recomendemos: Rosebank sí en el día si va a 30 km/h, pero tendrían que confirmarnos la velocidad real y las horas de jornada, ¿les pedimos eso?"
+          "texto": "Sí, pero para Rosebank con 2 h de descarga bastaría ir a 257,4 ÷ 10 = 25,74 km/h, o sea unos 26 km/h o más. ENTREGAMOS: Jackdaw, pasar la noche; Rosebank, en el día si va a unos 26 km/h o más con jornada de 12 h; pedimos la velocidad real y las horas de jornada."
         },
         {
           "hablante": "Fran",
@@ -196,48 +201,66 @@
     },
     {
       "id": "E2",
-      "nombre": "descarga como sobrante",
+      "nombre": "descarga fuera de la cuenta",
       "corridas": [
-        "N4_AA_r1"
+        "N1_AA_r1"
       ],
-      "perfil": "Tramo P, nivel N4, estilo AA.",
+      "perfil": "Tramo P, nivel N1, estilo AA.",
       "ruta": [
         "P1-MRS",
+        "P3-MM",
         "P2-RM",
         "P4-WM",
-        "P3-MM",
-        "P6-VAL",
+        "P2-RM",
+        "P4-WM",
         "P5-INT",
-        "P7-EXP"
+        "P4-WM",
+        "P5-INT",
+        "P6-VAL",
+        "P4-WM",
+        "P5-INT",
+        "P4-WM",
+        "P5-INT",
+        "P7-EXP",
+        "P6-VAL"
       ],
       "supuestos": [
-        "viaje de ida y vuelta (distancia doble)",
-        "velocidad constante (se prueban 20, 30 y 25 km/h)",
-        "jornada de 12 horas",
-        "la descarga usa el tiempo que sobra de la jornada",
-        "barco de carga anda a unos 25 km/h"
+        "ida y vuelta (distancia × 2)",
+        "velocidad de prueba 20 km/h",
+        "velocidad de prueba 40 km/h",
+        "jornada de 8 horas",
+        "falta sumar tiempo de descarga (no cuantificado)"
       ],
       "modelo": "proporcional",
-      "bloqueos": [],
-      "que_aprende": "Ninguna corrida cayó en el modelo de contar solo la ida, así que este escenario muestra otro contraste. El grupo no fija la descarga y la trata como el tiempo que queda libre en la jornada. Calcula la rapidez mínima para cada yacimiento y la compara con la que cree razonable para un barco de carga. Frente a E1, el curso puede discutir qué cambia en la recomendación para Rosebank cuando la descarga es un dato supuesto y cuando es solo lo que sobra. También puede discutir por qué este grupo termina pidiendo ese dato a la empresa.",
+      "bloqueos": [
+        {
+          "transicion": "B45",
+          "como_se_destrabo": "Resolución registrada: peer. En los turnos 9 y 10, Cami no sabía si 24.14 significaba 24 horas y 14 minutos; Fran recordó que una hora tiene 60 minutos y no 100 y propuso multiplicar la parte decimal por 60 con la calculadora. El grupo aplicó ese procedimiento al resto de los cálculos."
+        }
+      ],
+      "que_aprende": "El grupo cuenta ida y vuelta, pero deja la descarga como lo que sobra de la jornada sin decidir si alcanza, y apoya el 'sí' para Rosebank en una rapidez de prueba de 40 km/h que no discute. Es un caso cercano al modelo inadecuado previsto: una parte del tiempo del viaje queda fuera de la cuenta. Al compararlo con E1, donde la rapidez necesaria se contrasta con lo que puede hacer un barco de apoyo, el curso ve que la recomendación cambia según la rapidez elegida (como nota Cami al final: con 20 km/h Rosebank tampoco cabía) y que eso debe quedar escrito en la respuesta.",
       "extracto_dialogo": [
         {
+          "hablante": "Cami",
+          "texto": "[calculadora: 482.8 ÷ 20 = 24.14] Me da 24.14, pero no sé si son 24 horas y 14 minutos o qué, ¿cómo lo leemos con los decimales?"
+        },
+        {
           "hablante": "Fran",
-          "texto": "Sí, y como es ida y vuelta hay que doblar la distancia: 241.4 × 2 = 482.8 km y 128.7 × 2 = 257.4 km. Supongamos una velocidad, por ejemplo 20 km/h, y una jornada de 12 horas; después vemos cuánto sobra para descargar."
+          "texto": "Mmm, creo que no son 14 minutos, porque una hora tiene 60 minutos y no 100. Yo haría 0.14 × 60 con la calculadora para ver los minutos, pero no estoy segura, ¿probamos?"
+        },
+        {
+          "hablante": "Fran",
+          "texto": "ENTREGAMOS: Pedimos la velocidad real, las horas de la jornada, el tiempo de descarga y cómo pasar nudos a km/h. Con 40 km/h inventados y jornada de 8 h, Rosebank sí (6 h 26 min) y Jackdaw no (12 h 4 min)."
         },
         {
           "hablante": "Cami",
-          "texto": "Veamos al revés: velocidad mínima = distancia ÷ tiempo. Para Jackdaw, 482.8 ÷ 12 ≈ 40,2 km/h sin descargar nada, y para Rosebank, 257.4 ÷ 12 = 21,45 km/h. ¿Un barco así podrá ir tan rápido?"
-        },
-        {
-          "hablante": "Fran",
-          "texto": "Dudo que un barco de carga llegue a 40 km/h; yo creo que andan como 25 km/h, pero tendríamos que pedirle el dato a la empresa. Con 25: 257.4 ÷ 25 ≈ 10,3 h, o sea que Rosebank cabe justito con 12 − 10,3 = 1,7 h para descargar, y Jackdaw no."
+          "texto": "DE ACUERDO. Aunque ojo, con 20 km/h Rosebank tampoco alcanzaba (12 h 52 min), ¿lo dejamos escrito o así está bien?"
         }
       ]
     },
     {
       "id": "E3",
-      "nombre": "bloqueo en trabajar: horas decimales",
+      "nombre": "bloqueo al leer horas decimales",
       "corridas": [
         "N1_VV_r1"
       ],
@@ -270,10 +293,10 @@
       "bloqueos": [
         {
           "transicion": "B45",
-          "como_se_destrabo": "Resolución entre pares (peer). Fran leyó un resultado en horas con decimales como si la parte decimal fueran minutos. Cami dudó y se imaginó un reloj para comparar esa parte con media hora. Fran aceptó que una hora tiene 60 minutos y no 100, hizo la conversión con la calculadora y ambos corrigieron la lectura antes de recomendar."
+          "como_se_destrabo": "Resolución registrada: peer. En los turnos 14 a 16, Fran leyó 8.58 horas como 8 horas y 58 minutos; Cami se imaginó un reloj (0,5 es media hora) y estimó unos 35 minutos; Fran lo comprobó multiplicando 0,58 por 60 en la calculadora. La imagen del reloj, aportada por la compañera, destrabó el paso de horas decimales a horas y minutos."
         }
       ],
-      "que_aprende": "Este grupo plantea bien la ida y vuelta y la descarga, pero deja la descarga sin valor y la jornada abierta. Por eso recorre varias veces las fases de simplificar y matematizar. La traba aparece al pasar de los cálculos a la interpretación: un tiempo en horas decimales mal leído cambiaría el juicio sobre si el viaje cabe en la jornada. Comparado con E1, el curso ve que interpretar exige revisar las unidades de tiempo y que un supuesto sin valor deja la recomendación en un quizás.",
+      "que_aprende": "El grupo prueba varias rapideces inventadas, incluida una muy lenta, y comprueba que si el barco va más lento tarda más, lo que le da sentido al modelo. También identifica el puerto de salida hacia Rosebank como un supuesto tentativo que hay que preguntar. Comparado con E1, el curso ve que la traba no está en elegir el modelo sino en interpretar el resultado de la división como tiempo de reloj, y que esa lectura cambia si el viaje 'queda justo' o no en la jornada.",
       "extracto_dialogo": [
         {
           "hablante": "Fran",
@@ -291,7 +314,7 @@
     },
     {
       "id": "E4",
-      "nombre": "recomendación sin validar",
+      "nombre": "sin validar la rapidez",
       "corridas": [
         "N2_VV_r1"
       ],
@@ -317,7 +340,7 @@
       ],
       "modelo": "proporcional",
       "bloqueos": [],
-      "que_aprende": "Este grupo identifica bien qué preguntar a la empresa y convierte la descarga en una condición para Rosebank. Sin embargo, es el único escenario sin validación registrada: no revisa si las rapideces inventadas son razonables. Solo al final duda de si debe declarar que las inventó. Frente a E1 y E2, que juzgan la rapidez necesaria, el curso ve que una recomendación queda débil si no se pone a prueba el supuesto del que depende. Contrastado con E3, también puede revisar cómo este grupo lee las horas decimales.",
+      "que_aprende": "El grupo convierte la descarga en una condición (Rosebank cabe si descargar dura menos de 3 horas) y deja bien listadas las preguntas para la empresa, pero la traza registra que no valida: no contrasta las rapideces de 20 y 30 km/h con ningún viaje conocido ni discute si son realistas, y solo al final Cami advierte que esas rapideces las inventaron. Al compararlo con E1, donde se descarta una rapidez por poco realista, el curso ve qué agrega la fase de validación: probar la rapidez supuesta con un trayecto conocido en bus o auto antes de recomendar.",
       "extracto_dialogo": [
         {
           "hablante": "Fran",
@@ -340,63 +363,62 @@
   "intervenciones": [
     {
       "bloqueo": "B45",
-      "z1_z2": "Pregunten qué cálculo hicieron y cómo leyeron el número que les dio, por ejemplo: «¿Qué significa para ustedes ese resultado en horas?». Reconozcan lo que ya hicieron bien, como contar la ida y la vuelta, antes de pedir que revisen la lectura.",
-      "z3": "Pídanles que dibujen un reloj o una línea de tiempo y ubiquen ahí el resultado del cálculo, antes de decidir si el viaje cabe en la jornada.",
-      "z4": "Si el resultado trae decimales, por ejemplo 8.58 horas, pregunten: «¿La parte decimal son minutos? ¿Qué parte del reloj sería media hora?». No digan cuál es la lectura correcta.",
-      "z5": "Recuerden que una hora tiene 60 minutos y no 100. Pidan que conviertan la parte decimal con la calculadora y relean si el tiempo cabe en la jornada que supusieron. Es lo que hicieron Fran y Cami en E3. No entreguen el resultado del yacimiento."
-    },
-    {
-      "bloqueo": "B12",
-      "z1_z2": "Pregunten: «¿Qué creen que tiene que decidir la empresa? ¿Qué tiempos entran en esa decisión?». Escuchen antes de aportar nada.",
-      "z3": "Pídanles que dibujen el recorrido del barco desde la costa hasta cada yacimiento y de vuelta, marcando dónde se detiene.",
-      "z4": "Pregunten: «Para decir que se puede ir y volver en una jornada, ¿qué partes del viaje hay que contar?». No nombren la respuesta.",
-      "z5": "Pídanles que relean el enunciado y listen los momentos que nombra para el barco, sin calcular todavía. Después deben escribir qué tiempo corresponde a cada momento."
-    },
-    {
-      "bloqueo": "B23",
-      "z1_z2": "Pregunten: «¿Qué valores han decidido hasta ahora y en qué se apoyan?». Si no tienen ninguno, pregunten qué datos les faltan para comparar el viaje con una jornada.",
-      "z3": "Pídanles que hagan una lista de lo que no saben del barco y de la jornada, y que marquen qué podrían suponer y qué tendrían que pedir.",
-      "z4": "Pregunten: «¿Qué valor necesitan para la rapidez, para la descarga y para el largo de la jornada? ¿Cómo lo elegirían de forma que se pueda justificar?». No den los valores.",
-      "z5": "Ofrezcan las tarjetas R2 (cómo se mueve un barco de apoyo) y R3 (jornada de la tripulación) de «recursos a solicitud». Pídanles que elijan un valor para cada supuesto y lo justifiquen con la tarjeta. No sugieran cifras. En E3 la descarga quedó sin valor y la recomendación terminó en un quizás."
-    },
-    {
-      "bloqueo": "B34",
-      "z1_z2": "Pregunten: «¿Cómo piensan calcular el tiempo del viaje completo? ¿Qué parte ya tienen escrita?».",
-      "z3": "Pídanles que hagan un esquema del viaje de un yacimiento con sus partes en orden, y que escriban en cada parte el dato que usarían.",
-      "z4": "Pregunten: «¿Qué relación hay entre la distancia, la rapidez y el tiempo de un tramo? ¿Qué pasa con la vuelta y con la descarga en su esquema?». Así revisan si falta alguna parte, como pasaría si solo contaran la ida.",
-      "z5": "Si siguen sin avanzar, vuelvan a la tarjeta R2, que recuerda que el barco descarga antes de volver. Pídanles que comprueben que su esquema incluye todas las partes del viaje. No escriban la expresión por ellos."
+      "z1_z2": "Pregunte qué número les dio la calculadora y qué creen que significa en un reloj. Escuche primero cómo leyeron el resultado de la división (E2, E3). No corrija todavía.",
+      "z3": "Pídales que dibujen un reloj o una línea de tiempo de la jornada y ubiquen en ella el tiempo que calcularon para el viaje.",
+      "z4": "Pregunte: si 0,5 de hora es media hora, ¿dónde cae la parte decimal de su resultado? ¿Cuántos minutos tiene una hora, y qué cambia al pasar de decimales a horas y minutos?",
+      "z5": "Como último recurso, sugiera que conviertan solo la parte decimal de su propio resultado a minutos con la calculadora y comprueben con el dibujo del reloj que tenga sentido. No les dicte su resultado ni la recomendación. En E2 y E3 los grupos se destrabaron entre pares, con la imagen del reloj; conviene dejar que lo intenten juntos antes de intervenir."
     },
     {
       "bloqueo": "B56",
-      "z1_z2": "Pregunten: «¿En qué se apoya su recomendación? ¿Qué supuesto la sostiene?». Luego pregunten cuál de esos supuestos han puesto a prueba.",
-      "z3": "Pídanles que hagan una lista de supuestos y marquen cuáles son inventados y cuáles tienen respaldo, como hizo Cami en E4 al dudar de las rapideces.",
-      "z4": "Pregunten: «¿Cómo podrían saber si la rapidez que supusieron es razonable usando un viaje que conozcan? ¿Qué cambiaría en la recomendación si el barco fuera más lento?». No entreguen la comparación.",
-      "z5": "Ofrezcan la tarjeta R4 (calibración con un viaje conocido) y, para revisar el efecto de un mar agitado, vuelvan a la tarjeta R2. Pídanles que comparen lo que dice su modelo con el tiempo real de ese viaje y que anoten qué ajustan. No digan si su recomendación es correcta."
+      "z1_z2": "Pregunte con qué comprobaron la rapidez que eligieron y de dónde sacaron ese valor. En E4 el grupo recién advierte al final que esas rapideces eran inventadas.",
+      "z3": "Pídales que separen en dos columnas lo que viene de la noticia y lo que supusieron ellos, y que marquen cuáles supuestos podrían estar equivocados.",
+      "z4": "Pregunte: piensen en un viaje conocido en bus o auto. ¿Qué tiempo daría su modelo para ese viaje y cuánto demoró de verdad? ¿Qué pasaría con la recomendación si el barco fuera más lento?",
+      "z5": "Entregue el recurso R4 (tarjeta de calibración con un viaje conocido) y, si hace falta, R2 (cómo se mueve un barco de apoyo, que menciona el mar agitado). Pida que escriban cuánto cambia la recomendación si baja la rapidez, sin decirles cuál es la rapidez adecuada."
+    },
+    {
+      "bloqueo": "B23",
+      "z1_z2": "Pregunte qué valores han elegido para el barco y la jornada, y en qué se basaron. Si aún no han elegido ninguno, pregunte qué datos les faltan para decidir.",
+      "z3": "Propóngales hacer una lista escrita de supuestos con el valor elegido y su justificación, y anotar cuáles preguntarían a la empresa.",
+      "z4": "Pregunte: además de navegar, ¿qué otra parte del día ocupa tiempo? ¿Hay un tope de horas para una jornada en el mar, y se cuenta con o sin descanso?",
+      "z5": "Entregue R2 (tarjeta sobre el barco de apoyo) y R3 (tarjeta sobre la jornada de la tripulación). Aclare al curso que la frase de R3 sobre puertos que cierran de noche no tiene fuente: es un supuesto de la tarjeta que los grupos pueden discutir, no un dato ni un argumento para decidir. Las tarjetas no entregan valores ni el modelo."
+    },
+    {
+      "bloqueo": "B34",
+      "z1_z2": "Pregunte qué tiempo calcularían para un solo tramo y cómo lo harían. Pida que expliquen con sus palabras qué relación usan entre distancia, rapidez y tiempo.",
+      "z3": "Pídales que hagan un esquema del viaje con todos los momentos del barco, desde que sale de la costa hasta que termina, y que escriban al lado de cada uno cuánto tiempo ocupa.",
+      "z4": "Pregunte: si el barco va más lento, ¿el tiempo de un tramo aumenta o disminuye? ¿Qué operación refleja eso? ¿Su expresión incluye todo lo que hace el barco en la jornada? En E2 la descarga quedó fuera de la cuenta.",
+      "z5": "Como último recurso, pídales que prueben su relación con un viaje conocido en bus o auto (R4) y vean si el tiempo que sale es razonable. Después pídales que revisen qué momentos del barco faltan en su expresión. No escriba la expresión por ellos."
+    },
+    {
+      "bloqueo": "B12",
+      "z1_z2": "Pida que cuenten con sus palabras qué debe decidir la empresa y qué significa ir y volver en una misma jornada.",
+      "z3": "Propóngales hacer un dibujo con la costa, cada yacimiento y los momentos del viaje.",
+      "z4": "Pregunte: ¿qué momentos del viaje cuentan para saber si cabe en una jornada? ¿Se decide igual para los dos yacimientos, Jackdaw (241,4 km) y Rosebank (128,7 km)?",
+      "z5": "Muestre que el viaje tiene ida, descarga y vuelta y que se pide una recomendación para cada yacimiento. Pida que ubiquen esos momentos en su dibujo. No indique cómo se calcula el tiempo ni qué recomendación corresponde."
     }
   ],
   "puesta_en_comun": {
     "seleccion_y_orden": [
-      "Anticipar: antes de la puesta en común, recorran los grupos y anoten quién cuenta solo la ida (modelo RX), quién deja la descarga sin valor y quién validó la rapidez. Elijan según lo observado y no según la ruta propia.",
-      "Primero E3 (monitorear y seleccionar): es un modelo proporcional con ida y vuelta, y muestra el bloqueo B45, la lectura de horas decimales. Abre con un error accesible y fija que antes de recomendar hay que revisar las unidades de tiempo.",
-      "Segundo E4 (secuenciar): mismo tipo de modelo, pero convierte la descarga en una condición para Rosebank. Es la recomendación sin validación registrada. Pone en el centro la pregunta de si se probaron las rapideces inventadas.",
-      "Tercero E2 (conectar): trata la descarga como el tiempo que sobra de la jornada y calcula la rapidez mínima para cada yacimiento. Permite contrastar con E4 qué cambia cuando la descarga es un dato supuesto y cuando es solo lo que queda libre.",
-      "Cuarto E1 (conectar y cerrar): fija todos los supuestos, incluido el puerto de salida, invierte la relación y juzga si un barco de apoyo puede ir tan rápido. Su validación es de plausibilidad y no un contraste con un viaje conocido, lo que lleva a la validación independiente.",
-      "Si algún grupo real contó solo la ida (RX), muéstrenlo antes de E2 y E1. Pregunten por qué el tiempo queda subestimado y se recomienda un viaje que en realidad no cabe en el día."
+      "Primero E2 (descarga fuera de la cuenta): anticipa el modelo inadecuado, porque cuenta ida y vuelta pero deja la descarga sin decidir y apoya el 'sí' para Rosebank en una rapidez de prueba que nadie discute. Al abrir con un modelo incompleto, el docente no impone su ruta y el curso puede detectar qué falta.",
+      "Segundo E3 (bloqueo al leer horas decimales): monitorea la traba que aparece en el cálculo, es decir, cómo se lee un resultado como 8,58 h. Se selecciona después de E2 porque ahí aparece la misma dificultad con otros números y E3 muestra cómo se destrabó con la imagen del reloj.",
+      "Tercero E4 (sin validar la rapidez): hace visible que las rapideces eran inventadas y que la descarga puede plantearse como condición. Se secuencia aquí para que el curso note la ausencia de validación antes de ver un grupo que sí la hace.",
+      "Cuarto E1 (ruta esperada): conecta lo anterior. El grupo invierte la pregunta, calcula qué rapidez haría falta (48,28 km/h para Jackdaw) y la descarta por poco plausible. Atención: en N3_AA_r1 el grupo dice primero que Rosebank cabe a 30 km/h, pero su respuesta final fija el umbral cerca de 26 km/h al descontar la descarga de la jornada. Use los turnos de Fran y Cami donde aparece el umbral corregido. Contrastar con el umbral algo mayor de N4_VV_r1, que supone una descarga más larga, muestra que la recomendación depende del supuesto de descarga y no solo de la rapidez. Si hay grupos que usaron la distancia máxima alcanzable (R3) o la comparación entre los dos viajes (R2), relacione su ruta con esta inversión de la pregunta."
     ],
     "preguntas": [
-      "¿Qué supuestos sostienen cada recomendación: rapidez, descarga, jornada y puerto de salida? ¿Cuáles declararon y cuáles quedaron implícitos?",
-      "En E3 y E4, ¿qué cambia en la recomendación para Rosebank si la descarga es un valor supuesto y si es solo lo que sobra de la jornada, como en E2?",
-      "¿Cómo se leen las horas con decimales? ¿Qué habría pasado en E3 si se hubiera dejado la lectura de 0.58 como 58 minutos?",
-      "E1 y E2 calculan la rapidez que haría falta. ¿Es una forma más corta o más larga de decidir que calcular el tiempo con una rapidez supuesta? ¿Qué supuesto adicional necesita?",
-      "¿Qué pasaría con cada recomendación si el mar estuviera agitado y el barco fuera más lento? ¿Para qué yacimiento cambiaría más la decisión?",
-      "¿Qué diferencia hay entre decir que una rapidez parece razonable, como en E1, y compararla con un viaje conocido?",
-      "¿Hasta dónde sirve un modelo en el que el tiempo es proporcional a la distancia? ¿Qué cosas del viaje real deja fuera?"
+      "¿Qué supuestos eligió cada grupo (rapidez, descarga, jornada)? ¿Cuáles escribieron y cuáles quedaron implícitos?",
+      "¿Qué partes del viaje entraron en la cuenta y cuáles no? ¿Qué pasa con la recomendación si solo se cuenta la ida?",
+      "¿Cómo se lee un resultado como 8,58 h en horas y minutos? ¿Cómo lo comprobaron?",
+      "¿Cambia la recomendación para Rosebank si la descarga dura más? ¿Y si el mar está agitado y el barco va más lento?",
+      "¿Qué diferencia hay entre calcular el tiempo para una rapidez y calcular qué rapidez haría falta? ¿Cuál es más eficiente para decidir?",
+      "¿Por qué Jackdaw demora casi el doble que Rosebank, aunque no se fije la rapidez? (razón cercana a 1,9)",
+      "¿Cómo supieron que la rapidez elegida es plausible? ¿Qué evidencia independiente usaron o podrían usar?",
+      "¿Hasta dónde sirve un modelo de rapidez constante y línea recta? ¿En qué caso cambiaría la recomendación?"
     ],
-    "contraste_validacion": "Pidan a cada grupo un viaje conocido en bus o auto (tarjeta R4), con su distancia aproximada y el tiempo que demoró. Que apliquen a ese viaje la misma relación entre distancia, rapidez y tiempo que usaron para el barco y comparen lo que predice su modelo con el tiempo real. Si no coinciden, deben ajustar la rapidez supuesta y revisar si cambia su recomendación para Jackdaw y Rosebank. Ese viaje es un dato independiente porque no se usó para construir el modelo. Después, si el docente lo tiene, puede entregar un horario real de un barco de apoyo publicado por un operador como contraste de la rapidez elegida. Que cada grupo diga si su rapidez queda por encima o por debajo de ese horario, y qué recomendación sostendría en cada caso. No se entrega el resultado de referencia antes de este contraste."
+    "contraste_validacion": "Pida a cada grupo que elija un viaje conocido (bus, auto o transbordador de línea) con su distancia aproximada y el tiempo que demoró. Ese dato no se usa para construir el modelo. Que comparen el tiempo que predice su relación entre distancia, rapidez y tiempo con el tiempo real, y que ajusten la rapidez supuesta para el barco si hay diferencia. Luego revisen cuánto cambia la recomendación para cada yacimiento con la rapidez ajustada y con una más baja. Después, si el docente dispone de un horario real de un barco de apoyo publicado por un operador, puede entregarlo como contraste de la rapidez elegida. Los datos de los viajes conocidos los aportan los estudiantes y la guía no agrega ninguno."
   },
   "variantes_y_continuidad": {
-    "uso_variantes": "No hay variante hacia abajo (es null en la tarea). Si un grupo se traba, conviene apoyarse en las ayudas ya previstas: preguntar qué han hecho, ofrecer las tarjetas a solicitud (R2, R3, R4) y sugerir la ruta de comparar entre sí los dos viajes, sin cambiar la tarea ni dar la regla. La variante hacia arriba (tramo S2) mantiene el contexto y sirve para grupos de secundaria o para grupos de primaria que terminan pronto con modelo y validación sólidos. Añade: determinar a partir de qué rapidez cambia la recomendación para cada yacimiento, analizar qué ocurre si el mar está agitado o si la descarga se alarga, y comparar el barco con otro medio de transporte más rápido, con análisis de sensibilidad informal. La ruta de distancia máxima alcanzable (R3, nivel S1) puede aparecer como extensión, pero no se espera de la mayoría en primaria.",
-    "acostumbramiento": "Si el grupo nunca ha modelado, conviene una actividad previa breve con un viaje que conozcan (por ejemplo en bus o auto): estimar cuánto demora ir y volver, decir qué supusieron y cómo comprobarían su estimación, sin buscar una respuesta única. Así se instala la costumbre de declarar supuestos y contrastarlos, que luego se usa en P2-RM y P6-VAL. Esta tarea funciona como iniciación al ciclo completo de modelación en nivel primaria, repartida en dos sesiones, y puede ser el primer paso de una secuencia que siga con la variante hacia arriba o con otras tareas de rapidez, distancia y tiempo.",
+    "uso_variantes": "No hay variante hacia abajo (variantes_detalle: abajo es null). Si un grupo de primaria se bloquea, no se simplifica la tarea ni se cambian los datos: se diagnostica qué han hecho, se ofrece primero la ayuda mínima y, si hace falta, se sugiere la ruta de la tabla de avance por hora (R1) o la comparación entre los dos viajes (R2), que son rutas de nivel P. Sin entregar regla, modelo ni resultado. La variante hacia arriba (S2) mantiene el mismo contexto y pide además determinar a partir de qué rapidez cambia la recomendación para cada yacimiento, ver cómo cambia si el mar está agitado o si el tiempo de descarga se alarga, y comparar un barco con otro medio de transporte más rápido, con análisis de sensibilidad informal. Úsala con grupos que ya cerraron con éxito la tarea principal, o en secundaria superior desde el inicio. En la sesión de cierre, un grupo de primaria que ya tenga su recomendación puede explorar solo la pregunta sobre mar agitado, que la tarea ya contempla en la fase de validación.",
+    "acostumbramiento": "Si el grupo nunca ha modelado, conviene una actividad breve previa con una situación cercana, por ejemplo estimar cuánto demora un recorrido conocido en bus o auto. Allí practican decir qué datos faltan, elegir una rapidez razonable y justificarla, sin buscar una única respuesta correcta. En una secuencia, esta tarea sirve como iniciación a la modelación en primaria, porque incluye todas las fases del ciclo y un modelo inadecuado reconocible (contar solo la ida). También puede ser parte de una secuencia sobre rapidez, distancia y tiempo si se la sigue con otra tarea que exija decidir con supuestos.",
     "tarea_siguiente": null
   },
   "materiales": {

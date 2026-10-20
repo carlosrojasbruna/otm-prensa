@@ -13,15 +13,15 @@
     {
       "invariante": "semantica",
       "severidad": "advertencia",
-      "ubicacion": "guia.escenarios.E4.que_aprende y puesta_en_comun.preguntas",
-      "descripcion": "El grupo decide usar el resultado de la demanda lineal solo para ver cómo cambia el margen y no como respuesta. — La respuesta final de N1_AA_r1 sí recomienda fijar el precio en 1,5P + m con el m obtenido al optimizar. Solo advierte que se calculó con valores de prueba y que la recomendación es poco segura. La guía sobreinterpreta al decir que el grupo no lo toma como respuesta.",
+      "ubicacion": "tarea.estudiante.enunciado_es",
+      "descripcion": "Un grupo de defensa de empresas estadounidenses demandó al gobierno — La fuente solo habla de un grupo de defensa estadounidense que ya había ganado antes contra aranceles amplios. No dice que represente a empresas; la redacción sobreinterpreta el resumen.",
       "origen": "modelo"
     },
     {
       "invariante": "semantica",
       "severidad": "advertencia",
-      "ubicacion": "tarea.estudiante.recursos_a_solicitud.R4",
-      "descripcion": "Su margen habitual es estrecho. — Esta caracterización del margen de la importadora no aparece en la noticia ni en las trazas. Se atribuye a una fuente externa del sector que no está incluida en fuentes.",
+      "ubicacion": "tarea.estudiante.recursos_a_solicitud R5",
+      "descripcion": "Existen series públicas de precios al consumidor y de volúmenes importados de queso publicadas por organismos oficiales — Es una afirmación sobre el mundo que no aparece en las fuentes; se atribuye a otra fuente externa que no está incluida en fuentes ni en trazas.",
       "origen": "modelo"
     }
   ],
@@ -37,7 +37,7 @@
       "metodo": "codigo+modelo",
       "valor_fuente": "$20bn",
       "resultado": "coincide",
-      "nota": "valor igual al de la noticia; modelo: Coincide en valor, unidad (miles de millones de dólares) y significado con el párrafo 49."
+      "nota": "valor igual al de la noticia; modelo: Coincide en valor, unidad (miles de millones de dólares) y significado: valor aproximado de los bienes canadienses gravados, párrafo 49."
     },
     {
       "indice": 1,
@@ -50,7 +50,7 @@
       "metodo": "codigo+modelo",
       "valor_fuente": "50%",
       "resultado": "coincide",
-      "nota": "valor igual al de la noticia; modelo: Coincide con el párrafo 53: es el arancel que una empresa estadounidense paga sobre el queso exportado desde Canadá."
+      "nota": "valor igual al de la noticia; modelo: Coincide con el arancel que paga una empresa estadounidense sobre queso exportado desde Canadá, párrafo 53."
     }
   ],
   "notebook": {
@@ -62,14 +62,14 @@
     "agente": "verificador",
     "version_prompt": "1.0",
     "modelo": "claude-opus-5-5",
-    "request_id": "req_011CgEC3DUp4BB3QAqJsV9bi",
-    "fecha": "2026-10-20T21:22:45+00:00",
-    "costo_usd": 0.120483,
+    "request_id": "req_011CgEDA8JaqDbapcb9RfGVg",
+    "fecha": "2026-10-20T21:37:23+00:00",
+    "costo_usd": 0.121347,
     "modelo_llamado": true,
-    "texto_noticia_recibido": false,
+    "texto_noticia_recibido": true,
     "uso": {
-      "input_tokens": 15862,
-      "output_tokens": 2476,
+      "input_tokens": 17633,
+      "output_tokens": 2165,
       "cache_creation_input_tokens": 1503,
       "cache_read_input_tokens": 0
     }

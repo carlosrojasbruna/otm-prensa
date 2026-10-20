@@ -397,13 +397,13 @@
           "redactor": {
             "modelo": "claude-sonnet-5-5",
             "version_modelo": "claude-sonnet-5-5",
-            "costo_usd": 0.142011,
+            "costo_usd": 0.312838,
             "version_prompt": "1.0"
           },
           "redactor_escenarios": {
             "modelo": "claude-opus-5-5",
             "version_modelo": "claude-opus-5-5",
-            "costo_usd": 0.19644,
+            "costo_usd": 0.421988,
             "version_prompt": "1.0"
           },
           "simulador": {
@@ -421,7 +421,7 @@
           "verificador": {
             "modelo": "claude-opus-5-5",
             "version_modelo": "claude-opus-5-5",
-            "costo_usd": 0.120483,
+            "costo_usd": 0.24183,
             "version_prompt": "1.0"
           }
         },
@@ -440,8 +440,8 @@
         "version_MAR03": "1.0",
         "version_MED01": "1.1",
         "diseno_simulador": "diseno_otm",
-        "fecha": "2026-10-20T21:22:45Z",
-        "costo_usd": 2.043815
+        "fecha": "2026-10-20T21:37:23Z",
+        "costo_usd": 2.561537
       }
     },
     "trazas_resumen": {
@@ -690,7 +690,7 @@
     },
     "guia": {
       "tarea_id": "2026-10-pagar-trasladar-o-esperar",
-      "version": 1,
+      "version": 2,
       "fecha": "2026-10-20",
       "ficha": {
         "titulo": "¿Pagar, trasladar o esperar? Un arancel con juicio en curso",
@@ -713,25 +713,25 @@
         ],
         "tiempo": "2 sesiones de 90 min",
         "puntaje_rub01": 24,
-        "version": 1,
+        "version": 2,
         "fecha": "2026-10-20",
-        "cambios": ""
+        "cambios": "v2: correcciones de la revisión humana 2 (Carlos Rojas Bruna)"
       },
       "meta": {
-        "que_observar": "Cómo un grupo convierte una decisión de precios con un juicio sin fecha ni resultado conocidos en un modelo: qué simplifica, cómo trata el reembolso incierto y tardío, cómo elige el traspaso del arancel de 50% y cuán segura declara su recomendación.",
-        "contenido": "Valor esperado y árbol de decisión, optimización de una variable (precio o traspaso), elasticidad y modelos de demanda, valor del dinero en el tiempo y análisis de sensibilidad.",
+        "que_observar": "Cómo un equipo asesor convierte una decisión de precios y contratos bajo un juicio de resultado y plazo inciertos en un modelo explícito. Se observa si distingue lo que la importadora puede decidir (cuánto del arancel de 50% traslada, cómo trata los contratos) de lo que no controla (si el tribunal falla a favor y cuándo). Se observa también si declara qué tan segura es su recomendación y bajo qué condiciones cambiaría.",
+        "contenido": "Valor esperado y árbol de decisión, optimización de una variable (precio o traspaso), elasticidad y modelos de demanda, valor del dinero en el tiempo (devolución con intereses, descontada) y análisis de sensibilidad.",
         "subcompetencias": [
-          "Comprender la situación como una decisión con incertidumbre y distinguir lo que se sabe de lo que hay que pedir (P1-MRS)",
-          "Simplificar y declarar supuestos y variables con símbolos (P2-RM)",
-          "Matematizar la utilidad por política y el reembolso como flujo incierto y descontado (P3-MM)",
-          "Trabajar el modelo: optimizar, hallar la probabilidad crítica y barrer parámetros (P4-WM)",
-          "Interpretar el resultado como recomendación condicionada (P5-INT)",
-          "Validar contra series públicas no usadas para construir el modelo y corregir supuestos (P6-VAL)",
+          "Comprender la situación y reformularla como una decisión con incertidumbre (P1-MRS)",
+          "Simplificar: elegir producto, horizonte, resultado del juicio, tipo de demanda y tasas, y declarar los supuestos (P2-RM)",
+          "Matematizar: escribir la utilidad por política y la devolución como flujo incierto y descontado (P3-MM)",
+          "Trabajar el modelo: optimizar el traspaso, hallar la probabilidad mínima de ganar que justifica esperar y barrer parámetros (P4-WM)",
+          "Interpretar el resultado como recomendación condicionada para la gerencia (P5-INT)",
+          "Validar contrastando lo predicho con series públicas y revisar supuestos (P6-VAL)",
           "Comunicar la recomendación con los límites del modelo y las variables que más la mueven (P7-EXP)"
         ],
-        "meta_social": "Trabajo cooperativo en grupos que actúan como equipo asesor: cada integrante debe poder explicar y defender los supuestos del grupo ante la gerencia y ante otros grupos.",
+        "meta_social": "Trabajo cooperativo en grupos pequeños que actúan como equipo asesor: cada grupo debe justificar ante otros por qué supone lo que supone y defender una recomendación que reconoce su propia incertidumbre.",
         "evidencia": [
-          "Reformulación escrita del problema como decisión con incertidumbre y lista de datos pedidos a la gerencia (P1-MRS)",
+          "Reformulación escrita del problema como decisión y lista de datos pedidos a la gerencia (P1-MRS)",
           "Hoja de supuestos y variables con símbolos (P2-RM)",
           "Fórmulas de utilidad por política y expresión del valor esperado de la devolución (P3-MM)",
           "Tabla o gráfico de utilidad esperada según traspaso y probabilidad de ganar (P4-WM)",
@@ -776,79 +776,79 @@
         "barreras_por_fase": [
           {
             "fase": "P1-MRS",
-            "barrera": "Es probable que el grupo se quede en el titular del juicio y no formule la decisión real de la gerencia: cómo fijar precios y manejar contratos mientras el caso sigue abierto. Puede no distinguir quién paga el arancel al ingresar el producto ni qué cambia si el tribunal se demora (bloqueo B12)."
+            "barrera": "Es probable que el grupo se quede en el juicio (quién tiene la razón) y no identifique que la decisión real de la gerencia es cómo fijar precios y manejar contratos mientras el caso sigue abierto. También es frecuente no separar quién paga el arancel de quién puede recibir la devolución. Pedir información cuesta: pueden no saber qué preguntar a la gerencia (bloqueo B12)."
           },
           {
             "fase": "P2-RM",
-            "barrera": "Cuesta acotar: un solo producto, un horizonte, un resultado del juicio binario o discreto y una forma de demanda. Algunos grupos pedirán datos exactos a la gerencia en lugar de estimar órdenes de magnitud, o dejarán sin declarar la elasticidad, la fracción trasladable, la probabilidad de ganar, el plazo, las tasas y si los competidores pagan el mismo arancel (bloqueo B23)."
+            "barrera": "Hay muchas variables posibles (costo, margen, elasticidad, fracción trasladable, probabilidad y plazo del fallo, tasas, qué hacen los competidores) y el grupo puede no priorizar o dejar supuestos implícitos. La ficha R4 describe un margen estrecho como rasgo del negocio dentro del escenario que plantea la gerencia; no es un dato de la noticia ni del sector, y el grupo puede tomarlo como hecho verificado. También puede costar elegir una forma de demanda (lineal o elasticidad constante) y pasar de ella a símbolos (bloqueo B23)."
           },
           {
             "fase": "P3-MM",
-            "barrera": "Tentación del modelo inadecuado: trasladar el arancel entero sin que cambie la demanda y contar la devolución como ingreso seguro e inmediato. Dificultad para escribir la utilidad como función del traspaso, para tratar el reembolso con probabilidad, intereses y descuento, y para elegir entre valor esperado y criterio prudente (bloqueo B34)."
+            "barrera": "Tratar la devolución como ingreso seguro e inmediato, o suponer que el arancel se traslada entero sin que cambie la demanda (el modelo inadecuado de la tarea). Les cuesta expresar un reembolso incierto, tardío y con intereses como un flujo descontado a la tasa de la empresa, y decidir entre valor esperado y criterio prudente (bloqueo B34)."
           },
           {
             "fase": "P4-WM",
-            "barrera": "Cuesta pasar de la fórmula a la optimización con demanda lineal o de elasticidad constante, y plantear la probabilidad crítica de ganar que iguala esperar con trasladar. El barrido de elasticidades y plazos puede quedarse en un solo caso, o el grupo puede dar por buena una cifra sin revisar su sentido (bloqueo B45)."
+            "barrera": "Optimizar el precio exige ligar costo con arancel, demanda y utilidad en una sola expresión, y calcular una probabilidad crítica de ganar. Ningún grupo simulado optimizó el precio de punta a punta (ruta R3) ni llegó a la conclusión de la solución de referencia sobre cuánto del arancel trasladar; los grupos tienden a comparar políticas ya fijadas o a centrarse en el valor esperado de la devolución. Con parámetros de prueba, además, el resultado numérico puede parecer una respuesta cerrada (bloqueo B45)."
           },
           {
             "fase": "P5-INT",
-            "barrera": "Los resultados numéricos no se traducen en una recomendación condicionada. Es probable que el grupo entregue un único traspaso sin decir en qué condiciones cambia, sin indicar cómo registrar la devolución (ganancia posible, no segura) ni qué hacer en los contratos de precio fijo (bloqueo B56)."
+            "barrera": "Pasar del número a una recomendación para la gerencia: cuánto subir precios, cómo registrar la devolución y qué hacer con contratos de precio fijo. Es común que la recomendación quede sin condiciones, o que la incertidumbre se reconozca de palabra pero no se refleje en qué cambiaría la decisión (bloqueo B56)."
           },
           {
             "fase": "P6-VAL",
-            "barrera": "Es fácil quedarse conforme con el modelo porque es coherente por dentro. Cuesta decidir qué variable y qué periodo de las series públicas comparar, y revisar un supuesto cuando el traspaso o la caída de volumen observados no calzan con lo predicho (bloqueo B67)."
+            "barrera": "Elegir qué variable y qué periodo de las series públicas contrastar, y hacerlo sin haberlas usado para construir el modelo. Cuando lo predicho y lo observado no calzan, puede costar decidir qué supuesto revisar en lugar de descartar el modelo entero o forzar el ajuste (bloqueo B67). La ficha R5 solo se entrega cuando el grupo ya fijó su recomendación."
           },
           {
             "fase": "P7-EXP",
-            "barrera": "Presentar una recomendación segura aunque dependa de supuestos débiles. Cuesta mostrar los límites del modelo y las variables que más lo mueven, en especial la duración esperada del juicio y la elasticidad."
+            "barrera": "Mostrar límites y sensibilidad sin diluir la recomendación: decir con claridad qué variables la mueven más (por ejemplo plazo, probabilidad, elasticidad) y a qué condiciones cambiaría, en un informe breve para un lector que no vio el modelo."
           }
         ]
       },
       "organizacion": {
         "momentos": [
           {
-            "momento": "Comprensión y trabajo grupal – sesión 1 (comprender, simplificar, matematizar)",
+            "momento": "Comprensión y trabajo grupal (sesión 1)",
             "tiempo": "75 min",
-            "estudiantes": "Leen el enunciado, reformulan la decisión de la gerencia y listan lo que saben y lo que no. Piden recursos según lo necesiten (R3, R4). Escriben la hoja de supuestos con símbolos y comienzan a escribir la utilidad por política y el valor de la devolución.",
-            "docente": "Circula y diagnostica sin intervenir aún: pregunta qué han decidido y por qué, qué datos han pedido y qué supuestos faltan. Entrega las fichas a solicitud (R3, R4) y, si el grupo pregunta por una variable concreta, solo un orden de magnitud. No entrega modelo, regla ni resultado. Anota qué rutas (R1 a R4) aparecen y dónde se atascan."
+            "estudiantes": "Leen el enunciado y reformulan la decisión de la gerencia. Piden las tarjetas R3 y R4 y preguntan por variables concretas. Escriben la hoja de supuestos con símbolos y empiezan a escribir la utilidad por política, con la devolución como flujo incierto. Eligen la ruta que consideren (tabla de escenarios, valor esperado, optimización del precio o árbol de decisión).",
+            "docente": "Circula y diagnostica sin intervenir aún: pregunta qué han decidido, qué han supuesto y por qué. Anota qué ruta toma cada grupo. Si un grupo cita el margen de la importadora, lo remite a que R4 lo presenta como supuesto de la gerencia dentro del escenario. No entrega fórmulas ni el resultado de la referencia."
           },
           {
-            "momento": "Puesta en común – sesión 1",
+            "momento": "Puesta en común de supuestos (sesión 1)",
             "tiempo": "15 min",
-            "estudiantes": "Algunos grupos presentan su hoja de supuestos y su primera forma de la utilidad. Los demás preguntan qué supuesto pesa más.",
-            "docente": "Modera, ordena los supuestos que difieren entre grupos y pregunta por su efecto en la decisión. No dice cuál es el correcto ni anticipa el traspaso óptimo."
+            "estudiantes": "Dos o tres grupos leen sus supuestos y variables. Contrastan qué dejaron fuera y qué cambiaría si cambiara cada supuesto.",
+            "docente": "Recoge los supuestos en el pizarrón sin corregirlos. Pregunta: ¿qué supuesto pesa más en su modelo?, ¿qué dato pedirían para ajustarlo?"
           },
           {
-            "momento": "Comprensión y trabajo grupal – sesión 2 (trabajar e interpretar)",
+            "momento": "Comprensión y trabajo grupal (sesión 2)",
             "tiempo": "40 min",
-            "estudiantes": "Retoman el modelo, optimizan el traspaso o comparan políticas, calculan la probabilidad crítica de ganar si su ruta lo permite y barren elasticidades y plazos. Redactan la recomendación con sus condiciones y fijan una versión antes de pedir contraste.",
-            "docente": "Circula con ayuda mínima primero: pregunta qué han calculado y qué significa para la gerencia. Si un grupo está bloqueado, usa preguntas sobre su propio modelo, por ejemplo cómo reaccionan los clientes al precio o cómo trata el momento en que llega la devolución. No da la fórmula ni el valor del traspaso."
+            "estudiantes": "Terminan el modelo, trabajan sus expresiones, hacen barridos de parámetros y fijan por escrito una recomendación con condiciones.",
+            "docente": "Circula y diagnostica: pide que expliquen qué hicieron y qué les falta. Ayuda mínima primero: una pregunta sobre qué pasa con las ventas cuando sube el precio, o sobre qué cambia si el fallo demora. Si ningún grupo plantea el precio como variable a optimizar (ruta R3), lo hace visible con preguntas, por ejemplo '¿cómo decidirían cuánto subir el precio, y cómo lo comprobarían?'. No entrega la regla de optimización ni el traspaso resultante."
           },
           {
-            "momento": "Puesta en común – sesión 2",
-            "tiempo": "20 min",
-            "estudiantes": "Comparan recomendaciones y condiciones entre grupos con rutas distintas (tabla de escenarios, valor esperado, optimización, árbol de decisión). Explican qué variable cambiaría su recomendación.",
-            "docente": "Pide que cada grupo diga qué supuestos sostienen su recomendación. Hace visible que distintas rutas coherentes con supuestos explícitos pueden ser defendibles. Cuando un grupo declara su recomendación como fija, autoriza que solicite la tarjeta de contraste R5."
+            "momento": "Puesta en común",
+            "tiempo": "25 min",
+            "estudiantes": "Presentan en orden de ruta (tabla de escenarios, valor esperado, optimización, árbol) la recomendación y las condiciones de cambio. Comparan por qué recomendaciones distintas pueden ser coherentes con supuestos distintos.",
+            "docente": "Modera. Dice explícitamente que ningún grupo simulado optimizó el precio de punta a punta (ruta R3) ni llegó a la conclusión de la referencia, de modo que no hay que esperar que surja. Si no surge en el curso, propone comparar dos recomendaciones de traspaso distintas y preguntar qué debería ser cierto de la demanda para que una supere a la otra. Si un grupo presenta un precio obtenido al optimizar con parámetros de prueba, pregunta cuánto cambiaría el precio si cambiaran esos parámetros y qué tan segura es entonces la recomendación; ni lo valida ni lo descarta."
           },
           {
             "momento": "Validación y cierre",
-            "tiempo": "30 min",
-            "estudiantes": "Indican qué variable y qué periodo quieren comparar y reciben R5. Contrastan el traspaso y la caída de volumen predichos con lo observado, corrigen al menos un supuesto si no calzan y preparan una presentación breve a la gerencia con gráfico de sensibilidad y límites del modelo.",
-            "docente": "Entrega R5 solo después de que el grupo fijó su recomendación y nombró la variable y el periodo. Pregunta qué esperaban ver y qué cambiarían si no calza. En el cierre, resalta los límites del modelo y la diferencia entre recomendación segura y recomendación condicionada, sin dar la solución de referencia."
+            "tiempo": "25 min",
+            "estudiantes": "Con la recomendación ya fijada, piden R5 indicando variable y periodo a comparar. Contrastan lo predicho con lo observado, corrigen un supuesto si hace falta y redactan en el grupo una síntesis breve para la gerencia con gráfico de sensibilidad.",
+            "docente": "Entrega R5 solo después de que el grupo tenga su recomendación escrita. Pregunta qué esperaba ver y qué supuesto revisaría si no calzan. En el cierre, pide a cada grupo una condición bajo la cual cambiaría su recomendación."
           }
         ],
-        "agrupamiento": "Grupos de tres o cuatro integrantes, estables en ambas sesiones, para que haya verbalización y discusión de supuestos. Conviene mezclar perfiles para que aparezcan rutas distintas.",
-        "roles": "Rotativos por sesión: quien lleva la hoja de supuestos, quien verifica los cálculos y la coherencia de las fórmulas, y quien representa al equipo ante la gerencia en la puesta en común. El docente actúa de gerencia: responde solo preguntas concretas y no valida el modelo.",
+        "agrupamiento": "Grupos de tres o cuatro estudiantes, estables en las dos sesiones, para que cada uno verbalice sus supuestos y decisiones ante los demás.",
+        "roles": "Rotativos entre sesiones: quien gestiona los pedidos de información a la gerencia, quien lleva la hoja de supuestos, quien calcula y quien prepara la comunicación. El docente exige que cualquier integrante pueda explicar el modelo del grupo.",
         "producciones": [
-          "Reformulación de la decisión y lista de datos pedidos a la gerencia",
+          "Reformulación de la decisión y lista de datos pedidos",
           "Hoja de supuestos y variables con símbolos",
-          "Fórmulas de utilidad por política y del valor esperado de la devolución",
+          "Fórmulas de utilidad por política y valor esperado de la devolución",
           "Tabla o gráfico de utilidad esperada según traspaso y probabilidad de ganar",
-          "Recomendación escrita con condiciones de cambio",
-          "Comparación entre lo predicho y lo observado con el supuesto corregido",
-          "Informe o presentación breve con gráfico de sensibilidad y límites del modelo"
+          "Recomendación escrita con condiciones",
+          "Comparación entre lo predicho y lo observado, con el supuesto corregido",
+          "Informe o presentación breve con gráfico de sensibilidad"
         ],
-        "tecnologia": "Calculadora y planilla o software de gráficos permitidos para P4-WM (optimizar, barrer parámetros, graficar sensibilidad) y para la simulación opcional de la duración del juicio en la ruta de árbol de decisión. No se usan para decidir supuestos, elegir la forma de demanda ni construir el modelo en lugar del grupo. Las series públicas solo se consultan mediante la tarjeta R5 en P6-VAL."
+        "tecnologia": "Calculadora o planilla permitidas desde P4-WM (cálculo, barridos de parámetros y gráficos) y en P7-EXP (gráfico de sensibilidad). No se usan para decidir qué supuestos adoptar, qué forma tiene la demanda ni cómo tratar la devolución: esas decisiones de P1-MRS a P3-MM se registran a mano antes de calcular. No se permiten herramientas que entreguen un modelo ya armado o el resultado de la solución de referencia."
       },
       "escenarios": [
         {
@@ -881,11 +881,15 @@
           ],
           "modelo": "valor esperado",
           "bloqueos": [],
-          "que_aprende": "Este grupo trata la devolución como un flujo incierto y tardío: la multiplica por la probabilidad de ganar y la descuenta con el costo de capital, cerca de la ruta R2. Luego prueba varias probabilidades y nota que, con recargo reembolsable, la recomendación casi no depende de la probabilidad. El curso ve que la sensibilidad indica qué dato importa más; aquí es la pérdida de clientes, que queda como condición de la recomendación. Lo que falta, comparado con E4, es una demanda que responda al precio.",
+          "que_aprende": "Es la corrida más cercana a la ruta R2. El grupo trata la devolución como un flujo incierto: la multiplica por la probabilidad de ganar, le suma intereses y la descuenta con el costo de capital, en vez de contarla como ingreso seguro. Prueba la decisión con tres valores de probabilidad y concluye que la política de recargo reembolsable casi no depende de esa probabilidad. La demanda no se modela: la pérdida de clientes queda como condición explícita de la recomendación, no como parte del cálculo. Comparado con E2 y E3, el curso ve que descontar el reembolso y separar las políticas permite compararlas; comparado con E4, ve que aquí falta la reacción de los clientes al precio.",
           "extracto_dialogo": [
             {
               "hablante": "Cami",
               "texto": "Dale con los tres escenarios, pero ojo: con recargo reembolsable p casi no entra, porque nuestro costo sería solo financiar c·t, o sea c·t·((1+k)^n − 1) con k nuestro costo de capital. Los escenarios sirven más para el caso en que absorbemos el arancel, ¿los hacemos para ambas opciones?"
+            },
+            {
+              "hablante": "Fran",
+              "texto": "Sí, pidamos k, porque los 52,5 llegan recién en 12 meses y en valor presente valen 52,5/(1+k). Con k = 10%, por ejemplo, son 47,7 y para p = 0,5 el costo esperado sube de 123,75 a unos 126,1."
             },
             {
               "hablante": "Fran",
@@ -895,7 +899,7 @@
         },
         {
           "id": "E2",
-          "nombre": "traslado proporcional",
+          "nombre": "traslado proporcional del arancel",
           "corridas": [
             "N4_VV_r1"
           ],
@@ -909,6 +913,8 @@
             "P7-EXP"
           ],
           "supuestos": [
+            "100 cajas a $1.000 cada una (cifras inventadas)",
+            "arancel de 50% pagado hoy",
             "tres escenarios del juicio: se frena el cobro, ganan con devolución con intereses, pierden y el arancel queda como costo",
             "margen de 20% sobre costo (inventado)",
             "mantener el margen implica trasladar todo el arancel al precio",
@@ -916,7 +922,7 @@
           ],
           "modelo": "proporcional",
           "bloqueos": [],
-          "que_aprende": "La ruta salta de simplificar a trabajar sin pasar por matematizar. El grupo calcula proporcionalmente qué precio mantiene el margen y llega a trasladar todo el arancel, que es la primera mitad del modelo inadecuado RX. A diferencia de RX, reconoce que los clientes pueden irse y no cuenta la devolución como segura. Sin embargo, deja sin modelar cuánto absorber. Al compararlo con E1 y E4, el curso ve que separar la estructura (arancel aparte, cláusula de devolución) de la cuantía exige una relación entre precio y demanda que este modelo no tiene.",
+          "que_aprende": "Muestra la mitad del modelo inadecuado RX: los cálculos suponen que mantener el margen exige trasladar el arancel entero al precio, sin que la cantidad vendida cambie en las cuentas. A diferencia de RX, el grupo no cuenta la devolución como ingreso seguro: la maneja con una línea aparte en la factura y una cláusula de devolución. Advierte que el alza puede espantar clientes, pero no lo incorpora al modelo y deja abierto cuánto absorber. Al compararlo con E4, el curso ve qué cambia cuando la cantidad vendida pasa a depender del precio. Al compararlo con E1, ve que la recomendación de estructura (recargo aparte) coincide, aunque el monto a trasladar sigue sin fundamento.",
           "extracto_dialogo": [
             {
               "hablante": "Cami",
@@ -925,6 +931,10 @@
             {
               "hablante": "Fran",
               "texto": "Dale con 20%: el costo es $150.000, así que para mantener el margen sobre costo cobraría $180.000 por las 100 cajas, o sea $1.800 cada una en vez de $1.200 sin arancel. Pero ojo, un 50% más de precio puede espantar clientes, entonces habría que ver si absorben una parte."
+            },
+            {
+              "hablante": "Fran",
+              "texto": "Me cuadra, y yo separaría la seguridad en dos: es alta en la estructura (arancel aparte, contratos cortos, cláusula de devolución) porque funciona gane quien gane, pero baja en cuánto absorber, hasta tener la caída de demanda y la caja. ¿Armamos así el ENTREGAMOS, con los datos que pedimos al final?"
             }
           ]
         },
@@ -947,8 +957,12 @@
             "P7-EXP"
           ],
           "supuestos": [
+            "costo del queso $100 por caja (inventado)",
+            "precio previo $120, margen $20 por caja",
+            "arancel 50% sobre el costo: costo $150",
             "trasladar la mitad del arancel: precio $145",
             "reembolso de $50 repartido mitad cliente, mitad importadora",
+            "intereses repartidos en partes iguales",
             "solo dos escenarios: ganan o pierden el juicio",
             "el cliente podría irse si sube el precio (no cuantificado)"
           ],
@@ -956,10 +970,10 @@
           "bloqueos": [
             {
               "transicion": "B23",
-              "como_se_destrabo": "Quedó sin resolver. Entre los turnos 12 y 14 el grupo discute si devolver su parte al cliente que ya se fue, pero no convierte la pérdida de clientes en una variable. Fran cambia de tema hacia pedir la probabilidad de ganar. El grupo sigue con dos casos numéricos y el efecto de perder clientes queda solo como advertencia."
+              "como_se_destrabo": "Sin resolver. Entre los turnos 12 y 14 el grupo discute si devolver su parte al cliente que ya se fue, pero no convierte la posible fuga de clientes en una variable. Fran cambia de tema y propone pedir la probabilidad de ganar. Luego arman dos casos (ganan o pierden) con los números inventados, y la pérdida de clientes queda como supuesto no cuantificado."
             }
           ],
-          "que_aprende": "Este grupo llega a trasladar la mitad del arancel, pero por reparto equitativo y no por optimización. Además deja la reacción de los clientes sin cuantificar. Al contrastarlo con E4, que escribe la ganancia con una demanda que depende del precio, el curso ve qué se gana al pasar de casos con números inventados a una variable. También ve que este grupo solo mira el peor y el mejor caso, sin probabilidad ni descuento de la devolución.",
+          "que_aprende": "El grupo elige trasladar la mitad del arancel y repartir el reembolso mitad y mitad por un argumento de equidad ('cada uno recupera lo que puso'), no porque un modelo lo justifique. Usa un criterio prudente: elegir lo que deje 'menos mal parados' en los dos casos del juicio. No pondera esos casos con una probabilidad ni descuenta el reembolso. La reacción del cliente aparece varias veces en la conversación, pero nunca entra en las cuentas: esa es la traba entre simplificar y matematizar. Al compararlo con E1, el curso ve el paso de comparar dos casos fijos a ponderarlos y descontarlos. Al compararlo con E4, ve el paso de una preocupación verbal sobre los clientes a una función de demanda.",
           "extracto_dialogo": [
             {
               "hablante": "Fran",
@@ -972,12 +986,16 @@
             {
               "hablante": "Fran",
               "texto": "Mmm, no sé, me imagino al cliente que se fue llegando con la factura a reclamar sus $25, y se siente injusto dejarlo fuera. [dibujo: una puerta de salida con una flecha de $25 que lo sigue] ¿Y si mejor pedimos qué tan probable es que ganen el juicio?"
+            },
+            {
+              "hablante": "Cami",
+              "texto": "Sí, pidamos eso, aunque dudo que nos den un número exacto, porque dice que nadie sabe cómo termina. [dibujo: una balanza con \"gana\" y \"pierde\" y un signo de pregunta al medio] ¿Y si armamos dos casos, uno si ganan y otro si pierden, y recomendamos lo que nos deje menos mal parados en los dos?"
             }
           ]
         },
         {
           "id": "E4",
-          "nombre": "bloqueo en trabajar",
+          "nombre": "bloqueo en trabajar con demanda lineal",
           "corridas": [
             "N1_AA_r1"
           ],
@@ -998,9 +1016,12 @@
             "P6-VAL"
           ],
           "supuestos": [
+            "costo con arancel = 1,5P",
+            "tasa de interés i por todo el período del juicio",
             "probabilidad de ganar p como variable",
             "plazos de prueba de 6, 12 y 24 meses con interés compuesto mensual",
             "precio fijado según el peor caso (perder el juicio)",
+            "devolución a clientes según el contrato",
             "demanda lineal Q = a − b·precio",
             "a y b como valores de prueba"
           ],
@@ -1008,19 +1029,11 @@
           "bloqueos": [
             {
               "transicion": "B45",
-              "como_se_destrabo": "Se destrabó entre pares. En los turnos 9 a 11 Cami no sabe cómo pasar del costo esperado a un precio, y Fran propone probar varios plazos. Después, Fran sugiere fijar el precio con el peor caso. Cami objeta que así se pierden clientes, que no están en la fórmula. Fran responde escribiendo la ganancia con una cantidad que depende del precio, y eso lleva al grupo a la demanda lineal y a derivar."
+              "como_se_destrabo": "Resuelto entre pares. Cami obtiene el costo esperado y no sabe cómo pasar de ahí a un precio. Fran simplifica la expresión y propone probar varios plazos; Cami fija plazos de prueba con interés mensual. Después Fran propone fijar el precio según el peor caso, y una pregunta de Cami sobre los competidores lleva al grupo a escribir la ganancia con una demanda lineal y a derivarla."
             }
           ],
-          "que_aprende": "Una objeción de un compañero sobre la competencia hace que el grupo vuelva a matematizar, como muestran los regresos a P3-MM en la ruta. Así llega a una demanda lineal y a un margen óptimo, cerca de la ruta R3. El grupo decide usar ese resultado solo para ver cómo cambia el margen y no como respuesta, porque los parámetros son de prueba. Al compararlo con E3, el curso ve que la reacción de los clientes cambia la recomendación solo cuando entra en el modelo. Al compararlo con E1, ve que aquí la devolución queda aparte y no se descuenta.",
+          "que_aprende": "Es la única corrida que escribe la ganancia con una demanda que depende del precio y la optimiza. El grupo sí recomienda fijar el precio en 1,5P + m con el m obtenido al derivar. Advierte que a y b son valores de prueba y que la recomendación es poco segura, porque depende de a, b, p y del plazo. El valor esperado de la devolución queda calculado aparte y no entra en la decisión de precio. Ningún grupo simulado, tampoco este, lleva la optimización hasta interpretar qué fracción del aumento de costo termina en el precio, que es la ruta R3 completa. Si en el curso no surge, el docente puede pedir al grupo que exprese el precio recomendado con y sin arancel y que compare cuánto cambió frente al aumento del costo, sin anticipar la respuesta. Al compararlo con E2, el curso ve que incluir la reacción de los clientes cambia el precio recomendado frente al traslado proporcional.",
           "extracto_dialogo": [
-            {
-              "hablante": "Cami",
-              "texto": "Sí, probemos varios plazos, por ejemplo 6, 12 y 24 meses, con una tasa mensual r para que i = (1+r)^meses − 1. Pero igual no sé cómo pasamos de ahí a una recomendación de precio, ¿qué hacemos con ese costo esperado?"
-            },
-            {
-              "hablante": "Fran",
-              "texto": "Yo diría que fijemos el precio con el peor caso, o sea 1,5P más el margen, porque así no perdemos plata si pierden el juicio. Y si ganan, la devolución 0,5P·(1+i) queda aparte, ya sea como ganancia extra o para devolvérsela a los clientes, según el contrato, ¿te parece?"
-            },
             {
               "hablante": "Cami",
               "texto": "Sí, me parece, pero si todos los competidores también pagan el arancel, ¿nos conviene subir el precio con el peor caso? Podríamos perder clientes, y eso no lo tenemos en la fórmula."
@@ -1028,6 +1041,14 @@
             {
               "hablante": "Fran",
               "texto": "Tienes razón, eso no lo había pensado. Podríamos poner la ganancia como (precio − 1,5P)·Q(precio), con Q las unidades que vendemos, y pedir cuánto bajan las ventas si subimos y qué cobran los competidores, ¿te parece?"
+            },
+            {
+              "hablante": "Cami",
+              "texto": "Derivar sí sé hacerlo: G(m) = m(a − 1,5bP) − b·m², entonces G'(m) = a − 1,5bP − 2bm = 0 y m = (a − 1,5bP)/(2b). Pero como a y b son inventados, ¿lo usamos solo para ver cómo cambia m y no como respuesta final?"
+            },
+            {
+              "hablante": "Fran",
+              "texto": "Sí, usémoslo solo para ver cómo cambia m: si P sube, m baja, y si a sube, m sube. Pero igual la recomendación tiene que decir que no es segura, porque depende de a, b, p y del plazo del juicio, ¿lo escribimos así?"
             }
           ]
         }
@@ -1038,57 +1059,49 @@
       },
       "intervenciones": [
         {
-          "bloqueo": "B12",
-          "z1_z2": "Pregunten: ¿cómo dirían con sus palabras cuál es la decisión de la gerencia y qué dato les falta para tomarla? Reconozcan que el caso tiene mucha incertidumbre y que preguntar es válido.",
-          "z3": "Hagan un dibujo de la cadena: proveedor canadiense, importadora que paga el arancel, cliente, tribunal. Marquen con un signo de interrogación lo que no saben.",
-          "z4": "¿Qué puede pasar con el arancel pagado según cómo termine el juicio, y qué pasa si el fallo se demora? ¿Qué le preguntarían a la gerencia para separar lo que se sabe de lo que no?",
-          "z5": "Ofrezcan el recurso a solicitud R3 (tarjeta sobre lo que pide la demanda) y pidan que lo usen para completar su lista de lo conocido y lo desconocido. No digan cómo valorar la devolución."
-        },
-        {
           "bloqueo": "B23",
-          "z1_z2": "Pregunten: ¿qué supuestos tienen escritos hasta ahora y cuál de ellos sigue solo en palabras, como una advertencia? Valoren lo ya anotado antes de pedir más.",
-          "z3": "Hagan un esquema de quién paga, quién recibe dinero y qué cambia cuando sube el precio. Después escriban cada supuesto con un símbolo.",
-          "z4": "Si el cliente reacciona al precio, ¿qué cantidad cambia y de qué depende? ¿Cómo podrían escribir lo que gana la importadora para que esa reacción sea una variable y no una nota al margen?",
-          "z5": "Ofrezcan el recurso a solicitud R4 (ficha del negocio) y recuerden que la gerencia entrega órdenes de magnitud solo si preguntan por una variable concreta. Pidan que escriban con palabras la ganancia total como ganancia por unidad por unidades vendidas y que decidan de qué depende cada factor, sin resolver todavía."
+          "z1_z2": "Pregunten qué han hecho hasta ahora con la preocupación por los clientes que se van: ¿dónde aparece esa idea en sus cuentas? Escuchen la respuesta antes de sugerir nada. Reconozcan que el grupo ya detectó una variable relevante, como pasó en E3 con la fuga de clientes.",
+          "z3": "Hagan un esquema con flechas de la cadena completa: precio, reacción de los clientes, unidades vendidas, ganancia. Marquen qué parte de esa cadena ya está en sus cálculos y cuál no.",
+          "z4": "Si el precio sube, ¿qué cambia en las unidades que venden? ¿Qué cantidad necesitarían tener para que esa reacción entre en la cuenta y no quede solo como comentario? Si no hay un número del juicio, ¿cómo comparan los casos de ganar y perder sin tratarlos como iguales? Pueden apoyarse en la ficha del negocio (R4) y en la tarjeta sobre lo que pide la demanda (R3).",
+          "z5": "Pidan a la gerencia, mediante R4, una variable concreta: por ejemplo, cuánto bajan las ventas si el precio sube. Úsenla como valor de prueba declarado como supuesto, aunque no sea exacto. La ficha R4 habla de un margen estrecho: tómenlo como supuesto de la gerencia dentro del escenario, no como dato del sector. Esta ayuda no indica cuánto trasladar ni qué política conviene."
         },
         {
           "bloqueo": "B45",
-          "z1_z2": "Pregunten: ¿qué han calculado hasta ahora y qué los frena para pasar de ese cálculo a un precio concreto? Pidan que lo expliquen en voz alta.",
-          "z3": "Ordenen lo que tienen en una tabla: prueben varios valores de plazo y de probabilidad de ganar y observen qué cambia y qué no.",
-          "z4": "Si fijan el precio mirando solo el peor caso, ¿qué les pasa a las ventas? ¿Qué falta en su fórmula para que esa reacción cuente, y a quién le preguntarían por ello?",
-          "z5": "Remitan a la ficha del negocio (recurso a solicitud R4) para recordar que los clientes comparan con otros proveedores. Sugieran que formulen una pregunta concreta a la gerencia sobre ventas o competidores, sin entregarles la forma de la relación entre precio y ventas ni el resultado."
+          "z1_z2": "Pregunten qué resultado ya tienen (por ejemplo, un costo esperado) y qué les falta para pasar de ahí a un precio. En E4 el bloqueo apareció justo en ese paso. Pídanles que cuenten en voz alta lo que ya calcularon antes de ofrecer cualquier idea.",
+          "z3": "Prueben varios valores en vez de buscar una sola respuesta: varios plazos del juicio, varias probabilidades de ganar, varios precios. Ordénenlos en una tabla para ver qué cambia y qué no. Es la salida que usó el grupo de E4 con sus plazos de prueba.",
+          "z4": "Si el precio que fijan influye en cuánto venden, ¿de qué dos factores depende la ganancia total? ¿De qué depende cada factor? ¿Qué decisión de la recomendación cambia si los competidores también pagan el arancel? Esa última pregunta fue la que destrabó a E4.",
+          "z5": "Elijan una forma simple para la relación entre precio y unidades vendidas (una recta, por ejemplo) con valores de prueba que declaren como supuestos. Busquen qué precio deja la ganancia más alta, primero en una tabla de precios y después, si pueden, con derivada. Pidan a la gerencia por R4 la variable que les falte. Esta ayuda no entrega la fórmula final, el precio ni la fracción del arancel que se traslada."
         },
         {
           "bloqueo": "B56",
-          "z1_z2": "Pregunten: ¿qué recomendación tienen hoy y con qué condiciones la cambiarían? Que la lean tal como la escribieron.",
-          "z3": "Escriban la recomendación como si fueran a presentarla a la gerencia: qué hacer, qué tan segura es y qué dato la movería más.",
-          "z4": "¿Qué observarían en el mundo real que les diga si su modelo predijo bien la reacción de precios y de ventas? ¿Qué supuesto sería el primero en revisarse si no calza?",
-          "z5": "Una vez fijada la recomendación, ofrezcan el recurso a solicitud R5 (tarjeta de contraste) y pidan que indiquen qué variable y qué periodo quieren comparar. No adelanten qué muestran las series ni cómo deberían calzar."
+          "z1_z2": "Pregunten qué recomendación han fijado y qué predice su modelo sobre el traspaso al precio y sobre el volumen vendido. Si todavía no tienen una recomendación escrita, el grupo aún no está en condiciones de validar.",
+          "z3": "Escriban en una línea lo que su modelo predice, antes de mirar cualquier dato. Dejen aparte cuáles son supuestos de prueba y cuáles son resultados del modelo.",
+          "z4": "¿Qué variable y qué periodo compararían con lo observado? ¿Qué supuesto revisarían primero si lo observado no calza con su predicción: la reacción de los clientes, la fracción trasladada o si los demás proveedores pagan el mismo arancel?",
+          "z5": "Una vez fijada la recomendación, entreguen la tarjeta de contraste (R5). El grupo debe nombrar la variable y el periodo que quiere comparar. No anticipen qué deberían mostrar las series ni qué ajuste corresponde."
         }
       ],
       "puesta_en_comun": {
         "seleccion_y_orden": [
-          "Primero E2 (traslado proporcional): anticipa la respuesta más intuitiva, mantener el margen trasladando todo el arancel. Permite ver cómo se parece a la primera mitad del modelo inadecuado RX y qué la diferencia, pues el grupo reconoce que los clientes pueden irse y no da la devolución por segura.",
-          "Segundo E3 (bloqueo en matematizar): monitorea un grupo que llega a trasladar parte del arancel por reparto equitativo y deja la pérdida de clientes sin cuantificar. Sirve para que el curso nombre qué falta para pasar de dos casos numéricos a una variable.",
-          "Tercero E4 (bloqueo en trabajar): secuencia el paso siguiente. Una objeción sobre la competencia lleva a escribir la ganancia con ventas que dependen del precio. Conecta con E3 mostrando que la reacción de los clientes cambia la recomendación solo cuando entra en el modelo.",
-          "Cuarto E1 (ruta esperada): conecta la devolución como flujo incierto y tardío, con probabilidad y descuento, con la demanda de E4. Muestra que la sensibilidad indica qué dato pesa más y deja la pérdida de clientes como condición de la recomendación.",
-          "El docente presenta su propia ruta al final, solo si aporta algo que no apareció, y la compara con las de los grupos."
+          "Primero E2 (traslado proporcional): sirve para seleccionar un punto de partida accesible y hacer visible el supuesto de que mantener el margen exige trasladar el arancel entero sin que cambie la cantidad vendida. Es la mitad del modelo inadecuado RX, pero con la devolución en línea aparte y no como ingreso seguro. Así el curso parte de una idea conocida y el docente no impone su propia ruta.",
+          "Segundo E3 (bloqueo en matematizar): se presenta para monitorear el bloqueo B23. El grupo elige trasladar la mitad del arancel por un argumento de equidad y un criterio prudente entre dos casos, sin ponderar ni descontar, y la fuga de clientes nunca entra en las cuentas. Conviene aclarar que esa elección no viene de un modelo y no debe confundirse con la conclusión de la solución de referencia.",
+          "Tercero E1 (ruta esperada): se secuencia para conectar con E3 el paso de comparar dos casos fijos a ponderarlos con una probabilidad y descontarlos. Muestra la devolución como flujo incierto y tardío, y que con recargo reembolsable la decisión casi no depende de la probabilidad. Deja a la vista lo que falta: la reacción de los clientes al precio.",
+          "Cuarto E4 (demanda lineal): se cierra con la única corrida que escribe la ganancia con una demanda que depende del precio y la optimiza. Recomienda fijar el precio en 1,5P + m con el m obtenido al derivar, y advierte que a y b son valores de prueba y que la recomendación es poco segura. Permite conectar con E2 y ver qué cambia cuando los clientes reaccionan al precio.",
+          "Paso final, solo si no surge en el curso: ningún grupo simulado llevó la optimización de punta a punta (ruta R3) ni llegó a la conclusión de la solución de referencia sobre qué parte del arancel conviene trasladar. Para hacer visible esa ruta, pidan a un grupo que exprese el precio recomendado con arancel y sin arancel, y que compare cuánto cambió el precio frente al aumento del costo. No anticipen la respuesta ni el resultado."
         ],
         "preguntas": [
-          "¿Qué supuestos escribió cada grupo sobre la reacción de los clientes y sobre los competidores? ¿Cuál cambia más la recomendación?",
-          "En E2, ¿qué se pierde al mantener el margen trasladando todo el arancel? ¿En qué se diferencia de RX?",
-          "En E3 y E4, ¿qué diferencia hace pasar de casos con números inventados a una ganancia que depende del precio?",
-          "¿Qué hace cada grupo con la devolución: la cuenta como ingreso seguro, la deja aparte o la descuenta? ¿Qué supuesto sobre el juicio hay detrás de cada decisión?",
-          "En E1, ¿por qué con recargo reembolsable casi no importa la probabilidad de ganar? ¿Qué condición habría que cambiar para que sí importara?",
-          "E4 usa parámetros de prueba y no los toma como respuesta. ¿Cuándo es legítimo usar un resultado así?",
-          "¿Qué datos pedirían a la gerencia y cómo cambiaría su recomendación según lo que respondan?",
-          "¿Cuáles son los límites de cada modelo y bajo qué condiciones dejaría de servir?"
+          "E2: al mantener el margen sobre el costo, ¿qué se está suponiendo sobre cuántas unidades se venden? ¿Dónde aparece ese supuesto en sus cuentas?",
+          "E3: ¿en qué se apoya la elección de repartir el reembolso y trasladar una parte? ¿Un argumento de equidad es lo mismo que un modelo? ¿Qué cambiaría si la fuga de clientes entrara en las cuentas?",
+          "E1: ¿por qué cuenta como distinto tratar la devolución como flujo incierto, con intereses y descontado, que como ingreso seguro? ¿Qué decisión de la recomendación depende poco de la probabilidad de ganar y cuál quedó fuera del cálculo?",
+          "E4: la corrida fija el precio en 1,5P + m con el m que obtiene al derivar y advierte que a y b son valores de prueba. ¿Qué dice esa advertencia sobre cuán segura es la recomendación? ¿Qué cambia en m si cambian los valores de prueba? ¿Cómo se leería m frente al aumento del costo?",
+          "¿Qué ruta permitió comparar políticas con mayor claridad y qué ruta exigió más supuestos? ¿Qué se gana y qué se pierde al pasar de una tabla de escenarios a una función de demanda?",
+          "La ficha de la gerencia (R4) habla de un margen estrecho: ¿es un dato o un supuesto de nuestro escenario? ¿Qué pasaría con la recomendación si fuera otro?",
+          "¿Qué condiciones harían cambiar la recomendación: el plazo del juicio, la probabilidad de ganar, la reacción de los clientes, que los demás proveedores paguen o no el mismo arancel?"
         ],
-        "contraste_validacion": "Entregue el recurso a solicitud R5 solo cuando cada grupo haya fijado su recomendación. Cada grupo indica qué variable y qué periodo compara: series públicas de precios al consumidor y de volúmenes importados de queso, antes y después de la entrada en vigor del arancel o de un episodio anterior comparable. Compara el traspaso y la caída de volumen que predijo su modelo con lo observado, sin haber usado esas series para construirlo. Luego cada grupo escribe qué supuesto corregiría si no calzan, por ejemplo la reacción de los clientes o el comportamiento de los competidores. Cierre pidiendo cómo cambiaría la recomendación y qué quedaría como condición explícita. No agregue datos ni valores que no estén en la tarea."
+        "contraste_validacion": "Antes de mirar datos, cada grupo escribe qué traspaso al precio y qué caída de volumen predice su modelo. Luego, una vez fijada la recomendación, se entrega la tarjeta R5: el grupo nombra la variable y el periodo. Se contrastan con las series públicas de precios al consumidor y de volúmenes importados de queso, antes y después de la entrada en vigor del arancel o de un episodio anterior comparable. Esas series no se usaron para construir el modelo, que es lo que hace independiente la comparación. Se pide comparar lo predicho con lo observado en traspaso y en volumen, ver cuál supuesto no calza (reacción de los clientes, fracción trasladada, si los demás proveedores pagan el mismo arancel) y corregirlo por escrito. Pueden compararse las predicciones de E2 y E4 contra la misma evidencia sin anticipar cuál se acerca más. No se agregan datos fuera de lo que la tarea describe."
       },
       "variantes_y_continuidad": {
-        "uso_variantes": "La variante hacia abajo (tramo S2) conviene si el grupo es de secundaria alta o si, en la sesión 1, la mayoría no logra pasar de P2-RM a P3-MM. Cambia así: se comparan tres políticas fijas de precio (absorber el arancel, trasladarlo entero, trasladar una parte) con un solo escenario de resultado del juicio y una tabla de costos que la gerencia entrega al solicitarla; se retira la exigencia de modelar la demanda y se valida con una sola serie de precios. Equivale a la ruta R1 como punto de partida. Con ella el docente puede reducir las exigencias de P3-MM y P4-WM sin cambiar el enunciado. La variante hacia arriba es null: la tarea no la define, de modo que para un grupo avanzado conviene sostener las rutas R2 a R4 con sensibilidad formal, sin inventar una variante.",
-        "acostumbramiento": "Si el grupo nunca ha modelado, conviene una actividad previa breve con una decisión cotidiana bajo incertidumbre, en la que escriban una hoja de supuestos y justifiquen por qué simplifican, sin cálculo extenso. También sirve una sesión previa que practique el árbol de decisión con probabilidades dadas. En una secuencia, esta tarea es de nivel universitario y funciona como parte de una secuencia avanzada, no como diagnóstico ni iniciación. Para un grupo sin experiencia, la iniciación debería hacerse con la variante S2 antes de abordar las rutas con valor esperado y optimización.",
+        "uso_variantes": "Variante hacia abajo (S2): úsela si el grupo es de secundaria alta, o si el grupo no maneja todavía optimización con derivadas ni el valor del dinero en el tiempo, o si el tiempo se acorta. Cambia así: se comparan tres políticas fijas de precio (absorber el arancel, trasladarlo entero, trasladar una parte) con un solo escenario de resultado del juicio; la gerencia entrega una tabla de costos al solicitarla; se retira la exigencia de modelar la demanda; y se valida con una sola serie de precios. Corresponde a la ruta R1 (tabla de escenarios). Con ella no se espera ver la optimización del precio. Variante hacia arriba: no existe (es null); si un grupo avanza rápido, puede profundizar dentro de la tarea con la ruta de árbol de decisión con plazos del juicio (R4) o con barridos de elasticidad y plazo, sin cambiar el enunciado.",
+        "acostumbramiento": "Si el grupo nunca ha modelado, conviene una actividad previa breve, de otro contexto, donde deban decidir bajo incertidumbre con un resultado incierto (por ejemplo, elegir entre dos opciones con resultado posible pero no seguro), listar sus supuestos y decir qué dato cambiaría su elección. Así se practica distinguir lo que se decide de lo que no se controla, y escribir supuestos antes de calcular. Esta tarea, de nivel universitario y con dos sesiones, funciona como iniciación a la modelación completa del ciclo si el grupo ya hizo esa actividad previa; para un grupo sin experiencia, como parte de una secuencia que parte con la variante S2 y luego retoma la versión completa.",
         "tarea_siguiente": null
       },
       "materiales": {
@@ -1155,6 +1168,23 @@
       "fecha": "2026-10-20T21:22:45+00:00",
       "de": "con_guia",
       "a": "verificada"
+    },
+    {
+      "fecha": "2026-10-20T21:34:02+00:00",
+      "de": "verificada",
+      "a": "simulada",
+      "revisor": "Carlos Rojas Bruna",
+      "motivo": "revisión humana 2 rechaza la guía v1 (3 observaciones)"
+    },
+    {
+      "fecha": "2026-10-20T21:36:59+00:00",
+      "de": "simulada",
+      "a": "con_guia"
+    },
+    {
+      "fecha": "2026-10-20T21:37:26+00:00",
+      "de": "con_guia",
+      "a": "verificada"
     }
   ],
   "marcas": {
@@ -1207,16 +1237,16 @@
         "versiones_modelo": [
           "claude-sonnet-5-5"
         ],
-        "costo_usd": 0.142011,
-        "llamadas": 2
+        "costo_usd": 0.312838,
+        "llamadas": 4
       },
       "redactor_escenarios": {
         "modelo": "claude-opus-5-5",
         "versiones_modelo": [
           "claude-opus-5-5"
         ],
-        "costo_usd": 0.19644,
-        "llamadas": 1
+        "costo_usd": 0.421988,
+        "llamadas": 2
       },
       "ilustrador": {
         "modelo": "claude-sonnet-5-5",
@@ -1231,8 +1261,8 @@
         "versiones_modelo": [
           "claude-opus-5-5"
         ],
-        "costo_usd": 0.120483,
-        "llamadas": 1
+        "costo_usd": 0.24183,
+        "llamadas": 2
       }
     },
     "costos_compartidos": [
@@ -1265,6 +1295,17 @@
       "ok": true,
       "ruta": "tareas/2026-10/pagar-trasladar-o-esperar/",
       "rama": "tareas/semana-2026-W43"
+    },
+    "revision_2": {
+      "revisor": "Carlos Rojas Bruna",
+      "fecha": "2026-10-20T21:34:01Z",
+      "observaciones": [
+        "E4 (corrida N1_AA_r1) y la pregunta de la puesta en común sobre E4: la corrida sí recomienda fijar el precio en 1,5P + m con el m obtenido al optimizar; solo advierte que los parámetros son de prueba y que la recomendación es poco segura. Corregir que_aprende y la pregunta para no afirmar que el grupo no toma ese resultado como respuesta.",
+        "Ficha R4: 'su margen habitual es estrecho' no tiene fuente en la noticia. Donde la guía la use (intervenciones, organización), presentarlo como un supuesto de la gerencia dentro del escenario, no como un dato del sector.",
+        "Ningún grupo simulado optimizó el precio de punta a punta (ruta R3) ni llegó a la conclusión de la referencia de trasladar cerca de la mitad del arancel. Decirlo explícitamente al docente (análisis a priori o puesta en común) e indicar cómo hacer visible esa ruta si no surge en el curso, sin entregar el resultado."
+      ],
+      "version_guia": 2,
+      "cambios": "v2: correcciones de la revisión humana 2 (Carlos Rojas Bruna)"
     },
     "pendiente": "revision_humana_2"
   }
