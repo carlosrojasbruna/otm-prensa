@@ -122,3 +122,31 @@ def test_notebook_tiempo_limite(tmp_path):
 def test_parsear_numero():
     assert V.parsear_numero("38 %") == 38 and V.parsear_numero("1.234,5") == 1234.5
     assert V.parsear_numero(220) == 220 and V.parsear_numero("sin cifra") is None
+
+
+def test_contraste_semantico_recibe_titulo_de_la_noticia(monkeypatch):
+    """Una afirmación que solo está en el titular no debe quedar sin fuente (caso anticipo-renta-vitalicia)."""
+    import json as _json
+    from pipeline.agentes.verificador import run as ver
+
+    capturado = {}
+
+    def falso_llamar(**kw):
+        capturado["user"] = _json.loads(kw["user"])
+        return {"salida": {"cifras": [], "afirmaciones_no_respaldadas": []}, "meta": {"costo_usd": 0.0}}
+
+    monkeypatch.setattr(ver, "llamar", falso_llamar)
+    tarea = {"noticia": {"medio": "CIPER Chile", "titulo": "Suprema da la razón a aseguradoras", "fecha": "2026-10-19",
+                         "resumen_propio": "Resumen sin el sentido del fallo.", "cifras_usadas": []}}
+
+    class Inf:
+        def add(self, *a, **k):
+            pass
+
+    try:
+        ver._contraste_semantico(Inf(), tarea, {}, {}, None, {"estado": "no_encontrado", "stdout": ""}, [], None)
+    except (KeyError, TypeError):
+        pass  # el resto del procesamiento no importa aquí; solo lo enviado al modelo
+    noticia = capturado["user"]["fuentes"]["noticia"]
+    assert noticia["titulo"] == "Suprema da la razón a aseguradoras"
+    assert noticia["medio"] == "CIPER Chile" and noticia["fecha"] == "2026-10-19"

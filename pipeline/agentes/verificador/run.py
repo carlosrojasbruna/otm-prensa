@@ -275,8 +275,13 @@ def _cifras(inf, tarea, noticia, nb) -> list[dict]:
 # --------------------------------------------------------------------------- modelo
 def _contraste_semantico(inf, tarea, guia, trazas, noticia, nb, cifras, cliente):
     n = noticia or {}
+    ficha = tarea.get("noticia") or {}
+    # El título forma parte de la cita (medio, título, fecha, URL): sin él, afirmaciones que solo están en el
+    # titular se marcaban como no respaldadas (caso 2026-10-anticipo-renta-vitalicia, ver decisiones.md).
     fuentes = {
-        "noticia": {"resumen_propio": n.get("resumen_propio") or tarea["noticia"].get("resumen_propio"),
+        "noticia": {"medio": n.get("medio") or ficha.get("medio"), "titulo": n.get("titulo") or ficha.get("titulo"),
+                    "fecha": n.get("fecha") or ficha.get("fecha"),
+                    "resumen_propio": n.get("resumen_propio") or ficha.get("resumen_propio"),
                     "cifras": n.get("cifras") or tarea["noticia"].get("cifras_usadas")},
         "notebook": {"estado": nb["estado"], "salida": nb["stdout"][:4000]},
     }
