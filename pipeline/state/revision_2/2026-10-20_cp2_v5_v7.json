@@ -1,0 +1,14 @@
+{
+  "2026-10-pagar-trasladar-o-esperar-v4": [
+    {
+      "criterio": "nivel",
+      "mejora_minima": "Tres precisiones solo en task_space; no cambiar enunciado_es, foto_descripcion ni los recursos (la simulación se reutiliza). (1) reference_solution, paso 7 y result: mantener el precio previo (absorber todo) solo es óptimo si q·δ = 1, no 'q·δ ≥ 1'; con q·δ > 1 el costo efectivo queda bajo el costo previo y el óptimo baja el precio. (2) routes R4, resultado: no afirmar que el plazo mueve la recomendación más que la probabilidad; q y δ entran como producto q·δ, así que lo que decide es ese producto (un plazo largo y un costo de financiamiento alto bajan δ, y una probabilidad baja baja q). (3) validation_evidence: un traspaso observado cerca del aumento completo del costo es coherente con elasticidad constante alta (ε/(ε−1) cerca de 1); un traspaso claramente mayor que el aumento completo sugiere elasticidad constante BAJA (ε cerca de 1), no alta."
+    }
+  ],
+  "2026-10-anticipo-renta-vitalicia-v6": [
+    {
+      "criterio": "contexto",
+      "mejora_minima": "Corregir solo noticia.cifras_usadas[0], coherente con el enunciado (el oficio de la CMF fue anulado y el tope lo fijó la ley): que_es 'tope del adelanto de las rentas vitalicias fijado por la ley del tercer retiro'; localizador: noticia, párrafos 31 y 32. No cambiar enunciado_es, foto_descripcion ni los recursos (la simulación se reutiliza)."
+    }
+  ]
+}

@@ -1,0 +1,295 @@
+{
+  "tarea_id": "2026-10-anticipo-renta-vitalicia-v7",
+  "diseno": "diseno_otm",
+  "corridas": 6,
+  "modelo": "claude-sonnet-5-5",
+  "costo_usd": 1.4695,
+  "por_corrida": [
+    {
+      "id": "N1_VV_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N1",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P1-MRS",
+        "P2-RM",
+        "P4-WM",
+        "P2-RM",
+        "P4-WM",
+        "P6-VAL",
+        "P4-WM",
+        "P5-INT",
+        "P2-RM",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B34",
+          "turnos": [
+            10,
+            11
+          ],
+          "resolucion": "peer"
+        }
+      ],
+      "supuestos": [
+        "pensión mensual de 400 mil",
+        "adelanto = 10% de una pensión mensual (40 mil)",
+        "vive de 65 a 85 años (20 años, 240 meses)",
+        "interés de 3% anual",
+        "interés cobrado sobre saldo promedio (mitad del adelanto)",
+        "descuento fijo cada mes hasta pagar todo",
+        "plazos de 10 o 20 años",
+        "en muchas personas las muertes tempranas y tardías se compensan en promedio"
+      ],
+      "modelo": "interés simple",
+      "respuesta_final": "Descuento fijo cada mes, calculado a partir del 10% de la pensión mensual (unos 217 a 383 pesos por cada 400 mil de pensión, según si el plazo es 20 o 10 años), considerando interés y una tabla de cuántos viven a los 65; el descuento se detiene cuando se paga todo. Es una estimación, firme solo si los datos de interés y mortalidad son buenos, y se revisa si cambia el interés.",
+      "validacion": true,
+      "archivo": "N1_VV_r1.json",
+      "costo_usd": 0.209072
+    },
+    {
+      "id": "N1_AA_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N1",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P4-WM",
+        "P5-INT",
+        "P4-WM",
+        "P5-INT",
+        "P3-MM",
+        "P4-WM",
+        "P5-INT",
+        "P2-RM",
+        "P6-VAL",
+        "P4-WM",
+        "P6-VAL",
+        "P3-MM",
+        "P4-WM",
+        "P3-MM",
+        "P4-WM"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B23",
+          "turnos": [
+            14,
+            15
+          ],
+          "resolucion": "peer"
+        },
+        {
+          "transicion": "B45",
+          "turnos": [
+            23,
+            24
+          ],
+          "resolucion": "peer"
+        }
+      ],
+      "supuestos": [
+        "adelanto = 10% del total de la renta en la vida",
+        "pensión de $300.000 mensuales",
+        "edad 65 años",
+        "vive hasta 85 (esperanza de vida, 20 años)",
+        "descuento parejo mensual",
+        "en promedio los que viven menos compensan a los que viven más",
+        "descuento mientras la persona viva",
+        "pensión reajustada por inflación",
+        "tasa de interés constante 0,3% mensual"
+      ],
+      "modelo": "anualidad cierta",
+      "respuesta_final": "No llegan a exponer una respuesta final. Su propuesta en curso: adelanto de $7.200.000 (10% de 300.000·12·20) y cuota tal que 7.200.000 = cuota·(1−(1+r)^(−240))/r; con r = 0,3% mensual la cuota es ≈ $42.100, cerca de 14% de la pensión, mayor que el 10% sin descontar. Dejan pendiente pedir la tabla de mortalidad, la inflación y la tasa, y si r debe ser real.",
+      "validacion": true,
+      "archivo": "N1_AA_r1.json",
+      "costo_usd": 0.329576
+    },
+    {
+      "id": "N2_VV_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N2",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P2-RM",
+        "P4-WM",
+        "P6-VAL",
+        "P4-WM",
+        "P2-RM",
+        "P4-WM",
+        "P5-INT",
+        "P6-VAL",
+        "P4-WM",
+        "P5-INT",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B23",
+          "turnos": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "resolucion": "peer"
+        }
+      ],
+      "supuestos": [
+        "adelanto = 10% del pozo de todo lo que le queda por cobrar",
+        "pozo calculado como suma de pensiones sin descontar (400.000 × 240)",
+        "vida restante de unos 20 años (240 meses), según la expectativa de vida promedio",
+        "pensión inventada de $400.000",
+        "cuota mensual constante",
+        "tasa de interés constante de 0,3% mensual",
+        "probabilidad de seguir viva que baja 0,2% cada mes (inventada)",
+        "plazo alternativo de 30 años (360 meses)"
+      ],
+      "modelo": "anualidad actuarial",
+      "respuesta_final": "La cuota C es la que hace que la suma de C multiplicada por la probabilidad de seguir viva, descontada con la tasa, iguale el adelanto de 9.600.000. Con números inventados (0,3% de interés mensual y 0,2% mensual de probabilidad de fallecer) da unos 68.780 al mes a 20 años (cerca de 17% de la pensión) o unos 57.550 a 30 años. No es una regla firme, porque cambia con la tabla de mortalidad y la tasa.",
+      "validacion": true,
+      "archivo": "N2_VV_r1.json",
+      "costo_usd": 0.3626
+    },
+    {
+      "id": "N3_AA_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N3",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P3-MM",
+        "P2-RM",
+        "P4-WM",
+        "P5-INT",
+        "P4-WM",
+        "P6-VAL",
+        "P5-INT",
+        "P6-VAL",
+        "P4-WM",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "10% del valor total de la renta (capital), no de la pensión anual",
+        "edad 65 años",
+        "tasa de descuento 3% (sensibilidad 2% y 4%)",
+        "tabla de mortalidad chilena",
+        "misma tasa para calcular A y para descontar",
+        "horizonte de 20 años ciertos como aproximación sin mortalidad",
+        "descuento constante hasta completar A, plazo de 15 años",
+        "anualidades aproximadas ä65≈14 y ä65:15≈11"
+      ],
+      "modelo": "valor actuarial",
+      "respuesta_final": "d = A/ä_{x:15|} ≈ 13% de la pensión durante 15 años (65 años, tasa 3%); aproximado porque los factores 14 y 11 no salen de la tabla; firme solo si la tasa y la mortalidad no cambian, y la tasa lo mueve (cerca de 18% entre 2% y 4% con 20 años ciertos).",
+      "validacion": true,
+      "archivo": "N3_AA_r1.json",
+      "costo_usd": 0.165224
+    },
+    {
+      "id": "N4_VV_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N4",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P6-VAL",
+        "P5-INT",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "valor presente esperado de los descuentos igual al adelanto",
+        "10% se interpreta como 10% del capital que respalda la pensión (A)",
+        "tasa de interés constante (3% anual, probada con 2% y 5%)",
+        "horizonte cierto de 20 años en el ejemplo",
+        "adelanto inventado A = 1.000",
+        "descuento de por vida, sin cobrar a herederos",
+        "pérdidas por fallecimiento temprano se compensan en la cartera",
+        "usar mortalidad de pensionados reales",
+        "tasa y tabla fijas al pensionarse, revisadas solo para casos nuevos"
+      ],
+      "modelo": "anualidad vitalicia",
+      "respuesta_final": "Cuota mensual d = A / Σ v^t·p_t descontada mientras la persona viva, sin cobrar a herederos; en un ejemplo con 20 años ciertos y A inventado da 5,5 a 6,5 por cada 1.000 de adelanto (tasas de 2% a 5%). Tasa y tabla quedan fijas al pensionarse y se revisan solo para casos nuevos, porque d es sensible a ambas.",
+      "validacion": true,
+      "archivo": "N4_VV_r1.json",
+      "costo_usd": 0.203696
+    },
+    {
+      "id": "N4_AA_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N4",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P3-MM",
+        "P4-WM",
+        "P6-VAL",
+        "P4-WM",
+        "P5-INT",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "el 10% es del valor de la renta vitalicia, no de un año",
+        "descuento mensual constante",
+        "plazo de descuento elegido por el grupo (10, luego 15 años)",
+        "edad 65",
+        "horizonte cierto de 20 años (esperanza de vida) sin mortalidad",
+        "tasa de interés constante (2% y 4%)",
+        "tope del descuento en 15% de la pensión",
+        "equivalencia solo en promedio"
+      ],
+      "modelo": "anualidad descontada",
+      "respuesta_final": "Regla: descuento mensual d = 0,10·P·ä_x/ä_{x:15} durante 15 años (o hasta el fallecimiento), con tope de 15% de la pensión; equivalencia solo en promedio y sensible a la mortalidad. Cálculo de prueba con anualidad cierta a 20 años e i=2%: d ≈ 12,7% de P (18,2% a 10 años, 34,7% a 5 años; la tasa mueve poco, ~1,4 puntos entre 2% y 4%). Debe recalcularse con la tabla de mortalidad y la tasa de la póliza.",
+      "validacion": true,
+      "archivo": "N4_AA_r1.json",
+      "costo_usd": 0.199296
+    }
+  ],
+  "agregado": {
+    "pct_bloqueo_por_transicion": {
+      "B23": 0.33,
+      "B34": 0.17,
+      "B45": 0.17
+    },
+    "modelos_observados": {
+      "interés simple": 1,
+      "anualidad cierta": 1,
+      "anualidad actuarial": 1,
+      "valor actuarial": 1,
+      "anualidad vitalicia": 1,
+      "anualidad descontada": 1
+    },
+    "pct_validan": 1.0
+  },
+  "fecha": "2026-10-20T22:32:08Z"
+}

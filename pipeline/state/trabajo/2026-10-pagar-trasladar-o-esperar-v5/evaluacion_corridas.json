@@ -1,0 +1,295 @@
+{
+  "tarea_id": "2026-10-pagar-trasladar-o-esperar-v5",
+  "evaluaciones": [
+    {
+      "iteracion": 1,
+      "version_tarea": 5,
+      "fecha": "2026-10-20T23:03:34Z",
+      "modelo": "claude-opus-5-5",
+      "version_prompt": "1.3",
+      "version_rubrica": "4.0",
+      "corridas": [
+        {
+          "n": 1,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "Se plantea una necesidad real de decisión empresarial bajo incertidumbre judicial. No se entrega ninguna regla, fórmula ni modelo para resolverla.",
+                "cita": "La gerencia debe decidir cómo fijar los precios a sus clientes y cómo manejar sus contratos en los próximos meses."
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta admite varias estrategias y modelos defendibles: trasladar el arancel, absorberlo, usar contratos ajustables o esperar. No prescribe procedimiento y no hay instrucciones posteriores que encaucen la ruta.",
+                "cita": "Ustedes son el equipo asesor: ¿qué estrategia recomendarían a la gerencia y qué tan segura es esa recomendación?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige suponer probabilidades y plazos del juicio, estimar márgenes y la reacción de los clientes, y solicitar información pertinente. Esas decisiones de modelación son sustantivas.",
+                "cita": "Nadie sabe cuándo ni cómo terminará el caso. [...] Pueden pedir información adicional."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "La situación corresponde a un litigio arancelario real. La decisión de precios de un importador es plenamente plausible fuera de la escuela.",
+                "cita": "Un grupo estadounidense de defensa, que ya había ganado antes un juicio contra aranceles amplios, demandó al gobierno por los nuevos aranceles a productos canadienses."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El tema, la demanda y las cifras provienen de un hecho noticioso real y constituyen el núcleo de la tarea. También son auténticas las series públicas de precios e importaciones de R5.",
+                "cita": "El gobierno grava bienes canadienses por un valor de unos 20 mil millones de dólares."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "Los escenarios judiciales, la devolución con intereses y los tipos de contrato condicionan la construcción del modelo. Ese mismo contexto es necesario para interpretar la recomendación y juzgar su seguridad.",
+                "cita": "Los demandantes piden que, si ganan, se devuelva lo pagado con intereses, y que se frene el cobro mientras dura el juicio."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a comprender la situación y simplificarla en escenarios y supuestos. Luego hay que matematizar, por ejemplo con valor esperado o árboles de decisión, calcular y volver al contexto para juzgar la robustez de la recomendación; ninguna fase queda hecha por el enunciado.",
+                "cita": "¿qué estrategia recomendarían a la gerencia y qué tan segura es esa recomendación?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Hay evidencia independiente, no usada en la construcción del modelo, para contrastar sus predicciones. El desenlace posterior del juicio aporta un segundo contraste.",
+                "cita": "Existen series públicas de precios al consumidor del rubro quesos y de volúmenes importados de queso. [...] Se entrega solo después de que el grupo …"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto económico y judicial es comprensible y pertinente para universitarios de primeros años. La demanda calza con las herramientas esperables de U según MAR03: probabilidad, decisión bajo incertidumbre, optimización y sensibilidad.",
+                "cita": "¿qué estrategia recomendarían a la gerencia y qué tan segura es esa recomendación?"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Se puede entrar comparando escenarios con aritmética elemental. La tarea admite además soluciones mucho más sofisticadas, como árboles de decisión con probabilidades, modelos de demanda con sustitución y análisis de sensibilidad al plazo y al resultado del juicio.",
+                "cita": "Sus contratos con clientes pueden ser de precio fijo por un periodo o de precio ajustable."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las distintas estrategias y supuestos permiten comparar soluciones. También abren preguntas sobre los límites del modelo, el valor de esperar o la competencia, y el contraste con datos reales.",
+                "cita": "Los clientes comparan precios con otros proveedores y algunos pueden cambiarse a quesos de otro origen."
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información necesaria puede solicitarse y está condicionada a que el grupo identifique las variables. Las tarjetas describen el negocio de forma cualitativa sin revelar la estructura del modelo.",
+                "cita": "La gerencia entrega órdenes de magnitud solo si el grupo pregunta por una variable concreta."
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgEKfAUJjtj32csXx4Db7",
+            "fecha": "2026-10-20T23:02:42+00:00",
+            "intentos": 1,
+            "costo_usd": 0.112684,
+            "avisos": [
+              "cita_no_literal:decisiones",
+              "cita_recortada_25:validacion",
+              "cita_no_literal:validacion"
+            ]
+          }
+        },
+        {
+          "n": 2,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "Plantea una necesidad real de decisión para la empresa y no entrega ninguna regla, fórmula ni modelo de decisión listo para aplicar.",
+                "cita": "La gerencia debe decidir cómo fijar los precios a sus clientes y cómo manejar sus contratos en los próximos meses."
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta admite varias estrategias defendibles (trasladar, absorber, esperar, renegociar contratos) y varios modelos, como árboles de decisión, valor esperado o escenarios. No prescribe procedimiento ni hay instrucciones posteriores que encaucen.",
+                "cita": "Ustedes son el equipo asesor: ¿qué estrategia recomendarían a la gerencia y qué tan segura es esa recomendación?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige formular supuestos sobre la probabilidad y la duración del juicio y sobre la reacción de los clientes, estimar márgenes y descartar información poco pertinente (los 20 mil millones). También obliga a pedir información adicional.",
+                "cita": "Nadie sabe cuándo ni cómo terminará el caso."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "La situación de una importadora afectada por un arancel impugnado judicialmente existe en el mundo extraescolar y el encuadre no se percibe forzado.",
+                "cita": "Una importadora de Estados Unidos que compra queso en Canadá paga hoy un arancel de 50% sobre ese queso."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El tema (demanda contra aranceles a Canadá) y los datos (50%, unos 20 mil millones) provienen de un hecho real de actualidad y forman el núcleo de la tarea. Las series públicas de R5 son además un recurso auténtico no creado para enseñar.",
+                "cita": "Un grupo estadounidense de defensa, que ya había ganado antes un juicio contra aranceles amplios, demandó al gobierno por los nuevos aranceles a productos canadienses."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona las decisiones de modelación: tipo de contrato, devolución con intereses, competencia y margen estrecho. También es indispensable para interpretar la recomendación y juzgar su seguridad.",
+                "cita": "Sus contratos con clientes pueden ser de precio fijo por un periodo o de precio ajustable."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a comprender la situación legal y comercial, simplificarla en escenarios, matematizarla y calcular resultados. Luego hay que interpretar una recomendación y juzgar su robustez, sin que el enunciado deje ninguna fase hecha.",
+                "cita": "¿qué estrategia recomendarían a la gerencia y qué tan segura es esa recomendación?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "El modelo puede contrastarse con evidencia independiente: series públicas de precios y volúmenes, entregadas después de fijar la recomendación. También con el desenlace posterior del juicio.",
+                "cita": "Existen series públicas de precios al consumidor del rubro quesos y de volúmenes importados de queso."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto comercial y jurídico es comprensible y pertinente para universitarios de primeros años. La demanda (decisión bajo incertidumbre, valor esperado, optimización, sensibilidad) corresponde a las herramientas de probabilidad y optimización esperables en U.",
+                "cita": "La gerencia debe decidir cómo fijar los precios a sus clientes y cómo manejar sus contratos en los próximos meses."
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es razonable: se puede entrar comparando dos o tres escenarios con aritmética simple. El techo es alto, porque admite árboles de decisión, modelos de elasticidad y traslado de costos, valor del dinero en el tiempo y análisis de sensibilidad a la probabilidad de fallo.",
+                "cita": "Pueden pedir información adicional."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las distintas estrategias y supuestos permiten comparar soluciones y estudiar límites del modelo, como la sensibilidad a la duración del juicio o al cambio de proveedor. También abren nuevas preguntas, por ejemplo sobre el efecto en consumidores o en otros productos.",
+                "cita": "qué tan segura es esa recomendación?"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información necesaria se obtiene a solicitud o puede estimarse; la probabilidad del fallo puede tratarse como parámetro. Ningún material revela el modelo ni la regla de decisión.",
+                "cita": "La gerencia entrega órdenes de magnitud solo si el grupo pregunta por una variable concreta."
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgEKh1NRbZGpzmrcogVW9",
+            "fecha": "2026-10-20T23:03:09+00:00",
+            "intentos": 1,
+            "costo_usd": 0.06539,
+            "avisos": []
+          }
+        },
+        {
+          "n": 3,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "Plantea una necesidad real de decisión empresarial bajo incertidumbre judicial. No entrega ninguna regla, fórmula ni modelo para resolverla.",
+                "cita": "La gerencia debe decidir cómo fijar los precios a sus clientes y cómo manejar sus contratos en los próximos meses."
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta admite varias estrategias defendibles: trasladar el arancel, absorberlo, renegociar contratos o esperar. No prescribe ningún procedimiento ni hay instrucciones posteriores que encaucen la ruta.",
+                "cita": "Ustedes son el equipo asesor: ¿qué estrategia recomendarían a la gerencia y qué tan segura es esa recomendación?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige varias decisiones de modelación: suponer probabilidades y plazos del fallo, estimar márgenes y la reacción de los clientes, y solicitar información pertinente a la gerencia.",
+                "cita": "Nadie sabe cuándo ni cómo terminará el caso. [...] Pueden pedir información adicional."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Un arancel en disputa judicial que afecta los precios de un importador es una situación real del mundo económico. No es un encuadre forzado para insertar un cálculo.",
+                "cita": "Una importadora de Estados Unidos que compra queso en Canadá paga hoy un arancel de 50% sobre ese queso."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El tema y los datos auténticos (la demanda, el arancel del 50% y los 20 mil millones gravados) forman el núcleo de la incertidumbre que estructura la tarea. Además, se usan series públicas reales para contrastar el modelo.",
+                "cita": "Un grupo estadounidense de defensa, que ya había ganado antes un juicio contra aranceles amplios, demandó al gobierno por los nuevos aranceles a productos canadienses."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "Hay tres elementos del contexto que condicionan las decisiones del modelo y también la interpretación de la recomendación: el tipo de contrato, la competencia y la posible devolución con intereses.",
+                "cita": "Sus contratos con clientes pueden ser de precio fijo por un periodo o de precio ajustable."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a recorrer todas las fases del ciclo: comprender la situación legal y comercial, simplificar los escenarios, matematizar (por ejemplo, con costos esperados), calcular, interpretar y juzgar la seguridad de la recomendación. El enunciado no deja hecha ninguna fase.",
+                "cita": "¿qué estrategia recomendarían a la gerencia y qué tan segura es esa recomendación?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Hay evidencia independiente y posterior con la cual contrastar las predicciones del modelo. Esa evidencia se entrega recién después de fijada la recomendación.",
+                "cita": "Existen series públicas de precios al consumidor del rubro quesos y de volúmenes importados de queso."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "Para nivel U, la tarea requiere herramientas esperables según MAR03: decisión bajo incertidumbre, probabilidad, valor esperado y análisis de sensibilidad. El contexto y el lenguaje son comprensibles y pertinentes para ese nivel.",
+                "cita": "¿qué estrategia recomendarían a la gerencia y qué tan segura es esa recomendación?"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es accesible: comparar cualitativamente escenarios con aritmética de márgenes. El techo es alto: árboles de decisión, elasticidad de la demanda, opciones reales y sensibilidad a la probabilidad y al plazo del fallo.",
+                "cita": "La gerencia entrega órdenes de magnitud solo si el grupo pregunta por una variable concreta."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las distintas estrategias y supuestos permiten comparar soluciones y discutir límites del modelo. También abren preguntas nuevas, por ejemplo qué pasa si el fallo tarda más o si se ordena suspender el cobro.",
+                "cita": "El grupo debe indicar qué variable y qué periodo quiere comparar con lo que predijo su modelo."
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información necesaria puede solicitarse a la gerencia, que entrega órdenes de magnitud a pedido. Los materiales describen la situación sin revelar ningún modelo ni regla de solución.",
+                "cita": "R4 (Ficha del negocio de la importadora (descripción cualitativa)), disponible a solicitud del grupo"
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgEKj1VvVC631mQPCZLAA",
+            "fecha": "2026-10-20T23:03:34+00:00",
+            "intentos": 1,
+            "costo_usd": 0.06251,
+            "avisos": [
+              "cita_no_literal:decisiones"
+            ]
+          }
+        }
+      ],
+      "totales": [
+        24,
+        24,
+        24
+      ],
+      "rango_total": 0,
+      "rango_inestable": 4,
+      "evaluacion_inestable": false,
+      "mediana": {
+        "regla": "mediana por criterio (n par: mediana inferior)",
+        "total": 24,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 2
+        },
+        "corrida_fuente": {
+          "genuino": 1,
+          "abierta": 1,
+          "decisiones": 1,
+          "realismo": 1,
+          "autenticidad": 1,
+          "contexto": 1,
+          "ciclo": 1,
+          "validacion": 1,
+          "nivel": 1,
+          "autodiferenciacion": 1,
+          "fecundidad": 1,
+          "recursos": 1
+        }
+      }
+    }
+  ]
+}

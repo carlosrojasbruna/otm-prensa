@@ -1,0 +1,29 @@
+# DRY-RUN: no se escribe ningún archivo ni se ejecuta ningún comando
+# tarea 2026-10-anticipo-renta-vitalicia-v7 v7 -> tareas/2026-10/anticipo-renta-vitalicia/
+#   escribiría tareas/2026-10/anticipo-renta-vitalicia/tarea_v7.0_2026-10-20.json
+#   escribiría tareas/2026-10/anticipo-renta-vitalicia/tarea_v7.0_2026-10-20.md
+#   escribiría tareas/2026-10/anticipo-renta-vitalicia/guia_v7.0_2026-10-20.json
+#   escribiría tareas/2026-10/anticipo-renta-vitalicia/guia_v7.0_2026-10-20.md
+#   escribiría tareas/2026-10/anticipo-renta-vitalicia/evaluacion_v7.0_2026-10-20.json
+#   escribiría tareas/2026-10/anticipo-renta-vitalicia/trazas_v7.0_2026-10-20.json
+#   actualizaría tareas/catalogo.json (1 tarea(s); valida contra `catalogo`)
+#   el commit del catálogo es el real tras el primer commit (aquí 0000000)
+$ git switch -c tareas/semana-2026-W43
+$ git add -- tareas/2026-10/anticipo-renta-vitalicia/
+$ git commit -m 'tareas: publica 2026-10-anticipo-renta-vitalicia-v7 v7'
+$ git add -- tareas/catalogo.json
+$ git commit -m 'tareas: catálogo: 2026-10-anticipo-renta-vitalicia-v7 v7'
+$ git push -u origin tareas/semana-2026-W43
+$ gh pr create --base main --head tareas/semana-2026-W43 --title 'Tareas de la semana 2026-W43' --body '<cuerpo del PR, ver abajo>'
+# cuerpo del PR:
+#   ## Tareas incluidas
+#   
+#   - `2026-10-anticipo-renta-vitalicia` v7 · nivel U · RUB01 24/24
+#     - Noticia: CIPER Chile, «Tramitan expulsiones de extranjeros detenidos en aniversario del estallido; Suprema da la razón a aseguradoras por rentas vitalicias del tercer …», 2026-10-19, https://www.ciperchile.cl/2026/10/19/radar-19-10-26/?utm_source=rss&utm_medium=rss&utm_campaign=radar-19-10-26
+#   
+#   ## Revisión (GOB01 §2)
+#   - [ ] Quien revisó la guía aprueba el merge.
+#   - [ ] Cifras con localizador; ningún texto literal de noticia > 25 palabras.
+#   - [ ] Productos bajo CC BY-NC-SA 4.0.
+#   
+#   Generado por el agente bibliotecario (script determinista).

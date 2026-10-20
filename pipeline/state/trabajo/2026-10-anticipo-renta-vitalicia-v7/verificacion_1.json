@@ -1,0 +1,64 @@
+{
+  "tarea_id": "2026-10-anticipo-renta-vitalicia-v7",
+  "aprobado": true,
+  "estado_destino": "verificada",
+  "hallazgos": [
+    {
+      "invariante": "notebook",
+      "severidad": "advertencia",
+      "ubicacion": "guia.materiales.notebook",
+      "descripcion": "notebook escenarios.ipynb no encontrado: ",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "guia.escenarios[E4].que_aprende",
+      "descripcion": "No llega a exponer una respuesta porque termina por límite de turnos. — La traza de N1_AA_r1 confirma que no exponen una respuesta final, pero no menciona la causa (límite de turnos).",
+      "origen": "modelo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "guia.escenarios[E3].que_aprende",
+      "descripcion": "En el camino corrige una confusión de P1-MRS: había usado el 10% de un mes en vez del pozo. — La traza de N2_VV_r1 solo registra el supuesto final del 10% del pozo. No consta que antes usara el 10% de una pensión mensual.",
+      "origen": "modelo"
+    }
+  ],
+  "cifras_contrastadas": [
+    {
+      "indice": 0,
+      "que_es": "tope del adelanto de las rentas vitalicias fijado por la ley del tercer retiro",
+      "valor_tarea": "10%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafos 31 y 32"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "10%",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia; modelo: El párrafo 32 indica que la ley del tercer retiro obligó a las aseguradoras a adelantar hasta 10% de esas pensiones. El valor, la unidad y el significado coinciden."
+    }
+  ],
+  "notebook": {
+    "estado": "no_encontrado",
+    "ruta": "escenarios.ipynb",
+    "salida_resumen": ""
+  },
+  "meta": {
+    "agente": "verificador",
+    "version_prompt": "1.1",
+    "modelo": "claude-opus-5-5",
+    "request_id": "req_011CgEM2hy6dFhCY2xMXNNXY",
+    "fecha": "2026-10-20T23:20:52+00:00",
+    "costo_usd": 0.18404,
+    "modelo_llamado": true,
+    "texto_noticia_recibido": true,
+    "uso": {
+      "input_tokens": 26429,
+      "output_tokens": 3893,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 2320
+    }
+  }
+}

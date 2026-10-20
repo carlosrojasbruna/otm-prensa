@@ -1,12 +1,12 @@
 {
   "tarea_id": "2026-10-adelantar-compras-queso-v3",
-  "estado": "verificada",
+  "estado": "publicada",
   "iteraciones": 1,
   "artefactos": {
     "tarea": {
       "id": "2026-10-adelantar-compras-queso-v3",
       "titulo": "¿Cuánto queso conviene comprar antes de que rija un arancel?",
-      "estado": "verificada",
+      "estado": "publicada",
       "version": 3,
       "fecha": "2026-10-20",
       "noticia": {
@@ -1202,7 +1202,10 @@
           "n_grupos": 6,
           "diseno": "diseno_otm"
         },
-        "revision_humana_2": null,
+        "revision_humana_2": {
+          "revisor": "Carlos Rojas Bruna",
+          "fecha": "2026-10-20"
+        },
         "commit": null
       },
       "modelo_y_prompt": {
@@ -1245,6 +1248,13 @@
       "fecha": "2026-10-20T22:00:56+00:00",
       "de": "con_guia",
       "a": "verificada"
+    },
+    {
+      "fecha": "2026-10-20T23:41:37+00:00",
+      "de": "verificada",
+      "a": "publicada",
+      "revisor": "Carlos Rojas Bruna",
+      "motivo": "PR #1 mergeado (307c657); archivos en tareas/2026-10/adelantar-compras-queso/ (commit 272f057e5ef0)"
     }
   ],
   "marcas": {
@@ -1355,12 +1365,17 @@
       "ruta": "tareas/2026-10/adelantar-compras-queso-v3/",
       "rama": "tareas/semana-2026-W43"
     },
-    "pendiente": "publicacion",
     "revision_humana_2": {
       "revisor": "Carlos Rojas Bruna",
       "fecha": "2026-10-20T22:18:38Z",
       "resultado": "aprobada",
       "nota": ""
+    },
+    "publicacion": {
+      "pr": "https://github.com/carlosrojasbruna/otm-prensa/pull/1",
+      "merge": "307c657",
+      "ruta": "tareas/2026-10/adelantar-compras-queso/",
+      "commit": "272f057e5ef0"
     }
   }
 }

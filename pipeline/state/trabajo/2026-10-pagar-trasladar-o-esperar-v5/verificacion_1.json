@@ -1,0 +1,70 @@
+{
+  "tarea_id": "2026-10-pagar-trasladar-o-esperar-v5",
+  "aprobado": true,
+  "estado_destino": "verificada",
+  "hallazgos": [
+    {
+      "invariante": "notebook",
+      "severidad": "advertencia",
+      "ubicacion": "guia.materiales.notebook",
+      "descripcion": "notebook escenarios.ipynb no encontrado: ",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "guia.escenarios[E2].que_aprende (y guia.intervenciones[B23].z1_z2)",
+      "descripcion": "En N1_VV_r1 el grupo duda de que los clientes aguanten el recargo, pero esa duda no entra en ninguna cuenta. — La traza de N1_VV_r1 no registra esa duda: sus supuestos y su respuesta final hablan del plazo, el flete, el margen y el freno del cobro, no de la aceptación del recargo. No se contradice el modelo, pero el detalle no tiene respaldo en las trazas recibidas.",
+      "origen": "modelo"
+    }
+  ],
+  "cifras_contrastadas": [
+    {
+      "indice": 0,
+      "que_es": "Valor aproximado de los bienes canadienses gravados",
+      "valor_tarea": "$20bn",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 49"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "$20bn",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia; modelo: Mismo valor, unidad (miles de millones de dólares) y significado."
+    },
+    {
+      "indice": 1,
+      "que_es": "Arancel que paga una empresa estadounidense sobre queso exportado desde Canadá",
+      "valor_tarea": "50%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 53"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "50%",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia; modelo: Mismo valor y significado: arancel pagado por la importadora sobre el queso canadiense."
+    }
+  ],
+  "notebook": {
+    "estado": "no_encontrado",
+    "ruta": "escenarios.ipynb",
+    "salida_resumen": ""
+  },
+  "meta": {
+    "agente": "verificador",
+    "version_prompt": "1.1",
+    "modelo": "claude-opus-5-5",
+    "request_id": "req_011CgELoC1fnLKv11rRRqxfV",
+    "fecha": "2026-10-20T23:17:48+00:00",
+    "costo_usd": 0.162864,
+    "modelo_llamado": true,
+    "texto_noticia_recibido": true,
+    "uso": {
+      "input_tokens": 23536,
+      "output_tokens": 2856,
+      "cache_creation_input_tokens": 2320,
+      "cache_read_input_tokens": 0
+    }
+  }
+}
