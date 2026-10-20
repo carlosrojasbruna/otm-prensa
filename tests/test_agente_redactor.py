@@ -147,3 +147,23 @@ def test_normalizar_bloqueos_deja_solo_el_codigo():
 
     malo = {"intervenciones": [{"bloqueo": "B12 o B23"}, {"bloqueo": "simplificar"}]}
     assert len(normalizar_bloqueos(malo)) == 2
+
+
+def test_observaciones_de_revision_llegan_a_cada_seccion(monkeypatch):
+    """Guía v2 por revisión humana 2: las observaciones van en el mensaje de cada sección."""
+    import pytest as _pt
+    from pipeline.agentes.redactor import run as red
+
+    vistos = []
+
+    def generar(seccion, user, schema, verificar, cuenta, cliente=None):
+        vistos.append((seccion, user))
+        raise RuntimeError("alto")  # basta con el primer mensaje
+
+    monkeypatch.setattr(red, "_generar", generar)
+    monkeypatch.setattr(red, "validar_entradas", lambda *a, **k: None)
+    monkeypatch.setattr(red, "numeros_permitidos", lambda *a, **k: set())
+    with _pt.raises(RuntimeError):
+        red.redactar({"task_space": {}, "rubrica_rub01": {"total": 23}}, {}, {},
+                     {"observaciones_revision": ["Corregir E1"], "revision_humana_1": {"r": 1}, "puntaje_rub01": 23})
+    assert "Corregir E1" in vistos[0][1] and "revisión humana" in vistos[0][1]

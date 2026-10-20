@@ -775,6 +775,9 @@ class Ciclo:
         trans = cargar_transcripciones(exp.marcas.get("dir_transcripciones") or "")
         contexto = {"puntaje_rub01": art["evaluacion"]["rub01"]["total"], "revision_humana_1": self._revision_1(exp),
                     "fecha": date.today().isoformat(), "version": tarea["version"]}
+        if rev2 := exp.marcas.get("revision_2"):  # guía rehecha por la revisión humana 2
+            contexto.update({"observaciones_revision": rev2["observaciones"], "version": rev2["version_guia"],
+                             "cambios": rev2["cambios"]})
         r, _ = self._medir("redactor", self.agentes.redactar, tarea, trazas, trans, contexto, cliente=self.contador,
                            texto_noticia=self._texto_de(exp), exps=[exp])
         return self._transicionar(exp, "con_guia", artefactos={
@@ -891,6 +894,34 @@ class Ciclo:
             self._detener(e)
         return self._cerrar()
 
+    def rehacer_guia(self, observaciones: Mapping[str, list[str]], *, revisor: str) -> dict:
+        """La revisión humana 2 rechaza la guía: `verificada → simulada` y se reescribe desde las mismas trazas
+        con las observaciones del revisor (versión de guía + 1). Luego ilustrador, verificador y bibliotecario en
+        dry-run; el expediente vuelve a quedar pendiente de la revisión humana 2."""
+        if not (revisor and revisor.strip()):
+            raise ValueError("rehacer la guía exige `revisor` (revisión humana 2)")
+        self.registro["orden"] = "rehacer_guia"
+        self.registro["parametros"].update({"ids": list(observaciones), "revisor": revisor})
+        try:
+            self.contador.verificar()
+            for tid, obs in observaciones.items():
+                exp = orq.cargar(tid, self.rutas.expedientes)
+                if exp.estado != "verificada":
+                    self.registro["errores"].append(
+                        {"tarea_id": tid, "error": f"rehacer guía exige `verificada`, está en {exp.estado}"})
+                    continue
+                version = int(exp.artefactos["guia"].get("version", 1)) + 1
+                exp.marcas["revision_2"] = {"revisor": revisor, "fecha": ahora_utc(), "observaciones": list(obs),
+                                            "version_guia": version,
+                                            "cambios": f"v{version}: correcciones de la revisión humana 2 ({revisor})"}
+                exp.marcas.pop("pendiente", None)
+                exp = self._transicionar(exp, "simulada", revisor=revisor, motivo=(
+                    f"revisión humana 2 rechaza la guía v{version - 1} ({len(obs)} observaciones)"))
+                self.avanzar(exp)
+        except TopeAlcanzado as e:
+            self._detener(e)
+        return self._cerrar()
+
     def _detener(self, e: TopeAlcanzado) -> None:
         self.registro["detenido_por_tope"] = True
         self.registro["motivo_detencion"] = str(e)
@@ -959,6 +990,8 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--presupuesto-ciclo", type=float, metavar="USD",
                     help="tope adicional para este ciclo (además del 90 %% del tope semanal)")
     ap.add_argument("--estado", action="store_true", help="lista los expedientes y su estado")
+    ap.add_argument("--rehacer-guia", metavar="OBSERVACIONES.json",
+                    help="revisión humana 2: JSON {tarea_id: [observaciones]}; rehace la guía (exige --revisor)")
     a = ap.parse_args(argv)
 
     rutas = Rutas()
@@ -970,6 +1003,14 @@ def main(argv: list[str] | None = None) -> int:
                                  "error" if m.get("ultimo_error") else None) if x]
             print(f"{d['tarea_id']}: {d['estado']} (evaluaciones {d['iteraciones']}) {' · '.join(extra)}")
         return 0
+    if a.rehacer_guia:
+        if not a.revisor:
+            ap.error("--rehacer-guia exige --revisor (revisión humana 2)")
+        obs = json.loads(Path(a.rehacer_guia).read_text(encoding="utf-8"))
+        ciclo = Ciclo(rutas=rutas, presupuesto_ciclo_usd=a.presupuesto_ciclo, releer_noticia=True)
+        reg = ciclo.rehacer_guia(obs, revisor=a.revisor)
+        print(_resumen(reg))
+        return 3 if reg["detenido_por_tope"] else 0
     if a.revisor and not a.continuar:
         ap.error("--revisor solo se usa con --continuar (la revisión humana 1 es de un expediente ya evaluado)")
     if a.noticia and a.continuar:

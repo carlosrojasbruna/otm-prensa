@@ -519,3 +519,33 @@ def test_releer_noticia_que_falla_queda_registrada(rutas):
 
     c, reg = tramo_a(rutas, [rub(OK_23)] * 3, releer_noticia=True, leer_noticia=leer)
     assert any(e["tipo"] == "invariante3_sin_texto" for e in reg["eventos"])
+
+
+# =========================================================================== revisión humana 2
+def test_rehacer_guia_por_revision_humana_2(rutas):
+    tramo_a(rutas, [rub(OK_23)] * 3)
+    redacciones: list = []
+    c = nuevo_ciclo(rutas, respuestas_simulador(6), agentes=_agentes_tramo_b([True], redacciones))
+    c.continuar([TID], revisor=REVISOR)
+    assert orq.cargar(TID, rutas.expedientes).estado == "verificada"
+
+    obs = ["E4 sobreinterpreta la corrida", "usar coma decimal"]
+    c2 = nuevo_ciclo(rutas, [], agentes=_agentes_tramo_b([True], redacciones))
+    reg = c2.rehacer_guia({TID: obs}, revisor=REVISOR)
+    assert reg["errores"] == [], reg["errores"]
+    exp = orq.cargar(TID, rutas.expedientes)
+    assert exp.estado == "verificada" and exp.marcas["pendiente"] == "revision_humana_2"
+    assert [h["a"] for h in exp.historial][-4:] == ["verificada", "simulada", "con_guia", "verificada"]
+    assert exp.historial[-3]["motivo"].startswith("revisión humana 2 rechaza la guía v1")
+    ctx = redacciones[-1]
+    assert ctx["observaciones_revision"] == obs and ctx["version"] == 2 and "v2" in ctx["cambios"]
+
+
+def test_rehacer_guia_exige_verificada_y_revisor(rutas):
+    tramo_a(rutas, [rub(OK_23)] * 3)
+    c = nuevo_ciclo(rutas, [], agentes=_agentes_tramo_b([], []))
+    with pytest.raises(ValueError):
+        c.rehacer_guia({TID: ["x"]}, revisor="")
+    reg = c.rehacer_guia({TID: ["x"]}, revisor=REVISOR)
+    assert "exige `verificada`" in reg["errores"][0]["error"]
+    assert orq.cargar(TID, rutas.expedientes).estado == "evaluada"
