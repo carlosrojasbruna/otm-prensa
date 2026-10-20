@@ -1,0 +1,214 @@
+{
+  "id": "2026-10-viaje-barco-ida-vuelta-v2",
+  "titulo": "¿Ida y vuelta en un día al mar abierto?",
+  "estado": "verificada",
+  "version": 2,
+  "fecha": "2026-10-20",
+  "noticia": {
+    "noticia_id": "2026-10-20-bbc-uk-government-to-make-jackdaw-gas",
+    "medio": "BBC News",
+    "titulo": "UK government to make Jackdaw gas field announcement",
+    "fecha": "2026-10-20",
+    "url": "https://www.bbc.co.uk/news/articles/cvze4wx3elj1o?at_medium=RSS&at_campaign=rss",
+    "resumen_propio": "The UK government is expected to decide soon whether to approve the Jackdaw gas field in the North Sea, a choice delayed for months. Jackdaw lies a considerable distance east of Aberdeen and could feed the national grid within months, while the Rosebank oil site off Shetland is expected to wait longer. Environmental groups and industry bodies disagree about the climate and energy-security effects, and a court earlier ruled previous approvals unlawful.",
+    "cifras_usadas": [
+      {
+        "valor": "241.4km",
+        "unidad": "kilómetros",
+        "que_es": "distancia de Jackdaw al este de Aberdeen (equivalente en km)",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 57"
+        }
+      },
+      {
+        "valor": "128.7km",
+        "unidad": "kilómetros",
+        "que_es": "distancia de Rosebank al noroeste de Shetland (equivalente en km)",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 58"
+        }
+      }
+    ]
+  },
+  "nivel_principal": "P",
+  "variantes": {
+    "abajo": null,
+    "arriba": "S"
+  },
+  "area": "medio_ambiente",
+  "contenidos_matematicos": [
+    "rapidez, distancia y tiempo",
+    "proporcionalidad directa",
+    "estimación",
+    "unidades de tiempo"
+  ],
+  "tiempo_estimado": "2 sesiones de 90 min",
+  "estudiante": {
+    "enunciado_es": "En el mar del Norte hay yacimientos de gas y petróleo muy lejos de la costa, y el gobierno del Reino Unido discute si aprobar algunos. Jackdaw, un yacimiento de gas, queda a 241,4 km al este de Aberdeen. Rosebank, un yacimiento de petróleo, queda a 128,7 km al noroeste de las islas Shetland. Una empresa que lleva repuestos y alimentos a instalaciones en alta mar debe decidir si un barco de apoyo puede salir de la costa, llegar a cada lugar, descargar y volver en una misma jornada, o si la tripulación tendría que pasar la noche en el mar. ¿Qué le recomendarían a la empresa para cada yacimiento? Pueden pedir información adicional.",
+    "foto_descripcion": "Dibujo sencillo de un barco de apoyo navegando entre la costa y una plataforma en alta mar.",
+    "recursos_a_solicitud": [
+      {
+        "id": "R2",
+        "que_es": "Tarjeta sobre cómo se mueve un barco de apoyo",
+        "contenido": "Supuesto del escenario: un barco de apoyo avanza más despacio que un auto en carretera, más o menos al ritmo de una bicicleta que va a buen paso. Si el mar está agitado, avanza todavía más lento. Al llegar a la plataforma necesita un rato para descargar antes de volver.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P2-RM",
+        "fuente": "supuesto del escenario"
+      },
+      {
+        "id": "R3",
+        "que_es": "Tarjeta sobre la jornada de la tripulación",
+        "contenido": "Supuesto del escenario: la tripulación trabaja por turnos y necesita descanso. Una jornada en el mar no puede ocupar todas las horas del día.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P2-RM",
+        "fuente": "supuesto del escenario"
+      },
+      {
+        "id": "R4",
+        "que_es": "Tarjeta de calibración con un viaje conocido",
+        "contenido": "Supuesto del escenario: el grupo puede elegir un viaje que conozca, en bus o auto, con su distancia aproximada y lo que demoró, y comparar con lo que su modelo diría para ese mismo viaje.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P6-VAL",
+        "fuente": "supuesto del escenario"
+      }
+    ]
+  },
+  "variantes_detalle": {
+    "abajo": null,
+    "arriba": {
+      "tramo": "S2",
+      "cambios": "Mismo contexto. Se pide además determinar a partir de qué rapidez cambia la recomendación para cada yacimiento, cómo cambia si el mar está agitado o si el tiempo de descarga se alarga, y comparar un barco con otro medio de transporte más rápido, con análisis de sensibilidad informal."
+    }
+  },
+  "recursos_de_entrada": [
+    {
+      "id": "R1",
+      "que_es": "Datos de partida: distancias en kilómetros de los dos yacimientos",
+      "contenido": "Jackdaw: 241,4 km al este de Aberdeen. Rosebank: 128,7 km al noroeste de las islas Shetland.",
+      "disponibilidad": "de_entrada",
+      "fase": "P1-MRS",
+      "fuente": "noticia, párrafo 57 y párrafo 58"
+    }
+  ],
+  "mapa_ciclo": {
+    "P1-MRS": {
+      "decision": "Entender qué significa ir y volver en una jornada y qué parte del viaje cuenta: ida, descarga y vuelta.",
+      "evidencia": "Explican con sus palabras qué debe decidir la empresa y qué tiempos intervienen.",
+      "bloqueo_probable": "B12"
+    },
+    "P2-RM": {
+      "decision": "Suponer una rapidez razonable para el barco, un tiempo para descargar y la cantidad de horas de una jornada, y decidir si los cuentan con o sin descanso.",
+      "evidencia": "Lista escrita de supuestos con valores elegidos y su justificación a partir de las tarjetas.",
+      "bloqueo_probable": "B23"
+    },
+    "P3-MM": {
+      "decision": "Relacionar distancia, rapidez y tiempo: el tiempo de un tramo sale de dividir la distancia por la rapidez, y el viaje completo incluye ida y vuelta más la descarga.",
+      "evidencia": "Esquema o expresión escrita del tiempo total para cada yacimiento.",
+      "bloqueo_probable": "B34"
+    },
+    "P4-WM": {
+      "decision": "Calcular los tiempos para cada yacimiento, quizá con una tabla para varias rapideces.",
+      "evidencia": "Tabla o cálculos con tiempos de ida, de vuelta y total, con decimales escritos con coma.",
+      "bloqueo_probable": "B45"
+    },
+    "P5-INT": {
+      "decision": "Traducir los tiempos a una recomendación: ir y volver el mismo día o pasar la noche, para cada yacimiento.",
+      "evidencia": "Frase de recomendación para la empresa que cita los tiempos calculados.",
+      "bloqueo_probable": "B56"
+    },
+    "P6-VAL": {
+      "decision": "Probar la rapidez supuesta con un viaje conocido en bus o auto, y revisar cuánto cambia la recomendación si el barco es más lento por mar agitado.",
+      "evidencia": "Comparación escrita entre el tiempo que da su modelo para un viaje conocido y el tiempo real, y una nota con lo que cambia si baja la rapidez.",
+      "bloqueo_probable": "B56"
+    },
+    "P7-EXP": {
+      "decision": "Presentar la recomendación diciendo qué supuestos la sostienen y en qué caso cambiaría.",
+      "evidencia": "Informe breve o exposición con la tabla, la recomendación y los supuestos.",
+      "bloqueo_probable": null
+    }
+  },
+  "task_space": {
+    "required_assumptions": [
+      "Rapidez media del barco de apoyo, por ejemplo entre veinte y treinta kilómetros por hora, elegida y justificada por el grupo (por ejemplo, comparándola con una bicicleta rápida o con un viaje conocido).",
+      "Tiempo de descarga en destino, de pocas horas.",
+      "Largo de la jornada máxima que se permite al barco en el mar.",
+      "El barco va en línea recta, sale y regresa a la costa mencionada en la noticia y mantiene la misma rapidez."
+    ],
+    "reference_solution": {
+      "steps": "1) Fijar supuestos: rapidez v, tiempo de descarga c y largo de jornada H. 2) Tiempo de ida = distancia ÷ v. 3) Tiempo total = 2 × distancia ÷ v + c. 4) Calcular para 241,4 km y 128,7 km, con una o varias rapideces. 5) Comparar con H y recomendar. 6) Verificar la rapidez usada con un viaje conocido.",
+      "result": "Con una rapidez de veinticinco kilómetros por hora y dos horas de descarga: Jackdaw requiere cerca de 21 h en total y Rosebank cerca de 12 h. Rosebank cabe en una jornada larga, mientras que Jackdaw ocupa casi todo el día y conviene planificar pasar la noche en el mar, o usar un medio más rápido.",
+      "acceptable_range": "Para rapidez entre 20 y 30 km/h, el viaje de ida y vuelta (sin descarga) dura entre 16 y 24 h para Jackdaw y entre 9 y 13 h para Rosebank. Se acepta cualquier recomendación coherente con los supuestos declarados. En todos los casos, el viaje a Jackdaw demora casi el doble que el de Rosebank, porque 241,4 ÷ 128,7 ≈ 1,9."
+    },
+    "routes": [
+      {
+        "id": "R1",
+        "nombre": "Tabla de rapidez por horas",
+        "nivel": "P",
+        "modelo": "Proporcionalidad directa: cuánto avanza el barco en una hora, en dos, y así hasta llegar a la distancia.",
+        "resultado": "Jackdaw: unas 10 h de ida con 25 km/h; Rosebank: unas 5 h de ida."
+      },
+      {
+        "id": "R2",
+        "nombre": "Comparar entre sí los dos viajes",
+        "nivel": "P",
+        "modelo": "Razón entre distancias: si el tiempo es proporcional a la distancia, Jackdaw toma casi el doble que Rosebank, sin necesidad de fijar la rapidez.",
+        "resultado": "Si Rosebank llena la mitad de la jornada, Jackdaw la llena completa; la razón es cerca de 1,9."
+      },
+      {
+        "id": "R3",
+        "nombre": "Distancia máxima alcanzable",
+        "nivel": "S1",
+        "modelo": "Función lineal del tiempo total t = 2d/v + c, o distancia máxima d = v·(H − c)/2, comparada con las dos distancias.",
+        "resultado": "Con v = 25 km/h, c = 2 h y H = 14 h, la distancia máxima es 150 km: Rosebank sí cabe y Jackdaw no."
+      }
+    ],
+    "modelo_inadecuado": {
+      "id": "RX: contar solo el viaje de ida (241,4 ÷ v y 128,7 ÷ v) y compararlo con la jornada.",
+      "por_que_falla": "El barco tiene que volver a la costa y además descargar; si solo se cuenta la ida, el tiempo se subestima casi a la mitad y se recomienda hacer viajes que en realidad no caben en el día."
+    },
+    "validation_evidence": "Dato independiente que no se usa para construir el modelo: el tiempo real de un viaje conocido (por ejemplo un trayecto en bus o auto de la propia ciudad, o de un transbordador de línea), que el grupo compara con lo que predice su relación distancia, rapidez y tiempo, ajustando la rapidez supuesta. Como contraste posterior, el profesor puede entregar el tiempo de un trayecto real en barco con distancia y duración conocidas.",
+    "agent_visibility": {
+      "students": [
+        "enunciado_es",
+        "foto_descripcion",
+        "recursos_a_solicitud"
+      ],
+      "coder": [
+        "enunciado_es",
+        "task_space"
+      ],
+      "guide": [
+        "all"
+      ]
+    }
+  },
+  "rubrica_rub01": {
+    "total": 24,
+    "por_criterio": {
+      "genuino": 2,
+      "abierta": 2,
+      "decisiones": 2,
+      "realismo": 2,
+      "autenticidad": 2,
+      "contexto": 2,
+      "ciclo": 2,
+      "validacion": 2,
+      "nivel": 2,
+      "autodiferenciacion": 2,
+      "fecundidad": 2,
+      "recursos": 2
+    }
+  },
+  "rubrica_rub02": {
+    "P": null,
+    "S": null,
+    "U": null
+  },
+  "modelo_y_prompt": {
+    "diseñador": "claude-sonnet-5-5",
+    "version_prompt": "1.1",
+    "version_rubrica": "4.0"
+  }
+}
