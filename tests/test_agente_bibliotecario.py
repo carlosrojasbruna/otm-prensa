@@ -204,8 +204,11 @@ def test_version_del_pipeline_va_a_la_carpeta_del_slug_base_con_md_e_icono(repo)
     assert inv.validar_contra_esquema(cat, "catalogo")
     ent = cat["tareas"][0]
     assert ent["id"] == base and ent["ruta"] == f"tareas/{aaaa_mm}/{slug}/"
-    assert ent["archivos"]["icono"] == "icono_v3.0_2026-10-27.svg" and not any(
-        v.endswith(".md") for v in ent["archivos"].values())
+    assert cat["version_contrato"] == "1.1"
+    assert ent["archivos"]["icono"] == "icono_v3.0_2026-10-27.svg"
+    assert (ent["archivos"]["tarea_md"], ent["archivos"]["guia_md"]) == (
+        "tarea_v3.0_2026-10-27.md", "guia_v3.0_2026-10-27.md")
+    archivos_v3 = ent["archivos"]
     # la v4 del pipeline (`…-v4`) se reconoce como versión nueva de la misma tarea, en la misma carpeta
     t4, g4, e4 = copy.deepcopy(t), copy.deepcopy(g), copy.deepcopy(e)
     tid4 = f"{base}-v4"
@@ -214,6 +217,7 @@ def test_version_del_pipeline_va_a_la_carpeta_del_slug_base_con_md_e_icono(repo)
     bib.publicar(t4, g4, e4, raiz=repo, fecha_publicacion="2026-11-03", ejecutar_real=True, remoto=False)
     ent = _leer(repo / "tareas" / "catalogo.json")["tareas"][0]
     assert ent["version"] == 4 and [v["version"] for v in ent["versiones_anteriores"]] == [3]
+    assert ent["versiones_anteriores"][0]["archivos"] == archivos_v3   # los archivos de la v3 siguen localizables
     assert (carpeta / "tarea_v3.0_2026-10-27.md").read_text(encoding="utf-8") == md_t
 
 

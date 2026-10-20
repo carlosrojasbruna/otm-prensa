@@ -2,12 +2,12 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://otm-prensa.example/contratos/catalogo.schema.json",
   "title": "catalogo",
-  "description": "Catálogo de tareas publicadas (tareas/catalogo.json), lo mantiene el bibliotecario y lo consume el sitio. Contrato v1.0 (architect, 2026-10-20). Una tarea publicada no se edita: una v2 agrega una entrada nueva y la anterior pasa a `versiones_anteriores` (GOB01 §4).",
+  "description": "Catálogo de tareas publicadas (tareas/catalogo.json), lo mantiene el bibliotecario y lo consume el sitio. Contrato v1.1 (2026-10-20, autorizado por Carlos): `archivos` admite `tarea_md` y `guia_md` (render de PLT01/PLT02) además del `icono` SVG de cada versión, y cada elemento de `versiones_anteriores` puede llevar sus `archivos`; un catálogo v1.0 sigue siendo válido. v1.0: architect, 2026-10-20. Una tarea publicada no se edita: una v2 agrega una entrada nueva y la anterior pasa a `versiones_anteriores` (GOB01 §4).",
   "type": "object",
   "additionalProperties": false,
   "required": ["version_contrato", "actualizado", "tareas"],
   "properties": {
-    "version_contrato": {"const": "1.0"},
+    "version_contrato": {"enum": ["1.0", "1.1"]},
     "actualizado": {"$ref": "noticia.schema.json#/$defs/fecha_hora"},
     "tareas": {"type": "array", "items": {"$ref": "#/$defs/entrada"}}
   },
@@ -40,19 +40,7 @@
           }
         },
         "ruta": {"description": "Carpeta de la tarea: tareas/AAAA-MM/slug/", "type": "string", "pattern": "^tareas/[0-9]{4}-[0-9]{2}/[a-z0-9]+(-[a-z0-9]+)*/$"},
-        "archivos": {
-          "type": "object",
-          "additionalProperties": false,
-          "required": ["tarea", "guia", "evaluacion"],
-          "properties": {
-            "tarea": {"type": "string", "minLength": 1},
-            "guia": {"type": "string", "minLength": 1},
-            "evaluacion": {"type": "string", "minLength": 1},
-            "trazas": {"type": "string"},
-            "icono": {"type": "string"},
-            "pdf": {"type": "string"}
-          }
-        },
+        "archivos": {"$ref": "#/$defs/archivos"},
         "licencia": {"const": "CC BY-NC-SA 4.0"},
         "commit": {"type": "string", "pattern": "^[0-9a-f]{7,40}$"},
         "versiones_anteriores": {
@@ -64,10 +52,27 @@
             "properties": {
               "version": {"type": "integer", "minimum": 1},
               "fecha_publicacion": {"$ref": "noticia.schema.json#/$defs/fecha"},
-              "commit": {"type": "string", "pattern": "^[0-9a-f]{7,40}$"}
+              "commit": {"type": "string", "pattern": "^[0-9a-f]{7,40}$"},
+              "archivos": {"$ref": "#/$defs/archivos"}
             }
           }
         }
+      }
+    },
+    "archivos": {
+      "description": "Archivos de una versión dentro de `ruta` (nombre_vX.Y_AAAA-MM-DD.ext). v1.1: `tarea_md`, `guia_md` e `icono` .svg.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tarea", "guia", "evaluacion"],
+      "properties": {
+        "tarea": {"type": "string", "minLength": 1},
+        "tarea_md": {"type": "string", "pattern": "\\.md$"},
+        "guia": {"type": "string", "minLength": 1},
+        "guia_md": {"type": "string", "pattern": "\\.md$"},
+        "evaluacion": {"type": "string", "minLength": 1},
+        "trazas": {"type": "string"},
+        "icono": {"type": "string", "pattern": "\\.svg$"},
+        "pdf": {"type": "string"}
       }
     }
   }

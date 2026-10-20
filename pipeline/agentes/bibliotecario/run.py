@@ -46,8 +46,9 @@ ESTADOS_ARCHIVABLES = frozenset(CONFIG["estados_archivables"])
 RE_ID = re.compile(r"^([0-9]{4})-([0-9]{2})-([a-z0-9]+(?:-[a-z0-9]+)*)$")
 RE_NOMBRE = re.compile(r"^[a-z0-9_]+_v[0-9]+\.[0-9]+_[0-9]{4}-[0-9]{2}-[0-9]{2}\.(json|md|svg)$")
 RE_SUFIJO_VERSION = re.compile(r"-v[0-9]+$")
-# claves de `archivos` que el contrato `catalogo` admite; los .md son derivados del JSON y no se listan
-CLAVES_CATALOGO = ("tarea", "guia", "evaluacion", "trazas", "icono")
+# claves de `archivos` del contrato `catalogo` v1.1 (los .md y el ícono de cada versión se listan)
+CLAVES_CATALOGO = ("tarea", "tarea_md", "guia", "guia_md", "evaluacion", "trazas", "icono")
+VERSION_CONTRATO_CATALOGO = "1.1"
 
 
 class ErrorBibliotecario(Exception):
@@ -107,7 +108,7 @@ def cargar_catalogo(raiz: Path, ahora: datetime | None = None) -> dict:
     """Catálogo existente (validado; si no valida se rechaza sin tocarlo) o uno vacío."""
     ruta = raiz / RUTA_CATALOGO
     if not ruta.exists():
-        return {"version_contrato": "1.0", "actualizado": _ahora(ahora), "tareas": []}
+        return {"version_contrato": VERSION_CONTRATO_CATALOGO, "actualizado": _ahora(ahora), "tareas": []}
     cat = json.loads(ruta.read_text(encoding="utf-8"))
     r = inv.validar_contra_esquema(cat, "catalogo")
     if not r:
@@ -236,10 +237,11 @@ def preparar(tarea, guia, evaluacion, *, raiz: Path, trazas=None, texto_noticia:
         entrada["versiones_anteriores"] = [
             *anterior["versiones_anteriores"],
             {"version": anterior["version"], "fecha_publicacion": anterior["fecha_publicacion"],
-             "commit": anterior["commit"]},
+             "commit": anterior["commit"], "archivos": anterior["archivos"]},
         ]
     catalogo["tareas"] = sorted([t for t in catalogo["tareas"] if t["id"] != base] + [entrada],
                                 key=lambda t: t["id"])
+    catalogo["version_contrato"] = VERSION_CONTRATO_CATALOGO   # un catálogo v1.0 se reescribe como v1.1
     catalogo["actualizado"] = _ahora(ahora)
     r = inv.validar_contra_esquema(catalogo, "catalogo")                           # invariante 1
     if not r:
