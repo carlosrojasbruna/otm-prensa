@@ -15,17 +15,19 @@ Versión 1.0 · 2026-10-20. Resume el plan acordado con Carlos; los detalles de 
 
 ## Agentes de construcción
 
-| Agente | Entregable | Test de aceptación |
-|---|---|---|
-| `build-lead` | Orquesta; mantiene `pipeline/state/build.json` y `decisiones.md` | Cada fase cierra con sus tests en verde |
-| `architect` | `contratos/*.schema.json`, `pipeline/orquestador.py` (máquina de estados) | Artefactos de ejemplo validan; transiciones ilegales fallan |
-| `rubric-encoder` | `pipeline/agentes/evaluador/` (prompt + salida estructurada) | kappa ≥ 0,7 contra `evals/oro/puntajes_v0.4` en 3 corridas; reporta kappa por criterio |
-| `agent-smith` | Un agente del pipeline por invocación (explorador, filtro, diseñador, simulador-adapter, redactor, ilustrador, verificador, bibliotecario), con 5 casos de prueba cada uno | Casos pasan; salida valida contra contrato |
-| `sim-integrator` | `simulador/adapter/` según `insumos/simulador/SIM01`; port de `llamar()` a API | Reproduce una corrida del piloto; Sugarloaf en S1 produce `trazas_resumen` válido; hook de aislamiento rechaza `task_space` |
-| `eval-engineer` | `evals/` y comando `/otm:eval` | Matriz modelo × agente × métrica en `evals/resultados/` |
-| `site-builder` | `sitio/` fiel a los snapshots en `insumos/diseno/` | Lighthouse ≥ 90; flujo cuenta → valorar → comentar en staging |
-| `devops` | Workflows, hooks pre-commit, README de secrets | Pipeline completo corre en Actions con 1 noticia de prueba |
-| `docs-writer` | README, guía de operación, guía de contribución | Una persona ajena reproduce la instalación |
+Modelo por agente de construcción (definido en `.claude/agents/*.md`): **Opus** donde un error se propaga y se detecta tarde (`build-lead`, `architect`, `rubric-encoder`); **Sonnet** para el trabajo de volumen (`agent-smith`, `sim-integrator`, `eval-engineer`, `site-builder`, `devops`); **Haiku** para lo mecánico (`docs-writer`).
+
+| Agente | Modelo | Entregable | Test de aceptación |
+|---|---|---|---|
+| `build-lead` | Opus | Orquesta; mantiene `pipeline/state/build.json` y `decisiones.md` | Cada fase cierra con sus tests en verde |
+| `architect` | Opus | `contratos/*.schema.json`, `pipeline/orquestador.py` (máquina de estados) | Artefactos de ejemplo validan; transiciones ilegales fallan |
+| `rubric-encoder` | Opus | `pipeline/agentes/evaluador/` (prompt + salida estructurada) | kappa ≥ 0,7 contra `evals/oro/puntajes_v0.4` en 3 corridas; reporta kappa por criterio |
+| `agent-smith` | Sonnet | Un agente del pipeline por invocación (explorador, filtro, diseñador, simulador-adapter, redactor, ilustrador, verificador, bibliotecario), con 5 casos de prueba cada uno | Casos pasan; salida valida contra contrato |
+| `sim-integrator` | Sonnet | `simulador/adapter/` según `insumos/simulador/SIM01`; port de `llamar()` a API | Reproduce una corrida del piloto; Sugarloaf en S1 produce `trazas_resumen` válido; hook de aislamiento rechaza `task_space` |
+| `eval-engineer` | Sonnet | `evals/` y comando `/otm:eval` | Matriz modelo × agente × métrica en `evals/resultados/` |
+| `site-builder` | Sonnet | `sitio/` fiel a los snapshots en `insumos/diseno/` | Lighthouse ≥ 90; flujo cuenta → valorar → comentar en staging |
+| `devops` | Sonnet | Workflows, hooks pre-commit, README de secrets | Pipeline completo corre en Actions con 1 noticia de prueba |
+| `docs-writer` | Haiku | README, guía de operación, guía de contribución | Una persona ajena reproduce la instalación |
 
 ## Agentes del pipeline y modelos de partida
 
