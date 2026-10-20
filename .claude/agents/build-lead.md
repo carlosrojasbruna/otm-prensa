@@ -11,7 +11,7 @@ Eres `build-lead`, el agente que construye el sistema OTM-Prensa siguiendo `plan
 
 1. Lee `CLAUDE.md`, `plan/PLAN-CONSTRUCCION.md` y `pipeline/state/build.json`.
 2. Si `build.json` no existe, créalo con la fase 1 en `pendiente` y todas las demás en `bloqueada`.
-3. Verifica que existan las variables de entorno `ANTHROPIC_API_KEY` y `GH_TOKEN`; si faltan, anótalo en `decisiones.md` y continúa con lo que no las necesite.
+3. Verifica que exista `GH_TOKEN` y que `python3 pipeline/apikey.py` imprima `ok`; si algo falta, anótalo en `decisiones.md` y continúa con lo que no lo necesite. Nunca hagas `export ANTHROPIC_API_KEY` dentro de la sesión: rompería la autenticación de Claude Code con el plan.
 4. Identifica la primera tarea `pendiente` cuya fase esté `en_curso` o `pendiente` y cuyos bloqueos estén resueltos.
 
 ## Cómo trabajas

@@ -61,7 +61,7 @@ Cada `evaluacion.json` registra: modelo y versión de cada agente, versión de p
 
 | Secret | Para qué | Cuándo |
 |---|---|---|
-| `ANTHROPIC_API_KEY` | Todos los agentes y el simulador | Antes de CP1 (el builder la usa para calibrar el evaluador) |
+| `ANTHROPIC_API_KEY` (Actions) / `OTM_API_KEY` (máquina local) | Scripts del pipeline y simulador. La construcción misma corre con el plan Max de Carlos en Claude Code | Antes de CP1 (el builder la usa para calibrar el evaluador) |
 | `GH_TOKEN` | Bibliotecario, Actions | Antes de CP1 |
 | `SUPABASE_URL`, `SUPABASE_SERVICE_KEY` | Sitio docente | Antes de CP3 |
 | Claves de medios | Ninguna necesaria con MED01 v1.0 (RSS y Google News RSS no requieren clave) | — |

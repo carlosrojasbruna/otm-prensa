@@ -29,6 +29,7 @@ Los archivos de `insumos/` son de solo lectura para los agentes de construcción
 5. Ningún escenario de guía docente sin `id` de corrida del simulador que lo respalde.
 6. Los agentes-estudiante del simulador reciben solo `enunciado_es`, `foto_descripcion` y recursos "a solicitud"; nunca `task_space`.
 7. Ningún commit con secretos (`ANTHROPIC_API_KEY`, `GH_TOKEN`, claves de medios o de Supabase). Se leen de variables de entorno.
+   - **Clave de API en scripts:** todo script del pipeline obtiene la clave con `OTM_API_KEY` y, si no existe, con `ANTHROPIC_API_KEY` (helper: `pipeline/apikey.py`). En la máquina local se usa `OTM_API_KEY` para que Claude Code siga autenticado con el plan de Carlos (claude.ai); en GitHub Actions el secret se llama `ANTHROPIC_API_KEY`.
 8. Cada ejecución del pipeline registra en `evaluacion.json`: modelo y versión de cada agente, versión de prompt, versión de rúbrica, de MAR03 y de MED01, diseño del simulador, fecha, costo.
 
 ## Convenciones
