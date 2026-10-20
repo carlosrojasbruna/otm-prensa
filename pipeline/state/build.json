@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "fase_actual": 2,
+  "fase_actual": 3,
   "fases": {
     "1": {
       "nombre": "Contratos y calibración",
@@ -27,21 +27,66 @@
     },
     "2": {
       "nombre": "Agentes del pipeline",
-      "estado": "en_curso",
+      "estado": "aprobada",
       "tareas": {
-        "agent-smith/explorador": "en_curso",
-        "agent-smith/filtro": "en_curso",
-        "agent-smith/disenador": "en_curso",
-        "agent-smith/redactor": "en_curso",
-        "agent-smith/ilustrador": "en_curso",
-        "agent-smith/verificador": "en_curso",
-        "agent-smith/bibliotecario": "en_curso",
-        "sim-integrator": "en_curso"
+        "agent-smith/explorador": {
+          "estado": "completada",
+          "fecha": "2026-10-20",
+          "commit": "eeab863",
+          "test": "12 passed; vivo 0,006 USD, 5/5 validan"
+        },
+        "agent-smith/filtro": {
+          "estado": "completada",
+          "fecha": "2026-10-20",
+          "commit": "ed7019d",
+          "test": "18 passed; vivo 0,003 USD, 9/10 decisiones esperadas, inestable en frontera 7/6"
+        },
+        "agent-smith/disenador": {
+          "estado": "completada",
+          "fecha": "2026-10-20",
+          "commit": "0aba7c2",
+          "test": "17 passed; vivo 0,53 USD, RUB01 22/24"
+        },
+        "agent-smith/redactor": {
+          "estado": "completada",
+          "fecha": "2026-10-20",
+          "commit": "2755703",
+          "test": "16 passed; vivo 0,22 USD, guía valida + escenarios_respaldados"
+        },
+        "agent-smith/ilustrador": {
+          "estado": "completada",
+          "fecha": "2026-10-20",
+          "commit": "3f4b273",
+          "test": "18 passed; vivo 0,01 USD, SVG valida"
+        },
+        "agent-smith/verificador": {
+          "estado": "completada",
+          "fecha": "2026-10-20",
+          "commit": "b0db8d8",
+          "test": "14 passed; vivo 0,07 USD, rechaza ejemplo incoherente (correcto)"
+        },
+        "agent-smith/bibliotecario": {
+          "estado": "completada",
+          "fecha": "2026-10-20",
+          "commit": "ceca4a8",
+          "test": "10 passed; dry-run sin secretos"
+        },
+        "sim-integrator": {
+          "estado": "completada",
+          "fecha": "2026-10-20",
+          "commit": "9afe64d",
+          "test": "19 passed; caso 1 parcial (ruta no determinista al re-simular), casos 2 y 3 cumplen; vivo 1,33 USD"
+        }
+      },
+      "cierre": {
+        "por": "build-lead",
+        "fecha": "2026-10-20",
+        "nota": "fase sin checkpoint humano; cerrada con 267 tests en verde. Reservas para CP2 en decisiones.md"
       }
     },
     "3": {
       "nombre": "Evaluación y prototipo",
-      "estado": "bloqueada",
+      "estado": "pendiente",
       "tareas": {
         "eval-engineer": "pendiente",
         "orquestador": "pendiente",
@@ -75,6 +120,6 @@
       }
     }
   },
-  "costo_acumulado_usd": 10.9,
-  "ultimo_commit": "3ef26fe"
+  "costo_acumulado_usd": 13.06,
+  "ultimo_commit": "9afe64d"
 }

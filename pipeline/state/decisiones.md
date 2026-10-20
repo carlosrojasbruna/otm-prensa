@@ -52,6 +52,23 @@ Formato: `AAAA-MM-DD · agente · decisión · alternativa descartada · por qu�
 - 2026-10-20 · build-lead · Tope semanal provisional en `config.yaml`: 25 USD (monto [D] de GOB01 §3 aún sin fijar) · no tener tope · lectura conservadora; Carlos lo fija en CP2.
 - 2026-10-20 · build-lead · Test de aceptación de agent-smith: los 5 casos corren sin red con `ClienteFalso` (forma, contrato, invariantes) y además se hace ≥ 1 corrida real por agente con tope de 1 USD por agente · solo pruebas sin red · "los casos pasan" exige ver al menos una salida real del modelo; el tope evita gasto descontrolado.
 - 2026-10-20 · build-lead · Agentes sin contrato propio en `contratos/` (filtro, ilustrador, verificador): el filtro escribe el bloque `filtro` de `noticia`; ilustrador y verificador definen su esquema de salida local en `pipeline/agentes/<nombre>/salida.schema.json` · crear contratos nuevos · los contratos están congelados en CP1; un esquema local no cambia el contrato entre agentes.
+- 2026-10-20 · build-lead · Cada agente de la fase 2 anotó sus decisiones en su propio `DECISIONES.md` (`pipeline/agentes/<nombre>/`, `simulador/adapter/`) para no pisar este archivo en paralelo; aquí van solo las transversales. Leer esos archivos en CP2.
+- 2026-10-20 · build-lead · Contratos de salida locales (sin tocar `contratos/`): `ilustrador/salida.schema.json`, `verificador/salida.schema.json`. Diseñador y redactor envían a la API un esquema simplificado (la gramática del contrato completo da 400 "compiled grammar is too large") y validan en código contra el contrato completo.
+- 2026-10-20 · build-lead · **sim-integrator, caso 1 de SIM01 §5 aceptado con reserva:** recodificar la transcripción del piloto vía API reproduce ruta (R3; R3+R5) y n.º de bloqueos (1), pero la transición cambia (B56 → B23); re-simular da rutas distintas en 3 intentos (R5, R2, R5) con bloqueos ±1. Sin `temperature` en 5.5 la re-simulación no es determinista. Se acepta el port como "codificación comparable + bloqueos ±1" · bloquear la fase o votar sobre N repeticiones · el criterio literal es inalcanzable con estos modelos y la tarea es reversible; **Carlos decide en CP2** si se reformula SIM01 §5 caso 1.
+- 2026-10-20 · build-lead · `sim.py` no se editó: `llamar()` y las rutas `F_*` se sustituyen en tiempo de ejecución desde `simulador/adapter/` (verificado: sim.py sin cambios desde 2026-10-01). El `coder_schema` de INS09 se endurece al enviarlo (`additionalProperties:false`) sin mutar el insumo.
+- 2026-10-20 · build-lead · Costo de la fase 2 (corridas reales con `pipeline/llm.py`): ≈ 2,16 USD (sim-integrator 1,33; diseñador+evaluador 0,53; redactor 0,22; verificador 0,07; resto < 0,02). Una tarea de 6 corridas de simulación ≈ 0,7 USD.
+
+### Para CP2 (no bloquean la fase 3)
+
+1. SIM01 §5 caso 1: ¿reformular como "misma ruta al recodificar la misma transcripción; bloqueos ±1 al re-simular"? (ver arriba).
+2. Recursos "a solicitud": `sim.py` no los sirve a los estudiantes simulados; cambio mínimo propuesto en `simulador/adapter/DECISIONES.md`, **no aplicado** (tocaría `sim.py` más allá de `llamar()`, GOB01 §3). Mientras tanto ninguna guía puede citar una resolución por recurso.
+3. Niveles N2/N3 por tramo: interpolados por sim-integrator (MAR03 §3 no los da); auditar con Hugo y Mahsa.
+4. Caso 2 (Sugarloaf S1): 6/6 corridas usan Pitágoras y `pct_validan` = 1,0 → posible sobre-competencia de los estudiantes simulados o criterio de validación laxo del codificador; eval-engineer lo mide en fase 3.
+5. Filtro (Haiku): inestable en la frontera 7/6 (una de 5 decisiones cambia entre corridas). Regla del plan: subir a Sonnet si kappa < 0,6; eval-engineer lo mide en fase 3.
+6. Bibliotecario: (a) ¿la tarea pasa a `publicada` antes o después del merge del PR semanal? hoy archiva `verificada` o `publicada`; (b) ¿agregar el prefijo de commit `tareas:` a CLAUDE.md? hoy usa `pipeline:`.
+7. Explorador: el feed principal de CNN Chile no devuelve XML; el respaldo Google News trae solo título y enlace (y `url` de news.google.com). Devops debe verificar URLs de MED01 marcadas `url_verificar`.
+8. Diseñador, propuesta para prompt v1.1: datos que desglosan la estructura del modelo (p. ej. tarifa por componente) como recurso `a_solicitud`, no en `enunciado_es` (la corrida real perdió puntos en `genuino` y `ciclo` por eso).
+9. Pendientes técnicos para fase 3: `evaluador.py` y el modelo del codificador del simulador (constante `claude-opus-5-5`) deben leer `pipeline/config.yaml`; agregar `defusedxml` a las dependencias (devops).
 
 ## Requiere decisión humana
 
