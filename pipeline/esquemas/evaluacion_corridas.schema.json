@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://otm-prensa.example/pipeline/esquemas/evaluacion_corridas.schema.json",
+  "title": "evaluacion_corridas",
+  "description": "Archivo hermano de evaluacion.json (esquema local, no es contrato de contratos/, que está congelado desde CP1). Condición 1 de CP1: el evaluador corre N veces por tarea (pipeline/config.yaml: evaluador.corridas), el puntaje oficial es la mediana por criterio y se guardan todas las corridas; si el rango del total entre corridas es >= rango_inestable se marca evaluacion_inestable para la revisión humana 1. Una entrada por evaluación (iteración diseñador-evaluador). Cada `rub01` se valida además contra contratos/evaluacion_rub01.schema.json en pipeline/ciclo.py.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["tarea_id", "evaluaciones"],
+  "properties": {
+    "tarea_id": {"type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"},
+    "evaluaciones": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/evaluacion"}
+    }
+  },
+  "$defs": {
+    "evaluacion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["iteracion", "version_tarea", "fecha", "modelo", "version_prompt", "version_rubrica",
+                   "corridas", "totales", "rango_total", "rango_inestable", "evaluacion_inestable", "mediana"],
+      "properties": {
+        "iteracion": {"type": "integer", "minimum": 1},
+        "version_tarea": {"type": "integer", "minimum": 1},
+        "fecha": {"type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"},
+        "modelo": {"type": "string", "minLength": 1},
+        "version_prompt": {"type": "string", "minLength": 1},
+        "version_rubrica": {"type": "string", "minLength": 1},
+        "corridas": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["n", "rub01", "meta"],
+            "properties": {
+              "n": {"type": "integer", "minimum": 1},
+              "rub01": {"type": "object"},
+              "meta": {
+                "type": "object",
+                "required": ["modelo_respuesta", "costo_usd"],
+                "properties": {
+                  "modelo_respuesta": {"type": "string"},
+                  "request_id": {"type": ["string", "null"]},
+                  "fecha": {"type": "string"},
+                  "intentos": {"type": "integer"},
+                  "costo_usd": {"type": "number", "minimum": 0},
+                  "avisos": {"type": "array", "items": {"type": "string"}}
+                }
+              }
+            }
+          }
+        },
+        "totales": {"type": "array", "items": {"type": "integer", "minimum": 0, "maximum": 24}, "minItems": 1},
+        "rango_total": {"type": "integer", "minimum": 0},
+        "rango_inestable": {"type": "integer", "minimum": 1},
+        "evaluacion_inestable": {"type": "boolean"},
+        "mediana": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["regla", "total", "por_criterio", "corrida_fuente"],
+          "properties": {
+            "regla": {"type": "string"},
+            "total": {"type": "integer", "minimum": 0, "maximum": 24},
+            "por_criterio": {"type": "object", "additionalProperties": {"type": "integer", "enum": [0, 1, 2]}},
+            "corrida_fuente": {
+              "description": "Corrida de la que se toman justificación, cita y mejora de cada criterio (la primera cuyo puntaje es la mediana).",
+              "type": "object",
+              "additionalProperties": {"type": "integer", "minimum": 1}
+            }
+          }
+        }
+      }
+    }
+  }
+}

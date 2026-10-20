@@ -110,6 +110,10 @@ class Expediente:
     iteraciones: int = 0  # evaluaciones realizadas
     artefactos: dict[str, Any] = field(default_factory=dict)
     historial: list[dict[str, Any]] = field(default_factory=list)
+    # Anotaciones del ciclo que no son artefactos con contrato (p. ej. `evaluacion_inestable`,
+    # rechazos del verificador, costos por agente). No pasan por la validación de contratos ni
+    # cambian el estado; las escribe pipeline/ciclo.py y las lee la revisión humana.
+    marcas: dict[str, Any] = field(default_factory=dict)
 
     def a_dict(self) -> dict:
         return {
@@ -118,6 +122,7 @@ class Expediente:
             "iteraciones": self.iteraciones,
             "artefactos": self.artefactos,
             "historial": self.historial,
+            "marcas": self.marcas,
         }
 
     @classmethod

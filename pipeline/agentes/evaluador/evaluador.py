@@ -16,6 +16,8 @@ Decisiones (ver pipeline/state/decisiones.md):
   razonamiento se fija con `output_config.effort`.
 - El total se recalcula en código; no se confía en el que devuelve el modelo.
 - La clave se obtiene solo con pipeline.apikey.api_key (OTM_API_KEY local / ANTHROPIC_API_KEY en Actions).
+- Modelo y precios se leen de pipeline/config.yaml vía pipeline.llm (`modelo_de("evaluador")`,
+  `costo_usd`); el prompt y VERSION_PROMPT no cambian (fase 3, architect).
 """
 from __future__ import annotations
 
@@ -34,17 +36,22 @@ if str(RAIZ) not in sys.path:
 DIR = Path(__file__).resolve().parent
 RUB01_PATH = RAIZ / "insumos" / "rubricas" / "RUB01_calidad-tarea_v4.0_2026-10-20.json"
 
-MODELO = "claude-opus-5-5"
+from pipeline.llm import config as _config_pipeline  # noqa: E402
+from pipeline.llm import costo_usd as _costo_usd_config  # noqa: E402
+from pipeline.llm import modelo_de  # noqa: E402
+
+MODELO = modelo_de("evaluador")  # pipeline/config.yaml::modelos.evaluador (informativo; evaluar() lo relee)
 VERSION_PROMPT = "1.3"          # versión vigente del prompt de sistema
 ESFUERZO = "high"               # output_config.effort
 MAX_TOKENS = 16000
 VERSION_RUBRICA = "4.0"
 VERSION_MAR03 = "1.0"
 
-# Precios USD por millón de tokens. SUPUESTO (no hay tabla oficial en el repo): precio de lista
-# de Opus 4.5/4.6 (5 entrada / 25 salida; escritura de caché 5 min = 1,25x; lectura = 0,1x).
-# PRECIOS_PESIMISTAS (precio de Opus 4.1: 15/75) se informan como cota superior; el tope usa PRECIOS.
-PRECIOS = {"input": 5.0, "output": 25.0, "cache_write": 6.25, "cache_read": 0.50}
+# Precios USD por millón de tokens: tabla `precios_modelos` de pipeline/config.yaml (fuente única).
+# PRECIOS se conserva como nombre para evals/calibrar_evaluador.py (informe); el costo de cada
+# llamada se calcula con pipeline.llm.costo_usd según el modelo realmente usado.
+# PRECIOS_PESIMISTAS (precio de Opus 4.1: 15/75) es solo una cota informativa de CP1; no rige el tope.
+PRECIOS = dict(_config_pipeline()["precios_modelos"][MODELO])
 PRECIOS_PESIMISTAS = {"input": 15.0, "output": 75.0, "cache_write": 18.75, "cache_read": 1.50}
 
 
@@ -133,7 +140,10 @@ def _norm(s: str) -> str:
     return " ".join(s.split())
 
 
-def costo_usd(uso: dict, precios: dict = PRECIOS) -> float:
+def costo_usd(uso: dict, precios: dict | None = None, modelo: str | None = None) -> float:
+    """Sin `precios`: tabla de pipeline/config.yaml para `modelo` (por defecto, el del evaluador)."""
+    if precios is None:
+        return _costo_usd_config(uso, modelo or modelo_de("evaluador"))
     return round(
         uso.get("input_tokens", 0) * precios["input"] / 1e6
         + uso.get("output_tokens", 0) * precios["output"] / 1e6
@@ -191,11 +201,14 @@ def validar_contrato(rub01: dict) -> None:
         raise ValueError("rub01 no valida: " + "; ".join(errores))
 
 
-def evaluar(tarea: dict, version_prompt: str = VERSION_PROMPT, modelo: str = MODELO,
+def evaluar(tarea: dict, version_prompt: str = VERSION_PROMPT, modelo: str | None = None,
             esfuerzo: str = ESFUERZO, cliente=None, reintentos: int = 2) -> dict:
-    """Una llamada independiente al evaluador. Devuelve {"rub01": ..., "meta": ...}."""
+    """Una llamada independiente al evaluador. Devuelve {"rub01": ..., "meta": ...}.
+    `modelo` None = pipeline/config.yaml::modelos.evaluador."""
     import anthropic
     from pipeline.apikey import api_key
+
+    modelo = modelo or modelo_de("evaluador")
 
     cliente = cliente or anthropic.Anthropic(api_key=api_key())
     sistema = cargar_prompt(version_prompt)
@@ -244,13 +257,13 @@ def evaluar(tarea: dict, version_prompt: str = VERSION_PROMPT, modelo: str = MOD
             "segundos": round(time.time() - t0, 1),
             "intentos": intento + 1,
             "uso": {**uso_acum, "thinking_tokens": thinking},
-            "costo_usd": costo_usd(uso_acum),
+            "costo_usd": costo_usd(uso_acum, modelo=modelo),
             "costo_usd_pesimista": costo_usd(uso_acum, PRECIOS_PESIMISTAS),
             "avisos": avisos,
         }
         return {"rub01": rub01, "meta": meta}
     err = RuntimeError(f"evaluador falló tras {reintentos + 1} intentos: {ultimo_error}")
-    err.costo_usd = costo_usd(uso_acum)  # el gasto de intentos fallidos también cuenta
+    err.costo_usd = costo_usd(uso_acum, modelo=modelo)  # el gasto de intentos fallidos también cuenta
     raise err from ultimo_error
 
 

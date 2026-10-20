@@ -1,0 +1,8 @@
+# Dependencias de Python del pipeline OTM-Prensa (las que importa el código del repo).
+# Instalación: python -m pip install -r requirements.txt
+anthropic>=0.116          # pipeline/llm.py, evaluador (cliente de la API)
+PyYAML>=6.0               # pipeline/config.yaml, MED01, configs de agentes
+jsonschema>=4.26          # invariante 1 (contratos/)
+referencing>=0.37         # registro local de los $id de contratos/
+defusedxml>=0.7.1         # ilustrador: parseo seguro del SVG
+pytest>=9.0               # tests (desarrollo)

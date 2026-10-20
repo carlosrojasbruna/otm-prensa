@@ -26,7 +26,15 @@ CORRIDAS_DISENO_6 = [
     {"nivel": "N2", "composicion": "VV"}, {"nivel": "N3", "composicion": "AA"},
     {"nivel": "N4", "composicion": "VV"}, {"nivel": "N4", "composicion": "AA"},
 ]
-MODELO_CODIFICADOR_DEFECTO = "claude-opus-5-5"   # el de INS08 (piloto); config.yaml no define uno propio
+
+
+def modelo_codificador_defecto() -> str:
+    """pipeline/config.yaml::modelos.simulador_codificador (claude-opus-5-5 de partida, el de INS08)."""
+    from pipeline.llm import modelo_de
+    return modelo_de("simulador_codificador")
+
+
+MODELO_CODIFICADOR_DEFECTO = modelo_codificador_defecto()   # informativo; generar_todo relee config.yaml
 
 CODER_SYSTEM = """Eres un investigador en didáctica de la matemática y codificas transcripciones de pares de estudiantes que resuelven una tarea de modelación. Codificas de forma deductiva, con el libro de códigos que se entrega abajo. Te basas solo en lo que está escrito en la transcripción: no supones intenciones que no se expresan. No conoces el perfil de los estudiantes, y no debes intentar deducirlo.
 
@@ -215,7 +223,7 @@ def generar_todo(tarea: Mapping, dir_sim: Path, sim=None, *, modelo_estudiantes:
     sim = sim or _comun.cargar_sim()
     from pipeline.llm import modelo_de
     diseno = diseno_otm(tarea, modelo_estudiantes=modelo_estudiantes or modelo_de("simulador"),
-                        modelo_codificador=modelo_codificador or MODELO_CODIFICADOR_DEFECTO)
+                        modelo_codificador=modelo_codificador or modelo_codificador_defecto())
     dir_sim = Path(dir_sim)
     dir_sim.mkdir(parents=True, exist_ok=True)
     (dir_sim / "TAREA.md").write_text(generar_tarea_md(tarea), encoding="utf-8")
