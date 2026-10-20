@@ -615,3 +615,16 @@ def test_nueva_version_con_enunciado_cambiado_vuelve_a_simular(rutas):
     assert ag.simular.llamado["n"] == n_sim + 1
     assert "simulacion_reutilizada_de" not in orq.cargar(TID + "-v2", rutas.expedientes).marcas
     assert any(e["tipo"] == "simulacion_no_reutilizable" for e in reg["eventos"])
+
+
+def test_nueva_version_sobre_version_sin_simular_hereda_origen(rutas):
+    """v3 creada desde una v2 que nunca pasó por el tramo B: reutiliza la simulación y la guía de la v1."""
+    redacciones: list = []
+    _hasta_verificada(rutas, redacciones)
+    ag = _agentes_tramo_b([], redacciones)
+    ag.iterar = iterar_falso
+    nuevo_ciclo(rutas, [rub(OK_23)] * 3, agentes=ag).nueva_version({TID: MEJORAS})
+    nuevo_ciclo(rutas, [rub(OK_23)] * 3, agentes=ag).nueva_version({TID + "-v2": MEJORAS})
+    exp3 = orq.cargar(TID + "-v3", rutas.expedientes)
+    assert exp3.artefactos["tarea"]["version"] == 3
+    assert exp3.marcas["reusar_simulacion_de"] == TID and exp3.marcas["guia_base_de"] == TID

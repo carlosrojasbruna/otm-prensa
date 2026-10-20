@@ -1,0 +1,8 @@
+{
+  "2026-10-anticipo-renta-vitalicia-v3": [
+    {
+      "criterio": "validacion",
+      "mejora_minima": "Reemplazar la ficha hipotética de R4 por una validación con datos reales e independientes: ofertas de renta vitalicia del SCOMP (Sistema de Consultas y Ofertas de Montos de Pensión, que administran la Superintendencia de Pensiones y la CMF), que muestran la pensión mensual ofrecida por las aseguradoras según prima, edad y sexo. El grupo calcula con su modelo el factor de anualidad vitalicia (valor esperado descontado de la renta por cada peso de pensión) y lo contrasta con el que implican las ofertas reales (prima dividida por la pensión ofrecida), datos que no usó para construir la regla. R4 con fuente concreta ('otra fuente: SCOMP …') y contenido sin cifras inventadas. Ajustar mapa_ciclo P6-VAL y task_space.validation_evidence en coherencia. No cambiar enunciado_es ni foto_descripcion (la simulación se reutiliza)."
+    }
+  ]
+}

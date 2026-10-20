@@ -962,8 +962,11 @@ class Ciclo:
                 exp.marcas.update({"ciclo_id": self.ciclo_id, "noticia_id": previo.marcas.get("noticia_id"),
                                    "nivel_objetivo": previo.marcas.get("nivel_objetivo"),
                                    "origen": f"v{nueva['version']} de {tid} ({motivo})", "version_de": tid,
-                                   "reusar_simulacion_de": tid if "trazas_resumen" in previo.artefactos else None,
-                                   "guia_base_de": tid if "guia" in previo.artefactos else None,
+                                   # si la versión anterior no llegó a simularse o a tener guía, se hereda su origen
+                                   "reusar_simulacion_de": tid if "trazas_resumen" in previo.artefactos
+                                   else previo.marcas.get("reusar_simulacion_de"),
+                                   "guia_base_de": tid if "guia" in previo.artefactos
+                                   else previo.marcas.get("guia_base_de"),
                                    "atencion_mejoras": r.get("atencion_mejoras", [])})
                 if (texto := self._textos.get(tid)) is not None:
                     self._textos[exp.tarea_id] = texto
