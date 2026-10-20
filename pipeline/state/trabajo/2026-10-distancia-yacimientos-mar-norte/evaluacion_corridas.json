@@ -1,0 +1,344 @@
+{
+  "tarea_id": "2026-10-distancia-yacimientos-mar-norte",
+  "evaluaciones": [
+    {
+      "iteracion": 1,
+      "version_tarea": 1,
+      "fecha": "2026-10-20T20:34:56Z",
+      "modelo": "claude-opus-5-5",
+      "version_prompt": "1.3",
+      "version_rubrica": "4.0",
+      "corridas": [
+        {
+          "n": 1,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La tarea plantea una necesidad: comunicar a oyentes distancias grandes sin apoyo visual. No entrega una regla ni un modelo para hacerlo. La resta para obtener la diferencia es inmediata, pero el núcleo es construir una representación comprensible, que queda a cargo de los estudiantes.",
+                "cita": "Ustedes deben preparar un mensaje que se entienda sin mirar un mapa y que muestre cuánta diferencia hay entre ambos."
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe el procedimiento y admite varios caminos defendibles: comparar con trayectos conocidos, usar una escala en el patio, contar pasos o usar tiempos de viaje. No hay instrucciones posteriores que encaucen hacia una ruta única.",
+                "cita": "¿Cómo lo harían? Pueden pedir información adicional."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige decidir qué referencia familiar usar, estimar o buscar esa distancia, elegir una escala o unidad comprensible y seleccionar entre millas y kilómetros. Son decisiones y estimaciones de modelación reales.",
+                "cita": "La radio de su colegio quiere contar a los oyentes qué tan lejos de tierra están estos dos lugares"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Se trata de un hecho real de actualidad. Explicarlo en una radio escolar es una situación plausible fuera del aula.",
+                "cita": "El gobierno del Reino Unido debe decidir pronto si aprueba un yacimiento de gas llamado Jackdaw, bajo el mar del Norte."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los datos provienen de una noticia citada y constituyen el núcleo de la tarea. Es un componente auténtico integrado de manera sustantiva.",
+                "cita": "Según la noticia, queda a 150 millas (241.4 km) al este de Aberdeen, una ciudad de la costa de Escocia."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "La audiencia radial, que no puede ver un mapa, condiciona qué referencia y qué representación elegir. También es necesaria para juzgar si el mensaje funciona. Que las distancias se midan desde puntos de tierra distintos exige además interpretar el contexto.",
+                "cita": "quiere contar a los oyentes qué tan lejos de tierra están estos dos lugares"
+              },
+              "ciclo": {
+                "puntaje": 1,
+                "justificacion": "Las distancias llegan ya dadas en kilómetros, de modo que la simplificación queda prácticamente hecha. Saber cuál queda más lejos y cuánta diferencia hay se reduce a comparar y restar, lo que vuelve trivial parte del trabajo matemático. Hay duda con el 2 por la fase de construir la representación, y se asigna el menor.",
+                "cita": "Jackdaw: 150 millas (241.4 km) al este de Aberdeen. Rosebank: 80 millas (128.7 km) al noroeste de las islas Shetland."
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "El mensaje puede contrastarse con evidencia independiente accesible. La distancia de la referencia elegida puede verificarse en un mapa o una fuente pública, y la comprensión puede probarse con oyentes reales, como otros cursos.",
+                "cita": "Ustedes deben preparar un mensaje que se entienda sin mirar un mapa"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "Con la tarjeta de contexto, la situación y el lenguaje son comprensibles para 10–12 años. La matemática requerida (operatoria, unidades, estimación y proporcionalidad para escalar) corresponde a las herramientas esperables de P.",
+                "cita": "Las islas Shetland son un grupo de islas al norte de Escocia."
+              },
+              "autodiferenciacion": {
+                "puntaje": 1,
+                "justificacion": "El piso es bajo, pues basta comparar y restar. El techo es limitado: más allá de elegir una escala o una referencia familiar, la tarea admite pocas soluciones claramente más sofisticadas. Hay duda con el 2 y se asigna el menor.",
+                "cita": "cuál de los dos queda más lejos"
+              },
+              "fecundidad": {
+                "puntaje": 1,
+                "justificacion": "Pueden compararse los mensajes de distintos grupos. Sin embargo, una vez elegida una buena referencia la tarea tiende a agotarse y abre pocas preguntas nuevas sustantivas.",
+                "cita": "que muestre cuánta diferencia hay entre ambos"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "R3 sugiere la estructura de solución: una representación a escala en el patio medida en pasos o metros. R4 indica que sirve para ver a simple vista cuál queda más lejos. Ambos son sobreorientación parcial.",
+                "cita": "Se pueden usar huincha, cuerda, tiza, hojas cuadriculadas y el patio o el pasillo del colegio. Se puede medir en pasos o en metros."
+              }
+            },
+            "total": 20,
+            "mejoras": [
+              {
+                "criterio": "ciclo",
+                "mejora_minima": "Entregar solo las distancias en millas, tal como aparecen en la noticia. Agregar que la radio debe explicar también cuánto tardaría un barco en llegar, para que los estudiantes deban decidir conversiones, una velocidad razonable y supuestos."
+              },
+              {
+                "criterio": "autodiferenciacion",
+                "mejora_minima": "Añadir que el mensaje puede comparar ambos yacimientos con distancias o trayectos conocidos por los oyentes. Así se admiten desde una comparación simple hasta una escala proporcional o comparaciones con varias referencias y tiempos de viaje."
+              },
+              {
+                "criterio": "fecundidad",
+                "mejora_minima": "Pedir al final que comparen los mensajes de los grupos y discutan cuál representa mejor la diferencia. Preguntar también qué cambiaría si las distancias se midieran desde el mismo punto de tierra."
+              },
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Reemplazar R3 por una tarjeta neutra (\"Pueden solicitar materiales para medir o representar\"). Eliminar de R4 la frase \"Sirve para comparar cuál queda más lejos de tierra a simple vista\"."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgE8DA4kkyCQdESAQh7Cz",
+            "fecha": "2026-10-20T20:33:10+00:00",
+            "intentos": 1,
+            "costo_usd": 0.133858,
+            "avisos": []
+          }
+        },
+        {
+          "n": 2,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 1,
+                "justificacion": "La necesidad comunicativa es genuina y no se entrega un modelo. Sin embargo, con ambas distancias ya dadas, preguntar cuál queda más lejos y cuánta diferencia hay insinúa fuertemente una comparación y una resta directas. Dudé entre 1 y 2 y asigné el menor.",
+                "cita": "qué tan lejos de tierra están estos dos lugares y cuál de los dos queda más lejos"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe método. Admite caminos defendibles distintos: comparar con trayectos conocidos, representar a escala o expresar en tiempos de viaje.",
+                "cita": "Ustedes deben preparar un mensaje que se entienda sin mirar un mapa y que muestre cuánta diferencia hay entre ambos. ¿Cómo lo harían?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Hay que elegir una distancia de referencia familiar para los oyentes, estimarla u obtenerla y decidir una escala o equivalencia. Son decisiones de modelación reales.",
+                "cita": "preparar un mensaje que se entienda sin mirar un mapa"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Los yacimientos y la discusión pública son reales, y que una radio escolar quiera comunicarlos es claramente plausible.",
+                "cita": "El gobierno del Reino Unido debe decidir pronto si aprueba un yacimiento de gas llamado Jackdaw, bajo el mar del Norte."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los datos provienen de una noticia citada y constituyen el núcleo de la tarea, de modo que el componente auténtico está integrado de manera sustantiva.",
+                "cita": "Según la noticia, queda a 150 millas (241.4 km) al este de Aberdeen, una ciudad de la costa de Escocia."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El público radial, sin mapa, condiciona qué referencia y qué representación elegir. También es necesario para juzgar si el mensaje resultante se entiende.",
+                "cita": "La radio de su colegio quiere contar a los oyentes"
+              },
+              "ciclo": {
+                "puntaje": 1,
+                "justificacion": "La simplificación queda prácticamente hecha, porque la situación llega reducida a dos números ya convertidos a km. Además, el trabajo matemático sobre ellos (comparar y restar) es trivial.",
+                "cita": "Jackdaw: 150 millas (241.4 km) al este de Aberdeen. Rosebank: 80 millas (128.7 km) al noroeste de las islas Shetland."
+              },
+              "validacion": {
+                "puntaje": 1,
+                "justificacion": "Lo disponible es sobre todo una comprobación de consistencia: el mapa confirma cuál queda más lejos. Dudé entre 1 y 2, porque no hay un contraste claro del mensaje-modelo con evidencia independiente, y asigné el menor.",
+                "cita": "Sirve para comparar cuál queda más lejos de tierra a simple vista."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "Con la tarjeta de contexto, la situación es comprensible para 5°–7° básico. La matemática (operatoria con decimales, unidades, proporcionalidad y estimación) está dentro de las herramientas esperables en P.",
+                "cita": "Las islas Shetland son un grupo de islas al norte de Escocia."
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Se puede entrar con una resta y una comparación simple. La tarea también admite soluciones claramente más sofisticadas, como modelos a escala con proporcionalidad, varias referencias combinadas o tiempos de viaje.",
+                "cita": "un mensaje que se entienda sin mirar un mapa y que muestre cuánta diferencia hay entre ambos"
+              },
+              "fecundidad": {
+                "puntaje": 1,
+                "justificacion": "Se pueden comparar los mensajes de distintos grupos, pero la tarea no abre extensiones sustantivas. No pone en juego, por ejemplo, que las distancias se miden desde puntos de tierra distintos.",
+                "cita": "cuál de los dos queda más lejos"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "La información necesaria está disponible u obtenible. Sin embargo, la tarjeta de materiales sugiere de forma bastante directa una representación a escala en el patio, lo que constituye una sobreorientación parcial.",
+                "cita": "Se pueden usar huincha, cuerda, tiza, hojas cuadriculadas y el patio o el pasillo del colegio. Se puede medir en pasos o en metros."
+              }
+            },
+            "total": 19,
+            "mejoras": [
+              {
+                "criterio": "genuino",
+                "mejora_minima": "Reemplazar «y cuál de los dos queda más lejos... cuánta diferencia hay» por «que los oyentes puedan imaginar qué tan lejos de tierra está cada uno», sin pedir explícitamente la diferencia."
+              },
+              {
+                "criterio": "ciclo",
+                "mejora_minima": "Entregar solo las distancias en millas y pedir que el grupo decida cómo traducirlas a algo conocido por los oyentes, para que la simplificación y la conversión queden a cargo de los estudiantes."
+              },
+              {
+                "criterio": "validacion",
+                "mejora_minima": "Pedir que prueben su mensaje con compañeros que no vieron el mapa y que verifiquen la distancia de referencia elegida con un mapa con escala o un buscador."
+              },
+              {
+                "criterio": "fecundidad",
+                "mejora_minima": "Agregar al final: «¿Es justo comparar si una distancia se mide desde Aberdeen y la otra desde Shetland? ¿Qué cambiaría si se mide desde la costa más cercana?»"
+              },
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Sustituir R3 por una tarjeta neutra que diga solo «pueden pedir materiales para medir o dibujar», sin listar cuerda, tiza ni el patio."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgE8HdWc6Y518BLBZioxe",
+            "fecha": "2026-10-20T20:34:09+00:00",
+            "intentos": 1,
+            "costo_usd": 0.130218,
+            "avisos": []
+          }
+        },
+        {
+          "n": 3,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La tarea plantea una necesidad real de comunicación, hacer comprensible una distancia a oyentes de radio, y no entrega una regla ni un modelo de representación listo para aplicar.",
+                "cita": "Ustedes deben preparar un mensaje que se entienda sin mirar un mapa y que muestre cuánta diferencia hay entre ambos. ¿Cómo lo harían?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe el procedimiento. Admite varios caminos defendibles: diferencia, razón («casi el doble»), comparación con trayectos conocidos o representación a escala.",
+                "cita": "¿Cómo lo harían? Pueden pedir información adicional."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Para resolverla hay que elegir unidad y redondeo, escoger una distancia de referencia familiar o una escala, y decidir qué información pedir. Son decisiones de modelación, no supuestos automáticos.",
+                "cita": "preparar un mensaje que se entienda sin mirar un mapa"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "La situación es real: los yacimientos existen y son tema de noticia. Que una radio escolar quiera comunicar esas distancias es claramente plausible.",
+                "cita": "El gobierno del Reino Unido debe decidir pronto si aprueba un yacimiento de gas llamado Jackdaw, bajo el mar del Norte."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los datos provienen de una noticia citada y son el núcleo de la tarea, de modo que el componente auténtico está integrado de manera sustantiva.",
+                "cita": "Según la noticia, queda a 150 millas (241.4 km) al este de Aberdeen"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "La audiencia radial, que no ve el mapa, condiciona la elección de referencias y escala. Ese mismo contexto es necesario para juzgar si el mensaje funciona.",
+                "cita": "La radio de su colegio quiere contar a los oyentes qué tan lejos de tierra están estos dos lugares"
+              },
+              "ciclo": {
+                "puntaje": 1,
+                "justificacion": "Con ambos datos ya entregados, determinar cuál queda más lejos y la diferencia se vuelve casi inmediato, así que el trabajo matemático puede ser trivial. Dudo entre 1 y 2 porque una representación a escala exigiría más; asigno el menor.",
+                "cita": "Jackdaw: 150 millas (241.4 km) al este de Aberdeen. Rosebank: 80 millas (128.7 km) al noroeste de las islas Shetland."
+              },
+              "validacion": {
+                "puntaje": 1,
+                "justificacion": "Lo esperable es comprobar la plausibilidad: que la razón entre distancias sea cercana a 2 y que la representación sea coherente. No hay un contraste claro con evidencia independiente. Dudo con el 2, porque podría consultarse un mapa con escala; asigno el menor.",
+                "cita": "un mensaje que se entienda sin mirar un mapa y que muestre cuánta diferencia hay entre ambos"
+              },
+              "nivel": {
+                "puntaje": 1,
+                "justificacion": "La matemática (resta, proporción, decimales, unidades) está al alcance de P y el contexto es comprensible con R2. Sin embargo, el debate energético del mar del Norte es lejano y poco significativo para estudiantes chilenos de 10 a 12 años.",
+                "cita": "un yacimiento de petróleo que está a 80 millas (128.7 km) al noroeste de las islas Shetland"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es bajo, porque basta comparar y restar. La tarea también admite soluciones más sofisticadas: razón entre distancias, analogías con trayectos conocidos, representación a escala o discusión de los distintos puntos de referencia.",
+                "cita": "¿Cómo lo harían? Pueden pedir información adicional."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Los mensajes de distintos grupos pueden compararse en cuanto a claridad y fidelidad. Además se abre la pregunta de que las distancias se miden desde puntos de tierra distintos (Aberdeen y Shetland).",
+                "cita": "qué tan lejos de tierra están estos dos lugares y cuál de los dos queda más lejos"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "La información necesaria está disponible. Pero R3 (huincha, cuerda, patio, pasos) insinúa una representación a escala en el patio, lo que constituye una sobreorientación parcial hacia una ruta de solución.",
+                "cita": "Tarjeta de materiales disponibles para representar las distancias"
+              }
+            },
+            "total": 20,
+            "mejoras": [
+              {
+                "criterio": "ciclo",
+                "mejora_minima": "Pedir que el mensaje use una comparación con una distancia que los oyentes conozcan (por ejemplo, un trayecto en Chile), elegida y justificada por el grupo. Así el paso de matematizar y trabajar con la proporción deja de ser trivial."
+              },
+              {
+                "criterio": "validacion",
+                "mejora_minima": "Agregar que el grupo contraste su mensaje con un mapa con escala o con otra fuente, o que lo pruebe con compañeros que no conocen los datos, y lo ajuste según el resultado."
+              },
+              {
+                "criterio": "nivel",
+                "mejora_minima": "Incluir en la consigna que el mensaje relacione las distancias con lugares o trayectos conocidos por los estudiantes, para que el contexto lejano resulte significativo para ellos."
+              },
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Reformular R3 como una tarjeta genérica de materiales del aula, sin el título «para representar las distancias» ni la mención al patio y a los pasos, para no sugerir la representación a escala."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgE8N1ofnmrzdXqYLSLmW",
+            "fecha": "2026-10-20T20:34:56+00:00",
+            "intentos": 1,
+            "costo_usd": 0.103078,
+            "avisos": []
+          }
+        }
+      ],
+      "totales": [
+        20,
+        19,
+        20
+      ],
+      "rango_total": 1,
+      "rango_inestable": 4,
+      "evaluacion_inestable": false,
+      "mediana": {
+        "regla": "mediana por criterio (n par: mediana inferior)",
+        "total": 20,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 1,
+          "validacion": 1,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 1,
+          "recursos": 1
+        },
+        "corrida_fuente": {
+          "genuino": 1,
+          "abierta": 1,
+          "decisiones": 1,
+          "realismo": 1,
+          "autenticidad": 1,
+          "contexto": 1,
+          "ciclo": 1,
+          "validacion": 2,
+          "nivel": 1,
+          "autodiferenciacion": 2,
+          "fecundidad": 1,
+          "recursos": 1
+        }
+      }
+    }
+  ]
+}

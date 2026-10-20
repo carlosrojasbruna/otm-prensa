@@ -86,11 +86,33 @@
     },
     "3": {
       "nombre": "Evaluación y prototipo",
-      "estado": "pendiente",
+      "estado": "en_curso",
       "tareas": {
-        "eval-engineer": "pendiente",
-        "orquestador": "pendiente",
-        "prototipo-3-tareas": "pendiente"
+        "eval-engineer": {
+          "estado": "completada",
+          "fecha": "2026-10-20",
+          "commit": "40fa237",
+          "test": "matriz 9 agentes × 3 modelos; 9,68 USD; 331 passed"
+        },
+        "orquestador": {
+          "estado": "completada",
+          "fecha": "2026-10-20",
+          "commit": "84e88ca",
+          "test": "328 passed (23 de ciclo, sin red)"
+        },
+        "prototipo-3-tareas": {
+          "estado": "bloqueada",
+          "fecha": "2026-10-20",
+          "commit": null,
+          "test": "tramo A: 3 tareas en `evaluada` (RUB01 24, 24, 23; 3 corridas idénticas c/u); 3,85 USD. Tramo B espera revisión humana 1",
+          "espera": "revision_humana_1 de Carlos"
+        },
+        "explorador-med01-v1.1": {
+          "estado": "completada",
+          "fecha": "2026-10-20",
+          "commit": "5a16708",
+          "test": "14 nuevos + 12 previos passed; vivo 0,003 USD: La Tercera 2/4 validan; Nature (anti-bot), DW (URLs inválidas) y gnews (ids CBMi) sin leer"
+        }
       },
       "checkpoint": "CP2",
       "CP2": {
@@ -120,6 +142,6 @@
       }
     }
   },
-  "costo_acumulado_usd": 13.06,
-  "ultimo_commit": "9afe64d"
+  "costo_acumulado_usd": 26.586,
+  "ultimo_commit": "40fa237"
 }

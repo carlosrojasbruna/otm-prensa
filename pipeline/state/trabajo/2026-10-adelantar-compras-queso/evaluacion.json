@@ -1,0 +1,104 @@
+{
+  "tarea_id": "2026-10-adelantar-compras-queso",
+  "fecha": "2026-10-20T20:29:45Z",
+  "rub01": {
+    "version_rubrica": "4.0",
+    "criterios": {
+      "genuino": {
+        "puntaje": 2,
+        "justificacion": "Plantea una necesidad real de la importadora: planificar compras ante un arancel inminente. No entrega regla, fórmula ni modelo de inventario. Mencionar almacenamiento, deterioro y demanda describe la situación, no el procedimiento.",
+        "cita": "¿Cómo debería organizar sus compras antes y después de que empiece a regir el arancel?"
+      },
+      "abierta": {
+        "puntaje": 2,
+        "justificacion": "La pregunta no prescribe método y no hay instrucciones posteriores que encaucen. Admite varios modelos defendibles: comparación de escenarios, optimización con restricciones o modelo dinámico de inventario.",
+        "cita": "¿Cómo debería organizar sus compras antes y después de que empiece a regir el arancel?"
+      },
+      "decisiones": {
+        "puntaje": 2,
+        "justificacion": "Hay que separar información pertinente de la irrelevante, como este total agregado. También hay que suponer costos de bodega, tasas de deterioro y patrón de demanda, y solicitar fichas con rangos. Esto exige supuestos y estimaciones sustantivas.",
+        "cita": "En total, el gobierno grava bienes canadienses por un valor aproximado de $20bn."
+      },
+      "realismo": {
+        "puntaje": 2,
+        "justificacion": "Acopiar mercancía antes de que entre en vigor un arancel es una práctica comercial real. La importadora es hipotética, pero claramente plausible.",
+        "cita": "Una ley comercial antigua fue usada para imponer aranceles a bienes canadienses, y esa ley exige un periodo de espera (30-day) antes de aplicarlos."
+      },
+      "autenticidad": {
+        "puntaje": 2,
+        "justificacion": "El hecho noticioso (aranceles, periodo de espera de 30 días, demanda contra el gobierno) es el núcleo de la tarea. Además se integran series oficiales reales de importaciones para contrastar el modelo. No son materiales creados para enseñar.",
+        "cita": "Existen series mensuales de importaciones de queso desde Canadá en organismos oficiales de estadísticas de comercio."
+      },
+      "contexto": {
+        "puntaje": 2,
+        "justificacion": "Deterioro, capacidad de bodega, costos y estacionalidad condicionan las decisiones del modelo. El contexto también es indispensable para interpretar la estrategia y el efecto agregado sobre el sector.",
+        "cita": "El queso se guarda en bodega refrigerada, que tiene espacio limitado y cuesta dinero, y parte del producto se echa a perder con el tiempo."
+      },
+      "ciclo": {
+        "puntaje": 2,
+        "justificacion": "Resolver obliga a recorrer todas las fases: comprender la situación, simplificar y elegir variables, matematizar, calcular, interpretar la estrategia y su efecto agregado, y validar con R6. El enunciado nombra factores, pero no los cuantifica ni entrega el modelo.",
+        "cita": "¿Qué le pasaría al comercio del sector si todas las importadoras razonan igual? Pueden pedir información adicional."
+      },
+      "validacion": {
+        "puntaje": 2,
+        "justificacion": "Existe evidencia independiente: series oficiales de importaciones en torno a anuncios previos. Se entrega después de definir la estrategia, así que no se usa para construir el modelo.",
+        "cita": "El grupo debe indicar qué meses comparar (por ejemplo, alrededor de un anuncio de aranceles anterior) con lo que predijo su modelo."
+      },
+      "nivel": {
+        "puntaje": 2,
+        "justificacion": "Para U, el contexto económico es comprensible y pertinente. La demanda matemática (optimización con restricciones, modelos dinámicos discretos de inventario) corresponde a las herramientas esperables según MAR03. Los fragmentos en inglés («30-day», «$20bn») no afectan la comprensión en este nivel.",
+        "cita": "El queso se guarda en bodega refrigerada, que tiene espacio limitado y cuesta dinero"
+      },
+      "autodiferenciacion": {
+        "puntaje": 2,
+        "justificacion": "Hay un piso razonable: comparar costos de comprar antes o después con aritmética y supuestos simples. El techo es alto: programación dinámica, demanda estocástica, análisis de sensibilidad y efectos agregados de mercado.",
+        "cita": "Además, la demanda de sus clientes cambia de un mes a otro."
+      },
+      "fecundidad": {
+        "puntaje": 2,
+        "justificacion": "La segunda pregunta abre el paso de la decisión individual al efecto agregado. Las distintas estrategias y supuestos pueden compararse entre sí y contra datos reales.",
+        "cita": "¿Qué le pasaría al comercio del sector si todas las importadoras razonan igual?"
+      },
+      "recursos": {
+        "puntaje": 2,
+        "justificacion": "La información necesaria puede solicitarse como rangos u órdenes de magnitud, sin revelar el modelo ni la regla de solución. Los datos de contraste se entregan solo después de que el grupo define su estrategia.",
+        "cita": "Si el grupo pregunta por un tipo de queso, un costo o un plazo concretos, la bodega entrega una estimación de rango."
+      }
+    },
+    "total": 24,
+    "mejoras": []
+  },
+  "reproducibilidad": {
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.476049,
+        "version_prompt": "1.0"
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.211322,
+        "version_prompt": "1.3"
+      },
+      "filtro": {
+        "modelo": "claude-haiku-5-5",
+        "version_modelo": "claude-haiku-5-5",
+        "costo_usd": 0.00037,
+        "version_prompt": "1.0"
+      }
+    },
+    "version_prompt": {
+      "disenador": "1.0",
+      "evaluador": "1.3",
+      "filtro": "1.0"
+    },
+    "version_rubrica": "4.0",
+    "version_MAR03": "1.0",
+    "version_MED01": "1.1",
+    "diseno_simulador": null,
+    "fecha": "2026-10-20T20:29:45Z",
+    "costo_usd": 0.687741
+  }
+}

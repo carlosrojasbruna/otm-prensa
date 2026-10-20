@@ -1,0 +1,501 @@
+{
+  "tarea_id": "2026-10-precio-terreno-medialuna",
+  "estado": "archivada",
+  "iteraciones": 1,
+  "artefactos": {
+    "tarea": {
+      "id": "2026-10-precio-terreno-medialuna",
+      "titulo": "¿Puede una tasación errar tanto?",
+      "estado": "archivada",
+      "version": 1,
+      "fecha": "2026-10-20",
+      "noticia": {
+        "noticia_id": "2026-10-19-ciper-tramitan-expulsiones-de-extranjeros-detenidos-en",
+        "medio": "CIPER Chile",
+        "titulo": "Tramitan expulsiones de extranjeros detenidos en aniversario del estallido; Suprema da la razón a aseguradoras por rentas vitalicias del tercer retiro, y alcalde de Chillán queda con arraigo nacional por eventual fraude al fisco",
+        "fecha": "2026-10-19",
+        "url": "https://www.ciperchile.cl/2026/10/19/radar-19-10-26/?utm_source=rss&utm_medium=rss&utm_campaign=radar-19-10-26",
+        "resumen_propio": "Resumen diario de CIPER que reúne medidas migratorias tras detenciones en una manifestación, un fallo de la Suprema sobre anticipos de pensiones del tercer retiro, una formalización por fraude al fisco contra un alcalde y la postergación de una decisión sobre un juez.",
+        "cifras_usadas": [
+          {
+            "valor": "$3.276 millones",
+            "unidad": "pesos chilenos",
+            "que_es": "precio pagado por el municipio de Chillán por el terreno de la medialuna",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 35"
+            }
+          },
+          {
+            "valor": "$1.900 millones",
+            "unidad": "pesos chilenos",
+            "que_es": "perjuicio estimado a la municipalidad por la compra del terreno",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 35"
+            }
+          },
+          {
+            "valor": "$200 millones",
+            "unidad": "pesos chilenos",
+            "que_es": "perjuicio adicional estimado por la fiscalía por la devolución de bienes de la medialuna",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 35"
+            }
+          }
+        ]
+      },
+      "nivel_principal": "U",
+      "variantes": {
+        "abajo": "S",
+        "arriba": null
+      },
+      "area": "economia",
+      "contenidos_matematicos": [
+        "distribuciones de probabilidad",
+        "modelos multiplicativos y logaritmos",
+        "inferencia y contraste de hipótesis",
+        "sensibilidad",
+        "bootstrap"
+      ],
+      "tiempo_estimado": "2 sesiones de 90 min",
+      "estudiante": {
+        "enunciado_es": "La municipalidad de Chillán compró un terreno para una medialuna y pagó $3.276 millones. La fiscalía sostiene que esa compra le causó un perjuicio al municipio de $1.900 millones, y estima otro perjuicio de $200 millones por la devolución de bienes de la medialuna. Son acusaciones en proceso, no hechos probados. Un equipo de periodistas de datos quiere explicar al público si una diferencia como la que describe la fiscalía podría ocurrir solo por la incertidumbre normal al tasar un terreno, o si resulta muy poco creíble. ¿Cómo responderían a esa pregunta y qué tan segura sería su conclusión? Pueden pedir información adicional.",
+        "foto_descripcion": "Ícono de un terreno con un cerco y una medialuna dibujada, junto a una lupa sobre un signo de pesos.",
+        "recursos_a_solicitud": [
+          {
+            "id": "R2",
+            "que_es": "Registro de tasaciones o ventas de terrenos urbanos comparables en la misma zona, con su fecha y superficie.",
+            "contenido": "Listado anónimo de operaciones de terrenos urbanos comparables, con precio, superficie, ubicación general y fecha. El grupo debe decidir cuáles son comparables y cómo usarlos; no incluye ninguna medida de variabilidad ya calculada.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P2-RM",
+            "fuente": "otra fuente: datos públicos de transacciones y avalúos de terrenos urbanos"
+          },
+          {
+            "id": "R3",
+            "que_es": "Informes de varios peritos que tasaron un mismo terreno por separado, para ver cuánto difieren entre sí.",
+            "contenido": "Conjunto de informes de tasación independientes de un mismo tipo de terreno, con el valor que cada perito asignó y sus criterios. No trae promedio ni medida de dispersión.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P2-RM",
+            "fuente": "otra fuente: informes públicos de tasación de bienes inmuebles"
+          },
+          {
+            "id": "R4",
+            "que_es": "Tasación independiente posterior, hecha por un perito, del terreno de la medialuna, para contrastar el valor que el grupo estimó.",
+            "contenido": "Resumen del valor asignado al terreno en una tasación independiente del mismo terreno, con el método de tasación. Se entrega solo después de que el grupo entregue su conclusión.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P6-VAL",
+            "fuente": "otra fuente: informe pericial de tasación del terreno"
+          }
+        ]
+      },
+      "variantes_detalle": {
+        "abajo": {
+          "tramo": "S2",
+          "cambios": "Se entrega un conjunto pequeño de tasaciones comparables ya seleccionadas y se pide comparar el precio pagado con ese rango de valores, sin construir un modelo probabilístico completo; la validación es contrastar con una tasación independiente."
+        },
+        "arriba": null
+      },
+      "recursos_de_entrada": [
+        {
+          "id": "R1",
+          "que_es": "Montos de la noticia, escritos también en el enunciado.",
+          "contenido": "Precio pagado por el terreno: $3.276 millones. Perjuicio estimado por la compra del terreno: $1.900 millones. Perjuicio adicional estimado por la devolución de bienes de la medialuna: $200 millones.",
+          "disponibilidad": "de_entrada",
+          "fase": "P1-MRS",
+          "fuente": "noticia, párrafo 35"
+        }
+      ],
+      "mapa_ciclo": {
+        "P1-MRS": {
+          "decision": "Entender qué significa el perjuicio estimado, que son cifras de una acusación, y qué parte de los montos se relaciona con el terreno.",
+          "evidencia": "Esquema o texto del grupo que separa el precio del terreno, el perjuicio por la compra y el perjuicio por los bienes, con la incógnita escrita como pregunta de plausibilidad.",
+          "bloqueo_probable": "B12"
+        },
+        "P2-RM": {
+          "decision": "Decidir qué montos usar y cuáles dejar fuera, cómo estimar el valor razonable del terreno y cómo medir la variación normal de las tasaciones.",
+          "evidencia": "Selección justificada de cifras, solicitud de tasaciones comparables y lista de supuestos sobre el valor razonable y la dispersión.",
+          "bloqueo_probable": "B23"
+        },
+        "P3-MM": {
+          "decision": "Modelar el cociente entre precio y valor razonable como variable aleatoria, por ejemplo logarítmica normal, y plantear la probabilidad de un cociente tan alto o más.",
+          "evidencia": "Ecuación con la variable aleatoria, el parámetro de dispersión estimado de los datos y la cantidad cuya probabilidad se calcula.",
+          "bloqueo_probable": "B34"
+        },
+        "P4-WM": {
+          "decision": "Calcular el cociente observado, estimar la dispersión con las tasaciones, obtener probabilidades y repetir con varias dispersiones.",
+          "evidencia": "Tabla con probabilidades para distintos valores de dispersión y, si se usa bootstrap, su procedimiento.",
+          "bloqueo_probable": "B45"
+        },
+        "P5-INT": {
+          "decision": "Interpretar que una probabilidad muy baja solo indica que la diferencia es poco explicable por incertidumbre de tasación, sin probar intención ni culpabilidad.",
+          "evidencia": "Conclusión redactada en términos del contexto, con una advertencia sobre lo que el cálculo no demuestra.",
+          "bloqueo_probable": "B56"
+        },
+        "P6-VAL": {
+          "decision": "Contrastar el valor razonable estimado con una tasación independiente posterior y analizar cuánto cambia la conclusión si cambian el valor razonable y la dispersión.",
+          "evidencia": "Comparación entre el valor estimado y el valor de la tasación independiente, con el cambio en la probabilidad.",
+          "bloqueo_probable": "B56"
+        },
+        "P7-EXP": {
+          "decision": "Comunicar el resultado a una audiencia general con rangos y límites, sin afirmar nada sobre responsabilidad.",
+          "evidencia": "Texto o infografía con el rango de probabilidades, los supuestos y las limitaciones.",
+          "bloqueo_probable": "B67"
+        }
+      },
+      "task_space": {
+        "required_assumptions": [
+          "El perjuicio de $1.900 millones es la diferencia entre el precio pagado y el valor razonable del terreno, de modo que el valor razonable implícito es $3.276 millones menos $1.900 millones.",
+          "Los $200 millones corresponden a otro rubro (devolución de bienes de la medialuna) y no forman parte del sobreprecio del terreno.",
+          "El cociente entre precio y valor razonable sigue una distribución logarítmica normal con mediana uno cuando no hay sesgo.",
+          "La dispersión de las tasaciones se estima con terrenos comparables de la misma zona y época.",
+          "Las tasaciones comparables son independientes entre sí y no incluyen casos con circunstancias especiales."
+        ],
+        "reference_solution": {
+          "steps": "1) Seleccionar $3.276 millones y $1.900 millones y excluir los $200 millones del cálculo, porque se refieren a otros bienes. 2) Valor razonable implícito: $3.276 millones menos $1.900 millones, igual a $1.376 millones. 3) Cociente precio/valor razonable: 3.276/1.376, aproximadamente 2,38; el logaritmo natural es cerca de 0,87. 4) Estimar la dispersión sigma de ln(precio/tasación) con tasaciones comparables. 5) Probabilidad de un cociente igual o mayor bajo no sesgo: 1 menos Phi(0,87/sigma). 6) Sensibilidad: con sigma 0,25, probabilidad cercana a 0,0003; con sigma 0,30, cercana a 0,002; con sigma 0,40, cercana a 0,015. 7) Concluir que la diferencia es muy poco explicable por error de tasación, con la salvedad de que el cálculo no prueba intención ni responsabilidad y depende del valor razonable implícito. 8) Contrastar el valor razonable con una tasación independiente.",
+          "result": "Cociente cercano a 2,38 y probabilidad de que la variación normal de tasaciones lo explique entre cero y alrededor de 0,015 para dispersiones plausibles; la conclusión es que la diferencia es muy poco creíble como simple error de tasación, sin establecer culpabilidad.",
+          "acceptable_range": "Probabilidad entre menos de 0,0001 y 0,02 según la dispersión (de 0,2 a 0,4 en logaritmo); se acepta toda conclusión que declare sus supuestos, muestre la sensibilidad al valor razonable y a la dispersión, y no afirme intención."
+        },
+        "routes": [
+          {
+            "id": "R1",
+            "nombre": "Comparación porcentual simple",
+            "nivel": "S2",
+            "modelo": "Comparar el precio con el valor razonable implícito como razón y como diferencia porcentual, y contrastar con el rango de tasaciones comparables sin modelar probabilidad.",
+            "resultado": "El precio es cerca de 2,38 veces el valor implícito, es decir, 138% sobre ese valor; muy fuera del rango de comparables, sin medir cuán improbable es."
+          },
+          {
+            "id": "R2",
+            "nombre": "Modelo logarítmico normal de errores multiplicativos",
+            "nivel": "U",
+            "modelo": "ln(precio/valor) ~ Normal(0, sigma²) con sigma estimado de comparables; se calcula la cola superior en el cociente observado y se hace análisis de sensibilidad.",
+            "resultado": "Probabilidad entre cerca de cero y 0,015 según sigma; muy baja para sigma plausible."
+          },
+          {
+            "id": "R3",
+            "nombre": "Bootstrap empírico sobre tasaciones comparables",
+            "nivel": "U",
+            "modelo": "Se remuestrea la razón precio/tasación de los comparables y se estima la frecuencia de cocientes iguales o mayores que el observado; se compara con el modelo paramétrico.",
+            "resultado": "Frecuencia cercana a cero en el remuestreo, con un intervalo de confianza; se discute la cantidad de datos."
+          },
+          {
+            "id": "R4",
+            "nombre": "Enfoque bayesiano sobre el sesgo del precio",
+            "nivel": "U",
+            "modelo": "Distribución previa sobre el sesgo del precio pagado y verosimilitud con los datos de tasaciones; se compara la probabilidad posterior de sobreprecio con la de no sesgo.",
+            "resultado": "Probabilidad posterior de sobreprecio alta, aunque dependiente de la previa; el grupo discute el rol de esta."
+          }
+        ],
+        "modelo_inadecuado": {
+          "id": "RX: sumar los tres montos de la noticia y compararlos con el precio, o tratar los $200 millones como parte del sobreprecio del terreno.",
+          "por_que_falla": "Mezcla perjuicios de rubros distintos: los $200 millones corresponden a bienes de la medialuna y no al terreno, de modo que distorsiona el cociente precio/valor razonable; además una comparación en pesos absolutos no mide cuán atípico es el error, que es proporcional al tamaño del terreno, y no incorpora la dispersión de las tasaciones."
+        },
+        "validation_evidence": "Tasación independiente y posterior del mismo terreno, hecha por un perito, que el grupo recibe solo después de entregar su conclusión; se compara el valor razonable estimado por el grupo con el de la tasación y se recalcula la probabilidad con ese valor.",
+        "agent_visibility": {
+          "students": [
+            "enunciado_es",
+            "foto_descripcion",
+            "recursos_a_solicitud"
+          ],
+          "coder": [
+            "enunciado_es",
+            "task_space"
+          ],
+          "guide": [
+            "all"
+          ]
+        }
+      },
+      "rubrica_rub01": {
+        "total": 24,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 2
+        }
+      },
+      "rubrica_rub02": {
+        "P": null,
+        "S": null,
+        "U": null
+      },
+      "modelo_y_prompt": {
+        "diseñador": "claude-sonnet-5-5",
+        "version_prompt": "1.0",
+        "version_rubrica": "4.0"
+      }
+    },
+    "noticia": {
+      "id": "2026-10-19-ciper-tramitan-expulsiones-de-extranjeros-detenidos-en",
+      "medio_id": "ciper",
+      "medio": "CIPER Chile",
+      "idioma": "es",
+      "titulo": "Tramitan expulsiones de extranjeros detenidos en aniversario del estallido; Suprema da la razón a aseguradoras por rentas vitalicias del tercer retiro, y alcalde de Chillán queda con arraigo nacional por eventual fraude al fisco",
+      "fecha": "2026-10-19",
+      "url": "https://www.ciperchile.cl/2026/10/19/radar-19-10-26/?utm_source=rss&utm_medium=rss&utm_campaign=radar-19-10-26",
+      "area": "economia",
+      "resumen_propio": "Resumen diario de CIPER que reúne medidas migratorias tras detenciones en una manifestación, un fallo de la Suprema sobre anticipos de pensiones del tercer retiro, una formalización por fraude al fisco contra un alcalde y la postergación de una decisión sobre un juez.",
+      "cifras": [
+        {
+          "valor": 110,
+          "unidad": "detenidos",
+          "que_es": "personas detenidas durante la manifestación del domingo 18 de octubre",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 26"
+          }
+        },
+        {
+          "valor": 14,
+          "unidad": "carabineros lesionados",
+          "que_es": "funcionarios de Carabineros heridos durante la jornada de manifestaciones",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 26"
+          }
+        },
+        {
+          "valor": "10%",
+          "unidad": "porcentaje de la renta vitalicia",
+          "que_es": "monto máximo de anticipo de las rentas vitalicias fijado por el oficio de la CMF",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 31"
+          }
+        },
+        {
+          "valor": "$3.276 millones",
+          "unidad": "pesos chilenos",
+          "que_es": "precio pagado por el municipio de Chillán por el terreno de la medialuna",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 35"
+          }
+        },
+        {
+          "valor": "$1.900 millones",
+          "unidad": "pesos chilenos",
+          "que_es": "perjuicio estimado a la municipalidad por la compra del terreno",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 35"
+          }
+        },
+        {
+          "valor": "$200 millones",
+          "unidad": "pesos chilenos",
+          "que_es": "perjuicio adicional estimado por la fiscalía por la devolución de bienes de la medialuna",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 35"
+          }
+        },
+        {
+          "valor": "11 votos",
+          "unidad": "votos",
+          "que_es": "mayoría necesaria para remover a un juez",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 39"
+          }
+        },
+        {
+          "valor": "15 jueces",
+          "unidad": "jueces removidos",
+          "que_es": "cantidad de jueces removidos por la Suprema por viajar al extranjero con licencia médica",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 39"
+          }
+        }
+      ],
+      "recuperada_en": "2026-10-20T19:53:22Z",
+      "filtro": {
+        "version_rubrica": "4.0",
+        "puntajes": {
+          "genuino": 1,
+          "decisiones": 1,
+          "realismo": 2,
+          "autenticidad": 1,
+          "validacion": 2
+        },
+        "total": 7,
+        "pasa": true,
+        "justificacion": "Resumen diario con varios temas dispersos. Solo el caso de la medialuna ofrece cifras y una posible comprobación posterior, pero la noticia no plantea un problema modelable central y las pautas están ya dadas."
+      }
+    },
+    "evaluacion": {
+      "tarea_id": "2026-10-precio-terreno-medialuna",
+      "fecha": "2026-10-20T20:14:40Z",
+      "rub01": {
+        "version_rubrica": "4.0",
+        "criterios": {
+          "genuino": {
+            "puntaje": 2,
+            "justificacion": "Plantea una necesidad real: decidir si la diferencia es creíble como error de tasación. No entrega ninguna regla, distribución ni modelo de incertidumbre listo para aplicar.",
+            "cita": "quiere explicar al público si una diferencia como la que describe la fiscalía podría ocurrir solo por la incertidumbre normal al tasar un terreno"
+          },
+          "abierta": {
+            "puntaje": 2,
+            "justificacion": "La pregunta no prescribe el procedimiento. Admite varios modelos defendibles, como la dispersión entre peritos, una regresión con comparables o un modelo probabilístico del error relativo.",
+            "cita": "¿Cómo responderían a esa pregunta y qué tan segura sería su conclusión?"
+          },
+          "decisiones": {
+            "puntaje": 2,
+            "justificacion": "Resolver exige seleccionar comparables, suponer cómo se distribuye el error de tasación, interpretar qué valor implica el perjuicio y solicitar información.",
+            "cita": "El grupo debe decidir cuáles son comparables y cómo usarlos; no incluye ninguna medida de variabilidad ya calculada."
+          },
+          "realismo": {
+            "puntaje": 2,
+            "justificacion": "Es un caso real en curso. Que periodistas de datos expliquen la plausibilidad de una acusación es una práctica existente fuera de la escuela.",
+            "cita": "La municipalidad de Chillán compró un terreno para una medialuna y pagó $3.276 millones."
+          },
+          "autenticidad": {
+            "puntaje": 2,
+            "justificacion": "Los montos provienen de una noticia y son el núcleo de la tarea, porque la pregunta gira en torno a esa diferencia. Además, la actividad de periodismo de datos es auténtica.",
+            "cita": "La fiscalía sostiene que esa compra le causó un perjuicio al municipio de $1.900 millones"
+          },
+          "contexto": {
+            "puntaje": 2,
+            "justificacion": "El contexto condiciona qué terrenos son comparables y cómo leer el perjuicio como valor implícito. También condiciona cómo formular una conclusión prudente para el público, así que es necesario para interpretar y validar.",
+            "cita": "Son acusaciones en proceso, no hechos probados."
+          },
+          "ciclo": {
+            "puntaje": 2,
+            "justificacion": "Responder obliga a recorrer todo el ciclo: comprender qué implica el perjuicio y simplificar la incertidumbre de tasación. Luego hay que matematizarla (dispersión, probabilidad), calcular e interpretar el grado de seguridad, sin que el enunciado deje ninguna fase hecha.",
+            "cita": "¿Cómo responderían a esa pregunta y qué tan segura sería su conclusión?"
+          },
+          "validacion": {
+            "puntaje": 2,
+            "justificacion": "Existe evidencia independiente no usada en la construcción del modelo: una tasación posterior del mismo terreno. Con ella se puede contrastar la estimación del grupo.",
+            "cita": "Resumen del valor asignado al terreno en una tasación independiente del mismo terreno, con el método de tasación. Se entrega solo después de que el …"
+          },
+          "nivel": {
+            "puntaje": 2,
+            "justificacion": "El contexto es comprensible y pertinente para universitarios. Exige probabilidad y estadística (dispersión, plausibilidad de un evento extremo), que son herramientas esperables en el nivel U.",
+            "cita": "si una diferencia como la que describe la fiscalía podría ocurrir solo por la incertidumbre normal al tasar un terreno, o si resulta muy poco …"
+          },
+          "autodiferenciacion": {
+            "puntaje": 2,
+            "justificacion": "El piso es accesible: basta comparar la diferencia relativa con el rango entre peritos. El techo es alto, pues admite modelos de error relativo, regresión sobre comparables, simulación o cuantificación formal de la incertidumbre.",
+            "cita": "Informes de tasación independientes de un mismo tipo de terreno, con el valor que cada perito asignó y sus criterios."
+          },
+          "fecundidad": {
+            "puntaje": 2,
+            "justificacion": "Los modelos abren preguntas sustantivas: qué cuenta como comparable, la diferencia entre improbabilidad estadística y prueba judicial, y la sensibilidad de la conclusión a los supuestos. También permiten comparar soluciones y límites.",
+            "cita": "Son acusaciones en proceso, no hechos probados."
+          },
+          "recursos": {
+            "puntaje": 2,
+            "justificacion": "La información necesaria puede solicitarse y no revela el modelo, porque no trae dispersiones ya calculadas. Hay una duda menor: no se declara la superficie del terreno para usar R2 por metro cuadrado, pero R3 permite resolver el núcleo en términos relativos.",
+            "cita": "Conjunto de informes de tasación independientes de un mismo tipo de terreno, con el valor que cada perito asignó y sus criterios. No trae promedio …"
+          }
+        },
+        "total": 24,
+        "mejoras": []
+      },
+      "reproducibilidad": {
+        "agentes": {
+          "disenador": {
+            "modelo": "claude-sonnet-5-5",
+            "version_modelo": "claude-sonnet-5-5",
+            "costo_usd": 0.164821,
+            "version_prompt": "1.0"
+          },
+          "evaluador": {
+            "modelo": "claude-opus-5-5",
+            "version_modelo": "claude-opus-5-5",
+            "costo_usd": 0.187058,
+            "version_prompt": "1.3"
+          },
+          "filtro": {
+            "modelo": "claude-haiku-5-5",
+            "version_modelo": "claude-haiku-5-5",
+            "costo_usd": 0.00038,
+            "version_prompt": "1.0"
+          }
+        },
+        "version_prompt": {
+          "disenador": "1.0",
+          "evaluador": "1.3",
+          "filtro": "1.0"
+        },
+        "version_rubrica": "4.0",
+        "version_MAR03": "1.0",
+        "version_MED01": "1.1",
+        "diseno_simulador": null,
+        "fecha": "2026-10-20T20:14:40Z",
+        "costo_usd": 0.352259
+      }
+    }
+  },
+  "historial": [
+    {
+      "fecha": "2026-10-20T20:12:04+00:00",
+      "de": null,
+      "a": "borrador"
+    },
+    {
+      "fecha": "2026-10-20T20:14:40+00:00",
+      "de": "borrador",
+      "a": "evaluada",
+      "iteracion": 1,
+      "rub01_total": 24
+    },
+    {
+      "fecha": "2026-10-20T20:14:40+00:00",
+      "de": "evaluada",
+      "a": "archivada",
+      "motivo": "candidato no elegido: RUB01 24/24 frente a 24/24 de 2026-10-anticipo-renta-vitalicia (2 candidatos por noticia; se sigue con el mejor)"
+    }
+  ],
+  "marcas": {
+    "ciclo_id": "ciclo_20261020T195321968873Z",
+    "noticia_id": "2026-10-19-ciper-tramitan-expulsiones-de-extranjeros-detenidos-en",
+    "nivel_objetivo": "U",
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "versiones_modelo": [
+          "claude-sonnet-5-5"
+        ],
+        "costo_usd": 0.164821,
+        "llamadas": 1
+      },
+      "filtro": {
+        "modelo": "claude-haiku-5-5",
+        "versiones_modelo": [
+          "claude-haiku-5-5"
+        ],
+        "costo_usd": 0.00038,
+        "llamadas": 1
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "versiones_modelo": [
+          "claude-opus-5-5"
+        ],
+        "costo_usd": 0.187058,
+        "llamadas": 3
+      }
+    },
+    "costos_compartidos": [
+      "disenador",
+      "filtro"
+    ],
+    "version_MAR03": "1.0",
+    "evaluacion_inestable": false,
+    "evaluacion_rango_total": 0,
+    "evaluacion_corridas": "C:\\Users\\carro\\OneDrive - Universidad Católica de Chile\\repos\\otm-prensa\\pipeline\\state\\trabajo\\2026-10-precio-terreno-medialuna\\evaluacion_corridas.json"
+  }
+}

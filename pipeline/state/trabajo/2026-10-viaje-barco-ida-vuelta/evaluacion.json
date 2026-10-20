@@ -1,0 +1,109 @@
+{
+  "tarea_id": "2026-10-viaje-barco-ida-vuelta",
+  "fecha": "2026-10-20T20:37:22Z",
+  "rub01": {
+    "version_rubrica": "4.0",
+    "criterios": {
+      "genuino": {
+        "puntaje": 2,
+        "justificacion": "Plantea una necesidad real de decisión para la empresa. No entrega fórmula ni procedimiento; la relación entre distancia, velocidad y tiempo debe construirla el grupo.",
+        "cita": "debe decidir si un barco de apoyo puede salir de la costa, llegar a cada lugar, descargar y volver en una misma jornada"
+      },
+      "abierta": {
+        "puntaje": 2,
+        "justificacion": "La pregunta no prescribe método y admite varios modelos defendibles, según la velocidad, el tiempo de descarga y la duración de jornada que se supongan. No hay instrucciones posteriores que encaucen la ruta.",
+        "cita": "¿Qué le recomendarían a la empresa para cada yacimiento? Pueden pedir información adicional."
+      },
+      "decisiones": {
+        "puntaje": 2,
+        "justificacion": "Resolver exige estimar la velocidad del barco, el tiempo de descarga y la duración aceptable de una jornada, además de decidir qué información solicitar. Son supuestos sustantivos, no automáticos.",
+        "cita": "Un barco de apoyo avanza más despacio que un auto en carretera. Si el mar está agitado, avanza todavía más lento."
+      },
+      "realismo": {
+        "puntaje": 2,
+        "justificacion": "La logística de barcos de apoyo hacia yacimientos reales del mar del Norte existe fuera de la escuela. El encuadre no se percibe forzado.",
+        "cita": "Una empresa que lleva repuestos y alimentos a instalaciones en alta mar"
+      },
+      "autenticidad": {
+        "puntaje": 2,
+        "justificacion": "El tema (la discusión del gobierno británico) y las distancias de yacimientos reales provienen de la actualidad y son el núcleo de los datos de la tarea. Están integrados de manera sustantiva.",
+        "cita": "Jackdaw, un yacimiento de gas, queda a 241.4 km al este de Aberdeen. Rosebank, un yacimiento de petróleo, queda a 128.7 km al noroeste"
+      },
+      "contexto": {
+        "puntaje": 2,
+        "justificacion": "El contexto condiciona los supuestos (estado del mar, descarga, turnos, cierre de puertos). También es necesario para interpretar el resultado como una recomendación de ida y vuelta o de pernoctar.",
+        "cita": "Una jornada en el mar no puede ocupar todas las horas del día. Los puertos suelen cerrar de noche para descargar."
+      },
+      "ciclo": {
+        "puntaje": 2,
+        "justificacion": "Responder obliga a comprender la situación, simplificar (velocidad constante, tiempo de descarga) y matematizar la relación distancia-tiempo. Luego hay que calcular, interpretar en términos de jornada y juzgar la recomendación. El enunciado no deja hecha ninguna fase.",
+        "cita": "¿Qué le recomendarían a la empresa para cada yacimiento?"
+      },
+      "validacion": {
+        "puntaje": 2,
+        "justificacion": "Hay un caso nuevo no usado en la construcción del modelo, y existen datos públicos de velocidades de barcos de apoyo para contrastarlo. Las restricciones de turnos y de puertos también sirven para someterlo a prueba.",
+        "cita": "Pueden elegir un viaje que conozcan, en bus o auto, con su distancia aproximada y lo que demoró, y comparar con lo que su modelo …"
+      },
+      "nivel": {
+        "puntaje": 2,
+        "justificacion": "La situación de ida y vuelta es comprensible para niños de 10 a 12 años. La matemática requerida (proporcionalidad directa, estimación, operatoria con unidades) está dentro de las herramientas esperables del nivel P.",
+        "cita": "Un barco de apoyo avanza más despacio que un auto en carretera."
+      },
+      "autodiferenciacion": {
+        "puntaje": 2,
+        "justificacion": "Hay piso accesible: con una velocidad estimada se puede sumar o multiplicar tiempos. El techo es alto, porque se pueden incorporar el estado del mar, la descarga, los turnos, el cierre de puertos y comparar escenarios de velocidad.",
+        "cita": "Al llegar, necesita un rato para descargar antes de volver."
+      },
+      "fecundidad": {
+        "puntaje": 2,
+        "justificacion": "Las recomendaciones dependen de los supuestos, lo que permite comparar soluciones entre grupos. También abre preguntas sobre condiciones climáticas, límites de la jornada y cuál yacimiento es logísticamente viable.",
+        "cita": "Si el mar está agitado, avanza todavía más lento."
+      },
+      "recursos": {
+        "puntaje": 1,
+        "justificacion": "Los materiales no revelan el modelo, pero la velocidad del barco es imprescindible y ningún recurso la entrega ni indica cómo obtenerla. Para el nivel P es difícil de estimar, pues una búsqueda suele darla en nudos. Hay duda entre 1 y 2, porque la tarjeta da una cota superior; se asigna el menor.",
+        "cita": "Un barco de apoyo avanza más despacio que un auto en carretera."
+      }
+    },
+    "total": 23,
+    "mejoras": [
+      {
+        "criterio": "recursos",
+        "mejora_minima": "Agregar una tarjeta disponible a solicitud con una referencia de velocidad en km/h (por ejemplo, «un barco de apoyo típico navega a unos 20 a 25 km por hora con mar calmo»), o indicar cómo buscarla, sin dar el procedimiento de cálculo."
+      }
+    ]
+  },
+  "reproducibilidad": {
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.153683,
+        "version_prompt": "1.0"
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.319522,
+        "version_prompt": "1.3"
+      },
+      "filtro": {
+        "modelo": "claude-haiku-5-5",
+        "version_modelo": "claude-haiku-5-5",
+        "costo_usd": 0.000334,
+        "version_prompt": "1.0"
+      }
+    },
+    "version_prompt": {
+      "disenador": "1.0",
+      "evaluador": "1.3",
+      "filtro": "1.0"
+    },
+    "version_rubrica": "4.0",
+    "version_MAR03": "1.0",
+    "version_MED01": "1.1",
+    "diseno_simulador": null,
+    "fecha": "2026-10-20T20:37:22Z",
+    "costo_usd": 0.473539
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "tarea_id": "2026-10-anticipo-renta-vitalicia",
+  "fecha": "2026-10-20T20:13:22Z",
+  "rub01": {
+    "version_rubrica": "4.0",
+    "criterios": {
+      "genuino": {
+        "puntaje": 2,
+        "justificacion": "La situación plantea una necesidad real: recuperar un anticipo sin pérdida esperada ni cobro excesivo. No se entrega ninguna regla, fórmula ni modelo actuarial.",
+        "cita": "¿Qué regla propondrían para decidir cuánto bajar la pensión y por cuánto tiempo, y qué tan firme es esa regla?"
+      },
+      "abierta": {
+        "puntaje": 2,
+        "justificacion": "La pregunta no prescribe el método. Admite varios modelos defendibles, como esperanza de vida determinista, valor presente actuarial con probabilidades de sobrevida o distintos plazos y descuentos, y no hay instrucciones posteriores que encaucen la ruta.",
+        "cita": "¿Qué regla propondrían para decidir cuánto bajar la pensión y por cuánto tiempo"
+      },
+      "decisiones": {
+        "puntaje": 2,
+        "justificacion": "Resolver exige decidir varias cosas: edad y sexo del pensionado, qué tasa de interés usar, cómo tratar la mortalidad y qué significa «no perder en promedio». También exige solicitar la tabla de mortalidad y las tasas, de modo que hay supuestos e información por obtener.",
+        "cita": "Pueden pedir información adicional."
+      },
+      "realismo": {
+        "puntaje": 2,
+        "justificacion": "Los anticipos de rentas vitalicias y el tope regulatorio son una situación real del mercado previsional chileno, y la pregunta corresponde a un problema que una aseguradora enfrenta efectivamente.",
+        "cita": "la Corte Suprema falló a favor de las aseguradoras en una disputa sobre anticipos de rentas vitalicias"
+      },
+      "autenticidad": {
+        "puntaje": 2,
+        "justificacion": "La noticia y el oficio regulatorio están en el núcleo de la tarea. También son auténticos e integrados de manera sustantiva la tabla de mortalidad del regulador, las tasas de mercado y la ficha de una aseguradora real.",
+        "cita": "Un oficio de la CMF fijó que el anticipo puede llegar como máximo a 10% de la renta vitalicia."
+      },
+      "contexto": {
+        "puntaje": 2,
+        "justificacion": "El contexto condiciona las decisiones de modelación: el equilibrio en valor esperado, la sobrevida y el tope del 10%. Además es necesario para interpretar la regla y contrastarla con las condiciones reales de R4.",
+        "cita": "La compañía no quiere perder dinero en promedio, pero tampoco cobrarle de más a la persona."
+      },
+      "ciclo": {
+        "puntaje": 2,
+        "justificacion": "Responder obliga a recorrer todas las fases: comprender el anticipo, simplificar con supuestos, matematizar como equivalencia de valores presentes esperados, calcular, interpretar la regla y juzgar su firmeza. Ninguna fase viene hecha por el enunciado.",
+        "cita": "¿Qué regla propondrían para decidir cuánto bajar la pensión y por cuánto tiempo, y qué tan firme es esa regla?"
+      },
+      "validacion": {
+        "puntaje": 2,
+        "justificacion": "Existe evidencia independiente, no usada en la construcción del modelo, para contrastar la regla: la ficha R4 de una aseguradora real. A ella se suma el análisis de firmeza que pide la pregunta.",
+        "cita": "Ficha con el descuento mensual y el plazo de recuperación informados públicamente por una aseguradora para un perfil de pensionado. Se entrega solo después de …"
+      },
+      "nivel": {
+        "puntaje": 2,
+        "justificacion": "El contexto se explica en lenguaje comprensible. La matemática requerida (probabilidad, valor esperado, descuento financiero y sensibilidad) corresponde a las herramientas esperables del nivel U según MAR03.",
+        "cita": "rentas vitalicias, que son pensiones que una compañía paga cada mes mientras la persona viva"
+      },
+      "autodiferenciacion": {
+        "puntaje": 2,
+        "justificacion": "El piso es razonable, porque se puede empezar con una división simple del anticipo en un plazo o con la esperanza de vida. El techo es alto: la tarea admite valor presente actuarial con mortalidad por edad, comparación de tasas y análisis de sensibilidad.",
+        "cita": "cuánto bajar la pensión y por cuánto tiempo"
+      },
+      "fecundidad": {
+        "puntaje": 2,
+        "justificacion": "La pregunta por la firmeza abre el análisis de sensibilidad a la tasa, la edad y el sexo. Permite comparar las reglas de distintos grupos y con la oferta real de R4, y discutir la equidad entre la aseguradora y el pensionado.",
+        "cita": "y qué tan firme es esa regla?"
+      },
+      "recursos": {
+        "puntaje": 2,
+        "justificacion": "La información imprescindible (mortalidad y tasas) está disponible a solicitud y no revela el modelo. Lo que falta, como la edad o el monto de la pensión, puede suponerse o solicitarse.",
+        "cita": "El equipo docente entrega la tabla cuando el grupo la pide; no trae ninguna fórmula ni ejemplo de uso."
+      }
+    },
+    "total": 24,
+    "mejoras": []
+  },
+  "reproducibilidad": {
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.164821,
+        "version_prompt": "1.0"
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.233876,
+        "version_prompt": "1.3"
+      },
+      "filtro": {
+        "modelo": "claude-haiku-5-5",
+        "version_modelo": "claude-haiku-5-5",
+        "costo_usd": 0.00038,
+        "version_prompt": "1.0"
+      }
+    },
+    "version_prompt": {
+      "disenador": "1.0",
+      "evaluador": "1.3",
+      "filtro": "1.0"
+    },
+    "version_rubrica": "4.0",
+    "version_MAR03": "1.0",
+    "version_MED01": "1.1",
+    "diseno_simulador": null,
+    "fecha": "2026-10-20T20:13:22Z",
+    "costo_usd": 0.399077
+  }
+}

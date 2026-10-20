@@ -1,0 +1,104 @@
+{
+  "tarea_id": "2026-10-precio-terreno-medialuna",
+  "fecha": "2026-10-20T20:14:40Z",
+  "rub01": {
+    "version_rubrica": "4.0",
+    "criterios": {
+      "genuino": {
+        "puntaje": 2,
+        "justificacion": "Plantea una necesidad real: decidir si la diferencia es creíble como error de tasación. No entrega ninguna regla, distribución ni modelo de incertidumbre listo para aplicar.",
+        "cita": "quiere explicar al público si una diferencia como la que describe la fiscalía podría ocurrir solo por la incertidumbre normal al tasar un terreno"
+      },
+      "abierta": {
+        "puntaje": 2,
+        "justificacion": "La pregunta no prescribe el procedimiento. Admite varios modelos defendibles, como la dispersión entre peritos, una regresión con comparables o un modelo probabilístico del error relativo.",
+        "cita": "¿Cómo responderían a esa pregunta y qué tan segura sería su conclusión?"
+      },
+      "decisiones": {
+        "puntaje": 2,
+        "justificacion": "Resolver exige seleccionar comparables, suponer cómo se distribuye el error de tasación, interpretar qué valor implica el perjuicio y solicitar información.",
+        "cita": "El grupo debe decidir cuáles son comparables y cómo usarlos; no incluye ninguna medida de variabilidad ya calculada."
+      },
+      "realismo": {
+        "puntaje": 2,
+        "justificacion": "Es un caso real en curso. Que periodistas de datos expliquen la plausibilidad de una acusación es una práctica existente fuera de la escuela.",
+        "cita": "La municipalidad de Chillán compró un terreno para una medialuna y pagó $3.276 millones."
+      },
+      "autenticidad": {
+        "puntaje": 2,
+        "justificacion": "Los montos provienen de una noticia y son el núcleo de la tarea, porque la pregunta gira en torno a esa diferencia. Además, la actividad de periodismo de datos es auténtica.",
+        "cita": "La fiscalía sostiene que esa compra le causó un perjuicio al municipio de $1.900 millones"
+      },
+      "contexto": {
+        "puntaje": 2,
+        "justificacion": "El contexto condiciona qué terrenos son comparables y cómo leer el perjuicio como valor implícito. También condiciona cómo formular una conclusión prudente para el público, así que es necesario para interpretar y validar.",
+        "cita": "Son acusaciones en proceso, no hechos probados."
+      },
+      "ciclo": {
+        "puntaje": 2,
+        "justificacion": "Responder obliga a recorrer todo el ciclo: comprender qué implica el perjuicio y simplificar la incertidumbre de tasación. Luego hay que matematizarla (dispersión, probabilidad), calcular e interpretar el grado de seguridad, sin que el enunciado deje ninguna fase hecha.",
+        "cita": "¿Cómo responderían a esa pregunta y qué tan segura sería su conclusión?"
+      },
+      "validacion": {
+        "puntaje": 2,
+        "justificacion": "Existe evidencia independiente no usada en la construcción del modelo: una tasación posterior del mismo terreno. Con ella se puede contrastar la estimación del grupo.",
+        "cita": "Resumen del valor asignado al terreno en una tasación independiente del mismo terreno, con el método de tasación. Se entrega solo después de que el …"
+      },
+      "nivel": {
+        "puntaje": 2,
+        "justificacion": "El contexto es comprensible y pertinente para universitarios. Exige probabilidad y estadística (dispersión, plausibilidad de un evento extremo), que son herramientas esperables en el nivel U.",
+        "cita": "si una diferencia como la que describe la fiscalía podría ocurrir solo por la incertidumbre normal al tasar un terreno, o si resulta muy poco …"
+      },
+      "autodiferenciacion": {
+        "puntaje": 2,
+        "justificacion": "El piso es accesible: basta comparar la diferencia relativa con el rango entre peritos. El techo es alto, pues admite modelos de error relativo, regresión sobre comparables, simulación o cuantificación formal de la incertidumbre.",
+        "cita": "Informes de tasación independientes de un mismo tipo de terreno, con el valor que cada perito asignó y sus criterios."
+      },
+      "fecundidad": {
+        "puntaje": 2,
+        "justificacion": "Los modelos abren preguntas sustantivas: qué cuenta como comparable, la diferencia entre improbabilidad estadística y prueba judicial, y la sensibilidad de la conclusión a los supuestos. También permiten comparar soluciones y límites.",
+        "cita": "Son acusaciones en proceso, no hechos probados."
+      },
+      "recursos": {
+        "puntaje": 2,
+        "justificacion": "La información necesaria puede solicitarse y no revela el modelo, porque no trae dispersiones ya calculadas. Hay una duda menor: no se declara la superficie del terreno para usar R2 por metro cuadrado, pero R3 permite resolver el núcleo en términos relativos.",
+        "cita": "Conjunto de informes de tasación independientes de un mismo tipo de terreno, con el valor que cada perito asignó y sus criterios. No trae promedio …"
+      }
+    },
+    "total": 24,
+    "mejoras": []
+  },
+  "reproducibilidad": {
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.164821,
+        "version_prompt": "1.0"
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.187058,
+        "version_prompt": "1.3"
+      },
+      "filtro": {
+        "modelo": "claude-haiku-5-5",
+        "version_modelo": "claude-haiku-5-5",
+        "costo_usd": 0.00038,
+        "version_prompt": "1.0"
+      }
+    },
+    "version_prompt": {
+      "disenador": "1.0",
+      "evaluador": "1.3",
+      "filtro": "1.0"
+    },
+    "version_rubrica": "4.0",
+    "version_MAR03": "1.0",
+    "version_MED01": "1.1",
+    "diseno_simulador": null,
+    "fecha": "2026-10-20T20:14:40Z",
+    "costo_usd": 0.352259
+  }
+}

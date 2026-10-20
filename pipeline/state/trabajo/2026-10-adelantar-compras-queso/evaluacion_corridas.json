@@ -1,0 +1,293 @@
+{
+  "tarea_id": "2026-10-adelantar-compras-queso",
+  "evaluaciones": [
+    {
+      "iteracion": 1,
+      "version_tarea": 1,
+      "fecha": "2026-10-20T20:29:45Z",
+      "modelo": "claude-opus-5-5",
+      "version_prompt": "1.3",
+      "version_rubrica": "4.0",
+      "corridas": [
+        {
+          "n": 1,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "Plantea una necesidad real de la importadora: planificar compras ante un arancel inminente. No entrega regla, fórmula ni modelo de inventario. Mencionar almacenamiento, deterioro y demanda describe la situación, no el procedimiento.",
+                "cita": "¿Cómo debería organizar sus compras antes y después de que empiece a regir el arancel?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe método y no hay instrucciones posteriores que encaucen. Admite varios modelos defendibles: comparación de escenarios, optimización con restricciones o modelo dinámico de inventario.",
+                "cita": "¿Cómo debería organizar sus compras antes y después de que empiece a regir el arancel?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Hay que separar información pertinente de la irrelevante, como este total agregado. También hay que suponer costos de bodega, tasas de deterioro y patrón de demanda, y solicitar fichas con rangos. Esto exige supuestos y estimaciones sustantivas.",
+                "cita": "En total, el gobierno grava bienes canadienses por un valor aproximado de $20bn."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Acopiar mercancía antes de que entre en vigor un arancel es una práctica comercial real. La importadora es hipotética, pero claramente plausible.",
+                "cita": "Una ley comercial antigua fue usada para imponer aranceles a bienes canadienses, y esa ley exige un periodo de espera (30-day) antes de aplicarlos."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El hecho noticioso (aranceles, periodo de espera de 30 días, demanda contra el gobierno) es el núcleo de la tarea. Además se integran series oficiales reales de importaciones para contrastar el modelo. No son materiales creados para enseñar.",
+                "cita": "Existen series mensuales de importaciones de queso desde Canadá en organismos oficiales de estadísticas de comercio."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "Deterioro, capacidad de bodega, costos y estacionalidad condicionan las decisiones del modelo. El contexto también es indispensable para interpretar la estrategia y el efecto agregado sobre el sector.",
+                "cita": "El queso se guarda en bodega refrigerada, que tiene espacio limitado y cuesta dinero, y parte del producto se echa a perder con el tiempo."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Resolver obliga a recorrer todas las fases: comprender la situación, simplificar y elegir variables, matematizar, calcular, interpretar la estrategia y su efecto agregado, y validar con R6. El enunciado nombra factores, pero no los cuantifica ni entrega el modelo.",
+                "cita": "¿Qué le pasaría al comercio del sector si todas las importadoras razonan igual? Pueden pedir información adicional."
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existe evidencia independiente: series oficiales de importaciones en torno a anuncios previos. Se entrega después de definir la estrategia, así que no se usa para construir el modelo.",
+                "cita": "El grupo debe indicar qué meses comparar (por ejemplo, alrededor de un anuncio de aranceles anterior) con lo que predijo su modelo."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "Para U, el contexto económico es comprensible y pertinente. La demanda matemática (optimización con restricciones, modelos dinámicos discretos de inventario) corresponde a las herramientas esperables según MAR03. Los fragmentos en inglés («30-day», «$20bn») no afectan la comprensión en este nivel.",
+                "cita": "El queso se guarda en bodega refrigerada, que tiene espacio limitado y cuesta dinero"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Hay un piso razonable: comparar costos de comprar antes o después con aritmética y supuestos simples. El techo es alto: programación dinámica, demanda estocástica, análisis de sensibilidad y efectos agregados de mercado.",
+                "cita": "Además, la demanda de sus clientes cambia de un mes a otro."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "La segunda pregunta abre el paso de la decisión individual al efecto agregado. Las distintas estrategias y supuestos pueden compararse entre sí y contra datos reales.",
+                "cita": "¿Qué le pasaría al comercio del sector si todas las importadoras razonan igual?"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información necesaria puede solicitarse como rangos u órdenes de magnitud, sin revelar el modelo ni la regla de solución. Los datos de contraste se entregan solo después de que el grupo define su estrategia.",
+                "cita": "Si el grupo pregunta por un tipo de queso, un costo o un plazo concretos, la bodega entrega una estimación de rango."
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgE7uoupnve6Do2u1cCLn",
+            "fecha": "2026-10-20T20:28:48+00:00",
+            "intentos": 1,
+            "costo_usd": 0.079794,
+            "avisos": []
+          }
+        },
+        {
+          "n": 2,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La importadora enfrenta una necesidad real: decidir cuánto y cuándo comprar ante un arancel inminente. La tarea no entrega ninguna regla ni modelo de inventario para aplicar.",
+                "cita": "¿Cómo debería organizar sus compras antes y después de que empiece a regir el arancel?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe procedimiento. Admite varios modelos defendibles, desde una comparación simple de costos de acopio frente al arancel hasta una optimización dinámica con demanda variable.",
+                "cita": "¿Cómo debería organizar sus compras antes y después de que empiece a regir el arancel? ¿Qué le pasaría al comercio del sector si todas las …"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver la tarea exige varias cosas: elegir el tipo de queso, suponer tasas de deterioro y costos de bodega, estimar la demanda y solicitar información pertinente. Para eso están las fichas R4 y R5, a solicitud.",
+                "cita": "parte del producto se echa a perder con el tiempo. Además, la demanda de sus clientes cambia de un mes a otro."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Los aranceles a bienes canadienses y el acopio anticipado por parte de importadores son situaciones reales y claramente plausibles fuera de la escuela.",
+                "cita": "Una ley comercial antigua fue usada para imponer aranceles a bienes canadienses, y esa ley exige un periodo de espera (30-day) antes de aplicarlos."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "La tarea integra de modo sustantivo dos componentes auténticos. Los datos de la noticia (periodo de espera, arancel de 50%) son el núcleo de la decisión, y las series oficiales de importaciones (R6) sirven para contrastar.",
+                "cita": "Se entrega solo después de que el grupo haya definido su estrategia."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "Las restricciones de bodega, el deterioro y la estacionalidad condicionan el modelo. El contexto también es necesario para interpretar el resultado y validarlo con datos reales de importación.",
+                "cita": "El queso se guarda en bodega refrigerada, que tiene espacio limitado y cuesta dinero"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a recorrer todo el ciclo: comprender la situación, simplificar (elegir supuestos y variables), formular un modelo de inventario, resolverlo, interpretar la estrategia y validarla con R6. El enunciado no deja ninguna fase hecha.",
+                "cita": "Pueden pedir información adicional."
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "El modelo puede contrastarse con evidencia independiente que no se usó en su construcción: las importaciones observadas en torno a un anuncio de aranceles anterior.",
+                "cita": "Existen series mensuales de importaciones de queso desde Canadá en organismos oficiales de estadísticas de comercio."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto es comprensible para universitarios. La demanda de optimización con restricciones, con modelo dinámico de inventario y efecto agregado en el sector, corresponde a las herramientas esperables en U según MAR03.",
+                "cita": "El queso se guarda en bodega refrigerada, que tiene espacio limitado y cuesta dinero"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es razonable: basta comparar el costo de almacenar con el ahorro del arancel. El techo es alto, porque la tarea admite programación dinámica, demanda estocástica y efectos de equilibrio sectorial.",
+                "cita": "¿Qué le pasaría al comercio del sector si todas las importadoras razonan igual?"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "La segunda pregunta abre el análisis agregado. Además, las distintas estrategias según tipo de queso y supuestos permiten comparar soluciones y discutir los límites del modelo.",
+                "cita": "¿Qué le pasaría al comercio del sector si todas las importadoras razonan igual?"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información necesaria puede solicitarse en rangos o como orden de magnitud. Las fichas son cualitativas y no revelan la estructura del modelo ni la regla de solución.",
+                "cita": "Si el grupo pregunta por un tipo de queso, un costo o un plazo concretos, la bodega entrega una estimación de rango."
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgE7xNHoCRYyMmqKEWBwE",
+            "fecha": "2026-10-20T20:29:14+00:00",
+            "intentos": 1,
+            "costo_usd": 0.062254,
+            "avisos": [
+              "cita_recortada_25:abierta"
+            ]
+          }
+        },
+        {
+          "n": 3,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La importadora tiene una necesidad real: decidir cuánto y cuándo comprar. El enunciado no entrega ninguna regla, fórmula ni modelo de inventario para aplicar.",
+                "cita": "¿Cómo debería organizar sus compras antes y después de que empiece a regir el arancel?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe el método. Admite varios modelos defendibles, como una comparación de costos simple, programación lineal o un modelo dinámico de inventario, y no hay instrucciones posteriores que encaucen la ruta.",
+                "cita": "¿Cómo debería organizar sus compras antes y después de que empiece a regir el arancel? ¿Qué le pasaría al comercio del sector si todas las …"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver la tarea obliga a elegir el tipo de queso, estimar costos de almacenamiento y pérdidas, suponer la demanda y pedir información. Son decisiones y supuestos de modelación sustantivos.",
+                "cita": "El queso se guarda en bodega refrigerada, que tiene espacio limitado y cuesta dinero, y parte del producto se echa a perder con el tiempo."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Que las importadoras adelanten compras antes de que rija un arancel es una práctica comercial real y plausible. El encuadre no se percibe forzado para insertar un cálculo.",
+                "cita": "Se entera de que el queso pasará a pagar un arancel de 50% cuando termine ese periodo."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El tema real de los aranceles a Canadá y sus datos (plazo de 30 días y arancel de 50%) forman el núcleo del modelo, y R6 remite a series oficiales. La importadora es imaginada y la tarea no cita explícitamente la fuente, pero los componentes auténticos están integrados de manera sustantiva.",
+                "cita": "esa ley exige un periodo de espera (30-day) antes de aplicarlos"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "La perecibilidad, el espacio de bodega y la demanda estacional condicionan el modelo. El contexto también es necesario para interpretar si la estrategia es viable y para validarla con datos reales.",
+                "cita": "parte del producto se echa a perder con el tiempo. Además, la demanda de sus clientes cambia de un mes a otro."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "La tarea no entrega supuestos ni modelo. Responderla obliga a comprender, simplificar, matematizar, calcular, interpretar la estrategia y validarla, tanto con R6 como en la pregunta sobre el sector.",
+                "cita": "Pueden pedir información adicional."
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Hay evidencia independiente accesible: series oficiales en torno a un anuncio arancelario anterior. Esas series se entregan solo después de definir la estrategia, así que no se usaron para construir el modelo.",
+                "cita": "Existen series mensuales de importaciones de queso desde Canadá en organismos oficiales de estadísticas de comercio."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto es comprensible para universitarios de 1° y 2° año. La demanda matemática (optimización con restricciones y modelo dinámico de inventario) coincide con las herramientas esperables del nivel U.",
+                "cita": "El queso se guarda en bodega refrigerada, que tiene espacio limitado y cuesta dinero"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Se puede entrar comparando el costo de almacenar contra el 50% de arancel con aritmética elemental. El techo es alto: optimización dinámica, variedades de queso, sensibilidad y efectos agregados del sector.",
+                "cita": "¿Cómo debería organizar sus compras antes y después de que empiece a regir el arancel?"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "La segunda pregunta abre el paso de lo individual a lo agregado. Además, el contraste con series reales permite comparar estrategias y discutir los límites del modelo.",
+                "cita": "¿Qué le pasaría al comercio del sector si todas las importadoras razonan igual?"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información necesaria puede solicitarse en forma de rangos u órdenes de magnitud. Las fichas describen hechos del contexto sin revelar la estructura del modelo de inventario.",
+                "cita": "Si el grupo pregunta por un tipo de queso, un costo o un plazo concretos, la bodega entrega una estimación de rango."
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgE7zGFhjmkuJQMich7H5",
+            "fecha": "2026-10-20T20:29:45+00:00",
+            "intentos": 1,
+            "costo_usd": 0.069274,
+            "avisos": [
+              "cita_recortada_25:abierta"
+            ]
+          }
+        }
+      ],
+      "totales": [
+        24,
+        24,
+        24
+      ],
+      "rango_total": 0,
+      "rango_inestable": 4,
+      "evaluacion_inestable": false,
+      "mediana": {
+        "regla": "mediana por criterio (n par: mediana inferior)",
+        "total": 24,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 2
+        },
+        "corrida_fuente": {
+          "genuino": 1,
+          "abierta": 1,
+          "decisiones": 1,
+          "realismo": 1,
+          "autenticidad": 1,
+          "contexto": 1,
+          "ciclo": 1,
+          "validacion": 1,
+          "nivel": 1,
+          "autodiferenciacion": 1,
+          "fecundidad": 1,
+          "recursos": 1
+        }
+      }
+    }
+  ]
+}
