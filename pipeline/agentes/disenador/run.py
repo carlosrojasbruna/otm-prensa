@@ -227,6 +227,73 @@ def numeros_permitidos(noticia: dict, cifras_idx: list[int] | None = None) -> se
     return permitidos
 
 
+# Regla es-CL (prompt v1.1): decimales con coma. Punto + 1-2 dígitos, o + 4 o más dígitos, es decimal;
+# punto + exactamente 3 dígitos es separador de miles (3.276) y no se marca.
+_DECIMAL_PUNTO = re.compile(r"(?<![\w.,])\d+\.(?:\d{1,2}|\d{4,})(?![\d]|\.\d)")
+# Unidades y montos en inglés que no deben quedar en el texto en español ("$20bn", "30-day").
+_INGLES = re.compile(r"\d+(?:[.,]\d+)?\s?(?:bn|mn|billions?|millions?|trillions?|k)\b|\d+-(?:day|days|year|years|month|months|week|hour)\b",
+                     re.IGNORECASE)
+_FUENTE_GENERICA = re.compile(
+    r"^(?:descripci[oó]n (?:de|del)\b|asociaci|operadores|expertos?\b|el sector|los sectores|fuentes?\b|"
+    r"ejemplo|varios|diversas?|distintos|medios\b|prensa\b|internet|conocimiento|informaci[oó]n general)|\(ejemplo\)",
+    re.IGNORECASE)
+PREFIJO_SUPUESTO = "supuesto del escenario"
+
+
+def _textos(obj, ruta=""):
+    """Hojas de texto de un objeto JSON con su ruta."""
+    if isinstance(obj, str):
+        yield ruta, obj
+    elif isinstance(obj, dict):
+        for k, v in obj.items():
+            yield from _textos(v, f"{ruta}.{k}" if ruta else k)
+    elif isinstance(obj, list):
+        for i, v in enumerate(obj):
+            yield from _textos(v, f"{ruta}[{i}]")
+
+
+def errores_formato_es_cl(tarea: dict) -> list[str]:
+    """Decimales con punto o unidades en inglés en el texto en español (enunciado, recursos, mapa, task_space)."""
+    secciones = {"estudiante": tarea["estudiante"], "recursos_de_entrada": tarea["recursos_de_entrada"],
+                 "mapa_ciclo": tarea["mapa_ciclo"], "task_space": tarea["task_space"]}
+    errs = []
+    for donde, txt in _textos(secciones):
+        for m in _DECIMAL_PUNTO.finditer(txt):
+            errs.append(f"coma decimal es-CL en {donde}: «{m.group(0)}» usa punto decimal (escribe «{m.group(0).replace('.', ',')}»)")
+        for m in _INGLES.finditer(txt):
+            errs.append(f"unidad en inglés en {donde}: «{m.group(0)}» (escribe montos y unidades en español: «20 mil millones de dólares», «30 días»)")
+    return errs
+
+
+def errores_fuente_recursos(tarea: dict) -> list[str]:
+    """`fuente` de cada recurso: noticia con localizador, otra fuente concreta o supuesto del escenario marcado."""
+    errs = []
+    for rec in tarea["estudiante"]["recursos_a_solicitud"] + tarea["recursos_de_entrada"]:
+        fuente = rec["fuente"].strip()
+        bajo = fuente.lower()
+        es_supuesto_contenido = rec["contenido"].strip().lower().startswith(PREFIJO_SUPUESTO)
+        if bajo.startswith("noticia"):
+            ok = True
+        elif bajo.startswith("otra fuente:"):
+            resto = fuente.split(":", 1)[1].strip()
+            ok = len(resto) >= 3 and not _FUENTE_GENERICA.search(resto)
+            if not ok:
+                errs.append(f"recurso {rec['id']}: fuente «{fuente}» es genérica; nombra un organismo o publicación concreta "
+                            "o marca el recurso como «Supuesto del escenario: …» con fuente «supuesto del escenario»")
+            continue
+        elif bajo == PREFIJO_SUPUESTO:
+            ok = True
+            if not es_supuesto_contenido:
+                errs.append(f"recurso {rec['id']}: fuente «supuesto del escenario» pero el contenido no empieza con «Supuesto del escenario»")
+            continue
+        else:
+            errs.append(f"recurso {rec['id']}: fuente «{fuente}» debe empezar por «noticia», «otra fuente: <concreta>» o «supuesto del escenario»")
+            continue
+        if es_supuesto_contenido:
+            errs.append(f"recurso {rec['id']}: el contenido es un supuesto del escenario pero la fuente es «{fuente}»; usa «supuesto del escenario»")
+    return errs
+
+
 def validar_tarea(tarea: dict, noticia: dict, texto_noticia: str | None = None) -> list[str]:
     """Lista de errores (vacía si la tarea cumple). No lanza."""
     errores: list[str] = []
@@ -264,6 +331,9 @@ def validar_tarea(tarea: dict, noticia: dict, texto_noticia: str | None = None) 
     for rec in est["recursos_a_solicitud"] + tarea["recursos_de_entrada"]:
         if numeros_en(rec["contenido"]) and "noticia" not in rec["fuente"].lower():
             errores.append(f"recurso {rec['id']} con cifras pero fuente sin localizador de la noticia")
+    # prompt v1.1: coma decimal es-CL, unidades en español y fuente de cada recurso
+    errores += errores_formato_es_cl(tarea)
+    errores += errores_fuente_recursos(tarea)
     # forma que el esquema JSON no expresa
     if len(est["enunciado_es"].split()) < 25:
         errores.append("enunciado_es demasiado corto (< 25 palabras)")

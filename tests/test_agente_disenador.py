@@ -187,3 +187,84 @@ def test_nivel_invalido_y_noticia_invalida():
     mala.pop("cifras")
     with pytest.raises(ValueError):
         dis.disenar(mala, "P", cliente=ClienteFalso([]))
+
+
+# --------------------------------------------------------------------------- prompt v1.1: coma decimal es-CL y fuentes de recursos
+def _tarea_valida():
+    caso = cargar(DIR_CASOS / "s-cuenta-luz.json")
+    cliente = ClienteFalso(copy.deepcopy(caso["respuestas_simuladas"]))
+    tareas, _ = correr(caso, cliente)
+    return copy.deepcopy(tareas[0]), caso["noticia"]
+
+
+def test_decimal_con_punto_se_rechaza_en_todo_el_texto():
+    t, n = _tarea_valida()
+    for donde in ("enunciado", "mapa", "task_space"):
+        u = copy.deepcopy(t)
+        if donde == "enunciado":
+            u["estudiante"]["enunciado_es"] += " Recorren 241.4 km."
+        elif donde == "mapa":
+            u["mapa_ciclo"]["P3-MM"]["decision"] += " con 8.58 de factor"
+        else:
+            u["task_space"]["reference_solution"]["result"] = "Unos 3.5 meses"
+        errs = [e for e in dis.validar_tarea(u, n) if "coma decimal es-CL" in e]
+        assert errs, donde
+
+
+def test_miles_con_punto_y_coma_decimal_se_aceptan():
+    t, n = _tarea_valida()
+    t["task_space"]["reference_solution"]["result"] = "Entre 3.276 y 12.500 pesos; aprox. 241,4 km"
+    assert [e for e in dis.validar_tarea(t, n) if "es-CL" in e] == []
+    assert dis.errores_formato_es_cl(t) == []
+
+
+def test_unidades_en_ingles_se_rechazan():
+    t, n = _tarea_valida()
+    t["estudiante"]["enunciado_es"] += " Un arancel de $20bn y un plazo de 30-day."
+    errs = dis.errores_formato_es_cl(t)
+    assert any("20bn" in e for e in errs) and any("30-day" in e for e in errs)
+
+
+def test_recurso_con_fuente_generica_se_rechaza():
+    t, n = _tarea_valida()
+    r = t["estudiante"]["recursos_a_solicitud"][0]
+    r["fuente"] = "otra fuente: descripción de operadores marítimos"
+    r["contenido"] = "Los puertos suelen cerrar de noche."
+    errs = dis.errores_fuente_recursos(t)
+    assert any("genérica" in e for e in errs)
+    assert any("genérica" in e for e in dis.validar_tarea(t, n))
+    r["fuente"] = "asociaciones del sector"  # ni siquiera empieza por un prefijo válido
+    assert dis.errores_fuente_recursos(t)
+
+
+def test_recurso_con_supuesto_marcado_se_acepta():
+    t, n = _tarea_valida()
+    r = t["estudiante"]["recursos_a_solicitud"][0]
+    r["fuente"] = "supuesto del escenario"
+    r["contenido"] = "Supuesto del escenario: los puertos suelen cerrar de noche."
+    assert dis.errores_fuente_recursos(t) == []
+    # supuesto declarado en la fuente pero no en el contenido (y al revés) se rechaza
+    r["contenido"] = "Los puertos suelen cerrar de noche."
+    assert dis.errores_fuente_recursos(t)
+    r["fuente"] = "noticia, párrafo 2"
+    r["contenido"] = "Supuesto del escenario: los puertos suelen cerrar de noche."
+    assert dis.errores_fuente_recursos(t)
+
+
+def test_fuente_concreta_externa_y_noticia_se_aceptan():
+    t, n = _tarea_valida()
+    r = t["estudiante"]["recursos_a_solicitud"][0]
+    r["contenido"] = "Tabla con el precio por kilowatt hora de la nota."
+    r["fuente"] = "otra fuente: Comisión Nacional de Energía, informe de precios de nudo"
+    assert dis.errores_fuente_recursos(t) == []
+    r["fuente"] = "noticia, párrafo 3"
+    assert dis.errores_fuente_recursos(t) == []
+
+
+def test_prompt_v1_1_tiene_las_reglas_y_v1_0_se_conserva():
+    base = Path(dis.__file__).parent
+    p = (base / "prompt.md").read_text(encoding="utf-8")
+    assert dis.VERSION_PROMPT == "1.1" and "prompt v1.1" in p
+    assert "Coma decimal es-CL" in p and "Supuesto del escenario" in p
+    v0 = (base / "prompt_v1.0.md").read_text(encoding="utf-8")
+    assert "prompt v1.0" in v0 and "Coma decimal" not in v0

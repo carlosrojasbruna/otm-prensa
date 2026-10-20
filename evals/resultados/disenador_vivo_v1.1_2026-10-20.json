@@ -1,0 +1,500 @@
+{
+  "caso": "s-maraton-cifras",
+  "version_prompt": "1.1",
+  "meta": {
+    "modelo": "claude-sonnet-5-5",
+    "costo_usd": 0.17728,
+    "rondas": 1,
+    "historial": [
+      {
+        "ronda": 1,
+        "validos": 2,
+        "errores": []
+      }
+    ],
+    "rechazados": [],
+    "version_prompt": "1.1"
+  },
+  "errores_validar_tarea": [
+    [],
+    []
+  ],
+  "enfoques": [
+    "Decisión de compra: cuánta agua comprar en total y cómo repartirla entre los puestos, con un modelo de consumo por corredor (cantidades y proporcionalidad).",
+    "Programación de turnos: a qué hora debe estar listo cada puesto y cuánto debe permanecer abierto, con un modelo de tiempo-distancia entre el ritmo del primero y el del último."
+  ],
+  "candidatos": [
+    {
+      "id": "2026-10-cuanta-agua-comprar-maraton",
+      "titulo": "¿Cuánta agua hay que comprar para una maratón récord?",
+      "estado": "borrador",
+      "version": 1,
+      "fecha": "2026-10-20",
+      "noticia": {
+        "noticia_id": "2026-10-18-ejemplo-maraton",
+        "medio": "Diario Ejemplo",
+        "titulo": "Ejemplo sintético: récord de inscritos en la maratón de la ciudad",
+        "fecha": "2026-10-18",
+        "url": "https://ejemplo.invalid/2026-10-18-ejemplo-maraton",
+        "resumen_propio": "Ejemplo sintético para pruebas. La organización de una maratón informa cuántas personas se inscribieron, cuántos puestos de hidratación habrá, la distancia entre ellos y el tiempo que ganaron los primeros corredores el año pasado, y debate cuánta agua conviene comprar.",
+        "cifras_usadas": [
+          {
+            "valor": 8500,
+            "unidad": "personas",
+            "que_es": "inscritos a la maratón (ejemplo sintético)",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 1"
+            }
+          },
+          {
+            "valor": 42.2,
+            "unidad": "km",
+            "que_es": "distancia de la carrera (ejemplo sintético)",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 2"
+            }
+          },
+          {
+            "valor": 7,
+            "unidad": "puestos",
+            "que_es": "puestos de hidratación (ejemplo sintético)",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "mapa 1"
+            }
+          },
+          {
+            "valor": "5 h",
+            "unidad": "tiempo",
+            "que_es": "tiempo máximo permitido para terminar (ejemplo sintético)",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 4"
+            }
+          }
+        ]
+      },
+      "nivel_principal": "S",
+      "variantes": {
+        "abajo": "P",
+        "arriba": "U"
+      },
+      "area": "deporte",
+      "contenidos_matematicos": [
+        "proporcionalidad y razones",
+        "estimación de cantidades",
+        "modelo multiplicativo con supuestos",
+        "comparación de escenarios"
+      ],
+      "tiempo_estimado": "2 sesiones de 90 min",
+      "estudiante": {
+        "enunciado_es": "La maratón de la ciudad batió su récord de inscritos: se anotaron 8.500 personas para correr 42,2 km. La ruta tiene 7 puestos de hidratación y la carrera permite un tiempo máximo de 5 h para terminar. A pocos días de la largada, el equipo de logística discute cuánta agua comprar: si compran poca, habrá corredores sin agua en plena carrera; si compran demasiada, gastan presupuesto y se generan muchos residuos de botellas y vasos. Ustedes asesoran al equipo de logística. ¿Cuánta agua recomendarían comprar en total y cómo la repartirían entre los puestos? Expliquen qué supuestos hicieron para llegar a su recomendación. Pueden pedir información adicional.",
+        "foto_descripcion": "Ícono de una mesa de puesto de hidratación con vasos y botellas de agua, y al fondo corredores en una calle.",
+        "recursos_a_solicitud": [
+          {
+            "id": "R2",
+            "que_es": "Tarjeta sobre quiénes largan y cómo se comportan los inscritos",
+            "contenido": "Supuesto del escenario: no todos los inscritos llegan a la largada y algunos abandonan en el camino; la organización todavía no tiene un conteo de cuántos serán. Además, no todos los corredores se detienen en todos los puestos para beber.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P2-RM",
+            "fuente": "supuesto del escenario"
+          },
+          {
+            "id": "R3",
+            "que_es": "Tarjeta sobre el comportamiento de corredores rápidos y lentos",
+            "contenido": "Supuesto del escenario: los corredores más rápidos pasan por los puestos casi sin detenerse y toman poco líquido; los más lentos pasan más tiempo en la ruta, suelen detenerse en más puestos y beben más en cada uno. Los vasos o botellas son de tamaño pequeño, como los que se usan en carreras populares.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P2-RM",
+            "fuente": "supuesto del escenario"
+          },
+          {
+            "id": "R4",
+            "que_es": "Recomendación general sobre reposición de líquidos en ejercicio prolongado",
+            "contenido": "Las guías de reposición de líquidos para ejercicio prolongado señalan que la cantidad adecuada varía según la persona, el clima y la intensidad del esfuerzo, y que conviene evitar tanto la deshidratación como el consumo excesivo de líquido.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P6-VAL",
+            "fuente": "otra fuente: American College of Sports Medicine, posición oficial 'Exercise and Fluid Replacement'"
+          },
+          {
+            "id": "R5",
+            "que_es": "Observación de la organización sobre la edición anterior",
+            "contenido": "Supuesto del escenario: en la edición anterior, los puestos cercanos a la meta se quedaron sin agua cuando pasaron los corredores más lentos, mientras que en los primeros puestos sobró agua al final del día.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P6-VAL",
+            "fuente": "supuesto del escenario"
+          }
+        ]
+      },
+      "variantes_detalle": {
+        "abajo": {
+          "tramo": "P",
+          "cambios": "Se considera un solo puesto de hidratación y se acuerda un supuesto único (cada corredor bebe un vaso en ese puesto). La pregunta pasa a ser cuántos vasos y cuántas botellas hacen falta, con la cifra de inscritos como dato principal. Se entrega una tabla de partida con la equivalencia entre vasos y botellas pedida a solicitud. No cambia el contexto de la maratón."
+        },
+        "arriba": {
+          "tramo": "U",
+          "cambios": "Se pide tratar el consumo de cada corredor como variable aleatoria (cuántos puestos usa y cuánto bebe), estimar la cantidad de agua con un nivel de confianza para evitar quedarse corto, repartir el stock por puesto minimizando la probabilidad de quiebre y analizar la sensibilidad a la asistencia y al clima. Se discute la crítica del modelo."
+        }
+      },
+      "recursos_de_entrada": [
+        {
+          "id": "R1",
+          "que_es": "Datos de partida de la maratón, tal como aparecen en el enunciado",
+          "contenido": "8.500 personas inscritas; 42,2 km de distancia; 7 puestos de hidratación; tiempo máximo permitido para terminar: 5 h.",
+          "disponibilidad": "de_entrada",
+          "fase": "P1-MRS",
+          "fuente": "noticia, párrafo 1; párrafo 2; mapa 1; párrafo 4"
+        }
+      ],
+      "mapa_ciclo": {
+        "P1-MRS": {
+          "decision": "Identificar qué se pide (litros totales y reparto por puesto) y qué datos de la noticia son relevantes.",
+          "evidencia": "El grupo reformula la pregunta con sus palabras y subraya inscritos, distancia, puestos y tiempo máximo.",
+          "bloqueo_probable": "B12"
+        },
+        "P2-RM": {
+          "decision": "Decidir qué proporción de inscritos largará, cuántas veces bebe cada persona y cuánto toma por vez; qué datos pedir.",
+          "evidencia": "Lista escrita de supuestos y solicitud de tarjetas R2 y R3.",
+          "bloqueo_probable": "B23"
+        },
+        "P3-MM": {
+          "decision": "Escribir una expresión del total de litros en función de corredores, paradas y cantidad por parada; o por hora de carrera.",
+          "evidencia": "Fórmula o esquema con variables nombradas y unidades.",
+          "bloqueo_probable": "B34"
+        },
+        "P4-WM": {
+          "decision": "Calcular el total y el reparto entre puestos, probando al menos un escenario más optimista y otro más pesimista.",
+          "evidencia": "Tabla de cálculos con dos o más escenarios y total por puesto.",
+          "bloqueo_probable": null
+        },
+        "P5-INT": {
+          "decision": "Traducir el resultado a una recomendación de compra (botellas, vasos, reserva) y decidir si es realista.",
+          "evidencia": "Frase de recomendación con un rango y su justificación.",
+          "bloqueo_probable": "B45"
+        },
+        "P6-VAL": {
+          "decision": "Contrastar el reparto con la observación de la edición anterior y con las guías de hidratación; revisar supuestos.",
+          "evidencia": "Comentario escrito de qué ajustaron al leer R4 y R5 (por ejemplo, más agua en los puestos finales).",
+          "bloqueo_probable": "B56"
+        },
+        "P7-EXP": {
+          "decision": "Presentar la recomendación al equipo de logística con sus supuestos y límites.",
+          "evidencia": "Informe o cartel con total, reparto por puesto, rango y supuestos.",
+          "bloqueo_probable": null
+        }
+      },
+      "task_space": {
+        "required_assumptions": [
+          "Proporción de inscritos que efectivamente largan y terminan (el grupo debe estimarla).",
+          "Cuántos puestos usa en promedio cada corredor.",
+          "Volumen de líquido que toma una persona por parada (el grupo debe estimarlo).",
+          "Diferencia de consumo entre corredores rápidos y lentos.",
+          "Margen de reserva sobre el total estimado."
+        ],
+        "reference_solution": {
+          "steps": "1) Estimar corredores que largan: por ejemplo, 85 % a 90 % de 8.500, es decir, entre 7.200 y 7.700 personas. 2) Estimar paradas por corredor: por ejemplo, cinco de los siete puestos en promedio. 3) Estimar volumen por parada: alrededor de 0,2 L (un vaso pequeño). 4) Litros totales = corredores × paradas × litros por parada ≈ 7.400 × 5 × 0,2 ≈ 7.400 L. 5) Agregar reserva de 10 % a 15 % por derrames y consumo del personal: ≈ 8.100 a 8.500 L. 6) Repartir no de forma pareja: dar más proporción a los puestos finales, donde pasan los lentos que beben más y donde el flujo dura más; por ejemplo, 10 % en el primer puesto y hasta 18 % en el último.",
+          "result": "Una recomendación razonable es del orden de 8.000 a 9.000 litros en total, con reparto creciente hacia los puestos finales, más una reserva centralizada.",
+          "acceptable_range": "Entre 6.000 L y 12.000 L son totales defendibles si los supuestos de paradas y volumen por parada están explícitos y son plausibles; el reparto uniforme exacto entre los puestos es débil."
+        },
+        "routes": [
+          {
+            "id": "R1",
+            "nombre": "Por corredor y por parada",
+            "nivel": "S",
+            "modelo": "Total = corredores × paradas por corredor × litros por parada, con reserva porcentual",
+            "resultado": "Cerca de 8.000 a 9.000 L"
+          },
+          {
+            "id": "R2",
+            "nombre": "Por tiempo en carrera",
+            "nivel": "S",
+            "modelo": "Total = corredores × horas promedio en la ruta × litros por hora tomados en puestos; el tiempo máximo de 5 h acota el techo",
+            "resultado": "Entre 7.000 L y 14.000 L según la tasa de consumo asumida"
+          },
+          {
+            "id": "R3",
+            "nombre": "Reparto ponderado por flujo y permanencia",
+            "nivel": "S2",
+            "modelo": "Separar corredores rápidos, medios y lentos con proporciones y consumo distintos; calcular litros por puesto sumando los tres grupos",
+            "resultado": "Reparto creciente hacia los puestos finales; total cercano a la ruta R1"
+          },
+          {
+            "id": "R4",
+            "nombre": "Estimación gruesa por persona",
+            "nivel": "P",
+            "modelo": "Litros por inscrito acordado en grupo × inscritos",
+            "resultado": "Con un litro por inscrito, 8.500 L; sin distinguir puestos"
+          }
+        ],
+        "modelo_inadecuado": {
+          "id": "RX",
+          "por_que_falla": "Dividir el total en partes iguales entre los siete puestos y asumir que todos los inscritos beben lo mismo en cada uno ignora que los corredores lentos pasan más tiempo en la ruta y beben más en los puestos finales; el modelo deja sin agua precisamente esos puestos, como ocurrió el año anterior."
+        },
+        "validation_evidence": "Después de modelar, el grupo contrasta el total y el reparto con la observación de la edición anterior (puestos finales sin agua, primeros puestos con sobrante) y con las guías de reposición de líquidos del American College of Sports Medicine; idealmente, con el registro real de consumo de la organización tras la carrera.",
+        "agent_visibility": {
+          "students": [
+            "enunciado_es",
+            "foto_descripcion",
+            "recursos_a_solicitud"
+          ],
+          "coder": [
+            "enunciado_es",
+            "task_space"
+          ],
+          "guide": [
+            "all"
+          ]
+        }
+      },
+      "rubrica_rub01": null,
+      "rubrica_rub02": {
+        "P": null,
+        "S": null,
+        "U": null
+      },
+      "modelo_y_prompt": {
+        "diseñador": "claude-sonnet-5-5",
+        "version_prompt": "1.1",
+        "version_rubrica": "4.0"
+      }
+    },
+    {
+      "id": "2026-10-turnos-puestos-hidratacion-maraton",
+      "titulo": "¿Cuándo abren y cuándo cierran los puestos de la maratón?",
+      "estado": "borrador",
+      "version": 1,
+      "fecha": "2026-10-20",
+      "noticia": {
+        "noticia_id": "2026-10-18-ejemplo-maraton",
+        "medio": "Diario Ejemplo",
+        "titulo": "Ejemplo sintético: récord de inscritos en la maratón de la ciudad",
+        "fecha": "2026-10-18",
+        "url": "https://ejemplo.invalid/2026-10-18-ejemplo-maraton",
+        "resumen_propio": "Ejemplo sintético para pruebas. La organización de una maratón informa cuántas personas se inscribieron, cuántos puestos de hidratación habrá, la distancia entre ellos y el tiempo que ganaron los primeros corredores el año pasado, y debate cuánta agua conviene comprar.",
+        "cifras_usadas": [
+          {
+            "valor": 8500,
+            "unidad": "personas",
+            "que_es": "inscritos a la maratón (ejemplo sintético)",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 1"
+            }
+          },
+          {
+            "valor": 42.2,
+            "unidad": "km",
+            "que_es": "distancia de la carrera (ejemplo sintético)",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 2"
+            }
+          },
+          {
+            "valor": 7,
+            "unidad": "puestos",
+            "que_es": "puestos de hidratación (ejemplo sintético)",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "mapa 1"
+            }
+          },
+          {
+            "valor": "2 h 15 min",
+            "unidad": "tiempo",
+            "que_es": "tiempo del primer lugar el año pasado (ejemplo sintético)",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "tabla 1"
+            }
+          },
+          {
+            "valor": "5 h",
+            "unidad": "tiempo",
+            "que_es": "tiempo máximo permitido para terminar (ejemplo sintético)",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 4"
+            }
+          }
+        ]
+      },
+      "nivel_principal": "S",
+      "variantes": {
+        "abajo": "P",
+        "arriba": "U"
+      },
+      "area": "deporte",
+      "contenidos_matematicos": [
+        "razones y tasas (velocidad y ritmo)",
+        "función lineal distancia-tiempo",
+        "comparación de escenarios",
+        "unidades de tiempo"
+      ],
+      "tiempo_estimado": "2 sesiones de 90 min",
+      "estudiante": {
+        "enunciado_es": "En la maratón de la ciudad participan 8.500 personas que recorren 42,2 km. La ruta tiene 7 puestos de hidratación atendidos por voluntarios. El año pasado el primer lugar terminó la carrera en 2 h 15 min, y la organización permite un tiempo máximo de 5 h para terminar. Los voluntarios de cada puesto deben estar listos antes de que pase el primer corredor y se pueden retirar cuando ya pasó el último. El coordinador necesita armar los turnos: a qué hora debe estar listo cada puesto y cuánto tiempo debe permanecer abierto. ¿Cómo programarían ustedes los turnos de los puestos? Expliquen qué supuestos hicieron. Pueden pedir información adicional.",
+        "foto_descripcion": "Mapa esquemático de una ruta con siete puntos marcados entre la largada y la meta, y un reloj al lado.",
+        "recursos_a_solicitud": [
+          {
+            "id": "R2",
+            "que_es": "Tarjeta sobre la ubicación de los puestos y la largada",
+            "contenido": "Supuesto del escenario: la organización ubicó los puestos de forma aproximadamente pareja a lo largo de la ruta, con el último cerca de la meta; el mapa no indica distancias exactas. La largada es en la mañana y la hora exacta la fija cada grupo para su propuesta.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P2-RM",
+            "fuente": "supuesto del escenario"
+          },
+          {
+            "id": "R3",
+            "que_es": "Tarjeta sobre cómo corre la gente a lo largo de la carrera",
+            "contenido": "Supuesto del escenario: los corredores populares rara vez mantienen un ritmo exactamente constante; muchos se cansan hacia el final y los más lentos alternan trote y caminata. Con tanta gente, los últimos de la fila tardan un rato en cruzar la línea de largada.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P2-RM",
+            "fuente": "supuesto del escenario"
+          },
+          {
+            "id": "R4",
+            "que_es": "Observación del coordinador de voluntarios de la edición anterior",
+            "contenido": "Supuesto del escenario: el año pasado, en el puesto más cercano a la meta pasaron corredores hasta poco antes del cierre de la carrera, y en el primer puesto el último pasó mucho antes de la hora límite; algunos voluntarios de ese primer puesto esperaron sin trabajo bastante tiempo.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P6-VAL",
+            "fuente": "supuesto del escenario"
+          }
+        ]
+      },
+      "variantes_detalle": {
+        "abajo": {
+          "tramo": "P",
+          "cambios": "Se pide programar solo el primer puesto y el último con ritmos constantes para el primero y para el último en terminar; los puestos intermedios se resuelven por comparación. Se entrega la hora de largada acordada y una tabla de partida para anotar hora de paso. El contexto no cambia."
+        },
+        "arriba": {
+          "tramo": "U",
+          "cambios": "Se pide modelar el ritmo con fatiga (ritmo no constante) y la distribución de tiempos de llegada de todos los inscritos, de modo de estimar el flujo de corredores por minuto en cada puesto y dimensionar a los voluntarios; se pide además analizar la sensibilidad a la hora de largada y a los puntos de colocación."
+        }
+      },
+      "recursos_de_entrada": [
+        {
+          "id": "R1",
+          "que_es": "Datos de partida de la maratón, tal como aparecen en el enunciado",
+          "contenido": "8.500 personas inscritas; 42,2 km de distancia; 7 puestos de hidratación; el primer lugar del año pasado terminó en 2 h 15 min; tiempo máximo permitido para terminar: 5 h.",
+          "disponibilidad": "de_entrada",
+          "fase": "P1-MRS",
+          "fuente": "noticia, párrafo 1; párrafo 2; mapa 1; tabla 1; párrafo 4"
+        }
+      ],
+      "mapa_ciclo": {
+        "P1-MRS": {
+          "decision": "Entender qué significa abrir y cerrar un puesto: desde que pasa el primero hasta que pasa el último.",
+          "evidencia": "El grupo describe con sus palabras el intervalo de funcionamiento de un puesto y marca los datos de tiempo del enunciado.",
+          "bloqueo_probable": "B12"
+        },
+        "P2-RM": {
+          "decision": "Decidir dónde están los puestos (por ejemplo, equidistantes), ritmo de primero y último (constantes o no) y hora de largada; qué datos pedir.",
+          "evidencia": "Lista de supuestos y solicitud de tarjetas R2 y R3.",
+          "bloqueo_probable": "B23"
+        },
+        "P3-MM": {
+          "decision": "Expresar la hora de paso por cada puesto como distancia al puesto por ritmo, para el primero y para el último.",
+          "evidencia": "Tabla o gráfico de distancia versus tiempo con dos rectas o con una fórmula con variables nombradas.",
+          "bloqueo_probable": "B34"
+        },
+        "P4-WM": {
+          "decision": "Calcular horas de paso y duración de apertura para cada puesto y conseguir el patrón de crecimiento.",
+          "evidencia": "Tabla con hora de apertura, hora de cierre y duración por puesto.",
+          "bloqueo_probable": "B34"
+        },
+        "P5-INT": {
+          "decision": "Traducir los resultados en turnos de voluntarios (hora de llegada, margen de preparación, relevo) y verificar si tienen sentido.",
+          "evidencia": "Propuesta de horario por puesto con margen y comentario sobre por qué el último puesto necesita turnos más largos.",
+          "bloqueo_probable": "B45"
+        },
+        "P6-VAL": {
+          "decision": "Contrastar el modelo con la observación del coordinador y con la restricción del tiempo máximo en la meta.",
+          "evidencia": "Comentario escrito de qué ajustaron (por ejemplo, retraso de largada, ritmo con fatiga, cierre del último puesto antes del límite).",
+          "bloqueo_probable": "B56"
+        },
+        "P7-EXP": {
+          "decision": "Presentar al coordinador el horario de cada puesto con supuestos y márgenes.",
+          "evidencia": "Cartel o tabla final de turnos con supuestos explícitos.",
+          "bloqueo_probable": null
+        }
+      },
+      "task_space": {
+        "required_assumptions": [
+          "Ubicación de los puestos a lo largo de la ruta (por ejemplo, equidistantes).",
+          "Ritmo del primer corredor (constante o con variación) tomado desde el tiempo del primer lugar.",
+          "Ritmo del último corredor tomado desde el tiempo máximo permitido.",
+          "Hora de largada y retraso de los últimos en cruzar la línea.",
+          "Margen de preparación y de relevo de voluntarios."
+        ],
+        "reference_solution": {
+          "steps": "1) Ritmo del primero: 135 min / 42,2 km ≈ 3,2 min/km (unos 18,7 km/h). 2) Ritmo del último permitido: 300 min / 42,2 km ≈ 7,1 min/km (unos 8,4 km/h). 3) Suponer puestos equidistantes: el puesto k está a unos 6 km por k (el último, cerca de la meta). 4) Hora de paso del primero en el puesto k ≈ 3,2 × d_k min; del último ≈ 7,1 × d_k min, contados desde la largada. 5) Duración de apertura = (7,1 − 3,2) × d_k ≈ 3,9 × d_k min. Primer puesto (d ≈ 6 km): pasa entre unos 19 y unos 43 min, ventana de unos 24 min. Último puesto (d ≈ 40 km): entre unos 2 h 8 min y unos 4 h 44 min, ventana de unos 2 h 36 min. 6) Agregar margen de preparación y retraso de largada de los últimos corredores.",
+          "result": "La ventana de apertura crece de forma lineal con la distancia: desde unos 25 minutos en el primer puesto hasta unos 2 h 30 min en el último, más márgenes; los puestos finales necesitan turnos largos o relevos y los primeros pueden cerrar temprano.",
+          "acceptable_range": "Ventanas del primer puesto entre 20 y 45 minutos y del último entre 2 h y 3 h 15 min son defendibles según la ubicación supuesta y los márgenes; lo esencial es que la duración crezca con la distancia y que el cierre del último puesto no supere el tiempo máximo."
+        },
+        "routes": [
+          {
+            "id": "R1",
+            "nombre": "Dos ritmos constantes",
+            "nivel": "S1",
+            "modelo": "Recta distancia-tiempo para el primero y para el último; la diferencia entre ambas en cada puesto da la duración",
+            "resultado": "Ventana creciente: unos 24 min en el primer puesto hasta unos 2 h 36 min en el último"
+          },
+          {
+            "id": "R2",
+            "nombre": "Ritmo con fatiga",
+            "nivel": "S2",
+            "modelo": "El ritmo de los corredores lentos empeora con la distancia (segunda mitad más lenta); curva por tramos o función no lineal",
+            "resultado": "Los últimos pasan más tarde en los puestos finales; la ventana final se acerca al límite de 5 h"
+          },
+          {
+            "id": "R3",
+            "nombre": "Flujo de corredores por minuto",
+            "nivel": "S2",
+            "modelo": "Distribución de tiempos de llegada de 8.500 corredores (por ejemplo, tres grupos de ritmo) para estimar cuántas personas pasan por minuto y cuántos voluntarios se necesitan en la hora punta",
+            "resultado": "Hora punta de cada puesto y cantidad de voluntarios mayor en la mitad de la distribución"
+          },
+          {
+            "id": "R4",
+            "nombre": "Tabla por tramos de seis kilómetros",
+            "nivel": "P",
+            "modelo": "Tabla de paso con tiempo por kilómetro del primero y del último, sumando por puesto",
+            "resultado": "Horas de paso del primero y del último en cada puesto, con ventana que crece"
+          }
+        ],
+        "modelo_inadecuado": {
+          "id": "RX",
+          "por_que_falla": "Usar el ritmo del ganador para todos los corredores (o el promedio de los dos tiempos extremos sin considerar el recorrido) hace que los puestos cierren demasiado pronto: dejaría sin servicio a la gran mayoría de los inscritos, que termina mucho después del primer lugar."
+        },
+        "validation_evidence": "Después de modelar, el grupo contrasta las ventanas calculadas con la observación del coordinador del año anterior (primer puesto con voluntarios esperando; último puesto con corredores hasta casi el cierre) y con la restricción del tiempo máximo en la meta; idealmente, con tiempos parciales reales de una maratón.",
+        "agent_visibility": {
+          "students": [
+            "enunciado_es",
+            "foto_descripcion",
+            "recursos_a_solicitud"
+          ],
+          "coder": [
+            "enunciado_es",
+            "task_space"
+          ],
+          "guide": [
+            "all"
+          ]
+        }
+      },
+      "rubrica_rub01": null,
+      "rubrica_rub02": {
+        "P": null,
+        "S": null,
+        "U": null
+      },
+      "modelo_y_prompt": {
+        "diseñador": "claude-sonnet-5-5",
+        "version_prompt": "1.1",
+        "version_rubrica": "4.0"
+      },
+      "sub_tramo": "S1"
+    }
+  ]
+}
