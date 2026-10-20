@@ -268,3 +268,17 @@ def test_prompt_v1_1_tiene_las_reglas_y_v1_0_se_conserva():
     assert "Coma decimal es-CL" in p and "Supuesto del escenario" in p
     v0 = (base / "prompt_v1.0.md").read_text(encoding="utf-8")
     assert "prompt v1.0" in v0 and "Coma decimal" not in v0
+
+
+def test_fuente_noticia_sin_localizador_se_rechaza_como_en_el_verificador():
+    """Caso aranceles v2: «noticia, resumen del caso» pasó el diseñador y el verificador lo marcó crítico."""
+    from pipeline.agentes.disenador.run import errores_fuente_recursos
+
+    def tarea(fuente):
+        rec = {"id": "R3", "fuente": fuente, "contenido": "Los demandantes piden la devolución."}
+        return {"estudiante": {"recursos_a_solicitud": [rec]}, "recursos_de_entrada": []}
+
+    assert errores_fuente_recursos(tarea("noticia, resumen del caso"))
+    assert errores_fuente_recursos(tarea("noticia"))
+    assert not errores_fuente_recursos(tarea("noticia, párrafo 12"))
+    assert not errores_fuente_recursos(tarea("noticia, titular"))

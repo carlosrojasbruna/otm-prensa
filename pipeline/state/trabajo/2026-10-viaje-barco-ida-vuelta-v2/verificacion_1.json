@@ -1,0 +1,70 @@
+{
+  "tarea_id": "2026-10-viaje-barco-ida-vuelta-v2",
+  "aprobado": true,
+  "estado_destino": "verificada",
+  "hallazgos": [
+    {
+      "invariante": "notebook",
+      "severidad": "advertencia",
+      "ubicacion": "guia.materiales.notebook",
+      "descripcion": "notebook escenarios.ipynb no encontrado: ",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "guia.escenarios[E1].ruta",
+      "descripcion": "Ruta P2-RM → P4-WM → P5-INT → P4-WM → P5-INT → P6-VAL → P7-EXP atribuida al escenario con corridas N4_VV_r1 y N4_AA_r1 — La ruta coincide solo con N4_VV_r1. N4_AA_r1 registra P1-MRS y P3-MM, y termina en P7-EXP → P6-VAL. Es una diferencia de detalle en la ruta de una de las dos corridas citadas.",
+      "origen": "modelo"
+    }
+  ],
+  "cifras_contrastadas": [
+    {
+      "indice": 0,
+      "que_es": "distancia de Jackdaw al este de Aberdeen (equivalente en km)",
+      "valor_tarea": "241.4km",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 57"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "241.4km",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia; modelo: El párrafo 57 da esa distancia en km al este de Aberdeen, equivalente a unas 150 millas."
+    },
+    {
+      "indice": 1,
+      "que_es": "distancia de Rosebank al noroeste de Shetland (equivalente en km)",
+      "valor_tarea": "128.7km",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 58"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "128.7km",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia; modelo: El párrafo 58 da esa distancia en km al noroeste de Shetland, equivalente a unas 80 millas."
+    }
+  ],
+  "notebook": {
+    "estado": "no_encontrado",
+    "ruta": "escenarios.ipynb",
+    "salida_resumen": ""
+  },
+  "meta": {
+    "agente": "verificador",
+    "version_prompt": "1.1",
+    "modelo": "claude-opus-5-5",
+    "request_id": "req_011CgEFRoTCJLbEPwACaXYaQ",
+    "fecha": "2026-10-20T22:07:10+00:00",
+    "costo_usd": 0.119212,
+    "modelo_llamado": true,
+    "texto_noticia_recibido": true,
+    "uso": {
+      "input_tokens": 15433,
+      "output_tokens": 2294,
+      "cache_creation_input_tokens": 2320,
+      "cache_read_input_tokens": 0
+    }
+  }
+}

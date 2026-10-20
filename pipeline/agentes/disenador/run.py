@@ -273,7 +273,12 @@ def errores_fuente_recursos(tarea: dict) -> list[str]:
         bajo = fuente.lower()
         es_supuesto_contenido = rec["contenido"].strip().lower().startswith(PREFIJO_SUPUESTO)
         if bajo.startswith("noticia"):
-            ok = True
+            # misma regla que el verificador (fuente única): «noticia» exige localizador (párrafo N, titular…)
+            from pipeline.agentes.verificador.run import clasificar_fuente
+            if clasificar_fuente(fuente, rec["contenido"])["clase"] != "noticia":
+                errs.append(f"recurso {rec['id']}: fuente «{fuente}» no tiene localizador; usa «noticia, párrafo N» "
+                            "(o titular, tabla, gráfico) o marca el recurso como supuesto del escenario")
+                continue
         elif bajo.startswith("otra fuente:"):
             resto = fuente.split(":", 1)[1].strip()
             ok = len(resto) >= 3 and not _FUENTE_GENERICA.search(resto)

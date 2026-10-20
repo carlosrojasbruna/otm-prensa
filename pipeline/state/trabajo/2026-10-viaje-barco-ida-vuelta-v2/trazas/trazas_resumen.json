@@ -1,0 +1,210 @@
+{
+  "tarea_id": "2026-10-viaje-barco-ida-vuelta-v2",
+  "diseno": "diseno_otm",
+  "corridas": 6,
+  "modelo": "claude-sonnet-5-5",
+  "costo_usd": 0.6853,
+  "por_corrida": [
+    {
+      "id": "N1_VV_r1",
+      "perfil": {
+        "nivel_edad": "P",
+        "nivel": "N1",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P5-INT",
+        "P4-WM",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "ida y vuelta (distancia doble)",
+        "jornada de 12 horas",
+        "rapidez de 20 km/h",
+        "rapidez de 25 km/h",
+        "rapidez constante",
+        "tiempo de descarga cercano a 2 horas"
+      ],
+      "modelo": "proporcional",
+      "respuesta_final": "A Jackdaw (482,8 km ida y vuelta) casi seguro tendría que pasar la noche; a Rosebank (257,4 km) depende de la rapidez del barco, las horas de la jornada y cuánto demora descargar, así que necesitan esos datos (además de saber si el barco puede navegar de noche).",
+      "validacion": true,
+      "archivo": "N1_VV_r1.json",
+      "costo_usd": 0.113052
+    },
+    {
+      "id": "N1_AA_r1",
+      "perfil": {
+        "nivel_edad": "P",
+        "nivel": "N1",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P2-RM",
+        "P4-WM",
+        "P5-INT",
+        "P4-WM",
+        "P6-VAL",
+        "P3-MM",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "ida y vuelta: distancia doble",
+        "velocidad supuesta de 20 km/h",
+        "jornada hipotética de 12 horas",
+        "sumar tiempo de descarga (sin valor)"
+      ],
+      "modelo": "lineal",
+      "respuesta_final": "Pedimos velocidad, horas de jornada y tiempo de descarga, con tiempo total = (distancia × 2 ÷ velocidad) + descarga. Con 20 km/h, Jackdaw no alcanza (24 h 8 min) y Rosebank tampoco si la jornada es de 12 h.",
+      "validacion": true,
+      "archivo": "N1_AA_r1.json",
+      "costo_usd": 0.133008
+    },
+    {
+      "id": "N2_VV_r1",
+      "perfil": {
+        "nivel_edad": "P",
+        "nivel": "N2",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P5-INT",
+        "P4-WM",
+        "P5-INT",
+        "P7-EXP",
+        "P6-VAL"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "viaje de ida y vuelta (distancia doble)",
+        "sale de Aberdeen hacia Jackdaw y de Shetland hacia Rosebank",
+        "velocidad de 20 km/h",
+        "velocidad de 30 km/h",
+        "jornada de 8 horas como un trabajo normal",
+        "jornada de 12 horas",
+        "la descarga consume tiempo de la jornada"
+      ],
+      "modelo": "proporcional",
+      "respuesta_final": "Pedimos la velocidad del barco, las horas de la jornada, cuánto demora la descarga y el puerto de salida. Con 20 o 30 km/h, Jackdaw (482,8 km ida y vuelta) no cabe en un día y la tripulación dormiría en el mar, y Rosebank (257,4 km) depende de la velocidad y de la jornada.",
+      "validacion": true,
+      "archivo": "N2_VV_r1.json",
+      "costo_usd": 0.122828
+    },
+    {
+      "id": "N3_AA_r1",
+      "perfil": {
+        "nivel_edad": "P",
+        "nivel": "N3",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P4-WM",
+        "P5-INT",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "velocidad de 20 km/h",
+        "velocidad de 30 km/h",
+        "jornada de 12 horas",
+        "ida y vuelta (doble de la distancia)",
+        "tramo adicional desde el puerto hasta Shetland",
+        "tiempo de descarga no incluido en el cálculo"
+      ],
+      "modelo": "proporcional",
+      "respuesta_final": "Jackdaw: pernoctar, porque a 30 km/h el viaje de ida y vuelta dura unas 16,1 h y la jornada es de 12 h. Rosebank: solo se hace en el día si con las 3,4 h que sobran (12 − 8,6) alcanza el tramo desde el puerto hasta Shetland y la descarga; si no, pernoctar. Se supone 30 km/h y una jornada de 12 h. Se pidió la velocidad real y el puerto de salida.",
+      "validacion": false,
+      "archivo": "N3_AA_r1.json",
+      "costo_usd": 0.092024
+    },
+    {
+      "id": "N4_VV_r1",
+      "perfil": {
+        "nivel_edad": "P",
+        "nivel": "N4",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P2-RM",
+        "P4-WM",
+        "P5-INT",
+        "P4-WM",
+        "P5-INT",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "el barco va y vuelve (distancia doble)",
+        "rapidez del barco de 20 o 30 km/h",
+        "rapidez constante",
+        "jornada de 12 horas",
+        "2 horas de descarga",
+        "el viaje a Rosebank sale desde Shetland"
+      ],
+      "modelo": "lineal",
+      "respuesta_final": "Jackdaw (241,4 km) no cabe en una jornada, la tripulación pasaría la noche. Rosebank (128,7 km) cabe solo si el barco va a unos 30 km/h y sale desde Shetland, y falta saber velocidad, horas de jornada, descarga y puerto.",
+      "validacion": true,
+      "archivo": "N4_VV_r1.json",
+      "costo_usd": 0.126168
+    },
+    {
+      "id": "N4_AA_r1",
+      "perfil": {
+        "nivel_edad": "P",
+        "nivel": "N4",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P5-INT",
+        "P4-WM",
+        "P5-INT",
+        "P7-EXP",
+        "P6-VAL"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "viaje de ida y vuelta (distancia doble)",
+        "se suma un tiempo de descarga",
+        "velocidad de ejemplo 20 km/h",
+        "velocidad de ejemplo 30 km/h",
+        "jornada de 8, 10 o 12 horas",
+        "un barco de carga no va a más de 48 km/h"
+      ],
+      "modelo": "lineal (proporcional)",
+      "respuesta_final": "Pedimos velocidad, horas de jornada y tiempo de descarga. Rosebank cabe si 257,4 ÷ v + descarga ≤ jornada, y Jackdaw (482,8 ÷ v) casi seguro requiere pasar la noche. Para que Jackdaw cupiera en 10 horas, el barco tendría que ir a más de 48 km/h, lo que es mucho para un barco de carga.",
+      "validacion": true,
+      "archivo": "N4_AA_r1.json",
+      "costo_usd": 0.098216
+    }
+  ],
+  "agregado": {
+    "pct_bloqueo_por_transicion": {},
+    "modelos_observados": {
+      "proporcional": 3,
+      "lineal": 2,
+      "lineal (proporcional)": 1
+    },
+    "pct_validan": 0.83
+  },
+  "fecha": "2026-10-20T22:03:47Z"
+}

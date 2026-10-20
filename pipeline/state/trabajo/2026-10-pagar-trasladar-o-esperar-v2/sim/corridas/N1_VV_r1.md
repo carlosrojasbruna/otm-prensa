@@ -1,0 +1,16 @@
+# Corrida N1_VV_r1
+
+Nivel N1 · estilos V/V · rep 1 · 12 turnos · término: acuerdo · modelo claude-sonnet-5-5
+
+**1. Cami:** Mm, yo me imagino la caja de queso entrando a la aduana con un cartel de 50%, y de un lado el juez con la balanza que no sabemos para dónde cae. ¿Tú qué piensas, Fran, empezamos por cuánto le cuesta el queso a la importadora o por qué pasa si ganan el juicio?  
+**2. Fran:** Yo también me lo imagino así, la caja en la aduana y el juez en el medio. Empecemos por lo del queso: si cuesta 100 y le suman 50%, ¿paga 150? Y de ahí vemos qué pasa si les devuelven esos 50.  
+**3. Cami:** Sí, 100 más 50% son 150, o sea 100 × 1,5. Pero espera, ¿el arancel es sobre el precio del queso o sobre el queso más el flete? Eso habría que preguntarlo.  
+**4. Fran:** Ah, cierto, no había pensado en el flete, eso sería una de las cosas para pedir. Dibujé [dibujo: caja de queso con una flecha que suma 50 y otra flecha que vuelve si ganan], pero ¿y si le subimos el precio a los clientes y después devuelven la plata, nos quedamos con eso o se lo devolvemos?  
+**5. Cami:** Mm, yo creo que si les cobramos el 50% a los clientes y después nos devuelven la plata, sería medio injusto quedárnoslo, porque ellos pagaron ese extra. [dibujo: tres cajas en fila, importadora, cliente y aduana, con flechas de plata que irían de vuelta] ¿Y si lo ponemos en el contrato, que si devuelven, se reparte?  
+**6. Fran:** Sí, me gusta lo del contrato, así queda claro desde el principio. [dibujo: la flecha de plata vuelve de la aduana a la importadora y se divide en dos, una parte para el cliente] Pero ¿y si no devuelven nada o tardan años, la importadora igual se aguanta ese 50%?  
+**7. Cami:** Mm, ahí me la imagino con la caja trancada en la aduana y la plata sin volver, así que creo que el 50% habría que cobrarlo aparte, como un recargo en la factura que se pueda sacar si ganan. Pero no sé si los clientes lo aguantan, deberíamos preguntar cuánto margen tiene la importadora en el queso.  
+**8. Fran:** Ah, buena la idea del recargo aparte, así se ve clarito en la factura. Si el margen fuera de, digamos, 20 sobre 100, el 50% se la comería entera, ¿no? Entonces tendría que pasar casi todo al cliente, o si no pierde plata.  
+**9. Cami:** Sí, si compra a 100, paga 50 de arancel y lo vende a 120, pierde 30 en cada caja: 100 + 50 − 120 = 30. Entonces el recargo aparte parece lo más sensato, pero qué tan segura es la recomendación depende de cuánto tarde el juicio y de si el cliente acepta pagarlo.  
+**10. Fran:** Entonces dibujé [dibujo: balanza con "recargo aparte + cláusula de devolución" de un lado y "no sabemos cuándo termina el juicio" del otro, inclinada un poquito]. ¿Escribimos que la recomendación es medianamente segura, porque depende del plazo, del flete y del margen?  
+**11. Cami:** Sí, medianamente segura, yo veo la balanza inclinada pero no mucho. ENTREGAMOS: recomendamos cobrar el arancel como recargo aparte en la factura, con cláusula para repartir la devolución si ganan; es medianamente segura, porque depende del plazo del juicio, del flete y del margen, que habría que pedir.  
+**12. Fran:** DE ACUERDO. Solo agregaría, si les alcanza el espacio, que le pidamos a la gerencia ver también si el juicio frena el cobro, porque ahí cambiaría todo el cálculo.  
