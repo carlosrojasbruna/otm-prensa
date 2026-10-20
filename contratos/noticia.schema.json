@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://otm-prensa.example/contratos/noticia.schema.json",
+  "title": "noticia",
+  "description": "Salida del explorador de prensa (agente 1) y entrada del filtro de modelabilidad. Contrato v1.0 (architect, 2026-10-20). Nunca contiene texto literal de la noticia: solo cita (medio, título, fecha, URL), resumen propio <= 80 palabras y cifras con localizador (invariantes 3 y 4). Los $defs `cita`, `cifra`, `resumen_propio`, `area`, `fecha`, `fecha_hora` y `url` los reutilizan los demás contratos.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "medio_id", "medio", "idioma", "titulo", "fecha", "url", "area", "resumen_propio", "cifras", "recuperada_en"],
+  "properties": {
+    "id": {
+      "description": "Identificador estable de la noticia: AAAA-MM-DD-medio-slug.",
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}-[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "medio_id": {
+      "description": "id del medio en MED01 (insumos/medios/MED01_*.yaml). La pertenencia a la lista blanca la verifica pipeline/invariantes.py::medio_en_lista_blanca, no este esquema, para no duplicar MED01.",
+      "type": "string",
+      "pattern": "^[a-z0-9_]+$"
+    },
+    "medio": {"type": "string", "minLength": 1},
+    "idioma": {"enum": ["es", "en"]},
+    "titulo": {"description": "Título de la noticia tal como lo publica el medio (se cita; no cuenta como reproducción del cuerpo).", "type": "string", "minLength": 1, "maxLength": 300},
+    "fecha": {"$ref": "#/$defs/fecha"},
+    "url": {"$ref": "#/$defs/url"},
+    "area": {"$ref": "#/$defs/area"},
+    "resumen_propio": {"$ref": "#/$defs/resumen_propio"},
+    "cifras": {
+      "description": "Cifras de la noticia útiles para modelar, cada una con su localizador.",
+      "type": "array",
+      "items": {"$ref": "#/$defs/cifra"}
+    },
+    "recuperada_en": {"$ref": "#/$defs/fecha_hora"},
+    "filtro": {
+      "description": "Lo agrega el filtro de modelabilidad (agente 2): RUB01 versión corta, máx. 10. Ausente antes del filtro.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["version_rubrica", "puntajes", "total", "pasa"],
+      "properties": {
+        "version_rubrica": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+$"},
+        "puntajes": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["genuino", "decisiones", "realismo", "autenticidad", "validacion"],
+          "properties": {
+            "genuino": {"enum": [0, 1, 2]},
+            "decisiones": {"enum": [0, 1, 2]},
+            "realismo": {"enum": [0, 1, 2]},
+            "autenticidad": {"enum": [0, 1, 2]},
+            "validacion": {"enum": [0, 1, 2]}
+          }
+        },
+        "total": {"type": "integer", "minimum": 0, "maximum": 10},
+        "pasa": {"type": "boolean"},
+        "justificacion": {"type": "string"}
+      }
+    }
+  },
+  "$defs": {
+    "fecha": {"type": "string", "format": "date", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"},
+    "fecha_hora": {
+      "description": "RFC 3339 con zona horaria. Se valida con patrón porque el FormatChecker de date-time requiere un paquete opcional.",
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$"
+    },
+    "url": {"type": "string", "format": "uri", "pattern": "^https?://[^\\s]+$", "maxLength": 2000},
+    "area": {
+      "description": "Ids de área de MED01 (cuotas_por_area). Sustituyen la lista textual de PLT01 (ver decisiones.md).",
+      "enum": ["medio_ambiente", "economia", "salud", "ciencia_tecnologia", "deporte", "transporte_ciudad", "sociedad_datos"]
+    },
+    "resumen_propio": {
+      "description": "Resumen en palabras propias, 1 a 80 palabras (invariante 3). El patrón cuenta palabras separadas por espacios.",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1000,
+      "pattern": "^\\s*\\S+(\\s+\\S+){0,79}\\s*$"
+    },
+    "localizador": {
+      "description": "Dónde se encuentra la cifra (invariante 4): en la noticia (párrafo, tabla, gráfico) o en el notebook de escenarios (celda).",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fuente", "ubicacion"],
+      "properties": {
+        "fuente": {"enum": ["noticia", "notebook"]},
+        "ubicacion": {"type": "string", "minLength": 3, "maxLength": 200}
+      }
+    },
+    "cifra": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["valor", "unidad", "que_es", "localizador"],
+      "properties": {
+        "valor": {"type": ["number", "string"]},
+        "unidad": {"type": "string"},
+        "que_es": {"type": "string", "minLength": 1, "maxLength": 200},
+        "localizador": {"$ref": "#/$defs/localizador"}
+      }
+    },
+    "cita": {
+      "description": "Cita de la noticia dentro de una tarea (frontmatter `noticia` de PLT01).",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["medio", "titulo", "fecha", "url", "resumen_propio", "cifras_usadas"],
+      "properties": {
+        "noticia_id": {"type": "string"},
+        "medio": {"type": "string", "minLength": 1},
+        "titulo": {"type": "string", "minLength": 1, "maxLength": 300},
+        "fecha": {"$ref": "#/$defs/fecha"},
+        "url": {"$ref": "#/$defs/url"},
+        "resumen_propio": {"$ref": "#/$defs/resumen_propio"},
+        "cifras_usadas": {"type": "array", "items": {"$ref": "#/$defs/cifra"}}
+      }
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://otm-prensa.example/contratos/evaluacion.schema.json",
+  "title": "evaluacion",
+  "description": "evaluacion.json: salida del evaluador (agente 4) más el registro de reproducibilidad (invariante 8, GOB01 §6). Contrato v1.0 (architect, 2026-10-20). Forma fijada por build-lead; el bloque rub01 vive en evaluacion_rub01.schema.json.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["tarea_id", "fecha", "rub01", "reproducibilidad"],
+  "properties": {
+    "tarea_id": {
+      "description": "id de la tarea evaluada. Se acepta cualquier slug (AAAA-MM-slug en el pipeline; slugs de tareas-oro como 'giants-shoes' en calibración).",
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "fecha": {"$ref": "noticia.schema.json#/$defs/fecha_hora"},
+    "rub01": {"$ref": "evaluacion_rub01.schema.json"},
+    "reproducibilidad": {"$ref": "#/$defs/reproducibilidad"}
+  },
+  "$defs": {
+    "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+(\\.[0-9]+)?$"},
+    "reproducibilidad": {
+      "description": "Invariante 8. Se acumula: cada agente que corre agrega su entrada en `agentes`.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["agentes", "version_prompt", "version_rubrica", "version_MAR03", "version_MED01", "diseno_simulador", "fecha", "costo_usd"],
+      "properties": {
+        "agentes": {
+          "description": "Clave = nombre del agente del pipeline (explorador, filtro, disenador, evaluador, simulador, redactor, ilustrador, verificador, bibliotecario).",
+          "type": "object",
+          "minProperties": 1,
+          "propertyNames": {"pattern": "^[a-z_]+$"},
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["modelo", "version_modelo"],
+            "properties": {
+              "modelo": {"description": "Familia del modelo, p. ej. 'claude-opus-5-5'.", "type": "string", "minLength": 1},
+              "version_modelo": {"description": "Identificador exacto o snapshot devuelto por la API.", "type": "string", "minLength": 1},
+              "version_prompt": {"type": "string", "minLength": 1},
+              "temperatura": {"type": "number", "minimum": 0, "maximum": 1},
+              "costo_usd": {"type": "number", "minimum": 0}
+            }
+          }
+        },
+        "version_prompt": {
+          "description": "Versión del prompt: una cadena (agente único) o un mapa agente → versión.",
+          "oneOf": [
+            {"type": "string", "minLength": 1},
+            {"type": "object", "minProperties": 1, "additionalProperties": {"type": "string", "minLength": 1}}
+          ]
+        },
+        "version_rubrica": {"$ref": "#/$defs/version"},
+        "version_MAR03": {"$ref": "#/$defs/version"},
+        "version_MED01": {"$ref": "#/$defs/version"},
+        "diseno_simulador": {
+          "description": "Nombre del diseño (p. ej. 'diseno_otm_6'). null solo si la tarea aún no se simula (ver decisiones.md).",
+          "oneOf": [{"type": "string", "minLength": 1}, {"type": "null"}]
+        },
+        "fecha": {"$ref": "noticia.schema.json#/$defs/fecha_hora"},
+        "costo_usd": {"type": "number", "minimum": 0}
+      }
+    }
+  }
+}

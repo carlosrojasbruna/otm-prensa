@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://otm-prensa.example/contratos/catalogo.schema.json",
+  "title": "catalogo",
+  "description": "Catálogo de tareas publicadas (tareas/catalogo.json), lo mantiene el bibliotecario y lo consume el sitio. Contrato v1.0 (architect, 2026-10-20). Una tarea publicada no se edita: una v2 agrega una entrada nueva y la anterior pasa a `versiones_anteriores` (GOB01 §4).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version_contrato", "actualizado", "tareas"],
+  "properties": {
+    "version_contrato": {"const": "1.0"},
+    "actualizado": {"$ref": "noticia.schema.json#/$defs/fecha_hora"},
+    "tareas": {"type": "array", "items": {"$ref": "#/$defs/entrada"}}
+  },
+  "$defs": {
+    "entrada": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "titulo", "version", "fecha_publicacion", "nivel_principal", "variantes", "area", "contenidos_matematicos", "tiempo_estimado", "rub01_total", "noticia", "ruta", "archivos", "licencia", "commit", "versiones_anteriores"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[a-z0-9]+(-[a-z0-9]+)*$"},
+        "titulo": {"type": "string", "minLength": 1},
+        "version": {"type": "integer", "minimum": 1},
+        "fecha_publicacion": {"$ref": "noticia.schema.json#/$defs/fecha"},
+        "nivel_principal": {"$ref": "tarea.schema.json#/$defs/nivel"},
+        "sub_tramo": {"enum": ["S1", "S2"]},
+        "variantes": {"type": "array", "items": {"$ref": "tarea.schema.json#/$defs/nivel_o_subtramo"}},
+        "area": {"$ref": "noticia.schema.json#/$defs/area"},
+        "contenidos_matematicos": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+        "tiempo_estimado": {"type": "string", "minLength": 1},
+        "rub01_total": {"description": "El umbral de publicación no se fija aquí: lo aplica la invariante 2 leyendo RUB01.", "type": "integer", "minimum": 0, "maximum": 24},
+        "noticia": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["medio", "titulo", "fecha", "url"],
+          "properties": {
+            "medio": {"type": "string", "minLength": 1},
+            "titulo": {"type": "string", "minLength": 1},
+            "fecha": {"$ref": "noticia.schema.json#/$defs/fecha"},
+            "url": {"$ref": "noticia.schema.json#/$defs/url"}
+          }
+        },
+        "ruta": {"description": "Carpeta de la tarea: tareas/AAAA-MM/slug/", "type": "string", "pattern": "^tareas/[0-9]{4}-[0-9]{2}/[a-z0-9]+(-[a-z0-9]+)*/$"},
+        "archivos": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["tarea", "guia", "evaluacion"],
+          "properties": {
+            "tarea": {"type": "string", "minLength": 1},
+            "guia": {"type": "string", "minLength": 1},
+            "evaluacion": {"type": "string", "minLength": 1},
+            "trazas": {"type": "string"},
+            "icono": {"type": "string"},
+            "pdf": {"type": "string"}
+          }
+        },
+        "licencia": {"const": "CC BY-NC-SA 4.0"},
+        "commit": {"type": "string", "pattern": "^[0-9a-f]{7,40}$"},
+        "versiones_anteriores": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["version", "fecha_publicacion", "commit"],
+            "properties": {
+              "version": {"type": "integer", "minimum": 1},
+              "fecha_publicacion": {"$ref": "noticia.schema.json#/$defs/fecha"},
+              "commit": {"type": "string", "pattern": "^[0-9a-f]{7,40}$"}
+            }
+          }
+        }
+      }
+    }
+  }
+}

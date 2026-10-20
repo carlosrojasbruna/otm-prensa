@@ -1,0 +1,300 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://otm-prensa.example/contratos/guia.schema.json",
+  "title": "guia",
+  "description": "Guía docente según PLT02 v0.1 (salida del redactor, agente 6). Contrato v1.0 (architect, 2026-10-20). Cada sección está anclada a criterios de RUB03 (C1–C9). Invariante 5: cada escenario declara al menos un id de corrida; pipeline/invariantes.py::escenarios_respaldados comprueba que esos ids existan en trazas_resumen.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["tarea_id", "version", "fecha", "ficha", "meta", "analisis_a_priori", "organizacion", "escenarios", "tabla_bloqueos", "intervenciones", "puesta_en_comun", "variantes_y_continuidad", "materiales", "trazabilidad", "modelo_y_prompt"],
+  "properties": {
+    "tarea_id": {"type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"},
+    "version": {"type": "integer", "minimum": 1},
+    "fecha": {"$ref": "noticia.schema.json#/$defs/fecha"},
+    "ficha": {
+      "description": "PLT02 §0.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["titulo", "noticia", "nivel_principal", "variantes", "contenidos", "tiempo", "puntaje_rub01", "version", "fecha", "cambios"],
+      "properties": {
+        "titulo": {"type": "string", "minLength": 1},
+        "noticia": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["medio", "fecha", "url"],
+          "properties": {
+            "medio": {"type": "string", "minLength": 1},
+            "titulo": {"type": "string"},
+            "fecha": {"$ref": "noticia.schema.json#/$defs/fecha"},
+            "url": {"$ref": "noticia.schema.json#/$defs/url"}
+          }
+        },
+        "nivel_principal": {"$ref": "tarea.schema.json#/$defs/nivel"},
+        "sub_tramo": {"enum": ["S1", "S2"]},
+        "variantes": {"type": "array", "items": {"$ref": "tarea.schema.json#/$defs/nivel_o_subtramo"}},
+        "contenidos": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+        "tiempo": {"type": "string", "minLength": 1},
+        "puntaje_rub01": {"type": "integer", "minimum": 0, "maximum": 24},
+        "version": {"type": "integer", "minimum": 1},
+        "fecha": {"$ref": "noticia.schema.json#/$defs/fecha"},
+        "cambios": {"description": "Cambios respecto de la versión anterior; '' en la v1.", "type": "string"}
+      }
+    },
+    "meta": {
+      "description": "PLT02 §1 (C1).",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["que_observar", "subcompetencias", "evidencia"],
+      "properties": {
+        "que_observar": {"type": "string", "minLength": 1},
+        "contenido": {"type": "string"},
+        "subcompetencias": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+        "meta_social": {"type": "string"},
+        "evidencia": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "analisis_a_priori": {
+      "description": "PLT02 §2 (C2), tomado de PLT01 §4 y §3.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rutas", "modelo_inadecuado", "solucion_referencia", "rango_aceptable", "barreras_por_fase"],
+      "properties": {
+        "rutas": {
+          "type": "array",
+          "minItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "nombre", "nivel", "modelo"],
+            "properties": {
+              "id": {"type": "string", "pattern": "^R[0-9]+$"},
+              "nombre": {"type": "string", "minLength": 1},
+              "nivel": {"$ref": "tarea.schema.json#/$defs/nivel_o_subtramo"},
+              "modelo": {"type": "string", "minLength": 1}
+            }
+          }
+        },
+        "modelo_inadecuado": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["id", "por_que_falla"],
+          "properties": {"id": {"type": "string", "minLength": 1}, "por_que_falla": {"type": "string", "minLength": 1}}
+        },
+        "solucion_referencia": {"type": "string", "minLength": 1},
+        "rango_aceptable": {"type": "string", "minLength": 1},
+        "barreras_por_fase": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["fase", "barrera"],
+            "properties": {"fase": {"$ref": "tarea.schema.json#/$defs/fase"}, "barrera": {"type": "string", "minLength": 1}}
+          }
+        }
+      }
+    },
+    "organizacion": {
+      "description": "PLT02 §3 (C3, C4, C7).",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["momentos", "agrupamiento", "roles", "producciones", "tecnologia"],
+      "properties": {
+        "momentos": {
+          "type": "array",
+          "minItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["momento", "tiempo", "estudiantes", "docente"],
+            "properties": {
+              "momento": {"type": "string", "minLength": 1},
+              "tiempo": {"type": "string", "minLength": 1},
+              "estudiantes": {"type": "string", "minLength": 1},
+              "docente": {"type": "string", "minLength": 1}
+            }
+          }
+        },
+        "agrupamiento": {"type": "string", "minLength": 1},
+        "roles": {"type": "string", "minLength": 1},
+        "producciones": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+        "tecnologia": {"type": "string", "minLength": 1}
+      }
+    },
+    "escenarios": {
+      "description": "PLT02 §4 (C2, C6): 3–4 escenarios derivados SOLO de trazas (GOB01 §1).",
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 4,
+      "items": {"$ref": "#/$defs/escenario"}
+    },
+    "tabla_bloqueos": {
+      "description": "% de grupos simulados que se trabó en cada transición (copiado de trazas_resumen.agregado).",
+      "type": "object",
+      "propertyNames": {"$ref": "tarea.schema.json#/$defs/transicion"},
+      "additionalProperties": {"type": "number", "minimum": 0, "maximum": 1}
+    },
+    "intervenciones": {
+      "description": "PLT02 §5 (C5, C6). Ninguna ayuda entrega la regla.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["bloqueo", "z1_z2", "z3", "z4", "z5"],
+        "properties": {
+          "bloqueo": {"$ref": "tarea.schema.json#/$defs/transicion"},
+          "z1_z2": {"type": "string", "minLength": 1},
+          "z3": {"type": "string", "minLength": 1},
+          "z4": {"type": "string", "minLength": 1},
+          "z5": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "puesta_en_comun": {
+      "description": "PLT02 §6 (C8).",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["seleccion_y_orden", "preguntas", "contraste_validacion"],
+      "properties": {
+        "seleccion_y_orden": {"type": "array", "minItems": 2, "items": {"type": "string", "minLength": 1}},
+        "preguntas": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+        "contraste_validacion": {"type": "string", "minLength": 1}
+      }
+    },
+    "evaluacion_estudiante": {
+      "description": "PLT02 §7. Opcional: la plantilla la marca [Pendiente CP1].",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["por_fase"],
+      "properties": {
+        "por_fase": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["fase", "niveles"],
+            "properties": {
+              "fase": {"type": "string", "minLength": 1},
+              "niveles": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string", "minLength": 1}}
+            }
+          }
+        }
+      }
+    },
+    "variantes_y_continuidad": {
+      "description": "PLT02 §8 (P3, C9).",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["uso_variantes", "acostumbramiento", "tarea_siguiente"],
+      "properties": {
+        "uso_variantes": {"type": "string", "minLength": 1},
+        "acostumbramiento": {"type": "string", "minLength": 1},
+        "tarea_siguiente": {"type": ["string", "null"]}
+      }
+    },
+    "materiales": {
+      "description": "PLT02 §9: rutas relativas a la carpeta de la tarea.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tarea_pdf", "recursos_tarjetas", "notebook", "icono"],
+      "properties": {
+        "tarea_pdf": {"type": "string", "minLength": 1},
+        "recursos_tarjetas": {"type": "string", "minLength": 1},
+        "notebook": {"type": "string", "minLength": 1},
+        "icono": {"type": "string", "minLength": 1}
+      }
+    },
+    "trazabilidad": {
+      "description": "PLT02 §10. Los campos de revisión humana 2 y commit quedan null hasta la verificación/publicación.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["noticia_url", "diseno", "rub01_total", "revision_humana_1", "simulacion", "revision_humana_2", "commit"],
+      "properties": {
+        "noticia_url": {"$ref": "noticia.schema.json#/$defs/url"},
+        "diseno": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["modelo", "version_prompt"],
+          "properties": {"modelo": {"type": "string", "minLength": 1}, "version_prompt": {"type": "string", "minLength": 1}}
+        },
+        "rub01_total": {"type": "integer", "minimum": 0, "maximum": 24},
+        "revision_humana_1": {"$ref": "#/$defs/revision"},
+        "simulacion": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["n_grupos", "diseno"],
+          "properties": {"n_grupos": {"type": "integer", "minimum": 1}, "diseno": {"type": "string", "minLength": 1}}
+        },
+        "revision_humana_2": {"oneOf": [{"$ref": "#/$defs/revision"}, {"type": "null"}]},
+        "commit": {"oneOf": [{"type": "string", "pattern": "^[0-9a-f]{7,40}$"}, {"type": "null"}]}
+      }
+    },
+    "modelo_y_prompt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["redactor", "version_prompt"],
+      "properties": {
+        "redactor": {"type": "string", "minLength": 1},
+        "redactor_escenarios": {"type": "string", "minLength": 1},
+        "version_prompt": {"type": "string", "minLength": 1}
+      }
+    }
+  },
+  "$defs": {
+    "revision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["revisor", "fecha"],
+      "properties": {
+        "revisor": {"type": "string", "minLength": 1},
+        "fecha": {"$ref": "noticia.schema.json#/$defs/fecha"},
+        "comentarios": {"type": "string"}
+      }
+    },
+    "escenario": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "nombre", "corridas", "perfil", "ruta", "supuestos", "modelo", "bloqueos", "que_aprende", "extracto_dialogo"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^E[1-4]$"},
+        "nombre": {"type": "string", "minLength": 1},
+        "corridas": {
+          "description": "Invariante 5: ids de corrida del simulador que respaldan el escenario.",
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"$ref": "trazas_resumen.schema.json#/$defs/corrida_id"}
+        },
+        "perfil": {"type": "string", "minLength": 1},
+        "ruta": {"type": "array", "minItems": 1, "items": {"$ref": "tarea.schema.json#/$defs/fase"}},
+        "supuestos": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "modelo": {"type": "string", "minLength": 1},
+        "bloqueos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["transicion", "como_se_destrabo"],
+            "properties": {
+              "transicion": {"$ref": "tarea.schema.json#/$defs/transicion"},
+              "como_se_destrabo": {"type": "string", "minLength": 1}
+            }
+          }
+        },
+        "que_aprende": {"type": "string", "minLength": 1},
+        "extracto_dialogo": {
+          "description": "≤ 6 turnos, tomado de <id>.md.",
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 6,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["hablante", "texto"],
+            "properties": {"hablante": {"type": "string", "minLength": 1}, "texto": {"type": "string", "minLength": 1}}
+          }
+        }
+      }
+    }
+  }
+}

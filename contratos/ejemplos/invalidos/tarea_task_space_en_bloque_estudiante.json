@@ -1,0 +1,234 @@
+{
+  "id": "2026-10-embalse-el-yeso",
+  "titulo": "¿Cuánto dura el agua del embalse?",
+  "estado": "borrador",
+  "version": 1,
+  "fecha": "2026-10-20",
+  "noticia": {
+    "noticia_id": "2026-10-14-cnnchile-embalse-el-yeso",
+    "medio": "CNN Chile",
+    "titulo": "Ejemplo ficticio: el embalse baja de su nivel habitual",
+    "fecha": "2026-10-14",
+    "url": "https://www.cnnchile.com/ejemplo/embalse-el-yeso",
+    "resumen_propio": "Ejemplo ficticio para probar contratos. Un medio informa que un embalse que abastece a una ciudad está bajo su nivel habitual tras varios años secos y entrega su capacidad, su nivel actual y el consumo mensual estimado de la ciudad.",
+    "cifras_usadas": [
+      {
+        "valor": 220,
+        "unidad": "millones de m3",
+        "que_es": "capacidad del embalse (ejemplo ficticio)",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 2"
+        }
+      },
+      {
+        "valor": "38 %",
+        "unidad": "porcentaje",
+        "que_es": "nivel actual del embalse (ejemplo ficticio)",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "gráfico 1"
+        }
+      }
+    ]
+  },
+  "nivel_principal": "S",
+  "sub_tramo": "S1",
+  "variantes": {
+    "abajo": "P",
+    "arriba": "U"
+  },
+  "area": "medio_ambiente",
+  "contenidos_matematicos": [
+    "razones y tasas",
+    "función lineal"
+  ],
+  "tiempo_estimado": "2 sesiones de 90 min",
+  "estudiante": {
+    "enunciado_es": "La ciudad depende de un embalse que hoy está bastante más bajo de lo habitual. Las autoridades dicen que no hay riesgo este verano. ¿Tienen razón? Pueden pedir información adicional.",
+    "foto_descripcion": "Ícono plano de un embalse con una línea que marca el nivel actual por debajo del habitual.",
+    "recursos_a_solicitud": [
+      {
+        "id": "R1",
+        "que_es": "capacidad y nivel",
+        "contenido": "Capacidad 220 millones de m3; nivel actual 38 %.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P2-RM",
+        "fuente": "noticia (párrafo 2, gráfico 1)"
+      },
+      {
+        "id": "R2",
+        "que_es": "consumo",
+        "contenido": "Consumo mensual estimado de la ciudad en verano.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P3-MM",
+        "fuente": "otra fuente: informe de la empresa sanitaria (ejemplo)"
+      }
+    ],
+    "task_space": {
+      "required_assumptions": [
+        "consumo mensual constante",
+        "aportes despreciables en verano"
+      ],
+      "reference_solution": {
+        "steps": "Volumen útil = 0,38 × 220; meses = volumen útil / consumo.",
+        "result": "entre 5 y 7 meses",
+        "acceptable_range": "4 a 8 meses según supuestos"
+      },
+      "routes": [
+        {
+          "id": "R1",
+          "nombre": "proporcional",
+          "nivel": "P",
+          "modelo": "volumen / consumo",
+          "resultado": "≈ 6 meses"
+        },
+        {
+          "id": "R2",
+          "nombre": "lineal con aportes",
+          "nivel": "S1",
+          "modelo": "V(t) = V0 − (c − a)·t",
+          "resultado": "≈ 7 meses"
+        },
+        {
+          "id": "R3",
+          "nombre": "dinámico",
+          "nivel": "U",
+          "modelo": "balance mensual con evaporación",
+          "resultado": "≈ 5 meses"
+        }
+      ],
+      "modelo_inadecuado": {
+        "id": "RX",
+        "por_que_falla": "Usa la capacidad total en vez del volumen actual."
+      },
+      "validation_evidence": "Nivel del embalse publicado por la autoridad un mes después.",
+      "agent_visibility": {
+        "students": [
+          "enunciado_es",
+          "foto_descripcion",
+          "recursos_a_solicitud"
+        ],
+        "coder": [
+          "enunciado_es",
+          "task_space"
+        ],
+        "guide": [
+          "all"
+        ]
+      }
+    }
+  },
+  "variantes_detalle": {
+    "abajo": {
+      "tramo": "P",
+      "cambios": "Se entregan capacidad, nivel y consumo de entrada; se pregunta cuántos meses alcanza."
+    },
+    "arriba": {
+      "tramo": "U",
+      "cambios": "Se pide un modelo dinámico con aportes por deshielo y análisis de sensibilidad."
+    }
+  },
+  "recursos_de_entrada": [],
+  "mapa_ciclo": {
+    "P1-MRS": {
+      "decision": "entender qué significa que no haya riesgo",
+      "evidencia": "registro escrito del grupo",
+      "bloqueo_probable": null
+    },
+    "P2-RM": {
+      "decision": "suponer consumo constante y sin aportes",
+      "evidencia": "registro escrito del grupo",
+      "bloqueo_probable": "B12"
+    },
+    "P3-MM": {
+      "decision": "volumen disponible dividido por consumo mensual",
+      "evidencia": "registro escrito del grupo",
+      "bloqueo_probable": "B23"
+    },
+    "P4-WM": {
+      "decision": "calcular meses de autonomía",
+      "evidencia": "registro escrito del grupo",
+      "bloqueo_probable": null
+    },
+    "P5-INT": {
+      "decision": "comparar con la duración del verano",
+      "evidencia": "registro escrito del grupo",
+      "bloqueo_probable": null
+    },
+    "P6-VAL": {
+      "decision": "contrastar con el nivel informado un mes después",
+      "evidencia": "registro escrito del grupo",
+      "bloqueo_probable": "B56"
+    },
+    "P7-EXP": {
+      "decision": "presentar la respuesta con supuestos explícitos",
+      "evidencia": "registro escrito del grupo",
+      "bloqueo_probable": null
+    }
+  },
+  "task_space": {
+    "required_assumptions": [
+      "consumo mensual constante",
+      "aportes despreciables en verano"
+    ],
+    "reference_solution": {
+      "steps": "Volumen útil = 0,38 × 220; meses = volumen útil / consumo.",
+      "result": "entre 5 y 7 meses",
+      "acceptable_range": "4 a 8 meses según supuestos"
+    },
+    "routes": [
+      {
+        "id": "R1",
+        "nombre": "proporcional",
+        "nivel": "P",
+        "modelo": "volumen / consumo",
+        "resultado": "≈ 6 meses"
+      },
+      {
+        "id": "R2",
+        "nombre": "lineal con aportes",
+        "nivel": "S1",
+        "modelo": "V(t) = V0 − (c − a)·t",
+        "resultado": "≈ 7 meses"
+      },
+      {
+        "id": "R3",
+        "nombre": "dinámico",
+        "nivel": "U",
+        "modelo": "balance mensual con evaporación",
+        "resultado": "≈ 5 meses"
+      }
+    ],
+    "modelo_inadecuado": {
+      "id": "RX",
+      "por_que_falla": "Usa la capacidad total en vez del volumen actual."
+    },
+    "validation_evidence": "Nivel del embalse publicado por la autoridad un mes después.",
+    "agent_visibility": {
+      "students": [
+        "enunciado_es",
+        "foto_descripcion",
+        "recursos_a_solicitud"
+      ],
+      "coder": [
+        "enunciado_es",
+        "task_space"
+      ],
+      "guide": [
+        "all"
+      ]
+    }
+  },
+  "rubrica_rub01": null,
+  "rubrica_rub02": {
+    "P": null,
+    "S": null,
+    "U": null
+  },
+  "modelo_y_prompt": {
+    "diseñador": "claude-sonnet-5-5",
+    "version_prompt": "0.1",
+    "version_rubrica": "4.0"
+  }
+}

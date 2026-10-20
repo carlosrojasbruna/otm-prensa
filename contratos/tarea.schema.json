@@ -1,0 +1,211 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://otm-prensa.example/contratos/tarea.schema.json",
+  "title": "tarea",
+  "description": "Tarea de modelamiento según PLT01 v0.1 (salida del diseñador, agente 3). Contrato v1.0 (architect, 2026-10-20). Aislamiento (invariante 6): lo único que puede llegar a un estudiante simulado está en el bloque `estudiante` (enunciado_es, foto_descripcion, recursos_a_solicitud); `task_space` es un bloque hermano y nunca se anida en `estudiante`. Ver pipeline/invariantes.py::vista_estudiante.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "titulo", "estado", "version", "fecha", "noticia", "nivel_principal", "variantes", "area", "contenidos_matematicos", "tiempo_estimado", "estudiante", "variantes_detalle", "recursos_de_entrada", "mapa_ciclo", "task_space", "rubrica_rub01", "rubrica_rub02", "modelo_y_prompt"],
+  "properties": {
+    "id": {"description": "AAAA-MM-slug (PLT01).", "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[a-z0-9]+(-[a-z0-9]+)*$"},
+    "titulo": {"type": "string", "minLength": 1, "maxLength": 200},
+    "estado": {"$ref": "#/$defs/estado"},
+    "version": {"type": "integer", "minimum": 1},
+    "fecha": {"$ref": "noticia.schema.json#/$defs/fecha"},
+    "noticia": {"$ref": "noticia.schema.json#/$defs/cita"},
+    "nivel_principal": {"$ref": "#/$defs/nivel"},
+    "sub_tramo": {"description": "Solo si nivel_principal = S y la demanda lo exige (MAR03 §1).", "enum": ["S1", "S2"]},
+    "variantes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["abajo", "arriba"],
+      "properties": {
+        "abajo": {"oneOf": [{"$ref": "#/$defs/nivel"}, {"type": "null"}]},
+        "arriba": {"oneOf": [{"$ref": "#/$defs/nivel"}, {"type": "null"}]}
+      }
+    },
+    "area": {"$ref": "noticia.schema.json#/$defs/area"},
+    "contenidos_matematicos": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "tiempo_estimado": {"type": "string", "minLength": 1},
+    "estudiante": {
+      "description": "PLT01 §1 y recursos 'a solicitud' de §2. ÚNICO bloque visible para estudiantes simulados (invariante 6). additionalProperties=false impide que se cuele otra información.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["enunciado_es", "foto_descripcion", "recursos_a_solicitud"],
+      "properties": {
+        "enunciado_es": {"type": "string", "minLength": 20},
+        "foto_descripcion": {"description": "Descripción textual del ícono o imagen; 'none' si no hay.", "type": "string", "minLength": 1},
+        "recursos_a_solicitud": {"type": "array", "items": {"$ref": "#/$defs/recurso", "properties": {"disponibilidad": {"const": "a_solicitud"}}}}
+      }
+    },
+    "variantes_detalle": {
+      "description": "PLT01 §1.1 y §1.2. Una variante cambia datos, pregunta o validación, no el contexto (MAR03 §2).",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["abajo", "arriba"],
+      "properties": {
+        "abajo": {"oneOf": [{"$ref": "#/$defs/variante"}, {"type": "null"}]},
+        "arriba": {"oneOf": [{"$ref": "#/$defs/variante"}, {"type": "null"}]}
+      }
+    },
+    "recursos_de_entrada": {
+      "description": "Recursos de PLT01 §2 con disponibilidad 'de entrada'. No pasan al simulador por separado: lo que el estudiante recibe de entrada debe estar en enunciado_es (ver decisiones.md).",
+      "type": "array",
+      "items": {"$ref": "#/$defs/recurso", "properties": {"disponibilidad": {"const": "de_entrada"}}}
+    },
+    "mapa_ciclo": {
+      "description": "PLT01 §3: una fila por fase P1–P7, todas requeridas.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["P1-MRS", "P2-RM", "P3-MM", "P4-WM", "P5-INT", "P6-VAL", "P7-EXP"],
+      "properties": {
+        "P1-MRS": {"$ref": "#/$defs/fila_ciclo"},
+        "P2-RM": {"$ref": "#/$defs/fila_ciclo"},
+        "P3-MM": {"$ref": "#/$defs/fila_ciclo"},
+        "P4-WM": {"$ref": "#/$defs/fila_ciclo"},
+        "P5-INT": {"$ref": "#/$defs/fila_ciclo"},
+        "P6-VAL": {"$ref": "#/$defs/fila_ciclo"},
+        "P7-EXP": {"$ref": "#/$defs/fila_ciclo"}
+      }
+    },
+    "task_space": {
+      "description": "PLT01 §4. Para evaluador, codificador del simulador y guía; NUNCA para estudiantes.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required_assumptions", "reference_solution", "routes", "modelo_inadecuado", "validation_evidence", "agent_visibility"],
+      "properties": {
+        "required_assumptions": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+        "reference_solution": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["steps", "result", "acceptable_range"],
+          "properties": {
+            "steps": {"type": "string", "minLength": 1},
+            "result": {"type": "string", "minLength": 1},
+            "acceptable_range": {"type": "string", "minLength": 1}
+          }
+        },
+        "routes": {
+          "description": "Al menos 3 modelizaciones distintas (C2 de RUB03).",
+          "type": "array",
+          "minItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "nombre", "nivel", "modelo", "resultado"],
+            "properties": {
+              "id": {"type": "string", "pattern": "^R[0-9]+$"},
+              "nombre": {"type": "string", "minLength": 1},
+              "nivel": {"$ref": "#/$defs/nivel_o_subtramo"},
+              "modelo": {"type": "string", "minLength": 1},
+              "resultado": {"type": "string", "minLength": 1}
+            }
+          }
+        },
+        "modelo_inadecuado": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["id", "por_que_falla"],
+          "properties": {
+            "id": {"type": "string", "minLength": 1},
+            "por_que_falla": {"type": "string", "minLength": 1}
+          }
+        },
+        "validation_evidence": {"description": "Dato independiente, no usado para construir el modelo.", "type": "string", "minLength": 1},
+        "agent_visibility": {
+          "description": "Fijo por PLT01; se declara para que el hook de aislamiento pueda comprobarlo.",
+          "const": {
+            "students": ["enunciado_es", "foto_descripcion", "recursos_a_solicitud"],
+            "coder": ["enunciado_es", "task_space"],
+            "guide": ["all"]
+          }
+        }
+      }
+    },
+    "rubrica_rub01": {
+      "description": "Resumen de RUB01 que copia el orquestador desde evaluacion.json. null hasta la primera evaluación. La fuente de verdad es evaluacion.json.",
+      "oneOf": [
+        {"type": "null"},
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["total", "por_criterio"],
+          "properties": {
+            "total": {"type": "integer", "minimum": 0, "maximum": 24},
+            "por_criterio": {"type": "object", "additionalProperties": {"enum": [0, 1, 2]}}
+          }
+        }
+      ]
+    },
+    "rubrica_rub02": {
+      "description": "Adecuación por nivel (RUB02, máx. 10); null si no se evaluó.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["P", "S", "U"],
+      "properties": {
+        "P": {"type": ["integer", "null"], "minimum": 0, "maximum": 10},
+        "S": {"type": ["integer", "null"], "minimum": 0, "maximum": 10},
+        "U": {"type": ["integer", "null"], "minimum": 0, "maximum": 10}
+      }
+    },
+    "modelo_y_prompt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["diseñador", "version_prompt", "version_rubrica"],
+      "properties": {
+        "diseñador": {"type": "string", "minLength": 1},
+        "version_prompt": {"type": "string", "minLength": 1},
+        "version_rubrica": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+$"}
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"nivel_principal": {"not": {"const": "S"}}}, "required": ["nivel_principal"]},
+      "then": {"not": {"required": ["sub_tramo"]}}
+    }
+  ],
+  "$defs": {
+    "estado": {
+      "description": "Estados de la máquina del orquestador (pipeline/orquestador.py). PLT01 lista solo borrador|revisada|publicada; se amplía a todos los estados del pipeline más `archivada`.",
+      "enum": ["borrador", "evaluada", "revisada", "simulada", "con_guia", "verificada", "publicada", "archivada"]
+    },
+    "nivel": {"enum": ["P", "S", "U"]},
+    "nivel_o_subtramo": {"enum": ["P", "S", "S1", "S2", "U"]},
+    "fase": {"enum": ["P1-MRS", "P2-RM", "P3-MM", "P4-WM", "P5-INT", "P6-VAL", "P7-EXP"]},
+    "transicion": {"description": "Bloqueo en la transición entre fases i→j (INS04): B12, B23, ..., B67.", "type": "string", "pattern": "^B[1-6][2-7]$"},
+    "recurso": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "que_es", "contenido", "disponibilidad", "fase", "fuente"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^R[0-9]+$"},
+        "que_es": {"type": "string", "minLength": 1},
+        "contenido": {"description": "Lo que se entrega al estudiante (tarjeta). No contiene el modelo, la regla ni la estructura de la solución.", "type": "string", "minLength": 1},
+        "disponibilidad": {"enum": ["a_solicitud", "de_entrada"]},
+        "fase": {"$ref": "#/$defs/fase"},
+        "fuente": {"description": "'noticia' + localizador u otra fuente identificable.", "type": "string", "minLength": 1}
+      }
+    },
+    "variante": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tramo", "cambios"],
+      "properties": {
+        "tramo": {"$ref": "#/$defs/nivel_o_subtramo"},
+        "cambios": {"type": "string", "minLength": 1}
+      }
+    },
+    "fila_ciclo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["decision", "evidencia", "bloqueo_probable"],
+      "properties": {
+        "decision": {"type": "string", "minLength": 1},
+        "evidencia": {"type": "string", "minLength": 1},
+        "bloqueo_probable": {"oneOf": [{"$ref": "#/$defs/transicion"}, {"type": "null"}]},
+        "nota": {"type": "string"}
+      }
+    }
+  }
+}

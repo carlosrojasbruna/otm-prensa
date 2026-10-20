@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://otm-prensa.example/contratos/evaluacion_rub01.schema.json",
+  "title": "evaluacion_rub01",
+  "description": "Bloque `rub01` de evaluacion.json, usable por sí solo (lo valida el evaluador, pipeline/agentes/evaluador/). Forma fijada por build-lead a partir de RUB01.instrucciones_evaluador.salida. Contrato v1.0 (architect, 2026-10-20). Ligado a RUB01 v4.0: los 12 ids son exactamente RUB01.criterios[].id (tests/test_contratos.py lo verifica). La coherencia total = suma y la presencia de mejoras para criterios < 2 la comprueba pipeline/invariantes.py::consistencia_rub01 (no expresable en JSON Schema).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version_rubrica",
+    "criterios",
+    "total",
+    "mejoras"
+  ],
+  "properties": {
+    "version_rubrica": {
+      "const": "4.0"
+    },
+    "criterios": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "genuino",
+        "abierta",
+        "decisiones",
+        "realismo",
+        "autenticidad",
+        "contexto",
+        "ciclo",
+        "validacion",
+        "nivel",
+        "autodiferenciacion",
+        "fecundidad",
+        "recursos"
+      ],
+      "properties": {
+        "genuino": {
+          "$ref": "#/$defs/criterio"
+        },
+        "abierta": {
+          "$ref": "#/$defs/criterio"
+        },
+        "decisiones": {
+          "$ref": "#/$defs/criterio"
+        },
+        "realismo": {
+          "$ref": "#/$defs/criterio"
+        },
+        "autenticidad": {
+          "$ref": "#/$defs/criterio"
+        },
+        "contexto": {
+          "$ref": "#/$defs/criterio"
+        },
+        "ciclo": {
+          "$ref": "#/$defs/criterio"
+        },
+        "validacion": {
+          "$ref": "#/$defs/criterio"
+        },
+        "nivel": {
+          "$ref": "#/$defs/criterio"
+        },
+        "autodiferenciacion": {
+          "$ref": "#/$defs/criterio"
+        },
+        "fecundidad": {
+          "$ref": "#/$defs/criterio"
+        },
+        "recursos": {
+          "$ref": "#/$defs/criterio"
+        }
+      }
+    },
+    "total": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 24
+    },
+    "mejoras": {
+      "description": "Una entrada por cada criterio con puntaje 0 o 1.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "criterio",
+          "mejora_minima"
+        ],
+        "properties": {
+          "criterio": {
+            "$ref": "#/$defs/criterio_id"
+          },
+          "mejora_minima": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "criterio_id": {
+      "enum": [
+        "genuino",
+        "abierta",
+        "decisiones",
+        "realismo",
+        "autenticidad",
+        "contexto",
+        "ciclo",
+        "validacion",
+        "nivel",
+        "autodiferenciacion",
+        "fecundidad",
+        "recursos"
+      ]
+    },
+    "criterio": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "puntaje",
+        "justificacion",
+        "cita"
+      ],
+      "properties": {
+        "puntaje": {
+          "enum": [
+            0,
+            1,
+            2
+          ]
+        },
+        "justificacion": {
+          "description": "Una o dos oraciones que citan el enunciado o los recursos.",
+          "type": "string",
+          "minLength": 1
+        },
+        "cita": {
+          "description": "Fragmento del enunciado o de los recursos de la TAREA (no de la noticia) que respalda el puntaje.",
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,272 @@
+{
+  "tarea_id": "2026-10-embalse-el-yeso",
+  "version": 1,
+  "fecha": "2026-10-22",
+  "ficha": {
+    "titulo": "¿Cuánto dura el agua del embalse?",
+    "noticia": {
+      "medio": "CNN Chile",
+      "titulo": "Ejemplo ficticio: el embalse baja de su nivel habitual",
+      "fecha": "2026-10-14",
+      "url": "https://www.cnnchile.com/ejemplo/embalse-el-yeso"
+    },
+    "nivel_principal": "S",
+    "sub_tramo": "S1",
+    "variantes": [
+      "P",
+      "U"
+    ],
+    "contenidos": [
+      "razones y tasas",
+      "función lineal"
+    ],
+    "tiempo": "2 sesiones de 90 min",
+    "puntaje_rub01": 23,
+    "version": 1,
+    "fecha": "2026-10-22",
+    "cambios": ""
+  },
+  "meta": {
+    "que_observar": "Cómo los grupos formulan y jerarquizan supuestos.",
+    "subcompetencias": [
+      "simplificar",
+      "validar"
+    ],
+    "evidencia": [
+      "hoja de supuestos"
+    ]
+  },
+  "analisis_a_priori": {
+    "rutas": [
+      {
+        "id": "R1",
+        "nombre": "proporcional",
+        "nivel": "P",
+        "modelo": "volumen / consumo"
+      },
+      {
+        "id": "R2",
+        "nombre": "lineal con aportes",
+        "nivel": "S1",
+        "modelo": "V(t) = V0 − (c − a)·t"
+      },
+      {
+        "id": "R3",
+        "nombre": "dinámico",
+        "nivel": "U",
+        "modelo": "balance mensual con evaporación"
+      }
+    ],
+    "modelo_inadecuado": {
+      "id": "RX",
+      "por_que_falla": "Usa la capacidad total en vez del volumen actual."
+    },
+    "solucion_referencia": "Volumen útil dividido por consumo mensual.",
+    "rango_aceptable": "4 a 8 meses",
+    "barreras_por_fase": [
+      {
+        "fase": "P2-RM",
+        "barrera": "no distinguir capacidad de volumen actual"
+      }
+    ]
+  },
+  "organizacion": {
+    "momentos": [
+      {
+        "momento": "Comprensión y trabajo grupal",
+        "tiempo": "50 min",
+        "estudiantes": "modelan en pares",
+        "docente": "circula y diagnostica"
+      },
+      {
+        "momento": "Puesta en común",
+        "tiempo": "25 min",
+        "estudiantes": "presentan",
+        "docente": "orquesta"
+      },
+      {
+        "momento": "Validación y cierre",
+        "tiempo": "15 min",
+        "estudiantes": "contrastan con el dato posterior",
+        "docente": "cierra"
+      }
+    ],
+    "agrupamiento": "pares",
+    "roles": "registrador y portavoz",
+    "producciones": [
+      "hoja de supuestos",
+      "cálculo"
+    ],
+    "tecnologia": "calculadora en P4"
+  },
+  "escenarios": [
+    {
+      "id": "E1",
+      "nombre": "ruta esperada",
+      "corridas": [],
+      "perfil": "S1, pares, estilo visual",
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P5-INT",
+        "P7-EXP"
+      ],
+      "supuestos": [
+        "consumo constante"
+      ],
+      "modelo": "proporcional",
+      "bloqueos": [
+        {
+          "transicion": "B56",
+          "como_se_destrabo": "un compañero propuso dibujar el embalse"
+        }
+      ],
+      "que_aprende": "Comparar supuestos de consumo.",
+      "extracto_dialogo": [
+        {
+          "hablante": "A",
+          "texto": "¿Usamos todo el embalse o solo lo que queda?"
+        },
+        {
+          "hablante": "B",
+          "texto": "Solo lo que queda."
+        }
+      ]
+    },
+    {
+      "id": "E2",
+      "nombre": "modelo inadecuado",
+      "corridas": [
+        "N1_AA_r1"
+      ],
+      "perfil": "S1, pares, estilo visual",
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P5-INT",
+        "P7-EXP"
+      ],
+      "supuestos": [
+        "consumo constante"
+      ],
+      "modelo": "proporcional",
+      "bloqueos": [
+        {
+          "transicion": "B23",
+          "como_se_destrabo": "un compañero propuso dibujar el embalse"
+        }
+      ],
+      "que_aprende": "Comparar supuestos de consumo.",
+      "extracto_dialogo": [
+        {
+          "hablante": "A",
+          "texto": "¿Usamos todo el embalse o solo lo que queda?"
+        },
+        {
+          "hablante": "B",
+          "texto": "Solo lo que queda."
+        }
+      ]
+    },
+    {
+      "id": "E3",
+      "nombre": "bloqueo en simplificar",
+      "corridas": [
+        "N1_VV_r1"
+      ],
+      "perfil": "S1, pares, estilo visual",
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P5-INT",
+        "P7-EXP"
+      ],
+      "supuestos": [
+        "consumo constante"
+      ],
+      "modelo": "proporcional",
+      "bloqueos": [
+        {
+          "transicion": "B12",
+          "como_se_destrabo": "un compañero propuso dibujar el embalse"
+        }
+      ],
+      "que_aprende": "Comparar supuestos de consumo.",
+      "extracto_dialogo": [
+        {
+          "hablante": "A",
+          "texto": "¿Usamos todo el embalse o solo lo que queda?"
+        },
+        {
+          "hablante": "B",
+          "texto": "Solo lo que queda."
+        }
+      ]
+    }
+  ],
+  "tabla_bloqueos": {
+    "B12": 0.33,
+    "B23": 0.33,
+    "B56": 0.17
+  },
+  "intervenciones": [
+    {
+      "bloqueo": "B12",
+      "z1_z2": "Van bien, sigan.",
+      "z3": "Hagan un dibujo de la situación.",
+      "z4": "¿Qué parte del embalse se puede usar?",
+      "z5": "Comparen capacidad con nivel actual."
+    }
+  ],
+  "puesta_en_comun": {
+    "seleccion_y_orden": [
+      "E2",
+      "E3",
+      "E1"
+    ],
+    "preguntas": [
+      "¿Qué supusieron sobre el consumo?"
+    ],
+    "contraste_validacion": "Comparar con el nivel publicado un mes después."
+  },
+  "variantes_y_continuidad": {
+    "uso_variantes": "Variante P si el grupo no ha trabajado tasas.",
+    "acostumbramiento": "Estimación de Fermi previa.",
+    "tarea_siguiente": null
+  },
+  "materiales": {
+    "tarea_pdf": "tarea.pdf",
+    "recursos_tarjetas": "recursos.pdf",
+    "notebook": "escenarios.ipynb",
+    "icono": "icono.svg"
+  },
+  "trazabilidad": {
+    "noticia_url": "https://www.cnnchile.com/ejemplo/embalse-el-yeso",
+    "diseno": {
+      "modelo": "claude-sonnet-5-5",
+      "version_prompt": "0.1"
+    },
+    "rub01_total": 23,
+    "revision_humana_1": {
+      "revisor": "Carlos Rojas Bruna",
+      "fecha": "2026-10-20"
+    },
+    "simulacion": {
+      "n_grupos": 6,
+      "diseno": "diseno_otm_6"
+    },
+    "revision_humana_2": null,
+    "commit": null
+  },
+  "modelo_y_prompt": {
+    "redactor": "claude-sonnet-5-5",
+    "redactor_escenarios": "claude-opus-5-5",
+    "version_prompt": "0.1"
+  }
+}

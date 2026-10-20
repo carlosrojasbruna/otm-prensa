@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://otm-prensa.example/contratos/trazas_resumen.schema.json",
+  "title": "trazas_resumen",
+  "description": "Traducción de las salidas del simulador al esquema del repositorio (SIM01 v0.1 §3). La produce el adapter (sim-integrator). Contrato v1.0 (architect, 2026-10-20). La igualdad corridas == len(por_corrida) y la unicidad de ids las comprueba pipeline/invariantes.py::consistencia_trazas.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["tarea_id", "diseno", "corridas", "modelo", "por_corrida", "agregado"],
+  "properties": {
+    "tarea_id": {"type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"},
+    "diseno": {"description": "Nombre del diseño (diseno_otm de PERFILES.md).", "type": "string", "minLength": 1},
+    "corridas": {"type": "integer", "minimum": 1},
+    "modelo": {"type": "string", "minLength": 1},
+    "fecha": {"$ref": "noticia.schema.json#/$defs/fecha_hora"},
+    "costo_usd": {"type": "number", "minimum": 0},
+    "por_corrida": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/corrida"}
+    },
+    "agregado": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["pct_bloqueo_por_transicion", "modelos_observados", "pct_validan"],
+      "properties": {
+        "pct_bloqueo_por_transicion": {
+          "type": "object",
+          "propertyNames": {"$ref": "tarea.schema.json#/$defs/transicion"},
+          "additionalProperties": {"$ref": "#/$defs/proporcion"}
+        },
+        "modelos_observados": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 0}},
+        "pct_validan": {"$ref": "#/$defs/proporcion"}
+      }
+    }
+  },
+  "$defs": {
+    "proporcion": {"type": "number", "minimum": 0, "maximum": 1},
+    "corrida_id": {
+      "description": "id de corrida del simulador, p. ej. N1_VV_r1 (nivel_estilo_repetición).",
+      "type": "string",
+      "pattern": "^[A-Za-z0-9]+(_[A-Za-z0-9]+)*$"
+    },
+    "corrida": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "perfil", "ruta", "bloqueos", "supuestos", "modelo", "respuesta_final", "validacion"],
+      "properties": {
+        "id": {"$ref": "#/$defs/corrida_id"},
+        "perfil": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["nivel_edad", "nivel", "estilo"],
+          "properties": {
+            "nivel_edad": {"$ref": "tarea.schema.json#/$defs/nivel_o_subtramo"},
+            "nivel": {"enum": ["N1", "N2", "N3", "N4"]},
+            "estilo": {"description": "Composición del grupo por estilos V/A/I (INS08), p. ej. VV, AA.", "type": "string", "pattern": "^[VAI]{1,4}$"}
+          }
+        },
+        "ruta": {"type": "array", "minItems": 1, "items": {"$ref": "tarea.schema.json#/$defs/fase"}},
+        "bloqueos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["transicion", "turnos", "resolucion"],
+            "properties": {
+              "transicion": {"$ref": "tarea.schema.json#/$defs/transicion"},
+              "turnos": {"type": "array", "minItems": 1, "items": {"type": "integer", "minimum": 0}},
+              "resolucion": {"description": "Cómo se destrabó (p. ej. peer, recurso, self, sin_resolver).", "type": "string", "minLength": 1}
+            }
+          }
+        },
+        "supuestos": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "modelo": {"type": "string"},
+        "respuesta_final": {"type": "string"},
+        "validacion": {"type": "boolean"},
+        "archivo": {"description": "Ruta relativa a <id>.json / <id>.md / <id>_cod.json.", "type": "string"},
+        "costo_usd": {"type": "number", "minimum": 0}
+      }
+    }
+  }
+}
