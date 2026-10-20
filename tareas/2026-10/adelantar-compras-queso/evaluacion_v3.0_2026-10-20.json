@@ -1,0 +1,139 @@
+{
+  "tarea_id": "2026-10-adelantar-compras-queso-v3",
+  "fecha": "2026-10-20T21:53:39Z",
+  "rub01": {
+    "version_rubrica": "4.0",
+    "criterios": {
+      "genuino": {
+        "puntaje": 2,
+        "justificacion": "La importadora tiene una necesidad real: decidir cuánto adelantar compras. No se entrega ninguna regla, fórmula ni modelo de inventario listo para aplicar.",
+        "cita": "¿Cómo debería organizar sus compras antes y después de que rija el arancel?"
+      },
+      "abierta": {
+        "puntaje": 2,
+        "justificacion": "La pregunta no prescribe método. Admite varios modelos defendibles, desde una comparación simple de costos hasta modelos dinámicos de inventario, y ninguna instrucción posterior encauza la ruta.",
+        "cita": "¿Cómo debería organizar sus compras antes y después de que rija el arancel? Si todas las importadoras del rubro hicieran lo mismo, ¿qué pasaría con …"
+      },
+      "decisiones": {
+        "puntaje": 2,
+        "justificacion": "Para resolver hay que decidir qué tipo de queso considerar, suponer costos de almacenamiento, merma y demanda, y solicitar información (R4, R5, R7). Todo esto es exigencia sustantiva de supuestos y estimación.",
+        "cita": "Su bodega refrigerada tiene poco espacio y cuesta dinero, parte del queso se echa a perder y los pedidos de sus clientes cambian de mes …"
+      },
+      "realismo": {
+        "puntaje": 2,
+        "justificacion": "Adelantar compras ante un arancel anunciado es una práctica comercial real y plausible. El escenario, aunque hipotético, no está forzado para insertar un cálculo.",
+        "cita": "se anuncia un arancel de 50% que regirá cuando termine un periodo de espera de 30 días"
+      },
+      "autenticidad": {
+        "puntaje": 2,
+        "justificacion": "Los datos de la noticia (arancel de 50%, espera de 30 días, 20 mil millones) son parámetros centrales del modelo y de la estimación agregada. Además, R6 aporta series reales del Censo; el tema y los datos auténticos están integrados sustantivamente.",
+        "cita": "Según la noticia, el queso exportado desde Canadá paga 50% y los bienes canadienses gravados valen unos 20 mil millones de dólares estadounidenses."
+      },
+      "contexto": {
+        "puntaje": 2,
+        "justificacion": "Las restricciones de espacio, la vida útil y la demanda variable condicionan el modelo. También son necesarias para interpretar y juzgar si la estrategia es viable.",
+        "cita": "Su bodega refrigerada tiene poco espacio y cuesta dinero, parte del queso se echa a perder"
+      },
+      "ciclo": {
+        "puntaje": 2,
+        "justificacion": "Responder obliga a comprender la situación, simplificar (tipo de queso, horizonte), matematizar costos y restricciones, calcular, e interpretar y validar la estrategia. El enunciado no deja ninguna fase hecha.",
+        "cita": "¿Cómo debería organizar sus compras antes y después de que rija el arancel?"
+      },
+      "validacion": {
+        "puntaje": 2,
+        "justificacion": "R6 ofrece evidencia independiente, no usada en la construcción del modelo, para contrastar lo predicho con datos reales alrededor de un anuncio de aranceles anterior.",
+        "cita": "Hay series mensuales de importaciones de queso desde Canadá en las estadísticas de comercio exterior de la Oficina del Censo de EE. UU."
+      },
+      "nivel": {
+        "puntaje": 2,
+        "justificacion": "El contexto es comprensible para universitarios. La matemática requerida (optimización con restricciones, modelos dinámicos discretos, estimación agregada) corresponde a las herramientas esperables del nivel U en MAR03.",
+        "cita": "Su bodega refrigerada tiene poco espacio y cuesta dinero, parte del queso se echa a perder y los pedidos de sus clientes cambian de mes …"
+      },
+      "autodiferenciacion": {
+        "puntaje": 2,
+        "justificacion": "Se puede empezar comparando el costo de almacenar contra el ahorro del arancel con aritmética simple. La tarea admite soluciones más sofisticadas: inventario dinámico multiperiodo, demanda estacional, merma por tipo de queso o sensibilidad.",
+        "cita": "¿Cómo debería organizar sus compras antes y después de que rija el arancel?"
+      },
+      "fecundidad": {
+        "puntaje": 2,
+        "justificacion": "La tarea abre el paso de lo individual a lo agregado. Permite comparar estrategias y supuestos, y discutir límites del modelo frente a los datos del Censo.",
+        "cita": "Si todas las importadoras del rubro hicieran lo mismo, ¿qué pasaría con el comercio del sector y de qué orden de magnitud sería el efecto …"
+      },
+      "recursos": {
+        "puntaje": 2,
+        "justificacion": "La información necesaria se obtiene a solicitud, en rangos u órdenes de magnitud, sin revelar el modelo. El contraste se entrega solo después de definir la estrategia, y la ambigüedad temporal de R7 es una decisión deliberada para el grupo.",
+        "cita": "Si el grupo pregunta por un tipo de queso, un costo o un plazo concretos, la bodega entrega una estimación de rango."
+      }
+    },
+    "total": 24,
+    "mejoras": []
+  },
+  "reproducibilidad": {
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.129757,
+        "version_prompt": "1.1"
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.256072,
+        "version_prompt": "1.3"
+      },
+      "ilustrador": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.008174,
+        "version_prompt": "1.0"
+      },
+      "redactor": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.162434,
+        "version_prompt": "1.0"
+      },
+      "redactor_escenarios": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.223838,
+        "version_prompt": "1.0"
+      },
+      "simulador": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.0,
+        "version_prompt": "PROMPTS.md"
+      },
+      "simulador_codificador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.0,
+        "version_prompt": "PROMPTS.md"
+      },
+      "verificador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.15814,
+        "version_prompt": "1.1"
+      }
+    },
+    "version_prompt": {
+      "disenador": "1.1",
+      "evaluador": "1.3",
+      "ilustrador": "1.0",
+      "redactor": "1.0",
+      "redactor_escenarios": "1.0",
+      "simulador": "PROMPTS.md",
+      "simulador_codificador": "PROMPTS.md",
+      "verificador": "1.1"
+    },
+    "version_rubrica": "4.0",
+    "version_MAR03": "1.0",
+    "version_MED01": "1.1",
+    "diseno_simulador": "diseno_otm",
+    "fecha": "2026-10-20T22:00:52Z",
+    "costo_usd": 0.938415
+  }
+}

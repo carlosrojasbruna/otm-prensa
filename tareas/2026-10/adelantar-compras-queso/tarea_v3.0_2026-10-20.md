@@ -1,0 +1,179 @@
+# ¿Cuánto queso conviene comprar antes de que rija un arancel?
+
+Tarea `2026-10-adelantar-compras-queso-v3` · versión 3 · 2026-10-20 · nivel U · 2 sesiones de 90 min. Licencia CC BY-NC-SA 4.0. Generado desde `tarea` (JSON, fuente de verdad).
+
+```yaml frontmatter
+id: 2026-10-adelantar-compras-queso-v3
+titulo: ¿Cuánto queso conviene comprar antes de que rija un arancel?
+estado: verificada
+version: 3
+fecha: '2026-10-20'
+noticia:
+  noticia_id: 2026-10-20-bbc-trump-sued-over-canadian-tariffs-in
+  medio: BBC News
+  titulo: Trump sued over Canadian tariffs in latest legal challenge
+  fecha: '2026-10-20'
+  url: https://www.bbc.co.uk/news/articles/cqrkyj13m588o?at_medium=RSS&at_campaign=rss
+  resumen_propio: A US advocacy group that previously won against broad import duties has gone to court again, this time challenging new levies on Canadian products. The complaint argues the government stretched a 1930 statute meant to counter unfair foreign practices, and that the duties, including on dairy and cheese, hurt companies and their supply chains. The plaintiffs also seek refunds with interest and an injunction to halt collection while the case proceeds.
+  cifras_usadas:
+  - valor: $20bn
+    unidad: dólares estadounidenses (miles de millones)
+    que_es: Valor aproximado de los bienes canadienses gravados
+    localizador:
+      fuente: noticia
+      ubicacion: párrafo 49
+  - valor: 50%
+    unidad: porcentaje de arancel
+    que_es: Arancel que paga una empresa estadounidense sobre queso exportado desde Canadá
+    localizador:
+      fuente: noticia
+      ubicacion: párrafo 53
+  - valor: 30-day
+    unidad: días
+    que_es: Periodo de espera exigido por la Sección 338 antes de imponer aranceles
+    localizador:
+      fuente: noticia
+      ubicacion: párrafo 62
+nivel_principal: U
+variantes:
+  abajo: S
+  arriba: null
+area: economia
+contenidos_matematicos:
+- modelo dinámico discreto
+- optimización con restricciones
+- programación lineal
+- sensibilidad de parámetros
+- órdenes de magnitud y agregación
+tiempo_estimado: 2 sesiones de 90 min
+rubrica_rub01:
+  total: 24
+  por_criterio:
+    genuino: 2
+    abierta: 2
+    decisiones: 2
+    realismo: 2
+    autenticidad: 2
+    contexto: 2
+    ciclo: 2
+    validacion: 2
+    nivel: 2
+    autodiferenciacion: 2
+    fecundidad: 2
+    recursos: 2
+rubrica_rub02:
+  P: null
+  S: null
+  U: null
+modelo_y_prompt:
+  diseñador: claude-sonnet-5-5
+  version_prompt: '1.1'
+  version_rubrica: '4.0'
+```
+
+## 1. Enunciado para estudiantes (nivel principal)
+
+```text enunciado_es
+Un grupo de defensa de empresas estadounidenses demandó a su gobierno por aplicar aranceles a productos canadienses, entre ellos el queso, con una ley antigua que exige un periodo de espera de 30 días antes de imponerlos. Según la noticia, el queso exportado desde Canadá paga 50% y los bienes canadienses gravados valen unos 20 mil millones de dólares estadounidenses.
+
+Escenario hipotético, inspirado en el caso pero que no sale en la noticia: una importadora estadounidense compra queso canadiense cada mes y se anuncia un arancel de 50% que regirá cuando termine un periodo de espera de 30 días. Su bodega refrigerada tiene poco espacio y cuesta dinero, parte del queso se echa a perder y los pedidos de sus clientes cambian de mes en mes.
+
+¿Cómo debería organizar sus compras antes y después de que rija el arancel? Si todas las importadoras del rubro hicieran lo mismo, ¿qué pasaría con el comercio del sector y de qué orden de magnitud sería el efecto en dinero? Pueden pedir información adicional.
+```
+
+```text foto_descripcion
+Ícono de una bodega refrigerada con cajas de queso apiladas y un calendario con el periodo de espera marcado.
+```
+
+### 1.1 Variante hacia abajo (tramo S2)
+
+Se trabaja un solo tipo de queso, sin pérdida de producto, con capacidad de bodega ilimitada y demanda constante. Se pide determinar durante cuántos meses conviene guardar queso comprado antes del arancel, con una tabla de costos entregada al solicitarla. Se elimina la pregunta sobre el comportamiento conjunto de las empresas y el dimensionamiento del efecto en dinero.
+
+### 1.2 Variante hacia arriba
+
+No hay.
+
+## 2. Datos y recursos no reveladores
+
+| Recurso | Qué es | Contenido | Disponibilidad | Fase que alimenta | Fuente |
+|---|---|---|---|---|---|
+| R1 | Periodo de espera legal, incluido en el enunciado | La ley exige un periodo de espera de 30 días antes de imponer aranceles. | de_entrada | P1-MRS | noticia, párrafo 62 |
+| R2 | Arancel que paga el queso canadiense, incluido en el enunciado | El queso exportado desde Canadá a una empresa estadounidense paga un arancel de 50%. | de_entrada | P1-MRS | noticia, párrafo 53 |
+| R3 | Escala de los bienes canadienses gravados, incluida en el enunciado | Los bienes canadienses gravados valen aproximadamente 20 mil millones de dólares estadounidenses. | de_entrada | P1-MRS | noticia, párrafo 49 |
+| R4 | Ficha de almacenamiento y vida útil del queso del escenario | Supuesto del escenario: los quesos duros maduran y duran mucho más que los frescos. Guardar queso refrigerado cuesta por cantidad y por tiempo, y la bodega tiene un límite de espacio. Si el grupo pregunta por un tipo de queso, un costo o un plazo concretos, la bodega entrega una estimación de rango. | a_solicitud | P2-RM | supuesto del escenario |
+| R5 | Ficha de la demanda de los clientes de la importadora | Supuesto del escenario: los pedidos de supermercados y restaurantes varían por estación y por fiestas, y un cliente no compra mucho más solo porque haya más stock. El grupo puede pedir el patrón mensual de pedidos de un año típico de esta importadora, como orden de magnitud. | a_solicitud | P2-RM | supuesto del escenario |
+| R6 | Tarjeta de contraste: series mensuales de importaciones | Hay series mensuales de importaciones de queso desde Canadá en las estadísticas de comercio exterior de la Oficina del Censo de EE. UU. El grupo debe indicar qué meses comparar (por ejemplo, alrededor de un anuncio de aranceles anterior) con lo que predijo su modelo. Se entrega solo después de que el grupo haya definido su estrategia. | a_solicitud | P6-VAL | otra fuente: U.S. Census Bureau, estadísticas de comercio exterior de Estados Unidos (importaciones mensuales por producto y país de origen) |
+| R7 | Ficha sobre el peso del queso y de las importadoras en el comercio gravado | Supuesto del escenario: el queso es solo una parte de los bienes canadienses gravados, junto a muchos otros productos, y hay muchas importadoras de lácteos de tamaños muy distintos. Si el grupo pide una estimación de qué fracción del valor gravado corresponde a queso, o de cuántas importadoras comparables hay, se entrega solo un orden de magnitud. No se aclara cuánto tiempo abarca el valor total gravado: el grupo debe decidir cómo interpretarlo. | a_solicitud | P5-INT | supuesto del escenario |
+
+Los recursos `de_entrada` están incorporados en el enunciado. Ningún recurso contiene el modelo, la regla ni la estructura de la solución.
+
+## 3. Mapa a priori del ciclo
+
+| Fase | Decisión o actividad esperable | Evidencia observable | Bloqueo probable |
+|---|---|---|---|
+| P1-MRS Comprender | Distinguir lo que informa la noticia (arancel ya vigente, demanda judicial, periodo de espera) del escenario hipotético de la importadora, e identificar qué cambia al terminar el periodo de espera, qué costos compiten (arancel evitado frente a almacenamiento y pérdida) y que el periodo es una ventana de decisión. | Línea de tiempo con compras, inventario y demanda por mes, nota que separa hechos de la noticia y supuestos del escenario, y lista de datos pedidos. | B12 |
+| P2-RM Simplificar | Simplificar: horizonte, un queso, costo de bodega proporcional al stock, pérdida como fracción mensual, demanda estimada por mes, capacidad máxima; decidir si el valor total gravado se interpreta como anual y qué fracción es queso. | Tabla de variables y supuestos escrita antes de calcular. | B23 |
+| P3-MM Matematizar | Plantear la ecuación de inventario mes a mes y la función de costo total con arancel desde el mes de término del periodo, con restricción de capacidad y no negatividad; plantear cómo se suman los planes de muchas importadoras. | Recurrencia del inventario, función objetivo, restricciones y expresión del efecto agregado. | B34 |
+| P4-WM Trabajar | Resolver el costo mínimo por programación lineal, programación dinámica o planilla; obtener la regla de cuántos meses conviene adelantar y calcular el volumen agregado adelantado. | Calendario óptimo de compras e inventario, costo total frente a la política sin adelantar y cálculo del monto agregado. | B45 |
+| P5-INT Interpretar | Interpretar el plan en términos de negocio: cuánto adelantar, cuándo volver a comprar normal y cómo cambia el plan si el queso se echa a perder más rápido o la bodega es chica; interpretar el orden de magnitud del efecto en dinero para el sector. | Recomendación escrita con las condiciones que la hacen cambiar y rango del efecto agregado con sus supuestos. | B56 |
+| P6-VAL Validar | Comparar con series reales de importaciones alrededor de un anuncio de aranceles anterior: el modelo predice un salto antes y una caída después; ver si calza en tamaño y forma y qué supuesto explica las diferencias. | Gráfico predicho vs. observado y lista de supuestos modificados. | B67 |
+| P7-EXP Exponer | Comunicar el plan, la regla de decisión y la discusión sobre qué pasa cuando todas las empresas adelantan compras, dejando claro qué es dato de la noticia y qué es escenario. | Informe corto con calendario de compras, gráfico de inventario, tabla de sensibilidad y estimación agregada. | — |
+
+## 4. Espacio de soluciones
+
+> Para docentes, evaluador y simulador-codificador; **no** se entrega a estudiantes.
+
+### Supuestos necesarios
+
+- Precio de compra unitario y costo de almacenamiento por unidad y por mes (a estimar o solicitar sin cifra).
+- Fracción mensual de queso que se pierde, según tipo.
+- Capacidad máxima de la bodega.
+- Patrón de demanda mensual de los clientes durante el horizonte.
+- El arancel se aplica sobre las compras que ingresan después del periodo de espera; el stock ya comprado no lo paga.
+- El arancel anunciado es un escenario hipotético: en la noticia el queso ya paga el arancel de 50%, y el grupo debe decidir cómo tratar esa diferencia.
+- El arancel no se devuelve (se ignora el juicio) o se modela aparte, por ejemplo con una probabilidad de devolución.
+- El horizonte considerado y si el precio de venta se ajusta o no.
+- Para el efecto agregado: cómo interpretar el valor total gravado (periodo que abarca), qué fracción corresponde a queso y cuántas importadoras comparables adelantan compras.
+
+### Solución de referencia
+
+1) Definir meses k=0,1,...,N; compras x_k, inventario I_k, demanda d_k. 2) Dinámica: I_{k+1}=(1-s)(I_k+x_k-d_k), con 0<=I_k<=C y x_k>=0, s fracción perdida. 3) Costo total: suma de p·x_k·(1+t·1[k>=m]) + h·I_k, con m el mes en que rige el arancel. 4) Regla marginal: guardar una unidad comprada antes de m durante n meses cuesta aproximadamente n(h+s·p) y evita t·p. Conviene adelantar hasta n*=floor(t·p/(h+s·p)). 5) Resolver por programación lineal (planilla con Solver) o por programación dinámica hacia atrás. 6) Obtener el calendario óptimo: durante la ventana comprar lo necesario para cubrir la demanda de los siguientes n* meses, hasta llenar la capacidad C. 7) Sensibilidad en s, h, C y d_k. 8) Efecto agregado: si V es el valor gravado total y f la fracción que es queso, las compras adelantadas del sector rondan f·V·(n*/12) si V se interpreta como anual, acotadas por la capacidad total de bodega. Con muchas firmas haciendo lo mismo la demanda de importaciones sube durante la ventana y cae después, lo que encarece la bodega y reduce el beneficio de adelantar.
+
+**Resultado.** Con el precio normalizado a uno, t igual a cinco décimas y h+s·p igual a una décima por mes, n* es cinco meses. La importadora debería adelantar compras para cubrir cinco meses de demanda (si la capacidad lo permite) y luego volver a comprar según demanda, pagando el arancel. Si la bodega es chica, el límite es C y el beneficio de adelantar baja. Si el queso se pierde rápido, adelantar deja de convenir. A nivel de sector, se espera un aumento de las importaciones antes de que rija el arancel y una caída después. Como ilustración, con una fracción de queso de un uno por ciento del valor gravado interpretado como anual, el adelanto agregado sería del orden de decenas de millones de dólares.
+
+**Rango aceptable.** El horizonte óptimo de adelanto va de pocas semanas, con queso fresco o bodega cara, a varios meses, con queso duro y bodega barata. Se acepta cualquier plan coherente con supuestos explícitos, restricciones respetadas y sensibilidad informal. Para el sector se acepta cualquier estimación de orden de magnitud con fracción de queso, periodo del valor total y número de firmas justificados, que prediga adelanto seguido de caída, con tamaño dependiente de capacidad y vida útil.
+
+### Rutas
+
+| Ruta | Nombre | Nivel | Modelo | Resultado |
+|---|---|---|---|---|
+| R1 | Punto de equilibrio por unidad | S2 | Comparar el ahorro por unidad al evitar el arancel con el costo de guardarla n meses (almacenamiento más pérdida); hallar el n en que se igualan. | Hay un número máximo de meses de adelanto, n*, que depende de t, h y s. |
+| R2 | Programación lineal del plan de compras | U | Minimizar el costo total sujeto a la dinámica del inventario, capacidad y no negatividad; resolver con planilla o con software. | Calendario de compras que llena la bodega durante la ventana hasta cubrir n* meses y compra según demanda después. |
+| R3 | Programación dinámica hacia atrás | U | Función de valor V_k(I) con costo mínimo restante desde el mes k con inventario I; recurrencia hacia atrás con demanda variable. | Política óptima por mes y nivel de inventario; coincide con R2 y permite demanda estocástica. |
+| R4 | Modelo agregado de muchas importadoras con dimensionamiento | U | Suma de los planes individuales con costo de bodega creciente en el uso de capacidad total; el valor gravado total se reparte en fracción de queso y se convierte a compras mensuales para simular importaciones del sector. | Pico de importaciones en la ventana y valle posterior, con menor ahorro por unidad que el modelo individual y una estimación en dinero del adelanto agregado. |
+
+### Modelo inadecuado (RX)
+
+Comprar durante la ventana todo el queso que quepa en la bodega, o aplicar el arancel de 50% a todas las compras del horizonte, ignora que guardar cuesta dinero y que parte del queso se echa a perder, por lo que adelantar sin límite supera el ahorro del arancel evitado. Tampoco distingue entre producto que paga arancel y el que no, ni considera que la demanda limita cuánto se vende. Por último, tomar el valor gravado total como compras adelantadas del queso sobrestima el efecto del sector.
+
+### Evidencia de validación (independiente del modelo)
+
+Series mensuales de importaciones de queso desde Canadá en las estadísticas de comercio exterior de la Oficina del Censo de EE. UU., alrededor de un anuncio de aranceles anterior. El grupo contrasta si su modelo predice correctamente el salto de importaciones antes del arancel, la caída posterior y el orden de magnitud del cambio, con datos que no usó para construirlo.
+
+## 5. Rúbrica aplicada (RUB01)
+
+| # | Criterio | Puntaje | Justificación | Mejora mínima si < 2 |
+|---|---|---|---|---|
+| 1 | genuino | 2 | La importadora tiene una necesidad real: decidir cuánto adelantar compras. No se entrega ninguna regla, fórmula ni modelo de inventario listo para aplicar. | — |
+| 2 | abierta | 2 | La pregunta no prescribe método. Admite varios modelos defendibles, desde una comparación simple de costos hasta modelos dinámicos de inventario, y ninguna instrucción posterior encauza la ruta. | — |
+| 3 | decisiones | 2 | Para resolver hay que decidir qué tipo de queso considerar, suponer costos de almacenamiento, merma y demanda, y solicitar información (R4, R5, R7). Todo esto es exigencia sustantiva de supuestos y estimación. | — |
+| 4 | realismo | 2 | Adelantar compras ante un arancel anunciado es una práctica comercial real y plausible. El escenario, aunque hipotético, no está forzado para insertar un cálculo. | — |
+| 5 | autenticidad | 2 | Los datos de la noticia (arancel de 50%, espera de 30 días, 20 mil millones) son parámetros centrales del modelo y de la estimación agregada. Además, R6 aporta series reales del Censo; el tema y los datos auténticos están integrados sustantivamente. | — |
+| 6 | contexto | 2 | Las restricciones de espacio, la vida útil y la demanda variable condicionan el modelo. También son necesarias para interpretar y juzgar si la estrategia es viable. | — |
+| 7 | ciclo | 2 | Responder obliga a comprender la situación, simplificar (tipo de queso, horizonte), matematizar costos y restricciones, calcular, e interpretar y validar la estrategia. El enunciado no deja ninguna fase hecha. | — |
+| 8 | validacion | 2 | R6 ofrece evidencia independiente, no usada en la construcción del modelo, para contrastar lo predicho con datos reales alrededor de un anuncio de aranceles anterior. | — |
+| 9 | nivel | 2 | El contexto es comprensible para universitarios. La matemática requerida (optimización con restricciones, modelos dinámicos discretos, estimación agregada) corresponde a las herramientas esperables del nivel U en MAR03. | — |
+| 10 | autodiferenciacion | 2 | Se puede empezar comparando el costo de almacenar contra el ahorro del arancel con aritmética simple. La tarea admite soluciones más sofisticadas: inventario dinámico multiperiodo, demanda estacional, merma por tipo de queso o sensibilidad. | — |
+| 11 | fecundidad | 2 | La tarea abre el paso de lo individual a lo agregado. Permite comparar estrategias y supuestos, y discutir límites del modelo frente a los datos del Censo. | — |
+| 12 | recursos | 2 | La información necesaria se obtiene a solicitud, en rangos u órdenes de magnitud, sin revelar el modelo. El contraste se entrega solo después de definir la estrategia, y la ambigüedad temporal de R7 es una decisión deliberada para el grupo. | — |
+| | **Total** | **24/24** | | |
