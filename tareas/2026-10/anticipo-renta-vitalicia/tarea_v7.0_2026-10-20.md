@@ -1,0 +1,162 @@
+# Anulado el método: ¿cómo descontar el adelanto de una renta vitalicia?
+
+Tarea `2026-10-anticipo-renta-vitalicia-v7` · versión 7 · 2026-10-20 · nivel U · 2 sesiones de 90 min. Licencia CC BY-NC-SA 4.0. Generado desde `tarea` (JSON, fuente de verdad).
+
+```yaml frontmatter
+id: 2026-10-anticipo-renta-vitalicia-v7
+titulo: 'Anulado el método: ¿cómo descontar el adelanto de una renta vitalicia?'
+estado: verificada
+version: 7
+fecha: '2026-10-20'
+noticia:
+  noticia_id: 2026-10-19-ciper-tramitan-expulsiones-de-extranjeros-detenidos-en
+  medio: CIPER Chile
+  titulo: Tramitan expulsiones de extranjeros detenidos en aniversario del estallido; Suprema da la razón a aseguradoras por rentas vitalicias del tercer …
+  fecha: '2026-10-19'
+  url: https://www.ciperchile.cl/2026/10/19/radar-19-10-26/?utm_source=rss&utm_medium=rss&utm_campaign=radar-19-10-26
+  resumen_propio: Resumen diario de CIPER que reúne medidas migratorias tras detenciones en una manifestación, un fallo de la Suprema sobre anticipos de pensiones del tercer retiro, una formalización por fraude al fisco contra un alcalde y la postergación de una decisión sobre un juez.
+  cifras_usadas:
+  - valor: 10%
+    unidad: porcentaje de la renta vitalicia
+    que_es: tope del adelanto de las rentas vitalicias fijado por la ley del tercer retiro
+    localizador:
+      fuente: noticia
+      ubicacion: párrafos 31 y 32
+nivel_principal: U
+variantes:
+  abajo: S
+  arriba: null
+area: economia
+contenidos_matematicos:
+- probabilidad de supervivencia
+- valor presente y series
+- modelos dinámicos discretos
+- simulación
+- sensibilidad
+tiempo_estimado: 2 sesiones de 90 min
+rubrica_rub01:
+  total: 24
+  por_criterio:
+    genuino: 2
+    abierta: 2
+    decisiones: 2
+    realismo: 2
+    autenticidad: 2
+    contexto: 2
+    ciclo: 2
+    validacion: 2
+    nivel: 2
+    autodiferenciacion: 2
+    fecundidad: 2
+    recursos: 2
+rubrica_rub02:
+  P: null
+  S: null
+  U: null
+modelo_y_prompt:
+  diseñador: claude-sonnet-5-5
+  version_prompt: '1.1'
+  version_rubrica: '4.0'
+```
+
+## 1. Enunciado para estudiantes (nivel principal)
+
+```text enunciado_es
+Una noticia de CIPER Chile cuenta que la Corte Suprema declaró ilegal un oficio de la CMF, el regulador financiero. Ese oficio fijaba cómo calcular y pagar el adelanto que, por la ley del tercer retiro de fondos de pensiones, las aseguradoras debían dar a quienes tienen renta vitalicia, una pensión que se paga cada mes mientras la persona viva. La ley obligaba a adelantar hasta 10% de la renta vitalicia, monto que se descontaría de los pagos futuros. La Corte no se pronunció sobre compensaciones a las aseguradoras ni sobre los efectos para los pensionados, así que queda abierta la forma de descontar. Imaginen que asesoran a una aseguradora y a una persona recién pensionada que recibió el adelanto máximo. La compañía no quiere perder dinero en promedio, pero tampoco cobrar de más. ¿Qué regla propondrían para descontar el adelanto de la pensión mensual, cuánto y por cuánto tiempo, y qué tan firme es esa regla? Pueden pedir información adicional.
+```
+
+```text foto_descripcion
+Ícono de una persona mayor con una libreta de pensión y, al lado, una balanza con una moneda en cada plato.
+```
+
+### 1.1 Variante hacia abajo (tramo S2)
+
+Se entrega una esperanza de vida aproximada para la edad de la persona y una tasa de interés única, y se pide una regla para un solo plazo de recuperación. No se exige modelar la incertidumbre de la vida individual, solo promedios. La validación compara el factor que da el modelo con el que implican algunas ofertas del certificado anonimizado de R4 (prima dividida por pensión ofrecida) para esa edad; si solo hay estadísticas de tasas de venta, el grupo compara la tasa que usó con la tasa de venta publicada.
+
+### 1.2 Variante hacia arriba
+
+No hay.
+
+## 2. Datos y recursos no reveladores
+
+| Recurso | Qué es | Contenido | Disponibilidad | Fase que alimenta | Fuente |
+|---|---|---|---|---|---|
+| R1 | Hechos de la ley sobre el adelanto, escritos también en el enunciado. | La ley del tercer retiro obligó a las aseguradoras a adelantar hasta 10% de las rentas vitalicias, monto que se descontaría de los pagos futuros. | de_entrada | P1-MRS | noticia, párrafos 31 y 32 |
+| R2 | Tabla de mortalidad de personas pensionadas por renta vitalicia, por edad y sexo, publicada por el regulador. | Archivo con las probabilidades de fallecer a cada edad para mujeres y hombres pensionados por renta vitalicia. El equipo docente lo entrega cuando el grupo lo pide; no trae ninguna fórmula ni ejemplo de uso. | a_solicitud | P2-RM | otra fuente: Comisión para el Mercado Financiero (CMF) de Chile, tablas de mortalidad de rentistas vitalicios |
+| R3 | Serie de tasas de interés de largo plazo en instrumentos reajustables, como referencia para el valor del dinero en el tiempo. | Serie histórica, con fechas, de tasas de interés de largo plazo en instrumentos reajustables. No indica cuál tasa conviene usar ni cómo incorporarla al cálculo. | a_solicitud | P2-RM | otra fuente: Banco Central de Chile, Base de Datos Estadísticos, tasas de instrumentos reajustables |
+| R4 | Información real del mercado de rentas vitalicias para contrastar la regla del grupo después de haberla propuesto. | Los certificados de ofertas del SCOMP son individuales de cada afiliado y no existe un archivo público con ellos. Por eso el equipo docente entrega, solo después de que el grupo presente su regla, un certificado de ofertas anonimizado (sin nombre ni RUT) que informa, para cada oferta, la prima (el saldo que se traspasa a la aseguradora), la edad y el sexo de la persona pensionada y la pensión mensual ofrecida. Si el equipo docente no dispone de un certificado, entrega en su lugar las estadísticas de tasas de venta de rentas vitalicias que publica la Superintendencia de Pensiones. En ambos casos son datos reales de aseguradoras; el material no trae ninguna fórmula ni indica cómo se calcularon las pensiones. | a_solicitud | P6-VAL | otra fuente: Superintendencia de Pensiones de Chile, certificado de ofertas del Sistema de Consultas y Ofertas de Montos de Pensión (SCOMP) y estadísticas de rentas vitalicias (tasas de venta) |
+
+Los recursos `de_entrada` están incorporados en el enunciado. Ningún recurso contiene el modelo, la regla ni la estructura de la solución.
+
+## 3. Mapa a priori del ciclo
+
+| Fase | Decisión o actividad esperable | Evidencia observable | Bloqueo probable |
+|---|---|---|---|
+| P1-MRS Comprender | Distinguir qué fijó la ley (adelantar hasta 10% de la renta vitalicia, descontable de pagos futuros), qué hacía el oficio anulado y qué quedó abierto tras el fallo. Decidir qué significa 10% de la renta vitalicia (de la pensión mensual, de la anual o del valor total esperado) y quién asume el riesgo. | Escrito del grupo que separa ley, oficio anulado y vacío abierto, con la interpretación elegida del 10%, la incógnita (descuento y plazo) y la lista de quién gana o pierde. | B12 |
+| P2-RM Simplificar | Elegir edad y sexo de la persona, tabla de mortalidad, tasa de interés y si el descuento es constante en el tiempo. | Lista de supuestos con justificación y solicitud de la tabla de mortalidad y de las tasas. | B23 |
+| P3-MM Matematizar | Plantear una ecuación de equilibrio entre el adelanto y el valor esperado, descontado, de lo que se recupera, con probabilidades de supervivencia mensuales. | Expresión escrita o planilla con supervivencia, factor de descuento y descuento mensual como incógnita. | B34 |
+| P4-WM Trabajar | Calcular el descuento necesario para varios plazos y edades en planilla o código, y opcionalmente simular muchas vidas. | Tabla o gráfico de descuento versus plazo y edad, con el procedimiento reproducible. | B45 |
+| P5-INT Interpretar | Interpretar que plazos cortos exigen descuentos altos y que la edad y la tasa cambian el resultado, y decidir qué regla recomendar a falta de un método oficial vigente. | Recomendación redactada en términos del contexto: descuento y plazo para cada perfil de pensionado. | B56 |
+| P6-VAL Validar | Pedir y contrastar con los datos reales de R4, que no se usaron para construir la regla. Con certificado anonimizado: comparar el factor de anualidad vitalicia del modelo con el factor implícito en las ofertas (prima dividida por pensión ofrecida) y explicar las diferencias (costos, margen, tabla, tasa). Con solo estadísticas de tasas de venta: comparar la tasa usada con la publicada, recalcular el factor y el descuento y ver cuánto cambia la regla. En ambos casos, analizar la sensibilidad a la tasa y a la mortalidad. | Tabla con el factor del modelo y el factor implícito en las ofertas para cada edad y sexo (o, en su defecto, la comparación de tasas y el descuento recalculado), con una explicación de las diferencias y una versión del cálculo con otra tasa. | B56 |
+| P7-EXP Exponer | Presentar la regla, sus límites y los supuestos que más cambian el resultado ante personas no expertas, aclarando que es una propuesta del grupo y no el método anulado. | Informe o exposición con regla, gráfico de sensibilidad, resultado del contraste con datos reales del mercado y lista de límites. | B67 |
+
+## 4. Espacio de soluciones
+
+> Para docentes, evaluador y simulador-codificador; **no** se entrega a estudiantes.
+
+### Supuestos necesarios
+
+- El oficio de la CMF fue declarado ilegal y no hay método oficial vigente en la situación planteada: la regla es una propuesta del grupo, no una réplica del oficio. El tope del 10% lo fijó la ley del tercer retiro, no el oficio.
+- Interpretación principal: el adelanto es 10% del valor actual esperado de la renta vitalicia. El grupo debe explicitarla y puede compararla con la alternativa de 10% de la pensión de un año.
+- Edad y sexo representativos de una persona recién pensionada.
+- Tasa de interés real constante en el horizonte.
+- Tabla de mortalidad de rentistas aplicable a toda la cohorte, sin heterogeneidad individual.
+- El descuento mensual es una fracción constante de la pensión durante el plazo, y la renta se paga hasta el fallecimiento.
+- Se ignoran costos administrativos, comisiones, impuestos y eventuales compensaciones a las aseguradoras en el modelo base.
+- Para la ruta sin mortalidad se fija un horizonte de vida cierto (por ejemplo, la esperanza de vida).
+- Las ofertas del SCOMP son certificados individuales de cada afiliado y no existe un archivo público con ellas: el equipo docente usa un certificado anonimizado o, si no dispone de uno, las estadísticas de tasas de venta de rentas vitalicias de la Superintendencia de Pensiones.
+- Las ofertas incorporan costos y márgenes de las aseguradoras y su propia tabla y tasa de cálculo. El factor implícito en las ofertas sirve para contrastar el orden de magnitud y las tendencias por edad y sexo, no como valor exacto que el modelo deba reproducir.
+- Si solo hay estadísticas de tasas de venta, la validación contrasta la tasa y el factor resultante, no ofertas individuales por edad y sexo, y el grupo debe señalar esa limitación.
+
+### Solución de referencia
+
+1) Sea P la pensión mensual, v el factor de descuento mensual y s(k) la probabilidad de que la persona viva k meses después. 2) El valor esperado descontado de la renta es V = P·a_vit, con a_vit = suma de v^k·s(k) sobre todos los meses. 3) Con la interpretación principal, el adelanto es A = 0,10·V. 4) Si se descuenta una fracción r de la pensión durante n meses, el valor esperado recuperado es r·P·a_temp(n), con a_temp(n) = suma de v^k·s(k) desde k=1 hasta n. 5) Equilibrio: r = 0,10·a_vit/a_temp(n). Como a_temp(n) < a_vit para todo plazo finito, r > 0,10; solo si el descuento fuera de por vida r = 0,10, sin importar la mortalidad. 6) r crece al acortar el plazo y con la edad. 7) Calcular con la tabla para distintos n, edades y tasas. 8) Opcional: simular muchas vidas para obtener la distribución de ganancia o pérdida de la aseguradora. 9) Contraste con la ruta simple de horizonte fijo L sin mortalidad: r = 0,10·a(L)/a(n), con anualidades ciertas. Por ejemplo, con L de veinte años y tres por ciento real anual, r es cerca de 17% con plazo de diez años y cerca de 32% con plazo de cinco. Esa ruta supone recuperación cierta y no ve el riesgo de que la persona fallezca antes de terminar de pagar. 10) Como el oficio fue anulado, la regla resultante es una propuesta fundamentada del grupo; se discute qué ocurre con la compensación a la aseguradora, que la Corte no resolvió. 11) Validación: el docente obtiene datos reales del mercado; entrega un certificado de ofertas anonimizado o, si no dispone de uno, las estadísticas de tasas de venta de la Superintendencia de Pensiones. Con el certificado se calcula, para cada edad y sexo, el factor implícito prima/pensión ofrecida y se compara con a_vit del modelo: debería ser del mismo orden, decrecer con la edad y mostrar la diferencia por sexo; la brecha restante se atribuye a costos, margen, tabla y tasa de las aseguradoras y se verifica repitiendo el cálculo con otra tasa. Con las estadísticas de tasas de venta se compara la tasa del grupo con la publicada, se recalcula a_vit y r y se mide cuánto cambia la regla. 12) Contraste del modelo inadecuado: repartir sin interés ni mortalidad da r = 0,10·L/n (20% a diez años y 40% a cinco con L de veinte años), mayor que el r descontado.
+
+**Resultado.** Regla: r = 0,10·a_vit/a_temp(n), con r mayor que 0,10 y creciente al acortar el plazo. Para una persona de edad cercana a la de jubilación, tasa real moderada y plazo de unos diez años, el orden de magnitud es un descuento de entre quince y veinte por ciento de la pensión; para plazo de unos cinco años, cerca de un tercio. La ruta de horizonte fijo da valores del mismo orden (cerca de 17% y 32% en el ejemplo). Contraste: el factor a_vit del modelo es del mismo orden y con la misma tendencia por edad y sexo que el factor prima/pensión del certificado anonimizado; las ofertas pueden quedar algo por debajo o por encima según margen, costos y tasa usada. El modelo que reparte sin descontar ni considerar mortalidad produce descuentos mayores que los del modelo con descuento.
+
+**Rango aceptable.** Con la interpretación principal del 10% (valor actual esperado de la renta): descuento mensual entre diez y cuarenta por ciento según plazo, edad, sexo y tasa, siempre mayor que 10% si el plazo es finito. Con la interpretación alternativa (10% de la pensión de un año): descuento del orden de uno a dos por ciento para plazos de varios años. En la validación se acepta que el factor del modelo difiera del implícito en las ofertas (o que la tasa del grupo difiera de la tasa de venta publicada) siempre que el grupo explique la diferencia con supuestos explícitos y muestre su sensibilidad a la tasa y a la mortalidad. Se acepta cualquier regla coherente con supuestos explícitos que reconozca el valor del dinero en el tiempo; reconocer la mortalidad distingue las rutas de nivel U.
+
+### Rutas
+
+| Ruta | Nombre | Nivel | Modelo | Resultado |
+|---|---|---|---|---|
+| R1 | Horizonte fijo sin mortalidad | S2 | Se supone que la persona vive un número fijo de años L (por ejemplo, la esperanza de vida) y se igualan sumas de pagos descontados con tasa constante, sin probabilidades de supervivencia: r = 0,10·a(L)/a(n), con a(·) anualidad cierta. | r mayor que 0,10 cuando el plazo n es menor que L: con L de veinte años y tres por ciento real, cerca de 17% con plazo de diez años y cerca de 32% con plazo de cinco. Trata la recuperación como cierta: no ve el riesgo de fallecer antes de terminar de pagar ni diferencia por edad o sexo. |
+| R2 | Valor actuarial con tabla de mortalidad | U | Modelo dinámico discreto mensual con supervivencia s(k) tomada de la tabla y descuento v^k; ecuación de equilibrio resuelta para r dado n, o para n dado r. | r = 0,10·a_vit/a_temp(n); tabla de descuentos por edad y plazo, del mismo orden que R1 pero ajustada por mortalidad. |
+| R3 | Simulación de vidas y riesgo de la aseguradora | U | Monte Carlo: se simula la edad de fallecimiento con la tabla, se calcula la ganancia o pérdida de cada trayectoria y se busca r que anule la media; se estudia la dispersión. | Mismo r que R2 en promedio, más la distribución de ganancias y pérdidas y la probabilidad de pérdida por fallecimiento temprano. |
+| R4 | Mortalidad paramétrica ajustada | U | Se ajusta una ley de mortalidad paramétrica (por ejemplo Gompertz) a los datos de la tabla y se calcula analíticamente la anualidad temporal; se compara la sensibilidad a los parámetros. | r similar a R2 con una fórmula cerrada aproximada; la diferencia muestra el error del ajuste en edades altas. |
+
+### Modelo inadecuado (RX)
+
+Repartir el adelanto en cuotas iguales durante n meses sin interés ni mortalidad (comparando la renta total esperada sin descontar con n pensiones) da r = 0,10·L/n. Con L de veinte años, eso es 20% a diez años y 40% a cinco, que sobrecobra frente al cálculo con descuento (cerca de 17% y 32%). Ignora que los pagos lejanos valen menos hoy y que la recuperación se interrumpe si la persona fallece antes del plazo; por eso cobra de más y no iguala el valor esperado, y el error cambia con la edad. En la validación, además, sobreestima el factor de anualidad que implican las ofertas reales: sumar las pensiones sin descontarlas da un valor mayor que el valor esperado descontado.
+
+### Evidencia de validación (independiente del modelo)
+
+Datos reales del mercado de rentas vitalicias que el grupo recibe solo después de proponer su regla y que no usó para construirla. Las ofertas del SCOMP son certificados individuales de cada afiliado y no un archivo público, por lo que el equipo docente entrega un certificado de ofertas anonimizado (prima, edad, sexo y pensión mensual ofrecida) o, si no dispone de uno, las estadísticas de tasas de venta de rentas vitalicias que publica la Superintendencia de Pensiones. Con el certificado, el grupo calcula el factor implícito prima/pensión mensual ofrecida y lo compara con el factor de anualidad vitalicia de su modelo para la misma edad y sexo; revisa si coinciden el orden de magnitud y las tendencias, explica la brecha restante (costos, margen, tabla, tasa) y repite el cálculo con otra tasa o tabla para ver si la brecha se cierra. Con las estadísticas de tasas de venta, compara la tasa que usó con la publicada, recalcula el factor y el descuento y mide cuánto cambia su regla. Si el modelo no se acerca a los datos reales, el grupo revisa sus supuestos de P2 y P3 y no solo el cálculo.
+
+## 5. Rúbrica aplicada (RUB01)
+
+| # | Criterio | Puntaje | Justificación | Mejora mínima si < 2 |
+|---|---|---|---|---|
+| 1 | genuino | 2 | La situación plantea una necesidad real: diseñar la regla de descuento tras la anulación del método oficial. No se entrega ninguna fórmula ni modelo, y los recursos declaran explícitamente que no traen fórmulas. | — |
+| 2 | abierta | 2 | La pregunta admite varios modelos defendibles, como una rebaja vitalicia, una rebaja por plazo fijo o un descuento con o sin mortalidad e interés. Ninguna instrucción posterior encauza el procedimiento. | — |
+| 3 | decisiones | 2 | Resolver exige solicitar la tabla de mortalidad y las tasas, y suponer la edad, el sexo y el monto de la pensión. También obliga a elegir la tasa de descuento y a interpretar qué significa «no perder dinero en promedio». | — |
+| 4 | realismo | 2 | La situación es un hecho real y vigente del sistema de pensiones chileno. | — |
+| 5 | autenticidad | 2 | La noticia es el núcleo de la tarea. Se suman datos reales no creados para enseñar: la tabla de mortalidad del regulador, una serie de tasas y certificados de ofertas de aseguradoras. | — |
+| 6 | contexto | 2 | El contexto condiciona las decisiones de modelación: el riesgo de fallecimiento, el valor del dinero en el tiempo y la equidad entre ambas partes. También es necesario para juzgar qué tan firme es la regla. | — |
+| 7 | ciclo | 2 | Responder obliga a comprender el mecanismo, simplificar con supuestos, matematizar un valor presente actuarial, calcular, interpretar la regla y validarla. Ninguna fase queda hecha por el enunciado. | — |
+| 8 | validacion | 2 | El certificado de ofertas, con la prima, la edad, el sexo y la pensión ofrecida, es evidencia real independiente que no se usó para construir el modelo. Con él se puede contrastar el factor de renta implícito en la regla. | — |
+| 9 | nivel | 2 | El contexto y el lenguaje se explican y son comprensibles para el nivel U. La matemática requerida (probabilidad, esperanza, descuento en el tiempo y modelos discretos) está entre las herramientas esperables de ese nivel según MAR03. | — |
+| 10 | autodiferenciacion | 2 | Hay una entrada elemental: repartir el adelanto en cuotas, sin interés ni mortalidad. La tarea admite además soluciones mucho más sofisticadas, con mortalidad por sexo, tasas de interés y análisis de sensibilidad. | — |
+| 11 | fecundidad | 2 | Las reglas propuestas permiten comparar soluciones y discutir su sensibilidad a la tasa y a la tabla. También abren preguntas sobre la equidad por sexo o edad y sobre los límites del promedio frente al riesgo individual. | — |
+| 12 | recursos | 2 | La información imprescindible (mortalidad, tasas y datos de mercado) puede solicitarse, y lo demás puede suponerse. Ningún material revela el modelo ni indica cómo usar los datos. | — |
+| | **Total** | **24/24** | | |
