@@ -1,0 +1,302 @@
+{
+  "tarea_id": "2026-10-adelantar-compras-queso-v3",
+  "evaluaciones": [
+    {
+      "iteracion": 1,
+      "version_tarea": 3,
+      "fecha": "2026-10-20T21:53:39Z",
+      "modelo": "claude-opus-5-5",
+      "version_prompt": "1.3",
+      "version_rubrica": "4.0",
+      "corridas": [
+        {
+          "n": 1,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La importadora tiene una necesidad real: decidir cuánto adelantar compras. No se entrega ninguna regla, fórmula ni modelo de inventario listo para aplicar.",
+                "cita": "¿Cómo debería organizar sus compras antes y después de que rija el arancel?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe método. Admite varios modelos defendibles, desde una comparación simple de costos hasta modelos dinámicos de inventario, y ninguna instrucción posterior encauza la ruta.",
+                "cita": "¿Cómo debería organizar sus compras antes y después de que rija el arancel? Si todas las importadoras del rubro hicieran lo mismo, ¿qué pasaría con …"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Para resolver hay que decidir qué tipo de queso considerar, suponer costos de almacenamiento, merma y demanda, y solicitar información (R4, R5, R7). Todo esto es exigencia sustantiva de supuestos y estimación.",
+                "cita": "Su bodega refrigerada tiene poco espacio y cuesta dinero, parte del queso se echa a perder y los pedidos de sus clientes cambian de mes …"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Adelantar compras ante un arancel anunciado es una práctica comercial real y plausible. El escenario, aunque hipotético, no está forzado para insertar un cálculo.",
+                "cita": "se anuncia un arancel de 50% que regirá cuando termine un periodo de espera de 30 días"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los datos de la noticia (arancel de 50%, espera de 30 días, 20 mil millones) son parámetros centrales del modelo y de la estimación agregada. Además, R6 aporta series reales del Censo; el tema y los datos auténticos están integrados sustantivamente.",
+                "cita": "Según la noticia, el queso exportado desde Canadá paga 50% y los bienes canadienses gravados valen unos 20 mil millones de dólares estadounidenses."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "Las restricciones de espacio, la vida útil y la demanda variable condicionan el modelo. También son necesarias para interpretar y juzgar si la estrategia es viable.",
+                "cita": "Su bodega refrigerada tiene poco espacio y cuesta dinero, parte del queso se echa a perder"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a comprender la situación, simplificar (tipo de queso, horizonte), matematizar costos y restricciones, calcular, e interpretar y validar la estrategia. El enunciado no deja ninguna fase hecha.",
+                "cita": "¿Cómo debería organizar sus compras antes y después de que rija el arancel?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "R6 ofrece evidencia independiente, no usada en la construcción del modelo, para contrastar lo predicho con datos reales alrededor de un anuncio de aranceles anterior.",
+                "cita": "Hay series mensuales de importaciones de queso desde Canadá en las estadísticas de comercio exterior de la Oficina del Censo de EE. UU."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto es comprensible para universitarios. La matemática requerida (optimización con restricciones, modelos dinámicos discretos, estimación agregada) corresponde a las herramientas esperables del nivel U en MAR03.",
+                "cita": "Su bodega refrigerada tiene poco espacio y cuesta dinero, parte del queso se echa a perder y los pedidos de sus clientes cambian de mes …"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Se puede empezar comparando el costo de almacenar contra el ahorro del arancel con aritmética simple. La tarea admite soluciones más sofisticadas: inventario dinámico multiperiodo, demanda estacional, merma por tipo de queso o sensibilidad.",
+                "cita": "¿Cómo debería organizar sus compras antes y después de que rija el arancel?"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "La tarea abre el paso de lo individual a lo agregado. Permite comparar estrategias y supuestos, y discutir límites del modelo frente a los datos del Censo.",
+                "cita": "Si todas las importadoras del rubro hicieran lo mismo, ¿qué pasaría con el comercio del sector y de qué orden de magnitud sería el efecto …"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información necesaria se obtiene a solicitud, en rangos u órdenes de magnitud, sin revelar el modelo. El contraste se entrega solo después de definir la estrategia, y la ambigüedad temporal de R7 es una decisión deliberada para el grupo.",
+                "cita": "Si el grupo pregunta por un tipo de queso, un costo o un plazo concretos, la bodega entrega una estimación de rango."
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgEEKevx5TPqMfanHRAHt",
+            "fecha": "2026-10-20T21:52:43+00:00",
+            "intentos": 1,
+            "costo_usd": 0.116,
+            "avisos": [
+              "cita_recortada_25:abierta",
+              "cita_recortada_25:decisiones",
+              "cita_recortada_25:nivel",
+              "cita_recortada_25:fecundidad"
+            ]
+          }
+        },
+        {
+          "n": 2,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "Plantea una necesidad real de decisión para la importadora y no entrega ninguna regla ni modelo de inventario. Las restricciones (espacio, costo, merma, demanda variable) describen la situación sin prescribir un procedimiento.",
+                "cita": "¿Cómo debería organizar sus compras antes y después de que rija el arancel?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta admite varias estrategias y modelos defendibles, desde una comparación de costos simple hasta una optimización dinámica. Ninguna instrucción posterior encauza hacia una ruta única.",
+                "cita": "¿Cómo debería organizar sus compras antes y después de que rija el arancel?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige suponer costos, capacidad, merma y demanda, además de solicitar información (R4, R5, R7). También hay que decidir cómo interpretar el periodo que abarcan los 20 mil millones y estimar órdenes de magnitud.",
+                "cita": "Su bodega refrigerada tiene poco espacio y cuesta dinero, parte del queso se echa a perder y los pedidos de sus clientes cambian de mes …"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "El escenario es hipotético, pero adelantar compras ante un arancel anunciado es una práctica comercial real y claramente plausible fuera de la escuela.",
+                "cita": "se anuncia un arancel de 50% que regirá cuando termine un periodo de espera de 30 días"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los datos de la noticia (arancel, espera de 30 días, valor gravado) son parámetros centrales de ambas preguntas. Se suman series reales de la Oficina del Censo, aunque las fichas R4, R5 y R7 son construidas; hubo una duda leve entre 1 y 2, que se resolvió en 2 porque los datos auténticos sostienen el núcleo de la decisión.",
+                "cita": "Según la noticia, el queso exportado desde Canadá paga 50% y los bienes canadienses gravados valen unos 20 mil millones de dólares estadounidenses."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "La vida útil del queso, el límite de bodega y la estacionalidad de la demanda condicionan las decisiones de modelación. También son necesarios para interpretar y validar la estrategia.",
+                "cita": "un cliente no compra mucho más solo porque haya más stock"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a comprender la situación, simplificar, matematizar un problema de inventario y agregación, calcular e interpretar. La contrastación con R6 exige además validar. Ninguna fase queda hecha por el enunciado.",
+                "cita": "Si todas las importadoras del rubro hicieran lo mismo, ¿qué pasaría con el comercio del sector y de qué orden de magnitud sería el efecto …"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existen datos independientes (series mensuales de importaciones del Censo) que no se usaron para construir el modelo y que se entregan después de definir la estrategia.",
+                "cita": "El grupo debe indicar qué meses comparar (por ejemplo, alrededor de un anuncio de aranceles anterior) con lo que predijo su modelo."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto es comprensible para estudiantes universitarios. La demanda corresponde a optimización con restricciones y modelos dinámicos discretos, que son herramientas esperables en U según MAR03.",
+                "cita": "Su bodega refrigerada tiene poco espacio y cuesta dinero"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Se puede empezar comparando el costo de almacenar contra el 50% de arancel con aritmética simple. La propia tarea admite soluciones mucho más sofisticadas: programación dinámica, demanda estacional, merma por tipo de queso y efectos agregados.",
+                "cita": "¿Cómo debería organizar sus compras antes y después de que rija el arancel?"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "La agregación al sector y el contraste con datos reales abren preguntas nuevas sobre efectos de mercado y límites del modelo. También permiten comparar estrategias distintas entre grupos.",
+                "cita": "Si todas las importadoras del rubro hicieran lo mismo, ¿qué pasaría con el comercio del sector"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información necesaria puede solicitarse como rangos u órdenes de magnitud, sin que las fichas revelen la estrategia ni el modelo. R6 se entrega solo después de definida la estrategia.",
+                "cita": "Si el grupo pregunta por un tipo de queso, un costo o un plazo concretos, la bodega entrega una estimación de rango."
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgEEMTtUxescWPdoYCQa4",
+            "fecha": "2026-10-20T21:53:13+00:00",
+            "intentos": 1,
+            "costo_usd": 0.072466,
+            "avisos": [
+              "cita_recortada_25:decisiones",
+              "cita_recortada_25:ciclo"
+            ]
+          }
+        },
+        {
+          "n": 3,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La importadora tiene una necesidad real de decidir compras ante un arancel inminente. No se entrega ninguna regla ni modelo de inventario para aplicar.",
+                "cita": "¿Cómo debería organizar sus compras antes y después de que rija el arancel?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe procedimiento. Admite varios modelos defendibles (comparación de escenarios, modelo de inventario, optimización con restricciones) sin instrucciones posteriores que encaucen la ruta.",
+                "cita": "¿Cómo debería organizar sus compras antes y después de que rija el arancel? ... Pueden pedir información adicional."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige formular supuestos y estimar sobre costos de almacenamiento, vida útil, capacidad y demanda, y solicitar información pertinente (R4, R5, R7).",
+                "cita": "Su bodega refrigerada tiene poco espacio y cuesta dinero, parte del queso se echa a perder y los pedidos de sus clientes cambian de mes …"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Adelantar compras antes de que rija un arancel es una práctica comercial real. El escenario es hipotético pero claramente plausible fuera de la escuela.",
+                "cita": "una importadora estadounidense compra queso canadiense cada mes y se anuncia un arancel de 50% que regirá cuando termine un periodo de espera de 30 …"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "La noticia citada aporta el arancel, el plazo de espera y la escala del comercio, que son los parámetros centrales del problema. Las series del Censo (R6) añaden datos auténticos, por lo que el componente auténtico está integrado de manera sustantiva.",
+                "cita": "Según la noticia, el queso exportado desde Canadá paga 50% y los bienes canadienses gravados valen unos 20 mil millones de dólares estadounidenses."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "Las restricciones de espacio, deterioro y demanda condicionan el modelo. El contexto también es necesario para interpretar la estrategia y contrastarla con series reales.",
+                "cita": "Guardar queso refrigerado cuesta por cantidad y por tiempo, y la bodega tiene un límite de espacio."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a comprender la situación, simplificar con supuestos, matematizar un problema de compras y almacenamiento, resolverlo e interpretar la estrategia. Ninguna fase viene hecha por el enunciado.",
+                "cita": "¿Cómo debería organizar sus compras antes y después de que rija el arancel?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Las series mensuales de importaciones del Censo son evidencia independiente, no usada en la construcción del modelo, para contrastar lo que este predice.",
+                "cita": "El grupo debe indicar qué meses comparar (por ejemplo, alrededor de un anuncio de aranceles anterior) con lo que predijo su modelo."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto es comprensible para universitarios. La demanda (optimización con restricciones, modelo dinámico discreto, estimación de órdenes de magnitud) corresponde a las herramientas esperables del nivel U.",
+                "cita": "Su bodega refrigerada tiene poco espacio y cuesta dinero"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Se puede entrar comparando el costo de comprar ahora o después con aritmética simple. La tarea admite soluciones mucho más sofisticadas: programación dinámica, demanda estocástica, deterioro y análisis de sensibilidad.",
+                "cita": "¿Cómo debería organizar sus compras antes y después de que rija el arancel?"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "La tarea extiende la decisión individual al efecto agregado. Permite comparar estrategias y discutir los límites del modelo frente a datos reales.",
+                "cita": "Si todas las importadoras del rubro hicieran lo mismo, ¿qué pasaría con el comercio del sector y de qué orden de magnitud sería el efecto …"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información necesaria se obtiene a solicitud, en rangos u órdenes de magnitud, sin revelar el modelo. R6 se entrega solo después de definir la estrategia.",
+                "cita": "Si el grupo pregunta por un tipo de queso, un costo o un plazo concretos, la bodega entrega una estimación de rango."
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgEEPhBFHtVnRJPEAUVZn",
+            "fecha": "2026-10-20T21:53:39+00:00",
+            "intentos": 1,
+            "costo_usd": 0.067606,
+            "avisos": [
+              "cita_no_literal:abierta",
+              "cita_recortada_25:decisiones",
+              "cita_recortada_25:realismo",
+              "cita_recortada_25:fecundidad"
+            ]
+          }
+        }
+      ],
+      "totales": [
+        24,
+        24,
+        24
+      ],
+      "rango_total": 0,
+      "rango_inestable": 4,
+      "evaluacion_inestable": false,
+      "mediana": {
+        "regla": "mediana por criterio (n par: mediana inferior)",
+        "total": 24,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 2
+        },
+        "corrida_fuente": {
+          "genuino": 1,
+          "abierta": 1,
+          "decisiones": 1,
+          "realismo": 1,
+          "autenticidad": 1,
+          "contexto": 1,
+          "ciclo": 1,
+          "validacion": 1,
+          "nivel": 1,
+          "autodiferenciacion": 1,
+          "fecundidad": 1,
+          "recursos": 1
+        }
+      }
+    }
+  ]
+}
