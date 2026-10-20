@@ -42,7 +42,12 @@ BAJO_18 = {"genuino": 1, "abierta": 1, "ciclo": 1, "validacion": 1, "fecundidad"
 
 
 def tarea_base() -> dict:
-    return cargar_ejemplo("tarea")
+    t = cargar_ejemplo("tarea")
+    # verificador v1.1: la fuente del ejemplo del contrato ("informe de la empresa sanitaria") no es concreta
+    for r in t["estudiante"]["recursos_a_solicitud"]:
+        if r["fuente"].startswith("otra fuente"):
+            r["fuente"] = "otra fuente: Superintendencia de Servicios Sanitarios, informe de consumo 2025"
+    return t
 
 
 def candidato_b(t: dict) -> dict:
@@ -147,7 +152,7 @@ def test_ciclo_feliz_hasta_verificada(rutas):
     trazas = _j(CASO_RED / "trazas_resumen.json")
     ilu = _j(RAIZ / "evals" / "casos" / "ilustrador" / "01-embalse-valido.json")["respuestas_modelo"][0]
     resp = (respuestas_simulador(trazas["corridas"]) + _j(CASO_RED / "respuestas_falsas.json")
-            + [ilu, {"cifras": [], "afirmaciones_no_respaldadas": []}])
+            + [ilu, {"cifras": [], "afirmaciones_no_respaldadas": [], "recursos": []}])
     sim = simulador_falso(trazas, CASO_RED / "transcripciones")
     c = nuevo_ciclo(rutas, resp, agentes=C.Agentes(simular=sim))
     reg = c.continuar([TID], revisor=REVISOR)

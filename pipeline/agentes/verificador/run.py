@@ -11,17 +11,21 @@ Uso:
     (sin argumentos usa los ejemplos de contratos/ejemplos/)
 Código de salida: 0 aprobado, 2 rechazado.
 
-`texto_noticia` solo se lee en memoria para la invariante 3; nunca se guarda ni se envía al modelo.
+`texto_noticia` solo se lee en memoria: para la invariante 3 y para extraer los párrafos que citan los
+recursos y las cifras (v1.1). Al modelo solo llegan esos párrafos; el texto completo nunca se envía,
+se guarda ni se cita (> 25 palabras) en el informe.
 """
 from __future__ import annotations
 
 import argparse
 import copy
+import html
 import json
 import re
 import subprocess
 import sys
 import tempfile
+import unicodedata
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -43,7 +47,7 @@ ESQUEMA_SALIDA = json.loads((AQUI / CONFIG["esquema_salida"]).read_text(encoding
 ESQUEMA_MODELO = {
     "type": "object",
     "additionalProperties": False,
-    "required": ["cifras", "afirmaciones_no_respaldadas"],
+    "required": ["cifras", "afirmaciones_no_respaldadas", "recursos"],
     "properties": {
         "cifras": {"type": "array", "items": {
             "type": "object", "additionalProperties": False,
@@ -55,6 +59,13 @@ ESQUEMA_MODELO = {
             "required": ["ubicacion", "afirmacion", "motivo", "severidad"],
             "properties": {"ubicacion": {"type": "string"}, "afirmacion": {"type": "string"},
                            "motivo": {"type": "string"}, "severidad": {"enum": ["critico", "advertencia"]}}}},
+        "recursos": {"type": "array", "items": {
+            "type": "object", "additionalProperties": False,
+            "required": ["id", "juicio", "nota"],
+            "properties": {"id": {"type": "string"},
+                           "juicio": {"enum": ["respaldado", "no_respaldado", "contradicho",
+                                               "plausible", "no_plausible", "no_verificable"]},
+                           "nota": {"type": "string"}}}},
     },
 }
 
@@ -95,11 +106,35 @@ def _iguales(a: float, b: float) -> bool:
     return abs(a - b) <= 1e-9 * max(1.0, abs(a), abs(b))
 
 
+MAX_PALABRAS_CITA = 25  # invariante 3
+_CITA = re.compile(r"«([^»]*)»")
+
+
+def _recortar(texto: str, max_palabras: int = MAX_PALABRAS_CITA, corte: int = 20) -> str:
+    """Si `texto` supera `max_palabras`, lo abrevia a `corte` palabras + « …» (como la cita de títulos)."""
+    pal = texto.split()
+    return texto if len(pal) <= max_palabras else " ".join(pal[:corte]) + " …"
+
+
+def _recortar_citas(desc: str) -> str:
+    """Recorta cada tramo entre « » a ≤ 25 palabras: un hallazgo nunca reproduce la noticia."""
+    return _CITA.sub(lambda m: "«" + _recortar(m.group(1)) + "»", desc)
+
+
+def _sin_literal(texto: str, texto_noticia: str | None) -> str:
+    """Texto del modelo apto para el informe: nunca > 25 palabras consecutivas de la noticia."""
+    texto = _recortar_citas(texto)
+    if texto_noticia and inv.max_palabras_consecutivas_comunes(texto, texto_noticia)[0] > MAX_PALABRAS_CITA:
+        return " ".join(texto.split()[:20]) + " …"
+    return texto
+
+
 class _Informe:
     def __init__(self):
         self.hallazgos: list[dict] = []
 
     def add(self, invariante, severidad, ubicacion, descripcion, origen="codigo"):
+        descripcion = _recortar_citas(descripcion)
         self.hallazgos.append({"invariante": invariante, "severidad": severidad, "ubicacion": ubicacion,
                                "descripcion": descripcion, "origen": origen})
 
@@ -272,8 +307,134 @@ def _cifras(inf, tarea, noticia, nb) -> list[dict]:
     return out
 
 
+# --------------------------------------------------------------------------- recursos (v1.1)
+def _norm(s: str) -> str:
+    s = unicodedata.normalize("NFKD", s or "")
+    return "".join(c for c in s if not unicodedata.combining(c)).lower()
+
+
+_MARCA_SUPUESTO = "supuesto del escenario"
+_RE_PARRAFOS = re.compile(r"parrafos?\s+(\d+(?:\s*(?:-|–|a|y|,|e)\s*\d+)*)")
+_RE_LOC_NOTICIA = re.compile(r"\b(titular|titulo|grafico|tabla|figura|imagen|recuadro|infografia|cifra)\b")
+_RE_GENERICA = re.compile(
+    r"conocimiento (general|comun)|sentido comun|\binternet\b|\bweb\b|fuentes? (publicas?|oficiales|diversas?|varias)"
+    r"|datos (oficiales|publicos|de mercado)|elaboracion propia|estimacion|experiencia|estudios|expertos|literatura"
+    r"|diversas|varias|generica|no especificada|\bn/?a\b")
+_RE_ACRONIMO = re.compile(r"\b[A-ZÁÉÍÓÚÑ]{2,}\b")
+
+
+def _numeros_parrafo(texto_norm: str) -> list[int]:
+    """'párrafo 3' -> [3]; 'párrafos 2-4' -> [2,3,4]; 'párrafos 2 y 5' -> [2,5]."""
+    out: list[int] = []
+    for m in _RE_PARRAFOS.finditer(texto_norm):
+        trozo = m.group(1)
+        if re.search(r"\d\s*(?:-|–|a)\s*\d", trozo) and not re.search(r"[,y]|\be\b", trozo):
+            a, b = (int(x) for x in re.findall(r"\d+", trozo)[:2])
+            out += list(range(a, b + 1)) if 0 < b - a <= 20 else [a, b]
+        else:
+            out += [int(x) for x in re.findall(r"\d+", trozo)]
+    return sorted(set(out))
+
+
+def _otra_fuente_concreta(fuente: str) -> bool:
+    """'otra fuente: <X>' es concreta si X nombra un organismo o publicación: un nombre propio (palabra con
+    mayúscula inicial que no abre la frase, o sigla de ≥ 2 letras) o una URL/año. Si X es solo una
+    descripción genérica ('datos oficiales', 'conocimiento general') no lo es."""
+    texto = fuente.split(":", 1)[1].strip() if ":" in fuente else ""
+    if len(texto.split()) < 1 or not texto:
+        return False
+    toks = re.findall(r"[\wÁÉÍÓÚÑáéíóúñ./-]+", texto)
+    propio = bool(_RE_ACRONIMO.search(texto)) or any(t[:1].isupper() for t in toks[1:]) \
+        or bool(re.search(r"https?://|www\.|\.(cl|org|gov|com|int)\b|\b(19|20)\d\d\b", texto))
+    if not propio:
+        return False
+    return not (_RE_GENERICA.search(_norm(texto)) and len(toks) <= 2)
+
+
+def clasificar_fuente(fuente: str, contenido: str = "") -> dict:
+    """Clasifica el campo `fuente` de un recurso (determinista). Reglas, en este orden:
+    1. «supuesto del escenario» en `fuente` o `contenido` que empieza con «Supuesto del escenario» -> supuesto.
+    2. empieza con «otra fuente» -> otra_fuente si nombra un organismo/publicación concreta; si no, generica.
+    3. empieza con «noticia» (o «la noticia») -> noticia; con `parrafos` si cita «párrafo N», o con otro
+       localizador (titular, gráfico, tabla...). «noticia» a secas es generica.
+    4. cualquier otra cosa -> generica."""
+    s = _norm(fuente).strip()
+    marca_f = _MARCA_SUPUESTO in s
+    marca_c = _norm(contenido).lstrip().startswith(_MARCA_SUPUESTO)
+    if marca_f or marca_c:
+        return {"clase": "supuesto", "parrafos": [], "marca_completa": marca_f and marca_c}
+    if re.match(r"otra fuente\b", s):
+        return {"clase": "otra_fuente" if _otra_fuente_concreta(fuente) else "generica", "parrafos": []}
+    if re.match(r"(la )?noticia\b", s):
+        parrafos = _numeros_parrafo(s)
+        if parrafos or _RE_LOC_NOTICIA.search(s):
+            return {"clase": "noticia", "parrafos": parrafos}
+    return {"clase": "generica", "parrafos": []}
+
+
+def parrafos_de(texto: str) -> list[str]:
+    """Párrafos no vacíos del texto (HTML <p> o texto con saltos de línea); el índice visible parte en 1.
+    Misma convención que el explorador (`parrafos_de`), que es la que numera los localizadores."""
+    t = re.sub(r"(?is)<(script|style).*?</\1>", " ", texto)
+    t = re.sub(r"(?i)</p>|<br\s*/?>|</li>|</h[1-6]>", "\n", t)
+    t = html.unescape(re.sub(r"<[^>]+>", " ", t))
+    partes = [re.sub(r"\s+", " ", p).strip() for p in t.split("\n")]
+    return [p for p in partes if len(p) > 3]
+
+
+def _recursos(inf, tarea, texto_noticia):
+    """Clasifica la fuente de cada recurso y levanta los hallazgos deterministas. Devuelve
+    (recursos a contrastar con el modelo, {n: párrafo citado}). Los párrafos salen del texto en memoria
+    y son únicamente los citados por los recursos y por `cifras_usadas`."""
+    lista = [(f"tarea.estudiante.recursos_a_solicitud[{r.get('id')}]", r)
+             for r in (tarea.get("estudiante") or {}).get("recursos_a_solicitud", [])]
+    lista += [(f"tarea.recursos_de_entrada[{r.get('id')}]", r)
+              for r in tarea.get("recursos_de_entrada", [])]
+    a_modelo, pedidos = [], set()
+    for ub, r in lista:
+        cl = clasificar_fuente(r.get("fuente", ""), r.get("contenido", ""))
+        clase = cl["clase"]
+        if clase == "generica":
+            inf.add("semantica", "critico", ub,
+                    f"fuente genérica o sin localizador ({r.get('fuente')!r}): toda afirmación factual de un recurso "
+                    "debe venir de la noticia con «párrafo N», de «otra fuente: <organismo/publicación>» o estar "
+                    "marcada como «supuesto del escenario»")
+            continue
+        if clase == "supuesto":
+            if not cl["marca_completa"]:
+                inf.add("semantica", "advertencia", ub,
+                        "supuesto marcado solo en `fuente` o solo en `contenido`: márcalo en ambos")
+            continue
+        if clase == "noticia":
+            pedidos.update(cl["parrafos"])
+        a_modelo.append({"ubicacion": ub, "id": r.get("id"), "que_es": r.get("que_es"),
+                         "contenido": r.get("contenido"), "fuente": r.get("fuente"),
+                         "clase": clase, "parrafos": cl["parrafos"]})
+    for c in tarea.get("noticia", {}).get("cifras_usadas", []):
+        loc = c.get("localizador") or {}
+        if loc.get("fuente") == "noticia":
+            pedidos.update(_numeros_parrafo(_norm(str(loc.get("ubicacion", "")))))
+    citados: dict[str, str] = {}
+    if texto_noticia:
+        todos = parrafos_de(texto_noticia)
+        for n in sorted(pedidos):
+            if 1 <= n <= len(todos):
+                citados[str(n)] = todos[n - 1]
+            else:
+                inf.add("semantica", "advertencia", "tarea.recursos",
+                        f"el párrafo {n} no existe en el texto de la noticia ({len(todos)} párrafos)")
+    else:
+        for r in a_modelo:
+            if r["clase"] == "noticia":
+                inf.add("semantica", "advertencia", r["ubicacion"],
+                        "no se pudo contrastar con el texto: el ciclo no entregó `texto_noticia`; la afirmación "
+                        "del recurso solo se juzgó contra título, resumen y cifras")
+    return a_modelo, citados
+
+
 # --------------------------------------------------------------------------- modelo
-def _contraste_semantico(inf, tarea, guia, trazas, noticia, nb, cifras, cliente):
+def _contraste_semantico(inf, tarea, guia, trazas, noticia, nb, cifras, cliente,
+                         recursos=None, parrafos_citados=None, texto_noticia=None):
     n = noticia or {}
     ficha = tarea.get("noticia") or {}
     # El título forma parte de la cita (medio, título, fecha, URL): sin él, afirmaciones que solo están en el
@@ -285,13 +446,15 @@ def _contraste_semantico(inf, tarea, guia, trazas, noticia, nb, cifras, cliente)
                     "cifras": n.get("cifras") or tarea["noticia"].get("cifras_usadas")},
         "notebook": {"estado": nb["estado"], "salida": nb["stdout"][:4000]},
     }
+    if parrafos_citados:  # solo los párrafos citados por localizadores; nunca el texto completo
+        fuentes["noticia"]["parrafos_citados"] = parrafos_citados
     cif = [{"indice": c["indice"], "que_es": c["que_es"], "valor": c["valor_tarea"], "localizador": c["localizador"]}
            for c in cifras]
     afirmaciones = {"tarea": {"estudiante": tarea.get("estudiante"), "task_space": tarea.get("task_space")},
                     "guia": {k: guia.get(k) for k in ("analisis_a_priori", "escenarios", "tabla_bloqueos",
                                                       "intervenciones", "puesta_en_comun")}}
-    user = json.dumps({"cifras": cif, "fuentes": fuentes, "afirmaciones": afirmaciones, "trazas": trazas},
-                      ensure_ascii=False)
+    user = json.dumps({"cifras": cif, "fuentes": fuentes, "afirmaciones": afirmaciones, "trazas": trazas,
+                       "recursos_a_contrastar": recursos or []}, ensure_ascii=False)
     r = llamar(agente="verificador", system=PROMPT, user=user, schema=ESQUEMA_MODELO,
                max_tokens=CONFIG["max_tokens"], esfuerzo=CONFIG["esfuerzo"], cliente=cliente)
     sal = r["salida"]
@@ -301,16 +464,33 @@ def _contraste_semantico(inf, tarea, guia, trazas, noticia, nb, cifras, cliente)
         if c is None:
             continue
         c["metodo"] = "codigo+modelo"
-        c["nota"] = f"{c['nota']}; modelo: {m['nota']}"
+        c["nota"] = f"{c['nota']}; modelo: {_sin_literal(m['nota'], texto_noticia)}"
         if c["valor_fuente"] is None and m["valor_en_fuente"]:
-            c["valor_fuente"] = m["valor_en_fuente"]
+            c["valor_fuente"] = _sin_literal(m["valor_en_fuente"], texto_noticia)
         if not m["coincide"]:
             if c["resultado"] == "coincide":
                 c["resultado"] = "distinto"
             inf.add("semantica", "critico", f"tarea.noticia.cifras_usadas[{m['indice']}]",
-                    f"el modelo no encuentra respaldo para la cifra: {m['nota']}", "modelo")
+                    f"el modelo no encuentra respaldo para la cifra: {_sin_literal(m['nota'], texto_noticia)}", "modelo")
     for a in sal["afirmaciones_no_respaldadas"]:
-        inf.add("semantica", a["severidad"], a["ubicacion"], f"{a['afirmacion']} — {a['motivo']}", "modelo")
+        inf.add("semantica", a["severidad"], a["ubicacion"],
+                _sin_literal(f"{a['afirmacion']} — {a['motivo']}", texto_noticia), "modelo")
+    ubic = {x["id"]: x for x in recursos or []}
+    for j in sal.get("recursos", []):
+        rec = ubic.get(j["id"])
+        if rec is None or j["juicio"] == "respaldado" or j["juicio"] == "plausible":
+            continue
+        nota = _sin_literal(j["nota"], texto_noticia)
+        if rec["clase"] == "noticia":
+            if j["juicio"] == "contradicho":
+                inf.add("semantica", "critico", rec["ubicacion"],
+                        f"el recurso contradice los párrafos citados de la noticia: {nota}", "modelo")
+            else:  # no_respaldado / no_verificable: los párrafos citados no lo dicen (localizador dudoso)
+                inf.add("semantica", "advertencia", rec["ubicacion"],
+                        f"afirmación no respaldada por los párrafos citados ({rec['fuente']}): {nota}", "modelo")
+        else:  # otra fuente concreta: solo advertencia si el modelo no la ve plausible/verificable
+            inf.add("semantica", "advertencia", rec["ubicacion"],
+                    f"la otra fuente citada ({rec['fuente']}) no parece plausible o verificable: {nota}", "modelo")
     return r["meta"]
 
 
@@ -324,6 +504,7 @@ def verificar(tarea: dict, guia: dict, trazas: dict, noticia: dict | None = None
     nb = {"estado": "no_declarado", "ruta": None, "salida_resumen": "", "stdout": ""}
     declarado = (guia.get("materiales") or {}).get("notebook")
     cifras: list[dict] = []
+    recursos_modelo, parrafos_citados = [], {}
     try:
         if notebook_ruta is not None:
             nb = ejecutar_notebook(Path(notebook_ruta), CONFIG["notebook"]["timeout_s"])
@@ -338,11 +519,13 @@ def verificar(tarea: dict, guia: dict, trazas: dict, noticia: dict | None = None
         _invariante5(inf, guia, trazas)
         _invariante3(inf, tarea, guia, noticia, texto_noticia)
         cifras = _cifras(inf, tarea, noticia, nb)
+        recursos_modelo, parrafos_citados = _recursos(inf, tarea, texto_noticia)
     except (KeyError, TypeError, AttributeError) as e:
         inf.add("1", "critico", "(estructura)", f"artefacto con estructura inesperada ({type(e).__name__}: {e})")
     meta_llm, llamado = None, False
     if not inf.criticos("codigo"):
-        meta_llm = _contraste_semantico(inf, tarea, guia, trazas, noticia, nb, cifras, cliente)
+        meta_llm = _contraste_semantico(inf, tarea, guia, trazas, noticia, nb, cifras, cliente,
+                                       recursos_modelo, parrafos_citados, texto_noticia)
         llamado = True
     aprobado = not inf.criticos()
     meta = {"agente": "verificador", "version_prompt": CONFIG["version_prompt"],

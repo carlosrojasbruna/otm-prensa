@@ -1,6 +1,6 @@
 # Configuración del agente verificador (agente 7). El modelo sale de pipeline/config.yaml (modelos.verificador).
 agente: verificador
-version_prompt: "1.0"
+version_prompt: "1.1"
 prompt: prompt.md
 esquema_salida: salida.schema.json   # local: el verificador no tiene contrato en contratos/ (decisiones.md)
 # Los modelos 5.5 no aceptan temperature (pipeline/llm.py); se usa el valor por defecto.
