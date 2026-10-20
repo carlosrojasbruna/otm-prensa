@@ -1,0 +1,2067 @@
+{
+  "informe": "calibracion_evaluador",
+  "version_informe": "1.0",
+  "fecha": "2026-10-20",
+  "advertencia": "5 de los 9 puntajes de referencia (sugarloaf, port-of-hamburg, lighthouse, st-michaels-church, clear-day-at-the-ocean) son provisionales, puestos por Claude (2026-10-20). El kappa no se reporta como validez hasta la doble codificación humana.",
+  "umbral_kappa": 0.7,
+  "version_prompt_final": "1.3",
+  "acepta": true,
+  "historial_prompt": [
+    {
+      "version": "1.0",
+      "cambio": "Versión inicial: RUB01 v4.0 completa (JSON literal, incluidas instrucciones_evaluador) y MAR03 §1 literales; procedimiento por criterio; cita literal ≤ 25 palabras antes de justificación y puntaje; regla de independencia entre criterios.",
+      "acepta": false,
+      "kappa_por_corrida": [
+        0.5839753466872111,
+        0.6139876352395672,
+        0.5948987246811703
+      ],
+      "costo_usd": 2.546424
+    },
+    {
+      "version": "1.1",
+      "cambio": "Ajuste 1 (κ v1.0 = 0,58–0,61; evaluador sistemáticamente más severo, sobre todo en ciclo, nivel, validación y autenticidad). Se reemplaza la frase «el 2 exige cumplimiento pleno con evidencia» por una lectura de descriptores que no exige más de lo que dicen; se acota «ante duda, el menor» a dudas genuinas entre descriptores adyacentes; se agregan lecturas fijas de los criterios 5 (procedencia declarada se toma como cierta), 7 («exige» = la resolución obliga a recorrer las fases), 8 («posible» = evidencia accesible, no necesariamente entregada) y 9 (no descontar de nuevo apertura/supuestos/validación), y una regla para textos que relatan una tarea implementada. RUB01 y MAR03 sin cambios.",
+      "acepta": false,
+      "kappa_por_corrida": [
+        0.7185056472632494,
+        0.6877224199288257,
+        0.7247340425531915
+      ],
+      "costo_usd": 2.754648
+    },
+    {
+      "version": "1.2",
+      "cambio": "Ajuste 2 (κ v1.1 = 0,72/0,69/0,73: corrida 2 bajo el umbral; v1.1 corrigió la severidad pero pasó a sobrepuntuar autodiferenciación y recursos, y a poner 0 donde hay presencia parcial). Se agrega una frontera 0/1 simétrica a la del 2 (el 0 describe ausencia total) y lecturas fijas de los criterios 10 (piso = entrada sin una única idea clave; techo = la tarea misma admite soluciones más sofisticadas) y 12 (obtenibilidad real de la información para el nivel declarado). RUB01 y MAR03 sin cambios.",
+      "acepta": false,
+      "kappa_por_corrida": [
+        0.7108938547486033,
+        0.6800947867298579,
+        0.737985212569316
+      ],
+      "costo_usd": 2.728192
+    },
+    {
+      "version": "1.3",
+      "cambio": "Ajuste 3, último permitido (κ v1.2 = 0,71/0,68/0,74: corrida 2 bajo el umbral). Se agrega la lectura del criterio 4 (realismo = la situación existe o es plausible; una pregunta de curiosidad o desafío sobre hechos reales no es un encuadre forzado; la necesidad se juzga en el criterio 1) y se precisa la regla para relatos de tareas implementadas: las fases que el relato recorre sin decir quién decidió se leen como proceso de los estudiantes; solo cuenta como entregado lo que el texto dice que se les dio. RUB01 y MAR03 sin cambios.",
+      "acepta": true,
+      "kappa_por_corrida": [
+        0.7062314540059347,
+        0.8016528925619835,
+        0.7445219123505976
+      ],
+      "costo_usd": 2.702927
+    }
+  ],
+  "costo_total_usd": 10.732191,
+  "costo_total_usd_pesimista": 32.196564,
+  "reproducibilidad": {
+    "modelo": "claude-opus-5-5",
+    "effort": "high",
+    "max_tokens": 16000,
+    "temperature": "no se envía (el modelo la rechaza: 'deprecated for this model')",
+    "salida_estructurada": "output_config.format json_schema",
+    "cache": "system prompt con cache_control ephemeral",
+    "prompt_archivo": "pipeline/agentes/evaluador/prompt_sistema_v1.3.md",
+    "prompt_sha256": "d8c55ac66c2b282127aad47b7e2919e9a21e623cd3aeedcfe41149535ca72751",
+    "version_rubrica": "4.0",
+    "rubrica_sha256": "de11b63d71e4107e0622cc9f1cf5496ca1e939b096d16f574b2ca1a206ebc2d4",
+    "version_mar03": "1.0",
+    "referencia": "evals/oro/puntajes_v0.4_2026-10-20.csv",
+    "referencia_sha256": "2106220748164ae1af6eb41b5a777c82963d144aa0159bf56c5710f64a7722b5",
+    "sdk_anthropic": "0.116.0",
+    "python": "3.12.10",
+    "git_commit": "fb67480",
+    "precios_usd_mtok": {
+      "input": 5.0,
+      "output": 25.0,
+      "cache_write": 6.25,
+      "cache_read": 0.5
+    },
+    "precios_pesimistas_usd_mtok": {
+      "input": 15.0,
+      "output": 75.0,
+      "cache_write": 18.75,
+      "cache_read": 1.5
+    }
+  },
+  "analisis": [
+    {
+      "version_prompt": "1.0",
+      "corridas": [
+        {
+          "corrida": 1,
+          "kappa_global": 0.5839753466872111,
+          "n_pares": 108,
+          "acuerdo_exacto": 0.6296296296296297,
+          "kappa_humanas": 0.4645669291338582,
+          "n_pares_humanas": 48,
+          "acuerdo_exacto_humanas": 0.6458333333333334,
+          "kappa_provisionales": 0.6333687566418704,
+          "n_pares_provisionales": 60,
+          "totales": {
+            "clear-day-at-the-ocean": {
+              "evaluador": 3,
+              "referencia": 7,
+              "dif": -4
+            },
+            "giants-shoes": {
+              "evaluador": 21,
+              "referencia": 24,
+              "dif": -3
+            },
+            "lighthouse": {
+              "evaluador": 22,
+              "referencia": 20,
+              "dif": 2
+            },
+            "poblacion-belga": {
+              "evaluador": 12,
+              "referencia": 16,
+              "dif": -4
+            },
+            "port-of-hamburg": {
+              "evaluador": 22,
+              "referencia": 24,
+              "dif": -2
+            },
+            "residuos-plasticos": {
+              "evaluador": 16,
+              "referencia": 22,
+              "dif": -6
+            },
+            "st-michaels-church": {
+              "evaluador": 18,
+              "referencia": 21,
+              "dif": -3
+            },
+            "sugarloaf": {
+              "evaluador": 14,
+              "referencia": 20,
+              "dif": -6
+            },
+            "vapes-litio": {
+              "evaluador": 20,
+              "referencia": 24,
+              "dif": -4
+            }
+          },
+          "publicables_evaluador": [
+            "giants-shoes",
+            "lighthouse",
+            "port-of-hamburg",
+            "vapes-litio"
+          ],
+          "costo_usd": 0.855458,
+          "costo_usd_pesimista": 2.566374,
+          "tokens": {
+            "input_tokens": 3895,
+            "output_tokens": 31860,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 78966,
+            "thinking_tokens": 13343
+          },
+          "avisos": [
+            "residuos-plasticos:cita_no_literal:genuino"
+          ]
+        },
+        {
+          "corrida": 2,
+          "kappa_global": 0.6139876352395672,
+          "n_pares": 108,
+          "acuerdo_exacto": 0.6574074074074074,
+          "kappa_humanas": 0.5175879396984924,
+          "n_pares_humanas": 48,
+          "acuerdo_exacto_humanas": 0.6666666666666666,
+          "kappa_provisionales": 0.6542261251372119,
+          "n_pares_provisionales": 60,
+          "totales": {
+            "clear-day-at-the-ocean": {
+              "evaluador": 5,
+              "referencia": 7,
+              "dif": -2
+            },
+            "giants-shoes": {
+              "evaluador": 22,
+              "referencia": 24,
+              "dif": -2
+            },
+            "lighthouse": {
+              "evaluador": 21,
+              "referencia": 20,
+              "dif": 1
+            },
+            "poblacion-belga": {
+              "evaluador": 11,
+              "referencia": 16,
+              "dif": -5
+            },
+            "port-of-hamburg": {
+              "evaluador": 22,
+              "referencia": 24,
+              "dif": -2
+            },
+            "residuos-plasticos": {
+              "evaluador": 17,
+              "referencia": 22,
+              "dif": -5
+            },
+            "st-michaels-church": {
+              "evaluador": 17,
+              "referencia": 21,
+              "dif": -4
+            },
+            "sugarloaf": {
+              "evaluador": 14,
+              "referencia": 20,
+              "dif": -6
+            },
+            "vapes-litio": {
+              "evaluador": 20,
+              "referencia": 24,
+              "dif": -4
+            }
+          },
+          "publicables_evaluador": [
+            "giants-shoes",
+            "lighthouse",
+            "port-of-hamburg",
+            "vapes-litio"
+          ],
+          "costo_usd": 0.851408,
+          "costo_usd_pesimista": 2.554224,
+          "tokens": {
+            "input_tokens": 3895,
+            "output_tokens": 31698,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 78966,
+            "thinking_tokens": 13464
+          },
+          "avisos": []
+        },
+        {
+          "corrida": 3,
+          "kappa_global": 0.5948987246811703,
+          "n_pares": 108,
+          "acuerdo_exacto": 0.6296296296296297,
+          "kappa_humanas": 0.44329896907216504,
+          "n_pares_humanas": 48,
+          "acuerdo_exacto_humanas": 0.625,
+          "kappa_provisionales": 0.6604938271604939,
+          "n_pares_provisionales": 60,
+          "totales": {
+            "clear-day-at-the-ocean": {
+              "evaluador": 3,
+              "referencia": 7,
+              "dif": -4
+            },
+            "giants-shoes": {
+              "evaluador": 20,
+              "referencia": 24,
+              "dif": -4
+            },
+            "lighthouse": {
+              "evaluador": 22,
+              "referencia": 20,
+              "dif": 2
+            },
+            "poblacion-belga": {
+              "evaluador": 12,
+              "referencia": 16,
+              "dif": -4
+            },
+            "port-of-hamburg": {
+              "evaluador": 23,
+              "referencia": 24,
+              "dif": -1
+            },
+            "residuos-plasticos": {
+              "evaluador": 16,
+              "referencia": 22,
+              "dif": -6
+            },
+            "st-michaels-church": {
+              "evaluador": 16,
+              "referencia": 21,
+              "dif": -5
+            },
+            "sugarloaf": {
+              "evaluador": 14,
+              "referencia": 20,
+              "dif": -6
+            },
+            "vapes-litio": {
+              "evaluador": 20,
+              "referencia": 24,
+              "dif": -4
+            }
+          },
+          "publicables_evaluador": [
+            "giants-shoes",
+            "lighthouse",
+            "port-of-hamburg",
+            "vapes-litio"
+          ],
+          "costo_usd": 0.839558,
+          "costo_usd_pesimista": 2.518674,
+          "tokens": {
+            "input_tokens": 3895,
+            "output_tokens": 31224,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 78966,
+            "thinking_tokens": 13021
+          },
+          "avisos": []
+        }
+      ],
+      "por_criterio": {
+        "genuino": {
+          "kappa_agrupado": 0.7,
+          "n_pares": 27,
+          "acuerdo_exacto": 0.7037037037037037,
+          "kappa_por_corrida": [
+            0.7692307692307693,
+            0.6666666666666667,
+            0.6666666666666667
+          ],
+          "media_evaluador": 1.3703703703703705,
+          "media_referencia": 1.6666666666666667
+        },
+        "abierta": {
+          "kappa_agrupado": 0.722466960352423,
+          "n_pares": 27,
+          "acuerdo_exacto": 0.7407407407407407,
+          "kappa_por_corrida": [
+            0.7631578947368421,
+            0.7631578947368421,
+            0.64
+          ],
+          "media_evaluador": 1.4074074074074074,
+          "media_referencia": 1.4444444444444444
+        },
+        "decisiones": {
+          "kappa_agrupado": 0.8125,
+          "n_pares": 27,
+          "acuerdo_exacto": 0.7777777777777778,
+          "kappa_por_corrida": [
+            0.8125,
+            0.8125,
+            0.8125
+          ],
+          "media_evaluador": 1.4444444444444444,
+          "media_referencia": 1.6666666666666667
+        },
+        "realismo": {
+          "kappa_agrupado": 0.0,
+          "n_pares": 27,
+          "acuerdo_exacto": 0.7037037037037037,
+          "kappa_por_corrida": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "media_evaluador": 1.7037037037037037,
+          "media_referencia": 2
+        },
+        "autenticidad": {
+          "kappa_agrupado": 0.12307692307692297,
+          "n_pares": 27,
+          "acuerdo_exacto": 0.2962962962962963,
+          "kappa_por_corrida": [
+            -0.06779661016949157,
+            0.06896551724137934,
+            0.3076923076923076
+          ],
+          "media_evaluador": 1.4444444444444444,
+          "media_referencia": 1.5555555555555556
+        },
+        "contexto": {
+          "kappa_agrupado": 0.6582278481012658,
+          "n_pares": 27,
+          "acuerdo_exacto": 0.6666666666666666,
+          "kappa_por_corrida": [
+            0.6582278481012658,
+            0.6582278481012658,
+            0.6582278481012658
+          ],
+          "media_evaluador": 1.4444444444444444,
+          "media_referencia": 1.7777777777777777
+        },
+        "ciclo": {
+          "kappa_agrupado": 0.3400000000000001,
+          "n_pares": 27,
+          "acuerdo_exacto": 0.18518518518518517,
+          "kappa_por_corrida": [
+            0.32258064516129037,
+            0.368421052631579,
+            0.32258064516129037
+          ],
+          "media_evaluador": 0.8518518518518519,
+          "media_referencia": 1.6666666666666667
+        },
+        "validacion": {
+          "kappa_agrupado": 0.3926380368098159,
+          "n_pares": 27,
+          "acuerdo_exacto": 0.5925925925925926,
+          "kappa_por_corrida": [
+            0.4,
+            0.5714285714285714,
+            0.2622950819672131
+          ],
+          "media_evaluador": 1.2962962962962963,
+          "media_referencia": 1.5555555555555556
+        },
+        "nivel": {
+          "kappa_agrupado": 0.0,
+          "n_pares": 27,
+          "acuerdo_exacto": 0.6296296296296297,
+          "kappa_por_corrida": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "media_evaluador": 1.6296296296296295,
+          "media_referencia": 2
+        },
+        "autodiferenciacion": {
+          "kappa_agrupado": 1.0,
+          "n_pares": 27,
+          "acuerdo_exacto": 1.0,
+          "kappa_por_corrida": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "media_evaluador": 1.2222222222222223,
+          "media_referencia": 1.2222222222222223
+        },
+        "fecundidad": {
+          "kappa_agrupado": 0.53125,
+          "n_pares": 27,
+          "acuerdo_exacto": 0.6296296296296297,
+          "kappa_por_corrida": [
+            0.4545454545454545,
+            0.5714285714285714,
+            0.5714285714285714
+          ],
+          "media_evaluador": 1.2962962962962963,
+          "media_referencia": 1.6666666666666667
+        },
+        "recursos": {
+          "kappa_agrupado": 0.7820069204152249,
+          "n_pares": 27,
+          "acuerdo_exacto": 0.7407407407407407,
+          "kappa_por_corrida": [
+            0.7216494845360825,
+            0.8125,
+            0.8125
+          ],
+          "media_evaluador": 1.2962962962962963,
+          "media_referencia": 1.5555555555555556
+        }
+      },
+      "diferencias_ge3": [
+        {
+          "corrida": 1,
+          "tarea": "clear-day-at-the-ocean",
+          "evaluador": 3,
+          "referencia": 7,
+          "dif": -4
+        },
+        {
+          "corrida": 1,
+          "tarea": "giants-shoes",
+          "evaluador": 21,
+          "referencia": 24,
+          "dif": -3
+        },
+        {
+          "corrida": 1,
+          "tarea": "poblacion-belga",
+          "evaluador": 12,
+          "referencia": 16,
+          "dif": -4
+        },
+        {
+          "corrida": 1,
+          "tarea": "residuos-plasticos",
+          "evaluador": 16,
+          "referencia": 22,
+          "dif": -6
+        },
+        {
+          "corrida": 1,
+          "tarea": "st-michaels-church",
+          "evaluador": 18,
+          "referencia": 21,
+          "dif": -3
+        },
+        {
+          "corrida": 1,
+          "tarea": "sugarloaf",
+          "evaluador": 14,
+          "referencia": 20,
+          "dif": -6
+        },
+        {
+          "corrida": 1,
+          "tarea": "vapes-litio",
+          "evaluador": 20,
+          "referencia": 24,
+          "dif": -4
+        },
+        {
+          "corrida": 2,
+          "tarea": "poblacion-belga",
+          "evaluador": 11,
+          "referencia": 16,
+          "dif": -5
+        },
+        {
+          "corrida": 2,
+          "tarea": "residuos-plasticos",
+          "evaluador": 17,
+          "referencia": 22,
+          "dif": -5
+        },
+        {
+          "corrida": 2,
+          "tarea": "st-michaels-church",
+          "evaluador": 17,
+          "referencia": 21,
+          "dif": -4
+        },
+        {
+          "corrida": 2,
+          "tarea": "sugarloaf",
+          "evaluador": 14,
+          "referencia": 20,
+          "dif": -6
+        },
+        {
+          "corrida": 2,
+          "tarea": "vapes-litio",
+          "evaluador": 20,
+          "referencia": 24,
+          "dif": -4
+        },
+        {
+          "corrida": 3,
+          "tarea": "clear-day-at-the-ocean",
+          "evaluador": 3,
+          "referencia": 7,
+          "dif": -4
+        },
+        {
+          "corrida": 3,
+          "tarea": "giants-shoes",
+          "evaluador": 20,
+          "referencia": 24,
+          "dif": -4
+        },
+        {
+          "corrida": 3,
+          "tarea": "poblacion-belga",
+          "evaluador": 12,
+          "referencia": 16,
+          "dif": -4
+        },
+        {
+          "corrida": 3,
+          "tarea": "residuos-plasticos",
+          "evaluador": 16,
+          "referencia": 22,
+          "dif": -6
+        },
+        {
+          "corrida": 3,
+          "tarea": "st-michaels-church",
+          "evaluador": 16,
+          "referencia": 21,
+          "dif": -5
+        },
+        {
+          "corrida": 3,
+          "tarea": "sugarloaf",
+          "evaluador": 14,
+          "referencia": 20,
+          "dif": -6
+        },
+        {
+          "corrida": 3,
+          "tarea": "vapes-litio",
+          "evaluador": 20,
+          "referencia": 24,
+          "dif": -4
+        }
+      ],
+      "consistencia_entre_corridas": [
+        {
+          "corridas": [
+            1,
+            2
+          ],
+          "kappa": 0.9048923679060665,
+          "acuerdo_exacto": 0.9166666666666666
+        },
+        {
+          "corridas": [
+            1,
+            3
+          ],
+          "kappa": 0.8956723338485317,
+          "acuerdo_exacto": 0.9074074074074074
+        },
+        {
+          "corridas": [
+            2,
+            3
+          ],
+          "kappa": 0.9063944530046225,
+          "acuerdo_exacto": 0.9166666666666666
+        }
+      ],
+      "kappa_global_agrupado": 0.597579617834395,
+      "n_corridas_completas": 3,
+      "acepta": false,
+      "costo_usd": 2.546424,
+      "costo_usd_pesimista": 7.639272
+    },
+    {
+      "version_prompt": "1.1",
+      "corridas": [
+        {
+          "corrida": 1,
+          "kappa_global": 0.7185056472632494,
+          "n_pares": 108,
+          "acuerdo_exacto": 0.7777777777777778,
+          "kappa_humanas": 0.6363636363636364,
+          "n_pares_humanas": 48,
+          "acuerdo_exacto_humanas": 0.8125,
+          "kappa_provisionales": 0.748040313549832,
+          "n_pares_provisionales": 60,
+          "totales": {
+            "clear-day-at-the-ocean": {
+              "evaluador": 6,
+              "referencia": 7,
+              "dif": -1
+            },
+            "giants-shoes": {
+              "evaluador": 24,
+              "referencia": 24,
+              "dif": 0
+            },
+            "lighthouse": {
+              "evaluador": 24,
+              "referencia": 20,
+              "dif": 4
+            },
+            "poblacion-belga": {
+              "evaluador": 12,
+              "referencia": 16,
+              "dif": -4
+            },
+            "port-of-hamburg": {
+              "evaluador": 24,
+              "referencia": 24,
+              "dif": 0
+            },
+            "residuos-plasticos": {
+              "evaluador": 22,
+              "referencia": 22,
+              "dif": 0
+            },
+            "st-michaels-church": {
+              "evaluador": 20,
+              "referencia": 21,
+              "dif": -1
+            },
+            "sugarloaf": {
+              "evaluador": 23,
+              "referencia": 20,
+              "dif": 3
+            },
+            "vapes-litio": {
+              "evaluador": 23,
+              "referencia": 24,
+              "dif": -1
+            }
+          },
+          "publicables_evaluador": [
+            "giants-shoes",
+            "lighthouse",
+            "port-of-hamburg",
+            "residuos-plasticos",
+            "st-michaels-church",
+            "sugarloaf",
+            "vapes-litio"
+          ],
+          "costo_usd": 1.075978,
+          "costo_usd_pesimista": 3.227931,
+          "tokens": {
+            "input_tokens": 3895,
+            "output_tokens": 29000,
+            "cache_creation_input_tokens": 49850,
+            "cache_read_input_tokens": 39880,
+            "thinking_tokens": 12598
+          },
+          "avisos": [
+            "sugarloaf:cita_no_literal:decisiones",
+            "sugarloaf:cita_no_literal:recursos"
+          ]
+        },
+        {
+          "corrida": 2,
+          "kappa_global": 0.6877224199288257,
+          "n_pares": 108,
+          "acuerdo_exacto": 0.7592592592592593,
+          "kappa_humanas": 0.6842105263157894,
+          "n_pares_humanas": 48,
+          "acuerdo_exacto_humanas": 0.8333333333333334,
+          "kappa_provisionales": 0.6867749419953597,
+          "n_pares_provisionales": 60,
+          "totales": {
+            "clear-day-at-the-ocean": {
+              "evaluador": 7,
+              "referencia": 7,
+              "dif": 0
+            },
+            "giants-shoes": {
+              "evaluador": 24,
+              "referencia": 24,
+              "dif": 0
+            },
+            "lighthouse": {
+              "evaluador": 24,
+              "referencia": 20,
+              "dif": 4
+            },
+            "poblacion-belga": {
+              "evaluador": 13,
+              "referencia": 16,
+              "dif": -3
+            },
+            "port-of-hamburg": {
+              "evaluador": 24,
+              "referencia": 24,
+              "dif": 0
+            },
+            "residuos-plasticos": {
+              "evaluador": 20,
+              "referencia": 22,
+              "dif": -2
+            },
+            "st-michaels-church": {
+              "evaluador": 20,
+              "referencia": 21,
+              "dif": -1
+            },
+            "sugarloaf": {
+              "evaluador": 23,
+              "referencia": 20,
+              "dif": 3
+            },
+            "vapes-litio": {
+              "evaluador": 23,
+              "referencia": 24,
+              "dif": -1
+            }
+          },
+          "publicables_evaluador": [
+            "giants-shoes",
+            "lighthouse",
+            "port-of-hamburg",
+            "residuos-plasticos",
+            "st-michaels-church",
+            "sugarloaf",
+            "vapes-litio"
+          ],
+          "costo_usd": 0.80089,
+          "costo_usd_pesimista": 2.40267,
+          "tokens": {
+            "input_tokens": 3895,
+            "output_tokens": 29462,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 89730,
+            "thinking_tokens": 12954
+          },
+          "avisos": [
+            "residuos-plasticos:cita_no_literal:genuino"
+          ]
+        },
+        {
+          "corrida": 3,
+          "kappa_global": 0.7247340425531915,
+          "n_pares": 108,
+          "acuerdo_exacto": 0.7870370370370371,
+          "kappa_humanas": 0.5400696864111498,
+          "n_pares_humanas": 48,
+          "acuerdo_exacto_humanas": 0.7708333333333334,
+          "kappa_provisionales": 0.7982062780269058,
+          "n_pares_provisionales": 60,
+          "totales": {
+            "clear-day-at-the-ocean": {
+              "evaluador": 6,
+              "referencia": 7,
+              "dif": -1
+            },
+            "giants-shoes": {
+              "evaluador": 24,
+              "referencia": 24,
+              "dif": 0
+            },
+            "lighthouse": {
+              "evaluador": 23,
+              "referencia": 20,
+              "dif": 3
+            },
+            "poblacion-belga": {
+              "evaluador": 13,
+              "referencia": 16,
+              "dif": -3
+            },
+            "port-of-hamburg": {
+              "evaluador": 24,
+              "referencia": 24,
+              "dif": 0
+            },
+            "residuos-plasticos": {
+              "evaluador": 19,
+              "referencia": 22,
+              "dif": -3
+            },
+            "st-michaels-church": {
+              "evaluador": 22,
+              "referencia": 21,
+              "dif": 1
+            },
+            "sugarloaf": {
+              "evaluador": 23,
+              "referencia": 20,
+              "dif": 3
+            },
+            "vapes-litio": {
+              "evaluador": 23,
+              "referencia": 24,
+              "dif": -1
+            }
+          },
+          "publicables_evaluador": [
+            "giants-shoes",
+            "lighthouse",
+            "port-of-hamburg",
+            "st-michaels-church",
+            "sugarloaf",
+            "vapes-litio"
+          ],
+          "costo_usd": 0.87778,
+          "costo_usd_pesimista": 2.63334,
+          "tokens": {
+            "input_tokens": 4191,
+            "output_tokens": 32279,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 99700,
+            "thinking_tokens": 12642
+          },
+          "avisos": [
+            "sugarloaf:cita_no_literal:abierta"
+          ]
+        }
+      ],
+      "por_criterio": {
+        "genuino": {
+          "kappa_agrupado": 0.918918918918919,
+          "n_pares": 27,
+          "acuerdo_exacto": 0.9259259259259259,
+          "kappa_por_corrida": [
+            1.0,
+            0.88,
+            0.88
+          ],
+          "media_evaluador": 1.5925925925925926,
+          "media_referencia": 1.6666666666666667
+        },
+        "abierta": {
+          "kappa_agrupado": 0.6493506493506493,
+          "n_pares": 27,
+          "acuerdo_exacto": 0.6666666666666666,
+          "kappa_por_corrida": [
+            0.6493506493506493,
+            0.6493506493506493,
+            0.6493506493506493
+          ],
+          "media_evaluador": 1.5555555555555556,
+          "media_referencia": 1.4444444444444444
+        },
+        "decisiones": {
+          "kappa_agrupado": 0.8723404255319149,
+          "n_pares": 27,
+          "acuerdo_exacto": 0.8518518518518519,
+          "kappa_por_corrida": [
+            0.9032258064516129,
+            0.9032258064516129,
+            0.8125
+          ],
+          "media_evaluador": 1.5185185185185186,
+          "media_referencia": 1.6666666666666667
+        },
+        "realismo": {
+          "kappa_agrupado": 0.0,
+          "n_pares": 27,
+          "acuerdo_exacto": 0.8518518518518519,
+          "kappa_por_corrida": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "media_evaluador": 1.8518518518518519,
+          "media_referencia": 2
+        },
+        "autenticidad": {
+          "kappa_agrupado": 0.47058823529411764,
+          "n_pares": 27,
+          "acuerdo_exacto": 0.5925925925925926,
+          "kappa_por_corrida": [
+            0.64,
+            0.3571428571428572,
+            0.3571428571428572
+          ],
+          "media_evaluador": 1.7407407407407407,
+          "media_referencia": 1.5555555555555556
+        },
+        "contexto": {
+          "kappa_agrupado": 0.7926267281105991,
+          "n_pares": 27,
+          "acuerdo_exacto": 0.8148148148148148,
+          "kappa_por_corrida": [
+            0.7567567567567568,
+            0.7567567567567568,
+            0.8695652173913043
+          ],
+          "media_evaluador": 1.5925925925925926,
+          "media_referencia": 1.7777777777777777
+        },
+        "ciclo": {
+          "kappa_agrupado": 0.88,
+          "n_pares": 27,
+          "acuerdo_exacto": 0.8888888888888888,
+          "kappa_por_corrida": [
+            0.88,
+            0.88,
+            0.88
+          ],
+          "media_evaluador": 1.5555555555555556,
+          "media_referencia": 1.6666666666666667
+        },
+        "validacion": {
+          "kappa_agrupado": 0.3793103448275862,
+          "n_pares": 27,
+          "acuerdo_exacto": 0.7037037037037037,
+          "kappa_por_corrida": [
+            0.3076923076923076,
+            0.3076923076923076,
+            0.5263157894736843
+          ],
+          "media_evaluador": 1.7037037037037037,
+          "media_referencia": 1.5555555555555556
+        },
+        "nivel": {
+          "kappa_agrupado": null,
+          "n_pares": 27,
+          "acuerdo_exacto": 1.0,
+          "kappa_por_corrida": [
+            null,
+            null,
+            null
+          ],
+          "media_evaluador": 2,
+          "media_referencia": 2
+        },
+        "autodiferenciacion": {
+          "kappa_agrupado": 0.5308056872037914,
+          "n_pares": 27,
+          "acuerdo_exacto": 0.5925925925925926,
+          "kappa_por_corrida": [
+            0.3661971830985916,
+            0.4545454545454545,
+            0.7567567567567568
+          ],
+          "media_evaluador": 1.6296296296296295,
+          "media_referencia": 1.2222222222222223
+        },
+        "fecundidad": {
+          "kappa_agrupado": 0.6440677966101694,
+          "n_pares": 27,
+          "acuerdo_exacto": 0.7407407407407407,
+          "kappa_por_corrida": [
+            0.7,
+            0.5263157894736842,
+            0.7
+          ],
+          "media_evaluador": 1.4814814814814814,
+          "media_referencia": 1.6666666666666667
+        },
+        "recursos": {
+          "kappa_agrupado": 0.6943396226415095,
+          "n_pares": 27,
+          "acuerdo_exacto": 0.6666666666666666,
+          "kappa_por_corrida": [
+            0.7157894736842105,
+            0.8085106382978724,
+            0.5263157894736843
+          ],
+          "media_evaluador": 1.5185185185185186,
+          "media_referencia": 1.5555555555555556
+        }
+      },
+      "diferencias_ge3": [
+        {
+          "corrida": 1,
+          "tarea": "lighthouse",
+          "evaluador": 24,
+          "referencia": 20,
+          "dif": 4
+        },
+        {
+          "corrida": 1,
+          "tarea": "poblacion-belga",
+          "evaluador": 12,
+          "referencia": 16,
+          "dif": -4
+        },
+        {
+          "corrida": 1,
+          "tarea": "sugarloaf",
+          "evaluador": 23,
+          "referencia": 20,
+          "dif": 3
+        },
+        {
+          "corrida": 2,
+          "tarea": "lighthouse",
+          "evaluador": 24,
+          "referencia": 20,
+          "dif": 4
+        },
+        {
+          "corrida": 2,
+          "tarea": "poblacion-belga",
+          "evaluador": 13,
+          "referencia": 16,
+          "dif": -3
+        },
+        {
+          "corrida": 2,
+          "tarea": "sugarloaf",
+          "evaluador": 23,
+          "referencia": 20,
+          "dif": 3
+        },
+        {
+          "corrida": 3,
+          "tarea": "lighthouse",
+          "evaluador": 23,
+          "referencia": 20,
+          "dif": 3
+        },
+        {
+          "corrida": 3,
+          "tarea": "poblacion-belga",
+          "evaluador": 13,
+          "referencia": 16,
+          "dif": -3
+        },
+        {
+          "corrida": 3,
+          "tarea": "residuos-plasticos",
+          "evaluador": 19,
+          "referencia": 22,
+          "dif": -3
+        },
+        {
+          "corrida": 3,
+          "tarea": "sugarloaf",
+          "evaluador": 23,
+          "referencia": 20,
+          "dif": 3
+        }
+      ],
+      "consistencia_entre_corridas": [
+        {
+          "corridas": [
+            1,
+            2
+          ],
+          "kappa": 0.9083191850594228,
+          "acuerdo_exacto": 0.9259259259259259
+        },
+        {
+          "corridas": [
+            1,
+            3
+          ],
+          "kappa": 0.8972081218274112,
+          "acuerdo_exacto": 0.9166666666666666
+        },
+        {
+          "corridas": [
+            2,
+            3
+          ],
+          "kappa": 0.8714285714285714,
+          "acuerdo_exacto": 0.8981481481481481
+        }
+      ],
+      "kappa_global_agrupado": 0.7104025859535703,
+      "n_corridas_completas": 3,
+      "acepta": false,
+      "costo_usd": 2.754648,
+      "costo_usd_pesimista": 8.263940999999999
+    },
+    {
+      "version_prompt": "1.2",
+      "corridas": [
+        {
+          "corrida": 1,
+          "kappa_global": 0.7108938547486033,
+          "n_pares": 108,
+          "acuerdo_exacto": 0.7870370370370371,
+          "kappa_humanas": 0.625,
+          "n_pares_humanas": 48,
+          "acuerdo_exacto_humanas": 0.8333333333333334,
+          "kappa_provisionales": 0.7392815758980301,
+          "n_pares_provisionales": 60,
+          "totales": {
+            "clear-day-at-the-ocean": {
+              "evaluador": 7,
+              "referencia": 7,
+              "dif": 0
+            },
+            "giants-shoes": {
+              "evaluador": 24,
+              "referencia": 24,
+              "dif": 0
+            },
+            "lighthouse": {
+              "evaluador": 23,
+              "referencia": 20,
+              "dif": 3
+            },
+            "poblacion-belga": {
+              "evaluador": 14,
+              "referencia": 16,
+              "dif": -2
+            },
+            "port-of-hamburg": {
+              "evaluador": 24,
+              "referencia": 24,
+              "dif": 0
+            },
+            "residuos-plasticos": {
+              "evaluador": 19,
+              "referencia": 22,
+              "dif": -3
+            },
+            "st-michaels-church": {
+              "evaluador": 19,
+              "referencia": 21,
+              "dif": -2
+            },
+            "sugarloaf": {
+              "evaluador": 24,
+              "referencia": 20,
+              "dif": 4
+            },
+            "vapes-litio": {
+              "evaluador": 23,
+              "referencia": 24,
+              "dif": -1
+            }
+          },
+          "publicables_evaluador": [
+            "giants-shoes",
+            "lighthouse",
+            "port-of-hamburg",
+            "sugarloaf",
+            "vapes-litio"
+          ],
+          "costo_usd": 1.13421,
+          "costo_usd_pesimista": 3.402624,
+          "tokens": {
+            "input_tokens": 3895,
+            "output_tokens": 30627,
+            "cache_creation_input_tokens": 52490,
+            "cache_read_input_tokens": 41992,
+            "thinking_tokens": 14150
+          },
+          "avisos": []
+        },
+        {
+          "corrida": 2,
+          "kappa_global": 0.6800947867298579,
+          "n_pares": 108,
+          "acuerdo_exacto": 0.7685185185185185,
+          "kappa_humanas": 0.5893536121673004,
+          "n_pares_humanas": 48,
+          "acuerdo_exacto_humanas": 0.8125,
+          "kappa_provisionales": 0.7122302158273381,
+          "n_pares_provisionales": 60,
+          "totales": {
+            "clear-day-at-the-ocean": {
+              "evaluador": 8,
+              "referencia": 7,
+              "dif": 1
+            },
+            "giants-shoes": {
+              "evaluador": 23,
+              "referencia": 24,
+              "dif": -1
+            },
+            "lighthouse": {
+              "evaluador": 23,
+              "referencia": 20,
+              "dif": 3
+            },
+            "poblacion-belga": {
+              "evaluador": 14,
+              "referencia": 16,
+              "dif": -2
+            },
+            "port-of-hamburg": {
+              "evaluador": 24,
+              "referencia": 24,
+              "dif": 0
+            },
+            "residuos-plasticos": {
+              "evaluador": 19,
+              "referencia": 22,
+              "dif": -3
+            },
+            "st-michaels-church": {
+              "evaluador": 18,
+              "referencia": 21,
+              "dif": -3
+            },
+            "sugarloaf": {
+              "evaluador": 23,
+              "referencia": 20,
+              "dif": 3
+            },
+            "vapes-litio": {
+              "evaluador": 23,
+              "referencia": 24,
+              "dif": -1
+            }
+          },
+          "publicables_evaluador": [
+            "giants-shoes",
+            "lighthouse",
+            "port-of-hamburg",
+            "sugarloaf",
+            "vapes-litio"
+          ],
+          "costo_usd": 0.791741,
+          "costo_usd_pesimista": 2.375223,
+          "tokens": {
+            "input_tokens": 3895,
+            "output_tokens": 29001,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 94482,
+            "thinking_tokens": 12313
+          },
+          "avisos": [
+            "residuos-plasticos:cita_no_literal:abierta",
+            "sugarloaf:cita_no_literal:abierta",
+            "vapes-litio:cita_no_literal:ciclo",
+            "vapes-litio:cita_no_literal:autodiferenciacion"
+          ]
+        },
+        {
+          "corrida": 3,
+          "kappa_global": 0.737985212569316,
+          "n_pares": 108,
+          "acuerdo_exacto": 0.8055555555555556,
+          "kappa_humanas": 0.625,
+          "n_pares_humanas": 48,
+          "acuerdo_exacto_humanas": 0.8333333333333334,
+          "kappa_provisionales": 0.7745664739884394,
+          "n_pares_provisionales": 60,
+          "totales": {
+            "clear-day-at-the-ocean": {
+              "evaluador": 7,
+              "referencia": 7,
+              "dif": 0
+            },
+            "giants-shoes": {
+              "evaluador": 24,
+              "referencia": 24,
+              "dif": 0
+            },
+            "lighthouse": {
+              "evaluador": 23,
+              "referencia": 20,
+              "dif": 3
+            },
+            "poblacion-belga": {
+              "evaluador": 14,
+              "referencia": 16,
+              "dif": -2
+            },
+            "port-of-hamburg": {
+              "evaluador": 24,
+              "referencia": 24,
+              "dif": 0
+            },
+            "residuos-plasticos": {
+              "evaluador": 19,
+              "referencia": 22,
+              "dif": -3
+            },
+            "st-michaels-church": {
+              "evaluador": 20,
+              "referencia": 21,
+              "dif": -1
+            },
+            "sugarloaf": {
+              "evaluador": 21,
+              "referencia": 20,
+              "dif": 1
+            },
+            "vapes-litio": {
+              "evaluador": 23,
+              "referencia": 24,
+              "dif": -1
+            }
+          },
+          "publicables_evaluador": [
+            "giants-shoes",
+            "lighthouse",
+            "port-of-hamburg",
+            "st-michaels-church",
+            "sugarloaf",
+            "vapes-litio"
+          ],
+          "costo_usd": 0.802241,
+          "costo_usd_pesimista": 2.406723,
+          "tokens": {
+            "input_tokens": 3895,
+            "output_tokens": 29421,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 94482,
+            "thinking_tokens": 12911
+          },
+          "avisos": [
+            "vapes-litio:cita_no_literal:autodiferenciacion"
+          ]
+        }
+      ],
+      "por_criterio": {
+        "genuino": {
+          "kappa_agrupado": 0.88,
+          "n_pares": 27,
+          "acuerdo_exacto": 0.8888888888888888,
+          "kappa_por_corrida": [
+            0.88,
+            0.88,
+            0.88
+          ],
+          "media_evaluador": 1.5555555555555556,
+          "media_referencia": 1.6666666666666667
+        },
+        "abierta": {
+          "kappa_agrupado": 0.6493506493506493,
+          "n_pares": 27,
+          "acuerdo_exacto": 0.6666666666666666,
+          "kappa_por_corrida": [
+            0.6493506493506493,
+            0.6493506493506493,
+            0.6493506493506493
+          ],
+          "media_evaluador": 1.5555555555555556,
+          "media_referencia": 1.4444444444444444
+        },
+        "decisiones": {
+          "kappa_agrupado": 1.0,
+          "n_pares": 27,
+          "acuerdo_exacto": 1.0,
+          "kappa_por_corrida": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "media_evaluador": 1.6666666666666667,
+          "media_referencia": 1.6666666666666667
+        },
+        "realismo": {
+          "kappa_agrupado": 0.0,
+          "n_pares": 27,
+          "acuerdo_exacto": 0.8148148148148148,
+          "kappa_por_corrida": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "media_evaluador": 1.8148148148148149,
+          "media_referencia": 2
+        },
+        "autenticidad": {
+          "kappa_agrupado": 0.3571428571428572,
+          "n_pares": 27,
+          "acuerdo_exacto": 0.5555555555555556,
+          "kappa_por_corrida": [
+            0.3571428571428572,
+            0.3571428571428572,
+            0.3571428571428572
+          ],
+          "media_evaluador": 1.7777777777777777,
+          "media_referencia": 1.5555555555555556
+        },
+        "contexto": {
+          "kappa_agrupado": 0.7567567567567568,
+          "n_pares": 27,
+          "acuerdo_exacto": 0.7777777777777778,
+          "kappa_por_corrida": [
+            0.7567567567567568,
+            0.7567567567567568,
+            0.7567567567567568
+          ],
+          "media_evaluador": 1.5555555555555556,
+          "media_referencia": 1.7777777777777777
+        },
+        "ciclo": {
+          "kappa_agrupado": 0.8421052631578947,
+          "n_pares": 27,
+          "acuerdo_exacto": 0.8518518518518519,
+          "kappa_por_corrida": [
+            0.88,
+            0.7692307692307693,
+            0.88
+          ],
+          "media_evaluador": 1.5185185185185186,
+          "media_referencia": 1.6666666666666667
+        },
+        "validacion": {
+          "kappa_agrupado": 0.3793103448275862,
+          "n_pares": 27,
+          "acuerdo_exacto": 0.7037037037037037,
+          "kappa_por_corrida": [
+            0.3076923076923076,
+            0.3076923076923076,
+            0.5263157894736843
+          ],
+          "media_evaluador": 1.7037037037037037,
+          "media_referencia": 1.5555555555555556
+        },
+        "nivel": {
+          "kappa_agrupado": null,
+          "n_pares": 27,
+          "acuerdo_exacto": 1.0,
+          "kappa_por_corrida": [
+            null,
+            null,
+            null
+          ],
+          "media_evaluador": 2,
+          "media_referencia": 2
+        },
+        "autodiferenciacion": {
+          "kappa_agrupado": 0.7239263803680982,
+          "n_pares": 27,
+          "acuerdo_exacto": 0.8148148148148148,
+          "kappa_por_corrida": [
+            0.6785714285714286,
+            0.6785714285714286,
+            0.8235294117647058
+          ],
+          "media_evaluador": 1.4074074074074074,
+          "media_referencia": 1.2222222222222223
+        },
+        "fecundidad": {
+          "kappa_agrupado": 0.5882352941176471,
+          "n_pares": 27,
+          "acuerdo_exacto": 0.7407407407407407,
+          "kappa_por_corrida": [
+            0.5263157894736842,
+            0.5,
+            0.7
+          ],
+          "media_evaluador": 1.5555555555555556,
+          "media_referencia": 1.6666666666666667
+        },
+        "recursos": {
+          "kappa_agrupado": 0.6120689655172413,
+          "n_pares": 27,
+          "acuerdo_exacto": 0.6296296296296297,
+          "kappa_por_corrida": [
+            0.6493506493506493,
+            0.5384615384615384,
+            0.6493506493506493
+          ],
+          "media_evaluador": 1.4074074074074074,
+          "media_referencia": 1.5555555555555556
+        }
+      },
+      "diferencias_ge3": [
+        {
+          "corrida": 1,
+          "tarea": "lighthouse",
+          "evaluador": 23,
+          "referencia": 20,
+          "dif": 3
+        },
+        {
+          "corrida": 1,
+          "tarea": "residuos-plasticos",
+          "evaluador": 19,
+          "referencia": 22,
+          "dif": -3
+        },
+        {
+          "corrida": 1,
+          "tarea": "sugarloaf",
+          "evaluador": 24,
+          "referencia": 20,
+          "dif": 4
+        },
+        {
+          "corrida": 2,
+          "tarea": "lighthouse",
+          "evaluador": 23,
+          "referencia": 20,
+          "dif": 3
+        },
+        {
+          "corrida": 2,
+          "tarea": "residuos-plasticos",
+          "evaluador": 19,
+          "referencia": 22,
+          "dif": -3
+        },
+        {
+          "corrida": 2,
+          "tarea": "st-michaels-church",
+          "evaluador": 18,
+          "referencia": 21,
+          "dif": -3
+        },
+        {
+          "corrida": 2,
+          "tarea": "sugarloaf",
+          "evaluador": 23,
+          "referencia": 20,
+          "dif": 3
+        },
+        {
+          "corrida": 3,
+          "tarea": "lighthouse",
+          "evaluador": 23,
+          "referencia": 20,
+          "dif": 3
+        },
+        {
+          "corrida": 3,
+          "tarea": "residuos-plasticos",
+          "evaluador": 19,
+          "referencia": 22,
+          "dif": -3
+        }
+      ],
+      "consistencia_entre_corridas": [
+        {
+          "corridas": [
+            1,
+            2
+          ],
+          "kappa": 0.9476363636363636,
+          "acuerdo_exacto": 0.9629629629629629
+        },
+        {
+          "corridas": [
+            1,
+            3
+          ],
+          "kappa": 0.9489723600283487,
+          "acuerdo_exacto": 0.9629629629629629
+        },
+        {
+          "corridas": [
+            2,
+            3
+          ],
+          "kappa": 0.8959286918814744,
+          "acuerdo_exacto": 0.9259259259259259
+        }
+      ],
+      "kappa_global_agrupado": 0.7099034568670196,
+      "n_corridas_completas": 3,
+      "acepta": false,
+      "costo_usd": 2.728192,
+      "costo_usd_pesimista": 8.18457
+    },
+    {
+      "version_prompt": "1.3",
+      "corridas": [
+        {
+          "corrida": 1,
+          "kappa_global": 0.7062314540059347,
+          "n_pares": 108,
+          "acuerdo_exacto": 0.7962962962962963,
+          "kappa_humanas": 0.6199095022624435,
+          "n_pares_humanas": 48,
+          "acuerdo_exacto_humanas": 0.8541666666666666,
+          "kappa_provisionales": 0.7285886610373944,
+          "n_pares_provisionales": 60,
+          "totales": {
+            "clear-day-at-the-ocean": {
+              "evaluador": 7,
+              "referencia": 7,
+              "dif": 0
+            },
+            "giants-shoes": {
+              "evaluador": 24,
+              "referencia": 24,
+              "dif": 0
+            },
+            "lighthouse": {
+              "evaluador": 23,
+              "referencia": 20,
+              "dif": 3
+            },
+            "poblacion-belga": {
+              "evaluador": 14,
+              "referencia": 16,
+              "dif": -2
+            },
+            "port-of-hamburg": {
+              "evaluador": 24,
+              "referencia": 24,
+              "dif": 0
+            },
+            "residuos-plasticos": {
+              "evaluador": 24,
+              "referencia": 22,
+              "dif": 2
+            },
+            "st-michaels-church": {
+              "evaluador": 23,
+              "referencia": 21,
+              "dif": 2
+            },
+            "sugarloaf": {
+              "evaluador": 24,
+              "referencia": 20,
+              "dif": 4
+            },
+            "vapes-litio": {
+              "evaluador": 23,
+              "referencia": 24,
+              "dif": -1
+            }
+          },
+          "publicables_evaluador": [
+            "giants-shoes",
+            "lighthouse",
+            "port-of-hamburg",
+            "residuos-plasticos",
+            "st-michaels-church",
+            "sugarloaf",
+            "vapes-litio"
+          ],
+          "costo_usd": 1.087614,
+          "costo_usd_pesimista": 3.262842,
+          "tokens": {
+            "input_tokens": 3895,
+            "output_tokens": 28319,
+            "cache_creation_input_tokens": 54160,
+            "cache_read_input_tokens": 43328,
+            "thinking_tokens": 12600
+          },
+          "avisos": [
+            "sugarloaf:cita_no_literal:abierta",
+            "sugarloaf:cita_no_literal:nivel"
+          ]
+        },
+        {
+          "corrida": 2,
+          "kappa_global": 0.8016528925619835,
+          "n_pares": 108,
+          "acuerdo_exacto": 0.8518518518518519,
+          "kappa_humanas": 0.6756756756756757,
+          "n_pares_humanas": 48,
+          "acuerdo_exacto_humanas": 0.8541666666666666,
+          "kappa_provisionales": 0.843568945538818,
+          "n_pares_provisionales": 60,
+          "totales": {
+            "clear-day-at-the-ocean": {
+              "evaluador": 7,
+              "referencia": 7,
+              "dif": 0
+            },
+            "giants-shoes": {
+              "evaluador": 24,
+              "referencia": 24,
+              "dif": 0
+            },
+            "lighthouse": {
+              "evaluador": 23,
+              "referencia": 20,
+              "dif": 3
+            },
+            "poblacion-belga": {
+              "evaluador": 13,
+              "referencia": 16,
+              "dif": -3
+            },
+            "port-of-hamburg": {
+              "evaluador": 24,
+              "referencia": 24,
+              "dif": 0
+            },
+            "residuos-plasticos": {
+              "evaluador": 23,
+              "referencia": 22,
+              "dif": 1
+            },
+            "st-michaels-church": {
+              "evaluador": 21,
+              "referencia": 21,
+              "dif": 0
+            },
+            "sugarloaf": {
+              "evaluador": 22,
+              "referencia": 20,
+              "dif": 2
+            },
+            "vapes-litio": {
+              "evaluador": 23,
+              "referencia": 24,
+              "dif": -1
+            }
+          },
+          "publicables_evaluador": [
+            "giants-shoes",
+            "lighthouse",
+            "port-of-hamburg",
+            "residuos-plasticos",
+            "st-michaels-church",
+            "sugarloaf",
+            "vapes-litio"
+          ],
+          "costo_usd": 0.808294,
+          "costo_usd_pesimista": 2.424882,
+          "tokens": {
+            "input_tokens": 3895,
+            "output_tokens": 29603,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 97488,
+            "thinking_tokens": 13618
+          },
+          "avisos": []
+        },
+        {
+          "corrida": 3,
+          "kappa_global": 0.7445219123505976,
+          "n_pares": 108,
+          "acuerdo_exacto": 0.8240740740740741,
+          "kappa_humanas": 0.6842105263157895,
+          "n_pares_humanas": 48,
+          "acuerdo_exacto_humanas": 0.875,
+          "kappa_provisionales": 0.7571606475716065,
+          "n_pares_provisionales": 60,
+          "totales": {
+            "clear-day-at-the-ocean": {
+              "evaluador": 9,
+              "referencia": 7,
+              "dif": 2
+            },
+            "giants-shoes": {
+              "evaluador": 24,
+              "referencia": 24,
+              "dif": 0
+            },
+            "lighthouse": {
+              "evaluador": 23,
+              "referencia": 20,
+              "dif": 3
+            },
+            "poblacion-belga": {
+              "evaluador": 14,
+              "referencia": 16,
+              "dif": -2
+            },
+            "port-of-hamburg": {
+              "evaluador": 24,
+              "referencia": 24,
+              "dif": 0
+            },
+            "residuos-plasticos": {
+              "evaluador": 23,
+              "referencia": 22,
+              "dif": 1
+            },
+            "st-michaels-church": {
+              "evaluador": 24,
+              "referencia": 21,
+              "dif": 3
+            },
+            "sugarloaf": {
+              "evaluador": 17,
+              "referencia": 20,
+              "dif": -3
+            },
+            "vapes-litio": {
+              "evaluador": 23,
+              "referencia": 24,
+              "dif": -1
+            }
+          },
+          "publicables_evaluador": [
+            "giants-shoes",
+            "lighthouse",
+            "port-of-hamburg",
+            "residuos-plasticos",
+            "st-michaels-church",
+            "vapes-litio"
+          ],
+          "costo_usd": 0.8070189999999999,
+          "costo_usd_pesimista": 2.4210570000000002,
+          "tokens": {
+            "input_tokens": 3895,
+            "output_tokens": 29552,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 97488,
+            "thinking_tokens": 13363
+          },
+          "avisos": []
+        }
+      ],
+      "por_criterio": {
+        "genuino": {
+          "kappa_agrupado": 0.9589041095890412,
+          "n_pares": 27,
+          "acuerdo_exacto": 0.9629629629629629,
+          "kappa_por_corrida": [
+            1.0,
+            1.0,
+            0.88
+          ],
+          "media_evaluador": 1.6296296296296295,
+          "media_referencia": 1.6666666666666667
+        },
+        "abierta": {
+          "kappa_agrupado": 0.8068669527896996,
+          "n_pares": 27,
+          "acuerdo_exacto": 0.8148148148148148,
+          "kappa_por_corrida": [
+            0.7692307692307693,
+            0.7692307692307693,
+            0.8831168831168831
+          ],
+          "media_evaluador": 1.6296296296296295,
+          "media_referencia": 1.4444444444444444
+        },
+        "decisiones": {
+          "kappa_agrupado": 0.9620253164556962,
+          "n_pares": 27,
+          "acuerdo_exacto": 0.9629629629629629,
+          "kappa_por_corrida": [
+            1.0,
+            0.9032258064516129,
+            1.0
+          ],
+          "media_evaluador": 1.6296296296296295,
+          "media_referencia": 1.6666666666666667
+        },
+        "realismo": {
+          "kappa_agrupado": 0.0,
+          "n_pares": 27,
+          "acuerdo_exacto": 0.9259259259259259,
+          "kappa_por_corrida": [
+            0.0,
+            null,
+            0.0
+          ],
+          "media_evaluador": 1.9259259259259258,
+          "media_referencia": 2
+        },
+        "autenticidad": {
+          "kappa_agrupado": 0.3571428571428572,
+          "n_pares": 27,
+          "acuerdo_exacto": 0.5555555555555556,
+          "kappa_por_corrida": [
+            0.3571428571428572,
+            0.3571428571428572,
+            0.3571428571428572
+          ],
+          "media_evaluador": 1.7777777777777777,
+          "media_referencia": 1.5555555555555556
+        },
+        "contexto": {
+          "kappa_agrupado": 0.8043478260869565,
+          "n_pares": 27,
+          "acuerdo_exacto": 0.8518518518518519,
+          "kappa_por_corrida": [
+            0.8695652173913043,
+            0.8695652173913043,
+            0.6086956521739131
+          ],
+          "media_evaluador": 1.7037037037037037,
+          "media_referencia": 1.7777777777777777
+        },
+        "ciclo": {
+          "kappa_agrupado": 0.9589041095890412,
+          "n_pares": 27,
+          "acuerdo_exacto": 0.9629629629629629,
+          "kappa_por_corrida": [
+            1.0,
+            1.0,
+            0.88
+          ],
+          "media_evaluador": 1.6296296296296295,
+          "media_referencia": 1.6666666666666667
+        },
+        "validacion": {
+          "kappa_agrupado": 0.46153846153846156,
+          "n_pares": 27,
+          "acuerdo_exacto": 0.7407407407407407,
+          "kappa_por_corrida": [
+            0.3076923076923076,
+            0.3076923076923076,
+            0.7692307692307692
+          ],
+          "media_evaluador": 1.6666666666666667,
+          "media_referencia": 1.5555555555555556
+        },
+        "nivel": {
+          "kappa_agrupado": null,
+          "n_pares": 27,
+          "acuerdo_exacto": 1.0,
+          "kappa_por_corrida": [
+            null,
+            null,
+            null
+          ],
+          "media_evaluador": 2,
+          "media_referencia": 2
+        },
+        "autodiferenciacion": {
+          "kappa_agrupado": 0.6326530612244898,
+          "n_pares": 27,
+          "acuerdo_exacto": 0.7037037037037037,
+          "kappa_por_corrida": [
+            0.4545454545454545,
+            0.8695652173913043,
+            0.5573770491803278
+          ],
+          "media_evaluador": 1.5185185185185186,
+          "media_referencia": 1.2222222222222223
+        },
+        "fecundidad": {
+          "kappa_agrupado": 0.5,
+          "n_pares": 27,
+          "acuerdo_exacto": 0.7777777777777778,
+          "kappa_por_corrida": [
+            0.18181818181818188,
+            0.7692307692307692,
+            0.5
+          ],
+          "media_evaluador": 1.6666666666666667,
+          "media_referencia": 1.6666666666666667
+        },
+        "recursos": {
+          "kappa_agrupado": 0.6086956521739131,
+          "n_pares": 27,
+          "acuerdo_exacto": 0.6296296296296297,
+          "kappa_por_corrida": [
+            0.5263157894736843,
+            0.6493506493506493,
+            0.6493506493506493
+          ],
+          "media_evaluador": 1.4814814814814814,
+          "media_referencia": 1.5555555555555556
+        }
+      },
+      "diferencias_ge3": [
+        {
+          "corrida": 1,
+          "tarea": "lighthouse",
+          "evaluador": 23,
+          "referencia": 20,
+          "dif": 3
+        },
+        {
+          "corrida": 1,
+          "tarea": "sugarloaf",
+          "evaluador": 24,
+          "referencia": 20,
+          "dif": 4
+        },
+        {
+          "corrida": 2,
+          "tarea": "lighthouse",
+          "evaluador": 23,
+          "referencia": 20,
+          "dif": 3
+        },
+        {
+          "corrida": 2,
+          "tarea": "poblacion-belga",
+          "evaluador": 13,
+          "referencia": 16,
+          "dif": -3
+        },
+        {
+          "corrida": 3,
+          "tarea": "lighthouse",
+          "evaluador": 23,
+          "referencia": 20,
+          "dif": 3
+        },
+        {
+          "corrida": 3,
+          "tarea": "st-michaels-church",
+          "evaluador": 24,
+          "referencia": 21,
+          "dif": 3
+        },
+        {
+          "corrida": 3,
+          "tarea": "sugarloaf",
+          "evaluador": 17,
+          "referencia": 20,
+          "dif": -3
+        }
+      ],
+      "consistencia_entre_corridas": [
+        {
+          "corridas": [
+            1,
+            2
+          ],
+          "kappa": 0.8918918918918919,
+          "acuerdo_exacto": 0.9259259259259259
+        },
+        {
+          "corridas": [
+            1,
+            3
+          ],
+          "kappa": 0.837171052631579,
+          "acuerdo_exacto": 0.8981481481481481
+        },
+        {
+          "corridas": [
+            2,
+            3
+          ],
+          "kappa": 0.8506787330316742,
+          "acuerdo_exacto": 0.8981481481481481
+        }
+      ],
+      "kappa_global_agrupado": 0.7520940721649485,
+      "n_corridas_completas": 3,
+      "acepta": true,
+      "costo_usd": 2.702927,
+      "costo_usd_pesimista": 8.108781
+    }
+  ]
+}

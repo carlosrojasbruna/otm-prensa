@@ -1,0 +1,43 @@
+{
+  "id": "st-michaels-church",
+  "titulo": "St. Michael's Church",
+  "fuente_bibliografica": "Borromeo Ferri (2018) p. 53",
+  "nivel_declarado": {
+    "nivel": "P"
+  },
+  "forma_texto": "enunciado para estudiantes",
+  "texto_fuente": {
+    "tipo": "extraccion",
+    "archivo": "insumos/tareas-oro/st-michaels-church.md",
+    "desde": "## Enunciado original",
+    "hasta": "## Notas de la autora",
+    "sha256": "c4e1eb766f6d14ba2c9752437709b56f71c5fded624b48b623dfdafd33dee633"
+  },
+  "recursos": [
+    "Durante la tarea los estudiantes disponen de reglas de un metro y de libros donde pueden buscar la altura de la iglesia."
+  ],
+  "mapa_ciclo": null,
+  "referencia": {
+    "archivo": "evals/oro/puntajes_v0.4_2026-10-20.csv",
+    "evaluador": "Claude (provisional)",
+    "provisional": true,
+    "fecha": "2026-10-20",
+    "rol": "control positivo elemental",
+    "puntajes": {
+      "genuino": 2,
+      "abierta": 2,
+      "decisiones": 2,
+      "realismo": 2,
+      "autenticidad": 1,
+      "contexto": 2,
+      "ciclo": 2,
+      "validacion": 2,
+      "nivel": 2,
+      "autodiferenciacion": 1,
+      "fecundidad": 1,
+      "recursos": 2
+    },
+    "total": 21
+  },
+  "nota": "La entrada al evaluador se arma con cargar.py y excluye 'referencia'. Las notas de la autora y los campos de rol/puntaje de insumos/tareas-oro no se entregan (evitan filtrar el juicio de referencia)."
+}

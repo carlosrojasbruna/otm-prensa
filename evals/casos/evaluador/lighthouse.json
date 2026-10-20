@@ -1,0 +1,41 @@
+{
+  "id": "lighthouse",
+  "titulo": "Lighthouse",
+  "fuente_bibliografica": "Borromeo Ferri (2018) p. 106",
+  "nivel_declarado": {
+    "nivel": "S"
+  },
+  "forma_texto": "enunciado para estudiantes",
+  "texto_fuente": {
+    "tipo": "extraccion",
+    "archivo": "insumos/tareas-oro/lighthouse.md",
+    "desde": "## Enunciado original",
+    "hasta": "## Notas de la autora",
+    "sha256": "e59f4aaae105d7f8834ad63aec91f83def48d6ab736e82e6c50db26334e1f95c"
+  },
+  "recursos": [],
+  "mapa_ciclo": null,
+  "referencia": {
+    "archivo": "evals/oro/puntajes_v0.4_2026-10-20.csv",
+    "evaluador": "Claude (provisional)",
+    "provisional": true,
+    "fecha": "2026-10-20",
+    "rol": "control positivo",
+    "puntajes": {
+      "genuino": 2,
+      "abierta": 1,
+      "decisiones": 2,
+      "realismo": 2,
+      "autenticidad": 1,
+      "contexto": 2,
+      "ciclo": 2,
+      "validacion": 1,
+      "nivel": 2,
+      "autodiferenciacion": 1,
+      "fecundidad": 2,
+      "recursos": 2
+    },
+    "total": 20
+  },
+  "nota": "La entrada al evaluador se arma con cargar.py y excluye 'referencia'. Las notas de la autora y los campos de rol/puntaje de insumos/tareas-oro no se entregan (evitan filtrar el juicio de referencia)."
+}

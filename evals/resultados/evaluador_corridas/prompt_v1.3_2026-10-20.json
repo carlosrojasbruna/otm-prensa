@@ -1,0 +1,3024 @@
+{
+  "version_prompt": "1.3",
+  "cambio": "Ajuste 3, último permitido (κ v1.2 = 0,71/0,68/0,74: corrida 2 bajo el umbral). Se agrega la lectura del criterio 4 (realismo = la situación existe o es plausible; una pregunta de curiosidad o desafío sobre hechos reales no es un encuadre forzado; la necesidad se juzga en el criterio 1) y se precisa la regla para relatos de tareas implementadas: las fases que el relato recorre sin decir quién decidió se leen como proceso de los estudiantes; solo cuenta como entregado lo que el texto dice que se les dio. RUB01 y MAR03 sin cambios.",
+  "fecha": "2026-10-20T18:15:25+00:00",
+  "reproducibilidad": {
+    "modelo": "claude-opus-5-5",
+    "effort": "high",
+    "max_tokens": 16000,
+    "temperature": "no se envía (el modelo la rechaza: 'deprecated for this model')",
+    "salida_estructurada": "output_config.format json_schema",
+    "cache": "system prompt con cache_control ephemeral",
+    "prompt_archivo": "pipeline/agentes/evaluador/prompt_sistema_v1.3.md",
+    "prompt_sha256": "d8c55ac66c2b282127aad47b7e2919e9a21e623cd3aeedcfe41149535ca72751",
+    "version_rubrica": "4.0",
+    "rubrica_sha256": "de11b63d71e4107e0622cc9f1cf5496ca1e939b096d16f574b2ca1a206ebc2d4",
+    "version_mar03": "1.0",
+    "referencia": "evals/oro/puntajes_v0.4_2026-10-20.csv",
+    "referencia_sha256": "2106220748164ae1af6eb41b5a777c82963d144aa0159bf56c5710f64a7722b5",
+    "sdk_anthropic": "0.116.0",
+    "python": "3.12.10",
+    "git_commit": "fb67480",
+    "precios_usd_mtok": {
+      "input": 5.0,
+      "output": 25.0,
+      "cache_write": 6.25,
+      "cache_read": 0.5
+    },
+    "precios_pesimistas_usd_mtok": {
+      "input": 15.0,
+      "output": 75.0,
+      "cache_write": 18.75,
+      "cache_read": 1.5
+    }
+  },
+  "corridas": [
+    {
+      "corrida": 1,
+      "resultados": {
+        "clear-day-at-the-ocean": {
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 0,
+                "justificacion": "La tarea entrega el modelo completo y solo pide aplicarlo. Corresponde al descriptor 0: la regla está dada y la tarea se reduce a ejecutarla.",
+                "cita": "With the rule w² = 13 h you can estimate the range of sight in kilometers (w)"
+              },
+              "abierta": {
+                "puntaje": 0,
+                "justificacion": "La pregunta es cerrada y tiene una única respuesta numérica que se obtiene sustituyendo en la fórmula entregada. La segunda viñeta además prescribe los valores de la tabla.",
+                "cita": "How far can you see, if your eyes are 1.60 m above the ground?"
+              },
+              "decisiones": {
+                "puntaje": 0,
+                "justificacion": "Todos los datos, las unidades y los valores de h vienen fijados, así que no hay nada que seleccionar, suponer ni estimar. La situación está completamente estructurada.",
+                "cita": "Make a table for the range of sight with h = 5 m (10 m; 20 m; 40 m; 80 m)."
+              },
+              "realismo": {
+                "puntaje": 1,
+                "justificacion": "El fenómeno del horizonte es real y plausible, pero la serie de alturas que se duplican y la pregunta por cuadruplicar h solo tienen sentido para insertar el patrón de la raíz cuadrada. Dudé entre 2 y 1 y asigné el menor.",
+                "cita": "Perhaps you have observed at the ocean, that due the Earth's curvature, even with a clear view you only can see a certain distance."
+              },
+              "autenticidad": {
+                "puntaje": 1,
+                "justificacion": "El tema del alcance visual al horizonte es extraescolar y auténtico, pero la tarea no declara ninguna fuente. El material (fórmula redondeada, tabla y preguntas) fue construido para la actividad.",
+                "cita": "you can estimate the range of sight in kilometers (w), depending on how high above the ground your eyes are (h)"
+              },
+              "contexto": {
+                "puntaje": 0,
+                "justificacion": "Si se elimina el contexto, la resolución es idéntica: sustituir en w² = 13h y comparar valores. El contexto no condiciona ninguna decisión ni interpretación.",
+                "cita": "How does the range of sight, w, change, if the height h is quadrupled?"
+              },
+              "ciclo": {
+                "puntaje": 0,
+                "justificacion": "Comprender, simplificar y matematizar quedan hechos por el enunciado. Solo se ejercita una aplicación rutinaria de la fórmula, sin interpretar ni validar.",
+                "cita": "With the rule w² = 13 h you can estimate the range of sight"
+              },
+              "validacion": {
+                "puntaje": 1,
+                "justificacion": "Existen tablas de alcance visual y una deducción geométrica con el radio terrestre, pero la tarea no las convoca y la fórmula no es un modelo construido por los estudiantes. En la práctica solo cabe una comprobación de plausibilidad; dudé y asigné el menor.",
+                "cita": "due the Earth's curvature, even with a clear view you only can see a certain distance"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto es comprensible y la matemática requerida (raíz cuadrada, tablas, efecto de escalar una variable) está al alcance de secundaria según MAR03.",
+                "cita": "Make a table for the range of sight with h = 5 m (10 m; 20 m; 40 m; 80 m)."
+              },
+              "autodiferenciacion": {
+                "puntaje": 1,
+                "justificacion": "El piso es bajo y accesible, pero el techo también lo es: no admite soluciones de distinta sofisticación más allá de la generalización del cuadruplicar.",
+                "cita": "How far can you see, if your eyes are 1.60 m above the ground?"
+              },
+              "fecundidad": {
+                "puntaje": 1,
+                "justificacion": "La pregunta por el efecto de cuadruplicar h abre una discusión sobre el patrón, pero no surgen extensiones sustantivas ni comparación de modelos.",
+                "cita": "How does the range of sight, w, change, if the height h is quadrupled?"
+              },
+              "recursos": {
+                "puntaje": 0,
+                "justificacion": "Los materiales entregan directamente la estructura de la solución (el modelo). Corresponde al descriptor 0.",
+                "cita": "With the rule w² = 13 h you can estimate the range of sight in kilometers (w)"
+              }
+            },
+            "total": 7,
+            "mejoras": [
+              {
+                "criterio": "genuino",
+                "mejora_minima": "Eliminar la fórmula w² = 13h y plantear la necesidad: «¿Desde qué altura debe estar un vigía para ver un barco a 20 km?»."
+              },
+              {
+                "criterio": "abierta",
+                "mejora_minima": "Sustituir las viñetas por una pregunta abierta sobre cómo depende el alcance visual de la altura, sin prescribir valores ni procedimiento."
+              },
+              {
+                "criterio": "decisiones",
+                "mejora_minima": "Pedir a los estudiantes que decidan qué datos necesitan (radio terrestre, altura de los ojos o de un faro) y qué supuestos hacen (Tierra esférica, sin refracción)."
+              },
+              {
+                "criterio": "realismo",
+                "mejora_minima": "Reemplazar la tabla de alturas duplicadas por un caso real, como un salvavidas en su torre o un faro concreto, cuya altura sea relevante para la pregunta."
+              },
+              {
+                "criterio": "autenticidad",
+                "mejora_minima": "Integrar como dato una fuente real, por ejemplo el alcance geográfico publicado de un faro chileno o una noticia sobre visibilidad en el mar."
+              },
+              {
+                "criterio": "contexto",
+                "mejora_minima": "Pedir que la respuesta se interprete en la situación, por ejemplo si un bañista en apuros a cierta distancia es visible desde la torre del salvavidas."
+              },
+              {
+                "criterio": "ciclo",
+                "mejora_minima": "Retirar el modelo para que los estudiantes construyan la relación entre alcance y altura a partir de la geometría de la Tierra y luego la interpreten."
+              },
+              {
+                "criterio": "validacion",
+                "mejora_minima": "Pedir que se contraste el modelo propio con el alcance publicado de un faro real o con una tabla náutica."
+              },
+              {
+                "criterio": "autodiferenciacion",
+                "mejora_minima": "Abrir la pregunta para que admita desde estimaciones con dibujo a escala hasta modelos con el teorema de Pitágoras o con la refracción atmosférica."
+              },
+              {
+                "criterio": "fecundidad",
+                "mejora_minima": "Añadir una pregunta posterior sobre los límites del modelo, por ejemplo qué ocurre si el objeto observado también tiene altura, como el mástil de un barco."
+              },
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Quitar la regla del enunciado y ofrecer a solicitud solo el radio terrestre, sin la fórmula."
+              }
+            ]
+          },
+          "meta": {
+            "agente": "evaluador",
+            "modelo_solicitado": "claude-opus-5-5",
+            "modelo_respuesta": "claude-opus-5-5",
+            "version_prompt": "1.3",
+            "version_rubrica": "4.0",
+            "version_mar03": "1.0",
+            "parametros": {
+              "temperature": "default (el modelo rechaza temperature)",
+              "effort": "high",
+              "max_tokens": 16000,
+              "salida": "output_config.format json_schema"
+            },
+            "request_id": "req_011CgDwWtMfScFcGGenpxq2u",
+            "fecha": "2026-10-20T18:12:31+00:00",
+            "segundos": 36.4,
+            "intentos": 1,
+            "uso": {
+              "input_tokens": 394,
+              "output_tokens": 3755,
+              "cache_creation_input_tokens": 10832,
+              "cache_read_input_tokens": 0,
+              "thinking_tokens": 1428
+            },
+            "costo_usd": 0.163545,
+            "costo_usd_pesimista": 0.490635,
+            "avisos": []
+          }
+        },
+        "giants-shoes": {
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La pregunta plantea un problema real de estimación y no entrega ninguna regla ni relación entre pie y estatura. Quien resuelve debe construir esa relación por sí mismo.",
+                "cita": "Approximately how tall would a giant be for these shoes to fit?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "No prescribe el método. Admite varios modelos defendibles: proporción con el propio pie, promedios del curso o uso del ancho además del largo.",
+                "cita": "Approximately how tall would a giant be for these shoes to fit? Explain your solution."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige varias decisiones: qué dato usar (largo o ancho), suponer que las proporciones humanas se conservan, estimar la holgura del zapato respecto del pie y obtener medidas reales de pie y estatura.",
+                "cita": "with a width of 2.37 m and a length of 5.29 m"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Los zapatos existen y están registrados por Guinness. La pregunta es de curiosidad y estimación sobre un objeto real, lo que es plenamente realista.",
+                "cita": "In a sports centre on the Philippines, Florentino Anonuevo Jr. polishes a pair of shoes."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El tema y los datos provienen de una noticia y de un registro externo no creados para enseñar. Además, constituyen el núcleo de la tarea.",
+                "cita": "They are, according to the Guinness Book of Records, the world’s biggest"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona decisiones de modelación, como la holgura entre zapato y pie y si las proporciones humanas se mantienen. También es necesario para interpretar la estatura obtenida y juzgar su plausibilidad.",
+                "cita": "for these shoes to fit"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "La tarea obliga a recorrer todas las fases: comprender la situación, simplificar (relación pie-estatura), matematizar (proporción), calcular, interpretar la estatura y justificarla. El enunciado no deja hecha ninguna fase.",
+                "cita": "Approximately how tall would a giant be for these shoes to fit? Explain your solution."
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "El supuesto de proporcionalidad entre pie y estatura puede contrastarse con mediciones independientes de personas reales o con datos antropométricos públicos. Además, el ancho del zapato ofrece una prueba no usada si se modela con el largo.",
+                "cita": "Approximately how tall would a giant be"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto y el lenguaje son comprensibles para el nivel S. La matemática requerida (razones, proporcionalidad, promedio) está dentro de las herramientas esperables del tramo.",
+                "cita": "Approximately how tall would a giant be for these shoes to fit?"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es bajo, pues basta comparar con el propio pie. La tarea admite soluciones correctas más sofisticadas: promedios de varias personas, consideración de la holgura del zapato o contraste entre ancho y largo.",
+                "cita": "Explain your solution."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las distintas proporciones y la discrepancia entre usar ancho o largo permiten comparar soluciones. También abren preguntas sobre los límites del supuesto de semejanza.",
+                "cita": "with a width of 2.37 m and a length of 5.29 m"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "Los datos del zapato se entregan, y los datos de pie y estatura pueden medirse directamente en el aula. Nada en el material revela el modelo de solución.",
+                "cita": "with a width of 2.37 m and a length of 5.29 m"
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "agente": "evaluador",
+            "modelo_solicitado": "claude-opus-5-5",
+            "modelo_respuesta": "claude-opus-5-5",
+            "version_prompt": "1.3",
+            "version_rubrica": "4.0",
+            "version_mar03": "1.0",
+            "parametros": {
+              "temperature": "default (el modelo rechaza temperature)",
+              "effort": "high",
+              "max_tokens": 16000,
+              "salida": "output_config.format json_schema"
+            },
+            "request_id": "req_011CgDwWtLR9V4kRAkWRpQy7",
+            "fecha": "2026-10-20T18:12:17+00:00",
+            "segundos": 22.4,
+            "intentos": 1,
+            "uso": {
+              "input_tokens": 282,
+              "output_tokens": 2197,
+              "cache_creation_input_tokens": 10832,
+              "cache_read_input_tokens": 0,
+              "thinking_tokens": 796
+            },
+            "costo_usd": 0.124035,
+            "costo_usd_pesimista": 0.372105,
+            "avisos": []
+          }
+        },
+        "lighthouse": {
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La tarea plantea una necesidad real: saber desde qué distancia se avista el faro. No entrega fórmula, regla ni modelo; quien resuelve debe construirlo.",
+                "cita": "How far, approximately, was a ship when it saw the lighthouse for the first time?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe el método. Admite varios modelos defendibles: con o sin altura del observador, con o sin refracción, o por geometría del triángulo rectángulo con el radio terrestre.",
+                "cita": "How far, approximately, was a ship when it saw the lighthouse for the first time? Explain your solution."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige suponer la Tierra esférica, obtener su radio, decidir la altura del observador en el barco e ignorar o no el clima y la refracción. Son decisiones y supuestos sustantivos.",
+                "cita": "measuring 31 m (102 feet) in height"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "La situación existe fuera de la escuela: un faro real cuya función es avisar a los barcos de la cercanía de la costa.",
+                "cita": "In the bay of Massachusetts, a lighthouse called \"Boston light\" was built in 1716"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El tema y los datos (faro real, año y altura) son extraescolares y no fueron creados para enseñar el contenido. Además constituyen el núcleo de la tarea.",
+                "cita": "a lighthouse called \"Boston light\" was built in 1716, measuring 31 m (102 feet) in height"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona decisiones como la curvatura terrestre, la altura del observador y la visibilidad de la luz. También es necesario para interpretar qué significa «ver por primera vez» y si la distancia obtenida es razonable.",
+                "cita": "Its beacon was meant to warn ships that they were approaching the coast."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a comprender la situación, simplificar (Tierra esférica, línea de visión tangente), matematizar con un triángulo rectángulo, calcular e interpretar la distancia. Ninguna fase la deja hecha el enunciado.",
+                "cita": "How far, approximately, was a ship when it saw the lighthouse for the first time? Explain your solution."
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existe evidencia independiente accesible para contrastar el modelo: el alcance geográfico publicado del faro en listas náuticas y las tablas de distancia al horizonte.",
+                "cita": "a lighthouse called \"Boston light\""
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto y el lenguaje son comprensibles para secundaria. La matemática requerida (teorema de Pitágoras, radio terrestre, aproximación) está al alcance de las herramientas de S.",
+                "cita": "How far, approximately, was a ship when it saw the lighthouse for the first time?"
+              },
+              "autodiferenciacion": {
+                "puntaje": 1,
+                "justificacion": "El techo es alto: se puede refinar con la altura del observador, la refracción o la intensidad de la luz. Pero una solución correcta depende de una idea clave, la curvatura terrestre; sin ella la entrada se reduce a conjeturas. Dudo entre 1 y 2 y asigno el menor.",
+                "cita": "How far, approximately, was a ship when it saw the lighthouse for the first time?"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Los resultados abren preguntas nuevas: el efecto de la altura del mástil, la refracción, la potencia de la luz o la comparación con faros actuales. También permiten comparar modelos y sus límites.",
+                "cita": "Its beacon was meant to warn ships that they were approaching the coast."
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "Se entrega la altura y el radio terrestre se obtiene con una búsqueda simple. Nada revela el modelo ni la regla de solución.",
+                "cita": "measuring 31 m (102 feet) in height"
+              }
+            },
+            "total": 23,
+            "mejoras": [
+              {
+                "criterio": "autodiferenciacion",
+                "mejora_minima": "Agregar una pregunta de entrada que permita empezar sin la idea de curvatura y luego apunte a ella, sin revelar el modelo: por ejemplo, «¿Desde qué distancia crees que se ve un objeto de 31 m en el mar? ¿Qué podría impedir verlo más lejos?»."
+              }
+            ]
+          },
+          "meta": {
+            "agente": "evaluador",
+            "modelo_solicitado": "claude-opus-5-5",
+            "modelo_respuesta": "claude-opus-5-5",
+            "version_prompt": "1.3",
+            "version_rubrica": "4.0",
+            "version_mar03": "1.0",
+            "parametros": {
+              "temperature": "default (el modelo rechaza temperature)",
+              "effort": "high",
+              "max_tokens": 16000,
+              "salida": "output_config.format json_schema"
+            },
+            "request_id": "req_011CgDwWtNQgf9suN6akg5fw",
+            "fecha": "2026-10-20T18:12:20+00:00",
+            "segundos": 25.6,
+            "intentos": 1,
+            "uso": {
+              "input_tokens": 274,
+              "output_tokens": 2605,
+              "cache_creation_input_tokens": 10832,
+              "cache_read_input_tokens": 0,
+              "thinking_tokens": 997
+            },
+            "costo_usd": 0.134195,
+            "costo_usd_pesimista": 0.402585,
+            "avisos": []
+          }
+        },
+        "poblacion-belga": {
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 1,
+                "justificacion": "El modelo ya se aplicó en la sección anterior («calculations led to two observations»). La pregunta no entrega la regla de cálculo, pero insinúa con fuerza la estructura: factor de crecimiento y distribución a largo plazo. No se plantea una necesidad que deba resolverse desde la situación.",
+                "cita": "how can the long-term growth factor and the long-term age distribution be calculated in a more ‘mathematical’ way?"
+              },
+              "abierta": {
+                "puntaje": 1,
+                "justificacion": "Hay cierta apertura al pedir explicar el envejecimiento y buscar un cálculo «más matemático». Sin embargo, la consigna indica qué observación usar y encauza hacia una ruta casi única.",
+                "cita": "they have to explain this phenomenon using the first observation above."
+              },
+              "decisiones": {
+                "puntaje": 1,
+                "justificacion": "La situación llega estructurada: la tabla y las observaciones ya están formuladas. Solo quedan decisiones menores de interpretación, sin seleccionar datos ni formular supuestos de modelación.",
+                "cita": "In the previous section calculations led to two observations that were formulated in terms of the long-term growth factor and the long term age distribution."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "La evolución y el envejecimiento de la población belga son un fenómeno real del mundo extramatemático.",
+                "cita": "Students, for example, have to explain how they see the ageing of the population in the table."
+              },
+              "autenticidad": {
+                "puntaje": 1,
+                "justificacion": "El tema demográfico es auténtico. Pero la tabla parece ser el resultado de los cálculos de la secuencia, no datos extraescolares integrados, y no se declara su procedencia. Dudo entre 1 y 2 y asigno el menor.",
+                "cita": "explain how they see the ageing of the population in the table."
+              },
+              "contexto": {
+                "puntaje": 1,
+                "justificacion": "El contexto orienta la interpretación del envejecimiento. La pregunta central, en cambio, puede resolverse abandonándolo una vez formulada la matemática.",
+                "cita": "how can the long-term growth factor and the long-term age distribution be calculated in a more ‘mathematical’ way?"
+              },
+              "ciclo": {
+                "puntaje": 1,
+                "justificacion": "Las fases de comprender, simplificar y matematizar ya quedaron hechas antes. La tarea se concentra en interpretar resultados y en trabajo matemático, de modo que varias fases no se exigen.",
+                "cita": "In the previous section calculations led to two observations"
+              },
+              "validacion": {
+                "puntaje": 1,
+                "justificacion": "Existen datos demográficos reales de Bélgica, pero la tarea gira en torno al comportamiento a largo plazo de un modelo ya fijado. Eso permite sobre todo una comprobación de plausibilidad. Dudo entre 1 y 2 y asigno el menor.",
+                "cita": "they have to formulate what it means that the percentages no longer change in the long run"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "Calcular el factor de crecimiento y la distribución estable de un modelo poblacional discreto (álgebra lineal, modelos dinámicos discretos) se ajusta a las herramientas esperables del nivel U. El contexto es comprensible.",
+                "cita": "how can the long-term growth factor and the long-term age distribution be calculated in a more ‘mathematical’ way?"
+              },
+              "autodiferenciacion": {
+                "puntaje": 1,
+                "justificacion": "La interpretación de la tabla ofrece un piso accesible. Pero la pregunta central conduce a un único método de cálculo y no admite soluciones de distinta sofisticación, así que el techo es bajo.",
+                "cita": "explain how they see the ageing of the population in the table."
+              },
+              "fecundidad": {
+                "puntaje": 1,
+                "justificacion": "Hay espacio para discutir el significado de la estabilidad y del envejecimiento. Sin embargo, la tarea no abre comparaciones de modelos ni límites como extensiones sustantivas.",
+                "cita": "they have to formulate what it means that the percentages no longer change in the long run"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "La tabla imprescindible no se declara entre los recursos, aunque los datos demográficos belgas son obtenibles públicamente. Además, la consigna sobreorienta al indicar qué observación usar.",
+                "cita": "using the first observation above"
+              }
+            },
+            "total": 14,
+            "mejoras": [
+              {
+                "criterio": "genuino",
+                "mejora_minima": "Formular una necesidad real: por ejemplo, estimar cómo será la distribución por edades de Bélgica en 50 años para planificar pensiones, sin anunciar que existen un factor de crecimiento y una distribución límite."
+              },
+              {
+                "criterio": "abierta",
+                "mejora_minima": "Eliminar la indicación «using the first observation above» y dejar que los estudiantes elijan cómo explicar la estabilización de los porcentajes."
+              },
+              {
+                "criterio": "decisiones",
+                "mejora_minima": "Entregar datos demográficos brutos (nacimientos, defunciones por tramo de edad) y pedir que los estudiantes decidan los tramos de edad y los supuestos de fecundidad y mortalidad del modelo."
+              },
+              {
+                "criterio": "autenticidad",
+                "mejora_minima": "Incluir y citar como núcleo de la tarea una tabla oficial de población belga por edades (por ejemplo, de Statbel) en lugar de una tabla generada por los cálculos de la secuencia."
+              },
+              {
+                "criterio": "contexto",
+                "mejora_minima": "Añadir que los estudiantes interpreten el factor de crecimiento y la distribución estable calculados en términos de la población belga real y de sus consecuencias, por ejemplo la proporción de mayores de 65."
+              },
+              {
+                "criterio": "ciclo",
+                "mejora_minima": "Pedir que los estudiantes construyan el modelo de proyección poblacional a partir de los datos, en vez de partir de cálculos y observaciones ya hechos."
+              },
+              {
+                "criterio": "validacion",
+                "mejora_minima": "Pedir que contrasten la distribución por edades predicha con datos censales belgas de un año no usado para construir el modelo."
+              },
+              {
+                "criterio": "autodiferenciacion",
+                "mejora_minima": "Permitir respuestas desde la iteración numérica hasta el análisis espectral, y sugerir analizar la sensibilidad del factor de crecimiento ante cambios en la fecundidad."
+              },
+              {
+                "criterio": "fecundidad",
+                "mejora_minima": "Agregar una pregunta final sobre los límites del modelo, por ejemplo migración o tasas cambiantes en el tiempo, y sobre cómo cambiarían las conclusiones."
+              },
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Declarar explícitamente la tabla de población entre los recursos, o indicar la fuente pública de datos, y suprimir la referencia a qué observación usar."
+              }
+            ]
+          },
+          "meta": {
+            "agente": "evaluador",
+            "modelo_solicitado": "claude-opus-5-5",
+            "modelo_respuesta": "claude-opus-5-5",
+            "version_prompt": "1.3",
+            "version_rubrica": "4.0",
+            "version_mar03": "1.0",
+            "parametros": {
+              "temperature": "default (el modelo rechaza temperature)",
+              "effort": "high",
+              "max_tokens": 16000,
+              "salida": "output_config.format json_schema"
+            },
+            "request_id": "req_011CgDwWtNQLHrdJiWRU9Dhx",
+            "fecha": "2026-10-20T18:12:32+00:00",
+            "segundos": 37.7,
+            "intentos": 1,
+            "uso": {
+              "input_tokens": 352,
+              "output_tokens": 3907,
+              "cache_creation_input_tokens": 10832,
+              "cache_read_input_tokens": 0,
+              "thinking_tokens": 1554
+            },
+            "costo_usd": 0.167135,
+            "costo_usd_pesimista": 0.501405,
+            "avisos": []
+          }
+        },
+        "port-of-hamburg": {
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La pregunta plantea una necesidad real de estimar un área sin entregar fórmula, regla ni modelo; quien resuelve debe construirlo.",
+                "cita": "How big is the area needed for the transhipping of the containers?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "No prescribe procedimiento ni hay instrucciones posteriores que encaucen. Admite modelos distintos y defendibles: todos los contenedores a la vez, apilamiento, tiempo de permanencia, vías y grúas.",
+                "cita": "How big is the area needed for the transhipping of the containers?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "El dato anual obliga a suponer el tamaño de un contenedor, la altura de apilamiento y el tiempo de permanencia, a decidir si se incluye el espacio de maniobra y a descartar información irrelevante (contenedores extraviados).",
+                "cita": "In 2007, 9.9 million containers were shipped through the port of Hamburg."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "La situación es real: un puerto existente y su volumen de carga. Plantea una pregunta de estimación sobre hechos reales, plausible fuera de la escuela.",
+                "cita": "This makes Hamburg the world's ninth biggest port."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El texto y la cifra provienen de un boletín real, no creado para enseñar, y constituyen el núcleo de la tarea. Junto con la fotografía, son un componente auténtico integrado de manera sustantiva.",
+                "cita": "Original text of an insurance Newsletter: AOK Rheinland/Hamburg No. 2/2008"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El funcionamiento del puerto condiciona las decisiones de modelación (apilamiento, rotación, espacio para grúas). También es necesario para interpretar el resultado y juzgar si es razonable.",
+                "cita": "(La tarea incluye una fotografía de contenedores apilados y grúas; no muestra el área completa.)"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a comprender cómo opera el puerto, simplificar con supuestos, matematizar (área por contenedor, apilamiento, rotación), calcular y volver al contexto para interpretar y juzgar el área obtenida. Ninguna fase viene hecha.",
+                "cita": "How big is the area needed for the transhipping of the containers?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "El área real de las terminales de contenedores de Hamburgo es un dato público accesible (sitio del puerto, mapas satelitales). Es evidencia independiente para contrastar el modelo.",
+                "cita": "the port of Hamburg"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "Para secundaria, el contexto es comprensible y la matemática requerida (estimación, áreas, razones y tasas, proporcionalidad) está al alcance de las herramientas de S1 y S2.",
+                "cita": "How big is the area needed for the transhipping of the containers?"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Se puede entrar con un modelo elemental (número de contenedores por área de uno). La tarea admite modelos correctos más sofisticados con apilamiento, tiempo de permanencia, espacio de maniobra y análisis de sensibilidad.",
+                "cita": "In 2007, 9.9 million containers were shipped through the port of Hamburg."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las grandes diferencias entre los resultados según los supuestos permiten comparar soluciones y discutir los límites de cada modelo. También abren nuevas preguntas sobre eficiencia, rotación o crecimiento del puerto.",
+                "cita": "How big is the area needed for the transhipping of the containers?"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "Los datos faltantes (dimensiones de un contenedor, apilamiento, permanencia) pueden estimarse desde la foto y el conocimiento cotidiano u obtenerse con una búsqueda simple. Los materiales no revelan el modelo.",
+                "cita": "(La tarea incluye una fotografía de contenedores apilados y grúas; no muestra el área completa.)"
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "agente": "evaluador",
+            "modelo_solicitado": "claude-opus-5-5",
+            "modelo_respuesta": "claude-opus-5-5",
+            "version_prompt": "1.3",
+            "version_rubrica": "4.0",
+            "version_mar03": "1.0",
+            "parametros": {
+              "temperature": "default (el modelo rechaza temperature)",
+              "effort": "high",
+              "max_tokens": 16000,
+              "salida": "output_config.format json_schema"
+            },
+            "request_id": "req_011CgDwWtQPwnGC2TGiez7M5",
+            "fecha": "2026-10-20T18:12:17+00:00",
+            "segundos": 22.4,
+            "intentos": 1,
+            "uso": {
+              "input_tokens": 385,
+              "output_tokens": 2202,
+              "cache_creation_input_tokens": 10832,
+              "cache_read_input_tokens": 0,
+              "thinking_tokens": 684
+            },
+            "costo_usd": 0.124675,
+            "costo_usd_pesimista": 0.374025,
+            "avisos": []
+          }
+        },
+        "residuos-plasticos": {
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La situación plantea una necesidad real: dimensionar los residuos plásticos escolares. El texto no dice que se haya entregado una regla o modelo; según el relato, las variables y el razonamiento proporcional surgieron del proceso de modelación.",
+                "cita": "they identified the problem of plastic waste in schools and defined key variables such as the amount of plastic waste produced per week"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "Estimar el volumen de residuos de todas las escuelas de la ciudad admite varios caminos defendibles: cómo medir, qué muestra tomar, cómo escalar y qué periodo usar. No se declara ninguna instrucción que prescriba el método.",
+                "cita": "estimating the volume of total plastic waste generated by all primary schools in their city"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver la tarea exige simplificar, tomando una sala como muestra representativa. También exige recolectar datos y estimar información faltante, como el número de escuelas y la periodicidad.",
+                "cita": "simplifying, ensuring the problem was manageable by focusing on a single classroom’s waste as a representative sample"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Los residuos plásticos en las escuelas son una situación real y cercana al mundo extraescolar de los estudiantes.",
+                "cita": "the problem of plastic waste in schools"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El núcleo de la tarea son datos reales recolectados de los residuos de la propia sala, en torno a un tema auténtico (ODS 12). Esos datos no fueron fabricados para enseñar el contenido.",
+                "cita": "the students performed calculations, analyzed the collected data, and made predictions based on their model"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona decisiones de modelación, como la representatividad de la muestra. También es necesario para interpretar el resultado en términos de impacto ambiental y para validarlo con datos de producción de plástico.",
+                "cita": "considering the environmental impact of plastic waste accumulation on a larger scale"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "El relato recorre construir, simplificar, matematizar, calcular, interpretar y validar sin indicar que alguna fase se haya entregado hecha. Conforme a la regla de §3.1, se lee como el proceso de los estudiantes.",
+                "cita": "They then proceeded to interpreting, where they examined the implications of their results"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existe evidencia independiente, en datos disponibles sobre producción de residuos plásticos, para contrastar el modelo y ajustarlo.",
+                "cita": "comparing them with available data on plastic waste production and adjusting their model if necessary"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "La matemática requerida (proporcionalidad directa, multiplicación y estimación) está dentro de las herramientas esperables para P. El contexto escolar es comprensible y significativo para el nivel.",
+                "cita": "using proportional reasoning and multiplication"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es accesible, pues basta contar o medir los residuos de la sala y escalar. El techo admite refinamientos, como distinguir el tamaño de las escuelas, la variación semanal o la proyección anual, aunque el relato solo describe la ruta básica.",
+                "cita": "focusing on a single classroom’s waste as a representative sample"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Los resultados abren nuevas preguntas: efectos a largo plazo y acciones de reducción. Además, la comparación con datos disponibles permite discutir los límites del modelo.",
+                "cita": "explored the potential long-term effects of plastic waste accumulation, and brainstormed actionable solutions"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "Los datos centrales se obtienen midiendo los residuos de la propia sala, y el número de escuelas es obtenible con una búsqueda simple o preguntando. No se entrega material que revele el modelo.",
+                "cita": "analyzed the collected data"
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "agente": "evaluador",
+            "modelo_solicitado": "claude-opus-5-5",
+            "modelo_respuesta": "claude-opus-5-5",
+            "version_prompt": "1.3",
+            "version_rubrica": "4.0",
+            "version_mar03": "1.0",
+            "parametros": {
+              "temperature": "default (el modelo rechaza temperature)",
+              "effort": "high",
+              "max_tokens": 16000,
+              "salida": "output_config.format json_schema"
+            },
+            "request_id": "req_011CgDwYWf16DDa5RcGg23nT",
+            "fecha": "2026-10-20T18:12:47+00:00",
+            "segundos": 30.4,
+            "intentos": 1,
+            "uso": {
+              "input_tokens": 624,
+              "output_tokens": 3044,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 10832,
+              "thinking_tokens": 1574
+            },
+            "costo_usd": 0.084636,
+            "costo_usd_pesimista": 0.253908,
+            "avisos": []
+          }
+        },
+        "st-michaels-church": {
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La tarea plantea una pregunta de desafío sin entregar regla, fórmula ni procedimiento. Quien resuelve debe construir por sí mismo la relación entre la altura de la iglesia y la del grupo.",
+                "cita": "How many times could the members of your group be stacked on top of each other to reach the top of the church?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe el método. Admite varios caminos defendibles: sumar las alturas reales o usar un promedio, apilar cabeza-pies u hombros, buscar la altura en libros o estimarla desde la foto.",
+                "cita": "How many times could the members of your group be stacked on top of each other to reach the top of the church?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige medir a los integrantes y buscar u obtener la altura de la iglesia. También hay que decidir qué altura usar (hasta el pináculo o la llave) y suponer cómo se apilan las personas.",
+                "cita": "Durante la tarea los estudiantes disponen de reglas de un metro y de libros donde pueden buscar la altura de la iglesia."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Es una pregunta de curiosidad y estimación sobre un edificio real, con datos reales. Según la lectura del criterio 4, es realista aunque no responda a una necesidad práctica.",
+                "cita": "St. Michael's Church is one of Hamburg's town landmarks. At the pinnacle you can see a golden key."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El tema (un monumento real con su fotografía) y el dato central (su altura, buscada en libros no escritos para enseñar) son componentes extraescolares auténticos. Además, son el núcleo de la tarea.",
+                "cita": "libros donde pueden buscar la altura de la iglesia"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona las decisiones: qué altura de la iglesia tomar, las estaturas del propio grupo y la forma de apilar. También es necesario para interpretar el resultado en número de apilamientos completos del grupo.",
+                "cita": "the members of your group be stacked on top of each other to reach the top of the church"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a comprender la situación, simplificar (forma de apilar, estaturas), matematizar (cociente de alturas), calcular e interpretar el resultado. Además hay que juzgarlo frente a la iglesia real. Ninguna fase viene hecha por el enunciado.",
+                "cita": "How many times could the members of your group be stacked on top of each other to reach the top of the church?"
+              },
+              "validacion": {
+                "puntaje": 1,
+                "justificacion": "Se puede contrastar la altura de los libros con una estimación hecha desde la foto, pero eso valida un insumo y no el modelo de apilamiento. El resultado mismo solo admite una comprobación de plausibilidad. Hubo duda entre 1 y 2 y se asigna el menor.",
+                "cita": "(Incluye una fotografía de la iglesia.)"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "Medir, convertir unidades, sumar y dividir están dentro de las herramientas esperables para P. El contexto de un monumento con foto es comprensible para estudiantes de 10 a 12 años.",
+                "cita": "Durante la tarea los estudiantes disponen de reglas de un metro"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Hay piso accesible: medir a una persona y dividir. También hay techo alto: sumar las estaturas individuales, modelar el apilamiento sobre hombros o estimar la altura por proporción desde la fotografía.",
+                "cita": "How many times could the members of your group be stacked on top of each other"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Cada grupo obtiene resultados distintos según sus estaturas y supuestos, lo que permite comparar soluciones y modelos (promedio vs. suma, cabeza-pies vs. hombros). También permite discutir los límites del apilamiento.",
+                "cita": "the members of your group"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información necesaria se obtiene midiendo con reglas y buscando en libros, y ambas cosas son accesibles para el nivel P. Ningún material sugiere el modelo de solución.",
+                "cita": "libros donde pueden buscar la altura de la iglesia"
+              }
+            },
+            "total": 23,
+            "mejoras": [
+              {
+                "criterio": "validacion",
+                "mejora_minima": "Agregar a la foto una persona o un objeto de tamaño conocido junto a la iglesia y pedir que se compare el número de 'personas apiladas' estimado en la imagen con el resultado calculado."
+              }
+            ]
+          },
+          "meta": {
+            "agente": "evaluador",
+            "modelo_solicitado": "claude-opus-5-5",
+            "modelo_respuesta": "claude-opus-5-5",
+            "version_prompt": "1.3",
+            "version_rubrica": "4.0",
+            "version_mar03": "1.0",
+            "parametros": {
+              "temperature": "default (el modelo rechaza temperature)",
+              "effort": "high",
+              "max_tokens": 16000,
+              "salida": "output_config.format json_schema"
+            },
+            "request_id": "req_011CgDwYWhyPm2E9gPmxomwz",
+            "fecha": "2026-10-20T18:12:55+00:00",
+            "segundos": 38.7,
+            "intentos": 1,
+            "uso": {
+              "input_tokens": 296,
+              "output_tokens": 3744,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 10832,
+              "thinking_tokens": 2082
+            },
+            "costo_usd": 0.100496,
+            "costo_usd_pesimista": 0.301488,
+            "avisos": []
+          }
+        },
+        "sugarloaf": {
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La pregunta plantea un problema que no viene con fórmula ni modelo. Quien resuelve debe construir la relación entre recorrido del cable, desnivel, forma del cerro y tramo llano.",
+                "cita": "¿Qué distancia, aproximadamente, tenía que correr Giuseppe desde la estación del valle hasta el pie del cerro?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe procedimiento y admite varios modelos defendibles. Por ejemplo, el cable puede tomarse como recto o con catenaria, y el pie del cerro puede estimarse desde la foto o desde el tiempo de escalada.",
+                "cita": "¿Qué distancia, aproximadamente, tenía que correr Giuseppe [...]? Muestra todo tu trabajo."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Hay que seleccionar información (el dato de 12 minutos es poco útil sin supuestos de velocidad de escalada) y suponer un cable rectilíneo. También hay que estimar la extensión horizontal del cerro, que no está dada.",
+                "cita": "luego lo escalaba en 12 minutos"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "El teleférico y el cerro existen. La pregunta de estimación sobre el recorrido de un montañista es claramente plausible fuera de la escuela.",
+                "cita": "El teleférico del Pan de Azúcar tarda aproximadamente 3 minutos en su recorrido desde la estación del valle hasta la cima"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Se toma como cierta la procedencia declarada. Los datos del artículo (tiempo, velocidad, desnivel) son el núcleo de la tarea, así que el componente auténtico está integrado de forma sustantiva.",
+                "cita": "De un artículo de periódico:"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "La geografía condiciona el modelo: el cable llega a la cima, no al pie, y la forma del cerro en la foto debe estimarse. El contexto también se necesita para interpretar y juzgar la distancia obtenida.",
+                "cita": "primero corría desde la estación del valle a través de la amplia llanura hasta el cerro y luego lo escalaba"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Resolver obliga a comprender la situación y simplificarla (triángulo, cable recto, perfil del cerro). Luego hay que matematizar con distancia-tiempo y Pitágoras, calcular y volver a la situación para juzgar la estimación. Ninguna fase queda hecha por el enunciado.",
+                "cita": "Avanza a una velocidad de 30 km/h y salva un desnivel de aproximadamente 180 m."
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existe evidencia independiente accesible para contrastar la distancia estimada: mapas o imágenes satelitales públicas del lugar, y datos reales del teleférico.",
+                "cita": "en Río de Janeiro"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto es comprensible para S1. La matemática requerida (tasas, conversión de unidades, Pitágoras, estimación con escala) está al alcance de las herramientas esperables del sub-tramo.",
+                "cita": "tarda aproximadamente 3 minutos [...] Avanza a una velocidad de 30 km/h"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es accesible: basta calcular el largo del recorrido (1,5 km) y aproximar. El techo es alto: se puede corregir con Pitágoras, estimar el perfil del cerro desde la foto, usar los 12 minutos con supuestos de velocidad o considerar la curvatura del cable.",
+                "cita": "¿Qué distancia, aproximadamente, tenía que correr Giuseppe [...]?"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las distintas decisiones sobre la forma del cerro y el cable producen estimaciones distintas, comparables entre sí. Además, contrastar con datos reales abre preguntas sobre la coherencia de los datos y los límites del modelo.",
+                "cita": "luego lo escalaba en 12 minutos"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "Los datos necesarios están en el texto y la extensión del cerro puede estimarse desde la foto o un mapa. Ningún material revela el modelo ni la regla de solución.",
+                "cita": "En el centro y a la izquierda se ve un cerro de roca muy alto, de cima redondeada y laderas muy empinadas"
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "agente": "evaluador",
+            "modelo_solicitado": "claude-opus-5-5",
+            "modelo_respuesta": "claude-opus-5-5",
+            "version_prompt": "1.3",
+            "version_rubrica": "4.0",
+            "version_mar03": "1.0",
+            "parametros": {
+              "temperature": "default (el modelo rechaza temperature)",
+              "effort": "high",
+              "max_tokens": 16000,
+              "salida": "output_config.format json_schema"
+            },
+            "request_id": "req_011CgDwYkNkAreJJYR5c6UCw",
+            "fecha": "2026-10-20T18:12:55+00:00",
+            "segundos": 35.7,
+            "intentos": 1,
+            "uso": {
+              "input_tokens": 694,
+              "output_tokens": 3761,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 10832,
+              "thinking_tokens": 2113
+            },
+            "costo_usd": 0.102911,
+            "costo_usd_pesimista": 0.308733,
+            "avisos": [
+              "cita_no_literal:abierta",
+              "cita_no_literal:nivel"
+            ]
+          }
+        },
+        "vapes-litio": {
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La tarea plantea una necesidad real: cuantificar el impacto de los vapeadores desechables. No entrega ninguna regla ni modelo; quien la resuelve debe construir el modelo de desperdicio de litio.",
+                "cita": "What impact does the use of disposable e-cigarettes have on lithium waste, waste generation and water consumption in Germany?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe el procedimiento. Admite varios modelos defendibles, por ejemplo por número de usuarios, por ventas o por dispositivos desechados, y no hay instrucciones posteriores que fijen una ruta.",
+                "cita": "Modelling: Modelling of lithium wastage due to the consumption of e-cigarettes per year"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolverla exige estimar o buscar varios datos: cuántos usuarios hay en Alemania, cuántos dispositivos consume cada uno al año y cuánto litio contiene cada batería. También obliga a decidir qué incluir en el desperdicio y en el consumo de agua.",
+                "cita": "Modelling of lithium wastage due to the consumption of e-cigarettes per year"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Se trata de un fenómeno real y actual de consumo y residuos en Alemania, vinculado a un debate regulatorio europeo existente.",
+                "cita": "what could be the reasons why the European Parliament have not yet taken measures to ban these disposable products?"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El tema es extraescolar y auténtico y constituye el núcleo de la tarea: el consumo de vapeadores desechables, la minería de litio y la regulación europea. Además, el material audiovisual sobre minería de litio no parece creado para enseñar el contenido.",
+                "cita": "Working materials: • Short film about lithium mining • Information sheet on lithium wastage in disposable e-cigarettes"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona qué variables y supuestos se usan. También es necesario para interpretar los resultados y argumentar a favor o en contra de una prohibición.",
+                "cita": "Based on your modelled results, what could be the reasons why the European Parliament have not yet taken measures to ban these disposable products?"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "La pregunta abierta obliga a recorrer todo el ciclo: comprender la situación, simplificar, construir el modelo, calcular e interpretar. Además exige volver a la situación para juzgar los resultados con datos; ninguna fase viene hecha.",
+                "cita": "Please argue mathematically along with possible data. Would you like to request a ban?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existe evidencia independiente accesible para contrastar las estimaciones de litio desechado al año: estudios públicos, cifras de ventas y datos de reciclaje.",
+                "cita": "What impact does the use of disposable e-cigarettes have on lithium waste, waste generation and water consumption in Germany?"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El tema es cercano y significativo para adolescentes de 10.º grado. La matemática requerida (tasas, proporcionalidad, estimación, comparación de escenarios) está al alcance del nivel S.",
+                "cita": "Consumption of disposable products using the example of disposable cigarettes/vapes (grade 10)"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Hay un piso accesible: una estimación multiplicativa simple. También hay techo alto, porque la tarea admite modelos más refinados que integran agua, residuos, escenarios de consumo y reciclaje.",
+                "cita": "lithium waste, waste generation and water consumption in Germany"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Los resultados abren preguntas sobre prohibición, reciclaje, salud y consumo propio, y permiten comparar las soluciones y sus límites.",
+                "cita": "Recognizing, evaluating, acting: • Waste of resources disposable cigarettes/vapes"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "Hay duda entre 1 y 2. La hoja informativa trata justamente del desperdicio de litio, que es la magnitud a modelar, y no se describe su contenido. Por eso podría entregar cifras ya calculadas y sobreorientar la solución. Ante esa duda se asigna el menor.",
+                "cita": "Information sheet on lithium wastage in disposable e-cigarettes"
+              }
+            },
+            "total": 23,
+            "mejoras": [
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Especificar que la hoja informativa entrega solo datos de base (por ejemplo, gramos de litio por batería y cifras de ventas o usuarios en Alemania) y no cifras agregadas de litio desechado, o entregarla solo a solicitud de los estudiantes."
+              }
+            ]
+          },
+          "meta": {
+            "agente": "evaluador",
+            "modelo_solicitado": "claude-opus-5-5",
+            "modelo_respuesta": "claude-opus-5-5",
+            "version_prompt": "1.3",
+            "version_rubrica": "4.0",
+            "version_mar03": "1.0",
+            "parametros": {
+              "temperature": "default (el modelo rechaza temperature)",
+              "effort": "high",
+              "max_tokens": 16000,
+              "salida": "output_config.format json_schema"
+            },
+            "request_id": "req_011CgDwZYrjhPSRiT9TkN5CJ",
+            "fecha": "2026-10-20T18:12:59+00:00",
+            "segundos": 28.7,
+            "intentos": 1,
+            "uso": {
+              "input_tokens": 594,
+              "output_tokens": 3104,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 10832,
+              "thinking_tokens": 1372
+            },
+            "costo_usd": 0.085986,
+            "costo_usd_pesimista": 0.257958,
+            "avisos": []
+          }
+        }
+      },
+      "errores": {}
+    },
+    {
+      "corrida": 2,
+      "resultados": {
+        "clear-day-at-the-ocean": {
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 0,
+                "justificacion": "El enunciado entrega la regla lista para aplicar. La tarea se reduce a sustituir valores de h, que corresponde exactamente al descriptor 0.",
+                "cita": "With the rule w² = 13 h you can estimate the range of sight in kilometers (w)"
+              },
+              "abierta": {
+                "puntaje": 0,
+                "justificacion": "Las preguntas son cerradas, con dato único y método prescrito por la regla dada. Incluso la tabla trae los valores de h fijados, así que no admite caminos ni modelos alternativos.",
+                "cita": "How far can you see, if your eyes are 1.60 m above the ground?"
+              },
+              "decisiones": {
+                "puntaje": 0,
+                "justificacion": "La situación está completamente estructurada: los datos, las unidades y la regla vienen dados. No hay nada que seleccionar, suponer, estimar ni buscar.",
+                "cita": "Make a table for the range of sight with h = 5 m (10 m; 20 m; 40 m; 80 m)."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "El alcance visual hasta el horizonte según la altura del observador es un fenómeno real y una pregunta de curiosidad plausible fuera de la escuela.",
+                "cita": "Perhaps you have observed at the ocean, that due the Earth's curvature, even with a clear view you only can see a certain distance."
+              },
+              "autenticidad": {
+                "puntaje": 1,
+                "justificacion": "El tema del horizonte es auténtico, pero funciona solo como encuadre. La regla simplificada y los valores de h fueron construidos para la actividad. Hay duda entre 1 y 2 porque la regla aproxima una relación real, y se asigna el menor.",
+                "cita": "due the Earth's curvature, even with a clear view you only can see a certain distance"
+              },
+              "contexto": {
+                "puntaje": 0,
+                "justificacion": "Con la regla dada, el contexto puede eliminarse sin cambiar la resolución, que es pura sustitución y comparación numérica. El contexto no condiciona ninguna decisión.",
+                "cita": "How does the range of sight, w, change, if the height h is quadrupled?"
+              },
+              "ciclo": {
+                "puntaje": 0,
+                "justificacion": "Solo se ejercita la aplicación rutinaria de una fórmula entregada. Comprender, simplificar y matematizar ya vienen hechos.",
+                "cita": "With the rule w² = 13 h you can estimate the range of sight in kilometers (w)"
+              },
+              "validacion": {
+                "puntaje": 1,
+                "justificacion": "Solo cabe una comprobación de plausibilidad de los valores obtenidos. Hay duda porque existen datos externos de alcance visual, pero no hay un modelo construido por los estudiantes que contrastar, y se asigna el menor.",
+                "cita": "you can estimate the range of sight in kilometers (w), depending on how high above the ground your eyes are (h)"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto es comprensible para secundaria. La matemática requerida (despejar con raíz cuadrada, tabular, analizar el efecto de cuadruplicar h) está al alcance de las herramientas del nivel S.",
+                "cita": "How far can you see, if your eyes are 1.60 m above the ground?"
+              },
+              "autodiferenciacion": {
+                "puntaje": 0,
+                "justificacion": "Solo existe una ruta estrecha (sustituir en la fórmula) y los estudiantes más avanzados quedan sin desafío. Hay duda con 1 por la pregunta de cuadruplicar, que ofrece una generalización menor; se asigna el menor.",
+                "cita": "Make a table for the range of sight with h = 5 m (10 m; 20 m; 40 m; 80 m)."
+              },
+              "fecundidad": {
+                "puntaje": 1,
+                "justificacion": "La pregunta por el efecto de cuadruplicar h abre alguna discusión sobre el comportamiento de la raíz cuadrada. Fuera de eso, la tarea ofrece pocas extensiones sustantivas.",
+                "cita": "How does the range of sight, w, change, if the height h is quadrupled?"
+              },
+              "recursos": {
+                "puntaje": 0,
+                "justificacion": "El enunciado entrega la estructura completa de la solución (la regla y las unidades), que corresponde al descriptor 0.",
+                "cita": "With the rule w² = 13 h you can estimate the range of sight in kilometers (w)"
+              }
+            },
+            "total": 7,
+            "mejoras": [
+              {
+                "criterio": "genuino",
+                "mejora_minima": "Eliminar la regla w² = 13h y preguntar directamente qué tan lejos puede ver una persona en la playa, para que los estudiantes construyan la relación."
+              },
+              {
+                "criterio": "abierta",
+                "mejora_minima": "Reemplazar las dos viñetas por una pregunta abierta, por ejemplo «¿Desde qué altura tendrías que mirar para ver un barco a 20 km?», sin prescribir la fórmula."
+              },
+              {
+                "criterio": "decisiones",
+                "mejora_minima": "No dar la altura de los ojos ni la regla, de modo que los estudiantes deban estimar alturas y buscar u obtener el radio de la Tierra."
+              },
+              {
+                "criterio": "autenticidad",
+                "mejora_minima": "Integrar como dato central una fuente real, como el alcance publicado de un faro chileno con su altura, y pedir que se explique o contraste."
+              },
+              {
+                "criterio": "contexto",
+                "mejora_minima": "Plantear una decisión que dependa del contexto, por ejemplo a qué altura ubicar un puesto de salvavidas para vigilar una zona dada."
+              },
+              {
+                "criterio": "ciclo",
+                "mejora_minima": "Quitar la regla y pedir construir un modelo del alcance visual desde la geometría de la Tierra, interpretarlo y juzgar su validez."
+              },
+              {
+                "criterio": "validacion",
+                "mejora_minima": "Pedir comparar el modelo construido con el alcance publicado de un faro real o con una observación desde un edificio costero."
+              },
+              {
+                "criterio": "autodiferenciacion",
+                "mejora_minima": "Al abrir la pregunta, permitir soluciones por dibujo a escala o por Pitágoras, y considerar como extensión la altura del objeto observado o la refracción."
+              },
+              {
+                "criterio": "fecundidad",
+                "mejora_minima": "Agregar la pregunta de por qué se ve antes la cima de un barco o de una isla que su base, para comparar modelos y explorar sus límites."
+              },
+              {
+                "criterio": "recursos",
+                "mejora_minima": "No entregar la regla; indicar solo que el radio terrestre puede buscarse si se necesita."
+              }
+            ]
+          },
+          "meta": {
+            "agente": "evaluador",
+            "modelo_solicitado": "claude-opus-5-5",
+            "modelo_respuesta": "claude-opus-5-5",
+            "version_prompt": "1.3",
+            "version_rubrica": "4.0",
+            "version_mar03": "1.0",
+            "parametros": {
+              "temperature": "default (el modelo rechaza temperature)",
+              "effort": "high",
+              "max_tokens": 16000,
+              "salida": "output_config.format json_schema"
+            },
+            "request_id": "req_011CgDwbfo18c8nBriYpRyCv",
+            "fecha": "2026-10-20T18:13:37+00:00",
+            "segundos": 38.1,
+            "intentos": 1,
+            "uso": {
+              "input_tokens": 394,
+              "output_tokens": 3818,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 10832,
+              "thinking_tokens": 1587
+            },
+            "costo_usd": 0.102836,
+            "costo_usd_pesimista": 0.308508,
+            "avisos": []
+          }
+        },
+        "giants-shoes": {
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La tarea plantea una pregunta por resolver y no entrega ninguna regla ni relación entre el tamaño del zapato y la estatura. Quien resuelve debe construir esa relación por su cuenta.",
+                "cita": "Approximately how tall would a giant be for these shoes to fit? Explain your solution."
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe procedimiento. Admite varios caminos defendibles: comparar con el propio pie, usar datos del curso, usar el largo o el ancho, o fijar una razón pie-estatura.",
+                "cita": "Approximately how tall would a giant be for these shoes to fit? Explain your solution."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige decidir qué dato usar (largo o ancho) y suponer proporcionalidad corporal. También hay que considerar la holgura entre zapato y pie y obtener o estimar la razón pie-estatura de personas reales.",
+                "cita": "with a width of 2.37 m and a length of 5.29 m"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Se trata de un objeto real, registrado en Guinness. La pregunta de curiosidad sobre un objeto real es plausible fuera de la escuela, según la lectura del criterio 4.",
+                "cita": "In a sports centre on the Philippines, Florentino Anonuevo Jr. polishes a pair of shoes."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El hecho y las medidas provienen de una fuente extraescolar declarada (noticia o récord Guinness). Constituyen el núcleo de la tarea, así que el componente auténtico está integrado de manera sustantiva.",
+                "cita": "They are, according to the Guinness Book of Records, the world’s biggest"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona las decisiones: un zapato es más grande que el pie y se suponen proporciones humanas. Además, es necesario para interpretar la estatura obtenida y juzgar si es razonable.",
+                "cita": "Approximately how tall would a giant be for these shoes to fit?"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a comprender la situación, simplificar suponiendo proporcionalidad, matematizar con una razón y calcular. Luego hay que volver al contexto para interpretar y justificar. Hubo duda sobre si el cálculo es trivial, pero puede incluir promediar razones de datos reunidos, así que no queda hecho por el enunciado.",
+                "cita": "Approximately how tall would a giant be for these shoes to fit? Explain your solution."
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "El supuesto de proporcionalidad pie-estatura puede contrastarse con evidencia independiente: mediciones de compañeros o datos antropométricos públicos, que son casos nuevos no usados para construir el modelo. También se pueden contrastar las estaturas que predicen el largo y el ancho.",
+                "cita": "Explain your solution."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto y el lenguaje son comprensibles para S. La matemática requerida (razones, escala, promedio) corresponde a las herramientas de S1 descritas en MAR03.",
+                "cita": "with a width of 2.37 m and a length of 5.29 m"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es bajo, porque basta comparar con el propio pie y la propia estatura. El techo es alto: la tarea admite modelos con datos de varias personas, razones promedio, comparación entre largo y ancho y ajuste por la holgura del zapato.",
+                "cita": "Approximately how tall would a giant be for these shoes to fit?"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las soluciones pueden compararse según el dato usado (largo frente a ancho) y según la razón supuesta. Esto abre preguntas sobre los límites del supuesto de proporcionalidad y sobre la plausibilidad de un gigante.",
+                "cita": "Explain your solution."
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información faltante (la razón pie-estatura) puede obtenerse midiendo personas al alcance de estudiantes de S. Ningún material revela el modelo ni la regla de solución.",
+                "cita": "with a width of 2.37 m and a length of 5.29 m"
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "agente": "evaluador",
+            "modelo_solicitado": "claude-opus-5-5",
+            "modelo_respuesta": "claude-opus-5-5",
+            "version_prompt": "1.3",
+            "version_rubrica": "4.0",
+            "version_mar03": "1.0",
+            "parametros": {
+              "temperature": "default (el modelo rechaza temperature)",
+              "effort": "high",
+              "max_tokens": 16000,
+              "salida": "output_config.format json_schema"
+            },
+            "request_id": "req_011CgDwbfnFkAgZrdQY1ahZz",
+            "fecha": "2026-10-20T18:13:33+00:00",
+            "segundos": 34.0,
+            "intentos": 1,
+            "uso": {
+              "input_tokens": 282,
+              "output_tokens": 3277,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 10832,
+              "thinking_tokens": 1711
+            },
+            "costo_usd": 0.088751,
+            "costo_usd_pesimista": 0.266253,
+            "avisos": []
+          }
+        },
+        "lighthouse": {
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "Plantea una necesidad real: estimar la distancia de avistamiento. No entrega regla, fórmula ni modelo, y quien resuelve debe descubrir que la curvatura terrestre es lo determinante.",
+                "cita": "How far, approximately, was a ship when it saw the lighthouse for the first time?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe el procedimiento y admite varios modelos defendibles: con o sin altura del observador, alcance de la luz o refracción.",
+                "cita": "How far, approximately, was a ship when it saw the lighthouse for the first time? Explain your solution."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Solo se da la altura del faro. Hay que suponer una Tierra esférica, decidir la altura del observador en el barco y obtener el radio terrestre.",
+                "cita": "measuring 31 m (102 feet) in height"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Se trata de un faro real con una función real: avisar a los barcos. La pregunta por la distancia de avistamiento es claramente plausible fuera de la escuela.",
+                "cita": "In the bay of Massachusetts, a lighthouse called \"Boston light\" was built in 1716"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El tema y el dato central (un faro histórico y su altura) son componentes extraescolares auténticos. Constituyen el núcleo de la tarea y no fueron creados para enseñar el contenido.",
+                "cita": "a lighthouse called \"Boston light\" was built in 1716, measuring 31 m (102 feet) in height"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto marítimo condiciona las decisiones: curvatura, altura del observador y visibilidad de la luz. También es necesario para interpretar la respuesta como una distancia aproximada de aviso.",
+                "cita": "Its beacon was meant to warn ships that they were approaching the coast."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Resolver obliga a recorrer el ciclo completo de forma no trivial: comprender la situación, simplificar (Tierra esférica, línea tangente), matematizar con Pitágoras, calcular, interpretar la distancia y juzgarla.",
+                "cita": "How far, approximately, was a ship when it saw the lighthouse for the first time? Explain your solution."
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existe evidencia independiente accesible para contrastar el modelo: los alcances geográficos publicados en las listas de faros y las tablas náuticas de distancia al horizonte.",
+                "cita": "Its beacon was meant to warn ships that they were approaching the coast."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto es comprensible para secundaria. La matemática requerida (teorema de Pitágoras, raíz cuadrada, unidades) está al alcance de las herramientas del nivel S.",
+                "cita": "measuring 31 m (102 feet) in height"
+              },
+              "autodiferenciacion": {
+                "puntaje": 1,
+                "justificacion": "El techo es alto: admite incluir la altura del observador, la refracción y el alcance de la luz. Sin embargo, la entrada depende casi por completo de una única idea clave, la curvatura terrestre. Dudo entre 1 y 2 y asigno el menor por piso alto.",
+                "cita": "How far, approximately, was a ship when it saw the lighthouse for the first time?"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Comparar modelos y resultados abre nuevas preguntas: el efecto de la altura del barco, la refracción, la intensidad de la luz o la altura necesaria para un alcance dado.",
+                "cita": "Explain your solution."
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información faltante (radio terrestre, altura del observador) se obtiene con una búsqueda simple o se estima con conocimiento cotidiano. Nada revela el modelo.",
+                "cita": "No se declaran recursos ni materiales adicionales."
+              }
+            },
+            "total": 23,
+            "mejoras": [
+              {
+                "criterio": "autodiferenciacion",
+                "mejora_minima": "Agregar una pregunta inicial accesible que dé una entrada sin la idea de curvatura y deje abierta la vía de mayor sofisticación. Por ejemplo: «¿Qué factores podrían limitar la distancia desde la que se ve el faro?»."
+              }
+            ]
+          },
+          "meta": {
+            "agente": "evaluador",
+            "modelo_solicitado": "claude-opus-5-5",
+            "modelo_respuesta": "claude-opus-5-5",
+            "version_prompt": "1.3",
+            "version_rubrica": "4.0",
+            "version_mar03": "1.0",
+            "parametros": {
+              "temperature": "default (el modelo rechaza temperature)",
+              "effort": "high",
+              "max_tokens": 16000,
+              "salida": "output_config.format json_schema"
+            },
+            "request_id": "req_011CgDwbgBK6R7QPwn6uRTmf",
+            "fecha": "2026-10-20T18:13:24+00:00",
+            "segundos": 25.0,
+            "intentos": 1,
+            "uso": {
+              "input_tokens": 274,
+              "output_tokens": 2611,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 10832,
+              "thinking_tokens": 1057
+            },
+            "costo_usd": 0.072061,
+            "costo_usd_pesimista": 0.216183,
+            "avisos": []
+          }
+        },
+        "poblacion-belga": {
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 1,
+                "justificacion": "No se entrega explícitamente la regla de cálculo, pero los cálculos previos y las dos observaciones ya nombran los objetos a obtener (factor de crecimiento y distribución límite). Eso insinúa con fuerza la estructura (valor y vector propio). Dudé con 0 porque el modelo parece venir de la sección anterior.",
+                "cita": "how can the long-term growth factor and the long-term age distribution be calculated in a more ‘mathematical’ way?"
+              },
+              "abierta": {
+                "puntaje": 1,
+                "justificacion": "Hay cierta apertura al pedir explicar el envejecimiento, pero las consignas encauzan hacia una ruta casi única: usar una observación dada y llegar a un cálculo «más matemático» predeterminado.",
+                "cita": "they have to explain this phenomenon using the first observation above"
+              },
+              "decisiones": {
+                "puntaje": 0,
+                "justificacion": "La tabla, los cálculos y las observaciones ya están hechos, y la pregunta central es intramatemática. No hay que seleccionar información, suponer ni estimar: la situación llega completamente estructurada.",
+                "cita": "In the previous section calculations led to two observations that were formulated in terms of the long-term growth factor and the long term age distribution."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "El envejecimiento de la población belga es un fenómeno real y plausible fuera de la escuela.",
+                "cita": "explain how they see the ageing of the population in the table"
+              },
+              "autenticidad": {
+                "puntaje": 1,
+                "justificacion": "El tema demográfico es auténtico, pero no se declara la procedencia de la tabla ni de los datos. El núcleo parece construido para la secuencia; dudé con 2 por la autenticidad del tema.",
+                "cita": "explain how they see the ageing of the population in the table"
+              },
+              "contexto": {
+                "puntaje": 1,
+                "justificacion": "El contexto orienta la interpretación inicial del envejecimiento. Sin embargo, la pregunta central puede resolverse abandonándolo una vez formulada la matemática.",
+                "cita": "how can the long-term growth factor and the long-term age distribution be calculated in a more ‘mathematical’ way?"
+              },
+              "ciclo": {
+                "puntaje": 1,
+                "justificacion": "Comprender, simplificar y matematizar quedan hechas por secciones anteriores. Se exige trabajo matemático y algo de interpretación, pero no el ciclo completo.",
+                "cita": "In the previous section calculations led to two observations"
+              },
+              "validacion": {
+                "puntaje": 1,
+                "justificacion": "Solo se pide consistencia entre las observaciones de la simulación y el cálculo «más matemático». Existen datos demográficos reales, pero la tarea no orienta a contrastar el modelo con ellos; dudé con 2.",
+                "cita": "they have to formulate what it means that the percentages no longer change in the long run"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto es comprensible para universitarios. El cálculo de comportamiento a largo plazo (álgebra lineal, modelos dinámicos discretos) corresponde a las herramientas del nivel U.",
+                "cita": "how can the long-term growth factor and the long-term age distribution be calculated in a more ‘mathematical’ way?"
+              },
+              "autodiferenciacion": {
+                "puntaje": 1,
+                "justificacion": "El piso es alto: sin la idea clave de valor y vector propio no hay entrada a la pregunta central. Las soluciones admiten poca variación en sofisticación.",
+                "cita": "calculated in a more ‘mathematical’ way"
+              },
+              "fecundidad": {
+                "puntaje": 1,
+                "justificacion": "La interpretación del régimen estable permite alguna discusión. Sin embargo, la tarea no abre comparaciones de modelos ni preguntas sobre sus límites.",
+                "cita": "they have to formulate what it means that the percentages no longer change in the long run"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "La tabla y la «primera observación» no se entregan entre los recursos declarados. Además, las observaciones formuladas orientan parcialmente hacia la estructura de la solución.",
+                "cita": "explain how they see the ageing of the population in the table"
+              }
+            },
+            "total": 13,
+            "mejoras": [
+              {
+                "criterio": "genuino",
+                "mejora_minima": "Reemplazar las observaciones ya formuladas por la pregunta «¿Cómo evolucionará la estructura de edades de Bélgica en 50 años?», sin nombrar el factor de crecimiento ni la distribución límite."
+              },
+              {
+                "criterio": "abierta",
+                "mejora_minima": "Eliminar «using the first observation above» y permitir que los estudiantes elijan cómo explicar y calcular el comportamiento a largo plazo."
+              },
+              {
+                "criterio": "decisiones",
+                "mejora_minima": "Entregar datos demográficos crudos (población por edad, natalidad, mortalidad) y pedir que los estudiantes construyan las clases de edad y los supuestos del modelo."
+              },
+              {
+                "criterio": "autenticidad",
+                "mejora_minima": "Declarar e incluir como núcleo los datos reales de Statbel u otra fuente oficial belga usados en la tabla."
+              },
+              {
+                "criterio": "contexto",
+                "mejora_minima": "Añadir que los estudiantes interpreten el factor y la distribución calculados en términos de políticas belgas (pensiones, natalidad)."
+              },
+              {
+                "criterio": "ciclo",
+                "mejora_minima": "Pedir que los estudiantes formulen ellos mismos el modelo de proyección a partir de los datos y luego interpreten y validen sus predicciones."
+              },
+              {
+                "criterio": "validacion",
+                "mejora_minima": "Pedir contrastar la distribución de edades predicha con datos o proyecciones oficiales posteriores de Bélgica."
+              },
+              {
+                "criterio": "autodiferenciacion",
+                "mejora_minima": "Permitir una entrada por iteración numérica de la proyección antes del enfoque algebraico."
+              },
+              {
+                "criterio": "fecundidad",
+                "mejora_minima": "Agregar la pregunta de cómo cambiarían el factor y la distribución límite ante variaciones de natalidad o migración, y comparar los escenarios."
+              },
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Incluir la tabla de población por edades como recurso y retirar las observaciones que anticipan el resultado."
+              }
+            ]
+          },
+          "meta": {
+            "agente": "evaluador",
+            "modelo_solicitado": "claude-opus-5-5",
+            "modelo_respuesta": "claude-opus-5-5",
+            "version_prompt": "1.3",
+            "version_rubrica": "4.0",
+            "version_mar03": "1.0",
+            "parametros": {
+              "temperature": "default (el modelo rechaza temperature)",
+              "effort": "high",
+              "max_tokens": 16000,
+              "salida": "output_config.format json_schema"
+            },
+            "request_id": "req_011CgDwbfuCpDjKkG14Vhqsv",
+            "fecha": "2026-10-20T18:13:37+00:00",
+            "segundos": 37.9,
+            "intentos": 1,
+            "uso": {
+              "input_tokens": 352,
+              "output_tokens": 3673,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 10832,
+              "thinking_tokens": 1522
+            },
+            "costo_usd": 0.099001,
+            "costo_usd_pesimista": 0.297003,
+            "avisos": []
+          }
+        },
+        "port-of-hamburg": {
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La pregunta plantea una necesidad real, dimensionar el área de transbordo, y no entrega ninguna regla, fórmula ni modelo para resolverla.",
+                "cita": "How big is the area needed for the transhipping of the containers?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe procedimiento y admite varios modelos defendibles (apilamiento, tiempo de permanencia, pasillos, grúas), sin instrucciones posteriores que encaucen la ruta.",
+                "cita": "How big is the area needed for the transhipping of the containers?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Para pasar de un flujo anual a un área hay que estimar el tamaño de un contenedor, la altura de apilamiento y el tiempo de permanencia. También hay que descartar información irrelevante, como los contenedores mal ubicados.",
+                "cita": "In 2007, 9.9 million containers were shipped through the port of Hamburg."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "La situación es un puerto real con cifras reales; la pregunta de estimación sobre un hecho existente es claramente realista.",
+                "cita": "This makes Hamburg the world's ninth biggest port."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El texto procede de un boletín real no creado para enseñar matemática, y su dato de 9,9 millones de contenedores es el núcleo de la tarea.",
+                "cita": "Original text of an insurance Newsletter: AOK Rheinland/Hamburg No. 2/2008"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "Las decisiones de modelación (apilamiento, permanencia, espacio para grúas y búsqueda) dependen del funcionamiento del puerto. El contexto también es necesario para interpretar si el área obtenida es razonable.",
+                "cita": "In 365 days only two or three containers are put in the wrong place. Then the searching starts."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a comprender el transbordo, simplificar con supuestos, matematizar el área, calcular y volver a la situación para juzgar el resultado. El enunciado no deja ninguna fase hecha.",
+                "cita": "How big is the area needed for the transhipping of the containers?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "El área real de las terminales de contenedores de Hamburgo es un dato público accesible, independiente del modelo, con el cual contrastar la estimación.",
+                "cita": "In 2007, 9.9 million containers were shipped through the port of Hamburg."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto es comprensible para secundaria. La matemática requerida (área, razones y tasas, estimación de órdenes de magnitud) está al alcance de las herramientas de S.",
+                "cita": "How big is the area needed for the transhipping of the containers?"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Se puede entrar con un cálculo elemental (área de un contenedor por cantidad). La tarea admite modelos claramente más sofisticados con apilamiento, tiempo de permanencia, pasillos y sensibilidad a los supuestos.",
+                "cita": "(La tarea incluye una fotografía de contenedores apilados y grúas; no muestra el área completa.)"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Los distintos supuestos producen áreas muy diferentes, lo que permite comparar soluciones y discutir límites del modelo. También abre preguntas nuevas sobre la logística, la búsqueda de contenedores o el crecimiento del puerto.",
+                "cita": "By the way: no container has ever been lost in Hamburg."
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "Las dimensiones de un contenedor se obtienen con una búsqueda simple y la foto permite estimar el apilamiento sin revelar el modelo. Hubo duda por el tiempo de permanencia, poco cotidiano, pero puede asumirse como supuesto razonable o buscarse.",
+                "cita": "(La tarea incluye una fotografía de contenedores apilados y grúas; no muestra el área completa.)"
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "agente": "evaluador",
+            "modelo_solicitado": "claude-opus-5-5",
+            "modelo_respuesta": "claude-opus-5-5",
+            "version_prompt": "1.3",
+            "version_rubrica": "4.0",
+            "version_mar03": "1.0",
+            "parametros": {
+              "temperature": "default (el modelo rechaza temperature)",
+              "effort": "high",
+              "max_tokens": 16000,
+              "salida": "output_config.format json_schema"
+            },
+            "request_id": "req_011CgDwbfsxeotd1QhxV9XBG",
+            "fecha": "2026-10-20T18:13:22+00:00",
+            "segundos": 22.8,
+            "intentos": 1,
+            "uso": {
+              "input_tokens": 385,
+              "output_tokens": 2346,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 10832,
+              "thinking_tokens": 859
+            },
+            "costo_usd": 0.065991,
+            "costo_usd_pesimista": 0.197973,
+            "avisos": []
+          }
+        },
+        "residuos-plasticos": {
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La situación plantea una necesidad real: dimensionar los residuos plásticos escolares. El relato no indica que se entregara a los estudiantes una regla o modelo listo para aplicar.",
+                "cita": "they identified the problem of plastic waste in schools and defined key variables such as the amount of plastic waste produced per week"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta de estimación admite varios caminos defendibles: por estudiante, por curso o por escuela. Según la regla de relatos, el razonamiento proporcional es lo que hicieron los estudiantes, no un método prescrito.",
+                "cita": "estimating the volume of total plastic waste generated by all primary schools in their city"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige varias decisiones de modelación: suponer que una sala es representativa, recoger datos, elegir la unidad temporal y estimar el número de escuelas y cursos de la ciudad.",
+                "cita": "focusing on a single classroom’s waste as a representative sample"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Los residuos plásticos en las escuelas son una situación existente fuera del aula, no un encuadre forzado para insertar un cálculo.",
+                "cita": "identified the problem of plastic waste in schools"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los datos reales de residuos recogidos en la propia sala son el núcleo de la tarea y no fueron fabricados para enseñar el contenido. Se suman un tema auténtico (ODS 12) y la comparación con datos disponibles.",
+                "cita": "the students performed calculations, analyzed the collected data, and made predictions based on their model"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona la elección de la muestra y la escala, y es necesario para interpretar el impacto ambiental y la plausibilidad del resultado.",
+                "cita": "considering the environmental impact of plastic waste accumulation on a larger scale"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "El relato recorre todas las fases del ciclo: construir, simplificar, matematizar, calcular, interpretar y validar. No precisa que alguna se entregara hecha, por lo que se lee como el proceso exigido a los estudiantes.",
+                "cita": "They then moved to simplifying, ensuring the problem was manageable by focusing on a single classroom’s waste"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "El modelo puede contrastarse con evidencia independiente: datos públicos de producción de residuos plásticos que no se usaron en su construcción.",
+                "cita": "comparing them with available data on plastic waste production and adjusting their model if necessary"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "La matemática requerida (proporcionalidad, multiplicación, estimación de unidades) corresponde a las herramientas esperables del nivel P. El contexto escolar es comprensible y significativo para ese grupo.",
+                "cita": "using proportional reasoning and multiplication"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es elemental: escalar el residuo de una sala multiplicando. La tarea también admite soluciones más refinadas, como tasas por estudiante, distintos tamaños de escuela o proyecciones en el tiempo.",
+                "cita": "made predictions based on their model"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Los resultados abren nuevas preguntas sobre efectos a largo plazo y soluciones, y permiten discutir la precisión y los límites de las estimaciones.",
+                "cita": "explored the potential long-term effects of plastic waste accumulation, and brainstormed actionable solutions"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "El residuo de la sala es medible, pero el número y tamaño de las escuelas primarias de la ciudad y los datos de contraste no se entregan ni se indica cómo obtenerlos, lo que puede ser difícil para el nivel P. Hay duda entre 1 y 2 porque esos datos podrían solicitarse al docente; se asigna el menor.",
+                "cita": "estimating the volume of total plastic waste generated by all primary schools in their city"
+              }
+            },
+            "total": 23,
+            "mejoras": [
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Indicar que los estudiantes pueden solicitar al docente (o consultar en un listado municipal señalado) el número de escuelas primarias y de cursos de la ciudad, sin entregar el procedimiento de escalamiento."
+              }
+            ]
+          },
+          "meta": {
+            "agente": "evaluador",
+            "modelo_solicitado": "claude-opus-5-5",
+            "modelo_respuesta": "claude-opus-5-5",
+            "version_prompt": "1.3",
+            "version_rubrica": "4.0",
+            "version_mar03": "1.0",
+            "parametros": {
+              "temperature": "default (el modelo rechaza temperature)",
+              "effort": "high",
+              "max_tokens": 16000,
+              "salida": "output_config.format json_schema"
+            },
+            "request_id": "req_011CgDwdMJKHFx9tq47KTvvk",
+            "fecha": "2026-10-20T18:13:52+00:00",
+            "segundos": 29.7,
+            "intentos": 1,
+            "uso": {
+              "input_tokens": 624,
+              "output_tokens": 3112,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 10832,
+              "thinking_tokens": 1532
+            },
+            "costo_usd": 0.086336,
+            "costo_usd_pesimista": 0.259008,
+            "avisos": []
+          }
+        },
+        "st-michaels-church": {
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La pregunta plantea un desafío sobre un objeto real sin entregar regla, fórmula ni procedimiento. Quien resuelve debe construir la relación entre la altura de la iglesia y la altura del grupo.",
+                "cita": "How many times could the members of your group be stacked on top of each other to reach the top of the church?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "No hay instrucciones que prescriban el método. Se puede obtener la altura en libros o estimarla desde la foto, y medir a cada integrante o usar una altura promedio.",
+                "cita": "How many times could the members of your group be stacked on top of each other to reach the top of the church?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Hay que buscar la altura, medir a los integrantes y suponer cómo se apilan. También hay que decidir qué cuenta como «top» (incluida o no la llave) y cómo tratar un resultado no entero.",
+                "cita": "Durante la tarea los estudiantes disponen de reglas de un metro y de libros donde pueden buscar la altura de la iglesia."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Es un edificio real y la pregunta es de estimación o curiosidad sobre un objeto real. Según §3.1, eso es realista aunque no responda a una necesidad práctica.",
+                "cita": "St. Michael's Church is one of Hamburg's town landmarks. At the pinnacle you can see a golden key."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El tema (un hito real), la fotografía y el dato de altura tomado de libros no fueron creados para enseñar este contenido. Además, son el núcleo de la tarea.",
+                "cita": "libros donde pueden buscar la altura de la iglesia"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona decisiones: dónde está la cima, cuántos integrantes tiene el grupo y cómo se apilan. También es necesario para interpretar el resultado, por ejemplo cómo redondear un número no entero de grupos.",
+                "cita": "At the pinnacle you can see a golden key."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Resolverla obliga a comprender, simplificar (apilamiento vertical, alturas medidas), matematizar (sumar y dividir), calcular y volver a la situación para interpretar. El enunciado no deja hecha ninguna fase.",
+                "cita": "How many times could the members of your group be stacked on top of each other to reach the top of the church?"
+              },
+              "validacion": {
+                "puntaje": 1,
+                "justificacion": "Se puede contrastar la altura con otra fuente o con una estimación proporcional desde la foto. Pero el modelo de apilamiento en sí solo admite una comprobación de plausibilidad u orden de magnitud. Hay duda entre 1 y 2; se asigna el menor.",
+                "cita": "(Incluye una fotografía de la iglesia.)"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto es comprensible para 10–12 años. La matemática requerida (medición, unidades, suma, división y estimación) coincide con las herramientas esperables del nivel P.",
+                "cita": "How many times could the members of your group be stacked on top of each other"
+              },
+              "autodiferenciacion": {
+                "puntaje": 1,
+                "justificacion": "El piso es bajo: medir, sumar y dividir. Pero una vez obtenida la altura en los libros, el modelo se reduce a una división y las soluciones más sofisticadas son pocas. Por eso el techo es bajo; hay duda con 2.",
+                "cita": "libros donde pueden buscar la altura de la iglesia"
+              },
+              "fecundidad": {
+                "puntaje": 1,
+                "justificacion": "Los grupos de distinto tamaño y las distintas alturas encontradas permiten alguna comparación posterior. Sin embargo, la tarea no abre extensiones sustantivas. Hay duda con 2; se asigna el menor.",
+                "cita": "How many times could the members of your group be stacked"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información necesaria (altura de la iglesia y de los integrantes) es obtenible con los recursos declarados. Los materiales no revelan el modelo de solución.",
+                "cita": "Durante la tarea los estudiantes disponen de reglas de un metro y de libros donde pueden buscar la altura de la iglesia."
+              }
+            },
+            "total": 21,
+            "mejoras": [
+              {
+                "criterio": "validacion",
+                "mejora_minima": "Agregar a la fotografía una persona o un elemento de tamaño conocido junto a la iglesia, para que el resultado pueda contrastarse con una estimación independiente por escala."
+              },
+              {
+                "criterio": "autodiferenciacion",
+                "mejora_minima": "Añadir una segunda pregunta sobre cuántos grupos (o el curso completo) harían falta para llegar solo hasta la base de la torre o hasta la llave. Así se admiten soluciones con promedios, proporciones desde la foto o distintos supuestos de apilamiento."
+              },
+              {
+                "criterio": "fecundidad",
+                "mejora_minima": "Pedir al final que los grupos comparen sus resultados y expliquen por qué difieren (tamaño del grupo, altura usada, inclusión de la llave)."
+              }
+            ]
+          },
+          "meta": {
+            "agente": "evaluador",
+            "modelo_solicitado": "claude-opus-5-5",
+            "modelo_respuesta": "claude-opus-5-5",
+            "version_prompt": "1.3",
+            "version_rubrica": "4.0",
+            "version_mar03": "1.0",
+            "parametros": {
+              "temperature": "default (el modelo rechaza temperature)",
+              "effort": "high",
+              "max_tokens": 16000,
+              "salida": "output_config.format json_schema"
+            },
+            "request_id": "req_011CgDwdWq4Rt98UYiitSmNM",
+            "fecha": "2026-10-20T18:13:58+00:00",
+            "segundos": 33.3,
+            "intentos": 1,
+            "uso": {
+              "input_tokens": 296,
+              "output_tokens": 3434,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 10832,
+              "thinking_tokens": 1621
+            },
+            "costo_usd": 0.092746,
+            "costo_usd_pesimista": 0.278238,
+            "avisos": []
+          }
+        },
+        "sugarloaf": {
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La tarea plantea una pregunta por resolver y no entrega fórmula ni modelo. Quien resuelve debe construir la relación entre recorrido del teleférico, desnivel y distancia horizontal.",
+                "cita": "¿Qué distancia, aproximadamente, tenía que correr Giuseppe desde la estación del valle hasta el pie del cerro?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe el método y no hay instrucciones posteriores que lo encaucen. Admite modelos defendibles distintos según cómo se suponga la forma del cerro y del cable (pared vertical, ladera inclinada, cable recto o con catenaria).",
+                "cita": "¿Qué distancia, aproximadamente, tenía que correr Giuseppe desde la estación del valle hasta el pie del cerro? Muestra todo tu trabajo."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Hay que seleccionar información, porque el dato de los 12 minutos no sirve para la pregunta. También hay que suponer que el cable es recto, decidir cómo es la forma del cerro y estimar su extensión horizontal, que el texto no da.",
+                "cita": "luego lo escalaba en 12 minutos."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "El teleférico y el cerro existen. Preguntar por la distancia hasta el pie del cerro es una pregunta de curiosidad plausible sobre un lugar real.",
+                "cita": "El teleférico del Pan de Azúcar tarda aproximadamente 3 minutos en su recorrido desde la estación del valle hasta la cima"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "La tarea declara que su texto proviene de un artículo de periódico. Ese texto y sus datos (tiempo, velocidad, desnivel) son el núcleo de la tarea, de modo que el componente auténtico está integrado de manera sustantiva.",
+                "cita": "De un artículo de periódico:"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "La geometría real del teleférico y del cerro condiciona las decisiones de modelación: cable recto y forma de la ladera. El contexto también se necesita para interpretar el resultado aproximado y juzgar si es plausible.",
+                "cita": "salva un desnivel de aproximadamente 180 m"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Resolver obliga a recorrer todas las fases. Hay que comprender la situación, simplificarla a un triángulo con supuestos sobre el cerro, matematizar con la conversión de unidades y Pitágoras, calcular y volver al contexto para juzgar la respuesta aproximada. Ninguna fase viene hecha.",
+                "cita": "Avanza a una velocidad de 30 km/h y salva un desnivel de aproximadamente 180 m."
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existe evidencia independiente accesible para contrastar el modelo: un mapa o imagen satelital de Río de Janeiro permite comparar la distancia real entre la estación y el pie del cerro.",
+                "cita": "desde la estación del valle a través de la amplia llanura hasta el cerro"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto es comprensible para S1. La matemática requerida (tasas, conversión de unidades, teorema de Pitágoras o dibujo a escala) está al alcance de 8° básico – 1° medio.",
+                "cita": "Avanza a una velocidad de 30 km/h"
+              },
+              "autodiferenciacion": {
+                "puntaje": 1,
+                "justificacion": "El piso es razonable, porque se puede entrar con un dibujo a escala o calculando primero el largo del cable. Dudo entre 1 y 2 en el techo: las soluciones más sofisticadas (forma de la ladera, curvatura del cable) son refinamientos acotados de un mismo modelo geométrico, así que asigno el menor.",
+                "cita": "¿Qué distancia, aproximadamente, tenía que correr Giuseppe"
+              },
+              "fecundidad": {
+                "puntaje": 1,
+                "justificacion": "Se pueden comparar resultados según el supuesto sobre la forma del cerro y discutir el dato sobrante, pero la tarea abre pocas extensiones sustantivas más allá de la distancia pedida. Dudo entre 1 y 2 y asigno el menor.",
+                "cita": "primero corría desde la estación del valle a través de la amplia llanura hasta el cerro y luego lo escalaba en 12 minutos."
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "Los datos necesarios están en el texto. La forma del cerro puede estimarse con la foto o buscarse en un mapa, y ningún material revela el modelo ni la regla de solución.",
+                "cita": "Junto al texto hay una fotografía en blanco y negro. En el centro y a la izquierda se ve un cerro de roca muy alto"
+              }
+            },
+            "total": 22,
+            "mejoras": [
+              {
+                "criterio": "autodiferenciacion",
+                "mejora_minima": "Agregar una segunda pregunta que pida comparar la respuesta bajo dos supuestos distintos sobre la forma del cerro (pared vertical vs. ladera inclinada estimada desde la foto) y estimar cuánto cambia el resultado."
+              },
+              {
+                "criterio": "fecundidad",
+                "mejora_minima": "Añadir al final: «¿Qué tan rápido escalaba Giuseppe según tu modelo? ¿Es creíble para un montañista?», para abrir el uso del dato de los 12 minutos y una discusión sobre los límites del modelo."
+              }
+            ]
+          },
+          "meta": {
+            "agente": "evaluador",
+            "modelo_solicitado": "claude-opus-5-5",
+            "modelo_respuesta": "claude-opus-5-5",
+            "version_prompt": "1.3",
+            "version_rubrica": "4.0",
+            "version_mar03": "1.0",
+            "parametros": {
+              "temperature": "default (el modelo rechaza temperature)",
+              "effort": "high",
+              "max_tokens": 16000,
+              "salida": "output_config.format json_schema"
+            },
+            "request_id": "req_011CgDweAyyuFFy2cwFjqPHh",
+            "fecha": "2026-10-20T18:14:11+00:00",
+            "segundos": 38.1,
+            "intentos": 1,
+            "uso": {
+              "input_tokens": 694,
+              "output_tokens": 4023,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 10832,
+              "thinking_tokens": 2066
+            },
+            "costo_usd": 0.109461,
+            "costo_usd_pesimista": 0.328383,
+            "avisos": []
+          }
+        },
+        "vapes-litio": {
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La tarea plantea una necesidad real: cuantificar el impacto de los vapeadores desechables en Alemania. El texto no entrega ninguna regla ni modelo para calcular el desperdicio de litio.",
+                "cita": "What impact does the use of disposable e-cigarettes have on lithium waste, waste generation and water consumption in Germany?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta admite varios modelos defendibles, por ejemplo por número de usuarios, por ventas anuales o por litio por batería. No hay instrucciones que encaucen hacia una ruta única.",
+                "cita": "Modelling: Modelling of lithium wastage due to the consumption of e-cigarettes per year"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolverla exige estimar o buscar datos como cantidad de consumidores, dispositivos por año, litio por batería y agua por kilo de litio. También exige formular supuestos sobre el consumo.",
+                "cita": "Please argue mathematically along with possible data."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Se trata de una situación real y actual: el consumo de vapeadores desechables y el debate regulatorio europeo existen fuera de la escuela.",
+                "cita": "what could be the reasons why the European Parliament have not yet taken measures to ban these disposable products?"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El tema extraescolar auténtico (residuos de litio de vapeadores, debate sobre su prohibición) es el núcleo de la tarea, y la tarea usa un recurso real como un cortometraje. Hay una duda menor: la hoja de información podría haber sido elaborada para la actividad, pero el tema auténtico está integrado de manera sustantiva.",
+                "cita": "Short film about lithium mining"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto (Alemania, consumo anual, tipo de dispositivo) condiciona las decisiones de modelación. Además, es necesario para interpretar el resultado y argumentar sobre la prohibición.",
+                "cita": "Based on your modelled results, what could be the reasons why the European Parliament have not yet taken measures to ban these"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder exige comprender la situación, simplificar con supuestos, matematizar el consumo anual, calcular y volver al contexto para interpretar y juzgar. El enunciado no deja hecha ninguna fase.",
+                "cita": "Based on your modelled results, what could be the reasons why the European Parliament have not yet taken measures to ban these"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existen estimaciones públicas de ventas de vapeadores desechables y de litio desechado en Alemania. Con ellas se puede contrastar el modelo de forma independiente.",
+                "cita": "What impact does the use of disposable e-cigarettes have on lithium waste, waste generation and water consumption in Germany?"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto es cercano y significativo para adolescentes de S. La matemática requerida (razones, tasas, estimación) está al alcance de las herramientas esperables del nivel.",
+                "cita": "Consumption of disposable products using the example of disposable cigarettes/vapes (grade 10)"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Se puede entrar con una estimación multiplicativa simple. La tarea misma admite modelos más sofisticados: más variables (agua, residuos), escenarios de reciclaje y sensibilidad a los supuestos.",
+                "cita": "lithium waste, waste generation and water consumption in Germany"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Los resultados abren preguntas sobre política, reciclaje y consumo propio. También permiten comparar soluciones y discutir los límites de los datos.",
+                "cita": "Would you like to request a ban?"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "La hoja de información versa precisamente sobre la cantidad que se pide modelar, por lo que podría entregar el desperdicio ya cuantificado o la estructura del cálculo. El texto no precisa su contenido. Ante la duda entre 2 y 1 se asigna 1 por posible sobreorientación parcial.",
+                "cita": "Information sheet on lithium wastage in disposable e-cigarettes"
+              }
+            },
+            "total": 23,
+            "mejoras": [
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Precisar que la hoja de información entrega solo datos de base (por ejemplo, contenido de litio por batería y ventas anuales de desechables), sin cifras agregadas de desperdicio ni el procedimiento de cálculo."
+              }
+            ]
+          },
+          "meta": {
+            "agente": "evaluador",
+            "modelo_solicitado": "claude-opus-5-5",
+            "modelo_respuesta": "claude-opus-5-5",
+            "version_prompt": "1.3",
+            "version_rubrica": "4.0",
+            "version_mar03": "1.0",
+            "parametros": {
+              "temperature": "default (el modelo rechaza temperature)",
+              "effort": "high",
+              "max_tokens": 16000,
+              "salida": "output_config.format json_schema"
+            },
+            "request_id": "req_011CgDweTnGwA8S7zg3coSoV",
+            "fecha": "2026-10-20T18:14:09+00:00",
+            "segundos": 31.4,
+            "intentos": 1,
+            "uso": {
+              "input_tokens": 594,
+              "output_tokens": 3309,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 10832,
+              "thinking_tokens": 1663
+            },
+            "costo_usd": 0.091111,
+            "costo_usd_pesimista": 0.273333,
+            "avisos": []
+          }
+        }
+      },
+      "errores": {}
+    },
+    {
+      "corrida": 3,
+      "resultados": {
+        "clear-day-at-the-ocean": {
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 0,
+                "justificacion": "La tarea entrega el modelo completo y la resolución se reduce a evaluarlo. Corresponde al descriptor 0.",
+                "cita": "With the rule w² = 13 h you can estimate the range of sight in kilometers (w)"
+              },
+              "abierta": {
+                "puntaje": 0,
+                "justificacion": "Las preguntas son cerradas y prescriben el procedimiento: sustituir valores dados en la fórmula y tabular. No queda ningún camino alternativo.",
+                "cita": "Make a table for the range of sight with h = 5 m (10 m; 20 m; 40 m; 80 m)."
+              },
+              "decisiones": {
+                "puntaje": 0,
+                "justificacion": "La altura, las unidades, los valores de la tabla y el modelo vienen dados. No hay que seleccionar información, suponer ni estimar, así que la situación está completamente estructurada.",
+                "cita": "How far can you see, if your eyes are 1.60 m above the ground?"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "El alcance de la vista sobre el mar por la curvatura terrestre es un fenómeno real, y preguntar cuán lejos se ve es una curiosidad plausible fuera de la escuela. La tabla de alturas sucesivas es más escolar, pero no vuelve inverosímil la situación.",
+                "cita": "Perhaps you have observed at the ocean, that due the Earth's curvature, even with a clear view you only can see a certain distance."
+              },
+              "autenticidad": {
+                "puntaje": 1,
+                "justificacion": "El tema (el horizonte) es un fenómeno extraescolar auténtico, pero solo como referencia. La regla y los datos fueron construidos para la actividad y no se declara ninguna fuente. Dudé entre 0 y 1; asigno 1 porque existe una referencia auténtica secundaria.",
+                "cita": "due the Earth's curvature, even with a clear view you only can see a certain distance"
+              },
+              "contexto": {
+                "puntaje": 1,
+                "justificacion": "El contexto solo orienta el inicio: identificar la altura de los ojos con h y leer w como distancia. Después se abandona por completo y el resto es cálculo. Dudé con 0, porque el contexto es casi decorativo.",
+                "cita": "depending on how high above the ground your eyes are (h). You have to use h in meters."
+              },
+              "ciclo": {
+                "puntaje": 0,
+                "justificacion": "Solo se ejercita la aplicación rutinaria de una fórmula dada y una observación intramatemática. No hay comprensión, simplificación, matematización propia ni validación.",
+                "cita": "How does the range of sight, w, change, if the height h is quadrupled?"
+              },
+              "validacion": {
+                "puntaje": 1,
+                "justificacion": "Hay evidencia pública con la cual contrastar la regla (alcances geográficos de faros, la derivación geométrica con el radio terrestre). Sin embargo, como el modelo no lo construyen los estudiantes, en la práctica solo cabe una comprobación de plausibilidad. Dudé entre 1 y 2 y asigno el menor.",
+                "cita": "you can estimate the range of sight in kilometers (w)"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto es comprensible para secundaria. Raíces cuadradas, tablas y efecto de cuadruplicar están al alcance de las herramientas esperables de S según MAR03.",
+                "cita": "Make a table for the range of sight with h = 5 m (10 m; 20 m; 40 m; 80 m)."
+              },
+              "autodiferenciacion": {
+                "puntaje": 1,
+                "justificacion": "El piso es bajo, pero el techo también. La única diferenciación posible es responder la pregunta del cuádruple numéricamente o con un argumento algebraico (w proporcional a la raíz de h). No admite modelos de distinta sofisticación.",
+                "cita": "How does the range of sight, w, change, if the height h is quadrupled?"
+              },
+              "fecundidad": {
+                "puntaje": 1,
+                "justificacion": "La pregunta sobre cuadruplicar h abre una discusión breve sobre la relación de raíz cuadrada, pero no hay modelos ni decisiones que comparar. Las extensiones sustantivas son escasas. Dudé con 0.",
+                "cita": "How does the range of sight, w, change, if the height h is quadrupled?"
+              },
+              "recursos": {
+                "puntaje": 0,
+                "justificacion": "El enunciado entrega explícitamente la regla de solución, y la figura con w y h refuerza la estructura. Por tanto los materiales revelan el modelo.",
+                "cita": "With the rule w² = 13 h you can estimate the range of sight in kilometers (w)"
+              }
+            },
+            "total": 9,
+            "mejoras": [
+              {
+                "criterio": "genuino",
+                "mejora_minima": "Eliminar la regla w² = 13h y preguntar directamente: «Estás en la playa: ¿qué tan lejos está el horizonte que ves?»."
+              },
+              {
+                "criterio": "abierta",
+                "mejora_minima": "Reemplazar las viñetas por una pregunta abierta como «¿Desde qué altura habría que mirar para ver un barco a 20 km?», sin indicar el método."
+              },
+              {
+                "criterio": "decisiones",
+                "mejora_minima": "Pedir a los estudiantes que decidan la altura de sus ojos y que obtengan o estimen el radio terrestre, explicitando sus supuestos (por ejemplo, ignorar la refracción)."
+              },
+              {
+                "criterio": "autenticidad",
+                "mejora_minima": "Integrar un dato real como núcleo de la tarea, por ejemplo el alcance geográfico publicado de un faro chileno, con su altura, para que los estudiantes lo expliquen."
+              },
+              {
+                "criterio": "contexto",
+                "mejora_minima": "Hacer que la respuesta deba juzgarse en la situación, por ejemplo decidiendo si desde la torre de un faro concreto se vería una isla a cierta distancia."
+              },
+              {
+                "criterio": "ciclo",
+                "mejora_minima": "Al quitar la fórmula, pedir que construyan el modelo geométrico (tangente a la Tierra), calculen, interpreten y comparen el resultado con un dato real."
+              },
+              {
+                "criterio": "validacion",
+                "mejora_minima": "Agregar la consigna de contrastar el modelo con el alcance geográfico publicado de un faro de altura conocida."
+              },
+              {
+                "criterio": "autodiferenciacion",
+                "mejora_minima": "Con la fórmula eliminada, permitir enfoques desde dibujos a escala hasta Pitágoras o el análisis del efecto de la refracción, para elevar el techo."
+              },
+              {
+                "criterio": "fecundidad",
+                "mejora_minima": "Añadir la pregunta de cuándo deja de servir el modelo (refracción, altura del objeto observado), para abrir comparaciones."
+              },
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Retirar la regla w² = 13h y entregar el radio terrestre solo a solicitud."
+              }
+            ]
+          },
+          "meta": {
+            "agente": "evaluador",
+            "modelo_solicitado": "claude-opus-5-5",
+            "modelo_respuesta": "claude-opus-5-5",
+            "version_prompt": "1.3",
+            "version_rubrica": "4.0",
+            "version_mar03": "1.0",
+            "parametros": {
+              "temperature": "default (el modelo rechaza temperature)",
+              "effort": "high",
+              "max_tokens": 16000,
+              "salida": "output_config.format json_schema"
+            },
+            "request_id": "req_011CgDwgzAgSb1W97KmctXVz",
+            "fecha": "2026-10-20T18:14:54+00:00",
+            "segundos": 42.9,
+            "intentos": 1,
+            "uso": {
+              "input_tokens": 394,
+              "output_tokens": 4314,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 10832,
+              "thinking_tokens": 1965
+            },
+            "costo_usd": 0.115236,
+            "costo_usd_pesimista": 0.345708,
+            "avisos": []
+          }
+        },
+        "giants-shoes": {
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La tarea plantea una pregunta que hay que resolver sin entregar ninguna regla ni modelo. La relación entre el largo del pie y la estatura debe construirla quien resuelve.",
+                "cita": "Approximately how tall would a giant be for these shoes to fit? Explain your solution."
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe procedimiento. Admite varios caminos defendibles: razón pie/estatura propia, promedios del curso, uso del ancho o del largo, holgura entre zapato y pie.",
+                "cita": "Approximately how tall would a giant be for these shoes to fit?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Hay que decidir qué dato usar y suponer que el gigante conserva proporciones humanas. También hay que estimar la diferencia entre zapato y pie y obtener la razón pie/estatura midiendo personas.",
+                "cita": "with a width of 2.37 m and a length of 5.29 m. Approximately how tall"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Se trata de un objeto real registrado por Guinness. La pregunta es de curiosidad y estimación sobre ese objeto, plausible fuera de la escuela.",
+                "cita": "In a sports centre on the Philippines, Florentino Anonuevo Jr. polishes a pair of shoes."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El hecho y las medidas provienen de una fuente extraescolar declarada (Guinness/noticia). Esos datos son el núcleo de la tarea.",
+                "cita": "They are, according to the Guinness Book of Records, the world’s biggest"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona las decisiones: distinguir zapato de pie y elegir entre largo y ancho. Además es necesario para interpretar si la estatura obtenida es coherente con ambas medidas.",
+                "cita": "for these shoes to fit"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a recorrer todas las fases, ninguna dada por el enunciado: comprender, suponer proporcionalidad, medir, calcular y volver a interpretar la estatura obtenida.",
+                "cita": "Approximately how tall would a giant be for these shoes to fit? Explain your solution."
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "El modelo de proporción puede contrastarse con mediciones de otras personas (casos nuevos) y con datos antropométricos públicos. También puede compararse la estimación por ancho con la estimación por largo.",
+                "cita": "with a width of 2.37 m and a length of 5.29 m."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "Contexto y lenguaje son comprensibles para secundaria. La matemática requerida (razones, proporcionalidad, promedios) está al alcance de las herramientas de S.",
+                "cita": "Approximately how tall would a giant be for these shoes to fit?"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es bajo: basta comparar con el propio pie. El techo admite soluciones más refinadas, como promedios y rangos con datos del curso, holgura del zapato, contraste ancho/largo e intervalo de estimación.",
+                "cita": "Approximately how tall would a giant be for these shoes to fit? Explain your solution."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las soluciones pueden compararse entre sí, y la discrepancia entre las estimaciones por ancho y por largo abre preguntas nuevas. También se abren la viabilidad física de un gigante así y los límites del modelo proporcional.",
+                "cita": "with a width of 2.37 m and a length of 5.29 m."
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información faltante (razón pie/estatura) es obtenible midiéndose a sí mismos o con una búsqueda simple. Nada en el enunciado revela el modelo.",
+                "cita": "Approximately how tall would a giant be for these shoes to fit?"
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "agente": "evaluador",
+            "modelo_solicitado": "claude-opus-5-5",
+            "modelo_respuesta": "claude-opus-5-5",
+            "version_prompt": "1.3",
+            "version_rubrica": "4.0",
+            "version_mar03": "1.0",
+            "parametros": {
+              "temperature": "default (el modelo rechaza temperature)",
+              "effort": "high",
+              "max_tokens": 16000,
+              "salida": "output_config.format json_schema"
+            },
+            "request_id": "req_011CgDwgzAwNvmhKWREhP2Z6",
+            "fecha": "2026-10-20T18:14:37+00:00",
+            "segundos": 25.8,
+            "intentos": 1,
+            "uso": {
+              "input_tokens": 282,
+              "output_tokens": 2560,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 10832,
+              "thinking_tokens": 1119
+            },
+            "costo_usd": 0.070826,
+            "costo_usd_pesimista": 0.212478,
+            "avisos": []
+          }
+        },
+        "lighthouse": {
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La situación plantea una necesidad real: saber a qué distancia se divisa el faro. No entrega regla, fórmula ni modelo; quien resuelve debe construirlo.",
+                "cita": "How far, approximately, was a ship when it saw the lighthouse for the first time? Explain your solution."
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe método y admite varios modelos defendibles: curvatura terrestre con tangente y Pitágoras, inclusión de la altura del observador en el barco, alcance luminoso del haz o refracción.",
+                "cita": "How far, approximately, was a ship when it saw the lighthouse for the first time?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "El único dato dado es la altura. Resolver exige suponer que la limitante es la curvatura de la Tierra, obtener su radio, decidir la altura del observador y despreciar refracción y clima.",
+                "cita": "measuring 31 m (102 feet) in height"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Se trata de un faro real con una función real de advertir a los barcos. La pregunta sobre su distancia de visibilidad es plenamente plausible fuera de la escuela.",
+                "cita": "In the bay of Massachusetts, a lighthouse called \"Boston light\" was built in 1716"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El tema y los datos (un faro histórico real y su altura) son componentes extraescolares auténticos y constituyen el núcleo de la tarea. Se toma como cierta la procedencia declarada.",
+                "cita": "a lighthouse called \"Boston light\" was built in 1716, measuring 31 m (102 feet) in height"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona las decisiones: la altura del observador en el barco, la curvatura y el hecho de que sea mar abierto. También es necesario para interpretar el «approximately» y juzgar la respuesta.",
+                "cita": "Its beacon was meant to warn ships that they were approaching the coast."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a comprender la situación y a simplificarla a un modelo geométrico de la Tierra esférica. Luego hay que matematizar con un triángulo rectángulo, calcular, e interpretar y validar la distancia obtenida; ninguna fase viene hecha.",
+                "cita": "How far, approximately, was a ship when it saw the lighthouse for the first time? Explain your solution."
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existe evidencia independiente accesible para contrastar el modelo, como los alcances geográficos de faros publicados en cartas náuticas y en listas de faros, o los datos conocidos de visibilidad en el horizonte.",
+                "cita": "How far, approximately, was a ship"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto y el lenguaje son comprensibles para secundaria. La matemática requerida (teorema de Pitágoras o trigonometría elemental con el radio terrestre) está al alcance de las herramientas esperables del nivel S.",
+                "cita": "measuring 31 m (102 feet) in height"
+              },
+              "autodiferenciacion": {
+                "puntaje": 1,
+                "justificacion": "El techo es alto: admite incorporar la altura del observador, la refracción o el alcance luminoso. Sin embargo, la entrada depende en gran medida de una idea clave, que la curvatura terrestre limita la visión, y sin ella es difícil avanzar. Hay duda entre 1 y 2, por lo que se asigna el menor.",
+                "cita": "How far, approximately, was a ship when it saw the lighthouse for the first time?"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las soluciones permiten comparar modelos, por ejemplo con y sin la altura del barco o con la intensidad de la luz, y abren preguntas nuevas: qué altura haría falta para cierto alcance, o cuál es el efecto de la refracción y del clima.",
+                "cita": "Explain your solution."
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "El dato faltante imprescindible, el radio de la Tierra, es obtenible con una búsqueda simple o con conocimiento escolar en secundaria, y nada en el enunciado revela el modelo de solución.",
+                "cita": "No se declaran recursos ni materiales adicionales."
+              }
+            },
+            "total": 23,
+            "mejoras": [
+              {
+                "criterio": "autodiferenciacion",
+                "mejora_minima": "Añadir una pregunta inicial de entrada accesible sin revelar el modelo, como «¿Qué podría impedir que el barco vea el faro desde muy lejos?», para que estudiantes sin la idea de curvatura puedan comenzar a explorar."
+              }
+            ]
+          },
+          "meta": {
+            "agente": "evaluador",
+            "modelo_solicitado": "claude-opus-5-5",
+            "modelo_respuesta": "claude-opus-5-5",
+            "version_prompt": "1.3",
+            "version_rubrica": "4.0",
+            "version_mar03": "1.0",
+            "parametros": {
+              "temperature": "default (el modelo rechaza temperature)",
+              "effort": "high",
+              "max_tokens": 16000,
+              "salida": "output_config.format json_schema"
+            },
+            "request_id": "req_011CgDwgz9CwVRKQdqQhejPE",
+            "fecha": "2026-10-20T18:14:35+00:00",
+            "segundos": 23.8,
+            "intentos": 1,
+            "uso": {
+              "input_tokens": 274,
+              "output_tokens": 2497,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 10832,
+              "thinking_tokens": 827
+            },
+            "costo_usd": 0.069211,
+            "costo_usd_pesimista": 0.207633,
+            "avisos": []
+          }
+        },
+        "poblacion-belga": {
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 1,
+                "justificacion": "No se entrega el procedimiento final, pero los cálculos previos y las dos observaciones ya formuladas insinúan con fuerza la estructura de la solución. Corresponde al descriptor 1, no a una necesidad abierta por resolver.",
+                "cita": "In the previous section calculations led to two observations that were formulated in terms of the long-term growth factor and the long term age distribution."
+              },
+              "abierta": {
+                "puntaje": 1,
+                "justificacion": "Hay cierta apertura en las explicaciones pedidas, pero las consignas encauzan hacia una ruta casi única: usar la primera observación y llegar a un cálculo «más matemático» predeterminado.",
+                "cita": "they have to formulate what it means that the percentages no longer change in the long run and they have to explain this phenomenon using the first observation above."
+              },
+              "decisiones": {
+                "puntaje": 1,
+                "justificacion": "La tabla y las observaciones ya están dadas, y solo queda interpretarlas. No se exige seleccionar información, formular supuestos ni estimar, aunque hay decisiones interpretativas menores.",
+                "cita": "Students, for example, have to explain how they see the ageing of the population in the table."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "El envejecimiento y la evolución de la población belga son fenómenos reales fuera de la escuela.",
+                "cita": "explain how they see the ageing of the population in the table"
+              },
+              "autenticidad": {
+                "puntaje": 1,
+                "justificacion": "El tema demográfico es auténtico, pero el texto no declara la procedencia de la tabla ni de los datos. Además, el núcleo es una secuencia construida para enseñar el contenido. Dudo entre 1 y 2 y asigno el menor.",
+                "cita": "explain how they see the ageing of the population in the table"
+              },
+              "contexto": {
+                "puntaje": 1,
+                "justificacion": "El contexto sirve para interpretar el envejecimiento. Sin embargo, la pregunta central es intramatemática y puede resolverse abandonando la situación una vez formulado el modelo.",
+                "cita": "how can the long-term growth factor and the long-term age distribution be calculated in a more ‘mathematical’ way?"
+              },
+              "ciclo": {
+                "puntaje": 1,
+                "justificacion": "La comprensión, la simplificación y la matematización quedan hechas por la secuencia previa. Solo resta interpretar y trabajar matemáticamente, de modo que varias fases no se exigen.",
+                "cita": "In the previous section calculations led to two observations"
+              },
+              "validacion": {
+                "puntaje": 1,
+                "justificacion": "Lo que la tarea plantea es contrastar el cálculo «más matemático» con las observaciones numéricas previas, es decir, consistencia interna. Podrían existir datos demográficos externos, pero la tarea no los vincula, así que, ante la duda, asigno el menor.",
+                "cita": "how can the long-term growth factor and the long-term age distribution be calculated in a more ‘mathematical’ way?"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "Calcular el factor de crecimiento y la distribución a largo plazo (modelos dinámicos discretos y álgebra lineal) corresponde a las herramientas esperables en U. El contexto es comprensible.",
+                "cita": "the long-term growth factor and the long-term age distribution"
+              },
+              "autodiferenciacion": {
+                "puntaje": 1,
+                "justificacion": "Interpretar la tabla ofrece una entrada, pero la pregunta central depende de una idea clave única (valores y vectores propios). Esto deja un piso alto y poca variedad de soluciones con distinta sofisticación.",
+                "cita": "calculated in a more ‘mathematical’ way?"
+              },
+              "fecundidad": {
+                "puntaje": 1,
+                "justificacion": "Permite alguna discusión sobre la estabilidad de la distribución etaria. La tarea no abre comparaciones de modelos ni límites sustantivos.",
+                "cita": "they have to formulate what it means that the percentages no longer change in the long run"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "La tarea remite a «the table» y a «the first observation above», que no se declaran, aunque podrían derivarse de la secuencia o de datos públicos. Además, las observaciones previas orientan fuertemente la solución. Hay sobreorientación parcial e información de acceso difícil.",
+                "cita": "No se declaran recursos ni materiales adicionales."
+              }
+            },
+            "total": 14,
+            "mejoras": [
+              {
+                "criterio": "genuino",
+                "mejora_minima": "Plantear una necesidad real (p. ej., proyectar la proporción de mayores de 65 años en Bélgica para planificar pensiones) sin anticipar las observaciones sobre el factor de crecimiento y la distribución a largo plazo."
+              },
+              {
+                "criterio": "abierta",
+                "mejora_minima": "Reemplazar la consigna de «usar la primera observación» por una pregunta abierta sobre cómo evolucionará la estructura etaria, que admita distintos modelos defendibles."
+              },
+              {
+                "criterio": "decisiones",
+                "mejora_minima": "Entregar datos demográficos brutos (nacimientos, supervivencia por grupo etario) y pedir que los estudiantes elijan los grupos de edad y formulen supuestos sobre tasas constantes."
+              },
+              {
+                "criterio": "autenticidad",
+                "mejora_minima": "Declarar e integrar como núcleo una tabla real de Statbel o Eurostat con su fuente citada."
+              },
+              {
+                "criterio": "contexto",
+                "mejora_minima": "Pedir que el resultado matemático se use para responder una pregunta demográfica concreta (p. ej., la razón de dependencia futura) y que se juzgue si es razonable."
+              },
+              {
+                "criterio": "ciclo",
+                "mejora_minima": "Dejar a los estudiantes la construcción del modelo de proyección por grupos de edad a partir de los datos, en lugar de partir de cálculos y observaciones ya hechos."
+              },
+              {
+                "criterio": "validacion",
+                "mejora_minima": "Pedir que se contraste la distribución etaria proyectada con datos reales posteriores de Bélgica o con proyecciones oficiales no usadas en el modelo."
+              },
+              {
+                "criterio": "autodiferenciacion",
+                "mejora_minima": "Admitir explícitamente soluciones por iteración numérica o simulación además del cálculo con valores propios, e invitar a análisis de sensibilidad de las tasas."
+              },
+              {
+                "criterio": "fecundidad",
+                "mejora_minima": "Añadir una pregunta sobre qué ocurre si cambian la fecundidad o la migración y sobre los límites de suponer tasas constantes."
+              },
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Incluir la tabla de población referida, con su fuente, y eliminar las observaciones previas que anticipan la estructura de la solución."
+              }
+            ]
+          },
+          "meta": {
+            "agente": "evaluador",
+            "modelo_solicitado": "claude-opus-5-5",
+            "modelo_respuesta": "claude-opus-5-5",
+            "version_prompt": "1.3",
+            "version_rubrica": "4.0",
+            "version_mar03": "1.0",
+            "parametros": {
+              "temperature": "default (el modelo rechaza temperature)",
+              "effort": "high",
+              "max_tokens": 16000,
+              "salida": "output_config.format json_schema"
+            },
+            "request_id": "req_011CgDwgzBBtULCNsDStQ1Ps",
+            "fecha": "2026-10-20T18:14:47+00:00",
+            "segundos": 35.9,
+            "intentos": 1,
+            "uso": {
+              "input_tokens": 352,
+              "output_tokens": 3837,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 10832,
+              "thinking_tokens": 1531
+            },
+            "costo_usd": 0.103101,
+            "costo_usd_pesimista": 0.309303,
+            "avisos": []
+          }
+        },
+        "port-of-hamburg": {
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La pregunta plantea un problema real de dimensionamiento del puerto. No entrega fórmula, regla ni modelo: quien resuelve debe construir la relación entre número de contenedores, tamaño y ocupación del área.",
+                "cita": "How big is the area needed for the transhipping of the containers?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe procedimiento. Admite varios modelos defendibles, por ejemplo contenedores en el suelo, apilados, con tiempo de permanencia o con pasillos para grúas.",
+                "cita": "How big is the area needed for the transhipping of the containers?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "El único dato es el flujo anual. Resolver exige estimar las dimensiones de un contenedor, la altura de apilamiento y el tiempo de permanencia, y suponer el espacio para circulación y maquinaria.",
+                "cita": "In 2007, 9.9 million containers were shipped through the port of Hamburg."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "La situación se refiere a un puerto real y a una cuestión de planificación de espacio que existe fuera de la escuela.",
+                "cita": "This makes Hamburg the world's ninth biggest port."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El texto y la cifra provienen de un boletín real no creado para enseñar. El dato de 9.9 millones de contenedores es el núcleo de la tarea, de modo que el componente auténtico está integrado de manera sustantiva.",
+                "cita": "Original text of an insurance Newsletter: AOK Rheinland/Hamburg No. 2/2008"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto portuario condiciona las decisiones de modelación: apilamiento, rotación de contenedores y espacio para grúas. También es necesario para juzgar si el área obtenida es razonable para un puerto.",
+                "cita": "(La tarea incluye una fotografía de contenedores apilados y grúas; no muestra el área completa.)"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a comprender la operación del puerto, simplificarla con supuestos, matematizar el área y calcular. Luego hay que interpretar y juzgar el resultado en el contexto; ninguna fase viene hecha por el enunciado.",
+                "cita": "How big is the area needed for the transhipping of the containers?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "La superficie real de las terminales de contenedores de Hamburgo es un dato público accesible. Permite contrastar el modelo con evidencia independiente no usada en su construcción.",
+                "cita": "This makes Hamburg the world's ninth biggest port."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto es comprensible para secundaria. La matemática requerida (áreas, razones, tasas y estimación) está al alcance de las herramientas esperables en S.",
+                "cita": "In 2007, 9.9 million containers were shipped through the port of Hamburg."
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Hay una entrada elemental: multiplicar el número de contenedores por el área de uno. La misma tarea admite soluciones mucho más sofisticadas que incorporan apilamiento, tiempo de permanencia, pasillos y variaciones en el flujo.",
+                "cita": "How big is the area needed for the transhipping of the containers?"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Los distintos supuestos llevan a áreas muy diferentes, lo que permite comparar modelos y discutir sus límites. También abre preguntas sobre la logística, la ubicación de contenedores y la eficiencia del puerto.",
+                "cita": "In 365 days only two or three containers are put in the wrong place."
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información faltante puede estimarse o encontrarse con una búsqueda simple: medidas de un contenedor, altura de las pilas visible en la foto, tiempo típico de permanencia. La fotografía no revela el modelo.",
+                "cita": "(La tarea incluye una fotografía de contenedores apilados y grúas; no muestra el área completa.)"
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "agente": "evaluador",
+            "modelo_solicitado": "claude-opus-5-5",
+            "modelo_respuesta": "claude-opus-5-5",
+            "version_prompt": "1.3",
+            "version_rubrica": "4.0",
+            "version_mar03": "1.0",
+            "parametros": {
+              "temperature": "default (el modelo rechaza temperature)",
+              "effort": "high",
+              "max_tokens": 16000,
+              "salida": "output_config.format json_schema"
+            },
+            "request_id": "req_011CgDwgzDuPzodvcARUbhg2",
+            "fecha": "2026-10-20T18:14:34+00:00",
+            "segundos": 23.0,
+            "intentos": 1,
+            "uso": {
+              "input_tokens": 385,
+              "output_tokens": 2514,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 10832,
+              "thinking_tokens": 1015
+            },
+            "costo_usd": 0.070191,
+            "costo_usd_pesimista": 0.210573,
+            "avisos": []
+          }
+        },
+        "residuos-plasticos": {
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La situación plantea una necesidad real: dimensionar los residuos plásticos escolares. El relato no dice que se entregara a los estudiantes una regla o modelo; el razonamiento proporcional aparece como parte de su proceso.",
+                "cita": "they identified the problem of plastic waste in schools and defined key variables such as the amount of plastic waste produced per week"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta de estimación admite varios caminos y modelos defendibles: qué medir, qué muestra usar y cómo escalar. El texto no menciona instrucciones que prescriban el procedimiento a los estudiantes.",
+                "cita": "estimating the volume of total plastic waste generated by all primary schools in their city"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver la tarea exige simplificar, elegir una muestra representativa, recolectar datos y suponer que las escuelas son comparables. Son decisiones de modelación sustantivas.",
+                "cita": "focusing on a single classroom’s waste as a representative sample"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Los residuos plásticos en las escuelas son un problema real y existente fuera del aula de matemáticas.",
+                "cita": "the problem of plastic waste in schools"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los datos provienen de la basura real recolectada en el aula y el tema es auténtico (ODS 12). Esos datos son el núcleo de la tarea y se complementan con datos disponibles sobre producción de plástico, por lo que no fueron fabricados para enseñar el contenido.",
+                "cita": "the students performed calculations, analyzed the collected data, and made predictions based on their model"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona decisiones como la representatividad de la sala y la escala a la ciudad. También es necesario para interpretar el impacto ambiental y para validar el resultado con datos reales.",
+                "cita": "considering the environmental impact of plastic waste accumulation on a larger scale"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "El relato recorre construir, simplificar, matematizar, calcular, interpretar y validar sin indicar que alguna fase se entregara hecha. Según la regla para relatos, esto se lee como el proceso de modelación de los propios estudiantes.",
+                "cita": "They reflected on the accuracy and realism of their estimations, comparing them with available data on plastic waste production and adjusting their model if necessary"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existe evidencia independiente para contrastar el modelo: datos públicos sobre producción de residuos, además de mediciones repetibles en otras salas o semanas.",
+                "cita": "comparing them with available data on plastic waste production"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto escolar es cercano para el nivel P. La matemática requerida (proporcionalidad directa, multiplicación, estimación y unidades) corresponde a las herramientas esperables según MAR03.",
+                "cita": "using proportional reasoning and multiplication"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es bajo: se puede empezar contando o midiendo la basura de la sala y multiplicando. El techo es alto: la tarea admite modelos más refinados, como ponderar por matrícula, considerar la variación semanal o hacer predicciones de largo plazo.",
+                "cita": "estimating the volume of total plastic waste generated by all primary schools in their city"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Los resultados abren preguntas nuevas sobre efectos a largo plazo y soluciones, y permiten comparar y ajustar estimaciones.",
+                "cita": "explored the potential long-term effects of plastic waste accumulation, and brainstormed actionable solutions such as reducing plastic use, promoting recycling"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "Nada revela el modelo y los datos de la sala son medibles. Pero la tarea no entrega ni indica cómo conseguir el número de escuelas o estudiantes de la ciudad ni los datos de producción de plástico, que pueden ser difíciles de obtener para el nivel P. Dudo entre 1 y 2 y asigno el menor.",
+                "cita": "comparing them with available data on plastic waste production"
+              }
+            },
+            "total": 23,
+            "mejoras": [
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Indicar que los estudiantes pueden solicitar al docente el número de escuelas primarias y de estudiantes de la ciudad, y una cifra pública de residuos plásticos per cápita (por ejemplo, de un informe municipal) para contrastar su estimación."
+              }
+            ]
+          },
+          "meta": {
+            "agente": "evaluador",
+            "modelo_solicitado": "claude-opus-5-5",
+            "modelo_respuesta": "claude-opus-5-5",
+            "version_prompt": "1.3",
+            "version_rubrica": "4.0",
+            "version_mar03": "1.0",
+            "parametros": {
+              "temperature": "default (el modelo rechaza temperature)",
+              "effort": "high",
+              "max_tokens": 16000,
+              "salida": "output_config.format json_schema"
+            },
+            "request_id": "req_011CgDwigX77mwENSiPGZwnY",
+            "fecha": "2026-10-20T18:15:03+00:00",
+            "segundos": 28.8,
+            "intentos": 1,
+            "uso": {
+              "input_tokens": 624,
+              "output_tokens": 3072,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 10832,
+              "thinking_tokens": 1423
+            },
+            "costo_usd": 0.085336,
+            "costo_usd_pesimista": 0.256008,
+            "avisos": []
+          }
+        },
+        "st-michaels-church": {
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La pregunta plantea un problema por resolver y no entrega una regla, fórmula ni procedimiento. Quien resuelve debe construir la relación entre la altura de la iglesia y la estatura del grupo.",
+                "cita": "How many times could the members of your group be stacked on top of each other to reach the top of the church?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe un método. Admite varios caminos defendibles: estimar la altura desde la foto o buscarla en libros, y usar las estaturas individuales o un promedio.",
+                "cita": "How many times could the members of your group be stacked on top of each other to reach the top of the church?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige obtener la altura de la iglesia, medir a los integrantes y decidir supuestos: si se incluye la llave, cómo se apilan las personas y qué hacer con el resto no entero.",
+                "cita": "Durante la tarea los estudiantes disponen de reglas de un metro y de libros donde pueden buscar la altura de la iglesia."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Se trata de un monumento real y de una pregunta de estimación sobre un objeto real. Es una situación claramente plausible fuera de la escuela.",
+                "cita": "St. Michael's Church is one of Hamburg's town landmarks. At the pinnacle you can see a golden key."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El tema (una iglesia real), la fotografía y los libros con la altura real son componentes extraescolares no creados para enseñar. Además, constituyen el núcleo de la tarea.",
+                "cita": "(Incluye una fotografía de la iglesia.)"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona decisiones: hasta dónde medir y cómo se apilan cuerpos reales. También se necesita para interpretar un resultado no entero en número de personas y para juzgar su plausibilidad frente a la foto.",
+                "cita": "At the pinnacle you can see a golden key."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a recorrer el ciclo completo: comprender la situación, simplificar (estaturas, apilamiento), matematizar como cociente de alturas, calcular e interpretar el resultado en personas. Ninguna fase queda hecha por el enunciado.",
+                "cita": "How many times could the members of your group be stacked on top of each other to reach the top of the church?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existe evidencia independiente: la altura publicada en libros puede contrastar una estimación hecha desde la foto, y viceversa. También pueden medirse de nuevo las estaturas.",
+                "cita": "libros donde pueden buscar la altura de la iglesia"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto es comprensible para 10–12 años. La matemática requerida (medición, unidades, estimación, división o proporción) está entre las herramientas esperables del nivel P.",
+                "cita": "Durante la tarea los estudiantes disponen de reglas de un metro"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es bajo: basta medir a una persona y comparar con la altura. La tarea admite soluciones más sofisticadas, como sumar las estaturas reales del grupo, usar promedios, estimar por proporción desde la foto o considerar rangos de error.",
+                "cita": "How many times could the members of your group be stacked on top of each other"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Cada grupo obtiene resultados distintos según sus estaturas, la fuente de la altura y sus supuestos. Esto permite comparar soluciones y discutir límites, como la precisión de la foto o la inclusión de la llave.",
+                "cita": "How many times could the members of your group be stacked on top of each other to reach the top of the church?"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información necesaria se puede medir o buscar con recursos accesibles para el nivel P. Ningún material revela el modelo ni el procedimiento de solución.",
+                "cita": "Durante la tarea los estudiantes disponen de reglas de un metro y de libros donde pueden buscar la altura de la iglesia."
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "agente": "evaluador",
+            "modelo_solicitado": "claude-opus-5-5",
+            "modelo_respuesta": "claude-opus-5-5",
+            "version_prompt": "1.3",
+            "version_rubrica": "4.0",
+            "version_mar03": "1.0",
+            "parametros": {
+              "temperature": "default (el modelo rechaza temperature)",
+              "effort": "high",
+              "max_tokens": 16000,
+              "salida": "output_config.format json_schema"
+            },
+            "request_id": "req_011CgDwijcdyHQkMPTNazZsR",
+            "fecha": "2026-10-20T18:15:00+00:00",
+            "segundos": 24.9,
+            "intentos": 1,
+            "uso": {
+              "input_tokens": 296,
+              "output_tokens": 2621,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 10832,
+              "thinking_tokens": 1106
+            },
+            "costo_usd": 0.072421,
+            "costo_usd_pesimista": 0.217263,
+            "avisos": []
+          }
+        },
+        "sugarloaf": {
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 1,
+                "justificacion": "No se entrega una regla ni un modelo. Sin embargo, la combinación velocidad–tiempo–desnivel insinúa con fuerza el triángulo rectángulo, y la necesidad de saber cuánto corría Giuseppe es más un pretexto que un problema por resolver.",
+                "cita": "Avanza a una velocidad de 30 km/h y salva un desnivel de aproximadamente 180 m."
+              },
+              "abierta": {
+                "puntaje": 1,
+                "justificacion": "La pregunta no prescribe el método y el «aproximadamente» admite supuestos. Aun así, los datos convergen en una ruta y una respuesta casi únicas (distancia del cable y Pitágoras); por eso hay apertura parcial y no plena.",
+                "cita": "¿Qué distancia, aproximadamente, tenía que correr Giuseppe desde la estación del valle hasta el pie del cerro?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige descartar información superflua (los 12 minutos) y suponer que el cable es recto y que la pared del cerro es casi vertical. Esto implica seleccionar información y simplificar, como pide el descriptor de 2.",
+                "cita": "luego lo escalaba en 12 minutos"
+              },
+              "realismo": {
+                "puntaje": 1,
+                "justificacion": "El teleférico es real, pero la anécdota del ingeniero que corría y escalaba solo tiene sentido para plantear el cálculo de una distancia. Es un encuadre forzado para insertar matemática.",
+                "cita": "El ingeniero jefe, Giuseppe Pelligrini, preferiría mucho más ir a pie, como hacía antes, cuando era montañista"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "La tarea declara que el texto y sus datos provienen de un artículo de periódico y que ese material es el núcleo de la tarea. Por eso el componente auténtico está integrado de manera sustantiva.",
+                "cita": "De un artículo de periódico:"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto (llanura, cerro de laderas muy empinadas en la foto) condiciona el supuesto de que la distancia horizontal equivale a la carrera. También es necesario para interpretar el resultado como distancia hasta el pie del cerro.",
+                "cita": "primero corría desde la estación del valle a través de la amplia llanura hasta el cerro"
+              },
+              "ciclo": {
+                "puntaje": 1,
+                "justificacion": "La situación llega casi estructurada, con todos los datos numéricos dados, y la validación queda trivial. Comprender y simplificar exigen algo, pero no todas las fases son no triviales.",
+                "cita": "tarda aproximadamente 3 minutos en su recorrido desde la estación del valle hasta la cima"
+              },
+              "validacion": {
+                "puntaje": 1,
+                "justificacion": "Hay comprobaciones de plausibilidad (comparar con el desnivel y con el largo del cable). Un mapa público del lugar contrastaría más los datos del artículo que el modelo, así que tengo dudas entre 1 y 2 y elijo el menor.",
+                "cita": "¿Qué distancia, aproximadamente, tenía que correr Giuseppe"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto y el lenguaje son comprensibles para S1. La matemática requerida (tasas, conversión de unidades, teorema de Pitágoras o dibujo a escala) está al alcance de 8° básico – 1° medio.",
+                "cita": "Avanza a una velocidad de 30 km/h y salva un desnivel de aproximadamente 180 m."
+              },
+              "autodiferenciacion": {
+                "puntaje": 1,
+                "justificacion": "Hay entrada con un dibujo a escala o con Pitágoras. Sin embargo, el techo es bajo: la tarea apenas admite soluciones más sofisticadas, salvo considerar la pendiente del cerro o la curvatura del cable.",
+                "cita": "Muestra todo tu trabajo."
+              },
+              "fecundidad": {
+                "puntaje": 1,
+                "justificacion": "Se puede discutir el dato superfluo o los supuestos sobre el cable y la ladera, pero las extensiones sustantivas son pocas. La tarea tiende a agotarse en una cifra.",
+                "cita": "luego lo escalaba en 12 minutos"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "Toda la información necesaria está en el texto y la foto apoya los supuestos sin revelar el modelo ni el procedimiento de solución.",
+                "cita": "En el centro y a la izquierda se ve un cerro de roca muy alto, de cima redondeada y laderas muy empinadas"
+              }
+            },
+            "total": 17,
+            "mejoras": [
+              {
+                "criterio": "genuino",
+                "mejora_minima": "Plantear una necesidad real para Giuseppe, por ejemplo decidir si le conviene volver a subir corriendo y escalando o en teleférico, en lugar de preguntar directamente una distancia."
+              },
+              {
+                "criterio": "abierta",
+                "mejora_minima": "Retirar el desnivel exacto del enunciado y pedir que lo estimen a partir de la foto o de información buscada, de modo que existan varios modelos defendibles."
+              },
+              {
+                "criterio": "realismo",
+                "mejora_minima": "Sustituir la anécdota del ingeniero por una pregunta de un visitante real, como estimar cuánto se tardaría en llegar a pie desde la estación hasta el pie del cerro."
+              },
+              {
+                "criterio": "ciclo",
+                "mejora_minima": "Pedir que expliciten y justifiquen sus supuestos sobre el cable y la ladera, y que juzguen si su respuesta es razonable comparándola con otra información."
+              },
+              {
+                "criterio": "validacion",
+                "mejora_minima": "Indicar que contrasten su estimación con la distancia medida en un mapa en línea del recorrido real del teleférico y expliquen las diferencias."
+              },
+              {
+                "criterio": "autodiferenciacion",
+                "mejora_minima": "Agregar una pregunta que admita refinamientos, por ejemplo cómo cambia la respuesta si el cable cuelga o si la ladera no es vertical."
+              },
+              {
+                "criterio": "fecundidad",
+                "mejora_minima": "Añadir una pregunta de cierre que compare la velocidad de Giuseppe corriendo y escalando con la del teleférico, o que discuta qué supuestos hacen más o menos confiable la estimación."
+              }
+            ]
+          },
+          "meta": {
+            "agente": "evaluador",
+            "modelo_solicitado": "claude-opus-5-5",
+            "modelo_respuesta": "claude-opus-5-5",
+            "version_prompt": "1.3",
+            "version_rubrica": "4.0",
+            "version_mar03": "1.0",
+            "parametros": {
+              "temperature": "default (el modelo rechaza temperature)",
+              "effort": "high",
+              "max_tokens": 16000,
+              "salida": "output_config.format json_schema"
+            },
+            "request_id": "req_011CgDwitLGJZ5XfaRVD2y1a",
+            "fecha": "2026-10-20T18:15:18+00:00",
+            "segundos": 41.2,
+            "intentos": 1,
+            "uso": {
+              "input_tokens": 694,
+              "output_tokens": 4399,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 10832,
+              "thinking_tokens": 2194
+            },
+            "costo_usd": 0.118861,
+            "costo_usd_pesimista": 0.356583,
+            "avisos": []
+          }
+        },
+        "vapes-litio": {
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La pregunta plantea una necesidad real: estimar un impacto ambiental. No entrega ninguna regla, fórmula ni modelo listo para aplicar.",
+                "cita": "What impact does the use of disposable e-cigarettes have on lithium waste, waste generation and water consumption in Germany?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta admite varios modelos defendibles (lithium, residuos, agua; distintas estimaciones de consumo) y no prescribe procedimiento. La línea «Modelling» describe el foco del diseño, no un método impuesto.",
+                "cita": "Please argue mathematically along with possible data. Would you like to request a ban?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Modelar el desperdicio anual exige estimar cuántos dispositivos se consumen, cuánto litio contiene cada uno y qué parte se desecha. También exige elegir qué datos usar y formular supuestos.",
+                "cita": "Modelling of lithium wastage due to the consumption of e-cigarettes per year"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "El consumo de vapes desechables y su efecto sobre el litio es una situación real y actual en Alemania y la UE.",
+                "cita": "Consumption of disposable products using the example of disposable cigarettes/vapes"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El tema (vapes desechables, minería de litio) y el debate regulatorio europeo son componentes extraescolares auténticos que constituyen el núcleo de la tarea.",
+                "cita": "what could be the reasons why the European Parliament have not yet taken measures to ban these disposable products?"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona qué estimar (consumo en Alemania, litio por dispositivo). Además, es imprescindible para interpretar los resultados en la discusión sobre una prohibición.",
+                "cita": "Based on your modelled results, what could be the reasons why the European Parliament have not yet taken measures to ban these"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder exige comprender la situación, simplificar (qué impactos y qué datos), matematizar con estimaciones encadenadas, calcular y volver al contexto para argumentar sobre la prohibición. El enunciado no deja hecha ninguna fase.",
+                "cita": "Based on your modelled results, what could be the reasons"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existen datos públicos independientes contra los cuales contrastar el modelo, como ventas de vapes en Alemania, contenido de litio por batería o informes sobre residuos.",
+                "cita": "Please argue mathematically along with possible data."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El tema es cercano y significativo para adolescentes de grado 10. La matemática requerida (tasas, proporcionalidad, estimación) está al alcance del nivel S.",
+                "cita": "Me-reference: Recognizing the effects of e-cigarettes and reflecting on your own consumption"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Se puede entrar con una estimación proporcional simple de litio anual. La propia pregunta admite modelos más ricos que integran residuos, agua, reciclaje y escenarios.",
+                "cita": "What impact does the use of disposable e-cigarettes have on lithium waste, waste generation and water consumption in Germany?"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Los resultados abren preguntas sobre reciclaje, salud, prohibición y consumo propio, y permiten comparar estimaciones y argumentos.",
+                "cita": "Recycling options"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "Hay duda genuina: una hoja informativa sobre el desperdicio de litio, que es justamente lo que se pide modelar, podría entregar las cifras o la estructura del cálculo. La tarea no precisa su contenido, así que se asigna el menor.",
+                "cita": "Information sheet on lithium wastage in disposable e-cigarettes"
+              }
+            },
+            "total": 23,
+            "mejoras": [
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Precisar que la hoja informativa entrega solo datos parciales (por ejemplo, la masa de litio por batería y datos sobre usuarios o ventas), sin totales anuales ni el procedimiento de cálculo, y que los demás datos se buscan o estiman."
+              }
+            ]
+          },
+          "meta": {
+            "agente": "evaluador",
+            "modelo_solicitado": "claude-opus-5-5",
+            "modelo_respuesta": "claude-opus-5-5",
+            "version_prompt": "1.3",
+            "version_rubrica": "4.0",
+            "version_mar03": "1.0",
+            "parametros": {
+              "temperature": "default (el modelo rechaza temperature)",
+              "effort": "high",
+              "max_tokens": 16000,
+              "salida": "output_config.format json_schema"
+            },
+            "request_id": "req_011CgDwjdixHEmeVSwNRAA3a",
+            "fecha": "2026-10-20T18:15:25+00:00",
+            "segundos": 38.1,
+            "intentos": 1,
+            "uso": {
+              "input_tokens": 594,
+              "output_tokens": 3738,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 10832,
+              "thinking_tokens": 2183
+            },
+            "costo_usd": 0.101836,
+            "costo_usd_pesimista": 0.305508,
+            "avisos": []
+          }
+        }
+      },
+      "errores": {}
+    }
+  ],
+  "costo_fallidas": 0.0
+}
