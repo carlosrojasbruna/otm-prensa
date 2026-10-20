@@ -2,19 +2,74 @@
   "version": "1.0",
   "fase_actual": 1,
   "fases": {
-    "1": {"nombre": "Contratos y calibración", "estado": "en_curso",
-          "tareas": {"architect": "en_curso", "rubric-encoder": "en_curso"},
-          "checkpoint": "CP1", "CP1": {"aprobado": false, "fecha": null}},
-    "2": {"nombre": "Agentes del pipeline", "estado": "bloqueada",
-          "tareas": {"agent-smith/explorador": "pendiente", "agent-smith/filtro": "pendiente", "agent-smith/disenador": "pendiente", "agent-smith/redactor": "pendiente", "agent-smith/ilustrador": "pendiente", "agent-smith/verificador": "pendiente", "agent-smith/bibliotecario": "pendiente", "sim-integrator": "pendiente"}},
-    "3": {"nombre": "Evaluación y prototipo", "estado": "bloqueada",
-          "tareas": {"eval-engineer": "pendiente", "orquestador": "pendiente", "prototipo-3-tareas": "pendiente"},
-          "checkpoint": "CP2", "CP2": {"aprobado": false, "fecha": null}},
-    "4": {"nombre": "Sitio docente", "estado": "bloqueada", "tareas": {"site-builder": "pendiente"}},
-    "5": {"nombre": "Producción", "estado": "bloqueada",
-          "tareas": {"devops": "pendiente", "docs-writer": "pendiente", "lote-inicial-6": "pendiente"},
-          "checkpoint": "CP3", "CP3": {"aprobado": false, "fecha": null}}
+    "1": {
+      "nombre": "Contratos y calibración",
+      "estado": "en_curso",
+      "tareas": {
+        "architect": {
+          "estado": "completada",
+          "fecha": "2026-10-20",
+          "commit": "a8803a1",
+          "test": "134 passed"
+        },
+        "rubric-encoder": "en_curso"
+      },
+      "checkpoint": "CP1",
+      "CP1": {
+        "aprobado": false,
+        "fecha": null
+      }
+    },
+    "2": {
+      "nombre": "Agentes del pipeline",
+      "estado": "bloqueada",
+      "tareas": {
+        "agent-smith/explorador": "pendiente",
+        "agent-smith/filtro": "pendiente",
+        "agent-smith/disenador": "pendiente",
+        "agent-smith/redactor": "pendiente",
+        "agent-smith/ilustrador": "pendiente",
+        "agent-smith/verificador": "pendiente",
+        "agent-smith/bibliotecario": "pendiente",
+        "sim-integrator": "pendiente"
+      }
+    },
+    "3": {
+      "nombre": "Evaluación y prototipo",
+      "estado": "bloqueada",
+      "tareas": {
+        "eval-engineer": "pendiente",
+        "orquestador": "pendiente",
+        "prototipo-3-tareas": "pendiente"
+      },
+      "checkpoint": "CP2",
+      "CP2": {
+        "aprobado": false,
+        "fecha": null
+      }
+    },
+    "4": {
+      "nombre": "Sitio docente",
+      "estado": "bloqueada",
+      "tareas": {
+        "site-builder": "pendiente"
+      }
+    },
+    "5": {
+      "nombre": "Producción",
+      "estado": "bloqueada",
+      "tareas": {
+        "devops": "pendiente",
+        "docs-writer": "pendiente",
+        "lote-inicial-6": "pendiente"
+      },
+      "checkpoint": "CP3",
+      "CP3": {
+        "aprobado": false,
+        "fecha": null
+      }
+    }
   },
   "costo_acumulado_usd": 0,
-  "ultimo_commit": "e8a14da"
+  "ultimo_commit": "a8803a1"
 }
