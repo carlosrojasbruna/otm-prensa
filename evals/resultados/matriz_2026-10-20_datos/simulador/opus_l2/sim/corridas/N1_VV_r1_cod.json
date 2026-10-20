@@ -1,0 +1,174 @@
+{
+  "run": {
+    "id": "N1_VV_r1",
+    "nivel": "N1",
+    "composicion": "VV",
+    "rep": 1,
+    "estilos": [
+      "V",
+      "V"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.065976,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 2,
+        "fase": "P2-RM",
+        "fase_secundaria": "P1-MRS",
+        "eventos": [
+          "STRAT",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P1-MRS",
+        "fase_secundaria": null,
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P2-RM",
+        "fase_secundaria": "EMK",
+        "eventos": [
+          "DIST",
+          "LEX"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "EMK",
+        "fase_secundaria": "P3-MM",
+        "eventos": []
+      },
+      {
+        "n": 6,
+        "fase": "P3-MM",
+        "fase_secundaria": "EMK",
+        "eventos": []
+      },
+      {
+        "n": 7,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 8,
+        "fase": "P3-MM",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 9,
+        "fase": "P3-MM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 10,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 11,
+        "fase": "P3-MM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 12,
+        "fase": "P3-MM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 13,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 14,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 15,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 16,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 17,
+        "fase": "OFF",
+        "fase_secundaria": null,
+        "eventos": []
+      }
+    ],
+    "bloqueos": [
+      {
+        "codigo": "B23",
+        "turnos": [
+          3,
+          4,
+          5
+        ],
+        "resolucion": "peer",
+        "descripcion": "No saben cómo combinar los 30 km/h con los 3 minutos para obtener el largo del cable; dudan del significado de 30 km/h. B lo destraba en el turno 6 con la analogía del auto y la división 60:3."
+      },
+      {
+        "codigo": "B23",
+        "turnos": [
+          9,
+          10,
+          11,
+          12
+        ],
+        "resolucion": "peer",
+        "descripcion": "A propone restar 1500-180 con duda; B objeta con el dibujo y evoca una fórmula de triángulos; A no recuerda si se suman o restan los cuadrados. B lo resuelve en el turno 12 con la relación de Pitágoras y la resta de cuadrados."
+      }
+    ],
+    "supuestos": [
+      "la situación forma un triángulo (llano, subida del cerro y cable en diagonal)",
+      "el cable va recto de la estación a la cima",
+      "el cerro sube vertical al final del llano",
+      "el tiempo de escalada no sirve"
+    ],
+    "modelo": "geométrico (Pitágoras)",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Corría aproximadamente 1490 m (casi 1,5 km): cable 30:20 = 1,5 km = 1500 m; √(1500² − 180²) = √2.217.600 ≈ 1489 m."
+    },
+    "ruta_principal": "R2",
+    "rutas": [
+      "R2",
+      "R4"
+    ]
+  }
+}

@@ -1,0 +1,366 @@
+{
+  "tarea_id": "2026-10-sugarloaf",
+  "diseno": "diseno_otm",
+  "corridas": 6,
+  "modelo": "claude-haiku-5-5",
+  "costo_usd": 0.1043,
+  "por_corrida": [
+    {
+      "id": "N1_VV_r1",
+      "perfil": {
+        "nivel_edad": "S1",
+        "nivel": "N1",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P4-WM",
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P6-VAL",
+        "P3-MM",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P3-MM",
+        "P4-WM",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B23",
+          "turnos": [
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "resolucion": "peer"
+        },
+        {
+          "transicion": "B34",
+          "turnos": [
+            25,
+            26,
+            27
+          ],
+          "resolucion": "peer"
+        }
+      ],
+      "supuestos": [
+        "cable recto (línea inclinada)",
+        "180 m es la altura del cerro",
+        "1,5 km es la longitud del cable",
+        "escala de dibujo 1 cm = 100 m"
+      ],
+      "modelo": "pitágoras",
+      "respuesta_final": "La distancia que debía correr Giuseppe es aproximadamente 1490 m, es decir unos 1,5 km, obtenida con el teorema de Pitágoras: base = raíz(1500² − 180²) ≈ 1489,2 m.",
+      "validacion": true,
+      "archivo": "N1_VV_r1.json",
+      "costo_usd": 0.016607
+    },
+    {
+      "id": "N1_AA_r1",
+      "perfil": {
+        "nivel_edad": "S1",
+        "nivel": "N1",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P3-MM",
+        "P4-WM",
+        "P1-MRS",
+        "P3-MM",
+        "P4-WM",
+        "P2-RM",
+        "P5-INT",
+        "P4-WM",
+        "P5-INT",
+        "P7-EXP",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B23",
+          "turnos": [
+            5,
+            6,
+            7
+          ],
+          "resolucion": "peer"
+        },
+        {
+          "transicion": "B45",
+          "turnos": [
+            15,
+            16,
+            17,
+            18
+          ],
+          "resolucion": "peer"
+        },
+        {
+          "transicion": "B67",
+          "turnos": [
+            24,
+            25
+          ],
+          "resolucion": "sin_resolver"
+        }
+      ],
+      "supuestos": [
+        "cable es hipotenusa",
+        "180 m es altura del cateto vertical",
+        "llanura es el cateto buscado",
+        "12 minutos descartados",
+        "1,5 km aproximado"
+      ],
+      "modelo": "pitágoras",
+      "respuesta_final": "Giuseppe tenia que correr aproximadamente 1,49 km (unos 1,5 km), usando c² = a² + b² con 1500 m y 180 m; los 12 minutos de escalada no sirven para calcular la llanura.",
+      "validacion": true,
+      "archivo": "N1_AA_r1.json",
+      "costo_usd": 0.01717
+    },
+    {
+      "id": "N2_VV_r1",
+      "perfil": {
+        "nivel_edad": "S1",
+        "nivel": "N2",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P4-WM",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P5-INT",
+        "P1-MRS",
+        "P6-VAL",
+        "P1-MRS",
+        "P6-VAL",
+        "P1-MRS",
+        "P5-INT",
+        "P2-RM",
+        "P7-EXP",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B23",
+          "turnos": [
+            6,
+            7,
+            8
+          ],
+          "resolucion": "peer"
+        },
+        {
+          "transicion": "B56",
+          "turnos": [
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22
+          ],
+          "resolucion": "peer"
+        }
+      ],
+      "supuestos": [
+        "la llanura llega hasta el pie del cerro"
+      ],
+      "modelo": "pitágoras",
+      "respuesta_final": "Aproximadamente 1489 m (1,49 km), distancia horizontal hasta abajo de la cima, asumiendo que la llanura llega hasta el pie del cerro.",
+      "validacion": true,
+      "archivo": "N2_VV_r1.json",
+      "costo_usd": 0.016305
+    },
+    {
+      "id": "N3_AA_r1",
+      "perfil": {
+        "nivel_edad": "S1",
+        "nivel": "N3",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P3-MM",
+        "P4-WM",
+        "P2-RM",
+        "P6-VAL",
+        "P2-RM",
+        "P6-VAL",
+        "P7-EXP",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B23",
+          "turnos": [
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "resolucion": "peer"
+        },
+        {
+          "transicion": "B67",
+          "turnos": [
+            16,
+            17,
+            18
+          ],
+          "resolucion": "peer"
+        }
+      ],
+      "supuestos": [
+        "cable en diagonal o recto",
+        "escalada con avance horizontal despreciable",
+        "laderas casi verticales"
+      ],
+      "modelo": "pitágoras",
+      "respuesta_final": "La carrera es aproximadamente 1,49 km: d ≈ √(1500² − 180²) ≈ 1489 m, tomando el cable de 1,5 km como hipotenusa y despreciando el avance horizontal de la escalada porque la ladera es casi vertical; es una estimación.",
+      "validacion": true,
+      "archivo": "N3_AA_r1.json",
+      "costo_usd": 0.016041
+    },
+    {
+      "id": "N4_VV_r1",
+      "perfil": {
+        "nivel_edad": "S1",
+        "nivel": "N4",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P2-RM",
+        "P6-VAL",
+        "P2-RM",
+        "P6-VAL",
+        "P2-RM",
+        "P4-WM",
+        "P6-VAL",
+        "P4-WM",
+        "P2-RM",
+        "P6-VAL",
+        "P5-INT",
+        "P6-VAL",
+        "P2-RM",
+        "P6-VAL",
+        "P2-RM",
+        "P6-VAL"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B23",
+          "turnos": [
+            12,
+            13,
+            14,
+            16,
+            28,
+            29,
+            30
+          ],
+          "resolucion": "sin_resolver"
+        }
+      ],
+      "supuestos": [
+        "llanura plana",
+        "pared casi vertical",
+        "pie a unos 100 m de la cima",
+        "ladera recta",
+        "velocidad de subida 6 km/h",
+        "cable pegado a la ladera",
+        "subida parecida al largo del cable"
+      ],
+      "modelo": "pitagórico",
+      "respuesta_final": "Giuseppe corre aproximadamente 1,4 km desde la estación del valle hasta el pie del cerro, un valor algo menor que el largo del cable (1,5 km) porque el pie queda antes de la cima.",
+      "validacion": true,
+      "archivo": "N4_VV_r1.json",
+      "costo_usd": 0.022764
+    },
+    {
+      "id": "N4_AA_r1",
+      "perfil": {
+        "nivel_edad": "S1",
+        "nivel": "N4",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P4-WM",
+        "P3-MM",
+        "P2-RM",
+        "P6-VAL",
+        "P4-WM",
+        "P6-VAL",
+        "P5-INT",
+        "P6-VAL",
+        "P7-EXP",
+        "P6-VAL",
+        "P7-EXP",
+        "P6-VAL",
+        "P2-RM",
+        "P7-EXP",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B12",
+          "turnos": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "resolucion": "peer"
+        }
+      ],
+      "supuestos": [
+        "carrera a 12 km/h",
+        "escalada a 2 km/h",
+        "misma línea recta del teleférico"
+      ],
+      "modelo": "pitágoras",
+      "respuesta_final": "Aproximadamente 1,1 km (1,13 km en la fórmula √(1,5² − 0,18²) − √(0,4² − 0,18²)), suponiendo carrera a 12 km/h, escalada a 2 km/h y la misma línea recta del teleférico.",
+      "validacion": true,
+      "archivo": "N4_AA_r1.json",
+      "costo_usd": 0.015415
+    }
+  ],
+  "agregado": {
+    "pct_bloqueo_por_transicion": {
+      "B12": 0.17,
+      "B23": 0.83,
+      "B34": 0.17,
+      "B45": 0.17,
+      "B56": 0.17,
+      "B67": 0.33
+    },
+    "modelos_observados": {
+      "pitágoras": 5,
+      "pitagórico": 1
+    },
+    "pct_validan": 1.0
+  },
+  "fecha": "2026-10-20T19:49:41Z"
+}

@@ -1,0 +1,610 @@
+{
+ "agente": "verificador",
+ "celdas": [
+  {
+   "agente": "verificador",
+   "modelo": "claude-haiku-5-5",
+   "estado": "completa",
+   "metrica": {
+    "nombre": "pct_casos_ok",
+    "umbral": 1.0,
+    "valor": 0.8,
+    "ok": 4,
+    "n": 5,
+    "detalle_por_caso": {
+     "verificador-1": false,
+     "verificador-2": true,
+     "verificador-3": true,
+     "verificador-4": true,
+     "verificador-5": true
+    }
+   },
+   "pasa": false,
+   "costo_usd": 0.002821,
+   "costo_auxiliar_usd": 0.0,
+   "costo_por_unidad_usd": 0.002821,
+   "latencia_media_s": 18.7,
+   "latencia_max_s": 18.7,
+   "n_unidades": 5,
+   "n_unidades_corridas": 5,
+   "n_unidades_omitidas": 0,
+   "n_llamadas": 1,
+   "modelos_solicitados": [
+    "claude-haiku-5-5"
+   ],
+   "unidades": [
+    {
+     "id": "verificador-1",
+     "ok": false,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "aprobado": false,
+      "esperado_aprobado": true,
+      "llamo_al_modelo": true,
+      "criticas": [
+       "semantica"
+      ],
+      "esperadas": [],
+      "hallazgos_criticos": [
+       "semantica · tarea.estudiante.enunciado_es: Las autoridades dicen que no hay riesgo este verano. — Afirmación factual sobre la noticia que no aparece en las fuentes ni en las trazas.",
+       "semantica · tarea.task_space.routes R2 y guia.analisis_a_priori (ruta lineal con aportes): Resultado ≈ 7 meses para la ruta lineal con aportes. — Las corridas que usan modelo lineal (N3_AA_r1 y N4_VV_r1) reportan 'unos 6 meses', no 7.",
+       "semantica · tarea.task_space.routes R3 (ruta dinámica): Resultado ≈ 5 meses para la ruta dinámica. — La corrida con modelo dinámico (N4_AA_r1) reporta 'unos 6 meses', no 5.",
+       "semantica · guia.escenarios E1 (ruta, modelo): Ruta sin P6-VAL y modelo proporcional. — Las corridas citadas (N4_VV_r1 y N3_AA_r1) pasan por P6-VAL y usan modelo lineal, no proporcional.",
+       "semantica · guia.escenarios E2 (modelo): Modelo proporcional en el escenario 'modelo inadecuado'. — La corrida citada (N1_AA_r1) usa modelo de capacidad total, que es el modelo inadecuado."
+      ]
+     },
+     "segundos": 18.73,
+     "costo_usd": 0.002821,
+     "n_llamadas": 1,
+     "segundos_api": 18.68,
+     "modelos_solicitados": [
+      "claude-haiku-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 4257,
+      "output_tokens": 4414,
+      "cache_creation_input_tokens": 1503,
+      "cache_read_input_tokens": 0
+     }
+    },
+    {
+     "id": "verificador-2",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "aprobado": false,
+      "esperado_aprobado": false,
+      "llamo_al_modelo": false,
+      "criticas": [
+       "1",
+       "5"
+      ],
+      "esperadas": [
+       "1",
+       "5"
+      ],
+      "hallazgos_criticos": [
+       "1 · guia: guia: escenarios/1/corridas: [] should be non-empty",
+       "5 · guia.escenarios: escenario E2 sin id de corrida"
+      ]
+     },
+     "segundos": 0.01,
+     "costo_usd": 0,
+     "n_llamadas": 0,
+     "segundos_api": 0,
+     "modelos_solicitados": [],
+     "tokens": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0
+     }
+    },
+    {
+     "id": "verificador-3",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "aprobado": false,
+      "esperado_aprobado": false,
+      "llamo_al_modelo": false,
+      "criticas": [
+       "1",
+       "4"
+      ],
+      "esperadas": [
+       "1",
+       "4"
+      ],
+      "hallazgos_criticos": [
+       "1 · tarea: tarea: noticia/cifras_usadas/1: 'localizador' is a required property",
+       "4 · tarea.noticia.cifras_usadas[1]: cifra '38 %' (nivel actual del embalse (ejemplo ficticio)) sin localizador"
+      ]
+     },
+     "segundos": 0.0,
+     "costo_usd": 0,
+     "n_llamadas": 0,
+     "segundos_api": 0,
+     "modelos_solicitados": [],
+     "tokens": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0
+     }
+    },
+    {
+     "id": "verificador-4",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "aprobado": false,
+      "esperado_aprobado": false,
+      "llamo_al_modelo": false,
+      "criticas": [
+       "4"
+      ],
+      "esperadas": [
+       "4"
+      ],
+      "hallazgos_criticos": [
+       "4 · tarea.noticia.cifras_usadas[0]: valor 250 en la tarea, 220 en la noticia (párrafo 2)"
+      ]
+     },
+     "segundos": 0.01,
+     "costo_usd": 0,
+     "n_llamadas": 0,
+     "segundos_api": 0,
+     "modelos_solicitados": [],
+     "tokens": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0
+     }
+    },
+    {
+     "id": "verificador-5",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "aprobado": false,
+      "esperado_aprobado": false,
+      "llamo_al_modelo": false,
+      "criticas": [
+       "3"
+      ],
+      "esperadas": [
+       "3"
+      ],
+      "hallazgos_criticos": [
+       "3 · guia: 41 palabras consecutivas de la noticia (> 25): «el embalse que abastece a la ciudad registra un nivel inferior al habitual desde hace cuatro anos y los vecinos del sector alto ya reciben el agua con presion reducida durante las tardes de verano segun"
+      ]
+     },
+     "segundos": 0.01,
+     "costo_usd": 0,
+     "n_llamadas": 0,
+     "segundos_api": 0,
+     "modelos_solicitados": [],
+     "tokens": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0
+     }
+    }
+   ],
+   "notas": [
+    "solo el caso 1 depende del modelo; los casos 2 a 5 los decide el código (costo 0 y resultado idéntico entre modelos)"
+   ]
+  },
+  {
+   "agente": "verificador",
+   "modelo": "claude-sonnet-5-5",
+   "estado": "completa",
+   "metrica": {
+    "nombre": "pct_casos_ok",
+    "umbral": 1.0,
+    "valor": 0.8,
+    "ok": 4,
+    "n": 5,
+    "detalle_por_caso": {
+     "verificador-1": false,
+     "verificador-2": true,
+     "verificador-3": true,
+     "verificador-4": true,
+     "verificador-5": true
+    }
+   },
+   "pasa": false,
+   "costo_usd": 0.044142,
+   "costo_auxiliar_usd": 0.0,
+   "costo_por_unidad_usd": 0.044142,
+   "latencia_media_s": 22.4,
+   "latencia_max_s": 22.4,
+   "n_unidades": 5,
+   "n_unidades_corridas": 5,
+   "n_unidades_omitidas": 0,
+   "n_llamadas": 1,
+   "modelos_solicitados": [
+    "claude-sonnet-5-5"
+   ],
+   "unidades": [
+    {
+     "id": "verificador-1",
+     "ok": false,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "aprobado": false,
+      "esperado_aprobado": true,
+      "llamo_al_modelo": true,
+      "criticas": [
+       "semantica"
+      ],
+      "esperadas": [],
+      "hallazgos_criticos": [
+       "semantica · tarea.estudiante.enunciado_es: Las autoridades dicen que no hay riesgo este verano. — El resumen de la noticia no menciona ninguna declaración de las autoridades sobre el riesgo en verano.",
+       "semantica · tarea.task_space.reference_solution, routes R1-R3 y guia.analisis_a_priori.rango_aceptable: Resultado 'entre 5 y 7 meses', rango aceptable '4 a 8 meses' y resultados de ruta ≈6, ≈7 y ≈5 meses. — Las fuentes no dan ninguna cifra de consumo mensual, ",
+       "semantica · guia.escenarios E1: Modelo 'proporcional' y ruta sin P6-VAL. — Las corridas citadas (N4_VV_r1 y N3_AA_r1) usaron modelo lineal y ambas incluyen P6-VAL en la ruta, además de validar. El relato contradice las corridas.",
+       "semantica · guia.escenarios E2: Modelo 'proporcional', supuestos y diálogo 'Solo lo que queda', con bloqueo solo B23. — La corrida N1_AA_r1 usó el modelo 'capacidad total', no el proporcional. El diálogo ('solo lo que queda') contradice ese modelo. Además tuvo"
+      ]
+     },
+     "segundos": 22.42,
+     "costo_usd": 0.044142,
+     "n_llamadas": 1,
+     "segundos_api": 22.38,
+     "modelos_solicitados": [
+      "claude-sonnet-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 4257,
+      "output_tokens": 3187,
+      "cache_creation_input_tokens": 1503,
+      "cache_read_input_tokens": 0
+     }
+    },
+    {
+     "id": "verificador-2",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "aprobado": false,
+      "esperado_aprobado": false,
+      "llamo_al_modelo": false,
+      "criticas": [
+       "1",
+       "5"
+      ],
+      "esperadas": [
+       "1",
+       "5"
+      ],
+      "hallazgos_criticos": [
+       "1 · guia: guia: escenarios/1/corridas: [] should be non-empty",
+       "5 · guia.escenarios: escenario E2 sin id de corrida"
+      ]
+     },
+     "segundos": 0.02,
+     "costo_usd": 0,
+     "n_llamadas": 0,
+     "segundos_api": 0,
+     "modelos_solicitados": [],
+     "tokens": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0
+     }
+    },
+    {
+     "id": "verificador-3",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "aprobado": false,
+      "esperado_aprobado": false,
+      "llamo_al_modelo": false,
+      "criticas": [
+       "1",
+       "4"
+      ],
+      "esperadas": [
+       "1",
+       "4"
+      ],
+      "hallazgos_criticos": [
+       "1 · tarea: tarea: noticia/cifras_usadas/1: 'localizador' is a required property",
+       "4 · tarea.noticia.cifras_usadas[1]: cifra '38 %' (nivel actual del embalse (ejemplo ficticio)) sin localizador"
+      ]
+     },
+     "segundos": 0.0,
+     "costo_usd": 0,
+     "n_llamadas": 0,
+     "segundos_api": 0,
+     "modelos_solicitados": [],
+     "tokens": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0
+     }
+    },
+    {
+     "id": "verificador-4",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "aprobado": false,
+      "esperado_aprobado": false,
+      "llamo_al_modelo": false,
+      "criticas": [
+       "4"
+      ],
+      "esperadas": [
+       "4"
+      ],
+      "hallazgos_criticos": [
+       "4 · tarea.noticia.cifras_usadas[0]: valor 250 en la tarea, 220 en la noticia (párrafo 2)"
+      ]
+     },
+     "segundos": 0.0,
+     "costo_usd": 0,
+     "n_llamadas": 0,
+     "segundos_api": 0,
+     "modelos_solicitados": [],
+     "tokens": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0
+     }
+    },
+    {
+     "id": "verificador-5",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "aprobado": false,
+      "esperado_aprobado": false,
+      "llamo_al_modelo": false,
+      "criticas": [
+       "3"
+      ],
+      "esperadas": [
+       "3"
+      ],
+      "hallazgos_criticos": [
+       "3 · guia: 41 palabras consecutivas de la noticia (> 25): «el embalse que abastece a la ciudad registra un nivel inferior al habitual desde hace cuatro anos y los vecinos del sector alto ya reciben el agua con presion reducida durante las tardes de verano segun"
+      ]
+     },
+     "segundos": 0.02,
+     "costo_usd": 0,
+     "n_llamadas": 0,
+     "segundos_api": 0,
+     "modelos_solicitados": [],
+     "tokens": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0
+     }
+    }
+   ],
+   "notas": [
+    "solo el caso 1 depende del modelo; los casos 2 a 5 los decide el código (costo 0 y resultado idéntico entre modelos)"
+   ]
+  },
+  {
+   "agente": "verificador",
+   "modelo": "claude-opus-5-5",
+   "estado": "completa",
+   "metrica": {
+    "nombre": "pct_casos_ok",
+    "umbral": 1.0,
+    "valor": 0.8,
+    "ok": 4,
+    "n": 5,
+    "detalle_por_caso": {
+     "verificador-1": false,
+     "verificador-2": true,
+     "verificador-3": true,
+     "verificador-4": true,
+     "verificador-5": true
+    }
+   },
+   "pasa": false,
+   "costo_usd": 0.074329,
+   "costo_auxiliar_usd": 0.0,
+   "costo_por_unidad_usd": 0.074329,
+   "latencia_media_s": 36.7,
+   "latencia_max_s": 36.7,
+   "n_unidades": 5,
+   "n_unidades_corridas": 5,
+   "n_unidades_omitidas": 0,
+   "n_llamadas": 1,
+   "modelos_solicitados": [
+    "claude-opus-5-5"
+   ],
+   "unidades": [
+    {
+     "id": "verificador-1",
+     "ok": false,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "aprobado": false,
+      "esperado_aprobado": true,
+      "llamo_al_modelo": true,
+      "criticas": [
+       "semantica"
+      ],
+      "esperadas": [],
+      "hallazgos_criticos": [
+       "semantica · tarea.estudiante.enunciado_es: Las autoridades dicen que no hay riesgo este verano. — El resumen de la noticia no menciona ninguna declaración de las autoridades sobre el riesgo. Es un dato factual atribuido a la noticia sin respaldo en las fuentes",
+       "semantica · task_space.reference_solution (result y acceptable_range) y guia.analisis_a_priori.rango_aceptable: Resultado de entre 5 y 7 meses y rango aceptable de 4 a 8 meses. — Dependen de un consumo mensual que no aparece en las fuentes ni en el notebook, c",
+       "semantica · task_space.routes R2 y R3: Resultados de ≈ 7 meses (ruta lineal con aportes) y ≈ 5 meses (ruta dinámica). — No hay datos de consumo, aportes ni evaporación en las fuentes. En las trazas, las corridas lineales y la dinámica responden 'unos 6 meses',",
+       "semantica · guia.escenarios E1 (modelo): Modelo proporcional en la ruta esperada. — Las corridas citadas (N4_VV_r1 y N3_AA_r1) usaron un modelo lineal, no proporcional.",
+       "semantica · guia.escenarios E2 (modelo y extracto_dialogo): El escenario de modelo inadecuado usa el modelo proporcional y el diálogo concluye usar solo lo que queda. — La corrida citada N1_AA_r1 usó el modelo de capacidad total. El escenario describe un model"
+      ]
+     },
+     "segundos": 36.68,
+     "costo_usd": 0.074329,
+     "n_llamadas": 1,
+     "segundos_api": 36.63,
+     "modelos_solicitados": [
+      "claude-opus-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 4257,
+      "output_tokens": 2850,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 1503
+     }
+    },
+    {
+     "id": "verificador-2",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "aprobado": false,
+      "esperado_aprobado": false,
+      "llamo_al_modelo": false,
+      "criticas": [
+       "1",
+       "5"
+      ],
+      "esperadas": [
+       "1",
+       "5"
+      ],
+      "hallazgos_criticos": [
+       "1 · guia: guia: escenarios/1/corridas: [] should be non-empty",
+       "5 · guia.escenarios: escenario E2 sin id de corrida"
+      ]
+     },
+     "segundos": 0.0,
+     "costo_usd": 0,
+     "n_llamadas": 0,
+     "segundos_api": 0,
+     "modelos_solicitados": [],
+     "tokens": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0
+     }
+    },
+    {
+     "id": "verificador-3",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "aprobado": false,
+      "esperado_aprobado": false,
+      "llamo_al_modelo": false,
+      "criticas": [
+       "1",
+       "4"
+      ],
+      "esperadas": [
+       "1",
+       "4"
+      ],
+      "hallazgos_criticos": [
+       "1 · tarea: tarea: noticia/cifras_usadas/1: 'localizador' is a required property",
+       "4 · tarea.noticia.cifras_usadas[1]: cifra '38 %' (nivel actual del embalse (ejemplo ficticio)) sin localizador"
+      ]
+     },
+     "segundos": 0.01,
+     "costo_usd": 0,
+     "n_llamadas": 0,
+     "segundos_api": 0,
+     "modelos_solicitados": [],
+     "tokens": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0
+     }
+    },
+    {
+     "id": "verificador-4",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "aprobado": false,
+      "esperado_aprobado": false,
+      "llamo_al_modelo": false,
+      "criticas": [
+       "4"
+      ],
+      "esperadas": [
+       "4"
+      ],
+      "hallazgos_criticos": [
+       "4 · tarea.noticia.cifras_usadas[0]: valor 250 en la tarea, 220 en la noticia (párrafo 2)"
+      ]
+     },
+     "segundos": 0.0,
+     "costo_usd": 0,
+     "n_llamadas": 0,
+     "segundos_api": 0,
+     "modelos_solicitados": [],
+     "tokens": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0
+     }
+    },
+    {
+     "id": "verificador-5",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "aprobado": false,
+      "esperado_aprobado": false,
+      "llamo_al_modelo": false,
+      "criticas": [
+       "3"
+      ],
+      "esperadas": [
+       "3"
+      ],
+      "hallazgos_criticos": [
+       "3 · guia: 41 palabras consecutivas de la noticia (> 25): «el embalse que abastece a la ciudad registra un nivel inferior al habitual desde hace cuatro anos y los vecinos del sector alto ya reciben el agua con presion reducida durante las tardes de verano segun"
+      ]
+     },
+     "segundos": 0.01,
+     "costo_usd": 0,
+     "n_llamadas": 0,
+     "segundos_api": 0,
+     "modelos_solicitados": [],
+     "tokens": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0
+     }
+    }
+   ],
+   "notas": [
+    "solo el caso 1 depende del modelo; los casos 2 a 5 los decide el código (costo 0 y resultado idéntico entre modelos)"
+   ]
+  }
+ ]
+}

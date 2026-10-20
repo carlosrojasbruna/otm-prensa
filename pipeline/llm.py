@@ -18,6 +18,7 @@ from __future__ import annotations
 import json
 import sys
 import time
+from contextlib import contextmanager
 from datetime import datetime, timezone
 from functools import lru_cache
 from pathlib import Path
@@ -37,8 +38,30 @@ def config() -> dict:
     return yaml.safe_load(CONFIG_PATH.read_text(encoding="utf-8"))
 
 
+# Sobreescritura de modelo por agente, solo para evals (evals/run.py). Vacía en producción.
+_FORZADOS: dict[str, str] = {}
+
+
+@contextmanager
+def forzar_modelo(agente: str, modelo: str):
+    """Fuerza `modelo` para `agente` dentro del bloque (los agentes que usan modelo_de/llamar lo respetan).
+
+    Valida que el modelo tenga precio en config.yaml; restaura el valor previo al salir."""
+    if modelo not in config()["precios_modelos"]:
+        raise ValueError(f"modelo sin precio en config.yaml: {modelo}")
+    previo = _FORZADOS.get(agente)
+    _FORZADOS[agente] = modelo
+    try:
+        yield modelo
+    finally:
+        if previo is None:
+            _FORZADOS.pop(agente, None)
+        else:
+            _FORZADOS[agente] = previo
+
+
 def modelo_de(agente: str) -> str:
-    return config()["modelos"][agente]
+    return _FORZADOS.get(agente) or config()["modelos"][agente]
 
 
 def costo_usd(uso: dict, modelo: str) -> float:

@@ -1,0 +1,5344 @@
+{
+  "meta": {
+    "fecha": "2026-10-20",
+    "generada_utc": "2026-10-20T20:30:39+00:00",
+    "sin_red": false,
+    "agentes": [
+      "explorador",
+      "filtro",
+      "disenador",
+      "evaluador",
+      "simulador",
+      "redactor",
+      "ilustrador",
+      "verificador",
+      "bibliotecario"
+    ],
+    "modelos": [
+      "claude-haiku-5-5",
+      "claude-sonnet-5-5",
+      "claude-opus-5-5"
+    ],
+    "tope_usd": 12.0,
+    "topes_agente_usd": {
+      "simulador": 4.5,
+      "disenador": 3.5,
+      "evaluador": 1.5,
+      "redactor": 1.4,
+      "filtro": 0.5,
+      "ilustrador": 0.5,
+      "verificador": 0.3,
+      "explorador": 0.2
+    },
+    "duracion_s": 0,
+    "version_run": "1.0",
+    "reanudados": [
+      "explorador",
+      "filtro",
+      "disenador",
+      "evaluador",
+      "simulador",
+      "redactor",
+      "ilustrador",
+      "verificador",
+      "bibliotecario"
+    ],
+    "completados": [],
+    "rehechos": [],
+    "evaluador_de_referencia_disenador": "claude-opus-5-5",
+    "historial": [
+      "`python evals/run.py` (log: matriz_2026-10-20_corrida.log): 9 agentes x 3 modelos en paralelo (4 hilos). Gasto 8,586 USD. El diseñador/Opus quedó en 2 de 5 casos por la reserva del agente (3,5 USD); el verificador dio 0,8 en los tres modelos.",
+      "`python evals/run.py --completar --rehacer verificador --tope-agente disenador=5.0` (log: matriz_2026-10-20_completar.log): se completaron los 3 casos pendientes del diseñador/Opus y se rehízo el verificador para registrar los hallazgos críticos del modelo; la corrida inicial del verificador (0,129 USD) se conserva en `descartado.json` y cuenta en el total.",
+      "`python evals/run.py --reanudar`: regeneración del informe a partir de los datos guardados, sin llamadas a la API."
+    ],
+    "parametros": {
+      "corridas_filtro": 3,
+      "lanzadas_simulador": 2
+    },
+    "temperature": "no se envía (los modelos 5.5 la rechazan)"
+  },
+  "umbrales": {
+    "explorador": {
+      "metrica": "pct_casos_ok",
+      "umbral": 0.8,
+      "texto": "Fracción de los 5 casos que cumplen el resultado esperado (aceptada: valida contra `noticia`, medio en MED01, cifras con localizador, <= 25 palabras literales; descartada: sin noticia y con el motivo esperado). Umbral >= 0,8 (a lo más 1 de 5 falla)."
+    },
+    "filtro": {
+      "metrica": "kappa_decision",
+      "umbral": 0.6,
+      "texto": "Kappa de Cohen de la decisión pasa/no pasa contra la decisión esperada de los 5 casos, 3 corridas por caso (15 pares). Umbral >= 0,6 (regla del plan para subir a Sonnet). Se informan además la consistencia entre corridas y el total dentro del rango esperado."
+    },
+    "disenador": {
+      "metrica": "pct_rub01_ge20",
+      "umbral": 0.8,
+      "texto": "Fracción de los 5 casos cuyo primer candidato (o la tarea iterada) valida contra `tarea` y obtiene RUB01 >= 20/24 sin ningún criterio en 0 según el evaluador de producción (Opus 5.5, prompt v1.3, 1 corrida). Umbral >= 0,8."
+    },
+    "evaluador": {
+      "metrica": "kappa_ponderado",
+      "umbral": 0.7,
+      "texto": "Kappa ponderado cuadrático contra evals/oro/puntajes_v0.4 (9 tareas x 12 criterios = 108 pares) en cada corrida disponible (Opus: 3 corridas de calibración v1.3; Haiku y Sonnet: 1). Umbral >= 0,7 en todas. Se informa aparte el kappa contra las 4 tareas humanas (no provisionales)."
+    },
+    "simulador": {
+      "metrica": "pct_corridas_validas",
+      "umbral": 1.0,
+      "texto": "Sugarloaf S1, 2 lanzadas de 6 corridas por modelo (estudiantes y codificador con el mismo modelo). Pasa si todas las corridas se codifican y `trazas_resumen` valida contra el contrato y, además, a lo más la mitad de las corridas de perfil N1 usan Pitágoras (el perfil N1 declara que no lo conoce: fidelidad al perfil, punto 4 de 'Para CP2'). Umbral definido por eval-engineer; revisable en CP2."
+    },
+    "redactor": {
+      "metrica": "pct_casos_ok",
+      "umbral": 1.0,
+      "texto": "Fracción de los casos medibles en vivo (1 y 2: guía completa; 3: debe fallar con TrazasInsuficientes sin llamar al modelo) cuya guía valida contra `guia`, escenarios respaldados por trazas y cifras con localizador. Los casos 4 y 5 inducen el error con respuestas scripteadas y no son medibles en vivo. Umbral 1,0: un error en la guía llega a docentes. Ambos modelos del redactor (secciones base e intervenciones, y escenarios) se fuerzan al modelo de la celda."
+    },
+    "ilustrador": {
+      "metrica": "pct_casos_ok",
+      "umbral": 0.8,
+      "texto": "Fracción de los 5 casos para los que el agente entrega un SVG que pasa el validador (seguridad, paleta, tamaño, viewBox) y una `foto_descripcion` coherente, en <= 1 reparación. Umbral >= 0,8."
+    },
+    "verificador": {
+      "metrica": "pct_casos_ok",
+      "umbral": 1.0,
+      "texto": "Fracción de los 5 casos en los que el informe coincide con lo esperado (aprobado, estado destino, invariantes críticas). Solo el caso 1 llama al modelo; los otros 4 los resuelve el código. Umbral 1,0: el verificador es una compuerta."
+    },
+    "bibliotecario": {
+      "metrica": "n/a",
+      "umbral": null,
+      "texto": "Es un script determinista (sin modelo): celda N/A. Se reportan sus tests sin red."
+    }
+  },
+  "celdas": {
+    "explorador": [
+      {
+        "agente": "explorador",
+        "modelo": "claude-haiku-5-5",
+        "estado": "completa",
+        "metrica": {
+          "nombre": "pct_casos_ok",
+          "umbral": 0.8,
+          "valor": 1.0,
+          "ok": 5,
+          "n": 5,
+          "detalle_por_caso": {
+            "caso_1": true,
+            "caso_2": true,
+            "caso_3": true,
+            "caso_4": true,
+            "caso_5": true
+          }
+        },
+        "pasa": true,
+        "costo_usd": 0.001563,
+        "costo_auxiliar_usd": 0.0,
+        "costo_por_unidad_usd": 0.000521,
+        "latencia_media_s": 5.2,
+        "latencia_max_s": 6.1,
+        "n_unidades": 5,
+        "n_unidades_corridas": 5,
+        "n_unidades_omitidas": 0,
+        "n_llamadas": 3,
+        "modelos_solicitados": [
+          "claude-haiku-5-5"
+        ],
+        "unidades": [
+          {
+            "id": "caso_1",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "esperado": "aceptada",
+              "n_cifras": 4,
+              "descartada": null
+            },
+            "segundos": 6.07,
+            "costo_usd": 0.000507,
+            "n_llamadas": 1,
+            "segundos_api": 6.07,
+            "modelos_solicitados": [
+              "claude-haiku-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 339,
+              "output_tokens": 917,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 1469
+            }
+          },
+          {
+            "id": "caso_2",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "esperado": "aceptada",
+              "n_cifras": 4,
+              "descartada": null
+            },
+            "segundos": 4.68,
+            "costo_usd": 0.000488,
+            "n_llamadas": 1,
+            "segundos_api": 4.67,
+            "modelos_solicitados": [
+              "claude-haiku-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 339,
+              "output_tokens": 879,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 1469
+            }
+          },
+          {
+            "id": "caso_3",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "esperado": "descartada",
+              "motivo": "medio 'blogcualquiera' fuera de MED01"
+            },
+            "segundos": 0.0,
+            "costo_usd": 0,
+            "n_llamadas": 0,
+            "segundos_api": 0,
+            "modelos_solicitados": [],
+            "tokens": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 0
+            }
+          },
+          {
+            "id": "caso_4",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "esperado": "aceptada",
+              "n_cifras": 4,
+              "descartada": null
+            },
+            "segundos": 4.88,
+            "costo_usd": 0.000568,
+            "n_llamadas": 1,
+            "segundos_api": 4.88,
+            "modelos_solicitados": [
+              "claude-haiku-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 339,
+              "output_tokens": 1039,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 1469
+            }
+          },
+          {
+            "id": "caso_5",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "esperado": "descartada",
+              "motivo": "sin cifras en el cuerpo disponible (filtro previo MED01)"
+            },
+            "segundos": 0.0,
+            "costo_usd": 0,
+            "n_llamadas": 0,
+            "segundos_api": 0,
+            "modelos_solicitados": [],
+            "tokens": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 0
+            }
+          }
+        ],
+        "notas": []
+      },
+      {
+        "agente": "explorador",
+        "modelo": "claude-sonnet-5-5",
+        "estado": "completa",
+        "metrica": {
+          "nombre": "pct_casos_ok",
+          "umbral": 0.8,
+          "valor": 1.0,
+          "ok": 5,
+          "n": 5,
+          "detalle_por_caso": {
+            "caso_1": true,
+            "caso_2": true,
+            "caso_3": true,
+            "caso_4": true,
+            "caso_5": true
+          }
+        },
+        "pasa": true,
+        "costo_usd": 0.019594,
+        "costo_auxiliar_usd": 0.0,
+        "costo_por_unidad_usd": 0.006531,
+        "latencia_media_s": 10.9,
+        "latencia_max_s": 11.4,
+        "n_unidades": 5,
+        "n_unidades_corridas": 5,
+        "n_unidades_omitidas": 0,
+        "n_llamadas": 3,
+        "modelos_solicitados": [
+          "claude-sonnet-5-5"
+        ],
+        "unidades": [
+          {
+            "id": "caso_1",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "esperado": "aceptada",
+              "n_cifras": 4,
+              "descartada": null
+            },
+            "segundos": 11.45,
+            "costo_usd": 0.00863,
+            "n_llamadas": 1,
+            "segundos_api": 11.45,
+            "modelos_solicitados": [
+              "claude-sonnet-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 339,
+              "output_tokens": 428,
+              "cache_creation_input_tokens": 1469,
+              "cache_read_input_tokens": 0
+            }
+          },
+          {
+            "id": "caso_2",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "esperado": "aceptada",
+              "n_cifras": 4,
+              "descartada": null
+            },
+            "segundos": 10.81,
+            "costo_usd": 0.005642,
+            "n_llamadas": 1,
+            "segundos_api": 10.81,
+            "modelos_solicitados": [
+              "claude-sonnet-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 339,
+              "output_tokens": 467,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 1469
+            }
+          },
+          {
+            "id": "caso_3",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "esperado": "descartada",
+              "motivo": "medio 'blogcualquiera' fuera de MED01"
+            },
+            "segundos": 0.0,
+            "costo_usd": 0,
+            "n_llamadas": 0,
+            "segundos_api": 0,
+            "modelos_solicitados": [],
+            "tokens": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 0
+            }
+          },
+          {
+            "id": "caso_4",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "esperado": "aceptada",
+              "n_cifras": 4,
+              "descartada": null
+            },
+            "segundos": 10.4,
+            "costo_usd": 0.005322,
+            "n_llamadas": 1,
+            "segundos_api": 10.39,
+            "modelos_solicitados": [
+              "claude-sonnet-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 339,
+              "output_tokens": 435,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 1469
+            }
+          },
+          {
+            "id": "caso_5",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "esperado": "descartada",
+              "motivo": "sin cifras en el cuerpo disponible (filtro previo MED01)"
+            },
+            "segundos": 0.0,
+            "costo_usd": 0,
+            "n_llamadas": 0,
+            "segundos_api": 0,
+            "modelos_solicitados": [],
+            "tokens": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 0
+            }
+          }
+        ],
+        "notas": []
+      },
+      {
+        "agente": "explorador",
+        "modelo": "claude-opus-5-5",
+        "estado": "completa",
+        "metrica": {
+          "nombre": "pct_casos_ok",
+          "umbral": 0.8,
+          "valor": 1.0,
+          "ok": 5,
+          "n": 5,
+          "detalle_por_caso": {
+            "caso_1": true,
+            "caso_2": true,
+            "caso_3": true,
+            "caso_4": true,
+            "caso_5": true
+          }
+        },
+        "pasa": true,
+        "costo_usd": 0.039621,
+        "costo_auxiliar_usd": 0.0,
+        "costo_por_unidad_usd": 0.013207,
+        "latencia_media_s": 5.5,
+        "latencia_max_s": 5.5,
+        "n_unidades": 5,
+        "n_unidades_corridas": 5,
+        "n_unidades_omitidas": 0,
+        "n_llamadas": 3,
+        "modelos_solicitados": [
+          "claude-opus-5-5"
+        ],
+        "unidades": [
+          {
+            "id": "caso_1",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "esperado": "aceptada",
+              "n_cifras": 4,
+              "descartada": null
+            },
+            "segundos": 5.54,
+            "costo_usd": 0.017941,
+            "n_llamadas": 1,
+            "segundos_api": 5.52,
+            "modelos_solicitados": [
+              "claude-opus-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 339,
+              "output_tokens": 462,
+              "cache_creation_input_tokens": 1469,
+              "cache_read_input_tokens": 0
+            }
+          },
+          {
+            "id": "caso_2",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "esperado": "aceptada",
+              "n_cifras": 4,
+              "descartada": null
+            },
+            "segundos": 5.33,
+            "costo_usd": 0.01097,
+            "n_llamadas": 1,
+            "segundos_api": 5.31,
+            "modelos_solicitados": [
+              "claude-opus-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 339,
+              "output_tokens": 466,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 1469
+            }
+          },
+          {
+            "id": "caso_3",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "esperado": "descartada",
+              "motivo": "medio 'blogcualquiera' fuera de MED01"
+            },
+            "segundos": 0.0,
+            "costo_usd": 0,
+            "n_llamadas": 0,
+            "segundos_api": 0,
+            "modelos_solicitados": [],
+            "tokens": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 0
+            }
+          },
+          {
+            "id": "caso_4",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "esperado": "aceptada",
+              "n_cifras": 4,
+              "descartada": null
+            },
+            "segundos": 5.55,
+            "costo_usd": 0.01071,
+            "n_llamadas": 1,
+            "segundos_api": 5.55,
+            "modelos_solicitados": [
+              "claude-opus-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 339,
+              "output_tokens": 453,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 1469
+            }
+          },
+          {
+            "id": "caso_5",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "esperado": "descartada",
+              "motivo": "sin cifras en el cuerpo disponible (filtro previo MED01)"
+            },
+            "segundos": 0.0,
+            "costo_usd": 0,
+            "n_llamadas": 0,
+            "segundos_api": 0,
+            "modelos_solicitados": [],
+            "tokens": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 0
+            }
+          }
+        ],
+        "notas": []
+      }
+    ],
+    "filtro": [
+      {
+        "agente": "filtro",
+        "modelo": "claude-haiku-5-5",
+        "estado": "completa",
+        "metrica": {
+          "nombre": "kappa_decision",
+          "umbral": 0.6,
+          "valor": 1.0,
+          "n_pares": 15,
+          "acuerdo_exacto": 1.0,
+          "consistencia_casos": "5/5",
+          "total_en_rango": "11/15",
+          "errores_agente": 0,
+          "por_caso": {
+            "01-claramente-modelable": {
+              "decisiones": [
+                true,
+                true,
+                true
+              ],
+              "totales": [
+                9,
+                10,
+                9
+              ],
+              "consistente": true,
+              "esperado": true
+            },
+            "02-claramente-no-modelable": {
+              "decisiones": [
+                false,
+                false,
+                false
+              ],
+              "totales": [
+                1,
+                1,
+                1
+              ],
+              "consistente": true,
+              "esperado": false
+            },
+            "03-frontera-7": {
+              "decisiones": [
+                true,
+                true,
+                true
+              ],
+              "totales": [
+                8,
+                8,
+                9
+              ],
+              "consistente": true,
+              "esperado": true
+            },
+            "04-frontera-6": {
+              "decisiones": [
+                false,
+                false,
+                false
+              ],
+              "totales": [
+                3,
+                0,
+                3
+              ],
+              "consistente": true,
+              "esperado": false
+            },
+            "05-sin-cifras": {
+              "decisiones": [
+                false,
+                false,
+                false
+              ],
+              "totales": [
+                6,
+                6,
+                6
+              ],
+              "consistente": true,
+              "esperado": false
+            }
+          },
+          "nota": null
+        },
+        "pasa": true,
+        "costo_usd": 0.004737,
+        "costo_auxiliar_usd": 0.0,
+        "costo_por_unidad_usd": 0.000316,
+        "latencia_media_s": 3.0,
+        "latencia_max_s": 3.5,
+        "n_unidades": 15,
+        "n_unidades_corridas": 15,
+        "n_unidades_omitidas": 0,
+        "n_llamadas": 15,
+        "modelos_solicitados": [
+          "claude-haiku-5-5"
+        ],
+        "unidades": [
+          {
+            "id": "01-claramente-modelable#1",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": true,
+              "total": 9,
+              "esperado_pasa": true,
+              "total_en_rango": true
+            },
+            "segundos": 3.01,
+            "costo_usd": 0.000675,
+            "n_llamadas": 1,
+            "segundos_api": 3.0,
+            "modelos_solicitados": [
+              "claude-haiku-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 551,
+              "output_tokens": 467,
+              "cache_creation_input_tokens": 3094,
+              "cache_read_input_tokens": 0
+            }
+          },
+          {
+            "id": "01-claramente-modelable#2",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": true,
+              "total": 10,
+              "esperado_pasa": true,
+              "total_en_rango": true
+            },
+            "segundos": 3.26,
+            "costo_usd": 0.000311,
+            "n_llamadas": 1,
+            "segundos_api": 3.26,
+            "modelos_solicitados": [
+              "claude-haiku-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 551,
+              "output_tokens": 449,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 3094
+            }
+          },
+          {
+            "id": "01-claramente-modelable#3",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": true,
+              "total": 9,
+              "esperado_pasa": true,
+              "total_en_rango": true
+            },
+            "segundos": 3.06,
+            "costo_usd": 0.000299,
+            "n_llamadas": 1,
+            "segundos_api": 3.05,
+            "modelos_solicitados": [
+              "claude-haiku-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 551,
+              "output_tokens": 425,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 3094
+            }
+          },
+          {
+            "id": "02-claramente-no-modelable#1",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": false,
+              "total": 1,
+              "esperado_pasa": false,
+              "total_en_rango": true
+            },
+            "segundos": 2.27,
+            "costo_usd": 0.000256,
+            "n_llamadas": 1,
+            "segundos_api": 2.27,
+            "modelos_solicitados": [
+              "claude-haiku-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 226,
+              "output_tokens": 404,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 3094
+            }
+          },
+          {
+            "id": "02-claramente-no-modelable#2",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": false,
+              "total": 1,
+              "esperado_pasa": false,
+              "total_en_rango": true
+            },
+            "segundos": 2.25,
+            "costo_usd": 0.000247,
+            "n_llamadas": 1,
+            "segundos_api": 2.23,
+            "modelos_solicitados": [
+              "claude-haiku-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 226,
+              "output_tokens": 387,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 3094
+            }
+          },
+          {
+            "id": "02-claramente-no-modelable#3",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": false,
+              "total": 1,
+              "esperado_pasa": false,
+              "total_en_rango": true
+            },
+            "segundos": 2.43,
+            "costo_usd": 0.000268,
+            "n_llamadas": 1,
+            "segundos_api": 2.43,
+            "modelos_solicitados": [
+              "claude-haiku-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 226,
+              "output_tokens": 429,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 3094
+            }
+          },
+          {
+            "id": "03-frontera-7#1",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": true,
+              "total": 8,
+              "esperado_pasa": true,
+              "total_en_rango": true
+            },
+            "segundos": 3.15,
+            "costo_usd": 0.00031,
+            "n_llamadas": 1,
+            "segundos_api": 3.15,
+            "modelos_solicitados": [
+              "claude-haiku-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 424,
+              "output_tokens": 473,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 3094
+            }
+          },
+          {
+            "id": "03-frontera-7#2",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": true,
+              "total": 8,
+              "esperado_pasa": true,
+              "total_en_rango": true
+            },
+            "segundos": 2.86,
+            "costo_usd": 0.000284,
+            "n_llamadas": 1,
+            "segundos_api": 2.86,
+            "modelos_solicitados": [
+              "claude-haiku-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 424,
+              "output_tokens": 422,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 3094
+            }
+          },
+          {
+            "id": "03-frontera-7#3",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": true,
+              "total": 9,
+              "esperado_pasa": true,
+              "total_en_rango": false
+            },
+            "segundos": 3.02,
+            "costo_usd": 0.000322,
+            "n_llamadas": 1,
+            "segundos_api": 3.02,
+            "modelos_solicitados": [
+              "claude-haiku-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 424,
+              "output_tokens": 498,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 3094
+            }
+          },
+          {
+            "id": "04-frontera-6#1",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": false,
+              "total": 3,
+              "esperado_pasa": false,
+              "total_en_rango": false
+            },
+            "segundos": 3.3,
+            "costo_usd": 0.000296,
+            "n_llamadas": 1,
+            "segundos_api": 3.3,
+            "modelos_solicitados": [
+              "claude-haiku-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 414,
+              "output_tokens": 447,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 3094
+            }
+          },
+          {
+            "id": "04-frontera-6#2",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": false,
+              "total": 0,
+              "esperado_pasa": false,
+              "total_en_rango": false
+            },
+            "segundos": 3.27,
+            "costo_usd": 0.000294,
+            "n_llamadas": 1,
+            "segundos_api": 3.27,
+            "modelos_solicitados": [
+              "claude-haiku-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 414,
+              "output_tokens": 444,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 3094
+            }
+          },
+          {
+            "id": "04-frontera-6#3",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": false,
+              "total": 3,
+              "esperado_pasa": false,
+              "total_en_rango": false
+            },
+            "segundos": 3.45,
+            "costo_usd": 0.000301,
+            "n_llamadas": 1,
+            "segundos_api": 3.43,
+            "modelos_solicitados": [
+              "claude-haiku-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 414,
+              "output_tokens": 458,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 3094
+            }
+          },
+          {
+            "id": "05-sin-cifras#1",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": false,
+              "total": 6,
+              "esperado_pasa": false,
+              "total_en_rango": true
+            },
+            "segundos": 3.38,
+            "costo_usd": 0.000313,
+            "n_llamadas": 1,
+            "segundos_api": 3.38,
+            "modelos_solicitados": [
+              "claude-haiku-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 234,
+              "output_tokens": 518,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 3094
+            }
+          },
+          {
+            "id": "05-sin-cifras#2",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": false,
+              "total": 6,
+              "esperado_pasa": false,
+              "total_en_rango": true
+            },
+            "segundos": 3.17,
+            "costo_usd": 0.000291,
+            "n_llamadas": 1,
+            "segundos_api": 3.17,
+            "modelos_solicitados": [
+              "claude-haiku-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 234,
+              "output_tokens": 474,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 3094
+            }
+          },
+          {
+            "id": "05-sin-cifras#3",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": false,
+              "total": 6,
+              "esperado_pasa": false,
+              "total_en_rango": true
+            },
+            "segundos": 2.96,
+            "costo_usd": 0.00027,
+            "n_llamadas": 1,
+            "segundos_api": 2.96,
+            "modelos_solicitados": [
+              "claude-haiku-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 234,
+              "output_tokens": 432,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 3094
+            }
+          }
+        ],
+        "notas": []
+      },
+      {
+        "agente": "filtro",
+        "modelo": "claude-sonnet-5-5",
+        "estado": "completa",
+        "metrica": {
+          "nombre": "kappa_decision",
+          "umbral": 0.6,
+          "valor": 0.7059,
+          "n_pares": 15,
+          "acuerdo_exacto": 0.8667,
+          "consistencia_casos": "4/5",
+          "total_en_rango": "9/15",
+          "errores_agente": 0,
+          "por_caso": {
+            "01-claramente-modelable": {
+              "decisiones": [
+                false,
+                true,
+                false
+              ],
+              "totales": [
+                6,
+                7,
+                5
+              ],
+              "consistente": false,
+              "esperado": true
+            },
+            "02-claramente-no-modelable": {
+              "decisiones": [
+                false,
+                false,
+                false
+              ],
+              "totales": [
+                1,
+                1,
+                0
+              ],
+              "consistente": true,
+              "esperado": false
+            },
+            "03-frontera-7": {
+              "decisiones": [
+                true,
+                true,
+                true
+              ],
+              "totales": [
+                7,
+                7,
+                7
+              ],
+              "consistente": true,
+              "esperado": true
+            },
+            "04-frontera-6": {
+              "decisiones": [
+                false,
+                false,
+                false
+              ],
+              "totales": [
+                3,
+                3,
+                3
+              ],
+              "consistente": true,
+              "esperado": false
+            },
+            "05-sin-cifras": {
+              "decisiones": [
+                false,
+                false,
+                false
+              ],
+              "totales": [
+                6,
+                6,
+                6
+              ],
+              "consistente": true,
+              "esperado": false
+            }
+          },
+          "nota": null
+        },
+        "pasa": true,
+        "costo_usd": 0.099555,
+        "costo_auxiliar_usd": 0.0,
+        "costo_por_unidad_usd": 0.006637,
+        "latencia_media_s": 6.0,
+        "latencia_max_s": 11.6,
+        "n_unidades": 15,
+        "n_unidades_corridas": 15,
+        "n_unidades_omitidas": 0,
+        "n_llamadas": 15,
+        "modelos_solicitados": [
+          "claude-sonnet-5-5"
+        ],
+        "unidades": [
+          {
+            "id": "01-claramente-modelable#1",
+            "ok": false,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": false,
+              "total": 6,
+              "esperado_pasa": true,
+              "total_en_rango": false
+            },
+            "segundos": 5.05,
+            "costo_usd": 0.013587,
+            "n_llamadas": 1,
+            "segundos_api": 5.05,
+            "modelos_solicitados": [
+              "claude-sonnet-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 551,
+              "output_tokens": 475,
+              "cache_creation_input_tokens": 3094,
+              "cache_read_input_tokens": 0
+            }
+          },
+          {
+            "id": "01-claramente-modelable#2",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": true,
+              "total": 7,
+              "esperado_pasa": true,
+              "total_en_rango": false
+            },
+            "segundos": 5.2,
+            "costo_usd": 0.006601,
+            "n_llamadas": 1,
+            "segundos_api": 5.2,
+            "modelos_solicitados": [
+              "claude-sonnet-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 551,
+              "output_tokens": 488,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 3094
+            }
+          },
+          {
+            "id": "01-claramente-modelable#3",
+            "ok": false,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": false,
+              "total": 5,
+              "esperado_pasa": true,
+              "total_en_rango": false
+            },
+            "segundos": 5.43,
+            "costo_usd": 0.006751,
+            "n_llamadas": 1,
+            "segundos_api": 5.43,
+            "modelos_solicitados": [
+              "claude-sonnet-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 551,
+              "output_tokens": 503,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 3094
+            }
+          },
+          {
+            "id": "02-claramente-no-modelable#1",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": false,
+              "total": 1,
+              "esperado_pasa": false,
+              "total_en_rango": true
+            },
+            "segundos": 4.46,
+            "costo_usd": 0.005681,
+            "n_llamadas": 1,
+            "segundos_api": 4.46,
+            "modelos_solicitados": [
+              "claude-sonnet-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 226,
+              "output_tokens": 461,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 3094
+            }
+          },
+          {
+            "id": "02-claramente-no-modelable#2",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": false,
+              "total": 1,
+              "esperado_pasa": false,
+              "total_en_rango": true
+            },
+            "segundos": 4.1,
+            "costo_usd": 0.005481,
+            "n_llamadas": 1,
+            "segundos_api": 4.1,
+            "modelos_solicitados": [
+              "claude-sonnet-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 226,
+              "output_tokens": 441,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 3094
+            }
+          },
+          {
+            "id": "02-claramente-no-modelable#3",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": false,
+              "total": 0,
+              "esperado_pasa": false,
+              "total_en_rango": true
+            },
+            "segundos": 4.13,
+            "costo_usd": 0.005601,
+            "n_llamadas": 1,
+            "segundos_api": 4.11,
+            "modelos_solicitados": [
+              "claude-sonnet-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 226,
+              "output_tokens": 453,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 3094
+            }
+          },
+          {
+            "id": "03-frontera-7#1",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": true,
+              "total": 7,
+              "esperado_pasa": true,
+              "total_en_rango": true
+            },
+            "segundos": 4.74,
+            "costo_usd": 0.006417,
+            "n_llamadas": 1,
+            "segundos_api": 4.73,
+            "modelos_solicitados": [
+              "claude-sonnet-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 424,
+              "output_tokens": 495,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 3094
+            }
+          },
+          {
+            "id": "03-frontera-7#2",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": true,
+              "total": 7,
+              "esperado_pasa": true,
+              "total_en_rango": true
+            },
+            "segundos": 5.37,
+            "costo_usd": 0.006207,
+            "n_llamadas": 1,
+            "segundos_api": 5.36,
+            "modelos_solicitados": [
+              "claude-sonnet-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 424,
+              "output_tokens": 474,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 3094
+            }
+          },
+          {
+            "id": "03-frontera-7#3",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": true,
+              "total": 7,
+              "esperado_pasa": true,
+              "total_en_rango": true
+            },
+            "segundos": 4.37,
+            "costo_usd": 0.006437,
+            "n_llamadas": 1,
+            "segundos_api": 4.37,
+            "modelos_solicitados": [
+              "claude-sonnet-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 424,
+              "output_tokens": 497,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 3094
+            }
+          },
+          {
+            "id": "04-frontera-6#1",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": false,
+              "total": 3,
+              "esperado_pasa": false,
+              "total_en_rango": false
+            },
+            "segundos": 5.23,
+            "costo_usd": 0.006027,
+            "n_llamadas": 1,
+            "segundos_api": 5.23,
+            "modelos_solicitados": [
+              "claude-sonnet-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 414,
+              "output_tokens": 458,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 3094
+            }
+          },
+          {
+            "id": "04-frontera-6#2",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": false,
+              "total": 3,
+              "esperado_pasa": false,
+              "total_en_rango": false
+            },
+            "segundos": 3.95,
+            "costo_usd": 0.006157,
+            "n_llamadas": 1,
+            "segundos_api": 3.95,
+            "modelos_solicitados": [
+              "claude-sonnet-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 414,
+              "output_tokens": 471,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 3094
+            }
+          },
+          {
+            "id": "04-frontera-6#3",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": false,
+              "total": 3,
+              "esperado_pasa": false,
+              "total_en_rango": false
+            },
+            "segundos": 4.56,
+            "costo_usd": 0.006177,
+            "n_llamadas": 1,
+            "segundos_api": 4.56,
+            "modelos_solicitados": [
+              "claude-sonnet-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 414,
+              "output_tokens": 473,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 3094
+            }
+          },
+          {
+            "id": "05-sin-cifras#1",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": false,
+              "total": 6,
+              "esperado_pasa": false,
+              "total_en_rango": true
+            },
+            "segundos": 11.57,
+            "costo_usd": 0.006267,
+            "n_llamadas": 1,
+            "segundos_api": 11.57,
+            "modelos_solicitados": [
+              "claude-sonnet-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 234,
+              "output_tokens": 518,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 3094
+            }
+          },
+          {
+            "id": "05-sin-cifras#2",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": false,
+              "total": 6,
+              "esperado_pasa": false,
+              "total_en_rango": true
+            },
+            "segundos": 11.14,
+            "costo_usd": 0.006077,
+            "n_llamadas": 1,
+            "segundos_api": 11.14,
+            "modelos_solicitados": [
+              "claude-sonnet-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 234,
+              "output_tokens": 499,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 3094
+            }
+          },
+          {
+            "id": "05-sin-cifras#3",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": false,
+              "total": 6,
+              "esperado_pasa": false,
+              "total_en_rango": true
+            },
+            "segundos": 11.39,
+            "costo_usd": 0.006087,
+            "n_llamadas": 1,
+            "segundos_api": 11.39,
+            "modelos_solicitados": [
+              "claude-sonnet-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 234,
+              "output_tokens": 500,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 3094
+            }
+          }
+        ],
+        "notas": []
+      },
+      {
+        "agente": "filtro",
+        "modelo": "claude-opus-5-5",
+        "estado": "completa",
+        "metrica": {
+          "nombre": "kappa_decision",
+          "umbral": 0.6,
+          "valor": 0.8571,
+          "n_pares": 15,
+          "acuerdo_exacto": 0.9333,
+          "consistencia_casos": "4/5",
+          "total_en_rango": "8/15",
+          "errores_agente": 0,
+          "por_caso": {
+            "01-claramente-modelable": {
+              "decisiones": [
+                true,
+                false,
+                true
+              ],
+              "totales": [
+                7,
+                6,
+                7
+              ],
+              "consistente": false,
+              "esperado": true
+            },
+            "02-claramente-no-modelable": {
+              "decisiones": [
+                false,
+                false,
+                false
+              ],
+              "totales": [
+                1,
+                1,
+                1
+              ],
+              "consistente": true,
+              "esperado": false
+            },
+            "03-frontera-7": {
+              "decisiones": [
+                true,
+                true,
+                true
+              ],
+              "totales": [
+                10,
+                7,
+                7
+              ],
+              "consistente": true,
+              "esperado": true
+            },
+            "04-frontera-6": {
+              "decisiones": [
+                false,
+                false,
+                false
+              ],
+              "totales": [
+                2,
+                2,
+                3
+              ],
+              "consistente": true,
+              "esperado": false
+            },
+            "05-sin-cifras": {
+              "decisiones": [
+                false,
+                false,
+                false
+              ],
+              "totales": [
+                4,
+                5,
+                4
+              ],
+              "consistente": true,
+              "esperado": false
+            }
+          },
+          "nota": null
+        },
+        "pasa": true,
+        "costo_usd": 0.304524,
+        "costo_auxiliar_usd": 0.0,
+        "costo_por_unidad_usd": 0.020302,
+        "latencia_media_s": 9.9,
+        "latencia_max_s": 12.8,
+        "n_unidades": 15,
+        "n_unidades_corridas": 15,
+        "n_unidades_omitidas": 0,
+        "n_llamadas": 15,
+        "modelos_solicitados": [
+          "claude-opus-5-5"
+        ],
+        "unidades": [
+          {
+            "id": "01-claramente-modelable#1",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": true,
+              "total": 7,
+              "esperado_pasa": true,
+              "total_en_rango": false
+            },
+            "segundos": 10.45,
+            "costo_usd": 0.037134,
+            "n_llamadas": 1,
+            "segundos_api": 10.44,
+            "modelos_solicitados": [
+              "claude-opus-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 551,
+              "output_tokens": 973,
+              "cache_creation_input_tokens": 3094,
+              "cache_read_input_tokens": 0
+            }
+          },
+          {
+            "id": "01-claramente-modelable#2",
+            "ok": false,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": false,
+              "total": 6,
+              "esperado_pasa": true,
+              "total_en_rango": false
+            },
+            "segundos": 11.2,
+            "costo_usd": 0.024203,
+            "n_llamadas": 1,
+            "segundos_api": 11.18,
+            "modelos_solicitados": [
+              "claude-opus-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 551,
+              "output_tokens": 1069,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 3094
+            }
+          },
+          {
+            "id": "01-claramente-modelable#3",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": true,
+              "total": 7,
+              "esperado_pasa": true,
+              "total_en_rango": false
+            },
+            "segundos": 9.66,
+            "costo_usd": 0.020723,
+            "n_llamadas": 1,
+            "segundos_api": 9.65,
+            "modelos_solicitados": [
+              "claude-opus-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 551,
+              "output_tokens": 895,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 3094
+            }
+          },
+          {
+            "id": "02-claramente-no-modelable#1",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": false,
+              "total": 1,
+              "esperado_pasa": false,
+              "total_en_rango": true
+            },
+            "segundos": 7.59,
+            "costo_usd": 0.014123,
+            "n_llamadas": 1,
+            "segundos_api": 7.59,
+            "modelos_solicitados": [
+              "claude-opus-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 226,
+              "output_tokens": 630,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 3094
+            }
+          },
+          {
+            "id": "02-claramente-no-modelable#2",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": false,
+              "total": 1,
+              "esperado_pasa": false,
+              "total_en_rango": true
+            },
+            "segundos": 5.68,
+            "costo_usd": 0.010343,
+            "n_llamadas": 1,
+            "segundos_api": 5.67,
+            "modelos_solicitados": [
+              "claude-opus-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 226,
+              "output_tokens": 441,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 3094
+            }
+          },
+          {
+            "id": "02-claramente-no-modelable#3",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": false,
+              "total": 1,
+              "esperado_pasa": false,
+              "total_en_rango": true
+            },
+            "segundos": 7.26,
+            "costo_usd": 0.014543,
+            "n_llamadas": 1,
+            "segundos_api": 7.26,
+            "modelos_solicitados": [
+              "claude-opus-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 226,
+              "output_tokens": 651,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 3094
+            }
+          },
+          {
+            "id": "03-frontera-7#1",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": true,
+              "total": 10,
+              "esperado_pasa": true,
+              "total_en_rango": false
+            },
+            "segundos": 12.83,
+            "costo_usd": 0.022395,
+            "n_llamadas": 1,
+            "segundos_api": 12.83,
+            "modelos_solicitados": [
+              "claude-opus-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 424,
+              "output_tokens": 1004,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 3094
+            }
+          },
+          {
+            "id": "03-frontera-7#2",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": true,
+              "total": 7,
+              "esperado_pasa": true,
+              "total_en_rango": true
+            },
+            "segundos": 10.91,
+            "costo_usd": 0.022155,
+            "n_llamadas": 1,
+            "segundos_api": 10.91,
+            "modelos_solicitados": [
+              "claude-opus-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 424,
+              "output_tokens": 992,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 3094
+            }
+          },
+          {
+            "id": "03-frontera-7#3",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": true,
+              "total": 7,
+              "esperado_pasa": true,
+              "total_en_rango": true
+            },
+            "segundos": 11.66,
+            "costo_usd": 0.023315,
+            "n_llamadas": 1,
+            "segundos_api": 11.66,
+            "modelos_solicitados": [
+              "claude-opus-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 424,
+              "output_tokens": 1050,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 3094
+            }
+          },
+          {
+            "id": "04-frontera-6#1",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": false,
+              "total": 2,
+              "esperado_pasa": false,
+              "total_en_rango": false
+            },
+            "segundos": 10.04,
+            "costo_usd": 0.019175,
+            "n_llamadas": 1,
+            "segundos_api": 10.04,
+            "modelos_solicitados": [
+              "claude-opus-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 414,
+              "output_tokens": 845,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 3094
+            }
+          },
+          {
+            "id": "04-frontera-6#2",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": false,
+              "total": 2,
+              "esperado_pasa": false,
+              "total_en_rango": false
+            },
+            "segundos": 11.06,
+            "costo_usd": 0.020335,
+            "n_llamadas": 1,
+            "segundos_api": 11.04,
+            "modelos_solicitados": [
+              "claude-opus-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 414,
+              "output_tokens": 903,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 3094
+            }
+          },
+          {
+            "id": "04-frontera-6#3",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": false,
+              "total": 3,
+              "esperado_pasa": false,
+              "total_en_rango": false
+            },
+            "segundos": 8.84,
+            "costo_usd": 0.017715,
+            "n_llamadas": 1,
+            "segundos_api": 8.82,
+            "modelos_solicitados": [
+              "claude-opus-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 414,
+              "output_tokens": 772,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 3094
+            }
+          },
+          {
+            "id": "05-sin-cifras#1",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": false,
+              "total": 4,
+              "esperado_pasa": false,
+              "total_en_rango": true
+            },
+            "segundos": 9.85,
+            "costo_usd": 0.018635,
+            "n_llamadas": 1,
+            "segundos_api": 9.85,
+            "modelos_solicitados": [
+              "claude-opus-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 234,
+              "output_tokens": 854,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 3094
+            }
+          },
+          {
+            "id": "05-sin-cifras#2",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": false,
+              "total": 5,
+              "esperado_pasa": false,
+              "total_en_rango": true
+            },
+            "segundos": 10.48,
+            "costo_usd": 0.019715,
+            "n_llamadas": 1,
+            "segundos_api": 10.46,
+            "modelos_solicitados": [
+              "claude-opus-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 234,
+              "output_tokens": 908,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 3094
+            }
+          },
+          {
+            "id": "05-sin-cifras#3",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "pasa": false,
+              "total": 4,
+              "esperado_pasa": false,
+              "total_en_rango": true
+            },
+            "segundos": 10.56,
+            "costo_usd": 0.020015,
+            "n_llamadas": 1,
+            "segundos_api": 10.56,
+            "modelos_solicitados": [
+              "claude-opus-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 234,
+              "output_tokens": 923,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 3094
+            }
+          }
+        ],
+        "notas": []
+      }
+    ],
+    "disenador": [
+      {
+        "agente": "disenador",
+        "modelo": "claude-haiku-5-5",
+        "estado": "completa",
+        "metrica": {
+          "nombre": "pct_rub01_ge20",
+          "umbral": 0.8,
+          "valor": 0.6,
+          "ok": 3,
+          "n": 5,
+          "detalle_por_caso": {
+            "iteracion-cuenta-luz": true,
+            "p-bicicletas": false,
+            "s-cuenta-luz": false,
+            "s-maraton-cifras": true,
+            "u-urgencias": true
+          },
+          "rub01_media": 21.4,
+          "rub01_totales": [
+            24,
+            20,
+            18,
+            23,
+            22
+          ],
+          "pct_contrato_valido": 1.0
+        },
+        "pasa": false,
+        "costo_usd": 0.040663,
+        "costo_auxiliar_usd": 0.469248,
+        "costo_por_unidad_usd": 0.008133,
+        "latencia_media_s": 95.7,
+        "latencia_max_s": 111.8,
+        "n_unidades": 5,
+        "n_unidades_corridas": 5,
+        "n_unidades_omitidas": 0,
+        "n_llamadas": 7,
+        "modelos_solicitados": [
+          "claude-haiku-5-5"
+        ],
+        "unidades": [
+          {
+            "id": "iteracion-cuenta-luz",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "modo": "iteracion",
+              "contrato_valido": true,
+              "rondas": 2,
+              "n_candidatos": 1,
+              "rub01_total": 24,
+              "criterios_en_0": [],
+              "criterios_en_1": [],
+              "evaluador": "claude-opus-5-5",
+              "min_criterio": 2
+            },
+            "segundos": 86.99,
+            "costo_usd": 0.008205,
+            "n_llamadas": 2,
+            "segundos_api": 49.73,
+            "modelos_solicitados": [
+              "claude-haiku-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 10810,
+              "output_tokens": 10703,
+              "cache_creation_input_tokens": 13132,
+              "cache_read_input_tokens": 13132
+            },
+            "auxiliar": {
+              "rol": "disenador/evaluacion",
+              "costo_usd": 0.13524,
+              "n_llamadas": 1,
+              "segundos_api": 37.23,
+              "modelos_solicitados": [
+                "claude-opus-5-5"
+              ]
+            }
+          },
+          {
+            "id": "p-bicicletas",
+            "ok": false,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "modo": "diseno",
+              "contrato_valido": true,
+              "rondas": 1,
+              "n_candidatos": 2,
+              "rub01_total": 20,
+              "criterios_en_0": [
+                "recursos"
+              ],
+              "criterios_en_1": [
+                "autenticidad",
+                "validacion"
+              ],
+              "evaluador": "claude-opus-5-5",
+              "min_criterio": 0
+            },
+            "segundos": 111.8,
+            "costo_usd": 0.008373,
+            "n_llamadas": 1,
+            "segundos_api": 58.35,
+            "modelos_solicitados": [
+              "claude-haiku-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 687,
+              "output_tokens": 13345,
+              "cache_creation_input_tokens": 13054,
+              "cache_read_input_tokens": 0
+            },
+            "auxiliar": {
+              "rol": "disenador/evaluacion",
+              "costo_usd": 0.123686,
+              "n_llamadas": 1,
+              "segundos_api": 53.44,
+              "modelos_solicitados": [
+                "claude-opus-5-5"
+              ]
+            }
+          },
+          {
+            "id": "s-cuenta-luz",
+            "ok": false,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "modo": "diseno",
+              "contrato_valido": true,
+              "rondas": 1,
+              "n_candidatos": 2,
+              "rub01_total": 18,
+              "criterios_en_0": [],
+              "criterios_en_1": [
+                "genuino",
+                "decisiones",
+                "ciclo",
+                "autodiferenciacion",
+                "fecundidad",
+                "recursos"
+              ],
+              "evaluador": "claude-opus-5-5",
+              "min_criterio": 1
+            },
+            "segundos": 85.82,
+            "costo_usd": 0.005391,
+            "n_llamadas": 1,
+            "segundos_api": 46.52,
+            "modelos_solicitados": [
+              "claude-haiku-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 803,
+              "output_tokens": 10360,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 13054
+            },
+            "auxiliar": {
+              "rol": "disenador/evaluacion",
+              "costo_usd": 0.086882,
+              "n_llamadas": 1,
+              "segundos_api": 39.29,
+              "modelos_solicitados": [
+                "claude-opus-5-5"
+              ]
+            }
+          },
+          {
+            "id": "s-maraton-cifras",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "modo": "diseno",
+              "contrato_valido": true,
+              "rondas": 2,
+              "n_candidatos": 2,
+              "rub01_total": 23,
+              "criterios_en_0": [],
+              "criterios_en_1": [
+                "autenticidad"
+              ],
+              "evaluador": "claude-opus-5-5",
+              "min_criterio": 1
+            },
+            "segundos": 97.27,
+            "costo_usd": 0.010641,
+            "n_llamadas": 2,
+            "segundos_api": 74.26,
+            "modelos_solicitados": [
+              "claude-haiku-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 6568,
+              "output_tokens": 19446,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 26108
+            },
+            "auxiliar": {
+              "rol": "disenador/evaluacion",
+              "costo_usd": 0.052218,
+              "n_llamadas": 1,
+              "segundos_api": 22.97,
+              "modelos_solicitados": [
+                "claude-opus-5-5"
+              ]
+            }
+          },
+          {
+            "id": "u-urgencias",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "modo": "diseno",
+              "contrato_valido": true,
+              "rondas": 1,
+              "n_candidatos": 2,
+              "rub01_total": 22,
+              "criterios_en_0": [],
+              "criterios_en_1": [
+                "autenticidad",
+                "recursos"
+              ],
+              "evaluador": "claude-opus-5-5",
+              "min_criterio": 1
+            },
+            "segundos": 96.84,
+            "costo_usd": 0.008053,
+            "n_llamadas": 1,
+            "segundos_api": 66.74,
+            "modelos_solicitados": [
+              "claude-haiku-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 779,
+              "output_tokens": 15690,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 13054
+            },
+            "auxiliar": {
+              "rol": "disenador/evaluacion",
+              "costo_usd": 0.071222,
+              "n_llamadas": 1,
+              "segundos_api": 30.08,
+              "modelos_solicitados": [
+                "claude-opus-5-5"
+              ]
+            }
+          }
+        ],
+        "notas": [
+          "RUB01 por una sola corrida del evaluador opus (la variabilidad entre corridas llega a varios puntos, ver calibración); el costo de la evaluación se reporta aparte (costo_auxiliar_usd)."
+        ]
+      },
+      {
+        "agente": "disenador",
+        "modelo": "claude-sonnet-5-5",
+        "estado": "completa",
+        "metrica": {
+          "nombre": "pct_rub01_ge20",
+          "umbral": 0.8,
+          "valor": 0.6,
+          "ok": 3,
+          "n": 5,
+          "detalle_por_caso": {
+            "iteracion-cuenta-luz": true,
+            "p-bicicletas": true,
+            "s-cuenta-luz": true,
+            "s-maraton-cifras": false,
+            "u-urgencias": false
+          },
+          "rub01_media": 23.0,
+          "rub01_totales": [
+            24,
+            23,
+            22
+          ],
+          "pct_contrato_valido": 0.6
+        },
+        "pasa": false,
+        "costo_usd": 1.703902,
+        "costo_auxiliar_usd": 0.31092,
+        "costo_por_unidad_usd": 0.34078,
+        "latencia_media_s": 263.4,
+        "latencia_max_s": 381.1,
+        "n_unidades": 5,
+        "n_unidades_corridas": 5,
+        "n_unidades_omitidas": 0,
+        "n_llamadas": 11,
+        "modelos_solicitados": [
+          "claude-sonnet-5-5"
+        ],
+        "unidades": [
+          {
+            "id": "iteracion-cuenta-luz",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "modo": "iteracion",
+              "contrato_valido": true,
+              "rondas": 1,
+              "n_candidatos": 1,
+              "rub01_total": 24,
+              "criterios_en_0": [],
+              "criterios_en_1": [],
+              "evaluador": "claude-opus-5-5",
+              "min_criterio": 2
+            },
+            "segundos": 92.73,
+            "costo_usd": 0.138478,
+            "n_llamadas": 1,
+            "segundos_api": 70.4,
+            "modelos_solicitados": [
+              "claude-sonnet-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 3974,
+              "output_tokens": 9770,
+              "cache_creation_input_tokens": 13132,
+              "cache_read_input_tokens": 0
+            },
+            "auxiliar": {
+              "rol": "disenador/evaluacion",
+              "costo_usd": 0.057374,
+              "n_llamadas": 1,
+              "segundos_api": 22.31,
+              "modelos_solicitados": [
+                "claude-opus-5-5"
+              ]
+            }
+          },
+          {
+            "id": "p-bicicletas",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "modo": "diseno",
+              "contrato_valido": true,
+              "rondas": 1,
+              "n_candidatos": 2,
+              "rub01_total": 23,
+              "criterios_en_0": [],
+              "criterios_en_1": [
+                "autenticidad"
+              ],
+              "evaluador": "claude-opus-5-5",
+              "min_criterio": 1
+            },
+            "segundos": 141.89,
+            "costo_usd": 0.163379,
+            "n_llamadas": 1,
+            "segundos_api": 104.21,
+            "modelos_solicitados": [
+              "claude-sonnet-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 687,
+              "output_tokens": 12937,
+              "cache_creation_input_tokens": 13054,
+              "cache_read_input_tokens": 0
+            },
+            "auxiliar": {
+              "rol": "disenador/evaluacion",
+              "costo_usd": 0.082774,
+              "n_llamadas": 1,
+              "segundos_api": 37.66,
+              "modelos_solicitados": [
+                "claude-opus-5-5"
+              ]
+            }
+          },
+          {
+            "id": "s-cuenta-luz",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "modo": "diseno",
+              "contrato_valido": true,
+              "rondas": 2,
+              "n_candidatos": 2,
+              "rub01_total": 22,
+              "criterios_en_0": [],
+              "criterios_en_1": [
+                "autenticidad",
+                "ciclo"
+              ],
+              "evaluador": "claude-opus-5-5",
+              "min_criterio": 1
+            },
+            "segundos": 344.56,
+            "costo_usd": 0.416395,
+            "n_llamadas": 3,
+            "segundos_api": 291.88,
+            "modelos_solicitados": [
+              "claude-sonnet-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 8741,
+              "output_tokens": 39108,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 39162
+            },
+            "auxiliar": {
+              "rol": "disenador/evaluacion",
+              "costo_usd": 0.170772,
+              "n_llamadas": 1,
+              "segundos_api": 52.66,
+              "modelos_solicitados": [
+                "claude-opus-5-5"
+              ]
+            }
+          },
+          {
+            "id": "s-maraton-cifras",
+            "ok": false,
+            "omitida": false,
+            "error": "RuntimeError: disenador: la llamada falló tras 3 intentos: stop_reason=max_tokens",
+            "detalle": {},
+            "segundos": 356.9,
+            "costo_usd": 0.493143,
+            "n_llamadas": 3,
+            "segundos_api": 356.89,
+            "modelos_solicitados": [
+              "claude-sonnet-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 2655,
+              "output_tokens": 48000,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 39162
+            }
+          },
+          {
+            "id": "u-urgencias",
+            "ok": false,
+            "omitida": false,
+            "error": "RuntimeError: disenador: la llamada falló tras 3 intentos: stop_reason=max_tokens",
+            "detalle": {},
+            "segundos": 381.07,
+            "costo_usd": 0.492507,
+            "n_llamadas": 3,
+            "segundos_api": 381.06,
+            "modelos_solicitados": [
+              "claude-sonnet-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 2337,
+              "output_tokens": 48000,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 39162
+            }
+          }
+        ],
+        "notas": [
+          "RUB01 por una sola corrida del evaluador opus (la variabilidad entre corridas llega a varios puntos, ver calibración); el costo de la evaluación se reporta aparte (costo_auxiliar_usd)."
+        ]
+      },
+      {
+        "agente": "disenador",
+        "modelo": "claude-opus-5-5",
+        "estado": "completa",
+        "metrica": {
+          "nombre": "pct_rub01_ge20",
+          "umbral": 0.8,
+          "valor": 1.0,
+          "ok": 5,
+          "n": 5,
+          "detalle_por_caso": {
+            "iteracion-cuenta-luz": true,
+            "p-bicicletas": true,
+            "s-cuenta-luz": true,
+            "s-maraton-cifras": true,
+            "u-urgencias": true
+          },
+          "rub01_media": 23.6,
+          "rub01_totales": [
+            24,
+            22,
+            24,
+            24,
+            24
+          ],
+          "pct_contrato_valido": 1.0
+        },
+        "pasa": true,
+        "costo_usd": 1.219775,
+        "costo_auxiliar_usd": 0.379522,
+        "costo_por_unidad_usd": 0.243955,
+        "latencia_media_s": 135.9,
+        "latencia_max_s": 170.2,
+        "n_unidades": 5,
+        "n_unidades_corridas": 5,
+        "n_unidades_omitidas": 0,
+        "n_llamadas": 5,
+        "modelos_solicitados": [
+          "claude-opus-5-5"
+        ],
+        "unidades": [
+          {
+            "id": "iteracion-cuenta-luz",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "modo": "iteracion",
+              "contrato_valido": true,
+              "rondas": 1,
+              "n_candidatos": 1,
+              "rub01_total": 24,
+              "criterios_en_0": [],
+              "criterios_en_1": [],
+              "evaluador": "claude-opus-5-5",
+              "min_criterio": 2
+            },
+            "segundos": 117.71,
+            "costo_usd": 0.212896,
+            "n_llamadas": 1,
+            "segundos_api": 85.44,
+            "modelos_solicitados": [
+              "claude-opus-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 3974,
+              "output_tokens": 6567,
+              "cache_creation_input_tokens": 13132,
+              "cache_read_input_tokens": 0
+            },
+            "auxiliar": {
+              "rol": "disenador/evaluacion",
+              "costo_usd": 0.075958,
+              "n_llamadas": 1,
+              "segundos_api": 32.22,
+              "modelos_solicitados": [
+                "claude-opus-5-5"
+              ]
+            }
+          },
+          {
+            "id": "p-bicicletas",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "modo": "diseno",
+              "contrato_valido": true,
+              "rondas": 1,
+              "n_candidatos": 2,
+              "rub01_total": 22,
+              "criterios_en_0": [],
+              "criterios_en_1": [
+                "autenticidad",
+                "validacion"
+              ],
+              "evaluador": "claude-opus-5-5",
+              "min_criterio": 1
+            },
+            "segundos": 123.48,
+            "costo_usd": 0.264138,
+            "n_llamadas": 1,
+            "segundos_api": 91.44,
+            "modelos_solicitados": [
+              "claude-opus-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 687,
+              "output_tokens": 9806,
+              "cache_creation_input_tokens": 13054,
+              "cache_read_input_tokens": 0
+            },
+            "auxiliar": {
+              "rol": "disenador/evaluacion",
+              "costo_usd": 0.07677,
+              "n_llamadas": 1,
+              "segundos_api": 32.03,
+              "modelos_solicitados": [
+                "claude-opus-5-5"
+              ]
+            }
+          },
+          {
+            "id": "s-cuenta-luz",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "modo": "diseno",
+              "contrato_valido": true,
+              "rondas": 1,
+              "n_candidatos": 2,
+              "rub01_total": 24,
+              "criterios_en_0": [],
+              "criterios_en_1": [],
+              "evaluador": "claude-opus-5-5",
+              "min_criterio": 2
+            },
+            "segundos": 133.69,
+            "costo_usd": 0.216763,
+            "n_llamadas": 1,
+            "segundos_api": 98.51,
+            "modelos_solicitados": [
+              "claude-opus-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 803,
+              "output_tokens": 10547,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 13054
+            },
+            "auxiliar": {
+              "rol": "disenador/evaluacion",
+              "costo_usd": 0.077054,
+              "n_llamadas": 1,
+              "segundos_api": 35.17,
+              "modelos_solicitados": [
+                "claude-opus-5-5"
+              ]
+            }
+          },
+          {
+            "id": "s-maraton-cifras",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "modo": "diseno",
+              "contrato_valido": true,
+              "rondas": 1,
+              "n_candidatos": 2,
+              "rub01_total": 24,
+              "criterios_en_0": [],
+              "criterios_en_1": [],
+              "evaluador": "claude-opus-5-5",
+              "min_criterio": 2
+            },
+            "segundos": 134.32,
+            "costo_usd": 0.224331,
+            "n_llamadas": 1,
+            "segundos_api": 100.96,
+            "modelos_solicitados": [
+              "claude-opus-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 885,
+              "output_tokens": 10909,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 13054
+            },
+            "auxiliar": {
+              "rol": "disenador/evaluacion",
+              "costo_usd": 0.077278,
+              "n_llamadas": 1,
+              "segundos_api": 33.34,
+              "modelos_solicitados": [
+                "claude-opus-5-5"
+              ]
+            }
+          },
+          {
+            "id": "u-urgencias",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "modo": "diseno",
+              "contrato_valido": true,
+              "rondas": 1,
+              "n_candidatos": 2,
+              "rub01_total": 24,
+              "criterios_en_0": [],
+              "criterios_en_1": [],
+              "evaluador": "claude-opus-5-5",
+              "min_criterio": 2
+            },
+            "segundos": 170.17,
+            "costo_usd": 0.301647,
+            "n_llamadas": 1,
+            "segundos_api": 141.24,
+            "modelos_solicitados": [
+              "claude-opus-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 779,
+              "output_tokens": 14796,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 13054
+            },
+            "auxiliar": {
+              "rol": "disenador/evaluacion",
+              "costo_usd": 0.072462,
+              "n_llamadas": 1,
+              "segundos_api": 28.91,
+              "modelos_solicitados": [
+                "claude-opus-5-5"
+              ]
+            }
+          }
+        ],
+        "notas": [
+          "RUB01 por una sola corrida del evaluador opus (la variabilidad entre corridas llega a varios puntos, ver calibración); el costo de la evaluación se reporta aparte (costo_auxiliar_usd)."
+        ]
+      }
+    ],
+    "evaluador": [
+      {
+        "agente": "evaluador",
+        "modelo": "claude-haiku-5-5",
+        "estado": "completa",
+        "metrica": {
+          "nombre": "kappa_ponderado",
+          "umbral": 0.7,
+          "valor": 0.6221,
+          "corridas": 1,
+          "kappa_por_corrida": [
+            0.6221
+          ],
+          "kappa_humanas": 0.6426,
+          "acuerdo_exacto": 0.7315,
+          "acuerdo_exacto_humanas": 0.8542,
+          "n_tareas": 9,
+          "totales": {
+            "clear-day-at-the-ocean": {
+              "evaluador": 10,
+              "referencia": 7
+            },
+            "giants-shoes": {
+              "evaluador": 23,
+              "referencia": 24
+            },
+            "lighthouse": {
+              "evaluador": 20,
+              "referencia": 20
+            },
+            "poblacion-belga": {
+              "evaluador": 15,
+              "referencia": 16
+            },
+            "port-of-hamburg": {
+              "evaluador": 23,
+              "referencia": 24
+            },
+            "residuos-plasticos": {
+              "evaluador": 22,
+              "referencia": 22
+            },
+            "st-michaels-church": {
+              "evaluador": 20,
+              "referencia": 21
+            },
+            "sugarloaf": {
+              "evaluador": 17,
+              "referencia": 20
+            },
+            "vapes-litio": {
+              "evaluador": 23,
+              "referencia": 24
+            }
+          },
+          "reutilizada": false
+        },
+        "pasa": false,
+        "costo_usd": 0.047436,
+        "costo_auxiliar_usd": 0.0,
+        "costo_por_unidad_usd": 0.005271,
+        "latencia_media_s": 43.5,
+        "latencia_max_s": 58.9,
+        "n_unidades": 9,
+        "n_unidades_corridas": 9,
+        "n_unidades_omitidas": 0,
+        "n_llamadas": 9,
+        "modelos_solicitados": [
+          "claude-haiku-5-5"
+        ],
+        "unidades": [
+          {
+            "id": "clear-day-at-the-ocean",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "total": 10,
+              "avisos": [
+                "cita_recortada_25:genuino"
+              ]
+            },
+            "segundos": 50.54,
+            "costo_usd": 0.006952,
+            "n_llamadas": 1,
+            "segundos_api": 50.53,
+            "modelos_solicitados": [
+              "claude-haiku-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 394,
+              "output_tokens": 11117,
+              "cache_creation_input_tokens": 10832,
+              "cache_read_input_tokens": 0
+            }
+          },
+          {
+            "id": "giants-shoes",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "total": 23,
+              "avisos": []
+            },
+            "segundos": 45.55,
+            "costo_usd": 0.006642,
+            "n_llamadas": 1,
+            "segundos_api": 45.55,
+            "modelos_solicitados": [
+              "claude-haiku-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 282,
+              "output_tokens": 10519,
+              "cache_creation_input_tokens": 10832,
+              "cache_read_input_tokens": 0
+            }
+          },
+          {
+            "id": "lighthouse",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "total": 20,
+              "avisos": []
+            },
+            "segundos": 53.49,
+            "costo_usd": 0.007293,
+            "n_llamadas": 1,
+            "segundos_api": 53.49,
+            "modelos_solicitados": [
+              "claude-haiku-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 274,
+              "output_tokens": 11823,
+              "cache_creation_input_tokens": 10832,
+              "cache_read_input_tokens": 0
+            }
+          },
+          {
+            "id": "poblacion-belga",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "total": 15,
+              "avisos": []
+            },
+            "segundos": 58.9,
+            "costo_usd": 0.005484,
+            "n_llamadas": 1,
+            "segundos_api": 58.9,
+            "modelos_solicitados": [
+              "claude-haiku-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 352,
+              "output_tokens": 10680,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 10832
+            }
+          },
+          {
+            "id": "port-of-hamburg",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "total": 23,
+              "avisos": []
+            },
+            "segundos": 34.58,
+            "costo_usd": 0.003846,
+            "n_llamadas": 1,
+            "segundos_api": 34.58,
+            "modelos_solicitados": [
+              "claude-haiku-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 385,
+              "output_tokens": 7398,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 10832
+            }
+          },
+          {
+            "id": "residuos-plasticos",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "total": 22,
+              "avisos": []
+            },
+            "segundos": 36.91,
+            "costo_usd": 0.004494,
+            "n_llamadas": 1,
+            "segundos_api": 36.9,
+            "modelos_solicitados": [
+              "claude-haiku-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 624,
+              "output_tokens": 8647,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 10832
+            }
+          },
+          {
+            "id": "st-michaels-church",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "total": 20,
+              "avisos": []
+            },
+            "segundos": 35.57,
+            "costo_usd": 0.003871,
+            "n_llamadas": 1,
+            "segundos_api": 35.57,
+            "modelos_solicitados": [
+              "claude-haiku-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 296,
+              "output_tokens": 7467,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 10832
+            }
+          },
+          {
+            "id": "sugarloaf",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "total": 17,
+              "avisos": []
+            },
+            "segundos": 49.14,
+            "costo_usd": 0.005705,
+            "n_llamadas": 1,
+            "segundos_api": 49.14,
+            "modelos_solicitados": [
+              "claude-haiku-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 694,
+              "output_tokens": 11054,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 10832
+            }
+          },
+          {
+            "id": "vapes-litio",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "total": 23,
+              "avisos": []
+            },
+            "segundos": 26.83,
+            "costo_usd": 0.003149,
+            "n_llamadas": 1,
+            "segundos_api": 26.83,
+            "modelos_solicitados": [
+              "claude-haiku-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 594,
+              "output_tokens": 5962,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 10832
+            }
+          }
+        ],
+        "notas": [
+          "1 corrida sobre las 9 tareas-oro; kappa total incluye 5 puntajes provisionales de Claude"
+        ]
+      },
+      {
+        "agente": "evaluador",
+        "modelo": "claude-sonnet-5-5",
+        "estado": "completa",
+        "metrica": {
+          "nombre": "kappa_ponderado",
+          "umbral": 0.7,
+          "valor": 0.7814,
+          "corridas": 1,
+          "kappa_por_corrida": [
+            0.7814
+          ],
+          "kappa_humanas": 0.7143,
+          "acuerdo_exacto": 0.8426,
+          "acuerdo_exacto_humanas": 0.875,
+          "n_tareas": 9,
+          "totales": {
+            "clear-day-at-the-ocean": {
+              "evaluador": 8,
+              "referencia": 7
+            },
+            "giants-shoes": {
+              "evaluador": 24,
+              "referencia": 24
+            },
+            "lighthouse": {
+              "evaluador": 23,
+              "referencia": 20
+            },
+            "poblacion-belga": {
+              "evaluador": 13,
+              "referencia": 16
+            },
+            "port-of-hamburg": {
+              "evaluador": 24,
+              "referencia": 24
+            },
+            "residuos-plasticos": {
+              "evaluador": 23,
+              "referencia": 22
+            },
+            "st-michaels-church": {
+              "evaluador": 22,
+              "referencia": 21
+            },
+            "sugarloaf": {
+              "evaluador": 22,
+              "referencia": 20
+            },
+            "vapes-litio": {
+              "evaluador": 24,
+              "referencia": 24
+            }
+          },
+          "reutilizada": false
+        },
+        "pasa": true,
+        "costo_usd": 0.405046,
+        "costo_auxiliar_usd": 0.0,
+        "costo_por_unidad_usd": 0.045005,
+        "latencia_media_s": 25.2,
+        "latencia_max_s": 34.0,
+        "n_unidades": 9,
+        "n_unidades_corridas": 9,
+        "n_unidades_omitidas": 0,
+        "n_llamadas": 9,
+        "modelos_solicitados": [
+          "claude-sonnet-5-5"
+        ],
+        "unidades": [
+          {
+            "id": "clear-day-at-the-ocean",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "total": 8,
+              "avisos": [
+                "cita_recortada_25:genuino"
+              ]
+            },
+            "segundos": 23.07,
+            "costo_usd": 0.060828,
+            "n_llamadas": 1,
+            "segundos_api": 23.07,
+            "modelos_solicitados": [
+              "claude-sonnet-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 394,
+              "output_tokens": 3296,
+              "cache_creation_input_tokens": 10832,
+              "cache_read_input_tokens": 0
+            }
+          },
+          {
+            "id": "giants-shoes",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "total": 24,
+              "avisos": []
+            },
+            "segundos": 19.21,
+            "costo_usd": 0.053624,
+            "n_llamadas": 1,
+            "segundos_api": 19.21,
+            "modelos_solicitados": [
+              "claude-sonnet-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 282,
+              "output_tokens": 2598,
+              "cache_creation_input_tokens": 10832,
+              "cache_read_input_tokens": 0
+            }
+          },
+          {
+            "id": "lighthouse",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "total": 23,
+              "avisos": []
+            },
+            "segundos": 24.08,
+            "costo_usd": 0.056558,
+            "n_llamadas": 1,
+            "segundos_api": 24.07,
+            "modelos_solicitados": [
+              "claude-sonnet-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 274,
+              "output_tokens": 2893,
+              "cache_creation_input_tokens": 10832,
+              "cache_read_input_tokens": 0
+            }
+          },
+          {
+            "id": "poblacion-belga",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "total": 13,
+              "avisos": []
+            },
+            "segundos": 33.57,
+            "costo_usd": 0.048,
+            "n_llamadas": 1,
+            "segundos_api": 33.57,
+            "modelos_solicitados": [
+              "claude-sonnet-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 352,
+              "output_tokens": 4513,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 10832
+            }
+          },
+          {
+            "id": "port-of-hamburg",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "total": 24,
+              "avisos": []
+            },
+            "segundos": 18.14,
+            "costo_usd": 0.027906,
+            "n_llamadas": 1,
+            "segundos_api": 18.13,
+            "modelos_solicitados": [
+              "claude-sonnet-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 385,
+              "output_tokens": 2497,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 10832
+            }
+          },
+          {
+            "id": "residuos-plasticos",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "total": 23,
+              "avisos": []
+            },
+            "segundos": 26.5,
+            "costo_usd": 0.041084,
+            "n_llamadas": 1,
+            "segundos_api": 26.49,
+            "modelos_solicitados": [
+              "claude-sonnet-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 624,
+              "output_tokens": 3767,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 10832
+            }
+          },
+          {
+            "id": "st-michaels-church",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "total": 22,
+              "avisos": []
+            },
+            "segundos": 28.44,
+            "costo_usd": 0.038468,
+            "n_llamadas": 1,
+            "segundos_api": 28.44,
+            "modelos_solicitados": [
+              "claude-sonnet-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 296,
+              "output_tokens": 3571,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 10832
+            }
+          },
+          {
+            "id": "sugarloaf",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "total": 22,
+              "avisos": []
+            },
+            "segundos": 34.03,
+            "costo_usd": 0.047184,
+            "n_llamadas": 1,
+            "segundos_api": 34.02,
+            "modelos_solicitados": [
+              "claude-sonnet-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 694,
+              "output_tokens": 4363,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 10832
+            }
+          },
+          {
+            "id": "vapes-litio",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "total": 24,
+              "avisos": []
+            },
+            "segundos": 19.86,
+            "costo_usd": 0.031394,
+            "n_llamadas": 1,
+            "segundos_api": 19.86,
+            "modelos_solicitados": [
+              "claude-sonnet-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 594,
+              "output_tokens": 2804,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 10832
+            }
+          }
+        ],
+        "notas": [
+          "1 corrida sobre las 9 tareas-oro; kappa total incluye 5 puntajes provisionales de Claude"
+        ]
+      },
+      {
+        "agente": "evaluador",
+        "modelo": "claude-opus-5-5",
+        "estado": "reutilizada",
+        "metrica": {
+          "nombre": "kappa_ponderado",
+          "umbral": 0.7,
+          "valor": 0.7508,
+          "corridas": 3,
+          "kappa_por_corrida": [
+            0.7062,
+            0.8017,
+            0.7445
+          ],
+          "kappa_min": 0.7062,
+          "kappa_humanas": 0.6599,
+          "kappa_humanas_por_corrida": [
+            0.6199,
+            0.6757,
+            0.6842
+          ],
+          "acuerdo_exacto": 0.8241,
+          "acuerdo_exacto_humanas": 0.8611,
+          "n_tareas": 9,
+          "reutilizada": true
+        },
+        "pasa": true,
+        "costo_usd": 0.0,
+        "costo_auxiliar_usd": 0.0,
+        "costo_por_unidad_usd": 0.078321,
+        "latencia_media_s": 31.6,
+        "latencia_max_s": 42.9,
+        "n_unidades": 27,
+        "n_unidades_corridas": 0,
+        "n_unidades_omitidas": 0,
+        "n_llamadas": 0,
+        "modelos_solicitados": [
+          "claude-opus-5-5"
+        ],
+        "unidades": [],
+        "notas": [
+          "Reutilizada: corridas de calibración v1.3 (evals/resultados/evaluador_corridas/prompt_v1.3_2026-10-20.json); no se volvió a llamar a la API. Costos recalculados con config.yaml (4/20 USD/MTok); la calibración los registró con el supuesto 5/25."
+        ],
+        "costo_reutilizado_usd": 2.1147
+      }
+    ],
+    "simulador": [
+      {
+        "agente": "simulador",
+        "modelo": "claude-haiku-5-5",
+        "estado": "completa",
+        "metrica": {
+          "nombre": "pct_corridas_validas",
+          "umbral": 1.0,
+          "valor": 1.0,
+          "corridas_validas": 12,
+          "corridas_esperadas": 12,
+          "pct_validan": 1.0,
+          "pct_pitagoras": 0.9167,
+          "pct_pitagoras_N1": 1.0,
+          "n_pitagoras_N1": "4/4",
+          "n_pitagoras": "11/12",
+          "lanzadas": 2
+        },
+        "pasa": false,
+        "costo_usd": 0.199009,
+        "costo_auxiliar_usd": 0.0,
+        "costo_por_unidad_usd": 0.099504,
+        "latencia_media_s": 290.7,
+        "latencia_max_s": 299.1,
+        "n_unidades": 2,
+        "n_unidades_corridas": 2,
+        "n_unidades_omitidas": 0,
+        "n_llamadas": 324,
+        "modelos_solicitados": [
+          "claude-haiku-5-5"
+        ],
+        "unidades": [
+          {
+            "id": "haiku_lanzada1",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "n_corridas": 6,
+              "pct_validan": 1.0,
+              "pct_pitagoras": 0.8333,
+              "pct_pitagoras_N1": 1.0,
+              "n_pitagoras": 5,
+              "n_N1": 2,
+              "n_pitagoras_N1": 2,
+              "modelos_observados": {
+                "pitágoras": 5,
+                "pitagórico": 1
+              },
+              "pct_bloqueo_por_transicion": {
+                "B12": 0.17,
+                "B23": 0.83,
+                "B34": 0.17,
+                "B45": 0.17,
+                "B56": 0.17,
+                "B67": 0.33
+              },
+              "pitagoras_por_perfil": {
+                "N1_VV": true,
+                "N1_AA": true,
+                "N2_VV": true,
+                "N3_AA": true,
+                "N4_VV": false,
+                "N4_AA": true
+              },
+              "errores": [],
+              "trazas_validas": true,
+              "errores_contrato": []
+            },
+            "segundos": 299.14,
+            "costo_usd": 0.104189,
+            "n_llamadas": 170,
+            "segundos_api": 803.82,
+            "modelos_solicitados": [
+              "claude-haiku-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 323314,
+              "output_tokens": 138877,
+              "cache_creation_input_tokens": 9594,
+              "cache_read_input_tokens": 121732
+            }
+          },
+          {
+            "id": "haiku_lanzada2",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "n_corridas": 6,
+              "pct_validan": 1.0,
+              "pct_pitagoras": 1.0,
+              "pct_pitagoras_N1": 1.0,
+              "n_pitagoras": 6,
+              "n_N1": 2,
+              "n_pitagoras_N1": 2,
+              "modelos_observados": {
+                "pitágoras": 2,
+                "triángulo rectángulo": 2,
+                "pitagorico": 2
+              },
+              "pct_bloqueo_por_transicion": {
+                "B12": 0.5,
+                "B23": 0.5,
+                "B34": 0.17,
+                "B56": 0.5,
+                "B67": 0.17
+              },
+              "pitagoras_por_perfil": {
+                "N1_VV": true,
+                "N1_AA": true,
+                "N2_VV": true,
+                "N3_AA": true,
+                "N4_VV": true,
+                "N4_AA": true
+              },
+              "errores": [],
+              "trazas_validas": true,
+              "errores_contrato": []
+            },
+            "segundos": 282.33,
+            "costo_usd": 0.09482,
+            "n_llamadas": 154,
+            "segundos_api": 753.1,
+            "modelos_solicitados": [
+              "claude-haiku-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 280523,
+              "output_tokens": 128974,
+              "cache_creation_input_tokens": 9594,
+              "cache_read_input_tokens": 108746
+            }
+          }
+        ],
+        "notas": [
+          "estudiantes y codificador usan el modelo de la celda (en producción el codificador es Opus 5.5)"
+        ]
+      },
+      {
+        "agente": "simulador",
+        "modelo": "claude-sonnet-5-5",
+        "estado": "completa",
+        "metrica": {
+          "nombre": "pct_corridas_validas",
+          "umbral": 1.0,
+          "valor": 1.0,
+          "corridas_validas": 12,
+          "corridas_esperadas": 12,
+          "pct_validan": 0.915,
+          "pct_pitagoras": 0.6667,
+          "pct_pitagoras_N1": 1.0,
+          "n_pitagoras_N1": "4/4",
+          "n_pitagoras": "8/12",
+          "lanzadas": 2
+        },
+        "pasa": false,
+        "costo_usd": 1.198208,
+        "costo_auxiliar_usd": 0.0,
+        "costo_por_unidad_usd": 0.599104,
+        "latencia_media_s": 134.3,
+        "latencia_max_s": 142.8,
+        "n_unidades": 2,
+        "n_unidades_corridas": 2,
+        "n_unidades_omitidas": 0,
+        "n_llamadas": 141,
+        "modelos_solicitados": [
+          "claude-sonnet-5-5"
+        ],
+        "unidades": [
+          {
+            "id": "sonnet_lanzada1",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "n_corridas": 6,
+              "pct_validan": 1.0,
+              "pct_pitagoras": 0.8333,
+              "pct_pitagoras_N1": 1.0,
+              "n_pitagoras": 5,
+              "n_N1": 2,
+              "n_pitagoras_N1": 2,
+              "modelos_observados": {
+                "geométrico": 5,
+                "geométrico (pitágoras)": 1
+              },
+              "pct_bloqueo_por_transicion": {
+                "B23": 0.17
+              },
+              "pitagoras_por_perfil": {
+                "N1_VV": true,
+                "N1_AA": true,
+                "N2_VV": true,
+                "N3_AA": true,
+                "N4_VV": true,
+                "N4_AA": false
+              },
+              "errores": [],
+              "trazas_validas": true,
+              "errores_contrato": []
+            },
+            "segundos": 142.75,
+            "costo_usd": 0.611013,
+            "n_llamadas": 72,
+            "segundos_api": 401.98,
+            "modelos_solicitados": [
+              "claude-sonnet-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 100595,
+              "output_tokens": 37720,
+              "cache_creation_input_tokens": 9594,
+              "cache_read_input_tokens": 43245
+            }
+          },
+          {
+            "id": "sonnet_lanzada2",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "n_corridas": 6,
+              "pct_validan": 0.83,
+              "pct_pitagoras": 0.5,
+              "pct_pitagoras_N1": 1.0,
+              "n_pitagoras": 3,
+              "n_N1": 2,
+              "n_pitagoras_N1": 2,
+              "modelos_observados": {
+                "geométrico": 5,
+                "geométrico (pitágoras)": 1
+              },
+              "pct_bloqueo_por_transicion": {
+                "B12": 0.17,
+                "B34": 0.17
+              },
+              "pitagoras_por_perfil": {
+                "N1_VV": true,
+                "N1_AA": true,
+                "N2_VV": false,
+                "N3_AA": false,
+                "N4_VV": false,
+                "N4_AA": true
+              },
+              "errores": [],
+              "trazas_validas": true,
+              "errores_contrato": []
+            },
+            "segundos": 125.87,
+            "costo_usd": 0.587195,
+            "n_llamadas": 69,
+            "segundos_api": 361.17,
+            "modelos_solicitados": [
+              "claude-sonnet-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 96591,
+              "output_tokens": 36186,
+              "cache_creation_input_tokens": 9594,
+              "cache_read_input_tokens": 40899
+            }
+          }
+        ],
+        "notas": [
+          "estudiantes y codificador usan el modelo de la celda (en producción el codificador es Opus 5.5)"
+        ]
+      },
+      {
+        "agente": "simulador",
+        "modelo": "claude-opus-5-5",
+        "estado": "completa",
+        "metrica": {
+          "nombre": "pct_corridas_validas",
+          "umbral": 1.0,
+          "valor": 1.0,
+          "corridas_validas": 12,
+          "corridas_esperadas": 12,
+          "pct_validan": 1.0,
+          "pct_pitagoras": 1.0,
+          "pct_pitagoras_N1": 1.0,
+          "n_pitagoras_N1": "4/4",
+          "n_pitagoras": "12/12",
+          "lanzadas": 2
+        },
+        "pasa": false,
+        "costo_usd": 1.973406,
+        "costo_auxiliar_usd": 0.0,
+        "costo_por_unidad_usd": 0.986703,
+        "latencia_media_s": 154.7,
+        "latencia_max_s": 159.7,
+        "n_unidades": 2,
+        "n_unidades_corridas": 2,
+        "n_unidades_omitidas": 0,
+        "n_llamadas": 145,
+        "modelos_solicitados": [
+          "claude-opus-5-5"
+        ],
+        "unidades": [
+          {
+            "id": "opus_lanzada1",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "n_corridas": 6,
+              "pct_validan": 1.0,
+              "pct_pitagoras": 1.0,
+              "pct_pitagoras_N1": 1.0,
+              "n_pitagoras": 6,
+              "n_N1": 2,
+              "n_pitagoras_N1": 2,
+              "modelos_observados": {
+                "geométrico (pitágoras)": 6
+              },
+              "pct_bloqueo_por_transicion": {
+                "B23": 0.5,
+                "B34": 0.17
+              },
+              "pitagoras_por_perfil": {
+                "N1_VV": true,
+                "N1_AA": true,
+                "N2_VV": true,
+                "N3_AA": true,
+                "N4_VV": true,
+                "N4_AA": true
+              },
+              "errores": [],
+              "trazas_validas": true,
+              "errores_contrato": []
+            },
+            "segundos": 159.74,
+            "costo_usd": 1.005266,
+            "n_llamadas": 73,
+            "segundos_api": 397.18,
+            "modelos_solicitados": [
+              "claude-opus-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 101894,
+              "output_tokens": 27046,
+              "cache_creation_input_tokens": 9594,
+              "cache_read_input_tokens": 44061
+            }
+          },
+          {
+            "id": "opus_lanzada2",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "n_corridas": 6,
+              "pct_validan": 1.0,
+              "pct_pitagoras": 1.0,
+              "pct_pitagoras_N1": 1.0,
+              "n_pitagoras": 6,
+              "n_N1": 2,
+              "n_pitagoras_N1": 2,
+              "modelos_observados": {
+                "geométrico (pitágoras)": 6
+              },
+              "pct_bloqueo_por_transicion": {
+                "B12": 0.17,
+                "B23": 0.5
+              },
+              "pitagoras_por_perfil": {
+                "N1_VV": true,
+                "N1_AA": true,
+                "N2_VV": true,
+                "N3_AA": true,
+                "N4_VV": true,
+                "N4_AA": true
+              },
+              "errores": [],
+              "trazas_validas": true,
+              "errores_contrato": []
+            },
+            "segundos": 149.7,
+            "costo_usd": 0.96814,
+            "n_llamadas": 72,
+            "segundos_api": 414.29,
+            "modelos_solicitados": [
+              "claude-opus-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 98987,
+              "output_tokens": 25779,
+              "cache_creation_input_tokens": 9594,
+              "cache_read_input_tokens": 43273
+            }
+          }
+        ],
+        "notas": [
+          "estudiantes y codificador usan el modelo de la celda (en producción el codificador es Opus 5.5)"
+        ]
+      }
+    ],
+    "redactor": [
+      {
+        "agente": "redactor",
+        "modelo": "claude-haiku-5-5",
+        "estado": "completa",
+        "metrica": {
+          "nombre": "pct_casos_ok",
+          "umbral": 1.0,
+          "valor": 1.0,
+          "ok": 3,
+          "n": 3,
+          "detalle_por_caso": {
+            "caso1": true,
+            "caso2": true,
+            "caso3": true
+          }
+        },
+        "pasa": true,
+        "costo_usd": 0.012981,
+        "costo_auxiliar_usd": 0.0,
+        "costo_por_unidad_usd": 0.00649,
+        "latencia_media_s": 46.8,
+        "latencia_max_s": 51.2,
+        "n_unidades": 3,
+        "n_unidades_corridas": 3,
+        "n_unidades_omitidas": 0,
+        "n_llamadas": 6,
+        "modelos_solicitados": [
+          "claude-haiku-5-5"
+        ],
+        "unidades": [
+          {
+            "id": "caso1",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "esperado": "ok",
+              "n_escenarios": 4,
+              "guia_valida": true,
+              "escenarios_respaldados": true
+            },
+            "segundos": 51.19,
+            "costo_usd": 0.007448,
+            "n_llamadas": 3,
+            "segundos_api": 51.16,
+            "modelos_solicitados": [
+              "claude-haiku-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 10821,
+              "output_tokens": 10704,
+              "cache_creation_input_tokens": 8119,
+              "cache_read_input_tokens": 0
+            }
+          },
+          {
+            "id": "caso2",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "esperado": "ok",
+              "n_escenarios": 4,
+              "guia_valida": true,
+              "escenarios_respaldados": true
+            },
+            "segundos": 42.43,
+            "costo_usd": 0.005533,
+            "n_llamadas": 3,
+            "segundos_api": 42.43,
+            "modelos_solicitados": [
+              "claude-haiku-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 9643,
+              "output_tokens": 8976,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 8119
+            }
+          },
+          {
+            "id": "caso3",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "esperado": "TrazasInsuficientes",
+              "obtenido": "TrazasInsuficientes"
+            },
+            "segundos": 0.02,
+            "costo_usd": 0,
+            "n_llamadas": 0,
+            "segundos_api": 0,
+            "modelos_solicitados": [],
+            "tokens": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 0
+            }
+          }
+        ],
+        "notas": [
+          "casos 4 y 5 (error inducido con respuestas scripteadas) no se miden en vivo"
+        ]
+      },
+      {
+        "agente": "redactor",
+        "modelo": "claude-sonnet-5-5",
+        "estado": "completa",
+        "metrica": {
+          "nombre": "pct_casos_ok",
+          "umbral": 1.0,
+          "valor": 1.0,
+          "ok": 3,
+          "n": 3,
+          "detalle_por_caso": {
+            "caso1": true,
+            "caso2": true,
+            "caso3": true
+          }
+        },
+        "pasa": true,
+        "costo_usd": 0.325699,
+        "costo_auxiliar_usd": 0.0,
+        "costo_por_unidad_usd": 0.16285,
+        "latencia_media_s": 98.5,
+        "latencia_max_s": 99.8,
+        "n_unidades": 3,
+        "n_unidades_corridas": 3,
+        "n_unidades_omitidas": 0,
+        "n_llamadas": 6,
+        "modelos_solicitados": [
+          "claude-sonnet-5-5"
+        ],
+        "unidades": [
+          {
+            "id": "caso1",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "esperado": "ok",
+              "n_escenarios": 4,
+              "guia_valida": true,
+              "escenarios_respaldados": true
+            },
+            "segundos": 97.08,
+            "costo_usd": 0.172191,
+            "n_llamadas": 3,
+            "segundos_api": 97.07,
+            "modelos_solicitados": [
+              "claude-sonnet-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 10997,
+              "output_tokens": 12990,
+              "cache_creation_input_tokens": 8119,
+              "cache_read_input_tokens": 0
+            }
+          },
+          {
+            "id": "caso2",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "esperado": "ok",
+              "n_escenarios": 4,
+              "guia_valida": true,
+              "escenarios_respaldados": true
+            },
+            "segundos": 99.83,
+            "costo_usd": 0.153508,
+            "n_llamadas": 3,
+            "segundos_api": 99.82,
+            "modelos_solicitados": [
+              "claude-sonnet-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 10267,
+              "output_tokens": 13135,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 8119
+            }
+          },
+          {
+            "id": "caso3",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "esperado": "TrazasInsuficientes",
+              "obtenido": "TrazasInsuficientes"
+            },
+            "segundos": 0.0,
+            "costo_usd": 0,
+            "n_llamadas": 0,
+            "segundos_api": 0,
+            "modelos_solicitados": [],
+            "tokens": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 0
+            }
+          }
+        ],
+        "notas": [
+          "casos 4 y 5 (error inducido con respuestas scripteadas) no se miden en vivo"
+        ]
+      },
+      {
+        "agente": "redactor",
+        "modelo": "claude-opus-5-5",
+        "estado": "completa",
+        "metrica": {
+          "nombre": "pct_casos_ok",
+          "umbral": 1.0,
+          "valor": 1.0,
+          "ok": 3,
+          "n": 3,
+          "detalle_por_caso": {
+            "caso1": true,
+            "caso2": true,
+            "caso3": true
+          }
+        },
+        "pasa": true,
+        "costo_usd": 0.570103,
+        "costo_auxiliar_usd": 0.0,
+        "costo_por_unidad_usd": 0.285052,
+        "latencia_media_s": 104.9,
+        "latencia_max_s": 107.4,
+        "n_unidades": 3,
+        "n_unidades_corridas": 3,
+        "n_unidades_omitidas": 0,
+        "n_llamadas": 6,
+        "modelos_solicitados": [
+          "claude-opus-5-5"
+        ],
+        "unidades": [
+          {
+            "id": "caso1",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "esperado": "ok",
+              "n_escenarios": 4,
+              "guia_valida": true,
+              "escenarios_respaldados": true
+            },
+            "segundos": 107.43,
+            "costo_usd": 0.309855,
+            "n_llamadas": 3,
+            "segundos_api": 107.43,
+            "modelos_solicitados": [
+              "claude-opus-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 11180,
+              "output_tokens": 11227,
+              "cache_creation_input_tokens": 8119,
+              "cache_read_input_tokens": 0
+            }
+          },
+          {
+            "id": "caso2",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "esperado": "ok",
+              "n_escenarios": 4,
+              "guia_valida": true,
+              "escenarios_respaldados": true
+            },
+            "segundos": 102.37,
+            "costo_usd": 0.260248,
+            "n_llamadas": 3,
+            "segundos_api": 102.34,
+            "modelos_solicitados": [
+              "claude-opus-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 10391,
+              "output_tokens": 10853,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 8119
+            }
+          },
+          {
+            "id": "caso3",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "esperado": "TrazasInsuficientes",
+              "obtenido": "TrazasInsuficientes"
+            },
+            "segundos": 0.01,
+            "costo_usd": 0,
+            "n_llamadas": 0,
+            "segundos_api": 0,
+            "modelos_solicitados": [],
+            "tokens": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 0
+            }
+          }
+        ],
+        "notas": [
+          "casos 4 y 5 (error inducido con respuestas scripteadas) no se miden en vivo"
+        ]
+      }
+    ],
+    "ilustrador": [
+      {
+        "agente": "ilustrador",
+        "modelo": "claude-haiku-5-5",
+        "estado": "completa",
+        "metrica": {
+          "nombre": "pct_casos_ok",
+          "umbral": 0.8,
+          "valor": 1.0,
+          "ok": 5,
+          "n": 5,
+          "detalle_por_caso": {
+            "01-embalse-valido": true,
+            "02-bus-valido": true,
+            "03-svg-malicioso": true,
+            "04-colores-fuera-de-paleta": true,
+            "05-reparacion-texto": true
+          }
+        },
+        "pasa": true,
+        "costo_usd": 0.002117,
+        "costo_auxiliar_usd": 0.0,
+        "costo_por_unidad_usd": 0.000423,
+        "latencia_media_s": 4.5,
+        "latencia_max_s": 8.6,
+        "n_unidades": 5,
+        "n_unidades_corridas": 5,
+        "n_unidades_omitidas": 0,
+        "n_llamadas": 6,
+        "modelos_solicitados": [
+          "claude-haiku-5-5"
+        ],
+        "unidades": [
+          {
+            "id": "01-embalse-valido",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "esperado": "acepta",
+              "errores": [],
+              "reparaciones": 0,
+              "bytes_svg": 769
+            },
+            "segundos": 3.31,
+            "costo_usd": 0.000525,
+            "n_llamadas": 1,
+            "segundos_api": 3.3,
+            "modelos_solicitados": [
+              "claude-haiku-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 162,
+              "output_tokens": 621,
+              "cache_creation_input_tokens": 1588,
+              "cache_read_input_tokens": 0
+            }
+          },
+          {
+            "id": "02-bus-valido",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "esperado": "acepta",
+              "errores": [],
+              "reparaciones": 0,
+              "bytes_svg": 541
+            },
+            "segundos": 2.75,
+            "costo_usd": 0.000244,
+            "n_llamadas": 1,
+            "segundos_api": 2.74,
+            "modelos_solicitados": [
+              "claude-haiku-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 135,
+              "output_tokens": 430,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 1588
+            }
+          },
+          {
+            "id": "03-svg-malicioso",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "esperado": "acepta",
+              "errores": [],
+              "reparaciones": 0,
+              "bytes_svg": 589
+            },
+            "segundos": 4.26,
+            "costo_usd": 0.000266,
+            "n_llamadas": 1,
+            "segundos_api": 4.24,
+            "modelos_solicitados": [
+              "claude-haiku-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 141,
+              "output_tokens": 472,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 1588
+            }
+          },
+          {
+            "id": "04-colores-fuera-de-paleta",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "esperado": "acepta",
+              "errores": [],
+              "reparaciones": 1,
+              "bytes_svg": 559
+            },
+            "segundos": 8.62,
+            "costo_usd": 0.000779,
+            "n_llamadas": 2,
+            "segundos_api": 8.61,
+            "modelos_solicitados": [
+              "claude-haiku-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 328,
+              "output_tokens": 1429,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 3176
+            }
+          },
+          {
+            "id": "05-reparacion-texto",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "esperado": "acepta",
+              "errores": [],
+              "reparaciones": 0,
+              "bytes_svg": 715
+            },
+            "segundos": 3.78,
+            "costo_usd": 0.000303,
+            "n_llamadas": 1,
+            "segundos_api": 3.78,
+            "modelos_solicitados": [
+              "claude-haiku-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 151,
+              "output_tokens": 545,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 1588
+            }
+          }
+        ],
+        "notas": [
+          "en vivo los 5 casos se miden sobre su entrada (esperado: SVG válido); las respuestas scripteadas de los casos 3 y 4 solo existen en --sin-red"
+        ]
+      },
+      {
+        "agente": "ilustrador",
+        "modelo": "claude-sonnet-5-5",
+        "estado": "completa",
+        "metrica": {
+          "nombre": "pct_casos_ok",
+          "umbral": 0.8,
+          "valor": 1.0,
+          "ok": 5,
+          "n": 5,
+          "detalle_por_caso": {
+            "01-embalse-valido": true,
+            "02-bus-valido": true,
+            "03-svg-malicioso": true,
+            "04-colores-fuera-de-paleta": true,
+            "05-reparacion-texto": true
+          }
+        },
+        "pasa": true,
+        "costo_usd": 0.03336,
+        "costo_auxiliar_usd": 0.0,
+        "costo_por_unidad_usd": 0.006672,
+        "latencia_media_s": 4.5,
+        "latencia_max_s": 6.2,
+        "n_unidades": 5,
+        "n_unidades_corridas": 5,
+        "n_unidades_omitidas": 0,
+        "n_llamadas": 5,
+        "modelos_solicitados": [
+          "claude-sonnet-5-5"
+        ],
+        "unidades": [
+          {
+            "id": "01-embalse-valido",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "esperado": "acepta",
+              "errores": [],
+              "reparaciones": 0,
+              "bytes_svg": 618
+            },
+            "segundos": 3.62,
+            "costo_usd": 0.009414,
+            "n_llamadas": 1,
+            "segundos_api": 3.62,
+            "modelos_solicitados": [
+              "claude-sonnet-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 162,
+              "output_tokens": 512,
+              "cache_creation_input_tokens": 1588,
+              "cache_read_input_tokens": 0
+            }
+          },
+          {
+            "id": "02-bus-valido",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "esperado": "acepta",
+              "errores": [],
+              "reparaciones": 0,
+              "bytes_svg": 753
+            },
+            "segundos": 4.69,
+            "costo_usd": 0.006838,
+            "n_llamadas": 1,
+            "segundos_api": 4.69,
+            "modelos_solicitados": [
+              "claude-sonnet-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 135,
+              "output_tokens": 625,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 1588
+            }
+          },
+          {
+            "id": "03-svg-malicioso",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "esperado": "acepta",
+              "errores": [],
+              "reparaciones": 0,
+              "bytes_svg": 624
+            },
+            "segundos": 6.22,
+            "costo_usd": 0.00553,
+            "n_llamadas": 1,
+            "segundos_api": 6.22,
+            "modelos_solicitados": [
+              "claude-sonnet-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 141,
+              "output_tokens": 493,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 1588
+            }
+          },
+          {
+            "id": "04-colores-fuera-de-paleta",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "esperado": "acepta",
+              "errores": [],
+              "reparaciones": 0,
+              "bytes_svg": 641
+            },
+            "segundos": 3.9,
+            "costo_usd": 0.005478,
+            "n_llamadas": 1,
+            "segundos_api": 3.9,
+            "modelos_solicitados": [
+              "claude-sonnet-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 140,
+              "output_tokens": 488,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 1588
+            }
+          },
+          {
+            "id": "05-reparacion-texto",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "esperado": "acepta",
+              "errores": [],
+              "reparaciones": 0,
+              "bytes_svg": 697
+            },
+            "segundos": 4.22,
+            "costo_usd": 0.0061,
+            "n_llamadas": 1,
+            "segundos_api": 4.22,
+            "modelos_solicitados": [
+              "claude-sonnet-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 151,
+              "output_tokens": 548,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 1588
+            }
+          }
+        ],
+        "notas": [
+          "en vivo los 5 casos se miden sobre su entrada (esperado: SVG válido); las respuestas scripteadas de los casos 3 y 4 solo existen en --sin-red"
+        ]
+      },
+      {
+        "agente": "ilustrador",
+        "modelo": "claude-opus-5-5",
+        "estado": "completa",
+        "metrica": {
+          "nombre": "pct_casos_ok",
+          "umbral": 0.8,
+          "valor": 1.0,
+          "ok": 5,
+          "n": 5,
+          "detalle_por_caso": {
+            "01-embalse-valido": true,
+            "02-bus-valido": true,
+            "03-svg-malicioso": true,
+            "04-colores-fuera-de-paleta": true,
+            "05-reparacion-texto": true
+          }
+        },
+        "pasa": true,
+        "costo_usd": 0.065868,
+        "costo_auxiliar_usd": 0.0,
+        "costo_por_unidad_usd": 0.013174,
+        "latencia_media_s": 5.9,
+        "latencia_max_s": 6.4,
+        "n_unidades": 5,
+        "n_unidades_corridas": 5,
+        "n_unidades_omitidas": 0,
+        "n_llamadas": 5,
+        "modelos_solicitados": [
+          "claude-opus-5-5"
+        ],
+        "unidades": [
+          {
+            "id": "01-embalse-valido",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "esperado": "acepta",
+              "errores": [],
+              "reparaciones": 0,
+              "bytes_svg": 721
+            },
+            "segundos": 6.14,
+            "costo_usd": 0.020008,
+            "n_llamadas": 1,
+            "segundos_api": 6.14,
+            "modelos_solicitados": [
+              "claude-opus-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 162,
+              "output_tokens": 571,
+              "cache_creation_input_tokens": 1588,
+              "cache_read_input_tokens": 0
+            }
+          },
+          {
+            "id": "02-bus-valido",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "esperado": "acepta",
+              "errores": [],
+              "reparaciones": 0,
+              "bytes_svg": 571
+            },
+            "segundos": 5.17,
+            "costo_usd": 0.010218,
+            "n_llamadas": 1,
+            "segundos_api": 5.16,
+            "modelos_solicitados": [
+              "claude-opus-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 135,
+              "output_tokens": 468,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 1588
+            }
+          },
+          {
+            "id": "03-svg-malicioso",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "esperado": "acepta",
+              "errores": [],
+              "reparaciones": 0,
+              "bytes_svg": 696
+            },
+            "segundos": 6.38,
+            "costo_usd": 0.011722,
+            "n_llamadas": 1,
+            "segundos_api": 6.38,
+            "modelos_solicitados": [
+              "claude-opus-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 141,
+              "output_tokens": 542,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 1588
+            }
+          },
+          {
+            "id": "04-colores-fuera-de-paleta",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "esperado": "acepta",
+              "errores": [],
+              "reparaciones": 0,
+              "bytes_svg": 769
+            },
+            "segundos": 6.15,
+            "costo_usd": 0.013058,
+            "n_llamadas": 1,
+            "segundos_api": 6.15,
+            "modelos_solicitados": [
+              "claude-opus-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 140,
+              "output_tokens": 609,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 1588
+            }
+          },
+          {
+            "id": "05-reparacion-texto",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "esperado": "acepta",
+              "errores": [],
+              "reparaciones": 0,
+              "bytes_svg": 629
+            },
+            "segundos": 5.52,
+            "costo_usd": 0.010862,
+            "n_llamadas": 1,
+            "segundos_api": 5.52,
+            "modelos_solicitados": [
+              "claude-opus-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 151,
+              "output_tokens": 497,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 1588
+            }
+          }
+        ],
+        "notas": [
+          "en vivo los 5 casos se miden sobre su entrada (esperado: SVG válido); las respuestas scripteadas de los casos 3 y 4 solo existen en --sin-red"
+        ]
+      }
+    ],
+    "verificador": [
+      {
+        "agente": "verificador",
+        "modelo": "claude-haiku-5-5",
+        "estado": "completa",
+        "metrica": {
+          "nombre": "pct_casos_ok",
+          "umbral": 1.0,
+          "valor": 0.8,
+          "ok": 4,
+          "n": 5,
+          "detalle_por_caso": {
+            "verificador-1": false,
+            "verificador-2": true,
+            "verificador-3": true,
+            "verificador-4": true,
+            "verificador-5": true
+          }
+        },
+        "pasa": false,
+        "costo_usd": 0.002821,
+        "costo_auxiliar_usd": 0.0,
+        "costo_por_unidad_usd": 0.002821,
+        "latencia_media_s": 18.7,
+        "latencia_max_s": 18.7,
+        "n_unidades": 5,
+        "n_unidades_corridas": 5,
+        "n_unidades_omitidas": 0,
+        "n_llamadas": 1,
+        "modelos_solicitados": [
+          "claude-haiku-5-5"
+        ],
+        "unidades": [
+          {
+            "id": "verificador-1",
+            "ok": false,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "aprobado": false,
+              "esperado_aprobado": true,
+              "llamo_al_modelo": true,
+              "criticas": [
+                "semantica"
+              ],
+              "esperadas": [],
+              "hallazgos_criticos": [
+                "semantica · tarea.estudiante.enunciado_es: Las autoridades dicen que no hay riesgo este verano. — Afirmación factual sobre la noticia que no aparece en las fuentes ni en las trazas.",
+                "semantica · tarea.task_space.routes R2 y guia.analisis_a_priori (ruta lineal con aportes): Resultado ≈ 7 meses para la ruta lineal con aportes. — Las corridas que usan modelo lineal (N3_AA_r1 y N4_VV_r1) reportan 'unos 6 meses', no 7.",
+                "semantica · tarea.task_space.routes R3 (ruta dinámica): Resultado ≈ 5 meses para la ruta dinámica. — La corrida con modelo dinámico (N4_AA_r1) reporta 'unos 6 meses', no 5.",
+                "semantica · guia.escenarios E1 (ruta, modelo): Ruta sin P6-VAL y modelo proporcional. — Las corridas citadas (N4_VV_r1 y N3_AA_r1) pasan por P6-VAL y usan modelo lineal, no proporcional.",
+                "semantica · guia.escenarios E2 (modelo): Modelo proporcional en el escenario 'modelo inadecuado'. — La corrida citada (N1_AA_r1) usa modelo de capacidad total, que es el modelo inadecuado."
+              ]
+            },
+            "segundos": 18.73,
+            "costo_usd": 0.002821,
+            "n_llamadas": 1,
+            "segundos_api": 18.68,
+            "modelos_solicitados": [
+              "claude-haiku-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 4257,
+              "output_tokens": 4414,
+              "cache_creation_input_tokens": 1503,
+              "cache_read_input_tokens": 0
+            }
+          },
+          {
+            "id": "verificador-2",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "aprobado": false,
+              "esperado_aprobado": false,
+              "llamo_al_modelo": false,
+              "criticas": [
+                "1",
+                "5"
+              ],
+              "esperadas": [
+                "1",
+                "5"
+              ],
+              "hallazgos_criticos": [
+                "1 · guia: guia: escenarios/1/corridas: [] should be non-empty",
+                "5 · guia.escenarios: escenario E2 sin id de corrida"
+              ]
+            },
+            "segundos": 0.01,
+            "costo_usd": 0,
+            "n_llamadas": 0,
+            "segundos_api": 0,
+            "modelos_solicitados": [],
+            "tokens": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 0
+            }
+          },
+          {
+            "id": "verificador-3",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "aprobado": false,
+              "esperado_aprobado": false,
+              "llamo_al_modelo": false,
+              "criticas": [
+                "1",
+                "4"
+              ],
+              "esperadas": [
+                "1",
+                "4"
+              ],
+              "hallazgos_criticos": [
+                "1 · tarea: tarea: noticia/cifras_usadas/1: 'localizador' is a required property",
+                "4 · tarea.noticia.cifras_usadas[1]: cifra '38 %' (nivel actual del embalse (ejemplo ficticio)) sin localizador"
+              ]
+            },
+            "segundos": 0.0,
+            "costo_usd": 0,
+            "n_llamadas": 0,
+            "segundos_api": 0,
+            "modelos_solicitados": [],
+            "tokens": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 0
+            }
+          },
+          {
+            "id": "verificador-4",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "aprobado": false,
+              "esperado_aprobado": false,
+              "llamo_al_modelo": false,
+              "criticas": [
+                "4"
+              ],
+              "esperadas": [
+                "4"
+              ],
+              "hallazgos_criticos": [
+                "4 · tarea.noticia.cifras_usadas[0]: valor 250 en la tarea, 220 en la noticia (párrafo 2)"
+              ]
+            },
+            "segundos": 0.01,
+            "costo_usd": 0,
+            "n_llamadas": 0,
+            "segundos_api": 0,
+            "modelos_solicitados": [],
+            "tokens": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 0
+            }
+          },
+          {
+            "id": "verificador-5",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "aprobado": false,
+              "esperado_aprobado": false,
+              "llamo_al_modelo": false,
+              "criticas": [
+                "3"
+              ],
+              "esperadas": [
+                "3"
+              ],
+              "hallazgos_criticos": [
+                "3 · guia: 41 palabras consecutivas de la noticia (> 25): «el embalse que abastece a la ciudad registra un nivel inferior al habitual desde hace cuatro anos y los vecinos del sector alto ya reciben el agua con presion reducida durante las tardes de verano segun"
+              ]
+            },
+            "segundos": 0.01,
+            "costo_usd": 0,
+            "n_llamadas": 0,
+            "segundos_api": 0,
+            "modelos_solicitados": [],
+            "tokens": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 0
+            }
+          }
+        ],
+        "notas": [
+          "solo el caso 1 depende del modelo; los casos 2 a 5 los decide el código (costo 0 y resultado idéntico entre modelos)"
+        ]
+      },
+      {
+        "agente": "verificador",
+        "modelo": "claude-sonnet-5-5",
+        "estado": "completa",
+        "metrica": {
+          "nombre": "pct_casos_ok",
+          "umbral": 1.0,
+          "valor": 0.8,
+          "ok": 4,
+          "n": 5,
+          "detalle_por_caso": {
+            "verificador-1": false,
+            "verificador-2": true,
+            "verificador-3": true,
+            "verificador-4": true,
+            "verificador-5": true
+          }
+        },
+        "pasa": false,
+        "costo_usd": 0.044142,
+        "costo_auxiliar_usd": 0.0,
+        "costo_por_unidad_usd": 0.044142,
+        "latencia_media_s": 22.4,
+        "latencia_max_s": 22.4,
+        "n_unidades": 5,
+        "n_unidades_corridas": 5,
+        "n_unidades_omitidas": 0,
+        "n_llamadas": 1,
+        "modelos_solicitados": [
+          "claude-sonnet-5-5"
+        ],
+        "unidades": [
+          {
+            "id": "verificador-1",
+            "ok": false,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "aprobado": false,
+              "esperado_aprobado": true,
+              "llamo_al_modelo": true,
+              "criticas": [
+                "semantica"
+              ],
+              "esperadas": [],
+              "hallazgos_criticos": [
+                "semantica · tarea.estudiante.enunciado_es: Las autoridades dicen que no hay riesgo este verano. — El resumen de la noticia no menciona ninguna declaración de las autoridades sobre el riesgo en verano.",
+                "semantica · tarea.task_space.reference_solution, routes R1-R3 y guia.analisis_a_priori.rango_aceptable: Resultado 'entre 5 y 7 meses', rango aceptable '4 a 8 meses' y resultados de ruta ≈6, ≈7 y ≈5 meses. — Las fuentes no dan ninguna cifra de consumo mensual, ",
+                "semantica · guia.escenarios E1: Modelo 'proporcional' y ruta sin P6-VAL. — Las corridas citadas (N4_VV_r1 y N3_AA_r1) usaron modelo lineal y ambas incluyen P6-VAL en la ruta, además de validar. El relato contradice las corridas.",
+                "semantica · guia.escenarios E2: Modelo 'proporcional', supuestos y diálogo 'Solo lo que queda', con bloqueo solo B23. — La corrida N1_AA_r1 usó el modelo 'capacidad total', no el proporcional. El diálogo ('solo lo que queda') contradice ese modelo. Además tuvo"
+              ]
+            },
+            "segundos": 22.42,
+            "costo_usd": 0.044142,
+            "n_llamadas": 1,
+            "segundos_api": 22.38,
+            "modelos_solicitados": [
+              "claude-sonnet-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 4257,
+              "output_tokens": 3187,
+              "cache_creation_input_tokens": 1503,
+              "cache_read_input_tokens": 0
+            }
+          },
+          {
+            "id": "verificador-2",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "aprobado": false,
+              "esperado_aprobado": false,
+              "llamo_al_modelo": false,
+              "criticas": [
+                "1",
+                "5"
+              ],
+              "esperadas": [
+                "1",
+                "5"
+              ],
+              "hallazgos_criticos": [
+                "1 · guia: guia: escenarios/1/corridas: [] should be non-empty",
+                "5 · guia.escenarios: escenario E2 sin id de corrida"
+              ]
+            },
+            "segundos": 0.02,
+            "costo_usd": 0,
+            "n_llamadas": 0,
+            "segundos_api": 0,
+            "modelos_solicitados": [],
+            "tokens": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 0
+            }
+          },
+          {
+            "id": "verificador-3",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "aprobado": false,
+              "esperado_aprobado": false,
+              "llamo_al_modelo": false,
+              "criticas": [
+                "1",
+                "4"
+              ],
+              "esperadas": [
+                "1",
+                "4"
+              ],
+              "hallazgos_criticos": [
+                "1 · tarea: tarea: noticia/cifras_usadas/1: 'localizador' is a required property",
+                "4 · tarea.noticia.cifras_usadas[1]: cifra '38 %' (nivel actual del embalse (ejemplo ficticio)) sin localizador"
+              ]
+            },
+            "segundos": 0.0,
+            "costo_usd": 0,
+            "n_llamadas": 0,
+            "segundos_api": 0,
+            "modelos_solicitados": [],
+            "tokens": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 0
+            }
+          },
+          {
+            "id": "verificador-4",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "aprobado": false,
+              "esperado_aprobado": false,
+              "llamo_al_modelo": false,
+              "criticas": [
+                "4"
+              ],
+              "esperadas": [
+                "4"
+              ],
+              "hallazgos_criticos": [
+                "4 · tarea.noticia.cifras_usadas[0]: valor 250 en la tarea, 220 en la noticia (párrafo 2)"
+              ]
+            },
+            "segundos": 0.0,
+            "costo_usd": 0,
+            "n_llamadas": 0,
+            "segundos_api": 0,
+            "modelos_solicitados": [],
+            "tokens": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 0
+            }
+          },
+          {
+            "id": "verificador-5",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "aprobado": false,
+              "esperado_aprobado": false,
+              "llamo_al_modelo": false,
+              "criticas": [
+                "3"
+              ],
+              "esperadas": [
+                "3"
+              ],
+              "hallazgos_criticos": [
+                "3 · guia: 41 palabras consecutivas de la noticia (> 25): «el embalse que abastece a la ciudad registra un nivel inferior al habitual desde hace cuatro anos y los vecinos del sector alto ya reciben el agua con presion reducida durante las tardes de verano segun"
+              ]
+            },
+            "segundos": 0.02,
+            "costo_usd": 0,
+            "n_llamadas": 0,
+            "segundos_api": 0,
+            "modelos_solicitados": [],
+            "tokens": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 0
+            }
+          }
+        ],
+        "notas": [
+          "solo el caso 1 depende del modelo; los casos 2 a 5 los decide el código (costo 0 y resultado idéntico entre modelos)"
+        ]
+      },
+      {
+        "agente": "verificador",
+        "modelo": "claude-opus-5-5",
+        "estado": "completa",
+        "metrica": {
+          "nombre": "pct_casos_ok",
+          "umbral": 1.0,
+          "valor": 0.8,
+          "ok": 4,
+          "n": 5,
+          "detalle_por_caso": {
+            "verificador-1": false,
+            "verificador-2": true,
+            "verificador-3": true,
+            "verificador-4": true,
+            "verificador-5": true
+          }
+        },
+        "pasa": false,
+        "costo_usd": 0.074329,
+        "costo_auxiliar_usd": 0.0,
+        "costo_por_unidad_usd": 0.074329,
+        "latencia_media_s": 36.7,
+        "latencia_max_s": 36.7,
+        "n_unidades": 5,
+        "n_unidades_corridas": 5,
+        "n_unidades_omitidas": 0,
+        "n_llamadas": 1,
+        "modelos_solicitados": [
+          "claude-opus-5-5"
+        ],
+        "unidades": [
+          {
+            "id": "verificador-1",
+            "ok": false,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "aprobado": false,
+              "esperado_aprobado": true,
+              "llamo_al_modelo": true,
+              "criticas": [
+                "semantica"
+              ],
+              "esperadas": [],
+              "hallazgos_criticos": [
+                "semantica · tarea.estudiante.enunciado_es: Las autoridades dicen que no hay riesgo este verano. — El resumen de la noticia no menciona ninguna declaración de las autoridades sobre el riesgo. Es un dato factual atribuido a la noticia sin respaldo en las fuentes",
+                "semantica · task_space.reference_solution (result y acceptable_range) y guia.analisis_a_priori.rango_aceptable: Resultado de entre 5 y 7 meses y rango aceptable de 4 a 8 meses. — Dependen de un consumo mensual que no aparece en las fuentes ni en el notebook, c",
+                "semantica · task_space.routes R2 y R3: Resultados de ≈ 7 meses (ruta lineal con aportes) y ≈ 5 meses (ruta dinámica). — No hay datos de consumo, aportes ni evaporación en las fuentes. En las trazas, las corridas lineales y la dinámica responden 'unos 6 meses',",
+                "semantica · guia.escenarios E1 (modelo): Modelo proporcional en la ruta esperada. — Las corridas citadas (N4_VV_r1 y N3_AA_r1) usaron un modelo lineal, no proporcional.",
+                "semantica · guia.escenarios E2 (modelo y extracto_dialogo): El escenario de modelo inadecuado usa el modelo proporcional y el diálogo concluye usar solo lo que queda. — La corrida citada N1_AA_r1 usó el modelo de capacidad total. El escenario describe un model"
+              ]
+            },
+            "segundos": 36.68,
+            "costo_usd": 0.074329,
+            "n_llamadas": 1,
+            "segundos_api": 36.63,
+            "modelos_solicitados": [
+              "claude-opus-5-5"
+            ],
+            "tokens": {
+              "input_tokens": 4257,
+              "output_tokens": 2850,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 1503
+            }
+          },
+          {
+            "id": "verificador-2",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "aprobado": false,
+              "esperado_aprobado": false,
+              "llamo_al_modelo": false,
+              "criticas": [
+                "1",
+                "5"
+              ],
+              "esperadas": [
+                "1",
+                "5"
+              ],
+              "hallazgos_criticos": [
+                "1 · guia: guia: escenarios/1/corridas: [] should be non-empty",
+                "5 · guia.escenarios: escenario E2 sin id de corrida"
+              ]
+            },
+            "segundos": 0.0,
+            "costo_usd": 0,
+            "n_llamadas": 0,
+            "segundos_api": 0,
+            "modelos_solicitados": [],
+            "tokens": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 0
+            }
+          },
+          {
+            "id": "verificador-3",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "aprobado": false,
+              "esperado_aprobado": false,
+              "llamo_al_modelo": false,
+              "criticas": [
+                "1",
+                "4"
+              ],
+              "esperadas": [
+                "1",
+                "4"
+              ],
+              "hallazgos_criticos": [
+                "1 · tarea: tarea: noticia/cifras_usadas/1: 'localizador' is a required property",
+                "4 · tarea.noticia.cifras_usadas[1]: cifra '38 %' (nivel actual del embalse (ejemplo ficticio)) sin localizador"
+              ]
+            },
+            "segundos": 0.01,
+            "costo_usd": 0,
+            "n_llamadas": 0,
+            "segundos_api": 0,
+            "modelos_solicitados": [],
+            "tokens": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 0
+            }
+          },
+          {
+            "id": "verificador-4",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "aprobado": false,
+              "esperado_aprobado": false,
+              "llamo_al_modelo": false,
+              "criticas": [
+                "4"
+              ],
+              "esperadas": [
+                "4"
+              ],
+              "hallazgos_criticos": [
+                "4 · tarea.noticia.cifras_usadas[0]: valor 250 en la tarea, 220 en la noticia (párrafo 2)"
+              ]
+            },
+            "segundos": 0.0,
+            "costo_usd": 0,
+            "n_llamadas": 0,
+            "segundos_api": 0,
+            "modelos_solicitados": [],
+            "tokens": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 0
+            }
+          },
+          {
+            "id": "verificador-5",
+            "ok": true,
+            "omitida": false,
+            "error": null,
+            "detalle": {
+              "aprobado": false,
+              "esperado_aprobado": false,
+              "llamo_al_modelo": false,
+              "criticas": [
+                "3"
+              ],
+              "esperadas": [
+                "3"
+              ],
+              "hallazgos_criticos": [
+                "3 · guia: 41 palabras consecutivas de la noticia (> 25): «el embalse que abastece a la ciudad registra un nivel inferior al habitual desde hace cuatro anos y los vecinos del sector alto ya reciben el agua con presion reducida durante las tardes de verano segun"
+              ]
+            },
+            "segundos": 0.01,
+            "costo_usd": 0,
+            "n_llamadas": 0,
+            "segundos_api": 0,
+            "modelos_solicitados": [],
+            "tokens": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 0
+            }
+          }
+        ],
+        "notas": [
+          "solo el caso 1 depende del modelo; los casos 2 a 5 los decide el código (costo 0 y resultado idéntico entre modelos)"
+        ]
+      }
+    ],
+    "bibliotecario": [
+      {
+        "agente": "bibliotecario",
+        "modelo": "claude-haiku-5-5",
+        "estado": "n/a",
+        "metrica": {
+          "nombre": "n/a",
+          "umbral": null,
+          "valor": null
+        },
+        "pasa": null,
+        "costo_usd": 0.0,
+        "costo_auxiliar_usd": 0.0,
+        "costo_por_unidad_usd": null,
+        "latencia_media_s": null,
+        "latencia_max_s": null,
+        "n_unidades": 0,
+        "n_unidades_corridas": 0,
+        "n_unidades_omitidas": 0,
+        "n_llamadas": 0,
+        "modelos_solicitados": [],
+        "unidades": [],
+        "notas": [
+          "script determinista, sin modelo"
+        ],
+        "tests_sin_red": {
+          "corridos": true,
+          "resumen": "10 passed in 3.12s",
+          "returncode": 0,
+          "passed": 10
+        }
+      },
+      {
+        "agente": "bibliotecario",
+        "modelo": "claude-sonnet-5-5",
+        "estado": "n/a",
+        "metrica": {
+          "nombre": "n/a",
+          "umbral": null,
+          "valor": null
+        },
+        "pasa": null,
+        "costo_usd": 0.0,
+        "costo_auxiliar_usd": 0.0,
+        "costo_por_unidad_usd": null,
+        "latencia_media_s": null,
+        "latencia_max_s": null,
+        "n_unidades": 0,
+        "n_unidades_corridas": 0,
+        "n_unidades_omitidas": 0,
+        "n_llamadas": 0,
+        "modelos_solicitados": [],
+        "unidades": [],
+        "notas": [
+          "script determinista, sin modelo"
+        ],
+        "tests_sin_red": {
+          "corridos": true,
+          "resumen": "10 passed in 3.12s",
+          "returncode": 0,
+          "passed": 10
+        }
+      },
+      {
+        "agente": "bibliotecario",
+        "modelo": "claude-opus-5-5",
+        "estado": "n/a",
+        "metrica": {
+          "nombre": "n/a",
+          "umbral": null,
+          "valor": null
+        },
+        "pasa": null,
+        "costo_usd": 0.0,
+        "costo_auxiliar_usd": 0.0,
+        "costo_por_unidad_usd": null,
+        "latencia_media_s": null,
+        "latencia_max_s": null,
+        "n_unidades": 0,
+        "n_unidades_corridas": 0,
+        "n_unidades_omitidas": 0,
+        "n_llamadas": 0,
+        "modelos_solicitados": [],
+        "unidades": [],
+        "notas": [
+          "script determinista, sin modelo"
+        ],
+        "tests_sin_red": {
+          "corridos": true,
+          "resumen": "10 passed in 3.12s",
+          "returncode": 0,
+          "passed": 10
+        }
+      }
+    ]
+  },
+  "recomendaciones": {
+    "explorador": {
+      "agente": "explorador",
+      "modelo": "claude-haiku-5-5",
+      "cambia": false,
+      "modelo_partida": "claude-haiku-5-5",
+      "justificacion": "haiku: pct_casos_ok = 1,000 (umbral 0,80), 0,0005 USD/unidad, 5,2 s -> pasa. Métrica de contrato e invariantes sobre 5 casos sintéticos: no mide la calidad del resumen ni la cobertura de cifras en noticias reales."
+    },
+    "filtro": {
+      "agente": "filtro",
+      "modelo": "claude-haiku-5-5",
+      "cambia": false,
+      "modelo_partida": "claude-haiku-5-5",
+      "justificacion": "haiku: kappa_decision = 1,000 (umbral 0,60), 0,0003 USD/unidad, 3,0 s -> pasa."
+    },
+    "disenador": {
+      "agente": "disenador",
+      "modelo": "claude-opus-5-5",
+      "cambia": true,
+      "modelo_partida": "claude-sonnet-5-5",
+      "justificacion": "opus: pct_rub01_ge20 = 1,000 (umbral 0,80), 0,2440 USD/unidad, 135,9 s -> pasa. Los modelos más baratos no pasan: haiku: pct_rub01_ge20 = 0,600 (umbral 0,80), 0,0081 USD/unidad, 95,7 s; sonnet: pct_rub01_ge20 = 0,600 (umbral 0,80), 2 caso(s) con error del agente (RuntimeError: disenador: la llamada falló tras 3 intentos: stop_reason=max_tokens), 0,3408 USD/unidad, 263,4 s. Frente al modelo de partida (sonnet, 0,3408 USD/unidad): 28 % menos costo por unidad."
+    },
+    "evaluador": {
+      "agente": "evaluador",
+      "modelo": "claude-sonnet-5-5",
+      "cambia": true,
+      "modelo_partida": "claude-opus-5-5",
+      "justificacion": "sonnet: kappa_ponderado = 0,781 (umbral 0,70), 0,0450 USD/unidad, 25,2 s -> pasa. Los modelos más baratos no pasan: haiku: kappa_ponderado = 0,622 (umbral 0,70), 0,0053 USD/unidad, 43,5 s. Frente al modelo de partida (opus, 0,0783 USD/unidad): 43 % menos costo por unidad. Atención: sonnet se midió con 1 corrida; Opus varió entre 0,706 y 0,802 en sus 3 corridas (rango 0,095), de modo que la diferencia con Opus (0,751) está dentro del ruido. Confirmar con 3 corridas (costo aproximado: 2 corridas más = 0,81 USD) antes de cambiar el modelo. Reserva: el kappa descansa en 5 puntajes provisionales de Claude y los ajustes del prompt se hicieron mirando las mismas 9 tareas; contra las 4 tareas humanas el kappa es 0,714. En producción el evaluador corre 3 veces (condición 1 de CP1): el costo se triplica."
+    },
+    "simulador": {
+      "agente": "simulador",
+      "modelo": null,
+      "cambia": false,
+      "modelo_partida": "claude-sonnet-5-5",
+      "justificacion": "Ningún modelo medido pasa el umbral (haiku: pct_corridas_validas = 1,000 (umbral 1,00), corridas válidas 12/12, pct_validan 1,00, Pitágoras en N1 4/4 y en total 11/12, 0,0995 USD/unidad, 290,7 s; sonnet: pct_corridas_validas = 1,000 (umbral 1,00), corridas válidas 12/12, pct_validan 0,92, Pitágoras en N1 4/4 y en total 8/12, 0,5991 USD/unidad, 134,3 s; opus: pct_corridas_validas = 1,000 (umbral 1,00), corridas válidas 12/12, pct_validan 1,00, Pitágoras en N1 4/4 y en total 12/12, 0,9867 USD/unidad, 154,7 s). Se mantiene el modelo de partida (claude-sonnet-5-5) y se revisa el prompt/umbral."
+    },
+    "redactor": {
+      "agente": "redactor",
+      "modelo": "claude-haiku-5-5",
+      "cambia": true,
+      "modelo_partida": "claude-sonnet-5-5",
+      "justificacion": "haiku: pct_casos_ok = 1,000 (umbral 1,00), 0,0065 USD/unidad, 46,8 s -> pasa. Frente al modelo de partida (sonnet, 0,1628 USD/unidad): 96 % menos costo por unidad. Métrica de contrato e invariantes (guía válida, escenarios respaldados, cifras con localizador), no de calidad pedagógica: la revisión humana 2 sigue siendo el control de calidad de la guía."
+    },
+    "ilustrador": {
+      "agente": "ilustrador",
+      "modelo": "claude-haiku-5-5",
+      "cambia": true,
+      "modelo_partida": "claude-sonnet-5-5",
+      "justificacion": "haiku: pct_casos_ok = 1,000 (umbral 0,80), 0,0004 USD/unidad, 4,5 s -> pasa. Frente al modelo de partida (sonnet, 0,0067 USD/unidad): 94 % menos costo por unidad. Métrica de validez del SVG (seguridad, paleta, tamaño), no de calidad visual ni pertinencia de la imagen."
+    },
+    "verificador": {
+      "agente": "verificador",
+      "modelo": null,
+      "cambia": false,
+      "modelo_partida": "claude-opus-5-5",
+      "justificacion": "Ningún modelo medido pasa el umbral (haiku: pct_casos_ok = 0,800 (umbral 1,00), 0,0028 USD/unidad, 18,7 s; sonnet: pct_casos_ok = 0,800 (umbral 1,00), 0,0441 USD/unidad, 22,4 s; opus: pct_casos_ok = 0,800 (umbral 1,00), 0,0743 USD/unidad, 36,7 s). Se mantiene el modelo de partida (claude-opus-5-5) y se revisa el prompt/umbral."
+    },
+    "bibliotecario": {
+      "agente": "bibliotecario",
+      "modelo": null,
+      "cambia": false,
+      "modelo_partida": "claude-haiku-5-5",
+      "justificacion": "Script determinista, sin modelo: no aplica recomendación de modelo."
+    }
+  },
+  "costo": {
+    "total_usd": 9.677143,
+    "tope_usd": 12.0,
+    "por_agente_usd": {
+      "explorador": 0.060778,
+      "filtro": 0.408816,
+      "disenador": 4.12403,
+      "evaluador": 0.452482,
+      "simulador": 3.370623,
+      "redactor": 0.908783,
+      "ilustrador": 0.101345,
+      "verificador": 0.121292,
+      "bibliotecario": 0.0
+    },
+    "por_agente_modelo_usd": {
+      "verificador/(varios)": 0.250286,
+      "explorador/(varios)": 0.060778,
+      "filtro/(varios)": 0.408816,
+      "disenador/(varios)": 4.12403,
+      "evaluador/(varios)": 0.452482,
+      "simulador/(varios)": 3.370623,
+      "redactor/(varios)": 0.908783,
+      "ilustrador/(varios)": 0.101345,
+      "bibliotecario/(varios)": 0.0
+    },
+    "n_llamadas": 755,
+    "descartado_usd": 0.128994,
+    "reutilizado_no_gastado_usd": 2.1147,
+    "precios_usd_mtok": {
+      "claude-haiku-5-5": {
+        "input": 0.1,
+        "output": 0.5,
+        "cache_write": 0.125,
+        "cache_read": 0.01
+      },
+      "claude-sonnet-5-5": {
+        "input": 2.0,
+        "output": 10.0,
+        "cache_write": 2.5,
+        "cache_read": 0.2
+      },
+      "claude-opus-5-5": {
+        "input": 4.0,
+        "output": 20.0,
+        "cache_write": 5.0,
+        "cache_read": 0.2
+      }
+    }
+  },
+  "celdas_sin_correr": []
+}

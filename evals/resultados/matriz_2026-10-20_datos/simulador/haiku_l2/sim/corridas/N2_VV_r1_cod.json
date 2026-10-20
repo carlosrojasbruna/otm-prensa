@@ -1,0 +1,211 @@
+{
+  "run": {
+    "id": "N2_VV_r1",
+    "nivel": "N2",
+    "composicion": "VV",
+    "rep": 1,
+    "estilos": [
+      "V",
+      "V"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-haiku-5-5",
+  "costo_usd": 0.002606,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "eventos": []
+      },
+      {
+        "n": 2,
+        "fase": "P3-MM",
+        "eventos": []
+      },
+      {
+        "n": 3,
+        "fase": "P2-RM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P3-MM",
+        "eventos": []
+      },
+      {
+        "n": 5,
+        "fase": "P3-MM",
+        "eventos": []
+      },
+      {
+        "n": 6,
+        "fase": "P4-WM",
+        "eventos": []
+      },
+      {
+        "n": 7,
+        "fase": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 8,
+        "fase": "P2-RM",
+        "eventos": []
+      },
+      {
+        "n": 9,
+        "fase": "P2-RM",
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 10,
+        "fase": "P2-RM",
+        "eventos": [
+          "DIST",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 11,
+        "fase": "P2-RM",
+        "eventos": [
+          "STRAT",
+          "DIST"
+        ]
+      },
+      {
+        "n": 12,
+        "fase": "P1-MRS",
+        "eventos": [
+          "STRAT",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 13,
+        "fase": "P2-RM",
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 14,
+        "fase": "P2-RM",
+        "eventos": [
+          "DIST",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 15,
+        "fase": "P2-RM",
+        "eventos": []
+      },
+      {
+        "n": 16,
+        "fase": "P2-RM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 17,
+        "fase": "P2-RM",
+        "eventos": []
+      },
+      {
+        "n": 18,
+        "fase": "P5-INT",
+        "eventos": [
+          "ASSUME",
+          "DIST"
+        ]
+      },
+      {
+        "n": 19,
+        "fase": "P7-EXP",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 20,
+        "fase": "P7-EXP",
+        "eventos": [
+          "PREC",
+          "DIST"
+        ]
+      },
+      {
+        "n": 21,
+        "fase": "P5-INT",
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 22,
+        "fase": "P6-VAL",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 23,
+        "fase": "P7-EXP",
+        "eventos": []
+      },
+      {
+        "n": 24,
+        "fase": "P7-EXP",
+        "eventos": []
+      },
+      {
+        "n": 25,
+        "fase": "P7-EXP",
+        "eventos": []
+      }
+    ],
+    "bloqueos": [
+      {
+        "codigo": "B12",
+        "turnos": [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17
+        ],
+        "resolucion": "unresolved",
+        "descripcion": "Durante varios turnos ambos dudan sobre dónde queda el pie del cerro y para qué sirven los 12 minutos de escalada; las propuestas (dibujar la ladera, descartar los 12 minutos) no cierran la duda y el par termina declarando la limitación en lugar de resolverla."
+      }
+    ],
+    "supuestos": [
+      "cable recto",
+      "cable como hipotenusa del triángulo",
+      "altura igual al desnivel de 180 m",
+      "pie donde empieza la ladera",
+      "distancia plana igual a la base del triángulo"
+    ],
+    "modelo": "triángulo rectángulo",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Giuseppe tenía que correr aproximadamente 1489 m, hasta debajo de la cima, sin contar la ladera."
+    },
+    "ruta_principal": "R2",
+    "rutas": [
+      "R2"
+    ]
+  }
+}

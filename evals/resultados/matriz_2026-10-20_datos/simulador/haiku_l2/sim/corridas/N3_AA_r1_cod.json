@@ -1,0 +1,277 @@
+{
+  "run": {
+    "id": "N3_AA_r1",
+    "nivel": "N3",
+    "composicion": "AA",
+    "rep": 1,
+    "estilos": [
+      "A",
+      "A"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-haiku-5-5",
+  "costo_usd": 0.003971,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P4-WM",
+        "eventos": []
+      },
+      {
+        "n": 2,
+        "fase": "P3-MM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P4-WM",
+        "fase_secundaria": "P1-MRS",
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P3-MM",
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 6,
+        "fase": "P1-MRS",
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P2-RM",
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 8,
+        "fase": "P2-RM",
+        "eventos": [
+          "ASSUME",
+          "DIST"
+        ]
+      },
+      {
+        "n": 9,
+        "fase": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 10,
+        "fase": "P6-VAL",
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 11,
+        "fase": "P6-VAL",
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 12,
+        "fase": "P2-RM",
+        "eventos": [
+          "DIST",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 13,
+        "fase": "P3-MM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 14,
+        "fase": "P3-MM",
+        "eventos": []
+      },
+      {
+        "n": 15,
+        "fase": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 16,
+        "fase": "P3-MM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 17,
+        "fase": "P3-MM",
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 18,
+        "fase": "P4-WM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 19,
+        "fase": "P6-VAL",
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 20,
+        "fase": "P5-INT",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 21,
+        "fase": "P5-INT",
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 22,
+        "fase": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 23,
+        "fase": "P5-INT",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 24,
+        "fase": "P5-INT",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 25,
+        "fase": "P5-INT",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 26,
+        "fase": "P5-INT",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 27,
+        "fase": "P7-EXP",
+        "eventos": []
+      },
+      {
+        "n": 28,
+        "fase": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 29,
+        "fase": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 30,
+        "fase": "P7-EXP",
+        "eventos": [
+          "DIST"
+        ]
+      }
+    ],
+    "bloqueos": [
+      {
+        "codigo": "B12",
+        "turnos": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "resolucion": "peer",
+        "descripcion": "Duda explicita sobre si los 12 minutos y la distancia de escalada sirven; el par da vueltas entre hipotesis (pie bajo la cima, escalada a 30 km/h) sin avanzar hasta que A descarta los datos de escalada por validacion."
+      },
+      {
+        "codigo": "B23",
+        "turnos": [
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "resolucion": "unresolved",
+        "descripcion": "Al matematizar aparecen tres incognitas (x, L, theta) y solo dos ecuaciones; B propone estimar el angulo desde la foto y A lo rechaza; el par no logra una ecuacion adicional y concluye que faltan datos."
+      },
+      {
+        "codigo": "B67",
+        "turnos": [
+          27,
+          28,
+          29,
+          30
+        ],
+        "resolucion": "unresolved",
+        "descripcion": "Tras la entrega de la cota B expresa objecion a dejar la respuesta solo como cota y pide un valor estimado; A insiste en no inventar el angulo, y el acuerdo final sobre la forma de la respuesta no queda cerrado explicitamente."
+      }
+    ],
+    "supuestos": [
+      "triangulo rectangulo",
+      "pie al nivel de la estacion",
+      "ladera y llanura llegan a la misma vertical de la cima",
+      "llanura amplia implica x mayor que 0",
+      "angulo de 70 grados estimado de la foto (propuesto, no aceptado)"
+    ],
+    "modelo": "pitagorico",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "No hay un valor unico; solo sabemos que 0 < x < 1489 m, porque faltan el angulo de la ladera y la velocidad de escalada. La ecuacion es x = 1489 - L cos(theta)."
+    },
+    "ruta_principal": "otra",
+    "rutas": [
+      "R2",
+      "R3",
+      "otra"
+    ]
+  }
+}

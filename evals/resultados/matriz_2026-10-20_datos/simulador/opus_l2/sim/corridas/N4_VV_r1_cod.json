@@ -1,0 +1,83 @@
+{
+  "run": {
+    "id": "N4_VV_r1",
+    "nivel": "N4",
+    "composicion": "VV",
+    "rep": 1,
+    "estilos": [
+      "V",
+      "V"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.039292,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P3-MM",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P5-INT",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "DIST",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "DIST",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 6,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      }
+    ],
+    "bloqueos": [],
+    "supuestos": [
+      "situación como triángulo rectángulo con el cable como hipotenusa",
+      "altura del cerro de 180 m como cateto vertical",
+      "laderas del cerro casi verticales",
+      "el cerro no es totalmente vertical (tiene algo de ancho), por eso se resta un poco",
+      "el tiempo de escalada no sirve para la distancia horizontal"
+    ],
+    "modelo": "geométrico (Pitágoras)",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Cable = 30 · 3/60 = 1,5 km = 1500 m; distancia horizontal √(1500² − 180²) ≈ 1489 m; como el cerro no es totalmente vertical le restan un poco: Giuseppe corría aproximadamente 1,4 km."
+    },
+    "ruta_principal": "R3",
+    "rutas": [
+      "R3",
+      "R2"
+    ]
+  }
+}

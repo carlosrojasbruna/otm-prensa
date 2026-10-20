@@ -1,0 +1,400 @@
+{
+ "agente": "simulador",
+ "celdas": [
+  {
+   "agente": "simulador",
+   "modelo": "claude-haiku-5-5",
+   "estado": "completa",
+   "metrica": {
+    "nombre": "pct_corridas_validas",
+    "umbral": 1.0,
+    "valor": 1.0,
+    "corridas_validas": 12,
+    "corridas_esperadas": 12,
+    "pct_validan": 1.0,
+    "pct_pitagoras": 0.9167,
+    "pct_pitagoras_N1": 1.0,
+    "n_pitagoras_N1": "4/4",
+    "n_pitagoras": "11/12",
+    "lanzadas": 2
+   },
+   "pasa": false,
+   "costo_usd": 0.199009,
+   "costo_auxiliar_usd": 0.0,
+   "costo_por_unidad_usd": 0.099504,
+   "latencia_media_s": 290.7,
+   "latencia_max_s": 299.1,
+   "n_unidades": 2,
+   "n_unidades_corridas": 2,
+   "n_unidades_omitidas": 0,
+   "n_llamadas": 324,
+   "modelos_solicitados": [
+    "claude-haiku-5-5"
+   ],
+   "unidades": [
+    {
+     "id": "haiku_lanzada1",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "n_corridas": 6,
+      "pct_validan": 1.0,
+      "pct_pitagoras": 0.8333,
+      "pct_pitagoras_N1": 1.0,
+      "n_pitagoras": 5,
+      "n_N1": 2,
+      "n_pitagoras_N1": 2,
+      "modelos_observados": {
+       "pitágoras": 5,
+       "pitagórico": 1
+      },
+      "pct_bloqueo_por_transicion": {
+       "B12": 0.17,
+       "B23": 0.83,
+       "B34": 0.17,
+       "B45": 0.17,
+       "B56": 0.17,
+       "B67": 0.33
+      },
+      "pitagoras_por_perfil": {
+       "N1_VV": true,
+       "N1_AA": true,
+       "N2_VV": true,
+       "N3_AA": true,
+       "N4_VV": false,
+       "N4_AA": true
+      },
+      "errores": [],
+      "trazas_validas": true,
+      "errores_contrato": []
+     },
+     "segundos": 299.14,
+     "costo_usd": 0.104189,
+     "n_llamadas": 170,
+     "segundos_api": 803.82,
+     "modelos_solicitados": [
+      "claude-haiku-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 323314,
+      "output_tokens": 138877,
+      "cache_creation_input_tokens": 9594,
+      "cache_read_input_tokens": 121732
+     }
+    },
+    {
+     "id": "haiku_lanzada2",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "n_corridas": 6,
+      "pct_validan": 1.0,
+      "pct_pitagoras": 1.0,
+      "pct_pitagoras_N1": 1.0,
+      "n_pitagoras": 6,
+      "n_N1": 2,
+      "n_pitagoras_N1": 2,
+      "modelos_observados": {
+       "pitágoras": 2,
+       "triángulo rectángulo": 2,
+       "pitagorico": 2
+      },
+      "pct_bloqueo_por_transicion": {
+       "B12": 0.5,
+       "B23": 0.5,
+       "B34": 0.17,
+       "B56": 0.5,
+       "B67": 0.17
+      },
+      "pitagoras_por_perfil": {
+       "N1_VV": true,
+       "N1_AA": true,
+       "N2_VV": true,
+       "N3_AA": true,
+       "N4_VV": true,
+       "N4_AA": true
+      },
+      "errores": [],
+      "trazas_validas": true,
+      "errores_contrato": []
+     },
+     "segundos": 282.33,
+     "costo_usd": 0.09482,
+     "n_llamadas": 154,
+     "segundos_api": 753.1,
+     "modelos_solicitados": [
+      "claude-haiku-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 280523,
+      "output_tokens": 128974,
+      "cache_creation_input_tokens": 9594,
+      "cache_read_input_tokens": 108746
+     }
+    }
+   ],
+   "notas": [
+    "estudiantes y codificador usan el modelo de la celda (en producción el codificador es Opus 5.5)"
+   ]
+  },
+  {
+   "agente": "simulador",
+   "modelo": "claude-sonnet-5-5",
+   "estado": "completa",
+   "metrica": {
+    "nombre": "pct_corridas_validas",
+    "umbral": 1.0,
+    "valor": 1.0,
+    "corridas_validas": 12,
+    "corridas_esperadas": 12,
+    "pct_validan": 0.915,
+    "pct_pitagoras": 0.6667,
+    "pct_pitagoras_N1": 1.0,
+    "n_pitagoras_N1": "4/4",
+    "n_pitagoras": "8/12",
+    "lanzadas": 2
+   },
+   "pasa": false,
+   "costo_usd": 1.198208,
+   "costo_auxiliar_usd": 0.0,
+   "costo_por_unidad_usd": 0.599104,
+   "latencia_media_s": 134.3,
+   "latencia_max_s": 142.8,
+   "n_unidades": 2,
+   "n_unidades_corridas": 2,
+   "n_unidades_omitidas": 0,
+   "n_llamadas": 141,
+   "modelos_solicitados": [
+    "claude-sonnet-5-5"
+   ],
+   "unidades": [
+    {
+     "id": "sonnet_lanzada1",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "n_corridas": 6,
+      "pct_validan": 1.0,
+      "pct_pitagoras": 0.8333,
+      "pct_pitagoras_N1": 1.0,
+      "n_pitagoras": 5,
+      "n_N1": 2,
+      "n_pitagoras_N1": 2,
+      "modelos_observados": {
+       "geométrico": 5,
+       "geométrico (pitágoras)": 1
+      },
+      "pct_bloqueo_por_transicion": {
+       "B23": 0.17
+      },
+      "pitagoras_por_perfil": {
+       "N1_VV": true,
+       "N1_AA": true,
+       "N2_VV": true,
+       "N3_AA": true,
+       "N4_VV": true,
+       "N4_AA": false
+      },
+      "errores": [],
+      "trazas_validas": true,
+      "errores_contrato": []
+     },
+     "segundos": 142.75,
+     "costo_usd": 0.611013,
+     "n_llamadas": 72,
+     "segundos_api": 401.98,
+     "modelos_solicitados": [
+      "claude-sonnet-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 100595,
+      "output_tokens": 37720,
+      "cache_creation_input_tokens": 9594,
+      "cache_read_input_tokens": 43245
+     }
+    },
+    {
+     "id": "sonnet_lanzada2",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "n_corridas": 6,
+      "pct_validan": 0.83,
+      "pct_pitagoras": 0.5,
+      "pct_pitagoras_N1": 1.0,
+      "n_pitagoras": 3,
+      "n_N1": 2,
+      "n_pitagoras_N1": 2,
+      "modelos_observados": {
+       "geométrico": 5,
+       "geométrico (pitágoras)": 1
+      },
+      "pct_bloqueo_por_transicion": {
+       "B12": 0.17,
+       "B34": 0.17
+      },
+      "pitagoras_por_perfil": {
+       "N1_VV": true,
+       "N1_AA": true,
+       "N2_VV": false,
+       "N3_AA": false,
+       "N4_VV": false,
+       "N4_AA": true
+      },
+      "errores": [],
+      "trazas_validas": true,
+      "errores_contrato": []
+     },
+     "segundos": 125.87,
+     "costo_usd": 0.587195,
+     "n_llamadas": 69,
+     "segundos_api": 361.17,
+     "modelos_solicitados": [
+      "claude-sonnet-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 96591,
+      "output_tokens": 36186,
+      "cache_creation_input_tokens": 9594,
+      "cache_read_input_tokens": 40899
+     }
+    }
+   ],
+   "notas": [
+    "estudiantes y codificador usan el modelo de la celda (en producción el codificador es Opus 5.5)"
+   ]
+  },
+  {
+   "agente": "simulador",
+   "modelo": "claude-opus-5-5",
+   "estado": "completa",
+   "metrica": {
+    "nombre": "pct_corridas_validas",
+    "umbral": 1.0,
+    "valor": 1.0,
+    "corridas_validas": 12,
+    "corridas_esperadas": 12,
+    "pct_validan": 1.0,
+    "pct_pitagoras": 1.0,
+    "pct_pitagoras_N1": 1.0,
+    "n_pitagoras_N1": "4/4",
+    "n_pitagoras": "12/12",
+    "lanzadas": 2
+   },
+   "pasa": false,
+   "costo_usd": 1.973406,
+   "costo_auxiliar_usd": 0.0,
+   "costo_por_unidad_usd": 0.986703,
+   "latencia_media_s": 154.7,
+   "latencia_max_s": 159.7,
+   "n_unidades": 2,
+   "n_unidades_corridas": 2,
+   "n_unidades_omitidas": 0,
+   "n_llamadas": 145,
+   "modelos_solicitados": [
+    "claude-opus-5-5"
+   ],
+   "unidades": [
+    {
+     "id": "opus_lanzada1",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "n_corridas": 6,
+      "pct_validan": 1.0,
+      "pct_pitagoras": 1.0,
+      "pct_pitagoras_N1": 1.0,
+      "n_pitagoras": 6,
+      "n_N1": 2,
+      "n_pitagoras_N1": 2,
+      "modelos_observados": {
+       "geométrico (pitágoras)": 6
+      },
+      "pct_bloqueo_por_transicion": {
+       "B23": 0.5,
+       "B34": 0.17
+      },
+      "pitagoras_por_perfil": {
+       "N1_VV": true,
+       "N1_AA": true,
+       "N2_VV": true,
+       "N3_AA": true,
+       "N4_VV": true,
+       "N4_AA": true
+      },
+      "errores": [],
+      "trazas_validas": true,
+      "errores_contrato": []
+     },
+     "segundos": 159.74,
+     "costo_usd": 1.005266,
+     "n_llamadas": 73,
+     "segundos_api": 397.18,
+     "modelos_solicitados": [
+      "claude-opus-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 101894,
+      "output_tokens": 27046,
+      "cache_creation_input_tokens": 9594,
+      "cache_read_input_tokens": 44061
+     }
+    },
+    {
+     "id": "opus_lanzada2",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "n_corridas": 6,
+      "pct_validan": 1.0,
+      "pct_pitagoras": 1.0,
+      "pct_pitagoras_N1": 1.0,
+      "n_pitagoras": 6,
+      "n_N1": 2,
+      "n_pitagoras_N1": 2,
+      "modelos_observados": {
+       "geométrico (pitágoras)": 6
+      },
+      "pct_bloqueo_por_transicion": {
+       "B12": 0.17,
+       "B23": 0.5
+      },
+      "pitagoras_por_perfil": {
+       "N1_VV": true,
+       "N1_AA": true,
+       "N2_VV": true,
+       "N3_AA": true,
+       "N4_VV": true,
+       "N4_AA": true
+      },
+      "errores": [],
+      "trazas_validas": true,
+      "errores_contrato": []
+     },
+     "segundos": 149.7,
+     "costo_usd": 0.96814,
+     "n_llamadas": 72,
+     "segundos_api": 414.29,
+     "modelos_solicitados": [
+      "claude-opus-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 98987,
+      "output_tokens": 25779,
+      "cache_creation_input_tokens": 9594,
+      "cache_read_input_tokens": 43273
+     }
+    }
+   ],
+   "notas": [
+    "estudiantes y codificador usan el modelo de la celda (en producción el codificador es Opus 5.5)"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,217 @@
+{
+  "tarea_id": "2026-10-sugarloaf",
+  "diseno": "diseno_otm",
+  "corridas": 6,
+  "modelo": "claude-sonnet-5-5",
+  "costo_usd": 0.5872,
+  "por_corrida": [
+    {
+      "id": "N1_VV_r1",
+      "perfil": {
+        "nivel_edad": "S1",
+        "nivel": "N1",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P4-WM",
+        "P3-MM",
+        "P4-WM",
+        "P6-VAL",
+        "P2-RM",
+        "P4-WM",
+        "P5-INT",
+        "P7-EXP",
+        "P6-VAL"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B34",
+          "turnos": [
+            4,
+            5
+          ],
+          "resolucion": "peer"
+        }
+      ],
+      "supuestos": [
+        "cable como hipotenusa de un triángulo rectángulo con el cerro como lado vertical",
+        "el cerro tiene una parte ancha (el piso calculado llega hasta debajo de la cima)",
+        "velocidad de escalada inventada de 2 km/h"
+      ],
+      "modelo": "geométrico",
+      "respuesta_final": "Giuseppe corría aproximadamente 1 km, suponiendo que escalaba a 2 km/h.",
+      "validacion": true,
+      "archivo": "N1_VV_r1.json",
+      "costo_usd": 0.125156
+    },
+    {
+      "id": "N1_AA_r1",
+      "perfil": {
+        "nivel_edad": "S1",
+        "nivel": "N1",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P3-MM",
+        "P4-WM",
+        "P3-MM",
+        "P4-WM",
+        "P2-RM",
+        "P5-INT",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B12",
+          "turnos": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "resolucion": "peer"
+        }
+      ],
+      "supuestos": [
+        "cable como hipotenusa de un triángulo rectángulo (diagonal)",
+        "desnivel de 180 m como cateto",
+        "velocidad de escalada inventada de 2 km/h",
+        "la escalada también va en diagonal con el mismo desnivel de 180 m"
+      ],
+      "modelo": "geométrico (pitágoras)",
+      "respuesta_final": "Suponiendo que escalaba a 2 km/h, corría aproximadamente 1,1 km. Cable: 30 × 3/60 = 1,5 km; horizontal: √(1,5² − 0,18²) ≈ 1,49 km; escalada: 2 × 12/60 = 0,4 km, √(0,4² − 0,18²) ≈ 0,36 km; 1,49 − 0,36 ≈ 1,13 km.",
+      "validacion": true,
+      "archivo": "N1_AA_r1.json",
+      "costo_usd": 0.110794
+    },
+    {
+      "id": "N2_VV_r1",
+      "perfil": {
+        "nivel_edad": "S1",
+        "nivel": "N2",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P2-RM",
+        "P4-WM",
+        "P3-MM",
+        "P4-WM",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "cable como lado inclinado de un triángulo rectángulo",
+        "cerro con ancho: la base del triángulo llega hasta debajo de la cima",
+        "escalada a 3 km/h (velocidad inventada)",
+        "ladera como lado inclinado de otro triángulo rectángulo"
+      ],
+      "modelo": "geométrico",
+      "respuesta_final": "El llano es de unos 900 m si subía a 3 km/h (cable 1500 m, base ≈ 1489 m, escalada 600 m de los cuales ≈ 572 m son horizontales, llano ≈ 1489 − 572 ≈ 900 m). El resultado depende de la velocidad de escalada inventada.",
+      "validacion": true,
+      "archivo": "N2_VV_r1.json",
+      "costo_usd": 0.122994
+    },
+    {
+      "id": "N3_AA_r1",
+      "perfil": {
+        "nivel_edad": "S1",
+        "nivel": "N3",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P4-WM",
+        "P3-MM",
+        "P4-WM",
+        "P6-VAL",
+        "P2-RM",
+        "P4-WM",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "cable en diagonal que forma un triángulo rectángulo con el desnivel",
+        "el cerro ocupa parte de la distancia horizontal",
+        "velocidad de escalada estimada en 2 km/h",
+        "la ladera no es horizontal"
+      ],
+      "modelo": "geométrico",
+      "respuesta_final": "Unos 1,1 km: el cable mide 1,5 km, la distancia horizontal es de 1489 m y a eso se le resta la parte horizontal de la escalada, estimada con 2 km/h. Es una cifra aproximada que depende de esa velocidad supuesta.",
+      "validacion": true,
+      "archivo": "N3_AA_r1.json",
+      "costo_usd": 0.08486
+    },
+    {
+      "id": "N4_VV_r1",
+      "perfil": {
+        "nivel_edad": "S1",
+        "nivel": "N4",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P2-RM",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "ladera casi vertical",
+        "avance horizontal al escalar de unos 150 m"
+      ],
+      "modelo": "geométrico",
+      "respuesta_final": "Giuseppe corría aproximadamente 1300 m (cerca de 1,3 km): cable = 30 × 0,05 = 1,5 km = 1500 m; tramo horizontal = √(1500² − 180²) ≈ 1489 m; menos unos 150 m de avance horizontal al escalar.",
+      "validacion": true,
+      "archivo": "N4_VV_r1.json",
+      "costo_usd": 0.080856
+    },
+    {
+      "id": "N4_AA_r1",
+      "perfil": {
+        "nivel_edad": "S1",
+        "nivel": "N4",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P3-MM",
+        "P4-WM",
+        "P2-RM",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "recorrido del teleférico como hipotenusa del triángulo",
+        "cerro casi vertical, el pie queda casi debajo de la cima",
+        "los 12 minutos de escalada no sirven sin la velocidad de escalada"
+      ],
+      "modelo": "geométrico",
+      "respuesta_final": "Giuseppe corría aproximadamente 1,5 km hasta el pie del cerro: el cable mide 30 km/h · 3/60 h = 1,5 km y, por Pitágoras, x = √(1500² − 180²) ≈ 1489 m.",
+      "validacion": false,
+      "archivo": "N4_AA_r1.json",
+      "costo_usd": 0.06249
+    }
+  ],
+  "agregado": {
+    "pct_bloqueo_por_transicion": {
+      "B12": 0.17,
+      "B34": 0.17
+    },
+    "modelos_observados": {
+      "geométrico": 5,
+      "geométrico (pitágoras)": 1
+    },
+    "pct_validan": 0.83
+  },
+  "fecha": "2026-10-20T20:01:31Z"
+}

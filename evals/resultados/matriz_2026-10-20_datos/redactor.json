@@ -1,0 +1,323 @@
+{
+ "agente": "redactor",
+ "celdas": [
+  {
+   "agente": "redactor",
+   "modelo": "claude-haiku-5-5",
+   "estado": "completa",
+   "metrica": {
+    "nombre": "pct_casos_ok",
+    "umbral": 1.0,
+    "valor": 1.0,
+    "ok": 3,
+    "n": 3,
+    "detalle_por_caso": {
+     "caso1": true,
+     "caso2": true,
+     "caso3": true
+    }
+   },
+   "pasa": true,
+   "costo_usd": 0.012981,
+   "costo_auxiliar_usd": 0.0,
+   "costo_por_unidad_usd": 0.00649,
+   "latencia_media_s": 46.8,
+   "latencia_max_s": 51.2,
+   "n_unidades": 3,
+   "n_unidades_corridas": 3,
+   "n_unidades_omitidas": 0,
+   "n_llamadas": 6,
+   "modelos_solicitados": [
+    "claude-haiku-5-5"
+   ],
+   "unidades": [
+    {
+     "id": "caso1",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "esperado": "ok",
+      "n_escenarios": 4,
+      "guia_valida": true,
+      "escenarios_respaldados": true
+     },
+     "segundos": 51.19,
+     "costo_usd": 0.007448,
+     "n_llamadas": 3,
+     "segundos_api": 51.16,
+     "modelos_solicitados": [
+      "claude-haiku-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 10821,
+      "output_tokens": 10704,
+      "cache_creation_input_tokens": 8119,
+      "cache_read_input_tokens": 0
+     }
+    },
+    {
+     "id": "caso2",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "esperado": "ok",
+      "n_escenarios": 4,
+      "guia_valida": true,
+      "escenarios_respaldados": true
+     },
+     "segundos": 42.43,
+     "costo_usd": 0.005533,
+     "n_llamadas": 3,
+     "segundos_api": 42.43,
+     "modelos_solicitados": [
+      "claude-haiku-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 9643,
+      "output_tokens": 8976,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 8119
+     }
+    },
+    {
+     "id": "caso3",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "esperado": "TrazasInsuficientes",
+      "obtenido": "TrazasInsuficientes"
+     },
+     "segundos": 0.02,
+     "costo_usd": 0,
+     "n_llamadas": 0,
+     "segundos_api": 0,
+     "modelos_solicitados": [],
+     "tokens": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0
+     }
+    }
+   ],
+   "notas": [
+    "casos 4 y 5 (error inducido con respuestas scripteadas) no se miden en vivo"
+   ]
+  },
+  {
+   "agente": "redactor",
+   "modelo": "claude-sonnet-5-5",
+   "estado": "completa",
+   "metrica": {
+    "nombre": "pct_casos_ok",
+    "umbral": 1.0,
+    "valor": 1.0,
+    "ok": 3,
+    "n": 3,
+    "detalle_por_caso": {
+     "caso1": true,
+     "caso2": true,
+     "caso3": true
+    }
+   },
+   "pasa": true,
+   "costo_usd": 0.325699,
+   "costo_auxiliar_usd": 0.0,
+   "costo_por_unidad_usd": 0.16285,
+   "latencia_media_s": 98.5,
+   "latencia_max_s": 99.8,
+   "n_unidades": 3,
+   "n_unidades_corridas": 3,
+   "n_unidades_omitidas": 0,
+   "n_llamadas": 6,
+   "modelos_solicitados": [
+    "claude-sonnet-5-5"
+   ],
+   "unidades": [
+    {
+     "id": "caso1",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "esperado": "ok",
+      "n_escenarios": 4,
+      "guia_valida": true,
+      "escenarios_respaldados": true
+     },
+     "segundos": 97.08,
+     "costo_usd": 0.172191,
+     "n_llamadas": 3,
+     "segundos_api": 97.07,
+     "modelos_solicitados": [
+      "claude-sonnet-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 10997,
+      "output_tokens": 12990,
+      "cache_creation_input_tokens": 8119,
+      "cache_read_input_tokens": 0
+     }
+    },
+    {
+     "id": "caso2",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "esperado": "ok",
+      "n_escenarios": 4,
+      "guia_valida": true,
+      "escenarios_respaldados": true
+     },
+     "segundos": 99.83,
+     "costo_usd": 0.153508,
+     "n_llamadas": 3,
+     "segundos_api": 99.82,
+     "modelos_solicitados": [
+      "claude-sonnet-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 10267,
+      "output_tokens": 13135,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 8119
+     }
+    },
+    {
+     "id": "caso3",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "esperado": "TrazasInsuficientes",
+      "obtenido": "TrazasInsuficientes"
+     },
+     "segundos": 0.0,
+     "costo_usd": 0,
+     "n_llamadas": 0,
+     "segundos_api": 0,
+     "modelos_solicitados": [],
+     "tokens": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0
+     }
+    }
+   ],
+   "notas": [
+    "casos 4 y 5 (error inducido con respuestas scripteadas) no se miden en vivo"
+   ]
+  },
+  {
+   "agente": "redactor",
+   "modelo": "claude-opus-5-5",
+   "estado": "completa",
+   "metrica": {
+    "nombre": "pct_casos_ok",
+    "umbral": 1.0,
+    "valor": 1.0,
+    "ok": 3,
+    "n": 3,
+    "detalle_por_caso": {
+     "caso1": true,
+     "caso2": true,
+     "caso3": true
+    }
+   },
+   "pasa": true,
+   "costo_usd": 0.570103,
+   "costo_auxiliar_usd": 0.0,
+   "costo_por_unidad_usd": 0.285052,
+   "latencia_media_s": 104.9,
+   "latencia_max_s": 107.4,
+   "n_unidades": 3,
+   "n_unidades_corridas": 3,
+   "n_unidades_omitidas": 0,
+   "n_llamadas": 6,
+   "modelos_solicitados": [
+    "claude-opus-5-5"
+   ],
+   "unidades": [
+    {
+     "id": "caso1",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "esperado": "ok",
+      "n_escenarios": 4,
+      "guia_valida": true,
+      "escenarios_respaldados": true
+     },
+     "segundos": 107.43,
+     "costo_usd": 0.309855,
+     "n_llamadas": 3,
+     "segundos_api": 107.43,
+     "modelos_solicitados": [
+      "claude-opus-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 11180,
+      "output_tokens": 11227,
+      "cache_creation_input_tokens": 8119,
+      "cache_read_input_tokens": 0
+     }
+    },
+    {
+     "id": "caso2",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "esperado": "ok",
+      "n_escenarios": 4,
+      "guia_valida": true,
+      "escenarios_respaldados": true
+     },
+     "segundos": 102.37,
+     "costo_usd": 0.260248,
+     "n_llamadas": 3,
+     "segundos_api": 102.34,
+     "modelos_solicitados": [
+      "claude-opus-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 10391,
+      "output_tokens": 10853,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 8119
+     }
+    },
+    {
+     "id": "caso3",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "esperado": "TrazasInsuficientes",
+      "obtenido": "TrazasInsuficientes"
+     },
+     "segundos": 0.01,
+     "costo_usd": 0,
+     "n_llamadas": 0,
+     "segundos_api": 0,
+     "modelos_solicitados": [],
+     "tokens": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0
+     }
+    }
+   ],
+   "notas": [
+    "casos 4 y 5 (error inducido con respuestas scripteadas) no se miden en vivo"
+   ]
+  }
+ ]
+}

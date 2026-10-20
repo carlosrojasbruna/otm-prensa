@@ -1,0 +1,713 @@
+{
+ "agente": "disenador",
+ "celdas": [
+  {
+   "agente": "disenador",
+   "modelo": "claude-haiku-5-5",
+   "estado": "completa",
+   "metrica": {
+    "nombre": "pct_rub01_ge20",
+    "umbral": 0.8,
+    "valor": 0.6,
+    "ok": 3,
+    "n": 5,
+    "detalle_por_caso": {
+     "iteracion-cuenta-luz": true,
+     "p-bicicletas": false,
+     "s-cuenta-luz": false,
+     "s-maraton-cifras": true,
+     "u-urgencias": true
+    },
+    "rub01_media": 21.4,
+    "rub01_totales": [
+     24,
+     20,
+     18,
+     23,
+     22
+    ],
+    "pct_contrato_valido": 1.0
+   },
+   "pasa": false,
+   "costo_usd": 0.040663,
+   "costo_auxiliar_usd": 0.469248,
+   "costo_por_unidad_usd": 0.008133,
+   "latencia_media_s": 95.7,
+   "latencia_max_s": 111.8,
+   "n_unidades": 5,
+   "n_unidades_corridas": 5,
+   "n_unidades_omitidas": 0,
+   "n_llamadas": 7,
+   "modelos_solicitados": [
+    "claude-haiku-5-5"
+   ],
+   "unidades": [
+    {
+     "id": "iteracion-cuenta-luz",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "modo": "iteracion",
+      "contrato_valido": true,
+      "rondas": 2,
+      "n_candidatos": 1,
+      "rub01_total": 24,
+      "criterios_en_0": [],
+      "criterios_en_1": [],
+      "evaluador": "claude-opus-5-5",
+      "min_criterio": 2
+     },
+     "segundos": 86.99,
+     "costo_usd": 0.008205,
+     "n_llamadas": 2,
+     "segundos_api": 49.73,
+     "modelos_solicitados": [
+      "claude-haiku-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 10810,
+      "output_tokens": 10703,
+      "cache_creation_input_tokens": 13132,
+      "cache_read_input_tokens": 13132
+     },
+     "auxiliar": {
+      "rol": "disenador/evaluacion",
+      "costo_usd": 0.13524,
+      "n_llamadas": 1,
+      "segundos_api": 37.23,
+      "modelos_solicitados": [
+       "claude-opus-5-5"
+      ]
+     }
+    },
+    {
+     "id": "p-bicicletas",
+     "ok": false,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "modo": "diseno",
+      "contrato_valido": true,
+      "rondas": 1,
+      "n_candidatos": 2,
+      "rub01_total": 20,
+      "criterios_en_0": [
+       "recursos"
+      ],
+      "criterios_en_1": [
+       "autenticidad",
+       "validacion"
+      ],
+      "evaluador": "claude-opus-5-5",
+      "min_criterio": 0
+     },
+     "segundos": 111.8,
+     "costo_usd": 0.008373,
+     "n_llamadas": 1,
+     "segundos_api": 58.35,
+     "modelos_solicitados": [
+      "claude-haiku-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 687,
+      "output_tokens": 13345,
+      "cache_creation_input_tokens": 13054,
+      "cache_read_input_tokens": 0
+     },
+     "auxiliar": {
+      "rol": "disenador/evaluacion",
+      "costo_usd": 0.123686,
+      "n_llamadas": 1,
+      "segundos_api": 53.44,
+      "modelos_solicitados": [
+       "claude-opus-5-5"
+      ]
+     }
+    },
+    {
+     "id": "s-cuenta-luz",
+     "ok": false,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "modo": "diseno",
+      "contrato_valido": true,
+      "rondas": 1,
+      "n_candidatos": 2,
+      "rub01_total": 18,
+      "criterios_en_0": [],
+      "criterios_en_1": [
+       "genuino",
+       "decisiones",
+       "ciclo",
+       "autodiferenciacion",
+       "fecundidad",
+       "recursos"
+      ],
+      "evaluador": "claude-opus-5-5",
+      "min_criterio": 1
+     },
+     "segundos": 85.82,
+     "costo_usd": 0.005391,
+     "n_llamadas": 1,
+     "segundos_api": 46.52,
+     "modelos_solicitados": [
+      "claude-haiku-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 803,
+      "output_tokens": 10360,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 13054
+     },
+     "auxiliar": {
+      "rol": "disenador/evaluacion",
+      "costo_usd": 0.086882,
+      "n_llamadas": 1,
+      "segundos_api": 39.29,
+      "modelos_solicitados": [
+       "claude-opus-5-5"
+      ]
+     }
+    },
+    {
+     "id": "s-maraton-cifras",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "modo": "diseno",
+      "contrato_valido": true,
+      "rondas": 2,
+      "n_candidatos": 2,
+      "rub01_total": 23,
+      "criterios_en_0": [],
+      "criterios_en_1": [
+       "autenticidad"
+      ],
+      "evaluador": "claude-opus-5-5",
+      "min_criterio": 1
+     },
+     "segundos": 97.27,
+     "costo_usd": 0.010641,
+     "n_llamadas": 2,
+     "segundos_api": 74.26,
+     "modelos_solicitados": [
+      "claude-haiku-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 6568,
+      "output_tokens": 19446,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 26108
+     },
+     "auxiliar": {
+      "rol": "disenador/evaluacion",
+      "costo_usd": 0.052218,
+      "n_llamadas": 1,
+      "segundos_api": 22.97,
+      "modelos_solicitados": [
+       "claude-opus-5-5"
+      ]
+     }
+    },
+    {
+     "id": "u-urgencias",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "modo": "diseno",
+      "contrato_valido": true,
+      "rondas": 1,
+      "n_candidatos": 2,
+      "rub01_total": 22,
+      "criterios_en_0": [],
+      "criterios_en_1": [
+       "autenticidad",
+       "recursos"
+      ],
+      "evaluador": "claude-opus-5-5",
+      "min_criterio": 1
+     },
+     "segundos": 96.84,
+     "costo_usd": 0.008053,
+     "n_llamadas": 1,
+     "segundos_api": 66.74,
+     "modelos_solicitados": [
+      "claude-haiku-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 779,
+      "output_tokens": 15690,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 13054
+     },
+     "auxiliar": {
+      "rol": "disenador/evaluacion",
+      "costo_usd": 0.071222,
+      "n_llamadas": 1,
+      "segundos_api": 30.08,
+      "modelos_solicitados": [
+       "claude-opus-5-5"
+      ]
+     }
+    }
+   ],
+   "notas": [
+    "RUB01 por una sola corrida del evaluador opus (la variabilidad entre corridas llega a varios puntos, ver calibración); el costo de la evaluación se reporta aparte (costo_auxiliar_usd)."
+   ]
+  },
+  {
+   "agente": "disenador",
+   "modelo": "claude-sonnet-5-5",
+   "estado": "completa",
+   "metrica": {
+    "nombre": "pct_rub01_ge20",
+    "umbral": 0.8,
+    "valor": 0.6,
+    "ok": 3,
+    "n": 5,
+    "detalle_por_caso": {
+     "iteracion-cuenta-luz": true,
+     "p-bicicletas": true,
+     "s-cuenta-luz": true,
+     "s-maraton-cifras": false,
+     "u-urgencias": false
+    },
+    "rub01_media": 23.0,
+    "rub01_totales": [
+     24,
+     23,
+     22
+    ],
+    "pct_contrato_valido": 0.6
+   },
+   "pasa": false,
+   "costo_usd": 1.703902,
+   "costo_auxiliar_usd": 0.31092,
+   "costo_por_unidad_usd": 0.34078,
+   "latencia_media_s": 263.4,
+   "latencia_max_s": 381.1,
+   "n_unidades": 5,
+   "n_unidades_corridas": 5,
+   "n_unidades_omitidas": 0,
+   "n_llamadas": 11,
+   "modelos_solicitados": [
+    "claude-sonnet-5-5"
+   ],
+   "unidades": [
+    {
+     "id": "iteracion-cuenta-luz",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "modo": "iteracion",
+      "contrato_valido": true,
+      "rondas": 1,
+      "n_candidatos": 1,
+      "rub01_total": 24,
+      "criterios_en_0": [],
+      "criterios_en_1": [],
+      "evaluador": "claude-opus-5-5",
+      "min_criterio": 2
+     },
+     "segundos": 92.73,
+     "costo_usd": 0.138478,
+     "n_llamadas": 1,
+     "segundos_api": 70.4,
+     "modelos_solicitados": [
+      "claude-sonnet-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 3974,
+      "output_tokens": 9770,
+      "cache_creation_input_tokens": 13132,
+      "cache_read_input_tokens": 0
+     },
+     "auxiliar": {
+      "rol": "disenador/evaluacion",
+      "costo_usd": 0.057374,
+      "n_llamadas": 1,
+      "segundos_api": 22.31,
+      "modelos_solicitados": [
+       "claude-opus-5-5"
+      ]
+     }
+    },
+    {
+     "id": "p-bicicletas",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "modo": "diseno",
+      "contrato_valido": true,
+      "rondas": 1,
+      "n_candidatos": 2,
+      "rub01_total": 23,
+      "criterios_en_0": [],
+      "criterios_en_1": [
+       "autenticidad"
+      ],
+      "evaluador": "claude-opus-5-5",
+      "min_criterio": 1
+     },
+     "segundos": 141.89,
+     "costo_usd": 0.163379,
+     "n_llamadas": 1,
+     "segundos_api": 104.21,
+     "modelos_solicitados": [
+      "claude-sonnet-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 687,
+      "output_tokens": 12937,
+      "cache_creation_input_tokens": 13054,
+      "cache_read_input_tokens": 0
+     },
+     "auxiliar": {
+      "rol": "disenador/evaluacion",
+      "costo_usd": 0.082774,
+      "n_llamadas": 1,
+      "segundos_api": 37.66,
+      "modelos_solicitados": [
+       "claude-opus-5-5"
+      ]
+     }
+    },
+    {
+     "id": "s-cuenta-luz",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "modo": "diseno",
+      "contrato_valido": true,
+      "rondas": 2,
+      "n_candidatos": 2,
+      "rub01_total": 22,
+      "criterios_en_0": [],
+      "criterios_en_1": [
+       "autenticidad",
+       "ciclo"
+      ],
+      "evaluador": "claude-opus-5-5",
+      "min_criterio": 1
+     },
+     "segundos": 344.56,
+     "costo_usd": 0.416395,
+     "n_llamadas": 3,
+     "segundos_api": 291.88,
+     "modelos_solicitados": [
+      "claude-sonnet-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 8741,
+      "output_tokens": 39108,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 39162
+     },
+     "auxiliar": {
+      "rol": "disenador/evaluacion",
+      "costo_usd": 0.170772,
+      "n_llamadas": 1,
+      "segundos_api": 52.66,
+      "modelos_solicitados": [
+       "claude-opus-5-5"
+      ]
+     }
+    },
+    {
+     "id": "s-maraton-cifras",
+     "ok": false,
+     "omitida": false,
+     "error": "RuntimeError: disenador: la llamada falló tras 3 intentos: stop_reason=max_tokens",
+     "detalle": {},
+     "segundos": 356.9,
+     "costo_usd": 0.493143,
+     "n_llamadas": 3,
+     "segundos_api": 356.89,
+     "modelos_solicitados": [
+      "claude-sonnet-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 2655,
+      "output_tokens": 48000,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 39162
+     }
+    },
+    {
+     "id": "u-urgencias",
+     "ok": false,
+     "omitida": false,
+     "error": "RuntimeError: disenador: la llamada falló tras 3 intentos: stop_reason=max_tokens",
+     "detalle": {},
+     "segundos": 381.07,
+     "costo_usd": 0.492507,
+     "n_llamadas": 3,
+     "segundos_api": 381.06,
+     "modelos_solicitados": [
+      "claude-sonnet-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 2337,
+      "output_tokens": 48000,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 39162
+     }
+    }
+   ],
+   "notas": [
+    "RUB01 por una sola corrida del evaluador opus (la variabilidad entre corridas llega a varios puntos, ver calibración); el costo de la evaluación se reporta aparte (costo_auxiliar_usd)."
+   ]
+  },
+  {
+   "agente": "disenador",
+   "modelo": "claude-opus-5-5",
+   "estado": "completa",
+   "metrica": {
+    "nombre": "pct_rub01_ge20",
+    "umbral": 0.8,
+    "valor": 1.0,
+    "ok": 5,
+    "n": 5,
+    "detalle_por_caso": {
+     "iteracion-cuenta-luz": true,
+     "p-bicicletas": true,
+     "s-cuenta-luz": true,
+     "s-maraton-cifras": true,
+     "u-urgencias": true
+    },
+    "rub01_media": 23.6,
+    "rub01_totales": [
+     24,
+     22,
+     24,
+     24,
+     24
+    ],
+    "pct_contrato_valido": 1.0
+   },
+   "pasa": true,
+   "costo_usd": 1.219775,
+   "costo_auxiliar_usd": 0.379522,
+   "costo_por_unidad_usd": 0.243955,
+   "latencia_media_s": 135.9,
+   "latencia_max_s": 170.2,
+   "n_unidades": 5,
+   "n_unidades_corridas": 5,
+   "n_unidades_omitidas": 0,
+   "n_llamadas": 5,
+   "modelos_solicitados": [
+    "claude-opus-5-5"
+   ],
+   "unidades": [
+    {
+     "id": "iteracion-cuenta-luz",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "modo": "iteracion",
+      "contrato_valido": true,
+      "rondas": 1,
+      "n_candidatos": 1,
+      "rub01_total": 24,
+      "criterios_en_0": [],
+      "criterios_en_1": [],
+      "evaluador": "claude-opus-5-5",
+      "min_criterio": 2
+     },
+     "segundos": 117.71,
+     "costo_usd": 0.212896,
+     "n_llamadas": 1,
+     "segundos_api": 85.44,
+     "modelos_solicitados": [
+      "claude-opus-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 3974,
+      "output_tokens": 6567,
+      "cache_creation_input_tokens": 13132,
+      "cache_read_input_tokens": 0
+     },
+     "auxiliar": {
+      "rol": "disenador/evaluacion",
+      "costo_usd": 0.075958,
+      "n_llamadas": 1,
+      "segundos_api": 32.22,
+      "modelos_solicitados": [
+       "claude-opus-5-5"
+      ]
+     }
+    },
+    {
+     "id": "p-bicicletas",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "modo": "diseno",
+      "contrato_valido": true,
+      "rondas": 1,
+      "n_candidatos": 2,
+      "rub01_total": 22,
+      "criterios_en_0": [],
+      "criterios_en_1": [
+       "autenticidad",
+       "validacion"
+      ],
+      "evaluador": "claude-opus-5-5",
+      "min_criterio": 1
+     },
+     "segundos": 123.48,
+     "costo_usd": 0.264138,
+     "n_llamadas": 1,
+     "segundos_api": 91.44,
+     "modelos_solicitados": [
+      "claude-opus-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 687,
+      "output_tokens": 9806,
+      "cache_creation_input_tokens": 13054,
+      "cache_read_input_tokens": 0
+     },
+     "auxiliar": {
+      "rol": "disenador/evaluacion",
+      "costo_usd": 0.07677,
+      "n_llamadas": 1,
+      "segundos_api": 32.03,
+      "modelos_solicitados": [
+       "claude-opus-5-5"
+      ]
+     }
+    },
+    {
+     "id": "s-cuenta-luz",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "modo": "diseno",
+      "contrato_valido": true,
+      "rondas": 1,
+      "n_candidatos": 2,
+      "rub01_total": 24,
+      "criterios_en_0": [],
+      "criterios_en_1": [],
+      "evaluador": "claude-opus-5-5",
+      "min_criterio": 2
+     },
+     "segundos": 133.69,
+     "costo_usd": 0.216763,
+     "n_llamadas": 1,
+     "segundos_api": 98.51,
+     "modelos_solicitados": [
+      "claude-opus-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 803,
+      "output_tokens": 10547,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 13054
+     },
+     "auxiliar": {
+      "rol": "disenador/evaluacion",
+      "costo_usd": 0.077054,
+      "n_llamadas": 1,
+      "segundos_api": 35.17,
+      "modelos_solicitados": [
+       "claude-opus-5-5"
+      ]
+     }
+    },
+    {
+     "id": "s-maraton-cifras",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "modo": "diseno",
+      "contrato_valido": true,
+      "rondas": 1,
+      "n_candidatos": 2,
+      "rub01_total": 24,
+      "criterios_en_0": [],
+      "criterios_en_1": [],
+      "evaluador": "claude-opus-5-5",
+      "min_criterio": 2
+     },
+     "segundos": 134.32,
+     "costo_usd": 0.224331,
+     "n_llamadas": 1,
+     "segundos_api": 100.96,
+     "modelos_solicitados": [
+      "claude-opus-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 885,
+      "output_tokens": 10909,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 13054
+     },
+     "auxiliar": {
+      "rol": "disenador/evaluacion",
+      "costo_usd": 0.077278,
+      "n_llamadas": 1,
+      "segundos_api": 33.34,
+      "modelos_solicitados": [
+       "claude-opus-5-5"
+      ]
+     }
+    },
+    {
+     "id": "u-urgencias",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "modo": "diseno",
+      "contrato_valido": true,
+      "rondas": 1,
+      "n_candidatos": 2,
+      "rub01_total": 24,
+      "criterios_en_0": [],
+      "criterios_en_1": [],
+      "evaluador": "claude-opus-5-5",
+      "min_criterio": 2
+     },
+     "segundos": 170.17,
+     "costo_usd": 0.301647,
+     "n_llamadas": 1,
+     "segundos_api": 141.24,
+     "modelos_solicitados": [
+      "claude-opus-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 779,
+      "output_tokens": 14796,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 13054
+     },
+     "auxiliar": {
+      "rol": "disenador/evaluacion",
+      "costo_usd": 0.072462,
+      "n_llamadas": 1,
+      "segundos_api": 28.91,
+      "modelos_solicitados": [
+       "claude-opus-5-5"
+      ]
+     }
+    }
+   ],
+   "notas": [
+    "RUB01 por una sola corrida del evaluador opus (la variabilidad entre corridas llega a varios puntos, ver calibración); el costo de la evaluación se reporta aparte (costo_auxiliar_usd)."
+   ]
+  }
+ ]
+}

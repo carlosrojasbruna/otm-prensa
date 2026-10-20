@@ -1,0 +1,5 @@
+[
+ "`python evals/run.py` (log: matriz_2026-10-20_corrida.log): 9 agentes x 3 modelos en paralelo (4 hilos). Gasto 8,586 USD. El diseñador/Opus quedó en 2 de 5 casos por la reserva del agente (3,5 USD); el verificador dio 0,8 en los tres modelos.",
+ "`python evals/run.py --completar --rehacer verificador --tope-agente disenador=5.0` (log: matriz_2026-10-20_completar.log): se completaron los 3 casos pendientes del diseñador/Opus y se rehízo el verificador para registrar los hallazgos críticos del modelo; la corrida inicial del verificador (0,129 USD) se conserva en `descartado.json` y cuenta en el total.",
+ "`python evals/run.py --reanudar`: regeneración del informe a partir de los datos guardados, sin llamadas a la API."
+]

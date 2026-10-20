@@ -1,0 +1,244 @@
+{
+  "tarea_id": "2026-10-sugarloaf",
+  "diseno": "diseno_otm",
+  "corridas": 6,
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 1.0054,
+  "por_corrida": [
+    {
+      "id": "N1_VV_r1",
+      "perfil": {
+        "nivel_edad": "S1",
+        "nivel": "N1",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P1-MRS",
+        "P3-MM",
+        "P4-WM",
+        "P6-VAL",
+        "P3-MM",
+        "P6-VAL",
+        "P3-MM",
+        "P4-WM",
+        "P7-EXP",
+        "P6-VAL"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B23",
+          "turnos": [
+            2,
+            3,
+            4
+          ],
+          "resolucion": "peer"
+        },
+        {
+          "transicion": "B23",
+          "turnos": [
+            9,
+            10,
+            11
+          ],
+          "resolucion": "peer"
+        }
+      ],
+      "supuestos": [
+        "el cable es una línea recta (diagonal del triángulo)",
+        "el cerro es el lado vertical del triángulo",
+        "el teleférico avanza lo mismo en cada pedazo de tiempo (velocidad constante)",
+        "los 12 minutos de escalada no se usan"
+      ],
+      "modelo": "geométrico (pitágoras)",
+      "respuesta_final": "El cable mide 30 : 20 = 1,5 km = 1500 m; 1500 × 1500 − 180 × 180 = 2217600, y 1489 × 1489 ≈ 2217600, así que Giuseppe corría aproximadamente 1490 m (casi 1,5 km).",
+      "validacion": true,
+      "archivo": "N1_VV_r1.json",
+      "costo_usd": 0.261524
+    },
+    {
+      "id": "N1_AA_r1",
+      "perfil": {
+        "nivel_edad": "S1",
+        "nivel": "N1",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P4-WM",
+        "P3-MM",
+        "P4-WM",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P6-VAL",
+        "P2-RM",
+        "P7-EXP"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B34",
+          "turnos": [
+            2,
+            3
+          ],
+          "resolucion": "peer"
+        },
+        {
+          "transicion": "B23",
+          "turnos": [
+            6,
+            7
+          ],
+          "resolucion": "peer"
+        }
+      ],
+      "supuestos": [
+        "el cable va inclinado desde la estación hasta la cima y es la hipotenusa",
+        "triángulo rectángulo entre la altura del cerro y la distancia horizontal",
+        "los 12 minutos de escalada no se usan"
+      ],
+      "modelo": "geométrico (pitágoras)",
+      "respuesta_final": "3 min = 0,05 h; 30 · 0,05 = 1,5 km de cable; por Pitágoras, √(1500² − 180²) ≈ 1489 m. Giuseppe corría aproximadamente 1,5 km.",
+      "validacion": true,
+      "archivo": "N1_AA_r1.json",
+      "costo_usd": 0.186068
+    },
+    {
+      "id": "N2_VV_r1",
+      "perfil": {
+        "nivel_edad": "S1",
+        "nivel": "N2",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P4-WM",
+        "P3-MM",
+        "P4-WM",
+        "P6-VAL",
+        "P2-RM",
+        "P7-EXP"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B23",
+          "turnos": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "resolucion": "peer"
+        }
+      ],
+      "supuestos": [
+        "cerro vertical (ángulo recto en el pie del cerro)",
+        "cable recto como hipotenusa del triángulo",
+        "el tiempo de escalada (12 min) se descarta como dato de relleno"
+      ],
+      "modelo": "geométrico (pitágoras)",
+      "respuesta_final": "Cable = 30 km/h · 1/20 h = 1,5 km = 1500 m; abajo² = 1500² − 180² = 2.217.600, raíz ≈ 1489, o sea corría unos 1490 m (casi 1,5 km).",
+      "validacion": true,
+      "archivo": "N2_VV_r1.json",
+      "costo_usd": 0.164216
+    },
+    {
+      "id": "N3_AA_r1",
+      "perfil": {
+        "nivel_edad": "S1",
+        "nivel": "N3",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P4-WM",
+        "P3-MM",
+        "P4-WM",
+        "P6-VAL",
+        "P2-RM",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "el cable es la hipotenusa de un triángulo rectángulo",
+        "el desnivel de 180 m es el cateto vertical",
+        "el cerro es casi vertical",
+        "la cima está a lo más unos 100 m hacia adentro del pie del cerro",
+        "el tiempo de escalada no se usa"
+      ],
+      "modelo": "geométrico (pitágoras)",
+      "respuesta_final": "Cable = 30 · 3/60 = 1,5 km = 1500 m; con Pitágoras, √(1500² − 180²) ≈ 1489 m horizontal, y como el cerro es casi vertical le restamos unos 100 m, así que corría aproximadamente 1,4 km.",
+      "validacion": true,
+      "archivo": "N3_AA_r1.json",
+      "costo_usd": 0.130212
+    },
+    {
+      "id": "N4_VV_r1",
+      "perfil": {
+        "nivel_edad": "S1",
+        "nivel": "N4",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P2-RM",
+        "P4-WM",
+        "P6-VAL",
+        "P2-RM",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "el cable es el lado inclinado (hipotenusa) de un triángulo rectángulo",
+        "los 180 m son la altura vertical",
+        "el cerro tiene un ancho de unos 50 a 100 m desde el pie hasta debajo de la cima",
+        "el tiempo de escalada no aporta información sobre el ancho"
+      ],
+      "modelo": "geométrico (pitágoras)",
+      "respuesta_final": "Cable = 30 km/h · 1/20 h = 1500 m; horizontal = √(1500² − 180²) ≈ 1489 m; menos el ancho del cerro (50–100 m), Giuseppe corría aproximadamente 1400 m.",
+      "validacion": true,
+      "archivo": "N4_VV_r1.json",
+      "costo_usd": 0.127184
+    },
+    {
+      "id": "N4_AA_r1",
+      "perfil": {
+        "nivel_edad": "S1",
+        "nivel": "N4",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P4-WM",
+        "P3-MM",
+        "P4-WM",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "cable recto hasta la cima",
+        "triángulo rectángulo con desnivel vertical de 180 m",
+        "el cerro tiene ancho horizontal (unos 100 m)",
+        "ladera con inclinación de 60°",
+        "el tiempo de escalada no sirve (dato descartado)"
+      ],
+      "modelo": "geométrico (pitágoras)",
+      "respuesta_final": "El cable mide 30·3/60 = 1,5 km; la base del triángulo es √(1500²−180²) ≈ 1489 m; suponiendo una ladera de 60°, se restan 180/tan 60° ≈ 104 m; Giuseppe corría aproximadamente 1,4 km. Supuestos: cable recto desde el valle hasta la cima y ladera de 60°.",
+      "validacion": true,
+      "archivo": "N4_AA_r1.json",
+      "costo_usd": 0.13616
+    }
+  ],
+  "agregado": {
+    "pct_bloqueo_por_transicion": {
+      "B23": 0.5,
+      "B34": 0.17
+    },
+    "modelos_observados": {
+      "geométrico (pitágoras)": 6
+    },
+    "pct_validan": 1.0
+  },
+  "fecha": "2026-10-20T19:54:43Z"
+}

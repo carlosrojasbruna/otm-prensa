@@ -1,0 +1,1442 @@
+{
+ "agente": "filtro",
+ "celdas": [
+  {
+   "agente": "filtro",
+   "modelo": "claude-haiku-5-5",
+   "estado": "completa",
+   "metrica": {
+    "nombre": "kappa_decision",
+    "umbral": 0.6,
+    "valor": 1.0,
+    "n_pares": 15,
+    "acuerdo_exacto": 1.0,
+    "consistencia_casos": "5/5",
+    "total_en_rango": "11/15",
+    "errores_agente": 0,
+    "por_caso": {
+     "01-claramente-modelable": {
+      "decisiones": [
+       true,
+       true,
+       true
+      ],
+      "totales": [
+       9,
+       10,
+       9
+      ],
+      "consistente": true,
+      "esperado": true
+     },
+     "02-claramente-no-modelable": {
+      "decisiones": [
+       false,
+       false,
+       false
+      ],
+      "totales": [
+       1,
+       1,
+       1
+      ],
+      "consistente": true,
+      "esperado": false
+     },
+     "03-frontera-7": {
+      "decisiones": [
+       true,
+       true,
+       true
+      ],
+      "totales": [
+       8,
+       8,
+       9
+      ],
+      "consistente": true,
+      "esperado": true
+     },
+     "04-frontera-6": {
+      "decisiones": [
+       false,
+       false,
+       false
+      ],
+      "totales": [
+       3,
+       0,
+       3
+      ],
+      "consistente": true,
+      "esperado": false
+     },
+     "05-sin-cifras": {
+      "decisiones": [
+       false,
+       false,
+       false
+      ],
+      "totales": [
+       6,
+       6,
+       6
+      ],
+      "consistente": true,
+      "esperado": false
+     }
+    },
+    "nota": null
+   },
+   "pasa": true,
+   "costo_usd": 0.004737,
+   "costo_auxiliar_usd": 0.0,
+   "costo_por_unidad_usd": 0.000316,
+   "latencia_media_s": 3.0,
+   "latencia_max_s": 3.5,
+   "n_unidades": 15,
+   "n_unidades_corridas": 15,
+   "n_unidades_omitidas": 0,
+   "n_llamadas": 15,
+   "modelos_solicitados": [
+    "claude-haiku-5-5"
+   ],
+   "unidades": [
+    {
+     "id": "01-claramente-modelable#1",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": true,
+      "total": 9,
+      "esperado_pasa": true,
+      "total_en_rango": true
+     },
+     "segundos": 3.01,
+     "costo_usd": 0.000675,
+     "n_llamadas": 1,
+     "segundos_api": 3.0,
+     "modelos_solicitados": [
+      "claude-haiku-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 551,
+      "output_tokens": 467,
+      "cache_creation_input_tokens": 3094,
+      "cache_read_input_tokens": 0
+     }
+    },
+    {
+     "id": "01-claramente-modelable#2",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": true,
+      "total": 10,
+      "esperado_pasa": true,
+      "total_en_rango": true
+     },
+     "segundos": 3.26,
+     "costo_usd": 0.000311,
+     "n_llamadas": 1,
+     "segundos_api": 3.26,
+     "modelos_solicitados": [
+      "claude-haiku-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 551,
+      "output_tokens": 449,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3094
+     }
+    },
+    {
+     "id": "01-claramente-modelable#3",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": true,
+      "total": 9,
+      "esperado_pasa": true,
+      "total_en_rango": true
+     },
+     "segundos": 3.06,
+     "costo_usd": 0.000299,
+     "n_llamadas": 1,
+     "segundos_api": 3.05,
+     "modelos_solicitados": [
+      "claude-haiku-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 551,
+      "output_tokens": 425,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3094
+     }
+    },
+    {
+     "id": "02-claramente-no-modelable#1",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": false,
+      "total": 1,
+      "esperado_pasa": false,
+      "total_en_rango": true
+     },
+     "segundos": 2.27,
+     "costo_usd": 0.000256,
+     "n_llamadas": 1,
+     "segundos_api": 2.27,
+     "modelos_solicitados": [
+      "claude-haiku-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 226,
+      "output_tokens": 404,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3094
+     }
+    },
+    {
+     "id": "02-claramente-no-modelable#2",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": false,
+      "total": 1,
+      "esperado_pasa": false,
+      "total_en_rango": true
+     },
+     "segundos": 2.25,
+     "costo_usd": 0.000247,
+     "n_llamadas": 1,
+     "segundos_api": 2.23,
+     "modelos_solicitados": [
+      "claude-haiku-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 226,
+      "output_tokens": 387,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3094
+     }
+    },
+    {
+     "id": "02-claramente-no-modelable#3",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": false,
+      "total": 1,
+      "esperado_pasa": false,
+      "total_en_rango": true
+     },
+     "segundos": 2.43,
+     "costo_usd": 0.000268,
+     "n_llamadas": 1,
+     "segundos_api": 2.43,
+     "modelos_solicitados": [
+      "claude-haiku-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 226,
+      "output_tokens": 429,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3094
+     }
+    },
+    {
+     "id": "03-frontera-7#1",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": true,
+      "total": 8,
+      "esperado_pasa": true,
+      "total_en_rango": true
+     },
+     "segundos": 3.15,
+     "costo_usd": 0.00031,
+     "n_llamadas": 1,
+     "segundos_api": 3.15,
+     "modelos_solicitados": [
+      "claude-haiku-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 424,
+      "output_tokens": 473,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3094
+     }
+    },
+    {
+     "id": "03-frontera-7#2",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": true,
+      "total": 8,
+      "esperado_pasa": true,
+      "total_en_rango": true
+     },
+     "segundos": 2.86,
+     "costo_usd": 0.000284,
+     "n_llamadas": 1,
+     "segundos_api": 2.86,
+     "modelos_solicitados": [
+      "claude-haiku-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 424,
+      "output_tokens": 422,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3094
+     }
+    },
+    {
+     "id": "03-frontera-7#3",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": true,
+      "total": 9,
+      "esperado_pasa": true,
+      "total_en_rango": false
+     },
+     "segundos": 3.02,
+     "costo_usd": 0.000322,
+     "n_llamadas": 1,
+     "segundos_api": 3.02,
+     "modelos_solicitados": [
+      "claude-haiku-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 424,
+      "output_tokens": 498,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3094
+     }
+    },
+    {
+     "id": "04-frontera-6#1",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": false,
+      "total": 3,
+      "esperado_pasa": false,
+      "total_en_rango": false
+     },
+     "segundos": 3.3,
+     "costo_usd": 0.000296,
+     "n_llamadas": 1,
+     "segundos_api": 3.3,
+     "modelos_solicitados": [
+      "claude-haiku-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 414,
+      "output_tokens": 447,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3094
+     }
+    },
+    {
+     "id": "04-frontera-6#2",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": false,
+      "total": 0,
+      "esperado_pasa": false,
+      "total_en_rango": false
+     },
+     "segundos": 3.27,
+     "costo_usd": 0.000294,
+     "n_llamadas": 1,
+     "segundos_api": 3.27,
+     "modelos_solicitados": [
+      "claude-haiku-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 414,
+      "output_tokens": 444,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3094
+     }
+    },
+    {
+     "id": "04-frontera-6#3",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": false,
+      "total": 3,
+      "esperado_pasa": false,
+      "total_en_rango": false
+     },
+     "segundos": 3.45,
+     "costo_usd": 0.000301,
+     "n_llamadas": 1,
+     "segundos_api": 3.43,
+     "modelos_solicitados": [
+      "claude-haiku-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 414,
+      "output_tokens": 458,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3094
+     }
+    },
+    {
+     "id": "05-sin-cifras#1",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": false,
+      "total": 6,
+      "esperado_pasa": false,
+      "total_en_rango": true
+     },
+     "segundos": 3.38,
+     "costo_usd": 0.000313,
+     "n_llamadas": 1,
+     "segundos_api": 3.38,
+     "modelos_solicitados": [
+      "claude-haiku-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 234,
+      "output_tokens": 518,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3094
+     }
+    },
+    {
+     "id": "05-sin-cifras#2",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": false,
+      "total": 6,
+      "esperado_pasa": false,
+      "total_en_rango": true
+     },
+     "segundos": 3.17,
+     "costo_usd": 0.000291,
+     "n_llamadas": 1,
+     "segundos_api": 3.17,
+     "modelos_solicitados": [
+      "claude-haiku-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 234,
+      "output_tokens": 474,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3094
+     }
+    },
+    {
+     "id": "05-sin-cifras#3",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": false,
+      "total": 6,
+      "esperado_pasa": false,
+      "total_en_rango": true
+     },
+     "segundos": 2.96,
+     "costo_usd": 0.00027,
+     "n_llamadas": 1,
+     "segundos_api": 2.96,
+     "modelos_solicitados": [
+      "claude-haiku-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 234,
+      "output_tokens": 432,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3094
+     }
+    }
+   ],
+   "notas": []
+  },
+  {
+   "agente": "filtro",
+   "modelo": "claude-sonnet-5-5",
+   "estado": "completa",
+   "metrica": {
+    "nombre": "kappa_decision",
+    "umbral": 0.6,
+    "valor": 0.7059,
+    "n_pares": 15,
+    "acuerdo_exacto": 0.8667,
+    "consistencia_casos": "4/5",
+    "total_en_rango": "9/15",
+    "errores_agente": 0,
+    "por_caso": {
+     "01-claramente-modelable": {
+      "decisiones": [
+       false,
+       true,
+       false
+      ],
+      "totales": [
+       6,
+       7,
+       5
+      ],
+      "consistente": false,
+      "esperado": true
+     },
+     "02-claramente-no-modelable": {
+      "decisiones": [
+       false,
+       false,
+       false
+      ],
+      "totales": [
+       1,
+       1,
+       0
+      ],
+      "consistente": true,
+      "esperado": false
+     },
+     "03-frontera-7": {
+      "decisiones": [
+       true,
+       true,
+       true
+      ],
+      "totales": [
+       7,
+       7,
+       7
+      ],
+      "consistente": true,
+      "esperado": true
+     },
+     "04-frontera-6": {
+      "decisiones": [
+       false,
+       false,
+       false
+      ],
+      "totales": [
+       3,
+       3,
+       3
+      ],
+      "consistente": true,
+      "esperado": false
+     },
+     "05-sin-cifras": {
+      "decisiones": [
+       false,
+       false,
+       false
+      ],
+      "totales": [
+       6,
+       6,
+       6
+      ],
+      "consistente": true,
+      "esperado": false
+     }
+    },
+    "nota": null
+   },
+   "pasa": true,
+   "costo_usd": 0.099555,
+   "costo_auxiliar_usd": 0.0,
+   "costo_por_unidad_usd": 0.006637,
+   "latencia_media_s": 6.0,
+   "latencia_max_s": 11.6,
+   "n_unidades": 15,
+   "n_unidades_corridas": 15,
+   "n_unidades_omitidas": 0,
+   "n_llamadas": 15,
+   "modelos_solicitados": [
+    "claude-sonnet-5-5"
+   ],
+   "unidades": [
+    {
+     "id": "01-claramente-modelable#1",
+     "ok": false,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": false,
+      "total": 6,
+      "esperado_pasa": true,
+      "total_en_rango": false
+     },
+     "segundos": 5.05,
+     "costo_usd": 0.013587,
+     "n_llamadas": 1,
+     "segundos_api": 5.05,
+     "modelos_solicitados": [
+      "claude-sonnet-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 551,
+      "output_tokens": 475,
+      "cache_creation_input_tokens": 3094,
+      "cache_read_input_tokens": 0
+     }
+    },
+    {
+     "id": "01-claramente-modelable#2",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": true,
+      "total": 7,
+      "esperado_pasa": true,
+      "total_en_rango": false
+     },
+     "segundos": 5.2,
+     "costo_usd": 0.006601,
+     "n_llamadas": 1,
+     "segundos_api": 5.2,
+     "modelos_solicitados": [
+      "claude-sonnet-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 551,
+      "output_tokens": 488,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3094
+     }
+    },
+    {
+     "id": "01-claramente-modelable#3",
+     "ok": false,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": false,
+      "total": 5,
+      "esperado_pasa": true,
+      "total_en_rango": false
+     },
+     "segundos": 5.43,
+     "costo_usd": 0.006751,
+     "n_llamadas": 1,
+     "segundos_api": 5.43,
+     "modelos_solicitados": [
+      "claude-sonnet-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 551,
+      "output_tokens": 503,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3094
+     }
+    },
+    {
+     "id": "02-claramente-no-modelable#1",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": false,
+      "total": 1,
+      "esperado_pasa": false,
+      "total_en_rango": true
+     },
+     "segundos": 4.46,
+     "costo_usd": 0.005681,
+     "n_llamadas": 1,
+     "segundos_api": 4.46,
+     "modelos_solicitados": [
+      "claude-sonnet-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 226,
+      "output_tokens": 461,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3094
+     }
+    },
+    {
+     "id": "02-claramente-no-modelable#2",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": false,
+      "total": 1,
+      "esperado_pasa": false,
+      "total_en_rango": true
+     },
+     "segundos": 4.1,
+     "costo_usd": 0.005481,
+     "n_llamadas": 1,
+     "segundos_api": 4.1,
+     "modelos_solicitados": [
+      "claude-sonnet-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 226,
+      "output_tokens": 441,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3094
+     }
+    },
+    {
+     "id": "02-claramente-no-modelable#3",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": false,
+      "total": 0,
+      "esperado_pasa": false,
+      "total_en_rango": true
+     },
+     "segundos": 4.13,
+     "costo_usd": 0.005601,
+     "n_llamadas": 1,
+     "segundos_api": 4.11,
+     "modelos_solicitados": [
+      "claude-sonnet-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 226,
+      "output_tokens": 453,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3094
+     }
+    },
+    {
+     "id": "03-frontera-7#1",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": true,
+      "total": 7,
+      "esperado_pasa": true,
+      "total_en_rango": true
+     },
+     "segundos": 4.74,
+     "costo_usd": 0.006417,
+     "n_llamadas": 1,
+     "segundos_api": 4.73,
+     "modelos_solicitados": [
+      "claude-sonnet-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 424,
+      "output_tokens": 495,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3094
+     }
+    },
+    {
+     "id": "03-frontera-7#2",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": true,
+      "total": 7,
+      "esperado_pasa": true,
+      "total_en_rango": true
+     },
+     "segundos": 5.37,
+     "costo_usd": 0.006207,
+     "n_llamadas": 1,
+     "segundos_api": 5.36,
+     "modelos_solicitados": [
+      "claude-sonnet-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 424,
+      "output_tokens": 474,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3094
+     }
+    },
+    {
+     "id": "03-frontera-7#3",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": true,
+      "total": 7,
+      "esperado_pasa": true,
+      "total_en_rango": true
+     },
+     "segundos": 4.37,
+     "costo_usd": 0.006437,
+     "n_llamadas": 1,
+     "segundos_api": 4.37,
+     "modelos_solicitados": [
+      "claude-sonnet-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 424,
+      "output_tokens": 497,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3094
+     }
+    },
+    {
+     "id": "04-frontera-6#1",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": false,
+      "total": 3,
+      "esperado_pasa": false,
+      "total_en_rango": false
+     },
+     "segundos": 5.23,
+     "costo_usd": 0.006027,
+     "n_llamadas": 1,
+     "segundos_api": 5.23,
+     "modelos_solicitados": [
+      "claude-sonnet-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 414,
+      "output_tokens": 458,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3094
+     }
+    },
+    {
+     "id": "04-frontera-6#2",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": false,
+      "total": 3,
+      "esperado_pasa": false,
+      "total_en_rango": false
+     },
+     "segundos": 3.95,
+     "costo_usd": 0.006157,
+     "n_llamadas": 1,
+     "segundos_api": 3.95,
+     "modelos_solicitados": [
+      "claude-sonnet-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 414,
+      "output_tokens": 471,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3094
+     }
+    },
+    {
+     "id": "04-frontera-6#3",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": false,
+      "total": 3,
+      "esperado_pasa": false,
+      "total_en_rango": false
+     },
+     "segundos": 4.56,
+     "costo_usd": 0.006177,
+     "n_llamadas": 1,
+     "segundos_api": 4.56,
+     "modelos_solicitados": [
+      "claude-sonnet-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 414,
+      "output_tokens": 473,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3094
+     }
+    },
+    {
+     "id": "05-sin-cifras#1",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": false,
+      "total": 6,
+      "esperado_pasa": false,
+      "total_en_rango": true
+     },
+     "segundos": 11.57,
+     "costo_usd": 0.006267,
+     "n_llamadas": 1,
+     "segundos_api": 11.57,
+     "modelos_solicitados": [
+      "claude-sonnet-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 234,
+      "output_tokens": 518,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3094
+     }
+    },
+    {
+     "id": "05-sin-cifras#2",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": false,
+      "total": 6,
+      "esperado_pasa": false,
+      "total_en_rango": true
+     },
+     "segundos": 11.14,
+     "costo_usd": 0.006077,
+     "n_llamadas": 1,
+     "segundos_api": 11.14,
+     "modelos_solicitados": [
+      "claude-sonnet-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 234,
+      "output_tokens": 499,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3094
+     }
+    },
+    {
+     "id": "05-sin-cifras#3",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": false,
+      "total": 6,
+      "esperado_pasa": false,
+      "total_en_rango": true
+     },
+     "segundos": 11.39,
+     "costo_usd": 0.006087,
+     "n_llamadas": 1,
+     "segundos_api": 11.39,
+     "modelos_solicitados": [
+      "claude-sonnet-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 234,
+      "output_tokens": 500,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3094
+     }
+    }
+   ],
+   "notas": []
+  },
+  {
+   "agente": "filtro",
+   "modelo": "claude-opus-5-5",
+   "estado": "completa",
+   "metrica": {
+    "nombre": "kappa_decision",
+    "umbral": 0.6,
+    "valor": 0.8571,
+    "n_pares": 15,
+    "acuerdo_exacto": 0.9333,
+    "consistencia_casos": "4/5",
+    "total_en_rango": "8/15",
+    "errores_agente": 0,
+    "por_caso": {
+     "01-claramente-modelable": {
+      "decisiones": [
+       true,
+       false,
+       true
+      ],
+      "totales": [
+       7,
+       6,
+       7
+      ],
+      "consistente": false,
+      "esperado": true
+     },
+     "02-claramente-no-modelable": {
+      "decisiones": [
+       false,
+       false,
+       false
+      ],
+      "totales": [
+       1,
+       1,
+       1
+      ],
+      "consistente": true,
+      "esperado": false
+     },
+     "03-frontera-7": {
+      "decisiones": [
+       true,
+       true,
+       true
+      ],
+      "totales": [
+       10,
+       7,
+       7
+      ],
+      "consistente": true,
+      "esperado": true
+     },
+     "04-frontera-6": {
+      "decisiones": [
+       false,
+       false,
+       false
+      ],
+      "totales": [
+       2,
+       2,
+       3
+      ],
+      "consistente": true,
+      "esperado": false
+     },
+     "05-sin-cifras": {
+      "decisiones": [
+       false,
+       false,
+       false
+      ],
+      "totales": [
+       4,
+       5,
+       4
+      ],
+      "consistente": true,
+      "esperado": false
+     }
+    },
+    "nota": null
+   },
+   "pasa": true,
+   "costo_usd": 0.304524,
+   "costo_auxiliar_usd": 0.0,
+   "costo_por_unidad_usd": 0.020302,
+   "latencia_media_s": 9.9,
+   "latencia_max_s": 12.8,
+   "n_unidades": 15,
+   "n_unidades_corridas": 15,
+   "n_unidades_omitidas": 0,
+   "n_llamadas": 15,
+   "modelos_solicitados": [
+    "claude-opus-5-5"
+   ],
+   "unidades": [
+    {
+     "id": "01-claramente-modelable#1",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": true,
+      "total": 7,
+      "esperado_pasa": true,
+      "total_en_rango": false
+     },
+     "segundos": 10.45,
+     "costo_usd": 0.037134,
+     "n_llamadas": 1,
+     "segundos_api": 10.44,
+     "modelos_solicitados": [
+      "claude-opus-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 551,
+      "output_tokens": 973,
+      "cache_creation_input_tokens": 3094,
+      "cache_read_input_tokens": 0
+     }
+    },
+    {
+     "id": "01-claramente-modelable#2",
+     "ok": false,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": false,
+      "total": 6,
+      "esperado_pasa": true,
+      "total_en_rango": false
+     },
+     "segundos": 11.2,
+     "costo_usd": 0.024203,
+     "n_llamadas": 1,
+     "segundos_api": 11.18,
+     "modelos_solicitados": [
+      "claude-opus-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 551,
+      "output_tokens": 1069,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3094
+     }
+    },
+    {
+     "id": "01-claramente-modelable#3",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": true,
+      "total": 7,
+      "esperado_pasa": true,
+      "total_en_rango": false
+     },
+     "segundos": 9.66,
+     "costo_usd": 0.020723,
+     "n_llamadas": 1,
+     "segundos_api": 9.65,
+     "modelos_solicitados": [
+      "claude-opus-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 551,
+      "output_tokens": 895,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3094
+     }
+    },
+    {
+     "id": "02-claramente-no-modelable#1",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": false,
+      "total": 1,
+      "esperado_pasa": false,
+      "total_en_rango": true
+     },
+     "segundos": 7.59,
+     "costo_usd": 0.014123,
+     "n_llamadas": 1,
+     "segundos_api": 7.59,
+     "modelos_solicitados": [
+      "claude-opus-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 226,
+      "output_tokens": 630,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3094
+     }
+    },
+    {
+     "id": "02-claramente-no-modelable#2",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": false,
+      "total": 1,
+      "esperado_pasa": false,
+      "total_en_rango": true
+     },
+     "segundos": 5.68,
+     "costo_usd": 0.010343,
+     "n_llamadas": 1,
+     "segundos_api": 5.67,
+     "modelos_solicitados": [
+      "claude-opus-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 226,
+      "output_tokens": 441,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3094
+     }
+    },
+    {
+     "id": "02-claramente-no-modelable#3",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": false,
+      "total": 1,
+      "esperado_pasa": false,
+      "total_en_rango": true
+     },
+     "segundos": 7.26,
+     "costo_usd": 0.014543,
+     "n_llamadas": 1,
+     "segundos_api": 7.26,
+     "modelos_solicitados": [
+      "claude-opus-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 226,
+      "output_tokens": 651,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3094
+     }
+    },
+    {
+     "id": "03-frontera-7#1",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": true,
+      "total": 10,
+      "esperado_pasa": true,
+      "total_en_rango": false
+     },
+     "segundos": 12.83,
+     "costo_usd": 0.022395,
+     "n_llamadas": 1,
+     "segundos_api": 12.83,
+     "modelos_solicitados": [
+      "claude-opus-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 424,
+      "output_tokens": 1004,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3094
+     }
+    },
+    {
+     "id": "03-frontera-7#2",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": true,
+      "total": 7,
+      "esperado_pasa": true,
+      "total_en_rango": true
+     },
+     "segundos": 10.91,
+     "costo_usd": 0.022155,
+     "n_llamadas": 1,
+     "segundos_api": 10.91,
+     "modelos_solicitados": [
+      "claude-opus-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 424,
+      "output_tokens": 992,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3094
+     }
+    },
+    {
+     "id": "03-frontera-7#3",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": true,
+      "total": 7,
+      "esperado_pasa": true,
+      "total_en_rango": true
+     },
+     "segundos": 11.66,
+     "costo_usd": 0.023315,
+     "n_llamadas": 1,
+     "segundos_api": 11.66,
+     "modelos_solicitados": [
+      "claude-opus-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 424,
+      "output_tokens": 1050,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3094
+     }
+    },
+    {
+     "id": "04-frontera-6#1",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": false,
+      "total": 2,
+      "esperado_pasa": false,
+      "total_en_rango": false
+     },
+     "segundos": 10.04,
+     "costo_usd": 0.019175,
+     "n_llamadas": 1,
+     "segundos_api": 10.04,
+     "modelos_solicitados": [
+      "claude-opus-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 414,
+      "output_tokens": 845,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3094
+     }
+    },
+    {
+     "id": "04-frontera-6#2",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": false,
+      "total": 2,
+      "esperado_pasa": false,
+      "total_en_rango": false
+     },
+     "segundos": 11.06,
+     "costo_usd": 0.020335,
+     "n_llamadas": 1,
+     "segundos_api": 11.04,
+     "modelos_solicitados": [
+      "claude-opus-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 414,
+      "output_tokens": 903,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3094
+     }
+    },
+    {
+     "id": "04-frontera-6#3",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": false,
+      "total": 3,
+      "esperado_pasa": false,
+      "total_en_rango": false
+     },
+     "segundos": 8.84,
+     "costo_usd": 0.017715,
+     "n_llamadas": 1,
+     "segundos_api": 8.82,
+     "modelos_solicitados": [
+      "claude-opus-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 414,
+      "output_tokens": 772,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3094
+     }
+    },
+    {
+     "id": "05-sin-cifras#1",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": false,
+      "total": 4,
+      "esperado_pasa": false,
+      "total_en_rango": true
+     },
+     "segundos": 9.85,
+     "costo_usd": 0.018635,
+     "n_llamadas": 1,
+     "segundos_api": 9.85,
+     "modelos_solicitados": [
+      "claude-opus-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 234,
+      "output_tokens": 854,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3094
+     }
+    },
+    {
+     "id": "05-sin-cifras#2",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": false,
+      "total": 5,
+      "esperado_pasa": false,
+      "total_en_rango": true
+     },
+     "segundos": 10.48,
+     "costo_usd": 0.019715,
+     "n_llamadas": 1,
+     "segundos_api": 10.46,
+     "modelos_solicitados": [
+      "claude-opus-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 234,
+      "output_tokens": 908,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3094
+     }
+    },
+    {
+     "id": "05-sin-cifras#3",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "pasa": false,
+      "total": 4,
+      "esperado_pasa": false,
+      "total_en_rango": true
+     },
+     "segundos": 10.56,
+     "costo_usd": 0.020015,
+     "n_llamadas": 1,
+     "segundos_api": 10.56,
+     "modelos_solicitados": [
+      "claude-opus-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 234,
+      "output_tokens": 923,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3094
+     }
+    }
+   ],
+   "notas": []
+  }
+ ]
+}

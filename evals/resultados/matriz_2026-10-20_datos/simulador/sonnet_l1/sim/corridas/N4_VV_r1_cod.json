@@ -1,0 +1,95 @@
+{
+  "run": {
+    "id": "N4_VV_r1",
+    "nivel": "N4",
+    "composicion": "VV",
+    "rep": 1,
+    "estilos": [
+      "V",
+      "V"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-sonnet-5-5",
+  "costo_usd": 0.032442,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P3-MM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P4-WM",
+        "fase_secundaria": "P1-MRS",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "ASSUME",
+          "PREC"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME",
+          "DIST",
+          "PREC"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "DIST",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 6,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": [
+          "PREC"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "ASSUME"
+        ]
+      }
+    ],
+    "bloqueos": [],
+    "supuestos": [
+      "el cable es la hipotenusa de un triángulo rectángulo",
+      "el cerro es casi vertical",
+      "el pie del cerro queda un poco antes que la cima",
+      "los 12 minutos de escalada no sirven porque no se conoce la velocidad de subida"
+    ],
+    "modelo": "geométrico",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Giuseppe corría aproximadamente 1,4 km: el cable mide 0,5 km/min · 3 min = 1500 m, √(1500² − 180²) ≈ 1489 m, y como el pie del cerro queda un poco antes que la cima, se redondea a 1,4 km. Los 12 minutos no se usan."
+    },
+    "ruta_principal": "R3",
+    "rutas": [
+      "R3"
+    ]
+  }
+}

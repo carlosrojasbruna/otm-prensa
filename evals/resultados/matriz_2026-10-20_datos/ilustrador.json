@@ -1,0 +1,491 @@
+{
+ "agente": "ilustrador",
+ "celdas": [
+  {
+   "agente": "ilustrador",
+   "modelo": "claude-haiku-5-5",
+   "estado": "completa",
+   "metrica": {
+    "nombre": "pct_casos_ok",
+    "umbral": 0.8,
+    "valor": 1.0,
+    "ok": 5,
+    "n": 5,
+    "detalle_por_caso": {
+     "01-embalse-valido": true,
+     "02-bus-valido": true,
+     "03-svg-malicioso": true,
+     "04-colores-fuera-de-paleta": true,
+     "05-reparacion-texto": true
+    }
+   },
+   "pasa": true,
+   "costo_usd": 0.002117,
+   "costo_auxiliar_usd": 0.0,
+   "costo_por_unidad_usd": 0.000423,
+   "latencia_media_s": 4.5,
+   "latencia_max_s": 8.6,
+   "n_unidades": 5,
+   "n_unidades_corridas": 5,
+   "n_unidades_omitidas": 0,
+   "n_llamadas": 6,
+   "modelos_solicitados": [
+    "claude-haiku-5-5"
+   ],
+   "unidades": [
+    {
+     "id": "01-embalse-valido",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "esperado": "acepta",
+      "errores": [],
+      "reparaciones": 0,
+      "bytes_svg": 769
+     },
+     "segundos": 3.31,
+     "costo_usd": 0.000525,
+     "n_llamadas": 1,
+     "segundos_api": 3.3,
+     "modelos_solicitados": [
+      "claude-haiku-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 162,
+      "output_tokens": 621,
+      "cache_creation_input_tokens": 1588,
+      "cache_read_input_tokens": 0
+     }
+    },
+    {
+     "id": "02-bus-valido",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "esperado": "acepta",
+      "errores": [],
+      "reparaciones": 0,
+      "bytes_svg": 541
+     },
+     "segundos": 2.75,
+     "costo_usd": 0.000244,
+     "n_llamadas": 1,
+     "segundos_api": 2.74,
+     "modelos_solicitados": [
+      "claude-haiku-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 135,
+      "output_tokens": 430,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 1588
+     }
+    },
+    {
+     "id": "03-svg-malicioso",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "esperado": "acepta",
+      "errores": [],
+      "reparaciones": 0,
+      "bytes_svg": 589
+     },
+     "segundos": 4.26,
+     "costo_usd": 0.000266,
+     "n_llamadas": 1,
+     "segundos_api": 4.24,
+     "modelos_solicitados": [
+      "claude-haiku-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 141,
+      "output_tokens": 472,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 1588
+     }
+    },
+    {
+     "id": "04-colores-fuera-de-paleta",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "esperado": "acepta",
+      "errores": [],
+      "reparaciones": 1,
+      "bytes_svg": 559
+     },
+     "segundos": 8.62,
+     "costo_usd": 0.000779,
+     "n_llamadas": 2,
+     "segundos_api": 8.61,
+     "modelos_solicitados": [
+      "claude-haiku-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 328,
+      "output_tokens": 1429,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 3176
+     }
+    },
+    {
+     "id": "05-reparacion-texto",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "esperado": "acepta",
+      "errores": [],
+      "reparaciones": 0,
+      "bytes_svg": 715
+     },
+     "segundos": 3.78,
+     "costo_usd": 0.000303,
+     "n_llamadas": 1,
+     "segundos_api": 3.78,
+     "modelos_solicitados": [
+      "claude-haiku-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 151,
+      "output_tokens": 545,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 1588
+     }
+    }
+   ],
+   "notas": [
+    "en vivo los 5 casos se miden sobre su entrada (esperado: SVG válido); las respuestas scripteadas de los casos 3 y 4 solo existen en --sin-red"
+   ]
+  },
+  {
+   "agente": "ilustrador",
+   "modelo": "claude-sonnet-5-5",
+   "estado": "completa",
+   "metrica": {
+    "nombre": "pct_casos_ok",
+    "umbral": 0.8,
+    "valor": 1.0,
+    "ok": 5,
+    "n": 5,
+    "detalle_por_caso": {
+     "01-embalse-valido": true,
+     "02-bus-valido": true,
+     "03-svg-malicioso": true,
+     "04-colores-fuera-de-paleta": true,
+     "05-reparacion-texto": true
+    }
+   },
+   "pasa": true,
+   "costo_usd": 0.03336,
+   "costo_auxiliar_usd": 0.0,
+   "costo_por_unidad_usd": 0.006672,
+   "latencia_media_s": 4.5,
+   "latencia_max_s": 6.2,
+   "n_unidades": 5,
+   "n_unidades_corridas": 5,
+   "n_unidades_omitidas": 0,
+   "n_llamadas": 5,
+   "modelos_solicitados": [
+    "claude-sonnet-5-5"
+   ],
+   "unidades": [
+    {
+     "id": "01-embalse-valido",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "esperado": "acepta",
+      "errores": [],
+      "reparaciones": 0,
+      "bytes_svg": 618
+     },
+     "segundos": 3.62,
+     "costo_usd": 0.009414,
+     "n_llamadas": 1,
+     "segundos_api": 3.62,
+     "modelos_solicitados": [
+      "claude-sonnet-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 162,
+      "output_tokens": 512,
+      "cache_creation_input_tokens": 1588,
+      "cache_read_input_tokens": 0
+     }
+    },
+    {
+     "id": "02-bus-valido",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "esperado": "acepta",
+      "errores": [],
+      "reparaciones": 0,
+      "bytes_svg": 753
+     },
+     "segundos": 4.69,
+     "costo_usd": 0.006838,
+     "n_llamadas": 1,
+     "segundos_api": 4.69,
+     "modelos_solicitados": [
+      "claude-sonnet-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 135,
+      "output_tokens": 625,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 1588
+     }
+    },
+    {
+     "id": "03-svg-malicioso",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "esperado": "acepta",
+      "errores": [],
+      "reparaciones": 0,
+      "bytes_svg": 624
+     },
+     "segundos": 6.22,
+     "costo_usd": 0.00553,
+     "n_llamadas": 1,
+     "segundos_api": 6.22,
+     "modelos_solicitados": [
+      "claude-sonnet-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 141,
+      "output_tokens": 493,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 1588
+     }
+    },
+    {
+     "id": "04-colores-fuera-de-paleta",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "esperado": "acepta",
+      "errores": [],
+      "reparaciones": 0,
+      "bytes_svg": 641
+     },
+     "segundos": 3.9,
+     "costo_usd": 0.005478,
+     "n_llamadas": 1,
+     "segundos_api": 3.9,
+     "modelos_solicitados": [
+      "claude-sonnet-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 140,
+      "output_tokens": 488,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 1588
+     }
+    },
+    {
+     "id": "05-reparacion-texto",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "esperado": "acepta",
+      "errores": [],
+      "reparaciones": 0,
+      "bytes_svg": 697
+     },
+     "segundos": 4.22,
+     "costo_usd": 0.0061,
+     "n_llamadas": 1,
+     "segundos_api": 4.22,
+     "modelos_solicitados": [
+      "claude-sonnet-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 151,
+      "output_tokens": 548,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 1588
+     }
+    }
+   ],
+   "notas": [
+    "en vivo los 5 casos se miden sobre su entrada (esperado: SVG válido); las respuestas scripteadas de los casos 3 y 4 solo existen en --sin-red"
+   ]
+  },
+  {
+   "agente": "ilustrador",
+   "modelo": "claude-opus-5-5",
+   "estado": "completa",
+   "metrica": {
+    "nombre": "pct_casos_ok",
+    "umbral": 0.8,
+    "valor": 1.0,
+    "ok": 5,
+    "n": 5,
+    "detalle_por_caso": {
+     "01-embalse-valido": true,
+     "02-bus-valido": true,
+     "03-svg-malicioso": true,
+     "04-colores-fuera-de-paleta": true,
+     "05-reparacion-texto": true
+    }
+   },
+   "pasa": true,
+   "costo_usd": 0.065868,
+   "costo_auxiliar_usd": 0.0,
+   "costo_por_unidad_usd": 0.013174,
+   "latencia_media_s": 5.9,
+   "latencia_max_s": 6.4,
+   "n_unidades": 5,
+   "n_unidades_corridas": 5,
+   "n_unidades_omitidas": 0,
+   "n_llamadas": 5,
+   "modelos_solicitados": [
+    "claude-opus-5-5"
+   ],
+   "unidades": [
+    {
+     "id": "01-embalse-valido",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "esperado": "acepta",
+      "errores": [],
+      "reparaciones": 0,
+      "bytes_svg": 721
+     },
+     "segundos": 6.14,
+     "costo_usd": 0.020008,
+     "n_llamadas": 1,
+     "segundos_api": 6.14,
+     "modelos_solicitados": [
+      "claude-opus-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 162,
+      "output_tokens": 571,
+      "cache_creation_input_tokens": 1588,
+      "cache_read_input_tokens": 0
+     }
+    },
+    {
+     "id": "02-bus-valido",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "esperado": "acepta",
+      "errores": [],
+      "reparaciones": 0,
+      "bytes_svg": 571
+     },
+     "segundos": 5.17,
+     "costo_usd": 0.010218,
+     "n_llamadas": 1,
+     "segundos_api": 5.16,
+     "modelos_solicitados": [
+      "claude-opus-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 135,
+      "output_tokens": 468,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 1588
+     }
+    },
+    {
+     "id": "03-svg-malicioso",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "esperado": "acepta",
+      "errores": [],
+      "reparaciones": 0,
+      "bytes_svg": 696
+     },
+     "segundos": 6.38,
+     "costo_usd": 0.011722,
+     "n_llamadas": 1,
+     "segundos_api": 6.38,
+     "modelos_solicitados": [
+      "claude-opus-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 141,
+      "output_tokens": 542,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 1588
+     }
+    },
+    {
+     "id": "04-colores-fuera-de-paleta",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "esperado": "acepta",
+      "errores": [],
+      "reparaciones": 0,
+      "bytes_svg": 769
+     },
+     "segundos": 6.15,
+     "costo_usd": 0.013058,
+     "n_llamadas": 1,
+     "segundos_api": 6.15,
+     "modelos_solicitados": [
+      "claude-opus-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 140,
+      "output_tokens": 609,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 1588
+     }
+    },
+    {
+     "id": "05-reparacion-texto",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "esperado": "acepta",
+      "errores": [],
+      "reparaciones": 0,
+      "bytes_svg": 629
+     },
+     "segundos": 5.52,
+     "costo_usd": 0.010862,
+     "n_llamadas": 1,
+     "segundos_api": 5.52,
+     "modelos_solicitados": [
+      "claude-opus-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 151,
+      "output_tokens": 497,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 1588
+     }
+    }
+   ],
+   "notas": [
+    "en vivo los 5 casos se miden sobre su entrada (esperado: SVG válido); las respuestas scripteadas de los casos 3 y 4 solo existen en --sin-red"
+   ]
+  }
+ ]
+}

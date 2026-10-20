@@ -1,0 +1,146 @@
+{
+  "run": {
+    "id": "N2_VV_r1",
+    "nivel": "N2",
+    "composicion": "VV",
+    "rep": 1,
+    "estilos": [
+      "V",
+      "V"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-sonnet-5-5",
+  "costo_usd": 0.036094,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P2-RM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 3,
+        "fase": "P3-MM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 4,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "PREC"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P2-RM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "STRAT",
+          "DIST"
+        ]
+      },
+      {
+        "n": 6,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT",
+          "DIST"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "EMK",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "ASSUME",
+          "DIST"
+        ]
+      },
+      {
+        "n": 8,
+        "fase": "P3-MM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT",
+          "DIST"
+        ]
+      },
+      {
+        "n": 9,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": [
+          "DIST",
+          "PREC"
+        ]
+      },
+      {
+        "n": 10,
+        "fase": "P6-VAL",
+        "fase_secundaria": null,
+        "eventos": [
+          "ASSUME",
+          "DIST"
+        ]
+      },
+      {
+        "n": 11,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P7-EXP",
+        "eventos": [
+          "ASSUME",
+          "STRAT",
+          "DIST"
+        ]
+      },
+      {
+        "n": 12,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "ASSUME",
+          "DIST",
+          "PREC"
+        ]
+      },
+      {
+        "n": 13,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": [
+          "ASSUME"
+        ]
+      }
+    ],
+    "bloqueos": [],
+    "supuestos": [
+      "cable como lado inclinado de un triángulo rectángulo",
+      "cerro con ancho: la base del triángulo llega hasta debajo de la cima",
+      "escalada a 3 km/h (velocidad inventada)",
+      "ladera como lado inclinado de otro triángulo rectángulo"
+    ],
+    "modelo": "geométrico",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "El llano es de unos 900 m si subía a 3 km/h (cable 1500 m, base ≈ 1489 m, escalada 600 m de los cuales ≈ 572 m son horizontales, llano ≈ 1489 − 572 ≈ 900 m). El resultado depende de la velocidad de escalada inventada."
+    },
+    "ruta_principal": "R5",
+    "rutas": [
+      "R5",
+      "R2"
+    ]
+  }
+}

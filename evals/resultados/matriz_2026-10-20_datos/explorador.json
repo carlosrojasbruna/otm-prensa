@@ -1,0 +1,452 @@
+{
+ "agente": "explorador",
+ "celdas": [
+  {
+   "agente": "explorador",
+   "modelo": "claude-haiku-5-5",
+   "estado": "completa",
+   "metrica": {
+    "nombre": "pct_casos_ok",
+    "umbral": 0.8,
+    "valor": 1.0,
+    "ok": 5,
+    "n": 5,
+    "detalle_por_caso": {
+     "caso_1": true,
+     "caso_2": true,
+     "caso_3": true,
+     "caso_4": true,
+     "caso_5": true
+    }
+   },
+   "pasa": true,
+   "costo_usd": 0.001563,
+   "costo_auxiliar_usd": 0.0,
+   "costo_por_unidad_usd": 0.000521,
+   "latencia_media_s": 5.2,
+   "latencia_max_s": 6.1,
+   "n_unidades": 5,
+   "n_unidades_corridas": 5,
+   "n_unidades_omitidas": 0,
+   "n_llamadas": 3,
+   "modelos_solicitados": [
+    "claude-haiku-5-5"
+   ],
+   "unidades": [
+    {
+     "id": "caso_1",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "esperado": "aceptada",
+      "n_cifras": 4,
+      "descartada": null
+     },
+     "segundos": 6.07,
+     "costo_usd": 0.000507,
+     "n_llamadas": 1,
+     "segundos_api": 6.07,
+     "modelos_solicitados": [
+      "claude-haiku-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 339,
+      "output_tokens": 917,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 1469
+     }
+    },
+    {
+     "id": "caso_2",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "esperado": "aceptada",
+      "n_cifras": 4,
+      "descartada": null
+     },
+     "segundos": 4.68,
+     "costo_usd": 0.000488,
+     "n_llamadas": 1,
+     "segundos_api": 4.67,
+     "modelos_solicitados": [
+      "claude-haiku-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 339,
+      "output_tokens": 879,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 1469
+     }
+    },
+    {
+     "id": "caso_3",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "esperado": "descartada",
+      "motivo": "medio 'blogcualquiera' fuera de MED01"
+     },
+     "segundos": 0.0,
+     "costo_usd": 0,
+     "n_llamadas": 0,
+     "segundos_api": 0,
+     "modelos_solicitados": [],
+     "tokens": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0
+     }
+    },
+    {
+     "id": "caso_4",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "esperado": "aceptada",
+      "n_cifras": 4,
+      "descartada": null
+     },
+     "segundos": 4.88,
+     "costo_usd": 0.000568,
+     "n_llamadas": 1,
+     "segundos_api": 4.88,
+     "modelos_solicitados": [
+      "claude-haiku-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 339,
+      "output_tokens": 1039,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 1469
+     }
+    },
+    {
+     "id": "caso_5",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "esperado": "descartada",
+      "motivo": "sin cifras en el cuerpo disponible (filtro previo MED01)"
+     },
+     "segundos": 0.0,
+     "costo_usd": 0,
+     "n_llamadas": 0,
+     "segundos_api": 0,
+     "modelos_solicitados": [],
+     "tokens": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0
+     }
+    }
+   ],
+   "notas": []
+  },
+  {
+   "agente": "explorador",
+   "modelo": "claude-sonnet-5-5",
+   "estado": "completa",
+   "metrica": {
+    "nombre": "pct_casos_ok",
+    "umbral": 0.8,
+    "valor": 1.0,
+    "ok": 5,
+    "n": 5,
+    "detalle_por_caso": {
+     "caso_1": true,
+     "caso_2": true,
+     "caso_3": true,
+     "caso_4": true,
+     "caso_5": true
+    }
+   },
+   "pasa": true,
+   "costo_usd": 0.019594,
+   "costo_auxiliar_usd": 0.0,
+   "costo_por_unidad_usd": 0.006531,
+   "latencia_media_s": 10.9,
+   "latencia_max_s": 11.4,
+   "n_unidades": 5,
+   "n_unidades_corridas": 5,
+   "n_unidades_omitidas": 0,
+   "n_llamadas": 3,
+   "modelos_solicitados": [
+    "claude-sonnet-5-5"
+   ],
+   "unidades": [
+    {
+     "id": "caso_1",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "esperado": "aceptada",
+      "n_cifras": 4,
+      "descartada": null
+     },
+     "segundos": 11.45,
+     "costo_usd": 0.00863,
+     "n_llamadas": 1,
+     "segundos_api": 11.45,
+     "modelos_solicitados": [
+      "claude-sonnet-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 339,
+      "output_tokens": 428,
+      "cache_creation_input_tokens": 1469,
+      "cache_read_input_tokens": 0
+     }
+    },
+    {
+     "id": "caso_2",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "esperado": "aceptada",
+      "n_cifras": 4,
+      "descartada": null
+     },
+     "segundos": 10.81,
+     "costo_usd": 0.005642,
+     "n_llamadas": 1,
+     "segundos_api": 10.81,
+     "modelos_solicitados": [
+      "claude-sonnet-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 339,
+      "output_tokens": 467,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 1469
+     }
+    },
+    {
+     "id": "caso_3",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "esperado": "descartada",
+      "motivo": "medio 'blogcualquiera' fuera de MED01"
+     },
+     "segundos": 0.0,
+     "costo_usd": 0,
+     "n_llamadas": 0,
+     "segundos_api": 0,
+     "modelos_solicitados": [],
+     "tokens": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0
+     }
+    },
+    {
+     "id": "caso_4",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "esperado": "aceptada",
+      "n_cifras": 4,
+      "descartada": null
+     },
+     "segundos": 10.4,
+     "costo_usd": 0.005322,
+     "n_llamadas": 1,
+     "segundos_api": 10.39,
+     "modelos_solicitados": [
+      "claude-sonnet-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 339,
+      "output_tokens": 435,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 1469
+     }
+    },
+    {
+     "id": "caso_5",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "esperado": "descartada",
+      "motivo": "sin cifras en el cuerpo disponible (filtro previo MED01)"
+     },
+     "segundos": 0.0,
+     "costo_usd": 0,
+     "n_llamadas": 0,
+     "segundos_api": 0,
+     "modelos_solicitados": [],
+     "tokens": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0
+     }
+    }
+   ],
+   "notas": []
+  },
+  {
+   "agente": "explorador",
+   "modelo": "claude-opus-5-5",
+   "estado": "completa",
+   "metrica": {
+    "nombre": "pct_casos_ok",
+    "umbral": 0.8,
+    "valor": 1.0,
+    "ok": 5,
+    "n": 5,
+    "detalle_por_caso": {
+     "caso_1": true,
+     "caso_2": true,
+     "caso_3": true,
+     "caso_4": true,
+     "caso_5": true
+    }
+   },
+   "pasa": true,
+   "costo_usd": 0.039621,
+   "costo_auxiliar_usd": 0.0,
+   "costo_por_unidad_usd": 0.013207,
+   "latencia_media_s": 5.5,
+   "latencia_max_s": 5.5,
+   "n_unidades": 5,
+   "n_unidades_corridas": 5,
+   "n_unidades_omitidas": 0,
+   "n_llamadas": 3,
+   "modelos_solicitados": [
+    "claude-opus-5-5"
+   ],
+   "unidades": [
+    {
+     "id": "caso_1",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "esperado": "aceptada",
+      "n_cifras": 4,
+      "descartada": null
+     },
+     "segundos": 5.54,
+     "costo_usd": 0.017941,
+     "n_llamadas": 1,
+     "segundos_api": 5.52,
+     "modelos_solicitados": [
+      "claude-opus-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 339,
+      "output_tokens": 462,
+      "cache_creation_input_tokens": 1469,
+      "cache_read_input_tokens": 0
+     }
+    },
+    {
+     "id": "caso_2",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "esperado": "aceptada",
+      "n_cifras": 4,
+      "descartada": null
+     },
+     "segundos": 5.33,
+     "costo_usd": 0.01097,
+     "n_llamadas": 1,
+     "segundos_api": 5.31,
+     "modelos_solicitados": [
+      "claude-opus-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 339,
+      "output_tokens": 466,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 1469
+     }
+    },
+    {
+     "id": "caso_3",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "esperado": "descartada",
+      "motivo": "medio 'blogcualquiera' fuera de MED01"
+     },
+     "segundos": 0.0,
+     "costo_usd": 0,
+     "n_llamadas": 0,
+     "segundos_api": 0,
+     "modelos_solicitados": [],
+     "tokens": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0
+     }
+    },
+    {
+     "id": "caso_4",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "esperado": "aceptada",
+      "n_cifras": 4,
+      "descartada": null
+     },
+     "segundos": 5.55,
+     "costo_usd": 0.01071,
+     "n_llamadas": 1,
+     "segundos_api": 5.55,
+     "modelos_solicitados": [
+      "claude-opus-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 339,
+      "output_tokens": 453,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 1469
+     }
+    },
+    {
+     "id": "caso_5",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "esperado": "descartada",
+      "motivo": "sin cifras en el cuerpo disponible (filtro previo MED01)"
+     },
+     "segundos": 0.0,
+     "costo_usd": 0,
+     "n_llamadas": 0,
+     "segundos_api": 0,
+     "modelos_solicitados": [],
+     "tokens": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0
+     }
+    }
+   ],
+   "notas": []
+  }
+ ]
+}

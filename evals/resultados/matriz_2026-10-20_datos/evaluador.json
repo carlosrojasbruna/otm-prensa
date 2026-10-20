@@ -1,0 +1,618 @@
+{
+ "agente": "evaluador",
+ "celdas": [
+  {
+   "agente": "evaluador",
+   "modelo": "claude-haiku-5-5",
+   "estado": "completa",
+   "metrica": {
+    "nombre": "kappa_ponderado",
+    "umbral": 0.7,
+    "valor": 0.6221,
+    "corridas": 1,
+    "kappa_por_corrida": [
+     0.6221
+    ],
+    "kappa_humanas": 0.6426,
+    "acuerdo_exacto": 0.7315,
+    "acuerdo_exacto_humanas": 0.8542,
+    "n_tareas": 9,
+    "totales": {
+     "clear-day-at-the-ocean": {
+      "evaluador": 10,
+      "referencia": 7
+     },
+     "giants-shoes": {
+      "evaluador": 23,
+      "referencia": 24
+     },
+     "lighthouse": {
+      "evaluador": 20,
+      "referencia": 20
+     },
+     "poblacion-belga": {
+      "evaluador": 15,
+      "referencia": 16
+     },
+     "port-of-hamburg": {
+      "evaluador": 23,
+      "referencia": 24
+     },
+     "residuos-plasticos": {
+      "evaluador": 22,
+      "referencia": 22
+     },
+     "st-michaels-church": {
+      "evaluador": 20,
+      "referencia": 21
+     },
+     "sugarloaf": {
+      "evaluador": 17,
+      "referencia": 20
+     },
+     "vapes-litio": {
+      "evaluador": 23,
+      "referencia": 24
+     }
+    },
+    "reutilizada": false
+   },
+   "pasa": false,
+   "costo_usd": 0.047436,
+   "costo_auxiliar_usd": 0.0,
+   "costo_por_unidad_usd": 0.005271,
+   "latencia_media_s": 43.5,
+   "latencia_max_s": 58.9,
+   "n_unidades": 9,
+   "n_unidades_corridas": 9,
+   "n_unidades_omitidas": 0,
+   "n_llamadas": 9,
+   "modelos_solicitados": [
+    "claude-haiku-5-5"
+   ],
+   "unidades": [
+    {
+     "id": "clear-day-at-the-ocean",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "total": 10,
+      "avisos": [
+       "cita_recortada_25:genuino"
+      ]
+     },
+     "segundos": 50.54,
+     "costo_usd": 0.006952,
+     "n_llamadas": 1,
+     "segundos_api": 50.53,
+     "modelos_solicitados": [
+      "claude-haiku-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 394,
+      "output_tokens": 11117,
+      "cache_creation_input_tokens": 10832,
+      "cache_read_input_tokens": 0
+     }
+    },
+    {
+     "id": "giants-shoes",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "total": 23,
+      "avisos": []
+     },
+     "segundos": 45.55,
+     "costo_usd": 0.006642,
+     "n_llamadas": 1,
+     "segundos_api": 45.55,
+     "modelos_solicitados": [
+      "claude-haiku-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 282,
+      "output_tokens": 10519,
+      "cache_creation_input_tokens": 10832,
+      "cache_read_input_tokens": 0
+     }
+    },
+    {
+     "id": "lighthouse",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "total": 20,
+      "avisos": []
+     },
+     "segundos": 53.49,
+     "costo_usd": 0.007293,
+     "n_llamadas": 1,
+     "segundos_api": 53.49,
+     "modelos_solicitados": [
+      "claude-haiku-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 274,
+      "output_tokens": 11823,
+      "cache_creation_input_tokens": 10832,
+      "cache_read_input_tokens": 0
+     }
+    },
+    {
+     "id": "poblacion-belga",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "total": 15,
+      "avisos": []
+     },
+     "segundos": 58.9,
+     "costo_usd": 0.005484,
+     "n_llamadas": 1,
+     "segundos_api": 58.9,
+     "modelos_solicitados": [
+      "claude-haiku-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 352,
+      "output_tokens": 10680,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 10832
+     }
+    },
+    {
+     "id": "port-of-hamburg",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "total": 23,
+      "avisos": []
+     },
+     "segundos": 34.58,
+     "costo_usd": 0.003846,
+     "n_llamadas": 1,
+     "segundos_api": 34.58,
+     "modelos_solicitados": [
+      "claude-haiku-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 385,
+      "output_tokens": 7398,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 10832
+     }
+    },
+    {
+     "id": "residuos-plasticos",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "total": 22,
+      "avisos": []
+     },
+     "segundos": 36.91,
+     "costo_usd": 0.004494,
+     "n_llamadas": 1,
+     "segundos_api": 36.9,
+     "modelos_solicitados": [
+      "claude-haiku-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 624,
+      "output_tokens": 8647,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 10832
+     }
+    },
+    {
+     "id": "st-michaels-church",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "total": 20,
+      "avisos": []
+     },
+     "segundos": 35.57,
+     "costo_usd": 0.003871,
+     "n_llamadas": 1,
+     "segundos_api": 35.57,
+     "modelos_solicitados": [
+      "claude-haiku-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 296,
+      "output_tokens": 7467,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 10832
+     }
+    },
+    {
+     "id": "sugarloaf",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "total": 17,
+      "avisos": []
+     },
+     "segundos": 49.14,
+     "costo_usd": 0.005705,
+     "n_llamadas": 1,
+     "segundos_api": 49.14,
+     "modelos_solicitados": [
+      "claude-haiku-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 694,
+      "output_tokens": 11054,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 10832
+     }
+    },
+    {
+     "id": "vapes-litio",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "total": 23,
+      "avisos": []
+     },
+     "segundos": 26.83,
+     "costo_usd": 0.003149,
+     "n_llamadas": 1,
+     "segundos_api": 26.83,
+     "modelos_solicitados": [
+      "claude-haiku-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 594,
+      "output_tokens": 5962,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 10832
+     }
+    }
+   ],
+   "notas": [
+    "1 corrida sobre las 9 tareas-oro; kappa total incluye 5 puntajes provisionales de Claude"
+   ]
+  },
+  {
+   "agente": "evaluador",
+   "modelo": "claude-sonnet-5-5",
+   "estado": "completa",
+   "metrica": {
+    "nombre": "kappa_ponderado",
+    "umbral": 0.7,
+    "valor": 0.7814,
+    "corridas": 1,
+    "kappa_por_corrida": [
+     0.7814
+    ],
+    "kappa_humanas": 0.7143,
+    "acuerdo_exacto": 0.8426,
+    "acuerdo_exacto_humanas": 0.875,
+    "n_tareas": 9,
+    "totales": {
+     "clear-day-at-the-ocean": {
+      "evaluador": 8,
+      "referencia": 7
+     },
+     "giants-shoes": {
+      "evaluador": 24,
+      "referencia": 24
+     },
+     "lighthouse": {
+      "evaluador": 23,
+      "referencia": 20
+     },
+     "poblacion-belga": {
+      "evaluador": 13,
+      "referencia": 16
+     },
+     "port-of-hamburg": {
+      "evaluador": 24,
+      "referencia": 24
+     },
+     "residuos-plasticos": {
+      "evaluador": 23,
+      "referencia": 22
+     },
+     "st-michaels-church": {
+      "evaluador": 22,
+      "referencia": 21
+     },
+     "sugarloaf": {
+      "evaluador": 22,
+      "referencia": 20
+     },
+     "vapes-litio": {
+      "evaluador": 24,
+      "referencia": 24
+     }
+    },
+    "reutilizada": false
+   },
+   "pasa": true,
+   "costo_usd": 0.405046,
+   "costo_auxiliar_usd": 0.0,
+   "costo_por_unidad_usd": 0.045005,
+   "latencia_media_s": 25.2,
+   "latencia_max_s": 34.0,
+   "n_unidades": 9,
+   "n_unidades_corridas": 9,
+   "n_unidades_omitidas": 0,
+   "n_llamadas": 9,
+   "modelos_solicitados": [
+    "claude-sonnet-5-5"
+   ],
+   "unidades": [
+    {
+     "id": "clear-day-at-the-ocean",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "total": 8,
+      "avisos": [
+       "cita_recortada_25:genuino"
+      ]
+     },
+     "segundos": 23.07,
+     "costo_usd": 0.060828,
+     "n_llamadas": 1,
+     "segundos_api": 23.07,
+     "modelos_solicitados": [
+      "claude-sonnet-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 394,
+      "output_tokens": 3296,
+      "cache_creation_input_tokens": 10832,
+      "cache_read_input_tokens": 0
+     }
+    },
+    {
+     "id": "giants-shoes",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "total": 24,
+      "avisos": []
+     },
+     "segundos": 19.21,
+     "costo_usd": 0.053624,
+     "n_llamadas": 1,
+     "segundos_api": 19.21,
+     "modelos_solicitados": [
+      "claude-sonnet-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 282,
+      "output_tokens": 2598,
+      "cache_creation_input_tokens": 10832,
+      "cache_read_input_tokens": 0
+     }
+    },
+    {
+     "id": "lighthouse",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "total": 23,
+      "avisos": []
+     },
+     "segundos": 24.08,
+     "costo_usd": 0.056558,
+     "n_llamadas": 1,
+     "segundos_api": 24.07,
+     "modelos_solicitados": [
+      "claude-sonnet-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 274,
+      "output_tokens": 2893,
+      "cache_creation_input_tokens": 10832,
+      "cache_read_input_tokens": 0
+     }
+    },
+    {
+     "id": "poblacion-belga",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "total": 13,
+      "avisos": []
+     },
+     "segundos": 33.57,
+     "costo_usd": 0.048,
+     "n_llamadas": 1,
+     "segundos_api": 33.57,
+     "modelos_solicitados": [
+      "claude-sonnet-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 352,
+      "output_tokens": 4513,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 10832
+     }
+    },
+    {
+     "id": "port-of-hamburg",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "total": 24,
+      "avisos": []
+     },
+     "segundos": 18.14,
+     "costo_usd": 0.027906,
+     "n_llamadas": 1,
+     "segundos_api": 18.13,
+     "modelos_solicitados": [
+      "claude-sonnet-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 385,
+      "output_tokens": 2497,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 10832
+     }
+    },
+    {
+     "id": "residuos-plasticos",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "total": 23,
+      "avisos": []
+     },
+     "segundos": 26.5,
+     "costo_usd": 0.041084,
+     "n_llamadas": 1,
+     "segundos_api": 26.49,
+     "modelos_solicitados": [
+      "claude-sonnet-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 624,
+      "output_tokens": 3767,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 10832
+     }
+    },
+    {
+     "id": "st-michaels-church",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "total": 22,
+      "avisos": []
+     },
+     "segundos": 28.44,
+     "costo_usd": 0.038468,
+     "n_llamadas": 1,
+     "segundos_api": 28.44,
+     "modelos_solicitados": [
+      "claude-sonnet-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 296,
+      "output_tokens": 3571,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 10832
+     }
+    },
+    {
+     "id": "sugarloaf",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "total": 22,
+      "avisos": []
+     },
+     "segundos": 34.03,
+     "costo_usd": 0.047184,
+     "n_llamadas": 1,
+     "segundos_api": 34.02,
+     "modelos_solicitados": [
+      "claude-sonnet-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 694,
+      "output_tokens": 4363,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 10832
+     }
+    },
+    {
+     "id": "vapes-litio",
+     "ok": true,
+     "omitida": false,
+     "error": null,
+     "detalle": {
+      "total": 24,
+      "avisos": []
+     },
+     "segundos": 19.86,
+     "costo_usd": 0.031394,
+     "n_llamadas": 1,
+     "segundos_api": 19.86,
+     "modelos_solicitados": [
+      "claude-sonnet-5-5"
+     ],
+     "tokens": {
+      "input_tokens": 594,
+      "output_tokens": 2804,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 10832
+     }
+    }
+   ],
+   "notas": [
+    "1 corrida sobre las 9 tareas-oro; kappa total incluye 5 puntajes provisionales de Claude"
+   ]
+  },
+  {
+   "agente": "evaluador",
+   "modelo": "claude-opus-5-5",
+   "estado": "reutilizada",
+   "metrica": {
+    "nombre": "kappa_ponderado",
+    "umbral": 0.7,
+    "valor": 0.7508,
+    "corridas": 3,
+    "kappa_por_corrida": [
+     0.7062,
+     0.8017,
+     0.7445
+    ],
+    "kappa_min": 0.7062,
+    "kappa_humanas": 0.6599,
+    "kappa_humanas_por_corrida": [
+     0.6199,
+     0.6757,
+     0.6842
+    ],
+    "acuerdo_exacto": 0.8241,
+    "acuerdo_exacto_humanas": 0.8611,
+    "n_tareas": 9,
+    "reutilizada": true
+   },
+   "pasa": true,
+   "costo_usd": 0.0,
+   "costo_auxiliar_usd": 0.0,
+   "costo_por_unidad_usd": 0.078321,
+   "latencia_media_s": 31.6,
+   "latencia_max_s": 42.9,
+   "n_unidades": 27,
+   "n_unidades_corridas": 0,
+   "n_unidades_omitidas": 0,
+   "n_llamadas": 0,
+   "modelos_solicitados": [
+    "claude-opus-5-5"
+   ],
+   "unidades": [],
+   "notas": [
+    "Reutilizada: corridas de calibración v1.3 (evals/resultados/evaluador_corridas/prompt_v1.3_2026-10-20.json); no se volvió a llamar a la API. Costos recalculados con config.yaml (4/20 USD/MTok); la calibración los registró con el supuesto 5/25."
+   ],
+   "costo_reutilizado_usd": 2.1147
+  }
+ ]
+}

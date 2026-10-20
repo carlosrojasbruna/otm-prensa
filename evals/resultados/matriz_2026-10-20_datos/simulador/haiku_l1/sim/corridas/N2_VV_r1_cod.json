@@ -1,0 +1,243 @@
+{
+  "run": {
+    "id": "N2_VV_r1",
+    "nivel": "N2",
+    "composicion": "VV",
+    "rep": 1,
+    "estilos": [
+      "V",
+      "V"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-haiku-5-5",
+  "costo_usd": 0.002605,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P1-MRS",
+        "eventos": []
+      },
+      {
+        "n": 3,
+        "fase": "P4-WM",
+        "eventos": []
+      },
+      {
+        "n": 4,
+        "fase": "P2-RM",
+        "eventos": []
+      },
+      {
+        "n": 5,
+        "fase": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 6,
+        "fase": "P3-MM",
+        "eventos": []
+      },
+      {
+        "n": 7,
+        "fase": "P3-MM",
+        "eventos": []
+      },
+      {
+        "n": 8,
+        "fase": "P3-MM",
+        "eventos": []
+      },
+      {
+        "n": 9,
+        "fase": "P3-MM",
+        "eventos": []
+      },
+      {
+        "n": 10,
+        "fase": "P4-WM",
+        "eventos": []
+      },
+      {
+        "n": 11,
+        "fase": "P4-WM",
+        "eventos": []
+      },
+      {
+        "n": 12,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "PREC"
+        ]
+      },
+      {
+        "n": 13,
+        "fase": "P5-INT",
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 14,
+        "fase": "P1-MRS",
+        "eventos": [
+          "DIST",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 15,
+        "fase": "P6-VAL",
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 16,
+        "fase": "P1-MRS",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 17,
+        "fase": "P1-MRS",
+        "eventos": []
+      },
+      {
+        "n": 18,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P1-MRS",
+        "eventos": []
+      },
+      {
+        "n": 19,
+        "fase": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 20,
+        "fase": "P1-MRS",
+        "eventos": []
+      },
+      {
+        "n": 21,
+        "fase": "P5-INT",
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 22,
+        "fase": "P5-INT",
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 23,
+        "fase": "P2-RM",
+        "eventos": [
+          "DIST",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 24,
+        "fase": "P2-RM",
+        "eventos": []
+      },
+      {
+        "n": 25,
+        "fase": "P7-EXP",
+        "eventos": []
+      },
+      {
+        "n": 26,
+        "fase": "P6-VAL",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 27,
+        "fase": "P6-VAL",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 28,
+        "fase": "P7-EXP",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 29,
+        "fase": "P7-EXP",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 30,
+        "fase": "P7-EXP",
+        "eventos": []
+      }
+    ],
+    "bloqueos": [
+      {
+        "codigo": "B23",
+        "turnos": [
+          6,
+          7,
+          8
+        ],
+        "resolucion": "peer",
+        "descripcion": "Duda explícita sobre si Pitágoras implica sumar o restar cuadrados y sobre qué lado es el cable; B propone no saber y A lo destraba indicando restar cuadrados con el cable como lado mayor."
+      },
+      {
+        "codigo": "B56",
+        "turnos": [
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "resolucion": "peer",
+        "descripcion": "Duda sobre el rol de los 12 minutos de escalada y sobre si el resultado corresponde al pie del cerro; repetición de releer el enunciado sin avance hasta que A reconoce la confusión entre diagonal y llanura y B la retoma."
+      }
+    ],
+    "supuestos": [
+      "la llanura llega hasta el pie del cerro"
+    ],
+    "modelo": "Pitágoras",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Aproximadamente 1489 m (1,49 km), distancia horizontal hasta abajo de la cima, asumiendo que la llanura llega hasta el pie del cerro."
+    },
+    "ruta_principal": "R3",
+    "rutas": [
+      "R3",
+      "R2"
+    ]
+  }
+}
