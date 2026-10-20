@@ -1,0 +1,474 @@
+{
+  "id": "iteracion-cuenta-luz",
+  "descripcion": "Modo iteración: versión 1 evaluada con autenticidad y validación en 1; la v2 debe atender ambas mejoras y subir la versión.",
+  "modo": "iteracion",
+  "nivel": "S",
+  "noticia": {
+    "id": "2026-10-16-ejemplo-cuenta-luz",
+    "medio_id": "ejemplo",
+    "medio": "Diario Ejemplo",
+    "idioma": "es",
+    "titulo": "Ejemplo sintético: sube la cuenta de la luz en los hogares",
+    "fecha": "2026-10-16",
+    "url": "https://ejemplo.invalid/2026-10-16-ejemplo-cuenta-luz",
+    "area": "economia",
+    "resumen_propio": "Ejemplo sintético para pruebas. Se anuncia un alza de las tarifas eléctricas residenciales. La nota entrega el consumo mensual típico de un hogar, el precio de cada unidad de energía, el cargo fijo mensual y el porcentaje de alza anunciado, mientras algunas familias evalúan instalar paneles solares.",
+    "cifras": [
+      {
+        "valor": 180,
+        "unidad": "kWh por mes",
+        "que_es": "consumo mensual típico de un hogar (ejemplo sintético)",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 2"
+        }
+      },
+      {
+        "valor": 160,
+        "unidad": "pesos por kWh",
+        "que_es": "precio de la energía (ejemplo sintético)",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "tabla 1"
+        }
+      },
+      {
+        "valor": 1500,
+        "unidad": "pesos por mes",
+        "que_es": "cargo fijo mensual (ejemplo sintético)",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "tabla 1"
+        }
+      },
+      {
+        "valor": "12 %",
+        "unidad": "porcentaje",
+        "que_es": "alza anunciada de la tarifa (ejemplo sintético)",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 1"
+        }
+      }
+    ],
+    "recuperada_en": "2026-10-19T09:00:00Z"
+  },
+  "tarea_previa": {
+    "id": "2026-10-cuenta-luz",
+    "titulo": "¿Cuánto pesará el alza de la luz en tu casa?",
+    "estado": "evaluada",
+    "version": 1,
+    "fecha": "2026-10-19",
+    "noticia": {
+      "noticia_id": "2026-10-16-ejemplo-cuenta-luz",
+      "medio": "Diario Ejemplo",
+      "titulo": "Ejemplo sintético: sube la cuenta de la luz en los hogares",
+      "fecha": "2026-10-16",
+      "url": "https://ejemplo.invalid/2026-10-16-ejemplo-cuenta-luz",
+      "resumen_propio": "Ejemplo sintético para pruebas. Se anuncia un alza de las tarifas eléctricas residenciales. La nota entrega el consumo mensual típico de un hogar, el precio de cada unidad de energía, el cargo fijo mensual y el porcentaje de alza anunciado, mientras algunas familias evalúan instalar paneles solares.",
+      "cifras_usadas": [
+        {
+          "valor": 180,
+          "unidad": "kWh por mes",
+          "que_es": "consumo mensual típico de un hogar (ejemplo sintético)",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 2"
+          }
+        },
+        {
+          "valor": 160,
+          "unidad": "pesos por kWh",
+          "que_es": "precio de la energía (ejemplo sintético)",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "tabla 1"
+          }
+        }
+      ]
+    },
+    "nivel_principal": "S",
+    "variantes": {
+      "abajo": "P",
+      "arriba": "U"
+    },
+    "area": "economia",
+    "contenidos_matematicos": [
+      "razones y tasas",
+      "función lineal",
+      "porcentajes"
+    ],
+    "tiempo_estimado": "2 sesiones de 90 min",
+    "estudiante": {
+      "enunciado_es": "Se anunció que la tarifa eléctrica de los hogares sube. Un hogar típico consume 180 kWh al mes y paga 160 pesos por kWh. Una familia piensa instalar paneles solares o reducir su consumo. ¿Cuál de las dos opciones les conviene más durante los próximos años? Pueden pedir información adicional.",
+      "foto_descripcion": "Ícono plano de una casa con un medidor de luz y una flecha hacia arriba.",
+      "recursos_a_solicitud": [
+        {
+          "id": "R1",
+          "que_es": "costo de paneles",
+          "contenido": "Información de una empresa instaladora sobre el precio de un sistema doméstico y cuánta energía produce al mes.",
+          "disponibilidad": "a_solicitud",
+          "fase": "P2-RM",
+          "fuente": "otra fuente: cotización de empresa instaladora (ejemplo)"
+        }
+      ]
+    },
+    "variantes_detalle": {
+      "abajo": {
+        "tramo": "P",
+        "cambios": "Se entrega el costo de los paneles y se pregunta en cuántos meses se recupera."
+      },
+      "arriba": {
+        "tramo": "U",
+        "cambios": "Se pide un modelo dinámico con alzas sucesivas, tasa de descuento y análisis de sensibilidad."
+      }
+    },
+    "recursos_de_entrada": [],
+    "mapa_ciclo": {
+      "P1-MRS": {
+        "decision": "entender qué compara la familia y qué significa convenir",
+        "evidencia": "registro escrito del grupo",
+        "bloqueo_probable": null
+      },
+      "P2-RM": {
+        "decision": "elegir qué costos considerar y suponer consumo estable",
+        "evidencia": "registro escrito del grupo",
+        "bloqueo_probable": "B12"
+      },
+      "P3-MM": {
+        "decision": "expresar la cuenta como función del consumo",
+        "evidencia": "registro escrito del grupo",
+        "bloqueo_probable": "B23"
+      },
+      "P4-WM": {
+        "decision": "comparar la cuenta actual con la nueva y con cada opción",
+        "evidencia": "registro escrito del grupo",
+        "bloqueo_probable": null
+      },
+      "P5-INT": {
+        "decision": "decidir qué opción conviene y bajo qué condiciones",
+        "evidencia": "registro escrito del grupo",
+        "bloqueo_probable": null
+      },
+      "P6-VAL": {
+        "decision": "revisar si tiene sentido",
+        "evidencia": "registro escrito del grupo",
+        "bloqueo_probable": "B56"
+      },
+      "P7-EXP": {
+        "decision": "presentar la recomendación con los supuestos",
+        "evidencia": "registro escrito del grupo",
+        "bloqueo_probable": null
+      }
+    },
+    "task_space": {
+      "required_assumptions": [
+        "el consumo se mantiene",
+        "el alza se aplica una vez",
+        "el precio de los paneles es el cotizado"
+      ],
+      "reference_solution": {
+        "steps": "Cuenta nueva = (precio x 1,12 x consumo) + cargo fijo; comparar el ahorro mensual con el costo de la inversión.",
+        "result": "la inversión se recupera en varios años",
+        "acceptable_range": "de 4 a 10 años según supuestos"
+      },
+      "routes": [
+        {
+          "id": "R1",
+          "nombre": "lineal en el consumo",
+          "nivel": "S1",
+          "modelo": "cuenta = tarifa x consumo + cargo fijo",
+          "resultado": "≈ 6 años"
+        },
+        {
+          "id": "R2",
+          "nombre": "reducir consumo",
+          "nivel": "S1",
+          "modelo": "ahorro por menos kWh",
+          "resultado": "ahorro inmediato"
+        },
+        {
+          "id": "R3",
+          "nombre": "proyección con alzas",
+          "nivel": "U",
+          "modelo": "serie de alzas anuales",
+          "resultado": "≈ 5 años"
+        }
+      ],
+      "modelo_inadecuado": {
+        "id": "RX",
+        "por_que_falla": "Ignorar el cargo fijo y asumir que el alza afecta a todo el monto igual."
+      },
+      "validation_evidence": "Comparar con la realidad.",
+      "agent_visibility": {
+        "students": [
+          "enunciado_es",
+          "foto_descripcion",
+          "recursos_a_solicitud"
+        ],
+        "coder": [
+          "enunciado_es",
+          "task_space"
+        ],
+        "guide": [
+          "all"
+        ]
+      }
+    },
+    "rubrica_rub01": null,
+    "rubrica_rub02": {
+      "P": null,
+      "S": null,
+      "U": null
+    },
+    "modelo_y_prompt": {
+      "diseñador": "claude-sonnet-5-5",
+      "version_prompt": "1.0",
+      "version_rubrica": "4.0"
+    },
+    "sub_tramo": "S1"
+  },
+  "evaluacion": {
+    "version_rubrica": "4.0",
+    "criterios": {
+      "genuino": {
+        "cita": "¿Cuál de las dos opciones les conviene más durante los próximos años?",
+        "justificacion": "Justificación de ejemplo para genuino.",
+        "puntaje": 2
+      },
+      "abierta": {
+        "cita": "¿Cuál de las dos opciones les conviene más durante los próximos años?",
+        "justificacion": "Justificación de ejemplo para abierta.",
+        "puntaje": 2
+      },
+      "decisiones": {
+        "cita": "¿Cuál de las dos opciones les conviene más durante los próximos años?",
+        "justificacion": "Justificación de ejemplo para decisiones.",
+        "puntaje": 2
+      },
+      "realismo": {
+        "cita": "¿Cuál de las dos opciones les conviene más durante los próximos años?",
+        "justificacion": "Justificación de ejemplo para realismo.",
+        "puntaje": 2
+      },
+      "autenticidad": {
+        "cita": "¿Cuál de las dos opciones les conviene más durante los próximos años?",
+        "justificacion": "Justificación de ejemplo para autenticidad.",
+        "puntaje": 1
+      },
+      "contexto": {
+        "cita": "¿Cuál de las dos opciones les conviene más durante los próximos años?",
+        "justificacion": "Justificación de ejemplo para contexto.",
+        "puntaje": 2
+      },
+      "ciclo": {
+        "cita": "¿Cuál de las dos opciones les conviene más durante los próximos años?",
+        "justificacion": "Justificación de ejemplo para ciclo.",
+        "puntaje": 2
+      },
+      "validacion": {
+        "cita": "¿Cuál de las dos opciones les conviene más durante los próximos años?",
+        "justificacion": "Justificación de ejemplo para validacion.",
+        "puntaje": 1
+      },
+      "nivel": {
+        "cita": "¿Cuál de las dos opciones les conviene más durante los próximos años?",
+        "justificacion": "Justificación de ejemplo para nivel.",
+        "puntaje": 2
+      },
+      "autodiferenciacion": {
+        "cita": "¿Cuál de las dos opciones les conviene más durante los próximos años?",
+        "justificacion": "Justificación de ejemplo para autodiferenciacion.",
+        "puntaje": 2
+      },
+      "fecundidad": {
+        "cita": "¿Cuál de las dos opciones les conviene más durante los próximos años?",
+        "justificacion": "Justificación de ejemplo para fecundidad.",
+        "puntaje": 2
+      },
+      "recursos": {
+        "cita": "¿Cuál de las dos opciones les conviene más durante los próximos años?",
+        "justificacion": "Justificación de ejemplo para recursos.",
+        "puntaje": 2
+      }
+    },
+    "total": 22,
+    "mejoras": [
+      {
+        "criterio": "autenticidad",
+        "mejora_minima": "Integrar un dato real de la nota, como la tabla de tarifas, como recurso que el grupo deba interpretar."
+      },
+      {
+        "criterio": "validacion",
+        "mejora_minima": "Indicar un dato independiente, como una cuenta real de luz, con que contrastar el resultado."
+      }
+    ]
+  },
+  "respuestas_simuladas": [
+    {
+      "atencion_mejoras": [
+        {
+          "criterio": "autenticidad",
+          "que_cambio": "Se incorporó la tabla de tarifas de la nota y el alza anunciada en el enunciado."
+        },
+        {
+          "criterio": "validacion",
+          "que_cambio": "Se agregó una cuenta real como recurso para contrastar el resultado y se precisó la evidencia de validación."
+        }
+      ],
+      "tarea": {
+        "enfoque": "Evalúa si conviene reducir consumo o instalar paneles ante el alza.",
+        "slug": "cuenta-luz",
+        "titulo": "¿Cuánto pesará el alza de la luz en tu casa?",
+        "nivel_principal": "S",
+        "sub_tramo": "S1",
+        "variantes": {
+          "abajo": "P",
+          "arriba": "U"
+        },
+        "contenidos_matematicos": [
+          "razones y tasas",
+          "función lineal",
+          "porcentajes"
+        ],
+        "tiempo_estimado": "2 sesiones de 90 min",
+        "cifras_usadas_idx": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "enunciado_es": "Se anunció que la tarifa eléctrica de los hogares sube 12 %. Un hogar típico consume 180 kWh al mes y paga 160 pesos por kWh más un cargo fijo de 1.500 pesos mensuales. Una familia piensa instalar paneles solares o reducir su consumo. ¿Cuál de las dos opciones les conviene más durante los próximos años? Pueden pedir información adicional.",
+        "foto_descripcion": "Ícono plano de una casa con un medidor de luz y una flecha hacia arriba.",
+        "recursos": [
+          {
+            "id": "R1",
+            "que_es": "costo de paneles",
+            "contenido": "Información de una empresa instaladora sobre el precio de un sistema doméstico y cuánta energía produce al mes.",
+            "fase": "P2-RM",
+            "fuente": "otra fuente: cotización de empresa instaladora (ejemplo)",
+            "disponibilidad": "a_solicitud"
+          },
+          {
+            "id": "R2",
+            "que_es": "tarifa",
+            "contenido": "Tabla de la nota con el precio por kWh y el cargo fijo.",
+            "fase": "P3-MM",
+            "fuente": "noticia (tabla 1)",
+            "disponibilidad": "a_solicitud"
+          },
+          {
+            "id": "R3",
+            "que_es": "cuenta de luz real",
+            "contenido": "Una cuenta de luz real de un hogar, con el consumo del mes y el detalle de cobros.",
+            "fase": "P6-VAL",
+            "fuente": "otra fuente: cuenta de un hogar (ejemplo)",
+            "disponibilidad": "a_solicitud"
+          }
+        ],
+        "variantes_detalle": {
+          "abajo": {
+            "tramo": "P",
+            "cambios": "Se entrega el costo de los paneles y se pregunta en cuántos meses se recupera."
+          },
+          "arriba": {
+            "tramo": "U",
+            "cambios": "Se pide un modelo dinámico con alzas sucesivas, tasa de descuento y análisis de sensibilidad."
+          }
+        },
+        "mapa_ciclo": [
+          {
+            "fase": "P1-MRS",
+            "decision": "entender qué compara la familia y qué significa convenir",
+            "evidencia": "registro escrito del grupo",
+            "bloqueo_probable": ""
+          },
+          {
+            "fase": "P2-RM",
+            "decision": "elegir qué costos considerar y suponer consumo estable",
+            "evidencia": "registro escrito del grupo",
+            "bloqueo_probable": "B12"
+          },
+          {
+            "fase": "P3-MM",
+            "decision": "expresar la cuenta como función del consumo",
+            "evidencia": "registro escrito del grupo",
+            "bloqueo_probable": "B23"
+          },
+          {
+            "fase": "P4-WM",
+            "decision": "comparar la cuenta actual con la nueva y con cada opción",
+            "evidencia": "registro escrito del grupo",
+            "bloqueo_probable": ""
+          },
+          {
+            "fase": "P5-INT",
+            "decision": "decidir qué opción conviene y bajo qué condiciones",
+            "evidencia": "registro escrito del grupo",
+            "bloqueo_probable": ""
+          },
+          {
+            "fase": "P6-VAL",
+            "decision": "contrastar el resultado con una cuenta real recibida después de modelar",
+            "evidencia": "registro escrito del grupo",
+            "bloqueo_probable": "B56"
+          },
+          {
+            "fase": "P7-EXP",
+            "decision": "presentar la recomendación con los supuestos",
+            "evidencia": "registro escrito del grupo",
+            "bloqueo_probable": ""
+          }
+        ],
+        "required_assumptions": [
+          "el consumo se mantiene",
+          "el alza se aplica una vez",
+          "el precio de los paneles es el cotizado"
+        ],
+        "solucion_pasos": "Cuenta nueva = (precio x 1,12 x consumo) + cargo fijo; comparar el ahorro mensual con el costo de la inversión.",
+        "solucion_resultado": "la inversión se recupera en varios años",
+        "solucion_rango": "de 4 a 10 años según supuestos",
+        "routes": [
+          {
+            "id": "R1",
+            "nombre": "lineal en el consumo",
+            "nivel": "S1",
+            "modelo": "cuenta = tarifa x consumo + cargo fijo",
+            "resultado": "≈ 6 años"
+          },
+          {
+            "id": "R2",
+            "nombre": "reducir consumo",
+            "nivel": "S1",
+            "modelo": "ahorro por menos kWh",
+            "resultado": "ahorro inmediato"
+          },
+          {
+            "id": "R3",
+            "nombre": "proyección con alzas",
+            "nivel": "U",
+            "modelo": "serie de alzas anuales",
+            "resultado": "≈ 5 años"
+          }
+        ],
+        "modelo_inadecuado": "RX",
+        "por_que_falla": "Ignorar el cargo fijo y asumir que el alza afecta a todo el monto igual.",
+        "validation_evidence": "La cuenta real de un hogar y su consumo, que el grupo recibe después de elaborar su modelo, permiten contrastar el resultado."
+      }
+    }
+  ],
+  "criterio_aceptacion": {
+    "n_candidatos": 1,
+    "nivel_principal": "S",
+    "valida_tarea": true,
+    "aislamiento": true,
+    "estado": "borrador",
+    "version": 2,
+    "id_igual": true,
+    "atiende_mejoras": [
+      "autenticidad",
+      "validacion"
+    ],
+    "cifras_con_localizador": true
+  }
+}

@@ -1,0 +1,317 @@
+{
+  "id": "p-bicicletas",
+  "descripcion": "Nivel P, noticia sintética de transporte con tres cifras.",
+  "modo": "diseno",
+  "nivel": "P",
+  "noticia": {
+    "id": "2026-10-15-ejemplo-bicicletas-compartidas",
+    "medio_id": "ejemplo",
+    "medio": "Diario Ejemplo",
+    "idioma": "es",
+    "titulo": "Ejemplo sintético: la ciudad suma bicicletas compartidas",
+    "fecha": "2026-10-15",
+    "url": "https://ejemplo.invalid/2026-10-15-ejemplo-bicicletas-compartidas",
+    "area": "transporte_ciudad",
+    "resumen_propio": "Ejemplo sintético para pruebas. Un municipio puso bicicletas compartidas en varias estaciones y reporta cuántos viajes se hacen cada día, cuántas estaciones hay y cuánto dura en promedio un viaje. Los vecinos discuten si conviene agregar más bicicletas.",
+    "cifras": [
+      {
+        "valor": 1200,
+        "unidad": "viajes por día",
+        "que_es": "viajes diarios en el sistema (ejemplo sintético)",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 2"
+        }
+      },
+      {
+        "valor": 8,
+        "unidad": "estaciones",
+        "que_es": "estaciones habilitadas (ejemplo sintético)",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 3"
+        }
+      },
+      {
+        "valor": 15,
+        "unidad": "minutos",
+        "que_es": "duración promedio de un viaje (ejemplo sintético)",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "gráfico 1"
+        }
+      }
+    ],
+    "recuperada_en": "2026-10-19T09:00:00Z"
+  },
+  "respuestas_simuladas": [
+    {
+      "candidatos": [
+        {
+          "enfoque": "Pregunta por la disponibilidad de bicicletas en cada estación a lo largo del día.",
+          "slug": "bicicletas-por-estacion",
+          "titulo": "¿Alcanzan las bicicletas?",
+          "nivel_principal": "P",
+          "sub_tramo": "ninguno",
+          "variantes": {
+            "abajo": "ninguno",
+            "arriba": "S"
+          },
+          "contenidos_matematicos": [
+            "proporcionalidad directa",
+            "estimación"
+          ],
+          "tiempo_estimado": "2 sesiones de 90 min",
+          "cifras_usadas_idx": [
+            0,
+            1,
+            2
+          ],
+          "enunciado_es": "En la ciudad pusieron bicicletas compartidas en 8 estaciones. Cada día se hacen 1.200 viajes y un viaje dura en promedio 15 minutos. Algunos vecinos dicen que en horas de mucho movimiento no hay bicicletas disponibles. ¿Cuántas bicicletas necesita el sistema para que casi siempre haya una libre? Pueden pedir información adicional.",
+          "foto_descripcion": "Ícono plano de una estación con filas de bicicletas y un reloj.",
+          "recursos": [
+            {
+              "id": "R1",
+              "que_es": "horario de uso",
+              "contenido": "Los viajes se concentran en dos tramos del día: mañana y tarde, y casi no hay viajes de noche.",
+              "fase": "P2-RM",
+              "fuente": "otra fuente: observación del municipio (ejemplo)",
+              "disponibilidad": "a_solicitud"
+            },
+            {
+              "id": "R2",
+              "que_es": "datos de la noticia",
+              "contenido": "Hay 8 estaciones y 1.200 viajes por día.",
+              "fase": "P1-MRS",
+              "fuente": "noticia (párrafo 2, párrafo 3)",
+              "disponibilidad": "a_solicitud"
+            }
+          ],
+          "variantes_detalle": {
+            "abajo": {
+              "tramo": "ninguno",
+              "cambios": ""
+            },
+            "arriba": {
+              "tramo": "S",
+              "cambios": "Se pide comparar dos escenarios de reparto de bicicletas entre estaciones y justificar con datos de uso."
+            }
+          },
+          "mapa_ciclo": [
+            {
+              "fase": "P1-MRS",
+              "decision": "entender qué significa que casi siempre haya una bicicleta libre",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            },
+            {
+              "fase": "P2-RM",
+              "decision": "suponer que los viajes se reparten en pocas horas",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": "B12"
+            },
+            {
+              "fase": "P3-MM",
+              "decision": "relacionar viajes, duración y bicicletas en uso",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": "B23"
+            },
+            {
+              "fase": "P4-WM",
+              "decision": "calcular bicicletas simultáneas",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            },
+            {
+              "fase": "P5-INT",
+              "decision": "decidir si la cifra obtenida es razonable",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            },
+            {
+              "fase": "P6-VAL",
+              "decision": "comparar con la cantidad de bicicletas que ve el grupo en una estación",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            },
+            {
+              "fase": "P7-EXP",
+              "decision": "explicar el resultado con el supuesto de reparto de viajes",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            }
+          ],
+          "required_assumptions": [
+            "los viajes se concentran en ciertas horas",
+            "la duración promedio es representativa"
+          ],
+          "solucion_pasos": "Viajes por hora punta por duración en horas da las bicicletas en uso a la vez.",
+          "solucion_resultado": "entre 60 y 100 bicicletas",
+          "solucion_rango": "40 a 120 según el reparto horario supuesto",
+          "routes": [
+            {
+              "id": "R1",
+              "nombre": "uso simultáneo",
+              "nivel": "P",
+              "modelo": "viajes por hora punta x duración",
+              "resultado": "≈ 80"
+            },
+            {
+              "id": "R2",
+              "nombre": "promedio diario",
+              "nivel": "P",
+              "modelo": "viajes por día repartidos en 12 horas",
+              "resultado": "≈ 25 en uso"
+            },
+            {
+              "id": "R3",
+              "nombre": "por estación",
+              "nivel": "S",
+              "modelo": "demanda por estación con reposición",
+              "resultado": "≈ 90"
+            }
+          ],
+          "modelo_inadecuado": "RX",
+          "por_que_falla": "Dividir los viajes diarios por las estaciones sin considerar la duración de cada viaje.",
+          "validation_evidence": "Cantidad de bicicletas que la municipalidad informa tener en servicio."
+        },
+        {
+          "enfoque": "Pregunta por el tiempo que una bicicleta pasa en uso frente a parada.",
+          "slug": "bicicleta-en-uso",
+          "titulo": "¿Cuánto trabaja cada bicicleta?",
+          "nivel_principal": "P",
+          "sub_tramo": "ninguno",
+          "variantes": {
+            "abajo": "ninguno",
+            "arriba": "S"
+          },
+          "contenidos_matematicos": [
+            "proporcionalidad directa",
+            "estimación"
+          ],
+          "tiempo_estimado": "2 sesiones de 90 min",
+          "cifras_usadas_idx": [
+            0,
+            1,
+            2
+          ],
+          "enunciado_es": "El municipio quiere saber si las bicicletas compartidas se usan lo suficiente. Hay 8 estaciones, se registran 1.200 viajes por día y un viaje dura en promedio 15 minutos. Imaginen que una familia decide si invertir en más bicicletas. ¿Cómo decidirían si las bicicletas actuales están muy ocupadas o muy desocupadas? Pueden pedir información adicional.",
+          "foto_descripcion": "Ícono plano de una estación con filas de bicicletas y un reloj.",
+          "recursos": [
+            {
+              "id": "R1",
+              "que_es": "horario de uso",
+              "contenido": "Los viajes se concentran en dos tramos del día: mañana y tarde, y casi no hay viajes de noche.",
+              "fase": "P2-RM",
+              "fuente": "otra fuente: observación del municipio (ejemplo)",
+              "disponibilidad": "a_solicitud"
+            },
+            {
+              "id": "R2",
+              "que_es": "datos de la noticia",
+              "contenido": "Hay 8 estaciones y 1.200 viajes por día.",
+              "fase": "P1-MRS",
+              "fuente": "noticia (párrafo 2, párrafo 3)",
+              "disponibilidad": "a_solicitud"
+            }
+          ],
+          "variantes_detalle": {
+            "abajo": {
+              "tramo": "ninguno",
+              "cambios": ""
+            },
+            "arriba": {
+              "tramo": "S",
+              "cambios": "Se pide comparar dos escenarios de reparto de bicicletas entre estaciones y justificar con datos de uso."
+            }
+          },
+          "mapa_ciclo": [
+            {
+              "fase": "P1-MRS",
+              "decision": "entender qué significa que casi siempre haya una bicicleta libre",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            },
+            {
+              "fase": "P2-RM",
+              "decision": "suponer que los viajes se reparten en pocas horas",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": "B12"
+            },
+            {
+              "fase": "P3-MM",
+              "decision": "relacionar viajes, duración y bicicletas en uso",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": "B23"
+            },
+            {
+              "fase": "P4-WM",
+              "decision": "calcular bicicletas simultáneas",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            },
+            {
+              "fase": "P5-INT",
+              "decision": "decidir si la cifra obtenida es razonable",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            },
+            {
+              "fase": "P6-VAL",
+              "decision": "comparar con la cantidad de bicicletas que ve el grupo en una estación",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            },
+            {
+              "fase": "P7-EXP",
+              "decision": "explicar el resultado con el supuesto de reparto de viajes",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            }
+          ],
+          "required_assumptions": [
+            "los viajes se concentran en ciertas horas",
+            "la duración promedio es representativa"
+          ],
+          "solucion_pasos": "Tiempo total de uso diario dividido por las horas del servicio y por las bicicletas disponibles da la fracción de ocupación.",
+          "solucion_resultado": "entre 60 y 100 bicicletas",
+          "solucion_rango": "40 a 120 según el reparto horario supuesto",
+          "routes": [
+            {
+              "id": "R1",
+              "nombre": "uso simultáneo",
+              "nivel": "P",
+              "modelo": "viajes por hora punta x duración",
+              "resultado": "≈ 80"
+            },
+            {
+              "id": "R2",
+              "nombre": "promedio diario",
+              "nivel": "P",
+              "modelo": "viajes por día repartidos en 12 horas",
+              "resultado": "≈ 25 en uso"
+            },
+            {
+              "id": "R3",
+              "nombre": "por estación",
+              "nivel": "S",
+              "modelo": "demanda por estación con reposición",
+              "resultado": "≈ 90"
+            }
+          ],
+          "modelo_inadecuado": "RX",
+          "por_que_falla": "Contar solo los viajes sin su duración confunde frecuencia con ocupación.",
+          "validation_evidence": "Cantidad de bicicletas que la municipalidad informa tener en servicio."
+        }
+      ]
+    }
+  ],
+  "criterio_aceptacion": {
+    "n_candidatos": 2,
+    "nivel_principal": "P",
+    "valida_tarea": true,
+    "aislamiento": true,
+    "estado": "borrador",
+    "cifras_con_localizador": true
+  }
+}

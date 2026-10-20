@@ -1,0 +1,20 @@
+# Configuración del agente diseñador. El modelo NO se duplica aquí: se lee de pipeline/config.yaml
+# (modelos.disenador) vía pipeline.llm.modelo_de("disenador"). Plan: Sonnet 5.5, marcos y PLT01 en caché.
+agente: disenador
+version_prompt: "1.0"
+version_rubrica: "4.0"
+version_mar03: "1.0"
+version_plantilla: "PLT01 v0.2"
+modelo_de_partida: claude-sonnet-5-5   # informativo; manda pipeline/config.yaml
+temperatura: "default"                 # los modelos 5.5 no aceptan temperature (decisiones.md)
+esfuerzo: null                         # output_config.effort; null = default del modelo
+max_tokens: 16000
+candidatos_por_noticia: 2
+reparaciones_max: 2                    # reintentos con la lista de errores si la salida no valida
+max_iteraciones_evaluador: 3           # GOB01 §1 (lo hace cumplir el orquestador)
+contrato_salida: tarea                 # contratos/tarea.schema.json
+estado_de_salida: borrador
+cache:                                 # bloques estáticos al final del system (cache_control en el system completo)
+  - insumos/marcos/MAR03_niveles-por-edad_v1.0_2026-10-20.md
+  - insumos/plantillas/PLT01_plantilla-tarea_v0.2_2026-10-20.md
+  - insumos/rubricas/RUB01_calidad-tarea_v4.0_2026-10-20.json

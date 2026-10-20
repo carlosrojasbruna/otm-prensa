@@ -1,0 +1,332 @@
+{
+  "id": "u-urgencias",
+  "descripcion": "Nivel U, noticia sintética de salud con cuatro cifras; un solo candidato aceptable en la primera ronda no basta: debe devolver dos.",
+  "modo": "diseno",
+  "nivel": "U",
+  "noticia": {
+    "id": "2026-10-17-ejemplo-urgencias",
+    "medio_id": "ejemplo",
+    "medio": "Diario Ejemplo",
+    "idioma": "es",
+    "titulo": "Ejemplo sintético: largas esperas en la urgencia de un hospital",
+    "fecha": "2026-10-17",
+    "url": "https://ejemplo.invalid/2026-10-17-ejemplo-urgencias",
+    "area": "salud",
+    "resumen_propio": "Ejemplo sintético para pruebas. Un hospital informa que su servicio de urgencia recibe muchos pacientes por hora, cuenta con un número fijo de boxes de atención y demora un tiempo promedio en atender a cada paciente. Los usuarios reclaman por esperas de varias horas.",
+    "cifras": [
+      {
+        "valor": 45,
+        "unidad": "pacientes por hora",
+        "que_es": "llegadas promedio en hora punta (ejemplo sintético)",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 2"
+        }
+      },
+      {
+        "valor": 12,
+        "unidad": "boxes",
+        "que_es": "boxes de atención disponibles (ejemplo sintético)",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 3"
+        }
+      },
+      {
+        "valor": 40,
+        "unidad": "minutos",
+        "que_es": "tiempo promedio de atención por paciente (ejemplo sintético)",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "tabla 1"
+        }
+      },
+      {
+        "valor": 6,
+        "unidad": "horas",
+        "que_es": "espera máxima reportada por usuarios (ejemplo sintético)",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 4"
+        }
+      }
+    ],
+    "recuperada_en": "2026-10-19T09:00:00Z"
+  },
+  "respuestas_simuladas": [
+    {
+      "candidatos": [
+        {
+          "enfoque": "Modela la urgencia como sistema de colas y estudia la sensibilidad a la capacidad.",
+          "slug": "urgencia-colas",
+          "titulo": "¿Por qué se acumula la espera en urgencias?",
+          "nivel_principal": "U",
+          "sub_tramo": "ninguno",
+          "variantes": {
+            "abajo": "S",
+            "arriba": "ninguno"
+          },
+          "contenidos_matematicos": [
+            "probabilidad",
+            "procesos de llegada",
+            "modelos dinámicos discretos"
+          ],
+          "tiempo_estimado": "2 sesiones de 90 min",
+          "cifras_usadas_idx": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "enunciado_es": "Un hospital informa que en hora punta llegan 45 pacientes por hora a su urgencia, que tiene 12 boxes y que cada atención demora en promedio 40 minutos. Usuarios reportan esperas de hasta 6 horas. La dirección evalúa cómo aumentar su capacidad. ¿Qué tan creíble es lo que reportan los usuarios y qué cambio de capacidad tendría el mayor efecto? Pueden pedir información adicional.",
+          "foto_descripcion": "Ícono plano de una sala de espera con filas de sillas y un reloj.",
+          "recursos": [
+            {
+              "id": "R1",
+              "que_es": "distribución de llegadas",
+              "contenido": "Registro de llegadas por tramo de media hora de una semana tipo en un servicio similar.",
+              "fase": "P3-MM",
+              "fuente": "otra fuente: registro hospitalario (ejemplo)",
+              "disponibilidad": "a_solicitud"
+            },
+            {
+              "id": "R2",
+              "que_es": "tiempos de atención",
+              "contenido": "Resumen de tiempos de atención, con casos breves y casos complejos.",
+              "fase": "P3-MM",
+              "fuente": "otra fuente: registro hospitalario (ejemplo)",
+              "disponibilidad": "a_solicitud"
+            }
+          ],
+          "variantes_detalle": {
+            "abajo": {
+              "tramo": "S",
+              "cambios": "Se entrega la tasa de llegada y se pide comparar capacidad actual con una capacidad mayor mediante una simulación simple."
+            },
+            "arriba": {
+              "tramo": "ninguno",
+              "cambios": ""
+            }
+          },
+          "mapa_ciclo": [
+            {
+              "fase": "P1-MRS",
+              "decision": "entender qué mide la espera y quién la reporta",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            },
+            {
+              "fase": "P2-RM",
+              "decision": "suponer llegadas aleatorias e independientes",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": "B12"
+            },
+            {
+              "fase": "P3-MM",
+              "decision": "formular un modelo de colas o simulación por pasos",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": "B23"
+            },
+            {
+              "fase": "P4-WM",
+              "decision": "calcular espera esperada y su variabilidad",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            },
+            {
+              "fase": "P5-INT",
+              "decision": "interpretar el resultado frente a lo que reportan los usuarios",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": "B56"
+            },
+            {
+              "fase": "P6-VAL",
+              "decision": "contrastar con registros de espera reales",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            },
+            {
+              "fase": "P7-EXP",
+              "decision": "exponer límites del modelo y escenarios",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            }
+          ],
+          "required_assumptions": [
+            "llegadas poissonianas",
+            "tiempos de atención independientes",
+            "sin prioridades clínicas"
+          ],
+          "solucion_pasos": "Comparar la tasa de llegada con la capacidad de servicio y simular o resolver la cola para obtener la distribución de la espera.",
+          "solucion_resultado": "la utilización queda cerca de la saturación y la espera crece de forma no lineal",
+          "solucion_rango": "espera media de 1 a 6 horas según supuestos",
+          "routes": [
+            {
+              "id": "R1",
+              "nombre": "balance de flujo",
+              "nivel": "S2",
+              "modelo": "capacidad contra llegadas",
+              "resultado": "sistema casi saturado"
+            },
+            {
+              "id": "R2",
+              "nombre": "cola con varios servidores",
+              "nivel": "U",
+              "modelo": "modelo de colas",
+              "resultado": "espera media de horas"
+            },
+            {
+              "id": "R3",
+              "nombre": "simulación discreta",
+              "nivel": "U",
+              "modelo": "simulación por eventos",
+              "resultado": "distribución de esperas con cola larga"
+            }
+          ],
+          "modelo_inadecuado": "RX",
+          "por_que_falla": "Promediar llegadas durante todo el día e ignorar la hora punta.",
+          "validation_evidence": "Tiempos de espera publicados por el hospital en otra semana."
+        },
+        {
+          "enfoque": "Formula una decisión de optimización sobre cuántos boxes habilitar.",
+          "slug": "urgencia-optimizacion",
+          "titulo": "¿Cuántos boxes más hacen falta?",
+          "nivel_principal": "U",
+          "sub_tramo": "ninguno",
+          "variantes": {
+            "abajo": "S",
+            "arriba": "ninguno"
+          },
+          "contenidos_matematicos": [
+            "probabilidad",
+            "procesos de llegada",
+            "modelos dinámicos discretos"
+          ],
+          "tiempo_estimado": "2 sesiones de 90 min",
+          "cifras_usadas_idx": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "enunciado_es": "En la urgencia de un hospital llegan 45 pacientes por hora en hora punta y hay 12 boxes; cada atención demora en promedio 40 minutos. Los usuarios reportan esperas de hasta 6 horas y la dirección puede habilitar más boxes, pero cada uno tiene un costo. ¿Cuántos boxes más conviene habilitar y cómo justificarían ese número? Pueden pedir información adicional.",
+          "foto_descripcion": "Ícono plano de una sala de espera con filas de sillas y un reloj.",
+          "recursos": [
+            {
+              "id": "R1",
+              "que_es": "distribución de llegadas",
+              "contenido": "Registro de llegadas por tramo de media hora de una semana tipo en un servicio similar.",
+              "fase": "P3-MM",
+              "fuente": "otra fuente: registro hospitalario (ejemplo)",
+              "disponibilidad": "a_solicitud"
+            },
+            {
+              "id": "R2",
+              "que_es": "tiempos de atención",
+              "contenido": "Resumen de tiempos de atención, con casos breves y casos complejos.",
+              "fase": "P3-MM",
+              "fuente": "otra fuente: registro hospitalario (ejemplo)",
+              "disponibilidad": "a_solicitud"
+            }
+          ],
+          "variantes_detalle": {
+            "abajo": {
+              "tramo": "S",
+              "cambios": "Se entrega la tasa de llegada y se pide comparar capacidad actual con una capacidad mayor mediante una simulación simple."
+            },
+            "arriba": {
+              "tramo": "ninguno",
+              "cambios": ""
+            }
+          },
+          "mapa_ciclo": [
+            {
+              "fase": "P1-MRS",
+              "decision": "entender qué mide la espera y quién la reporta",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            },
+            {
+              "fase": "P2-RM",
+              "decision": "suponer llegadas aleatorias e independientes",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": "B12"
+            },
+            {
+              "fase": "P3-MM",
+              "decision": "formular un modelo de colas o simulación por pasos",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": "B23"
+            },
+            {
+              "fase": "P4-WM",
+              "decision": "calcular espera esperada y su variabilidad",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            },
+            {
+              "fase": "P5-INT",
+              "decision": "interpretar el resultado frente a lo que reportan los usuarios",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": "B56"
+            },
+            {
+              "fase": "P6-VAL",
+              "decision": "contrastar con registros de espera reales",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            },
+            {
+              "fase": "P7-EXP",
+              "decision": "exponer límites del modelo y escenarios",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            }
+          ],
+          "required_assumptions": [
+            "llegadas poissonianas",
+            "tiempos de atención independientes",
+            "sin prioridades clínicas"
+          ],
+          "solucion_pasos": "Plantear el compromiso entre costo de boxes y espera esperada, y buscar el punto donde la mejora marginal se vuelve pequeña.",
+          "solucion_resultado": "la utilización queda cerca de la saturación y la espera crece de forma no lineal",
+          "solucion_rango": "espera media de 1 a 6 horas según supuestos",
+          "routes": [
+            {
+              "id": "R1",
+              "nombre": "balance de flujo",
+              "nivel": "S2",
+              "modelo": "capacidad contra llegadas",
+              "resultado": "sistema casi saturado"
+            },
+            {
+              "id": "R2",
+              "nombre": "cola con varios servidores",
+              "nivel": "U",
+              "modelo": "modelo de colas",
+              "resultado": "espera media de horas"
+            },
+            {
+              "id": "R3",
+              "nombre": "simulación discreta",
+              "nivel": "U",
+              "modelo": "simulación por eventos",
+              "resultado": "distribución de esperas con cola larga"
+            }
+          ],
+          "modelo_inadecuado": "RX",
+          "por_que_falla": "Usar solo la capacidad media sin variabilidad subestima la cola.",
+          "validation_evidence": "Tiempos de espera publicados por el hospital en otra semana."
+        }
+      ]
+    }
+  ],
+  "criterio_aceptacion": {
+    "n_candidatos": 2,
+    "nivel_principal": "U",
+    "valida_tarea": true,
+    "aislamiento": true,
+    "estado": "borrador",
+    "cifras_con_localizador": true
+  }
+}

@@ -1,0 +1,332 @@
+{
+  "id": "s-cuenta-luz",
+  "descripcion": "Nivel S (sub-tramo S1), noticia sintética de economía con cuatro cifras.",
+  "modo": "diseno",
+  "nivel": "S",
+  "noticia": {
+    "id": "2026-10-16-ejemplo-cuenta-luz",
+    "medio_id": "ejemplo",
+    "medio": "Diario Ejemplo",
+    "idioma": "es",
+    "titulo": "Ejemplo sintético: sube la cuenta de la luz en los hogares",
+    "fecha": "2026-10-16",
+    "url": "https://ejemplo.invalid/2026-10-16-ejemplo-cuenta-luz",
+    "area": "economia",
+    "resumen_propio": "Ejemplo sintético para pruebas. Se anuncia un alza de las tarifas eléctricas residenciales. La nota entrega el consumo mensual típico de un hogar, el precio de cada unidad de energía, el cargo fijo mensual y el porcentaje de alza anunciado, mientras algunas familias evalúan instalar paneles solares.",
+    "cifras": [
+      {
+        "valor": 180,
+        "unidad": "kWh por mes",
+        "que_es": "consumo mensual típico de un hogar (ejemplo sintético)",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 2"
+        }
+      },
+      {
+        "valor": 160,
+        "unidad": "pesos por kWh",
+        "que_es": "precio de la energía (ejemplo sintético)",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "tabla 1"
+        }
+      },
+      {
+        "valor": 1500,
+        "unidad": "pesos por mes",
+        "que_es": "cargo fijo mensual (ejemplo sintético)",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "tabla 1"
+        }
+      },
+      {
+        "valor": "12 %",
+        "unidad": "porcentaje",
+        "que_es": "alza anunciada de la tarifa (ejemplo sintético)",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 1"
+        }
+      }
+    ],
+    "recuperada_en": "2026-10-19T09:00:00Z"
+  },
+  "respuestas_simuladas": [
+    {
+      "candidatos": [
+        {
+          "enfoque": "Evalúa si conviene reducir consumo o instalar paneles ante el alza.",
+          "slug": "alza-cuenta-luz",
+          "titulo": "¿Cuánto pesará el alza de la luz en tu casa?",
+          "nivel_principal": "S",
+          "sub_tramo": "S1",
+          "variantes": {
+            "abajo": "P",
+            "arriba": "U"
+          },
+          "contenidos_matematicos": [
+            "razones y tasas",
+            "función lineal",
+            "porcentajes"
+          ],
+          "tiempo_estimado": "2 sesiones de 90 min",
+          "cifras_usadas_idx": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "enunciado_es": "Se anunció que la tarifa eléctrica de los hogares sube 12 %. Un hogar típico consume 180 kWh al mes y paga 160 pesos por kWh más un cargo fijo de 1.500 pesos mensuales. Una familia piensa instalar paneles solares o reducir su consumo. ¿Cuál de las dos opciones les conviene más durante los próximos años? Pueden pedir información adicional.",
+          "foto_descripcion": "Ícono plano de una casa con un medidor de luz y una flecha hacia arriba.",
+          "recursos": [
+            {
+              "id": "R1",
+              "que_es": "costo de paneles",
+              "contenido": "Información de una empresa instaladora sobre el precio de un sistema doméstico y cuánta energía produce al mes.",
+              "fase": "P2-RM",
+              "fuente": "otra fuente: cotización de empresa instaladora (ejemplo)",
+              "disponibilidad": "a_solicitud"
+            },
+            {
+              "id": "R2",
+              "que_es": "tarifa",
+              "contenido": "Tabla de la nota con el precio por kWh y el cargo fijo.",
+              "fase": "P3-MM",
+              "fuente": "noticia (tabla 1)",
+              "disponibilidad": "a_solicitud"
+            }
+          ],
+          "variantes_detalle": {
+            "abajo": {
+              "tramo": "P",
+              "cambios": "Se entrega el costo de los paneles y se pregunta en cuántos meses se recupera."
+            },
+            "arriba": {
+              "tramo": "U",
+              "cambios": "Se pide un modelo dinámico con alzas sucesivas, tasa de descuento y análisis de sensibilidad."
+            }
+          },
+          "mapa_ciclo": [
+            {
+              "fase": "P1-MRS",
+              "decision": "entender qué compara la familia y qué significa convenir",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            },
+            {
+              "fase": "P2-RM",
+              "decision": "elegir qué costos considerar y suponer consumo estable",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": "B12"
+            },
+            {
+              "fase": "P3-MM",
+              "decision": "expresar la cuenta como función del consumo",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": "B23"
+            },
+            {
+              "fase": "P4-WM",
+              "decision": "comparar la cuenta actual con la nueva y con cada opción",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            },
+            {
+              "fase": "P5-INT",
+              "decision": "decidir qué opción conviene y bajo qué condiciones",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            },
+            {
+              "fase": "P6-VAL",
+              "decision": "contrastar con la cuenta real de un hogar",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": "B56"
+            },
+            {
+              "fase": "P7-EXP",
+              "decision": "presentar la recomendación con los supuestos",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            }
+          ],
+          "required_assumptions": [
+            "el consumo se mantiene",
+            "el alza se aplica una vez",
+            "el precio de los paneles es el cotizado"
+          ],
+          "solucion_pasos": "Cuenta nueva = (precio x 1,12 x consumo) + cargo fijo; comparar el ahorro mensual con el costo de la inversión.",
+          "solucion_resultado": "la inversión se recupera en varios años",
+          "solucion_rango": "de 4 a 10 años según supuestos",
+          "routes": [
+            {
+              "id": "R1",
+              "nombre": "lineal en el consumo",
+              "nivel": "S1",
+              "modelo": "cuenta = tarifa x consumo + cargo fijo",
+              "resultado": "≈ 6 años"
+            },
+            {
+              "id": "R2",
+              "nombre": "reducir consumo",
+              "nivel": "S1",
+              "modelo": "ahorro por menos kWh",
+              "resultado": "ahorro inmediato"
+            },
+            {
+              "id": "R3",
+              "nombre": "proyección con alzas",
+              "nivel": "U",
+              "modelo": "serie de alzas anuales",
+              "resultado": "≈ 5 años"
+            }
+          ],
+          "modelo_inadecuado": "RX",
+          "por_que_falla": "Ignorar el cargo fijo y asumir que el alza afecta a todo el monto igual.",
+          "validation_evidence": "Una cuenta real de luz de un hogar y el precio de los paneles en dos tiendas."
+        },
+        {
+          "enfoque": "Compara el efecto del alza en hogares con distinto consumo.",
+          "slug": "alza-segun-consumo",
+          "titulo": "¿Quién siente más el alza de la luz?",
+          "nivel_principal": "S",
+          "sub_tramo": "S1",
+          "variantes": {
+            "abajo": "P",
+            "arriba": "U"
+          },
+          "contenidos_matematicos": [
+            "razones y tasas",
+            "función lineal",
+            "porcentajes"
+          ],
+          "tiempo_estimado": "2 sesiones de 90 min",
+          "cifras_usadas_idx": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "enunciado_es": "Una nota anuncia que la tarifa eléctrica residencial sube 12 %. Se sabe que un hogar típico consume 180 kWh al mes, que cada kWh cuesta 160 pesos y que hay un cargo fijo de 1.500 pesos al mes. Hay hogares que consumen mucho menos y otros mucho más. ¿El alza afecta de igual forma a todos? ¿A quiénes les cuesta más? Pueden pedir información adicional.",
+          "foto_descripcion": "Ícono plano de una casa con un medidor de luz y una flecha hacia arriba.",
+          "recursos": [
+            {
+              "id": "R1",
+              "que_es": "costo de paneles",
+              "contenido": "Información de una empresa instaladora sobre el precio de un sistema doméstico y cuánta energía produce al mes.",
+              "fase": "P2-RM",
+              "fuente": "otra fuente: cotización de empresa instaladora (ejemplo)",
+              "disponibilidad": "a_solicitud"
+            },
+            {
+              "id": "R2",
+              "que_es": "tarifa",
+              "contenido": "Tabla de la nota con el precio por kWh y el cargo fijo.",
+              "fase": "P3-MM",
+              "fuente": "noticia (tabla 1)",
+              "disponibilidad": "a_solicitud"
+            }
+          ],
+          "variantes_detalle": {
+            "abajo": {
+              "tramo": "P",
+              "cambios": "Se entrega el costo de los paneles y se pregunta en cuántos meses se recupera."
+            },
+            "arriba": {
+              "tramo": "U",
+              "cambios": "Se pide un modelo dinámico con alzas sucesivas, tasa de descuento y análisis de sensibilidad."
+            }
+          },
+          "mapa_ciclo": [
+            {
+              "fase": "P1-MRS",
+              "decision": "entender qué compara la familia y qué significa convenir",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            },
+            {
+              "fase": "P2-RM",
+              "decision": "elegir qué costos considerar y suponer consumo estable",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": "B12"
+            },
+            {
+              "fase": "P3-MM",
+              "decision": "expresar la cuenta como función del consumo",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": "B23"
+            },
+            {
+              "fase": "P4-WM",
+              "decision": "comparar la cuenta actual con la nueva y con cada opción",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            },
+            {
+              "fase": "P5-INT",
+              "decision": "decidir qué opción conviene y bajo qué condiciones",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            },
+            {
+              "fase": "P6-VAL",
+              "decision": "contrastar con la cuenta real de un hogar",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": "B56"
+            },
+            {
+              "fase": "P7-EXP",
+              "decision": "presentar la recomendación con los supuestos",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            }
+          ],
+          "required_assumptions": [
+            "el consumo se mantiene",
+            "el alza se aplica una vez",
+            "el precio de los paneles es el cotizado"
+          ],
+          "solucion_pasos": "Escribir la cuenta como función del consumo y comparar el cambio relativo en hogares de distinto consumo.",
+          "solucion_resultado": "la inversión se recupera en varios años",
+          "solucion_rango": "de 4 a 10 años según supuestos",
+          "routes": [
+            {
+              "id": "R1",
+              "nombre": "lineal en el consumo",
+              "nivel": "S1",
+              "modelo": "cuenta = tarifa x consumo + cargo fijo",
+              "resultado": "≈ 6 años"
+            },
+            {
+              "id": "R2",
+              "nombre": "reducir consumo",
+              "nivel": "S1",
+              "modelo": "ahorro por menos kWh",
+              "resultado": "ahorro inmediato"
+            },
+            {
+              "id": "R3",
+              "nombre": "proyección con alzas",
+              "nivel": "U",
+              "modelo": "serie de alzas anuales",
+              "resultado": "≈ 5 años"
+            }
+          ],
+          "modelo_inadecuado": "RX",
+          "por_que_falla": "Suponer que el cambio relativo es 12 % para todos olvida el peso del cargo fijo.",
+          "validation_evidence": "Una cuenta real de luz de un hogar y el precio de los paneles en dos tiendas."
+        }
+      ]
+    }
+  ],
+  "criterio_aceptacion": {
+    "n_candidatos": 2,
+    "nivel_principal": "S",
+    "valida_tarea": true,
+    "aislamiento": true,
+    "estado": "borrador",
+    "cifras_con_localizador": true
+  }
+}

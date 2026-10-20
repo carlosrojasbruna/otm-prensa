@@ -1,0 +1,108 @@
+{
+  "rub01": {
+    "version_rubrica": "4.0",
+    "criterios": {
+      "genuino": {
+        "puntaje": 1,
+        "justificacion": "Hay una necesidad real: saber cuánto sube la cuenta y cómo evitarlo. Sin embargo, el enunciado entrega por separado el precio por kWh y el cargo fijo, y el contraste entre la mamá y el papá apunta a la estructura lineal «cargo fijo + precio × consumo». Insinúa fuertemente el modelo sin darlo completo.",
+        "cita": "cada kWh cuesta 160 pesos por kWh y además se cobra un cargo fijo de 1500 pesos por mes, aunque no se use nada de …"
+      },
+      "abierta": {
+        "puntaje": 2,
+        "justificacion": "La pregunta no prescribe procedimiento. Admite modelos defendibles distintos según a qué conceptos se aplique el 12 % y qué otros cargos haya, y también distintas propuestas de ahorro.",
+        "cita": "¿Cuánto cambiará la cuenta mensual de la familia y qué podrían hacer para que no suba? Expliquen cómo decidieron."
+      },
+      "decisiones": {
+        "puntaje": 2,
+        "justificacion": "Resolver exige suponer a qué se aplica el alza, decidir si se incluyen impuestos u otros cargos, pedir una boleta real y estimar potencias y horas de uso de los artefactos.",
+        "cita": "El comunicado de alza no siempre aclara a qué conceptos de la boleta se aplica el porcentaje."
+      },
+      "realismo": {
+        "puntaje": 2,
+        "justificacion": "Un alza tarifaria y su efecto en la cuenta de un hogar es una situación real y frecuente fuera de la escuela.",
+        "cita": "Un diario informó que las tarifas eléctricas de las casas subirán un 12 %."
+      },
+      "autenticidad": {
+        "puntaje": 2,
+        "justificacion": "Los datos centrales se declaran tomados de una nota de prensa y forman el núcleo de la tarea. Además, se integra un recurso extraescolar: la boleta real de la casa. Ambos cuentan como componentes auténticos integrados de manera sustantiva.",
+        "cita": "Según la nota, cada kWh cuesta 160 pesos por kWh y además se cobra un cargo fijo de 1500 pesos por mes"
+      },
+      "contexto": {
+        "puntaje": 2,
+        "justificacion": "El contexto condiciona decisiones de modelación: a qué se aplica el alza y qué cargos se incluyen. También es necesario para interpretar si la reducción de consumo es realista y para validar con la boleta.",
+        "cita": "Una boleta residencial real puede incluir otros conceptos e impuestos que la noticia no detalla."
+      },
+      "ciclo": {
+        "puntaje": 1,
+        "justificacion": "El enunciado deja casi hecha la simplificación y estructuración: fija el consumo y entrega precio y cargo fijo. Con eso, la matematización se vuelve casi directa, aunque las fases de interpretación y validación sí se exigen.",
+        "cita": "consume lo mismo que un hogar típico: 180 kWh por mes"
+      },
+      "validacion": {
+        "puntaje": 2,
+        "justificacion": "Existe evidencia independiente accesible para contrastar el modelo: una boleta real, y el alza efectivamente observada después.",
+        "cita": "El grupo puede pedir una boleta real de su casa o de un familiar para ver qué aparece en ella."
+      },
+      "nivel": {
+        "puntaje": 2,
+        "justificacion": "El contexto doméstico es comprensible y pertinente para S1. Porcentajes, función lineal y ecuación de primer grado están dentro de las herramientas esperables de ese tramo.",
+        "cita": "¿Cuánto cambiará la cuenta mensual de la familia y qué podrían hacer para que no suba?"
+      },
+      "autodiferenciacion": {
+        "puntaje": 2,
+        "justificacion": "Se puede entrar con aritmética simple calculando la cuenta antes y después del alza. La tarea admite soluciones más sofisticadas: la cuenta como función del consumo, escenarios sobre la base del alza y un plan de ahorro por artefacto con potencias estimadas.",
+        "cita": "Cuánto consume cada uno depende de su potencia y de las horas de uso: el grupo debe estimarlas o buscar las etiquetas de los aparatos."
+      },
+      "fecundidad": {
+        "puntaje": 2,
+        "justificacion": "Los distintos supuestos producen modelos comparables y abren preguntas sobre los límites del modelo, por ejemplo por qué el alza porcentual de la cuenta difiere del 12 % o qué ahorro es viable.",
+        "cita": "La mamá de Camila dice que la cuenta completa subirá un 12 %, pero su papá cree que la subida será distinta."
+      },
+      "recursos": {
+        "puntaje": 2,
+        "justificacion": "La información adicional se puede obtener con medios simples: una boleta real o las etiquetas de los aparatos. Los recursos R2 y R3 son cualitativos y no revelan la regla de solución.",
+        "cita": "Los que producen calor suelen consumir mucho más que los que dan luz o cargan aparatos."
+      }
+    },
+    "total": 22,
+    "mejoras": [
+      {
+        "criterio": "genuino",
+        "mejora_minima": "Dejar en el enunciado solo el alza del 12 % y el consumo del hogar. El precio por kWh y el cargo fijo no se entregan desglosados: los estudiantes los obtienen de una boleta real, que pueden pedir como información adicional, y así descubren ellos la estructura de la cuenta."
+      },
+      {
+        "criterio": "ciclo",
+        "mejora_minima": "No fijar el consumo en 180 kWh ni dar la tarifa ya separada en sus componentes. Pedir que el grupo determine el consumo de referencia y la estructura de cobro a partir de una boleta, para que la simplificación y la matematización queden a su cargo."
+      }
+    ]
+  },
+  "meta": {
+    "agente": "evaluador",
+    "modelo_solicitado": "claude-opus-5-5",
+    "modelo_respuesta": "claude-opus-5-5",
+    "version_prompt": "1.3",
+    "version_rubrica": "4.0",
+    "version_mar03": "1.0",
+    "parametros": {
+      "temperature": "default (el modelo rechaza temperature)",
+      "effort": "high",
+      "max_tokens": 16000,
+      "salida": "output_config.format json_schema"
+    },
+    "request_id": "req_011CgE1sVW34ngZoxR3FEGsP",
+    "fecha": "2026-10-20T19:09:38+00:00",
+    "segundos": 37.1,
+    "intentos": 1,
+    "uso": {
+      "input_tokens": 1426,
+      "output_tokens": 3876,
+      "cache_creation_input_tokens": 10832,
+      "cache_read_input_tokens": 0,
+      "thinking_tokens": 1890
+    },
+    "costo_usd": 0.17173,
+    "costo_usd_pesimista": 0.51519,
+    "avisos": [
+      "cita_recortada_25:genuino"
+    ]
+  }
+}

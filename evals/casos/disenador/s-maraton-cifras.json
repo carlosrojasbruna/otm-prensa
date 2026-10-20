@@ -1,0 +1,609 @@
+{
+  "id": "s-maraton-cifras",
+  "descripcion": "Cifras con localizador: la primera respuesta simulada introduce el número 300, que no está en la noticia; el agente debe detectarlo y reparar en una segunda ronda.",
+  "modo": "diseno",
+  "nivel": "S",
+  "noticia": {
+    "id": "2026-10-18-ejemplo-maraton",
+    "medio_id": "ejemplo",
+    "medio": "Diario Ejemplo",
+    "idioma": "es",
+    "titulo": "Ejemplo sintético: récord de inscritos en la maratón de la ciudad",
+    "fecha": "2026-10-18",
+    "url": "https://ejemplo.invalid/2026-10-18-ejemplo-maraton",
+    "area": "deporte",
+    "resumen_propio": "Ejemplo sintético para pruebas. La organización de una maratón informa cuántas personas se inscribieron, cuántos puestos de hidratación habrá, la distancia entre ellos y el tiempo que ganaron los primeros corredores el año pasado, y debate cuánta agua conviene comprar.",
+    "cifras": [
+      {
+        "valor": 8500,
+        "unidad": "personas",
+        "que_es": "inscritos a la maratón (ejemplo sintético)",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 1"
+        }
+      },
+      {
+        "valor": 42.2,
+        "unidad": "km",
+        "que_es": "distancia de la carrera (ejemplo sintético)",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 2"
+        }
+      },
+      {
+        "valor": 7,
+        "unidad": "puestos",
+        "que_es": "puestos de hidratación (ejemplo sintético)",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "mapa 1"
+        }
+      },
+      {
+        "valor": "2 h 15 min",
+        "unidad": "tiempo",
+        "que_es": "tiempo del primer lugar el año pasado (ejemplo sintético)",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "tabla 1"
+        }
+      },
+      {
+        "valor": "5 h",
+        "unidad": "tiempo",
+        "que_es": "tiempo máximo permitido para terminar (ejemplo sintético)",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 4"
+        }
+      }
+    ],
+    "recuperada_en": "2026-10-19T09:00:00Z"
+  },
+  "respuestas_simuladas": [
+    {
+      "candidatos": [
+        {
+          "enfoque": "Estima la cantidad de agua a comprar y su distribución entre puestos.",
+          "slug": "agua-maraton",
+          "titulo": "¿Cuánta agua hay que tener lista?",
+          "nivel_principal": "S",
+          "sub_tramo": "S1",
+          "variantes": {
+            "abajo": "P",
+            "arriba": "U"
+          },
+          "contenidos_matematicos": [
+            "razones y tasas",
+            "estimación",
+            "promedio"
+          ],
+          "tiempo_estimado": "2 sesiones de 90 min",
+          "cifras_usadas_idx": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "enunciado_es": "Una maratón de 42,2 km tendrá 8.500 inscritos y 7 puestos y 300 voluntarios de hidratación. El primer lugar del año pasado tardó 2 h 15 min y el tiempo máximo permitido es de 5 h. La organización debe decidir cuánta agua comprar y cómo repartirla entre los puestos. ¿Qué cantidad recomendarían? Pueden pedir información adicional.",
+          "foto_descripcion": "Ícono plano de un puesto de agua con vasos y corredores pasando.",
+          "recursos": [
+            {
+              "id": "R1",
+              "que_es": "consumo",
+              "contenido": "Estimación de cuánta agua beben los corredores por hora en pruebas largas, según un manual de organizadores.",
+              "fase": "P2-RM",
+              "fuente": "otra fuente: manual de organizadores (ejemplo)",
+              "disponibilidad": "a_solicitud"
+            },
+            {
+              "id": "R2",
+              "que_es": "datos del recorrido",
+              "contenido": "Hay 7 puestos en un recorrido de 42,2 km.",
+              "fase": "P1-MRS",
+              "fuente": "noticia (párrafo 2, mapa 1)",
+              "disponibilidad": "a_solicitud"
+            }
+          ],
+          "variantes_detalle": {
+            "abajo": {
+              "tramo": "P",
+              "cambios": "Se entrega el consumo por persona y se pregunta cuánta agua se necesita en total."
+            },
+            "arriba": {
+              "tramo": "U",
+              "cambios": "Se modela el flujo de corredores por puesto en el tiempo y se analiza la sensibilidad."
+            }
+          },
+          "mapa_ciclo": [
+            {
+              "fase": "P1-MRS",
+              "decision": "entender qué cantidad de agua se necesita y cuándo",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            },
+            {
+              "fase": "P2-RM",
+              "decision": "suponer ritmo y consumo por corredor",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": "B12"
+            },
+            {
+              "fase": "P3-MM",
+              "decision": "relacionar corredores, tiempo y consumo en cada puesto",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": "B23"
+            },
+            {
+              "fase": "P4-WM",
+              "decision": "calcular agua total y por puesto",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            },
+            {
+              "fase": "P5-INT",
+              "decision": "interpretar el resultado con un margen de seguridad",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            },
+            {
+              "fase": "P6-VAL",
+              "decision": "contrastar con el consumo de la maratón anterior",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            },
+            {
+              "fase": "P7-EXP",
+              "decision": "justificar la compra",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            }
+          ],
+          "required_assumptions": [
+            "todos los inscritos corren",
+            "el consumo es constante por hora"
+          ],
+          "solucion_pasos": "Corredores por puesto por consumo en el tiempo que pasan en el recorrido.",
+          "solucion_resultado": "varios miles de litros",
+          "solucion_rango": "de 8.000 a 20.000 litros según consumo supuesto",
+          "routes": [
+            {
+              "id": "R1",
+              "nombre": "total por persona",
+              "nivel": "P",
+              "modelo": "agua por persona x inscritos",
+              "resultado": "≈ 12.000 L"
+            },
+            {
+              "id": "R2",
+              "nombre": "por puesto y tiempo",
+              "nivel": "S1",
+              "modelo": "flujo de corredores por puesto",
+              "resultado": "≈ 1.800 L por puesto"
+            },
+            {
+              "id": "R3",
+              "nombre": "con variabilidad de ritmos",
+              "nivel": "U",
+              "modelo": "distribución de pasos por puesto",
+              "resultado": "picos mayores en los primeros puestos"
+            }
+          ],
+          "modelo_inadecuado": "RX",
+          "por_que_falla": "Comprar agua solo para el tiempo del primer lugar y no para quienes tardan más.",
+          "validation_evidence": "Cantidad de agua realmente consumida en la maratón anterior."
+        },
+        {
+          "enfoque": "Estima la cantidad de agua según el ritmo en el tiempo.",
+          "slug": "agua-segun-ritmo",
+          "titulo": "¿A qué hora se agota el agua?",
+          "nivel_principal": "S",
+          "sub_tramo": "S1",
+          "variantes": {
+            "abajo": "P",
+            "arriba": "U"
+          },
+          "contenidos_matematicos": [
+            "razones y tasas",
+            "estimación",
+            "promedio"
+          ],
+          "tiempo_estimado": "2 sesiones de 90 min",
+          "cifras_usadas_idx": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "enunciado_es": "Una maratón de 42,2 km tendrá 8.500 inscritos y 7 puestos de hidratación repartidos en el recorrido. El primer lugar del año pasado tardó 2 h 15 min y el tiempo máximo es de 5 h. Los corredores no pasan todos juntos por cada puesto. ¿En qué momentos y en qué puestos habrá más demanda de agua? Pueden pedir información adicional.",
+          "foto_descripcion": "Ícono plano de un puesto de agua con vasos y corredores pasando.",
+          "recursos": [
+            {
+              "id": "R1",
+              "que_es": "consumo",
+              "contenido": "Estimación de cuánta agua beben los corredores por hora en pruebas largas, según un manual de organizadores.",
+              "fase": "P2-RM",
+              "fuente": "otra fuente: manual de organizadores (ejemplo)",
+              "disponibilidad": "a_solicitud"
+            },
+            {
+              "id": "R2",
+              "que_es": "datos del recorrido",
+              "contenido": "Hay 7 puestos en un recorrido de 42,2 km.",
+              "fase": "P1-MRS",
+              "fuente": "noticia (párrafo 2, mapa 1)",
+              "disponibilidad": "a_solicitud"
+            }
+          ],
+          "variantes_detalle": {
+            "abajo": {
+              "tramo": "P",
+              "cambios": "Se entrega el consumo por persona y se pregunta cuánta agua se necesita en total."
+            },
+            "arriba": {
+              "tramo": "U",
+              "cambios": "Se modela el flujo de corredores por puesto en el tiempo y se analiza la sensibilidad."
+            }
+          },
+          "mapa_ciclo": [
+            {
+              "fase": "P1-MRS",
+              "decision": "entender qué cantidad de agua se necesita y cuándo",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            },
+            {
+              "fase": "P2-RM",
+              "decision": "suponer ritmo y consumo por corredor",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": "B12"
+            },
+            {
+              "fase": "P3-MM",
+              "decision": "relacionar corredores, tiempo y consumo en cada puesto",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": "B23"
+            },
+            {
+              "fase": "P4-WM",
+              "decision": "calcular agua total y por puesto",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            },
+            {
+              "fase": "P5-INT",
+              "decision": "interpretar el resultado con un margen de seguridad",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            },
+            {
+              "fase": "P6-VAL",
+              "decision": "contrastar con el consumo de la maratón anterior",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            },
+            {
+              "fase": "P7-EXP",
+              "decision": "justificar la compra",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            }
+          ],
+          "required_assumptions": [
+            "todos los inscritos corren",
+            "el consumo es constante por hora"
+          ],
+          "solucion_pasos": "Corredores por puesto por consumo en el tiempo que pasan en el recorrido.",
+          "solucion_resultado": "varios miles de litros",
+          "solucion_rango": "de 8.000 a 20.000 litros según consumo supuesto",
+          "routes": [
+            {
+              "id": "R1",
+              "nombre": "total por persona",
+              "nivel": "P",
+              "modelo": "agua por persona x inscritos",
+              "resultado": "≈ 12.000 L"
+            },
+            {
+              "id": "R2",
+              "nombre": "por puesto y tiempo",
+              "nivel": "S1",
+              "modelo": "flujo de corredores por puesto",
+              "resultado": "≈ 1.800 L por puesto"
+            },
+            {
+              "id": "R3",
+              "nombre": "con variabilidad de ritmos",
+              "nivel": "U",
+              "modelo": "distribución de pasos por puesto",
+              "resultado": "picos mayores en los primeros puestos"
+            }
+          ],
+          "modelo_inadecuado": "RX",
+          "por_que_falla": "Suponer que todos pasan a la vez por cada puesto exagera el pico de demanda.",
+          "validation_evidence": "Cantidad de agua realmente consumida en la maratón anterior."
+        }
+      ]
+    },
+    {
+      "candidatos": [
+        {
+          "enfoque": "Estima la cantidad de agua a comprar y su distribución entre puestos.",
+          "slug": "agua-maraton",
+          "titulo": "¿Cuánta agua hay que tener lista?",
+          "nivel_principal": "S",
+          "sub_tramo": "S1",
+          "variantes": {
+            "abajo": "P",
+            "arriba": "U"
+          },
+          "contenidos_matematicos": [
+            "razones y tasas",
+            "estimación",
+            "promedio"
+          ],
+          "tiempo_estimado": "2 sesiones de 90 min",
+          "cifras_usadas_idx": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "enunciado_es": "Una maratón de 42,2 km tendrá 8.500 inscritos y 7 puestos de hidratación. El primer lugar del año pasado tardó 2 h 15 min y el tiempo máximo permitido es de 5 h. La organización debe decidir cuánta agua comprar y cómo repartirla entre los puestos. ¿Qué cantidad recomendarían? Pueden pedir información adicional.",
+          "foto_descripcion": "Ícono plano de un puesto de agua con vasos y corredores pasando.",
+          "recursos": [
+            {
+              "id": "R1",
+              "que_es": "consumo",
+              "contenido": "Estimación de cuánta agua beben los corredores por hora en pruebas largas, según un manual de organizadores.",
+              "fase": "P2-RM",
+              "fuente": "otra fuente: manual de organizadores (ejemplo)",
+              "disponibilidad": "a_solicitud"
+            },
+            {
+              "id": "R2",
+              "que_es": "datos del recorrido",
+              "contenido": "Hay 7 puestos en un recorrido de 42,2 km.",
+              "fase": "P1-MRS",
+              "fuente": "noticia (párrafo 2, mapa 1)",
+              "disponibilidad": "a_solicitud"
+            }
+          ],
+          "variantes_detalle": {
+            "abajo": {
+              "tramo": "P",
+              "cambios": "Se entrega el consumo por persona y se pregunta cuánta agua se necesita en total."
+            },
+            "arriba": {
+              "tramo": "U",
+              "cambios": "Se modela el flujo de corredores por puesto en el tiempo y se analiza la sensibilidad."
+            }
+          },
+          "mapa_ciclo": [
+            {
+              "fase": "P1-MRS",
+              "decision": "entender qué cantidad de agua se necesita y cuándo",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            },
+            {
+              "fase": "P2-RM",
+              "decision": "suponer ritmo y consumo por corredor",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": "B12"
+            },
+            {
+              "fase": "P3-MM",
+              "decision": "relacionar corredores, tiempo y consumo en cada puesto",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": "B23"
+            },
+            {
+              "fase": "P4-WM",
+              "decision": "calcular agua total y por puesto",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            },
+            {
+              "fase": "P5-INT",
+              "decision": "interpretar el resultado con un margen de seguridad",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            },
+            {
+              "fase": "P6-VAL",
+              "decision": "contrastar con el consumo de la maratón anterior",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            },
+            {
+              "fase": "P7-EXP",
+              "decision": "justificar la compra",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            }
+          ],
+          "required_assumptions": [
+            "todos los inscritos corren",
+            "el consumo es constante por hora"
+          ],
+          "solucion_pasos": "Corredores por puesto por consumo en el tiempo que pasan en el recorrido.",
+          "solucion_resultado": "varios miles de litros",
+          "solucion_rango": "de 8.000 a 20.000 litros según consumo supuesto",
+          "routes": [
+            {
+              "id": "R1",
+              "nombre": "total por persona",
+              "nivel": "P",
+              "modelo": "agua por persona x inscritos",
+              "resultado": "≈ 12.000 L"
+            },
+            {
+              "id": "R2",
+              "nombre": "por puesto y tiempo",
+              "nivel": "S1",
+              "modelo": "flujo de corredores por puesto",
+              "resultado": "≈ 1.800 L por puesto"
+            },
+            {
+              "id": "R3",
+              "nombre": "con variabilidad de ritmos",
+              "nivel": "U",
+              "modelo": "distribución de pasos por puesto",
+              "resultado": "picos mayores en los primeros puestos"
+            }
+          ],
+          "modelo_inadecuado": "RX",
+          "por_que_falla": "Comprar agua solo para el tiempo del primer lugar y no para quienes tardan más.",
+          "validation_evidence": "Cantidad de agua realmente consumida en la maratón anterior."
+        },
+        {
+          "enfoque": "Estima la cantidad de agua según el ritmo en el tiempo.",
+          "slug": "agua-segun-ritmo",
+          "titulo": "¿A qué hora se agota el agua?",
+          "nivel_principal": "S",
+          "sub_tramo": "S1",
+          "variantes": {
+            "abajo": "P",
+            "arriba": "U"
+          },
+          "contenidos_matematicos": [
+            "razones y tasas",
+            "estimación",
+            "promedio"
+          ],
+          "tiempo_estimado": "2 sesiones de 90 min",
+          "cifras_usadas_idx": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "enunciado_es": "Una maratón de 42,2 km tendrá 8.500 inscritos y 7 puestos de hidratación repartidos en el recorrido. El primer lugar del año pasado tardó 2 h 15 min y el tiempo máximo es de 5 h. Los corredores no pasan todos juntos por cada puesto. ¿En qué momentos y en qué puestos habrá más demanda de agua? Pueden pedir información adicional.",
+          "foto_descripcion": "Ícono plano de un puesto de agua con vasos y corredores pasando.",
+          "recursos": [
+            {
+              "id": "R1",
+              "que_es": "consumo",
+              "contenido": "Estimación de cuánta agua beben los corredores por hora en pruebas largas, según un manual de organizadores.",
+              "fase": "P2-RM",
+              "fuente": "otra fuente: manual de organizadores (ejemplo)",
+              "disponibilidad": "a_solicitud"
+            },
+            {
+              "id": "R2",
+              "que_es": "datos del recorrido",
+              "contenido": "Hay 7 puestos en un recorrido de 42,2 km.",
+              "fase": "P1-MRS",
+              "fuente": "noticia (párrafo 2, mapa 1)",
+              "disponibilidad": "a_solicitud"
+            }
+          ],
+          "variantes_detalle": {
+            "abajo": {
+              "tramo": "P",
+              "cambios": "Se entrega el consumo por persona y se pregunta cuánta agua se necesita en total."
+            },
+            "arriba": {
+              "tramo": "U",
+              "cambios": "Se modela el flujo de corredores por puesto en el tiempo y se analiza la sensibilidad."
+            }
+          },
+          "mapa_ciclo": [
+            {
+              "fase": "P1-MRS",
+              "decision": "entender qué cantidad de agua se necesita y cuándo",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            },
+            {
+              "fase": "P2-RM",
+              "decision": "suponer ritmo y consumo por corredor",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": "B12"
+            },
+            {
+              "fase": "P3-MM",
+              "decision": "relacionar corredores, tiempo y consumo en cada puesto",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": "B23"
+            },
+            {
+              "fase": "P4-WM",
+              "decision": "calcular agua total y por puesto",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            },
+            {
+              "fase": "P5-INT",
+              "decision": "interpretar el resultado con un margen de seguridad",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            },
+            {
+              "fase": "P6-VAL",
+              "decision": "contrastar con el consumo de la maratón anterior",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            },
+            {
+              "fase": "P7-EXP",
+              "decision": "justificar la compra",
+              "evidencia": "registro escrito del grupo",
+              "bloqueo_probable": ""
+            }
+          ],
+          "required_assumptions": [
+            "todos los inscritos corren",
+            "el consumo es constante por hora"
+          ],
+          "solucion_pasos": "Corredores por puesto por consumo en el tiempo que pasan en el recorrido.",
+          "solucion_resultado": "varios miles de litros",
+          "solucion_rango": "de 8.000 a 20.000 litros según consumo supuesto",
+          "routes": [
+            {
+              "id": "R1",
+              "nombre": "total por persona",
+              "nivel": "P",
+              "modelo": "agua por persona x inscritos",
+              "resultado": "≈ 12.000 L"
+            },
+            {
+              "id": "R2",
+              "nombre": "por puesto y tiempo",
+              "nivel": "S1",
+              "modelo": "flujo de corredores por puesto",
+              "resultado": "≈ 1.800 L por puesto"
+            },
+            {
+              "id": "R3",
+              "nombre": "con variabilidad de ritmos",
+              "nivel": "U",
+              "modelo": "distribución de pasos por puesto",
+              "resultado": "picos mayores en los primeros puestos"
+            }
+          ],
+          "modelo_inadecuado": "RX",
+          "por_que_falla": "Suponer que todos pasan a la vez por cada puesto exagera el pico de demanda.",
+          "validation_evidence": "Cantidad de agua realmente consumida en la maratón anterior."
+        }
+      ]
+    }
+  ],
+  "criterio_aceptacion": {
+    "n_candidatos": 2,
+    "nivel_principal": "S",
+    "valida_tarea": true,
+    "aislamiento": true,
+    "estado": "borrador",
+    "cifras_con_localizador": true,
+    "rondas": 2,
+    "error_primera_ronda_contiene": "300"
+  }
+}

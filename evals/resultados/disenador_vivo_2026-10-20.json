@@ -1,0 +1,220 @@
+{
+  "id": "2026-10-cuanto-sube-mi-cuenta",
+  "titulo": "¿Cuánto más pagará la familia de Camila por la luz?",
+  "estado": "borrador",
+  "version": 1,
+  "fecha": "2026-10-20",
+  "noticia": {
+    "noticia_id": "2026-10-16-ejemplo-cuenta-luz",
+    "medio": "Diario Ejemplo",
+    "titulo": "Ejemplo sintético: sube la cuenta de la luz en los hogares",
+    "fecha": "2026-10-16",
+    "url": "https://ejemplo.invalid/2026-10-16-ejemplo-cuenta-luz",
+    "resumen_propio": "Ejemplo sintético para pruebas. Se anuncia un alza de las tarifas eléctricas residenciales. La nota entrega el consumo mensual típico de un hogar, el precio de cada unidad de energía, el cargo fijo mensual y el porcentaje de alza anunciado, mientras algunas familias evalúan instalar paneles solares.",
+    "cifras_usadas": [
+      {
+        "valor": 180,
+        "unidad": "kWh por mes",
+        "que_es": "consumo mensual típico de un hogar (ejemplo sintético)",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 2"
+        }
+      },
+      {
+        "valor": 160,
+        "unidad": "pesos por kWh",
+        "que_es": "precio de la energía (ejemplo sintético)",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "tabla 1"
+        }
+      },
+      {
+        "valor": 1500,
+        "unidad": "pesos por mes",
+        "que_es": "cargo fijo mensual (ejemplo sintético)",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "tabla 1"
+        }
+      },
+      {
+        "valor": "12 %",
+        "unidad": "porcentaje",
+        "que_es": "alza anunciada de la tarifa (ejemplo sintético)",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 1"
+        }
+      }
+    ]
+  },
+  "nivel_principal": "S",
+  "variantes": {
+    "abajo": "P",
+    "arriba": "S"
+  },
+  "area": "economia",
+  "contenidos_matematicos": [
+    "porcentajes y razones",
+    "función lineal",
+    "ecuaciones de primer grado",
+    "comparación de escenarios"
+  ],
+  "tiempo_estimado": "2 sesiones de 90 min",
+  "estudiante": {
+    "enunciado_es": "Un diario informó que las tarifas eléctricas de las casas subirán un 12 %. La familia de Camila se dio cuenta de que consume lo mismo que un hogar típico: 180 kWh por mes. Según la nota, cada kWh cuesta 160 pesos por kWh y además se cobra un cargo fijo de 1500 pesos por mes, aunque no se use nada de electricidad. La mamá de Camila dice que la cuenta completa subirá un 12 %, pero su papá cree que la subida será distinta. Además, quieren saber si gastando menos energía lograrían pagar lo mismo que antes. ¿Cuánto cambiará la cuenta mensual de la familia y qué podrían hacer para que no suba? Expliquen cómo decidieron. Pueden pedir información adicional.",
+    "foto_descripcion": "Ícono de una boleta de luz con una flecha hacia arriba y, al lado, una ampolleta encendida.",
+    "recursos_a_solicitud": [
+      {
+        "id": "R2",
+        "que_es": "Aclaración sobre cómo es una boleta eléctrica real",
+        "contenido": "Una boleta residencial real puede incluir otros conceptos e impuestos que la noticia no detalla. El comunicado de alza no siempre aclara a qué conceptos de la boleta se aplica el porcentaje. El grupo puede pedir una boleta real de su casa o de un familiar para ver qué aparece en ella.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P2-RM",
+        "fuente": "otra fuente: boleta eléctrica residencial real (de la casa de un integrante del grupo)"
+      },
+      {
+        "id": "R3",
+        "que_es": "Lista de artefactos comunes de un hogar y su uso típico de electricidad, solo cualitativa",
+        "contenido": "Artefactos habituales: refrigerador, hervidor, estufa eléctrica, ampolletas, lavadora, televisor, cargadores. Los que producen calor suelen consumir mucho más que los que dan luz o cargan aparatos. Cuánto consume cada uno depende de su potencia y de las horas de uso: el grupo debe estimarlas o buscar las etiquetas de los aparatos.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P3-MM",
+        "fuente": "otra fuente: etiquetas de eficiencia energética de artefactos domésticos"
+      }
+    ]
+  },
+  "variantes_detalle": {
+    "abajo": {
+      "tramo": "P",
+      "cambios": "Se supone acordado que el alza se aplica a toda la cuenta. La pregunta se reduce a cuánto sube la cuenta y cuántos kWh menos habría que gastar para pagar lo mismo, con ayuda de una tabla de dos columnas (kWh consumidos y pesos a pagar) que el grupo completa por tanteo."
+    },
+    "arriba": {
+      "tramo": "S2",
+      "cambios": "Se pide además considerar que el consumo cambia según la estación del año, comparar al menos dos formas de aplicar el alza y analizar cuánto cambia la conclusión si el consumo real de la familia fuera mayor o menor que el típico."
+    }
+  },
+  "recursos_de_entrada": [
+    {
+      "id": "R1",
+      "que_es": "Datos de la noticia que el grupo recibe al comienzo y que están escritos en el enunciado",
+      "contenido": "Consumo mensual típico: 180 kWh por mes. Precio de la energía: 160 pesos por kWh. Cargo fijo: 1500 pesos por mes. Alza anunciada: 12 %.",
+      "disponibilidad": "de_entrada",
+      "fase": "P1-MRS",
+      "fuente": "noticia (párrafo 2; tabla 1; párrafo 1)"
+    }
+  ],
+  "mapa_ciclo": {
+    "P1-MRS": {
+      "decision": "Entender qué dice la noticia, qué paga hoy la familia y qué significa que el alza sea de un porcentaje, y qué se está preguntando.",
+      "evidencia": "Parafrasean la situación con sus palabras y listan qué datos hay y cuáles faltan.",
+      "bloqueo_probable": "B12"
+    },
+    "P2-RM": {
+      "decision": "Decidir si el alza se aplica a toda la cuenta o solo a la energía, si hay otros cargos, y fijar un consumo de referencia.",
+      "evidencia": "Lista escrita de supuestos y de datos descartados o pedidos como información adicional.",
+      "bloqueo_probable": "B23"
+    },
+    "P3-MM": {
+      "decision": "Expresar la cuenta como función del consumo: cargo fijo más precio por kWh por cantidad, antes y después del alza.",
+      "evidencia": "Fórmula, tabla o gráfico de la cuenta en función de los kWh para ambos escenarios.",
+      "bloqueo_probable": "B34"
+    },
+    "P4-WM": {
+      "decision": "Obtener la cuenta con y sin alza, la diferencia en pesos y en porcentaje, y el consumo con que la cuenta no cambia.",
+      "evidencia": "Cálculos de la diferencia de la cuenta y resolución de una ecuación o tanteo ordenado.",
+      "bloqueo_probable": "B45"
+    },
+    "P5-INT": {
+      "decision": "Traducir los resultados a una recomendación para la familia: cuánto pagarán de más y cuánto tendrían que ahorrar, y si es realista.",
+      "evidencia": "Enunciado de la respuesta con unidades y comparación con hábitos de consumo plausibles de una casa.",
+      "bloqueo_probable": "B56"
+    },
+    "P6-VAL": {
+      "decision": "Contrastar el modelo con una boleta real y con el escenario alternativo, y revisar si el porcentaje de alza realmente observado coincide con el supuesto.",
+      "evidencia": "Comparación entre lo modelado y los montos de una boleta real; ajuste de supuestos si no calzan.",
+      "bloqueo_probable": "B67"
+    },
+    "P7-EXP": {
+      "decision": "Presentar al resto del curso qué supuestos hicieron, qué resultado obtuvieron y por qué difiere del dicho por la mamá de Camila.",
+      "evidencia": "Informe o póster con modelo, supuestos, resultado y límites.",
+      "bloqueo_probable": null
+    }
+  },
+  "task_space": {
+    "required_assumptions": [
+      "Si el alza se aplica a toda la cuenta o solo al precio de la energía, dejando el cargo fijo igual.",
+      "Que el consumo se mantiene constante en el mes de referencia, igual al hogar típico de la noticia.",
+      "Que no hay otros cargos ni impuestos, o que se mantienen fijos.",
+      "Qué significa no pagar más: igualar el monto de la cuenta anterior al alza.",
+      "Qué artefactos se podrían usar menos y qué tan realista es ese ahorro."
+    ],
+    "reference_solution": {
+      "steps": "1) Cuenta actual: 180*160 + 1500 = 30300 pesos. 2) Escenario A (alza sobre toda la cuenta): 30300*1,12 = 33936 pesos; sube 3636 pesos. 3) Escenario B (alza solo sobre la energía): precio nuevo 179,2 pesos por kWh; cuenta 179,2*180 + 1500 = 33756 pesos; sube 3456 pesos, cerca de 11,4 % de la cuenta. 4) Consumo con el que no sube la cuenta: en B se resuelve 179,2x + 1500 = 30300, de donde x ≈ 160,7 kWh (unos 19 kWh menos, cerca de 10,7 %); en A se resuelve 179,2x + 1680 = 30300, de donde x ≈ 159,7 kWh (unos 20 kWh menos, cerca de 11,3 %). 5) Interpretación: como el cargo fijo no baja al consumir menos, el ahorro de energía debe ser algo mayor que el alza sobre el consumo; unos 20 kWh menos al mes equivalen a reducir el uso de algún artefacto de calor.",
+      "result": "La cuenta pasa de 30300 pesos a entre 33756 y 33936 pesos según el supuesto sobre el alza (aumento mensual de unos 3456 a 3636 pesos). Para pagar lo mismo que antes habría que bajar el consumo unos 19 a 20 kWh por mes.",
+      "acceptable_range": "Aumento de la cuenta entre 3400 y 3700 pesos por mes (11 % a 12 %); reducción de consumo necesaria entre 18 y 22 kWh por mes según los supuestos sobre otros cargos y el alcance del alza."
+    },
+    "routes": [
+      {
+        "id": "R1",
+        "nombre": "Tanteo con tabla",
+        "nivel": "P",
+        "modelo": "Tabla de consumo versus cuenta: suponen un consumo menor, calculan la cuenta con el precio nuevo y el cargo fijo, y repiten hasta igualar la cuenta anterior.",
+        "resultado": "Cuenta nueva cerca de 33900 pesos; consumo para pagar lo mismo cerca de 160 kWh."
+      },
+      {
+        "id": "R2",
+        "nombre": "Porcentaje sobre la cuenta completa",
+        "nivel": "S1",
+        "modelo": "Cuenta nueva = cuenta actual por uno coma doce; consumo de equilibrio con la ecuación lineal con precio y cargo fijo ambos aumentados.",
+        "resultado": "Sube 3636 pesos; consumo de equilibrio cerca de 159,7 kWh."
+      },
+      {
+        "id": "R3",
+        "nombre": "Función lineal con alza solo en energía",
+        "nivel": "S1",
+        "modelo": "C(x) = 1,12*160*x + 1500 comparada con C0(x) = 160*x + 1500; se resuelve la ecuación C(x) = C0(180) para hallar el consumo de equilibrio.",
+        "resultado": "Sube 3456 pesos; consumo de equilibrio cerca de 160,7 kWh."
+      },
+      {
+        "id": "R4",
+        "nombre": "Comparación gráfica y costo medio por kWh",
+        "nivel": "S2",
+        "modelo": "Dos rectas de cuenta versus consumo (antes y después) y análisis de la diferencia vertical entre ellas y del costo medio por kWh, que incluye el cargo fijo.",
+        "resultado": "La brecha crece con el consumo; el costo medio por kWh es mayor para consumos bajos por el peso del cargo fijo."
+      }
+    ],
+    "modelo_inadecuado": {
+      "id": "R5",
+      "por_que_falla": "Interpretar el 12 % como 12 pesos más por cada kWh da un aumento de 2160 pesos mensuales, que subestima en unos 40 % el alza real y lleva a pedir una reducción de consumo insuficiente; el contraste con una boleta real muestra la diferencia."
+    },
+    "validation_evidence": "Una boleta real de una vivienda, de preferencia de un mes posterior al alza, con su consumo, el precio por kWh, el cargo fijo y el monto total, que el grupo compara con lo que su modelo predice para ese mismo consumo y con la variación porcentual realmente observada.",
+    "agent_visibility": {
+      "students": [
+        "enunciado_es",
+        "foto_descripcion",
+        "recursos_a_solicitud"
+      ],
+      "coder": [
+        "enunciado_es",
+        "task_space"
+      ],
+      "guide": [
+        "all"
+      ]
+    }
+  },
+  "rubrica_rub01": null,
+  "rubrica_rub02": {
+    "P": null,
+    "S": null,
+    "U": null
+  },
+  "modelo_y_prompt": {
+    "diseñador": "claude-sonnet-5-5",
+    "version_prompt": "1.0",
+    "version_rubrica": "4.0"
+  },
+  "sub_tramo": "S1"
+}
