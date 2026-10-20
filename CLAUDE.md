@@ -24,7 +24,7 @@ Los archivos de `insumos/` son de solo lectura para los agentes de construcción
 
 1. Ningún artefacto cambia de estado sin validar contra su esquema en `contratos/`.
 2. Ninguna tarea llega a `revisada` con RUB01 < 20/24 o con algún criterio en 0.
-3. Ningún archivo del repo contiene más de 25 palabras consecutivas del texto de una noticia. Las noticias se citan (medio, título, fecha, URL) y se resumen en ≤ 80 palabras propias.
+3. Ningún archivo del repo contiene más de 25 palabras consecutivas del **cuerpo** de una noticia. Las noticias se citan (medio, título, fecha, URL) y se resumen en ≤ 80 palabras propias. El **titular se cita completo**: es parte de la cita y queda fuera del conteo (decisión humana 2026-10-20); el límite rige para `resumen_propio`, enunciado, recursos y guía.
 4. Ninguna cifra en una tarea sin localizador en la noticia o en el notebook de escenarios.
 5. Ningún escenario de guía docente sin `id` de corrida del simulador que lo respalde.
 6. Los agentes-estudiante del simulador reciben solo `enunciado_es`, `foto_descripcion` y recursos "a solicitud"; nunca `task_space`.
