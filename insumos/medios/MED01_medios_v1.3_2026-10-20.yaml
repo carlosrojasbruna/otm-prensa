@@ -1,5 +1,5 @@
 # MED01 – Lista blanca de medios (v1.3, 2026-10-20; vigente).
-# v1.3: DW con la URL real del feed de ciencia y tecnología (patrón rss.dw.com/rdf/rss-sp-<sección>), aportada por Carlos; Nature pasa a radar temático.
+# v1.3: DW con sus feeds reales (patrón rss.dw.com/rdf/rss-sp-<sección>: `all` = todo DW en español, `cyt` = ciencia y tecnología), aportados por Carlos; Nature pasa a radar temático.
 # v1.2: + `estrategia_descubrimiento` (RSS + GDELT como radar + API agregadora solo para medios sin feed). Decisión de Carlos 2026-10-20.
 # v1.0: Emol, CNN Chile, CIPER, Canal 13, Reuters, BBC (decisión de Carlos).
 # v1.1: + La Tercera (verificada: texto completo en el feed), Nature News (verificada), Deutsche Welle en español (por verificar);
@@ -109,13 +109,13 @@ medios:
     idioma: es
     pais: DE
     acceso: rss
-    url: "https://rss.dw.com/rdf/rss-sp-cyt"
+    url: "https://rss.dw.com/rdf/rss-sp-all"           # todo DW en español
     url_verificar: false
     secciones:
       - {area: ciencia_tecnologia, url: "https://rss.dw.com/rdf/rss-sp-cyt"}
-      # otras secciones en español: ver corporate.dw.com/es/rss/a-68793660 (patrón rss.dw.com/rdf/rss-sp-<sección>); agregar cuando Carlos las confirme
-    verificacion: "2026-10-20: URL del feed de ciencia y tecnología confirmada por Carlos desde la página oficial de DW; formato RDF. Las URLs xml/rss-es-* de v1.1 eran incorrectas y se eliminan"
-    areas: [ciencia_tecnologia, medio_ambiente, salud]
+      # otras secciones: corporate.dw.com/es/rss/a-68793660 (patrón rss.dw.com/rdf/rss-sp-<sección>)
+    verificacion: "2026-10-20: feeds `all` y `cyt` confirmados por Carlos desde la página oficial de DW; formato RDF. Las URLs xml/rss-es-* de v1.1 eran incorrectas y se eliminan"
+    areas: [ciencia_tecnologia, medio_ambiente, salud, economia, sociedad_datos]
   - id: naturenews
     nombre: Nature News
     idioma: en
