@@ -15,6 +15,6 @@ estados_archivables: [verificada, publicada]
 git:
   rama_base: main
   prefijo_rama: "tareas/semana-"      # + AAAA-Www (semana ISO de la fecha de publicación)
-  prefijo_commit: "pipeline:"         # CLAUDE.md no lista `tareas:`; se usa uno de los listados
+  prefijo_commit: "tareas:"           # CLAUDE.md lista `tareas:` desde 87de76d (decisión 6b de CP2)
   licencia: "CC BY-NC-SA 4.0"
 modo_por_defecto: dry-run
