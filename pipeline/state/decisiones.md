@@ -33,6 +33,17 @@ Formato: `AAAA-MM-DD · agente · decisión · alternativa descartada · por qu�
 - 2026-10-20 · rubric-encoder · Precio de Opus 5.5 no documentado en el repo: el costo se calcula con 5/25 USD por MTok (escritura de caché 6,25; lectura 0,50) y se informa también una cota pesimista 15/75; el tope de 15 USD se controla con el precio supuesto · usar la cota pesimista para el tope (habría impedido más de una versión del prompt) · Carlos debe verificar el costo real en la Console. Gasto calibración: 10,73 USD supuestos (+ ~0,17 de sondeos); cota pesimista 32,2 USD.
 - 2026-10-20 · rubric-encoder · Calibración del evaluador: prompt v1.0 κ = 0,58/0,61/0,60 (no acepta). Ajuste 1 → v1.1 (lectura de descriptores sin exigir más de lo que dicen; «ante duda, el menor» solo entre descriptores adyacentes; lecturas fijas de criterios 5, 7, 8, 9; regla para relatos de tareas implementadas): 0,72/0,69/0,73. Ajuste 2 → v1.2 (frontera 0/1; lecturas de criterios 10 y 12): 0,71/0,68/0,74. Ajuste 3 → v1.3 (lectura del criterio 4; atribución de fases en relatos): 0,71/0,80/0,75 → **acepta**. RUB01 y la referencia no se tocaron; el prompt no contiene tareas-oro ni puntajes. `VERSION_PROMPT = "1.3"` · detenerse en v1.2 · el plan permite 3 ajustes. **Advertencia:** contra las 4 tareas humanas κ = 0,62/0,68/0,68 (< 0,7); el cumplimiento depende de los 5 puntajes provisionales de Claude y los ajustes se hicieron mirando las mismas 9 tareas (sin conjunto de prueba): no reportar como validez.
 
+## Decisiones del humano en CP1 (2026-10-20, Carlos, con revisión de Claude)
+
+- **Contratos congelados** tal como están (7 esquemas, máquina de estados con retrocesos, `archivada` y `revisor` obligatorio).
+- **Evaluador aceptado con reservas.** Condiciones para la fase 2 en adelante:
+  1. En producción el evaluador corre **3 veces** por tarea y el puntaje oficial es la **mediana por criterio**; `evaluacion.json` guarda las tres corridas, no solo la mediana. Si el rango del total entre corridas es ≥ 4 puntos, la tarea se marca `evaluacion_inestable` y la revisión humana 1 lo ve.
+  2. La **doble codificación humana** de las 5 tareas-oro provisionales (Hugo/Mahsa) se hace antes de CP3; con ella, `rubric-encoder` recalibra v1.4 usando las 4 tareas de Abiam como conjunto de prueba (no de ajuste). El kappa reportable es ese.
+  3. Los criterios débiles (autenticidad 0,36, validación 0,46, fecundidad 0,50) se documentan en el prompt v1.4 con un ejemplo de 0/1/2 cada uno, tomado de las tareas-oro.
+- **Temperatura:** se acepta que Opus 5.5 no la admita; la condición 1 reemplaza la regla "temperatura 0" del plan.
+- **PLT01 v0.2** creada por el humano (áreas = ids de MED01; estados completos; recursos `de_entrada` dentro de `enunciado_es`). Los agentes de la fase 2 leen v0.2.
+- **Costo:** el gasto real se verifica en la Console; `pipeline/config.yaml` debe leer precios de una tabla editable (`precios_modelos`) y no suponerlos.
+
 ## Requiere decisión humana
 
 (vacío)
