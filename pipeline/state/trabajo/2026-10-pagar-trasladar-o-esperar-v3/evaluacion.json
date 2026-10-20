@@ -1,0 +1,97 @@
+{
+  "tarea_id": "2026-10-pagar-trasladar-o-esperar-v3",
+  "fecha": "2026-10-20T22:10:33Z",
+  "rub01": {
+    "version_rubrica": "4.0",
+    "criterios": {
+      "genuino": {
+        "puntaje": 2,
+        "justificacion": "La situación plantea una necesidad real de decisión bajo incertidumbre judicial. No entrega ninguna regla, algoritmo ni modelo para fijar precios o gestionar contratos.",
+        "cita": "La gerencia debe decidir cómo fijar los precios a sus clientes y cómo manejar sus contratos en los próximos meses."
+      },
+      "abierta": {
+        "puntaje": 2,
+        "justificacion": "La pregunta no prescribe procedimiento. Admite caminos defendibles distintos, como análisis de escenarios, valor esperado, árboles de decisión o estrategias de cobertura contractual.",
+        "cita": "¿qué estrategia recomendarían a la gerencia y qué tan segura es esa recomendación?"
+      },
+      "decisiones": {
+        "puntaje": 2,
+        "justificacion": "Resolver exige varios supuestos: probabilidad y plazo del fallo, sensibilidad de los clientes al precio y margen. También exige seleccionar qué variables pedir a la gerencia.",
+        "cita": "Nadie sabe cuándo ni cómo terminará el caso. ... Pueden pedir información adicional."
+      },
+      "realismo": {
+        "puntaje": 2,
+        "justificacion": "Un importador que debe fijar precios mientras un arancel está en litigio es una situación claramente plausible fuera de la escuela. No hay un encuadre forzado para insertar un cálculo.",
+        "cita": "Una importadora de Estados Unidos que compra queso en Canadá paga hoy un arancel de 50% sobre ese queso."
+      },
+      "autenticidad": {
+        "puntaje": 2,
+        "justificacion": "El tema y los datos del litigio arancelario (monto gravado, arancel, petición de devolución con intereses) son componentes extraescolares auténticos. Son el núcleo de la incertidumbre que estructura la decisión.",
+        "cita": "Un grupo estadounidense de defensa, que ya había ganado antes un juicio contra aranceles amplios, demandó al gobierno por los nuevos aranceles a productos canadienses."
+      },
+      "contexto": {
+        "puntaje": 2,
+        "justificacion": "Varios elementos del contexto condicionan qué estrategias son posibles y cómo se interpreta su riesgo: el tipo de contrato, la competencia, la eventual devolución con intereses y la posible suspensión del cobro.",
+        "cita": "Sus contratos con clientes pueden ser de precio fijo por un periodo o de precio ajustable."
+      },
+      "ciclo": {
+        "puntaje": 2,
+        "justificacion": "Responder obliga a comprender el litigio, simplificar escenarios, matematizar costos y probabilidades, calcular, interpretar la recomendación y juzgar su seguridad. Ninguna fase queda hecha por el enunciado.",
+        "cita": "Ustedes son el equipo asesor: ¿qué estrategia recomendarían a la gerencia y qué tan segura es esa recomendación?"
+      },
+      "validacion": {
+        "puntaje": 2,
+        "justificacion": "Existe evidencia independiente y no usada en la construcción del modelo, entregada solo después de fijar la recomendación. Permite contrastar las predicciones; además, el desenlace del juicio será un dato posterior.",
+        "cita": "Existen series públicas de precios al consumidor del rubro quesos y de volúmenes importados de queso."
+      },
+      "nivel": {
+        "puntaje": 2,
+        "justificacion": "El contexto económico-legal es comprensible para estudiantes universitarios. La demanda (probabilidad, decisión bajo incertidumbre, optimización, sensibilidad) corresponde a las herramientas esperables del nivel U.",
+        "cita": "¿qué estrategia recomendarían a la gerencia y qué tan segura es esa recomendación?"
+      },
+      "autodiferenciacion": {
+        "puntaje": 2,
+        "justificacion": "Se puede entrar comparando dos o tres escenarios con aritmética de costos. El techo es alto: árboles de decisión con probabilidades, elasticidad de demanda, valor del dinero en el tiempo y análisis de sensibilidad.",
+        "cita": "Los clientes comparan precios con otros proveedores y algunos pueden cambiarse a quesos de otro origen."
+      },
+      "fecundidad": {
+        "puntaje": 2,
+        "justificacion": "Las distintas combinaciones de desenlace y plazo abren preguntas sobre la robustez de cada estrategia. Permiten comparar recomendaciones entre grupos y discutir los límites del modelo frente al riesgo.",
+        "cita": "Los demandantes piden que, si ganan, se devuelva lo pagado con intereses, y que se frene el cobro mientras dura el juicio."
+      },
+      "recursos": {
+        "puntaje": 2,
+        "justificacion": "La información necesaria puede solicitarse u obtenerse con búsqueda o estimación. Los materiales describen el negocio cualitativamente sin revelar el modelo ni la estrategia de solución.",
+        "cita": "La gerencia entrega órdenes de magnitud solo si el grupo pregunta por una variable concreta."
+      }
+    },
+    "total": 24,
+    "mejoras": []
+  },
+  "reproducibilidad": {
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.107583,
+        "version_prompt": "1.1"
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.20077,
+        "version_prompt": "1.3"
+      }
+    },
+    "version_prompt": {
+      "disenador": "1.1",
+      "evaluador": "1.3"
+    },
+    "version_rubrica": "4.0",
+    "version_MAR03": "1.0",
+    "version_MED01": "1.1",
+    "diseno_simulador": null,
+    "fecha": "2026-10-20T22:10:33Z",
+    "costo_usd": 0.308353
+  }
+}

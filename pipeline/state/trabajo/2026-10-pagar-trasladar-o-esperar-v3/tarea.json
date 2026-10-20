@@ -1,0 +1,232 @@
+{
+  "id": "2026-10-pagar-trasladar-o-esperar-v3",
+  "titulo": "¿Pagar, trasladar o esperar? Un arancel con juicio en curso",
+  "estado": "evaluada",
+  "version": 3,
+  "fecha": "2026-10-20",
+  "noticia": {
+    "noticia_id": "2026-10-20-bbc-trump-sued-over-canadian-tariffs-in",
+    "medio": "BBC News",
+    "titulo": "Trump sued over Canadian tariffs in latest legal challenge",
+    "fecha": "2026-10-20",
+    "url": "https://www.bbc.co.uk/news/articles/cqrkyj13m588o?at_medium=RSS&at_campaign=rss",
+    "resumen_propio": "A US advocacy group that previously won against broad import duties has gone to court again, this time challenging new levies on Canadian products. The complaint argues the government stretched a 1930 statute meant to counter unfair foreign practices, and that the duties, including on dairy and cheese, hurt companies and their supply chains. The plaintiffs also seek refunds with interest and an injunction to halt collection while the case proceeds.",
+    "cifras_usadas": [
+      {
+        "valor": "$20bn",
+        "unidad": "dólares estadounidenses (miles de millones)",
+        "que_es": "Valor aproximado de los bienes canadienses gravados",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 49"
+        }
+      },
+      {
+        "valor": "50%",
+        "unidad": "porcentaje de arancel",
+        "que_es": "Arancel que paga una empresa estadounidense sobre queso exportado desde Canadá",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 53"
+        }
+      }
+    ]
+  },
+  "nivel_principal": "U",
+  "variantes": {
+    "abajo": "S",
+    "arriba": null
+  },
+  "area": "economia",
+  "contenidos_matematicos": [
+    "valor esperado y árbol de decisión",
+    "optimización de una variable",
+    "elasticidad y modelos de demanda",
+    "valor del dinero en el tiempo",
+    "análisis de sensibilidad"
+  ],
+  "tiempo_estimado": "2 sesiones de 90 min",
+  "estudiante": {
+    "enunciado_es": "Un grupo estadounidense de defensa, que ya había ganado antes un juicio contra aranceles amplios, demandó al gobierno por los nuevos aranceles a productos canadienses. Sostiene que se estiró una ley antigua, pensada para contrarrestar prácticas desleales de otros países. El gobierno grava bienes canadienses por un valor de unos 20 mil millones de dólares. Una importadora de Estados Unidos que compra queso en Canadá paga hoy un arancel de 50% sobre ese queso. Los demandantes piden que, si ganan, se devuelva lo pagado con intereses, y que se frene el cobro mientras dura el juicio. Nadie sabe cuándo ni cómo terminará el caso. La gerencia debe decidir cómo fijar los precios a sus clientes y cómo manejar sus contratos en los próximos meses. Ustedes son el equipo asesor: ¿qué estrategia recomendarían a la gerencia y qué tan segura es esa recomendación? Pueden pedir información adicional.",
+    "foto_descripcion": "Ícono de una caja de queso con una etiqueta de porcentaje al lado de una balanza de justicia.",
+    "recursos_a_solicitud": [
+      {
+        "id": "R3",
+        "que_es": "Tarjeta sobre lo que pide la demanda",
+        "contenido": "Los demandantes piden la devolución de los aranceles pagados con intereses y una orden judicial que suspenda el cobro mientras el caso sigue. No se sabe cuánto tardará el tribunal ni qué decidirá.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P1-MRS",
+        "fuente": "noticia, párrafos 50 y 68"
+      },
+      {
+        "id": "R4",
+        "que_es": "Ficha del negocio de la importadora (descripción cualitativa)",
+        "contenido": "Supuesto del escenario: la importadora compra a proveedores canadienses, paga el arancel al ingresar el producto y vende a distribuidores y tiendas. Sus contratos con clientes pueden ser de precio fijo por un periodo o de precio ajustable. Los clientes comparan precios con otros proveedores y algunos pueden cambiarse a quesos de otro origen. Su margen habitual es estrecho. La gerencia entrega órdenes de magnitud solo si el grupo pregunta por una variable concreta.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P2-RM",
+        "fuente": "supuesto del escenario"
+      },
+      {
+        "id": "R5",
+        "que_es": "Tarjeta de contraste: series públicas de precios e importaciones de queso",
+        "contenido": "Existen series públicas de precios al consumidor del rubro quesos y de volúmenes importados de queso. El grupo debe indicar qué variable y qué periodo quiere comparar con lo que predijo su modelo. Se entrega solo después de que el grupo haya fijado su recomendación.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P6-VAL",
+        "fuente": "otra fuente: Oficina de Estadísticas Laborales de EE. UU. (Índice de Precios al Consumidor, rubro quesos y productos relacionados) y Oficina del Censo de EE. UU. (estadísticas de comercio exterior, importaciones de queso)"
+      }
+    ]
+  },
+  "variantes_detalle": {
+    "abajo": {
+      "tramo": "S2",
+      "cambios": "Se pide comparar tres políticas fijas de precio (absorber el arancel, trasladarlo entero, trasladar una parte) con un solo escenario de resultado del juicio y una tabla de costos que la gerencia entrega al solicitarla. Se retira la exigencia de modelar la demanda y se pide validar con una sola serie de precios."
+    },
+    "arriba": null
+  },
+  "recursos_de_entrada": [
+    {
+      "id": "R1",
+      "que_es": "Arancel que paga la importadora por el queso canadiense, incluido en el enunciado",
+      "contenido": "El queso exportado desde Canadá a una empresa estadounidense paga un arancel de 50%.",
+      "disponibilidad": "de_entrada",
+      "fase": "P1-MRS",
+      "fuente": "noticia, párrafo 53"
+    },
+    {
+      "id": "R2",
+      "que_es": "Escala de los bienes canadienses gravados, incluida en el enunciado",
+      "contenido": "Los bienes canadienses gravados valen unos 20 mil millones de dólares.",
+      "disponibilidad": "de_entrada",
+      "fase": "P1-MRS",
+      "fuente": "noticia, párrafo 49"
+    }
+  ],
+  "mapa_ciclo": {
+    "P1-MRS": {
+      "decision": "Decidir qué se sabe y qué no: quién paga el arancel, qué pasa si el tribunal da la razón, qué pasa si se demora, cuál es la decisión real de la gerencia.",
+      "evidencia": "Reformulación del problema como decisión con incertidumbre y lista de datos pedidos a la gerencia.",
+      "bloqueo_probable": "B12"
+    },
+    "P2-RM": {
+      "decision": "Simplificar: un solo producto, periodo horizonte, resultado del juicio binario o discreto, demanda lineal o de elasticidad constante, tasa de interés y costo del dinero.",
+      "evidencia": "Lista escrita de supuestos y variables con símbolos.",
+      "bloqueo_probable": "B23"
+    },
+    "P3-MM": {
+      "decision": "Escribir la utilidad como función del traspaso del arancel, incluir el reembolso como flujo incierto y descontado, elegir entre valor esperado y criterio prudente.",
+      "evidencia": "Fórmulas de utilidad por política y expresión del valor esperado de la devolución.",
+      "bloqueo_probable": "B34"
+    },
+    "P4-WM": {
+      "decision": "Optimizar el precio o el traspaso, calcular la probabilidad mínima de ganar que justifica esperar y hacer barridos de parámetros.",
+      "evidencia": "Tabla o gráfico de utilidad esperada según traspaso y probabilidad de ganar.",
+      "bloqueo_probable": "B45"
+    },
+    "P5-INT": {
+      "decision": "Traducir a una recomendación: cuánto subir precios, si registrar la devolución como ingreso probable, qué hacer en contratos de precio fijo.",
+      "evidencia": "Recomendación escrita con condiciones (si la probabilidad supera cierto umbral, si la elasticidad es mayor que tal valor).",
+      "bloqueo_probable": "B56"
+    },
+    "P6-VAL": {
+      "decision": "Contrastar la reacción de precios y volúmenes de un episodio real con lo que predijo el modelo y revisar supuestos si no calzan.",
+      "evidencia": "Comparación escrita entre traspaso y caída de volumen predichos y observados; supuesto corregido.",
+      "bloqueo_probable": "B67"
+    },
+    "P7-EXP": {
+      "decision": "Presentar la recomendación a la gerencia con los límites del modelo y las variables que más la mueven.",
+      "evidencia": "Informe o presentación breve con gráfico de sensibilidad y condiciones de cambio de recomendación.",
+      "bloqueo_probable": null
+    }
+  },
+  "task_space": {
+    "required_assumptions": [
+      "Costo unitario de compra y margen habitual de la importadora (a estimar o pedir sin cifra).",
+      "Elasticidad de la demanda al precio, de rango plausible (a estimar).",
+      "Fracción del arancel que se puede trasladar sin perder clientes.",
+      "Probabilidad de que el tribunal falle a favor y plazo hasta la devolución.",
+      "Tasa de interés que se pagaría sobre lo devuelto y costo de financiamiento de la importadora.",
+      "Los demás proveedores o importadores enfrentan el mismo arancel o no, según el supuesto elegido."
+    ],
+    "reference_solution": {
+      "steps": "1) Sea c el costo unitario antes del arancel y t el arancel (cinco décimas). Costo puesto en bodega: c(1+t). 2) Demanda Q(p) lineal o de elasticidad constante. 3) Utilidad por periodo con precio p: (p - c(1+t))Q(p). Si p* es óptimo, con demanda lineal Q=a-bp se tiene p*=(a/b + c(1+t))/2, de modo que el traspaso óptimo es la mitad del aumento del costo. 4) Reembolso: si el tribunal da la razón con probabilidad q, se recibe tc por unidad pagada, con intereses i durante tau periodos, descontado a la tasa r de la empresa: valor esperado = q·t·c·Q·(1+i)^tau/(1+r)^tau. 5) Valor de esperar sin subir el precio vs. subir: comparar la pérdida de utilidad por no trasladar con el valor esperado de la devolución. 6) Calcular la probabilidad crítica q* en la que ambas políticas empatan y probar con tres valores de elasticidad y tres plazos. 7) Recomendar política y condiciones.",
+      "result": "Respuesta defendible: trasladar solo una parte del arancel (cercana a la mitad con demanda lineal) y no apostar la utilidad a la devolución; registrar el reembolso como ganancia posible y no segura. La política de absorber todo solo conviene si q es alta, el plazo corto y la elasticidad grande. Ejemplo ilustrativo con costo unitario normalizado a cien, margen de veinte por ciento y demanda lineal: el arancel sube el costo a ciento cincuenta, y el precio óptimo sube menos que cincuenta.",
+      "acceptable_range": "El traspaso razonable va de aproximadamente un tercio a algo más de la mitad del arancel según elasticidad; la probabilidad crítica de ganar para justificar absorber todo suele quedar muy por sobre el cincuenta por ciento si el costo de financiarse es alto. Se acepta cualquier recomendación coherente con supuestos explícitos y sensibilidad al menos informal."
+    },
+    "routes": [
+      {
+        "id": "R1",
+        "nombre": "Tabla de escenarios de costo",
+        "nivel": "S2",
+        "modelo": "Comparación de tres políticas fijas (absorber, trasladar todo, trasladar mitad) con una caída de ventas supuesta para cada una y utilidad unitaria por periodo.",
+        "resultado": "Trasladar una parte maximiza la utilidad en el escenario base; trasladar todo es sensible a la pérdida de clientes."
+      },
+      {
+        "id": "R2",
+        "nombre": "Valor esperado de la devolución",
+        "nivel": "U",
+        "modelo": "Utilidad esperada = utilidad operacional + q·reembolso con intereses descontado; cálculo de la probabilidad crítica q*.",
+        "resultado": "Existe un umbral de probabilidad de ganar bajo el cual absorber el arancel esperando el reembolso destruye valor."
+      },
+      {
+        "id": "R3",
+        "nombre": "Optimización del precio con demanda estimada",
+        "nivel": "U",
+        "modelo": "Maximización de (p - c(1+t))Q(p) con Q lineal o de elasticidad constante; derivada igual a cero y análisis de segunda derivada.",
+        "resultado": "El traspaso óptimo depende de la elasticidad y es inferior al arancel completo."
+      },
+      {
+        "id": "R4",
+        "nombre": "Árbol de decisión con plazos del juicio",
+        "nivel": "U",
+        "modelo": "Árbol con ramas de fallo a favor, en contra o demorado, con probabilidades y flujos descontados; simulación opcional de la duración.",
+        "resultado": "La recomendación cambia con la duración esperada del juicio más que con el valor exacto de la probabilidad."
+      }
+    ],
+    "modelo_inadecuado": {
+      "id": "RX",
+      "por_que_falla": "Modelo inadecuado: suponer que el arancel de 50% se traslada entero al cliente sin que cambie la demanda, y contar la devolución como un ingreso seguro. Falla porque ignora que los clientes reaccionan al precio y pueden cambiar de proveedor; además trata un resultado judicial incierto y tardío como cierto e inmediato y no descuenta el reembolso, por lo que sobreestima la utilidad y no permite comparar políticas."
+    },
+    "validation_evidence": "Series públicas de precios al consumidor del rubro quesos (Oficina de Estadísticas Laborales de EE. UU.) y de volúmenes importados de queso (Oficina del Censo de EE. UU., estadísticas de comercio exterior), antes y después de la entrada en vigor del arancel o de un episodio anterior comparable. El grupo contrasta el traspaso y la caída de volumen que predijo su modelo con lo observado, sin haber usado esas series para construirlo.",
+    "agent_visibility": {
+      "students": [
+        "enunciado_es",
+        "foto_descripcion",
+        "recursos_a_solicitud"
+      ],
+      "coder": [
+        "enunciado_es",
+        "task_space"
+      ],
+      "guide": [
+        "all"
+      ]
+    }
+  },
+  "rubrica_rub01": {
+    "total": 24,
+    "por_criterio": {
+      "genuino": 2,
+      "abierta": 2,
+      "decisiones": 2,
+      "realismo": 2,
+      "autenticidad": 2,
+      "contexto": 2,
+      "ciclo": 2,
+      "validacion": 2,
+      "nivel": 2,
+      "autodiferenciacion": 2,
+      "fecundidad": 2,
+      "recursos": 2
+    }
+  },
+  "rubrica_rub02": {
+    "P": null,
+    "S": null,
+    "U": null
+  },
+  "modelo_y_prompt": {
+    "diseñador": "claude-sonnet-5-5",
+    "version_prompt": "1.1",
+    "version_rubrica": "4.0"
+  }
+}
