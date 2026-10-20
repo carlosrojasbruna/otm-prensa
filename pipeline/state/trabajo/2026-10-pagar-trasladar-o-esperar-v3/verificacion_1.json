@@ -1,0 +1,84 @@
+{
+  "tarea_id": "2026-10-pagar-trasladar-o-esperar-v3",
+  "aprobado": true,
+  "estado_destino": "verificada",
+  "hallazgos": [
+    {
+      "invariante": "notebook",
+      "severidad": "advertencia",
+      "ubicacion": "guia.materiales.notebook",
+      "descripcion": "notebook escenarios.ipynb no encontrado: ",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "guia.escenarios[E2].que_aprende; guia.intervenciones[B23].z1_z2",
+      "descripcion": "En N1_VV_r1 el grupo duda de que los clientes aguanten el recargo, pero esa duda no entra en ninguna cuenta. — Ni los supuestos ni la respuesta final de N1_VV_r1 en las trazas mencionan una duda sobre la aceptación del recargo por los clientes; la respuesta final habla de plazo, flete, margen y freno del cobro. Puede estar en el diálogo completo, pero no figura en lo recibido.",
+      "origen": "modelo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "tarea.task_space.routes[R3].resultado; reference_solution.acceptable_range; guia.rango_aceptable",
+      "descripcion": "El traspaso óptimo depende de la elasticidad y es inferior al arancel completo (con Q lineal o de elasticidad constante); rango de un tercio a algo más de la mitad. — Es correcto para demanda lineal (traspaso de la mitad), pero con demanda de elasticidad constante el precio óptimo es un margen multiplicativo sobre el costo y el alza del precio supera el alza del costo. La afirmación general no vale para ambas formas que la propia ruta admite.",
+      "origen": "modelo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "guia.escenarios[E2].modelo",
+      "descripcion": "Modelo: costo más margen (para N1_AA_r1 y N1_VV_r1). — La traza registra para N1_VV_r1 el modelo 'aritmético'; solo N1_AA_r1 es 'costo más margen'. Diferencia de detalle.",
+      "origen": "modelo"
+    }
+  ],
+  "cifras_contrastadas": [
+    {
+      "indice": 0,
+      "que_es": "Valor aproximado de los bienes canadienses gravados",
+      "valor_tarea": "$20bn",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 49"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "$20bn",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia; modelo: El párrafo 49 da unos 20 mil millones de dólares como valor de los bienes canadienses gravados; coinciden valor, unidad y significado."
+    },
+    {
+      "indice": 1,
+      "que_es": "Arancel que paga una empresa estadounidense sobre queso exportado desde Canadá",
+      "valor_tarea": "50%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 53"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "50%",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia; modelo: El párrafo 53 indica que la empresa paga un arancel de 50% sobre el queso exportado desde Canadá; coincide."
+    }
+  ],
+  "notebook": {
+    "estado": "no_encontrado",
+    "ruta": "escenarios.ipynb",
+    "salida_resumen": ""
+  },
+  "meta": {
+    "agente": "verificador",
+    "version_prompt": "1.1",
+    "modelo": "claude-opus-5-5",
+    "request_id": "req_011CgEFzXWQXzHAa6TYkhBra",
+    "fecha": "2026-10-20T22:14:41+00:00",
+    "costo_usd": 0.154312,
+    "modelo_llamado": true,
+    "texto_noticia_recibido": true,
+    "uso": {
+      "input_tokens": 19578,
+      "output_tokens": 3220,
+      "cache_creation_input_tokens": 2320,
+      "cache_read_input_tokens": 0
+    }
+  }
+}

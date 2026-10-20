@@ -1,0 +1,114 @@
+{
+  "ciclo_id": "ciclo_20261020T221210967312Z",
+  "inicio": "2026-10-20T22:12:10Z",
+  "fin": "2026-10-20T22:14:47Z",
+  "semana": "2026-W43",
+  "parametros": {
+    "tope_semanal_usd": 25.0,
+    "fraccion_detencion": 0.9,
+    "presupuesto_ciclo_usd": 1.5,
+    "limite_usd": 22.446959,
+    "gasto_semana_previo_usd": 20.946959,
+    "corridas_evaluador": 3,
+    "rango_inestable": 4,
+    "corridas_simulador": 6,
+    "ids": [
+      "2026-10-pagar-trasladar-o-esperar-v3"
+    ],
+    "revisor": "Carlos Rojas Bruna"
+  },
+  "detenido_por_tope": false,
+  "eventos": [
+    {
+      "fecha": "2026-10-20T22:12:12Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-pagar-trasladar-o-esperar-v3",
+      "de": "evaluada",
+      "a": "revisada"
+    },
+    {
+      "fecha": "2026-10-20T22:12:12Z",
+      "tipo": "simulacion_reutilizada",
+      "tarea_id": "2026-10-pagar-trasladar-o-esperar-v3",
+      "origen": "2026-10-pagar-trasladar-o-esperar-v2"
+    },
+    {
+      "fecha": "2026-10-20T22:12:13Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-pagar-trasladar-o-esperar-v3",
+      "de": "revisada",
+      "a": "simulada"
+    },
+    {
+      "fecha": "2026-10-20T22:14:01Z",
+      "tipo": "agente",
+      "agente": "redactor",
+      "tareas": [
+        "2026-10-pagar-trasladar-o-esperar-v3"
+      ],
+      "llamadas": 3,
+      "usd": 0.403041
+    },
+    {
+      "fecha": "2026-10-20T22:14:05Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-pagar-trasladar-o-esperar-v3",
+      "de": "simulada",
+      "a": "con_guia"
+    },
+    {
+      "fecha": "2026-10-20T22:14:09Z",
+      "tipo": "agente",
+      "agente": "ilustrador",
+      "tareas": [
+        "2026-10-pagar-trasladar-o-esperar-v3"
+      ],
+      "llamadas": 1,
+      "usd": 0.011128
+    },
+    {
+      "fecha": "2026-10-20T22:14:41Z",
+      "tipo": "agente",
+      "agente": "verificador",
+      "tareas": [
+        "2026-10-pagar-trasladar-o-esperar-v3"
+      ],
+      "llamadas": 1,
+      "usd": 0.154312
+    },
+    {
+      "fecha": "2026-10-20T22:14:45Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-pagar-trasladar-o-esperar-v3",
+      "de": "con_guia",
+      "a": "verificada"
+    },
+    {
+      "fecha": "2026-10-20T22:14:47Z",
+      "tipo": "bibliotecario_dry_run",
+      "tarea_id": "2026-10-pagar-trasladar-o-esperar-v3",
+      "ok": true,
+      "ruta": "tareas/2026-10/pagar-trasladar-o-esperar-v3/",
+      "rama": "tareas/semana-2026-W43"
+    }
+  ],
+  "expedientes": {
+    "2026-10-pagar-trasladar-o-esperar-v3": "verificada"
+  },
+  "noticias": [],
+  "pendientes_humanos": [
+    {
+      "tarea_id": "2026-10-pagar-trasladar-o-esperar-v3",
+      "pendiente": "revision_humana_2",
+      "estado": "verificada"
+    }
+  ],
+  "errores": [],
+  "orden": "tramo_b",
+  "gasto": {
+    "ciclo_usd": 0.568481,
+    "semana_usd": 21.51544,
+    "limite_usd": 22.446959,
+    "llamadas": 5
+  }
+}
