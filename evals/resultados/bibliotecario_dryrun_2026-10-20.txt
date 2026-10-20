@@ -1,0 +1,61 @@
+# Dry-run bibliotecario 2026-10-20 (sin secretos; no se escribio ni ejecuto nada)
+## 1. tarea nueva (contratos/ejemplos, estado puesto en 'verificada' en memoria)
+# DRY-RUN: no se escribe ningún archivo ni se ejecuta ningún comando
+# tarea 2026-10-embalse-el-yeso v1 -> tareas/2026-10/embalse-el-yeso/
+#   escribiría tareas/2026-10/embalse-el-yeso/tarea_v1.0_2026-10-27.json
+#   escribiría tareas/2026-10/embalse-el-yeso/guia_v1.0_2026-10-27.json
+#   escribiría tareas/2026-10/embalse-el-yeso/evaluacion_v1.0_2026-10-27.json
+#   actualizaría tareas/catalogo.json (1 tarea(s); valida contra `catalogo`)
+#   el commit del catálogo es el real tras el primer commit (aquí 0000000)
+$ git switch -c tareas/semana-2026-W44
+$ git add -- tareas/2026-10/embalse-el-yeso/
+$ git commit -m 'pipeline: publica 2026-10-embalse-el-yeso v1'
+$ git add -- tareas/catalogo.json
+$ git commit -m 'pipeline: catálogo: 2026-10-embalse-el-yeso v1'
+$ git push -u origin tareas/semana-2026-W44
+$ gh pr create --base main --head tareas/semana-2026-W44 --title 'Tareas de la semana 2026-W44' --body '<cuerpo del PR, ver abajo>'
+# cuerpo del PR:
+#   ## Tareas incluidas
+#   
+#   - `2026-10-embalse-el-yeso` v1 · nivel S · RUB01 23/24
+#     - Noticia: CNN Chile, «Ejemplo ficticio: el embalse baja de su nivel habitual», 2026-10-14, https://www.cnnchile.com/ejemplo/embalse-el-yeso
+#   
+#   ## Revisión (GOB01 §2)
+#   - [ ] Quien revisó la guía aprueba el merge.
+#   - [ ] Cifras con localizador; ningún texto literal de noticia > 25 palabras.
+#   - [ ] Productos bajo CC BY-NC-SA 4.0.
+#   
+#   Generado por el agente bibliotecario (script determinista).
+
+## 2. v2 sobre catalogo con v1 publicada (catalogo ejemplo en directorio temporal)
+# DRY-RUN: no se escribe ningún archivo ni se ejecuta ningún comando
+# tarea 2026-10-embalse-el-yeso v2 -> tareas/2026-10/embalse-el-yeso/
+#   escribiría tareas/2026-10/embalse-el-yeso/tarea_v2.0_2026-11-10.json
+#   escribiría tareas/2026-10/embalse-el-yeso/guia_v2.0_2026-11-10.json
+#   escribiría tareas/2026-10/embalse-el-yeso/evaluacion_v2.0_2026-11-10.json
+#   actualizaría tareas/catalogo.json (1 tarea(s); valida contra `catalogo`)
+#   versiones anteriores conservadas intactas: [1]
+#   el commit del catálogo es el real tras el primer commit (aquí 0000000)
+$ git switch -c tareas/semana-2026-W46
+$ git add -- tareas/2026-10/embalse-el-yeso/
+$ git commit -m 'pipeline: publica 2026-10-embalse-el-yeso v2'
+$ git add -- tareas/catalogo.json
+$ git commit -m 'pipeline: catálogo: 2026-10-embalse-el-yeso v2'
+$ git push -u origin tareas/semana-2026-W46
+$ gh pr create --base main --head tareas/semana-2026-W46 --title 'Tareas de la semana 2026-W46' --body '<cuerpo del PR, ver abajo>'
+# cuerpo del PR:
+#   ## Tareas incluidas
+#   
+#   - `2026-10-embalse-el-yeso` v2 · nivel S · RUB01 23/24
+#     - Noticia: CNN Chile, «Ejemplo ficticio: el embalse baja de su nivel habitual», 2026-10-14, https://www.cnnchile.com/ejemplo/embalse-el-yeso
+#   
+#   ## Revisión (GOB01 §2)
+#   - [ ] Quien revisó la guía aprueba el merge.
+#   - [ ] Cifras con localizador; ningún texto literal de noticia > 25 palabras.
+#   - [ ] Productos bajo CC BY-NC-SA 4.0.
+#   
+#   Generado por el agente bibliotecario (script determinista).
+
+## 3. rechazo: estado con_guia
+RECHAZADO:
+  - estado `con_guia` no publicable (se exige uno de ['publicada', 'verificada'])

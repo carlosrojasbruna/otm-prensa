@@ -1,0 +1,12 @@
+{
+  "id": "03_catalogo_licencia_distinta",
+  "descripcion": "El catálogo existente tiene una entrada con licencia distinta de CC BY-NC-SA 4.0 (contratos/ejemplos/invalidos/catalogo_licencia_distinta.json): no valida, se rechaza y no se toca.",
+  "entrada": {
+    "base": "contratos/ejemplos",
+    "parches": {"tarea": {"estado": "verificada"}},
+    "catalogo_previo": "contratos/ejemplos/invalidos/catalogo_licencia_distinta.json",
+    "publicar_antes": false,
+    "fecha_publicacion": "2026-10-27"
+  },
+  "criterio_aceptacion": {"resultado": "rechazo", "mensaje_contiene": "catálogo existente no valida", "no_escribe": true}
+}

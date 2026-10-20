@@ -1,0 +1,18 @@
+{
+  "id": "01_tarea_nueva",
+  "descripcion": "Tarea verificada y nueva: se archiva en tareas/2026-10/embalse-el-yeso/, el catálogo valida y queda una entrada v1 sin versiones anteriores.",
+  "entrada": {
+    "base": "contratos/ejemplos",
+    "parches": {"tarea": {"estado": "verificada"}},
+    "catalogo_previo": null,
+    "publicar_antes": false,
+    "fecha_publicacion": "2026-10-27"
+  },
+  "criterio_aceptacion": {
+    "resultado": "ok",
+    "ruta": "tareas/2026-10/embalse-el-yeso/",
+    "archivos_escritos": ["tarea_v1.0_2026-10-27.json", "guia_v1.0_2026-10-27.json", "evaluacion_v1.0_2026-10-27.json"],
+    "catalogo": {"n_tareas": 1, "version": 1, "versiones_anteriores": [], "licencia": "CC BY-NC-SA 4.0"},
+    "rama": "tareas/semana-2026-W44"
+  }
+}

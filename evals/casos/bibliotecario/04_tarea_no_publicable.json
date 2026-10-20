@@ -1,0 +1,12 @@
+{
+  "id": "04_tarea_no_publicable",
+  "descripcion": "La tarea está en estado con_guia (aún sin verificador ni revisión humana): no es publicable y no se archiva.",
+  "entrada": {
+    "base": "contratos/ejemplos",
+    "parches": {"tarea": {"estado": "con_guia"}},
+    "catalogo_previo": null,
+    "publicar_antes": false,
+    "fecha_publicacion": "2026-10-27"
+  },
+  "criterio_aceptacion": {"resultado": "rechazo", "mensaje_contiene": "no publicable", "no_escribe": true}
+}

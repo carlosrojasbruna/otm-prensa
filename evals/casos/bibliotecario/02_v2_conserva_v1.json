@@ -1,0 +1,22 @@
+{
+  "id": "02_v2_conserva_v1",
+  "descripcion": "Ya está publicada la v1. Una v2 de la misma tarea se escribe en la misma carpeta, la v1 queda byte a byte intacta y pasa a versiones_anteriores. Repetir la v1 se rechaza.",
+  "entrada": {
+    "base": "contratos/ejemplos",
+    "parches": {
+      "tarea": {"estado": "verificada", "version": 2},
+      "guia": {"version": 2, "ficha.version": 2}
+    },
+    "catalogo_previo": null,
+    "publicar_antes": true,
+    "fecha_publicacion": "2026-11-10"
+  },
+  "criterio_aceptacion": {
+    "resultado": "ok",
+    "ruta": "tareas/2026-10/embalse-el-yeso/",
+    "archivos_escritos": ["tarea_v2.0_2026-11-10.json", "guia_v2.0_2026-11-10.json", "evaluacion_v2.0_2026-11-10.json"],
+    "v1_intacta": true,
+    "catalogo": {"n_tareas": 1, "version": 2, "versiones_anteriores": [1], "licencia": "CC BY-NC-SA 4.0"},
+    "repetir_v1_rechazado": true
+  }
+}

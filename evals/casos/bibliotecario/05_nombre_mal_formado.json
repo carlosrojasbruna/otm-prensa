@@ -1,0 +1,16 @@
+{
+  "id": "05_nombre_mal_formado",
+  "descripcion": "El id de la tarea no cumple AAAA-MM-slug (mayúsculas y guiones bajos): se rechaza antes de crear ninguna carpeta.",
+  "entrada": {
+    "base": "contratos/ejemplos",
+    "parches": {
+      "tarea": {"estado": "verificada", "id": "2026-10-Embalse_El_Yeso"},
+      "guia": {"tarea_id": "2026-10-Embalse_El_Yeso"},
+      "evaluacion": {"tarea_id": "2026-10-Embalse_El_Yeso"}
+    },
+    "catalogo_previo": null,
+    "publicar_antes": false,
+    "fecha_publicacion": "2026-10-27"
+  },
+  "criterio_aceptacion": {"resultado": "rechazo", "mensaje_contiene": "tarea", "no_escribe": true}
+}

@@ -1,0 +1,20 @@
+# Agente bibliotecario: script determinista (plan: "Haiku 5.5 / script"). No llama al modelo.
+agente: bibliotecario
+version: "1.0"
+fecha: "2026-10-20"
+usa_modelo: false
+# Modelo de partida del pipeline (pipeline/config.yaml); solo se usaría si el cuerpo del PR
+# pasara a redactarse con modelo. Hoy no se invoca y no hay prompt.md.
+modelo_de_partida: claude-haiku-5-5
+temperatura: null
+salida:
+  contrato: catalogo          # contratos/catalogo.schema.json
+  archivo: tareas/catalogo.json
+entradas: [tarea, guia, evaluacion]   # opcional: trazas_resumen
+estados_archivables: [verificada, publicada]
+git:
+  rama_base: main
+  prefijo_rama: "tareas/semana-"      # + AAAA-Www (semana ISO de la fecha de publicación)
+  prefijo_commit: "pipeline:"         # CLAUDE.md no lista `tareas:`; se usa uno de los listados
+  licencia: "CC BY-NC-SA 4.0"
+modo_por_defecto: dry-run
