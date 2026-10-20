@@ -167,3 +167,24 @@ def test_observaciones_de_revision_llegan_a_cada_seccion(monkeypatch):
         red.redactar({"task_space": {}, "rubrica_rub01": {"total": 23}}, {}, {},
                      {"observaciones_revision": ["Corregir E1"], "revision_humana_1": {"r": 1}, "puntaje_rub01": 23})
     assert "Corregir E1" in vistos[0][1] and "revisión humana" in vistos[0][1]
+
+
+def test_guia_base_llega_como_punto_de_partida(monkeypatch):
+    """Tarea v2: el redactor recibe las secciones de la guía anterior."""
+    import pytest as _pt
+    from pipeline.agentes.redactor import run as red
+
+    vistos = []
+
+    def generar(seccion, user, schema, verificar, cuenta, cliente=None):
+        vistos.append(user)
+        raise RuntimeError("alto")
+
+    monkeypatch.setattr(red, "_generar", generar)
+    monkeypatch.setattr(red, "validar_entradas", lambda *a, **k: None)
+    monkeypatch.setattr(red, "numeros_permitidos", lambda *a, **k: set())
+    base = {"meta": {"que_observar": "MARCA-GUIA-ANTERIOR"}, "escenarios": []}
+    with _pt.raises(RuntimeError):
+        red.redactar({"task_space": {}, "rubrica_rub01": {"total": 23}}, {}, {},
+                     {"guia_base": base, "revision_humana_1": {"r": 1}, "puntaje_rub01": 23})
+    assert "MARCA-GUIA-ANTERIOR" in vistos[0] and "versión anterior" in vistos[0]

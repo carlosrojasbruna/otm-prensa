@@ -375,20 +375,32 @@ def redactar(tarea: dict, trazas: dict, transcripciones: dict[str, str], context
     ts = tarea["task_space"]
     # Revisión humana 2: observaciones que la nueva versión de la guía debe corregir (van en cada sección).
     obs = [o for o in contexto.get("observaciones_revision") or [] if o.strip()]
+    base_prev = contexto.get("guia_base") or {}
+
+    def previa(*claves):
+        """Secciones de la guía de la versión anterior de la tarea, como punto de partida."""
+        sec = {k: base_prev[k] for k in claves if k in base_prev}
+        return ("\n\n# Guía de la versión anterior de esta tarea (punto de partida: conserva lo que siga siendo "
+                "válido con la tarea y las trazas actuales; cambia lo que la nueva versión o las observaciones "
+                "exigen)\n" + _j(sec)) if sec else ""
+
     nota_rev = ("\n\n# Observaciones de la revisión humana (corrígelas en esta versión; lo demás, solo si hace "
                 "falta para que sea coherente)\n- " + "\n- ".join(obs)) if obs else ""
 
     # 1. base: meta, barreras, organización, variantes
     def v_base(s):
         return cifras_sin_localizador(s, permitidos)
-    base = _generar("base", "# Tarea\n" + _j(tarea) + nota_rev, esquema_base(), v_base, cuenta, cliente)
+    base = _generar("base", "# Tarea\n" + _j(tarea) + previa("meta", "analisis_a_priori", "organizacion",
+                                                            "variantes_y_continuidad") + nota_rev,
+                    esquema_base(), v_base, cuenta, cliente)
 
     # 2. escenarios: solo desde trazas y transcripciones
     resumen_tarea = {k: tarea[k] for k in ("id", "titulo", "nivel_principal", "contenidos_matematicos", "mapa_ciclo")}
     resumen_tarea["enunciado_es"] = tarea["estudiante"]["enunciado_es"]
     resumen_tarea["task_space"] = ts
     user_esc = ("# Tarea\n" + _j(resumen_tarea) + "\n\n# trazas_resumen\n" + _j(trazas) + "\n\n# Transcripciones\n"
-                + "\n".join(f"## {i}.md\n{t}" for i, t in transcripciones.items()) + nota_rev)
+                + "\n".join(f"## {i}.md\n{t}" for i, t in transcripciones.items()) + previa("escenarios")
+                + nota_rev)
 
     def v_esc(s):
         if s["estado"] == "insuficiente":
@@ -411,7 +423,8 @@ def redactar(tarea: dict, trazas: dict, transcripciones: dict[str, str], context
                                  | {"enunciado_es": tarea["estudiante"]["enunciado_es"], "task_space": ts,
                                     "recursos_a_solicitud": tarea["estudiante"]["recursos_a_solicitud"]})
                 + "\n\n# Tabla de bloqueos observados (proporción de grupos simulados)\n" + _j(tabla)
-                + "\n\n# Escenarios redactados\n" + _j(escenarios) + nota_rev)
+                + "\n\n# Escenarios redactados\n" + _j(escenarios) + previa("intervenciones", "puesta_en_comun")
+                + nota_rev)
 
     def v_int(s):
         errores = normalizar_bloqueos(s)
