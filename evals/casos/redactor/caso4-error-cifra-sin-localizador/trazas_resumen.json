@@ -1,0 +1,209 @@
+{
+  "tarea_id": "2026-10-embalse-el-yeso",
+  "diseno": "diseno_otm_6",
+  "corridas": 6,
+  "modelo": "claude-sonnet-5-5",
+  "fecha": "2026-10-21T10:00:00Z",
+  "costo_usd": 1.8,
+  "por_corrida": [
+    {
+      "id": "N1_VV_r1",
+      "perfil": {
+        "nivel_edad": "S1",
+        "nivel": "N1",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P5-INT",
+        "P7-EXP"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B12",
+          "turnos": [
+            4,
+            5
+          ],
+          "resolucion": "peer"
+        }
+      ],
+      "supuestos": [
+        "consumo constante"
+      ],
+      "modelo": "proporcional",
+      "respuesta_final": "Alcanza para unos 6 meses.",
+      "validacion": false
+    },
+    {
+      "id": "N1_AA_r1",
+      "perfil": {
+        "nivel_edad": "S1",
+        "nivel": "N1",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P5-INT",
+        "P7-EXP"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B12",
+          "turnos": [
+            4,
+            5
+          ],
+          "resolucion": "peer"
+        },
+        {
+          "transicion": "B23",
+          "turnos": [
+            4,
+            5
+          ],
+          "resolucion": "peer"
+        }
+      ],
+      "supuestos": [
+        "consumo constante"
+      ],
+      "modelo": "capacidad total",
+      "respuesta_final": "Alcanza para unos 6 meses.",
+      "validacion": false
+    },
+    {
+      "id": "N2_VV_r1",
+      "perfil": {
+        "nivel_edad": "S1",
+        "nivel": "N2",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P5-INT",
+        "P7-EXP"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B23",
+          "turnos": [
+            4,
+            5
+          ],
+          "resolucion": "peer"
+        }
+      ],
+      "supuestos": [
+        "consumo constante"
+      ],
+      "modelo": "proporcional",
+      "respuesta_final": "Alcanza para unos 6 meses.",
+      "validacion": false
+    },
+    {
+      "id": "N3_AA_r1",
+      "perfil": {
+        "nivel_edad": "S1",
+        "nivel": "N3",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P5-INT",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "consumo constante"
+      ],
+      "modelo": "lineal",
+      "respuesta_final": "Alcanza para unos 6 meses.",
+      "validacion": true
+    },
+    {
+      "id": "N4_VV_r1",
+      "perfil": {
+        "nivel_edad": "S1",
+        "nivel": "N4",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P5-INT",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B56",
+          "turnos": [
+            4,
+            5
+          ],
+          "resolucion": "peer"
+        }
+      ],
+      "supuestos": [
+        "consumo constante"
+      ],
+      "modelo": "lineal",
+      "respuesta_final": "Alcanza para unos 6 meses.",
+      "validacion": true
+    },
+    {
+      "id": "N4_AA_r1",
+      "perfil": {
+        "nivel_edad": "S1",
+        "nivel": "N4",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P5-INT",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "consumo constante"
+      ],
+      "modelo": "dinámico",
+      "respuesta_final": "Alcanza para unos 6 meses.",
+      "validacion": true
+    }
+  ],
+  "agregado": {
+    "pct_bloqueo_por_transicion": {
+      "B12": 0.33,
+      "B23": 0.33,
+      "B56": 0.17
+    },
+    "modelos_observados": {
+      "proporcional": 2,
+      "capacidad total": 1,
+      "lineal": 2,
+      "dinámico": 1
+    },
+    "pct_validan": 0.5
+  }
+}

@@ -1,0 +1,32 @@
+# Configuración del agente redactor (guía docente, PLT02). Los modelos se leen de pipeline/config.yaml
+# (claves `modelos.redactor` y `modelos.redactor_escenarios`); aquí solo se referencian.
+agente: redactor
+version_prompt: "1.0"
+fecha: "2026-10-20"
+prompt: prompt.md
+
+# Modelo de partida (plan §Agentes del pipeline: Sonnet 5.5; Opus 5.5 para escenarios).
+secciones:
+  base:             {modelo_clave: redactor,            esfuerzo: null,   max_tokens: 8000}
+  escenarios:       {modelo_clave: redactor_escenarios, esfuerzo: medium, max_tokens: 12000}
+  intervenciones:   {modelo_clave: redactor,            esfuerzo: null,   max_tokens: 8000}
+
+# Los modelos 5.5 no aceptan `temperature`: se usa el valor por defecto (ver decisiones del repo).
+temperature: null
+
+# Contratos (contratos/*.schema.json)
+entrada: [tarea, trazas_resumen]
+salida: guia
+
+# Reglas de suficiencia y reparación
+min_corridas: 3            # GOB01 §1: 3–4 escenarios, cada uno con id de corrida
+min_escenarios: 3
+max_escenarios: 4
+reparaciones_por_seccion: 1   # una segunda pasada con los errores a la vista; luego falla
+
+# Valores determinísticos que el agente no inventa (PLT02 §9 y §10)
+materiales:
+  tarea_pdf: tarea.pdf
+  recursos_tarjetas: recursos.pdf
+  notebook: escenarios.ipynb
+  icono: icono.svg

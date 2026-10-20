@@ -1,0 +1,506 @@
+{
+  "guia": {
+    "tarea_id": "2026-10-embalse-el-yeso",
+    "version": 1,
+    "fecha": "2026-10-22",
+    "ficha": {
+      "titulo": "¿Cuánto dura el agua del embalse?",
+      "noticia": {
+        "medio": "CNN Chile",
+        "titulo": "Ejemplo ficticio: el embalse baja de su nivel habitual",
+        "fecha": "2026-10-14",
+        "url": "https://www.cnnchile.com/ejemplo/embalse-el-yeso"
+      },
+      "nivel_principal": "S",
+      "variantes": [
+        "P",
+        "U"
+      ],
+      "contenidos": [
+        "razones y tasas",
+        "función lineal"
+      ],
+      "tiempo": "2 sesiones de 90 min",
+      "puntaje_rub01": 23,
+      "version": 1,
+      "fecha": "2026-10-22",
+      "cambios": "",
+      "sub_tramo": "S1"
+    },
+    "meta": {
+      "que_observar": "Observar cómo el grupo pasa de una afirmación de autoridad («no hay riesgo este verano») a una pregunta matemática: qué información pide, qué supuestos declara para el embalse y si contrasta su conclusión con un dato externo en vez de quedarse con su propio cálculo.",
+      "contenido": "Razones y tasas (volumen disponible en relación con el consumo mensual) y función lineal (el volumen del embalse como función decreciente del tiempo, en la ruta con aportes).",
+      "subcompetencias": [
+        "Comprender la situación: interpretar qué significa que no haya riesgo (P1-MRS)",
+        "Simplificar: decidir qué información pedir y suponer consumo constante y aportes despreciables en verano (P2-RM)",
+        "Matematizar: expresar los meses de autonomía como volumen disponible dividido por consumo mensual, o como función lineal del tiempo (P3-MM)",
+        "Trabajar con el modelo y calcular los meses de autonomía (P4-WM)",
+        "Interpretar el resultado frente a la duración del verano (P5-INT)",
+        "Validar contrastando con el nivel que la autoridad publicó un mes después (P6-VAL)",
+        "Comunicar la respuesta con los supuestos explícitos (P7-EXP)"
+      ],
+      "meta_social": "Trabajo cooperativo en grupos pequeños: que cada integrante verbalice y justifique sus decisiones de supuestos y modelo, y que el grupo llegue a una sola respuesta argumentada.",
+      "evidencia": [
+        "Registro escrito del grupo, que sigue las fases del ciclo (es la evidencia que fija el mapa_ciclo en todas las fases)",
+        "Hoja de supuestos con los supuestos declarados y la justificación de cada uno",
+        "Registro de las solicitudes de información hechas al docente (capacidad y nivel, consumo) y del momento en que se pidieron",
+        "Cálculo de los meses de autonomía con la ruta elegida",
+        "Comparación escrita entre la conclusión del grupo y el nivel publicado un mes después",
+        "Exposición oral breve de la respuesta con sus supuestos"
+      ]
+    },
+    "analisis_a_priori": {
+      "rutas": [
+        {
+          "id": "R1",
+          "nombre": "proporcional",
+          "nivel": "P",
+          "modelo": "volumen / consumo"
+        },
+        {
+          "id": "R2",
+          "nombre": "lineal con aportes",
+          "nivel": "S1",
+          "modelo": "V(t) = V0 − (c − a)·t"
+        },
+        {
+          "id": "R3",
+          "nombre": "dinámico",
+          "nivel": "U",
+          "modelo": "balance mensual con evaporación"
+        }
+      ],
+      "modelo_inadecuado": {
+        "id": "RX",
+        "por_que_falla": "Usa la capacidad total en vez del volumen actual."
+      },
+      "solucion_referencia": "Volumen útil = 0,38 × 220; meses = volumen útil / consumo. Resultado: entre 5 y 7 meses",
+      "rango_aceptable": "4 a 8 meses según supuestos",
+      "barreras_por_fase": [
+        {
+          "fase": "P1-MRS",
+          "barrera": "No hay un bloqueo Bij previsto, pero la decisión central es entender qué significa «no hay riesgo». Algunos grupos pueden tomar la frase como opinión y no como una pregunta que se responde con cuánto tiempo alcanza el agua frente a la duración del verano."
+        },
+        {
+          "fase": "P2-RM",
+          "barrera": "Bloqueo B12. El enunciado no entrega datos: hay que decidir qué pedir y qué suponer. La dificultad es aceptar el consumo mensual constante y los aportes despreciables en verano como supuestos explícitos. Otra es usar la capacidad total como si fuera el agua que hay hoy, que es el modelo inadecuado de esta tarea, porque ignora el nivel actual."
+        },
+        {
+          "fase": "P3-MM",
+          "barrera": "Bloqueo B23. Hay que armar la relación entre volumen disponible y consumo mensual. Puede confundirse el porcentaje de nivel con un volumen, o dividir en el orden equivocado. En la ruta lineal con aportes cuesta además identificar qué representa cada parámetro del modelo."
+        },
+        {
+          "fase": "P5-INT",
+          "barrera": "No hay bloqueo Bij previsto. El enunciado no fija la duración del verano, así que el grupo debe decidirla y declararla antes de comparar. Si no lo hace, su conclusión queda sin criterio."
+        },
+        {
+          "fase": "P6-VAL",
+          "barrera": "Bloqueo B56. Validar tiende a reducirse a revisar la aritmética. La dificultad es confrontar el resultado con el nivel publicado un mes después y, si no coinciden, volver a los supuestos en lugar de forzar o descartar el dato. Esta fase también depende de que el docente tenga ese dato a mano."
+        }
+      ]
+    },
+    "organizacion": {
+      "momentos": [
+        {
+          "momento": "Comprensión y trabajo grupal (sesión 1): lectura del problema, supuestos y modelo",
+          "tiempo": "80 min",
+          "estudiantes": "Leen el enunciado y explican con sus palabras qué sería «no hay riesgo». Deciden qué información pedir y la solicitan al docente: capacidad y nivel (R1), consumo (R2). Escriben sus supuestos y proponen cómo calcular cuánto tiempo alcanza el agua. Todo queda en el registro escrito del grupo.",
+          "docente": "Presenta el problema sin reproducir la noticia ni dar ninguna cifra. Entrega R1 y R2 solo cuando un grupo los pide y explica para qué. Circula y diagnostica preguntando qué han hecho y por qué. En esta etapa no interviene en el modelo. Ten preparado el valor de consumo de R2: la tarea no lo trae y debe provenir del informe de la empresa sanitaria."
+        },
+        {
+          "momento": "Comprensión y trabajo grupal (sesión 1): cierre de sesión con hoja de supuestos",
+          "tiempo": "10 min",
+          "estudiantes": "Completan la hoja de supuestos y anotan el modelo elegido y lo que falta resolver para la sesión siguiente.",
+          "docente": "Recoge o fotografía las hojas de supuestos. Registra qué rutas aparecen y en qué fase se detuvo cada grupo, sin corregir."
+        },
+        {
+          "momento": "Comprensión y trabajo grupal (sesión 2): cálculo e interpretación",
+          "tiempo": "30 min",
+          "estudiantes": "Retoman su registro, calculan los meses de autonomía y los comparan con la duración del verano que hayan declarado. Preparan la respuesta con los supuestos a la vista.",
+          "docente": "Circula y diagnostica antes de intervenir: pregunta qué representa cada número y de dónde sale. Si un grupo está bloqueado, la ayuda mínima va primero y consiste en una pregunta sobre lo que ya hizo. Ninguna ayuda entrega la regla, el modelo ni el resultado. Se priorizan los grupos con bloqueo B12 o B23 visible."
+        },
+        {
+          "momento": "Puesta en común",
+          "tiempo": "30 min",
+          "estudiantes": "Los portavoces exponen respuesta, supuestos y ruta. Comparan resultados distintos y discuten cuánto depende cada uno de lo que se supuso. Pueden mencionar los modelos que no funcionaron.",
+          "docente": "Ordena las presentaciones para contrastar rutas (proporcional y lineal con aportes). Pide justificar supuestos y no declara cuál es la correcta. Anota en la pizarra los supuestos que cambian los resultados."
+        },
+        {
+          "momento": "Validación y cierre",
+          "tiempo": "30 min",
+          "estudiantes": "Contrastan su conclusión con el nivel publicado por la autoridad un mes después. Discuten si el resultado se sostiene y qué supuesto revisarían si no coincide. Reescriben la respuesta final con supuestos explícitos.",
+          "docente": "Entrega el dato de validación recién en este momento. Pregunta qué significa la coincidencia o la diferencia. Cierra recogiendo qué supuestos sostuvieron o debilitaron la respuesta, sin poner notas ni puntajes."
+        }
+      ],
+      "agrupamiento": "Grupos pequeños, estables durante las dos sesiones, para que haya conversación y una sola respuesta del grupo. Se evita que un integrante calcule solo mientras otros esperan.",
+      "roles": "Cuatro funciones que rotan entre sesiones: quien lee y reformula el enunciado, quien pide información al docente y justifica el pedido, quien registra supuestos y decisiones, y quien actúa de portavoz. Todos deben poder explicar el modelo del grupo.",
+      "producciones": [
+        "Registro escrito del grupo por fases",
+        "Hoja de supuestos",
+        "Registro de las solicitudes de información",
+        "Cálculo de los meses de autonomía",
+        "Comparación escrita con el nivel publicado un mes después",
+        "Respuesta final con supuestos explícitos (exposición breve)"
+      ],
+      "tecnologia": "Calculadora, y planilla si el grupo la quiere, solo para el cálculo en P4-WM y para ordenar la ruta lineal. No se usa para decidir supuestos ni para elegir el modelo, y los datos se obtienen únicamente por R1 y R2, sin buscar la respuesta en internet. No se muestra ninguna solución de referencia en pantalla."
+    },
+    "escenarios": [
+      {
+        "id": "E1",
+        "nombre": "ruta esperada",
+        "corridas": [
+          "N3_AA_r1"
+        ],
+        "perfil": "Tramo S1, nivel N3, estilo AA.",
+        "ruta": [
+          "P1-MRS",
+          "P2-RM",
+          "P3-MM",
+          "P4-WM",
+          "P5-INT",
+          "P6-VAL",
+          "P7-EXP"
+        ],
+        "supuestos": [
+          "consumo constante"
+        ],
+        "modelo": "lineal",
+        "bloqueos": [],
+        "que_aprende": "El grupo distingue desde el inicio el agua que queda hoy de la capacidad del embalse. Con el supuesto de consumo constante describe una disminución igual cada mes, que expresa como una recta. Además planea contrastar con el nivel informado después (P6-VAL). Al compararlo con E2, el curso ve que la decisión clave es qué volumen se usa como punto de partida. Al compararlo con E3 y E2, ve que validar es un paso que los grupos sin P6-VAL omitieron.",
+        "extracto_dialogo": [
+          {
+            "hablante": "A",
+            "texto": "Lo que importa es cuánta agua queda hoy."
+          },
+          {
+            "hablante": "B",
+            "texto": "Es una parte de la capacidad, la que marca el nivel."
+          },
+          {
+            "hablante": "A",
+            "texto": "Si el consumo no cambia, la cantidad baja siempre igual cada mes."
+          },
+          {
+            "hablante": "B",
+            "texto": "Entonces es una recta que baja hasta cero."
+          },
+          {
+            "hablante": "A",
+            "texto": "Y para saber si es verdad, miramos el dato de después."
+          }
+        ]
+      },
+      {
+        "id": "E2",
+        "nombre": "modelo inadecuado",
+        "corridas": [
+          "N1_AA_r1"
+        ],
+        "perfil": "Tramo S1, nivel N1, estilo AA.",
+        "ruta": [
+          "P1-MRS",
+          "P2-RM",
+          "P3-MM",
+          "P4-WM",
+          "P5-INT",
+          "P7-EXP"
+        ],
+        "supuestos": [
+          "consumo constante"
+        ],
+        "modelo": "capacidad total",
+        "bloqueos": [
+          {
+            "transicion": "B12",
+            "como_se_destrabo": "Resolución registrada: peer. El grupo duda de si el nivel del embalse cuenta y le pregunta a otro grupo. Ese grupo responde que el nivel es otra cosa, y con eso avanzan. La traba se supera sin resolver la duda de fondo."
+          },
+          {
+            "transicion": "B23",
+            "como_se_destrabo": "Resolución registrada: peer. El grupo no sabe cómo combinar el nivel con la capacidad. Tras la respuesta del otro grupo, decide quedarse con la capacidad total porque es más fácil. Así cae en el modelo que la tarea describe como inadecuado."
+          }
+        ],
+        "que_aprende": "Un compañero plantea la pregunta correcta sobre el nivel, pero el grupo la descarta por comodidad y usa la capacidad total en vez del volumen actual. La respuesta final registrada es la misma que la de los grupos con modelos adecuados. Por eso el curso aprende que el resultado no basta para juzgar un modelo: hay que revisar qué volumen se eligió. Esta corrida tampoco valida, a diferencia de E1 y E4.",
+        "extracto_dialogo": [
+          {
+            "hablante": "A",
+            "texto": "Dice que el embalse es de 220, dividamos por el consumo."
+          },
+          {
+            "hablante": "B",
+            "texto": "Pero está al 38 %, ¿no cuenta eso?"
+          },
+          {
+            "hablante": "A",
+            "texto": "No sé cómo se junta lo del nivel con la capacidad."
+          },
+          {
+            "hablante": "B",
+            "texto": "Preguntémosle al otro grupo qué hicieron."
+          },
+          {
+            "hablante": "A",
+            "texto": "Ellos dijeron que lo del nivel era otra cosa."
+          },
+          {
+            "hablante": "B",
+            "texto": "Igual dejemos la capacidad total, es más fácil."
+          }
+        ]
+      },
+      {
+        "id": "E3",
+        "nombre": "bloqueo en simplificar",
+        "corridas": [
+          "N1_VV_r1"
+        ],
+        "perfil": "Tramo S1, nivel N1, estilo VV.",
+        "ruta": [
+          "P1-MRS",
+          "P2-RM",
+          "P3-MM",
+          "P4-WM",
+          "P5-INT",
+          "P7-EXP"
+        ],
+        "supuestos": [
+          "consumo constante"
+        ],
+        "modelo": "proporcional",
+        "bloqueos": [
+          {
+            "transicion": "B12",
+            "como_se_destrabo": "Resolución registrada: peer. Al dibujar el embalse con su nivel, el grupo nota que falta saber cuánto gasta la ciudad. Un compañero propone pedir el dato del consumo y luego suponer que el consumo es constante. Con eso pasan a la división."
+          }
+        ],
+        "que_aprende": "El grupo parte sin saber qué calcular. Se destraba al representar la situación y al identificar qué dato falta, en este caso el consumo. Eso muestra el valor de pedir información adicional, como permite el enunciado. El supuesto de consumo constante aparece al final y no antes de calcular. Al comparar con E1, el curso puede discutir en qué momento conviene explicitar los supuestos. También ve que esta corrida no valida su resultado.",
+        "extracto_dialogo": [
+          {
+            "hablante": "A",
+            "texto": "Lo dibujé y falta saber cuánto gasta la ciudad."
+          },
+          {
+            "hablante": "B",
+            "texto": "Pidamos el dato del consumo."
+          },
+          {
+            "hablante": "A",
+            "texto": "Con ese dato dividimos y sale una cantidad de meses."
+          },
+          {
+            "hablante": "B",
+            "texto": "Supongamos que el consumo es constante."
+          }
+        ]
+      },
+      {
+        "id": "E4",
+        "nombre": "bloqueo en validar",
+        "corridas": [
+          "N4_VV_r1"
+        ],
+        "perfil": "Tramo S1, nivel N4, estilo VV.",
+        "ruta": [
+          "P1-MRS",
+          "P2-RM",
+          "P3-MM",
+          "P4-WM",
+          "P5-INT",
+          "P6-VAL",
+          "P7-EXP"
+        ],
+        "supuestos": [
+          "consumo constante"
+        ],
+        "modelo": "lineal",
+        "bloqueos": [
+          {
+            "transicion": "B56",
+            "como_se_destrabo": "Resolución registrada: peer. Un integrante pregunta cómo saber si el resultado es razonable y el otro no sabe con qué compararlo. El primero propone dibujar la recta y ver si el nivel del mes siguiente cae sobre ella. El grupo acepta esa forma de contrastar."
+          }
+        ],
+        "que_aprende": "Incluso un grupo que separa bien lo que queda de lo que cabe y arma una función que baja con el tiempo puede trabarse al validar. Se destraba cuando usa el nivel informado después como dato de contraste sobre su propia recta. El curso aprende que validar exige buscar una evidencia externa al cálculo. Esa evidencia faltó en E2 y E3.",
+        "extracto_dialogo": [
+          {
+            "hablante": "A",
+            "texto": "¿Cómo sabemos que el resultado es razonable?"
+          },
+          {
+            "hablante": "B",
+            "texto": "No se me ocurre con qué compararlo."
+          },
+          {
+            "hablante": "A",
+            "texto": "Dibujemos la recta y vemos si el nivel del mes siguiente cae sobre ella."
+          },
+          {
+            "hablante": "B",
+            "texto": "Buena idea, eso sirve para contrastar."
+          }
+        ]
+      }
+    ],
+    "tabla_bloqueos": {
+      "B12": 0.33,
+      "B23": 0.33,
+      "B56": 0.17
+    },
+    "intervenciones": [
+      {
+        "bloqueo": "B12",
+        "z1_z2": "Antes de ayudar, pregunten: «¿Qué han hecho hasta ahora? ¿Qué entienden por que no haya riesgo este verano?». Reconozcan lo avanzado y pídanles que cuenten con sus palabras qué situación del embalse están mirando.",
+        "z3": "Pídanles que hagan un dibujo del embalse hoy, más bajo de lo habitual, y que anoten en él qué saben y qué no. En E3 el grupo se destrabó así: al dibujar notó qué dato faltaba.",
+        "z4": "Pregunten: «¿Qué necesitarían saber para decir cuánto tiempo dura el agua? ¿Qué están suponiendo sobre el gasto de la ciudad y sobre lo que entra al embalse en verano?». Si dudan de si el nivel cuenta (como en E2), pregunten: «¿El nivel les dice algo distinto de lo que dice la capacidad?». No respondan por ellos.",
+        "z5": "Recuerden que el enunciado permite pedir información adicional. Si la solicitan, entreguen el recurso R1 (capacidad y nivel) y, si piden el gasto de la ciudad, el recurso R2 (consumo). Pidan que escriban en el registro del grupo los supuestos que van a usar. No les digan qué operación hacer con los datos."
+      },
+      {
+        "bloqueo": "B23",
+        "z1_z2": "Pregunten: «¿Qué datos tienen y qué intentaron hacer con ellos? ¿Por qué eligieron ese dato como punto de partida?». Escuchen antes de sugerir nada.",
+        "z3": "Propongan un esquema o una tabla mes a mes del agua que queda en el embalse, para ver cómo cambia con el paso del tiempo.",
+        "z4": "Pregunten: «De los datos que tienen, ¿cuál describe el agua que hay hoy y cuál describe lo que cabe en el embalse? ¿Cuál les sirve como punto de partida y por qué?». Si dicen que usarán lo más fácil, como en E2, pídanles que expliquen qué situación representa ese dato.",
+        "z5": "Si aún no tienen el dato de consumo, ofrezcan el recurso R2. Pidan que completen las primeras filas de su tabla mes a mes y que digan qué se repite en cada fila. Que sean ellos quienes formulen la relación entre el agua que queda, lo que se gasta y el tiempo. No les den la operación ni la cantidad de meses."
+      },
+      {
+        "bloqueo": "B56",
+        "z1_z2": "Pregunten: «¿Qué han hecho hasta ahora? ¿Cómo saben que su resultado es razonable?». Valoren que se hagan esta pregunta, como el integrante de E4.",
+        "z3": "Pidan que piensen qué información externa a su cálculo podría confirmar o desmentir su respuesta. Una pregunta general sirve: «¿Qué dato del mundo real nos diría si nos equivocamos?».",
+        "z4": "Pregunten: «¿Qué información publicará la autoridad un mes después y cómo se relaciona con lo que ustedes predijeron para ese momento?». Pídanles que escriban qué esperan que ocurra con el nivel según su modelo.",
+        "z5": "Orienten sin dar el contraste hecho: que ubiquen en su propio dibujo o esquema el nivel informado un mes después y miren si coincide con lo que su modelo anticipa. Si no coincide, que revisen sus supuestos de consumo constante y aportes despreciables. No les digan si su resultado es correcto."
+      }
+    ],
+    "puesta_en_comun": {
+      "seleccion_y_orden": [
+        "Primero E3 (bloqueo en simplificar, modelo proporcional): se anticipa y se selecciona porque es el modelo más accesible y muestra cómo pedir información adicional ayuda a destrabar. Permite monitorear en qué momento aparece el supuesto de consumo constante.",
+        "Segundo E2 (modelo inadecuado): se secuencia después para que, con el dibujo de E3 como referencia, el curso detecte que el grupo usó la capacidad total en vez del volumen actual. Se hace notar que su respuesta final coincide con la de otros grupos, por lo que el resultado no basta para juzgar un modelo.",
+        "Tercero E1 (ruta esperada, modelo lineal): conecta con E2 al mostrar la diferencia en el punto de partida, y presenta el consumo constante como una disminución igual cada mes. Además ya plantea contrastar con el dato posterior.",
+        "Cuarto E4 (bloqueo en validar, modelo lineal): se cierra con él para conectar con E1 y mostrar cómo se contrasta con evidencia externa, algo que faltó en E2 y E3. El docente no presenta primero su propia ruta: entra después de que los grupos hayan expuesto las suyas."
+      ],
+      "preguntas": [
+        "¿Qué volumen usó cada grupo como punto de partida y por qué? ¿Es el mismo en E1, E2, E3 y E4?",
+        "¿Qué supuestos hizo cada grupo, explícitos o no? ¿Cuándo los escribieron: antes o después de calcular?",
+        "¿Qué cambiaría en su respuesta si el consumo no fuera constante o si entraran aportes de agua al embalse?",
+        "E2 y E3 llegan a respuestas parecidas con modelos distintos: ¿qué diferencia hay entre ellos y por qué importa?",
+        "¿Qué tan eficiente es cada modelo (proporcional frente a lineal) para responder la pregunta de las autoridades? ¿Qué límite tiene cada uno?",
+        "¿Cómo supieron, o cómo podrían saber, que su resultado es razonable? ¿Qué evidencia externa a su cálculo usarían?",
+        "Con su respuesta, ¿tienen razón las autoridades al decir que no hay riesgo este verano? ¿Qué dependería de los supuestos?"
+      ],
+      "contraste_validacion": "Usen como evidencia independiente el nivel del embalse publicado por la autoridad un mes después. El docente debe contar con ese dato real; no se inventa. Pida a cada grupo que, antes de verlo, diga qué nivel espera para ese momento según su modelo. Luego comparen la predicción con el dato publicado, como hizo E4 sobre su propia recta. Discutan si la diferencia, si la hay, se explica por los supuestos de consumo constante y aportes despreciables en verano. Recuerden que la tarea considera aceptable un rango de 4 a 8 meses según los supuestos. Cierren preguntando qué ajustarían en el modelo y qué supuesto revisarían primero."
+    },
+    "variantes_y_continuidad": {
+      "uso_variantes": "Variante hacia abajo (tramo P): entrega capacidad, nivel y consumo de entrada y pregunta cuántos meses alcanza. Úsala con un grupo que se quede detenido en la solicitud de datos y en los supuestos (B12) o en la relación entre volumen y consumo (B23) pese a las preguntas de diagnóstico. Con ella los grupos dejan de decidir qué información pedir, así que pierdes esa evidencia de P2-RM. Variante hacia arriba (tramo U): pide un modelo dinámico con aportes por deshielo y análisis de sensibilidad. Úsala con un grupo que ya completó el cálculo y la validación y cuyos supuestos de consumo constante y aportes despreciables conviene poner en duda. Pasa de la ruta proporcional a un balance en el tiempo y a explorar cómo cambia la respuesta al modificar los supuestos. Ninguna de las dos variantes es null. Para el grupo de S1 la tarea base ya admite la ruta lineal con aportes.",
+      "acostumbramiento": "Si el grupo nunca ha modelado, conviene una actividad breve previa con una situación cotidiana de tasa, como un depósito que se vacía. Se pide solo decir qué se necesita saber y qué se supondría antes de calcular, para que declarar supuestos sea una práctica conocida. Se trabaja en grupos pequeños con los mismos roles. En una secuencia, esta tarea sirve para iniciar la modelación en S1: permite diagnosticar cómo simplifican, matematizan y validan los grupos y sirve de base para tareas posteriores. La ficha está en estado borrador, por lo que esta función se confirma tras usarla.",
+      "tarea_siguiente": null
+    },
+    "materiales": {
+      "tarea_pdf": "tarea.pdf",
+      "recursos_tarjetas": "recursos.pdf",
+      "notebook": "escenarios.ipynb",
+      "icono": "icono.svg"
+    },
+    "trazabilidad": {
+      "noticia_url": "https://www.cnnchile.com/ejemplo/embalse-el-yeso",
+      "diseno": {
+        "modelo": "claude-sonnet-5-5",
+        "version_prompt": "0.1"
+      },
+      "rub01_total": 23,
+      "revision_humana_1": {
+        "revisor": "Carlos Rojas Bruna",
+        "fecha": "2026-10-20"
+      },
+      "simulacion": {
+        "n_grupos": 6,
+        "diseno": "diseno_otm_6"
+      },
+      "revision_humana_2": null,
+      "commit": null
+    },
+    "modelo_y_prompt": {
+      "redactor": "claude-sonnet-5-5",
+      "redactor_escenarios": "claude-opus-5-5",
+      "version_prompt": "1.0"
+    }
+  },
+  "meta": {
+    "agente": "redactor",
+    "version_prompt": "1.0",
+    "modelos": {
+      "redactor": "claude-sonnet-5-5",
+      "redactor_escenarios": "claude-opus-5-5"
+    },
+    "llamadas": [
+      {
+        "seccion": "base",
+        "agente": "redactor",
+        "modelo": "claude-sonnet-5-5",
+        "modelo_respuesta": "claude-sonnet-5-5",
+        "request_id": "req_011CgE1XMku6rKsxg3JWp4aG",
+        "fecha": "2026-10-20T19:05:15+00:00",
+        "segundos": 47.3,
+        "intentos": 1,
+        "parametros": {
+          "temperature": "default (los modelos 5.5 no la admiten)",
+          "effort": "default",
+          "max_tokens": 8000
+        },
+        "uso": {
+          "input_tokens": 2441,
+          "output_tokens": 5623,
+          "cache_creation_input_tokens": 2845,
+          "cache_read_input_tokens": 0
+        },
+        "costo_usd": 0.068224
+      },
+      {
+        "seccion": "escenarios",
+        "agente": "redactor",
+        "modelo": "claude-opus-5-5",
+        "modelo_respuesta": "claude-opus-5-5",
+        "request_id": "req_011CgE1ar26usZnP7nPwB2mQ",
+        "fecha": "2026-10-20T19:05:46+00:00",
+        "segundos": 31.0,
+        "intentos": 1,
+        "parametros": {
+          "temperature": "default (los modelos 5.5 no la admiten)",
+          "effort": "medium",
+          "max_tokens": 12000
+        },
+        "uso": {
+          "input_tokens": 4214,
+          "output_tokens": 3195,
+          "cache_creation_input_tokens": 3008,
+          "cache_read_input_tokens": 0
+        },
+        "costo_usd": 0.095796
+      },
+      {
+        "seccion": "intervenciones",
+        "agente": "redactor",
+        "modelo": "claude-sonnet-5-5",
+        "modelo_respuesta": "claude-sonnet-5-5",
+        "request_id": "req_011CgE1d9BmCqMk5innJsBLh",
+        "fecha": "2026-10-20T19:06:20+00:00",
+        "segundos": 33.0,
+        "intentos": 1,
+        "parametros": {
+          "temperature": "default (los modelos 5.5 no la admiten)",
+          "effort": "default",
+          "max_tokens": 8000
+        },
+        "uso": {
+          "input_tokens": 4556,
+          "output_tokens": 3928,
+          "cache_creation_input_tokens": 2266,
+          "cache_read_input_tokens": 0
+        },
+        "costo_usd": 0.054057
+      }
+    ],
+    "costo_usd": 0.218077
+  },
+  "validacion": {
+    "esquema_guia": true,
+    "escenarios_respaldados": true,
+    "cifras_con_fuente": true,
+    "literal_noticia": null
+  }
+}

@@ -1,0 +1,233 @@
+[
+  {
+    "meta": {
+      "que_observar": "Cómo los grupos distinguen la capacidad del embalse del volumen que queda y cómo lo declaran como supuesto.",
+      "contenido": "Razones y tasas; relación lineal entre tiempo y volumen.",
+      "subcompetencias": [
+        "simplificar",
+        "matematizar",
+        "validar"
+      ],
+      "meta_social": "Argumentar en pares y escuchar la ruta del otro grupo.",
+      "evidencia": [
+        "hoja de supuestos del grupo",
+        "registro escrito del cálculo",
+        "exposición en la puesta en común"
+      ]
+    },
+    "barreras_por_fase": [
+      {
+        "fase": "P2-RM",
+        "barrera": "No separar la capacidad del embalse del volumen que queda hoy; suponer sin declarar que el consumo es constante."
+      },
+      {
+        "fase": "P3-MM",
+        "barrera": "No saber cómo juntar el nivel con la capacidad en una sola expresión."
+      },
+      {
+        "fase": "P6-VAL",
+        "barrera": "No identificar con qué dato independiente contrastar el resultado."
+      }
+    ],
+    "organizacion": {
+      "momentos": [
+        {
+          "momento": "Comprensión y trabajo grupal",
+          "tiempo": "90 min",
+          "estudiantes": "Leen el enunciado, piden información y modelan en pares.",
+          "docente": "Circula, diagnostica preguntando qué han hecho y no interviene aún."
+        },
+        {
+          "momento": "Puesta en común",
+          "tiempo": "50 min",
+          "estudiantes": "Presentan su modelo y sus supuestos y comparan rutas.",
+          "docente": "Orquesta según la sección de puesta en común."
+        },
+        {
+          "momento": "Validación y cierre",
+          "tiempo": "40 min",
+          "estudiantes": "Contrastan con el dato posterior y redactan la conclusión.",
+          "docente": "Cierra comparando modelos, supuestos y límites."
+        }
+      ],
+      "agrupamiento": "Pares estables durante toda la tarea.",
+      "roles": "Registrador, que anota supuestos, y portavoz, que explica las decisiones.",
+      "producciones": [
+        "hoja de supuestos",
+        "cálculo con su justificación",
+        "conclusión escrita"
+      ],
+      "tecnologia": "Calculadora desde la fase de trabajo matemático; no se permite buscar la respuesta antes de formular supuestos."
+    },
+    "uso_variantes": "Usar la variante hacia abajo si el grupo no ha trabajado con tasas, entregando los datos de entrada; usar la hacia arriba para pedir un modelo con aportes.",
+    "acostumbramiento": "Si el grupo nunca ha modelado, conviene una actividad previa de estimación. La tarea sirve como iniciación a la modelación con datos de prensa."
+  },
+  {
+    "estado": "ok",
+    "motivo": "",
+    "escenarios": [
+      {
+        "id": "E1",
+        "nombre": "ruta esperada",
+        "corridas": [
+          "N4_AA_r1",
+          "N3_AA_r1"
+        ],
+        "perfil": "S1, nivel N4 y N3, estilo AA",
+        "ruta": [
+          "P1-MRS",
+          "P2-RM",
+          "P3-MM",
+          "P4-WM",
+          "P5-INT",
+          "P6-VAL",
+          "P7-EXP"
+        ],
+        "supuestos": [
+          "consumo constante"
+        ],
+        "modelo": "dinámico",
+        "bloqueos": [],
+        "que_aprende": "Que distinguir lo que queda de lo que cabe permite llegar a modelos distintos (recta o balance mensual) con el mismo resultado final.",
+        "extracto_dialogo": [
+          {
+            "hablante": "A",
+            "texto": "Entonces hay que ver cuánta agua queda de verdad, no la capacidad."
+          },
+          {
+            "hablante": "B",
+            "texto": "Supongamos que la ciudad gasta lo mismo cada mes."
+          },
+          {
+            "hablante": "A",
+            "texto": "Hagamos un balance mes a mes y veamos dónde llegamos."
+          }
+        ]
+      },
+      {
+        "id": "E2",
+        "nombre": "modelo inadecuado",
+        "corridas": [
+          "N1_AA_r1"
+        ],
+        "perfil": "S1, nivel N1, estilo AA",
+        "ruta": [
+          "P1-MRS",
+          "P2-RM",
+          "P3-MM",
+          "P4-WM",
+          "P5-INT",
+          "P7-EXP"
+        ],
+        "supuestos": [
+          "consumo constante"
+        ],
+        "modelo": "capacidad total",
+        "bloqueos": [
+          {
+            "transicion": "B12",
+            "como_se_destrabo": "preguntaron a otro grupo, pero no cambiaron de idea."
+          },
+          {
+            "transicion": "B23",
+            "como_se_destrabo": "lo resolvió un compañero de otro grupo, sin corregir el uso de la capacidad total."
+          }
+        ],
+        "que_aprende": "Que usar la capacidad total en vez de lo que queda da una respuesta parecida y por eso el error pasa inadvertido sin validar.",
+        "extracto_dialogo": [
+          {
+            "hablante": "A",
+            "texto": "Dice que el embalse es de 220, dividamos por el consumo."
+          },
+          {
+            "hablante": "B",
+            "texto": "Pero está al 38 %, ¿no cuenta eso?"
+          },
+          {
+            "hablante": "B",
+            "texto": "Igual dejemos la capacidad total, es más fácil."
+          }
+        ]
+      },
+      {
+        "id": "E3",
+        "nombre": "bloqueo en simplificar",
+        "corridas": [
+          "N1_VV_r1"
+        ],
+        "perfil": "S1, nivel N1, estilo VV",
+        "ruta": [
+          "P1-MRS",
+          "P2-RM",
+          "P3-MM",
+          "P4-WM",
+          "P5-INT",
+          "P7-EXP"
+        ],
+        "supuestos": [
+          "consumo constante"
+        ],
+        "modelo": "proporcional",
+        "bloqueos": [
+          {
+            "transicion": "B12",
+            "como_se_destrabo": "un compañero propuso dibujar el embalse con su nivel."
+          }
+        ],
+        "que_aprende": "Que un dibujo ayuda a separar lo que se sabe de lo que falta y a pedir el dato que falta.",
+        "extracto_dialogo": [
+          {
+            "hablante": "A",
+            "texto": "No entiendo qué hay que calcular."
+          },
+          {
+            "hablante": "B",
+            "texto": "Dibujemos el embalse con su nivel."
+          },
+          {
+            "hablante": "A",
+            "texto": "Lo dibujé y falta saber cuánto gasta la ciudad."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "intervenciones": [
+      {
+        "bloqueo": "B12",
+        "z1_z2": "Preguntar qué han entendido hasta ahora y reconocer lo avanzado.",
+        "z3": "Hagan un dibujo de la situación.",
+        "z4": "¿Qué parte del embalse está disponible hoy para la ciudad?",
+        "z5": "Pidan la tarjeta de capacidad y nivel y discutan qué dice cada dato."
+      },
+      {
+        "bloqueo": "B23",
+        "z1_z2": "Preguntar qué cantidad quieren obtener y con qué datos.",
+        "z3": "Escriban con palabras la relación entre lo que hay y lo que se gasta.",
+        "z4": "¿Cómo se combinan el nivel y la capacidad para saber lo que queda?",
+        "z5": "Pidan la tarjeta de consumo y ordenen los datos en una tabla."
+      },
+      {
+        "bloqueo": "B56",
+        "z1_z2": "Preguntar cómo sabrían si su respuesta es razonable.",
+        "z3": "Piensen en otro dato, distinto de los usados, con el que se pueda comparar.",
+        "z4": "¿Qué dato posterior al cálculo podría decirles si el modelo acertó?",
+        "z5": "Comparen su resultado con la evidencia independiente que entrega el docente."
+      }
+    ],
+    "puesta_en_comun": {
+      "seleccion_y_orden": [
+        "Primero E2, porque hace visible el supuesto de usar la capacidad total.",
+        "Luego E3, para mostrar cómo se destrabó la simplificación con un dibujo.",
+        "Al final E1, para conectar los modelos y comparar supuestos."
+      ],
+      "preguntas": [
+        "¿Qué supusieron sobre el consumo y qué pasa si cambia?",
+        "¿Qué modelo es más simple y cuál es más preciso?",
+        "¿Con qué dato independiente validaron?"
+      ],
+      "contraste_validacion": "Comparar la respuesta de cada ruta con el nivel del embalse publicado por la autoridad un mes después."
+    }
+  }
+]
