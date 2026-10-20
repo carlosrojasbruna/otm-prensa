@@ -1,0 +1,8 @@
+{
+  "2026-10-anticipo-renta-vitalicia-v4": [
+    {
+      "criterio": "validacion",
+      "mejora_minima": "Corregir el error conceptual en task_space.modelo_inadecuado: repartir sin interés ni mortalidad SOBREESTIMA (no subestima) el factor de anualidad que implican las ofertas reales, porque sumar pensiones sin descontar da un valor mayor que el valor esperado descontado. Revisar que pasos, resultado y rango de la solución de referencia digan lo mismo. Además, en R4 y en la evidencia de validación, precisar cómo obtiene el docente las ofertas: las ofertas del SCOMP son certificados individuales de cada afiliado, no un archivo público; indicar que se usa un certificado de ofertas anonimizado o, si no hay, las estadísticas de tasas de venta de rentas vitalicias que publica la Superintendencia de Pensiones. No cambiar enunciado_es ni foto_descripcion (la simulación se reutiliza)."
+    }
+  ]
+}
