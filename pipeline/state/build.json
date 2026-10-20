@@ -4,7 +4,7 @@
   "fases": {
     "1": {
       "nombre": "Contratos y calibración",
-      "estado": "en_curso",
+      "estado": "en_checkpoint",
       "tareas": {
         "architect": {
           "estado": "completada",
@@ -12,7 +12,12 @@
           "commit": "a8803a1",
           "test": "134 passed"
         },
-        "rubric-encoder": "en_curso"
+        "rubric-encoder": {
+          "estado": "completada",
+          "fecha": "2026-10-20",
+          "commit": "3ef26fe",
+          "test": "kappa 0.706/0.802/0.745 (provisional); 139 passed"
+        }
       },
       "checkpoint": "CP1",
       "CP1": {
@@ -70,6 +75,6 @@
       }
     }
   },
-  "costo_acumulado_usd": 0,
-  "ultimo_commit": "a8803a1"
+  "costo_acumulado_usd": 10.9,
+  "ultimo_commit": "3ef26fe"
 }
