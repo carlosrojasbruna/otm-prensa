@@ -86,7 +86,7 @@
     },
     "3": {
       "nombre": "Evaluación y prototipo",
-      "estado": "en_curso",
+      "estado": "en_checkpoint",
       "tareas": {
         "eval-engineer": {
           "estado": "completada",
@@ -101,23 +101,39 @@
           "test": "328 passed (23 de ciclo, sin red)"
         },
         "prototipo-3-tareas": {
-          "estado": "bloqueada",
+          "estado": "completada",
           "fecha": "2026-10-20",
-          "commit": null,
-          "test": "tramo A: 3 tareas en `evaluada` (RUB01 24, 24, 23; 3 corridas idénticas c/u); 3,85 USD. Tramo B espera revisión humana 1",
-          "espera": "revision_humana_1 de Carlos"
+          "commit": "04b662f",
+          "test": "4 tareas en verificada (queso v3, barco v2, aranceles v4, anticipo v6); revisión 2: 2 aprobadas, 2 pendientes"
         },
         "explorador-med01-v1.1": {
           "estado": "completada",
           "fecha": "2026-10-20",
           "commit": "5a16708",
           "test": "14 nuevos + 12 previos passed; vivo 0,003 USD: La Tercera 2/4 validan; Nature (anti-bot), DW (URLs inválidas) y gnews (ids CBMi) sin leer"
+        },
+        "disenador-v1.1": {
+          "estado": "completada",
+          "fecha": "2026-10-20",
+          "commit": "cdb3d52",
+          "test": "decisión de Carlos; 24 tests del diseñador; vivo 0,18 USD"
+        },
+        "verificador-v1.1": {
+          "estado": "completada",
+          "fecha": "2026-10-20",
+          "commit": "e75e464",
+          "test": "decisión de Carlos; 24 tests nuevos; prueba real detectó fuentes genéricas"
         }
       },
       "checkpoint": "CP2",
       "CP2": {
         "aprobado": false,
         "fecha": null
+      },
+      "cierre": {
+        "por": "build-lead",
+        "fecha": "2026-10-20",
+        "nota": "378 passed; informe en pipeline/state/CP2_informe.md"
       }
     },
     "4": {
@@ -142,6 +158,6 @@
       }
     }
   },
-  "costo_acumulado_usd": 26.586,
-  "ultimo_commit": "a3920d7"
+  "costo_acumulado_usd": 47.97,
+  "ultimo_commit": "04b662f"
 }
