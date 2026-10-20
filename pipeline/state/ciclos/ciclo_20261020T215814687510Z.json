@@ -1,0 +1,114 @@
+{
+  "ciclo_id": "ciclo_20261020T215814687510Z",
+  "inicio": "2026-10-20T21:58:14Z",
+  "fin": "2026-10-20T22:00:59Z",
+  "semana": "2026-W43",
+  "parametros": {
+    "tope_semanal_usd": 25.0,
+    "fraccion_detencion": 0.9,
+    "presupuesto_ciclo_usd": 2.0,
+    "limite_usd": 17.965504,
+    "gasto_semana_previo_usd": 15.965504,
+    "corridas_evaluador": 3,
+    "rango_inestable": 4,
+    "corridas_simulador": 6,
+    "ids": [
+      "2026-10-adelantar-compras-queso-v3"
+    ],
+    "revisor": "Carlos Rojas Bruna"
+  },
+  "detenido_por_tope": false,
+  "eventos": [
+    {
+      "fecha": "2026-10-20T21:58:15Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-adelantar-compras-queso-v3",
+      "de": "evaluada",
+      "a": "revisada"
+    },
+    {
+      "fecha": "2026-10-20T21:58:15Z",
+      "tipo": "simulacion_reutilizada",
+      "tarea_id": "2026-10-adelantar-compras-queso-v3",
+      "origen": "2026-10-adelantar-compras-queso-v2"
+    },
+    {
+      "fecha": "2026-10-20T21:58:17Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-adelantar-compras-queso-v3",
+      "de": "revisada",
+      "a": "simulada"
+    },
+    {
+      "fecha": "2026-10-20T22:00:00Z",
+      "tipo": "agente",
+      "agente": "redactor",
+      "tareas": [
+        "2026-10-adelantar-compras-queso-v3"
+      ],
+      "llamadas": 3,
+      "usd": 0.386272
+    },
+    {
+      "fecha": "2026-10-20T22:00:03Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-adelantar-compras-queso-v3",
+      "de": "simulada",
+      "a": "con_guia"
+    },
+    {
+      "fecha": "2026-10-20T22:00:08Z",
+      "tipo": "agente",
+      "agente": "ilustrador",
+      "tareas": [
+        "2026-10-adelantar-compras-queso-v3"
+      ],
+      "llamadas": 1,
+      "usd": 0.008174
+    },
+    {
+      "fecha": "2026-10-20T22:00:52Z",
+      "tipo": "agente",
+      "agente": "verificador",
+      "tareas": [
+        "2026-10-adelantar-compras-queso-v3"
+      ],
+      "llamadas": 1,
+      "usd": 0.15814
+    },
+    {
+      "fecha": "2026-10-20T22:00:56Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-adelantar-compras-queso-v3",
+      "de": "con_guia",
+      "a": "verificada"
+    },
+    {
+      "fecha": "2026-10-20T22:00:59Z",
+      "tipo": "bibliotecario_dry_run",
+      "tarea_id": "2026-10-adelantar-compras-queso-v3",
+      "ok": true,
+      "ruta": "tareas/2026-10/adelantar-compras-queso-v3/",
+      "rama": "tareas/semana-2026-W43"
+    }
+  ],
+  "expedientes": {
+    "2026-10-adelantar-compras-queso-v3": "verificada"
+  },
+  "noticias": [],
+  "pendientes_humanos": [
+    {
+      "tarea_id": "2026-10-adelantar-compras-queso-v3",
+      "pendiente": "revision_humana_2",
+      "estado": "verificada"
+    }
+  ],
+  "errores": [],
+  "orden": "tramo_b",
+  "gasto": {
+    "ciclo_usd": 0.552586,
+    "semana_usd": 16.51809,
+    "limite_usd": 17.965504,
+    "llamadas": 5
+  }
+}

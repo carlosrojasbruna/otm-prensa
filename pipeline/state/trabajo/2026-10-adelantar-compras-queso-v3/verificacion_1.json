@@ -1,0 +1,97 @@
+{
+  "tarea_id": "2026-10-adelantar-compras-queso-v3",
+  "aprobado": true,
+  "estado_destino": "verificada",
+  "hallazgos": [
+    {
+      "invariante": "notebook",
+      "severidad": "advertencia",
+      "ubicacion": "guia.materiales.notebook",
+      "descripcion": "notebook escenarios.ipynb no encontrado: ",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "guia.escenarios[E2].perfil",
+      "descripcion": "La corrida terminó por máximo de turnos, sin entrega acordada. — La traza de N1_VV_r1 no registra un fin por máximo de turnos. Registra validación verdadera y una respuesta final. Solo se observa que la ruta no llega a P7-EXP.",
+      "origen": "modelo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "guia.escenarios[E2].que_aprende",
+      "descripcion": "Toma dos decisiones de modelación que ningún otro grupo hace explícitas: que la demanda baja con el arancel… — N4_VV_r1 (E4) también explicita, en su respuesta final y en su diálogo, que el arancel recortaría las compras posteriores. Por tanto, 'ningún otro grupo' es inexacto.",
+      "origen": "modelo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "guia.escenarios[E1].que_aprende",
+      "descripcion": "En N1_AA_r1 corrigen que el ahorro del arancel se gana una sola vez por unidad. — La traza lo registra como supuesto, no como una corrección durante la corrida. La redacción sobreinterpreta levemente.",
+      "origen": "modelo"
+    }
+  ],
+  "cifras_contrastadas": [
+    {
+      "indice": 0,
+      "que_es": "Valor aproximado de los bienes canadienses gravados",
+      "valor_tarea": "$20bn",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 49"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "$20bn",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia; modelo: El párrafo 49 da unos 20 mil millones de dólares como valor de los bienes canadienses gravados. Coincide en valor, unidad y significado."
+    },
+    {
+      "indice": 1,
+      "que_es": "Arancel que paga una empresa estadounidense sobre queso exportado desde Canadá",
+      "valor_tarea": "50%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 53"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "50%",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia; modelo: El párrafo 53 indica que la empresa paga aranceles de 50% sobre queso exportado desde Canadá."
+    },
+    {
+      "indice": 2,
+      "que_es": "Periodo de espera exigido por la Sección 338 antes de imponer aranceles",
+      "valor_tarea": "30-day",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 62"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "30-day",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia; modelo: El párrafo 62 indica que la Sección 338 exige una espera de 30 días antes de imponer gravámenes."
+    }
+  ],
+  "notebook": {
+    "estado": "no_encontrado",
+    "ruta": "escenarios.ipynb",
+    "salida_resumen": ""
+  },
+  "meta": {
+    "agente": "verificador",
+    "version_prompt": "1.1",
+    "modelo": "claude-opus-5-5",
+    "request_id": "req_011CgEEvV3MLTC87J7Pmqw4a",
+    "fecha": "2026-10-20T22:00:52+00:00",
+    "costo_usd": 0.15814,
+    "modelo_llamado": true,
+    "texto_noticia_recibido": true,
+    "uso": {
+      "input_tokens": 20345,
+      "output_tokens": 3258,
+      "cache_creation_input_tokens": 2320,
+      "cache_read_input_tokens": 0
+    }
+  }
+}

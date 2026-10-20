@@ -140,7 +140,7 @@ Datos reales del prototipo (precios de `pipeline/config.yaml`; modelos de partid
 | Tarea nueva, tramo A | explorador + filtro (≈ 0) + diseñador 2 candidatos + evaluador 3 corridas × 2 | 0,59 – 0,90 por noticia; ≈ 1,3 por tarea lograda contando noticias perdidas | aranceles 0,90 · CIPER 0,59 · barco 0,84 |
 | Nueva versión de tarea (`--nueva-version`) | diseñador (iteración) + evaluador 3 corridas | 0,29 – 0,50 | barco v2 0,29 · aranceles v2 0,40 · anticipo v2 0,40 · queso v2 0,50 |
 | Tramo B con simulación | simulador 6 corridas + codificador + guía + ilustrador + verificador | 1,7 – 2,2 (simulación sola 0,9 – 1,6) | anticipo v2 1,66 · queso v2 2,19 (incluye un redactor fallido) · anticipo v1 2,66 (2 guías + 2 verificaciones) |
-| Tramo B reutilizando simulación | guía (redactor + escenarios) + ilustrador + verificador | 0,55 – 0,90 (estimado por componentes) | — (se medirá con queso v3 y anticipo v3) |
+| Tramo B reutilizando simulación | guía (redactor + escenarios) + ilustrador + verificador | 0,55 (medido) | queso v3 0,55 (guía 0,39 + verificador 0,16) |
 | Guía v2 por revisión humana 2 (`--rehacer-guia`) | guía + ilustrador + verificador | ≈ 0,50 | aranceles y barco: 1,00 las dos |
 | Tarea completa nueva hasta `verificada` | tramo A + tramo B | ≈ 2,5 – 3,5 | — |
 
