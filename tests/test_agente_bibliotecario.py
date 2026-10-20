@@ -175,3 +175,50 @@ def test_no_sobrescribe_archivo_existente(repo):
     (carpeta / "tarea_v1.0_2026-10-27.json").write_text("{}", encoding="utf-8")
     with pytest.raises(bib.ErrorBibliotecario, match="ya existe"):
         bib.preparar(t, g, e, raiz=repo, fecha_publicacion="2026-10-27")
+
+
+def test_version_del_pipeline_va_a_la_carpeta_del_slug_base_con_md_e_icono(repo):
+    """`…-v3` se archiva en la carpeta del slug base, con render .md (PLT01/PLT02) e ícono versionados."""
+    t, g, e = _ejemplos()
+    base = t["id"]
+    tid = f"{base}-v3"
+    t["id"], g["tarea_id"], e["tarea_id"] = tid, tid, tid
+    t["version"] = g["version"] = g["ficha"]["version"] = 3
+    t["estado"] = "verificada"
+    svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><circle cx="5" cy="5" r="4"/></svg>'
+    bib.publicar(t, g, e, raiz=repo, fecha_publicacion="2026-10-27", ejecutar_real=True, remoto=False, icono_svg=svg)
+    aaaa_mm, slug = base[:7], base[8:]
+    carpeta = repo / "tareas" / aaaa_mm / slug
+    nombres = sorted(p.name for p in carpeta.iterdir())
+    assert nombres == sorted(f"{n}_v3.0_2026-10-27.{x}" for n, x in (
+        ("tarea", "json"), ("tarea", "md"), ("guia", "json"), ("guia", "md"), ("evaluacion", "json"), ("icono", "svg")))
+    assert (carpeta / "icono_v3.0_2026-10-27.svg").read_text(encoding="utf-8") == svg
+    md_t = (carpeta / "tarea_v3.0_2026-10-27.md").read_text(encoding="utf-8")
+    md_g = (carpeta / "guia_v3.0_2026-10-27.md").read_text(encoding="utf-8")
+    for s in ("## 1. Enunciado", "## 2. Datos y recursos", "## 3. Mapa a priori", "## 4. Espacio de soluciones",
+              "## 5. Rúbrica aplicada", t["estudiante"]["enunciado_es"].strip()[:40]):
+        assert s in md_t
+    for k in range(11):
+        assert f"## {k}. " in md_g
+    cat = _leer(repo / "tareas" / "catalogo.json")
+    assert inv.validar_contra_esquema(cat, "catalogo")
+    ent = cat["tareas"][0]
+    assert ent["id"] == base and ent["ruta"] == f"tareas/{aaaa_mm}/{slug}/"
+    assert ent["archivos"]["icono"] == "icono_v3.0_2026-10-27.svg" and not any(
+        v.endswith(".md") for v in ent["archivos"].values())
+    # la v4 del pipeline (`…-v4`) se reconoce como versión nueva de la misma tarea, en la misma carpeta
+    t4, g4, e4 = copy.deepcopy(t), copy.deepcopy(g), copy.deepcopy(e)
+    tid4 = f"{base}-v4"
+    t4["id"], g4["tarea_id"], e4["tarea_id"] = tid4, tid4, tid4
+    t4["version"] = g4["version"] = g4["ficha"]["version"] = 4
+    bib.publicar(t4, g4, e4, raiz=repo, fecha_publicacion="2026-11-03", ejecutar_real=True, remoto=False)
+    ent = _leer(repo / "tareas" / "catalogo.json")["tareas"][0]
+    assert ent["version"] == 4 and [v["version"] for v in ent["versiones_anteriores"]] == [3]
+    assert (carpeta / "tarea_v3.0_2026-10-27.md").read_text(encoding="utf-8") == md_t
+
+
+def test_rechaza_icono_que_no_es_svg(repo):
+    t, g, e = _ejemplos()
+    t["estado"] = "verificada"
+    with pytest.raises(bib.ErrorBibliotecario, match="SVG"):
+        bib.preparar(t, g, e, raiz=repo, icono_svg="no soy un svg")
