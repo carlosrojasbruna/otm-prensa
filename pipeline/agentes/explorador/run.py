@@ -151,6 +151,13 @@ def _valor(v: str):
     return s
 
 
+def cita_titulo(titulo: str, max_palabras: int = 25, corte: int = 20) -> str:
+    """Título para citar. Si supera `max_palabras`, se abrevia a `corte` palabras + « …» para que la cita
+    no exceda el límite literal de la invariante 3 (ver pipeline/state/decisiones.md, fase 3)."""
+    pal = titulo.split()
+    return titulo if len(pal) <= max_palabras else " ".join(pal[:corte]) + " …"
+
+
 def n_palabras(s: str) -> int:
     return len(s.split())
 
@@ -474,7 +481,7 @@ def explorar_noticia(c: dict, *, cliente=None, ahora: datetime | None = None, ba
         noticia = {
             "id": f"{fecha}-{c['medio_id']}-{slug(c['titulo'])}",
             "medio_id": c["medio_id"], "medio": c["medio"], "idioma": c["idioma"],
-            "titulo": c["titulo"][:300], "fecha": fecha, "url": c["url"],
+            "titulo": cita_titulo(c["titulo"])[:300], "fecha": fecha, "url": c["url"],
             "area": s["area"], "resumen_propio": resumen, "cifras": cifras,
             "recuperada_en": ahora.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         }

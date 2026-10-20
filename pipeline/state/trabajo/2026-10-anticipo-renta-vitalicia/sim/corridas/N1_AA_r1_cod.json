@@ -1,0 +1,186 @@
+{
+  "run": {
+    "id": "N1_AA_r1",
+    "nivel": "N1",
+    "composicion": "AA",
+    "rep": 1,
+    "estilos": [
+      "A",
+      "A"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.07918,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT",
+          "LEX"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P2-RM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "ASSUME",
+          "LEX"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P3-MM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P3-MM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P4-WM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 6,
+        "fase": "P3-MM",
+        "fase_secundaria": "P1-MRS",
+        "eventos": []
+      },
+      {
+        "n": 7,
+        "fase": "P3-MM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 8,
+        "fase": "P2-RM",
+        "fase_secundaria": "EMK",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 9,
+        "fase": "P3-MM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 10,
+        "fase": "P3-MM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 11,
+        "fase": "P2-RM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "STRAT",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 12,
+        "fase": "P2-RM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "STRAT",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 13,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 14,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 15,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 16,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 17,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 18,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      }
+    ],
+    "bloqueos": [
+      {
+        "codigo": "B12",
+        "turnos": [
+          1,
+          2,
+          3
+        ],
+        "resolucion": "self",
+        "descripcion": "Duda explícita de ambos sobre si el 10% se refiere a la pensión mensual o al total de la renta vitalicia; A decide en el turno 3 partir provisoriamente con A = 0,1·P, sin resolver la duda de fondo."
+      }
+    ],
+    "supuestos": [
+      "anticipo = 10% de la pensión mensual",
+      "descuento constante x durante n meses",
+      "plazo n = 12 meses (y luego 60)",
+      "persona de 65 años",
+      "tasa de interés mensual constante de 0,3%",
+      "p_k = 1 (nadie muere) en el cálculo de prueba",
+      "supervivencia según tabla de mortalidad"
+    ],
+    "modelo": "valor actuarial",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Regla: x = 0,1·P / Σ[p_k/(1+i)^k], con k de 1 a n, donde p_k es la probabilidad de seguir vivo en el mes k e i la tasa mensual. Piden la tabla de mortalidad, la tasa y el n máximo; la firmeza se estudia recalculando x con distintas tablas, tasas y plazos. Con p_k = 1, i = 0,3% y n = 12, x ≈ 0,0085·P, que sería el mínimo."
+    },
+    "ruta_principal": "R2",
+    "rutas": [
+      "R2",
+      "R1"
+    ]
+  }
+}

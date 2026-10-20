@@ -1,0 +1,26 @@
+# Corrida N3_AA_r1
+
+Nivel N3 · estilos A/A · rep 1 · 22 turnos · término: acuerdo · modelo claude-sonnet-5-5
+
+**1. Cami:** Okey, a ver, creo que hay que definir qué es "10% de la renta vitalicia": ¿10% de una mensualidad o del valor total esperado de la renta? Yo diría que la regla es igualar el valor presente esperado de los descuentos con el anticipo, pero necesitaríamos tasa de descuento y esperanza de vida.  
+**2. Fran:** Buena pregunta, yo lo leería como 10% del valor total esperado, porque 10% de una mensualidad sería casi nada. Entonces la regla sería A = 0,1·VP, y los descuentos d durante n meses cumplen d·Σ_{k=1}^{n} v^k·P(sobrevivir k meses) = A.  
+**3. Cami:** Ya, entonces d y n quedan atados por esa ecuación: fijamos n y despejamos d. Lo menos firme es que depende de la tabla de mortalidad y de la tasa v, porque si la persona muere antes, la compañía no recupera todo.  
+**4. Fran:** Sí, y ojo que eso es justo lo que balancea la regla: en promedio la compañía no pierde, pero si muere antes, la persona pagó menos y la compañía pierde, y si vive más, pasa al revés. Para fijar n podríamos pedir que no pase de unos 12 o 24 meses, ¿te parece?  
+**5. Cami:** Me parece bien, pero ojo que si n es largo la regla es más sensible a la mortalidad y a v. Probemos con n = 24, d = 0,1·VP / Σ_{k=1}^{24} v^k·p_k, y ahí vemos qué pasa si cambiamos v.  
+**6. Fran:** Dale, pero ojo que d no puede quedar mayor que la pensión misma, o sea d < P. Pidamos también un dato: una tasa y una tabla de mortalidad, y con eso calculamos d para v = 0,997 y otro valor y comparamos.  
+**7. Cami:** Espera, probemos con números: si la renta dura unos 20 años, VP ≈ 200·P, así que A = 20·P y con n = 24 saldría d ≈ 20P/23 ≈ 0,87·P. Eso es casi quitarle toda la pensión, así que 24 meses no sirve y n tendría que ser bastante más largo.  
+**8. Fran:** Ya, entonces mejor fijemos un tope para d, por ejemplo d ≤ 0,2·P, y despejamos n con Σ_{k=1}^{n} v^k·p_k = 20P/d = 100. Eso da como 10 años o más, y ahí la regla depende mucho de la mortalidad.  
+**9. Cami:** Ojo que cada término v^k·p_k es menor que 1, así que para llegar a 100 necesitamos n bastante mayor que 100 meses, tal vez unos 12 años. Calculemos n con v = 0,997 y otro v para ver cuánto se mueve.  
+**10. Fran:** Hagamos una cuenta gruesa: si v^k·p_k baja de 1 a más o menos 0,6 en el mes 120, el promedio es como 0,8. Entonces Σ hasta 120 da ≈ 96 y n sale cerca de 125 meses. Repitamos con v = 0,995 para ver cuánto se mueve n.  
+**11. Cami:** Ojo que si cambiamos v, también cambia el VP, así que el 100 ya no vale: A = 0,1·VP y la suma hasta n hay que recalcularlas con la misma v. Con v = 0,995 el VP baja, pero los términos también decaen más rápido, así que n podría subir o bajar y habría que calcularlo.  
+**12. Fran:** Tienes razón, el 100 se mueve con v. Mejor lo escribo como razón: Σ_{k=1}^{n} v^k·p_k / Σ_{k=1}^{∞} v^k·p_k = 0,1·P/d, así que con d = 0,2·P buscamos el n donde ya se acumuló la mitad del VP, y calculamos eso con cada v.  
+**13. Cami:** Ahí sí, la razón ya no depende de P: con d = 0,2·P buscamos el n donde se acumula la mitad del VP. Como los primeros términos pesan más, n debería quedar antes de la mitad del horizonte; calculemos con v = 0,997 y v = 0,995 para ver cuánto se mueve.  
+**14. Fran:** Como no tenemos tabla de mortalidad, supongamos algo simple, por ejemplo p_k = 1 − k/240 (todos mueren a los 20 años), y calculamos S_n/S_∞ = 0,5 con v = 0,997 y con v = 0,995. Así vemos cuánto se mueve n, aunque después igual habría que pedir la tabla real.  
+**15. Cami:** Antes de meter v, saquemos la referencia con v = 1: n − n²/480 = 60, o sea n² − 480n + 28800 = 0, que da n ≈ 70 meses. Con descuento los primeros meses pesan más, así que n debería salir algo menor, y ahí calculamos con 0,997 y 0,995.  
+**16. Fran:** Ok, n ≈ 70 meses con v = 1, o sea unos 6 años, y mi 125 de antes estaba mal porque usé mal el 100. Con v = 0,997 aproximemos v^k ≈ e^(−0,003k) e igualemos las integrales ∫₀ⁿ e^(−0,003k)(1−k/240)dk = 0,5·∫₀²⁴⁰ de lo mismo.  
+**17. Cami:** Ya, con a = 0,003 la primitiva es F(n) = (1−e^(−an))/a − (1/240)·(1 − e^(−an)(1+an))/a². Probé en la calculadora: F(240) ≈ 96, así que buscamos F(n) ≈ 48, y n sale cerca de 60 meses, o sea baja de 70 a 60.  
+**18. Fran:** Revisé F(60) ≈ 54,9 − 6,6 = 48,3, así que n ≈ 60 calza. Con a = 0,005 me da F(240) ≈ 83,6, o sea busco F(n) ≈ 41,8, y n sale cerca de 53 meses.  
+**19. Cami:** Me calza: n pasa de 70 a 60 a 53 meses cuando v sube de 0 a 0,3% a 0,5% mensual, o sea la regla se mueve harto con la tasa, y más aún con la tabla de mortalidad real. ¿Armamos la entrega con la regla d·S_n = 0,1·S_∞, d ≤ 0,2·P, y ese rango de n como sensibilidad?  
+**20. Fran:** Ojo que a la regla le falta la P: es d·S_n = 0,1·P·S_∞, con S_n = Σ v^k·p_k, y d ≤ 0,2·P. Pongamos también que los n de 70, 60 y 53 meses salen con p_k = 1 − k/240, un supuesto nuestro, y que con la tabla real y la tasa real hay que recalcular.  
+**21. Cami:** ENTREGAMOS: bajar la pensión d durante n meses con d·S_n = 0,1·P·S_∞ y d ≤ 0,2·P. Con p_k = 1 − k/240, n da 70, 60 y 53 meses según v, así que es poco firme y hay que recalcular con tasa y tabla reales.  
+**22. Fran:** DE ACUERDO  

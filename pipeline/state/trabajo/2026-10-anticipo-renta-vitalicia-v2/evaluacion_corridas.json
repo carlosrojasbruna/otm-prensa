@@ -1,0 +1,289 @@
+{
+  "tarea_id": "2026-10-anticipo-renta-vitalicia-v2",
+  "evaluaciones": [
+    {
+      "iteracion": 1,
+      "version_tarea": 2,
+      "fecha": "2026-10-20T21:23:05Z",
+      "modelo": "claude-opus-5-5",
+      "version_prompt": "1.3",
+      "version_rubrica": "4.0",
+      "corridas": [
+        {
+          "n": 1,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La tarea plantea una necesidad real de la aseguradora y el pensionado sin entregar fórmula ni procedimiento. La condición de no perder ni cobrar de más fija el objetivo, pero no la estructura del modelo.",
+                "cita": "¿Qué regla propondrían para decidir cuánto bajar la pensión y por cuánto tiempo, y qué tan firme es esa regla?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe método y admite varios modelos defendibles: devolución simple, descuento con interés o valor esperado con mortalidad. No hay instrucciones posteriores que encaucen la ruta.",
+                "cita": "¿Qué regla propondrían para decidir cuánto bajar la pensión y por cuánto tiempo"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige suponer la edad y el sexo del pensionado, elegir una tasa de interés, decidir si incluir la mortalidad y solicitar tablas y series. Son decisiones sustantivas de modelación.",
+                "cita": "Imaginen que una aseguradora ofrece a una persona recién pensionada un anticipo en ese tope"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Se trata de una situación real del mercado de pensiones chileno, con un regulador y un fallo judicial. El encuadre no está forzado.",
+                "cita": "la Corte Suprema dio la razón a las aseguradoras en una disputa por los anticipos de rentas vitalicias del tercer retiro"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Integran la tarea de manera sustantiva varios componentes auténticos: la noticia de CIPER, el oficio de la CMF, la tabla de mortalidad del regulador y las condiciones reales de una aseguradora.",
+                "cita": "Ficha con el descuento mensual y el plazo de recuperación informados públicamente por una aseguradora para un perfil de pensionado."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona las decisiones: el tope del 10%, el riesgo de fallecimiento y el equilibrio entre las partes. También es necesario para interpretar y contrastar la regla con la oferta real.",
+                "cita": "La compañía no quiere perder dinero en promedio, pero tampoco cobrarle de más a la persona."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "El enunciado no deja hecha ninguna fase. Resolver obliga a comprender, simplificar, matematizar, calcular, interpretar la regla y juzgar su solidez.",
+                "cita": "¿Qué regla propondrían para decidir cuánto bajar la pensión y por cuánto tiempo, y qué tan firme es esa regla?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Las condiciones reales de una aseguradora (R4) son evidencia independiente, no usada en la construcción del modelo, con la cual contrastar la regla.",
+                "cita": "Se entrega solo después de que el grupo presente su regla."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El enunciado explica el contexto y lo vuelve comprensible. La demanda (valor presente esperado con probabilidades de supervivencia y descuento) corresponde a las herramientas de probabilidad, cálculo y programación esperables en U.",
+                "cita": "Una renta vitalicia es una pensión que una aseguradora paga cada mes mientras la persona viva."
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Se puede entrar con una devolución simple en cuotas, sin interés ni mortalidad. El techo es alto: modelos actuariales con tabla de mortalidad, tasas y análisis de sensibilidad por edad, sexo o tasa.",
+                "cita": "Pueden pedir información adicional."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "La pregunta invita a comparar reglas, analizar la sensibilidad a la tasa y a la mortalidad y discutir la equidad entre perfiles. El contraste con la oferta real abre nuevas preguntas.",
+                "cita": "y qué tan firme es esa regla?"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información necesaria se obtiene a solicitud o se puede suponer, como la edad de pensión. Ningún material revela el modelo ni indica cómo usar la tasa o la tabla.",
+                "cita": "El equipo docente la entrega cuando el grupo la pide; no trae ninguna fórmula ni ejemplo de uso."
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgEBzMZuhSeMBPz1aC33Z",
+            "fecha": "2026-10-20T21:22:10+00:00",
+            "intentos": 1,
+            "costo_usd": 0.1162,
+            "avisos": []
+          }
+        },
+        {
+          "n": 2,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La situación plantea una necesidad real: diseñar una regla justa de recuperación del anticipo. No entrega fórmula ni modelo. La condición «en promedio» fija el objetivo, no el procedimiento.",
+                "cita": "La compañía no quiere perder dinero en promedio, pero tampoco cobrarle de más a la persona."
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta admite varios modelos defendibles (con o sin mortalidad, con o sin descuento, con distintos plazos) y no prescribe ningún método.",
+                "cita": "¿Qué regla propondrían para decidir cuánto bajar la pensión y por cuánto tiempo, y qué tan firme es esa regla?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Quien resuelve debe decidir varias cosas: la edad y el sexo de la persona, el monto de la pensión, la base del 10%, la tasa de interés y si incorpora la mortalidad. También debe solicitar R2 y R3. Todo eso son supuestos y obtención de información pertinente.",
+                "cita": "Imaginen que una aseguradora ofrece a una persona recién pensionada un anticipo en ese tope"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "La situación es real y actual: los anticipos de rentas vitalicias existieron y fueron objeto de una disputa judicial. Calcular su recuperación es un problema que las aseguradoras efectivamente resuelven.",
+                "cita": "la Corte Suprema dio la razón a las aseguradoras en una disputa por los anticipos de rentas vitalicias del tercer retiro"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Varios componentes auténticos están integrados de manera sustantiva: la noticia de CIPER, el tope de la CMF, la tabla de mortalidad del regulador, la serie de tasas y la ficha real de una aseguradora. Ninguno fue creado para enseñar.",
+                "cita": "Según la noticia, un oficio de la CMF fija que el anticipo puede llegar como máximo a 10% de la renta vitalicia."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona decisiones de modelación: el riesgo de que la persona fallezca antes de devolver el anticipo y el valor del dinero en el tiempo. También es necesario para juzgar la justicia de la regla y para contrastarla con R4.",
+                "cita": "Una renta vitalicia es una pensión que una aseguradora paga cada mes mientras la persona viva."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Resolver obliga a recorrer todas las fases de forma no trivial: comprender la renta vitalicia, simplificar con supuestos y formular un modelo de equivalencia de valor presente esperado. Luego hay que calcular, interpretar la regla y juzgar su solidez.",
+                "cita": "¿Qué regla propondrían para decidir cuánto bajar la pensión y por cuánto tiempo, y qué tan firme es esa regla?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existe evidencia independiente no usada en la construcción del modelo: las condiciones reales de una aseguradora, entregadas después de que el grupo presenta su regla. Además, la variación de tasas y tablas permite un análisis de sensibilidad.",
+                "cita": "Ficha con el descuento mensual y el plazo de recuperación informados públicamente por una aseguradora para un perfil de pensionado. Se entrega solo después"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto se define con lenguaje claro. La matemática requerida está dentro de las herramientas esperables en U: probabilidad, valor presente esperado, modelos discretos y sensibilidad.",
+                "cita": "Una renta vitalicia es una pensión que una aseguradora paga cada mes mientras la persona viva."
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Hay un piso razonable para U: dividir el anticipo en cuotas sin interés ni mortalidad. El techo es alto: incorporar descuento, probabilidades de supervivencia por sexo y edad, y analizar la sensibilidad a la tasa.",
+                "cita": "cuánto bajar la pensión y por cuánto tiempo"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las decisiones abren preguntas sustantivas: la equidad entre hombres y mujeres por sus distintas tablas, el efecto de la tasa y el riesgo de muerte temprana. También permiten comparar las reglas de distintos grupos con la oferta real.",
+                "cita": "y qué tan firme es esa regla?"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "Los datos difíciles de obtener (tabla de mortalidad y tasas) están disponibles a solicitud y no revelan cómo usarlos. El resto puede suponerse, y la ficha de contraste se entrega solo después de presentar la regla.",
+                "cita": "El equipo docente la entrega cuando el grupo la pide; no trae ninguna fórmula ni ejemplo de uso."
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgEC2Pt7qWYKo2UWSsQpk",
+            "fecha": "2026-10-20T21:22:36+00:00",
+            "intentos": 1,
+            "costo_usd": 0.063206,
+            "avisos": []
+          }
+        },
+        {
+          "n": 3,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "Plantea una necesidad real: recuperar el anticipo sin pérdida ni cobro excesivo. No entrega ninguna regla, fórmula ni modelo actuarial, sino que pide construirlo.",
+                "cita": "¿Qué regla propondrían para decidir cuánto bajar la pensión y por cuánto tiempo, y qué tan firme es esa regla?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "Admite varios modelos defendibles: descuento fijo o variable, con o sin interés, con o sin mortalidad, y distintos plazos. No hay instrucciones posteriores que prescriban un método.",
+                "cita": "¿Qué regla propondrían para decidir cuánto bajar la pensión y por cuánto tiempo"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Hay que suponer la edad, el sexo y el monto de la pensión, interpretar el tope de 10%, elegir una tasa y decidir si se incorpora la mortalidad. También hay que solicitar la tabla y las tasas, lo que corresponde a selección de información y supuestos sustantivos.",
+                "cita": "Imaginen que una aseguradora ofrece a una persona recién pensionada un anticipo en ese tope"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "La situación existe: los anticipos de rentas vitalicias tras el tercer retiro y su recuperación mediante descuentos son una práctica real en Chile.",
+                "cita": "la Corte Suprema dio la razón a las aseguradoras en una disputa por los anticipos de rentas vitalicias del tercer retiro"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "La noticia de CIPER, el oficio de la CMF, la tabla de mortalidad del regulador, las tasas de mercado y la oferta real de una aseguradora son componentes extraescolares integrados en el núcleo de la tarea.",
+                "cita": "Ficha con el descuento mensual y el plazo de recuperación informados públicamente por una aseguradora para un perfil de pensionado."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto fija la condición de equidad que define el modelo, con el riesgo de fallecimiento y el valor del dinero en el tiempo. También es necesario para juzgar la firmeza de la regla y compararla con la oferta real.",
+                "cita": "La compañía no quiere perder dinero en promedio, pero tampoco cobrarle de más a la persona."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Resolverla obliga a recorrer todas las fases: comprender el anticipo, simplificar con supuestos, matematizar la equivalencia de valores esperados, calcular, interpretar la regla y juzgar su firmeza. El enunciado no deja ninguna fase hecha.",
+                "cita": "¿Qué regla propondrían para decidir cuánto bajar la pensión y por cuánto tiempo, y qué tan firme es esa regla?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "La ficha real de la aseguradora (R4) es evidencia independiente, no usada en la construcción del modelo, contra la cual contrastar la regla.",
+                "cita": "Se entrega solo después de que el grupo presente su regla."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto se explica y es pertinente para universitarios. La matemática requerida (valor presente esperado, probabilidad de supervivencia, modelo discreto) corresponde a las herramientas esperables del nivel U.",
+                "cita": "Una renta vitalicia es una pensión que una aseguradora paga cada mes mientras la persona viva."
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Se puede entrar con un modelo simple sin interés ni mortalidad. El techo alto lo dan modelos con tabla de mortalidad por sexo, descuento con tasas reajustables y análisis de sensibilidad.",
+                "cita": "Pueden pedir información adicional."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "La pregunta abre la sensibilidad a la tasa y a la mortalidad, la equidad entre perfiles y la comparación entre las reglas de los grupos y con la oferta real. Todo ello permite discutir los límites del modelo.",
+                "cita": "y qué tan firme es esa regla?"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información necesaria se entrega a solicitud o puede suponerse, como la edad y el monto de la pensión. Ningún recurso indica la tasa ni la forma de construir la regla, así que no revelan el modelo.",
+                "cita": "El equipo docente la entrega cuando el grupo la pide; no trae ninguna fórmula ni ejemplo de uso."
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgEC4KwHYVL18jQzfnneV",
+            "fecha": "2026-10-20T21:23:05+00:00",
+            "intentos": 1,
+            "costo_usd": 0.065426,
+            "avisos": []
+          }
+        }
+      ],
+      "totales": [
+        24,
+        24,
+        24
+      ],
+      "rango_total": 0,
+      "rango_inestable": 4,
+      "evaluacion_inestable": false,
+      "mediana": {
+        "regla": "mediana por criterio (n par: mediana inferior)",
+        "total": 24,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 2
+        },
+        "corrida_fuente": {
+          "genuino": 1,
+          "abierta": 1,
+          "decisiones": 1,
+          "realismo": 1,
+          "autenticidad": 1,
+          "contexto": 1,
+          "ciclo": 1,
+          "validacion": 1,
+          "nivel": 1,
+          "autodiferenciacion": 1,
+          "fecundidad": 1,
+          "recursos": 1
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "run": {
+    "id": "N4_VV_r1",
+    "nivel": "N4",
+    "composicion": "VV",
+    "rep": 1,
+    "estilos": [
+      "V",
+      "V"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.067552,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P3-MM",
+        "fase_secundaria": "P1-MRS",
+        "eventos": [
+          "LEX"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P2-RM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P4-WM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 6,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 7,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 8,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 9,
+        "fase": "P5-INT",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 10,
+        "fase": "P6-VAL",
+        "fase_secundaria": "EMK",
+        "eventos": []
+      },
+      {
+        "n": 11,
+        "fase": "P2-RM",
+        "fase_secundaria": "EMK",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 12,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 13,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 14,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P7-EXP",
+        "eventos": [
+          "ASSUME"
+        ]
+      }
+    ],
+    "bloqueos": [],
+    "supuestos": [
+      "renta mensual de 1.000.000",
+      "anticipo = 10% de la renta mensual (100.000)",
+      "tasa de descuento constante de 0,3% mensual",
+      "descuento mensual d constante durante n meses",
+      "sobrevida casi 1 (p_t ≈ 0,99) en 12 meses",
+      "persona de 65 años",
+      "88% vivo a los 10 años (p promedio ≈ 0,94), sin tabla real",
+      "total pagado no mayor que anticipo más interés de un crédito de consumo",
+      "plazo corto de 12 meses"
+    ],
+    "modelo": "valor actual esperado",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Anticipo del 10% (tomado como 10% de una renta mensual de 1.000.000, es decir 100.000). Regla: d = anticipo / Σ_{t=1}^{n} p_t/(1+i)^t, con n = 12 meses, lo que da d ≈ 8.500 al mes (≈0,85% de la pensión), y con la condición de que el total pagado no supere el anticipo más el interés de un crédito de consumo. La regla es firme a 12 meses (casi no dependen de i ni p), pero para plazos largos depende bastante de la tasa y de la mortalidad; vale para una persona de 65 años con i ≈ 0,3% mensual y habría que recalcular para edades mayores."
+    },
+    "ruta_principal": "R2",
+    "rutas": [
+      "R2",
+      "R1"
+    ]
+  }
+}

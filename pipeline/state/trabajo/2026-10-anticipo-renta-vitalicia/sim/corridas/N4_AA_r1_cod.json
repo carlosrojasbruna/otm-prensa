@@ -1,0 +1,123 @@
+{
+  "run": {
+    "id": "N4_AA_r1",
+    "nivel": "N4",
+    "composicion": "AA",
+    "rep": 1,
+    "estilos": [
+      "A",
+      "A"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.062376,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P3-MM",
+        "fase_secundaria": "P1-MRS",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P2-RM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P3-MM",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P2-RM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P4-WM",
+        "fase_secundaria": "EMK",
+        "eventos": [
+          "STRAT",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 6,
+        "fase": "P4-WM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 8,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 9,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 10,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 11,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P7-EXP",
+        "eventos": [
+          "ASSUME"
+        ]
+      }
+    ],
+    "bloqueos": [],
+    "supuestos": [
+      "anticipo = 10% del valor presente de la renta vitalicia",
+      "tasa de interés constante (3% y 5%)",
+      "supervivencia anual constante p (0,96 y 0,98)",
+      "descuento d constante durante n años",
+      "tope propio d ≤ 20% de la pensión",
+      "tabla de pensionados (viven más que la población general)",
+      "la persona no debe quedar sin pensión (d < R)"
+    ],
+    "modelo": "actuarial geométrico",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Regla: d = 0,1·R/(1−qⁿ), con q = p/(1+i), y n elegido de modo que d ≤ 0,2R (tope propio, no normativo). Con p = 0,98 y n = 10 años, el descuento es cerca de 25% de la pensión con i = 3% y 20% con i = 5%. La regla es sensible a la tasa, a la tabla de mortalidad del pensionado y a interpretar el anticipo como 10% del valor presente de la renta; con p constante es solo una aproximación."
+    },
+    "ruta_principal": "R2",
+    "rutas": [
+      "R2",
+      "R4"
+    ]
+  }
+}

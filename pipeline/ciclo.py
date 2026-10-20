@@ -375,6 +375,10 @@ class Ciclo:
     rango_inestable: int | None = None
     corridas_simulador: int | None = None
     salida: Callable[[str], None] = print
+    # Invariante 3: si el texto de la noticia no vino por --texto-noticia, se relee del enlace original
+    # (solo en memoria, respetando robots.txt). La CLI lo activa; los tests no tocan la red.
+    releer_noticia: bool = False
+    leer_noticia: Callable[[str], str] | None = None
 
     def __post_init__(self):
         cfg = config()
@@ -428,8 +432,26 @@ class Ciclo:
             _escribir(d / "trazas_resumen.json", art["trazas_resumen"])
         return exp
 
+    def _texto(self, clave: str, url: str | None) -> str | None:
+        """Texto de la noticia en memoria (invariante 3). Nunca se escribe a disco."""
+        if clave in self._textos or not (self.releer_noticia and url):
+            return self._textos.get(clave)
+        leer = self.leer_noticia
+        if leer is None:
+            from pipeline.agentes.explorador.run import bajar_cuerpo as leer
+        try:
+            self._textos[clave] = leer(url)
+        except Exception as err:  # noqa: BLE001 — sin texto la invariante 3 no se puede comprobar: se registra
+            self._textos[clave] = None
+            self.evento("invariante3_sin_texto", clave=clave, error=str(err)[:200])
+        return self._textos[clave]
+
+    def _texto_de(self, exp: orq.Expediente) -> str | None:
+        n = exp.artefactos.get("noticia") or exp.artefactos["tarea"].get("noticia") or {}
+        return self._texto(exp.tarea_id, n.get("url"))
+
     def _transicionar(self, exp: orq.Expediente, destino: str, **kw) -> orq.Expediente:
-        texto = self._textos.get(exp.tarea_id)
+        texto = self._texto_de(exp)
         nuevo = orq.transicionar(exp, destino, texto_noticia=texto, **kw)
         nuevo.marcas.pop("ultimo_error", None)
         self.evento("transicion", tarea_id=exp.tarea_id, de=exp.estado, a=destino,
@@ -576,7 +598,7 @@ class Ciclo:
         """Noticia → (filtro) → 2 candidatos evaluados → mejor candidato iterado hasta el umbral o archivado.
         Devuelve el expediente elegido (en `evaluada` si cumple, `archivada` si no) o None."""
         nid = noticia.get("id", "?")
-        texto = self._textos.get(nid)
+        texto = self._texto(nid, noticia.get("url"))
         info = {"noticia_id": nid, "nivel": nivel, "resultado": None}
         self.registro["noticias"].append(info)
         llam_filtro: list[dict] = []
@@ -711,7 +733,7 @@ class Ciclo:
         if noticia is None:
             raise ErrorEtapa("el expediente no trae la noticia: no se puede iterar el diseño")
         r, _ = self._medir("disenador", self.agentes.iterar, exp.artefactos["tarea"], ev, noticia,
-                           cliente=self.contador, texto_noticia=self._textos.get(exp.tarea_id), exps=[exp])
+                           cliente=self.contador, texto_noticia=self._texto_de(exp), exps=[exp])
         nueva = copy.deepcopy(r["tarea"])
         if nueva["id"] != exp.tarea_id:
             raise ErrorEtapa(f"la iteración cambió el id de la tarea ({nueva['id']!r})")
@@ -754,7 +776,7 @@ class Ciclo:
         contexto = {"puntaje_rub01": art["evaluacion"]["rub01"]["total"], "revision_humana_1": self._revision_1(exp),
                     "fecha": date.today().isoformat(), "version": tarea["version"]}
         r, _ = self._medir("redactor", self.agentes.redactar, tarea, trazas, trans, contexto, cliente=self.contador,
-                           texto_noticia=self._textos.get(exp.tarea_id), exps=[exp])
+                           texto_noticia=self._texto_de(exp), exps=[exp])
         return self._transicionar(exp, "con_guia", artefactos={
             "guia": r["guia"], "evaluacion": self._evaluacion_actualizada(exp)})
 
@@ -782,7 +804,7 @@ class Ciclo:
         art = exp.artefactos
         inf, _ = self._medir("verificador", self.agentes.verificar, art["tarea"], art["guia"], art["trazas_resumen"],
                              art.get("noticia"), cliente=self.contador,
-                             texto_noticia=self._textos.get(exp.tarea_id), exps=[exp])
+                             texto_noticia=self._texto_de(exp), exps=[exp])
         n = exp.marcas.get("rechazos_verificador", 0)
         _escribir(self.rutas.de(exp.tarea_id) / f"verificacion_{n + 1}.json", inf)
         if inf["aprobado"]:
@@ -803,7 +825,7 @@ class Ciclo:
         art = exp.artefactos
         try:
             r = self.agentes.publicar(art["tarea"], art["guia"], art["evaluacion"], art["trazas_resumen"],
-                                      texto_noticia=self._textos.get(exp.tarea_id))
+                                      texto_noticia=self._texto_de(exp))
             exp.marcas["bibliotecario_dry_run"] = {"ok": True, "ruta": r.get("ruta"), "rama": r.get("rama")}
             _escribir(self.rutas.de(exp.tarea_id) / "bibliotecario_dry_run.txt", "\n".join(r.get("lineas", [])) + "\n")
         except Exception as err:  # noqa: BLE001 — no cambia el estado; lo ve la revisión humana 2
@@ -954,7 +976,7 @@ def main(argv: list[str] | None = None) -> int:
         ap.error("--noticia y --continuar son órdenes distintas")
     texto = Path(a.texto_noticia).read_text(encoding="utf-8") if a.texto_noticia else None
 
-    ciclo = Ciclo(rutas=rutas, presupuesto_ciclo_usd=a.presupuesto_ciclo)
+    ciclo = Ciclo(rutas=rutas, presupuesto_ciclo_usd=a.presupuesto_ciclo, releer_noticia=True)
     if a.continuar:
         if texto and len(a.continuar) != 1:
             ap.error("--texto-noticia exige un solo id")

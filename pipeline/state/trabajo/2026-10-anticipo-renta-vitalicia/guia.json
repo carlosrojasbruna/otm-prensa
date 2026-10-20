@@ -1,0 +1,458 @@
+{
+  "tarea_id": "2026-10-anticipo-renta-vitalicia",
+  "version": 1,
+  "fecha": "2026-10-20",
+  "ficha": {
+    "titulo": "¿Cuánto bajar la pensión si te adelantan parte de la renta?",
+    "noticia": {
+      "medio": "CIPER Chile",
+      "titulo": "Tramitan expulsiones de extranjeros detenidos en aniversario del estallido; Suprema da la razón a aseguradoras por rentas vitalicias del tercer …",
+      "fecha": "2026-10-19",
+      "url": "https://www.ciperchile.cl/2026/10/19/radar-19-10-26/?utm_source=rss&utm_medium=rss&utm_campaign=radar-19-10-26"
+    },
+    "nivel_principal": "U",
+    "variantes": [
+      "S"
+    ],
+    "contenidos": [
+      "probabilidad de supervivencia",
+      "valor presente y series",
+      "modelos dinámicos discretos",
+      "simulación",
+      "sensibilidad"
+    ],
+    "tiempo": "2 sesiones de 90 min",
+    "puntaje_rub01": 24,
+    "version": 1,
+    "fecha": "2026-10-20",
+    "cambios": ""
+  },
+  "meta": {
+    "que_observar": "Cómo el grupo convierte un tope de anticipo (10% de la renta vitalicia) en una regla de descuento mensual y plazo, y si reconoce que la recuperación se interrumpe si la persona fallece y que el dinero vale distinto en el tiempo. Interesa ver si explicita sus supuestos, compara interpretaciones del 10% y dice qué tan firme es su regla.",
+    "contenido": "Probabilidad de supervivencia, valor presente y series (anualidades vitalicia y temporal), modelo dinámico discreto mensual, simulación de vidas y análisis de sensibilidad a la tasa y a la mortalidad.",
+    "subcompetencias": [
+      "Comprender la situación e interpretar qué significa el 10% de la renta vitalicia y quién asume el riesgo (P1-MRS)",
+      "Simplificar: elegir edad, sexo, tabla de mortalidad, tasa y descuento constante, y pedir la información que falta (P2-RM)",
+      "Matematizar una ecuación de equilibrio entre el anticipo y el valor esperado descontado de lo recuperado (P3-MM)",
+      "Trabajar el modelo en planilla o código para varios plazos y edades, y opcionalmente simular vidas (P4-WM)",
+      "Interpretar el resultado en términos del contexto y decidir qué regla recomendar (P5-INT)",
+      "Validar contra condiciones reales que no se usaron para construir la regla, y estudiar sensibilidad (P6-VAL)",
+      "Comunicar la regla, sus límites y los supuestos que más la cambian a personas no expertas (P7-EXP)"
+    ],
+    "meta_social": "Trabajo cooperativo en grupos pequeños, con verbalización y justificación de cada supuesto ante los demás, y defensa de la regla frente al curso.",
+    "evidencia": [
+      "Escrito del grupo con la interpretación elegida del 10%, la incógnita (descuento y plazo) y la lista de quién gana o pierde (P1-MRS)",
+      "Hoja de supuestos con justificación y registro de lo que el grupo solicitó (tabla de mortalidad y tasas) (P2-RM)",
+      "Expresión escrita o planilla con supervivencia, factor de descuento y descuento mensual como incógnita (P3-MM)",
+      "Tabla o gráfico de descuento versus plazo y edad, con el procedimiento reproducible (P4-WM)",
+      "Recomendación redactada en términos del contexto para cada perfil de pensionado (P5-INT)",
+      "Comparación numérica entre el descuento del modelo y el de la ficha real, con explicación de las diferencias y repetición del cálculo con otra tasa (P6-VAL)",
+      "Informe o exposición con regla, gráfico de sensibilidad y lista de límites (P7-EXP)"
+    ]
+  },
+  "analisis_a_priori": {
+    "rutas": [
+      {
+        "id": "R1",
+        "nombre": "Horizonte fijo sin mortalidad",
+        "nivel": "S2",
+        "modelo": "Se supone que la persona vive un número fijo de años (esperanza de vida) y se igualan sumas de pagos descontados con tasa constante, sin probabilidades de supervivencia."
+      },
+      {
+        "id": "R2",
+        "nombre": "Valor actuarial con tabla de mortalidad",
+        "nivel": "U",
+        "modelo": "Modelo dinámico discreto mensual con supervivencia s(k) tomada de la tabla y descuento v^k; ecuación de equilibrio resuelta para r dado n, o para n dado r."
+      },
+      {
+        "id": "R3",
+        "nombre": "Simulación de vidas y riesgo de la aseguradora",
+        "nivel": "U",
+        "modelo": "Monte Carlo: se simula la edad de fallecimiento con la tabla, se calcula la ganancia o pérdida de cada trayectoria y se busca r que anule la media; se estudia la dispersión."
+      },
+      {
+        "id": "R4",
+        "nombre": "Mortalidad paramétrica ajustada",
+        "nivel": "U",
+        "modelo": "Se ajusta una ley de mortalidad paramétrica (por ejemplo Gompertz) a los datos de la tabla y se calcula analíticamente la anualidad temporal; se compara la sensibilidad a los parámetros."
+      }
+    ],
+    "modelo_inadecuado": {
+      "id": "RX: repartir el anticipo en partes iguales sin interés ni mortalidad, dividiendo por la esperanza de vida en meses.",
+      "por_que_falla": "Ignora que el dinero tiene valor en el tiempo y que la recuperación se interrumpe si la persona fallece antes del plazo; como la supervivencia no es lineal, usar solo la vida media no iguala el valor esperado, por lo que la aseguradora pierde o cobra de más según la edad."
+    },
+    "solucion_referencia": "1) Sea P la pensión mensual, v el factor de descuento mensual y s(k) la probabilidad de que la persona viva k meses después. 2) El valor esperado descontado de la renta es V = P·suma de v^k·s(k) sobre todos los meses. 3) Con la interpretación principal, el anticipo es A = 0,10·V. 4) Si se descuenta una fracción r de la pensión durante n meses, lo esperado recuperado es r·P·suma de v^k·s(k) desde k=1 hasta n. 5) Equilibrio: r = 0,10·(anualidad vitalicia)/(anualidad temporal de n meses). 6) Si el descuento fuera de por vida, r = 0,10 sin importar la mortalidad; para plazos finitos r es mayor y crece al acortar el plazo y con la edad. 7) Calcular con la tabla para distintos n, edades y tasas. 8) Opcional: simular muchas vidas para obtener la distribución de ganancia o pérdida de la aseguradora. Resultado: Regla: r = 0,10·(anualidad vitalicia)/(anualidad temporal en n meses), con r creciente al acortar el plazo. Para una persona de edad cercana a la edad de jubilación, tasa real moderada y plazo de unos diez años, el orden de magnitud es un descuento de entre quince y veinte por ciento de la pensión; para plazo de unos cinco años, cerca de un tercio.",
+    "rango_aceptable": "Entre diez y cuarenta por ciento de descuento mensual según plazo, edad, sexo, tasa e interpretación del 10%; se acepta cualquier regla coherente con supuestos explícitos, que reconozca la mortalidad y el valor del dinero en el tiempo, y que muestre sensibilidad.",
+    "barreras_por_fase": [
+      {
+        "fase": "P1-MRS",
+        "barrera": "El 10% admite varias lecturas (de la pensión mensual, de la anual o del valor total esperado) y muchos grupos toman una sin advertir que hay otras. Cuesta además ver que la incógnita son dos cosas a la vez, descuento y plazo, y que la compañía y la persona asumen riesgos distintos (B12)."
+      },
+      {
+        "fase": "P2-RM",
+        "barrera": "Hay que elegir edad, sexo, tabla, tasa y forma del descuento sin que el enunciado los fije. Es probable que el grupo no piense en pedir la tabla de mortalidad ni las tasas, o que reduzca la vida de la persona a una duración media, que es el modelo inadecuado de repartir el anticipo en cuotas iguales sin interés ni mortalidad. Ese atajo ignora el valor del dinero en el tiempo y la interrupción por fallecimiento (B23)."
+      },
+      {
+        "fase": "P3-MM",
+        "barrera": "Plantear el equilibrio exige combinar probabilidad de supervivencia mensual con factor de descuento y distinguir lo que se paga de por vida de lo que se recupera solo durante el plazo. Es previsible que se confundan ambas sumas, que se omita la supervivencia en una de ellas o que no se vea el descuento mensual como la incógnita de la ecuación (B34)."
+      },
+      {
+        "fase": "P4-WM",
+        "barrera": "Calcular sumas largas mes a mes con la tabla, y repetirlas para varios plazos y edades, es laborioso y propenso a errores de planilla o de código. La simulación de vidas se vuelve una dificultad adicional si no se entiende por qué debería coincidir en promedio con el cálculo analítico (B45)."
+      },
+      {
+        "fase": "P5-INT",
+        "barrera": "Cuesta leer el resultado como regla en el contexto: por qué plazos cortos exigen descuentos altos y cómo cambian la edad y la tasa. Hay riesgo de quedarse con un solo número en vez de una recomendación por perfil de pensionado (B56)."
+      },
+      {
+        "fase": "P6-VAL",
+        "barrera": "Al recibir la ficha de la aseguradora, el grupo puede ajustar su modelo hasta que coincida en vez de contrastarlo, o descartar las diferencias sin explicarlas. Atribuir la brecha a costos, margen o tabla, y estudiar la sensibilidad a la tasa y a la mortalidad, requiere distinguir error del modelo de supuestos distintos (B56)."
+      },
+      {
+        "fase": "P7-EXP",
+        "barrera": "Explicar a personas no expertas una regla que depende de anualidades y mortalidad, y decir con claridad sus límites (sin heterogeneidad individual, sin costos ni impuestos), obliga a traducir sin perder los supuestos que más cambian el resultado (B67)."
+      }
+    ]
+  },
+  "organizacion": {
+    "momentos": [
+      {
+        "momento": "Comprensión y trabajo grupal",
+        "tiempo": "50 min",
+        "estudiantes": "Leen el enunciado y escriben su interpretación del 10%, la incógnita y quién gana o pierde. Eligen edad, sexo y forma del descuento, anotan sus supuestos con justificación y deciden qué información pedir (tabla de mortalidad, tasas). Comienzan a plantear la ecuación de equilibrio.",
+        "docente": "Presenta la situación sin resolverla. Circula y diagnostica preguntando qué han hecho y por qué, sin intervenir todavía. Entrega la tabla y las tasas solo cuando el grupo las pide, sin fórmulas ni ejemplos de uso. Anota qué rutas aparecen (horizonte fijo, valor actuarial, simulación, mortalidad paramétrica) y quién se bloquea en B12, B23 o B34."
+      },
+      {
+        "momento": "Comprensión y trabajo grupal (continuación: cálculo y sensibilidad)",
+        "tiempo": "40 min",
+        "estudiantes": "Calculan el descuento para varios plazos y edades en planilla o código, y opcionalmente simulan vidas. Preparan una tabla o gráfico y una recomendación en términos del contexto.",
+        "docente": "Sigue circulando. Pregunta cómo obtuvieron cada resultado y qué cambiaría si variaran la tasa o la edad. Si un grupo se bloquea, empieza por la ayuda mínima (una pregunta sobre lo que ya hizo) y no entrega la regla, el modelo ni el resultado."
+      },
+      {
+        "momento": "Puesta en común",
+        "tiempo": "30 min",
+        "estudiantes": "Los grupos presentan su regla, sus supuestos y su recomendación, y comparan interpretaciones del 10% y rutas distintas. Preguntan a otros grupos por qué eligieron esos supuestos.",
+        "docente": "Modera, ordena las presentaciones para contrastar rutas e interpretaciones y pide justificar cada supuesto. Contrasta, si aparece, el reparto en partes iguales sin interés ni mortalidad con los modelos que sí reconocen la mortalidad, sin decir cuál es el correcto. Entrega la ficha de la aseguradora a cada grupo solo después de que haya presentado su regla."
+      },
+      {
+        "momento": "Validación y cierre",
+        "tiempo": "60 min",
+        "estudiantes": "Comparan el descuento de su modelo con el de la ficha real, explican las diferencias (costos, margen, tabla) y repiten el cálculo con otra tasa. Redactan o exponen el informe con regla, gráfico de sensibilidad y límites, dirigido a personas no expertas.",
+        "docente": "Pregunta qué diferencias esperaban y por qué, y pide no ajustar el modelo solo para igualar la ficha. Cierra con una síntesis de las rutas, los supuestos que más movieron el resultado y los límites reconocidos, sin dar un resultado único. Recoge las producciones."
+      }
+    ],
+    "agrupamiento": "Grupos de tres o cuatro estudiantes, estables en las dos sesiones, para que haya discusión de supuestos y verbalización. Las rutas distintas entre grupos se aprovechan en la puesta en común.",
+    "roles": "Cada grupo reparte: quien registra supuestos y decisiones, quien calcula en planilla o código, quien revisa que cada paso tenga justificación y quien presenta. Los roles rotan entre la primera y la segunda sesión.",
+    "producciones": [
+      "Escrito con interpretación del 10%, incógnita y lista de quién gana o pierde",
+      "Hoja de supuestos con justificación y registro de lo solicitado",
+      "Expresión escrita o planilla con la ecuación de equilibrio",
+      "Tabla o gráfico de descuento versus plazo y edad, con el procedimiento reproducible",
+      "Recomendación por perfil de pensionado",
+      "Comparación con la ficha de la aseguradora y explicación de diferencias",
+      "Informe o exposición final con regla, gráfico de sensibilidad y límites"
+    ],
+    "tecnologia": "Se permite planilla de cálculo o código para calcular sumas y variar plazos, edades y tasas (P4-WM), y para la simulación de vidas y los gráficos de sensibilidad (P4-WM y P6-VAL). No se usa para elegir interpretación, supuestos ni forma de la ecuación (P1-MRS a P3-MM): esas decisiones las toma el grupo y las justifica por escrito."
+  },
+  "escenarios": [
+    {
+      "id": "E1",
+      "nombre": "ruta esperada",
+      "corridas": [
+        "N4_AA_r1"
+      ],
+      "perfil": "Tramo U, nivel N4, estilo AA.",
+      "ruta": [
+        "P3-MM",
+        "P2-RM",
+        "P3-MM",
+        "P2-RM",
+        "P4-WM",
+        "P6-VAL",
+        "P4-WM",
+        "P7-EXP",
+        "P6-VAL"
+      ],
+      "supuestos": [
+        "anticipo = 10% del valor presente de la renta vitalicia",
+        "tasa de interés constante (3% y 5%)",
+        "supervivencia anual constante p (0,96 y 0,98)",
+        "descuento d constante durante n años",
+        "tope propio d ≤ 20% de la pensión",
+        "tabla de pensionados (viven más que la población general)"
+      ],
+      "modelo": "actuarial geométrico",
+      "bloqueos": [],
+      "que_aprende": "El grupo descarta en voz alta que el 10% sea de la pensión mensual y lo toma como 10% del valor presente de la renta. Así llega a la estructura de la solución de referencia: descuento igual a 10% de la anualidad vitalicia dividido por la anualidad temporal. Para obtener una fórmula cerrada supone una supervivencia anual constante y declara que eso es solo una aproximación. Prueba dos valores de p y dos tasas y concluye que la regla es sensible a ambos. También deja anotado que su tope de 20% es un criterio propio y no viene de la norma. Frente a E3, el curso ve que la interpretación del 10% cambia el orden de magnitud del descuento. Frente a E2, ve que la mortalidad entra en el cálculo y no queda solo nombrada. Ojo: la sensibilidad que revisan no reemplaza el contraste con la ficha real de una aseguradora.",
+      "extracto_dialogo": [
+        {
+          "hablante": "Fran",
+          "texto": "Sí, y ojo: si \"10% de la renta\" fuera 10% de la pensión mensual, el anticipo sería mínimo, así que yo lo tomaría como 10% del valor presente de la renta, A = 0,1·R·ä_x. Entonces la regla sería d·ä_{x:n} = A, con una sola ecuación y dos incógnitas, d y n."
+        },
+        {
+          "hablante": "Cami",
+          "texto": "Me cuadran tus números: d/R = 0,1/(1−q^n) no depende de R, y que n cambie casi 2 años entre 3% y 5% ya muestra que la regla es sensible. Pero p = 0,96 constante es muy grosero para un pensionado, así que probemos con p = 0,98 y vemos cuánto se mueve n."
+        },
+        {
+          "hablante": "Cami",
+          "texto": "DE ACUERDO. Dejaría anotado que el 20% de tope es un criterio nuestro, no viene de la norma, y que con p constante el modelo es solo una aproximación."
+        }
+      ]
+    },
+    {
+      "id": "E2",
+      "nombre": "horizonte fijo sin mortalidad",
+      "corridas": [
+        "N2_VV_r1"
+      ],
+      "perfil": "Tramo U, nivel N2, estilo VV.",
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P2-RM",
+        "P4-WM",
+        "P3-MM",
+        "P4-WM",
+        "P6-VAL",
+        "P3-MM",
+        "P4-WM",
+        "P6-VAL",
+        "P3-MM",
+        "P5-INT",
+        "P3-MM",
+        "P6-VAL",
+        "P4-WM",
+        "P6-VAL",
+        "P5-INT"
+      ],
+      "supuestos": [
+        "10% del valor total de la renta",
+        "horizonte de vida fijo de 20 años (esperanza de vida)",
+        "pensión de 500 mil",
+        "tasa de interés constante (2%, 3%, 5% anual)",
+        "descuento mensual constante durante el plazo",
+        "plazos de 5, 10 y 15 años",
+        "tope de baja de 15% de la pensión"
+      ],
+      "modelo": "valor presente (anualidad)",
+      "bloqueos": [],
+      "que_aprende": "Este grupo sigue la ruta R1 de la tarea. Parte repartiendo el anticipo en partes iguales, sin interés, y luego corrige dos veces por su cuenta: primero agrega la tasa a las cuotas y después se da cuenta de que el propio anticipo también debe ir en valor de hoy. Más adelante reconoce que, si la persona muere antes del plazo, la compañía pierde. Pide la tabla de mortalidad y escribe la regla ponderada por supervivencia, pero no la usa en los cálculos. Por eso concluye que la regla es firme frente a la tasa y muy sensible al plazo, sin haber medido el efecto de la mortalidad. Comparado con E1 y E4, el curso ve la diferencia entre nombrar la supervivencia y meterla en el modelo, y cómo eso cambia lo que se puede afirmar sobre la firmeza de la regla.",
+      "extracto_dialogo": [
+        {
+          "hablante": "Cami",
+          "texto": "Sí, me da 9.000.000 / 103,5 ≈ 86.957, unos 87 mil, así que la pensión quedaría en como 413 mil por 10 años. Pero ojo que seguimos suponiendo que vive justo 20 años: si muere antes de los 10 años de devolución, la compañía pierde, y eso todavía no lo metemos, ¿cómo lo hacemos?"
+        },
+        {
+          "hablante": "Fran",
+          "texto": "Yo lo veo como el escalón con una curva de gente viva bajando encima, y cada cuota la multiplicamos por la probabilidad de seguir vivo ese mes. ¿Pedimos una tabla de mortalidad para esas probabilidades?"
+        },
+        {
+          "hablante": "Cami",
+          "texto": "Sí, el plazo mueve el escalón de 162 a 62 mil y la tasa solo unos 7 mil. Entonces la igualdad es firme, pero el plazo es una decisión, ¿lo fijamos con un tope, tipo que la pensión no baje más de 15%?"
+        }
+      ]
+    },
+    {
+      "id": "E3",
+      "nombre": "bloqueo en simplificar",
+      "corridas": [
+        "N1_AA_r1",
+        "N4_VV_r1"
+      ],
+      "perfil": "Tramo U; N1_AA_r1: nivel N1, estilo AA; N4_VV_r1: nivel N4, estilo VV.",
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P3-MM",
+        "P2-RM",
+        "P3-MM",
+        "P2-RM",
+        "P4-WM",
+        "P6-VAL",
+        "P4-WM",
+        "P7-EXP"
+      ],
+      "supuestos": [
+        "anticipo = 10% de la pensión mensual",
+        "plazo n = 12 meses (y luego 60)",
+        "p_k = 1 (nadie muere) en el cálculo de prueba",
+        "anticipo = 10% de la renta mensual (100.000)",
+        "sobrevida casi 1 (p_t ≈ 0,99) en 12 meses",
+        "plazo corto de 12 meses"
+      ],
+      "modelo": "valor actuarial",
+      "bloqueos": [
+        {
+          "transicion": "B12",
+          "como_se_destrabo": "Resolución self en N1_AA_r1. En los primeros turnos Cami y Fran dudan si el 10% es de la pensión mensual o de todo lo que la persona recibirá. Sin recurso externo, deciden partir provisoriamente con el 10% de la pensión mensual para poder avanzar. La duda no se retoma: Cami incluso comenta que le parece poco para llamarlo anticipo. La traba se destraba para seguir trabajando, pero la decisión de P1 queda sin examinar."
+        }
+      ],
+      "que_aprende": "Ambas corridas llegan a una ecuación de equilibrio bien armada, con supervivencia e interés. Sin embargo, toman el 10% como una fracción de una sola pensión mensual, y el descuento resultante queda por debajo del 1% de la pensión. En N4_VV_r1, la conclusión de que la regla es firme a 12 meses se explica porque la mortalidad casi no actúa en un plazo tan corto. Esa firmeza depende de la interpretación elegida al inicio, no del modelo. Comparado con E1, el curso ve que la decisión de P1 sobre qué significa el 10% pesa más que la técnica de cálculo, y que conviene explicitar las interpretaciones posibles y compararlas antes de seguir.",
+      "extracto_dialogo": [
+        {
+          "hablante": "Cami",
+          "texto": "Mmm, a ver, yo no sé bien por dónde partir, pero creo que primero tendríamos que definir qué es el anticipo, ¿no? Como 10% de la renta vitalicia... ¿10% de la pensión mensual o de todo lo que va a recibir en la vida?"
+        },
+        {
+          "hablante": "Fran",
+          "texto": "Yo creo que sería 10% de la pensión mensual, pero no estoy segura. Si le ponemos P a la pensión, el anticipo sería A = 0,1·P, ¿o puede ser del total que va a recibir en la vida?"
+        },
+        {
+          "hablante": "Cami",
+          "texto": "Mmm, no sé, 10% de una sola pensión se me hace poquito para llamarlo anticipo. Pero partamos con A = 0,1·P y después vemos cuánto bajar: x por mes durante n meses, con n·x = A, ¿te parece?"
+        }
+      ]
+    },
+    {
+      "id": "E4",
+      "nombre": "supervivencia lineal supuesta",
+      "corridas": [
+        "N3_AA_r1",
+        "N1_VV_r1"
+      ],
+      "perfil": "Tramo U; N3_AA_r1: nivel N3, estilo AA; N1_VV_r1: nivel N1, estilo VV.",
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P5-INT",
+        "P2-RM",
+        "P4-WM",
+        "P3-MM",
+        "P6-VAL",
+        "P4-WM",
+        "P6-VAL",
+        "P3-MM",
+        "P5-INT",
+        "P2-RM",
+        "P4-WM",
+        "P6-VAL",
+        "P4-WM",
+        "P6-VAL",
+        "P5-INT",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "supuestos": [
+        "10% del valor total esperado de la renta",
+        "tasa de descuento constante (v = 0,997 y 0,995)",
+        "tope del descuento d ≤ 0,2·P",
+        "supervivencia lineal p_k = 1 − k/240 (todos mueren a los 20 años)",
+        "probabilidad de seguir viva baja linealmente de 1 a 0 en 240 meses",
+        "interés mensual constante de 0,3% (y 0,6% como alternativa)"
+      ],
+      "modelo": "valor actuarial",
+      "bloqueos": [
+        {
+          "transicion": "B34",
+          "como_se_destrabo": "Resolución peer en N3_AA_r1. Fran hace una cuenta gruesa usando una suma objetivo fija y repite el cálculo cambiando la tasa. Cami le advierte que, al cambiar la tasa, también cambia el valor del anticipo, porque ambos lados deben descontarse con la misma tasa. Fran reescribe entonces la condición como una razón entre la suma temporal y la vitalicia, que ya no depende de la pensión, y con eso retoman el cálculo."
+        },
+        {
+          "transicion": "B23",
+          "como_se_destrabo": "Resolución peer en N1_VV_r1. Al anotar cada descuento ponderado, Fran se enreda y no sabe si los porcentajes que probaban eran interés o probabilidad de morir. Cami aclara que eran la tasa de interés mensual y propone, como supuesto aparte para la supervivencia, una rampa que baja de 1 a 0 en 240 meses. Con eso separan los dos factores y siguen calculando por tramos."
+        }
+      ],
+      "que_aprende": "Sin tabla de mortalidad, ambos grupos inventan una supervivencia lineal hasta los 20 años y la usan dentro de una ecuación actuarial correcta. N3_AA_r1 declara ese supuesto en su entrega, mide cuánto se mueve el plazo con la tasa y concluye que la regla es poco firme y debe recalcularse con datos reales. N1_VV_r1 llega a la misma estructura, pero termina sin una regla cerrada y cuestionando que el cobro dure casi toda la vida. Comparado con E1, que supone supervivencia constante, el curso ve que el supuesto sobre la mortalidad cambia el resultado tanto como la tasa. Ve también que, en el cálculo, el anticipo y lo recuperado deben descontarse con la misma tasa.",
+      "extracto_dialogo": [
+        {
+          "hablante": "Fran",
+          "texto": "Hagamos una cuenta gruesa: si v^k·p_k baja de 1 a más o menos 0,6 en el mes 120, el promedio es como 0,8. Entonces Σ hasta 120 da ≈ 96 y n sale cerca de 125 meses. Repitamos con v = 0,995 para ver cuánto se mueve n."
+        },
+        {
+          "hablante": "Cami",
+          "texto": "Ojo que si cambiamos v, también cambia el VP, así que el 100 ya no vale: A = 0,1·VP y la suma hasta n hay que recalcularlas con la misma v. Con v = 0,995 el VP baja, pero los términos también decaen más rápido, así que n podría subir o bajar y habría que calcularlo."
+        },
+        {
+          "hablante": "Fran",
+          "texto": "Tienes razón, el 100 se mueve con v. Mejor lo escribo como razón: Σ_{k=1}^{n} v^k·p_k / Σ_{k=1}^{∞} v^k·p_k = 0,1·P/d, así que con d = 0,2·P buscamos el n donde ya se acumuló la mitad del VP, y calculamos eso con cada v."
+        }
+      ]
+    }
+  ],
+  "tabla_bloqueos": {
+    "B12": 0.17,
+    "B23": 0.17,
+    "B34": 0.17
+  },
+  "intervenciones": [
+    {
+      "bloqueo": "B12",
+      "z1_z2": "Pregunten: ¿qué han escrito hasta ahora sobre el anticipo y qué les hace dudar de qué es el 10%? Reconozcan que la duda es razonable y pídanles que la dejen escrita antes de seguir. En los grupos simulados la duda se zanjó sin examinarla, y después un grupo encontró 'poco' el anticipo.",
+      "z3": "Hagan un esquema simple: qué entrega hoy la aseguradora, qué recibe después y de qué dinero sale el 10%. Anoten quién gana y quién pierde si la persona fallece pronto.",
+      "z4": "¿De qué cantidades podría ser el 10%: de una pensión mensual, de la pensión de un año o de todo lo que se espera pagar en la vida? ¿Cuál de ellas se parece más a un anticipo de la renta vitalicia? ¿Qué cambiaría en el descuento según la elección?",
+      "z5": "Escriban las lecturas posibles del 10% (de la pensión mensual y del valor total esperado de la renta), calculen el anticipo con cada una y comparen el orden de magnitud. Decidan cuál usarán y anoten por qué. No se indica cuál elegir ni cómo calcular el descuento."
+    },
+    {
+      "bloqueo": "B23",
+      "z1_z2": "Pregunten: ¿qué supuestos han fijado y cuáles aún no? ¿Qué números están usando y de dónde los sacaron? Si mezclan porcentajes, pidan que digan qué representa cada uno.",
+      "z3": "Hagan una lista en dos columnas: lo que saben de la persona y de la aseguradora, y lo que están suponiendo. Marquen qué supuestos podrían pedir como información adicional.",
+      "z4": "¿Qué factores hacen que un pago futuro valga distinto a uno de hoy? ¿Qué le pasa al cobro si la persona fallece antes del plazo? ¿Cada factor es un supuesto aparte? ¿Qué información necesitan para fijarlos?",
+      "z5": "Entreguen los recursos a solicitud R2 (tabla de mortalidad) y R3 (tasas de interés de largo plazo), sin indicar cómo usarlos. Pidan que escriban en dos líneas separadas el supuesto sobre la supervivencia y el supuesto sobre el interés, con una justificación para cada uno."
+    },
+    {
+      "bloqueo": "B34",
+      "z1_z2": "Pregunten: ¿qué quieren que quede igual entre lo que la aseguradora entrega y lo que espera recuperar? ¿Qué han probado hasta ahora y qué parte les cuesta escribir?",
+      "z3": "Escriban con palabras el equilibrio que buscan, antes de usar símbolos. Después hagan una tabla mes a mes con lo que se paga, lo que se descuenta de la pensión y lo que se espera cobrar.",
+      "z4": "Si cambian la tasa, ¿qué ocurre con el valor del anticipo y con lo que se recupera? ¿Ambos lados deben tratarse con la misma tasa? ¿Qué debe valer cada pago mensual esperado para reflejar que la persona puede no estar viva? ¿Cuál es la incógnita que quieren despejar?",
+      "z5": "Armen una tabla con tres columnas por mes: probabilidad de seguir viva, factor de descuento y pago esperado. Decidan qué suma de esas columnas debe igualar al anticipo y qué parte de la pensión es la incógnita. No se entrega la expresión final ni su resultado."
+    }
+  ],
+  "puesta_en_comun": {
+    "seleccion_y_orden": [
+      "Anticipar: antes de la clase, revisen cuáles escenarios muestran la decisión del 10%, la mortalidad y la sensibilidad. No empiecen con la ruta del docente.",
+      "Primero E3 (bloqueo en simplificar): se monitorea la decisión de P1. El grupo tomó el 10% como parte de una sola pensión mensual y no examinó esa elección. Sirve para mostrar que la interpretación inicial condiciona todo el resultado.",
+      "Segundo E2 (horizonte fijo sin mortalidad): se selecciona porque corrige sus propios supuestos paso a paso. Nombra la supervivencia y pide la tabla, pero no la usa en el cálculo. Permite discutir qué se puede afirmar sobre la firmeza de la regla sin haber medido la mortalidad.",
+      "Tercero E4 (supervivencia lineal supuesta): se secuencia después de E2 porque sí incorpora la supervivencia, aunque inventada, y la declara como supuesto. Muestra que el supuesto sobre mortalidad pesa tanto como la tasa, y que anticipo y recuperación se descuentan con la misma tasa.",
+      "Cuarto E1 (ruta esperada): se presenta al final para conectar. Interpreta el 10% sobre el valor de la renta, aproxima con supervivencia constante, prueba dos valores de supervivencia y dos tasas, y declara su tope propio. Se conecta con E3 por la interpretación, con E2 por la mortalidad dentro del modelo y con E4 por el supuesto de supervivencia.",
+      "Cierre: conecten los cuatro escenarios con la ficha real. Dejen explícito que la sensibilidad de E1 no reemplaza el contraste externo."
+    ],
+    "preguntas": [
+      "¿Qué significa el 10% en cada grupo y cómo cambia el orden de magnitud del descuento según la interpretación?",
+      "¿Qué supuesto sobre la supervivencia usó cada grupo (ninguna, constante, lineal, tabla) y cuánto mueve el resultado?",
+      "¿En qué escenario la mortalidad está nombrada pero no entra en el cálculo? ¿Qué se puede afirmar entonces sobre la firmeza de la regla?",
+      "¿Por qué el anticipo y lo recuperado deben descontarse con la misma tasa?",
+      "¿Qué tope de descuento puso cada grupo? ¿Viene de la norma o es un criterio propio?",
+      "¿Qué ruta es más simple y cuál más precisa? ¿Qué se gana y qué se pierde al simplificar la supervivencia?",
+      "¿Para qué perfiles de pensionado y plazos deja de servir su regla? ¿Qué supuesto cambia más el resultado: plazo, edad, tasa o mortalidad?",
+      "¿Quién gana o pierde con cada regla, la aseguradora o la persona, si el fallecimiento ocurre pronto?"
+    ],
+    "contraste_validacion": "Después de que cada grupo presente su regla, entreguen el recurso R4, la ficha con el descuento mensual y el plazo informados públicamente por una aseguradora para un perfil de pensionado. Esa ficha no se usó para construir la regla. Cada grupo compara el descuento de su modelo con el de la ficha para un perfil y plazo comparables, y anota la diferencia. Luego discuten qué la explica: costos, margen, tabla de mortalidad u otros supuestos del grupo. Finalmente repiten el cálculo con otra tasa y revisan si la diferencia se acerca o se aleja. No se agregan datos fuera de la ficha. Los grupos que no usaron la tabla de mortalidad deben decir qué esperan que cambie al incorporarla."
+  },
+  "variantes_y_continuidad": {
+    "uso_variantes": "La variante hacia abajo (tramo S2) se usa con grupos de secundaria alta, o con estudiantes universitarios sin experiencia en series y valor presente, que tras la primera parte del trabajo grupal sigan bloqueados en B23 o B34. Los cambios son: se entrega una esperanza de vida aproximada para la edad de la persona y una tasa de interés única; se pide una regla para un solo plazo de recuperación; no se exige modelar la incertidumbre de la vida individual, solo promedios; y la validación compara con un caso real. Aun así, el docente no entrega la regla ni el resultado, y conviene que el grupo discuta qué se pierde al usar solo promedios. La variante hacia arriba es null: la tarea no la define. Los grupos que avancen rápido pueden profundizar con las rutas ya previstas (simulación de vidas y riesgo de la aseguradora, o mortalidad paramétrica ajustada) y con el análisis de sensibilidad, sin cambiar el enunciado.",
+    "acostumbramiento": "Si el grupo nunca ha modelado, conviene una actividad previa breve con una situación cotidiana abierta (por ejemplo, decidir cómo repartir el pago de una deuda con interés), donde deban explicitar supuestos, pedir información que falta y comparar resultados con una referencia, sin que el docente dé la fórmula. Esta tarea no es de iniciación ni de diagnóstico: exige valor presente, probabilidad de supervivencia y planilla o código, y encaja como parte de una secuencia sobre modelación con series y probabilidad, después de que el grupo haya practicado el ciclo completo en problemas más acotados. Las dos sesiones sirven para consolidar la simplificación, la validación con datos externos y la comunicación de límites.",
+    "tarea_siguiente": null
+  },
+  "materiales": {
+    "tarea_pdf": "tarea.pdf",
+    "recursos_tarjetas": "recursos.pdf",
+    "notebook": "escenarios.ipynb",
+    "icono": "icono.svg"
+  },
+  "trazabilidad": {
+    "noticia_url": "https://www.ciperchile.cl/2026/10/19/radar-19-10-26/?utm_source=rss&utm_medium=rss&utm_campaign=radar-19-10-26",
+    "diseno": {
+      "modelo": "claude-sonnet-5-5",
+      "version_prompt": "1.0"
+    },
+    "rub01_total": 24,
+    "revision_humana_1": {
+      "revisor": "Carlos Rojas Bruna",
+      "fecha": "2026-10-20"
+    },
+    "simulacion": {
+      "n_grupos": 6,
+      "diseno": "diseno_otm"
+    },
+    "revision_humana_2": null,
+    "commit": null
+  },
+  "modelo_y_prompt": {
+    "redactor": "claude-sonnet-5-5",
+    "redactor_escenarios": "claude-opus-5-5",
+    "version_prompt": "1.0"
+  }
+}

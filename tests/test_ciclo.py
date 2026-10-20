@@ -484,3 +484,38 @@ def test_explorador_aplica_filtro_y_descarta(rutas):
     exp = orq.cargar(TID, rutas.expedientes)
     assert exp.artefactos["noticia"]["filtro"]["pasa"] is True
     assert exp.marcas["nivel_objetivo"] == "P"      # rotación S, P, U por noticia
+
+
+# =========================================================================== invariante 3 con texto releído
+def test_releer_noticia_pasa_el_texto_al_hook_de_invariante_3(rutas):
+    """Sin --texto-noticia, el ciclo relee la noticia en memoria y el hook la usa en cada transición."""
+    leidas = []
+
+    def leer(url):
+        leidas.append(url)
+        return "texto de la noticia sin relación con la tarea"
+
+    _, reg = tramo_a(rutas, [rub(OK_23)] * 3, releer_noticia=True, leer_noticia=leer)
+    exp = orq.cargar(TID, rutas.expedientes)
+    assert exp.estado == "evaluada"
+    assert leidas and len(set(leidas)) == 1  # se lee una vez por noticia y se reutiliza
+
+
+def test_releer_noticia_bloquea_copia_literal(rutas):
+    tarea = tarea_base()
+    copia = " ".join(f"palabra{i}" for i in range(30))
+    tarea["estudiante"]["enunciado_es"] = copia + " " + tarea["estudiante"]["enunciado_es"]
+    ag = C.Agentes(disenar=lambda *a, **k: {"candidatos": [tarea], "meta": {}}, iterar=iterar_falso)
+    c = nuevo_ciclo(rutas, [rub(OK_23)] * 3, agentes=ag, releer_noticia=True, leer_noticia=lambda u: copia)
+    c.correr(noticias=[cargar_ejemplo("noticia")], max_tareas=1, nivel="S")
+    exp = orq.cargar(TID, rutas.expedientes)
+    assert exp.estado == "borrador"  # el hook impidió pasar a evaluada
+    assert "Invariante 3" in json.dumps(exp.marcas.get("ultimo_error"), ensure_ascii=False)
+
+
+def test_releer_noticia_que_falla_queda_registrada(rutas):
+    def leer(url):
+        raise OSError("robots.txt prohíbe")
+
+    c, reg = tramo_a(rutas, [rub(OK_23)] * 3, releer_noticia=True, leer_noticia=leer)
+    assert any(e["tipo"] == "invariante3_sin_texto" for e in reg["eventos"])

@@ -205,3 +205,13 @@ def test_error_de_api_en_una_noticia_no_detiene_el_lote(monkeypatch):
     res = run.explorar(cliente=object(), bajar=lambda u: "")
     assert res["noticias"] == []
     assert res["descartes"][0]["motivo"].startswith("error de API")
+
+
+def test_cita_titulo_abrevia_titulares_largos():
+    from pipeline.agentes.explorador.run import cita_titulo
+
+    corto = "Un titular de diez palabras que no se debe tocar nunca"
+    assert cita_titulo(corto) == corto
+    largo = " ".join(f"p{i}" for i in range(34))
+    c = cita_titulo(largo)
+    assert c.endswith(" …") and len(c.split()) == 21

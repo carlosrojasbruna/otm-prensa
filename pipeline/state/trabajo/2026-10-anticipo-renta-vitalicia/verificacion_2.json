@@ -1,0 +1,71 @@
+{
+  "tarea_id": "2026-10-anticipo-renta-vitalicia",
+  "aprobado": false,
+  "estado_destino": "simulada",
+  "hallazgos": [
+    {
+      "invariante": "notebook",
+      "severidad": "advertencia",
+      "ubicacion": "guia.materiales.notebook",
+      "descripcion": "notebook escenarios.ipynb no encontrado: ",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "critico",
+      "ubicacion": "tarea.estudiante.enunciado_es",
+      "descripcion": "la Corte Suprema falló a favor de las aseguradoras en una disputa sobre anticipos de rentas vitalicias — Las fuentes solo mencionan un fallo de la Suprema sobre anticipos de pensiones del tercer retiro. No indican a favor de quién se resolvió ni que la disputa fuera con aseguradoras.",
+      "origen": "modelo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "guia.escenarios E4.que_aprende",
+      "descripcion": "el supuesto sobre la mortalidad cambia el resultado tanto como la tasa — Ninguna corrida citada (N3_AA_r1, N1_VV_r1) compara supuestos de mortalidad distintos. Ambas usan la misma rampa lineal y solo varían la tasa, así que la comparación de magnitudes no está medida en las trazas.",
+      "origen": "modelo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "guia.intervenciones B12.z1_z2",
+      "descripcion": "En los grupos simulados la duda se zanjó sin examinarla, y después un grupo encontró 'poco' el anticipo — Solo una corrida (N1_AA_r1) tuvo el bloqueo B12. Según el escenario E3, el comentario de que el anticipo parecía poco se hizo al momento de decidir y no después. La redacción generaliza y reordena lo ocurrido.",
+      "origen": "modelo"
+    }
+  ],
+  "cifras_contrastadas": [
+    {
+      "indice": 0,
+      "que_es": "monto máximo de anticipo de las rentas vitalicias fijado por el oficio de la CMF",
+      "valor_tarea": "10%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 31"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "10%",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia; modelo: Coinciden el valor, la unidad y el significado: es el tope del anticipo de rentas vitalicias fijado por el oficio de la CMF, en el párrafo 31."
+    }
+  ],
+  "notebook": {
+    "estado": "no_encontrado",
+    "ruta": "escenarios.ipynb",
+    "salida_resumen": ""
+  },
+  "meta": {
+    "agente": "verificador",
+    "version_prompt": "1.0",
+    "modelo": "claude-opus-5-5",
+    "request_id": "req_011CgEBZpN1u8dvNaKF5Y8VT",
+    "fecha": "2026-10-20T21:16:37+00:00",
+    "costo_usd": 0.129221,
+    "modelo_llamado": true,
+    "texto_noticia_recibido": false,
+    "uso": {
+      "input_tokens": 17505,
+      "output_tokens": 2945,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 1503
+    }
+  }
+}

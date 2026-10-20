@@ -1,0 +1,216 @@
+{
+  "id": "2026-10-anticipo-renta-vitalicia-v2",
+  "titulo": "¿Cuánto bajar la pensión si te adelantan parte de la renta?",
+  "estado": "evaluada",
+  "version": 2,
+  "fecha": "2026-10-20",
+  "noticia": {
+    "noticia_id": "2026-10-19-ciper-tramitan-expulsiones-de-extranjeros-detenidos-en",
+    "medio": "CIPER Chile",
+    "titulo": "Tramitan expulsiones de extranjeros detenidos en aniversario del estallido; Suprema da la razón a aseguradoras por rentas vitalicias del tercer …",
+    "fecha": "2026-10-19",
+    "url": "https://www.ciperchile.cl/2026/10/19/radar-19-10-26/?utm_source=rss&utm_medium=rss&utm_campaign=radar-19-10-26",
+    "resumen_propio": "Resumen diario de CIPER que reúne medidas migratorias tras detenciones en una manifestación, un fallo de la Suprema sobre anticipos de pensiones del tercer retiro, una formalización por fraude al fisco contra un alcalde y la postergación de una decisión sobre un juez.",
+    "cifras_usadas": [
+      {
+        "valor": "10%",
+        "unidad": "porcentaje de la renta vitalicia",
+        "que_es": "monto máximo de anticipo de las rentas vitalicias fijado por el oficio de la CMF",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 31"
+        }
+      }
+    ]
+  },
+  "nivel_principal": "U",
+  "variantes": {
+    "abajo": "S",
+    "arriba": null
+  },
+  "area": "economia",
+  "contenidos_matematicos": [
+    "probabilidad de supervivencia",
+    "valor presente y series",
+    "modelos dinámicos discretos",
+    "simulación",
+    "sensibilidad"
+  ],
+  "tiempo_estimado": "2 sesiones de 90 min",
+  "estudiante": {
+    "enunciado_es": "El resumen diario de CIPER Chile del lunes diecinueve de octubre, en su titular, informa que la Corte Suprema dio la razón a las aseguradoras en una disputa por los anticipos de rentas vitalicias del tercer retiro de fondos de pensiones. Una renta vitalicia es una pensión que una aseguradora paga cada mes mientras la persona viva. Según la noticia, un oficio de la CMF fija que el anticipo puede llegar como máximo a 10% de la renta vitalicia. Imaginen que una aseguradora ofrece a una persona recién pensionada un anticipo en ese tope y quiere recuperarlo bajando su pensión mensual durante un tiempo. La compañía no quiere perder dinero en promedio, pero tampoco cobrarle de más a la persona. ¿Qué regla propondrían para decidir cuánto bajar la pensión y por cuánto tiempo, y qué tan firme es esa regla? Pueden pedir información adicional.",
+    "foto_descripcion": "Ícono de una persona mayor con una libreta de pensión y, al lado, una balanza con una moneda en cada plato.",
+    "recursos_a_solicitud": [
+      {
+        "id": "R2",
+        "que_es": "Tabla de mortalidad de personas pensionadas por renta vitalicia, por edad y sexo, publicada por el regulador.",
+        "contenido": "Archivo con las probabilidades de fallecer a cada edad para mujeres y hombres pensionados. El equipo docente la entrega cuando el grupo la pide; no trae ninguna fórmula ni ejemplo de uso.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P2-RM",
+        "fuente": "otra fuente: tabla de mortalidad de rentistas vitalicios publicada por la CMF"
+      },
+      {
+        "id": "R3",
+        "que_es": "Referencia de tasas de interés de largo plazo en pesos reajustables usadas por el mercado de rentas vitalicias.",
+        "contenido": "Serie histórica de tasas de interés de largo plazo en instrumentos reajustables, con fechas. No indica cuál tasa conviene usar ni cómo incorporarla.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P2-RM",
+        "fuente": "otra fuente: series públicas de tasas de instrumentos del Banco Central de Chile"
+      },
+      {
+        "id": "R4",
+        "que_es": "Condiciones reales de un anticipo ofrecido por una aseguradora, para contrastar la regla del grupo.",
+        "contenido": "Ficha con el descuento mensual y el plazo de recuperación informados públicamente por una aseguradora para un perfil de pensionado. Se entrega solo después de que el grupo presente su regla.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P6-VAL",
+        "fuente": "otra fuente: información pública de una aseguradora de rentas vitalicias"
+      }
+    ]
+  },
+  "variantes_detalle": {
+    "abajo": {
+      "tramo": "S2",
+      "cambios": "Se entrega una esperanza de vida aproximada para la edad de la persona y una tasa de interés única, y se pide una regla para un solo plazo de recuperación. No se exige modelar la incertidumbre de la vida individual, solo promedios, y la validación compara con un caso real."
+    },
+    "arriba": null
+  },
+  "recursos_de_entrada": [
+    {
+      "id": "R1",
+      "que_es": "Tope de anticipo fijado por el oficio de la CMF, escrito también en el enunciado.",
+      "contenido": "El anticipo de una renta vitalicia puede llegar como máximo a 10% de la renta vitalicia.",
+      "disponibilidad": "de_entrada",
+      "fase": "P1-MRS",
+      "fuente": "noticia, párrafo 31"
+    }
+  ],
+  "mapa_ciclo": {
+    "P1-MRS": {
+      "decision": "Decidir qué significa 10% de la renta vitalicia (de la pensión mensual, de la anual o del valor total esperado), qué dice el titular de la noticia y qué dice el oficio, y quién asume el riesgo.",
+      "evidencia": "Escrito del grupo con la interpretación elegida, la incógnita (descuento y plazo) y la lista de quién gana o pierde.",
+      "bloqueo_probable": "B12"
+    },
+    "P2-RM": {
+      "decision": "Elegir edad y sexo de la persona, tabla de mortalidad, tasa de interés y si el descuento es constante en el tiempo.",
+      "evidencia": "Lista de supuestos con justificación y solicitud de la tabla de mortalidad y de las tasas.",
+      "bloqueo_probable": "B23"
+    },
+    "P3-MM": {
+      "decision": "Plantear una ecuación de equilibrio entre el anticipo y el valor esperado, descontado, de lo que se recupera, con probabilidades de supervivencia mensuales.",
+      "evidencia": "Expresión escrita o planilla con supervivencia, factor de descuento y descuento mensual como incógnita.",
+      "bloqueo_probable": "B34"
+    },
+    "P4-WM": {
+      "decision": "Calcular el descuento necesario para varios plazos y edades en planilla o código, y opcionalmente simular muchas vidas.",
+      "evidencia": "Tabla o gráfico de descuento versus plazo y edad, con el procedimiento reproducible.",
+      "bloqueo_probable": "B45"
+    },
+    "P5-INT": {
+      "decision": "Interpretar que plazos cortos exigen descuentos altos y que la edad y la tasa cambian el resultado, y decidir qué regla recomendar.",
+      "evidencia": "Recomendación redactada en términos del contexto: descuento y plazo para cada perfil de pensionado.",
+      "bloqueo_probable": "B56"
+    },
+    "P6-VAL": {
+      "decision": "Contrastar con las condiciones reales de una aseguradora, que no se usaron para construir la regla, y analizar la sensibilidad a la tasa y a la mortalidad.",
+      "evidencia": "Comparación numérica entre el descuento del modelo y el publicado, con una explicación de las diferencias.",
+      "bloqueo_probable": "B56"
+    },
+    "P7-EXP": {
+      "decision": "Presentar la regla, sus límites y los supuestos que más cambian el resultado ante personas no expertas.",
+      "evidencia": "Informe o exposición con regla, gráfico de sensibilidad y lista de límites.",
+      "bloqueo_probable": "B67"
+    }
+  },
+  "task_space": {
+    "required_assumptions": [
+      "Interpretación principal: el anticipo es 10% del valor actual esperado de la renta vitalicia. El grupo debe explicitarla y puede compararla con la alternativa de 10% de la pensión de un año.",
+      "Edad y sexo representativos de una persona recién pensionada.",
+      "Tasa de interés real constante en el horizonte.",
+      "Tabla de mortalidad de rentistas aplicable a toda la cohorte, sin heterogeneidad individual.",
+      "El descuento mensual es una fracción constante de la pensión durante el plazo, y la renta se paga hasta el fallecimiento.",
+      "Se ignoran costos administrativos, comisiones e impuestos.",
+      "Para la ruta sin mortalidad se fija un horizonte de vida cierto (por ejemplo, la esperanza de vida)."
+    ],
+    "reference_solution": {
+      "steps": "1) Sea P la pensión mensual, v el factor de descuento mensual y s(k) la probabilidad de que la persona viva k meses después. 2) El valor esperado descontado de la renta es V = P·a_vit, con a_vit = suma de v^k·s(k) sobre todos los meses. 3) Con la interpretación principal, el anticipo es A = 0,10·V. 4) Si se descuenta una fracción r de la pensión durante n meses, el valor esperado recuperado es r·P·a_temp(n), con a_temp(n) = suma de v^k·s(k) desde k=1 hasta n. 5) Equilibrio: r = 0,10·a_vit/a_temp(n). Como a_temp(n) < a_vit para todo plazo finito, r > 0,10; solo si el descuento fuera de por vida r = 0,10, sin importar la mortalidad. 6) r crece al acortar el plazo y con la edad. 7) Calcular con la tabla para distintos n, edades y tasas. 8) Opcional: simular muchas vidas para obtener la distribución de ganancia o pérdida de la aseguradora. 9) Contraste con la ruta simple de horizonte fijo L sin mortalidad: r = 0,10·a(L)/a(n), con anualidades ciertas. Por ejemplo, con L de veinte años y tres por ciento real anual, r es cerca de 17% con plazo de diez años y cerca de 32% con plazo de cinco. Esa ruta, a diferencia de R2, supone que la recuperación ocurre con certeza y por eso no ve el riesgo de que la persona fallezca antes de terminar de pagar. Los valores de R1 y R2 son del mismo orden, pero R2 los matiza por edad y sexo y permite medir ese riesgo.",
+      "result": "Regla: r = 0,10·a_vit/a_temp(n), con r mayor que 0,10 y creciente al acortar el plazo. Para una persona de edad cercana a la de jubilación, tasa real moderada y plazo de unos diez años, el orden de magnitud es un descuento de entre quince y veinte por ciento de la pensión; para plazo de unos cinco años, cerca de un tercio. La ruta de horizonte fijo da valores del mismo orden (cerca de 17% y 32% en el ejemplo con veinte años de vida y tres por ciento real).",
+      "acceptable_range": "Con la interpretación principal del 10% (valor actual esperado de la renta): descuento mensual entre diez y cuarenta por ciento según plazo, edad, sexo y tasa, siempre mayor que 10% si el plazo es finito. Con la interpretación alternativa (10% de la pensión de un año): descuento del orden de uno a dos por ciento para plazos de varios años. Se acepta cualquier regla coherente con supuestos explícitos, que reconozca el valor del dinero en el tiempo y que muestre sensibilidad; reconocer la mortalidad distingue las rutas de nivel U."
+    },
+    "routes": [
+      {
+        "id": "R1",
+        "nombre": "Horizonte fijo sin mortalidad",
+        "nivel": "S2",
+        "modelo": "Se supone que la persona vive un número fijo de años L (por ejemplo, la esperanza de vida) y se igualan sumas de pagos descontados con tasa constante, sin probabilidades de supervivencia: r = 0,10·a(L)/a(n), con a(·) anualidad cierta.",
+        "resultado": "r mayor que 0,10 cuando el plazo n es menor que L: con L de veinte años y tres por ciento real, cerca de 17% con plazo de diez años y cerca de 32% con plazo de cinco. Difiere de R2 en que trata la recuperación como cierta: no ve el riesgo de fallecer antes de terminar de pagar ni diferencia por edad o sexo."
+      },
+      {
+        "id": "R2",
+        "nombre": "Valor actuarial con tabla de mortalidad",
+        "nivel": "U",
+        "modelo": "Modelo dinámico discreto mensual con supervivencia s(k) tomada de la tabla y descuento v^k; ecuación de equilibrio resuelta para r dado n, o para n dado r.",
+        "resultado": "r = 0,10·a_vit/a_temp(n); tabla de descuentos por edad y plazo, del mismo orden que R1 pero ajustada por mortalidad."
+      },
+      {
+        "id": "R3",
+        "nombre": "Simulación de vidas y riesgo de la aseguradora",
+        "nivel": "U",
+        "modelo": "Monte Carlo: se simula la edad de fallecimiento con la tabla, se calcula la ganancia o pérdida de cada trayectoria y se busca r que anule la media; se estudia la dispersión.",
+        "resultado": "Mismo r que R2 en promedio, más la distribución de ganancias y pérdidas y la probabilidad de pérdida por fallecimiento temprano."
+      },
+      {
+        "id": "R4",
+        "nombre": "Mortalidad paramétrica ajustada",
+        "nivel": "U",
+        "modelo": "Se ajusta una ley de mortalidad paramétrica (por ejemplo Gompertz) a los datos de la tabla y se calcula analíticamente la anualidad temporal; se compara la sensibilidad a los parámetros.",
+        "resultado": "r similar a R2 con una fórmula cerrada aproximada; la diferencia muestra el error del ajuste en edades altas."
+      }
+    ],
+    "modelo_inadecuado": {
+      "id": "RX",
+      "por_que_falla": "Repartir el anticipo en cuotas iguales durante n meses sin interés ni mortalidad (comparando la renta total esperada sin descontar con n pensiones) da r = 0,10·L/n. Con L de veinte años, eso es 20% a diez años y 40% a cinco, que sobrecobra frente al cálculo con descuento (cerca de 17% y 32%). Ignora que los pagos lejanos valen menos hoy y que la recuperación se interrumpe si la persona fallece antes del plazo; por eso cobra de más y no iguala el valor esperado, y el error cambia con la edad."
+    },
+    "validation_evidence": "Ficha con el descuento mensual y el plazo reales informados públicamente por una aseguradora para un perfil de pensionado, que el grupo recibe solo después de proponer su regla; se compara con la salida del modelo, se discuten las diferencias (costos, margen, tabla) y se repite el cálculo con otra tasa.",
+    "agent_visibility": {
+      "students": [
+        "enunciado_es",
+        "foto_descripcion",
+        "recursos_a_solicitud"
+      ],
+      "coder": [
+        "enunciado_es",
+        "task_space"
+      ],
+      "guide": [
+        "all"
+      ]
+    }
+  },
+  "rubrica_rub01": {
+    "total": 24,
+    "por_criterio": {
+      "genuino": 2,
+      "abierta": 2,
+      "decisiones": 2,
+      "realismo": 2,
+      "autenticidad": 2,
+      "contexto": 2,
+      "ciclo": 2,
+      "validacion": 2,
+      "nivel": 2,
+      "autodiferenciacion": 2,
+      "fecundidad": 2,
+      "recursos": 2
+    }
+  },
+  "rubrica_rub02": {
+    "P": null,
+    "S": null,
+    "U": null
+  },
+  "modelo_y_prompt": {
+    "diseñador": "claude-sonnet-5-5",
+    "version_prompt": "1.0",
+    "version_rubrica": "4.0"
+  }
+}
