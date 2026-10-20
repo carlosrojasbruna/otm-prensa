@@ -1,0 +1,26 @@
+{
+  "id": "verificador-2",
+  "descripcion": "El escenario E2 de la guía no cita ningún id de corrida del simulador (invariante 5).",
+  "mutaciones": [
+    {
+      "ruta": "guia/escenarios/1/corridas",
+      "valor": []
+    }
+  ],
+  "con_noticia": true,
+  "notebook": null,
+  "texto_noticia": null,
+  "respuesta_modelo": {
+    "cifras": [],
+    "afirmaciones_no_respaldadas": []
+  },
+  "esperado": {
+    "aprobado": false,
+    "estado_destino": "simulada",
+    "modelo_llamado": false,
+    "invariantes_criticas": [
+      "1",
+      "5"
+    ]
+  }
+}

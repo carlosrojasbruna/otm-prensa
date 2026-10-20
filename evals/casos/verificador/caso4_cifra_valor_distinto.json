@@ -1,0 +1,29 @@
+{
+  "id": "verificador-4",
+  "descripcion": "La cifra de capacidad tiene localizador válido (párrafo 2) pero la tarea dice 250 y la noticia dice 220 (invariante 4).",
+  "mutaciones": [
+    {
+      "ruta": "tarea/noticia/cifras_usadas/0/valor",
+      "valor": 250
+    },
+    {
+      "ruta": "tarea/estudiante/recursos_a_solicitud/0/contenido",
+      "valor": "Capacidad 250 millones de m3; nivel actual 38 %."
+    }
+  ],
+  "con_noticia": true,
+  "notebook": null,
+  "texto_noticia": null,
+  "respuesta_modelo": {
+    "cifras": [],
+    "afirmaciones_no_respaldadas": []
+  },
+  "esperado": {
+    "aprobado": false,
+    "estado_destino": "simulada",
+    "modelo_llamado": false,
+    "invariantes_criticas": [
+      "4"
+    ]
+  }
+}

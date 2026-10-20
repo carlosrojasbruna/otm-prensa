@@ -1,0 +1,26 @@
+{
+  "id": "verificador-3",
+  "descripcion": "La segunda cifra usada no tiene localizador (invariante 4); además el recurso R1 menciona 38 % que ya no queda respaldado.",
+  "mutaciones": [
+    {
+      "ruta": "tarea/noticia/cifras_usadas/1/localizador",
+      "eliminar": true
+    }
+  ],
+  "con_noticia": true,
+  "notebook": null,
+  "texto_noticia": null,
+  "respuesta_modelo": {
+    "cifras": [],
+    "afirmaciones_no_respaldadas": []
+  },
+  "esperado": {
+    "aprobado": false,
+    "estado_destino": "simulada",
+    "modelo_llamado": false,
+    "invariantes_criticas": [
+      "1",
+      "4"
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "id": "verificador-1",
+  "descripcion": "Aprobado limpio: ejemplos del contrato + una cifra respaldada por la salida de un notebook que se ejecuta en subproceso sin red.",
+  "mutaciones": [
+    {
+      "ruta": "tarea/noticia/cifras_usadas",
+      "valor": [
+        {
+          "valor": 220,
+          "unidad": "millones de m3",
+          "que_es": "capacidad del embalse (ejemplo ficticio)",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 2"
+          }
+        },
+        {
+          "valor": "38 %",
+          "unidad": "porcentaje",
+          "que_es": "nivel actual del embalse (ejemplo ficticio)",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "gráfico 1"
+          }
+        },
+        {
+          "valor": 83.6,
+          "unidad": "millones de m3",
+          "que_es": "volumen útil calculado en el notebook (ejemplo ficticio)",
+          "localizador": {
+            "fuente": "notebook",
+            "ubicacion": "celda 1"
+          }
+        }
+      ]
+    }
+  ],
+  "con_noticia": true,
+  "notebook": "escenarios_caso1.ipynb",
+  "texto_noticia": null,
+  "respuesta_modelo": {
+    "cifras": [
+      {
+        "indice": 0,
+        "coincide": true,
+        "valor_en_fuente": "220 millones de m3",
+        "nota": "capacidad, igual en la noticia"
+      },
+      {
+        "indice": 1,
+        "coincide": true,
+        "valor_en_fuente": "38 %",
+        "nota": "nivel actual, igual en la noticia"
+      },
+      {
+        "indice": 2,
+        "coincide": true,
+        "valor_en_fuente": "83,6",
+        "nota": "0,38 x 220 = 83,6"
+      }
+    ],
+    "afirmaciones_no_respaldadas": []
+  },
+  "esperado": {
+    "aprobado": true,
+    "estado_destino": "verificada",
+    "modelo_llamado": true,
+    "invariantes_criticas": []
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://otm-prensa.example/agentes/verificador/salida.schema.json",
+  "title": "informe_verificador",
+  "description": "Informe del verificador (agente 7). Esquema local: el verificador no tiene contrato en contratos/ (decisiones.md, 2026-10-20). aprobado=true solo si no hay hallazgos de severidad 'critico'. Si aprobado, estado_destino='verificada'; si no, 'simulada' (retroceso con_guia -> simulada).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["tarea_id", "aprobado", "estado_destino", "hallazgos", "cifras_contrastadas", "notebook", "meta"],
+  "properties": {
+    "tarea_id": {"type": "string", "minLength": 1},
+    "aprobado": {"type": "boolean"},
+    "estado_destino": {"enum": ["verificada", "simulada"]},
+    "hallazgos": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["invariante", "severidad", "ubicacion", "descripcion", "origen"],
+        "properties": {
+          "invariante": {"enum": ["1", "3", "4", "5", "coherencia", "notebook", "semantica"]},
+          "severidad": {"enum": ["critico", "advertencia"]},
+          "ubicacion": {"type": "string", "minLength": 1},
+          "descripcion": {"type": "string", "minLength": 1},
+          "origen": {"enum": ["codigo", "modelo"]}
+        }
+      }
+    },
+    "cifras_contrastadas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["indice", "que_es", "valor_tarea", "localizador", "resultado", "metodo", "nota"],
+        "properties": {
+          "indice": {"type": "integer", "minimum": 0},
+          "que_es": {"type": "string"},
+          "valor_tarea": {"type": ["number", "string"]},
+          "valor_fuente": {"type": ["number", "string", "null"]},
+          "localizador": {
+            "type": ["object", "null"],
+            "additionalProperties": false,
+            "required": ["fuente", "ubicacion"],
+            "properties": {"fuente": {"type": "string"}, "ubicacion": {"type": "string"}}
+          },
+          "resultado": {"enum": ["coincide", "distinto", "sin_localizador", "localizador_inexistente", "no_verificable"]},
+          "metodo": {"enum": ["codigo", "codigo+modelo"]},
+          "nota": {"type": "string"}
+        }
+      }
+    },
+    "notebook": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["estado"],
+      "properties": {
+        "estado": {"enum": ["ejecutado", "no_declarado", "no_encontrado", "error", "tiempo_agotado"]},
+        "ruta": {"type": ["string", "null"]},
+        "salida_resumen": {"type": "string"}
+      }
+    },
+    "meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["agente", "version_prompt", "fecha", "costo_usd", "modelo_llamado"],
+      "properties": {
+        "agente": {"const": "verificador"},
+        "version_prompt": {"type": "string"},
+        "modelo": {"type": ["string", "null"]},
+        "request_id": {"type": ["string", "null"]},
+        "fecha": {"type": "string"},
+        "costo_usd": {"type": "number", "minimum": 0},
+        "modelo_llamado": {"type": "boolean"},
+        "texto_noticia_recibido": {"type": "boolean"},
+        "uso": {"type": ["object", "null"]}
+      }
+    }
+  }
+}
