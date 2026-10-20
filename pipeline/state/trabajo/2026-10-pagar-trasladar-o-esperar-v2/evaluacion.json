@@ -1,0 +1,97 @@
+{
+  "tarea_id": "2026-10-pagar-trasladar-o-esperar-v2",
+  "fecha": "2026-10-20T21:44:37Z",
+  "rub01": {
+    "version_rubrica": "4.0",
+    "criterios": {
+      "genuino": {
+        "puntaje": 2,
+        "justificacion": "Plantea una necesidad real de decisión empresarial y no entrega ninguna regla, fórmula ni modelo para resolverla. La estructura de la decisión bajo incertidumbre la tiene que construir el grupo.",
+        "cita": "La gerencia debe decidir cómo fijar los precios a sus clientes y cómo manejar sus contratos en los próximos meses."
+      },
+      "abierta": {
+        "puntaje": 2,
+        "justificacion": "La pregunta no prescribe procedimiento y admite varias estrategias y modelos defendibles. Entre ellos están pagar y trasladar, absorber, esperar, cambiar el tipo de contrato o modelar escenarios de fallo.",
+        "cita": "¿qué estrategia recomendarían a la gerencia y qué tan segura es esa recomendación?"
+      },
+      "decisiones": {
+        "puntaje": 2,
+        "justificacion": "Resolver exige suponer probabilidades y plazos del fallo y estimar la reacción de los clientes. También exige seleccionar variables y solicitar órdenes de magnitud a la gerencia.",
+        "cita": "Nadie sabe cuándo ni cómo terminará el caso. ... Pueden pedir información adicional."
+      },
+      "realismo": {
+        "puntaje": 2,
+        "justificacion": "Es una situación existente o claramente plausible fuera de la escuela. Una importadora enfrenta un arancel en litigio y debe fijar precios.",
+        "cita": "Un grupo estadounidense de defensa, que ya había ganado antes un juicio contra aranceles amplios, demandó al gobierno por los nuevos aranceles a productos canadienses."
+      },
+      "autenticidad": {
+        "puntaje": 2,
+        "justificacion": "El litigio real, sus pretensiones (devolución con intereses, suspensión del cobro) y la escala de los bienes gravados son un tema y datos extraescolares integrados en el núcleo de la decisión. A esto se suman series públicas de contraste. La empresa es un supuesto del escenario, pero la incertidumbre judicial auténtica es lo que mueve la tarea.",
+        "cita": "El gobierno grava bienes canadienses por un valor de unos 20 mil millones de dólares."
+      },
+      "contexto": {
+        "puntaje": 2,
+        "justificacion": "El contexto condiciona el modelo: la posible devolución, la suspensión y el tipo de contrato definen los escenarios. Además es necesario para interpretar qué tan segura es la recomendación.",
+        "cita": "Los demandantes piden que, si ganan, se devuelva lo pagado con intereses, y que se frene el cobro mientras dura el juicio."
+      },
+      "ciclo": {
+        "puntaje": 2,
+        "justificacion": "Responder obliga a comprender la situación legal y comercial y a simplificar en escenarios. También obliga a matematizar (por ejemplo, márgenes esperados por escenario), calcular y volver a la situación para recomendar y juzgar la seguridad de la recomendación. El enunciado no deja ninguna fase hecha.",
+        "cita": "Ustedes son el equipo asesor: ¿qué estrategia recomendarían a la gerencia y qué tan segura es esa recomendación?"
+      },
+      "validacion": {
+        "puntaje": 2,
+        "justificacion": "La recomendación puede contrastarse con evidencia independiente no usada en su construcción. Las series públicas se entregan después de fijar la recomendación, y el fallo judicial futuro es otro dato posterior.",
+        "cita": "Existen series públicas de precios al consumidor del rubro quesos y de volúmenes importados de queso."
+      },
+      "nivel": {
+        "puntaje": 2,
+        "justificacion": "El contexto comercial y legal es comprensible y pertinente para estudiantes universitarios. La demanda corresponde a herramientas esperables en U según MAR03: modelos probabilísticos o de decisión bajo incertidumbre, optimización y sensibilidad.",
+        "cita": "¿qué estrategia recomendarían a la gerencia y qué tan segura es esa recomendación?"
+      },
+      "autodiferenciacion": {
+        "puntaje": 2,
+        "justificacion": "Se puede entrar con una comparación elemental de escenarios de costo y precio. La tarea admite soluciones mucho más sofisticadas: árboles de decisión con valor esperado, elasticidad de la demanda, valor del tiempo con intereses y análisis de sensibilidad.",
+        "cita": "Sus contratos con clientes pueden ser de precio fijo por un periodo o de precio ajustable."
+      },
+      "fecundidad": {
+        "puntaje": 2,
+        "justificacion": "Las distintas estrategias y supuestos permiten comparar soluciones y discutir los límites del modelo. También abren nuevas preguntas, como la sustitución por otros orígenes, la duración del juicio o los efectos sobre consumidores.",
+        "cita": "Los clientes comparan precios con otros proveedores y algunos pueden cambiarse a quesos de otro origen."
+      },
+      "recursos": {
+        "puntaje": 2,
+        "justificacion": "La información necesaria puede solicitarse u obtenerse, y lo que no se entrega, como la probabilidad del fallo, se estima como supuesto. Los materiales describen el negocio cualitativamente sin revelar el modelo de decisión.",
+        "cita": "La gerencia entrega órdenes de magnitud solo si el grupo pregunta por una variable concreta."
+      }
+    },
+    "total": 24,
+    "mejoras": []
+  },
+  "reproducibilidad": {
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.129675,
+        "version_prompt": "1.1"
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.272984,
+        "version_prompt": "1.3"
+      }
+    },
+    "version_prompt": {
+      "disenador": "1.1",
+      "evaluador": "1.3"
+    },
+    "version_rubrica": "4.0",
+    "version_MAR03": "1.0",
+    "version_MED01": "1.1",
+    "diseno_simulador": null,
+    "fecha": "2026-10-20T21:44:37Z",
+    "costo_usd": 0.402659
+  }
+}

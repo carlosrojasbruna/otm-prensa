@@ -1,0 +1,139 @@
+{
+  "ciclo_id": "ciclo_20261020T214218627744Z",
+  "inicio": "2026-10-20T21:42:18Z",
+  "fin": "2026-10-20T21:46:54Z",
+  "semana": "2026-W43",
+  "parametros": {
+    "tope_semanal_usd": 25.0,
+    "fraccion_detencion": 0.9,
+    "presupuesto_ciclo_usd": 2.0,
+    "limite_usd": 16.532272,
+    "gasto_semana_previo_usd": 14.532272,
+    "corridas_evaluador": 3,
+    "rango_inestable": 4,
+    "corridas_simulador": 6,
+    "ids": [
+      "2026-10-pagar-trasladar-o-esperar",
+      "2026-10-viaje-barco-ida-vuelta"
+    ],
+    "motivo": "revisión humana"
+  },
+  "detenido_por_tope": false,
+  "eventos": [
+    {
+      "fecha": "2026-10-20T21:43:06Z",
+      "tipo": "agente",
+      "agente": "disenador",
+      "tareas": [],
+      "llamadas": 1,
+      "usd": 0.129675
+    },
+    {
+      "fecha": "2026-10-20T21:43:33Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-pagar-trasladar-o-esperar-v2"
+      ],
+      "llamadas": 1,
+      "usd": 0.117884
+    },
+    {
+      "fecha": "2026-10-20T21:44:05Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-pagar-trasladar-o-esperar-v2"
+      ],
+      "llamadas": 1,
+      "usd": 0.07529
+    },
+    {
+      "fecha": "2026-10-20T21:44:37Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-pagar-trasladar-o-esperar-v2"
+      ],
+      "llamadas": 1,
+      "usd": 0.07981
+    },
+    {
+      "fecha": "2026-10-20T21:44:40Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-pagar-trasladar-o-esperar-v2",
+      "de": "borrador",
+      "a": "evaluada"
+    },
+    {
+      "fecha": "2026-10-20T21:45:17Z",
+      "tipo": "agente",
+      "agente": "disenador",
+      "tareas": [],
+      "llamadas": 1,
+      "usd": 0.076609
+    },
+    {
+      "fecha": "2026-10-20T21:45:51Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-viaje-barco-ida-vuelta-v2"
+      ],
+      "llamadas": 1,
+      "usd": 0.07747
+    },
+    {
+      "fecha": "2026-10-20T21:46:21Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-viaje-barco-ida-vuelta-v2"
+      ],
+      "llamadas": 1,
+      "usd": 0.06545
+    },
+    {
+      "fecha": "2026-10-20T21:46:51Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-viaje-barco-ida-vuelta-v2"
+      ],
+      "llamadas": 1,
+      "usd": 0.07121
+    },
+    {
+      "fecha": "2026-10-20T21:46:54Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-viaje-barco-ida-vuelta-v2",
+      "de": "borrador",
+      "a": "evaluada"
+    }
+  ],
+  "expedientes": {
+    "2026-10-pagar-trasladar-o-esperar-v2": "evaluada",
+    "2026-10-viaje-barco-ida-vuelta-v2": "evaluada"
+  },
+  "noticias": [],
+  "pendientes_humanos": [
+    {
+      "tarea_id": "2026-10-pagar-trasladar-o-esperar-v2",
+      "pendiente": "revision_humana_1",
+      "estado": "evaluada"
+    },
+    {
+      "tarea_id": "2026-10-viaje-barco-ida-vuelta-v2",
+      "pendiente": "revision_humana_1",
+      "estado": "evaluada"
+    }
+  ],
+  "errores": [],
+  "orden": "nueva_version",
+  "gasto": {
+    "ciclo_usd": 0.693398,
+    "semana_usd": 15.22567,
+    "limite_usd": 16.532272,
+    "llamadas": 8
+  }
+}

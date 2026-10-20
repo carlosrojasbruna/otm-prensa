@@ -1,0 +1,296 @@
+{
+  "tarea_id": "2026-10-viaje-barco-ida-vuelta-v2",
+  "evaluaciones": [
+    {
+      "iteracion": 1,
+      "version_tarea": 2,
+      "fecha": "2026-10-20T21:46:51Z",
+      "modelo": "claude-opus-5-5",
+      "version_prompt": "1.3",
+      "version_rubrica": "4.0",
+      "corridas": [
+        {
+          "n": 1,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La tarea plantea una necesidad real de decisión logística y no entrega velocidades, tiempos ni una fórmula. Describir las etapas del viaje forma parte de la situación y no insinúa el procedimiento de cálculo.",
+                "cita": "debe decidir si un barco de apoyo puede salir de la costa, llegar a cada lugar, descargar y volver en una misma jornada"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta pide una recomendación sin prescribir el método. Admite distintos modelos defendibles según la velocidad, el tiempo de descarga y la duración de la jornada que se supongan.",
+                "cita": "¿Qué le recomendarían a la empresa para cada yacimiento? Pueden pedir información adicional."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Para resolver hay que estimar la velocidad, el tiempo de descarga, la duración aceptable de la jornada y el efecto del mar agitado. Además se puede solicitar información, de modo que los supuestos son sustantivos.",
+                "cita": "un barco de apoyo avanza más despacio que un auto en carretera, más o menos al ritmo de una bicicleta que va a buen paso"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Los yacimientos y la logística de barcos de apoyo a instalaciones en alta mar existen fuera de la escuela, y la pregunta de la empresa es plausible.",
+                "cita": "Jackdaw, un yacimiento de gas, queda a 241,4 km al este de Aberdeen."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El tema (el debate sobre Jackdaw y Rosebank) y las distancias son componentes extraescolares reales y constituyen el núcleo de la tarea. No fueron fabricados para enseñar el contenido.",
+                "cita": "el gobierno del Reino Unido discute si aprobar algunos. Jackdaw, un yacimiento de gas"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona los supuestos: estado del mar, descarga y descanso de la tripulación. También es necesario para interpretar el resultado como recomendación de jornada única o de pernoctar en el mar.",
+                "cita": "Si el mar está agitado, avanza todavía más lento. Al llegar a la plataforma necesita un rato para descargar antes de volver."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a recorrer las fases: comprender la situación, suponer velocidades y tiempos, plantear la relación entre distancia y tiempo, calcular, interpretar el resultado como recomendación y contrastarlo con la jornada y con un viaje conocido. Ninguna fase queda hecha por el enunciado.",
+                "cita": "¿Qué le recomendarían a la empresa para cada yacimiento?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "El modelo puede contrastarse con un caso no usado en su construcción, un viaje conocido. También es accesible la velocidad real de los barcos de apoyo como evidencia independiente.",
+                "cita": "el grupo puede elegir un viaje que conozca, en bus o auto, con su distancia aproximada y lo que demoró, y comparar"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto y el lenguaje son comprensibles para estudiantes de 10 a 12 años. La matemática requerida (proporcionalidad, operatoria con kilómetros y horas, estimación) corresponde a las herramientas esperables del nivel P.",
+                "cita": "más o menos al ritmo de una bicicleta que va a buen paso"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Hay un piso accesible: un cálculo aproximado con la velocidad de una bicicleta. La tarea también admite soluciones más refinadas: escenarios de mar agitado, márgenes de descarga y descanso, o la velocidad mínima necesaria.",
+                "cita": "Pueden pedir información adicional."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las recomendaciones dependen de los supuestos, lo que permite comparar soluciones entre grupos. Además abre preguntas sobre la distancia límite para una jornada o sobre el efecto del clima.",
+                "cita": "o si la tripulación tendría que pasar la noche en el mar"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "Las distancias se entregan, y la velocidad, la descarga y la jornada pueden estimarse con conocimiento cotidiano a partir de tarjetas cualitativas a solicitud. Ninguna tarjeta revela la regla de cálculo.",
+                "cita": "R1 (Datos de partida: distancias en kilómetros de los dos yacimientos), entregado de entrada"
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgEDnbC6wC7XX42TYWQE9",
+            "fecha": "2026-10-20T21:45:51+00:00",
+            "intentos": 1,
+            "costo_usd": 0.07747,
+            "avisos": []
+          }
+        },
+        {
+          "n": 2,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La situación plantea una decisión logística real y no entrega ninguna regla ni relación entre distancia, rapidez y tiempo: quien resuelve debe construirla.",
+                "cita": "debe decidir si un barco de apoyo puede salir de la costa, llegar a cada lugar, descargar y volver en una misma jornada"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta pide una recomendación sin prescribir procedimiento. Admite distintas estimaciones de rapidez, tiempo de descarga y duración de la jornada, y por tanto varios modelos defendibles.",
+                "cita": "¿Qué le recomendarían a la empresa para cada yacimiento? Pueden pedir información adicional."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige estimar la rapidez, el tiempo de descarga y la duración aceptable de una jornada, y decidir si se considera el mar agitado. También hay que solicitar información pertinente.",
+                "cita": "Supuesto del escenario: un barco de apoyo avanza más despacio que un auto en carretera, más o menos al ritmo de una bicicleta"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Los yacimientos y el abastecimiento por barcos de apoyo existen. La decisión de la empresa es claramente plausible fuera de la escuela.",
+                "cita": "En el mar del Norte hay yacimientos de gas y petróleo muy lejos de la costa, y el gobierno del Reino Unido discute si aprobar …"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El tema (la aprobación de yacimientos en el Reino Unido) y las distancias son componentes extraescolares reales, no creados para enseñar. Son el núcleo numérico de la tarea, de modo que están integrados de manera sustantiva.",
+                "cita": "Jackdaw, un yacimiento de gas, queda a 241,4 km al este de Aberdeen. Rosebank, un yacimiento de petróleo, queda a 128,7 km"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona los supuestos (rapidez, clima, descarga, turnos de la tripulación). También es necesario para interpretar si el tiempo calculado cabe en una jornada y para formular la recomendación.",
+                "cita": "Si el mar está agitado, avanza todavía más lento. Al llegar a la plataforma necesita un rato para descargar antes de volver."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Para responder hay que comprender la situación, fijar supuestos, modelar el tiempo de ida y vuelta con descarga, calcular y volver al contexto para recomendar. Ninguna fase viene hecha, y en el caso de Rosebank la interpretación no es trivial.",
+                "cita": "¿Qué le recomendarían a la empresa para cada yacimiento?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "R4 ofrece un caso nuevo, no usado en la construcción del modelo, para contrastarlo. Además, la rapidez real de los barcos de apoyo es un dato público accesible.",
+                "cita": "el grupo puede elegir un viaje que conozca, en bus o auto, con su distancia aproximada y lo que demoró, y comparar con lo que …"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El lenguaje y el contexto se explican en términos cotidianos (bicicleta, auto, pasar la noche). La matemática requerida (operatoria, proporcionalidad, estimación con unidades) corresponde a las herramientas esperables del nivel P.",
+                "cita": "si la tripulación tendría que pasar la noche en el mar"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Se puede entrar con una estimación simple de horas por kilómetro, sin depender de una idea clave única. La tarea admite además soluciones más sofisticadas, como escenarios de clima, rangos de rapidez o tablas para ambos yacimientos.",
+                "cita": "Si el mar está agitado, avanza todavía más lento."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Los dos yacimientos producen resultados contrastantes que obligan a comparar soluciones según los supuestos. Esto abre preguntas como qué rapidez haría viable el viaje o cómo influye el clima.",
+                "cita": "¿Qué le recomendarían a la empresa para cada yacimiento?"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "Las distancias se entregan y los demás datos se obtienen a solicitud o se estiman con conocimiento cotidiano. Las tarjetas dan referencias cualitativas sin revelar la relación distancia-rapidez-tiempo ni la solución.",
+                "cita": "disponible a solicitud del grupo"
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgEDq8V5s73xdS5zX6ZWS",
+            "fecha": "2026-10-20T21:46:21+00:00",
+            "intentos": 1,
+            "costo_usd": 0.06545,
+            "avisos": [
+              "cita_recortada_25:realismo",
+              "cita_recortada_25:validacion"
+            ]
+          }
+        },
+        {
+          "n": 3,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "Plantea una necesidad real de decisión logística y no entrega ninguna regla ni relación entre distancia, rapidez y tiempo. El modelo debe construirlo el grupo.",
+                "cita": "Una empresa que lleva repuestos y alimentos a instalaciones en alta mar debe decidir si un barco de apoyo puede salir de la costa, llegar …"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta pide una recomendación sin prescribir procedimiento. Admite distintos caminos defendibles según la rapidez, el tiempo de descarga y la duración de jornada que se supongan.",
+                "cita": "¿Qué le recomendarían a la empresa para cada yacimiento? Pueden pedir información adicional."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige estimar la rapidez del barco y el tiempo de descarga, suponer la duración de una jornada y considerar el estado del mar. Ninguno de esos datos viene cuantificado.",
+                "cita": "un barco de apoyo avanza más despacio que un auto en carretera, más o menos al ritmo de una bicicleta que va a buen paso"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "La situación es real: hay yacimientos reales y operaciones de abastecimiento en alta mar que existen fuera de la escuela.",
+                "cita": "En el mar del Norte hay yacimientos de gas y petróleo muy lejos de la costa, y el gobierno del Reino Unido discute si aprobar …"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El tema y las distancias provienen de una noticia real sobre la aprobación de yacimientos. Son los datos centrales de la tarea, por lo que el componente auténtico está integrado de forma sustantiva.",
+                "cita": "Jackdaw, un yacimiento de gas, queda a 241,4 km al este de Aberdeen. Rosebank, un yacimiento de petróleo, queda a 128,7 km al noroeste"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona qué supuestos hacer: estado del mar, descarga y descanso de la tripulación. También es necesario para interpretar el resultado como recomendación de viaje en el día o pernoctar.",
+                "cita": "Si el mar está agitado, avanza todavía más lento. Al llegar a la plataforma necesita un rato para descargar antes de volver."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a comprender la operación y simplificarla (rapidez, descarga, jornada), matematizar con tiempo según distancia y rapidez, y calcular. Luego hay que volver a la situación para recomendar y juzgar esa recomendación. Ninguna fase queda hecha por el enunciado.",
+                "cita": "¿Qué le recomendarían a la empresa para cada yacimiento?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "El modelo puede contrastarse con un caso nuevo conocido. Existen además datos públicos sobre la rapidez real de los barcos de apoyo y sus tiempos de viaje.",
+                "cita": "el grupo puede elegir un viaje que conozca, en bus o auto, con su distancia aproximada y lo que demoró, y comparar con lo que …"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El lenguaje es cotidiano y comprensible para 10–12 años. La matemática requerida (proporcionalidad entre distancia y tiempo, operatoria con decimales, estimación y unidades) está entre las herramientas esperables de P.",
+                "cita": "más o menos al ritmo de una bicicleta que va a buen paso"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Hay piso accesible: estimar una rapidez y calcular horas de ida y vuelta. El techo es alto porque admite incorporar descarga, turnos, escenarios de mar agitado y márgenes de seguridad, y comparar ambos yacimientos.",
+                "cita": "Si el mar está agitado, avanza todavía más lento."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las recomendaciones dependen de los supuestos, lo que permite comparar soluciones entre grupos. Abre preguntas sobre a qué distancia deja de ser viable un viaje en el día o qué pasa con mal tiempo.",
+                "cita": "¿Qué le recomendarían a la empresa para cada yacimiento?"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "Las distancias están dadas y la información faltante puede solicitarse en tarjetas o estimarse con conocimiento cotidiano, como la rapidez de una bicicleta. Las tarjetas son cualitativas y no revelan la relación ni los valores de solución.",
+                "cita": "R2 (Tarjeta sobre cómo se mueve un barco de apoyo), disponible a solicitud del grupo"
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgEDsJxRpbSWBHDMcxFAg",
+            "fecha": "2026-10-20T21:46:51+00:00",
+            "intentos": 1,
+            "costo_usd": 0.07121,
+            "avisos": [
+              "cita_recortada_25:genuino",
+              "cita_recortada_25:realismo",
+              "cita_recortada_25:validacion"
+            ]
+          }
+        }
+      ],
+      "totales": [
+        24,
+        24,
+        24
+      ],
+      "rango_total": 0,
+      "rango_inestable": 4,
+      "evaluacion_inestable": false,
+      "mediana": {
+        "regla": "mediana por criterio (n par: mediana inferior)",
+        "total": 24,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 2
+        },
+        "corrida_fuente": {
+          "genuino": 1,
+          "abierta": 1,
+          "decisiones": 1,
+          "realismo": 1,
+          "autenticidad": 1,
+          "contexto": 1,
+          "ciclo": 1,
+          "validacion": 1,
+          "nivel": 1,
+          "autodiferenciacion": 1,
+          "fecundidad": 1,
+          "recursos": 1
+        }
+      }
+    }
+  ]
+}
