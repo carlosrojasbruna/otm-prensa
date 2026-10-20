@@ -1,4 +1,4 @@
-"""Explorador con MED01 v1.1, sin red: feeds y HTML sintéticos escritos por el equipo (invariante 3)."""
+"""Explorador con MED01 (fuentes agregadas en v1.1; vigente v1.4), sin red: feeds y HTML sintéticos escritos por el equipo (invariante 3)."""
 import base64
 import json
 import urllib.error
@@ -68,7 +68,7 @@ def _leer_con_robots(robots, pagina=PAGINA):
 
 
 def test_med01_mas_alta_y_registrada():
-    assert ex.cargar_med01()["version"] == "1.1"
+    assert ex.cargar_med01()["version"] == "1.4"
     ids = {m["id"] for m in ex.cargar_med01()["medios"]}
     assert {"latercera", "naturenews", "dw", "cnnchile"} <= ids
     assert _medio("cnnchile")["acceso"] == "gnews"
@@ -163,7 +163,7 @@ def test_robots_404_permite_y_se_lee_el_enlace_original():
 
     cli = ClienteFalso(CASO1["respuestas_modelo"])
     r = ex.explorar(["naturenews"], 3, cliente=cli, ahora=AHORA, leer=leer)
-    assert r["meta"]["n_aceptadas"] == 1 and r["meta"]["version_med01"] == "1.1"
+    assert r["meta"]["n_aceptadas"] == 1 and r["meta"]["version_med01"] == "1.4"
     n = r["noticias"][0]
     assert n["medio_id"] == "naturenews" and inv.validar_contra_esquema(n, "noticia")
     # la descripción del feed se ignora: el cuerpo vino de la página
