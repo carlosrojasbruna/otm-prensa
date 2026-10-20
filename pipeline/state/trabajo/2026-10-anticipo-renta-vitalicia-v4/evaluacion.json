@@ -1,0 +1,97 @@
+{
+  "tarea_id": "2026-10-anticipo-renta-vitalicia-v4",
+  "fecha": "2026-10-20T22:01:25Z",
+  "rub01": {
+    "version_rubrica": "4.0",
+    "criterios": {
+      "genuino": {
+        "puntaje": 2,
+        "justificacion": "Plantea una necesidad real: diseñar una regla de recuperación justa del anticipo. No entrega fórmula, algoritmo ni modelo, y los recursos declaran explícitamente que no traen fórmulas.",
+        "cita": "La compañía no quiere perder dinero en promedio, pero tampoco cobrarle de más a la persona."
+      },
+      "abierta": {
+        "puntaje": 2,
+        "justificacion": "La pregunta no prescribe el procedimiento. Admite varios modelos defendibles: rebaja a plazo fijo o vitalicia, con o sin descuento financiero, con o sin mortalidad, y diferenciada o no por sexo y edad.",
+        "cita": "¿Qué regla propondrían para decidir cuánto bajar la pensión y por cuánto tiempo, y qué tan firme es esa regla?"
+      },
+      "decisiones": {
+        "puntaje": 2,
+        "justificacion": "Resolver exige solicitar la tabla de mortalidad y la serie de tasas, y decidir qué tasa usar, qué edad y sexo suponer y cómo interpretar el tope del 10%. También hay que formular el criterio de equidad «no perder en promedio».",
+        "cita": "Pueden pedir información adicional."
+      },
+      "realismo": {
+        "puntaje": 2,
+        "justificacion": "La situación existe: anticipos de rentas vitalicias recuperados mediante rebajas de pensión, en un litigio real. El encuadre de la aseguradora que diseña la rebaja corresponde a una práctica efectiva y no se percibe forzado.",
+        "cita": "la Corte Suprema dio la razón a las aseguradoras en una disputa por los anticipos de rentas vitalicias del tercer retiro de fondos de pensiones"
+      },
+      "autenticidad": {
+        "puntaje": 2,
+        "justificacion": "Hay varios componentes auténticos integrados en el núcleo de la tarea: la noticia y el tope regulatorio, la tabla de mortalidad del regulador y las ofertas reales del SCOMP.",
+        "cita": "Según la noticia, un oficio de la CMF fija que el anticipo puede llegar como máximo a 10% de la renta vitalicia."
+      },
+      "contexto": {
+        "puntaje": 2,
+        "justificacion": "El contexto condiciona las decisiones de modelación: el pago depende de la sobrevida y del valor del dinero en el tiempo. También es necesario para interpretar la equidad de la regla y para validarla con ofertas reales.",
+        "cita": "Una renta vitalicia es una pensión que una aseguradora paga cada mes mientras la persona viva."
+      },
+      "ciclo": {
+        "puntaje": 2,
+        "justificacion": "Responder obliga a recorrer todas las fases: comprender el mecanismo, simplificar (edad, tasa, plazo), matematizar como equivalencia de valores presentes esperados, calcular, interpretar la regla y juzgar su firmeza. Ninguna fase viene hecha.",
+        "cita": "¿Qué regla propondrían para decidir cuánto bajar la pensión y por cuánto tiempo, y qué tan firme es esa regla?"
+      },
+      "validacion": {
+        "puntaje": 2,
+        "justificacion": "Las ofertas reales del SCOMP (prima, edad, sexo y pensión) son evidencia independiente no usada en la construcción del modelo. Permiten contrastar el factor actuarial implícito en la regla del grupo.",
+        "cita": "El equipo docente lo entrega solo después de que el grupo presente su regla."
+      },
+      "nivel": {
+        "puntaje": 2,
+        "justificacion": "La matemática requerida (probabilidad, valor esperado, descuento, programación o planilla) está dentro de las herramientas esperables en U. El contexto previsional es comprensible y pertinente para universitarios.",
+        "cita": "Archivo con las probabilidades de fallecer a cada edad para mujeres y hombres pensionados por renta vitalicia."
+      },
+      "autodiferenciacion": {
+        "puntaje": 2,
+        "justificacion": "Hay un piso accesible: una rebaja simple que devuelva el monto sin interés ni mortalidad. El techo es alto: valor presente actuarial con mortalidad por sexo, comparación de rebaja temporal y vitalicia, y sensibilidad a la tasa.",
+        "cita": "quiere recuperarlo bajando su pensión mensual durante un tiempo"
+      },
+      "fecundidad": {
+        "puntaje": 2,
+        "justificacion": "Las reglas abren preguntas sobre la sensibilidad a tasa y mortalidad, la equidad entre sexos, el riesgo para la aseguradora y el contraste con ofertas reales. Además permiten comparar soluciones entre grupos.",
+        "cita": "y qué tan firme es esa regla?"
+      },
+      "recursos": {
+        "puntaje": 2,
+        "justificacion": "La información necesaria (mortalidad, tasas, ofertas) está disponible a solicitud y explícitamente no revela el modelo. Lo que falta, como la edad o el monto, puede suponerse o parametrizarse.",
+        "cita": "No indica cuál tasa conviene usar ni cómo incorporarla al cálculo."
+      }
+    },
+    "total": 24,
+    "mejoras": []
+  },
+  "reproducibilidad": {
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.104911,
+        "version_prompt": "1.1"
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.19701,
+        "version_prompt": "1.3"
+      }
+    },
+    "version_prompt": {
+      "disenador": "1.1",
+      "evaluador": "1.3"
+    },
+    "version_rubrica": "4.0",
+    "version_MAR03": "1.0",
+    "version_MED01": "1.1",
+    "diseno_simulador": null,
+    "fecha": "2026-10-20T22:01:25Z",
+    "costo_usd": 0.301921
+  }
+}

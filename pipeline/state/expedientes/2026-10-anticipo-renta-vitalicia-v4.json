@@ -1,0 +1,472 @@
+{
+  "tarea_id": "2026-10-anticipo-renta-vitalicia-v4",
+  "estado": "evaluada",
+  "iteraciones": 1,
+  "artefactos": {
+    "tarea": {
+      "id": "2026-10-anticipo-renta-vitalicia-v4",
+      "titulo": "¿Cuánto bajar la pensión si te adelantan parte de la renta?",
+      "estado": "evaluada",
+      "version": 4,
+      "fecha": "2026-10-20",
+      "noticia": {
+        "noticia_id": "2026-10-19-ciper-tramitan-expulsiones-de-extranjeros-detenidos-en",
+        "medio": "CIPER Chile",
+        "titulo": "Tramitan expulsiones de extranjeros detenidos en aniversario del estallido; Suprema da la razón a aseguradoras por rentas vitalicias del tercer …",
+        "fecha": "2026-10-19",
+        "url": "https://www.ciperchile.cl/2026/10/19/radar-19-10-26/?utm_source=rss&utm_medium=rss&utm_campaign=radar-19-10-26",
+        "resumen_propio": "Resumen diario de CIPER que reúne medidas migratorias tras detenciones en una manifestación, un fallo de la Suprema sobre anticipos de pensiones del tercer retiro, una formalización por fraude al fisco contra un alcalde y la postergación de una decisión sobre un juez.",
+        "cifras_usadas": [
+          {
+            "valor": "10%",
+            "unidad": "porcentaje de la renta vitalicia",
+            "que_es": "monto máximo de anticipo de las rentas vitalicias fijado por el oficio de la CMF",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 31"
+            }
+          }
+        ]
+      },
+      "nivel_principal": "U",
+      "variantes": {
+        "abajo": "S",
+        "arriba": null
+      },
+      "area": "economia",
+      "contenidos_matematicos": [
+        "probabilidad de supervivencia",
+        "valor presente y series",
+        "modelos dinámicos discretos",
+        "simulación",
+        "sensibilidad"
+      ],
+      "tiempo_estimado": "2 sesiones de 90 min",
+      "estudiante": {
+        "enunciado_es": "El resumen diario de CIPER Chile del lunes diecinueve de octubre, en su titular, informa que la Corte Suprema dio la razón a las aseguradoras en una disputa por los anticipos de rentas vitalicias del tercer retiro de fondos de pensiones. Una renta vitalicia es una pensión que una aseguradora paga cada mes mientras la persona viva. Según la noticia, un oficio de la CMF fija que el anticipo puede llegar como máximo a 10% de la renta vitalicia. Imaginen que una aseguradora ofrece a una persona recién pensionada un anticipo en ese tope y quiere recuperarlo bajando su pensión mensual durante un tiempo. La compañía no quiere perder dinero en promedio, pero tampoco cobrarle de más a la persona. ¿Qué regla propondrían para decidir cuánto bajar la pensión y por cuánto tiempo, y qué tan firme es esa regla? Pueden pedir información adicional.",
+        "foto_descripcion": "Ícono de una persona mayor con una libreta de pensión y, al lado, una balanza con una moneda en cada plato.",
+        "recursos_a_solicitud": [
+          {
+            "id": "R2",
+            "que_es": "Tabla de mortalidad de personas pensionadas por renta vitalicia, por edad y sexo, publicada por el regulador.",
+            "contenido": "Archivo con las probabilidades de fallecer a cada edad para mujeres y hombres pensionados por renta vitalicia. El equipo docente lo entrega cuando el grupo lo pide; no trae ninguna fórmula ni ejemplo de uso.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P2-RM",
+            "fuente": "otra fuente: Comisión para el Mercado Financiero (CMF) de Chile, tablas de mortalidad de rentistas vitalicios"
+          },
+          {
+            "id": "R3",
+            "que_es": "Serie de tasas de interés de largo plazo en instrumentos reajustables, como referencia para el valor del dinero en el tiempo.",
+            "contenido": "Serie histórica, con fechas, de tasas de interés de largo plazo en instrumentos reajustables. No indica cuál tasa conviene usar ni cómo incorporarla al cálculo.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P2-RM",
+            "fuente": "otra fuente: Banco Central de Chile, Base de Datos Estadísticos, tasas de instrumentos reajustables"
+          },
+          {
+            "id": "R4",
+            "que_es": "Conjunto de ofertas reales de renta vitalicia obtenidas del SCOMP, para contrastar la regla del grupo después de haberla propuesto.",
+            "contenido": "Registro de ofertas reales de renta vitalicia entregadas por aseguradoras a través del SCOMP. Para cada oferta informa la prima (el saldo que se traspasa a la aseguradora), la edad y el sexo de la persona pensionada y la pensión mensual ofrecida. El equipo docente lo entrega solo después de que el grupo presente su regla. Son ofertas reales de aseguradoras; el registro no trae ninguna fórmula ni indica cómo se calcularon las pensiones.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P6-VAL",
+            "fuente": "otra fuente: Sistema de Consultas y Ofertas de Montos de Pensión (SCOMP), administrado por la Superintendencia de Pensiones y la CMF"
+          }
+        ]
+      },
+      "variantes_detalle": {
+        "abajo": {
+          "tramo": "S2",
+          "cambios": "Se entrega una esperanza de vida aproximada para la edad de la persona y una tasa de interés única, y se pide una regla para un solo plazo de recuperación. No se exige modelar la incertidumbre de la vida individual, solo promedios. La validación compara el factor que da el modelo con el que implican algunas ofertas reales de R4 (prima dividida por pensión ofrecida) para esa edad."
+        },
+        "arriba": null
+      },
+      "recursos_de_entrada": [
+        {
+          "id": "R1",
+          "que_es": "Tope de anticipo fijado por el oficio de la CMF, escrito también en el enunciado.",
+          "contenido": "El anticipo de una renta vitalicia puede llegar como máximo a 10% de la renta vitalicia.",
+          "disponibilidad": "de_entrada",
+          "fase": "P1-MRS",
+          "fuente": "noticia, párrafo 31"
+        }
+      ],
+      "mapa_ciclo": {
+        "P1-MRS": {
+          "decision": "Decidir qué significa 10% de la renta vitalicia (de la pensión mensual, de la anual o del valor total esperado), qué dice el titular de la noticia y qué dice el oficio, y quién asume el riesgo.",
+          "evidencia": "Escrito del grupo con la interpretación elegida, la incógnita (descuento y plazo) y la lista de quién gana o pierde.",
+          "bloqueo_probable": "B12"
+        },
+        "P2-RM": {
+          "decision": "Elegir edad y sexo de la persona, tabla de mortalidad, tasa de interés y si el descuento es constante en el tiempo.",
+          "evidencia": "Lista de supuestos con justificación y solicitud de la tabla de mortalidad y de las tasas.",
+          "bloqueo_probable": "B23"
+        },
+        "P3-MM": {
+          "decision": "Plantear una ecuación de equilibrio entre el anticipo y el valor esperado, descontado, de lo que se recupera, con probabilidades de supervivencia mensuales.",
+          "evidencia": "Expresión escrita o planilla con supervivencia, factor de descuento y descuento mensual como incógnita.",
+          "bloqueo_probable": "B34"
+        },
+        "P4-WM": {
+          "decision": "Calcular el descuento necesario para varios plazos y edades en planilla o código, y opcionalmente simular muchas vidas.",
+          "evidencia": "Tabla o gráfico de descuento versus plazo y edad, con el procedimiento reproducible.",
+          "bloqueo_probable": "B45"
+        },
+        "P5-INT": {
+          "decision": "Interpretar que plazos cortos exigen descuentos altos y que la edad y la tasa cambian el resultado, y decidir qué regla recomendar.",
+          "evidencia": "Recomendación redactada en términos del contexto: descuento y plazo para cada perfil de pensionado.",
+          "bloqueo_probable": "B56"
+        },
+        "P6-VAL": {
+          "decision": "Pedir y contrastar con las ofertas reales del SCOMP (R4), que no se usaron para construir la regla: comparar el factor de anualidad vitalicia del modelo (valor esperado descontado de la renta por cada peso de pensión) con el factor que implican las ofertas, y decidir qué explica las diferencias (costos, margen, tabla, tasa). Analizar además la sensibilidad a la tasa y a la mortalidad.",
+          "evidencia": "Tabla con el factor del modelo y el factor implícito en las ofertas para cada edad y sexo, con una explicación de las diferencias y una versión del cálculo con otra tasa.",
+          "bloqueo_probable": "B56"
+        },
+        "P7-EXP": {
+          "decision": "Presentar la regla, sus límites y los supuestos que más cambian el resultado ante personas no expertas.",
+          "evidencia": "Informe o exposición con regla, gráfico de sensibilidad, resultado del contraste con ofertas reales y lista de límites.",
+          "bloqueo_probable": "B67"
+        }
+      },
+      "task_space": {
+        "required_assumptions": [
+          "Interpretación principal: el anticipo es 10% del valor actual esperado de la renta vitalicia. El grupo debe explicitarla y puede compararla con la alternativa de 10% de la pensión de un año.",
+          "Edad y sexo representativos de una persona recién pensionada.",
+          "Tasa de interés real constante en el horizonte.",
+          "Tabla de mortalidad de rentistas aplicable a toda la cohorte, sin heterogeneidad individual.",
+          "El descuento mensual es una fracción constante de la pensión durante el plazo, y la renta se paga hasta el fallecimiento.",
+          "Se ignoran costos administrativos, comisiones e impuestos en el modelo base.",
+          "Para la ruta sin mortalidad se fija un horizonte de vida cierto (por ejemplo, la esperanza de vida).",
+          "Las ofertas del SCOMP incorporan costos y márgenes de las aseguradoras y su propia tabla y tasa de cálculo, y la prima y la pensión pueden definirse con reajustabilidad o condiciones adicionales. El factor implícito en las ofertas sirve para contrastar el orden de magnitud y las tendencias por edad y sexo, no como valor exacto que el modelo deba reproducir. Si el equipo docente no dispone de ofertas para el perfil elegido, el grupo puede tomar ofertas de edades cercanas o pedir más casos."
+        ],
+        "reference_solution": {
+          "steps": "1) Sea P la pensión mensual, v el factor de descuento mensual y s(k) la probabilidad de que la persona viva k meses después. 2) El valor esperado descontado de la renta es V = P·a_vit, con a_vit = suma de v^k·s(k) sobre todos los meses. 3) Con la interpretación principal, el anticipo es A = 0,10·V. 4) Si se descuenta una fracción r de la pensión durante n meses, el valor esperado recuperado es r·P·a_temp(n), con a_temp(n) = suma de v^k·s(k) desde k=1 hasta n. 5) Equilibrio: r = 0,10·a_vit/a_temp(n). Como a_temp(n) < a_vit para todo plazo finito, r > 0,10; solo si el descuento fuera de por vida r = 0,10, sin importar la mortalidad. 6) r crece al acortar el plazo y con la edad. 7) Calcular con la tabla para distintos n, edades y tasas. 8) Opcional: simular muchas vidas para obtener la distribución de ganancia o pérdida de la aseguradora. 9) Contraste con la ruta simple de horizonte fijo L sin mortalidad: r = 0,10·a(L)/a(n), con anualidades ciertas. Por ejemplo, con L de veinte años y tres por ciento real anual, r es cerca de 17% con plazo de diez años y cerca de 32% con plazo de cinco. Esa ruta supone que la recuperación ocurre con certeza y por eso no ve el riesgo de que la persona fallezca antes de terminar de pagar. 10) Validación: con las ofertas reales de R4 se calcula, para cada edad y sexo, el factor implícito prima/pensión ofrecida (meses de pensión que equivalen al valor de la renta) y se compara con a_vit del modelo. El factor del modelo debería ser del mismo orden que el de las ofertas, decrecer con la edad y mostrar la diferencia por sexo; la brecha restante se atribuye a costos, margen, tabla y tasa de las aseguradoras, y se verifica repitiendo el cálculo con otra tasa.",
+          "result": "Regla: r = 0,10·a_vit/a_temp(n), con r mayor que 0,10 y creciente al acortar el plazo. Para una persona de edad cercana a la de jubilación, tasa real moderada y plazo de unos diez años, el orden de magnitud es un descuento de entre quince y veinte por ciento de la pensión; para plazo de unos cinco años, cerca de un tercio. La ruta de horizonte fijo da valores del mismo orden (cerca de 17% y 32% en el ejemplo con veinte años de vida y tres por ciento real). Contraste: el factor a_vit del modelo es del mismo orden y con la misma tendencia por edad y sexo que el factor prima/pensión de las ofertas reales; las ofertas suelen quedar algo por debajo o por encima según margen, costos y tasa usada, y el grupo debe explicar esa diferencia.",
+          "acceptable_range": "Con la interpretación principal del 10% (valor actual esperado de la renta): descuento mensual entre diez y cuarenta por ciento según plazo, edad, sexo y tasa, siempre mayor que 10% si el plazo es finito. Con la interpretación alternativa (10% de la pensión de un año): descuento del orden de uno a dos por ciento para plazos de varios años. En la validación se acepta que el factor del modelo difiera del implícito en las ofertas siempre que el grupo explique la diferencia con supuestos explícitos y muestre su sensibilidad a la tasa y a la mortalidad. Se acepta cualquier regla coherente con supuestos explícitos que reconozca el valor del dinero en el tiempo; reconocer la mortalidad distingue las rutas de nivel U."
+        },
+        "routes": [
+          {
+            "id": "R1",
+            "nombre": "Horizonte fijo sin mortalidad",
+            "nivel": "S2",
+            "modelo": "Se supone que la persona vive un número fijo de años L (por ejemplo, la esperanza de vida) y se igualan sumas de pagos descontados con tasa constante, sin probabilidades de supervivencia: r = 0,10·a(L)/a(n), con a(·) anualidad cierta.",
+            "resultado": "r mayor que 0,10 cuando el plazo n es menor que L: con L de veinte años y tres por ciento real, cerca de 17% con plazo de diez años y cerca de 32% con plazo de cinco. Difiere de R2 en que trata la recuperación como cierta: no ve el riesgo de fallecer antes de terminar de pagar ni diferencia por edad o sexo."
+          },
+          {
+            "id": "R2",
+            "nombre": "Valor actuarial con tabla de mortalidad",
+            "nivel": "U",
+            "modelo": "Modelo dinámico discreto mensual con supervivencia s(k) tomada de la tabla y descuento v^k; ecuación de equilibrio resuelta para r dado n, o para n dado r.",
+            "resultado": "r = 0,10·a_vit/a_temp(n); tabla de descuentos por edad y plazo, del mismo orden que R1 pero ajustada por mortalidad."
+          },
+          {
+            "id": "R3",
+            "nombre": "Simulación de vidas y riesgo de la aseguradora",
+            "nivel": "U",
+            "modelo": "Monte Carlo: se simula la edad de fallecimiento con la tabla, se calcula la ganancia o pérdida de cada trayectoria y se busca r que anule la media; se estudia la dispersión.",
+            "resultado": "Mismo r que R2 en promedio, más la distribución de ganancias y pérdidas y la probabilidad de pérdida por fallecimiento temprano."
+          },
+          {
+            "id": "R4",
+            "nombre": "Mortalidad paramétrica ajustada",
+            "nivel": "U",
+            "modelo": "Se ajusta una ley de mortalidad paramétrica (por ejemplo Gompertz) a los datos de la tabla y se calcula analíticamente la anualidad temporal; se compara la sensibilidad a los parámetros.",
+            "resultado": "r similar a R2 con una fórmula cerrada aproximada; la diferencia muestra el error del ajuste en edades altas."
+          }
+        ],
+        "modelo_inadecuado": {
+          "id": "RX",
+          "por_que_falla": "Repartir el anticipo en cuotas iguales durante n meses sin interés ni mortalidad (comparando la renta total esperada sin descontar con n pensiones) da r = 0,10·L/n. Con L de veinte años, eso es 20% a diez años y 40% a cinco, que sobrecobra frente al cálculo con descuento (cerca de 17% y 32%). Ignora que los pagos lejanos valen menos hoy y que la recuperación se interrumpe si la persona fallece antes del plazo; por eso cobra de más y no iguala el valor esperado, y el error cambia con la edad. En la validación, además, subestima el factor de anualidad que implican las ofertas reales, porque no descuenta los pagos futuros."
+        },
+        "validation_evidence": "Ofertas reales de renta vitalicia del SCOMP (R4), datos independientes que el grupo recibe solo después de proponer su regla y que no usó para construirla. Para cada oferta, el grupo calcula el factor implícito prima/pensión mensual ofrecida (cuántos meses de pensión equivalen al valor de la renta) y lo compara con el factor de anualidad vitalicia que da su modelo (valor esperado descontado de la renta por cada peso de pensión) para la misma edad y sexo. Revisa si coinciden el orden de magnitud y las tendencias por edad y sexo, explica la brecha restante (costos, margen, tabla, tasa) y repite el cálculo con otra tasa o tabla para ver si la brecha se cierra. Si el modelo no se acerca a las ofertas reales, el grupo revisa sus supuestos de P2 y P3 y no solo el cálculo.",
+        "agent_visibility": {
+          "students": [
+            "enunciado_es",
+            "foto_descripcion",
+            "recursos_a_solicitud"
+          ],
+          "coder": [
+            "enunciado_es",
+            "task_space"
+          ],
+          "guide": [
+            "all"
+          ]
+        }
+      },
+      "rubrica_rub01": {
+        "total": 24,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 2
+        }
+      },
+      "rubrica_rub02": {
+        "P": null,
+        "S": null,
+        "U": null
+      },
+      "modelo_y_prompt": {
+        "diseñador": "claude-sonnet-5-5",
+        "version_prompt": "1.1",
+        "version_rubrica": "4.0"
+      }
+    },
+    "noticia": {
+      "id": "2026-10-19-ciper-tramitan-expulsiones-de-extranjeros-detenidos-en",
+      "medio_id": "ciper",
+      "medio": "CIPER Chile",
+      "idioma": "es",
+      "titulo": "Tramitan expulsiones de extranjeros detenidos en aniversario del estallido; Suprema da la razón a aseguradoras por rentas vitalicias del tercer …",
+      "fecha": "2026-10-19",
+      "url": "https://www.ciperchile.cl/2026/10/19/radar-19-10-26/?utm_source=rss&utm_medium=rss&utm_campaign=radar-19-10-26",
+      "area": "economia",
+      "resumen_propio": "Resumen diario de CIPER que reúne medidas migratorias tras detenciones en una manifestación, un fallo de la Suprema sobre anticipos de pensiones del tercer retiro, una formalización por fraude al fisco contra un alcalde y la postergación de una decisión sobre un juez.",
+      "cifras": [
+        {
+          "valor": 110,
+          "unidad": "detenidos",
+          "que_es": "personas detenidas durante la manifestación del domingo 18 de octubre",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 26"
+          }
+        },
+        {
+          "valor": 14,
+          "unidad": "carabineros lesionados",
+          "que_es": "funcionarios de Carabineros heridos durante la jornada de manifestaciones",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 26"
+          }
+        },
+        {
+          "valor": "10%",
+          "unidad": "porcentaje de la renta vitalicia",
+          "que_es": "monto máximo de anticipo de las rentas vitalicias fijado por el oficio de la CMF",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 31"
+          }
+        },
+        {
+          "valor": "$3.276 millones",
+          "unidad": "pesos chilenos",
+          "que_es": "precio pagado por el municipio de Chillán por el terreno de la medialuna",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 35"
+          }
+        },
+        {
+          "valor": "$1.900 millones",
+          "unidad": "pesos chilenos",
+          "que_es": "perjuicio estimado a la municipalidad por la compra del terreno",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 35"
+          }
+        },
+        {
+          "valor": "$200 millones",
+          "unidad": "pesos chilenos",
+          "que_es": "perjuicio adicional estimado por la fiscalía por la devolución de bienes de la medialuna",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 35"
+          }
+        },
+        {
+          "valor": "11 votos",
+          "unidad": "votos",
+          "que_es": "mayoría necesaria para remover a un juez",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 39"
+          }
+        },
+        {
+          "valor": "15 jueces",
+          "unidad": "jueces removidos",
+          "que_es": "cantidad de jueces removidos por la Suprema por viajar al extranjero con licencia médica",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 39"
+          }
+        }
+      ],
+      "recuperada_en": "2026-10-20T19:53:22Z",
+      "filtro": {
+        "version_rubrica": "4.0",
+        "puntajes": {
+          "genuino": 1,
+          "decisiones": 1,
+          "realismo": 2,
+          "autenticidad": 1,
+          "validacion": 2
+        },
+        "total": 7,
+        "pasa": true,
+        "justificacion": "Resumen diario con varios temas dispersos. Solo el caso de la medialuna ofrece cifras y una posible comprobación posterior, pero la noticia no plantea un problema modelable central y las pautas están ya dadas."
+      }
+    },
+    "evaluacion": {
+      "tarea_id": "2026-10-anticipo-renta-vitalicia-v4",
+      "fecha": "2026-10-20T22:01:25Z",
+      "rub01": {
+        "version_rubrica": "4.0",
+        "criterios": {
+          "genuino": {
+            "puntaje": 2,
+            "justificacion": "Plantea una necesidad real: diseñar una regla de recuperación justa del anticipo. No entrega fórmula, algoritmo ni modelo, y los recursos declaran explícitamente que no traen fórmulas.",
+            "cita": "La compañía no quiere perder dinero en promedio, pero tampoco cobrarle de más a la persona."
+          },
+          "abierta": {
+            "puntaje": 2,
+            "justificacion": "La pregunta no prescribe el procedimiento. Admite varios modelos defendibles: rebaja a plazo fijo o vitalicia, con o sin descuento financiero, con o sin mortalidad, y diferenciada o no por sexo y edad.",
+            "cita": "¿Qué regla propondrían para decidir cuánto bajar la pensión y por cuánto tiempo, y qué tan firme es esa regla?"
+          },
+          "decisiones": {
+            "puntaje": 2,
+            "justificacion": "Resolver exige solicitar la tabla de mortalidad y la serie de tasas, y decidir qué tasa usar, qué edad y sexo suponer y cómo interpretar el tope del 10%. También hay que formular el criterio de equidad «no perder en promedio».",
+            "cita": "Pueden pedir información adicional."
+          },
+          "realismo": {
+            "puntaje": 2,
+            "justificacion": "La situación existe: anticipos de rentas vitalicias recuperados mediante rebajas de pensión, en un litigio real. El encuadre de la aseguradora que diseña la rebaja corresponde a una práctica efectiva y no se percibe forzado.",
+            "cita": "la Corte Suprema dio la razón a las aseguradoras en una disputa por los anticipos de rentas vitalicias del tercer retiro de fondos de pensiones"
+          },
+          "autenticidad": {
+            "puntaje": 2,
+            "justificacion": "Hay varios componentes auténticos integrados en el núcleo de la tarea: la noticia y el tope regulatorio, la tabla de mortalidad del regulador y las ofertas reales del SCOMP.",
+            "cita": "Según la noticia, un oficio de la CMF fija que el anticipo puede llegar como máximo a 10% de la renta vitalicia."
+          },
+          "contexto": {
+            "puntaje": 2,
+            "justificacion": "El contexto condiciona las decisiones de modelación: el pago depende de la sobrevida y del valor del dinero en el tiempo. También es necesario para interpretar la equidad de la regla y para validarla con ofertas reales.",
+            "cita": "Una renta vitalicia es una pensión que una aseguradora paga cada mes mientras la persona viva."
+          },
+          "ciclo": {
+            "puntaje": 2,
+            "justificacion": "Responder obliga a recorrer todas las fases: comprender el mecanismo, simplificar (edad, tasa, plazo), matematizar como equivalencia de valores presentes esperados, calcular, interpretar la regla y juzgar su firmeza. Ninguna fase viene hecha.",
+            "cita": "¿Qué regla propondrían para decidir cuánto bajar la pensión y por cuánto tiempo, y qué tan firme es esa regla?"
+          },
+          "validacion": {
+            "puntaje": 2,
+            "justificacion": "Las ofertas reales del SCOMP (prima, edad, sexo y pensión) son evidencia independiente no usada en la construcción del modelo. Permiten contrastar el factor actuarial implícito en la regla del grupo.",
+            "cita": "El equipo docente lo entrega solo después de que el grupo presente su regla."
+          },
+          "nivel": {
+            "puntaje": 2,
+            "justificacion": "La matemática requerida (probabilidad, valor esperado, descuento, programación o planilla) está dentro de las herramientas esperables en U. El contexto previsional es comprensible y pertinente para universitarios.",
+            "cita": "Archivo con las probabilidades de fallecer a cada edad para mujeres y hombres pensionados por renta vitalicia."
+          },
+          "autodiferenciacion": {
+            "puntaje": 2,
+            "justificacion": "Hay un piso accesible: una rebaja simple que devuelva el monto sin interés ni mortalidad. El techo es alto: valor presente actuarial con mortalidad por sexo, comparación de rebaja temporal y vitalicia, y sensibilidad a la tasa.",
+            "cita": "quiere recuperarlo bajando su pensión mensual durante un tiempo"
+          },
+          "fecundidad": {
+            "puntaje": 2,
+            "justificacion": "Las reglas abren preguntas sobre la sensibilidad a tasa y mortalidad, la equidad entre sexos, el riesgo para la aseguradora y el contraste con ofertas reales. Además permiten comparar soluciones entre grupos.",
+            "cita": "y qué tan firme es esa regla?"
+          },
+          "recursos": {
+            "puntaje": 2,
+            "justificacion": "La información necesaria (mortalidad, tasas, ofertas) está disponible a solicitud y explícitamente no revela el modelo. Lo que falta, como la edad o el monto, puede suponerse o parametrizarse.",
+            "cita": "No indica cuál tasa conviene usar ni cómo incorporarla al cálculo."
+          }
+        },
+        "total": 24,
+        "mejoras": []
+      },
+      "reproducibilidad": {
+        "agentes": {
+          "disenador": {
+            "modelo": "claude-sonnet-5-5",
+            "version_modelo": "claude-sonnet-5-5",
+            "costo_usd": 0.104911,
+            "version_prompt": "1.1"
+          },
+          "evaluador": {
+            "modelo": "claude-opus-5-5",
+            "version_modelo": "claude-opus-5-5",
+            "costo_usd": 0.19701,
+            "version_prompt": "1.3"
+          }
+        },
+        "version_prompt": {
+          "disenador": "1.1",
+          "evaluador": "1.3"
+        },
+        "version_rubrica": "4.0",
+        "version_MAR03": "1.0",
+        "version_MED01": "1.1",
+        "diseno_simulador": null,
+        "fecha": "2026-10-20T22:01:25Z",
+        "costo_usd": 0.301921
+      }
+    }
+  },
+  "historial": [
+    {
+      "fecha": "2026-10-20T21:59:33+00:00",
+      "de": null,
+      "a": "borrador"
+    },
+    {
+      "fecha": "2026-10-20T22:01:25+00:00",
+      "de": "borrador",
+      "a": "evaluada",
+      "iteracion": 1,
+      "rub01_total": 24
+    }
+  ],
+  "marcas": {
+    "ciclo_id": "ciclo_20261020T215839542130Z",
+    "noticia_id": "2026-10-19-ciper-tramitan-expulsiones-de-extranjeros-detenidos-en",
+    "nivel_objetivo": "U",
+    "origen": "v4 de 2026-10-anticipo-renta-vitalicia-v3 (revisión humana)",
+    "version_de": "2026-10-anticipo-renta-vitalicia-v3",
+    "reusar_simulacion_de": "2026-10-anticipo-renta-vitalicia-v2",
+    "guia_base_de": "2026-10-anticipo-renta-vitalicia-v2",
+    "atencion_mejoras": [
+      {
+        "criterio": "validacion",
+        "que_cambio": "Reemplacé la ficha hipotética del recurso R4 (a_solicitud, fase P6-VAL) por ofertas reales de renta vitalicia del SCOMP, con fuente concreta ('otra fuente: SCOMP …'). El contenido no trae cifras inventadas: describe los campos (prima, edad, sexo, pensión mensual ofrecida) sin dar valores ni método. Reescribí la fila P6-VAL de mapa_ciclo para que el grupo contraste el factor de anualidad vitalicia de su modelo con el que implican las ofertas (prima dividida por pensión ofrecida). Reescribí task_space.validation_evidence con el mismo contraste y añadí en required_assumptions que las ofertas incluyen costos y margen de las aseguradoras. Ajusté la validación de variantes_detalle.abajo y los pasos de la solución de referencia. No toqué enunciado_es ni foto_descripcion."
+      }
+    ],
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "versiones_modelo": [
+          "claude-sonnet-5-5"
+        ],
+        "costo_usd": 0.104911,
+        "llamadas": 1
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "versiones_modelo": [
+          "claude-opus-5-5"
+        ],
+        "costo_usd": 0.19701,
+        "llamadas": 3
+      }
+    },
+    "version_MAR03": "1.0",
+    "evaluacion_inestable": false,
+    "evaluacion_rango_total": 0,
+    "evaluacion_corridas": "C:\\Users\\carro\\OneDrive - Universidad Católica de Chile\\repos\\otm-prensa\\pipeline\\state\\trabajo\\2026-10-anticipo-renta-vitalicia-v4\\evaluacion_corridas.json",
+    "pendiente": "revision_humana_1"
+  }
+}
