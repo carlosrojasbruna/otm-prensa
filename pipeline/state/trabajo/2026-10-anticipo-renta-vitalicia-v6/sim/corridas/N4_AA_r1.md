@@ -1,0 +1,19 @@
+# Corrida N4_AA_r1
+
+Nivel N4 · estilos A/A · rep 1 · 15 turnos · término: acuerdo · modelo claude-sonnet-5-5
+
+**1. Cami:** Yo lo plantearía como equivalencia actuarial: que el valor presente de los descuentos sea igual al adelanto, o sea A = Σ d·vᵗ·ₜpₓ, con una tasa y una tabla de mortalidad. Pero ojo, primero hay que definir qué es ese "10%": ¿de un año de pensión o del valor total?  
+**2. Fran:** Ojo con eso, Cami: en la ley el 10% es del valor de la renta vitalicia, no de un año, así que A = 0,10·(PRV). Si el descuento d es constante, queda d = A / ä_x, con ä_x = Σ vᵗ·ₜpₓ, pero necesitaríamos la tasa, la tabla y la edad.  
+**3. Cami:** Fíjate que si uso la misma tasa y tabla, d = 0,10·P·ä / ä = 0,10·P: sería descontar el 10% de la pensión de por vida. Entonces el "cuánto tiempo" lo tendríamos que fijar nosotros, por ejemplo n años, con d = A / ä_{x:n}, ¿te parece?  
+**4. Fran:** Sí, me parece: con n = 10 años, por ejemplo, d = 0,10·P·ä_x / ä_{x:10}, que es mayor que 0,10·P porque se descuenta en menos tiempo. Pero la regla es firme solo en promedio, y depende de la tasa y la tabla, así que habría que probar cómo cambia d si movemos la tasa.  
+**5. Cami:** Hagamos la prueba: edad 65, n = 10, y calculo d/P con i = 2% y con i = 4% usando la misma tabla. Así vemos cuánto se mueve, porque si cambia poco la regla es firme, y si cambia mucho no.  
+**6. Fran:** Dale, pero ojo: d/P = 0,10·ä_x / ä_{x:10}, y como ä_x es de por vida, debería moverse más con la tasa que ä_{x:10}. Necesitamos la tabla de mortalidad; si no la tenemos, pidámosla o asumamos una aproximada.  
+**7. Cami:** Sin tabla, aproximemos con una anualidad cierta a 20 años, que sería la esperanza de vida a los 65. Con i=2%: ä₂₀≈16,68 y ä₁₀≈9,16, así que d/P≈0,10·16,68/9,16≈0,182; con 4% me da ≈0,168.  
+**8. Fran:** Me cuadran tus cálculos: 0,182 contra 0,168, o sea d cambia como un 8% relativo al pasar de 2% a 4%, y eso es bastante firme respecto a la tasa. Pero ojo, la anualidad cierta a 20 años ignora la mortalidad: con tabla real ä_x sería menor y d/P bajaría, así que esa sensibilidad también hay que probarla.  
+**9. Cami:** De acuerdo: 0,182 contra 0,168 son como 1,4 puntos de la pensión, así que la tasa mueve poco. El supuesto más débil es la mortalidad, así que pidamos la tabla y la tasa de la póliza, y mientras tanto probemos n = 20 para ver cuánto baja d/P hacia 0,10.  
+**10. Fran:** Ojo, con ä₂₀ como aproximación de ä_x, n = 20 da d/P = 0,10 por construcción, así que no nos aporta nada. Mejor probemos n = 5 y n = 15 con i = 2%, y pidamos la tabla para ver cuánto baja d/P al incluir mortalidad.  
+**11. Cami:** Dale: con i=2%, ä₅≈4,81 y ä₁₅≈13,11, así que d/P≈0,10·16,68/4,81≈0,347 para n=5 y 0,10·16,68/13,11≈0,127 para n=15. Con n=5 descontaríamos más de un tercio de la pensión, y eso pesa mucho para el pensionado, así que n=15 o más parece más razonable.  
+**12. Fran:** Ojo, n = 15 con d/P ≈ 0,127 es más llevadero, pero ningún n rompe la equivalencia: n lo elegimos por criterio y no sale del cálculo. Propongo fijar un tope, por ejemplo d ≤ 15% de P, y pedir la tabla para recalcular con mortalidad real.  
+**13. Cami:** Me parece bien el tope del 15%, porque con n=15 queda en ≈12,7% y con n=10 se pasaría (≈18%). Entonces propongo entregar: d = 0,10·P·ä_x / ä_{x:15}, tope 15% de P, equivalencia solo en promedio, y recalcular con la tabla y la tasa de la póliza. ¿Lo escribimos así?  
+**14. Fran:** Sí, escribámoslo. ENTREGAMOS: d = 0,10·P·ä_x/ä_{x:15} mensual por 15 años (o hasta el fallecimiento), tope 15% de P, equivalencia solo en promedio y sensible a la mortalidad, con un cálculo de prueba de ≈12,7% a i=2%. Hay que recalcular con la tabla y la tasa de la póliza.  
+**15. Cami:** DE ACUERDO. Queda claro que el 12,7% es solo un cálculo de prueba con la aproximación a 20 años, y que el número final sale de recalcular con la tabla y la tasa de la póliza.  

@@ -1,0 +1,78 @@
+{
+  "tarea_id": "2026-10-anticipo-renta-vitalicia-v6",
+  "aprobado": true,
+  "estado_destino": "verificada",
+  "hallazgos": [
+    {
+      "invariante": "notebook",
+      "severidad": "advertencia",
+      "ubicacion": "guia.materiales.notebook",
+      "descripcion": "notebook escenarios.ipynb no encontrado: ",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "guia.escenarios[E1].que_aprende",
+      "descripcion": "Las tres notan que, con la misma tasa y tabla, descontar de por vida devuelve el 10% de cada pensión — Las trazas solo muestran esa observación en N4_AA_r1. N4_VV_r1 trabaja con un adelanto inventado A = 1.000 sin expresarlo como 10% de la pensión, y N3_AA_r1 no la menciona.",
+      "origen": "modelo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "guia.escenarios[E1].que_aprende",
+      "descripcion": "los números salen de un horizonte cierto de 20 años — El resultado principal de N3_AA_r1 (≈13% a 15 años) usa factores aproximados ä65≈14 y ä65:15≈11, no un horizonte cierto. El horizonte cierto aparece solo en su análisis de sensibilidad.",
+      "origen": "modelo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "guia.escenarios[E3].que_aprende",
+      "descripcion": "corrige en el camino una confusión de P1-MRS (había usado el 10% de un mes en vez del pozo) — La traza de N2_VV_r1 solo registra el supuesto del 10% del pozo. No hay constancia de una lectura previa como 10% de un mes.",
+      "origen": "modelo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "guia.escenarios[E4].que_aprende",
+      "descripcion": "termina por límite de turnos — La traza indica que no llegan a exponer una respuesta final, pero no dice por qué.",
+      "origen": "modelo"
+    }
+  ],
+  "cifras_contrastadas": [
+    {
+      "indice": 0,
+      "que_es": "monto máximo de anticipo de las rentas vitalicias fijado por el oficio de la CMF",
+      "valor_tarea": "10%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 31"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "10%",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia; modelo: El párrafo 31 dice que el oficio de la CMF regulaba el anticipo de hasta un 10% de las rentas vitalicias. Coinciden el valor, la unidad y el significado."
+    }
+  ],
+  "notebook": {
+    "estado": "no_encontrado",
+    "ruta": "escenarios.ipynb",
+    "salida_resumen": ""
+  },
+  "meta": {
+    "agente": "verificador",
+    "version_prompt": "1.1",
+    "modelo": "claude-opus-5-5",
+    "request_id": "req_011CgEHapiaZ7vDaV6865Jzb",
+    "fecha": "2026-10-20T22:35:42+00:00",
+    "costo_usd": 0.195432,
+    "modelo_llamado": true,
+    "texto_noticia_recibido": true,
+    "uso": {
+      "input_tokens": 26068,
+      "output_tokens": 3978,
+      "cache_creation_input_tokens": 2320,
+      "cache_read_input_tokens": 0
+    }
+  }
+}

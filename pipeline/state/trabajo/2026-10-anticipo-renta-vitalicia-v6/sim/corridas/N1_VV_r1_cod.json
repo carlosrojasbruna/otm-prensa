@@ -1,0 +1,190 @@
+{
+  "run": {
+    "id": "N1_VV_r1",
+    "nivel": "N1",
+    "composicion": "VV",
+    "rep": 1,
+    "estilos": [
+      "V",
+      "V"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.080672,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P2-RM",
+        "fase_secundaria": "P1-MRS",
+        "eventos": [
+          "STRAT",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P1-MRS",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P2-RM",
+        "fase_secundaria": "EMK",
+        "eventos": []
+      },
+      {
+        "n": 6,
+        "fase": "EMK",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 8,
+        "fase": "P4-WM",
+        "fase_secundaria": "P3-MM",
+        "eventos": []
+      },
+      {
+        "n": 9,
+        "fase": "P2-RM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 10,
+        "fase": "P4-WM",
+        "fase_secundaria": "P3-MM",
+        "eventos": []
+      },
+      {
+        "n": 11,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 12,
+        "fase": "P4-WM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 13,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 14,
+        "fase": "P5-INT",
+        "fase_secundaria": "P2-RM",
+        "eventos": []
+      },
+      {
+        "n": 15,
+        "fase": "P2-RM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "STRAT",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 16,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 17,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 18,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 19,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      }
+    ],
+    "bloqueos": [
+      {
+        "codigo": "B34",
+        "turnos": [
+          10,
+          11
+        ],
+        "resolucion": "peer",
+        "descripcion": "B calcula el interés simple sobre los 40 mil completos y duda si lo cobra bien; A objeta que el saldo se va achicando, y B corrige usando el saldo promedio (la mitad) en el turno 12."
+      }
+    ],
+    "supuestos": [
+      "pensión mensual de 400 mil",
+      "adelanto = 10% de una pensión mensual (40 mil)",
+      "vive de 65 a 85 años (20 años, 240 meses)",
+      "interés de 3% anual",
+      "interés cobrado sobre saldo promedio (mitad del adelanto)",
+      "descuento fijo cada mes hasta pagar todo",
+      "plazos de 10 o 20 años",
+      "en muchas personas las muertes tempranas y tardías se compensan en promedio"
+    ],
+    "modelo": "interés simple",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Descuento fijo cada mes, calculado a partir del 10% de la pensión mensual (unos 217 a 383 pesos por cada 400 mil de pensión, según si el plazo es 20 o 10 años), considerando interés y una tabla de cuántos viven a los 65; el descuento se detiene cuando se paga todo. Es una estimación, firme solo si los datos de interés y mortalidad son buenos, y se revisa si cambia el interés."
+    },
+    "ruta_principal": "R1",
+    "rutas": [
+      "R1"
+    ]
+  }
+}

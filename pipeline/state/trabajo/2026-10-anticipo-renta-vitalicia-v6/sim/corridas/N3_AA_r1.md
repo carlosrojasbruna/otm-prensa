@@ -1,0 +1,18 @@
+# Corrida N3_AA_r1
+
+Nivel N3 · estilos A/A · rep 1 · 14 turnos · término: acuerdo · modelo claude-sonnet-5-5
+
+**1. Cami:** Para mí lo primero es definir qué es "10% de la renta vitalicia": ¿10% de la pensión anual, o de todo el valor de la renta, o sea el capital que respalda la pensión? Si es lo segundo, necesitamos la esperanza de vida y una tasa de descuento para que el descuento sea justo en promedio.  
+**2. Fran:** Yo creo que es lo segundo, porque si fuera 10% de la pensión anual el adelanto sería chico. Entonces la regla justa sería que el valor presente de los descuentos mensuales sea igual al adelanto: A = Σ d·vᵗ·ₜpₓ, o sea d = A / ä ₓ.  
+**3. Cami:** Ok, eso me hace sentido: d = A / äₓ, donde äₓ es la anualidad vitalicia con pagos mensuales, así el descuento tiene el mismo valor esperado que el adelanto. Pero necesitamos datos: la edad del pensionado, la tasa de descuento y una tabla de mortalidad, ¿o suponemos algo, digamos 65 años y 3%?  
+**4. Fran:** Dale, supongamos 65 años, 3% y una tabla de mortalidad chilena. Pero ojo: si A = 0,1·P·äₓ, entonces d = A/äₓ = 0,1·P, o sea descontar 10% de cada pensión de por vida. ¿Eso no te parece raro?  
+**5. Cami:** No me parece raro: si adelantas 10% del valor, devolver 10% de cada pago calza en valor esperado, pero el que vive más termina pagando más que A. ¿Probamos con A fijo y tasas de 2% y 4% para ver cuánto se mueve d?  
+**6. Fran:** Dale, pero ojo: con A fijo, d = A/äₓ, y como äₓ baja cuando sube la tasa, a 4% el descuento mensual sale más grande que a 2%. Calculémoslo con la tabla y veamos cuánto cambia d, porque eso nos dice qué tan firme es la regla.  
+**7. Cami:** Sin la tabla a mano, aproximo con 20 años ciertos: ä = (1−v²⁰)/d da 16,7 a 2% y 14,1 a 4%. Entonces d = A/ä sube como 18% al pasar de 2% a 4%, o sea que la tasa mueve harto la regla.  
+**8. Fran:** Cuadra el 18%, pero ojo que con 20 años ciertos ignoramos la mortalidad, así que habría que rehacerlo con la tabla. Y si A = 0,1·P·ä con la misma tasa, d = 0,1·P no se mueve, así que la sensibilidad viene de usar tasas distintas para A y para descontar.  
+**9. Cami:** Ok, entonces con la misma tasa en ambos lados la regla d = 0,1·P es firme, y lo que mueve el resultado es la tasa técnica que use la aseguradora y la mortalidad. Propongo pedir esa tasa y, para no cobrar de más a quien vive harto, descontar hasta completar A con interés y no de por vida, ¿te cuadra?  
+**10. Fran:** Me cuadra parar al completar A, pero ojo: si se corta ahí, el que muere antes deja de pagar y la compañía pierde en promedio. Habría que calcular d = A / ä_{x:n̄|} con mortalidad, o sea una anualidad temporal, y d sale mayor que 0,1·P. ¿Qué n te parece, 10 o 15 años?  
+**11. Cami:** Yo iría con 15: con 10 años el descuento sube demasiado. Y ojo, si usamos d = A/ä_{x:15|} con mortalidad, la muerte temprana ya está en el cálculo y calza en promedio. Aproximando ä₆₅ ≈ 14 y ä_{65:15|} ≈ 11, d ≈ 0,1·P·14/11 ≈ 0,13·P. ¿Lo comprobamos con la tabla?  
+**12. Fran:** Cuadra: 0,1·14/11 ≈ 0,127, o sea cerca de 13% de la pensión por 15 años, aunque esos 14 y 11 son aproximados y hay que sacarlos de la tabla. Pidámosle al profe la tabla y la tasa técnica, y recalculemos d con n = 15 a 2% y a 4% para ver qué tan firme es el 13%.  
+**13. Cami:** Como no tenemos la tabla, entreguemos con supuestos: ENTREGAMOS: d = A/ä_{x:15|} ≈ 13% de la pensión por 15 años (65 años, 3%), y es firme solo si la tasa y la mortalidad no cambian.  
+**14. Fran:** DE ACUERDO. Solo agregaría que 13% es aproximado, porque los 14 y 11 no salen de la tabla, y que la tasa lo mueve: con el cálculo de 20 años ciertos, d cambió cerca de 18% entre 2% y 4%.  

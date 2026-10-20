@@ -1,0 +1,146 @@
+{
+  "run": {
+    "id": "N3_AA_r1",
+    "nivel": "N3",
+    "composicion": "AA",
+    "rep": 1,
+    "estilos": [
+      "A",
+      "A"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.062824,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "LEX",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P3-MM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P2-RM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P5-INT",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 6,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 8,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P4-WM",
+        "eventos": []
+      },
+      {
+        "n": 9,
+        "fase": "P5-INT",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 10,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P3-MM",
+        "eventos": []
+      },
+      {
+        "n": 11,
+        "fase": "P4-WM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 12,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 13,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 14,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      }
+    ],
+    "bloqueos": [],
+    "supuestos": [
+      "10% del valor total de la renta (capital), no de la pensión anual",
+      "edad 65 años",
+      "tasa de descuento 3% (sensibilidad 2% y 4%)",
+      "tabla de mortalidad chilena",
+      "misma tasa para calcular A y para descontar",
+      "horizonte de 20 años ciertos como aproximación sin mortalidad",
+      "descuento constante hasta completar A, plazo de 15 años",
+      "anualidades aproximadas ä65≈14 y ä65:15≈11"
+    ],
+    "modelo": "valor actuarial",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "d = A/ä_{x:15|} ≈ 13% de la pensión durante 15 años (65 años, tasa 3%); aproximado porque los factores 14 y 11 no salen de la tabla; firme solo si la tasa y la mortalidad no cambian, y la tasa lo mueve (cerca de 18% entre 2% y 4% con 20 años ciertos)."
+    },
+    "ruta_principal": "R2",
+    "rutas": [
+      "R2",
+      "R1"
+    ]
+  }
+}

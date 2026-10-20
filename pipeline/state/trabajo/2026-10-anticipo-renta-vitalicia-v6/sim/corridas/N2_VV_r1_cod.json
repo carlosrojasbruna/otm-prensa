@@ -1,0 +1,258 @@
+{
+  "run": {
+    "id": "N2_VV_r1",
+    "nivel": "N2",
+    "composicion": "VV",
+    "rep": 1,
+    "estilos": [
+      "V",
+      "V"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.1064,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 2,
+        "fase": "P1-MRS",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P2-RM",
+        "fase_secundaria": "P1-MRS",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P2-RM",
+        "fase_secundaria": "EMK",
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 6,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 8,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 9,
+        "fase": "P2-RM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 10,
+        "fase": "P3-MM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 11,
+        "fase": "P3-MM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 12,
+        "fase": "P3-MM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 13,
+        "fase": "P2-RM",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 14,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": [
+          "PREC"
+        ]
+      },
+      {
+        "n": 15,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P4-WM",
+        "eventos": []
+      },
+      {
+        "n": 16,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 17,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 18,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 19,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 20,
+        "fase": "P4-WM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 21,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 22,
+        "fase": "P5-INT",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 23,
+        "fase": "P6-VAL",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 24,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P4-WM",
+        "eventos": []
+      },
+      {
+        "n": 25,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 26,
+        "fase": "P5-INT",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 27,
+        "fase": "P6-VAL",
+        "fase_secundaria": null,
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 28,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 29,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      }
+    ],
+    "bloqueos": [
+      {
+        "codigo": "B23",
+        "turnos": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "resolucion": "peer",
+        "descripcion": "Con el reparto en cuotas iguales hasta la expectativa de vida, el par duda y se objeta mutuamente sobre cómo se compensan las pérdidas por fallecimientos tempranos. A concluye que la compañía siempre perdería en promedio. B destraba la discusión al proponer descontar más cada mes, lo que lleva a introducir la tabla de mortalidad y el interés."
+      }
+    ],
+    "supuestos": [
+      "adelanto = 10% del pozo de todo lo que le queda por cobrar",
+      "pozo calculado como suma de pensiones sin descontar (400.000 × 240)",
+      "vida restante de unos 20 años (240 meses), según la expectativa de vida promedio",
+      "pensión inventada de $400.000",
+      "cuota mensual constante",
+      "tasa de interés constante de 0,3% mensual",
+      "probabilidad de seguir viva que baja 0,2% cada mes (inventada)",
+      "plazo alternativo de 30 años (360 meses)"
+    ],
+    "modelo": "anualidad actuarial",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "La cuota C es la que hace que la suma de C multiplicada por la probabilidad de seguir viva, descontada con la tasa, iguale el adelanto de 9.600.000. Con números inventados (0,3% de interés mensual y 0,2% mensual de probabilidad de fallecer) da unos 68.780 al mes a 20 años (cerca de 17% de la pensión) o unos 57.550 a 30 años. No es una regla firme, porque cambia con la tabla de mortalidad y la tasa."
+    },
+    "ruta_principal": "R2",
+    "rutas": [
+      "R2",
+      "RX"
+    ]
+  }
+}

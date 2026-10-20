@@ -1,0 +1,152 @@
+{
+  "run": {
+    "id": "N4_AA_r1",
+    "nivel": "N4",
+    "composicion": "AA",
+    "rep": 1,
+    "estilos": [
+      "A",
+      "A"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.070296,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P2-RM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P2-RM",
+        "fase_secundaria": "EMK",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P3-MM",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P3-MM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "STRAT",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 6,
+        "fase": "P3-MM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P4-WM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 8,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 9,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 10,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 11,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 12,
+        "fase": "P5-INT",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 13,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 14,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 15,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      }
+    ],
+    "bloqueos": [],
+    "supuestos": [
+      "el 10% es del valor de la renta vitalicia, no de un año",
+      "descuento mensual constante",
+      "plazo de descuento elegido por el grupo (10, luego 15 años)",
+      "edad 65",
+      "horizonte cierto de 20 años (esperanza de vida) sin mortalidad",
+      "tasa de interés constante (2% y 4%)",
+      "tope del descuento en 15% de la pensión",
+      "equivalencia solo en promedio"
+    ],
+    "modelo": "anualidad descontada",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Regla: descuento mensual d = 0,10·P·ä_x/ä_{x:15} durante 15 años (o hasta el fallecimiento), con tope de 15% de la pensión; equivalencia solo en promedio y sensible a la mortalidad. Cálculo de prueba con anualidad cierta a 20 años e i=2%: d ≈ 12,7% de P (18,2% a 10 años, 34,7% a 5 años; la tasa mueve poco, ~1,4 puntos entre 2% y 4%). Debe recalcularse con la tabla de mortalidad y la tasa de la póliza."
+    },
+    "ruta_principal": "R1",
+    "rutas": [
+      "R1",
+      "R2"
+    ]
+  }
+}

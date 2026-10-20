@@ -1,0 +1,203 @@
+{
+  "ciclo_id": "ciclo_20261020T222518739328Z",
+  "inicio": "2026-10-20T22:25:18Z",
+  "fin": "2026-10-20T22:35:46Z",
+  "semana": "2026-W43",
+  "parametros": {
+    "tope_semanal_usd": 35.0,
+    "fraccion_detencion": 0.9,
+    "presupuesto_ciclo_usd": 4.0,
+    "limite_usd": 26.257564,
+    "gasto_semana_previo_usd": 22.257564,
+    "corridas_evaluador": 3,
+    "rango_inestable": 4,
+    "corridas_simulador": 6,
+    "ids": [
+      "2026-10-pagar-trasladar-o-esperar-v4",
+      "2026-10-anticipo-renta-vitalicia-v6"
+    ],
+    "revisor": "Carlos Rojas Bruna"
+  },
+  "detenido_por_tope": false,
+  "eventos": [
+    {
+      "fecha": "2026-10-20T22:25:20Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-pagar-trasladar-o-esperar-v4",
+      "de": "evaluada",
+      "a": "revisada"
+    },
+    {
+      "fecha": "2026-10-20T22:25:20Z",
+      "tipo": "simulacion_reutilizada",
+      "tarea_id": "2026-10-pagar-trasladar-o-esperar-v4",
+      "origen": "2026-10-pagar-trasladar-o-esperar-v3"
+    },
+    {
+      "fecha": "2026-10-20T22:25:21Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-pagar-trasladar-o-esperar-v4",
+      "de": "revisada",
+      "a": "simulada"
+    },
+    {
+      "fecha": "2026-10-20T22:27:13Z",
+      "tipo": "agente",
+      "agente": "redactor",
+      "tareas": [
+        "2026-10-pagar-trasladar-o-esperar-v4"
+      ],
+      "llamadas": 3,
+      "usd": 0.419043
+    },
+    {
+      "fecha": "2026-10-20T22:27:17Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-pagar-trasladar-o-esperar-v4",
+      "de": "simulada",
+      "a": "con_guia"
+    },
+    {
+      "fecha": "2026-10-20T22:27:22Z",
+      "tipo": "agente",
+      "agente": "ilustrador",
+      "tareas": [
+        "2026-10-pagar-trasladar-o-esperar-v4"
+      ],
+      "llamadas": 1,
+      "usd": 0.011368
+    },
+    {
+      "fecha": "2026-10-20T22:27:51Z",
+      "tipo": "agente",
+      "agente": "verificador",
+      "tareas": [
+        "2026-10-pagar-trasladar-o-esperar-v4"
+      ],
+      "llamadas": 1,
+      "usd": 0.159156
+    },
+    {
+      "fecha": "2026-10-20T22:27:55Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-pagar-trasladar-o-esperar-v4",
+      "de": "con_guia",
+      "a": "verificada"
+    },
+    {
+      "fecha": "2026-10-20T22:27:58Z",
+      "tipo": "bibliotecario_dry_run",
+      "tarea_id": "2026-10-pagar-trasladar-o-esperar-v4",
+      "ok": true,
+      "ruta": "tareas/2026-10/pagar-trasladar-o-esperar-v4/",
+      "rama": "tareas/semana-2026-W43"
+    },
+    {
+      "fecha": "2026-10-20T22:28:00Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-anticipo-renta-vitalicia-v6",
+      "de": "evaluada",
+      "a": "revisada"
+    },
+    {
+      "fecha": "2026-10-20T22:28:00Z",
+      "tipo": "simulacion_no_reutilizable",
+      "tarea_id": "2026-10-anticipo-renta-vitalicia-v6",
+      "origen": "2026-10-anticipo-renta-vitalicia-v5"
+    },
+    {
+      "fecha": "2026-10-20T22:32:08Z",
+      "tipo": "agente",
+      "agente": "simulador",
+      "tareas": [
+        "2026-10-anticipo-renta-vitalicia-v6"
+      ],
+      "llamadas": 137,
+      "usd": 1.469404
+    },
+    {
+      "fecha": "2026-10-20T22:32:09Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-anticipo-renta-vitalicia-v6",
+      "de": "revisada",
+      "a": "simulada"
+    },
+    {
+      "fecha": "2026-10-20T22:34:55Z",
+      "tipo": "agente",
+      "agente": "redactor",
+      "tareas": [
+        "2026-10-anticipo-renta-vitalicia-v6"
+      ],
+      "llamadas": 3,
+      "usd": 0.524907
+    },
+    {
+      "fecha": "2026-10-20T22:34:57Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-anticipo-renta-vitalicia-v6",
+      "de": "simulada",
+      "a": "con_guia"
+    },
+    {
+      "fecha": "2026-10-20T22:35:02Z",
+      "tipo": "agente",
+      "agente": "ilustrador",
+      "tareas": [
+        "2026-10-anticipo-renta-vitalicia-v6"
+      ],
+      "llamadas": 1,
+      "usd": 0.013296
+    },
+    {
+      "fecha": "2026-10-20T22:35:42Z",
+      "tipo": "agente",
+      "agente": "verificador",
+      "tareas": [
+        "2026-10-anticipo-renta-vitalicia-v6"
+      ],
+      "llamadas": 1,
+      "usd": 0.195432
+    },
+    {
+      "fecha": "2026-10-20T22:35:44Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-anticipo-renta-vitalicia-v6",
+      "de": "con_guia",
+      "a": "verificada"
+    },
+    {
+      "fecha": "2026-10-20T22:35:46Z",
+      "tipo": "bibliotecario_dry_run",
+      "tarea_id": "2026-10-anticipo-renta-vitalicia-v6",
+      "ok": true,
+      "ruta": "tareas/2026-10/anticipo-renta-vitalicia-v6/",
+      "rama": "tareas/semana-2026-W43"
+    }
+  ],
+  "expedientes": {
+    "2026-10-pagar-trasladar-o-esperar-v4": "verificada",
+    "2026-10-anticipo-renta-vitalicia-v6": "verificada"
+  },
+  "noticias": [],
+  "pendientes_humanos": [
+    {
+      "tarea_id": "2026-10-pagar-trasladar-o-esperar-v4",
+      "pendiente": "revision_humana_2",
+      "estado": "verificada"
+    },
+    {
+      "tarea_id": "2026-10-anticipo-renta-vitalicia-v6",
+      "pendiente": "revision_humana_2",
+      "estado": "verificada"
+    }
+  ],
+  "errores": [],
+  "orden": "tramo_b",
+  "gasto": {
+    "ciclo_usd": 2.792606,
+    "semana_usd": 25.05017,
+    "limite_usd": 26.257564,
+    "llamadas": 147
+  }
+}

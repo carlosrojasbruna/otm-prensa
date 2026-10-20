@@ -1,12 +1,12 @@
 {
   "tarea_id": "2026-10-anticipo-renta-vitalicia-v6",
-  "estado": "evaluada",
+  "estado": "verificada",
   "iteraciones": 1,
   "artefactos": {
     "tarea": {
       "id": "2026-10-anticipo-renta-vitalicia-v6",
       "titulo": "Anulado el método: ¿cómo descontar el adelanto de una renta vitalicia?",
-      "estado": "evaluada",
+      "estado": "verificada",
       "version": 6,
       "fecha": "2026-10-20",
       "noticia": {
@@ -405,18 +405,851 @@
             "version_modelo": "claude-opus-5-5",
             "costo_usd": 0.185594,
             "version_prompt": "1.3"
+          },
+          "ilustrador": {
+            "modelo": "claude-sonnet-5-5",
+            "version_modelo": "claude-sonnet-5-5",
+            "costo_usd": 0.013296,
+            "version_prompt": "1.0"
+          },
+          "redactor": {
+            "modelo": "claude-sonnet-5-5",
+            "version_modelo": "claude-sonnet-5-5",
+            "costo_usd": 0.207787,
+            "version_prompt": "1.0"
+          },
+          "redactor_escenarios": {
+            "modelo": "claude-opus-5-5",
+            "version_modelo": "claude-opus-5-5",
+            "costo_usd": 0.31712,
+            "version_prompt": "1.0"
+          },
+          "simulador": {
+            "modelo": "claude-sonnet-5-5",
+            "version_modelo": "claude-sonnet-5-5",
+            "costo_usd": 0.97184,
+            "version_prompt": "PROMPTS.md"
+          },
+          "simulador_codificador": {
+            "modelo": "claude-opus-5-5",
+            "version_modelo": "claude-opus-5-5",
+            "costo_usd": 0.497564,
+            "version_prompt": "PROMPTS.md"
+          },
+          "verificador": {
+            "modelo": "claude-opus-5-5",
+            "version_modelo": "claude-opus-5-5",
+            "costo_usd": 0.195432,
+            "version_prompt": "1.1"
           }
         },
         "version_prompt": {
           "disenador": "1.1",
-          "evaluador": "1.3"
+          "evaluador": "1.3",
+          "ilustrador": "1.0",
+          "redactor": "1.0",
+          "redactor_escenarios": "1.0",
+          "simulador": "PROMPTS.md",
+          "simulador_codificador": "PROMPTS.md",
+          "verificador": "1.1"
         },
         "version_rubrica": "4.0",
         "version_MAR03": "1.0",
         "version_MED01": "1.1",
-        "diseno_simulador": null,
-        "fecha": "2026-10-20T22:24:13Z",
-        "costo_usd": 0.310421
+        "diseno_simulador": "diseno_otm",
+        "fecha": "2026-10-20T22:35:42Z",
+        "costo_usd": 2.51346
+      }
+    },
+    "trazas_resumen": {
+      "tarea_id": "2026-10-anticipo-renta-vitalicia-v6",
+      "diseno": "diseno_otm",
+      "corridas": 6,
+      "modelo": "claude-sonnet-5-5",
+      "costo_usd": 1.4695,
+      "por_corrida": [
+        {
+          "id": "N1_VV_r1",
+          "perfil": {
+            "nivel_edad": "U",
+            "nivel": "N1",
+            "estilo": "VV"
+          },
+          "ruta": [
+            "P1-MRS",
+            "P2-RM",
+            "P1-MRS",
+            "P2-RM",
+            "P4-WM",
+            "P2-RM",
+            "P4-WM",
+            "P6-VAL",
+            "P4-WM",
+            "P5-INT",
+            "P2-RM",
+            "P6-VAL",
+            "P7-EXP"
+          ],
+          "bloqueos": [
+            {
+              "transicion": "B34",
+              "turnos": [
+                10,
+                11
+              ],
+              "resolucion": "peer"
+            }
+          ],
+          "supuestos": [
+            "pensión mensual de 400 mil",
+            "adelanto = 10% de una pensión mensual (40 mil)",
+            "vive de 65 a 85 años (20 años, 240 meses)",
+            "interés de 3% anual",
+            "interés cobrado sobre saldo promedio (mitad del adelanto)",
+            "descuento fijo cada mes hasta pagar todo",
+            "plazos de 10 o 20 años",
+            "en muchas personas las muertes tempranas y tardías se compensan en promedio"
+          ],
+          "modelo": "interés simple",
+          "respuesta_final": "Descuento fijo cada mes, calculado a partir del 10% de la pensión mensual (unos 217 a 383 pesos por cada 400 mil de pensión, según si el plazo es 20 o 10 años), considerando interés y una tabla de cuántos viven a los 65; el descuento se detiene cuando se paga todo. Es una estimación, firme solo si los datos de interés y mortalidad son buenos, y se revisa si cambia el interés.",
+          "validacion": true,
+          "archivo": "N1_VV_r1.json",
+          "costo_usd": 0.209072
+        },
+        {
+          "id": "N1_AA_r1",
+          "perfil": {
+            "nivel_edad": "U",
+            "nivel": "N1",
+            "estilo": "AA"
+          },
+          "ruta": [
+            "P1-MRS",
+            "P2-RM",
+            "P4-WM",
+            "P5-INT",
+            "P4-WM",
+            "P5-INT",
+            "P3-MM",
+            "P4-WM",
+            "P5-INT",
+            "P2-RM",
+            "P6-VAL",
+            "P4-WM",
+            "P6-VAL",
+            "P3-MM",
+            "P4-WM",
+            "P3-MM",
+            "P4-WM"
+          ],
+          "bloqueos": [
+            {
+              "transicion": "B23",
+              "turnos": [
+                14,
+                15
+              ],
+              "resolucion": "peer"
+            },
+            {
+              "transicion": "B45",
+              "turnos": [
+                23,
+                24
+              ],
+              "resolucion": "peer"
+            }
+          ],
+          "supuestos": [
+            "adelanto = 10% del total de la renta en la vida",
+            "pensión de $300.000 mensuales",
+            "edad 65 años",
+            "vive hasta 85 (esperanza de vida, 20 años)",
+            "descuento parejo mensual",
+            "en promedio los que viven menos compensan a los que viven más",
+            "descuento mientras la persona viva",
+            "pensión reajustada por inflación",
+            "tasa de interés constante 0,3% mensual"
+          ],
+          "modelo": "anualidad cierta",
+          "respuesta_final": "No llegan a exponer una respuesta final. Su propuesta en curso: adelanto de $7.200.000 (10% de 300.000·12·20) y cuota tal que 7.200.000 = cuota·(1−(1+r)^(−240))/r; con r = 0,3% mensual la cuota es ≈ $42.100, cerca de 14% de la pensión, mayor que el 10% sin descontar. Dejan pendiente pedir la tabla de mortalidad, la inflación y la tasa, y si r debe ser real.",
+          "validacion": true,
+          "archivo": "N1_AA_r1.json",
+          "costo_usd": 0.329576
+        },
+        {
+          "id": "N2_VV_r1",
+          "perfil": {
+            "nivel_edad": "U",
+            "nivel": "N2",
+            "estilo": "VV"
+          },
+          "ruta": [
+            "P1-MRS",
+            "P2-RM",
+            "P3-MM",
+            "P2-RM",
+            "P4-WM",
+            "P6-VAL",
+            "P4-WM",
+            "P2-RM",
+            "P4-WM",
+            "P5-INT",
+            "P6-VAL",
+            "P4-WM",
+            "P5-INT",
+            "P6-VAL",
+            "P7-EXP"
+          ],
+          "bloqueos": [
+            {
+              "transicion": "B23",
+              "turnos": [
+                5,
+                6,
+                7,
+                8
+              ],
+              "resolucion": "peer"
+            }
+          ],
+          "supuestos": [
+            "adelanto = 10% del pozo de todo lo que le queda por cobrar",
+            "pozo calculado como suma de pensiones sin descontar (400.000 × 240)",
+            "vida restante de unos 20 años (240 meses), según la expectativa de vida promedio",
+            "pensión inventada de $400.000",
+            "cuota mensual constante",
+            "tasa de interés constante de 0,3% mensual",
+            "probabilidad de seguir viva que baja 0,2% cada mes (inventada)",
+            "plazo alternativo de 30 años (360 meses)"
+          ],
+          "modelo": "anualidad actuarial",
+          "respuesta_final": "La cuota C es la que hace que la suma de C multiplicada por la probabilidad de seguir viva, descontada con la tasa, iguale el adelanto de 9.600.000. Con números inventados (0,3% de interés mensual y 0,2% mensual de probabilidad de fallecer) da unos 68.780 al mes a 20 años (cerca de 17% de la pensión) o unos 57.550 a 30 años. No es una regla firme, porque cambia con la tabla de mortalidad y la tasa.",
+          "validacion": true,
+          "archivo": "N2_VV_r1.json",
+          "costo_usd": 0.3626
+        },
+        {
+          "id": "N3_AA_r1",
+          "perfil": {
+            "nivel_edad": "U",
+            "nivel": "N3",
+            "estilo": "AA"
+          },
+          "ruta": [
+            "P1-MRS",
+            "P3-MM",
+            "P2-RM",
+            "P4-WM",
+            "P5-INT",
+            "P4-WM",
+            "P6-VAL",
+            "P5-INT",
+            "P6-VAL",
+            "P4-WM",
+            "P6-VAL",
+            "P7-EXP"
+          ],
+          "bloqueos": [],
+          "supuestos": [
+            "10% del valor total de la renta (capital), no de la pensión anual",
+            "edad 65 años",
+            "tasa de descuento 3% (sensibilidad 2% y 4%)",
+            "tabla de mortalidad chilena",
+            "misma tasa para calcular A y para descontar",
+            "horizonte de 20 años ciertos como aproximación sin mortalidad",
+            "descuento constante hasta completar A, plazo de 15 años",
+            "anualidades aproximadas ä65≈14 y ä65:15≈11"
+          ],
+          "modelo": "valor actuarial",
+          "respuesta_final": "d = A/ä_{x:15|} ≈ 13% de la pensión durante 15 años (65 años, tasa 3%); aproximado porque los factores 14 y 11 no salen de la tabla; firme solo si la tasa y la mortalidad no cambian, y la tasa lo mueve (cerca de 18% entre 2% y 4% con 20 años ciertos).",
+          "validacion": true,
+          "archivo": "N3_AA_r1.json",
+          "costo_usd": 0.165224
+        },
+        {
+          "id": "N4_VV_r1",
+          "perfil": {
+            "nivel_edad": "U",
+            "nivel": "N4",
+            "estilo": "VV"
+          },
+          "ruta": [
+            "P1-MRS",
+            "P2-RM",
+            "P3-MM",
+            "P4-WM",
+            "P6-VAL",
+            "P5-INT",
+            "P6-VAL",
+            "P7-EXP"
+          ],
+          "bloqueos": [],
+          "supuestos": [
+            "valor presente esperado de los descuentos igual al adelanto",
+            "10% se interpreta como 10% del capital que respalda la pensión (A)",
+            "tasa de interés constante (3% anual, probada con 2% y 5%)",
+            "horizonte cierto de 20 años en el ejemplo",
+            "adelanto inventado A = 1.000",
+            "descuento de por vida, sin cobrar a herederos",
+            "pérdidas por fallecimiento temprano se compensan en la cartera",
+            "usar mortalidad de pensionados reales",
+            "tasa y tabla fijas al pensionarse, revisadas solo para casos nuevos"
+          ],
+          "modelo": "anualidad vitalicia",
+          "respuesta_final": "Cuota mensual d = A / Σ v^t·p_t descontada mientras la persona viva, sin cobrar a herederos; en un ejemplo con 20 años ciertos y A inventado da 5,5 a 6,5 por cada 1.000 de adelanto (tasas de 2% a 5%). Tasa y tabla quedan fijas al pensionarse y se revisan solo para casos nuevos, porque d es sensible a ambas.",
+          "validacion": true,
+          "archivo": "N4_VV_r1.json",
+          "costo_usd": 0.203696
+        },
+        {
+          "id": "N4_AA_r1",
+          "perfil": {
+            "nivel_edad": "U",
+            "nivel": "N4",
+            "estilo": "AA"
+          },
+          "ruta": [
+            "P2-RM",
+            "P3-MM",
+            "P4-WM",
+            "P3-MM",
+            "P4-WM",
+            "P6-VAL",
+            "P4-WM",
+            "P5-INT",
+            "P7-EXP"
+          ],
+          "bloqueos": [],
+          "supuestos": [
+            "el 10% es del valor de la renta vitalicia, no de un año",
+            "descuento mensual constante",
+            "plazo de descuento elegido por el grupo (10, luego 15 años)",
+            "edad 65",
+            "horizonte cierto de 20 años (esperanza de vida) sin mortalidad",
+            "tasa de interés constante (2% y 4%)",
+            "tope del descuento en 15% de la pensión",
+            "equivalencia solo en promedio"
+          ],
+          "modelo": "anualidad descontada",
+          "respuesta_final": "Regla: descuento mensual d = 0,10·P·ä_x/ä_{x:15} durante 15 años (o hasta el fallecimiento), con tope de 15% de la pensión; equivalencia solo en promedio y sensible a la mortalidad. Cálculo de prueba con anualidad cierta a 20 años e i=2%: d ≈ 12,7% de P (18,2% a 10 años, 34,7% a 5 años; la tasa mueve poco, ~1,4 puntos entre 2% y 4%). Debe recalcularse con la tabla de mortalidad y la tasa de la póliza.",
+          "validacion": true,
+          "archivo": "N4_AA_r1.json",
+          "costo_usd": 0.199296
+        }
+      ],
+      "agregado": {
+        "pct_bloqueo_por_transicion": {
+          "B23": 0.33,
+          "B34": 0.17,
+          "B45": 0.17
+        },
+        "modelos_observados": {
+          "interés simple": 1,
+          "anualidad cierta": 1,
+          "anualidad actuarial": 1,
+          "valor actuarial": 1,
+          "anualidad vitalicia": 1,
+          "anualidad descontada": 1
+        },
+        "pct_validan": 1.0
+      },
+      "fecha": "2026-10-20T22:32:08Z"
+    },
+    "guia": {
+      "tarea_id": "2026-10-anticipo-renta-vitalicia-v6",
+      "version": 6,
+      "fecha": "2026-10-20",
+      "ficha": {
+        "titulo": "Anulado el método: ¿cómo descontar el adelanto de una renta vitalicia?",
+        "noticia": {
+          "medio": "CIPER Chile",
+          "titulo": "Tramitan expulsiones de extranjeros detenidos en aniversario del estallido; Suprema da la razón a aseguradoras por rentas vitalicias del tercer …",
+          "fecha": "2026-10-19",
+          "url": "https://www.ciperchile.cl/2026/10/19/radar-19-10-26/?utm_source=rss&utm_medium=rss&utm_campaign=radar-19-10-26"
+        },
+        "nivel_principal": "U",
+        "variantes": [
+          "S"
+        ],
+        "contenidos": [
+          "probabilidad de supervivencia",
+          "valor presente y series",
+          "modelos dinámicos discretos",
+          "simulación",
+          "sensibilidad"
+        ],
+        "tiempo": "2 sesiones de 90 min",
+        "puntaje_rub01": 24,
+        "version": 6,
+        "fecha": "2026-10-20",
+        "cambios": "v6 de 2026-10-anticipo-renta-vitalicia-v5 (revisión humana)"
+      },
+      "meta": {
+        "que_observar": "Observar cómo cada grupo convierte una pregunta abierta, cómo descontar de la pensión mensual el adelanto de la renta vitalicia tras anularse el oficio de la CMF, en una regla con supuestos explícitos. Interesa ver si el grupo declara qué entiende por 10% de la renta vitalicia, si reconoce que el dinero futuro vale menos hoy, si trata la posibilidad de que la persona fallezca antes de terminar de pagar, si contrasta su regla con datos reales que no usó para construirla y si dice qué tan firme es. También interesa ver si presenta la regla como propuesta propia y no como réplica del método anulado.",
+        "contenido": "Probabilidad de supervivencia, valor presente y series (anualidades), modelos dinámicos discretos mensuales, simulación de vidas y sensibilidad de la regla a la tasa y a la mortalidad.",
+        "subcompetencias": [
+          "Comprender la situación: separar lo que fijó la ley, lo que hacía el oficio anulado y lo que quedó abierto tras el fallo, y fijar una interpretación explícita del 10% (P1-MRS)",
+          "Simplificar: elegir edad, sexo, tabla de mortalidad, tasa y forma del descuento (P2-RM)",
+          "Matematizar: plantear un equilibrio entre el adelanto y lo que se recupera, descontado y con supervivencia (P3-MM)",
+          "Trabajar con planilla o código para varios plazos y edades (P4-WM)",
+          "Interpretar los resultados como descuento y plazo para cada perfil de pensionado, y decidir qué regla recomendar a falta de método oficial vigente (P5-INT)",
+          "Validar con datos reales del mercado no usados para construir la regla, explicar diferencias y analizar sensibilidad a la tasa y a la mortalidad (P6-VAL)",
+          "Comunicar la regla, sus límites y los supuestos que más la mueven a personas no expertas, aclarando que es una propuesta del grupo (P7-EXP)"
+        ],
+        "meta_social": "Trabajo cooperativo en grupos pequeños, con verbalización y justificación de cada supuesto. Se busca que el grupo discuta entre pares quién gana o pierde, la persona pensionada o la aseguradora, antes de calcular.",
+        "evidencia": [
+          "Escrito del grupo que separa ley, oficio anulado y vacío abierto, con la interpretación elegida del 10%, la incógnita (descuento y plazo) y la lista de quién gana o pierde (P1-MRS)",
+          "Hoja de supuestos con justificación y registro de las solicitudes de la tabla de mortalidad y de las tasas (P2-RM)",
+          "Expresión escrita o planilla con supervivencia, factor de descuento y descuento mensual como incógnita (P3-MM)",
+          "Tabla o gráfico de descuento versus plazo y edad, con procedimiento reproducible (P4-WM)",
+          "Recomendación redactada en términos del contexto para cada perfil de pensionado (P5-INT)",
+          "Tabla con el factor del modelo y el factor implícito en las ofertas del certificado anonimizado (prima dividida por pensión ofrecida) por edad y sexo; o, si solo hay estadísticas de tasas de venta, comparación de tasas y descuento recalculado; con explicación de las diferencias y una versión del cálculo con otra tasa (P6-VAL)",
+          "Informe breve o exposición con la regla, gráfico de sensibilidad, resultado del contraste con datos reales y lista de límites (P7-EXP)"
+        ]
+      },
+      "analisis_a_priori": {
+        "rutas": [
+          {
+            "id": "R1",
+            "nombre": "Horizonte fijo sin mortalidad",
+            "nivel": "S2",
+            "modelo": "Se supone que la persona vive un número fijo de años L (por ejemplo, la esperanza de vida) y se igualan sumas de pagos descontados con tasa constante, sin probabilidades de supervivencia: r = 0,10·a(L)/a(n), con a(·) anualidad cierta."
+          },
+          {
+            "id": "R2",
+            "nombre": "Valor actuarial con tabla de mortalidad",
+            "nivel": "U",
+            "modelo": "Modelo dinámico discreto mensual con supervivencia s(k) tomada de la tabla y descuento v^k; ecuación de equilibrio resuelta para r dado n, o para n dado r."
+          },
+          {
+            "id": "R3",
+            "nombre": "Simulación de vidas y riesgo de la aseguradora",
+            "nivel": "U",
+            "modelo": "Monte Carlo: se simula la edad de fallecimiento con la tabla, se calcula la ganancia o pérdida de cada trayectoria y se busca r que anule la media; se estudia la dispersión."
+          },
+          {
+            "id": "R4",
+            "nombre": "Mortalidad paramétrica ajustada",
+            "nivel": "U",
+            "modelo": "Se ajusta una ley de mortalidad paramétrica (por ejemplo Gompertz) a los datos de la tabla y se calcula analíticamente la anualidad temporal; se compara la sensibilidad a los parámetros."
+          }
+        ],
+        "modelo_inadecuado": {
+          "id": "RX",
+          "por_que_falla": "Repartir el adelanto en cuotas iguales durante n meses sin interés ni mortalidad (comparando la renta total esperada sin descontar con n pensiones) da r = 0,10·L/n. Con L de veinte años, eso es 20% a diez años y 40% a cinco, que sobrecobra frente al cálculo con descuento (cerca de 17% y 32%). Ignora que los pagos lejanos valen menos hoy y que la recuperación se interrumpe si la persona fallece antes del plazo; por eso cobra de más y no iguala el valor esperado, y el error cambia con la edad. En la validación, además, sobreestima el factor de anualidad que implican las ofertas reales: sumar las pensiones sin descontarlas da un valor mayor que el valor esperado descontado."
+        },
+        "solucion_referencia": "1) Sea P la pensión mensual, v el factor de descuento mensual y s(k) la probabilidad de que la persona viva k meses después. 2) El valor esperado descontado de la renta es V = P·a_vit, con a_vit = suma de v^k·s(k) sobre todos los meses. 3) Con la interpretación principal, el adelanto es A = 0,10·V. 4) Si se descuenta una fracción r de la pensión durante n meses, el valor esperado recuperado es r·P·a_temp(n), con a_temp(n) = suma de v^k·s(k) desde k=1 hasta n. 5) Equilibrio: r = 0,10·a_vit/a_temp(n). Como a_temp(n) < a_vit para todo plazo finito, r > 0,10; solo si el descuento fuera de por vida r = 0,10, sin importar la mortalidad. 6) r crece al acortar el plazo y con la edad. 7) Calcular con la tabla para distintos n, edades y tasas. 8) Opcional: simular muchas vidas para obtener la distribución de ganancia o pérdida de la aseguradora. 9) Contraste con la ruta simple de horizonte fijo L sin mortalidad: r = 0,10·a(L)/a(n), con anualidades ciertas. Por ejemplo, con L de veinte años y tres por ciento real anual, r es cerca de 17% con plazo de diez años y cerca de 32% con plazo de cinco. Esa ruta supone recuperación cierta y no ve el riesgo de que la persona fallezca antes de terminar de pagar. 10) Como el oficio fue anulado, la regla resultante es una propuesta fundamentada del grupo; se discute qué ocurre con la compensación a la aseguradora, que la Corte no resolvió. 11) Validación: el docente obtiene datos reales del mercado; entrega un certificado de ofertas anonimizado o, si no dispone de uno, las estadísticas de tasas de venta de la Superintendencia de Pensiones. Con el certificado se calcula, para cada edad y sexo, el factor implícito prima/pensión ofrecida y se compara con a_vit del modelo: debería ser del mismo orden, decrecer con la edad y mostrar la diferencia por sexo; la brecha restante se atribuye a costos, margen, tabla y tasa de las aseguradoras y se verifica repitiendo el cálculo con otra tasa. Con las estadísticas de tasas de venta se compara la tasa del grupo con la publicada, se recalcula a_vit y r y se mide cuánto cambia la regla. 12) Contraste del modelo inadecuado: repartir sin interés ni mortalidad da r = 0,10·L/n (20% a diez años y 40% a cinco con L de veinte años), mayor que el r descontado. Resultado: Regla: r = 0,10·a_vit/a_temp(n), con r mayor que 0,10 y creciente al acortar el plazo. Para una persona de edad cercana a la de jubilación, tasa real moderada y plazo de unos diez años, el orden de magnitud es un descuento de entre quince y veinte por ciento de la pensión; para plazo de unos cinco años, cerca de un tercio. La ruta de horizonte fijo da valores del mismo orden (cerca de 17% y 32% en el ejemplo). Contraste: el factor a_vit del modelo es del mismo orden y con la misma tendencia por edad y sexo que el factor prima/pensión del certificado anonimizado; las ofertas pueden quedar algo por debajo o por encima según margen, costos y tasa usada. El modelo que reparte sin descontar ni considerar mortalidad produce descuentos mayores que los del modelo con descuento.",
+        "rango_aceptable": "Con la interpretación principal del 10% (valor actual esperado de la renta): descuento mensual entre diez y cuarenta por ciento según plazo, edad, sexo y tasa, siempre mayor que 10% si el plazo es finito. Con la interpretación alternativa (10% de la pensión de un año): descuento del orden de uno a dos por ciento para plazos de varios años. En la validación se acepta que el factor del modelo difiera del implícito en las ofertas (o que la tasa del grupo difiera de la tasa de venta publicada) siempre que el grupo explique la diferencia con supuestos explícitos y muestre su sensibilidad a la tasa y a la mortalidad. Se acepta cualquier regla coherente con supuestos explícitos que reconozca el valor del dinero en el tiempo; reconocer la mortalidad distingue las rutas de nivel U.",
+        "barreras_por_fase": [
+          {
+            "fase": "P1-MRS",
+            "barrera": "Bloqueo probable B12. Cuesta separar tres cosas: lo que fijó la ley (adelantar hasta 10% de la renta vitalicia), lo que hacía el oficio anulado y lo que el fallo dejó abierto. El 10% admite varias lecturas (de la pensión mensual, de la anual o del valor total esperado de la renta) y es fácil tomar una sin declararla. Tampoco es evidente quién asume el riesgo si la persona fallece pronto. Algunos grupos pueden creer que el descuento debe ser exactamente 10%, o buscar el método del oficio como si siguiera vigente."
+          },
+          {
+            "fase": "P2-RM",
+            "barrera": "Bloqueo probable B23. El enunciado no fija edad, sexo, tasa ni forma del descuento, y a los grupos les cuesta decidir qué supuestos hacen falta y pedir la tabla de mortalidad y las tasas como información adicional. Quienes no piden la tabla tienden a suponer una vida de duración cierta, que sirve para la ruta simple pero oculta el riesgo de fallecimiento. La serie de tasas no indica cuál usar, así que hay que elegir y justificar."
+          },
+          {
+            "fase": "P3-MM",
+            "barrera": "Bloqueo probable B34. El salto más fuerte es pasar de la idea de que la compañía no pierda en promedio a una ecuación que iguale el adelanto con el valor esperado, descontado, de lo recuperado. Aparecen el factor de descuento mensual, las probabilidades de supervivencia mes a mes y el descuento como incógnita. Error anticipable, el modelo inadecuado: repartir el adelanto en cuotas iguales sin interés ni mortalidad. Da 20% a diez años y 40% a cinco, y sobrecobra frente al cálculo con descuento (cerca de 17% y 32%)."
+          },
+          {
+            "fase": "P4-WM",
+            "barrera": "Bloqueo probable B45. La dificultad es operativa: armar la suma de términos con supervivencia y descuento para muchos meses, variar plazo, edad y tasa de forma ordenada y dejar el procedimiento reproducible. Quienes optan por simular vidas deben decidir cuántas trayectorias usar y cómo leer una media con dispersión. Se puede perder de vista la ecuación al quedar atrapados en la planilla o el código."
+          },
+          {
+            "fase": "P5-INT",
+            "barrera": "Bloqueo probable B56. Los grupos pueden entregar una tabla de números sin traducirla a una recomendación para cada perfil de pensionado. Cuesta ver por qué los plazos cortos exigen descuentos más altos y por qué el resultado cambia con la edad y la tasa. También cuesta aceptar que, con plazo finito, el descuento resulte mayor que 10%, algo que a algunos les parecerá contraintuitivo. Además, sin método oficial vigente y con la compensación a la aseguradora sin resolver, es difícil decidir con qué criterio recomendar una regla y no solo calcularla."
+          },
+          {
+            "fase": "P6-VAL",
+            "barrera": "Bloqueo probable B56. Los datos reales llegan solo después de presentar la regla y no son un archivo público: son un certificado de ofertas anonimizado o, si no hay uno, estadísticas de tasas de venta. El grupo puede leer cualquier diferencia como error propio o descartar los datos por incomparables. Cuesta distinguir las diferencias esperables (costos, margen, tabla y tasa de la aseguradora) de un fallo del modelo, y entender que el contraste busca orden de magnitud y tendencias por edad y sexo, no igualar un valor exacto. Quien usó el reparto sin descontar puede no notar que su factor queda por encima del de las ofertas. Cuesta repetir el cálculo con otra tasa y otra mortalidad para dimensionar la sensibilidad, en vez de ajustar los supuestos para que calcen. Si el certificado no cubre el perfil elegido, cuesta decidir si tomar edades cercanas. Con solo tasas de venta, cuesta reconocer que no hay comparación por edad y sexo."
+          },
+          {
+            "fase": "P7-EXP",
+            "barrera": "Bloqueo probable B67. Comunicar la regla a personas no expertas exige traducir la ecuación al lenguaje del contexto. Los grupos tienden a mostrar solo la fórmula y a omitir los límites: se ignoran costos, comisiones, impuestos y compensaciones a las aseguradoras, se trata a toda la cohorte con la misma tabla y se pasa por alto lo que mostró el contraste con datos reales. También puede quedar poco claro que la regla es una propuesta del grupo y no el método anulado. Es difícil elegir qué supuestos mueven más el resultado y mostrarlo en un gráfico de sensibilidad."
+          }
+        ]
+      },
+      "organizacion": {
+        "momentos": [
+          {
+            "momento": "Comprensión y trabajo grupal (primera sesión): comprender y simplificar",
+            "tiempo": "40 min",
+            "estudiantes": "Leen el enunciado y los hechos de la ley, y discuten qué fijó la ley, qué hacía el oficio anulado y qué quedó abierto. Deciden qué significa el 10% de la renta vitalicia y quién gana o pierde, y lo dejan por escrito junto con la incógnita (descuento y plazo). Después listan supuestos (edad, sexo, tasa, forma del descuento) y deciden si piden la tabla de mortalidad y las tasas.",
+            "docente": "Presenta la situación con palabras propias, sin leer la noticia. Aclara que el oficio fue declarado ilegal, que no hay método oficial vigente y que pueden pedir información adicional. Circula y diagnostica preguntando qué han decidido, qué falta y qué supuesto están usando; todavía no interviene con ayudas. Entrega la tabla de mortalidad (R2) y la serie de tasas (R3) solo cuando el grupo las pide, sin fórmula ni ejemplo de uso."
+          },
+          {
+            "momento": "Comprensión y trabajo grupal (primera sesión): matematizar",
+            "tiempo": "50 min",
+            "estudiantes": "Plantean por escrito o en planilla cómo relacionar el adelanto con lo que la aseguradora recupera durante el plazo, con el descuento mensual como incógnita. Anotan dónde se atascan y qué alternativas consideraron.",
+            "docente": "Sigue circulando y diagnosticando: pregunta qué han hecho y qué quieren que su expresión represente. Registra qué ruta sigue cada grupo (horizonte fijo, tabla, simulación o ley paramétrica) y quiénes caen en el reparto en cuotas iguales sin descuento. La ayuda mínima va primero y nunca entrega la ecuación ni el resultado."
+          },
+          {
+            "momento": "Comprensión y trabajo grupal (segunda sesión): trabajar e interpretar",
+            "tiempo": "30 min",
+            "estudiantes": "Calculan el descuento para varios plazos y edades en planilla o código, y opcionalmente simulan vidas. Construyen una tabla o gráfico y redactan su recomendación, en términos del contexto, para cada perfil de pensionado.",
+            "docente": "Verifica que el procedimiento sea reproducible y que la recomendación hable de descuento y plazo, no solo de números. Diagnostica con preguntas sobre qué cambia al variar plazo, edad o tasa. No entrega la ecuación ni el resultado."
+          },
+          {
+            "momento": "Puesta en común",
+            "tiempo": "25 min",
+            "estudiantes": "Cada grupo presenta su regla, sus supuestos y su recomendación, y dice cómo trató la compensación a la aseguradora, que el fallo no resolvió. Los demás preguntan por la interpretación del 10%, la tasa y el tratamiento de la mortalidad, y comparan rutas.",
+            "docente": "Modera y ordena las rutas en la pizarra sin calificarlas, destacando las diferencias de supuestos. Al terminar la presentación de cada grupo, y solo entonces, entrega R4: un certificado de ofertas anonimizado (sin nombre ni RUT) o, si no dispone de uno, las estadísticas de tasas de venta de la Superintendencia de Pensiones. No entrega fórmula, no indica cómo se calcularon las pensiones y no declara cuál regla es la correcta."
+          },
+          {
+            "momento": "Validación y cierre",
+            "tiempo": "35 min",
+            "estudiantes": "Con el certificado, calculan el factor implícito (prima dividida por pensión ofrecida) por edad y sexo y lo comparan con el factor de su modelo. Con las tasas de venta, comparan su tasa con la publicada y recalculan el factor y el descuento. Explican las diferencias y repiten el cálculo con otra tasa. Redactan los límites de su regla, señalan la limitación del material recibido y preparan una síntesis para personas no expertas con un gráfico de sensibilidad, aclarando que es una propuesta del grupo y no el método anulado.",
+            "docente": "Pregunta qué diferencias esperan y por qué, antes de comentar. Cierra con una reflexión sobre qué supuestos mueven más el resultado y por qué la regla no es única. Recoge las producciones."
+          }
+        ],
+        "agrupamiento": "Grupos pequeños y estables durante las dos sesiones, para sostener la discusión de supuestos. La puesta en común es con todo el curso.",
+        "roles": "Dentro de cada grupo, funciones rotativas entre sesiones: quien lleva la hoja de supuestos y registra las decisiones, quien opera la planilla o el código, y quien actúa como portavoz y redacta los límites. Todas las decisiones de modelación se toman entre todos.",
+        "producciones": [
+          "Escrito que separa ley, oficio anulado y vacío abierto, con la interpretación del 10%, la incógnita y la lista de quién gana o pierde",
+          "Hoja de supuestos con justificación y registro de lo solicitado",
+          "Expresión o planilla del modelo",
+          "Tabla o gráfico de descuento versus plazo y edad",
+          "Recomendación redactada por perfil de pensionado",
+          "Comparación con los datos reales de R4 (factor del modelo y factor de las ofertas, o tasas) con explicación de diferencias y repetición con otra tasa",
+          "Informe breve o exposición con la regla, gráfico de sensibilidad, resultado del contraste y límites"
+        ],
+        "tecnologia": "Se permite calculadora, planilla o código para P3-MM (registrar la expresión), P4-WM (calcular para varios plazos, edades y tasas, y simular vidas si lo desean) y P6-VAL (cálculos de la comparación y repetición con otra tasa). La herramienta ejecuta el cálculo, pero no decide la interpretación del 10%, los supuestos ni la validación: eso lo deciden los grupos. No se usan buscadores ni asistentes automáticos para obtener la regla. Las tablas, las tasas y los datos de contraste llegan solo por las solicitudes de R2 y R3 y por la entrega de R4 que hace el docente."
+      },
+      "escenarios": [
+        {
+          "id": "E1",
+          "nombre": "ruta esperada",
+          "corridas": [
+            "N4_AA_r1",
+            "N3_AA_r1",
+            "N4_VV_r1"
+          ],
+          "perfil": "Tramo U, nivel N4, estilo AA (N4_AA_r1); tramo U, nivel N3, estilo AA (N3_AA_r1); tramo U, nivel N4, estilo VV (N4_VV_r1).",
+          "ruta": [
+            "P2-RM",
+            "P3-MM",
+            "P4-WM",
+            "P3-MM",
+            "P4-WM",
+            "P6-VAL",
+            "P4-WM",
+            "P5-INT",
+            "P7-EXP"
+          ],
+          "supuestos": [
+            "el 10% es del valor de la renta vitalicia, no de un año",
+            "descuento mensual constante",
+            "plazo de descuento elegido por el grupo (10, luego 15 años)",
+            "horizonte cierto de 20 años (esperanza de vida) sin mortalidad",
+            "tasa de interés constante (2% y 4%)",
+            "tope del descuento en 15% de la pensión",
+            "equivalencia solo en promedio",
+            "tabla de mortalidad chilena",
+            "descuento de por vida, sin cobrar a herederos",
+            "pérdidas por fallecimiento temprano se compensan en la cartera"
+          ],
+          "modelo": "anualidad descontada",
+          "bloqueos": [],
+          "que_aprende": "Las tres corridas adoptan la interpretación principal del 10% (valor de la renta, no de un año) y plantean la equivalencia actuarial de la ruta R2: el adelanto igual al valor presente esperado de los descuentos, con tasa y supervivencia. Las tres notan que, con la misma tasa y tabla, descontar de por vida devuelve el 10% de cada pensión; N4_VV_r1 se queda con esa regla de por vida y sin cobro a herederos, mientras N4_AA_r1 y N3_AA_r1 fijan un plazo y usan la anualidad temporal, lo que da un descuento mayor que el 10%. N4_AA_r1 aporta una decisión que el curso puede discutir: el plazo no sale del cálculo, se elige por criterio, y por eso agrega un tope. El límite común: ninguna obtiene la tabla, así que los números salen de un horizonte cierto de 20 años (cálculo de la ruta R1 con estructura de R2), y su P6-VAL es una revisión de sensibilidad a la tasa, no el contraste con un certificado de ofertas o con las tasas de venta publicadas que la tarea prevé. Comparadas con E2 y E4, muestran que la interpretación del 10% y la forma de valorar adelanto y recuperación con el mismo criterio deciden la regla antes que cualquier cuenta.",
+          "extracto_dialogo": [
+            {
+              "hablante": "Cami",
+              "texto": "Fíjate que si uso la misma tasa y tabla, d = 0,10·P·ä / ä = 0,10·P: sería descontar el 10% de la pensión de por vida. Entonces el \"cuánto tiempo\" lo tendríamos que fijar nosotros, por ejemplo n años, con d = A / ä_{x:n}, ¿te parece?"
+            },
+            {
+              "hablante": "Fran",
+              "texto": "Me cuadran tus cálculos: 0,182 contra 0,168, o sea d cambia como un 8% relativo al pasar de 2% a 4%, y eso es bastante firme respecto a la tasa. Pero ojo, la anualidad cierta a 20 años ignora la mortalidad: con tabla real ä_x sería menor y d/P bajaría, así que esa sensibilidad también hay que probarla."
+            },
+            {
+              "hablante": "Fran",
+              "texto": "Ojo, n = 15 con d/P ≈ 0,127 es más llevadero, pero ningún n rompe la equivalencia: n lo elegimos por criterio y no sale del cálculo. Propongo fijar un tope, por ejemplo d ≤ 15% de P, y pedir la tabla para recalcular con mortalidad real."
+            }
+          ]
+        },
+        {
+          "id": "E2",
+          "nombre": "modelo inadecuado",
+          "corridas": [
+            "N1_VV_r1"
+          ],
+          "perfil": "Tramo U, nivel N1, estilo VV.",
+          "ruta": [
+            "P1-MRS",
+            "P2-RM",
+            "P1-MRS",
+            "P2-RM",
+            "P4-WM",
+            "P2-RM",
+            "P4-WM",
+            "P6-VAL",
+            "P4-WM",
+            "P5-INT",
+            "P2-RM",
+            "P6-VAL",
+            "P7-EXP"
+          ],
+          "supuestos": [
+            "adelanto = 10% de una pensión mensual (40 mil)",
+            "vive de 65 a 85 años (20 años, 240 meses)",
+            "interés de 3% anual",
+            "interés cobrado sobre saldo promedio (mitad del adelanto)",
+            "descuento fijo cada mes hasta pagar todo",
+            "en muchas personas las muertes tempranas y tardías se compensan en promedio"
+          ],
+          "modelo": "interés simple",
+          "bloqueos": [
+            {
+              "transicion": "B34",
+              "como_se_destrabo": "Resolución entre pares (peer). Fran cobró el interés siempre sobre el adelanto completo y preguntó si estaba bien. Cami, mirando su dibujo de la bolsita que se achica cada mes, objetó que el interés no debía cobrarse siempre sobre el total. Fran aceptó y lo calculó sobre la mitad del adelanto como saldo promedio. La traba se destrabó con una aproximación de interés simple, no con descuento mes a mes."
+            }
+          ],
+          "que_aprende": "El grupo elige la interpretación del 10% como una pensión mensual, lo que deja un adelanto pequeño, y lo reparte en cuotas iguales agregando interés simple sobre un saldo promedio: un pariente del modelo inadecuado RX, que no descuenta cada pago al presente. Además afirma que las muertes tempranas y tardías se compensan en promedio, pero su regla detiene el descuento al pagar todo, así que quien vive más no aporta nada extra. Pide la tabla y menciona la mortalidad en la respuesta, pero sus números no la usan. Comparado con E3, donde el grupo descubre justamente que cortar el descuento deja solo pérdidas, el curso discute por qué la compensación en promedio exige que la mortalidad entre en el cálculo y no solo en el discurso, y cómo la decisión de P1-MRS sobre el 10% cambia el orden de magnitud de la regla.",
+          "extracto_dialogo": [
+            {
+              "hablante": "Fran",
+              "texto": "Ya, probemos: 3% de 40 mil son 1.200 al año, y en 20 años serían 24 mil más, o sea 64 mil en total. 64.000 entre 240 meses da como 267 pesos al mes, ¿te cuadra o estoy cobrando mal el interés?"
+            },
+            {
+              "hablante": "Cami",
+              "texto": "Mmm, no sé si cuadra: en mi dibujo la bolsita se va achicando cada mes porque ella va pagando, así que el 3% no debería cobrarse siempre sobre los 40 mil, ¿o sí? Igual 267 pesos me sigue pareciendo poquito, ¿lo probamos con 10 años para comparar?"
+            },
+            {
+              "hablante": "Fran",
+              "texto": "Tienes razón, el interés se cobra sobre lo que va quedando, así que en promedio sería como la mitad de los 40 mil. A 10 años: 40.000/120 = 333 al mes sin interés, y con interés serían 1.200 × 10 / 2 = 6.000 más, o sea 46.000/120 ≈ 383, ¿te cuadra?"
+            },
+            {
+              "hablante": "Cami",
+              "texto": "Yo me imagino no una señora sino muchas, todas con su bolsita de 40 mil: algunas se mueren antes y la compañía pierde, pero otras viven más de 85 y pagan de más, y la balanza se parejea en promedio. ¿Pedimos una tabla de cuántos años vive la gente a los 65 para sacar el descuento con eso?"
+            }
+          ]
+        },
+        {
+          "id": "E3",
+          "nombre": "bloqueo en matematizar",
+          "corridas": [
+            "N2_VV_r1"
+          ],
+          "perfil": "Tramo U, nivel N2, estilo VV.",
+          "ruta": [
+            "P1-MRS",
+            "P2-RM",
+            "P3-MM",
+            "P2-RM",
+            "P4-WM",
+            "P6-VAL",
+            "P4-WM",
+            "P2-RM",
+            "P4-WM",
+            "P5-INT",
+            "P6-VAL",
+            "P4-WM",
+            "P5-INT",
+            "P6-VAL",
+            "P7-EXP"
+          ],
+          "supuestos": [
+            "adelanto = 10% del pozo de todo lo que le queda por cobrar",
+            "pozo calculado como suma de pensiones sin descontar (400.000 × 240)",
+            "cuota mensual constante",
+            "tasa de interés constante de 0,3% mensual",
+            "probabilidad de seguir viva que baja 0,2% cada mes (inventada)",
+            "plazo alternativo de 30 años (360 meses)"
+          ],
+          "modelo": "anualidad actuarial",
+          "bloqueos": [
+            {
+              "transicion": "B23",
+              "como_se_destrabo": "Resolución entre pares (peer). El grupo había repartido el adelanto en cuotas iguales hasta la marca de la expectativa de vida. Cami preguntó con quién se compensaba la pérdida si a los que viven más no se les cobra después de la marca; Fran, mirando el dibujo de las dos flechas, reconoció que solo había pérdidas. De ahí surgió la idea de cuotas más gordas y, enseguida, la de ponderar cada mes por la probabilidad de seguir viva."
+            }
+          ],
+          "que_aprende": "El grupo descubre por qué cortar el descuento en la esperanza de vida no permite compensar en promedio, y de esa traba llega a la estructura de la ruta R2: cada cuota pesa según la probabilidad de seguir viva y se descuenta con la tasa. También corrige en el camino una confusión de P1-MRS (había usado el 10% de un mes en vez del pozo). Su límite está en P2-RM: calcula el adelanto sobre la suma de pensiones sin descontar y la mortalidad es una tasa inventada y constante, no una tabla. Comparado con E1, que valora adelanto y recuperación con la misma anualidad, el curso discute por qué ambas cosas deben valorarse igual; comparado con E2, ve qué cambia cuando la mortalidad entra en la cuenta.",
+          "extracto_dialogo": [
+            {
+              "hablante": "Fran",
+              "texto": "Espera, creo que es al revés: si ella vive más, ya devolvió todo el adelanto en la marca y no hay pérdida. La compañía pierde si se muere antes de esa marca, y ahí se compensa con las que viven más, ¿no? [dibujo: dos flechas, una que corta antes de la marca y otra que pasa de largo]"
+            },
+            {
+              "hablante": "Cami",
+              "texto": "Pero espera, si a los que viven más no les cobran nada después de la marca, ¿con quién se compensa lo que pierde la compañía por los que se mueren antes? [dibujo: una flecha corta con una \"X\" antes de la marca y otra larga sin cobro después] Me parece que así siempre perdería en promedio, ¿no?"
+            },
+            {
+              "hablante": "Fran",
+              "texto": "Tienes razón, mirando el dibujo solo veo pérdidas: los que mueren antes no devuelven todo y los que viven más devuelven justo el adelanto, nada extra. ¿Y si corremos la marca más a la derecha, o descontamos un poquito más cada mes, para que lo que se pierde por los que mueren antes se tape?"
+            },
+            {
+              "hablante": "Fran",
+              "texto": "Ya, con la tabla veríamos qué tan probable es que siga viva en cada mes, y el cuadrito de cada mes valdría solo esa probabilidad. Entonces elegimos la cuota para que, sumando todos esos cuadritos, den justo el adelanto, ¿te parece? [dibujo: cuadritos que se van poniendo más pálidos hacia la derecha]"
+            }
+          ]
+        },
+        {
+          "id": "E4",
+          "nombre": "modelo inadecuado corregido",
+          "corridas": [
+            "N1_AA_r1"
+          ],
+          "perfil": "Tramo U, nivel N1, estilo AA.",
+          "ruta": [
+            "P1-MRS",
+            "P2-RM",
+            "P4-WM",
+            "P5-INT",
+            "P4-WM",
+            "P5-INT",
+            "P3-MM",
+            "P4-WM",
+            "P5-INT",
+            "P2-RM",
+            "P6-VAL",
+            "P4-WM",
+            "P6-VAL",
+            "P3-MM",
+            "P4-WM",
+            "P3-MM",
+            "P4-WM"
+          ],
+          "supuestos": [
+            "adelanto = 10% del total de la renta en la vida",
+            "vive hasta 85 (esperanza de vida, 20 años)",
+            "descuento parejo mensual",
+            "en promedio los que viven menos compensan a los que viven más",
+            "descuento mientras la persona viva",
+            "pensión reajustada por inflación",
+            "tasa de interés constante 0,3% mensual"
+          ],
+          "modelo": "anualidad cierta",
+          "bloqueos": [
+            {
+              "transicion": "B23",
+              "como_se_destrabo": "Resolución entre pares (peer). Al ver que la n se cancelaba, Fran preguntó qué pasaba si la persona moría antes del plazo; Cami notó que si el descuento se corta a los n años nada compensa a quienes mueren antes. Fran propuso no cortar y seguir descontando mientras la persona viva, usando n solo para calcular la cuota."
+            },
+            {
+              "transicion": "B45",
+              "como_se_destrabo": "Resolución entre pares (peer). Tras obtener un porcentaje distinto del 10% con otro plazo, el grupo dudó si dejar la regla como porcentaje o cuota fija y si un porcentaje reajustado cobraba de más. Cami observó que los pesos futuros valen menos que los de hoy y propuso pedir la inflación; eso llevó a pedir la tasa y a plantear la suma descontada de cuotas."
+            }
+          ],
+          "que_aprende": "El grupo parte del modelo inadecuado RX: total de pensiones sin descontar repartido en cuotas iguales, sin interés ni mortalidad. Lo corrige por pasos: primero decide descontar mientras la persona viva para que haya compensación, después reconoce que el adelanto ya está fijo y que la esperanza de vida mueve la cuota, y al final introduce la tasa con una anualidad cierta. No llega a usar tabla ni a exponer una respuesta (termina por límite de turnos), pero deja abierta una pregunta valiosa: si la pensión se reajusta, la tasa debe ser real para no contar la inflación dos veces. Comparado con E2, muestra que el mismo punto de partida inadecuado puede revisarse cuando el grupo examina sus supuestos; comparado con E1, que la anualidad cierta todavía no ve el riesgo de fallecer antes de terminar de pagar.",
+          "extracto_dialogo": [
+            {
+              "hablante": "Fran",
+              "texto": "Ya, entonces el adelanto serían $7.200.000, y si lo descontamos parejo en los 20 años son 240 meses: 7.200.000 / 240 = $30.000 al mes. ¿Pero eso no sería cobrarle de más a la aseguradora o de menos, si la persona vive menos de 85?"
+            },
+            {
+              "hablante": "Cami",
+              "texto": "Mmm, si el descuento se corta a los n años, el que vive más no paga extra, así que no hay nada que compense a los que mueren antes, ¿no? Entonces n tendría que ser más largo que la esperanza de vida, pero no sé cuánto."
+            },
+            {
+              "hablante": "Fran",
+              "texto": "¿Y si no cortamos a los n años y se sigue descontando los $30.000 mientras la persona viva? Así el que vive más paga extra y compensa al que muere antes, y n solo sirve para calcular la cuota, ¿no?"
+            },
+            {
+              "hablante": "Cami",
+              "texto": "Sí, tiene sentido: con una tasa r, lo que se descuenta más adelante vale menos hoy, así que tendría que cumplirse 7.200.000 = suma de cuota/(1+r)^t, y la cuota saldría más alta que 30.000. ¿Pedimos r también?"
+            },
+            {
+              "hablante": "Fran",
+              "texto": "Sí, me da igual: (1 − 0,487)/0,003 = 171 y 7.200.000/171 ≈ 42.105, o sea 42.105/300.000 ≈ 14% de la pensión y no 10%. Pero ahí r tendría que ser una tasa real, ¿o no? Porque si la pensión ya se reajusta por inflación, no sé si estamos contando la inflación dos veces."
+            }
+          ]
+        }
+      ],
+      "tabla_bloqueos": {
+        "B23": 0.33,
+        "B34": 0.17,
+        "B45": 0.17
+      },
+      "intervenciones": [
+        {
+          "bloqueo": "B12",
+          "z1_z2": "Pregunten: «¿Qué entienden por 10% de la renta vitalicia y qué han escrito hasta ahora?». Reconozcan que la frase admite más de una lectura y que dudar es razonable. Pidan que anoten la incógnita (descuento y plazo) y quién gana o pierde con el adelanto.",
+          "z3": "Pidan un dibujo de la situación: una línea de tiempo con el adelanto al inicio y la pensión rebajada cada mes. Que marquen qué parte del dibujo representa el 10%. Pidan también que separen por escrito lo que fijó la ley, lo que hacía el oficio anulado y lo que quedó abierto.",
+          "z4": "Pregunten: «Si el 10% fuera de una sola pensión mensual, de la pensión de un año o del valor de todo lo que la persona recibiría mientras viva, ¿cómo cambia el tamaño del adelanto y el tiempo para recuperarlo?». Que escriban cada lectura con una pensión supuesta, sin decirles cuál elegir. E2 tomó una pensión mensual y quedó con un adelanto pequeño; E1, E3 y E4 tomaron el valor de la renta.",
+          "z5": "Propongan fijar una lectura de forma provisoria, dejarla escrita como supuesto y revisarla contra otra lectura antes de presentar la regla. Que expliquen cuál defienden y por qué. No les digan cuál lectura es la correcta ni cuánto debería salir el descuento."
+        },
+        {
+          "bloqueo": "B23",
+          "z1_z2": "Pregunten: «¿Qué supuestos han elegido hasta ahora y qué les falta para escribir una relación entre el adelanto y lo que se recupera?». Reconozcan que decidir qué entra al modelo y qué no es difícil. Pidan que lean en voz alta su lista de supuestos sobre edad, tasa, mortalidad y si el descuento es constante.",
+          "z3": "Sugieran un dibujo de líneas de vida: una persona que fallece pronto y otra que vive mucho, con el descuento mensual marcado en cada una. Que señalen en el dibujo dónde la aseguradora recupera el adelanto y dónde no. Así E3 vio dónde estaba la traba.",
+          "z4": "Pregunten: «Si el descuento se corta en cierto plazo, ¿con quién se compensa lo que pierde la aseguradora cuando la persona fallece antes de terminar de pagar? ¿Y qué ocurre con quienes viven más?». Si dicen que las muertes tempranas y tardías se compensan en promedio, pregunten dónde se ve eso en sus números (E2 lo dijo, pero su cálculo no usaba mortalidad).",
+          "z5": "Recuerden que pueden pedir el recurso R2 (tabla de mortalidad) y el R3 (tasas de interés). Pidan que armen, para cada una de las dos personas del dibujo, una tabla mes a mes de lo que se paga y de la probabilidad de que siga viva, y que comparen ese conjunto con el adelanto. Si usan una probabilidad inventada, que la declaren como supuesto. No les entreguen la ecuación ni el valor del descuento."
+        },
+        {
+          "bloqueo": "B34",
+          "z1_z2": "Pregunten: «¿Qué han planteado y en qué paso exacto se quedaron para calcular?». Reconozcan lo que ya tienen y pidan que digan con sus palabras cuáles son las incógnitas y qué dato pueden fijar. Como E1, que advirtió que fijar el plazo deja una sola incógnita.",
+          "z3": "Sugieran bajar el problema a un caso pequeño: un plazo corto y una pensión supuesta, escribiendo mes a mes qué entra y qué sale. Que prueben en la calculadora o la planilla antes de buscar una expresión general.",
+          "z4": "Pregunten: «¿Un pago de dentro de varios meses vale lo mismo hoy que uno de este mes? ¿Están valorando el adelanto y lo que se recupera con el mismo criterio?». Si, como en E2, cobran interés sobre un saldo promedio, pregunten si ese cálculo lleva cada pago al presente o es una aproximación, y qué esperan que cambie al compararlo con repartir sin interés.",
+          "z5": "Indiquen que la suma que necesitan tiene muchos términos con un patrón regular, y que pueden armarla término a término en planilla o código y comprobarla contra el caso pequeño. Que un compañero complete lo que el otro recuerda de la fórmula y la validen con la calculadora. No les entreguen la ecuación ni el valor del descuento."
+        },
+        {
+          "bloqueo": "B45",
+          "z1_z2": "Pregunten: «¿Qué calcularon y qué resultado les llama la atención?». Reconozcan que ya tienen un procedimiento que corre. Pidan que describan qué dato cambiaron entre una prueba y otra y qué les hace dudar del resultado.",
+          "z3": "Sugieran ordenar las pruebas en una tabla, cambiando un solo dato a la vez (plazo, tasa, edad) y anotando el descuento que sale. Que lo grafiquen si pueden, para ver la tendencia antes de decidir.",
+          "z4": "Pregunten: «¿La pensión se reajusta o queda en pesos de hoy, y la tasa que usan es coherente con eso?». Pregunten también si su regla conviene como porcentaje de la pensión o como cuota fija, y qué cambiaría en cada caso. E4 se hizo esa pregunta al obtener un porcentaje distinto del 10% con otro plazo.",
+          "z5": "Recuerden que pueden pedir el recurso R3 para decidir qué tasa usar, y que deben anotar si la tasa es real o nominal. Si E1 probó dos tasas, ellos también pueden hacerlo y registrar cuánto se mueve el descuento. No les indiquen qué tasa ni qué plazo elegir ni cuánto debería salir."
+        },
+        {
+          "bloqueo": "B56",
+          "z1_z2": "Pregunten: «¿Qué dice su resultado en términos de la persona pensionada y de la aseguradora, y cómo saben que es razonable?». Reconozcan que revisar la propia regla cuesta. Pidan que redacten la recomendación con descuento y plazo para cada perfil.",
+          "z3": "Sugieran que escriban junto a la regla lo que esperaban ver antes de calcular y lo que obtuvieron, y que lo marquen en el dibujo inicial de la situación. Que anoten qué supuestos creen que más mueven el resultado.",
+          "z4": "Pregunten: «¿Qué dato que no hayan usado para construir la regla podría decirles si van bien encaminados?». Que redacten qué comparación pedirían. Aclaren que revisar sensibilidad a la tasa es útil, pero no equivale a contrastar con datos reales; E1 se quedó en lo primero.",
+          "z5": "Anuncien que, una vez presentada la regla, el docente entrega el recurso R4 (certificado de ofertas anonimizado o, si no hay, estadísticas de tasas de venta). No se entrega antes. Pidan que preparen cómo compararían el factor de su modelo con el de los datos y qué harían si no coinciden. No les digan qué debería salir."
+        }
+      ],
+      "puesta_en_comun": {
+        "seleccion_y_orden": [
+          "Primero E2 (anticipar y monitorear): interpreta el 10% como una pensión mensual y reparte con interés simple. Muestra cómo esa elección de P1-MRS cambia el orden de magnitud de la regla y cómo afirmar que las muertes se compensan en promedio no basta si la cuenta no usa mortalidad. El docente no presenta aún su propia ruta.",
+          "Segundo E4 (seleccionar): parte del modelo que reparte sin descontar ni considerar mortalidad y lo corrige por pasos. Permite ver cómo un grupo revisa sus supuestos, incorpora la tasa y se pregunta si la pensión reajustada obliga a usar una tasa real.",
+          "Tercero E3 (secuenciar): muestra con el dibujo de las dos flechas por qué cortar el descuento deja solo pérdidas y cómo de ahí surge ponderar cada mes según la probabilidad de seguir viva. Se contrasta con E2 y E4 para ver qué cambia cuando la mortalidad entra en la cuenta, y se nota su límite: mortalidad inventada y adelanto sobre pensiones sin descontar.",
+          "Último E1 (conectar): reúne la interpretación principal del 10%, la equivalencia entre adelanto y descuentos con tasa y supervivencia, y el plazo elegido por criterio con un tope. Conecta lo anterior y deja ver su límite: sin tabla, sin contraste con datos reales. Recién aquí el docente integra su propia ruta y puede abrir la simulación de vidas (R3 de las rutas)."
+        ],
+        "preguntas": [
+          "¿Qué entendió cada grupo por 10% de la renta vitalicia y cómo cambia el orden de magnitud de la regla según esa lectura (E2 frente a E1, E3 y E4)?",
+          "¿Qué supuestos de cada lista mueven más el resultado y cuáles casi no lo mueven (tasa, plazo, tope, horizonte de vida)?",
+          "¿Por qué repartir el adelanto en cuotas iguales sin interés ni mortalidad, como al inicio de E4, cobra de más?",
+          "¿Por qué valorar el adelanto y lo que se recupera con el mismo criterio importa para que la aseguradora no pierda en promedio?",
+          "¿Qué se gana y qué se pierde al usar un horizonte cierto como en E1 o una probabilidad inventada como en E3, en lugar de una tabla de mortalidad?",
+          "¿Quién decide el plazo si el cálculo no lo determina, y qué justifica un tope como el de E1?",
+          "¿Qué significa que la regla valga en promedio y qué riesgo queda para una persona o una aseguradora si fallece antes de terminar de pagar?",
+          "¿Qué decisión tomarían distinta hoy y cómo la comprobarían con evidencia que no usaron para construir la regla?"
+        ],
+        "contraste_validacion": "Después de que cada grupo presente su regla, entreguen el recurso R4. Las ofertas del SCOMP son certificados individuales, por lo que entreguen un certificado de ofertas anonimizado (prima, edad, sexo y pensión mensual ofrecida) o, si no disponen de uno, las estadísticas de tasas de venta de rentas vitalicias de la Superintendencia de Pensiones. Con el certificado, pidan que calculen el factor prima dividida por pensión mensual ofrecida para cada edad y sexo y lo comparen con el factor de anualidad vitalicia de su modelo. Que anoten la diferencia sin ajustar el modelo antes de explicarla, y que revisen si coinciden el orden de magnitud y las tendencias por edad y sexo. Con las estadísticas de tasas de venta, que comparen la tasa que usaron con la publicada, recalculen el factor y el descuento con esa tasa y midan cuánto cambia su regla; que señalen que así no contrastan ofertas individuales por edad y sexo. Luego discutan las causas de la brecha que la tarea señala: costos, margen de la aseguradora, tabla y tasa usadas, y pidan que repitan el cálculo con otra tasa o tabla para ver si la brecha se cierra. Recuerden que el factor de las ofertas sirve para contrastar orden de magnitud y tendencias, no como valor exacto que el modelo deba reproducir. Pregunten qué esperarían ver con un modelo que suma pensiones sin descontar, como el de E4 al inicio, y comprueben si su factor queda por encima del de las ofertas. Señalen que E1 solo revisó sensibilidad a la tasa y no tuvo este contraste. Si el modelo no se acerca a los datos, que revisen sus supuestos de P2 y P3 y no solo el cálculo. Cierren con una conclusión sobre qué tan firme es la regla de cada grupo y bajo qué supuestos, aclarando que es una propuesta del grupo y no el método anulado. No agreguen datos que no estén en el material entregado."
+      },
+      "variantes_y_continuidad": {
+        "uso_variantes": "Variante hacia abajo (S, tramo S2): úsese si el curso no ha trabajado valor del dinero en el tiempo o si, tras la primera parte de la sesión inicial, los grupos siguen detenidos en B23 o B34. Cambios: se entrega una esperanza de vida aproximada para la edad de la persona y una tasa de interés única, y se pide una regla para un solo plazo de recuperación. No se exige modelar la incertidumbre de la vida individual, solo promedios. La validación compara el factor que da el modelo con el que implican algunas ofertas del certificado anonimizado de R4 (prima dividida por pensión ofrecida) para esa edad; si solo hay estadísticas de tasas de venta, el grupo compara la tasa que usó con la tasa de venta publicada. Corresponde a la ruta de horizonte fijo, sin tabla de mortalidad. No se entrega fórmula ni resultado; se mantiene la hoja de supuestos y R4 se entrega solo después de que el grupo presente su regla. Variante hacia arriba: no existe (es null) y no se improvisa una. Los grupos que avanzan antes pueden profundizar dentro de la misma tarea con la simulación de vidas, la mortalidad paramétrica y el análisis de sensibilidad, sin alterar el enunciado ni adelantar R4.",
+        "acostumbramiento": "Si el grupo nunca ha modelado, conviene una actividad previa breve con una pregunta abierta de la vida cotidiana, en la que cada grupo escriba qué supuestos necesita antes de calcular y se comparen las listas. Si además no ha trabajado con valor del dinero en el tiempo, conviene una actividad corta que discuta, sin fórmulas, si un pago futuro vale lo mismo que uno de hoy. Esta tarea, con sus dos sesiones, funciona como parte de una secuencia de modelación, no como diagnóstico ni como primera iniciación: supone que los grupos ya han explicitado supuestos y contrastado un modelo con datos alguna vez.",
+        "tarea_siguiente": null
+      },
+      "materiales": {
+        "tarea_pdf": "tarea.pdf",
+        "recursos_tarjetas": "recursos.pdf",
+        "notebook": "escenarios.ipynb",
+        "icono": "icono.svg"
+      },
+      "trazabilidad": {
+        "noticia_url": "https://www.ciperchile.cl/2026/10/19/radar-19-10-26/?utm_source=rss&utm_medium=rss&utm_campaign=radar-19-10-26",
+        "diseno": {
+          "modelo": "claude-sonnet-5-5",
+          "version_prompt": "1.1"
+        },
+        "rub01_total": 24,
+        "revision_humana_1": {
+          "revisor": "Carlos Rojas Bruna",
+          "fecha": "2026-10-20"
+        },
+        "simulacion": {
+          "n_grupos": 6,
+          "diseno": "diseno_otm"
+        },
+        "revision_humana_2": null,
+        "commit": null
+      },
+      "modelo_y_prompt": {
+        "redactor": "claude-sonnet-5-5",
+        "redactor_escenarios": "claude-opus-5-5",
+        "version_prompt": "1.0"
       }
     }
   },
@@ -432,6 +1265,27 @@
       "a": "evaluada",
       "iteracion": 1,
       "rub01_total": 24
+    },
+    {
+      "fecha": "2026-10-20T22:28:00+00:00",
+      "de": "evaluada",
+      "a": "revisada",
+      "revisor": "Carlos Rojas Bruna"
+    },
+    {
+      "fecha": "2026-10-20T22:32:09+00:00",
+      "de": "revisada",
+      "a": "simulada"
+    },
+    {
+      "fecha": "2026-10-20T22:34:57+00:00",
+      "de": "simulada",
+      "a": "con_guia"
+    },
+    {
+      "fecha": "2026-10-20T22:35:44+00:00",
+      "de": "con_guia",
+      "a": "verificada"
     }
   ],
   "marcas": {
@@ -464,12 +1318,83 @@
         ],
         "costo_usd": 0.185594,
         "llamadas": 3
+      },
+      "simulador": {
+        "modelo": "claude-sonnet-5-5",
+        "versiones_modelo": [
+          "claude-sonnet-5-5"
+        ],
+        "costo_usd": 0.97184,
+        "llamadas": 131
+      },
+      "simulador_codificador": {
+        "modelo": "claude-opus-5-5",
+        "versiones_modelo": [
+          "claude-opus-5-5"
+        ],
+        "costo_usd": 0.497564,
+        "llamadas": 6
+      },
+      "redactor": {
+        "modelo": "claude-sonnet-5-5",
+        "versiones_modelo": [
+          "claude-sonnet-5-5"
+        ],
+        "costo_usd": 0.207787,
+        "llamadas": 2
+      },
+      "redactor_escenarios": {
+        "modelo": "claude-opus-5-5",
+        "versiones_modelo": [
+          "claude-opus-5-5"
+        ],
+        "costo_usd": 0.31712,
+        "llamadas": 1
+      },
+      "ilustrador": {
+        "modelo": "claude-sonnet-5-5",
+        "versiones_modelo": [
+          "claude-sonnet-5-5"
+        ],
+        "costo_usd": 0.013296,
+        "llamadas": 1
+      },
+      "verificador": {
+        "modelo": "claude-opus-5-5",
+        "versiones_modelo": [
+          "claude-opus-5-5"
+        ],
+        "costo_usd": 0.195432,
+        "llamadas": 1
       }
     },
     "version_MAR03": "1.0",
     "evaluacion_inestable": false,
     "evaluacion_rango_total": 0,
     "evaluacion_corridas": "C:\\Users\\carro\\OneDrive - Universidad Católica de Chile\\repos\\otm-prensa\\pipeline\\state\\trabajo\\2026-10-anticipo-renta-vitalicia-v6\\evaluacion_corridas.json",
-    "pendiente": "revision_humana_1"
+    "simulador_manifiesto": {
+      "tarea_id": "2026-10-anticipo-renta-vitalicia-v6",
+      "version_tarea": 6,
+      "tramo": "U",
+      "backend": "api",
+      "diseno": "diseno_otm",
+      "corridas": 6,
+      "modelo_estudiantes": "claude-sonnet-5-5",
+      "modelo_codificador": "claude-opus-5-5",
+      "insumos_simulador": {
+        "INS08": "PERFILES.md",
+        "INS09": "PROMPTS.md"
+      },
+      "marco_niveles": "MAR03 v1.0 §3",
+      "fecha": "2026-10-20T22:28:00Z"
+    },
+    "dir_transcripciones": "C:\\Users\\carro\\OneDrive - Universidad Católica de Chile\\repos\\otm-prensa\\pipeline\\state\\trabajo\\2026-10-anticipo-renta-vitalicia-v6\\sim\\corridas",
+    "icono": "C:\\Users\\carro\\OneDrive - Universidad Católica de Chile\\repos\\otm-prensa\\pipeline\\state\\trabajo\\2026-10-anticipo-renta-vitalicia-v6\\icono.svg",
+    "bibliotecario_dry_run": {
+      "ok": true,
+      "ruta": "tareas/2026-10/anticipo-renta-vitalicia-v6/",
+      "rama": "tareas/semana-2026-W43"
+    },
+    "pendiente": "revision_humana_2"
   }
 }

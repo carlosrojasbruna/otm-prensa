@@ -1,0 +1,153 @@
+{
+  "run": {
+    "id": "N4_VV_r1",
+    "nivel": "N4",
+    "composicion": "VV",
+    "rep": 1,
+    "estilos": [
+      "V",
+      "V"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.080496,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P2-RM",
+        "fase_secundaria": "EMK",
+        "eventos": [
+          "STRAT",
+          "DIST"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P3-MM",
+        "fase_secundaria": null,
+        "eventos": [
+          "LEX",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P3-MM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME",
+          "LEX",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P3-MM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 6,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 8,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 9,
+        "fase": "P5-INT",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 10,
+        "fase": "P6-VAL",
+        "fase_secundaria": "EMK",
+        "eventos": [
+          "STRAT",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 11,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P7-EXP",
+        "eventos": []
+      },
+      {
+        "n": 12,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P7-EXP",
+        "eventos": []
+      },
+      {
+        "n": 13,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 14,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 15,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      }
+    ],
+    "bloqueos": [],
+    "supuestos": [
+      "valor presente esperado de los descuentos igual al adelanto",
+      "10% se interpreta como 10% del capital que respalda la pensión (A)",
+      "tasa de interés constante (3% anual, probada con 2% y 5%)",
+      "horizonte cierto de 20 años en el ejemplo",
+      "adelanto inventado A = 1.000",
+      "descuento de por vida, sin cobrar a herederos",
+      "pérdidas por fallecimiento temprano se compensan en la cartera",
+      "usar mortalidad de pensionados reales",
+      "tasa y tabla fijas al pensionarse, revisadas solo para casos nuevos"
+    ],
+    "modelo": "anualidad vitalicia",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Cuota mensual d = A / Σ v^t·p_t descontada mientras la persona viva, sin cobrar a herederos; en un ejemplo con 20 años ciertos y A inventado da 5,5 a 6,5 por cada 1.000 de adelanto (tasas de 2% a 5%). Tasa y tabla quedan fijas al pensionarse y se revisan solo para casos nuevos, porque d es sensible a ambas."
+    },
+    "ruta_principal": "R1",
+    "rutas": [
+      "R1",
+      "R2"
+    ]
+  }
+}
