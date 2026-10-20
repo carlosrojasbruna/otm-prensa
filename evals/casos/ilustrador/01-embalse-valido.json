@@ -1,0 +1,23 @@
+{
+  "id": "01-embalse-valido",
+  "descripcion": "SVG válido de embalse: acepta.",
+  "entrada": {
+    "tarea_base": "contratos/ejemplos/tarea_ejemplo.json",
+    "reemplazos": {
+      "titulo": "Embalse y ciudad",
+      "area": "medio_ambiente",
+      "estudiante.foto_descripcion": "Ícono plano de un embalse con una línea que marca el nivel."
+    }
+  },
+  "respuestas_modelo": [
+    {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 300\" width=\"400\" height=\"300\"><title>Embalse entre cerros</title><rect x=\"0\" y=\"0\" width=\"400\" height=\"300\" fill=\"#e0f2fe\"/><circle cx=\"320\" cy=\"60\" r=\"30\" fill=\"#fde68a\"/><path d=\"M0 170 L100 90 L200 160 L280 120 L280 300 L0 300 Z\" fill=\"#86efac\"/><path d=\"M0 230 Q50 215 100 230 T200 230 L280 230 L280 300 L0 300 Z\" fill=\"#3b82f6\"/><path d=\"M280 130 L320 130 L370 300 L280 300 Z\" fill=\"#9ca3af\"/></svg>",
+      "foto_descripcion": "Ícono plano de un embalse entre cerros con agua azul y un muro gris."
+    }
+  ],
+  "criterio_aceptacion": {
+    "resultado": "acepta",
+    "errores_contienen": [],
+    "intentos_reparacion": 0
+  }
+}

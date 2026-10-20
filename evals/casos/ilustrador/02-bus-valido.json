@@ -1,0 +1,23 @@
+{
+  "id": "02-bus-valido",
+  "descripcion": "SVG válido de bus: acepta.",
+  "entrada": {
+    "tarea_base": "contratos/ejemplos/tarea_ejemplo.json",
+    "reemplazos": {
+      "titulo": "Pasaje del bus",
+      "area": "economia",
+      "estudiante.foto_descripcion": "none"
+    }
+  },
+  "respuestas_modelo": [
+    {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 300\" width=\"400\" height=\"300\"><rect x=\"0\" y=\"0\" width=\"400\" height=\"300\" fill=\"#fef3c7\"/><rect x=\"0\" y=\"230\" width=\"400\" height=\"70\" fill=\"#d1d5db\"/><rect x=\"60\" y=\"100\" width=\"240\" height=\"120\" rx=\"14\" fill=\"#f97316\"/><rect x=\"80\" y=\"120\" width=\"50\" height=\"45\" rx=\"5\" fill=\"#bfdbfe\"/><rect x=\"145\" y=\"120\" width=\"50\" height=\"45\" rx=\"5\" fill=\"#bfdbfe\"/><rect x=\"210\" y=\"120\" width=\"50\" height=\"45\" rx=\"5\" fill=\"#bfdbfe\"/><circle cx=\"120\" cy=\"225\" r=\"20\" fill=\"#374151\"/><circle cx=\"240\" cy=\"225\" r=\"20\" fill=\"#374151\"/></svg>",
+      "foto_descripcion": "Ícono plano de un bus naranja sobre una calle gris con fondo amarillo claro."
+    }
+  ],
+  "criterio_aceptacion": {
+    "resultado": "acepta",
+    "errores_contienen": [],
+    "intentos_reparacion": 0
+  }
+}

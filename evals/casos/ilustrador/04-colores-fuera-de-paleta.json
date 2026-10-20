@@ -1,0 +1,29 @@
+{
+  "id": "04-colores-fuera-de-paleta",
+  "descripcion": "Colores fuera de paleta, color con nombre y url(): rechaza.",
+  "entrada": {
+    "tarea_base": "contratos/ejemplos/tarea_ejemplo.json",
+    "reemplazos": {
+      "titulo": "Encuesta electoral",
+      "area": "sociedad_datos",
+      "estudiante.foto_descripcion": "none"
+    }
+  },
+  "respuestas_modelo": [
+    {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 300\" width=\"400\" height=\"300\"><rect x=\"0\" y=\"0\" width=\"400\" height=\"300\" fill=\"#ff00ff\"/><circle cx=\"200\" cy=\"150\" r=\"60\" fill=\"red\"/><rect x=\"10\" y=\"10\" width=\"50\" height=\"50\" fill=\"url(#g)\"/></svg>",
+      "foto_descripcion": "Un fondo magenta con un círculo rojo."
+    },
+    {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 300\" width=\"400\" height=\"300\"><rect x=\"0\" y=\"0\" width=\"400\" height=\"300\" fill=\"#ff00ff\"/><circle cx=\"200\" cy=\"150\" r=\"60\" fill=\"red\"/><rect x=\"10\" y=\"10\" width=\"50\" height=\"50\" fill=\"url(#g)\"/></svg>",
+      "foto_descripcion": "Un fondo magenta con un círculo rojo."
+    }
+  ],
+  "criterio_aceptacion": {
+    "resultado": "rechaza",
+    "errores_contienen": [
+      "color fuera de paleta"
+    ],
+    "intentos_reparacion": 0
+  }
+}
