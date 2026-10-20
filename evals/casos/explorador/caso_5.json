@@ -1,0 +1,21 @@
+{
+  "id": "caso_5",
+  "agente": "explorador",
+  "descripcion": "Cuerpo sin cifras (columna de opinión): descartada por el filtro previo sin llamar al modelo.",
+  "nota": "Texto 100 % sintético escrito por el equipo; no proviene de ningún medio (invariante 3).",
+  "entrada": {
+    "medio_id": "cnnchile",
+    "medio": "CNN Chile",
+    "idioma": "es",
+    "titulo": "Texto sintético: embalse de Valdoria baja a 38 % de su nivel",
+    "fecha": "2026-10-17",
+    "url": "https://www.cnnchile.com/sintetico/embalse-valdoria",
+    "cuerpo_html": "<p>Columna sintética de opinión sobre el valor de la lectura en las escuelas de la ciudad ficticia de Valdoria.</p>"
+  },
+  "respuestas_modelo": [],
+  "esperado": {
+    "resultado": "descartada",
+    "llamadas": 0,
+    "motivo_contiene": "sin cifras"
+  }
+}

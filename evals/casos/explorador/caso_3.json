@@ -1,0 +1,21 @@
+{
+  "id": "caso_3",
+  "agente": "explorador",
+  "descripcion": "Medio fuera de la lista blanca de MED01: descartada sin llamar al modelo.",
+  "nota": "Texto 100 % sintético escrito por el equipo; no proviene de ningún medio (invariante 3).",
+  "entrada": {
+    "medio_id": "blogcualquiera",
+    "medio": "Blog Cualquiera",
+    "idioma": "es",
+    "titulo": "Texto sintético: embalse de Valdoria baja a 38 % de su nivel",
+    "fecha": "2026-10-17",
+    "url": "https://www.cnnchile.com/sintetico/embalse-valdoria",
+    "cuerpo_html": "<p>El embalse sintético Los Almendros, que abastece a la ciudad ficticia de Valdoria, registró este lunes un nivel de 38 % de su capacidad total.</p><p>Según el informe inventado de la empresa sanitaria, la capacidad máxima del embalse es de 220 millones de metros cúbicos y el consumo mensual estimado de la ciudad alcanza los 14 millones de metros cúbicos.</p><p>Los técnicos ficticios señalaron que, de mantenerse el ritmo actual, la reserva alcanzaría para unos 6 meses sin nuevas lluvias.</p>"
+  },
+  "respuestas_modelo": [],
+  "esperado": {
+    "resultado": "descartada",
+    "llamadas": 0,
+    "motivo_contiene": "fuera de MED01"
+  }
+}

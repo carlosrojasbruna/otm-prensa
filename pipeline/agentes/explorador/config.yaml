@@ -1,0 +1,18 @@
+# Configuración del agente explorador. El modelo se lee de pipeline/config.yaml (modelos.explorador);
+# aquí solo se documenta. No se fija temperatura: los modelos 5.5 no la aceptan.
+agente: explorador
+version_prompt: "1.0"
+prompt: prompt.md
+modelo_partida: claude-haiku-5-5        # = pipeline/config.yaml::modelos.explorador
+modelo_fuente: pipeline/config.yaml
+temperatura: default                    # no se envía
+contrato_salida: noticia                # contratos/noticia.schema.json
+esquema_modelo: interno                 # subconjunto que llena el modelo; el resto lo completa run.py
+insumos: [MED01 v1.0]
+parametros:
+  max_resumen_palabras: 80
+  max_palabras_literales: 25
+  intentos_resumen: 3
+  dias_maximos: 14                      # MED01 filtro_previo.fecha_dentro_de_14_dias
+  max_tokens: 2000
+  max_chars_cuerpo: 12000
