@@ -5,7 +5,7 @@ Observatorio de Tareas de Modelamiento desde la Prensa. Pipeline de agentes que 
 ## Lee primero
 
 1. `insumos/INV00_inventario-de-insumos_v0.4_2026-10-20.md` — qué existe y en qué estado.
-2. `insumos/GOB01_gobernanza_v1.0_2026-10-20.md` — umbrales, aprobaciones, secrets, licencias.
+2. `insumos/GOB01_gobernanza_v1.1_2026-10-20.md` — umbrales, aprobaciones, secrets, licencias.
 3. `plan/PLAN-CONSTRUCCION.md` — fases, agentes de construcción, checkpoints.
 4. `pipeline/state/build.json` — dónde va la construcción (lo mantiene `build-lead`).
 
@@ -36,7 +36,7 @@ Los archivos de `insumos/` son de solo lectura para los agentes de construcción
 
 - Idioma de código, prompts y documentos: español; identificadores en inglés cuando son estándar (`task_space`, `coder_schema`).
 - Nombres de archivos de insumos y entregables: `nombre_vX.Y_AAAA-MM-DD.ext`. Las tareas publicadas no se editan: se crea v2 en la misma carpeta y se conserva v1.
-- Commits: mensaje en español, prefijo por área (`insumos:`, `contratos:`, `agente/<nombre>:`, `pipeline:`, `sitio:`, `devops:`, `docs:`).
+- Commits: mensaje en español, prefijo por área (`insumos:`, `contratos:`, `agente/<nombre>:`, `pipeline:`, `tareas:`, `sitio:`, `devops:`, `docs:`).
 - Modelos de partida por agente (GOB01 §3); `eval-engineer` puede cambiarlos solo con evidencia en `evals/resultados/`.
 - Los agentes no preguntan entre checkpoints: toman la lectura más conservadora, la anotan en `pipeline/state/decisiones.md` y siguen. El humano lee ese archivo en cada checkpoint.
 
