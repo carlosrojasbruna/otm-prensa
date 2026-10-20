@@ -1,0 +1,87 @@
+{
+  "ciclo_id": "ciclo_20261020T220246654362Z",
+  "inicio": "2026-10-20T22:02:46Z",
+  "fin": "2026-10-20T22:05:05Z",
+  "semana": "2026-W43",
+  "parametros": {
+    "tope_semanal_usd": 25.0,
+    "fraccion_detencion": 0.9,
+    "presupuesto_ciclo_usd": 1.0,
+    "limite_usd": 17.820011,
+    "gasto_semana_previo_usd": 16.820011,
+    "corridas_evaluador": 3,
+    "rango_inestable": 4,
+    "corridas_simulador": 6,
+    "ids": [
+      "2026-10-anticipo-renta-vitalicia-v4"
+    ],
+    "motivo": "revisión humana"
+  },
+  "detenido_por_tope": false,
+  "eventos": [
+    {
+      "fecha": "2026-10-20T22:03:42Z",
+      "tipo": "agente",
+      "agente": "disenador",
+      "tareas": [],
+      "llamadas": 1,
+      "usd": 0.118873
+    },
+    {
+      "fecha": "2026-10-20T22:04:09Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-anticipo-renta-vitalicia-v5"
+      ],
+      "llamadas": 1,
+      "usd": 0.06671
+    },
+    {
+      "fecha": "2026-10-20T22:04:35Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-anticipo-renta-vitalicia-v5"
+      ],
+      "llamadas": 1,
+      "usd": 0.06137
+    },
+    {
+      "fecha": "2026-10-20T22:05:05Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-anticipo-renta-vitalicia-v5"
+      ],
+      "llamadas": 1,
+      "usd": 0.06879
+    },
+    {
+      "fecha": "2026-10-20T22:05:05Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-anticipo-renta-vitalicia-v5",
+      "de": "borrador",
+      "a": "evaluada"
+    }
+  ],
+  "expedientes": {
+    "2026-10-anticipo-renta-vitalicia-v5": "evaluada"
+  },
+  "noticias": [],
+  "pendientes_humanos": [
+    {
+      "tarea_id": "2026-10-anticipo-renta-vitalicia-v5",
+      "pendiente": "revision_humana_1",
+      "estado": "evaluada"
+    }
+  ],
+  "errores": [],
+  "orden": "nueva_version",
+  "gasto": {
+    "ciclo_usd": 0.315743,
+    "semana_usd": 17.135754,
+    "limite_usd": 17.820011,
+    "llamadas": 4
+  }
+}

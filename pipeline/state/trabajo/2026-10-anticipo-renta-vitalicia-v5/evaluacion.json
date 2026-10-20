@@ -1,0 +1,97 @@
+{
+  "tarea_id": "2026-10-anticipo-renta-vitalicia-v5",
+  "fecha": "2026-10-20T22:05:05Z",
+  "rub01": {
+    "version_rubrica": "4.0",
+    "criterios": {
+      "genuino": {
+        "puntaje": 2,
+        "justificacion": "La tarea plantea una necesidad real: recuperar el anticipo sin pérdida ni cobro excesivo. Pide construir la regla y no entrega fórmula ni modelo; ningún recurso trae fórmulas.",
+        "cita": "¿Qué regla propondrían para decidir cuánto bajar la pensión y por cuánto tiempo, y qué tan firme es esa regla?"
+      },
+      "abierta": {
+        "puntaje": 2,
+        "justificacion": "La pregunta no prescribe procedimiento. Admite varios modelos defendibles: rebaja temporal o permanente, con o sin mortalidad, con distintas tasas de descuento, y no hay instrucciones que encaucen a una ruta única.",
+        "cita": "¿Qué regla propondrían para decidir cuánto bajar la pensión y por cuánto tiempo"
+      },
+      "decisiones": {
+        "puntaje": 2,
+        "justificacion": "Resolverla exige decidir qué significa «en promedio» (riesgo de fallecimiento) y elegir la tasa de interés. También exige suponer la edad, el sexo y el monto de la pensión, y solicitar la tabla de mortalidad y la serie de tasas.",
+        "cita": "La compañía no quiere perder dinero en promedio, pero tampoco cobrarle de más a la persona. ... Pueden pedir información adicional."
+      },
+      "realismo": {
+        "puntaje": 2,
+        "justificacion": "Los anticipos de rentas vitalicias y la forma de recuperarlos son una situación real y vigente en Chile, no un encuadre forzado para insertar un cálculo.",
+        "cita": "la Corte Suprema dio la razón a las aseguradoras en una disputa por los anticipos de rentas vitalicias del tercer retiro de fondos de pensiones"
+      },
+      "autenticidad": {
+        "puntaje": 2,
+        "justificacion": "La noticia y el tope del 10 % fijado por el oficio de la CMF son el núcleo de la tarea. Se suman componentes auténticos no creados para enseñar: la tabla de mortalidad del regulador, la serie de tasas reales y un certificado SCOMP real.",
+        "cita": "El resumen diario de CIPER Chile del lunes diecinueve de octubre"
+      },
+      "contexto": {
+        "puntaje": 2,
+        "justificacion": "El contexto condiciona el modelo: la renta es vitalicia, la persona puede fallecer y el dinero tiene un valor en el tiempo. También es necesario para juzgar la equidad y la firmeza de la regla y para contrastarla con las ofertas reales.",
+        "cita": "La compañía no quiere perder dinero en promedio, pero tampoco cobrarle de más a la persona."
+      },
+      "ciclo": {
+        "puntaje": 2,
+        "justificacion": "Responder obliga a comprender la renta vitalicia, simplificar con supuestos, matematizar como valor presente esperado, calcular, interpretar la regla y juzgar su firmeza. Ninguna fase viene hecha.",
+        "cita": "¿Qué regla propondrían para decidir cuánto bajar la pensión y por cuánto tiempo, y qué tan firme es esa regla?"
+      },
+      "validacion": {
+        "puntaje": 2,
+        "justificacion": "El certificado SCOMP real, con prima, edad, sexo y pensión, es evidencia independiente no usada al construir la regla. Permite contrastar los factores de renta y la tasa implícita del modelo.",
+        "cita": "un certificado de ofertas anonimizado (sin nombre ni RUT) que informa, para cada oferta, la prima"
+      },
+      "nivel": {
+        "puntaje": 2,
+        "justificacion": "Para el nivel U, el contexto es comprensible y relevante. La matemática requerida (probabilidad, valor presente, sumas esperadas, programación) está entre las herramientas esperables de MAR03 para universitarios.",
+        "cita": "Archivo con las probabilidades de fallecer a cada edad para mujeres y hombres pensionados por renta vitalicia."
+      },
+      "autodiferenciacion": {
+        "puntaje": 2,
+        "justificacion": "El piso es razonable: se puede empezar dividiendo el anticipo en rebajas mensuales sin interés ni mortalidad. La misma pregunta admite soluciones más sofisticadas: descuento financiero, valor esperado con tablas de mortalidad, diferencias por sexo y edad, y sensibilidad a la tasa.",
+        "cita": "¿Qué regla propondrían para decidir cuánto bajar la pensión y por cuánto tiempo"
+      },
+      "fecundidad": {
+        "puntaje": 2,
+        "justificacion": "La pregunta por la firmeza abre el análisis de sensibilidad a la tasa y a la mortalidad. También abre la discusión de equidad entre perfiles y la comparación entre reglas de los grupos y con las ofertas reales del mercado.",
+        "cita": "y qué tan firme es esa regla?"
+      },
+      "recursos": {
+        "puntaje": 2,
+        "justificacion": "Los datos imprescindibles (mortalidad y tasas) están disponibles a solicitud sin revelar el modelo. El material de contraste se entrega solo después de presentar la regla. Lo demás puede suponerse o pedirse.",
+        "cita": "El equipo docente lo entrega cuando el grupo lo pide; no trae ninguna fórmula ni ejemplo de uso."
+      }
+    },
+    "total": 24,
+    "mejoras": []
+  },
+  "reproducibilidad": {
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.118873,
+        "version_prompt": "1.1"
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.19687,
+        "version_prompt": "1.3"
+      }
+    },
+    "version_prompt": {
+      "disenador": "1.1",
+      "evaluador": "1.3"
+    },
+    "version_rubrica": "4.0",
+    "version_MAR03": "1.0",
+    "version_MED01": "1.1",
+    "diseno_simulador": null,
+    "fecha": "2026-10-20T22:05:05Z",
+    "costo_usd": 0.315743
+  }
+}
