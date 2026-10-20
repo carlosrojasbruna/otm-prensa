@@ -509,7 +509,11 @@ def explorar(medios_ids: list[str] | None = None, max_por_medio: int = 8, *, cli
             if gasto >= tope_usd:
                 descartes.append({"url": c["url"], "motivo": "tope de gasto alcanzado"})
                 continue
-            res = explorar_noticia(c, cliente=cliente, ahora=ahora, bajar=bajar)
+            try:
+                res = explorar_noticia(c, cliente=cliente, ahora=ahora, bajar=bajar)
+            except RuntimeError as e:  # una noticia que falla en la API no detiene el lote
+                descartes.append({"url": c["url"], "medio_id": c["medio_id"], "motivo": f"error de API: {e}"[:200]})
+                continue
             gasto += res["costo_usd"]
             if res["noticia"]:
                 noticias.append(res["noticia"])

@@ -190,3 +190,18 @@ def test_latercera_usa_cuerpo_del_feed_sin_bajar_pagina():
     cli = ClienteFalso(CASO1["respuestas_modelo"])
     r = ex.explorar(["latercera"], 3, cliente=cli, ahora=AHORA, leer=lambda u: rss.encode(), bajar=bajar)
     assert r["meta"]["n_aceptadas"] == 1 and paginas == []
+
+
+def test_error_de_api_en_una_noticia_no_detiene_el_lote(monkeypatch):
+    from pipeline.agentes.explorador import run
+
+    monkeypatch.setattr(run, "cargar_med01", lambda: {"version": "1.1", "medios": [{"id": "x"}]})
+    monkeypatch.setattr(run, "recolectar", lambda *a, **k: [{"url": "https://x/1", "medio_id": "x"}])
+
+    def falla(*a, **k):
+        raise RuntimeError("explorador: la llamada falló tras 3 intentos: stop_reason=max_tokens")
+
+    monkeypatch.setattr(run, "explorar_noticia", falla)
+    res = run.explorar(cliente=object(), bajar=lambda u: "")
+    assert res["noticias"] == []
+    assert res["descartes"][0]["motivo"].startswith("error de API")
