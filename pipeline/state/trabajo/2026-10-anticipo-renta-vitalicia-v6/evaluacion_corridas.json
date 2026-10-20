@@ -1,0 +1,289 @@
+{
+  "tarea_id": "2026-10-anticipo-renta-vitalicia-v6",
+  "evaluaciones": [
+    {
+      "iteracion": 1,
+      "version_tarea": 6,
+      "fecha": "2026-10-20T22:24:13Z",
+      "modelo": "claude-opus-5-5",
+      "version_prompt": "1.3",
+      "version_rubrica": "4.0",
+      "corridas": [
+        {
+          "n": 1,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La tarea plantea una necesidad real, abierta tras el fallo de la Corte: definir cómo descontar el adelanto. No entrega ninguna fórmula, regla ni modelo actuarial que baste con aplicar.",
+                "cita": "¿Qué regla propondrían para descontar el adelanto de la pensión mensual, cuánto y por cuánto tiempo, y qué tan firme es esa regla?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "Hay varias reglas defendibles: un descuento permanente, uno temporal o una equivalencia actuarial con o sin interés. La pregunta no prescribe el método y no hay instrucciones posteriores que encaucen la ruta.",
+                "cita": "Imaginen que asesoran a una aseguradora y a una persona recién pensionada que recibió el adelanto máximo."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver obliga a suponer la edad, el sexo y el monto de la pensión, y a decidir si se usa mortalidad y qué tasa de descuento. También hay que interpretar el 10% y solicitar la tabla de mortalidad y las tasas.",
+                "cita": "Pueden pedir información adicional."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "La situación es un hecho real del sistema de pensiones chileno, con un problema de cálculo que sigue abierto.",
+                "cita": "Una noticia de CIPER Chile cuenta que la Corte Suprema declaró ilegal un oficio de la CMF, el regulador financiero."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "La tarea integra de manera sustantiva componentes auténticos que no se crearon para enseñar: la noticia de CIPER, la ley, la tabla oficial de mortalidad, tasas reales y un certificado SCOMP real.",
+                "cita": "Archivo con las probabilidades de fallecer a cada edad para mujeres y hombres pensionados por renta vitalicia."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "Esta condición del contexto define el criterio del modelo (equidad en valor esperado). El contexto también es necesario para interpretar la regla y juzgar su firmeza ante ambas partes.",
+                "cita": "La compañía no quiere perder dinero en promedio, pero tampoco cobrar de más."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder exige comprender la renta vitalicia y simplificar con supuestos. Luego hay que matematizar (valor presente esperado), calcular, interpretar la regla para ambas partes y validar su firmeza; el enunciado no deja ninguna fase hecha.",
+                "cita": "cuánto y por cuánto tiempo, y qué tan firme es esa regla?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "El certificado trae prima, edad, sexo y pensión ofrecida reales, que no se usaron para construir el modelo. Con ellos se puede contrastar externamente el modelo de valoración del grupo.",
+                "cita": "entrega, solo después de que el grupo presente su regla, un certificado de ofertas anonimizado (sin nombre ni RUT)"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El lenguaje técnico (oficio, CMF, renta vitalicia) se explica en el texto. La matemática requerida (probabilidad, valor esperado, descuento temporal, modelos discretos) corresponde a las herramientas esperables del nivel U.",
+                "cita": "una pensión que se paga cada mes mientras la persona viva"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Hay un piso accesible: repartir el adelanto según una esperanza de vida estimada. También hay un techo alto: una equivalencia actuarial con tabla de mortalidad, tasa de interés y análisis de sensibilidad.",
+                "cita": "¿Qué regla propondrían para descontar el adelanto de la pensión mensual, cuánto y por cuánto tiempo"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las soluciones permiten comparar reglas y discutir el riesgo de longevidad, las diferencias por sexo y la elección de la tasa. También abren preguntas sobre el fallecimiento antes de completar el descuento y la equidad entre las partes.",
+                "cita": "y qué tan firme es esa regla?"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información necesaria se obtiene a solicitud o puede suponerse, y ningún material revela el modelo ni la regla de cálculo.",
+                "cita": "El equipo docente lo entrega cuando el grupo lo pide; no trae ninguna fórmula ni ejemplo de uso."
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgEGfEuc3UmTmxYrq67gZ",
+            "fecha": "2026-10-20T22:23:21+00:00",
+            "intentos": 1,
+            "costo_usd": 0.058678,
+            "avisos": []
+          }
+        },
+        {
+          "n": 2,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La tarea parte de una necesidad real que quedó abierta tras el fallo: cómo descontar el adelanto. No entrega fórmula ni modelo actuarial, y los recursos aclaran que no traen fórmulas. La condición «no perder dinero en promedio» es un objetivo de la situación, no un procedimiento.",
+                "cita": "¿Qué regla propondrían para descontar el adelanto de la pensión mensual, cuánto y por cuánto tiempo, y qué tan firme es esa regla?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "Hay varias reglas defendibles: descuento fijo vitalicio, descuento por un plazo fijo o descuento con o sin tasa de interés. La pregunta no prescribe el método y no hay instrucciones posteriores que encaucen la ruta.",
+                "cita": "queda abierta la forma de descontar. Imaginen que asesoran a una aseguradora y a una persona recién pensionada"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Para resolver hay que suponer la edad, el sexo y el monto de la pensión, decidir qué significa el 10%, elegir una tasa de interés de la serie y solicitar la tabla de mortalidad. Son decisiones sustantivas de modelación.",
+                "cita": "Pueden pedir información adicional."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Es un hecho real del sistema de pensiones chileno, con un problema regulatorio auténtico y sin resolver.",
+                "cita": "la Corte Suprema declaró ilegal un oficio de la CMF, el regulador financiero"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "La noticia, la tabla de mortalidad del regulador, la serie de tasas y el certificado SCOMP real son componentes extraescolares. Están integrados como núcleo de la tarea.",
+                "cita": "Una noticia de CIPER Chile cuenta que la Corte Suprema declaró ilegal un oficio de la CMF"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona el modelo: la incertidumbre de la sobrevida obliga a usar la mortalidad y el valor del dinero obliga a usar una tasa. También se necesita para juzgar si la regla es justa para ambas partes.",
+                "cita": "La compañía no quiere perder dinero en promedio, pero tampoco cobrar de más."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "La tarea obliga a recorrer todo el ciclo: comprender el mecanismo legal, simplificar con supuestos, matematizar el valor esperado de los pagos y calcularlo. Luego hay que interpretar el resultado como una regla y juzgar su firmeza. El enunciado no deja ninguna fase hecha.",
+                "cita": "¿Qué regla propondrían para descontar el adelanto de la pensión mensual, cuánto y por cuánto tiempo, y qué tan firme es esa regla?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "El certificado real informa prima, edad, sexo y pensión de cada oferta. Es evidencia independiente, no usada al construir la regla, con la que se puede contrastar el modelo.",
+                "cita": "entrega, solo después de que el grupo presente su regla, un certificado de ofertas anonimizado"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El enunciado explica los términos y el contexto es pertinente para universitarios. Valor esperado, descuento y probabilidad de sobrevida están dentro de las herramientas del nivel U (probabilidad, modelos discretos, programación).",
+                "cita": "renta vitalicia, una pensión que se paga cada mes mientras la persona viva"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Se puede entrar dividiendo el adelanto por los meses esperados de vida sin interés. También caben soluciones correctas más sofisticadas: valor presente actuarial con mortalidad por sexo, comparación de tasas y análisis de sensibilidad.",
+                "cita": "cuánto y por cuánto tiempo, y qué tan firme es esa regla"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "La tarea permite comparar reglas entre grupos. Abre preguntas sobre la equidad por sexo o edad, sobre qué pasa si la persona fallece antes de terminar el descuento y sobre la sensibilidad a la tasa elegida.",
+                "cita": "La Corte no se pronunció sobre compensaciones a las aseguradoras ni sobre los efectos para los pensionados"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La mortalidad y las tasas se obtienen a solicitud sin revelar el modelo, y los datos de contraste se entregan después de proponer la regla. Lo demás (edad, monto) puede suponerse o pedirse.",
+                "cita": "El equipo docente lo entrega cuando el grupo lo pide; no trae ninguna fórmula ni ejemplo de uso."
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgEGgzWjXKQYdnMETu6kM",
+            "fecha": "2026-10-20T22:23:49+00:00",
+            "intentos": 1,
+            "costo_usd": 0.067118,
+            "avisos": []
+          }
+        },
+        {
+          "n": 3,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La tarea plantea una necesidad real: definir una regla justa de descuento que la Corte dejó abierta. No entrega ninguna fórmula ni modelo listo para aplicar.",
+                "cita": "La compañía no quiere perder dinero en promedio, pero tampoco cobrar de más. ¿Qué regla propondrían para descontar el adelanto de la pensión mensual"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "Admite varias reglas defendibles, como un descuento vitalicio constante, un descuento mayor por plazo fijo o esquemas con o sin interés. No hay instrucciones que encaucen el método.",
+                "cita": "¿Qué regla propondrían para descontar el adelanto de la pensión mensual, cuánto y por cuánto tiempo, y qué tan firme es esa regla?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver obliga a decidir y solicitar información: mortalidad, tasa de descuento, edad y sexo del pensionado, interpretación de \"no perder en promedio\". También exige formular supuestos y simplificar.",
+                "cita": "Pueden pedir información adicional."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Es una situación real y actual del sistema de pensiones chileno, con actores reales (aseguradoras, pensionados, regulador).",
+                "cita": "la Corte Suprema declaró ilegal un oficio de la CMF, el regulador financiero"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "La noticia, la tabla de mortalidad del regulador, la serie de tasas y el certificado SCOMP son componentes extraescolares reales. Constituyen el núcleo de la tarea.",
+                "cita": "Una noticia de CIPER Chile cuenta que la Corte Suprema declaró ilegal un oficio de la CMF"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto fija el criterio de equidad actuarial que condiciona el modelo: valor esperado, mortalidad y valor del dinero. También es necesario para juzgar si la regla es aceptable para ambas partes.",
+                "cita": "La compañía no quiere perder dinero en promedio, pero tampoco cobrar de más."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder exige comprender la ley y el conflicto, simplificar y elegir supuestos, y matematizar con valor presente esperado. Luego hay que calcular, interpretar la regla y juzgar su solidez, sin que el enunciado deje hecha ninguna fase.",
+                "cita": "cuánto y por cuánto tiempo, y qué tan firme es esa regla?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "El certificado real permite contrastar el factor de renta implícito en la regla del grupo con pensiones efectivamente ofrecidas. Es evidencia independiente no usada en la construcción.",
+                "cita": "entrega, solo después de que el grupo presente su regla, un certificado de ofertas anonimizado (sin nombre ni RUT)"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto está explicado y es comprensible y pertinente para estudiantes universitarios. La matemática requerida (probabilidad, valor esperado, descuento financiero, sensibilidad) corresponde a las herramientas del nivel U.",
+                "cita": "renta vitalicia, una pensión que se paga cada mes mientras la persona viva"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es accesible: se puede repartir el adelanto entre los meses de esperanza de vida, sin interés. La tarea admite soluciones más sofisticadas, con anualidades actuariales por sexo y edad, tasas alternativas y análisis de sensibilidad.",
+                "cita": "Imaginen que asesoran a una aseguradora y a una persona recién pensionada que recibió el adelanto máximo."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "La pregunta por la firmeza abre la comparación de reglas, la sensibilidad a la tasa y a la mortalidad y los efectos distributivos por sexo o edad. También permite discutir los límites del criterio \"en promedio\".",
+                "cita": "y qué tan firme es esa regla?"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información imprescindible (mortalidad, tasas, datos de mercado) está disponible a solicitud y no revela el modelo. Los datos personales faltantes pueden suponerse o estimarse a partir del material entregado.",
+                "cita": "El equipo docente lo entrega cuando el grupo lo pide; no trae ninguna fórmula ni ejemplo de uso."
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgEGj3eKKREzpyyP1v4qR",
+            "fecha": "2026-10-20T22:24:13+00:00",
+            "intentos": 1,
+            "costo_usd": 0.059798,
+            "avisos": []
+          }
+        }
+      ],
+      "totales": [
+        24,
+        24,
+        24
+      ],
+      "rango_total": 0,
+      "rango_inestable": 4,
+      "evaluacion_inestable": false,
+      "mediana": {
+        "regla": "mediana por criterio (n par: mediana inferior)",
+        "total": 24,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 2
+        },
+        "corrida_fuente": {
+          "genuino": 1,
+          "abierta": 1,
+          "decisiones": 1,
+          "realismo": 1,
+          "autenticidad": 1,
+          "contexto": 1,
+          "ciclo": 1,
+          "validacion": 1,
+          "nivel": 1,
+          "autodiferenciacion": 1,
+          "fecundidad": 1,
+          "recursos": 1
+        }
+      }
+    }
+  ]
+}
