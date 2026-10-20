@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "fase_actual": 3,
+  "fase_actual": 4,
   "fases": {
     "1": {
       "nombre": "Contratos y calibración",
@@ -86,7 +86,7 @@
     },
     "3": {
       "nombre": "Evaluación y prototipo",
-      "estado": "en_checkpoint",
+      "estado": "aprobada",
       "tareas": {
         "eval-engineer": {
           "estado": "completada",
@@ -127,8 +127,8 @@
       },
       "checkpoint": "CP2",
       "CP2": {
-        "aprobado": false,
-        "fecha": null
+        "aprobado": true,
+        "fecha": "2026-10-20"
       },
       "cierre": {
         "por": "build-lead",
@@ -138,7 +138,7 @@
     },
     "4": {
       "nombre": "Sitio docente",
-      "estado": "bloqueada",
+      "estado": "pendiente",
       "tareas": {
         "site-builder": "pendiente"
       }
