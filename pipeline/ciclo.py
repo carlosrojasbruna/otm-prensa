@@ -81,6 +81,24 @@ def _json(obj: Any) -> str:
     return json.dumps(obj, ensure_ascii=False, indent=2, default=str) + "\n"
 
 
+def _ruta_marca(ruta: Any) -> str:
+    """Ruta para una marca del expediente: relativa a la raíz del repo (POSIX) si está dentro, para que el
+    expediente no lleve rutas absolutas de la máquina o del runner; si está fuera (tests), absoluta."""
+    if not ruta:
+        return ""
+    p = Path(ruta).resolve()
+    try:
+        return p.relative_to(inv.RAIZ.resolve()).as_posix()
+    except ValueError:
+        return str(p)
+
+
+def _ruta_de_marca(marca: str) -> Path:
+    """Inversa de _ruta_marca: una ruta relativa se resuelve contra la raíz del repo."""
+    p = Path(marca)
+    return p if p.is_absolute() else inv.RAIZ / p
+
+
 def _escribir(ruta: Path, contenido: Any) -> Path:
     ruta.parent.mkdir(parents=True, exist_ok=True)
     ruta.write_text(contenido if isinstance(contenido, str) else _json(contenido), encoding="utf-8")
@@ -593,7 +611,7 @@ class Ciclo:
 
         exp.marcas["evaluacion_inestable"] = inestable
         exp.marcas["evaluacion_rango_total"] = rango
-        exp.marcas["evaluacion_corridas"] = str(ruta)
+        exp.marcas["evaluacion_corridas"] = _ruta_marca(ruta)
         evaluacion = {"tarea_id": exp.tarea_id, "fecha": ahora_utc(), "rub01": rub,
                       "reproducibilidad": self.reproducibilidad(exp)}
         if inestable:
@@ -777,7 +795,7 @@ class Ciclo:
             raise ErrorEtapa(f"se esperaban {self.corridas_simulador} corridas y hay "
                              f"{trazas.get('corridas') if trazas else 0}")
         exp.marcas["simulador_manifiesto"] = res.get("manifiesto") or {}
-        exp.marcas["dir_transcripciones"] = str(res.get("dir_transcripciones") or "")
+        exp.marcas["dir_transcripciones"] = _ruta_marca(res.get("dir_transcripciones"))
         if res.get("avisos"):
             exp.marcas["avisos_simulador"] = list(res["avisos"])
         return self._transicionar(exp, "simulada", artefactos={
@@ -820,7 +838,8 @@ class Ciclo:
     def _redactar(self, exp: orq.Expediente) -> orq.Expediente:
         art = exp.artefactos
         tarea, trazas = art["tarea"], art["trazas_resumen"]
-        trans = cargar_transcripciones(exp.marcas.get("dir_transcripciones") or "")
+        marca = exp.marcas.get("dir_transcripciones") or ""
+        trans = cargar_transcripciones(_ruta_de_marca(marca) if marca else "")
         contexto = {"puntaje_rub01": art["evaluacion"]["rub01"]["total"], "revision_humana_1": self._revision_1(exp),
                     "fecha": date.today().isoformat(), "version": tarea["version"]}
         if base := exp.marcas.get("guia_base_de"):  # nueva versión de la tarea: la guía anterior es la base
@@ -851,7 +870,7 @@ class Ciclo:
             return
         _escribir(d / "icono.svg", s["svg"])
         _escribir(d / "ilustrador.json", s)
-        exp.marcas["icono"] = str(d / "icono.svg")
+        exp.marcas["icono"] = _ruta_marca(d / "icono.svg")
 
     def _verificar(self, exp: orq.Expediente) -> orq.Expediente:
         if "icono" not in exp.marcas:   # ilustrador (orden: redactor → ilustrador → verificador); una vez por tarea
