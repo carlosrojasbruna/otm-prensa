@@ -141,12 +141,13 @@
       "estado": "en_curso",
       "tareas": {
         "site-builder": {
-          "estado": "en_curso",
+          "estado": "completada",
           "fecha": "2026-10-20",
-          "commit": null,
-          "test": null
+          "commit": "f786c15",
+          "test": "parte local: build 11 páginas; 35/35 tests del sitio (e2e cuenta→valorar→comentar→moderar contra backend local; RLS en PGlite); Lighthouse local home 100/100/100/100 móvil y escritorio, tarea 99/100/100/100 móvil y 100×4 escritorio; pytest 374 passed. Staging NO verificado: requiere decisión humana (decisiones.md)"
         }
-      }
+      },
+      "cierre_pendiente": "La parte «en staging» del test de aceptación (flujo real y Lighthouse sobre la URL) requiere crear Supabase y hosting: decisión humana. La fase no se cierra hasta entonces o hasta que Carlos la traslade a devops/CP3."
     },
     "5": {
       "nombre": "Producción",
@@ -164,5 +165,5 @@
     }
   },
   "costo_acumulado_usd": 47.97,
-  "ultimo_commit": "04b662f"
+  "ultimo_commit": "f786c15"
 }
