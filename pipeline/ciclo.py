@@ -44,6 +44,7 @@ from __future__ import annotations
 
 import argparse
 import copy
+import functools
 import json
 import re
 import sys
@@ -364,6 +365,20 @@ def registrar_gasto_semana(ruta: Path, semana: str, ciclo_id: str, usd: float) -
 
 
 # =========================================================================== ciclo
+def _con_cierre_de_emergencia(orden: Callable) -> Callable:
+    """Si una orden del ciclo termina con una excepción no capturada (o se interrumpe), el gasto ya hecho
+    se persiste igual en gasto_semanal.json y el registro del ciclo se escribe con el error. Sin esto, el
+    tope semanal subestimaría el gasto. La excepción original se vuelve a lanzar."""
+    @functools.wraps(orden)
+    def envuelta(self, *a, **kw):
+        try:
+            return orden(self, *a, **kw)
+        except BaseException as err:
+            self._cierre_de_emergencia(err)
+            raise
+    return envuelta
+
+
 @dataclass
 class Ciclo:
     agentes: Agentes = field(default_factory=Agentes)
@@ -875,6 +890,7 @@ class Ciclo:
         self._guardar(exp)
 
     # ------------------------------------------------------------------ órdenes
+    @_con_cierre_de_emergencia
     def correr(self, *, noticias: list[dict] | None = None, max_tareas: int = 3, nivel: str | None = None,
                filtrar: bool | None = None, textos: Mapping[str, str] | None = None) -> dict:
         """Tramo A. `noticias` None = explorador (y filtro). Con noticias, el filtro es opcional."""
@@ -910,6 +926,7 @@ class Ciclo:
             self._detener(e)
         return self._cerrar()
 
+    @_con_cierre_de_emergencia
     def continuar(self, ids: list[str], *, revisor: str | None = None,
                   textos: Mapping[str, str] | None = None) -> dict:
         """Tramo B (o reanudación). `revisor` aprueba la revisión humana 1 de estos expedientes."""
@@ -932,6 +949,7 @@ class Ciclo:
             self._detener(e)
         return self._cerrar()
 
+    @_con_cierre_de_emergencia
     def nueva_version(self, mejoras: Mapping[str, list[dict]], *, motivo: str = "revisión humana") -> dict:
         """Nueva versión de tareas ya trabajadas (`verificada`, `evaluada`, ...): el diseñador itera con
         `mejoras` [{criterio, mejora_minima}] y la v+1 abre un expediente propio (`<id>-v<n>`), que se evalúa
@@ -977,6 +995,7 @@ class Ciclo:
             self._detener(e)
         return self._cerrar()
 
+    @_con_cierre_de_emergencia
     def rehacer_guia(self, observaciones: Mapping[str, list[str]], *, revisor: str) -> dict:
         """La revisión humana 2 rechaza la guía: `verificada → simulada` y se reescribe desde las mismas trazas
         con las observaciones del revisor (versión de guía + 1). Luego ilustrador, verificador y bibliotecario en
@@ -1009,6 +1028,18 @@ class Ciclo:
         self.registro["detenido_por_tope"] = True
         self.registro["motivo_detencion"] = str(e)
         self.evento("detencion_por_tope", detalle=str(e))
+
+    def _cierre_de_emergencia(self, err: BaseException) -> None:
+        if self.registro.get("fin") is not None:   # _cerrar ya corrió: el gasto está persistido
+            return
+        if "orden" not in self.registro and self.contador.total == 0:   # falló la validación previa: no hay nada que cerrar
+            return
+        self.registro["terminado_con_error"] = True
+        self.registro["errores"].append({"etapa": "ciclo", "error": f"{type(err).__name__}: {err}"[:2000]})
+        try:
+            self._cerrar()
+        except Exception:  # noqa: BLE001 — no tapar la excepción original
+            traceback.print_exc()
 
     def _cerrar(self) -> dict:
         self.registro["fin"] = ahora_utc()

@@ -628,3 +628,41 @@ def test_nueva_version_sobre_version_sin_simular_hereda_origen(rutas):
     exp3 = orq.cargar(TID + "-v3", rutas.expedientes)
     assert exp3.artefactos["tarea"]["version"] == 3
     assert exp3.marcas["reusar_simulacion_de"] == TID and exp3.marcas["guia_base_de"] == TID
+
+
+# =========================================================================== gasto ante errores no capturados
+def test_gasto_se_persiste_si_un_agente_lanza_excepcion_no_capturada(rutas):
+    modelo = modelo_de("evaluador")
+    usd = costo_usd({"input_tokens": 1000, "output_tokens": 200}, modelo)
+
+    def explorar_roto(*, cliente, tope_usd):
+        cliente.messages.create(model=modelo, max_tokens=10, messages=[])   # gasta y luego falla
+        raise RuntimeError("explorador roto")
+
+    c = nuevo_ciclo(rutas, ["ok"], agentes=C.Agentes(explorar=explorar_roto))
+    with pytest.raises(RuntimeError, match="explorador roto"):
+        c.correr(max_tareas=1)
+    assert C.gasto_semana(rutas.gasto_semanal, C.semana_iso()) == pytest.approx(usd)
+    [archivo] = list(rutas.ciclos.glob("ciclo_*.json"))
+    reg = json.loads(archivo.read_text(encoding="utf-8"))
+    assert reg["terminado_con_error"] is True and "explorador roto" in reg["errores"][-1]["error"]
+    assert reg["gasto"]["ciclo_usd"] == pytest.approx(usd)
+
+
+def test_gasto_se_persiste_tambien_ante_interrupcion(rutas):
+    modelo = modelo_de("evaluador")
+
+    def explorar_interrumpido(*, cliente, tope_usd):
+        cliente.messages.create(model=modelo, max_tokens=10, messages=[])
+        raise KeyboardInterrupt
+
+    c = nuevo_ciclo(rutas, ["ok"], agentes=C.Agentes(explorar=explorar_interrumpido))
+    with pytest.raises(KeyboardInterrupt):
+        c.correr(max_tareas=1)
+    assert C.gasto_semana(rutas.gasto_semanal, C.semana_iso()) > 0
+
+
+def test_no_se_cuenta_dos_veces_el_gasto_en_un_cierre_normal(rutas):
+    c, reg = tramo_a(rutas, [rub(OK_23)] * 3)
+    datos = json.loads(rutas.gasto_semanal.read_text(encoding="utf-8"))
+    assert len(datos["semanas"][C.semana_iso()]["ciclos"]) == 1
