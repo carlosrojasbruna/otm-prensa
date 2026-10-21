@@ -10,6 +10,10 @@
 # carpeta `IDEA MODELAMIENTO/` (contiene `simulacion/sim.py` e `insumos/`); SIM_REPO_TOKEN = token fino de
 # solo lectura (contents:read) sobre ese repo. Si falta alguno, el workflow termina con un aviso y no hace nada.
 #
+# `solo_comprobar=true`: solo hace el checkout de SIM_REPO, verifica `simulacion/sim.py` e `insumos/`, importa el
+# adapter contra ese sim.py y termina. No usa la API ni escribe nada (ids no hace falta). Si faltan los secrets,
+# en este modo el job falla en vez de avisar.
+#
 # Comparte el grupo de concurrencia `semanal` con semanal.yml: ambos escriben pipeline/state/gasto_semanal.json.
 name: tramo_b
 
@@ -21,14 +25,20 @@ on:
         required: true
         type: string
       ids:
-        description: "Ids de expediente (tarea_id) separados por espacio; deben estar en `evaluada` y en main"
-        required: true
+        description: "Ids de expediente (tarea_id) separados por espacio; deben estar en `evaluada` y en main (obligatorio salvo con solo_comprobar)"
+        required: false
         type: string
+        default: ""
       presupuesto_ciclo:
         description: "Tope adicional en USD solo para este ciclo (vacío = 90 % del tope semanal)"
         required: false
         type: string
         default: ""
+      solo_comprobar:
+        description: "Solo comprobar el acceso al simulador (checkout de SIM_REPO + importar el adapter); sin API"
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -47,19 +57,78 @@ jobs:
     env:
       SIM_REPO: ${{ secrets.SIM_REPO }}
       SIM_REPO_TOKEN: ${{ secrets.SIM_REPO_TOKEN }}
+      SOLO_COMPROBAR: ${{ inputs.solo_comprobar }}
     steps:
       - id: g
         run: |
           if [ -n "$SIM_REPO" ] && [ -n "$SIM_REPO_TOKEN" ]; then
             echo "habilitado=true" >> "$GITHUB_OUTPUT"
+          elif [ "$SOLO_COMPROBAR" = "true" ]; then
+            echo "::error title=Comprobación fallida::Faltan los secrets SIM_REPO y/o SIM_REPO_TOKEN. Ver docs/secrets.md."
+            exit 1
           else
             echo "habilitado=false" >> "$GITHUB_OUTPUT"
             echo "::warning title=Tramo B deshabilitado::Faltan los secrets SIM_REPO y/o SIM_REPO_TOKEN (el simulador es un repo externo). No se hizo nada. Ver docs/secrets.md."
           fi
 
+  comprobar:
+    needs: guardia
+    if: ${{ needs.guardia.outputs.habilitado == 'true' && inputs.solo_comprobar }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PYTHONUTF8: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Simulador externo (repo de IDEA MODELAMIENTO)
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ secrets.SIM_REPO }}
+          token: ${{ secrets.SIM_REPO_TOKEN }}
+          path: _sim
+          persist-credentials: false
+
+      - name: Verificar simulacion/sim.py e insumos/
+        run: |
+          test -f _sim/simulacion/sim.py || { echo "::error::SIM_REPO no contiene simulacion/sim.py en su raíz"; exit 1; }
+          test -d _sim/insumos || { echo "::error::SIM_REPO no contiene insumos/ en su raíz"; exit 1; }
+          echo "insumos/ (nombres):"; ls -1 _sim/insumos
+
+      - name: Ubicar el simulador donde lo espera pipeline/config.yaml (simulador.repo)
+        run: |
+          destino="$(cd .. && cd .. && pwd)/IDEA MODELAMIENTO"
+          ln -s "$PWD/_sim" "$destino"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+
+      - name: Importar el adapter contra ese sim.py (sin API)
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from simulador.adapter import _comun, lanzador  # noqa: F401
+          print("simulador.repo ->", _comun.repo_simulador())
+          assert _comun.simulador_disponible(), "sim.py no está donde dice config.yaml"
+          assert _comun.insumos_simulador().is_dir(), "insumos/ no está junto a simulacion/"
+          sim = _comun.cargar_sim()
+          for nombre in ("simular", "codificar", "bloques", "llamar", "cargar_insumos"):
+              assert callable(getattr(sim, nombre, None)), f"sim.py no expone {nombre}()"
+          for nombre in ("F_PERFILES", "F_PROMPTS"):
+              ruta = Path(getattr(sim, nombre))
+              assert ruta.is_file(), f"sim.{nombre} no existe: {ruta.name}"
+              print(f"sim.{nombre} ->", ruta.name)
+          print("OK: el adapter importa sim.py del repo externo; no se llamó a la API.")
+          PY
+
   tramo_b:
     needs: guardia
-    if: ${{ needs.guardia.outputs.habilitado == 'true' }}
+    if: ${{ needs.guardia.outputs.habilitado == 'true' && !inputs.solo_comprobar }}
     runs-on: ubuntu-latest
     timeout-minutes: 120
     env:
@@ -80,6 +149,7 @@ jobs:
             exit 1
           fi
           [ "${#IN_REVISOR}" -ge 3 ] || { echo "::error::El input revisor es obligatorio (nombre y apellido de quien hizo la revisión humana 1)"; exit 1; }
+          [ -n "${IN_IDS// /}" ] || { echo "::error::El input ids es obligatorio para correr el tramo B"; exit 1; }
           [[ "$IN_IDS" =~ ^[A-Za-z0-9._\ -]+$ ]] || { echo "::error::ids: solo letras, números, punto, guion y espacios"; exit 1; }
           if [ -n "$IN_PRESUPUESTO" ]; then
             [[ "$IN_PRESUPUESTO" =~ ^[0-9]+(\.[0-9]+)?$ ]] || { echo "::error::presupuesto_ciclo debe ser un número en USD"; exit 1; }

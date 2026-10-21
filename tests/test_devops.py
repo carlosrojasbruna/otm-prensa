@@ -228,6 +228,16 @@ def test_tramo_b_solo_manual_con_revisor_y_guarda_de_secrets():
     assert "SIM_REPO" in texto and "SIM_REPO_TOKEN" in texto
 
 
+def test_tramo_b_solo_comprobar_no_usa_api_ni_escribe():
+    d = _wf("tramo_b.yml")
+    e = d["on"]["workflow_dispatch"]["inputs"]["solo_comprobar"]
+    assert e["type"] == "boolean" and e["default"] is False
+    assert "solo_comprobar" in d["jobs"]["tramo_b"]["if"] and "!inputs.solo_comprobar" in d["jobs"]["tramo_b"]["if"]
+    texto = json.dumps(d["jobs"]["comprobar"])
+    assert "ANTHROPIC_API_KEY" not in texto and "GH_TOKEN" not in texto and "pipeline.ciclo" not in texto
+    assert "simulacion/sim.py" in texto and "insumos" in texto and "cargar_sim" in texto
+
+
 def test_workflows_no_incrustan_secretos_ni_los_imprimen():
     for p in (RAIZ / ".github" / "workflows").glob("*.yml"):
         t = p.read_text(encoding="utf-8")
