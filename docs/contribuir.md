@@ -112,7 +112,7 @@ En ambos casos, después vienen las revisiones humanas y el bibliotecario, que p
 Estas son las invariantes que afectan a quien escribe contenido. Están en `CLAUDE.md`; aquí va cómo aplican.
 
 - **Límite de 25 palabras (invariante 3).** Ningún archivo del repositorio contiene más de 25 palabras consecutivas del cuerpo de una noticia. El resumen propio de la noticia tiene un máximo de 80 palabras. Cada noticia se cita con medio, título, fecha y URL.
-- **Titular.** Según `CLAUDE.md` (decisión humana del 2026-10-20), el titular se cita completo y queda fuera del conteo. El código aún no aplica esa exclusión: `cumple_limite_literal` (`pipeline/invariantes.py`) compara todas las cadenas del artefacto, título incluido. El explorador abrevia a 20 palabras y « …» los titulares de más de 25 (`cita_titulo` en `pipeline/agentes/explorador/run.py`). Si un titular dispara el bloqueo, no lo ocultes ni lo abrevies sin registrarlo en `pipeline/state/decisiones.md`. La regla ya está decidida; falta ajustar el código y el contrato `noticia` (versión nueva).
+- **Titular.** Según `CLAUDE.md` (decisión humana del 2026-10-20) y el contrato `noticia` v1.2, el titular se cita completo y queda fuera del conteo: `cumple_limite_literal` (`pipeline/invariantes.py`) omite el `titulo` de toda cita de noticia (objeto con `medio`, `titulo` y `url`). Copiado fuera de la cita, por ejemplo en el enunciado, sí cuenta. El explorador todavía abrevia a 20 palabras y « …» los titulares de más de 25 (`cita_titulo` en `pipeline/agentes/explorador/run.py`), algo que ya no hace falta (pendiente en `decisiones.md`).
 - **No guardes el cuerpo de una noticia.** El hook bloquea nombres de archivo como `texto_noticia*.txt`, `cuerpo_noticia*` o `noticia_texto*` (`.txt` o `.md`). El texto de la noticia solo existe en memoria durante el ciclo.
 - **Cifras con localizador (invariante 4).** Toda cifra de una tarea lleva `localizador` (`{fuente: noticia|notebook, ubicacion}`), y toda fuente de `recursos[]` es obligatoria. Lo impone el esquema.
 - **Lo que el estudiante recibe de entrada** debe estar escrito en `enunciado_es`, porque el simulador de estudiantes no recibe otros recursos (invariante 6).
@@ -179,5 +179,4 @@ Quién aprueba un PR manual sigue **pendiente de confirmar**. `CLAUDE.md` reserv
 
 - Canal para que docentes o terceros propongan tareas (plantilla de issue, formulario o similar).
 - Definir si los PR manuales sobre `tareas/` están permitidos y cómo se revisan (sección 6).
-- Ajustar `cumple_limite_literal` y el contrato `noticia` para excluir el titular del conteo (sección 7).
 - Regla de aprobación para PR de terceros (sección 11).

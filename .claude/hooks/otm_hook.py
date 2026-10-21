@@ -182,8 +182,14 @@ def chequear_texto(rel: str, texto: str, noticias: list[tuple[str, str]]) -> lis
             if patron.search(texto):
                 errores.append(f"Invariante 7: posible {que} en el archivo (no se muestra el valor)")
     if noticias and not rel.startswith(("insumos/", "evals/casos/")):
+        objeto: object = texto
+        if rel.endswith(".json"):           # en un JSON el titular de las citas queda fuera del conteo (noticia v1.2)
+            try:
+                objeto = json.loads(texto)
+            except ValueError:
+                pass
         for nombre, cuerpo in noticias:
-            r = inv.cumple_limite_literal(texto, cuerpo)
+            r = inv.cumple_limite_literal(objeto, cuerpo)
             if not r:
                 errores.append(f"Invariante 3: {r.errores[0][:200]} (noticia {nombre})")
     return errores

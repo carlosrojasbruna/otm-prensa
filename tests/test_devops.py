@@ -207,7 +207,7 @@ def _wf(nombre):
     return d
 
 
-@pytest.mark.parametrize("nombre", ["ci.yml", "deploy.yml", "semanal.yml", "tramo_b.yml", "publicar.yml"])
+@pytest.mark.parametrize("nombre", ["ci.yml", "deploy.yml", "semanal.yml", "tramo_b.yml", "publicar.yml", "publicada.yml"])
 def test_workflows_son_yaml_validos(nombre):
     assert _wf(nombre)["jobs"]
 
@@ -267,3 +267,12 @@ def test_deploy_usa_pages_y_no_pone_la_clave_de_servicio_en_el_build():
             assert "SUPABASE_SERVICE_KEY" not in s.get("env", {})
     t = (RAIZ / ".github" / "workflows" / "deploy.yml").read_text(encoding="utf-8")
     assert "PUBLIC_SUPABASE_ANON_KEY" in t and "actions/deploy-pages" in t
+
+
+def test_marcas_de_ruta_son_relativas_al_repo_y_se_resuelven():
+    dentro = RAIZ / "pipeline" / "state" / "trabajo" / "x" / "evaluacion_corridas.json"
+    assert C._ruta_marca(dentro) == "pipeline/state/trabajo/x/evaluacion_corridas.json"
+    assert C._ruta_de_marca(C._ruta_marca(dentro)) == dentro
+    assert C._ruta_marca(None) == ""
+    d = json.loads(NOTICIA_PRUEBA.read_text(encoding="utf-8"))
+    assert d["medio_id"] == "diario_ficticio" and "ficticio" in d["medio"].lower()

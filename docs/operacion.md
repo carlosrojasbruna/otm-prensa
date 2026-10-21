@@ -4,14 +4,14 @@ Esta guía describe cómo corre el pipeline cada semana, cómo se lanza cada wor
 
 Quien opera el sistema es Carlos Rojas Bruna, revisor humano (GOB01 §2). Los agentes no preguntan entre checkpoints: anotan la lectura conservadora en `decisiones.md` y siguen.
 
-Estado al 2026-10-21: piloto, CP3 pendiente de aprobación (`pipeline/state/CP3_informe.md`).
+Estado al 2026-10-21: piloto, CP3 aprobado (`pipeline/state/CP3_informe.md`).
 
 ## 0. Antes de empezar
 
 ### Cómo lanzar un workflow desde la web
 
 1. Entra en la pestaña **Actions** del repositorio.
-2. En la lista de la izquierda, elige el workflow (`semanal`, `tramo_b`, `publicar` o `deploy`).
+2. En la lista de la izquierda, elige el workflow (`semanal`, `tramo_b`, `publicar` o `deploy`). `publicada.yml` no tiene botón: corre solo tras el merge de un PR de publicación (sección 5.6).
 3. Pulsa **Run workflow**.
 4. En **Use workflow from**, deja **Branch: main**. Lanza siempre desde `main`, salvo que esta guía indique otra cosa.
 5. Rellena los inputs y pulsa **Run workflow**.
@@ -22,11 +22,13 @@ Los workflows que aceptan inputs (`workflow_dispatch`) son estos:
 |---|---|---|---|---|
 | `semanal.yml` | Cron los lunes 09:00 UTC, y a mano | `max_tareas` (3), `presupuesto_ciclo` (vacío), `noticia_prueba` (vacío), `ejecutar_ciclo` (`true`) | Verifica MED01 y corre el tramo A. Abre o actualiza el PR `semanal/AAAA-WW` | `evaluada` |
 | `tramo_b.yml` | A mano | `revisor` (obligatorio), `ids` (obligatorio salvo con `solo_comprobar`), `presupuesto_ciclo` (vacío), `solo_comprobar` (`false`) | Corre el tramo B. Abre o actualiza el PR `semanal/AAAA-WW` | `verificada` |
-| `publicar.yml` | A mano | `ids` (obligatorio), `revisor` (obligatorio), `dry_run` (`false`) | Ejecuta el bibliotecario y abre el PR `publicar/<fecha>-<n>` | Sigue en `verificada`. Pasa a `publicada` con un paso manual después del merge (sección 5.6) |
+| `publicar.yml` | A mano | `ids` (obligatorio), `revisor` (obligatorio), `dry_run` (`false`) | Ejecuta el bibliotecario y abre el PR `publicar/<fecha>-<n>` | Sigue en `verificada`. Tras el merge de su PR, `publicada.yml` lo pasa a `publicada` (sección 5.6) |
 | `deploy.yml` | Cada push a `main`, y a mano | Ninguno | Aplica migraciones, construye el sitio, lo publica en Pages y corre el staging | Sitio en producción |
 | `ci.yml` | Cada push y cada pull request | Ninguno | Pruebas, contratos, invariantes y escaneo de secretos | Solo informa |
 
-`semanal.yml` y `tramo_b.yml` comparten una rama por semana (`semanal/AAAA-WW`). `semanal`, `tramo_b` y `publicar` comparten el grupo de concurrencia `semanal`, así que dos de ellos no escriben a la vez.
+`publicada.yml` no acepta inputs. Se dispara al cerrar un PR hacia `main` que fue mergeado y cuya rama empieza por `publicar/`. Cualquier otro cierre no hace nada.
+
+`semanal.yml` y `tramo_b.yml` comparten una rama por semana (`semanal/AAAA-WW`). `semanal`, `tramo_b`, `publicar` y `publicada` declaran el mismo grupo de concurrencia `semanal`, así que no escriben a la vez.
 
 ## 1. Cómo corre la semana (automático)
 
@@ -150,7 +152,7 @@ Revisa en el PR del tramo B. Los archivos de cada expediente están en `pipeline
 - `trazas_resumen.json` y `sim/manifiesto.json`: las corridas del simulador que respaldan los escenarios.
 - `icono.svg`: el ícono que la publicación va a usar.
 
-Comprueba que el enunciado de `tarea.json` no haya cambiado respecto de la revisión 1, que no haya texto copiado de la noticia (invariante 3) y que las citas apunten a la noticia real.
+Comprueba que el enunciado de `tarea.json` no haya cambiado respecto de la revisión 1, que no haya texto copiado de la noticia (invariante 3) y que las citas apunten a la noticia real. Para la invariante 3, el titular de cada cita queda fuera del conteo de 25 palabras desde el contrato `noticia` v1.2 (lo aplica `pipeline/invariantes.py::cumple_limite_literal`). El resto de la guía y de la tarea sí cuenta.
 
 ### 5.2 Si hay defectos (solo en local)
 
@@ -204,24 +206,47 @@ El job queda en rojo y el log muestra las líneas «RECHAZADO». Corrige la caus
 
 Revisa en el PR los archivos de `tareas/AAAA-MM/<slug>/` (la tarea, la guía en JSON y en Markdown, la evaluación, las trazas y el ícono) y el diff de `tareas/catalogo.json`. CI corre sobre el PR. Si todo está bien, mergea. Las tareas publicadas no se editan: un cambio posterior es una versión nueva en la misma carpeta.
 
+Al mergear, `publicada.yml` corre solo y pasa a `publicada` los expedientes de ese PR (sección 5.6). No hace falta ninguna acción manual. Si cierras el PR sin mergear, `publicada.yml` no hace nada y los expedientes siguen en `verificada`.
+
 ### 5.5 Despliegue
 
-Cada push a `main`, incluido el merge del PR de publicación, dispara `deploy.yml` (sección 6). El sitio lee `tareas/catalogo.json` al construirse, así que la tarea nueva aparece con ese despliegue.
+Cada push a `main`, incluido el merge del PR de publicación, dispara `deploy.yml` (sección 6). El sitio lee `tareas/catalogo.json` al construirse, así que la tarea nueva aparece con ese despliegue. El commit que `publicada.yml` hace en `main` también es un push a `main`: dispara `deploy.yml` y `ci.yml` como cualquier otro.
 
-### 5.6 Paso pendiente: `verificada` → `publicada`
+### 5.6 Paso automático: `verificada` → `publicada` (`publicada.yml`)
 
-**Pendiente, no automatizado.** Después del merge, el expediente sigue en `verificada` con las marcas `revision_humana_2` y `publicacion_propuesta`. Pasar a `publicada` exige registrar la marca `publicacion` con el PR, la fecha de merge, la ruta y el commit. Hoy lo hace una persona en local con el orquestador (así se hizo con los PR #1 y #2). No hay un comando de CLI para eso.
+Tras el merge de un PR de `publicar.yml`, `.github/workflows/publicada.yml` pasa a `publicada` los expedientes de ese PR. Se dispara con `pull_request` `closed` hacia `main`, y solo corre si el PR fue mergeado y su rama empieza por `publicar/`. Un PR cerrado sin merge, o de otra rama, no hace nada.
 
-Mientras no se haga, el sitio ya muestra la tarea, pero el expediente queda en `verificada`. Si alguien lanza `publicar.yml` otra vez para ese id, el bibliotecario lo rechaza porque la versión ya está en el catálogo.
+El workflow hace checkout de `main` (que ya incluye el merge) y ejecuta `python -m pipeline.marcar_publicadas --rama <rama> --pr <n> --merge <sha>`:
 
-Una automatización posible sería un workflow `on: pull_request: closed` (solo PR merged de la rama `publicar/*`) que haga la transición y commitee en `main`. No está construido: cambia el flujo de estados y escribe en `main` sin PR, y esa decisión es de Carlos (`decisiones.md`, 2026-10-21).
+1. Busca en `pipeline/state/expedientes/` de `main` los expedientes en `verificada` cuya marca `publicacion_propuesta.rama` es la rama del PR. Si no hay ninguno, sale con código 3: el workflow emite un aviso y no falla.
+2. Comprueba que `tareas/catalogo.json` de `main` tenga la versión de cada tarea. Si falta alguna, rechaza el lote con código 2 y no escribe nada.
+3. Hace la transición `verificada → publicada` con el orquestador, que valida cada artefacto contra `contratos/`. El revisor es el de la marca `revision_humana_2` del expediente, y la guía debe tener `trazabilidad.revision_humana_2`.
+4. Escribe solo el estado: `estado` del expediente, su espejo `tarea.estado` en `pipeline/state/trabajo/<id>/tarea.json` y la entrada de `historial` (de, a, fecha, revisor y el motivo `PR #<n> mergeado (<sha>); publicada.yml`). No toca `tareas/`, ni las marcas, ni la guía. Si un expediente no pasa, no escribe ninguno.
+5. Pasa el hook de invariantes sobre `pipeline/state` (`python .claude/hooks/otm_hook.py staged`) y commitea en `main` como `otm-prensa-bot`, con el mensaje `pipeline: publicada <ids> (PR #<n>, merge <sha12>)`, usando `GH_TOKEN` para el push.
+
+No hay marca `publicacion` en el expediente: el PR, el merge y el sha quedan en el motivo del historial y en el mensaje del commit. El catálogo ya tenía la tarea desde el merge del PR, así que el sitio no cambia con este paso.
+
+El job usa el grupo de concurrencia `semanal`, así que espera si otro workflow de ese grupo está corriendo.
+
+**Relanzarlo a mano.** Si `publicada.yml` falló y la causa ya está corregida (sección 11), el paso se puede hacer en local. Desde `main` actualizado, con las dependencias de `requirements.txt` instaladas y sin `OTM_API_KEY` (el comando no llama a ningún modelo):
+
+```bash
+git checkout main && git pull
+python -m pipeline.marcar_publicadas --rama publicar/<AAAA-MM-DD>-<n> --pr <n> --merge <sha12>
+git add pipeline/state
+python .claude/hooks/otm_hook.py staged
+git commit -m "pipeline: publicada <ids> (PR #<n>, merge <sha12>)"
+git push origin main
+```
+
+`--merge` acepta el sha del merge (el workflow usa sus 12 primeros caracteres). Si el comando responde código 3, ningún expediente de esa rama está en `verificada`: ya se hizo, o nunca estuvo listo. No lo repitas. Para comprobar el resultado, `python -m pipeline.ciclo --estado` lista el estado de cada expediente.
 
 ## 6. Despliegue del sitio
 
 `.github/workflows/deploy.yml` corre con cada push a `main` y a mano (`workflow_dispatch`, sin inputs). Sus jobs, en orden:
 
 1. **`migraciones`**: comprueba el secret `SUPABASE_DB_URL` y que `sitio/db/aplicar_todo.sql` esté al día con las migraciones (`node sitio/db/generar_aplicar_todo.mjs --check`). Después aplica el SQL con `psql`. Ese paso tiene `continue-on-error`: si falla, deja un aviso y el despliegue sigue. El SQL es idempotente y va en una transacción. `SUPABASE_DB_URL` debe ser la cadena del **Session pooler** de Supabase; la conexión directa es solo IPv6 y los runners de GitHub no la alcanzan.
-2. **`sitio`** (espera a `migraciones`): build de Astro en `sitio/web` con la clave publicable. Nunca usa la clave de servicio.
+2. **`sitio`** (espera a `migraciones`): build de Astro en `sitio/web` con la clave publicable. Nunca usa la clave de servicio. El checkout de este job no trae el historial completo, así que el desempate de «Tarea de la semana» por fecha de commit no se aplica en producción (ver `sitio/README.md`).
 3. **`publicar`**: despliega en GitHub Pages. Este job es el de Pages, no el workflow `publicar.yml`.
 4. **`staging`**: `npm run staging` contra el proyecto real de Supabase. Crea un usuario de prueba, valora y comenta, comprueba que el comentario pendiente no se ve, lo modera con una cuenta temporal y borra lo creado. Si falla, el job falla. Después, Lighthouse sobre la URL pública corre como informativo.
 
@@ -246,7 +271,7 @@ Cifras medidas en 2026-10-20 y 2026-10-21 (`CP3_informe.md`, sección 5). Los pr
 - Tope semanal: 35 USD, con detención al 90 % (31,50).
 - Semana 2026-W43: 27,02 USD en `main` (`gasto_semanal.json`), más 0,65 USD de la rama `semanal/2026-W43` (PR #3 cerrado sin merge). Total cercano a 27,67 USD.
 - Con el tope de 35 USD caben unas seis tareas completas por semana. El cuello de botella son las dos revisiones humanas.
-- Los jobs `medios`, `deploy`, `staging` y Lighthouse no usan la API.
+- Los jobs `medios`, `deploy`, `staging`, `publicada` y Lighthouse no usan la API.
 
 ## 8. Comprobar el acceso al simulador
 
@@ -309,6 +334,14 @@ Cambiar un modelo de partida (`pipeline/config.yaml`, `modelos:`) exige evidenci
 | `publicar` termina con «RECHAZADO» (código 2) | Alguna validación no pasó (sección 5.3). Nada se escribió | Lee el motivo en el log, corrige y vuelve a lanzar |
 | `publicar` rechaza con «no se pudo releer la noticia» | La URL de la noticia no responde, o cambió | Comprueba la URL. Mientras no haya texto, no se publica (invariante 3) |
 | `publicar` falla en «Ningún id con un PR de publicación abierto» | Ese id ya tiene un PR `publicar/*` abierto | Mergea o cierra ese PR y relanza |
+| `publicada` falla en «Comprobar secrets» con «Faltan secrets» (`GH_TOKEN`) | Falta el secret | Créalo (ver `docs/secrets.md`). Nada se escribió. Relanza a mano (sección 5.6) |
+| `publicada` sale con código 2 y «el catálogo de main no tiene la v<n>» | El merge no dejó en `main` la versión que el expediente declara, o el catálogo no tiene esa tarea | Revisa el diff de `tareas/catalogo.json` en `main`. Si el PR está bien, corrige la causa y relanza a mano. Nada se escribió |
+| `publicada` sale con código 2 y «publicada requiere `revisor`» | El expediente no tiene la marca `revision_humana_2` con `revisor` | Revisa `marcas.revision_humana_2` del expediente en `main`. Si falta, regístrala con la revisión humana 2 correspondiente y relanza a mano. Nada se escribió |
+| `publicada` sale con código 2 y «publicada requiere guia.trazabilidad.revision_humana_2» | La guía no tiene la revisión humana 2 registrada | Lo mismo que el caso anterior, en `guia.trazabilidad`. Nada se escribió |
+| `publicada` sale con código 2 y un error de validación contra el contrato | Un artefacto del expediente no valida (invariante 1) | Corrige el artefacto por la vía que corresponda y relanza a mano. Nada se escribió |
+| `publicada` falla en «Invariantes y commit en main» | El hook de invariantes rechaza `pipeline/state` | No se commiteó nada. Lee el log, corrige el estado y relanza a mano |
+| `publicada` falla en el push a `main` | `main` avanzó desde el checkout, o el token no puede escribir en `main` | Relanza a mano desde `main` actualizado. Si la protección de la rama impide el push de `GH_TOKEN`, el repositorio no documenta cómo resolverlo (**pendiente**) |
+| `publicada` termina con aviso «Ningún expediente de <rama> en verificada» (código 3) | No hay expedientes de esa rama en `verificada`: ya pasaron a `publicada`, o el PR no traía expedientes | Es un aviso, no un fallo. Comprueba con `python -m pipeline.ciclo --estado` y no repitas el paso |
 | El PR de un workflow no dispara CI | El commit lo creó el `GITHUB_TOKEN` de fábrica | Los workflows usan `GH_TOKEN`. Si pasa, revisa el secret |
 | `deploy` muestra «Migraciones no aplicadas» | `SUPABASE_DB_URL` mal configurado (usuario o contraseña), o conexión directa | Usa la cadena del Session pooler, actualiza el secret, o aplica `sitio/db/aplicar_todo.sql` en el SQL Editor |
 | El job `migraciones` falla antes de `psql` | Falta el secret, o `aplicar_todo.sql` no está al día | Si falta el secret, créalo. Si no está al día, regenera el archivo con `node sitio/db/generar_aplicar_todo.mjs` y commitea |
@@ -316,10 +349,9 @@ Cambiar un modelo de partida (`pipeline/config.yaml`, `modelos:`) exige evidenci
 
 ## 12. Pendientes que afectan la operación
 
-- **Paso `verificada` → `publicada`** después del merge: manual, sin comando (sección 5.6).
 - **Corregir o rechazar desde la web:** `--rehacer-guia`, `--nueva-version` y el descarte de un `evaluada` no tienen workflow. Requieren la máquina local.
 - **Rechazo del verificador por un defecto de la tarea:** vuelve a `simulada` y gasta la guía (`decisiones.md`).
-- **Invariante 3 y el titular:** `CLAUDE.md` deja el titular fuera del conteo (decisión del 2026-10-20), pero `cumple_limite_literal` (`pipeline/invariantes.py`) aún compara todas las cadenas, título incluido. Falta ajustar el código y el contrato `noticia` (versión nueva).
 - **Monto definitivo del tope semanal** (**[D]**, 35 USD es provisional).
 - **Kappa reportable:** doble codificación humana pendiente (sección 10).
-- **CP3:** lo aprueba Carlos (`/otm-approve CP3`). Ver `pipeline/state/CP3_informe.md`, sección 7.
+- **Push de `publicada.yml` si `main` tiene protección:** el repositorio no documenta cómo se resuelve (sección 11).
+- **Pendientes de CP3** (aprobado el 2026-10-21): ver `pipeline/state/CP3_informe.md`, sección 7.

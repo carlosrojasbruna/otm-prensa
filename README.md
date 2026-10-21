@@ -8,14 +8,13 @@ Sitio publicado: https://carlosrojasbruna.github.io/otm-prensa/
 
 ## Estado (2026-10-21)
 
-Piloto. El checkpoint CP3 (aprobación de Carlos) está pendiente; su informe es `pipeline/state/CP3_informe.md`.
+Piloto. CP3 aprobado por Carlos el 2026-10-21 (informe: `pipeline/state/CP3_informe.md`).
 
 - **Sitio:** en producción en GitHub Pages. El despliegue `deploy.yml` (ejecución 39593763840) completó sus cuatro jobs, incluido el de staging contra Supabase.
 - **Tareas publicadas:** 4, en `tareas/2026-10/` (índice en `tareas/catalogo.json`): `adelantar-compras-queso` (v3), `viaje-barco-ida-vuelta` (v2), `pagar-trasladar-o-esperar` (v5) y `anticipo-renta-vitalicia` (v7). Entraron por los PR #1 y #2.
 - **Ciclo semanal:** `semanal.yml` corre el tramo A (hasta `evaluada`) los lunes a las 09:00 UTC. La prueba de aceptación en Actions (ejecución 39593513149) pasó con una tarea y 0,65 USD. Su PR (#3) se revisó y se cerró sin merge. La rama `semanal/2026-W43` se conserva porque su gasto sigue contando para el tope semanal.
 - **Tramo B:** `tramo_b.yml` necesita los secrets `SIM_REPO` y `SIM_REPO_TOKEN`, que apuntan al repositorio privado `carlosrojasbruna/otm-simulador` (el simulador no es público). La comprobación `solo_comprobar` pasó en Actions (ejecución 39600145692). Hasta hoy, los tramos B se corrieron en local.
-- **Publicación:** `publicar.yml` abre el PR que agrega una tarea a `tareas/`. Se probó con un dry-run y con rechazos reales. Aún no ha publicado una tarea nueva.
-- **Pendiente:** el paso de `verificada` a `publicada` del expediente, después del merge del PR de publicación, no está automatizado. Lo hace una persona en local. El sitio sí se actualiza con el merge. Detalle en `docs/operacion.md`, sección 5.
+- **Publicación:** `publicar.yml` abre el PR que agrega una tarea a `tareas/`. Se probó con un dry-run y con rechazos reales. Aún no ha publicado una tarea nueva. Al mergear ese PR, `publicada.yml` pasa sus expedientes de `verificada` a `publicada` (implementado; el repositorio no registra todavía una ejecución real de este paso). Detalle en `docs/operacion.md`, sección 5.6.
 
 ## Cómo funciona
 
@@ -23,7 +22,7 @@ Piloto. El checkpoint CP3 (aprobación de Carlos) está pendiente; su informe es
 2. **Revisión humana 1.** Quien revisa lee la tarea y su evaluación en el PR semanal y decide si pasa al tramo B.
 3. **Tramo B (manual).** El simulador corre seis corridas con estudiantes que solo reciben el enunciado. El redactor escribe la guía por secciones, el ilustrador genera el ícono y el verificador contrasta cifras y afirmaciones con la noticia. La tarea llega a `verificada`.
 4. **Revisión humana 2.** Quien revisa lee la guía y la verificación.
-5. **Publicación (manual).** `publicar.yml` ejecuta el bibliotecario, un script sin modelo que escribe `tareas/AAAA-MM/<slug>/` y actualiza `tareas/catalogo.json`, y abre un PR. Al hacer merge, `deploy.yml` reconstruye el sitio.
+5. **Publicación.** `publicar.yml` (lanzado a mano) ejecuta el bibliotecario, un script sin modelo que escribe `tareas/AAAA-MM/<slug>/` y actualiza `tareas/catalogo.json`, y abre un PR. Al hacer merge, `publicada.yml` pasa los expedientes del PR a `publicada` y `deploy.yml` reconstruye el sitio.
 
 Estados de un expediente: `evaluada → revisada → simulada → con_guia → verificada → publicada`, con `archivada` como salida. El detalle de cada paso y de cada workflow está en [`docs/operacion.md`](docs/operacion.md).
 
@@ -35,14 +34,14 @@ Estados de un expediente: `evaluada → revisada → simulada → con_guia → v
 | `plan/` | Plan de construcción por fases (`PLAN-CONSTRUCCION.md`) |
 | `insumos/` | Fuente única de verdad, de solo lectura: rúbricas, marcos, plantillas, tareas-oro, medios (MED01), gobernanza y contrato del simulador |
 | `contratos/` | Esquemas JSON de los artefactos (`noticia`, `tarea`, `evaluacion`, `evaluacion_rub01`, `guia`, `trazas_resumen`, `catalogo`) y ejemplos válidos e inválidos |
-| `pipeline/` | Orquestador (`orquestador.py`), ciclo (`ciclo.py`), invariantes (`invariantes.py`), publicación (`publicar.py`), agentes (`agentes/`), configuración (`config.yaml`) y estado (`state/`) |
+| `pipeline/` | Orquestador (`orquestador.py`), ciclo (`ciclo.py`), invariantes (`invariantes.py`), publicación (`publicar.py`), marca de publicadas (`marcar_publicadas.py`), agentes (`agentes/`), configuración (`config.yaml`) y estado (`state/`) |
 | `simulador/adapter/` | Adaptador del simulador externo. `sim.py` no está en este repositorio |
 | `evals/` | Calibración del evaluador (`calibrar_evaluador.py`), matriz modelo × agente (`run.py`), casos de prueba y resultados |
 | `tareas/` | Tareas publicadas (`AAAA-MM/<slug>/`) y el catálogo. Licencia CC BY-NC-SA 4.0 (`tareas/LICENSE.md`) |
-| `sitio/` | Sitio docente: `web/` (Astro y pruebas), `api/` (adaptadores de backend) y `db/` (migraciones SQL y RLS) |
+| `sitio/` | Sitio docente: `web/` (Astro y pruebas), `api/` (adaptadores de backend) y `db/` (migraciones SQL y RLS). Ver `sitio/README.md` |
 | `.claude/` | Agentes de construcción, comandos de Claude Code y el hook que aplica las invariantes |
 | `.githooks/` | Hook de `pre-commit` (opcional, se activa por clon) |
-| `.github/workflows/` | `semanal.yml`, `tramo_b.yml`, `publicar.yml`, `ci.yml` y `deploy.yml` |
+| `.github/workflows/` | `semanal.yml`, `tramo_b.yml`, `publicar.yml`, `publicada.yml`, `ci.yml` y `deploy.yml` |
 | `tests/` | Pruebas de Python (`pytest`) |
 | `docs/` | Guías: `operacion.md`, `contribuir.md` y `secrets.md` |
 
@@ -52,7 +51,7 @@ El pipeline se rige por ocho invariantes. El texto completo está en [`CLAUDE.md
 
 1. Ningún artefacto cambia de estado sin validar contra su esquema en `contratos/`.
 2. Ninguna tarea llega a `revisada` con RUB01 menor que 20/24 o con algún criterio en 0.
-3. Ningún archivo del repositorio contiene más de 25 palabras consecutivas del cuerpo de una noticia. Las noticias se citan (medio, título, fecha, URL) y se resumen en 80 palabras o menos. El titular se cita completo y queda fuera del conteo (decisión del 2026-10-20). El código aún cuenta el titular; ese ajuste está pendiente.
+3. Ningún archivo del repositorio contiene más de 25 palabras consecutivas del cuerpo de una noticia. Las noticias se citan (medio, título, fecha, URL) y se resumen en 80 palabras o menos. El titular se cita completo y queda fuera del conteo desde la versión 1.2 del contrato `noticia` (decisión del 2026-10-20; lo aplica `pipeline/invariantes.py::cumple_limite_literal`).
 4. Ninguna cifra de una tarea aparece sin localizador en la noticia o en el notebook de escenarios.
 5. Ningún escenario de guía docente existe sin el id de una corrida del simulador que lo respalde.
 6. Los agentes-estudiante del simulador reciben solo `enunciado_es`, `foto_descripcion` y los recursos a solicitud; nunca `task_space`.
@@ -88,7 +87,7 @@ Los valores nunca van en el repositorio. Los nombres son:
 - `OTM_API_KEY`: clave de la API de Anthropic en la máquina local. Todo script del pipeline la lee primero. No definas `ANTHROPIC_API_KEY` en la máquina local: Claude Code dejaría de usar el plan de claude.ai. Comprueba la clave sin imprimirla con `python pipeline/apikey.py` (responde `ok` o `falta`).
 - `ANTHROPIC_API_KEY`: solo en GitHub Actions, como secret del repositorio con ese nombre.
 - `CHROME_PATH`: opcional. Ruta o nombre del ejecutable de Chrome para las pruebas de navegador.
-- `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY` y `SUPABASE_SERVICE_KEY`: solo para `npm run staging`. La clave de servicio no se usa nunca en el sitio ni en las pruebas.
+- `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY` y `SUPABASE_SERVICE_KEY`: solo para `npm run staging`. La clave de servicio no se usa nunca en el sitio ni en las pruebas. La plantilla de las variables públicas del sitio está en `sitio/.env.example`.
 
 La lista completa de secrets, quién los crea y qué los usa está en [`docs/secrets.md`](docs/secrets.md).
 
@@ -132,11 +131,11 @@ La prueba 2 escribe en `pipeline/state/` (expedientes, carpeta de trabajo, regis
 
 ## Documentación
 
-- [`docs/operacion.md`](docs/operacion.md): cómo corre la semana, cómo se lanza cada workflow desde la web de GitHub, cómo se revisa cada paso, costos, despliegue, moderación, recalibración del evaluador y qué hacer cuando algo falla.
+- [`docs/operacion.md`](docs/operacion.md): cómo corre la semana, cómo se lanza cada workflow desde la web de GitHub, cómo se revisa cada paso, la publicación y el paso automático a `publicada`, costos, despliegue, moderación, recalibración del evaluador y qué hacer cuando algo falla.
 - [`docs/contribuir.md`](docs/contribuir.md): convenciones de nombres y commits, cómo activar los hooks, cómo cambiar un agente, cómo proponer una tarea o corregir una guía por PR, y qué revisa CI.
 - [`docs/secrets.md`](docs/secrets.md): secrets, variables de entorno y rotación.
+- [`sitio/README.md`](sitio/README.md): el sitio: instalación, variables, backends, despliegue, staging, «Tarea de la semana», pruebas y pendientes.
 - [`sitio/db/README.md`](sitio/db/README.md): migraciones de Supabase y moderación.
-- [`sitio/README.md`](sitio/README.md): detalle del sitio. Algunas secciones están desactualizadas (ver `pipeline/state/CP3_informe.md`, sección 6).
 - [`CLAUDE.md`](CLAUDE.md): reglas del repositorio.
 - [`plan/PLAN-CONSTRUCCION.md`](plan/PLAN-CONSTRUCCION.md): fases, agentes de construcción y checkpoints.
 
