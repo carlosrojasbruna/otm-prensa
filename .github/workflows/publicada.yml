@@ -1,0 +1,77 @@
+# Tras el merge de un PR de publicar.yml (rama `publicar/*`): los expedientes de ese PR pasan a `publicada`.
+#
+# Corre python -m pipeline.marcar_publicadas: busca en main los expedientes en `verificada` cuya marca
+# `publicacion_propuesta.rama` es la rama del PR, comprueba que el catálogo tenga esa versión y hace la transición
+# con el orquestador (valida contra contratos/; revisor = el de la revisión humana 2). Solo cambia el estado.
+# Commitea en main (decisión de Carlos, post-CP3) con GH_TOKEN, después de pasar el hook de invariantes.
+#
+# Si el PR se cierra sin merge, o la rama no es `publicar/*`, no hace nada.
+#
+# Secrets (docs/secrets.md): GH_TOKEN (push a main). No usa la API de Anthropic.
+name: publicada
+
+on:
+  pull_request:
+    types: [closed]
+    branches: [main]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: semanal
+  cancel-in-progress: false
+
+jobs:
+  publicada:
+    if: ${{ github.event.pull_request.merged == true && startsWith(github.event.pull_request.head.ref, 'publicar/') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      RAMA: ${{ github.event.pull_request.head.ref }}
+      PR: ${{ github.event.pull_request.number }}
+      MERGE: ${{ github.event.pull_request.merge_commit_sha }}
+      PYTHONUTF8: "1"
+    steps:
+      - name: Comprobar secrets (no se imprimen)
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "::error title=Faltan secrets::Crear en Settings > Secrets and variables > Actions: GH_TOKEN (ver docs/secrets.md)"
+            exit 1
+          fi
+
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          token: ${{ secrets.GH_TOKEN }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+
+      - name: verificada -> publicada
+        id: marcar
+        run: |
+          set +e
+          ids="$(python -m pipeline.marcar_publicadas --rama "$RAMA" --pr "$PR" --merge "${MERGE:0:12}")"
+          rc=$?
+          set -e
+          if [ "$rc" = "3" ]; then echo "::warning::Ningún expediente de $RAMA en verificada; nada que hacer"; fi
+          [ "$rc" = "0" ] || [ "$rc" = "3" ] || exit "$rc"
+          echo "ids=$ids" >> "$GITHUB_OUTPUT"
+
+      - name: Invariantes y commit en main
+        if: ${{ steps.marcar.outputs.ids != '' }}
+        env:
+          IDS: ${{ steps.marcar.outputs.ids }}
+        run: |
+          set -euo pipefail
+          git config user.name "otm-prensa-bot"
+          git config user.email "otm-prensa-bot@users.noreply.github.com"
+          git add pipeline/state
+          python .claude/hooks/otm_hook.py staged
+          git commit -q -m "pipeline: publicada $IDS (PR #$PR, merge ${MERGE:0:12})"
+          git push origin main

@@ -207,7 +207,7 @@ def _wf(nombre):
     return d
 
 
-@pytest.mark.parametrize("nombre", ["ci.yml", "deploy.yml", "semanal.yml", "tramo_b.yml", "publicar.yml"])
+@pytest.mark.parametrize("nombre", ["ci.yml", "deploy.yml", "semanal.yml", "tramo_b.yml", "publicar.yml", "publicada.yml"])
 def test_workflows_son_yaml_validos(nombre):
     assert _wf(nombre)["jobs"]
 
