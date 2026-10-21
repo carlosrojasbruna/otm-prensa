@@ -42,12 +42,26 @@ Variables de construcción: `OTM_REPO_ROOT` (raíz con `tareas/`; por defecto do
 
 `PUBLIC_BACKEND=local|none`; si no se define, el modo es `supabase` cuando existen `PUBLIC_SUPABASE_URL` y `PUBLIC_SUPABASE_ANON_KEY`, y `none` en otro caso (lectura y descarga funcionan; los formularios avisan que las cuentas no están habilitadas). El build usado para Lighthouse es `none` (sin llamadas de red a servicios).
 
+### Tarea de la semana
+
+Regla (decisión de Carlos, 2026-10-20), en `web/src/lib/semana.js`: entre las tareas del catálogo (todas publicadas), la de mayor `rub01_total`; empate, la de `fecha_publicacion` más reciente; empate, la del commit de publicación (campo `commit` de la entrada, fecha leída de git en el build) más reciente; si git no tiene el historial o sigue el empate, el `id` en orden alfabético. En CI el checkout debe traer el historial completo (`fetch-depth: 0`) para que el build elija igual que en local.
+
+**Fijarla a mano (moderador).** Edita `web/src/config/tarea_semana.json` por commit o PR (el sitio es estático; no se lee de Supabase):
+
+```json
+{ "fijada": "2026-10-pagar-trasladar-o-esperar", "fijada_por": "Carlos Rojas Bruna",
+  "fecha": "2026-10-21", "hasta": "2026-10-28", "motivo": "Coincide con la noticia del día" }
+```
+
+`fijada` es el `id` del catálogo; `hasta` (AAAA-MM-DD, inclusivo) puede ser `null` (sin vencimiento). **Desfijarla:** pon `"fijada": null` (o deja que venza `hasta`). Si `fijada` no existe en el catálogo o `hasta` ya pasó, el build la ignora, imprime un aviso `[tarea de la semana]` y aplica la regla. El build siempre imprime qué tarea eligió y con qué criterio. Para que el cambio se vea hay que reconstruir y publicar el sitio.
+
 ### Pruebas (`npm test`, ~1 min)
 
 | Archivo | Cubre |
 |---|---|
 | `catalogo.test.mjs` | cada tarea del catálogo real tiene página, cita completa, licencia, descargas existentes e idénticas a `tareas/`; el HTML de la tarea solo contiene texto que ya está en `tareas/` |
 | `versiones.test.mjs` | fixtures (no toca `tareas/`): `versiones_anteriores` con archivos, catálogo 1.0 sin `tarea_md`/`guia_md`, 2 tareas |
+| `semana.test.mjs` | regla de «Tarea de la semana» con fixtures sintéticos: mayor RUB01, desempates, fijación válida, inexistente y vencida |
 | `e2e.test.mjs` | Chrome headless: cuenta -> valorar -> comentar -> invisible hasta moderar -> moderar -> visible; aviso de uso de datos en los formularios |
 | `api-local.test.mjs` | semántica del backend simulado |
 | `db-rls.test.mjs` | migraciones y RLS reales sobre PGlite (Postgres embebido, esquema `auth` simulado) |

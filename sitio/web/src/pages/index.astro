@@ -4,15 +4,19 @@ import Tarjeta from '../components/Tarjeta.astro';
 import Resumen from '../components/Resumen.astro';
 import { cargarCatalogo, nivelDe, AREAS, semanaIso, fechaLarga, urlArchivo } from '../lib/catalogo.js';
 import { u } from '../lib/url.js';
+import { elegirTareaSemana } from '../lib/semana.js';
+import configSemana from '../config/tarea_semana.json';
 
 const { tareas } = cargarCatalogo();
-const destacada = tareas[0]; // más reciente (ver ordenamiento en lib/catalogo.js)
-const ultima = destacada?.fecha_publicacion;
+const { tarea: destacada, criterio, avisos } = elegirTareaSemana(tareas, configSemana);
+for (const a of avisos) console.warn(`[tarea de la semana] ${a}`);
+console.info(`[tarea de la semana] ${destacada?.id ?? '-'} (${criterio})`);
+const ultima = tareas.map((t) => t.fecha_publicacion).sort().at(-1); // fecha de la publicación más reciente
 const dias = (a, b) => (Date.parse(a) - Date.parse(b)) / 86400000;
 const esNueva = (t) => ultima && dias(ultima, t.fecha_publicacion) < 7;
 const nuevas = tareas.filter(esNueva).slice(0, 8);
 const resto = tareas.filter((t) => !nuevas.includes(t)).slice(0, 8);
-const sem = ultima ? semanaIso(ultima) : null;
+const sem = destacada ? semanaIso(destacada.fecha_publicacion) : null;
 const niv = destacada ? nivelDe(destacada) : null;
 const porNivel = ['P', 'S', 'U'].map((n) => [n, tareas.filter((t) => t.nivel_principal === n || t.variantes.some((v) => v[0] === n))]).filter(([, l]) => l.length);
 ---
