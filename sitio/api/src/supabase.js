@@ -23,6 +23,18 @@ export function crearBackendSupabase({ supabaseUrl, supabaseAnonKey }) {
   if (!supabaseUrl || !supabaseAnonKey) throw new ErrorOtm('sin_configuracion', 'Faltan PUBLIC_SUPABASE_URL / PUBLIC_SUPABASE_ANON_KEY.');
   const sb = createClient(supabaseUrl, supabaseAnonKey, { auth: { persistSession: true, autoRefreshToken: true } });
 
+  // Sin upsert: PostgREST lo traduce a ON CONFLICT DO UPDATE SET <todas las columnas>, y 0002_rls.sql solo
+  // concede UPDATE sobre las columnas editables (42501). Se actualiza la fila propia y, si no existe, se inserta.
+  async function guardarPropia(tabla, clave, editables) {
+    const actualizar = () => Object.entries(clave).reduce((q, [k, v]) => q.eq(k, v), sb.from(tabla).update(editables)).select(Object.keys(clave)[0]);
+    let { data, error } = await actualizar();
+    envolver(error);
+    if (data.length) return;
+    ({ error } = await sb.from(tabla).insert({ ...clave, ...editables }));
+    if (error?.code === '23505') ({ error } = await actualizar());   // otra pestaña la creó entretanto
+    envolver(error);
+  }
+
   async function usuario() {
     const { data, error } = await sb.auth.getSession();
     envolver(error);
@@ -110,10 +122,7 @@ export function crearBackendSupabase({ supabaseUrl, supabaseAnonKey }) {
     async valorar({ tareaId, version, puntaje }) {
       validarTarea(tareaId, version); validarPuntaje(puntaje);
       const u = await usuario();
-      const { error } = await sb.from('valoraciones').upsert(
-        { user_id: u.id, tarea_id: tareaId, tarea_version: version, puntaje },
-        { onConflict: 'user_id,tarea_id' });
-      envolver(error);
+      await guardarPropia('valoraciones', { user_id: u.id, tarea_id: tareaId }, { tarea_version: version, puntaje });
     },
     async retirarValoracion(tareaId) {
       const u = await usuario();
@@ -148,11 +157,10 @@ export function crearBackendSupabase({ supabaseUrl, supabaseAnonKey }) {
       exigirAviso(avisoAceptado);
       const p = validarPerfil(perfil);
       const u = await usuario();
-      const { error } = await sb.from('perfiles').upsert({
-        user_id: u.id, nivel_ensenanza: p.nivelEnsenanza, tipo_establecimiento: p.tipoEstablecimiento,
+      await guardarPropia('perfiles', { user_id: u.id }, {
+        nivel_ensenanza: p.nivelEnsenanza, tipo_establecimiento: p.tipoEstablecimiento,
         region: p.region, anios_experiencia: p.aniosExperiencia, aviso_version: AVISO_VERSION,
-      }, { onConflict: 'user_id' });
-      envolver(error);
+      });
     },
     async retirarPerfil() {
       const u = await usuario();

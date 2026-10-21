@@ -186,7 +186,8 @@ async function uiChrome(urlBase, { rutaTarea, correo, clave, comentario }) {
     await p.fill('[name=texto]', comentario);
     await p.check('[name=aviso]');
     await p.click('#form-opinion button[type=submit]');
-    await p.waitForFunction(() => /moderación/.test(document.getElementById('op-mensaje').textContent), null, { timeout: 20000 });
+    await p.waitForFunction(() => /moderación/.test(document.getElementById('op-mensaje').textContent), null, { timeout: 20000 })
+      .catch(async (e) => { throw new Error(`${e.message.split('\n')[0]}; mensaje en la página: «${await p.locator('#op-mensaje').textContent()}»`); });
     if (errs.length) throw new Error('errores de JavaScript en la página: ' + errs.join(' | ').slice(0, 300));
   } finally { await browser.close(); }
 }

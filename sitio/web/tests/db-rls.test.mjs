@@ -85,6 +85,15 @@ test('valoraciones: 1-5, una por usuario y tarea, solo a nombre propio; agregado
   });
 });
 
+test('el upsert de PostgREST (ON CONFLICT DO UPDATE SET user_id, …) choca con el UPDATE por columnas: el adaptador no lo usa', async () => {
+  await como('authenticated', U.ana, async () => {
+    await falla(() => q(`insert into public.valoraciones (user_id, tarea_id, tarea_version, puntaje) values ('${U.ana}', '2026-10-upsert', 1, 3)
+      on conflict (user_id, tarea_id) do update set user_id = excluded.user_id, tarea_id = excluded.tarea_id, tarea_version = excluded.tarea_version, puntaje = excluded.puntaje`), /permission denied/);
+    await falla(() => q(`insert into public.perfiles (user_id, aviso_version) values ('${U.ana}', 'v1')
+      on conflict (user_id) do update set user_id = excluded.user_id, aviso_version = excluded.aviso_version`), /permission denied/);
+  });
+});
+
 let idComentario;
 test('comentarios: nacen pendientes, no son públicos, no se puede saltar la moderación', async () => {
   await como('authenticated', U.ana, async () => {

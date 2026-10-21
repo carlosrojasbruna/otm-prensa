@@ -51,3 +51,25 @@ test('escribir exige sesión y validaciones del cliente (puntaje, aviso, texto)'
   await assert.rejects(() => b.guardarPerfil({}, false), (e) => e.codigo === 'aviso_no_aceptado');
   await assert.rejects(() => b.guardarPerfil({ aniosExperiencia: 70 }, true), (e) => e.codigo === 'anios_invalidos');
 });
+
+test('valorar y guardar perfil: PATCH de la fila propia y, si no existe, POST (nunca upsert, ver db-rls)', async () => {
+  const SESION = { access_token: 'jwt', refresh_token: 'r', expires_in: 3600, token_type: 'bearer', user: { id: 'u-1', email: 'a@x.cl' } };
+  const llamadas = simular([
+    { ruta: '/auth/v1/token', metodo: 'POST', cuerpo: SESION },
+    { ruta: '/rest/v1/valoraciones', metodo: 'PATCH', cuerpo: [] },
+    { ruta: '/rest/v1/valoraciones', metodo: 'POST', cuerpo: [], status: 201 },
+    { ruta: '/rest/v1/perfiles', metodo: 'PATCH', cuerpo: [{ user_id: 'u-1' }] },
+  ]);
+  const b = await crearBackend({ supabaseUrl: URL_SB, supabaseAnonKey: ANON });
+  await b.iniciarSesion({ email: 'a@x.cl', password: 'clave-larga-123' });
+  await b.valorar({ tareaId: '2026-10-a', version: 2, puntaje: 4 });
+  await b.guardarPerfil({ aniosExperiencia: 5 }, true);
+  const rest = llamadas.filter((l) => l.ruta.startsWith('/rest/'));
+  assert.deepEqual(rest.map((l) => `${l.metodo} ${l.ruta}`),
+    ['PATCH /rest/v1/valoraciones', 'POST /rest/v1/valoraciones', 'PATCH /rest/v1/perfiles']);
+  assert.deepEqual(rest[0].cuerpo, { tarea_version: 2, puntaje: 4 }, 'el PATCH solo lleva columnas con GRANT UPDATE');
+  assert.match(rest[0].query, /user_id=eq\.u-1/); assert.match(rest[0].query, /tarea_id=eq\.2026-10-a/);
+  assert.deepEqual(rest[1].cuerpo, { user_id: 'u-1', tarea_id: '2026-10-a', tarea_version: 2, puntaje: 4 });
+  for (const l of rest) assert.ok(!/on_conflict/.test(l.query) && !/resolution=/.test(l.cab.prefer || ''), 'sin upsert');
+  assert.ok(!('user_id' in rest[2].cuerpo));
+});
