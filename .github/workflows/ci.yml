@@ -1,5 +1,12 @@
+# CI de OTM-Prensa: secretos, contratos e invariantes, tests de Python (agentes, ciclo, orquestador, hooks)
+# y tests del sitio. No usa secrets ni la red de pago: los tests de agentes corren con clientes falsos.
 name: ci
+
 on: [push, pull_request]
+
+permissions:
+  contents: read
+
 jobs:
   secrets-scan:
     runs-on: ubuntu-latest
@@ -16,3 +23,59 @@ jobs:
           for f in glob.glob("insumos/**/*.json",recursive=True)+glob.glob("contratos/*.json"):
               json.load(open(f)); print("ok",f)
           PY
+
+  contratos-e-invariantes:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONUTF8: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Ejemplos de contratos contra sus esquemas (invariante 1)
+        run: |
+          for f in contratos/ejemplos/*_ejemplo.json; do
+            n="$(basename "$f" _ejemplo.json)"
+            python -m pipeline.invariantes esquema "$n" "$f" && echo "ok $n"
+          done
+      - name: Noticia de prueba del pipeline en Actions
+        run: python -m pipeline.invariantes esquema noticia evals/casos/ciclo/noticia_prueba_actions.json
+      - name: Invariantes 1-3, 5-8 sobre todo el repo (tareas, expedientes, estado) y secretos de Supabase / bases de datos
+        run: python .claude/hooks/otm_hook.py repo
+
+  pytest:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONUTF8: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Tests completos (agentes, ciclo, orquestador, contratos, hooks, tope al 90 %)
+        run: python -m pytest -q
+
+  sitio:
+    runs-on: ubuntu-latest
+    env:
+      CHROME_PATH: google-chrome
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: sitio/package-lock.json
+      - name: aplicar_todo.sql está al día con las migraciones
+        run: node sitio/db/generar_aplicar_todo.mjs --check
+      - name: Instalar dependencias
+        working-directory: sitio
+        run: npm ci
+      - name: Tests del sitio (catálogo, regla de la tarea de la semana, RLS en PGlite, e2e en Chrome)
+        working-directory: sitio/web
+        run: npm test
