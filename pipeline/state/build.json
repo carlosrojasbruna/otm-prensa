@@ -155,9 +155,14 @@
     },
     "5": {
       "nombre": "Producción",
-      "estado": "pendiente",
+      "estado": "en_curso",
       "tareas": {
-        "devops": "pendiente",
+        "devops": {
+          "estado": "en_curso",
+          "fecha": "2026-10-20",
+          "commit": "79cb779",
+          "test": "local: pytest 418 passed, 6 skipped; sitio 57/57; actionlint sin hallazgos. Aceptación en Actions pendiente: push a main bloqueado por permisos"
+        },
         "docs-writer": "pendiente",
         "lote-inicial-6": "pendiente"
       },
@@ -169,5 +174,5 @@
     }
   },
   "costo_acumulado_usd": 47.97,
-  "ultimo_commit": "f786c15"
+  "ultimo_commit": "79cb779"
 }

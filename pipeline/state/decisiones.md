@@ -204,3 +204,5 @@ Componentes: evaluación (3 corridas Opus) 0,21 – 0,37; diseñador 0,08 – 0,
 
 ## Requiere decisión humana
 
+- 2026-10-20 · build-lead · **Push de `main` a origin (10 commits, e0c50bf…79cb779) denegado por el modo de permisos de la sesión.** El push dispara `deploy.yml`, que aplica las migraciones en Supabase con `SUPABASE_DB_URL`, publica el sitio en Pages y corre staging; sin él no se puede ejecutar el test de aceptación de devops. Carlos debe hacer `git push origin main` (o autorizar el push) y luego `gh workflow run semanal.yml -f max_tareas=1 -f presupuesto_ciclo=2 -f noticia_prueba=evals/casos/ciclo/noticia_prueba_actions.json -f ejecutar_ciclo=true`. Verificar antes que `SUPABASE_DB_URL` sea la cadena del *Session pooler* (la directa es solo IPv6 y los runners no la alcanzan). No se intentó publicar por otra vía.
+
