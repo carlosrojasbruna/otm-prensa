@@ -1,0 +1,432 @@
+{
+  "tarea_id": "2026-10-ampliar-ciclovia-cuantos-km",
+  "estado": "archivada",
+  "iteraciones": 1,
+  "artefactos": {
+    "tarea": {
+      "id": "2026-10-ampliar-ciclovia-cuantos-km",
+      "titulo": "¿Cuántos kilómetros de ciclovía conviene agregar?",
+      "estado": "archivada",
+      "version": 1,
+      "fecha": "2026-10-21",
+      "noticia": {
+        "noticia_id": "2026-10-20-prueba-actions-ciclovia",
+        "medio": "Emol / El Mercurio",
+        "titulo": "Ejemplo sintético: municipio evalúa ampliar una ciclovía (noticia de prueba del pipeline en Actions)",
+        "fecha": "2026-10-20",
+        "url": "https://www.example.org/sintetico/2026-10-20-prueba-actions-ciclovia",
+        "resumen_propio": "Ejemplo sintético para pruebas. Un municipio debe decidir si amplía una ciclovía que hoy recibe miles de viajes diarios. Se informan el flujo medio, la longitud actual y el costo estimado por kilómetro, pero no cuántos viajes nuevos se generarían ni cómo cambia el uso con la distancia.",
+        "cifras_usadas": [
+          {
+            "valor": 4200,
+            "unidad": "viajes/día",
+            "que_es": "flujo medio actual de la ciclovía (sintético)",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 2"
+            }
+          },
+          {
+            "valor": 6.5,
+            "unidad": "km",
+            "que_es": "longitud actual (sintético)",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 2"
+            }
+          },
+          {
+            "valor": 310,
+            "unidad": "millones de pesos/km",
+            "que_es": "costo estimado de ampliación (sintético)",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 4"
+            }
+          }
+        ]
+      },
+      "nivel_principal": "S",
+      "variantes": {
+        "abajo": "P",
+        "arriba": "S"
+      },
+      "area": "transporte_ciudad",
+      "contenidos_matematicos": [
+        "razones y tasas",
+        "proporcionalidad",
+        "función lineal",
+        "comparación de escenarios"
+      ],
+      "tiempo_estimado": "2 sesiones de 90 min",
+      "estudiante": {
+        "enunciado_es": "Un municipio estudia ampliar una ciclovía de la ciudad. Hoy la ciclovía mide 6,5 km y recibe en promedio 4.200 viajes al día. Ampliarla cuesta alrededor de 310 millones de pesos por kilómetro. Las autoridades quieren decidir cuántos kilómetros agregar, pero nadie sabe cuántos viajes nuevos traería la ampliación ni si cada kilómetro nuevo atraería tanto público como los que ya existen. Ustedes asesoran al municipio: ¿cuántos kilómetros conviene ampliar y cuántos viajes diarios más podrían esperar? Expliquen qué supuestos hacen y cómo podrían comprobar su estimación. Pueden pedir información adicional.",
+        "foto_descripcion": "Ícono de una ciclovía vista desde arriba: un tramo continuo y, a continuación, un tramo punteado que indica la posible ampliación.",
+        "recursos_a_solicitud": [
+          {
+            "id": "R2",
+            "que_es": "Presupuesto del municipio",
+            "contenido": "Supuesto del escenario: el municipio aún no fija un presupuesto máximo para la ampliación; el grupo puede proponer uno razonable y justificarlo ante las autoridades.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P2-RM",
+            "fuente": "supuesto del escenario"
+          },
+          {
+            "id": "R3",
+            "que_es": "Descripción de las zonas por donde pasaría la ampliación",
+            "contenido": "Supuesto del escenario: el tramo actual conecta sectores de mucha actividad, mientras que los tramos nuevos llegarían a barrios con menos población cercana a la ciclovía que el tramo actual.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P2-RM",
+            "fuente": "supuesto del escenario"
+          },
+          {
+            "id": "R4",
+            "que_es": "Conteos de una ciclovía parecida que ya fue ampliada, para contrastar la estimación",
+            "contenido": "Supuesto del escenario: el municipio puede entregar los conteos de viajes de una ciclovía parecida de otra comuna, medidos antes y después de ampliarla; el flujo aumentó, pero no en la misma proporción en que aumentó la longitud.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P6-VAL",
+            "fuente": "supuesto del escenario"
+          }
+        ]
+      },
+      "variantes_detalle": {
+        "abajo": {
+          "tramo": "P",
+          "cambios": "El docente fija un presupuesto de referencia y se pide solo estimar cuántos kilómetros alcanzan y cuántos viajes nuevos habría bajo un único supuesto acordado (el flujo crece en proporción a la longitud). Se omite la comparación de modelos y la validación se hace contrastando con el flujo por kilómetro actual."
+        },
+        "arriba": {
+          "tramo": "S2",
+          "cambios": "Se pide comparar al menos dos modelos de atracción de viajes (proporcional y con rendimiento decreciente por kilómetro), analizar la sensibilidad del costo por viaje nuevo a los supuestos y decidir con criterios jerarquizados."
+        }
+      },
+      "recursos_de_entrada": [
+        {
+          "id": "R1",
+          "que_es": "Datos de partida de la ciclovía y del costo de ampliar",
+          "contenido": "La ciclovía actual mide 6,5 km y recibe en promedio 4.200 viajes al día. Ampliarla cuesta alrededor de 310 millones de pesos por kilómetro.",
+          "disponibilidad": "de_entrada",
+          "fase": "P1-MRS",
+          "fuente": "noticia, párrafo 2 y párrafo 4"
+        }
+      ],
+      "mapa_ciclo": {
+        "P1-MRS": {
+          "decision": "Identificar qué se pregunta (longitud a ampliar y viajes nuevos) y qué datos existen y cuáles faltan (viajes nuevos, presupuesto).",
+          "evidencia": "El grupo reformula la pregunta con sus palabras y lista datos conocidos y desconocidos.",
+          "bloqueo_probable": "B12"
+        },
+        "P2-RM": {
+          "decision": "Decidir si cada kilómetro nuevo atrae igual, más o menos público que el promedio actual; fijar un presupuesto o rango de kilómetros.",
+          "evidencia": "Lista escrita de supuestos y petición de información (R2, R3).",
+          "bloqueo_probable": "B23"
+        },
+        "P3-MM": {
+          "decision": "Traducir los supuestos a una relación entre kilómetros ampliados, viajes nuevos y costo (tasa de viajes por kilómetro, factor de reducción o tramos sucesivos).",
+          "evidencia": "Expresión o tabla que relaciona longitud agregada, viajes y costo.",
+          "bloqueo_probable": "B34"
+        },
+        "P4-WM": {
+          "decision": "Calcular el flujo por kilómetro, los viajes nuevos y el costo por viaje diario nuevo para varias longitudes.",
+          "evidencia": "Tabla de escenarios con cálculos de costo y viajes con comas decimales correctas.",
+          "bloqueo_probable": "B45"
+        },
+        "P5-INT": {
+          "decision": "Traducir los resultados a una recomendación: cuántos kilómetros y con qué rango de viajes esperables.",
+          "evidencia": "Frase de recomendación con rango y condiciones, no un solo número sin contexto.",
+          "bloqueo_probable": "B56"
+        },
+        "P6-VAL": {
+          "decision": "Contrastar la predicción con los conteos antes y después de otra ciclovía ampliada (R4) y ajustar el supuesto.",
+          "evidencia": "Comparación escrita entre lo predicho y lo observado y revisión del modelo.",
+          "bloqueo_probable": "B67"
+        },
+        "P7-EXP": {
+          "decision": "Presentar a las autoridades la recomendación, los supuestos y los límites de la estimación.",
+          "evidencia": "Informe o exposición breve con tabla, supuestos y sensibilidad.",
+          "bloqueo_probable": null
+        }
+      },
+      "task_space": {
+        "required_assumptions": [
+          "Cuántos viajes nuevos atrae cada kilómetro agregado respecto del promedio actual (factor entre 0 y 1 o más).",
+          "Presupuesto máximo que el municipio puede destinar.",
+          "El costo por kilómetro se mantiene constante al ampliar.",
+          "Los viajes actuales no cambian por la ampliación.",
+          "El flujo medio actual se reparte de manera uniforme a lo largo de la ciclovía actual (para obtener un flujo por kilómetro)."
+        ],
+        "reference_solution": {
+          "steps": "1) Flujo por kilómetro actual: 4.200 / 6,5 ≈ 646 viajes por día por km. 2) Para x kilómetros nuevos, costo = 310·x millones de pesos. 3) Viajes nuevos = k · 646 · x, con k entre 0,3 y 1 según qué tan atractivos sean los barrios nuevos. 4) Costo por viaje diario nuevo = 310·x / (k·646·x) millones, es decir ≈ 0,48 / k millones por viaje diario. 5) Con un presupuesto p, x = p / 310 km. 6) Recomendar x y un rango de viajes nuevos, y contrastar con el comportamiento de una ciclovía parecida ya ampliada.",
+          "result": "Con un presupuesto p, se pueden ampliar p/310 km. Ejemplo: 2 km cuestan 620 millones de pesos y atraerían entre unos 390 y unos 1.290 viajes diarios nuevos (k entre 0,3 y 1), es decir entre 0,48 y 1,6 millones de pesos por viaje diario nuevo.",
+          "acceptable_range": "Cualquier longitud justificada por el presupuesto propuesto es aceptable si la estimación de viajes nuevos explicita su factor k o su regla de decrecimiento. Los viajes nuevos por kilómetro razonables van desde cerca de 200 hasta 646; el costo por viaje diario nuevo, entre 0,48 y 1,6 millones de pesos."
+        },
+        "routes": [
+          {
+            "id": "R1",
+            "nombre": "Proporcionalidad directa",
+            "nivel": "S1",
+            "modelo": "Viajes nuevos = (4.200 / 6,5) · x; costo = 310 · x.",
+            "resultado": "Cada kilómetro agrega unos 646 viajes diarios por 310 millones de pesos: unos 0,48 millones por viaje diario nuevo."
+          },
+          {
+            "id": "R2",
+            "nombre": "Proporcionalidad con factor de atractivo",
+            "nivel": "S1",
+            "modelo": "Viajes nuevos = k · 646 · x, con k entre 0,3 y 0,7 por ser barrios menos densos; comparación de escenarios.",
+            "resultado": "Para 2 km: 620 millones de pesos y entre unos 390 y 900 viajes diarios nuevos; costo por viaje entre 0,7 y 1,6 millones."
+          },
+          {
+            "id": "R3",
+            "nombre": "Rendimiento decreciente por tramos",
+            "nivel": "S2",
+            "modelo": "El kilómetro j atrae 646 · r^j viajes, con r cercano a 0,8; suma geométrica y costo marginal creciente por viaje.",
+            "resultado": "Con r = 0,8 y 3 km: unos 1.260 viajes diarios nuevos por 930 millones de pesos (≈ 0,74 millones por viaje); más allá de cierto tramo, el costo marginal por viaje sube mucho."
+          }
+        ],
+        "modelo_inadecuado": {
+          "id": "RX: suponer que cualquier ampliación, sea cual sea su longitud, atrae otros 4.200 viajes diarios (como si el flujo fuera independiente de los kilómetros).",
+          "por_que_falla": "Confunde el flujo total de la ciclovía actual con el flujo que aporta cada kilómetro: no depende de la longitud agregada, de modo que ampliar más o menos kilómetros daría el mismo beneficio y la decisión de cuánto ampliar pierde sentido."
+        },
+        "validation_evidence": "Conteos de viajes, antes y después, de una ciclovía parecida que ya fue ampliada (R4), no usados para fijar el factor k ni la razón r. El grupo compara la predicción de su modelo con el crecimiento observado y revisa sus supuestos.",
+        "agent_visibility": {
+          "students": [
+            "enunciado_es",
+            "foto_descripcion",
+            "recursos_a_solicitud"
+          ],
+          "coder": [
+            "enunciado_es",
+            "task_space"
+          ],
+          "guide": [
+            "all"
+          ]
+        }
+      },
+      "rubrica_rub01": {
+        "total": 22,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 1,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 1
+        }
+      },
+      "rubrica_rub02": {
+        "P": null,
+        "S": null,
+        "U": null
+      },
+      "modelo_y_prompt": {
+        "diseñador": "claude-sonnet-5-5",
+        "version_prompt": "1.1",
+        "version_rubrica": "4.0"
+      },
+      "sub_tramo": "S1"
+    },
+    "noticia": {
+      "id": "2026-10-20-prueba-actions-ciclovia",
+      "medio_id": "emol",
+      "medio": "Emol / El Mercurio",
+      "idioma": "es",
+      "titulo": "Ejemplo sintético: municipio evalúa ampliar una ciclovía (noticia de prueba del pipeline en Actions)",
+      "fecha": "2026-10-20",
+      "url": "https://www.example.org/sintetico/2026-10-20-prueba-actions-ciclovia",
+      "area": "transporte_ciudad",
+      "resumen_propio": "Ejemplo sintético para pruebas. Un municipio debe decidir si amplía una ciclovía que hoy recibe miles de viajes diarios. Se informan el flujo medio, la longitud actual y el costo estimado por kilómetro, pero no cuántos viajes nuevos se generarían ni cómo cambia el uso con la distancia.",
+      "cifras": [
+        {
+          "valor": 4200,
+          "unidad": "viajes/día",
+          "que_es": "flujo medio actual de la ciclovía (sintético)",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 2"
+          }
+        },
+        {
+          "valor": 6.5,
+          "unidad": "km",
+          "que_es": "longitud actual (sintético)",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 2"
+          }
+        },
+        {
+          "valor": 310,
+          "unidad": "millones de pesos/km",
+          "que_es": "costo estimado de ampliación (sintético)",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 4"
+          }
+        }
+      ],
+      "recuperada_en": "2026-10-20T12:00:00Z"
+    },
+    "evaluacion": {
+      "tarea_id": "2026-10-ampliar-ciclovia-cuantos-km",
+      "fecha": "2026-10-21T11:43:08Z",
+      "rub01": {
+        "version_rubrica": "4.0",
+        "criterios": {
+          "genuino": {
+            "puntaje": 2,
+            "justificacion": "La tarea plantea una necesidad real de decisión y no entrega ninguna regla ni modelo. La mención de si cada kilómetro atraería tanto público abre una pregunta, pero no impone una estructura.",
+            "cita": "Las autoridades quieren decidir cuántos kilómetros agregar, pero nadie sabe cuántos viajes nuevos traería la ampliación"
+          },
+          "abierta": {
+            "puntaje": 2,
+            "justificacion": "La pregunta admite varios modelos defendibles: proporcional, con rendimiento decreciente o con costo por viaje. Tampoco hay instrucciones que encaucen hacia una ruta única.",
+            "cita": "¿cuántos kilómetros conviene ampliar y cuántos viajes diarios más podrían esperar?"
+          },
+          "decisiones": {
+            "puntaje": 2,
+            "justificacion": "Resolver la tarea exige formular supuestos sobre la demanda por kilómetro, proponer un presupuesto y decidir qué información solicitar. Esto corresponde al descriptor 2.",
+            "cita": "Expliquen qué supuestos hacen y cómo podrían comprobar su estimación. Pueden pedir información adicional."
+          },
+          "realismo": {
+            "puntaje": 2,
+            "justificacion": "La decisión municipal de ampliar una ciclovía, con costos por kilómetro y conteos de viajes, es una situación claramente plausible fuera de la escuela.",
+            "cita": "Un municipio estudia ampliar una ciclovía de la ciudad."
+          },
+          "autenticidad": {
+            "puntaje": 1,
+            "justificacion": "El tema y la actividad de asesoría en planificación urbana son extraescolares. Sin embargo, no se declara ninguna fuente, y los datos y recursos son supuestos construidos para la actividad, de modo que el núcleo del material es fabricado.",
+            "cita": "Supuesto del escenario: el municipio aún no fija un presupuesto máximo para la ampliación"
+          },
+          "contexto": {
+            "puntaje": 2,
+            "justificacion": "El contexto condiciona el supuesto central sobre la atracción de viajes por kilómetro y el presupuesto. Además, es necesario para interpretar la recomendación y validarla.",
+            "cita": "los tramos nuevos llegarían a barrios con menos población cercana a la ciclovía que el tramo actual"
+          },
+          "ciclo": {
+            "puntaje": 2,
+            "justificacion": "Responder obliga a comprender la situación, simplificar mediante supuestos, construir un modelo de viajes y costo, calcular, interpretar la recomendación y comprobarla. El enunciado no deja ninguna fase hecha.",
+            "cita": "Ustedes asesoran al municipio: ¿cuántos kilómetros conviene ampliar y cuántos viajes diarios más podrían esperar?"
+          },
+          "validacion": {
+            "puntaje": 2,
+            "justificacion": "Hay evidencia independiente, los conteos antes y después de otra ciclovía, no usada para construir el modelo. Permite contrastar la estimación.",
+            "cita": "Conteos de una ciclovía parecida que ya fue ampliada, para contrastar la estimación"
+          },
+          "nivel": {
+            "puntaje": 2,
+            "justificacion": "El contexto es comprensible para estudiantes de 13 a 15 años. La matemática requerida (tasas de viajes por kilómetro, modelos lineales por tramos, costo por viaje) está dentro de las herramientas de S1.",
+            "cita": "Hoy la ciclovía mide 6,5 km y recibe en promedio 4.200 viajes al día."
+          },
+          "autodiferenciacion": {
+            "puntaje": 2,
+            "justificacion": "Se puede entrar con una proporción simple de viajes por kilómetro. La tarea admite soluciones más sofisticadas, como rendimiento decreciente por zona, costo por viaje nuevo u optimización bajo un presupuesto propuesto.",
+            "cita": "ni si cada kilómetro nuevo atraería tanto público como los que ya existen"
+          },
+          "fecundidad": {
+            "puntaje": 2,
+            "justificacion": "Distintos supuestos llevan a recomendaciones diferentes que pueden compararse. Esto abre preguntas sobre los límites del modelo proporcional y sobre el criterio de qué conviene al municipio.",
+            "cita": "Expliquen qué supuestos hacen y cómo podrían comprobar su estimación."
+          },
+          "recursos": {
+            "puntaje": 1,
+            "justificacion": "La información está disponible a solicitud, pero hay sobreorientación parcial: las descripciones de R3 y R4 adelantan que los tramos nuevos rinden menos, casi entregando el supuesto estructural. Además, R4 no trae los conteos numéricos para contrastar. Dudo entre 1 y 2 y asigno el menor.",
+            "cita": "el flujo aumentó, pero no en la misma proporción en que aumentó la longitud."
+          }
+        },
+        "total": 22,
+        "mejoras": [
+          {
+            "criterio": "autenticidad",
+            "mejora_minima": "Reemplazar los datos supuestos por cifras de una noticia o un registro público citado (longitud, viajes diarios y costo por km de una ciclovía real), y usar como R4 conteos reales publicados de una ciclovía ampliada."
+          },
+          {
+            "criterio": "recursos",
+            "mejora_minima": "Hacer que R4 entregue solo la tabla de conteos antes y después, con las longitudes, sin la conclusión «no en la misma proporción». En R3, describir las zonas con datos (población o actividad cercana) en vez de anticipar que atraerán menos viajes."
+          }
+        ]
+      },
+      "reproducibilidad": {
+        "agentes": {
+          "disenador": {
+            "modelo": "claude-sonnet-5-5",
+            "version_modelo": "claude-sonnet-5-5",
+            "costo_usd": 0.18306,
+            "version_prompt": "1.1"
+          },
+          "evaluador": {
+            "modelo": "claude-opus-5-5",
+            "version_modelo": "claude-opus-5-5",
+            "costo_usd": 0.276312,
+            "version_prompt": "1.3"
+          }
+        },
+        "version_prompt": {
+          "disenador": "1.1",
+          "evaluador": "1.3"
+        },
+        "version_rubrica": "4.0",
+        "version_MAR03": "1.0",
+        "version_MED01": "1.4",
+        "diseno_simulador": null,
+        "fecha": "2026-10-21T11:43:09Z",
+        "costo_usd": 0.459372
+      }
+    }
+  },
+  "historial": [
+    {
+      "fecha": "2026-10-21T11:41:33+00:00",
+      "de": null,
+      "a": "borrador"
+    },
+    {
+      "fecha": "2026-10-21T11:43:09+00:00",
+      "de": "borrador",
+      "a": "evaluada",
+      "iteracion": 1,
+      "rub01_total": 22
+    },
+    {
+      "fecha": "2026-10-21T11:44:29+00:00",
+      "de": "evaluada",
+      "a": "archivada",
+      "motivo": "candidato no elegido: RUB01 22/24 frente a 23/24 de 2026-10-ciclovia-vale-la-pena (2 candidatos por noticia; se sigue con el mejor)"
+    }
+  ],
+  "marcas": {
+    "ciclo_id": "ciclo_20261021T113945836655Z",
+    "noticia_id": "2026-10-20-prueba-actions-ciclovia",
+    "nivel_objetivo": "S",
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "versiones_modelo": [
+          "claude-sonnet-5-5"
+        ],
+        "costo_usd": 0.18306,
+        "llamadas": 1
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "versiones_modelo": [
+          "claude-opus-5-5"
+        ],
+        "costo_usd": 0.276312,
+        "llamadas": 3
+      }
+    },
+    "costos_compartidos": [
+      "disenador"
+    ],
+    "version_MAR03": "1.0",
+    "evaluacion_inestable": false,
+    "evaluacion_rango_total": 1,
+    "evaluacion_corridas": "/home/runner/work/otm-prensa/otm-prensa/pipeline/state/trabajo/2026-10-ampliar-ciclovia-cuantos-km/evaluacion_corridas.json"
+  }
+}

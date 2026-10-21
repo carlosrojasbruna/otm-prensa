@@ -1,0 +1,687 @@
+{
+  "fecha": "2026-10-21",
+  "generado": "2026-10-21T11:39:27Z",
+  "med01_version": "1.4",
+  "user_agent": "OTM-Prensa/1.0 (observatorio academico; PUC Chile; verificar-medios; +https://github.com/carlosrojasbruna/otm-prensa)",
+  "timeout_s": 20,
+  "costo_usd": 0.0,
+  "resumen": {
+    "medios": 16,
+    "ok": 11,
+    "usar_respaldo": 0,
+    "sin_acceso": 5
+  },
+  "medios": [
+    {
+      "id": "latercera",
+      "nombre": "La Tercera",
+      "acceso_med01": "rss",
+      "url_verificar": false,
+      "rol": null,
+      "recomendacion": {
+        "estado": "sin_acceso",
+        "acceso": null,
+        "url": null,
+        "motivo": "principal: la respuesta no es un feed RSS/Atom (probablemente HTML)"
+      },
+      "urls": [
+        {
+          "url": "https://www.latercera.com/arc/outboundfeeds/rss/?outputType=xml",
+          "rol": "principal",
+          "area": null,
+          "origen": "https://www.latercera.com",
+          "robots_http": 200,
+          "robots_permitido": true,
+          "robots_error": null,
+          "http": 200,
+          "content_type": "application/xml; charset=utf-8",
+          "es_feed": false,
+          "items": 0,
+          "ms": 68,
+          "error": "la respuesta no es un feed RSS/Atom (probablemente HTML)",
+          "descargado": true,
+          "ok": false
+        }
+      ]
+    },
+    {
+      "id": "emol",
+      "nombre": "Emol / El Mercurio",
+      "acceso_med01": "rss",
+      "url_verificar": true,
+      "rol": null,
+      "recomendacion": {
+        "estado": "sin_acceso",
+        "acceso": null,
+        "url": null,
+        "motivo": "principal: ConnectionResetError: [Errno 104] Connection reset by peer; respaldo: robots.txt no permite este agente en esta ruta: no se descarga"
+      },
+      "urls": [
+        {
+          "url": "https://www.emol.com/rss/",
+          "rol": "principal",
+          "area": null,
+          "origen": "https://www.emol.com",
+          "robots_http": 200,
+          "robots_permitido": true,
+          "robots_error": null,
+          "http": null,
+          "content_type": null,
+          "es_feed": false,
+          "items": 0,
+          "ms": null,
+          "error": "ConnectionResetError: [Errno 104] Connection reset by peer",
+          "descargado": false,
+          "ok": false
+        },
+        {
+          "url": "https://news.google.com/rss/search?q=site:emol.com&hl=es-419&gl=CL&ceid=CL:es-419",
+          "rol": "respaldo",
+          "area": null,
+          "origen": "https://news.google.com",
+          "robots_http": 200,
+          "robots_permitido": false,
+          "robots_error": null,
+          "http": null,
+          "content_type": null,
+          "es_feed": false,
+          "items": 0,
+          "ms": null,
+          "error": "robots.txt no permite este agente en esta ruta: no se descarga",
+          "descargado": false,
+          "ok": false
+        }
+      ]
+    },
+    {
+      "id": "cnnchile",
+      "nombre": "CNN Chile",
+      "acceso_med01": "gnews",
+      "url_verificar": true,
+      "rol": null,
+      "recomendacion": {
+        "estado": "sin_acceso",
+        "acceso": null,
+        "url": null,
+        "motivo": "principal: robots.txt no permite este agente en esta ruta: no se descarga"
+      },
+      "urls": [
+        {
+          "url": "https://news.google.com/rss/search?q=site:cnnchile.com&hl=es-419&gl=CL&ceid=CL:es-419",
+          "rol": "principal",
+          "area": null,
+          "origen": "https://news.google.com",
+          "robots_http": 200,
+          "robots_permitido": false,
+          "robots_error": null,
+          "http": null,
+          "content_type": null,
+          "es_feed": false,
+          "items": 0,
+          "ms": null,
+          "error": "robots.txt no permite este agente en esta ruta: no se descarga",
+          "descargado": false,
+          "ok": false
+        }
+      ]
+    },
+    {
+      "id": "ciper",
+      "nombre": "CIPER Chile",
+      "acceso_med01": "rss",
+      "url_verificar": false,
+      "rol": null,
+      "recomendacion": {
+        "estado": "ok",
+        "acceso": "rss",
+        "url": "https://www.ciperchile.cl/feed/"
+      },
+      "urls": [
+        {
+          "url": "https://www.ciperchile.cl/feed/",
+          "rol": "principal",
+          "area": null,
+          "origen": "https://www.ciperchile.cl",
+          "robots_http": 200,
+          "robots_permitido": true,
+          "robots_error": null,
+          "http": 200,
+          "content_type": "application/rss+xml; charset=UTF-8",
+          "es_feed": true,
+          "items": 16,
+          "ms": 843,
+          "error": null,
+          "descargado": true,
+          "ok": true
+        },
+        {
+          "url": "https://news.google.com/rss/search?q=site:ciperchile.cl&hl=es-419&gl=CL&ceid=CL:es-419",
+          "rol": "respaldo",
+          "area": null,
+          "origen": "https://news.google.com",
+          "robots_http": 200,
+          "robots_permitido": false,
+          "robots_error": null,
+          "http": null,
+          "content_type": null,
+          "es_feed": false,
+          "items": 0,
+          "ms": null,
+          "error": "robots.txt no permite este agente en esta ruta: no se descarga",
+          "descargado": false,
+          "ok": false
+        }
+      ]
+    },
+    {
+      "id": "canal13",
+      "nombre": "Canal 13 / T13",
+      "acceso_med01": "rss",
+      "url_verificar": true,
+      "rol": null,
+      "recomendacion": {
+        "estado": "sin_acceso",
+        "acceso": null,
+        "url": null,
+        "motivo": "principal: HTTP 404; respaldo: robots.txt no permite este agente en esta ruta: no se descarga"
+      },
+      "urls": [
+        {
+          "url": "https://www.t13.cl/rss",
+          "rol": "principal",
+          "area": null,
+          "origen": "https://www.t13.cl",
+          "robots_http": 200,
+          "robots_permitido": true,
+          "robots_error": null,
+          "http": 404,
+          "content_type": "text/html; charset=UTF-8",
+          "es_feed": false,
+          "items": 0,
+          "ms": 20,
+          "error": "HTTP 404",
+          "descargado": true,
+          "ok": false
+        },
+        {
+          "url": "https://news.google.com/rss/search?q=site:t13.cl&hl=es-419&gl=CL&ceid=CL:es-419",
+          "rol": "respaldo",
+          "area": null,
+          "origen": "https://news.google.com",
+          "robots_http": 200,
+          "robots_permitido": false,
+          "robots_error": null,
+          "http": null,
+          "content_type": null,
+          "es_feed": false,
+          "items": 0,
+          "ms": null,
+          "error": "robots.txt no permite este agente en esta ruta: no se descarga",
+          "descargado": false,
+          "ok": false
+        }
+      ]
+    },
+    {
+      "id": "reuters",
+      "nombre": "Reuters",
+      "acceso_med01": "gnews",
+      "url_verificar": false,
+      "rol": null,
+      "recomendacion": {
+        "estado": "sin_acceso",
+        "acceso": null,
+        "url": null,
+        "motivo": "principal: robots.txt no permite este agente en esta ruta: no se descarga"
+      },
+      "urls": [
+        {
+          "url": "https://news.google.com/rss/search?q=site:reuters.com&hl=en-US&gl=US&ceid=US:en",
+          "rol": "principal",
+          "area": null,
+          "origen": "https://news.google.com",
+          "robots_http": 200,
+          "robots_permitido": false,
+          "robots_error": null,
+          "http": null,
+          "content_type": null,
+          "es_feed": false,
+          "items": 0,
+          "ms": null,
+          "error": "robots.txt no permite este agente en esta ruta: no se descarga",
+          "descargado": false,
+          "ok": false
+        }
+      ]
+    },
+    {
+      "id": "bbc",
+      "nombre": "BBC News",
+      "acceso_med01": "rss",
+      "url_verificar": false,
+      "rol": null,
+      "recomendacion": {
+        "estado": "ok",
+        "acceso": "rss",
+        "url": "https://feeds.bbci.co.uk/news/rss.xml"
+      },
+      "urls": [
+        {
+          "url": "https://feeds.bbci.co.uk/news/rss.xml",
+          "rol": "principal",
+          "area": null,
+          "origen": "https://feeds.bbci.co.uk",
+          "robots_http": 200,
+          "robots_permitido": true,
+          "robots_error": null,
+          "http": 200,
+          "content_type": "text/xml; charset=utf-8",
+          "es_feed": true,
+          "items": 29,
+          "ms": 64,
+          "error": null,
+          "descargado": true,
+          "ok": true
+        },
+        {
+          "url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+          "rol": "seccion",
+          "area": "sociedad_datos",
+          "origen": "https://feeds.bbci.co.uk",
+          "robots_http": 200,
+          "robots_permitido": true,
+          "robots_error": null,
+          "http": 200,
+          "content_type": "text/xml; charset=utf-8",
+          "es_feed": true,
+          "items": 36,
+          "ms": 59,
+          "error": null,
+          "descargado": true,
+          "ok": true
+        },
+        {
+          "url": "https://feeds.bbci.co.uk/news/science_and_environment/rss.xml",
+          "rol": "seccion",
+          "area": "ciencia_tecnologia",
+          "origen": "https://feeds.bbci.co.uk",
+          "robots_http": 200,
+          "robots_permitido": true,
+          "robots_error": null,
+          "http": 200,
+          "content_type": "text/xml; charset=utf-8",
+          "es_feed": true,
+          "items": 39,
+          "ms": 159,
+          "error": null,
+          "descargado": true,
+          "ok": true
+        },
+        {
+          "url": "https://feeds.bbci.co.uk/news/health/rss.xml",
+          "rol": "seccion",
+          "area": "salud",
+          "origen": "https://feeds.bbci.co.uk",
+          "robots_http": 200,
+          "robots_permitido": true,
+          "robots_error": null,
+          "http": 200,
+          "content_type": "text/xml; charset=utf-8",
+          "es_feed": true,
+          "items": 56,
+          "ms": 41,
+          "error": null,
+          "descargado": true,
+          "ok": true
+        },
+        {
+          "url": "https://feeds.bbci.co.uk/news/business/rss.xml",
+          "rol": "seccion",
+          "area": "economia",
+          "origen": "https://feeds.bbci.co.uk",
+          "robots_http": 200,
+          "robots_permitido": true,
+          "robots_error": null,
+          "http": 200,
+          "content_type": "text/xml; charset=utf-8",
+          "es_feed": true,
+          "items": 53,
+          "ms": 45,
+          "error": null,
+          "descargado": true,
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "bbcmundo",
+      "nombre": "BBC Mundo",
+      "acceso_med01": "rss",
+      "url_verificar": false,
+      "rol": null,
+      "recomendacion": {
+        "estado": "ok",
+        "acceso": "rss",
+        "url": "https://feeds.bbci.co.uk/mundo/rss.xml"
+      },
+      "urls": [
+        {
+          "url": "https://feeds.bbci.co.uk/mundo/rss.xml",
+          "rol": "principal",
+          "area": null,
+          "origen": "https://feeds.bbci.co.uk",
+          "robots_http": 200,
+          "robots_permitido": true,
+          "robots_error": null,
+          "http": 200,
+          "content_type": "text/xml; charset=utf-8",
+          "es_feed": true,
+          "items": 34,
+          "ms": 143,
+          "error": null,
+          "descargado": true,
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "dw",
+      "nombre": "Deutsche Welle (español)",
+      "acceso_med01": "rss",
+      "url_verificar": false,
+      "rol": null,
+      "recomendacion": {
+        "estado": "ok",
+        "acceso": "rss",
+        "url": "https://rss.dw.com/rdf/rss-sp-all"
+      },
+      "urls": [
+        {
+          "url": "https://rss.dw.com/rdf/rss-sp-all",
+          "rol": "principal",
+          "area": null,
+          "origen": "https://rss.dw.com",
+          "robots_http": 200,
+          "robots_permitido": true,
+          "robots_error": null,
+          "http": 200,
+          "content_type": "text/xml; charset=UTF-8",
+          "es_feed": true,
+          "items": 21,
+          "ms": 119,
+          "error": null,
+          "descargado": true,
+          "ok": true
+        },
+        {
+          "url": "https://rss.dw.com/rdf/rss-sp-cyt",
+          "rol": "seccion",
+          "area": "ciencia_tecnologia",
+          "origen": "https://rss.dw.com",
+          "robots_http": 200,
+          "robots_permitido": true,
+          "robots_error": null,
+          "http": 200,
+          "content_type": "text/xml; charset=UTF-8",
+          "es_feed": true,
+          "items": 17,
+          "ms": 17,
+          "error": null,
+          "descargado": true,
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "naturenews",
+      "nombre": "Nature News",
+      "acceso_med01": "rss",
+      "url_verificar": false,
+      "rol": "radar_tematico",
+      "recomendacion": {
+        "estado": "ok",
+        "acceso": "rss",
+        "url": "https://www.nature.com/nature.rss"
+      },
+      "urls": [
+        {
+          "url": "https://www.nature.com/nature.rss",
+          "rol": "principal",
+          "area": null,
+          "origen": "https://www.nature.com",
+          "robots_http": 200,
+          "robots_permitido": true,
+          "robots_error": null,
+          "http": 200,
+          "content_type": "application/rss+xml; charset=utf-8",
+          "es_feed": true,
+          "items": 75,
+          "ms": 19,
+          "error": null,
+          "descargado": true,
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "cooperativa",
+      "nombre": "Radio Cooperativa",
+      "acceso_med01": "rss",
+      "url_verificar": false,
+      "rol": null,
+      "recomendacion": {
+        "estado": "ok",
+        "acceso": "rss",
+        "url": "https://www.cooperativa.cl/noticias/site/tax/port/all/rss____1.xml"
+      },
+      "urls": [
+        {
+          "url": "https://www.cooperativa.cl/noticias/site/tax/port/all/rss____1.xml",
+          "rol": "principal",
+          "area": null,
+          "origen": "https://www.cooperativa.cl",
+          "robots_http": 200,
+          "robots_permitido": true,
+          "robots_error": null,
+          "http": 200,
+          "content_type": "text/xml; charset=utf-8",
+          "es_feed": true,
+          "items": 15,
+          "ms": 1730,
+          "error": null,
+          "descargado": true,
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "df",
+      "nombre": "Diario Financiero",
+      "acceso_med01": "rss",
+      "url_verificar": false,
+      "rol": null,
+      "recomendacion": {
+        "estado": "ok",
+        "acceso": "rss",
+        "url": "https://www.df.cl/noticias/site/list/port/rss.xml"
+      },
+      "urls": [
+        {
+          "url": "https://www.df.cl/noticias/site/list/port/rss.xml",
+          "rol": "principal",
+          "area": null,
+          "origen": "https://www.df.cl",
+          "robots_http": 200,
+          "robots_permitido": true,
+          "robots_error": null,
+          "http": 200,
+          "content_type": "text/xml; charset=utf-8",
+          "es_feed": true,
+          "items": 50,
+          "ms": 683,
+          "error": null,
+          "descargado": true,
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "biobio",
+      "nombre": "BioBioChile",
+      "acceso_med01": "rss",
+      "url_verificar": true,
+      "rol": null,
+      "recomendacion": {
+        "estado": "ok",
+        "acceso": "rss",
+        "url": "http://feeds.feedburner.com/radiobiobio/NNeJ"
+      },
+      "urls": [
+        {
+          "url": "http://feeds.feedburner.com/radiobiobio/NNeJ",
+          "rol": "principal",
+          "area": null,
+          "origen": "http://feeds.feedburner.com",
+          "robots_http": 200,
+          "robots_permitido": true,
+          "robots_error": null,
+          "http": 200,
+          "content_type": "text/xml; charset=utf-8",
+          "es_feed": true,
+          "items": 20,
+          "ms": 251,
+          "error": null,
+          "descargado": true,
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "france24",
+      "nombre": "France 24 (español)",
+      "acceso_med01": "rss",
+      "url_verificar": true,
+      "rol": null,
+      "recomendacion": {
+        "estado": "ok",
+        "acceso": "rss",
+        "url": "https://www.france24.com/es/rss"
+      },
+      "urls": [
+        {
+          "url": "https://www.france24.com/es/rss",
+          "rol": "principal",
+          "area": null,
+          "origen": "https://www.france24.com",
+          "robots_http": 200,
+          "robots_permitido": true,
+          "robots_error": null,
+          "http": 200,
+          "content_type": "application/rss+xml; charset=utf-8",
+          "es_feed": true,
+          "items": 24,
+          "ms": 54,
+          "error": null,
+          "descargado": true,
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "eldiario",
+      "nombre": "elDiario.es",
+      "acceso_med01": "rss",
+      "url_verificar": false,
+      "rol": null,
+      "recomendacion": {
+        "estado": "ok",
+        "acceso": "rss",
+        "url": "https://www.eldiario.es/rss"
+      },
+      "urls": [
+        {
+          "url": "https://www.eldiario.es/rss",
+          "rol": "principal",
+          "area": null,
+          "origen": "https://www.eldiario.es",
+          "robots_http": 200,
+          "robots_permitido": true,
+          "robots_error": null,
+          "http": 200,
+          "content_type": "text/xml; charset=UTF-8",
+          "es_feed": true,
+          "items": 116,
+          "ms": 628,
+          "error": null,
+          "descargado": true,
+          "ok": true
+        }
+      ]
+    },
+    {
+      "id": "guardian",
+      "nombre": "The Guardian",
+      "acceso_med01": "rss",
+      "url_verificar": true,
+      "rol": null,
+      "recomendacion": {
+        "estado": "ok",
+        "acceso": "rss",
+        "url": "https://www.theguardian.com/world/rss"
+      },
+      "urls": [
+        {
+          "url": "https://www.theguardian.com/world/rss",
+          "rol": "principal",
+          "area": null,
+          "origen": "https://www.theguardian.com",
+          "robots_http": 200,
+          "robots_permitido": true,
+          "robots_error": null,
+          "http": 200,
+          "content_type": "text/xml; charset=UTF-8",
+          "es_feed": true,
+          "items": 45,
+          "ms": 15,
+          "error": null,
+          "descargado": true,
+          "ok": true
+        },
+        {
+          "url": "https://www.theguardian.com/environment/rss",
+          "rol": "seccion",
+          "area": "medio_ambiente",
+          "origen": "https://www.theguardian.com",
+          "robots_http": 200,
+          "robots_permitido": true,
+          "robots_error": null,
+          "http": 200,
+          "content_type": "text/xml; charset=UTF-8",
+          "es_feed": true,
+          "items": 34,
+          "ms": 43,
+          "error": null,
+          "descargado": true,
+          "ok": true
+        },
+        {
+          "url": "https://www.theguardian.com/science/rss",
+          "rol": "seccion",
+          "area": "ciencia_tecnologia",
+          "origen": "https://www.theguardian.com",
+          "robots_http": 200,
+          "robots_permitido": true,
+          "robots_error": null,
+          "http": 200,
+          "content_type": "text/xml; charset=UTF-8",
+          "es_feed": true,
+          "items": 28,
+          "ms": 13,
+          "error": null,
+          "descargado": true,
+          "ok": true
+        }
+      ]
+    }
+  ]
+}

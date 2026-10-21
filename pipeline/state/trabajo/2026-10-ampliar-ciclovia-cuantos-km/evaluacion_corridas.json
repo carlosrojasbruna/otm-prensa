@@ -1,0 +1,312 @@
+{
+  "tarea_id": "2026-10-ampliar-ciclovia-cuantos-km",
+  "evaluaciones": [
+    {
+      "iteracion": 1,
+      "version_tarea": 1,
+      "fecha": "2026-10-21T11:43:08Z",
+      "modelo": "claude-opus-5-5",
+      "version_prompt": "1.3",
+      "version_rubrica": "4.0",
+      "corridas": [
+        {
+          "n": 1,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La tarea plantea una necesidad real de decisión y no entrega ninguna regla ni modelo. La mención de si cada kilómetro atraería tanto público abre una pregunta, pero no impone una estructura.",
+                "cita": "Las autoridades quieren decidir cuántos kilómetros agregar, pero nadie sabe cuántos viajes nuevos traería la ampliación"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta admite varios modelos defendibles: proporcional, con rendimiento decreciente o con costo por viaje. Tampoco hay instrucciones que encaucen hacia una ruta única.",
+                "cita": "¿cuántos kilómetros conviene ampliar y cuántos viajes diarios más podrían esperar?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver la tarea exige formular supuestos sobre la demanda por kilómetro, proponer un presupuesto y decidir qué información solicitar. Esto corresponde al descriptor 2.",
+                "cita": "Expliquen qué supuestos hacen y cómo podrían comprobar su estimación. Pueden pedir información adicional."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "La decisión municipal de ampliar una ciclovía, con costos por kilómetro y conteos de viajes, es una situación claramente plausible fuera de la escuela.",
+                "cita": "Un municipio estudia ampliar una ciclovía de la ciudad."
+              },
+              "autenticidad": {
+                "puntaje": 1,
+                "justificacion": "El tema y la actividad de asesoría en planificación urbana son extraescolares. Sin embargo, no se declara ninguna fuente, y los datos y recursos son supuestos construidos para la actividad, de modo que el núcleo del material es fabricado.",
+                "cita": "Supuesto del escenario: el municipio aún no fija un presupuesto máximo para la ampliación"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona el supuesto central sobre la atracción de viajes por kilómetro y el presupuesto. Además, es necesario para interpretar la recomendación y validarla.",
+                "cita": "los tramos nuevos llegarían a barrios con menos población cercana a la ciclovía que el tramo actual"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a comprender la situación, simplificar mediante supuestos, construir un modelo de viajes y costo, calcular, interpretar la recomendación y comprobarla. El enunciado no deja ninguna fase hecha.",
+                "cita": "Ustedes asesoran al municipio: ¿cuántos kilómetros conviene ampliar y cuántos viajes diarios más podrían esperar?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Hay evidencia independiente, los conteos antes y después de otra ciclovía, no usada para construir el modelo. Permite contrastar la estimación.",
+                "cita": "Conteos de una ciclovía parecida que ya fue ampliada, para contrastar la estimación"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto es comprensible para estudiantes de 13 a 15 años. La matemática requerida (tasas de viajes por kilómetro, modelos lineales por tramos, costo por viaje) está dentro de las herramientas de S1.",
+                "cita": "Hoy la ciclovía mide 6,5 km y recibe en promedio 4.200 viajes al día."
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Se puede entrar con una proporción simple de viajes por kilómetro. La tarea admite soluciones más sofisticadas, como rendimiento decreciente por zona, costo por viaje nuevo u optimización bajo un presupuesto propuesto.",
+                "cita": "ni si cada kilómetro nuevo atraería tanto público como los que ya existen"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Distintos supuestos llevan a recomendaciones diferentes que pueden compararse. Esto abre preguntas sobre los límites del modelo proporcional y sobre el criterio de qué conviene al municipio.",
+                "cita": "Expliquen qué supuestos hacen y cómo podrían comprobar su estimación."
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "La información está disponible a solicitud, pero hay sobreorientación parcial: las descripciones de R3 y R4 adelantan que los tramos nuevos rinden menos, casi entregando el supuesto estructural. Además, R4 no trae los conteos numéricos para contrastar. Dudo entre 1 y 2 y asigno el menor.",
+                "cita": "el flujo aumentó, pero no en la misma proporción en que aumentó la longitud."
+              }
+            },
+            "total": 22,
+            "mejoras": [
+              {
+                "criterio": "autenticidad",
+                "mejora_minima": "Reemplazar los datos supuestos por cifras de una noticia o un registro público citado (longitud, viajes diarios y costo por km de una ciclovía real), y usar como R4 conteos reales publicados de una ciclovía ampliada."
+              },
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Hacer que R4 entregue solo la tabla de conteos antes y después, con las longitudes, sin la conclusión «no en la misma proporción». En R3, describir las zonas con datos (población o actividad cercana) en vez de anticipar que atraerán menos viajes."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgFKZNGKPbvoKVEMvwgGw",
+            "fecha": "2026-10-21T11:42:06+00:00",
+            "intentos": 1,
+            "costo_usd": 0.12872,
+            "avisos": []
+          }
+        },
+        {
+          "n": 2,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "Plantea una necesidad real de decisión y no entrega una regla ni un modelo listo para aplicar. La mención de que los kilómetros nuevos podrían no atraer tanto público expresa una incertidumbre del contexto y no un procedimiento.",
+                "cita": "Las autoridades quieren decidir cuántos kilómetros agregar, pero nadie sabe cuántos viajes nuevos traería la ampliación"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe el método. Admite modelos defendibles distintos (proporcional, con rendimiento decreciente, con criterio de costo por viaje) y una decisión sobre qué significa «conviene».",
+                "cita": "¿cuántos kilómetros conviene ampliar y cuántos viajes diarios más podrían esperar?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Para resolver hay que formular supuestos sobre la demanda de los tramos nuevos y proponer un presupuesto o un criterio de conveniencia. También hay que decidir qué información solicitar (R2–R4).",
+                "cita": "Expliquen qué supuestos hacen y cómo podrían comprobar su estimación. Pueden pedir información adicional."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "La decisión municipal sobre ampliar una ciclovía es una situación real y frecuente fuera de la escuela, con cifras plausibles.",
+                "cita": "Un municipio estudia ampliar una ciclovía de la ciudad."
+              },
+              "autenticidad": {
+                "puntaje": 1,
+                "justificacion": "El tema es auténtico, pero los datos y recursos se declaran como «supuesto del escenario» sin fuente extraescolar. El núcleo del material fue construido para la actividad, lo que corresponde al descriptor 1.",
+                "cita": "Supuesto del escenario: el municipio puede entregar los conteos de viajes de una ciclovía parecida de otra comuna"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto (zonas, población, costo, presupuesto) condiciona los supuestos del modelo. También es necesario para interpretar la recomendación y validarla.",
+                "cita": "los tramos nuevos llegarían a barrios con menos población cercana a la ciclovía que el tramo actual"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a comprender la situación, simplificar la demanda por kilómetro, matematizar con tasas, calcular, interpretar una recomendación y validarla. Ninguna fase viene hecha.",
+                "cita": "¿cuántos kilómetros conviene ampliar y cuántos viajes diarios más podrían esperar? Expliquen qué supuestos hacen y cómo podrían comprobar su estimación."
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existen conteos antes y después de una ampliación análoga. Son evidencia independiente, no usada en la construcción, para contrastar el modelo.",
+                "cita": "R4 (Conteos de una ciclovía parecida que ya fue ampliada, para contrastar la estimación)"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto y el lenguaje son comprensibles para 13–15 años. La matemática requerida (tasas, promedio, modelo lineal o por tramos, costo por kilómetro) está dentro de las herramientas de S1.",
+                "cita": "Hoy la ciclovía mide 6,5 km y recibe en promedio 4.200 viajes al día."
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Hay un piso accesible con proporcionalidad de viajes por kilómetro. El techo es alto: rendimiento decreciente, costo por viaje nuevo o comparación de escenarios de presupuesto.",
+                "cita": "nadie sabe cuántos viajes nuevos traería la ampliación ni si cada kilómetro nuevo atraería tanto público como los que ya existen"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Los distintos presupuestos, supuestos de demanda y criterios de conveniencia permiten comparar soluciones. También permiten discutir los límites del modelo frente a los conteos de R4.",
+                "cita": "el grupo puede proponer uno razonable y justificarlo ante las autoridades"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información necesaria está en el enunciado, puede solicitarse (R2–R4) o estimarse. Los recursos describen el contexto sin entregar el modelo ni la regla de solución.",
+                "cita": "R3 (Descripción de las zonas por donde pasaría la ampliación), disponible a solicitud del grupo"
+              }
+            },
+            "total": 23,
+            "mejoras": [
+              {
+                "criterio": "autenticidad",
+                "mejora_minima": "Reemplazar las cifras de partida y los conteos de R4 por datos reales citados con su fuente, por ejemplo un informe municipal o una noticia sobre una ciclovía chilena ampliada. Así el núcleo de datos sería un componente extraescolar auténtico."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgFKbkutW3dgcCUrTLhAR",
+            "fecha": "2026-10-21T11:42:36+00:00",
+            "intentos": 1,
+            "costo_usd": 0.072886,
+            "avisos": []
+          }
+        },
+        {
+          "n": 3,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La situación plantea una necesidad de decisión real. No entrega ninguna regla ni modelo que relacione kilómetros con viajes, así que el grupo debe construirlo.",
+                "cita": "Las autoridades quieren decidir cuántos kilómetros agregar, pero nadie sabe cuántos viajes nuevos traería la ampliación"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe procedimiento y admite varios modelos defendibles (proporcional, con rendimientos decrecientes, costo por viaje) y distintos criterios de conveniencia.",
+                "cita": "Ustedes asesoran al municipio: ¿cuántos kilómetros conviene ampliar y cuántos viajes diarios más podrían esperar?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige formular supuestos sobre la demanda de los tramos nuevos, proponer un presupuesto, estimar y solicitar información pertinente (R2, R3, R4).",
+                "cita": "Expliquen qué supuestos hacen y cómo podrían comprobar su estimación. Pueden pedir información adicional."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Ampliar ciclovías y estimar su demanda y costo es una situación que existe en la planificación urbana real.",
+                "cita": "Un municipio estudia ampliar una ciclovía de la ciudad."
+              },
+              "autenticidad": {
+                "puntaje": 1,
+                "justificacion": "El tema es extraescolar auténtico, pero los datos y recursos se declaran como «supuesto del escenario» y no tienen fuente real citada. El núcleo del material fue construido para la actividad. Dudo entre 1 y 2 porque el tema sí es auténtico; aplico el menor.",
+                "cita": "Supuesto del escenario: el municipio puede entregar los conteos de viajes de una ciclovía parecida de otra comuna"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "Las características de las zonas y del presupuesto condicionan los supuestos del modelo. El contexto se necesita también para interpretar la conveniencia y validar con la ciclovía comparable.",
+                "cita": "los tramos nuevos llegarían a barrios con menos población cercana a la ciclovía que el tramo actual"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "La pregunta obliga a comprender la situación, simplificar con supuestos, matematizar la relación longitud-viajes-costo, calcular, interpretar la conveniencia y validar. Ninguna fase queda hecha.",
+                "cita": "¿cuántos kilómetros conviene ampliar y cuántos viajes diarios más podrían esperar? Expliquen qué supuestos hacen y cómo podrían comprobar su estimación."
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existen datos independientes de otra ciclovía, medidos antes y después de su ampliación, con los que contrastar el modelo; además se pide explicar cómo comprobar la estimación.",
+                "cita": "Conteos de una ciclovía parecida que ya fue ampliada, para contrastar la estimación"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto y el lenguaje son comprensibles para S1. La matemática requerida (tasas, viajes por km, función lineal, comparación de escenarios) está en las herramientas esperables del sub-tramo.",
+                "cita": "Hoy la ciclovía mide 6,5 km y recibe en promedio 4.200 viajes al día."
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Se puede empezar con una tasa elemental de viajes por km (piso razonable). La tarea admite soluciones más sofisticadas, como rendimientos decrecientes, costo por viaje nuevo o escenarios por presupuesto (techo alto).",
+                "cita": "ni si cada kilómetro nuevo atraería tanto público como los que ya existen"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Los distintos presupuestos y supuestos de demanda producen recomendaciones comparables. Esto abre preguntas sobre los límites de la proporcionalidad y la rentabilidad de cada kilómetro.",
+                "cita": "el grupo puede proponer uno razonable y justificarlo ante las autoridades"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "La información es obtenible a solicitud, pero R4 entrega una conclusión cualitativa en lugar de los conteos. Así anticipa que la relación no es proporcional, una sobreorientación parcial hacia la estructura del modelo, y deja sin datos numéricos concretos para contrastar.",
+                "cita": "el flujo aumentó, pero no en la misma proporción en que aumentó la longitud."
+              }
+            },
+            "total": 22,
+            "mejoras": [
+              {
+                "criterio": "autenticidad",
+                "mejora_minima": "Usar los datos de una ciclovía real (longitud, conteos de viajes y costo por km), tomados de una noticia o de un registro municipal citado, en lugar de cifras de escenario."
+              },
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Reemplazar el contenido de R4 por la tabla de conteos y longitudes antes y después de la ampliación de la otra ciclovía, sin afirmar que el flujo no creció proporcionalmente."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgFKe1SK5PKH719efBAyH",
+            "fecha": "2026-10-21T11:43:08+00:00",
+            "intentos": 1,
+            "costo_usd": 0.074706,
+            "avisos": []
+          }
+        }
+      ],
+      "totales": [
+        22,
+        23,
+        22
+      ],
+      "rango_total": 1,
+      "rango_inestable": 4,
+      "evaluacion_inestable": false,
+      "mediana": {
+        "regla": "mediana por criterio (n par: mediana inferior)",
+        "total": 22,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 1,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 1
+        },
+        "corrida_fuente": {
+          "genuino": 1,
+          "abierta": 1,
+          "decisiones": 1,
+          "realismo": 1,
+          "autenticidad": 1,
+          "contexto": 1,
+          "ciclo": 1,
+          "validacion": 1,
+          "nivel": 1,
+          "autodiferenciacion": 1,
+          "fecundidad": 1,
+          "recursos": 1
+        }
+      }
+    }
+  ]
+}

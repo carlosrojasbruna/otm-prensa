@@ -1,0 +1,161 @@
+{
+  "ciclo_id": "ciclo_20261021T113945836655Z",
+  "inicio": "2026-10-21T11:39:45Z",
+  "fin": "2026-10-21T11:44:29Z",
+  "semana": "2026-W43",
+  "parametros": {
+    "tope_semanal_usd": 35.0,
+    "fraccion_detencion": 0.9,
+    "presupuesto_ciclo_usd": 2.0,
+    "limite_usd": 29.018433,
+    "gasto_semana_previo_usd": 27.018433,
+    "corridas_evaluador": 3,
+    "rango_inestable": 4,
+    "corridas_simulador": 6,
+    "max_tareas": 1,
+    "nivel": null,
+    "origen": "archivo"
+  },
+  "detenido_por_tope": false,
+  "eventos": [
+    {
+      "fecha": "2026-10-21T11:39:46Z",
+      "tipo": "invariante3_sin_texto",
+      "clave": "2026-10-20-prueba-actions-ciclovia",
+      "error": "no se pudo leer el enlace original (HTTPError)"
+    },
+    {
+      "fecha": "2026-10-21T11:41:33Z",
+      "tipo": "agente",
+      "agente": "disenador",
+      "tareas": [],
+      "llamadas": 1,
+      "usd": 0.18306
+    },
+    {
+      "fecha": "2026-10-21T11:42:06Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-ampliar-ciclovia-cuantos-km"
+      ],
+      "llamadas": 1,
+      "usd": 0.12872
+    },
+    {
+      "fecha": "2026-10-21T11:42:36Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-ampliar-ciclovia-cuantos-km"
+      ],
+      "llamadas": 1,
+      "usd": 0.072886
+    },
+    {
+      "fecha": "2026-10-21T11:43:08Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-ampliar-ciclovia-cuantos-km"
+      ],
+      "llamadas": 1,
+      "usd": 0.074706
+    },
+    {
+      "fecha": "2026-10-21T11:43:09Z",
+      "tipo": "invariante3_sin_texto",
+      "clave": "2026-10-ampliar-ciclovia-cuantos-km",
+      "error": "no se pudo leer el enlace original (HTTPError)"
+    },
+    {
+      "fecha": "2026-10-21T11:43:09Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-ampliar-ciclovia-cuantos-km",
+      "de": "borrador",
+      "a": "evaluada"
+    },
+    {
+      "fecha": "2026-10-21T11:43:35Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-ciclovia-vale-la-pena"
+      ],
+      "llamadas": 1,
+      "usd": 0.064262
+    },
+    {
+      "fecha": "2026-10-21T11:44:03Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-ciclovia-vale-la-pena"
+      ],
+      "llamadas": 1,
+      "usd": 0.067182
+    },
+    {
+      "fecha": "2026-10-21T11:44:29Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-ciclovia-vale-la-pena"
+      ],
+      "llamadas": 1,
+      "usd": 0.060662
+    },
+    {
+      "fecha": "2026-10-21T11:44:29Z",
+      "tipo": "invariante3_sin_texto",
+      "clave": "2026-10-ciclovia-vale-la-pena",
+      "error": "no se pudo leer el enlace original (HTTPError)"
+    },
+    {
+      "fecha": "2026-10-21T11:44:29Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-ciclovia-vale-la-pena",
+      "de": "borrador",
+      "a": "evaluada"
+    },
+    {
+      "fecha": "2026-10-21T11:44:29Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-ampliar-ciclovia-cuantos-km",
+      "de": "evaluada",
+      "a": "archivada",
+      "motivo": "candidato no elegido: RUB01 22/24 frente a 23/24 de 2026-10-ciclovia-vale-la-pena (2 candidatos por noticia; se sigue con el mejor)"
+    }
+  ],
+  "expedientes": {
+    "2026-10-ampliar-ciclovia-cuantos-km": "archivada",
+    "2026-10-ciclovia-vale-la-pena": "evaluada"
+  },
+  "noticias": [
+    {
+      "noticia_id": "2026-10-20-prueba-actions-ciclovia",
+      "nivel": "S",
+      "resultado": "evaluada",
+      "candidatos": [
+        "2026-10-ampliar-ciclovia-cuantos-km",
+        "2026-10-ciclovia-vale-la-pena"
+      ],
+      "elegido": "2026-10-ciclovia-vale-la-pena"
+    }
+  ],
+  "pendientes_humanos": [
+    {
+      "tarea_id": "2026-10-ciclovia-vale-la-pena",
+      "pendiente": "revision_humana_1",
+      "estado": "evaluada"
+    }
+  ],
+  "errores": [],
+  "orden": "tramo_a",
+  "gasto": {
+    "ciclo_usd": 0.651478,
+    "semana_usd": 27.669911,
+    "limite_usd": 29.018433,
+    "llamadas": 7
+  }
+}

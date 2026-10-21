@@ -1,0 +1,423 @@
+{
+  "tarea_id": "2026-10-ciclovia-vale-la-pena",
+  "estado": "evaluada",
+  "iteraciones": 1,
+  "artefactos": {
+    "tarea": {
+      "id": "2026-10-ciclovia-vale-la-pena",
+      "titulo": "¿Cuántos ciclistas nuevos justifican un kilómetro más?",
+      "estado": "evaluada",
+      "version": 1,
+      "fecha": "2026-10-21",
+      "noticia": {
+        "noticia_id": "2026-10-20-prueba-actions-ciclovia",
+        "medio": "Emol / El Mercurio",
+        "titulo": "Ejemplo sintético: municipio evalúa ampliar una ciclovía (noticia de prueba del pipeline en Actions)",
+        "fecha": "2026-10-20",
+        "url": "https://www.example.org/sintetico/2026-10-20-prueba-actions-ciclovia",
+        "resumen_propio": "Ejemplo sintético para pruebas. Un municipio debe decidir si amplía una ciclovía que hoy recibe miles de viajes diarios. Se informan el flujo medio, la longitud actual y el costo estimado por kilómetro, pero no cuántos viajes nuevos se generarían ni cómo cambia el uso con la distancia.",
+        "cifras_usadas": [
+          {
+            "valor": 4200,
+            "unidad": "viajes/día",
+            "que_es": "flujo medio actual de la ciclovía (sintético)",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 2"
+            }
+          },
+          {
+            "valor": 6.5,
+            "unidad": "km",
+            "que_es": "longitud actual (sintético)",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 2"
+            }
+          },
+          {
+            "valor": 310,
+            "unidad": "millones de pesos/km",
+            "que_es": "costo estimado de ampliación (sintético)",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 4"
+            }
+          }
+        ]
+      },
+      "nivel_principal": "S",
+      "variantes": {
+        "abajo": "S",
+        "arriba": "U"
+      },
+      "area": "transporte_ciudad",
+      "contenidos_matematicos": [
+        "razones y tasas",
+        "modelación con parámetros",
+        "análisis de sensibilidad",
+        "modelos exponenciales (valor presente)"
+      ],
+      "tiempo_estimado": "2 sesiones de 90 min",
+      "estudiante": {
+        "enunciado_es": "La alcaldesa quiere ampliar una ciclovía, pero necesita un criterio claro para justificar el gasto ante los vecinos. La ciclovía actual mide 6,5 km y recibe en promedio 4.200 viajes al día. Cada kilómetro adicional costaría 310 millones de pesos. Ella pregunta: ¿cuál es el mínimo de viajes diarios nuevos que debería atraer un kilómetro adicional para que el gasto valga la pena, y es realista esperar esa cantidad? Definan ustedes qué significa que valga la pena y con qué lo compararían. Expliquen qué supuestos hacen y cómo pondrían a prueba su respuesta. Pueden pedir información adicional.",
+        "foto_descripcion": "Ícono de una balanza con una bicicleta en un platillo y monedas en el otro.",
+        "recursos_a_solicitud": [
+          {
+            "id": "R2",
+            "que_es": "Tipos de beneficio que la alcaldesa podría considerar",
+            "contenido": "Supuesto del escenario: la alcaldesa acepta considerar beneficios como menos viajes en auto o mejoras en la salud de quienes pedalean; el grupo decide cuáles incluir y cómo darles un valor.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P2-RM",
+            "fuente": "supuesto del escenario"
+          },
+          {
+            "id": "R3",
+            "que_es": "Horizonte de uso de la ciclovía",
+            "contenido": "Supuesto del escenario: el municipio espera que un tramo bien mantenido siga en uso durante varias décadas; el grupo puede proponer el período de evaluación.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P2-RM",
+            "fuente": "supuesto del escenario"
+          },
+          {
+            "id": "R4",
+            "que_es": "Dato observado en un tramo recién abierto para contrastar el umbral",
+            "contenido": "Supuesto del escenario: el municipio puede entregar el conteo de viajes que atrajo el último tramo agregado a una ciclovía de la comuna, medido después de abrirlo, para compararlo con el mínimo que ustedes calcularon.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P6-VAL",
+            "fuente": "supuesto del escenario"
+          }
+        ]
+      },
+      "variantes_detalle": {
+        "abajo": {
+          "tramo": "S",
+          "cambios": "Se pide un único criterio de comparación: el costo por viaje diario del tramo actual como referencia (nivel S1); se acuerda un solo supuesto de beneficio y no se exige horizonte temporal ni sensibilidad."
+        },
+        "arriba": {
+          "tramo": "U",
+          "cambios": "Se pide modelar el valor presente de los beneficios con una tasa de descuento, tratar como inciertos el valor por viaje y los viajes por kilómetro (rangos o simulación) y discutir los límites del criterio de umbral, incluyendo la optimización de la longitud."
+        }
+      },
+      "recursos_de_entrada": [
+        {
+          "id": "R1",
+          "que_es": "Datos de partida de la ciclovía y del costo de ampliar",
+          "contenido": "La ciclovía actual mide 6,5 km y recibe en promedio 4.200 viajes al día. Cada kilómetro adicional costaría 310 millones de pesos.",
+          "disponibilidad": "de_entrada",
+          "fase": "P1-MRS",
+          "fuente": "noticia, párrafo 2 y párrafo 4"
+        }
+      ],
+      "mapa_ciclo": {
+        "P1-MRS": {
+          "decision": "Entender que se busca un umbral (viajes mínimos por kilómetro) y no una predicción, y qué datos entrega y no entrega la situación.",
+          "evidencia": "El grupo reformula la pregunta como 'mínimo de viajes diarios nuevos por kilómetro' y lista qué falta: valor del viaje, horizonte.",
+          "bloqueo_probable": "B12"
+        },
+        "P2-RM": {
+          "decision": "Definir qué significa que valga la pena: equiparar el costo por viaje del tramo actual o comparar con beneficios valorados durante un horizonte.",
+          "evidencia": "Criterio escrito y supuestos sobre beneficios y horizonte (R2, R3).",
+          "bloqueo_probable": "B23"
+        },
+        "P3-MM": {
+          "decision": "Plantear una ecuación de equilibrio entre costo y beneficio: costo por kilómetro = viajes mínimos × valor × días × años (con o sin descuento).",
+          "evidencia": "Ecuación o fórmula con los parámetros nombrados.",
+          "bloqueo_probable": "B34"
+        },
+        "P4-WM": {
+          "decision": "Despejar los viajes mínimos y calcular el umbral para distintos valores de los parámetros.",
+          "evidencia": "Tabla de umbrales con comas decimales correctas y variaciones de los supuestos.",
+          "bloqueo_probable": "B45"
+        },
+        "P5-INT": {
+          "decision": "Traducir el umbral a una frase de decisión y compararlo con el flujo por kilómetro actual para juzgar si es realista.",
+          "evidencia": "Texto que dice si el umbral es alcanzable y bajo qué supuestos.",
+          "bloqueo_probable": "B56"
+        },
+        "P6-VAL": {
+          "decision": "Contrastar el umbral con el conteo del último tramo abierto (R4) y revisar los supuestos más débiles.",
+          "evidencia": "Comparación escrita entre el umbral y el dato observado, con revisión de parámetros.",
+          "bloqueo_probable": "B67"
+        },
+        "P7-EXP": {
+          "decision": "Presentar a la alcaldesa un criterio claro, su sensibilidad y sus límites.",
+          "evidencia": "Exposición breve con el umbral, un gráfico o tabla de sensibilidad y las condiciones de validez.",
+          "bloqueo_probable": null
+        }
+      },
+      "task_space": {
+        "required_assumptions": [
+          "Valor monetario o equivalente de un viaje diario en bicicleta (beneficio social por viaje).",
+          "Horizonte de evaluación en años y días de uso por año.",
+          "Si se usa o no una tasa de descuento.",
+          "El costo por kilómetro nuevo se mantiene constante y no hay costos de mantención o se acuerda cómo tratarlos.",
+          "Los viajes nuevos son atraídos por el kilómetro adicional y no solo desviados de otras ciclovías."
+        ],
+        "reference_solution": {
+          "steps": "1) Costo de un kilómetro: 310 millones de pesos. 2) Referencia: costo del tramo actual por viaje diario = (6,5 · 310) / 4.200 ≈ 0,48 millones; equivaldría a que un kilómetro nuevo atraiga 4.200 / 6,5 ≈ 646 viajes diarios. 3) Criterio de beneficio: N viajes diarios nuevos × v (valor por viaje) × 365 × T años ≥ 310 millones; N ≥ 310.000.000 / (v · 365 · T). 4) Con descuento: reemplazar 365·T por 365 · A, con A = (1 − (1+r)^(−T)) / r. 5) Variar v, T y r y comparar con 646 viajes por kilómetro como referencia de lo que atrae hoy cada kilómetro.",
+          "result": "Con v = 1.000 pesos por viaje y T = 20 años sin descuento, N ≥ unos 43 viajes diarios nuevos por kilómetro; con tasa de descuento del 5 %, unos 68. Con el criterio del tramo actual, el umbral sube a unos 646 viajes diarios por kilómetro.",
+          "acceptable_range": "Según el criterio y los supuestos, el umbral puede ir desde unas pocas decenas hasta cerca de 650 viajes diarios nuevos por kilómetro. Es aceptable cualquier valor bien fundamentado en supuestos explícitos que incluya su comparación con el flujo actual por kilómetro."
+        },
+        "routes": [
+          {
+            "id": "R1",
+            "nombre": "Equivalencia con el costo por viaje del tramo actual",
+            "nivel": "S1",
+            "modelo": "Costo por viaje diario actual = 6,5 · 310 / 4.200; el kilómetro nuevo debe igualar ese costo, es decir, atraer 4.200 / 6,5 viajes diarios.",
+            "resultado": "Umbral cercano a 646 viajes diarios nuevos por kilómetro; con tramos nuevos menos atractivos, el gasto parece difícil de justificar."
+          },
+          {
+            "id": "R2",
+            "nombre": "Beneficio-costo con horizonte y valor por viaje",
+            "nivel": "S2",
+            "modelo": "N = 310.000.000 / (v · 365 · T), explorando varios valores de v y T.",
+            "resultado": "Con v = 1.000 pesos y T = 20 años: N ≈ 43 viajes diarios; con v = 500 pesos y T = 10 años: N ≈ 170."
+          },
+          {
+            "id": "R3",
+            "nombre": "Valor presente con tasa de descuento",
+            "nivel": "U",
+            "modelo": "N = 310.000.000 / (v · 365 · A), con A = (1 − (1+r)^(−T)) / r; sensibilidad ante r, v y T.",
+            "resultado": "Con r = 5 %, T = 20 años y v = 1.000 pesos: A ≈ 12,46 y N ≈ 68 viajes diarios por kilómetro."
+          }
+        ],
+        "modelo_inadecuado": {
+          "id": "RX: dividir los 310 millones de pesos entre los 4.200 viajes actuales y concluir que cada viaje nuevo cuesta unos 0,074 millones, como si el kilómetro adicional fuera a atraer todos los viajes de la ciclovía.",
+          "por_que_falla": "Mezcla el flujo total de toda la ciclovía con el efecto de un solo kilómetro adicional: el costo marginal de un kilómetro debe compararse con los viajes que ese kilómetro atrae, no con los que ya existen, y por eso subestima mucho el umbral."
+        },
+        "validation_evidence": "Conteo de viajes del último tramo abierto, medido después de abrirlo (R4), que no se usa para construir el umbral. El grupo lo compara con el mínimo calculado y con el flujo por kilómetro actual, y revisa el valor por viaje y el horizonte.",
+        "agent_visibility": {
+          "students": [
+            "enunciado_es",
+            "foto_descripcion",
+            "recursos_a_solicitud"
+          ],
+          "coder": [
+            "enunciado_es",
+            "task_space"
+          ],
+          "guide": [
+            "all"
+          ]
+        }
+      },
+      "rubrica_rub01": {
+        "total": 23,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 1,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 2
+        }
+      },
+      "rubrica_rub02": {
+        "P": null,
+        "S": null,
+        "U": null
+      },
+      "modelo_y_prompt": {
+        "diseñador": "claude-sonnet-5-5",
+        "version_prompt": "1.1",
+        "version_rubrica": "4.0"
+      },
+      "sub_tramo": "S2"
+    },
+    "noticia": {
+      "id": "2026-10-20-prueba-actions-ciclovia",
+      "medio_id": "emol",
+      "medio": "Emol / El Mercurio",
+      "idioma": "es",
+      "titulo": "Ejemplo sintético: municipio evalúa ampliar una ciclovía (noticia de prueba del pipeline en Actions)",
+      "fecha": "2026-10-20",
+      "url": "https://www.example.org/sintetico/2026-10-20-prueba-actions-ciclovia",
+      "area": "transporte_ciudad",
+      "resumen_propio": "Ejemplo sintético para pruebas. Un municipio debe decidir si amplía una ciclovía que hoy recibe miles de viajes diarios. Se informan el flujo medio, la longitud actual y el costo estimado por kilómetro, pero no cuántos viajes nuevos se generarían ni cómo cambia el uso con la distancia.",
+      "cifras": [
+        {
+          "valor": 4200,
+          "unidad": "viajes/día",
+          "que_es": "flujo medio actual de la ciclovía (sintético)",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 2"
+          }
+        },
+        {
+          "valor": 6.5,
+          "unidad": "km",
+          "que_es": "longitud actual (sintético)",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 2"
+          }
+        },
+        {
+          "valor": 310,
+          "unidad": "millones de pesos/km",
+          "que_es": "costo estimado de ampliación (sintético)",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 4"
+          }
+        }
+      ],
+      "recuperada_en": "2026-10-20T12:00:00Z"
+    },
+    "evaluacion": {
+      "tarea_id": "2026-10-ciclovia-vale-la-pena",
+      "fecha": "2026-10-21T11:44:29Z",
+      "rub01": {
+        "version_rubrica": "4.0",
+        "criterios": {
+          "genuino": {
+            "puntaje": 2,
+            "justificacion": "La situación plantea una necesidad real de decisión (justificar un gasto ante los vecinos). No entrega ninguna regla ni fórmula de costo-beneficio para aplicar.",
+            "cita": "¿cuál es el mínimo de viajes diarios nuevos que debería atraer un kilómetro adicional para que el gasto valga la pena, y es realista esperar …"
+          },
+          "abierta": {
+            "puntaje": 2,
+            "justificacion": "La pregunta deja al grupo la definición del criterio y la comparación, de modo que admite varios modelos defendibles. No prescribe el procedimiento.",
+            "cita": "Definan ustedes qué significa que valga la pena y con qué lo compararían."
+          },
+          "decisiones": {
+            "puntaje": 2,
+            "justificacion": "Resolver exige elegir qué beneficios contar y cómo valorarlos, fijar un horizonte de evaluación, formular supuestos y solicitar información. Son decisiones de modelación sustantivas.",
+            "cita": "Expliquen qué supuestos hacen y cómo pondrían a prueba su respuesta. Pueden pedir información adicional."
+          },
+          "realismo": {
+            "puntaje": 2,
+            "justificacion": "Evaluar si una ampliación de infraestructura vial se justifica es una situación que existe en la gestión municipal real.",
+            "cita": "La alcaldesa quiere ampliar una ciclovía, pero necesita un criterio claro para justificar el gasto ante los vecinos."
+          },
+          "autenticidad": {
+            "puntaje": 1,
+            "justificacion": "El tema y la práctica de evaluar una inversión pública son auténticos. Sin embargo, la tarea no declara la procedencia de los datos (6,5 km, 4.200 viajes, 310 millones) y los recursos se presentan como «supuesto del escenario», por lo que el núcleo parece construido para la actividad. Dudé entre 1 y 2 y asigné el menor.",
+            "cita": "Supuesto del escenario: el municipio espera que un tramo bien mantenido siga en uso durante varias décadas"
+          },
+          "contexto": {
+            "puntaje": 2,
+            "justificacion": "El contexto determina qué beneficios valorar y qué significa «valer la pena». También es necesario para juzgar si el umbral es realista.",
+            "cita": "¿cuál es el mínimo de viajes diarios nuevos que debería atraer un kilómetro adicional para que el gasto valga la pena, y es realista esperar …"
+          },
+          "ciclo": {
+            "puntaje": 2,
+            "justificacion": "Responder obliga a comprender la situación, simplificar eligiendo beneficios y horizonte, matematizar un umbral, calcularlo y volver al contexto para juzgar si es realista. Ninguna fase viene hecha.",
+            "cita": "Definan ustedes qué significa que valga la pena y con qué lo compararían. Expliquen qué supuestos hacen y cómo pondrían a prueba su respuesta."
+          },
+          "validacion": {
+            "puntaje": 2,
+            "justificacion": "R4 aporta un dato observado e independiente del modelo, con el cual contrastar el umbral calculado.",
+            "cita": "el municipio puede entregar el conteo de viajes que atrajo el último tramo agregado a una ciclovía de la comuna, medido después de abrirlo"
+          },
+          "nivel": {
+            "puntaje": 2,
+            "justificacion": "El contexto y el lenguaje son comprensibles para S2. La matemática requerida (tasas, costo por viaje, horizonte temporal, eventualmente escenarios) está al alcance de las herramientas esperables del nivel.",
+            "cita": "La ciclovía actual mide 6,5 km y recibe en promedio 4.200 viajes al día. Cada kilómetro adicional costaría 310 millones de pesos."
+          },
+          "autodiferenciacion": {
+            "puntaje": 2,
+            "justificacion": "Se puede entrar con un costo por viaje simple sin depender de una idea clave única. La tarea también admite modelos más refinados, con varios beneficios, horizonte de décadas y análisis de sensibilidad.",
+            "cita": "el grupo decide cuáles incluir y cómo darles un valor"
+          },
+          "fecundidad": {
+            "puntaje": 2,
+            "justificacion": "Las distintas definiciones de «valer la pena» y los distintos supuestos producen umbrales comparables. Eso abre preguntas sobre qué beneficios contar y sobre los límites del modelo.",
+            "cita": "Definan ustedes qué significa que valga la pena y con qué lo compararían."
+          },
+          "recursos": {
+            "puntaje": 2,
+            "justificacion": "Los datos de partida se entregan y los demás se obtienen a solicitud o por estimación cotidiana. R2 sugiere tipos de beneficio pero no revela el modelo ni cómo valorarlos.",
+            "cita": "la alcaldesa acepta considerar beneficios como menos viajes en auto o mejoras en la salud de quienes pedalean; el grupo decide cuáles incluir"
+          }
+        },
+        "total": 23,
+        "mejoras": [
+          {
+            "criterio": "autenticidad",
+            "mejora_minima": "Declarar que la longitud, los viajes diarios y el costo por kilómetro provienen de una fuente real citada (por ejemplo, una noticia sobre una ciclovía o un conteo municipal publicado), usándolos como datos del enunciado."
+          }
+        ]
+      },
+      "reproducibilidad": {
+        "agentes": {
+          "disenador": {
+            "modelo": "claude-sonnet-5-5",
+            "version_modelo": "claude-sonnet-5-5",
+            "costo_usd": 0.18306,
+            "version_prompt": "1.1"
+          },
+          "evaluador": {
+            "modelo": "claude-opus-5-5",
+            "version_modelo": "claude-opus-5-5",
+            "costo_usd": 0.192106,
+            "version_prompt": "1.3"
+          }
+        },
+        "version_prompt": {
+          "disenador": "1.1",
+          "evaluador": "1.3"
+        },
+        "version_rubrica": "4.0",
+        "version_MAR03": "1.0",
+        "version_MED01": "1.4",
+        "diseno_simulador": null,
+        "fecha": "2026-10-21T11:44:29Z",
+        "costo_usd": 0.375166
+      }
+    }
+  },
+  "historial": [
+    {
+      "fecha": "2026-10-21T11:41:33+00:00",
+      "de": null,
+      "a": "borrador"
+    },
+    {
+      "fecha": "2026-10-21T11:44:29+00:00",
+      "de": "borrador",
+      "a": "evaluada",
+      "iteracion": 1,
+      "rub01_total": 23
+    }
+  ],
+  "marcas": {
+    "ciclo_id": "ciclo_20261021T113945836655Z",
+    "noticia_id": "2026-10-20-prueba-actions-ciclovia",
+    "nivel_objetivo": "S",
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "versiones_modelo": [
+          "claude-sonnet-5-5"
+        ],
+        "costo_usd": 0.18306,
+        "llamadas": 1
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "versiones_modelo": [
+          "claude-opus-5-5"
+        ],
+        "costo_usd": 0.192106,
+        "llamadas": 3
+      }
+    },
+    "costos_compartidos": [
+      "disenador"
+    ],
+    "version_MAR03": "1.0",
+    "evaluacion_inestable": false,
+    "evaluacion_rango_total": 0,
+    "evaluacion_corridas": "/home/runner/work/otm-prensa/otm-prensa/pipeline/state/trabajo/2026-10-ciclovia-vale-la-pena/evaluacion_corridas.json",
+    "pendiente": "revision_humana_1"
+  }
+}

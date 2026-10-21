@@ -1,0 +1,106 @@
+{
+  "tarea_id": "2026-10-ampliar-ciclovia-cuantos-km",
+  "fecha": "2026-10-21T11:43:08Z",
+  "rub01": {
+    "version_rubrica": "4.0",
+    "criterios": {
+      "genuino": {
+        "puntaje": 2,
+        "justificacion": "La tarea plantea una necesidad real de decisión y no entrega ninguna regla ni modelo. La mención de si cada kilómetro atraería tanto público abre una pregunta, pero no impone una estructura.",
+        "cita": "Las autoridades quieren decidir cuántos kilómetros agregar, pero nadie sabe cuántos viajes nuevos traería la ampliación"
+      },
+      "abierta": {
+        "puntaje": 2,
+        "justificacion": "La pregunta admite varios modelos defendibles: proporcional, con rendimiento decreciente o con costo por viaje. Tampoco hay instrucciones que encaucen hacia una ruta única.",
+        "cita": "¿cuántos kilómetros conviene ampliar y cuántos viajes diarios más podrían esperar?"
+      },
+      "decisiones": {
+        "puntaje": 2,
+        "justificacion": "Resolver la tarea exige formular supuestos sobre la demanda por kilómetro, proponer un presupuesto y decidir qué información solicitar. Esto corresponde al descriptor 2.",
+        "cita": "Expliquen qué supuestos hacen y cómo podrían comprobar su estimación. Pueden pedir información adicional."
+      },
+      "realismo": {
+        "puntaje": 2,
+        "justificacion": "La decisión municipal de ampliar una ciclovía, con costos por kilómetro y conteos de viajes, es una situación claramente plausible fuera de la escuela.",
+        "cita": "Un municipio estudia ampliar una ciclovía de la ciudad."
+      },
+      "autenticidad": {
+        "puntaje": 1,
+        "justificacion": "El tema y la actividad de asesoría en planificación urbana son extraescolares. Sin embargo, no se declara ninguna fuente, y los datos y recursos son supuestos construidos para la actividad, de modo que el núcleo del material es fabricado.",
+        "cita": "Supuesto del escenario: el municipio aún no fija un presupuesto máximo para la ampliación"
+      },
+      "contexto": {
+        "puntaje": 2,
+        "justificacion": "El contexto condiciona el supuesto central sobre la atracción de viajes por kilómetro y el presupuesto. Además, es necesario para interpretar la recomendación y validarla.",
+        "cita": "los tramos nuevos llegarían a barrios con menos población cercana a la ciclovía que el tramo actual"
+      },
+      "ciclo": {
+        "puntaje": 2,
+        "justificacion": "Responder obliga a comprender la situación, simplificar mediante supuestos, construir un modelo de viajes y costo, calcular, interpretar la recomendación y comprobarla. El enunciado no deja ninguna fase hecha.",
+        "cita": "Ustedes asesoran al municipio: ¿cuántos kilómetros conviene ampliar y cuántos viajes diarios más podrían esperar?"
+      },
+      "validacion": {
+        "puntaje": 2,
+        "justificacion": "Hay evidencia independiente, los conteos antes y después de otra ciclovía, no usada para construir el modelo. Permite contrastar la estimación.",
+        "cita": "Conteos de una ciclovía parecida que ya fue ampliada, para contrastar la estimación"
+      },
+      "nivel": {
+        "puntaje": 2,
+        "justificacion": "El contexto es comprensible para estudiantes de 13 a 15 años. La matemática requerida (tasas de viajes por kilómetro, modelos lineales por tramos, costo por viaje) está dentro de las herramientas de S1.",
+        "cita": "Hoy la ciclovía mide 6,5 km y recibe en promedio 4.200 viajes al día."
+      },
+      "autodiferenciacion": {
+        "puntaje": 2,
+        "justificacion": "Se puede entrar con una proporción simple de viajes por kilómetro. La tarea admite soluciones más sofisticadas, como rendimiento decreciente por zona, costo por viaje nuevo u optimización bajo un presupuesto propuesto.",
+        "cita": "ni si cada kilómetro nuevo atraería tanto público como los que ya existen"
+      },
+      "fecundidad": {
+        "puntaje": 2,
+        "justificacion": "Distintos supuestos llevan a recomendaciones diferentes que pueden compararse. Esto abre preguntas sobre los límites del modelo proporcional y sobre el criterio de qué conviene al municipio.",
+        "cita": "Expliquen qué supuestos hacen y cómo podrían comprobar su estimación."
+      },
+      "recursos": {
+        "puntaje": 1,
+        "justificacion": "La información está disponible a solicitud, pero hay sobreorientación parcial: las descripciones de R3 y R4 adelantan que los tramos nuevos rinden menos, casi entregando el supuesto estructural. Además, R4 no trae los conteos numéricos para contrastar. Dudo entre 1 y 2 y asigno el menor.",
+        "cita": "el flujo aumentó, pero no en la misma proporción en que aumentó la longitud."
+      }
+    },
+    "total": 22,
+    "mejoras": [
+      {
+        "criterio": "autenticidad",
+        "mejora_minima": "Reemplazar los datos supuestos por cifras de una noticia o un registro público citado (longitud, viajes diarios y costo por km de una ciclovía real), y usar como R4 conteos reales publicados de una ciclovía ampliada."
+      },
+      {
+        "criterio": "recursos",
+        "mejora_minima": "Hacer que R4 entregue solo la tabla de conteos antes y después, con las longitudes, sin la conclusión «no en la misma proporción». En R3, describir las zonas con datos (población o actividad cercana) en vez de anticipar que atraerán menos viajes."
+      }
+    ]
+  },
+  "reproducibilidad": {
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.18306,
+        "version_prompt": "1.1"
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.276312,
+        "version_prompt": "1.3"
+      }
+    },
+    "version_prompt": {
+      "disenador": "1.1",
+      "evaluador": "1.3"
+    },
+    "version_rubrica": "4.0",
+    "version_MAR03": "1.0",
+    "version_MED01": "1.4",
+    "diseno_simulador": null,
+    "fecha": "2026-10-21T11:43:09Z",
+    "costo_usd": 0.459372
+  }
+}
