@@ -34,8 +34,15 @@ before(async () => {
     grant usage on schema public to anon, authenticated;
     insert into auth.users values ('${U.ana}', 'ana@x.cl'), ('${U.beto}', 'beto@x.cl'), ('${U.mod}', 'mod@x.cl');
   `);
-  for (const f of fs.readdirSync(MIGRACIONES).filter((n) => n.endsWith('.sql')).sort()) {
-    await db.exec(fs.readFileSync(path.join(MIGRACIONES, f), 'utf8'));
+  if (process.env.OTM_DB_MODO === 'aplicar_todo') {
+    // Mismas comprobaciones, pero con el archivo único aplicado DOS veces (idempotencia).
+    const todo = fs.readFileSync(path.resolve(MIGRACIONES, '..', 'aplicar_todo.sql'), 'utf8');
+    await db.exec(todo);
+    await db.exec(todo);
+  } else {
+    for (const f of fs.readdirSync(MIGRACIONES).filter((n) => n.endsWith('.sql')).sort()) {
+      await db.exec(fs.readFileSync(path.join(MIGRACIONES, f), 'utf8'));
+    }
   }
   await db.exec(`insert into public.moderadores (user_id) values ('${U.mod}');`);
 });
