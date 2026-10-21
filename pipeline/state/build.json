@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "fase_actual": 4,
+  "fase_actual": 5,
   "fases": {
     "1": {
       "nombre": "Contratos y calibración",
@@ -138,7 +138,7 @@
     },
     "4": {
       "nombre": "Sitio docente",
-      "estado": "en_curso",
+      "estado": "aprobada",
       "tareas": {
         "site-builder": {
           "estado": "completada",
@@ -147,11 +147,15 @@
           "test": "parte local: build 11 páginas; 35/35 tests del sitio (e2e cuenta→valorar→comentar→moderar contra backend local; RLS en PGlite); Lighthouse local home 100/100/100/100 móvil y escritorio, tarea 99/100/100/100 móvil y 100×4 escritorio; pytest 374 passed. Staging NO verificado: requiere decisión humana (decisiones.md)"
         }
       },
-      "cierre_pendiente": "La parte «en staging» del test de aceptación (flujo real y Lighthouse sobre la URL) requiere crear Supabase y hosting: decisión humana. La fase no se cierra hasta entonces o hasta que Carlos la traslade a devops/CP3."
+      "cierre": {
+        "por": "Carlos (orden en sesión)",
+        "fecha": "2026-10-20",
+        "nota": "sitio verificado en local (35/35, Lighthouse 99-100); staging se verifica en la fase 5 (devops) y se reporta en CP3"
+      }
     },
     "5": {
       "nombre": "Producción",
-      "estado": "bloqueada",
+      "estado": "pendiente",
       "tareas": {
         "devops": "pendiente",
         "docs-writer": "pendiente",

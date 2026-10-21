@@ -1,12 +1,12 @@
 {
   "tarea_id": "2026-10-anticipo-renta-vitalicia-v7",
-  "estado": "verificada",
+  "estado": "publicada",
   "iteraciones": 1,
   "artefactos": {
     "tarea": {
       "id": "2026-10-anticipo-renta-vitalicia-v7",
       "titulo": "Anulado el método: ¿cómo descontar el adelanto de una renta vitalicia?",
-      "estado": "verificada",
+      "estado": "publicada",
       "version": 7,
       "fecha": "2026-10-20",
       "noticia": {
@@ -1243,7 +1243,10 @@
           "n_grupos": 6,
           "diseno": "diseno_otm"
         },
-        "revision_humana_2": null,
+        "revision_humana_2": {
+          "revisor": "Carlos Rojas Bruna",
+          "fecha": "2026-10-20"
+        },
         "commit": null
       },
       "modelo_y_prompt": {
@@ -1286,6 +1289,13 @@
       "fecha": "2026-10-20T23:20:55+00:00",
       "de": "con_guia",
       "a": "verificada"
+    },
+    {
+      "fecha": "2026-10-21T00:34:24+00:00",
+      "de": "verificada",
+      "a": "publicada",
+      "revisor": "Carlos Rojas Bruna",
+      "motivo": "PR #2 mergeado (659e06a); archivos en tareas/2026-10/anticipo-renta-vitalicia/ (commit 30fb162ce761)"
     }
   ],
   "marcas": {
@@ -1407,12 +1417,17 @@
       "ruta": "tareas/2026-10/anticipo-renta-vitalicia/",
       "rama": "tareas/semana-2026-W43"
     },
-    "pendiente": "publicacion",
     "revision_humana_2": {
       "revisor": "Carlos Rojas Bruna",
       "fecha": "2026-10-20T23:40:00Z",
       "resultado": "aprobada",
       "nota": "aprobada por Carlos en la sesión; publicar en PR #2"
+    },
+    "publicacion": {
+      "pr": "https://github.com/carlosrojasbruna/otm-prensa/pull/2",
+      "merge": "659e06a",
+      "ruta": "tareas/2026-10/anticipo-renta-vitalicia/",
+      "commit": "30fb162ce761"
     }
   }
 }
