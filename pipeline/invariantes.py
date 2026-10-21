@@ -235,13 +235,52 @@ def textos_de(artefacto: Any) -> Iterator[str]:
             yield from textos_de(v)
 
 
+def _es_cita(d: Mapping[str, Any]) -> bool:
+    """Cita de una noticia: el artefacto `noticia`, `tarea.noticia` o la `noticia` de una entrada del catálogo."""
+    return all(k in d for k in ("medio", "titulo", "url"))
+
+
+def textos_sin_titulares(artefacto: Any) -> tuple[list[str], list[str]]:
+    """(cadenas del artefacto sin el `titulo` de las citas de noticia, titulares encontrados)."""
+    textos: list[str] = []
+    titulares: list[str] = []
+
+    def rec(x: Any) -> None:
+        if isinstance(x, str):
+            textos.append(x)
+        elif isinstance(x, Mapping):
+            cita = _es_cita(x)
+            for k, v in x.items():
+                if cita and k == "titulo" and isinstance(v, str):
+                    titulares.append(v)
+                else:
+                    rec(v)
+        elif isinstance(x, (list, tuple)):
+            for v in x:
+                rec(v)
+
+    rec(artefacto)
+    return textos, titulares
+
+
 def cumple_limite_literal(
-    texto: Any, fuente: str, limite: int = LIMITE_PALABRAS_LITERALES
+    texto: Any, fuente: str, limite: int = LIMITE_PALABRAS_LITERALES, titulares: Iterable[str] = ()
 ) -> Resultado:
     """Invariante 3. `texto` (cadena o artefacto JSON) no contiene más de `limite` palabras
     consecutivas de `fuente` (texto de la noticia). Las cadenas del artefacto se concatenan en
-    orden, de modo que también se detectan copias partidas entre campos contiguos."""
-    peor, tramo = max_palabras_consecutivas_comunes(" ".join(textos_de(texto)), fuente)
+    orden, de modo que también se detectan copias partidas entre campos contiguos.
+
+    El titular se cita completo y queda fuera del conteo (CLAUDE.md, decisión del 2026-10-20; contrato
+    `noticia` v1.2): en un artefacto se omite el `titulo` de toda cita de noticia (objeto con `medio`,
+    `titulo` y `url`); en una cadena (p. ej. un .md renderizado) se quitan las apariciones exactas de los
+    `titulares` que se entreguen. El límite sigue rigiendo para resumen_propio, enunciado, recursos y guía."""
+    if isinstance(texto, str):
+        for tit in sorted({t for t in titulares if t and t.strip()}, key=len, reverse=True):
+            texto = texto.replace(tit, " ")
+        cadenas = [texto]
+    else:
+        cadenas, _ = textos_sin_titulares(texto)
+    peor, tramo = max_palabras_consecutivas_comunes(" ".join(cadenas), fuente)
     errores = [f"{peor} palabras consecutivas de la noticia (> {limite}): «{tramo}»"] if peor > limite else []
     return Resultado.desde_errores(errores, max_consecutivas=peor)
 

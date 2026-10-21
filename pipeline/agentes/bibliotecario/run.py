@@ -196,7 +196,8 @@ def preparar(tarea, guia, evaluacion, *, raiz: Path, trazas=None, texto_noticia:
     tarea_md, guia_md = render_tarea(tarea, evaluacion), render_guia(guia, trazas)
     if texto_noticia:                                                              # invariante 3 (render)
         errores = [f"{n}: {e}" for n, md in (("tarea.md", tarea_md), ("guia.md", guia_md))
-                   for e in inv.cumple_limite_literal(md, texto_noticia).errores]
+                   for e in inv.cumple_limite_literal(md, texto_noticia,
+                                                     titulares=[tarea["noticia"]["titulo"]]).errores]
         if errores:
             raise ErrorBibliotecario(errores)
     archivos = {
