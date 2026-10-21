@@ -1,0 +1,157 @@
+# Despliegue del sitio docente (devops, fase 5; GOB01 §4: GitHub Pages).
+#
+#   push a main (y workflow_dispatch)
+#     migraciones -> aplica sitio/db/aplicar_todo.sql en Supabase (idempotente, una transacción)
+#     sitio       -> build de Astro (sitio/web) con la clave PUBLICABLE; nunca la de servicio
+#     publicar    -> GitHub Pages (Settings > Pages > Source = GitHub Actions)
+#     staging     -> flujo cuenta/valorar/comentar/moderar contra Supabase real + Lighthouse sobre la URL pública
+#
+# Secrets (valores nunca en el repo ni en logs; ver docs/secrets.md): SUPABASE_DB_URL, SUPABASE_URL,
+# SUPABASE_PUBLISHABLE_KEY, SUPABASE_SERVICE_KEY (solo el job `staging`). Cada job comprueba en ejecución que
+# los suyos existan y falla con un mensaje claro si falta alguno.
+name: deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Un despliegue a la vez; uno en curso no se cancela (las migraciones corren en transacción, pero no se interrumpen).
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  migraciones:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+    steps:
+      - name: Comprobar el secret SUPABASE_DB_URL (no se imprime)
+        run: |
+          if [ -z "$SUPABASE_DB_URL" ]; then
+            echo "::error title=Falta el secret SUPABASE_DB_URL::Crear el secret en Settings > Secrets and variables > Actions (ver docs/secrets.md). Use la cadena del Session pooler de Supabase: los runners de GitHub no tienen IPv6 y la conexión directa de Supabase es solo IPv6."
+            exit 1
+          fi
+          echo "::add-mask::$SUPABASE_DB_URL"
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: aplicar_todo.sql está al día con las migraciones
+        run: node sitio/db/generar_aplicar_todo.mjs --check
+      - name: Instalar psql
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq postgresql-client
+      - name: Aplicar migraciones (idempotentes; una transacción)
+        run: psql "$SUPABASE_DB_URL" -v ON_ERROR_STOP=1 -f sitio/db/aplicar_todo.sql
+
+  sitio:
+    needs: migraciones
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      SUPABASE_PUBLISHABLE_KEY: ${{ secrets.SUPABASE_PUBLISHABLE_KEY }}
+    steps:
+      - name: Comprobar secrets del build (no se imprimen)
+        run: |
+          faltan=""
+          [ -n "$SUPABASE_URL" ] || faltan="$faltan SUPABASE_URL"
+          [ -n "$SUPABASE_PUBLISHABLE_KEY" ] || faltan="$faltan SUPABASE_PUBLISHABLE_KEY"
+          if [ -n "$faltan" ]; then
+            echo "::error title=Faltan secrets::Crear en Settings > Secrets and variables > Actions:$faltan (ver docs/secrets.md)"
+            exit 1
+          fi
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: sitio/package-lock.json
+      - uses: actions/configure-pages@v5
+      - name: Instalar dependencias
+        working-directory: sitio
+        run: npm ci
+      - name: Build del sitio (solo la clave publicable; nunca SUPABASE_SERVICE_KEY)
+        working-directory: sitio/web
+        env:
+          PUBLIC_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_PUBLISHABLE_KEY }}
+          SITE_URL: https://${{ github.repository_owner }}.github.io
+          SITE_BASE: /${{ github.event.repository.name }}/
+          PUBLIC_REPO_URL: https://github.com/${{ github.repository }}
+        run: npm run build
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: sitio/web/dist
+
+  publicar:
+    needs: sitio
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    outputs:
+      page_url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
+
+  staging:
+    needs: publicar
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      SUPABASE_PUBLISHABLE_KEY: ${{ secrets.SUPABASE_PUBLISHABLE_KEY }}
+      SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+      CHROME_PATH: google-chrome   # ubuntu-latest trae Chrome; chrome.mjs lo busca en PATH
+      URL_PUBLICA: ${{ needs.publicar.outputs.page_url }}
+    steps:
+      - name: Comprobar secrets de staging (no se imprimen)
+        run: |
+          faltan=""
+          [ -n "$SUPABASE_URL" ] || faltan="$faltan SUPABASE_URL"
+          [ -n "$SUPABASE_PUBLISHABLE_KEY" ] || faltan="$faltan SUPABASE_PUBLISHABLE_KEY"
+          [ -n "$SUPABASE_SERVICE_KEY" ] || faltan="$faltan SUPABASE_SERVICE_KEY"
+          if [ -n "$faltan" ]; then
+            echo "::error title=Faltan secrets::Crear en Settings > Secrets and variables > Actions:$faltan (ver docs/secrets.md)"
+            exit 1
+          fi
+          echo "::add-mask::$SUPABASE_SERVICE_KEY"
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: sitio/package-lock.json
+      - name: Instalar dependencias
+        working-directory: sitio
+        run: npm ci
+      - name: Staging contra Supabase real (API + interfaz en Chrome; borra lo que crea)
+        working-directory: sitio/web
+        run: npm run staging -- --url "$URL_PUBLICA"
+      - name: Lighthouse sobre la URL pública (informativo, no bloquea el despliegue)
+        id: lighthouse
+        continue-on-error: true
+        working-directory: sitio/web
+        run: npm run lighthouse -- --url "$URL_PUBLICA"
+      - name: Informe de Lighthouse
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-publico
+          path: sitio/web/lighthouse-publico/
+          if-no-files-found: ignore
+      - name: Aviso si Lighthouse quedó bajo el umbral
+        if: ${{ steps.lighthouse.outcome == 'failure' }}
+        run: echo "::warning title=Lighthouse::Alguna categoría quedó bajo 90 o el script falló; ver el artefacto lighthouse-publico."
