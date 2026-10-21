@@ -155,24 +155,57 @@
     },
     "5": {
       "nombre": "Producción",
-      "estado": "en_curso",
+      "estado": "en_checkpoint",
       "tareas": {
         "devops": {
-          "estado": "en_curso",
-          "fecha": "2026-10-20",
-          "commit": "79cb779",
-          "test": "local: pytest 418 passed, 6 skipped; sitio 57/57; actionlint sin hallazgos. Aceptación en Actions pendiente: push a main bloqueado por permisos"
+          "estado": "completada",
+          "fecha": "2026-10-21",
+          "commit": "b11bfc7",
+          "test": "Actions: deploy 39593763840 (4 jobs en verde, staging contra Supabase, Lighthouse 100x4 móvil/escritorio) y semanal 39593513149 (PR #3, CI en verde); pytest 418 passed, 6 skipped"
         },
-        "docs-writer": "pendiente",
-        "lote-inicial-6": "pendiente"
+        "docs-writer": {
+          "estado": "completada",
+          "fecha": "2026-10-21",
+          "commit": null,
+          "test": "relanzado: README, docs/operacion.md (ciclo 100 % web), docs/contribuir.md; hallazgo de PR duplicado corregido en publicar.yml. Falta la prueba con una persona ajena"
+        },
+        "lote-inicial-6": {
+          "estado": "incompleta",
+          "fecha": "2026-10-21",
+          "commit": null,
+          "test": "4 publicadas (PR #1, #2); la candidata sintética del PR #3 no es publicable; completar el lote ≈ 5–7 USD (cron W44)"
+        },
+        "tramo_b-simulador-privado": {
+          "estado": "completada",
+          "fecha": "2026-10-21",
+          "commit": "9864b32",
+          "test": "tramo_b.yml solo_comprobar en Actions 39600145692: checkout de otm-simulador, sim.py e insumos/ presentes, adapter importa sim.py (INS08/INS09 v0.2); sin API"
+        },
+        "publicar-workflow": {
+          "estado": "completada",
+          "fecha": "2026-10-21",
+          "commit": null,
+          "test": "publicar.yml: dry-run 39600906331 (rechaza v6 reemplazada tras releer la noticia) y ejecución 39601072403 (rechaza v7 publicada; sin rama ni PR); tests/test_publicar.py 5 passed; pytest 426 passed, 6 skipped"
+        },
+        "revision-pr3": {
+          "estado": "completada",
+          "fecha": "2026-10-21",
+          "commit": null,
+          "test": "PR #3 revisado (salida correcta del tramo A), comentado y cerrado sin merge; rama semanal/2026-W43 conservada por el gasto"
+        }
       },
       "checkpoint": "CP3",
       "CP3": {
         "aprobado": false,
         "fecha": null
+      },
+      "cierre": {
+        "por": "build-lead",
+        "fecha": "2026-10-21",
+        "nota": "informe en pipeline/state/CP3_informe.md; CP3 sin aprobar"
       }
     }
   },
-  "costo_acumulado_usd": 47.97,
-  "ultimo_commit": "79cb779"
+  "costo_acumulado_usd": 50.59,
+  "ultimo_commit": "ffafd34"
 }

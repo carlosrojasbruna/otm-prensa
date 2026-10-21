@@ -83,6 +83,20 @@ jobs:
           git config user.email "otm-prensa-bot@users.noreply.github.com"
           echo "rama=$rama" >> "$GITHUB_OUTPUT"
 
+      - name: Ningún id con un PR de publicación abierto
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN || github.token }}
+        run: |
+          abiertos="$(gh pr list --state open --limit 100 --json headRefName,title,number \
+            --jq '.[] | select(.headRefName | startswith("publicar/")) | "#\(.number) \(.title)"')"
+          read -r -a ids <<< "$IN_IDS"
+          for id in "${ids[@]}"; do
+            if printf '%s\n' "$abiertos" | grep -qw -- "$id"; then
+              echo "::error::$id ya tiene un PR de publicación abierto: $(printf '%s\n' "$abiertos" | grep -w -- "$id")"
+              exit 1
+            fi
+          done
+
       - name: Publicar (bibliotecario)
         env:
           RAMA: ${{ steps.rama.outputs.rama }}
