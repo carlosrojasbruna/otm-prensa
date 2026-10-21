@@ -1,7 +1,7 @@
 # Despliegue del sitio docente (devops, fase 5; GOB01 §4: GitHub Pages).
 #
 #   push a main (y workflow_dispatch)
-#     migraciones -> aplica sitio/db/aplicar_todo.sql en Supabase (idempotente, una transacción)
+#     migraciones -> aplica sitio/db/aplicar_todo.sql en Supabase (idempotente, una transacción; si psql falla, aviso y sigue)
 #     sitio       -> build de Astro (sitio/web) con la clave PUBLICABLE; nunca la de servicio
 #     publicar    -> GitHub Pages (Settings > Pages > Source = GitHub Actions)
 #     staging     -> flujo cuenta/valorar/comentar/moderar contra Supabase real + Lighthouse sobre la URL pública
@@ -50,8 +50,27 @@ jobs:
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq postgresql-client
-      - name: Aplicar migraciones (idempotentes; una transacción)
-        run: psql "$SUPABASE_DB_URL" -v ON_ERROR_STOP=1 -f sitio/db/aplicar_todo.sql
+      # No bloquea el despliegue: las migraciones también se aplican a mano en el SQL Editor (decisión de Carlos,
+      # 2026-10-20). Si falla, la transacción no deja nada a medias y el job `staging` detecta un esquema roto.
+      - name: Aplicar migraciones (idempotentes; una transacción; no bloquea)
+        id: migrar
+        continue-on-error: true
+        env:
+          PGCONNECT_TIMEOUT: 20
+        run: |
+          set +e
+          psql "$SUPABASE_DB_URL" -v ON_ERROR_STOP=1 -f sitio/db/aplicar_todo.sql
+          codigo=$?
+          echo "codigo=$codigo" >> "$GITHUB_OUTPUT"
+          exit $codigo
+      - name: Aviso si las migraciones no se aplicaron
+        if: ${{ steps.migrar.outcome == 'failure' }}
+        run: |
+          if [ "${{ steps.migrar.outputs.codigo }}" = "2" ]; then
+            echo "::warning title=Migraciones no aplicadas (conexión)::psql no pudo conectarse a Supabase; el despliegue sigue. Comprobar que SUPABASE_DB_URL sea la cadena del Session pooler o aplicar sitio/db/aplicar_todo.sql en el SQL Editor."
+          else
+            echo "::warning title=Migraciones no aplicadas (código ${{ steps.migrar.outputs.codigo }})::psql falló y la transacción se revirtió; el despliegue sigue. Revisar el log de este paso y aplicar sitio/db/aplicar_todo.sql en el SQL Editor si corresponde."
+          fi
 
   sitio:
     needs: migraciones
