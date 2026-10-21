@@ -1,0 +1,112 @@
+# Publicación de tareas (devops, fase 5): expedientes en `verificada` -> tareas/<AAAA-MM>/<slug>/ + catálogo, en un PR.
+#
+# SOLO MANUAL (workflow_dispatch, sin cron ni push). `revisor` es OBLIGATORIO: quien hizo la revisión humana 2
+# de las guías (GOB01 §2); se registra en guia.trazabilidad.revision_humana_2 y en la marca del expediente.
+#
+# QUE HACE. python -m pipeline.publicar (envuelve al bibliotecario): exige `verificada`, relee la noticia para la
+# invariante 3 (sin texto no publica), valida umbral RUB01, escenarios respaldados y catálogo, y rechaza una tarea
+# ya publicada (una tarea publicada no se edita: se versiona). Todo o nada. Commitea en `publicar/<fecha>-<n>` y
+# abre un PR a main con el mismo patrón que semanal.yml (GH_TOKEN, para que corra ci.yml sobre el PR).
+#
+# ESTADO. Los expedientes siguen en `verificada`; pasan a `publicada` solo después del merge (decisiones.md).
+# Con el merge, deploy.yml publica el sitio con el catálogo nuevo.
+#
+# dry_run=true: valida y muestra lo que haría; no escribe, no hace push ni abre PR (no necesita GH_TOKEN).
+#
+# Secrets (docs/secrets.md): GH_TOKEN (push y PR). No usa ANTHROPIC_API_KEY: no llama a ningún modelo.
+#
+# Comparte el grupo de concurrencia `semanal` con semanal.yml y tramo_b.yml: los tres escriben pipeline/state/.
+name: publicar
+
+on:
+  workflow_dispatch:
+    inputs:
+      ids:
+        description: "Ids de expediente (tarea_id) en `verificada`, separados por espacio"
+        required: true
+        type: string
+      revisor:
+        description: "Nombre de quien hizo la revisión humana 2 de estas guías (obligatorio)"
+        required: true
+        type: string
+      dry_run:
+        description: "Solo validar y mostrar lo que haría (sin escribir, push ni PR)"
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: semanal
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      IN_IDS: ${{ inputs.ids }}
+      IN_REVISOR: ${{ inputs.revisor }}
+      DRY_RUN: ${{ inputs.dry_run }}
+      PYTHONUTF8: "1"
+    steps:
+      - name: Comprobar secrets y entradas (no se imprimen)
+        run: |
+          if [ "$DRY_RUN" != "true" ] && [ -z "$GH_TOKEN" ]; then
+            echo "::error title=Faltan secrets::Crear en Settings > Secrets and variables > Actions: GH_TOKEN (ver docs/secrets.md)"
+            exit 1
+          fi
+          [ "${#IN_REVISOR}" -ge 3 ] || { echo "::error::El input revisor es obligatorio (nombre y apellido de quien hizo la revisión humana 2)"; exit 1; }
+          [ -n "${IN_IDS// /}" ] || { echo "::error::El input ids es obligatorio"; exit 1; }
+          [[ "$IN_IDS" =~ ^[A-Za-z0-9._\ -]+$ ]] || { echo "::error::ids: solo letras, números, punto, guion y espacios"; exit 1; }
+
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_TOKEN || github.token }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+
+      - name: Rama
+        id: rama
+        run: |
+          rama="publicar/$(date -u +%Y-%m-%d)-${{ github.run_number }}"
+          git config user.name "otm-prensa-bot"
+          git config user.email "otm-prensa-bot@users.noreply.github.com"
+          echo "rama=$rama" >> "$GITHUB_OUTPUT"
+
+      - name: Publicar (bibliotecario)
+        env:
+          RAMA: ${{ steps.rama.outputs.rama }}
+          URL_RUN: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          read -r -a ids <<< "$IN_IDS"
+          args=("${ids[@]}" --revisor "$IN_REVISOR")
+          if [ "$DRY_RUN" != "true" ]; then
+            args+=(--ejecutar --rama "$RAMA" --cuerpo "$RUNNER_TEMP/cuerpo.md" --url-run "$URL_RUN")
+          fi
+          python -m pipeline.publicar "${args[@]}"
+
+      - name: Invariantes sobre lo que se va a publicar
+        if: ${{ !inputs.dry_run }}
+        run: |
+          mapfile -t cambiados < <(git diff --name-only origin/main...HEAD)
+          printf '%s\n' "${cambiados[@]}"
+          python .claude/hooks/otm_hook.py archivos "${cambiados[@]}"
+
+      - name: Push y PR
+        if: ${{ !inputs.dry_run }}
+        env:
+          RAMA: ${{ steps.rama.outputs.rama }}
+        run: |
+          set -euo pipefail
+          git push -u origin "$RAMA"
+          gh pr create --base main --head "$RAMA" --title "Publicar: $IN_IDS" --body-file "$RUNNER_TEMP/cuerpo.md"

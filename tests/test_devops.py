@@ -207,7 +207,7 @@ def _wf(nombre):
     return d
 
 
-@pytest.mark.parametrize("nombre", ["ci.yml", "deploy.yml", "semanal.yml", "tramo_b.yml"])
+@pytest.mark.parametrize("nombre", ["ci.yml", "deploy.yml", "semanal.yml", "tramo_b.yml", "publicar.yml"])
 def test_workflows_son_yaml_validos(nombre):
     assert _wf(nombre)["jobs"]
 
@@ -236,6 +236,19 @@ def test_tramo_b_solo_comprobar_no_usa_api_ni_escribe():
     texto = json.dumps(d["jobs"]["comprobar"])
     assert "ANTHROPIC_API_KEY" not in texto and "GH_TOKEN" not in texto and "pipeline.ciclo" not in texto
     assert "simulacion/sim.py" in texto and "insumos" in texto and "cargar_sim" in texto
+
+
+def test_publicar_solo_manual_con_revisor_dry_run_y_pr():
+    d = _wf("publicar.yml")
+    assert set(d["on"]) == {"workflow_dispatch"}
+    e = d["on"]["workflow_dispatch"]["inputs"]
+    assert e["revisor"]["required"] is True and e["ids"]["required"] is True
+    assert e["dry_run"]["type"] == "boolean" and e["dry_run"]["default"] is False
+    texto = (RAIZ / ".github" / "workflows" / "publicar.yml").read_text(encoding="utf-8")
+    assert "pipeline.publicar" in texto and "gh pr create" in texto
+    assert "ANTHROPIC_API_KEY" not in json.dumps(d["jobs"])      # no llama a ningún modelo
+    pasos = {s.get("name"): s for s in d["jobs"]["publicar"]["steps"]}
+    assert pasos["Push y PR"]["if"] == "${{ !inputs.dry_run }}"
 
 
 def test_workflows_no_incrustan_secretos_ni_los_imprimen():
