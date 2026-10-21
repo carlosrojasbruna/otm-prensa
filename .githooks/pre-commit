@@ -1,0 +1,13 @@
+#!/bin/sh
+# Hook pre-commit de OTM-Prensa: invariantes 1, 2, 3, 5, 6, 7 y 8 de CLAUDE.md sobre lo que se va a commitear
+# y protección de insumos/ (solo lectura). Lógica en .claude/hooks/otm_hook.py (reutiliza pipeline/invariantes.py).
+#
+# Activar (una vez por clon; no lo activa ningún script):
+#   git config core.hooksPath .githooks
+# Desactivar:
+#   git config --unset core.hooksPath
+# Invariante 3 con texto de noticias: OTM_TEXTOS_NOTICIAS=<carpeta fuera del repo con .txt> (opcional).
+RAIZ="$(git rev-parse --show-toplevel)" || exit 1
+PY="${PYTHON:-python3}"
+command -v "$PY" >/dev/null 2>&1 || PY=python
+exec "$PY" "$RAIZ/.claude/hooks/otm_hook.py" staged
