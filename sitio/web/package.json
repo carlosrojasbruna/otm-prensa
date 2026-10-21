@@ -1,0 +1,26 @@
+{
+  "name": "otm-web",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "test": "node scripts/test.mjs",
+    "lighthouse": "node scripts/lighthouse.mjs",
+    "local": "node scripts/local.mjs"
+  },
+  "dependencies": {
+    "astro": "^7.4.1",
+    "marked": "latest",
+    "otm-api": "*"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.10",
+    "chrome-launcher": "latest",
+    "lighthouse": "^13.5.0",
+    "playwright-core": "latest"
+  }
+}

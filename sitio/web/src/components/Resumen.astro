@@ -1,0 +1,5 @@
+---
+// Valoración resumida; el texto se actualiza en el navegador si hay backend de cuentas.
+const { id } = Astro.props;
+---
+<span class="valoracion-fila" data-resumen={id}><span class="estrellas" aria-hidden="true">★★★★★</span> <span class="valoracion-txt">Sin valoraciones aún</span></span>

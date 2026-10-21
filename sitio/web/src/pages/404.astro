@@ -1,0 +1,10 @@
+---
+import Base from '../layouts/Base.astro';
+import { u } from '../lib/url.js';
+---
+<Base titulo="Página no encontrada" descripcion="La página que buscas no existe." noindex>
+  <div class="contenedor texto-pagina">
+    <h1>No encontramos esa página</h1>
+    <p><a href={u('')}>Volver al inicio</a> o <a href={u('explorar/')}>explorar las tareas</a>.</p>
+  </div>
+</Base>

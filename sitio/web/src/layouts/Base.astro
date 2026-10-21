@@ -1,0 +1,66 @@
+---
+import '../styles/global.css';
+import { u } from '../lib/url.js';
+const { titulo, descripcion = 'Tareas de modelamiento matemático a partir de noticias de prensa, con guía docente. Repositorio abierto para docentes.', actual = '', noindex = false } = Astro.props;
+const NAV = [
+  ['inicio', '', 'Inicio'],
+  ['explorar', 'explorar/', 'Explorar'],
+  ['niveles', 'explorar/#niveles', 'Por nivel'],
+  ['como-usar', 'como-usar/', 'Cómo usar'],
+  ['acerca', 'acerca/', 'Acerca del proyecto'],
+];
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : null;
+---
+<!doctype html>
+<html lang="es-CL">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{titulo === 'OTM-Prensa' ? titulo : `${titulo} · OTM-Prensa`}</title>
+    <meta name="description" content={descripcion} />
+    {noindex && <meta name="robots" content="noindex" />}
+    {canonical && <link rel="canonical" href={canonical} />}
+    <meta name="theme-color" content="#7c3aed" />
+    <link rel="icon" href={u('favicon.svg')} type="image/svg+xml" />
+  </head>
+  <body>
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+    <header class="cabecera">
+      <div class="contenedor">
+        <a class="marca" href={u('')}>
+          <span class="marca-logo" aria-hidden="true">O</span>
+          <span><span class="marca-nombre">OTM-Prensa</span><span class="marca-lema">Tareas de modelamiento desde la prensa</span></span>
+        </a>
+        <nav class="nav" aria-label="Principal">
+          {NAV.map(([id, ruta, etiqueta]) => <a href={u(ruta)} aria-current={id === actual ? 'page' : undefined}>{etiqueta}</a>)}
+        </nav>
+        <a class="cuenta-chip" href={u('cuenta/')} id="cuenta-chip" aria-current={actual === 'cuenta' ? 'page' : undefined}>
+          <span class="avatar" aria-hidden="true" id="cuenta-avatar">?</span>
+          <span><b id="cuenta-titulo">Mi cuenta</b><small id="cuenta-sub">Ingresar o crear cuenta</small></span>
+        </a>
+      </div>
+    </header>
+    <main id="contenido">
+      <slot />
+    </main>
+    <footer class="pie">
+      <div class="contenedor">
+        <p><strong>OTM-Prensa</strong> · Observatorio de Tareas de Modelamiento desde la Prensa · Pontificia Universidad Católica de Chile.</p>
+        <p>Las tareas y guías se publican con licencia <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license noopener noreferrer">CC BY-NC-SA 4.0</a>. El código del sitio es MIT.</p>
+        <p>Las noticias se citan con medio, título, fecha y enlace; este sitio no reproduce su texto.</p>
+      </div>
+    </footer>
+    <script>
+      import { backend, MODO } from '../scripts/cliente.js';
+      // Estado de la cuenta en la cabecera (solo si hay backend).
+      if (MODO !== 'none') {
+        backend().then((b) => b.sesion()).then((s) => {
+          if (!s) return;
+          document.getElementById('cuenta-avatar').textContent = s.email[0].toUpperCase();
+          document.getElementById('cuenta-titulo').textContent = 'Mi cuenta';
+          document.getElementById('cuenta-sub').textContent = s.email;
+        }).catch(() => {});
+      }
+    </script>
+  </body>
+</html>

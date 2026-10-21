@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+import AvisoDatos from '../components/AvisoDatos.astro';
+import { u } from '../lib/url.js';
+---
+<Base titulo="Acerca del proyecto" actual="acerca" descripcion="OTM-Prensa: observatorio de tareas de modelamiento desde la prensa, de la Pontificia Universidad Católica de Chile.">
+  <div class="contenedor texto-pagina">
+    <p class="migas"><a href={u('')}>Inicio</a> › Acerca del proyecto</p>
+    <h1>Acerca del proyecto</h1>
+    <p>OTM-Prensa es un observatorio de tareas de modelamiento matemático construidas a partir de noticias de prensa, con guía docente. Un pipeline de agentes propone las tareas y cada una pasa por una rúbrica de calidad y por revisión humana antes de publicarse. Responsable: Carlos Rojas Bruna (Pontificia Universidad Católica de Chile).</p>
+    <h2>Niveles</h2>
+    <p>P (primaria, 10–12 años), S (secundaria, 13–18 años; S1 de 13 a 15 y S2 de 16 a 18) y U (universitario, 18–20 años). Se declaran por edad para no atar el banco a un sistema educativo.</p>
+    <h2>Noticias</h2>
+    <p>Las noticias se citan (medio, título, fecha y enlace) y se resumen con palabras propias. El sitio no reproduce su texto.</p>
+    <h2 id="datos">Uso de datos</h2>
+    <AvisoDatos />
+    <p>La cuenta es necesaria solo para valorar y comentar. El perfil docente (nivel que enseñas, tipo de establecimiento, región y años de experiencia) es opcional en el piloto.</p>
+    <h2>Licencias</h2>
+    <p>Tareas y guías: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license noopener noreferrer">CC BY-NC-SA 4.0</a>. Código: MIT.</p>
+  </div>
+</Base>

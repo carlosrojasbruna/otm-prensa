@@ -1,0 +1,69 @@
+---
+import Base from '../layouts/Base.astro';
+import Tarjeta from '../components/Tarjeta.astro';
+import Resumen from '../components/Resumen.astro';
+import { cargarCatalogo, nivelDe, AREAS, semanaIso, fechaLarga, urlArchivo } from '../lib/catalogo.js';
+import { u } from '../lib/url.js';
+
+const { tareas } = cargarCatalogo();
+const destacada = tareas[0]; // más reciente (ver ordenamiento en lib/catalogo.js)
+const ultima = destacada?.fecha_publicacion;
+const dias = (a, b) => (Date.parse(a) - Date.parse(b)) / 86400000;
+const esNueva = (t) => ultima && dias(ultima, t.fecha_publicacion) < 7;
+const nuevas = tareas.filter(esNueva).slice(0, 8);
+const resto = tareas.filter((t) => !nuevas.includes(t)).slice(0, 8);
+const sem = ultima ? semanaIso(ultima) : null;
+const niv = destacada ? nivelDe(destacada) : null;
+const porNivel = ['P', 'S', 'U'].map((n) => [n, tareas.filter((t) => t.nivel_principal === n || t.variantes.some((v) => v[0] === n))]).filter(([, l]) => l.length);
+---
+<Base titulo="OTM-Prensa" actual="inicio">
+  <div class="contenedor">
+    {destacada ? (
+      <section class="hero" aria-labelledby="hero-titulo">
+        <div class="hero-img">
+          {destacada.archivos.icono && <img src={u(urlArchivo(destacada, destacada.archivos.icono))} alt="" width="400" height="300" fetchpriority="high" />}
+        </div>
+        <div class="hero-cuerpo">
+          <div class="chips">
+            <span class="chip chip-hero">TAREA DE LA SEMANA</span>
+            {esNueva(destacada) && <span class="chip chip-nuevo">NUEVO</span>}
+            <span class="chip chip-hero2">Semana {sem.semana} · {sem.anio}</span>
+          </div>
+          <h1 id="hero-titulo"><a href={u(destacada.url)}>{destacada.titulo}</a></h1>
+          <p>A partir de una noticia de {destacada.noticia.medio} del {fechaLarga(destacada.noticia.fecha)}.</p>
+          <p class="meta-hero">Nivel {niv.corto} ({niv.edad} años){destacada.variantes.length ? ` · variantes ${destacada.variantes.join(', ')}` : ''} · {destacada.contenidos_matematicos.slice(0, 3).join(' · ')} · {destacada.tiempo_estimado}</p>
+          <div class="acciones">
+            <a class="boton boton-blanco" href={u(destacada.url)}>Ver la tarea</a>
+            {destacada.archivos.guia_md && <a class="boton boton-borde" href={u(urlArchivo(destacada, destacada.archivos.guia_md))} download>⬇ Guía docente</a>}
+            <Resumen id={destacada.id} />
+          </div>
+        </div>
+      </section>
+    ) : (
+      <p class="vacio">Aún no hay tareas publicadas.</p>
+    )}
+
+    {nuevas.length > 0 && (
+      <section class="fila" aria-labelledby="h-nuevas">
+        <div class="fila-cab"><h2 id="h-nuevas">Nuevas esta semana</h2><a href={u('explorar/')}>Ver todas ›</a></div>
+        <ul class="rejilla">{nuevas.map((t, i) => <Tarjeta t={t} nuevo lazy={i > 3} />)}</ul>
+      </section>
+    )}
+    {resto.length > 0 && (
+      <section class="fila" aria-labelledby="h-antes">
+        <div class="fila-cab"><h2 id="h-antes">Publicadas antes</h2><a href={u('explorar/')}>Ver todas ›</a></div>
+        <ul class="rejilla">{resto.map((t) => <Tarjeta t={t} />)}</ul>
+      </section>
+    )}
+    {porNivel.map(([n, lista]) => (
+      <section class="fila" aria-labelledby={`h-niv-${n}`}>
+        <div class="fila-cab"><h2 id={`h-niv-${n}`}>Para tu nivel: {nivelDe({ nivel_principal: n }).largo}</h2><a href={u(`explorar/?nivel=${n}`)}>Ver todas ›</a></div>
+        <ul class="rejilla">{lista.slice(0, 4).map((t) => <Tarjeta t={t} />)}</ul>
+      </section>
+    ))}
+  </div>
+  <script>
+    import { hidratarResumenes } from '../scripts/valoraciones-resumen.js';
+    hidratarResumenes();
+  </script>
+</Base>

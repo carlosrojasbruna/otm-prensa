@@ -1,0 +1,92 @@
+---
+import Base from '../../layouts/Base.astro';
+import Tarjeta from '../../components/Tarjeta.astro';
+import { cargarCatalogo, AREAS, NIVEL_INFO } from '../../lib/catalogo.js';
+import { u } from '../../lib/url.js';
+const { tareas } = cargarCatalogo();
+const areas = [...new Set(tareas.map((t) => t.area))].sort((a, b) => (AREAS[a] ?? a).localeCompare(AREAS[b] ?? b, 'es'));
+const contenidos = [...new Set(tareas.flatMap((t) => t.contenidos_matematicos))].sort((a, b) => a.localeCompare(b, 'es'));
+---
+<Base titulo="Explorar tareas" actual="explorar" descripcion="Explora las tareas de modelamiento por nivel, tema y contenido matemático.">
+  <div class="contenedor">
+    <p class="migas"><a href={u('')}>Inicio</a> › Explorar</p>
+    <h1>Explorar tareas</h1>
+    <p class="niveles-ayuda" id="niveles">Niveles (MAR03): P primaria 10–12 años · S secundaria 13–18 años (S1: 13–15, S2: 16–18) · U universitario 18–20 años. Una tarea aparece en un nivel si es su nivel principal o una de sus variantes.</p>
+
+    <form class="filtros" role="search" aria-label="Filtros" id="filtros" onsubmit="return false">
+      <label class="busca"><span>Buscar por tema, contenido matemático o noticia</span><input type="search" id="f-q" autocomplete="off" /></label>
+      <label><span>Nivel</span>
+        <select id="f-nivel"><option value="">Todos</option>
+          {['P', 'S', 'U'].map((n) => <option value={n}>{NIVEL_INFO[n].largo}</option>)}
+        </select></label>
+      <label><span>Tema</span>
+        <select id="f-area"><option value="">Todos</option>{areas.map((a) => <option value={a}>{AREAS[a] ?? a}</option>)}</select></label>
+      <label><span>Contenido matemático</span>
+        <select id="f-cont"><option value="">Todos</option>{contenidos.map((c) => <option value={c}>{c}</option>)}</select></label>
+      <label><span>Ordenar</span>
+        <select id="f-orden"><option value="recientes">Más recientes</option><option value="valoradas">Mejor valoradas</option><option value="titulo">Título (A–Z)</option></select></label>
+    </form>
+    <div class="filtros-activos" id="activos" aria-label="Filtros activos"></div>
+    <p class="conteo" id="conteo" role="status" aria-live="polite">{tareas.length} {tareas.length === 1 ? 'tarea' : 'tareas'}</p>
+    <ul class="rejilla" id="resultados">{tareas.map((t) => <Tarjeta t={t} lazy />)}</ul>
+    <p class="vacio" id="sin-resultados" hidden>Ninguna tarea coincide con los filtros. Prueba quitar alguno.</p>
+  </div>
+  <script>
+    import { hidratarResumenes } from '../../scripts/valoraciones-resumen.js';
+    const $ = (id) => document.getElementById(id);
+    const lista = $('resultados');
+    const items = [...lista.children];
+    const quita = (s) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+    const ctl = { q: $('f-q'), nivel: $('f-nivel'), area: $('f-area'), cont: $('f-cont'), orden: $('f-orden') };
+
+    function desdeUrl() {
+      const p = new URLSearchParams(location.search);
+      for (const k of Object.keys(ctl)) if (p.has(k)) ctl[k].value = p.get(k);
+    }
+    function aUrl() {
+      const p = new URLSearchParams();
+      for (const [k, el] of Object.entries(ctl)) if (el.value && !(k === 'orden' && el.value === 'recientes')) p.set(k, el.value);
+      const s = p.toString();
+      history.replaceState(null, '', location.pathname + (s ? `?${s}` : '') + location.hash);
+    }
+    function aplicar() {
+      const q = quita(ctl.q.value.trim());
+      const n = ctl.nivel.value, a = ctl.area.value, c = ctl.cont.value;
+      let visibles = 0;
+      for (const li of items) {
+        const d = li.querySelector('article').dataset;
+        const niveles = [d.nivel, ...(d.variantes ? d.variantes.split(',') : [])].map((x) => x[0]);
+        const ok = (!n || niveles.includes(n)) && (!a || d.area === a) && (!c || d.contenidos.split('|').includes(c)) && (!q || quita(d.texto).includes(q));
+        li.hidden = !ok;
+        if (ok) visibles++;
+      }
+      const dato = (li) => li.querySelector('article').dataset;
+      const val = (li) => Number(li.querySelector('[data-resumen]')?.dataset.promedio || 0);
+      const cmp = {
+        recientes: (x, y) => dato(y).fecha.localeCompare(dato(x).fecha) || dato(x).titulo.localeCompare(dato(y).titulo, 'es'),
+        valoradas: (x, y) => val(y) - val(x) || dato(y).fecha.localeCompare(dato(x).fecha),
+        titulo: (x, y) => dato(x).titulo.localeCompare(dato(y).titulo, 'es'),
+      }[ctl.orden.value];
+      items.sort(cmp).forEach((li) => lista.appendChild(li));
+      $('conteo').textContent = `${visibles} ${visibles === 1 ? 'tarea' : 'tareas'}`;
+      $('sin-resultados').hidden = visibles !== 0;
+      const act = $('activos'); act.textContent = '';
+      for (const [k, clase, etiqueta] of [['nivel', 'nivel', 'Nivel'], ['area', 'area', 'Tema'], ['cont', 'cont', 'Contenido'], ['q', 'q', 'Búsqueda']]) {
+        if (!ctl[k].value) continue;
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.className = `chip chip-filtro-${clase}`;
+        const txt = ctl[k].tagName === 'SELECT' ? ctl[k].selectedOptions[0].textContent : ctl[k].value;
+        b.textContent = `${etiqueta}: ${txt}  ✕`;
+        b.setAttribute('aria-label', `Quitar filtro ${etiqueta}: ${txt}`);
+        b.addEventListener('click', () => { ctl[k].value = ''; aplicar(); });
+        act.appendChild(b);
+      }
+      aUrl();
+    }
+    desdeUrl();
+    for (const el of Object.values(ctl)) el.addEventListener('input', aplicar);
+    aplicar();
+    hidratarResumenes().then(() => { if (ctl.orden.value === 'valoradas') aplicar(); });
+  </script>
+</Base>

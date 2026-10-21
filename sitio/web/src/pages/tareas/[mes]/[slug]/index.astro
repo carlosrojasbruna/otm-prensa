@@ -1,0 +1,155 @@
+---
+import Base from '../../../../layouts/Base.astro';
+import AvisoDatos from '../../../../components/AvisoDatos.astro';
+import { cargarCatalogo, cargarContenido, relacionadas, nivelDe, AREAS, NIVEL_INFO, fechaLarga, semanaIso, urlArchivo } from '../../../../lib/catalogo.js';
+import { u } from '../../../../lib/url.js';
+
+export function getStaticPaths() {
+  const { tareas } = cargarCatalogo();
+  return tareas.map((t) => ({ params: { mes: t.mes, slug: t.slug }, props: { t, todas: tareas } }));
+}
+const { t, todas } = Astro.props;
+const c = cargarContenido(t);
+const niv = nivelDe(t);
+const sem = semanaIso(t.fecha_publicacion);
+const rel = relacionadas(todas, t);
+const repo = import.meta.env.PUBLIC_REPO_URL;
+const A = t.archivos;
+const enlace = (nombre) => u(urlArchivo(t, nombre));
+const descargas = [
+  [A.tarea_md, 'Tarea (.md)'], [A.tarea, 'Tarea (.json)'], [A.guia_md, 'Guía docente (.md)'], [A.guia, 'Guía docente (.json)'],
+].filter(([n]) => n);
+const variantes = t.variantes.map((v) => NIVEL_INFO[v]?.largo ?? v);
+---
+<Base titulo={t.titulo} descripcion={`Tarea de modelamiento de nivel ${niv.corto} (${niv.edad} años) a partir de una noticia de ${t.noticia.medio}: ${t.contenidos_matematicos.slice(0, 3).join(', ')}.`}>
+  <div class="contenedor">
+    <p class="migas"><a href={u('')}>Inicio</a> › <a href={u('explorar/')}>Explorar</a> › {AREAS[t.area] ?? t.area}</p>
+    <div class="tarea-rejilla">
+      <article class="panel" aria-labelledby="titulo-tarea">
+        <div class="panel-chips">
+          <span class="chip chip-verde">PUBLICADA · revisada por el equipo</span>
+          <span class="chip chip-gris">Semana {sem.semana} · {sem.anio}</span>
+          {t.version > 1 && <span class="chip chip-naranja">v{t.version}</span>}
+        </div>
+        <div class="tarea-cab">
+          <div class="tarea-ilustra">
+            {A.icono
+              ? <img src={enlace(A.icono)} alt={c.iconoAlt || ''} width="150" height="92" fetchpriority="high" />
+              : <svg viewBox="0 0 150 92" width="150" height="92" role="img" aria-label="Sin ilustración"><rect width="150" height="92" fill="#ede9fe"/></svg>}
+          </div>
+          <div>
+            <h1 id="titulo-tarea">{t.titulo}</h1>
+            <p class="cita">Noticia: {t.noticia.medio}, <a href={t.noticia.url} rel="noopener noreferrer" lang="en">{t.noticia.titulo}</a>, {fechaLarga(t.noticia.fecha)}. ↗</p>
+          </div>
+        </div>
+
+        <dl class="meta">
+          <div><dt>Nivel principal</dt><dd><span class="chip" style={`background:${niv.fondo};color:${niv.texto}`}>{niv.largo}</span></dd></div>
+          <div><dt>Variantes</dt><dd>{variantes.length ? variantes.join(' · ') : 'Sin variantes'}</dd></div>
+          <div class="ancho"><dt>Contenidos</dt><dd>{t.contenidos_matematicos.join(' · ')}</dd></div>
+          <div><dt>Tiempo</dt><dd>{t.tiempo_estimado}</dd></div>
+          <div><dt>Puntaje rúbrica (RUB01)</dt><dd>{t.rub01_total} / 24</dd></div>
+          <div><dt>Tema</dt><dd>{AREAS[t.area] ?? t.area}</dd></div>
+          <div><dt>Publicada</dt><dd>{fechaLarga(t.fecha_publicacion)} · v{t.version}</dd></div>
+        </dl>
+
+        <div class="val-bloque" data-resumen={t.id} id="bloque-valoracion">
+          <div class="estrellas" aria-hidden="true">★★★★★</div>
+          <div class="val-detalle"><b><span class="valoracion-txt">Sin valoraciones aún</span></b>
+            <a href="#comentarios">Valorar y comentar</a></div>
+        </div>
+
+        <h2 class="descargas-titulo" id="h-descargas">Descargas (lectura y descarga libres)</h2>
+        <ul class="descargas" aria-labelledby="h-descargas">
+          {descargas.map(([n, et], i) => <li><a class={`boton ${i % 2 === 0 ? '' : 'boton-sec'}`} href={enlace(n)} download>⬇ {et}</a></li>)}
+          {repo && <li><a class="boton boton-gris" href={`${repo}/tree/main/${t.ruta}`} rel="noopener noreferrer">Ver en repositorio ↗</a></li>}
+        </ul>
+        <p class="licencia-nota">Licencia <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license noopener noreferrer">{t.licencia}</a>: puedes copiar, adaptar y compartir con atribución, sin fines comerciales y con la misma licencia.</p>
+
+        <nav class="secciones" aria-label="Secciones de la tarea" id="secciones">
+          <a href="#tarea" aria-current="true">Tarea</a>
+          <a href="#guia">Guía docente</a>
+          <a href="#comentarios">Valoración y comentarios <span id="n-comentarios"></span></a>
+        </nav>
+
+        <section class="seccion md" id="tarea" aria-label="Tarea">
+          {c.tareaHtml
+            ? <Fragment set:html={c.tareaHtml} />
+            : c.enunciado
+              ? <div><h2>Enunciado para estudiantes</h2><blockquote><p>{c.enunciado}</p></blockquote><p>Esta versión del catálogo (contrato 1.0) no incluye el texto en Markdown; descarga el JSON para ver la tarea completa.</p></div>
+              : <p>El texto de esta tarea no está disponible en este catálogo; usa los archivos de descarga.</p>}
+        </section>
+        <section class="seccion md" id="guia" aria-label="Guía docente">
+          {c.guiaHtml
+            ? <Fragment set:html={c.guiaHtml} />
+            : <p>La guía docente de esta versión solo está disponible como archivo descargable{A.guia ? '' : ' (no hay archivo registrado)'}.</p>}
+        </section>
+
+        <section class="seccion" id="comentarios" aria-label="Valoración y comentarios">
+          <h2>Comentarios de docentes</h2>
+          <div id="lista-comentarios" aria-live="polite"><p class="licencia-nota">Aún no hay comentarios publicados.</p></div>
+
+          <form class="form" id="form-opinion" data-tarea-id={t.id} data-version={t.version} novalidate>
+            <h3>¿Cómo te resultó implementarla?</h3>
+            <p class="mensaje info" id="op-requiere">Para valorar y comentar necesitas una cuenta. <a id="op-enlace-cuenta" href={u('cuenta/')}>Crea una o inicia sesión</a>. La lectura y la descarga son libres.</p>
+            <fieldset id="op-campos" class="campo" disabled>
+              <legend class="sr-only">Valoración y comentario</legend>
+              <fieldset class="campo">
+                <legend>Tu valoración (1 a 5)</legend>
+                <div class="estrellas-form" role="radiogroup" aria-label="Valoración de 1 a 5 estrellas">
+                  {[5, 4, 3, 2, 1].map((n) => (<><input type="radio" name="puntaje" id={`p${n}`} value={n} /><label for={`p${n}`}><span aria-hidden="true">★</span><span class="sr-only">{n} {n === 1 ? 'estrella' : 'estrellas'}</span></label></>))}
+                </div>
+              </fieldset>
+              <label class="campo"><span>Nivel en que la implementaste (opcional)</span>
+                <select name="nivel"><option value="">No indicar</option>{['P', 'S', 'U'].map((n) => <option value={n}>{NIVEL_INFO[n].largo}</option>)}</select></label>
+              <label class="campo"><span>Comentario (opcional si solo valoras)</span>
+                <textarea name="texto" maxlength="2000" rows="4" placeholder="Cuéntanos qué funcionó, dónde se trabaron los estudiantes y qué cambiarías…"></textarea></label>
+              <AvisoDatos />
+              <label class="acepto"><input type="checkbox" name="aviso" /> <span>Entiendo y acepto el aviso de uso de datos.</span></label>
+              <button class="boton" type="submit">Publicar valoración y comentario</button>
+            </fieldset>
+            <p class="mensaje" id="op-mensaje" role="status" hidden></p>
+          </form>
+        </section>
+      </article>
+
+      <aside class="lateral" aria-label="Información complementaria">
+        <section class="panel" aria-labelledby="h-rel">
+          <h2 id="h-rel">Tareas relacionadas</h2>
+          {rel.length ? rel.map((r) => (
+            <a class="relacionada" href={u(r.url)}><b>{r.titulo}</b><span>{nivelDe(r).corto} · {AREAS[r.area] ?? r.area}</span></a>
+          )) : <p class="licencia-nota">Aún no hay otras tareas.</p>}
+        </section>
+        <section class="panel panel-cuenta" aria-labelledby="h-cta">
+          <h2 id="h-cta">Tu cuenta docente</h2>
+          <p>Para valorar y comentar necesitas una cuenta. El perfil (nivel que enseñas, tipo de establecimiento, región, años de experiencia) es opcional.</p>
+          <p>Con esto el proyecto estudia qué tareas funcionan para qué población y mejora el banco. Puedes editar o retirar tus datos cuando quieras.</p>
+          <a href={u('cuenta/')}>Ir a mi cuenta ›</a>
+        </section>
+        <section class="panel" aria-labelledby="h-traza">
+          <h2 id="h-traza">Trazabilidad y versiones</h2>
+          <ul class="traza">
+            <li>Versión vigente: v{t.version}, publicada el {t.fecha_publicacion}.</li>
+            <li>Rúbrica RUB01: {t.rub01_total} / 24.</li>
+            <li>Commit <code>{t.commit}</code>.</li>
+          </ul>
+          <h3 style="font-size:13px;margin:14px 0 6px">Versiones anteriores</h3>
+          {t.versiones_anteriores.length ? (
+            <ul class="traza" id="versiones-anteriores">
+              {t.versiones_anteriores.map((v) => (
+                <li data-version={v.version}>v{v.version} · {v.fecha_publicacion} · commit <code>{v.commit}</code>
+                  {Object.keys(v.archivos).length > 0 && <> ·
+                    {[['tarea_md', 'tarea .md'], ['tarea', 'tarea .json'], ['guia_md', 'guía .md'], ['guia', 'guía .json']].filter(([k]) => v.archivos[k]).map(([k, et]) => <> <a href={enlace(v.archivos[k])} download>{et}</a></>)}
+                  </>}
+                </li>
+              ))}
+            </ul>
+          ) : <p class="licencia-nota" id="versiones-anteriores">Esta es la primera versión.</p>}
+        </section>
+      </aside>
+    </div>
+  </div>
+  <script>
+    import '../../../../scripts/tarea.js';
+  </script>
+</Base>

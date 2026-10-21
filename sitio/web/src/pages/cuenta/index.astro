@@ -1,0 +1,149 @@
+---
+import Base from '../../layouts/Base.astro';
+import AvisoDatos from '../../components/AvisoDatos.astro';
+import { NIVELES, TIPOS_ESTABLECIMIENTO, REGIONES } from 'otm-api';
+import { u } from '../../lib/url.js';
+---
+<Base titulo="Mi cuenta" actual="cuenta" descripcion="Crea tu cuenta docente para valorar y comentar tareas, y administra tu perfil y tus datos." noindex>
+  <div class="contenedor">
+    <p class="migas"><a href={u('')}>Inicio</a> › Mi cuenta</p>
+    <h1>Mi cuenta docente</h1>
+    <p class="texto-pagina">La lectura y la descarga de tareas y guías son libres. La cuenta es necesaria solo para valorar y comentar. El perfil es opcional en esta etapa piloto.</p>
+    <p class="mensaje info" id="c-nodisp" hidden>Las cuentas aún no están habilitadas en este sitio (no hay servicio configurado).</p>
+    <p class="mensaje" id="c-mensaje" role="status" hidden></p>
+
+    <div class="cuenta-rejilla" id="c-anonimo">
+      <form class="form" id="f-ingresar" novalidate>
+        <h2>Ingresar</h2>
+        <label class="campo"><span>Correo</span><input type="email" name="email" autocomplete="email" required /></label>
+        <label class="campo"><span>Contraseña</span><input type="password" name="password" autocomplete="current-password" required /></label>
+        <button class="boton" type="submit">Ingresar</button>
+      </form>
+      <form class="form" id="f-registro" novalidate>
+        <h2>Crear cuenta</h2>
+        <label class="campo"><span>Correo</span><input type="email" name="email" autocomplete="email" required /></label>
+        <label class="campo"><span>Contraseña (mínimo 8 caracteres)</span><input type="password" name="password" autocomplete="new-password" minlength="8" required /></label>
+        <AvisoDatos />
+        <label class="acepto"><input type="checkbox" name="aviso" /> <span>Entiendo y acepto el aviso de uso de datos.</span></label>
+        <button class="boton" type="submit">Crear cuenta</button>
+      </form>
+    </div>
+
+    <div class="cuenta-rejilla" id="c-sesion" hidden>
+      <form class="form" id="f-perfil" novalidate>
+        <h2>Perfil docente (opcional)</h2>
+        <p class="licencia-nota">Con estos datos el proyecto estudia qué tareas funcionan para qué población. Todos los campos son opcionales.</p>
+        <label class="campo"><span>Nivel que enseñas</span>
+          <select name="nivelEnsenanza"><option value="">Prefiero no indicar</option>{Object.entries(NIVELES).map(([k, v]) => <option value={k}>{v}</option>)}</select></label>
+        <label class="campo"><span>Tipo de establecimiento</span>
+          <select name="tipoEstablecimiento"><option value="">Prefiero no indicar</option>{Object.entries(TIPOS_ESTABLECIMIENTO).map(([k, v]) => <option value={k}>{v}</option>)}</select></label>
+        <label class="campo"><span>Región</span>
+          <select name="region"><option value="">Prefiero no indicar</option>{REGIONES.map((r) => <option value={r}>{r}</option>)}</select></label>
+        <label class="campo"><span>Años de experiencia</span>
+          <input type="number" name="aniosExperiencia" min="0" max="60" inputmode="numeric" /></label>
+        <AvisoDatos />
+        <label class="acepto"><input type="checkbox" name="aviso" /> <span>Entiendo y acepto el aviso de uso de datos.</span></label>
+        <button class="boton" type="submit">Guardar perfil</button>
+        <button class="boton boton-gris" type="button" id="b-retirar-perfil">Retirar mi perfil</button>
+        <p class="mensaje" id="p-mensaje" role="status" hidden></p>
+      </form>
+      <section class="form" aria-labelledby="h-mis" style="background:#fff;border-color:#e5e7eb">
+        <h2 id="h-mis">Mis comentarios y valoraciones</h2>
+        <p class="licencia-nota" id="c-sesion-correo"></p>
+        <div id="c-mis"></div>
+        <h3 style="margin-top:18px">Tus datos</h3>
+        <p class="licencia-nota">Puedes retirar todas tus valoraciones, comentarios y tu perfil. No se puede deshacer.</p>
+        <button class="boton boton-gris" type="button" id="b-retirar-todo">Retirar todos mis datos</button>
+        <button class="boton boton-sec" type="button" id="b-salir">Cerrar sesión</button>
+        <p class="licencia-nota" id="c-moderacion" hidden><a href={u('moderacion/')}>Ir a moderación de comentarios ›</a></p>
+      </section>
+    </div>
+  </div>
+  <script>
+    import { backend, MODO, esc, mensajeDe } from '../../scripts/cliente.js';
+    import { ETIQUETA_ESTADO } from 'otm-api';
+    const $ = (id) => document.getElementById(id);
+    const base = import.meta.env.BASE_URL;
+    function aviso(el, tipo, texto) { el.hidden = false; el.className = `mensaje ${tipo}`; el.textContent = texto; }
+    const msg = (t, x) => aviso($('c-mensaje'), t, x);
+    const volver = (() => {
+      const v = new URLSearchParams(location.search).get('volver');
+      return v && v.startsWith('/') && !v.startsWith('//') ? v : null;
+    })();
+
+    async function pintarSesion(b, s) {
+      $('c-anonimo').hidden = true; $('c-sesion').hidden = false;
+      $('c-sesion-correo').textContent = `Sesión iniciada como ${s.email}.`;
+      $('c-moderacion').hidden = !s.esModerador;
+      const d = await b.misDatos();
+      const f = $('f-perfil');
+      if (d.perfil) for (const k of ['nivelEnsenanza', 'tipoEstablecimiento', 'region', 'aniosExperiencia']) f.elements[k].value = d.perfil[k] ?? '';
+      $('c-mis').innerHTML =
+        (d.valoraciones.length ? `<p>Valoraciones: ${d.valoraciones.map((v) => `<a href="${esc(base)}tareas/${esc(v.tareaId.slice(0, 7))}/${esc(v.tareaId.slice(8))}/">${esc(v.tareaId.slice(8))}: ${v.puntaje}★</a>`).join(' · ')}</p>` : '<p class="licencia-nota">Aún no has valorado tareas.</p>') +
+        (d.comentarios.length ? d.comentarios.map((c) => `
+          <article class="comentario" data-id="${esc(c.id)}">
+            <header><b>${esc(c.tareaId.slice(8))}</b><small>${esc(ETIQUETA_ESTADO[c.estado])}</small></header>
+            <p>${esc(c.texto)}</p>
+            <div class="acciones"><button type="button" class="boton-mini" data-editar>Editar</button>
+              <button type="button" class="boton-mini peligro" data-retirar>Retirar</button></div>
+          </article>`).join('') : '<p class="licencia-nota">Aún no has comentado.</p>');
+      $('c-mis').querySelectorAll('[data-retirar]').forEach((btn) => btn.addEventListener('click', async () => {
+        try { await b.retirarComentario(btn.closest('.comentario').dataset.id); msg('ok', 'Comentario retirado.'); await pintarSesion(b, s); } catch (e) { msg('error', mensajeDe(e)); }
+      }));
+      $('c-mis').querySelectorAll('[data-editar]').forEach((btn) => btn.addEventListener('click', async () => {
+        const art = btn.closest('.comentario');
+        const nuevo = window.prompt('Edita tu comentario. Volverá a moderación antes de publicarse.', art.querySelector('p').textContent);
+        if (nuevo == null) return;
+        try { await b.editarComentario(art.dataset.id, { texto: nuevo, nivelImplementado: null }); msg('ok', 'Comentario actualizado; vuelve a moderación.'); await pintarSesion(b, s); } catch (e) { msg('error', mensajeDe(e)); }
+      }));
+    }
+
+    async function iniciar() {
+      if (MODO === 'none') { $('c-nodisp').hidden = false; $('c-anonimo').hidden = true; return; }
+      const b = await backend();
+      const s = await b.sesion().catch(() => null);
+      if (s) await pintarSesion(b, s);
+
+      $('f-ingresar').addEventListener('submit', async (ev) => {
+        ev.preventDefault();
+        const f = new FormData(ev.target);
+        try {
+          await b.iniciarSesion({ email: f.get('email'), password: f.get('password') });
+          if (volver) { location.href = volver; return; }
+          location.reload();
+        } catch (e) { msg('error', mensajeDe(e)); }
+      });
+      $('f-registro').addEventListener('submit', async (ev) => {
+        ev.preventDefault();
+        const f = new FormData(ev.target);
+        try {
+          if (!f.get('aviso')) throw Object.assign(new Error('Debes aceptar el aviso de uso de datos.'), { codigo: 'aviso_no_aceptado' });
+          const r = await b.registrar({ email: f.get('email'), password: f.get('password') });
+          if (r.requiereConfirmacion) { msg('info', 'Te enviamos un correo para confirmar la cuenta. Ábrelo y luego inicia sesión.'); return; }
+          if (volver) { location.href = volver; return; }
+          location.reload();
+        } catch (e) { msg('error', mensajeDe(e)); }
+      });
+      $('f-perfil').addEventListener('submit', async (ev) => {
+        ev.preventDefault();
+        const f = new FormData(ev.target);
+        try {
+          await b.guardarPerfil({
+            nivelEnsenanza: f.get('nivelEnsenanza'), tipoEstablecimiento: f.get('tipoEstablecimiento'),
+            region: f.get('region'), aniosExperiencia: f.get('aniosExperiencia'),
+          }, !!f.get('aviso'));
+          aviso($('p-mensaje'), 'ok', 'Perfil guardado.');
+        } catch (e) { aviso($('p-mensaje'), 'error', mensajeDe(e)); }
+      });
+      $('b-retirar-perfil').addEventListener('click', async () => {
+        try { await b.retirarPerfil(); $('f-perfil').reset(); aviso($('p-mensaje'), 'ok', 'Perfil retirado.'); } catch (e) { aviso($('p-mensaje'), 'error', mensajeDe(e)); }
+      });
+      $('b-retirar-todo').addEventListener('click', async () => {
+        if (!window.confirm('Se borrarán tus valoraciones, comentarios y perfil. ¿Continuar?')) return;
+        try { await b.retirarTodo(); $('f-perfil').reset(); msg('ok', 'Tus datos fueron retirados.'); await pintarSesion(b, await b.sesion()); } catch (e) { msg('error', mensajeDe(e)); }
+      });
+      $('b-salir').addEventListener('click', async () => { await b.cerrarSesion(); location.reload(); });
+    }
+    iniciar().catch((e) => msg('error', mensajeDe(e)));
+  </script>
+</Base>

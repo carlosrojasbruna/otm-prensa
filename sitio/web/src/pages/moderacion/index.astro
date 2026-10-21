@@ -1,0 +1,39 @@
+---
+import Base from '../../layouts/Base.astro';
+import { u } from '../../lib/url.js';
+---
+<Base titulo="Moderación de comentarios" descripcion="Cola de comentarios pendientes de moderación." noindex>
+  <div class="contenedor">
+    <p class="migas"><a href={u('')}>Inicio</a> › Moderación</p>
+    <h1>Moderación de comentarios</h1>
+    <p class="texto-pagina">Solo para personas moderadoras. Aprueba o rechaza los comentarios pendientes; un comentario se publica únicamente si es aprobado. La autorización la imponen las políticas de la base de datos, no esta página.</p>
+    <p class="mensaje" id="m-mensaje" role="status" hidden></p>
+    <div id="m-lista" aria-live="polite"></div>
+  </div>
+  <script>
+    import { backend, MODO, esc, mensajeDe } from '../../scripts/cliente.js';
+    const $ = (id) => document.getElementById(id);
+    const msg = (tipo, t) => { const el = $('m-mensaje'); el.hidden = false; el.className = `mensaje ${tipo}`; el.textContent = t; };
+    async function pintar(b) {
+      const lista = await b.pendientes();
+      $('m-lista').innerHTML = lista.length ? lista.map((c) => `
+        <article class="comentario" data-id="${esc(c.id)}">
+          <header><b>${esc(c.tareaId)} · v${esc(c.tareaVersion)}</b><time datetime="${esc(c.creado)}">${esc(new Date(c.creado).toLocaleString('es-CL'))}</time></header>
+          <p>${esc(c.texto)}</p>
+          <div class="acciones"><button type="button" class="boton-mini" data-estado="aprobado">Aprobar</button>
+            <button type="button" class="boton-mini peligro" data-estado="rechazado">Rechazar</button></div>
+        </article>`).join('') : '<p class="vacio">No hay comentarios pendientes.</p>';
+      $('m-lista').querySelectorAll('[data-estado]').forEach((btn) => btn.addEventListener('click', async () => {
+        try { await b.moderar(btn.closest('.comentario').dataset.id, btn.dataset.estado); msg('ok', 'Listo.'); await pintar(b); } catch (e) { msg('error', mensajeDe(e)); }
+      }));
+    }
+    (async () => {
+      if (MODO === 'none') return msg('info', 'No hay servicio de cuentas configurado.');
+      const b = await backend();
+      const s = await b.sesion();
+      if (!s) return msg('info', 'Inicia sesión desde Mi cuenta con una cuenta de moderación.');
+      if (!s.esModerador) return msg('error', 'Tu cuenta no tiene permiso de moderación.');
+      await pintar(b);
+    })().catch((e) => msg('error', mensajeDe(e)));
+  </script>
+</Base>

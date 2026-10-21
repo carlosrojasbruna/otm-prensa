@@ -1,0 +1,28 @@
+---
+import { AREAS, nivelDe, semanaIso } from '../lib/catalogo.js';
+import { urlArchivo } from '../lib/catalogo.js';
+import { u } from '../lib/url.js';
+import Resumen from './Resumen.astro';
+const { t, nuevo = false, lazy = true } = Astro.props;
+const niv = nivelDe(t);
+---
+<li class="tarjeta-item">
+  <article class="tarjeta"
+    data-id={t.id} data-nivel={t.nivel_principal} data-subtramo={t.sub_tramo ?? ''} data-variantes={t.variantes.join(',')}
+    data-area={t.area} data-contenidos={t.contenidos_matematicos.join('|')}
+    data-fecha={t.fecha_publicacion} data-titulo={t.titulo}
+    data-texto={[t.titulo, t.noticia.medio, ...t.contenidos_matematicos, AREAS[t.area]].join(' ').toLowerCase()}>
+    <div class="tarjeta-img">
+      {t.archivos.icono
+        ? <img src={u(urlArchivo(t, t.archivos.icono))} alt="" width="256" height="112" loading={lazy ? 'lazy' : 'eager'} decoding="async" />
+        : <svg viewBox="0 0 256 112" width="256" height="112" aria-hidden="true"><rect width="256" height="112" fill="#ede9fe"/><text x="128" y="64" text-anchor="middle" font-size="28" fill="#6d28d9">{t.nivel_principal}</text></svg>}
+      {nuevo && <span class="chip chip-nuevo">NUEVO</span>}
+      <span class="chip chip-nivel" style={`background:${niv.fondo};color:${niv.texto}`}>{niv.corto} · {niv.edad}</span>
+    </div>
+    <div class="tarjeta-cuerpo">
+      <h3><a href={u(t.url)}>{t.titulo}</a></h3>
+      <span class="tema">{AREAS[t.area] ?? t.area}</span>
+      <Resumen id={t.id} />
+    </div>
+  </article>
+</li>
