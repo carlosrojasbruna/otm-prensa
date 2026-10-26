@@ -1,0 +1,113 @@
+{
+  "tarea_id": "2026-10-votos-canal-whatsapp",
+  "fecha": "2026-10-26T16:48:06Z",
+  "rub01": {
+    "version_rubrica": "4.0",
+    "criterios": {
+      "genuino": {
+        "puntaje": 2,
+        "justificacion": "La necesidad de la editora es real y el enunciado no entrega ninguna regla ni modelo para estimar votos movidos. Quien resuelve debe construir el modelo.",
+        "cita": "su editora quiere saber si es razonable afirmar que este canal cambió el resultado. Hagan su propia estimación de cuántos votos pudo mover el canal"
+      },
+      "abierta": {
+        "puntaje": 2,
+        "justificacion": "La pregunta no prescribe procedimiento y admite varios modelos defendibles. Por ejemplo, cadenas de proporciones, rangos o escenarios.",
+        "cita": "Hagan su propia estimación de cuántos votos pudo mover el canal y decidan con qué confianza la presentarían."
+      },
+      "decisiones": {
+        "puntaje": 2,
+        "justificacion": "Resolver exige estimar qué fracción lee, reenvía o es persuadible, formular supuestos sobre votantes ya decididos y decidir qué información solicitar. R2 explicita que el grupo debe proponer y justificar su proporción.",
+        "cita": "Pueden pedir información adicional."
+      },
+      "realismo": {
+        "puntaje": 2,
+        "justificacion": "La situación es un hecho real. La verificación de una afirmación política en un medio es una práctica extraescolar plausible.",
+        "cita": "un canal de WhatsApp llamado «Ejército de Lula» reunió a 10,8 millones de seguidores para apoyar la candidatura de Lula antes de la elección"
+      },
+      "autenticidad": {
+        "puntaje": 2,
+        "justificacion": "El núcleo de la tarea proviene de una noticia real: la cifra del canal y el debate entre aliados e investigadores. Se suman los resultados oficiales del órgano electoral, de modo que los componentes auténticos están integrados sustantivamente.",
+        "cita": "Los aliados del candidato dicen que el canal ayudó a dar vuelta la carrera. Algunos investigadores responden que es muy difícil saber cuántos votos movió"
+      },
+      "contexto": {
+        "puntaje": 2,
+        "justificacion": "El contexto condiciona los supuestos: seguidores ya simpatizantes, efecto de otras campañas, alcance real de los mensajes. También es necesario para interpretar si la estimación alcanza a cambiar el resultado.",
+        "cita": "es muy difícil saber cuántos votos movió, porque al mismo tiempo hubo campaña en la calle"
+      },
+      "ciclo": {
+        "puntaje": 2,
+        "justificacion": "Responder obliga a comprender la situación, simplificar con supuestos, matematizar una cadena de proporciones, calcular e interpretar frente a la pregunta de la editora. También obliga a juzgar la confianza del resultado, y ninguna fase queda hecha por el enunciado.",
+        "cita": "Hagan su propia estimación de cuántos votos pudo mover el canal y decidan con qué confianza la presentarían."
+      },
+      "validacion": {
+        "puntaje": 1,
+        "justificacion": "Los votos movidos por el canal no son observables. El total de habilitados y la diferencia final sirven sobre todo para acotar la plausibilidad e interpretar si el efecto alcanzaría a cambiar el resultado, no para contrastar el valor estimado. Dudé con 2 por la restricción contextual que aporta R4, y elegí el menor.",
+        "cita": "incluyen el total de votantes habilitados y la diferencia final de votos entre los candidatos. Se entregan al grupo cuando ya tiene una estimación propia."
+      },
+      "nivel": {
+        "puntaje": 2,
+        "justificacion": "El contexto electoral y de redes sociales es comprensible y pertinente para secundaria. La matemática requerida está al alcance de S: proporciones, porcentajes, estimación y comparación de escenarios.",
+        "cita": "Ustedes trabajan en la unidad de verificación de datos de un medio"
+      },
+      "autodiferenciacion": {
+        "puntaje": 2,
+        "justificacion": "Se puede entrar con una cadena simple de porcentajes sobre 10,8 millones. La tarea admite soluciones más sofisticadas: rangos de escenarios, sensibilidad a cada supuesto, alcance de reenvíos fuera del canal y comparación con la diferencia final.",
+        "cita": "Hagan su propia estimación de cuántos votos pudo mover el canal y decidan con qué confianza la presentarían."
+      },
+      "fecundidad": {
+        "puntaje": 2,
+        "justificacion": "Las distintas estimaciones y niveles de confianza permiten comparar soluciones entre grupos. También abren preguntas sobre los límites de atribuir votos a una sola causa frente a la campaña en la calle.",
+        "cita": "decidan con qué confianza la presentarían"
+      },
+      "recursos": {
+        "puntaje": 1,
+        "justificacion": "La información es obtenible a solicitud y no da cifras. Sin embargo, R2 y R3 nombran precisamente los dos factores clave del modelo: fracción que lee o reenvía y fracción ya decidida. Eso es una sobreorientación parcial. Dudé con 2 porque solo se entregan si el grupo las pide, y elegí el menor.",
+        "cita": "unirse a un canal de apoyo a una candidatura es algo que hacen sobre todo personas que ya simpatizaban con ella"
+      }
+    },
+    "total": 22,
+    "mejoras": [
+      {
+        "criterio": "validacion",
+        "mejora_minima": "Agregar a R4, a solicitud, un dato independiente que permita contrastar un eslabón del modelo. Por ejemplo, una encuesta publicada sobre qué porcentaje de votantes declara haber cambiado su voto por mensajes de WhatsApp, o datos de lectura y reenvío de canales similares. Así la estimación puede compararse con evidencia no usada en su construcción."
+      },
+      {
+        "criterio": "recursos",
+        "mejora_minima": "Reformular R2 y R3 para que respondan solo a la pregunta concreta que haga el grupo, sin nombrar de antemano los factores del modelo. Por ejemplo: «Si el grupo pregunta por un dato que no existe para este caso, se le indica que debe proponer y justificar una estimación propia»."
+      }
+    ]
+  },
+  "reproducibilidad": {
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.325856,
+        "version_prompt": "1.1"
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.291156,
+        "version_prompt": "1.3"
+      },
+      "filtro": {
+        "modelo": "claude-haiku-5-5",
+        "version_modelo": "claude-haiku-5-5",
+        "costo_usd": 0.000667,
+        "version_prompt": "1.0"
+      }
+    },
+    "version_prompt": {
+      "disenador": "1.1",
+      "evaluador": "1.3",
+      "filtro": "1.0"
+    },
+    "version_rubrica": "4.0",
+    "version_MAR03": "1.0",
+    "version_MED01": "1.4",
+    "diseno_simulador": null,
+    "fecha": "2026-10-26T16:48:06Z",
+    "costo_usd": 0.617679
+  }
+}

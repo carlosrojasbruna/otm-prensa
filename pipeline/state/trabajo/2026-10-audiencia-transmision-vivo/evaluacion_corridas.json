@@ -1,0 +1,321 @@
+{
+  "tarea_id": "2026-10-audiencia-transmision-vivo",
+  "evaluaciones": [
+    {
+      "iteracion": 1,
+      "version_tarea": 1,
+      "fecha": "2026-10-26T16:49:50Z",
+      "modelo": "claude-opus-5-5",
+      "version_prompt": "1.3",
+      "version_rubrica": "4.0",
+      "corridas": [
+        {
+          "n": 1,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "Plantea una necesidad real del periodista: estimar el alcance a partir de las conexiones simultáneas. No entrega la regla que vincula conectados, tiempo de permanencia y personas distintas.",
+                "cita": "Ustedes asesoran al periodista: ¿cuántas personas distintas pudieron haber visto la transmisión y es creíble que haya alcanzado a una parte importante de los seguidores …"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe el método. Admite varios modelos defendibles, por ejemplo por bloques horarios, por promedio de conectados o por distintas permanencias, y no hay instrucciones posteriores que encaucen hacia una ruta única.",
+                "cita": "Expliquen qué supuestos usan y decidan cómo presentarían el resultado en una frase para el público."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige estimar cuántos hay conectados en cada momento y cuánto permanecen, formular supuestos sobre la variación diaria y decidir qué información pedir.",
+                "cita": "El tiempo que permaneció conectada cada persona no se conoce y debe estimarse."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Distinguir audiencia simultánea de alcance total es un problema real y frecuente en el periodismo sobre transmisiones en vivo. La situación es claramente plausible.",
+                "cita": "un periodista quiere contar cuánta gente participó de verdad"
+              },
+              "autenticidad": {
+                "puntaje": 1,
+                "justificacion": "El tema y los datos de partida (10,8 millones de seguidores, 24 horas) son auténticos, pero no se declara su fuente y los seguidores se usan sobre todo como contraste. El núcleo (curva de conexión, tarjetas R3–R5) es un escenario construido; hay duda entre 1 y 2, por lo que se asigna el menor.",
+                "cita": "Supuesto del escenario: hay más gente conectada por la tarde y la noche, y mucha menos de madrugada."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona los supuestos (variación horaria, entradas y salidas) y es necesario para interpretar el resultado frente a los seguidores y redactar la frase para el público.",
+                "cita": "nadie vio la transmisión completa; la gente entraba y salía en momentos distintos del día"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a recorrer todas las fases de forma no trivial:\n- comprender la diferencia entre conectados simultáneos y personas distintas;\n- simplificar y matematizar con la tasa de recambio;\n- calcular;\n- interpretar frente a 10,8 millones;\n- validar.",
+                "cita": "¿cuántas personas distintas pudieron haber visto la transmisión y es creíble que haya alcanzado a una parte importante de los seguidores del canal?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existe evidencia independiente, entregada solo después de la estimación propia, para contrastar el modelo. Se suma la restricción del tamaño del canal.",
+                "cita": "terminada la transmisión, la plataforma publica dos datos: el máximo de personas conectadas a la vez y el total de espectadores distintos"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto (WhatsApp, transmisiones en vivo) es comprensible para S1. La matemática requerida (tasas, promedios, proporciones) está dentro de las herramientas esperables del sub-tramo.",
+                "cita": "Ustedes asesoran al periodista: ¿cuántas personas distintas pudieron haber visto la transmisión"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Admite una entrada elemental, con bloques horarios y una permanencia fija, y soluciones más refinadas: curvas, distribuciones de permanencia, análisis de sensibilidad. Hay piso razonable y techo alto.",
+                "cita": "El grupo puede pedir una forma de describir esa variación o proponer la suya."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Los distintos supuestos de permanencia producen estimaciones comparables. El contraste con el máximo simultáneo y el total abre preguntas sobre cómo se reportan audiencias y sobre los límites del modelo.",
+                "cita": "decidan cómo presentarían el resultado en una frase para el público"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "El número de personas conectadas es imprescindible y no se entrega: la curva no tiene escala y R3 es solo cualitativa. Tampoco se indica cómo obtenerlo, lo que resulta difícil para estudiantes de S1.",
+                "cita": "Ícono de un reloj que recorre todo un día y, debajo, una curva con subidas y bajadas que representa personas conectadas a lo largo de …"
+              }
+            },
+            "total": 22,
+            "mejoras": [
+              {
+                "criterio": "autenticidad",
+                "mejora_minima": "Declarar la fuente periodística de los datos del canal y la transmisión. Si existe, incorporar como dato auténtico una cifra real de conexión simultánea reportada por la prensa, en lugar de una curva solo construida para el escenario."
+              },
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Agregar a R3 una escala o algunos valores de personas conectadas en ciertas horas, disponibles a solicitud, o indicar cómo estimarlos. No debe revelarse la relación entre permanencia y personas distintas."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgRBypuihcL8M8wfvxPA2",
+            "fecha": "2026-10-26T16:48:44+00:00",
+            "intentos": 1,
+            "costo_usd": 0.082274,
+            "avisos": [
+              "cita_recortada_25:genuino",
+              "cita_recortada_25:recursos"
+            ]
+          }
+        },
+        {
+          "n": 2,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "Plantea una necesidad real del periodista: distinguir conectados simultáneos de espectadores distintos. No entrega ninguna regla ni modelo que relacione la curva de conexión con el total de personas.",
+                "cita": "¿cuántas personas distintas pudieron haber visto la transmisión y es creíble que haya alcanzado a una parte importante de los seguidores del canal?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe el procedimiento y admite varios modelos defendibles, como curvas por tramos horarios o distintas duraciones de permanencia. Además deja abierta la forma de comunicar el resultado.",
+                "cita": "Expliquen qué supuestos usan y decidan cómo presentarían el resultado en una frase para el público."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolverla obliga a estimar el nivel de conexión a lo largo del día y el tiempo medio de permanencia, a simplificar la curva y a decidir qué información pedir.",
+                "cita": "El tiempo que permaneció conectada cada persona no se conoce y debe estimarse."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Estimar el alcance real de una transmisión de un canal político existente es una situación plausible del periodismo. El acotamiento «en este ejercicio» no vuelve el encuadre artificial.",
+                "cita": "un periodista quiere contar cuánta gente participó de verdad"
+              },
+              "autenticidad": {
+                "puntaje": 1,
+                "justificacion": "El tema y la cifra de 10,8 millones provienen de un hecho real, pero la cifra opera sobre todo como contraste. El material con que se construye el modelo (R3, R4 y R5) se declara «supuesto del escenario». Dudé entre 1 y 2 y elegí el menor.",
+                "cita": "el canal de WhatsApp «Ejército de Lula», que había llegado a 10,8 millones de seguidores, organizó una transmisión en vivo de 24 horas"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona los supuestos: los horarios de conexión y las entradas y salidas de la gente. También es necesario para juzgar la credibilidad frente a los seguidores y para redactar la frase pública.",
+                "cita": "es creíble que haya alcanzado a una parte importante de los seguidores del canal?"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder exige recorrer todo el ciclo: comprender la diferencia entre conectados y distintos, simplificar la curva, matematizar con tasas y duraciones, calcular, interpretar frente a los 10,8 millones y validar.",
+                "cita": "la plataforma solo le muestra cuántas personas están conectadas en cada momento del día, y no cuántas personas distintas pasaron por la transmisión"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "R5 aporta evidencia independiente, que no se usó en la construcción del modelo. Se entrega después de que el grupo tiene su estimación, lo que permite contrastar el modelo.",
+                "cita": "la plataforma publica dos datos: el máximo de personas conectadas a la vez y el total de espectadores distintos"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto de redes sociales es comprensible para 13–15 años. La matemática requerida (promedios, tasas, horas-persona divididas por permanencia) está al alcance de S1.",
+                "cita": "hay más gente conectada por la tarde y la noche, y mucha menos de madrugada"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Se puede entrar con una cota simple, «al menos tantos como el máximo conectado», o con un promedio constante. También admite modelos refinados por tramos horarios y con distintas duraciones de permanencia.",
+                "cita": "El grupo puede pedir una forma de describir esa variación o proponer la suya."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las distintas estimaciones y rangos pueden compararse entre grupos y con R5. Esto abre preguntas sobre cómo se reportan audiencias y sobre la sensibilidad a la duración supuesta.",
+                "cita": "decidan cómo presentarían el resultado en una frase para el público"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "El dato imprescindible (cuántas personas había conectadas en cada momento) no se entrega ni figura entre los recursos solicitables. R3 es solo cualitativa y R5 llega después. Un grupo de S1 debe inventar ese nivel sin base para estimarlo.",
+                "cita": "Pueden pedir información adicional."
+              }
+            },
+            "total": 22,
+            "mejoras": [
+              {
+                "criterio": "autenticidad",
+                "mejora_minima": "Integrar como núcleo un dato real publicado sobre la transmisión, por ejemplo una cifra de conectados simultáneos o de reproducciones reportada por la prensa, en lugar de supuestos del escenario."
+              },
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Añadir una tarjeta solicitable con algunas lecturas aproximadas del número de conectados en ciertas horas, sin indicar cómo combinarlas con la duración de permanencia."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgRC2aQB8T8BAUbHeeScR",
+            "fecha": "2026-10-26T16:49:19+00:00",
+            "intentos": 1,
+            "costo_usd": 0.075934,
+            "avisos": []
+          }
+        },
+        {
+          "n": 3,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La situación plantea una necesidad real: estimar el alcance de la transmisión. No entrega la regla que relaciona las personas conectadas, la duración de las visitas y los espectadores distintos.",
+                "cita": "un periodista quiere contar cuánta gente participó de verdad"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe un procedimiento. Admite varios modelos defendibles, por ejemplo por franjas horarias, con un promedio de conectados o con distintas permanencias, y ninguna instrucción posterior encauza hacia una ruta única.",
+                "cita": "¿cuántas personas distintas pudieron haber visto la transmisión y es creíble que haya alcanzado a una parte importante de los seguidores del canal?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige estimar cuánta gente está conectada en cada franja y cuánto permanece cada persona, formular supuestos y decidir qué información solicitar.",
+                "cita": "El tiempo que permaneció conectada cada persona no se conoce y debe estimarse."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Un periodista que estima el alcance real de una transmisión política es una situación claramente plausible fuera de la escuela, aunque la restricción de la plataforma se declare como parte del ejercicio.",
+                "cita": "La víspera de la elección en Brasil, el canal de WhatsApp «Ejército de Lula», que había llegado a 10,8 millones de seguidores, organizó una transmisión …"
+              },
+              "autenticidad": {
+                "puntaje": 1,
+                "justificacion": "El tema y las cifras del canal son auténticos y se usan para juzgar la credibilidad. Sin embargo, el núcleo del material (la curva, el comportamiento de los espectadores y los datos de contraste) se declara construido como escenario. Dudé entre 2 y 1 y asigno el menor.",
+                "cita": "Supuesto del escenario: hay más gente conectada por la tarde y la noche, y mucha menos de madrugada."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona los supuestos sobre horarios y permanencia, y es necesario para interpretar el resultado frente a los 10,8 millones de seguidores y comunicarlo al público.",
+                "cita": "decidan cómo presentarían el resultado en una frase para el público"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Resolver obliga a comprender la diferencia entre conectados y personas distintas, simplificar con supuestos, matematizar, calcular, interpretar frente al tamaño del canal y validar. El enunciado no deja ninguna fase hecha.",
+                "cita": "Expliquen qué supuestos usan y decidan cómo presentarían el resultado en una frase para el público."
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "R5 aporta evidencia independiente, no usada en la construcción del modelo, para contrastar la estimación propia.",
+                "cita": "la plataforma publica dos datos: el máximo de personas conectadas a la vez y el total de espectadores distintos"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto de redes sociales es comprensible y pertinente para S1. La matemática requerida (tasas, promedios, multiplicación por franjas horarias) está dentro de las herramientas esperables del sub-tramo.",
+                "cita": "no cuántas personas distintas pasaron por la transmisión"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Se puede entrar con un promedio constante de conectados y una permanencia fija, y la tarea admite soluciones más refinadas: curva por franjas, distribución de permanencias y análisis de sensibilidad.",
+                "cita": "El grupo puede pedir una forma de describir esa variación o proponer la suya."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las distintas estimaciones y supuestos permiten comparar soluciones, discutir los límites del modelo frente al dato posterior y abrir preguntas sobre cómo comunicar cifras de audiencia.",
+                "cita": "es creíble que haya alcanzado a una parte importante de los seguidores del canal?"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "Ningún recurso entrega una magnitud para el número de conectados: la curva no tiene escala, R3 es solo cualitativo y el máximo llega recién en R5. Ese dato imprescindible es difícil de estimar para estudiantes de S1.",
+                "cita": "la plataforma solo le muestra cuántas personas están conectadas en cada momento del día"
+              }
+            },
+            "total": 22,
+            "mejoras": [
+              {
+                "criterio": "autenticidad",
+                "mejora_minima": "Citar la noticia de origen e incorporar como dato de partida alguna cifra real publicada sobre la transmisión (por ejemplo, un pico de conectados informado por la prensa), en lugar de presentarla solo como supuesto del escenario."
+              },
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Añadir a R3, disponible a solicitud, una escala orientativa de conectados (por ejemplo, un rango de personas conectadas en hora punta y de madrugada) sin indicar cómo combinarla con la permanencia."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgRC58yJX94nphpQS9Jdu",
+            "fecha": "2026-10-26T16:49:50+00:00",
+            "intentos": 1,
+            "costo_usd": 0.068914,
+            "avisos": [
+              "cita_recortada_25:realismo"
+            ]
+          }
+        }
+      ],
+      "totales": [
+        22,
+        22,
+        22
+      ],
+      "rango_total": 0,
+      "rango_inestable": 4,
+      "evaluacion_inestable": false,
+      "mediana": {
+        "regla": "mediana por criterio (n par: mediana inferior)",
+        "total": 22,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 1,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 1
+        },
+        "corrida_fuente": {
+          "genuino": 1,
+          "abierta": 1,
+          "decisiones": 1,
+          "realismo": 1,
+          "autenticidad": 1,
+          "contexto": 1,
+          "ciclo": 1,
+          "validacion": 1,
+          "nivel": 1,
+          "autodiferenciacion": 1,
+          "fecundidad": 1,
+          "recursos": 1
+        }
+      }
+    }
+  ]
+}

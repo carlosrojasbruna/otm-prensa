@@ -1,0 +1,435 @@
+{
+  "tarea_id": "2026-10-votos-canal-whatsapp",
+  "estado": "evaluada",
+  "iteraciones": 1,
+  "artefactos": {
+    "tarea": {
+      "id": "2026-10-votos-canal-whatsapp",
+      "titulo": "¿Cuántos votos puede mover un canal de WhatsApp?",
+      "estado": "evaluada",
+      "version": 1,
+      "fecha": "2026-10-26",
+      "noticia": {
+        "noticia_id": "2026-10-26-bbc-how-lula-s-army-whatsapp-chat",
+        "medio": "BBC News",
+        "titulo": "How 'Lula's Army' WhatsApp chat helped turn Brazil election around",
+        "fecha": "2026-10-26",
+        "url": "https://www.bbc.co.uk/news/articles/cwz0vg4v3ndeo?at_medium=RSS&at_campaign=rss",
+        "resumen_propio": "A WhatsApp channel backing Lula's bid for another term grew very quickly to a large follower base, and its leader asked members to share videos and push hashtags. Allies credit it with helping reverse the race in a short period, but researchers say its actual effect on votes is hard to measure and point to street campaigning as well.",
+        "cifras_usadas": [
+          {
+            "valor": "10.8 million",
+            "unidad": "seguidores en WhatsApp",
+            "que_es": "Número de seguidores que alcanzó el canal de WhatsApp 'Lula's Army'",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 52"
+            }
+          }
+        ]
+      },
+      "nivel_principal": "S",
+      "variantes": {
+        "abajo": "P",
+        "arriba": "U"
+      },
+      "area": "sociedad_datos",
+      "contenidos_matematicos": [
+        "proporciones y porcentajes encadenados",
+        "estimación de Fermi",
+        "comparación de escenarios",
+        "sensibilidad informal"
+      ],
+      "tiempo_estimado": "2 sesiones de 90 min",
+      "estudiante": {
+        "enunciado_es": "En Brasil, un canal de WhatsApp llamado «Ejército de Lula» reunió a 10,8 millones de seguidores para apoyar la candidatura de Lula antes de la elección. Su líder pedía a los miembros que compartieran videos y empujaran etiquetas en redes sociales. Los aliados del candidato dicen que el canal ayudó a dar vuelta la carrera. Algunos investigadores responden que es muy difícil saber cuántos votos movió, porque al mismo tiempo hubo campaña en la calle. Ustedes trabajan en la unidad de verificación de datos de un medio y su editora quiere saber si es razonable afirmar que este canal cambió el resultado. Hagan su propia estimación de cuántos votos pudo mover el canal y decidan con qué confianza la presentarían. Pueden pedir información adicional.",
+        "foto_descripcion": "Ícono de un teléfono móvil con una burbuja de chat y una flecha de reenvío que sale hacia varias siluetas de personas.",
+        "recursos_a_solicitud": [
+          {
+            "id": "R2",
+            "que_es": "Tarjeta sobre el comportamiento de los seguidores",
+            "contenido": "Supuesto del escenario: no todos los seguidores leen cada mensaje ni lo reenvían. La proporción que sí lo hace varía de un canal a otro y no existe una cifra única para este caso; el grupo debe proponer y justificar la suya.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P2-RM",
+            "fuente": "supuesto del escenario"
+          },
+          {
+            "id": "R3",
+            "que_es": "Tarjeta sobre la intención de voto previa de los seguidores",
+            "contenido": "Supuesto del escenario: unirse a un canal de apoyo a una candidatura es algo que hacen sobre todo personas que ya simpatizaban con ella, de modo que una parte de los seguidores ya tenía su voto decidido antes de entrar.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P2-RM",
+            "fuente": "supuesto del escenario"
+          },
+          {
+            "id": "R4",
+            "que_es": "Tarjeta de contraste con el resultado oficial",
+            "contenido": "Los resultados oficiales publicados por el órgano electoral de Brasil incluyen el total de votantes habilitados y la diferencia final de votos entre los candidatos. Se entregan al grupo cuando ya tiene una estimación propia.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P6-VAL",
+            "fuente": "otra fuente: Tribunal Superior Eleitoral (TSE) de Brasil, resultados oficiales de la elección"
+          }
+        ]
+      },
+      "variantes_detalle": {
+        "abajo": {
+          "tramo": "P",
+          "cambios": "Se pide una sola incógnita: de los seguidores, cuántos podrían haber cambiado o reafirmado su voto por el canal. El grupo acuerda un único supuesto por etapa y trabaja con proporciones simples, por ejemplo «de cada diez». La validación se reduce a comparar con el tamaño del canal que da la noticia y a decir si el resultado le parece posible."
+        },
+        "arriba": {
+          "tramo": "U",
+          "cambios": "Se pide un intervalo de incertidumbre para el número de votos, tratando cada proporción como una variable con rango, por ejemplo mediante simulación. Se exige un análisis de sensibilidad sobre cuál etapa pesa más y una crítica del modelo: asociación frente a causalidad y solapamiento con otros canales de campaña."
+        }
+      },
+      "recursos_de_entrada": [
+        {
+          "id": "R1",
+          "que_es": "Dato de partida: tamaño del canal",
+          "contenido": "El canal alcanzó 10,8 millones de seguidores en WhatsApp.",
+          "disponibilidad": "de_entrada",
+          "fase": "P1-MRS",
+          "fuente": "noticia, párrafo 52"
+        }
+      ],
+      "mapa_ciclo": {
+        "P1-MRS": {
+          "decision": "Entender que la pregunta es por votos movidos y no por seguidores, y fijar quién usará la estimación.",
+          "evidencia": "El grupo reformula la pregunta con sus palabras y separa «seguidores» de «votos».",
+          "bloqueo_probable": "B12"
+        },
+        "P2-RM": {
+          "decision": "Elegir qué etapas hay entre ser seguidor y votar, y qué dejar fuera (campaña en la calle, otros medios).",
+          "evidencia": "Lista escrita de factores incluidos y excluidos, con una razón para cada uno.",
+          "bloqueo_probable": "B23"
+        },
+        "P3-MM": {
+          "decision": "Expresar los votos movidos como el tamaño del canal por una cadena de proporciones, o con reenvíos adicionales.",
+          "evidencia": "Una expresión con variables nombradas y un valor propuesto para cada una.",
+          "bloqueo_probable": "B34"
+        },
+        "P4-WM": {
+          "decision": "Calcular el resultado con distintas combinaciones de proporciones.",
+          "evidencia": "Tabla con escenarios bajo, medio y alto y su resultado.",
+          "bloqueo_probable": "B45"
+        },
+        "P5-INT": {
+          "decision": "Interpretar el número como votos posibles y no seguros, y compararlo con el tamaño de la elección.",
+          "evidencia": "Frase que dice qué significa el rango en términos de la elección.",
+          "bloqueo_probable": "B56"
+        },
+        "P6-VAL": {
+          "decision": "Contrastar con la diferencia final y el número de votantes habilitados, y decidir qué supuesto revisar.",
+          "evidencia": "Comparación escrita entre el rango estimado y el dato oficial, con un supuesto ajustado.",
+          "bloqueo_probable": "B67"
+        },
+        "P7-EXP": {
+          "decision": "Escribir para la editora una conclusión con rango y advertencias.",
+          "evidencia": "Texto o cartel con el rango, los supuestos y el límite de lo que se puede afirmar.",
+          "bloqueo_probable": null
+        }
+      },
+      "task_space": {
+        "required_assumptions": [
+          "Proporción de seguidores que lee o ve los mensajes.",
+          "Proporción de los que leen que no tenía el voto decidido de antemano.",
+          "Proporción de estos que realmente cambia o confirma su voto por influencia del canal.",
+          "Proporción de ellos que efectivamente vota.",
+          "Que la campaña en la calle y otros medios se tratan aparte y no se atribuyen al canal."
+        ],
+        "reference_solution": {
+          "steps": "1) Distinguir seguidores de votos. 2) Definir etapas: lee el mensaje, no tenía voto decidido, se deja influir, vota. 3) Proponer una proporción por etapa y justificarla. 4) Multiplicar el tamaño del canal por las proporciones. 5) Repetir con un escenario bajo y uno alto. 6) Comparar el rango con la diferencia final y con el total de votantes habilitados. 7) Concluir con rango y límites.",
+          "result": "Con valores ilustrativos de 0,6 que leen, 0,2 sin voto decidido y 0,1 que se deja influir: 10,8 millones × 0,6 × 0,2 × 0,1 = 129.600 votos. La respuesta depende de los supuestos y debe presentarse como rango.",
+          "acceptable_range": "Escenario bajo (0,4; 0,1; 0,05): 21.600 votos. Escenario alto (0,8; 0,3; 0,2): 518.400 votos. Cualquier rango justificado con proporciones razonables y comparado con la diferencia oficial es aceptable; afirmar con certeza que el canal decidió la elección, o que no tuvo ningún efecto, no es defendible."
+        },
+        "routes": [
+          {
+            "id": "R1",
+            "nombre": "Embudo de proporciones",
+            "nivel": "S1",
+            "modelo": "Votos = seguidores × proporción que lee × proporción sin voto decidido × proporción que se deja influir.",
+            "resultado": "Con proporciones ilustrativas, 129.600 votos."
+          },
+          {
+            "id": "R2",
+            "nombre": "Escenarios y sensibilidad",
+            "nivel": "S2",
+            "modelo": "El mismo embudo con valores bajo, medio y alto, y comparación de cuánto cambia el resultado al variar cada proporción por separado.",
+            "resultado": "Rango entre 21.600 y 518.400 votos; la proporción que se deja influir es la que más pesa."
+          },
+          {
+            "id": "R3",
+            "nombre": "Alcance con reenvíos",
+            "nivel": "S2",
+            "modelo": "Alcance = seguidores × (1 + r + r² + …) = seguidores / (1 − r), con r el número medio de personas nuevas alcanzadas por cada seguidor que reenvía; luego se aplica una proporción de persuasión al alcance nuevo.",
+            "resultado": "Con r = 0,3 el alcance potencial es cerca de 15,4 millones de personas, con solapamiento; los votos movidos siguen siendo una fracción pequeña de ese alcance."
+          },
+          {
+            "id": "R4",
+            "nombre": "Tasa de conversión directa",
+            "nivel": "P",
+            "modelo": "Votos = seguidores × una sola proporción acordada («de cada cien seguidores, cuántos votaron distinto por el canal»).",
+            "resultado": "Con una proporción de 0,05 resultan 540.000 votos; es un modelo más tosco porque oculta las etapas."
+          }
+        ],
+        "modelo_inadecuado": {
+          "id": "RX",
+          "por_que_falla": "Suponer que cada seguidor del canal equivale a un voto ganado confunde asociación con efecto causal. Ignora que muchos ya apoyaban la candidatura, que no todos leen los mensajes ni votan, y sobreestima el efecto por un factor grande."
+        },
+        "validation_evidence": "Después de modelar, el grupo contrasta su rango con los resultados oficiales del órgano electoral de Brasil: la diferencia final de votos y el total de votantes habilitados. Esos datos no se usaron para construir el modelo. Así evalúan si el efecto máximo estimado es compatible con una diferencia que el canal pudo haber alterado, y qué supuestos habría que cambiar para que lo fuera.",
+        "agent_visibility": {
+          "students": [
+            "enunciado_es",
+            "foto_descripcion",
+            "recursos_a_solicitud"
+          ],
+          "coder": [
+            "enunciado_es",
+            "task_space"
+          ],
+          "guide": [
+            "all"
+          ]
+        }
+      },
+      "rubrica_rub01": {
+        "total": 22,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 1,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 1
+        }
+      },
+      "rubrica_rub02": {
+        "P": null,
+        "S": null,
+        "U": null
+      },
+      "modelo_y_prompt": {
+        "diseñador": "claude-sonnet-5-5",
+        "version_prompt": "1.1",
+        "version_rubrica": "4.0"
+      }
+    },
+    "noticia": {
+      "id": "2026-10-26-bbc-how-lula-s-army-whatsapp-chat",
+      "medio_id": "bbc",
+      "medio": "BBC News",
+      "idioma": "en",
+      "titulo": "How 'Lula's Army' WhatsApp chat helped turn Brazil election around",
+      "fecha": "2026-10-26",
+      "url": "https://www.bbc.co.uk/news/articles/cwz0vg4v3ndeo?at_medium=RSS&at_campaign=rss",
+      "area": "sociedad_datos",
+      "resumen_propio": "A WhatsApp channel backing Lula's bid for another term grew very quickly to a large follower base, and its leader asked members to share videos and push hashtags. Allies credit it with helping reverse the race in a short period, but researchers say its actual effect on votes is hard to measure and point to street campaigning as well.",
+      "cifras": [
+        {
+          "valor": "10.8 million",
+          "unidad": "seguidores en WhatsApp",
+          "que_es": "Número de seguidores que alcanzó el canal de WhatsApp 'Lula's Army'",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 52"
+          }
+        },
+        {
+          "valor": "24-hour",
+          "unidad": "horas",
+          "que_es": "Duración del evento en vivo 'turnaround livestream' organizado la víspera de la elección",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 61"
+          }
+        }
+      ],
+      "recuperada_en": "2026-10-26T16:03:05Z",
+      "filtro": {
+        "version_rubrica": "4.0",
+        "puntajes": {
+          "genuino": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 1,
+          "validacion": 2
+        },
+        "total": 9,
+        "pasa": true,
+        "justificacion": "Noticia con una pregunta real y modelable sobre influencia en votos, con decisiones de estimación y validación posible contra resultados. Las cifras son escasas, por lo que la autenticidad queda limitada."
+      }
+    },
+    "evaluacion": {
+      "tarea_id": "2026-10-votos-canal-whatsapp",
+      "fecha": "2026-10-26T16:48:06Z",
+      "rub01": {
+        "version_rubrica": "4.0",
+        "criterios": {
+          "genuino": {
+            "puntaje": 2,
+            "justificacion": "La necesidad de la editora es real y el enunciado no entrega ninguna regla ni modelo para estimar votos movidos. Quien resuelve debe construir el modelo.",
+            "cita": "su editora quiere saber si es razonable afirmar que este canal cambió el resultado. Hagan su propia estimación de cuántos votos pudo mover el canal"
+          },
+          "abierta": {
+            "puntaje": 2,
+            "justificacion": "La pregunta no prescribe procedimiento y admite varios modelos defendibles. Por ejemplo, cadenas de proporciones, rangos o escenarios.",
+            "cita": "Hagan su propia estimación de cuántos votos pudo mover el canal y decidan con qué confianza la presentarían."
+          },
+          "decisiones": {
+            "puntaje": 2,
+            "justificacion": "Resolver exige estimar qué fracción lee, reenvía o es persuadible, formular supuestos sobre votantes ya decididos y decidir qué información solicitar. R2 explicita que el grupo debe proponer y justificar su proporción.",
+            "cita": "Pueden pedir información adicional."
+          },
+          "realismo": {
+            "puntaje": 2,
+            "justificacion": "La situación es un hecho real. La verificación de una afirmación política en un medio es una práctica extraescolar plausible.",
+            "cita": "un canal de WhatsApp llamado «Ejército de Lula» reunió a 10,8 millones de seguidores para apoyar la candidatura de Lula antes de la elección"
+          },
+          "autenticidad": {
+            "puntaje": 2,
+            "justificacion": "El núcleo de la tarea proviene de una noticia real: la cifra del canal y el debate entre aliados e investigadores. Se suman los resultados oficiales del órgano electoral, de modo que los componentes auténticos están integrados sustantivamente.",
+            "cita": "Los aliados del candidato dicen que el canal ayudó a dar vuelta la carrera. Algunos investigadores responden que es muy difícil saber cuántos votos movió"
+          },
+          "contexto": {
+            "puntaje": 2,
+            "justificacion": "El contexto condiciona los supuestos: seguidores ya simpatizantes, efecto de otras campañas, alcance real de los mensajes. También es necesario para interpretar si la estimación alcanza a cambiar el resultado.",
+            "cita": "es muy difícil saber cuántos votos movió, porque al mismo tiempo hubo campaña en la calle"
+          },
+          "ciclo": {
+            "puntaje": 2,
+            "justificacion": "Responder obliga a comprender la situación, simplificar con supuestos, matematizar una cadena de proporciones, calcular e interpretar frente a la pregunta de la editora. También obliga a juzgar la confianza del resultado, y ninguna fase queda hecha por el enunciado.",
+            "cita": "Hagan su propia estimación de cuántos votos pudo mover el canal y decidan con qué confianza la presentarían."
+          },
+          "validacion": {
+            "puntaje": 1,
+            "justificacion": "Los votos movidos por el canal no son observables. El total de habilitados y la diferencia final sirven sobre todo para acotar la plausibilidad e interpretar si el efecto alcanzaría a cambiar el resultado, no para contrastar el valor estimado. Dudé con 2 por la restricción contextual que aporta R4, y elegí el menor.",
+            "cita": "incluyen el total de votantes habilitados y la diferencia final de votos entre los candidatos. Se entregan al grupo cuando ya tiene una estimación propia."
+          },
+          "nivel": {
+            "puntaje": 2,
+            "justificacion": "El contexto electoral y de redes sociales es comprensible y pertinente para secundaria. La matemática requerida está al alcance de S: proporciones, porcentajes, estimación y comparación de escenarios.",
+            "cita": "Ustedes trabajan en la unidad de verificación de datos de un medio"
+          },
+          "autodiferenciacion": {
+            "puntaje": 2,
+            "justificacion": "Se puede entrar con una cadena simple de porcentajes sobre 10,8 millones. La tarea admite soluciones más sofisticadas: rangos de escenarios, sensibilidad a cada supuesto, alcance de reenvíos fuera del canal y comparación con la diferencia final.",
+            "cita": "Hagan su propia estimación de cuántos votos pudo mover el canal y decidan con qué confianza la presentarían."
+          },
+          "fecundidad": {
+            "puntaje": 2,
+            "justificacion": "Las distintas estimaciones y niveles de confianza permiten comparar soluciones entre grupos. También abren preguntas sobre los límites de atribuir votos a una sola causa frente a la campaña en la calle.",
+            "cita": "decidan con qué confianza la presentarían"
+          },
+          "recursos": {
+            "puntaje": 1,
+            "justificacion": "La información es obtenible a solicitud y no da cifras. Sin embargo, R2 y R3 nombran precisamente los dos factores clave del modelo: fracción que lee o reenvía y fracción ya decidida. Eso es una sobreorientación parcial. Dudé con 2 porque solo se entregan si el grupo las pide, y elegí el menor.",
+            "cita": "unirse a un canal de apoyo a una candidatura es algo que hacen sobre todo personas que ya simpatizaban con ella"
+          }
+        },
+        "total": 22,
+        "mejoras": [
+          {
+            "criterio": "validacion",
+            "mejora_minima": "Agregar a R4, a solicitud, un dato independiente que permita contrastar un eslabón del modelo. Por ejemplo, una encuesta publicada sobre qué porcentaje de votantes declara haber cambiado su voto por mensajes de WhatsApp, o datos de lectura y reenvío de canales similares. Así la estimación puede compararse con evidencia no usada en su construcción."
+          },
+          {
+            "criterio": "recursos",
+            "mejora_minima": "Reformular R2 y R3 para que respondan solo a la pregunta concreta que haga el grupo, sin nombrar de antemano los factores del modelo. Por ejemplo: «Si el grupo pregunta por un dato que no existe para este caso, se le indica que debe proponer y justificar una estimación propia»."
+          }
+        ]
+      },
+      "reproducibilidad": {
+        "agentes": {
+          "disenador": {
+            "modelo": "claude-sonnet-5-5",
+            "version_modelo": "claude-sonnet-5-5",
+            "costo_usd": 0.325856,
+            "version_prompt": "1.1"
+          },
+          "evaluador": {
+            "modelo": "claude-opus-5-5",
+            "version_modelo": "claude-opus-5-5",
+            "costo_usd": 0.291156,
+            "version_prompt": "1.3"
+          },
+          "filtro": {
+            "modelo": "claude-haiku-5-5",
+            "version_modelo": "claude-haiku-5-5",
+            "costo_usd": 0.000667,
+            "version_prompt": "1.0"
+          }
+        },
+        "version_prompt": {
+          "disenador": "1.1",
+          "evaluador": "1.3",
+          "filtro": "1.0"
+        },
+        "version_rubrica": "4.0",
+        "version_MAR03": "1.0",
+        "version_MED01": "1.4",
+        "diseno_simulador": null,
+        "fecha": "2026-10-26T16:48:06Z",
+        "costo_usd": 0.617679
+      }
+    }
+  },
+  "historial": [
+    {
+      "fecha": "2026-10-26T16:46:23+00:00",
+      "de": null,
+      "a": "borrador"
+    },
+    {
+      "fecha": "2026-10-26T16:48:07+00:00",
+      "de": "borrador",
+      "a": "evaluada",
+      "iteracion": 1,
+      "rub01_total": 22
+    }
+  ],
+  "marcas": {
+    "ciclo_id": "ciclo_20261026T160305094644Z",
+    "noticia_id": "2026-10-26-bbc-how-lula-s-army-whatsapp-chat",
+    "nivel_objetivo": "S",
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "versiones_modelo": [
+          "claude-sonnet-5-5"
+        ],
+        "costo_usd": 0.325856,
+        "llamadas": 2
+      },
+      "filtro": {
+        "modelo": "claude-haiku-5-5",
+        "versiones_modelo": [
+          "claude-haiku-5-5"
+        ],
+        "costo_usd": 0.000667,
+        "llamadas": 1
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "versiones_modelo": [
+          "claude-opus-5-5"
+        ],
+        "costo_usd": 0.291156,
+        "llamadas": 3
+      }
+    },
+    "costos_compartidos": [
+      "disenador",
+      "filtro"
+    ],
+    "version_MAR03": "1.0",
+    "evaluacion_inestable": false,
+    "evaluacion_rango_total": 0,
+    "evaluacion_corridas": "pipeline/state/trabajo/2026-10-votos-canal-whatsapp/evaluacion_corridas.json",
+    "pendiente": "revision_humana_1"
+  }
+}

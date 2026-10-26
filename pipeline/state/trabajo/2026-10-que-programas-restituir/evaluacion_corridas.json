@@ -1,0 +1,306 @@
+{
+  "tarea_id": "2026-10-que-programas-restituir",
+  "evaluaciones": [
+    {
+      "iteracion": 1,
+      "version_tarea": 1,
+      "fecha": "2026-10-26T16:28:54Z",
+      "modelo": "claude-opus-5-5",
+      "version_prompt": "1.3",
+      "version_rubrica": "4.0",
+      "corridas": [
+        {
+          "n": 1,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "Plantea una necesidad real de decisión presupuestaria. No entrega regla, fórmula ni modelo de priorización o reparto.",
+                "cita": "La comisión necesita una recomendación clara: ¿qué parte del dinero recortado convendría restituir y a qué programas daría prioridad?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe procedimiento. Admite varios criterios de priorización (evaluación, cobertura, desempleo, área) y varios modelos de reparto defendibles.",
+                "cita": "Entreguen una propuesta con su monto estimado y expliquen en qué supuestos se apoya."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige estimar el costo de cada programa con supuestos, elegir criterios de prioridad, seleccionar información y decidir cuánto restituir.",
+                "cita": "el material no trae el monto de cada programa por separado; los programas no cuestan lo mismo"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Es una discusión presupuestaria real en la que asesorar a una comisión legislativa es una práctica existente fuera de la escuela.",
+                "cita": "El proyecto de Presupuesto del próximo año propone eliminar 18 programas sociales de empleo, discapacidad, justicia juvenil y cultura"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los datos provienen de una noticia y de un análisis real del proyecto de ley, y constituyen el núcleo de la tarea. También el desglose del proyecto (R6) es auténtico.",
+                "cita": "Una fundación que analizó el proyecto señala que 13 de esos programas tenían evaluación favorable de la Dipres"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto define los criterios de prioridad y la restricción de dinero. Es también indispensable para interpretar y defender la recomendación.",
+                "cita": "Ustedes asesoran a una comisión de diputados que quiere pedir que se restituyan algunos programas, pero sabe que no habrá dinero para todos."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a comprender la situación y simplificar con supuestos sobre costos y criterios. Luego hay que matematizar un reparto o índice, calcular montos y volver a la situación para justificar y contrastar.",
+                "cita": "¿qué parte del dinero recortado convendría restituir y a qué programas daría prioridad?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existe evidencia independiente no usada en la construcción del modelo, el desglose real por programa, con la cual contrastar las estimaciones de costo.",
+                "cita": "Desglose por programa publicado en el proyecto de ley: monto asignado a cada programa y su evaluación, para comparar con la estimación del grupo."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El tema y el lenguaje son comprensibles y pertinentes para estudiantes de 16–18 años. La matemática (proporciones, ponderaciones, optimización simple bajo restricción) está al alcance de S2.",
+                "cita": "Ustedes asesoran a una comisión de diputados"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Hay un piso accesible: costo promedio y priorizar los 13 programas favorables. El techo es alto: índices multicriterio, repartos ponderados por cobertura y análisis de sensibilidad.",
+                "cita": "El grupo puede estimar el reparto con supuestos explícitos."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las distintas propuestas pueden compararse según sus criterios y supuestos. La tarea abre preguntas sobre otros recortes, el desempleo y los límites de usar solo la evaluación Dipres.",
+                "cita": "Además de los programas eliminados, el cierre de otras iniciativas reduce el financiamiento en 8.621 millones de pesos"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "Los montos están disponibles a solicitud y nada revela el modelo, pero la lista de los 18 programas solo llega con R6, después de la estimación. Esa lista incluye cuáles son los 13 favorables y su tamaño, y la pregunta pide priorizar programas; para S2 es difícil de obtener por cuenta propia y la tarea no indica cómo conseguirla.",
+                "cita": "R6 (Tarjeta de contraste que se entrega después de presentar la estimación)"
+              }
+            },
+            "total": 23,
+            "mejoras": [
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Agregar una tarjeta disponible a solicitud con el nombre de los 18 programas, su área, si tienen evaluación favorable y una referencia cualitativa de cobertura, sin montos. Así el grupo podrá priorizar programas concretos antes de recibir R6."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgRAPonBvBL34YdRWHypE",
+            "fecha": "2026-10-26T16:27:48+00:00",
+            "intentos": 1,
+            "costo_usd": 0.119016,
+            "avisos": []
+          }
+        },
+        {
+          "n": 2,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La situación plantea una necesidad real de decisión presupuestaria. No entrega ninguna regla, fórmula ni criterio de priorización listo para aplicar.",
+                "cita": "La comisión necesita una recomendación clara: ¿qué parte del dinero recortado convendría restituir y a qué programas daría prioridad?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe procedimiento y admite varios modelos defendibles, como priorizar por evaluación, por área o por costo-beneficio. No hay instrucciones posteriores que encaucen una ruta única.",
+                "cita": "Entreguen una propuesta con su monto estimado y expliquen en qué supuestos se apoya."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige estimar el reparto del costo, formular supuestos sobre tamaño y beneficiarios, y decidir criterios de prioridad. También exige seleccionar qué información solicitar entre R2 y R5.",
+                "cita": "el material no trae el monto de cada programa por separado; los programas no cuestan lo mismo"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Asesorar a una comisión legislativa sobre restituir programas recortados es una situación real y plausible fuera de la escuela.",
+                "cita": "El proyecto de Presupuesto del próximo año propone eliminar 18 programas sociales"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los datos de la noticia (18 programas, 50.615 millones, 13 con evaluación favorable, cifra del INE) son el núcleo de la tarea. Constituyen componentes auténticos integrados de manera sustantiva.",
+                "cita": "Una fundación que analizó el proyecto señala que 13 de esos programas tenían evaluación favorable de la Dipres"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona las decisiones: la restricción presupuestaria, la evaluación Dipres y la desocupación inciden en la priorización. También es necesario para interpretar y defender la recomendación ante la comisión.",
+                "cita": "quiere pedir que se restituyan algunos programas, pero sabe que no habrá dinero para todos"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a comprender la situación, simplificar con supuestos de costo y criterios, matematizar el reparto y calcular montos. Luego hay que volver a la situación para justificar la propuesta, y el enunciado no deja ninguna fase hecha.",
+                "cita": "¿qué parte del dinero recortado convendría restituir y a qué programas daría prioridad?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "R6 aporta evidencia independiente, no usada en la construcción del modelo, para contrastar la estimación del reparto de costos.",
+                "cita": "Desglose por programa publicado en el proyecto de ley: monto asignado a cada programa y su evaluación, para comparar con la estimación del grupo."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto presupuestario es comprensible y pertinente para estudiantes de 16-18 años, y R3 aclara la terminología técnica. La demanda (supuestos en competencia, escenarios y optimización simple bajo restricción) está al alcance de S2.",
+                "cita": "una evaluación favorable significa que la Dipres considera que el programa cumple sus objetivos y recomienda continuarlo"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es accesible: se puede empezar con un reparto igualitario y una priorización por evaluación. El techo es alto: la tarea admite ponderaciones multicriterio, escenarios y optimización bajo restricción presupuestaria.",
+                "cita": "El grupo puede estimar el reparto con supuestos explícitos."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las propuestas con distintos criterios y montos pueden compararse entre sí y con el desglose real. Además, los otros recortes de R5 abren nuevas preguntas sobre prioridades y límites del modelo.",
+                "cita": "Además de los programas eliminados, el cierre de otras iniciativas reduce el financiamiento en 8.621 millones de pesos"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "Ningún material revela el modelo, pero la tarea pide priorizar programas sin identificarlos ni indicar cuáles 13 tienen evaluación favorable. Esa información solo llega con R6 tras la estimación y es difícil de obtener para estudiantes de S2.",
+                "cita": "proponer eliminar 18 programas sociales de empleo, discapacidad, justicia juvenil y cultura"
+              }
+            },
+            "total": 23,
+            "mejoras": [
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Agregar una tarjeta disponible a solicitud desde el inicio con el nombre y el área de cada uno de los 18 programas y cuáles tienen evaluación favorable de la Dipres, sin incluir montos, para que la priorización sea posible antes del contraste con R6."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgRARyF1Lwzph5cVmvuMJ",
+            "fecha": "2026-10-26T16:28:15+00:00",
+            "intentos": 1,
+            "costo_usd": 0.066742,
+            "avisos": [
+              "cita_no_literal:recursos"
+            ]
+          }
+        },
+        {
+          "n": 3,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La comisión plantea una necesidad real de decisión y la tarea no entrega ninguna regla, criterio de prioridad ni modelo de reparto para aplicar.",
+                "cita": "La comisión necesita una recomendación clara: ¿qué parte del dinero recortado convendría restituir y a qué programas daría prioridad?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe procedimiento. Admite varios criterios de prioridad defendibles (evaluación, área, cobertura) y distintos montos según el modelo de reparto.",
+                "cita": "Entreguen una propuesta con su monto estimado y expliquen en qué supuestos se apoya."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver obliga a estimar el costo de cada programa con supuestos explícitos, a elegir criterios de prioridad y a seleccionar qué información pedir (R3, R4, R5).",
+                "cita": "el material no trae el monto de cada programa por separado; los programas no cuestan lo mismo"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Un recorte presupuestario y la asesoría a una comisión legislativa son situaciones existentes y plausibles fuera de la escuela.",
+                "cita": "El proyecto de Presupuesto del próximo año propone eliminar 18 programas sociales de empleo, discapacidad, justicia juvenil y cultura"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los datos de la noticia (monto, número de programas, evaluaciones, cifra del INE) son el núcleo de la tarea y no fueron creados para enseñar.",
+                "cita": "Una fundación que analizó el proyecto señala que 13 de esos programas tenían evaluación favorable de la Dipres"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto determina los criterios de prioridad y la restricción presupuestaria, y hace falta para interpretar la recomendación y contrastarla con el desglose real.",
+                "cita": "Ustedes asesoran a una comisión de diputados que quiere pedir que se restituyan algunos programas, pero sabe que no habrá dinero para todos."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Para responder hay que comprender la situación, simplificar con supuestos sobre costos y prioridades, estimar montos, interpretarlos como recomendación y contrastarlos con R6; el enunciado no deja hecha ninguna fase.",
+                "cita": "Entreguen una propuesta con su monto estimado y expliquen en qué supuestos se apoya."
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existe evidencia independiente, no usada en la construcción del modelo, con la que contrastar la estimación del reparto.",
+                "cita": "Desglose por programa publicado en el proyecto de ley: monto asignado a cada programa y su evaluación, para comparar con la estimación del grupo."
+              },
+              "nivel": {
+                "puntaje": 1,
+                "justificacion": "El contexto y el lenguaje son comprensibles para S, pero la matemática que la tarea exige (proporcionalidad, sumas, reparto estimado) no requiere herramientas de S2, el sub-tramo declarado. Hay duda entre 1 y 2: la tarea admite una optimización simple, pero no la exige.",
+                "cita": "Entreguen una propuesta con su monto estimado"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Se puede entrar con un reparto uniforme o proporcional. La tarea admite soluciones más sofisticadas, como ponderar varios criterios, comparar escenarios presupuestarios o analizar la sensibilidad a los supuestos de costo.",
+                "cita": "El grupo puede estimar el reparto con supuestos explícitos."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Distintos criterios de prioridad y montos permiten comparar propuestas entre grupos. El contraste con el desglose real abre preguntas sobre los límites de los supuestos.",
+                "cita": "¿qué parte del dinero recortado convendría restituir y a qué programas daría prioridad?"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información necesaria está en el enunciado o puede solicitarse en las tarjetas R2 a R5. El desglose que podría revelar el reparto se entrega solo después de la estimación, así que nada revela el modelo.",
+                "cita": "Pueden pedir información adicional."
+              }
+            },
+            "total": 23,
+            "mejoras": [
+              {
+                "criterio": "nivel",
+                "mejora_minima": "Pedir que comparen al menos dos escenarios de monto disponible y que elijan qué programas restituir para maximizar un criterio ponderado (cobertura × evaluación) bajo ese tope. Así la tarea exige una optimización simple propia de S2. La alternativa es declarar el nivel S sin sub-tramo."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgRATwj2w9TexA6YbECxY",
+            "fecha": "2026-10-26T16:28:54+00:00",
+            "intentos": 1,
+            "costo_usd": 0.086502,
+            "avisos": []
+          }
+        }
+      ],
+      "totales": [
+        23,
+        23,
+        23
+      ],
+      "rango_total": 0,
+      "rango_inestable": 4,
+      "evaluacion_inestable": false,
+      "mediana": {
+        "regla": "mediana por criterio (n par: mediana inferior)",
+        "total": 23,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 1
+        },
+        "corrida_fuente": {
+          "genuino": 1,
+          "abierta": 1,
+          "decisiones": 1,
+          "realismo": 1,
+          "autenticidad": 1,
+          "contexto": 1,
+          "ciclo": 1,
+          "validacion": 1,
+          "nivel": 1,
+          "autodiferenciacion": 1,
+          "fecundidad": 1,
+          "recursos": 1
+        }
+      }
+    }
+  ]
+}

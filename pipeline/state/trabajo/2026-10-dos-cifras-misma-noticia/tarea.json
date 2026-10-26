@@ -1,0 +1,213 @@
+{
+  "id": "2026-10-dos-cifras-misma-noticia",
+  "titulo": "Dos cuentas para un mismo tema: ¿cuál creerle?",
+  "estado": "borrador",
+  "version": 1,
+  "fecha": "2026-10-26",
+  "noticia": {
+    "noticia_id": "2026-10-23-ciper-este-es-el-argumento-con-que",
+    "medio": "CIPER Chile",
+    "titulo": "Este es el argumento con que el gobierno anterior se opuso en tribunales a rebajar las condenas de agresores sexuales de niños",
+    "fecha": "2026-10-23",
+    "url": "https://www.ciperchile.cl/2026/10/23/este-es-el-argumento-con-que-el-gobierno-anterior-se-opuso-en-tribunales-a-rebajar-las-condenas-de-agresores-sexuales-de-ninos/?utm_source=rss&utm_medium=rss&utm_campaign=este-es-el-argumento-con-que-el-gobierno-anterior-se-opuso-en-tribunales-a-rebajar-las-condenas-de-agresores-sexuales-de-ninos",
+    "resumen_propio": "Investigación que revisa 73 recursos de amparo presentados entre 2022 y 2025 por condenados por abuso sexual infantil a quienes se les negó una rebaja de condena. Muestra que la administración anterior litigó en tribunales contra esos beneficios, mientras que el gobierno actual los concedió sin disputa. En la mayoría de los casos la Corte Suprema terminó obligando a otorgar la rebaja, aunque en unos pocos la justicia respaldó al Ejecutivo.",
+    "cifras_usadas": [
+      {
+        "valor": 56,
+        "unidad": "condenados",
+        "que_es": "número de condenados por agresiones sexuales a menores a quienes el gobierno rebajó la pena",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 25"
+        }
+      },
+      {
+        "valor": 275,
+        "unidad": "personas",
+        "que_es": "cantidad de personas que, según el ministro Rabat, recibieron el beneficio bajo la administración anterior",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 25"
+        }
+      },
+      {
+        "valor": 73,
+        "unidad": "casos",
+        "que_es": "número de casos revisados por CIPER, presentados entre 2022 y 2025",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 25"
+        }
+      }
+    ]
+  },
+  "nivel_principal": "P",
+  "variantes": {
+    "abajo": null,
+    "arriba": "S"
+  },
+  "area": "sociedad_datos",
+  "contenidos_matematicos": [
+    "comparación aditiva y multiplicativa",
+    "porcentajes simples",
+    "estimación",
+    "gráficos de barras"
+  ],
+  "tiempo_estimado": "1 sesión de 90 min",
+  "estudiante": {
+    "enunciado_es": "En un reportaje sobre condenados por delitos graves contra niños que recibieron una rebaja de su condena aparecen dos cuentas distintas. La investigación periodística registra 56 condenados a quienes el gobierno les rebajó la pena. El ministro Rabat afirmó que 275 personas recibieron ese beneficio durante el gobierno anterior. Ustedes preparan una exposición para su curso y quieren que sus compañeros entiendan estas cifras sin confundirse. ¿Qué tan distintas son las dos cifras? ¿Qué podría explicar la diferencia y qué cifra recomendarían usar al hablar del tema? Pueden pedir información adicional.",
+    "foto_descripcion": "Dos barras de distinto largo, cada una con un signo de interrogación, junto a un ícono de periódico.",
+    "recursos_a_solicitud": [
+      {
+        "id": "R2",
+        "que_es": "Quién entrega cada cifra",
+        "contenido": "La cifra de 275 la dio el ministro Rabat; la cifra de 56 aparece en el reportaje de la investigación.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P1-MRS",
+        "fuente": "noticia, párrafo 25"
+      },
+      {
+        "id": "R3",
+        "que_es": "Información sobre cómo se hizo cada cuenta",
+        "contenido": "Supuesto del escenario: el reportaje no explica con detalle cómo se hizo cada cuenta ni qué períodos abarca cada una.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P2-RM",
+        "fuente": "supuesto del escenario"
+      },
+      {
+        "id": "R4",
+        "que_es": "Tamaño de la revisión de la investigación, para contrastar la explicación del grupo",
+        "contenido": "La investigación revisó 73 casos de reclamos presentados en tribunales por condenados a quienes se les había negado la rebaja.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P6-VAL",
+        "fuente": "noticia, párrafo 25"
+      }
+    ]
+  },
+  "variantes_detalle": {
+    "abajo": null,
+    "arriba": {
+      "tramo": "S1",
+      "cambios": "Se pide estimar un rango para la cifra 'verdadera' bajo dos o tres supuestos sobre qué cuenta cada fuente, y comparar cuánto cambian la diferencia y la razón entre las cifras según el supuesto. La validación pide contrastar el rango con un dato adicional de la investigación."
+    }
+  },
+  "recursos_de_entrada": [
+    {
+      "id": "R1",
+      "que_es": "Las dos cifras de partida (también escritas en el enunciado)",
+      "contenido": "La investigación registra 56 condenados a quienes el gobierno rebajó la pena. El ministro Rabat afirmó que 275 personas recibieron el beneficio en la administración anterior.",
+      "disponibilidad": "de_entrada",
+      "fase": "P1-MRS",
+      "fuente": "noticia, párrafo 25"
+    }
+  ],
+  "mapa_ciclo": {
+    "P1-MRS": {
+      "decision": "Entender que hay dos cifras sobre un tema parecido, entregadas por fuentes distintas, y que aún no se sabe si cuentan exactamente lo mismo.",
+      "evidencia": "Explican con sus palabras qué dice cada fuente y quién la entrega; piden la tarjeta sobre las fuentes.",
+      "bloqueo_probable": "B12"
+    },
+    "P2-RM": {
+      "decision": "Decidir qué supuestos aceptar sobre lo que cuenta cada cifra (¿mismo período? ¿mismos casos?) y si una cuenta puede estar dentro de la otra.",
+      "evidencia": "Anotan al menos un supuesto sobre lo que mide cada cifra y piden información sobre cómo se hizo la cuenta.",
+      "bloqueo_probable": "B23"
+    },
+    "P3-MM": {
+      "decision": "Elegir cómo comparar: diferencia (resta), cuántas veces cabe una en otra (razón) o qué parte del total es (porcentaje).",
+      "evidencia": "Escriben la operación elegida con las cifras, por ejemplo 275 menos 56 o 56 entre 275.",
+      "bloqueo_probable": "B34"
+    },
+    "P4-WM": {
+      "decision": "Realizar las operaciones, redondear con criterio y, si quieren, dibujar barras con escala.",
+      "evidencia": "Resultados escritos con unidades y un gráfico con barras proporcionales.",
+      "bloqueo_probable": "B45"
+    },
+    "P5-INT": {
+      "decision": "Interpretar: una cifra es unas cinco veces la otra; la diferencia es grande, así que probablemente no cuentan lo mismo, y eso condiciona qué cifra recomendar.",
+      "evidencia": "Frase que explica el resultado en palabras ('la cuenta del ministro es unas cinco veces mayor') y enlaza con su hipótesis sobre la diferencia.",
+      "bloqueo_probable": "B56"
+    },
+    "P6-VAL": {
+      "decision": "Pedir el tamaño de la revisión de la investigación (73 casos) y ver si su explicación es compatible; discutir qué falta para saber cuál cifra es más fiable.",
+      "evidencia": "Contrastan su explicación con la tarjeta de los 73 casos y anotan qué información adicional necesitarían.",
+      "bloqueo_probable": "B56"
+    },
+    "P7-EXP": {
+      "decision": "Elegir cómo presentar las cifras al curso sin confundir, y qué decir sobre sus límites.",
+      "evidencia": "Un afiche o un guion breve que nombra las dos cifras, sus fuentes y la recomendación argumentada.",
+      "bloqueo_probable": null
+    }
+  },
+  "task_space": {
+    "required_assumptions": [
+      "Las dos cifras podrían no contar lo mismo (otro período, otro tipo de casos o distinta fuente de registro).",
+      "Para comparar, se tratan como números de personas del mismo tipo, sabiendo que esto es una simplificación.",
+      "No hay certeza sobre cuál de las dos es más exacta; la recomendación depende del criterio del grupo (por ejemplo, fuente verificable o alcance de la cuenta)."
+    ],
+    "reference_solution": {
+      "steps": "1) Anotar las dos cifras y sus fuentes: 56 (reportaje) y 275 (ministro). 2) Diferencia: 275 − 56 = 219. 3) Razón: 275 ÷ 56 ≈ 4,9, o sea la cifra del ministro es casi cinco veces mayor. 4) Parte del total: 56 ÷ 275 ≈ 0,204, cerca de 20,4%. 5) Formular hipótesis sobre por qué difieren (distinto período, distintos casos, distinta fuente) y pedir información. 6) Contrastar con los 73 casos revisados por la investigación: la investigación miró un conjunto de reclamos, así que una cuenta menor es plausible. 7) Recomendar cómo informar, por ejemplo citar ambas cifras con su fuente y aclarar que no cuentan necesariamente lo mismo.",
+      "result": "Las cifras difieren en 219 personas; la cifra del ministro es casi cinco veces la de la investigación y la de la investigación equivale a cerca de 20,4% de la otra. La recomendación depende del criterio del grupo: lo razonable es informar las dos con su fuente y aclarar que no está confirmado que midan lo mismo.",
+      "acceptable_range": "Diferencia: 219 (exacta). Razón: entre 4,9 y 5 veces. Porcentaje: entre 20% y 20,4%. Cualquier recomendación es aceptable si se justifica con la fuente y con lo que cuenta cada cifra."
+    },
+    "routes": [
+      {
+        "id": "R1",
+        "nombre": "Diferencia por resta",
+        "nivel": "P",
+        "modelo": "Comparación aditiva: 275 − 56.",
+        "resultado": "219 personas de diferencia."
+      },
+      {
+        "id": "R2",
+        "nombre": "Razón o porcentaje",
+        "nivel": "P",
+        "modelo": "Comparación multiplicativa: 275 ÷ 56, o 56 como parte de 275.",
+        "resultado": "Casi cinco veces; cerca de 20,4%."
+      },
+      {
+        "id": "R3",
+        "nombre": "Gráfico de barras proporcional",
+        "nivel": "P",
+        "modelo": "Dos barras con escala común para mostrar visualmente la diferencia y evitar exagerar o minimizar.",
+        "resultado": "Una barra casi cinco veces más larga que la otra."
+      },
+      {
+        "id": "R4",
+        "nombre": "Escenarios sobre qué cuenta cada cifra",
+        "nivel": "S1",
+        "modelo": "Probar dos o tres supuestos (la cuenta menor está dentro de la mayor; abarcan períodos distintos) y calcular la diferencia y la razón bajo cada uno.",
+        "resultado": "Con la cuenta menor contenida en la mayor quedan 219 casos que la investigación no registra; con períodos distintos no se pueden comparar directamente."
+      }
+    ],
+    "modelo_inadecuado": {
+      "id": "RX",
+      "por_que_falla": "Sumar 56 y 275 para obtener 331 como total de personas con rebaja. Falla porque probablemente las cuentas se superponen (los 56 pueden estar incluidos entre los 275), y no se sabe si miden lo mismo, de modo que la suma podría contar dos veces a las mismas personas."
+    },
+    "validation_evidence": "Dato independiente y no usado en la construcción del modelo (tarjeta R4): la investigación revisó 73 casos de reclamos presentados en tribunales. El grupo contrasta si su explicación (por ejemplo, que la investigación mira solo un subconjunto de casos) es compatible con ese tamaño. No decide cuál cifra es la correcta, pero permite probar si la proporción obtenida es razonable.",
+    "agent_visibility": {
+      "students": [
+        "enunciado_es",
+        "foto_descripcion",
+        "recursos_a_solicitud"
+      ],
+      "coder": [
+        "enunciado_es",
+        "task_space"
+      ],
+      "guide": [
+        "all"
+      ]
+    }
+  },
+  "rubrica_rub01": null,
+  "rubrica_rub02": {
+    "P": null,
+    "S": null,
+    "U": null
+  },
+  "modelo_y_prompt": {
+    "diseñador": "claude-sonnet-5-5",
+    "version_prompt": "1.1",
+    "version_rubrica": "4.0"
+  }
+}

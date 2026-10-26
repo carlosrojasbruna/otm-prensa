@@ -1,0 +1,113 @@
+{
+  "tarea_id": "2026-10-cuanto-le-dura-la-caja",
+  "fecha": "2026-10-26T16:53:47Z",
+  "rub01": {
+    "version_rubrica": "4.0",
+    "criterios": {
+      "genuino": {
+        "puntaje": 2,
+        "justificacion": "Plantea una necesidad real: explicar si el dinero alcanza. No entrega una regla ni un modelo; el grupo debe construir la relación entre efectivo y ritmo de pérdidas.",
+        "cita": "Una periodista de un diario escolar quiere explicar a sus lectores si a Anthropic le alcanza el dinero que tiene para seguir funcionando."
+      },
+      "abierta": {
+        "puntaje": 2,
+        "justificacion": "La pregunta no prescribe procedimiento. Admite varios modelos defendibles: comparar en semestres o en meses, incluir o no el dinero de la salida a bolsa, suponer pérdidas constantes o crecientes.",
+        "cita": "¿Qué responderían ustedes y por qué? Pueden pedir información adicional."
+      },
+      "decisiones": {
+        "puntaje": 2,
+        "justificacion": "Hay que tomar varias decisiones de modelación: si restar o no los ingresos, qué hacer con el dato de SpaceX, suponer que el ritmo de pérdidas se mantiene y decidir si se cuenta el dinero de la bolsa.",
+        "cita": "tuvo pérdidas por 80,7 mil millones de dólares e ingresos por 16,3 mil millones de dólares. También declaró tener 112,4 mil millones"
+      },
+      "realismo": {
+        "puntaje": 2,
+        "justificacion": "La situación de una empresa real que informa sus finanzas antes de salir a bolsa existe fuera de la escuela. El encuadre del diario escolar es plausible.",
+        "cita": "Anthropic, la empresa que creó el chatbot Claude, prepara su salida a la bolsa de Estados Unidos"
+      },
+      "autenticidad": {
+        "puntaje": 2,
+        "justificacion": "Los datos financieros declarados por la empresa son el núcleo de la tarea. Se toman como auténticos según la procedencia declarada y están integrados de manera sustantiva.",
+        "cita": "En los documentos que entregó, informó que en el primer semestre del año, la mitad del año, tuvo pérdidas por 80,7 mil millones"
+      },
+      "contexto": {
+        "puntaje": 2,
+        "justificacion": "El contexto condiciona decisiones (dinero de la salida a bolsa, si las pérdidas se mantienen). También es necesario para interpretar si unos meses de margen significan que «alcanza».",
+        "cita": "si a Anthropic le alcanza el dinero que tiene para seguir funcionando"
+      },
+      "ciclo": {
+        "puntaje": 2,
+        "justificacion": "Responder obliga a recorrer todo el ciclo: comprender pérdida frente a ingresos, simplificar suponiendo un ritmo constante, matematizar como razón efectivo/pérdida por semestre, calcular, interpretar en tiempo y juzgar la respuesta. Ninguna fase viene hecha en el enunciado.",
+        "cita": "¿Qué responderían ustedes y por qué?"
+      },
+      "validacion": {
+        "puntaje": 2,
+        "justificacion": "Existe evidencia independiente posterior (el nuevo informe) con la cual contrastar el modelo de ritmo de gasto.",
+        "cita": "la empresa publicará más adelante un nuevo informe con sus pérdidas y su dinero disponible del periodo siguiente; la periodista puede revisarlo cuando salga."
+      },
+      "nivel": {
+        "puntaje": 1,
+        "justificacion": "La matemática (división y proporcionalidad con decimales, semestres a meses) está al alcance del nivel P. Sin embargo, el vocabulario financiero ('salida a bolsa', 'valoración', 'efectivo o equivalentes', 'billones') es denso para 10–12 años y requiere ajustes menores. Dudo entre 1 y 2 y asigno el menor.",
+        "cita": "Anthropic, la empresa que creó el chatbot Claude, prepara su salida a la bolsa de Estados Unidos: quiere vender partes de la empresa al público."
+      },
+      "autodiferenciacion": {
+        "puntaje": 2,
+        "justificacion": "El piso es accesible: ver que 112,4 supera a 80,7 y concluir «alcanza para algo más de un semestre». El techo admite estimar meses y construir escenarios con dinero de la bolsa o con pérdidas crecientes.",
+        "cita": "Pueden pedir información adicional."
+      },
+      "fecundidad": {
+        "puntaje": 2,
+        "justificacion": "Los resultados abren preguntas nuevas, como cuánto dinero de la bolsa haría falta o qué pasa si las pérdidas crecen. También permiten comparar soluciones con distintos supuestos y discutir los límites del modelo.",
+        "cita": "al salir a bolsa, la empresa puede recibir dinero nuevo por las partes que vende, pero en este problema todavía no se sabe cuánto ni …"
+      },
+      "recursos": {
+        "puntaje": 1,
+        "justificacion": "Los datos están disponibles y nada revela el modelo. Sin embargo, el material entregado de entrada anuncia que el dato de SpaceX sobra, lo que anula esa decisión de selección de información: es una sobreorientación parcial.",
+        "cita": "Valoración inicial de SpaceX: cerca de 1,8 billones de dólares (dato que no es necesario para responder)."
+      }
+    },
+    "total": 22,
+    "mejoras": [
+      {
+        "criterio": "nivel",
+        "mejora_minima": "Reemplazar en el enunciado los términos técnicos por expresiones cotidianas, por ejemplo 'salida a bolsa' por 'vender partes de la empresa a cualquier persona' y 'efectivo o equivalentes' por 'dinero disponible'. Escribir además las cifras grandes en millones (por ejemplo, 1.800.000 millones), manteniendo el contexto."
+      },
+      {
+        "criterio": "recursos",
+        "mejora_minima": "Eliminar de R5 la anotación «(dato que no es necesario para responder)», para que sea el grupo quien decida qué datos usar."
+      }
+    ]
+  },
+  "reproducibilidad": {
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.19146,
+        "version_prompt": "1.1"
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.261842,
+        "version_prompt": "1.3"
+      },
+      "filtro": {
+        "modelo": "claude-haiku-5-5",
+        "version_modelo": "claude-haiku-5-5",
+        "costo_usd": 0.000739,
+        "version_prompt": "1.0"
+      }
+    },
+    "version_prompt": {
+      "disenador": "1.1",
+      "evaluador": "1.3",
+      "filtro": "1.0"
+    },
+    "version_rubrica": "4.0",
+    "version_MAR03": "1.0",
+    "version_MED01": "1.4",
+    "diseno_simulador": null,
+    "fecha": "2026-10-26T16:53:47Z",
+    "costo_usd": 0.454041
+  }
+}
