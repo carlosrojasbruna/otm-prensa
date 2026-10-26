@@ -1,0 +1,305 @@
+{
+  "tarea_id": "2026-10-leer-documento-de-riesgos",
+  "evaluaciones": [
+    {
+      "iteracion": 1,
+      "version_tarea": 1,
+      "fecha": "2026-10-26T16:55:42Z",
+      "modelo": "claude-opus-5-5",
+      "version_prompt": "1.3",
+      "version_rubrica": "4.0",
+      "corridas": [
+        {
+          "n": 1,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "Plantea una necesidad concreta: planificar la lectura antes de un plazo. No entrega ninguna regla ni modelo; el grupo debe construir la relación entre páginas, velocidad de lectura y reparto.",
+                "cita": "¿Cuánto tiempo necesitarían para leerlo completo y cómo conviene repartirse la lectura para escribir su nota a tiempo?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe procedimiento. Admite varios modelos defendibles: velocidad promedio o individual, reparto equitativo o proporcional, con o sin ajuste por dificultad. No hay instrucciones posteriores que encaucen.",
+                "cita": "cómo conviene repartirse la lectura para escribir su nota a tiempo? Pueden pedir información adicional."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige estimar la velocidad de lectura midiéndola y suponer que las páginas son similares. También hay que decidir el tiempo diario y el plazo, y elegir qué información solicitar. Son decisiones de modelación sustantivas.",
+                "cita": "Pueden pedir información adicional."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Estimar y planificar el tiempo de lectura de un documento real antes de un plazo es una situación plausible fuera de la matemática escolar. Tiene sentido por sí misma, no solo para insertar un cálculo.",
+                "cita": "Su grupo es el equipo del diario escolar y quiere leer todo el documento antes de escribir una nota para sus compañeros."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "La noticia sobre el documento de Anthropic aporta el dato central de extensión (90 páginas), sobre el cual se construye toda la estimación. Es un componente auténtico citado y usado como dato.",
+                "cita": "Para eso publicó un documento de unas 90 páginas donde explica sus riesgos"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El carácter técnico del informe condiciona la velocidad supuesta, y el plazo del diario condiciona el reparto. Ambos son necesarios para interpretar y validar. El dato de inversión es decorativo, pero el núcleo del contexto no lo es.",
+                "cita": "una página impresa de un informe técnico de una empresa, con vocabulario financiero y tablas, para que el grupo compruebe su estimación"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a recorrer todas las fases: comprender la situación y simplificar (página típica, velocidad constante). Luego matematizar con proporcionalidad, calcular, interpretar en un calendario de reparto y validar con una página técnica. Ninguna fase viene hecha.",
+                "cita": "¿Cuánto tiempo necesitarían para leerlo completo y cómo conviene repartirse la lectura para escribir su nota a tiempo?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existe evidencia independiente no usada en la construcción del modelo: cronometrar una página de un informe técnico permite contrastar la velocidad supuesta. Se trata de una medición.",
+                "cita": "el profesor entrega una página impresa de un informe técnico de una empresa, con vocabulario financiero y tablas, para que el grupo compruebe su estimación"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto se explica en lenguaje accesible para 10–12 años. La matemática requerida (operatoria, proporcionalidad directa, unidades de tiempo, estimación) corresponde a las herramientas esperables del nivel P.",
+                "cita": "quiere vender partes de la empresa al público en la bolsa de Estados Unidos"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es accesible: cronometrar una página y multiplicar por 90. El techo es alto porque la tarea admite soluciones más refinadas: reparto proporcional a velocidades individuales, factor de ajuste por dificultad técnica, incluir el tiempo de escritura en el plan.",
+                "cita": "el profesor entrega una página impresa de un libro de lectura del curso para que cada integrante se cronometre leyéndola"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las distintas velocidades medidas y los distintos criterios de reparto permiten comparar planes entre grupos. También abren preguntas sobre los límites del modelo, por ejemplo si un texto técnico se lee igual que uno habitual o si conviene leerlo todo.",
+                "cita": "cómo conviene repartirse la lectura para escribir su nota a tiempo?"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La extensión viene dada; la velocidad se obtiene por medición con R1 y R2, y el plazo lo decide el grupo. Todo es obtenible en el nivel P y ningún material revela la estructura de la solución.",
+                "cita": "Supuesto del escenario: el grupo decide cuánto tiempo al día puede dedicar a leer y cuántos días tiene hasta publicar su nota."
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgRCQxRbnN2ERFMzzdVd9",
+            "fecha": "2026-10-26T16:54:28+00:00",
+            "intentos": 1,
+            "costo_usd": 0.086362,
+            "avisos": []
+          }
+        },
+        {
+          "n": 2,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "Plantea una necesidad concreta: leer el documento a tiempo para publicar la nota. No entrega una regla ni un modelo para calcular el tiempo ni para repartir la lectura.",
+                "cita": "Su grupo es el equipo del diario escolar y quiere leer todo el documento antes de escribir una nota para sus compañeros."
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe un procedimiento. Admite caminos distintos, como medir el tiempo por página o por palabras y repartir en partes iguales o según la velocidad de cada integrante.",
+                "cita": "¿Cuánto tiempo necesitarían para leerlo completo y cómo conviene repartirse la lectura para escribir su nota a tiempo?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver obliga a estimar la velocidad de lectura y a suponer que las páginas son uniformes o que tienen distinta dificultad. También hay que decidir el tiempo diario disponible y solicitar información (R1–R4).",
+                "cita": "Pueden pedir información adicional."
+              },
+              "realismo": {
+                "puntaje": 1,
+                "justificacion": "Estimar el tiempo de lectura y repartir un documento largo es plausible. Pero que estudiantes de 10–12 años quieran leer completo un informe financiero de riesgos de 90 páginas parece un encuadre forzado para insertar el cálculo. Dudé entre 1 y 2 y asigné el menor.",
+                "cita": "Su grupo es el equipo del diario escolar y quiere leer todo el documento antes de escribir una nota para sus compañeros."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "La extensión del documento real que cita la noticia es el dato central del modelo, así que es un componente auténtico integrado de manera sustantiva. El dato del billón de dólares, en cambio, es solo contexto.",
+                "cita": "Para eso publicó un documento de unas 90 páginas donde explica sus riesgos"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "Dos rasgos del contexto condicionan los supuestos sobre la velocidad de lectura y la interpretación del reparto: el tipo de documento (técnico, con vocabulario financiero) y el plazo del diario escolar. También sirven para validar la estimación con R3.",
+                "cita": "un informe técnico de una empresa, con vocabulario financiero y tablas, para que el grupo compruebe su estimación."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a recorrer todas las fases. Hay que comprender la situación, simplificar (velocidad constante, páginas equivalentes), matematizar con proporcionalidad y división, calcular, interpretar si se cumple el plazo y validar. Ninguna fase la deja hecha el enunciado.",
+                "cita": "¿Cuánto tiempo necesitarían para leerlo completo y cómo conviene repartirse la lectura para escribir su nota a tiempo?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "R3 permite contrastar con una medición independiente la estimación construida con un texto habitual (R1).",
+                "cita": "el profesor entrega una página impresa de un informe técnico de una empresa, con vocabulario financiero y tablas, para que el grupo compruebe su estimación."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto financiero está explicado con lenguaje accesible para P. La matemática requerida (medición de tiempos, proporcionalidad directa, división y unidades) corresponde a las herramientas esperables del nivel.",
+                "cita": "quiere vender partes de la empresa al público en la bolsa de Estados Unidos."
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Hay un piso elemental: cronometrar una página y multiplicar por 90. La propia tarea admite soluciones más sofisticadas, como repartir según la velocidad de cada integrante, ajustar por la dificultad del informe o incluir el tiempo de escritura.",
+                "cita": "cómo conviene repartirse la lectura para escribir su nota a tiempo?"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las distintas formas de repartir la lectura y los supuestos sobre la velocidad permiten comparar soluciones. También abren preguntas sobre los límites del modelo, como la diferencia de dificultad entre textos o si es viable leerlo todo.",
+                "cita": "cómo conviene repartirse la lectura"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información necesaria está disponible: la extensión viene en el enunciado, la velocidad se mide con R1 y R2, la dificultad se compara con R3 y el plazo lo decide el grupo (R4). Ningún material revela el modelo.",
+                "cita": "el profesor entrega una página impresa de un libro de lectura del curso para que cada integrante se cronometre leyéndola."
+              }
+            },
+            "total": 23,
+            "mejoras": [
+              {
+                "criterio": "realismo",
+                "mejora_minima": "Reemplazar la meta de leer «todo el documento» por una necesidad propia del diario escolar, por ejemplo leer la sección de riesgos de la IA o decidir si alcanza a leerlo completo antes de la fecha de cierre. Así el encuadre deja de parecer forzado para niños de 10–12 años."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgRCTvxNuhKStSTz8vx8R",
+            "fecha": "2026-10-26T16:55:05+00:00",
+            "intentos": 1,
+            "costo_usd": 0.082822,
+            "avisos": []
+          }
+        },
+        {
+          "n": 3,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La tarea plantea una necesidad (planificar la lectura antes de un plazo) sin entregar una regla ni un modelo. El grupo debe construir la relación entre páginas, velocidad de lectura y tiempo disponible.",
+                "cita": "¿Cuánto tiempo necesitarían para leerlo completo y cómo conviene repartirse la lectura para escribir su nota a tiempo?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "Hay varios caminos defendibles: usar la velocidad promedio o la individual, repartir por páginas o por tiempo, o ajustar según la dificultad. No hay instrucciones que encaucen hacia una ruta única.",
+                "cita": "cómo conviene repartirse la lectura para escribir su nota a tiempo? Pueden pedir información adicional."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige obtener información midiendo la propia velocidad (R1, R2) y suponer una velocidad constante. También hay que estimar si el texto técnico es más lento y decidir el tiempo diario y el plazo.",
+                "cita": "el grupo decide cuánto tiempo al día puede dedicar a leer y cuántos días tiene hasta publicar su nota."
+              },
+              "realismo": {
+                "puntaje": 1,
+                "justificacion": "El informe de riesgos y su extensión son reales. Sin embargo, que estudiantes de 10 a 12 años quieran leer completo un documento bursátil de 90 páginas parece un encuadre construido para insertar el cálculo del tiempo de lectura. Hay duda entre 1 y 2, y se asigna el menor.",
+                "cita": "Su grupo es el equipo del diario escolar y quiere leer todo el documento antes de escribir una nota para sus compañeros."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El hecho noticioso y el dato de unas 90 páginas, que se toman como ciertos, son el núcleo cuantitativo de la tarea. La página de un informe real de empresa (R3) se integra para validar. El dato de inversión es solo decorativo, pero no resta al componente auténtico central.",
+                "cita": "Para eso publicó un documento de unas 90 páginas donde explica sus riesgos"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "Dos rasgos del contexto condicionan las decisiones: que el documento sea técnico (puede leerse más lento) y que el grupo tenga un plazo para la nota (obliga a repartirse la lectura). Ambos son necesarios para interpretar la respuesta y validarla con R3.",
+                "cita": "una página impresa de un informe técnico de una empresa, con vocabulario financiero y tablas, para que el grupo compruebe su estimación."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Resolver obliga a recorrer el ciclo: comprender la situación, simplificar suponiendo un ritmo constante, matematizar de forma proporcional y calcular. Luego hay que interpretar el resultado como un reparto con plazo y validarlo con la página técnica. Ninguna fase viene hecha.",
+                "cita": "¿Cuánto tiempo necesitarían para leerlo completo y cómo conviene repartirse la lectura para escribir su nota a tiempo?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existe evidencia independiente de la usada para construir el modelo: cronometrar la lectura de una página técnica real permite contrastar la velocidad supuesta con el texto de libro habitual.",
+                "cita": "el profesor entrega una página impresa de un informe técnico de una empresa [...] para que el grupo compruebe su estimación."
+              },
+              "nivel": {
+                "puntaje": 1,
+                "justificacion": "La matemática (operatoria, proporcionalidad directa, unidades de tiempo) está al alcance del nivel P y el lenguaje está simplificado. Aun así, la salida a bolsa y un informe de riesgos financieros son poco significativos para niños de 10 a 12 años. Hay duda entre 1 y 2, y se asigna el menor.",
+                "cita": "quiere vender partes de la empresa al público en la bolsa de Estados Unidos."
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es accesible: basta medir el tiempo de una página y multiplicar por 90. El techo es alto, porque se pueden incorporar velocidades individuales, la mayor dificultad del texto técnico, pausas, un reparto equilibrado entre integrantes y tiempo para escribir.",
+                "cita": "Pueden pedir información adicional."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Los distintos repartos y supuestos de velocidad permiten comparar soluciones. Además abren preguntas sobre los límites del modelo, por ejemplo si basta leer una parte para escribir la nota o cuánto influyen las tablas.",
+                "cita": "cómo conviene repartirse la lectura para escribir su nota a tiempo?"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "Toda la información necesaria es obtenible por estudiantes de primaria: midiéndola (R1, R2) o decidiéndola (R4). Los materiales no revelan la estructura proporcional de la solución.",
+                "cita": "el profesor entrega una página impresa de un libro de lectura del curso para que cada integrante se cronometre leyéndola."
+              }
+            },
+            "total": 22,
+            "mejoras": [
+              {
+                "criterio": "realismo",
+                "mejora_minima": "Reemplazar el propósito de leer todo el documento por uno creíble para el diario escolar: por ejemplo, que el grupo decida si alcanza a leerlo completo o qué parte leer, porque un periodista adulto tardaría X horas."
+              },
+              {
+                "criterio": "nivel",
+                "mejora_minima": "Dar a los estudiantes una razón cercana para leer el informe (por ejemplo, saber qué riesgos ve la empresa en los chatbots que ellos usan) en vez de centrar la explicación en la venta de acciones en la bolsa."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgRCWeWkW1CeZPYoKq8Lu",
+            "fecha": "2026-10-26T16:55:42+00:00",
+            "intentos": 1,
+            "costo_usd": 0.083842,
+            "avisos": [
+              "cita_no_literal:validacion"
+            ]
+          }
+        }
+      ],
+      "totales": [
+        24,
+        23,
+        22
+      ],
+      "rango_total": 2,
+      "rango_inestable": 4,
+      "evaluacion_inestable": false,
+      "mediana": {
+        "regla": "mediana por criterio (n par: mediana inferior)",
+        "total": 23,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 1,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 2
+        },
+        "corrida_fuente": {
+          "genuino": 1,
+          "abierta": 1,
+          "decisiones": 1,
+          "realismo": 2,
+          "autenticidad": 1,
+          "contexto": 1,
+          "ciclo": 1,
+          "validacion": 1,
+          "nivel": 1,
+          "autodiferenciacion": 1,
+          "fecundidad": 1,
+          "recursos": 1
+        }
+      }
+    }
+  ]
+}

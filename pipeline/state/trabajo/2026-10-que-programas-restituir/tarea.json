@@ -1,0 +1,263 @@
+{
+  "id": "2026-10-que-programas-restituir",
+  "titulo": "¿Qué programas conviene salvar del recorte?",
+  "estado": "borrador",
+  "version": 1,
+  "fecha": "2026-10-26",
+  "noticia": {
+    "noticia_id": "2026-10-23-ciper-fundacion-horizonte-ciudadano-presupuesto-2027-elimina",
+    "medio": "CIPER Chile",
+    "titulo": "Fundación Horizonte Ciudadano: Presupuesto 2027 elimina 18 programas sociales por un monto de $50 mil millones",
+    "fecha": "2026-10-23",
+    "url": "https://www.ciperchile.cl/2026/10/23/fundacion-horizonte-ciudadano-presupuesto-2027-elimina-18-programas-sociales-por-un-monto-de-50-mil-millones/?utm_source=rss&utm_medium=rss&utm_campaign=fundacion-horizonte-ciudadano-presupuesto-2027-elimina-18-programas-sociales-por-un-monto-de-50-mil-millones",
+    "resumen_propio": "Una fundación chilena analiza el proyecto de Presupuesto 2027 y estima que suprime 18 programas de empleo, discapacidad, justicia juvenil y cultura, con un ahorro cercano a 50 mil millones de pesos. Según el texto, la mayoría de esos programas tenía evaluación favorable de la Dipres. También se inicia el cierre de tres programas más y baja el aporte al nuevo servicio de reinserción juvenil, mientras la desocupación sube.",
+    "cifras_usadas": [
+      {
+        "valor": 18,
+        "unidad": "programas sociales a eliminar",
+        "que_es": "Cantidad de programas que el proyecto de Presupuesto 2027 propone eliminar",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 25"
+        }
+      },
+      {
+        "valor": 13,
+        "unidad": "programas recomendados favorablemente por la Dipres",
+        "que_es": "Cuántos de los 18 programas a eliminar tenían evaluación favorable de Dipres",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 29"
+        }
+      },
+      {
+        "valor": "$50.615 millones",
+        "unidad": "pesos chilenos",
+        "que_es": "Recorte que supone suprimir los 18 programas",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 30"
+        }
+      },
+      {
+        "valor": "$8.621 millones",
+        "unidad": "pesos chilenos",
+        "que_es": "Reducción de financiamiento de las tres iniciativas cuyo cierre comienza este año",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 30"
+        }
+      },
+      {
+        "valor": "9,6%",
+        "unidad": "porcentaje de la fuerza laboral",
+        "que_es": "Nivel de desocupados a nivel nacional según el INE, citado en la nota",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 32"
+        }
+      },
+      {
+        "valor": "$5.168 millones",
+        "unidad": "pesos chilenos",
+        "que_es": "Equivalente en pesos de la caída del aporte fiscal al Servicio Nacional de Reinserción Social Juvenil",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 37"
+        }
+      }
+    ]
+  },
+  "nivel_principal": "S",
+  "variantes": {
+    "abajo": "S",
+    "arriba": "U"
+  },
+  "area": "economia",
+  "contenidos_matematicos": [
+    "razones y proporcionalidad",
+    "porcentajes",
+    "comparación de escenarios",
+    "análisis de sensibilidad",
+    "optimización simple"
+  ],
+  "tiempo_estimado": "2 sesiones de 90 min",
+  "estudiante": {
+    "enunciado_es": "El proyecto de Presupuesto del próximo año propone eliminar 18 programas sociales de empleo, discapacidad, justicia juvenil y cultura, lo que supone un recorte de 50.615 millones de pesos. Una fundación que analizó el proyecto señala que 13 de esos programas tenían evaluación favorable de la Dipres, el organismo que revisa el gasto público. Ustedes asesoran a una comisión de diputados que quiere pedir que se restituyan algunos programas, pero sabe que no habrá dinero para todos. La comisión necesita una recomendación clara: ¿qué parte del dinero recortado convendría restituir y a qué programas daría prioridad? Entreguen una propuesta con su monto estimado y expliquen en qué supuestos se apoya. Pueden pedir información adicional.",
+    "foto_descripcion": "Ícono de una balanza: en un platillo hay monedas y en el otro fichas que representan programas sociales.",
+    "recursos_a_solicitud": [
+      {
+        "id": "R2",
+        "que_es": "Tarjeta sobre el costo de cada programa",
+        "contenido": "Supuesto del escenario: el material no trae el monto de cada programa por separado; los programas no cuestan lo mismo, porque unos son pequeños y otros atienden a mucha más gente. El grupo puede estimar el reparto con supuestos explícitos.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P2-RM",
+        "fuente": "supuesto del escenario"
+      },
+      {
+        "id": "R3",
+        "que_es": "Tarjeta sobre qué significa evaluación favorable",
+        "contenido": "Supuesto del escenario: una evaluación favorable significa que la Dipres considera que el programa cumple sus objetivos y recomienda continuarlo; no informa cuánto cuesta ni a cuántas personas atiende.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P2-RM",
+        "fuente": "supuesto del escenario"
+      },
+      {
+        "id": "R4",
+        "que_es": "Tarjeta de contexto laboral",
+        "contenido": "La nota cita al INE: la desocupación nacional es de 9,6 % de la fuerza laboral.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P5-INT",
+        "fuente": "noticia, párrafo 32"
+      },
+      {
+        "id": "R5",
+        "que_es": "Tarjeta con otros recortes del mismo proyecto",
+        "contenido": "Además de los programas eliminados, el cierre de otras iniciativas reduce el financiamiento en 8.621 millones de pesos, y el aporte fiscal al Servicio Nacional de Reinserción Social Juvenil cae en 5.168 millones de pesos.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P5-INT",
+        "fuente": "noticia, párrafos 30 y 37"
+      },
+      {
+        "id": "R6",
+        "que_es": "Tarjeta de contraste que se entrega después de presentar la estimación",
+        "contenido": "Desglose por programa publicado en el proyecto de ley: monto asignado a cada programa y su evaluación, para comparar con la estimación del grupo.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P6-VAL",
+        "fuente": "otra fuente: Dipres, Proyecto de Ley de Presupuestos del Sector Público"
+      }
+    ]
+  },
+  "variantes_detalle": {
+    "abajo": {
+      "tramo": "S1",
+      "cambios": "Se entrega como supuesto de partida que todos los programas cuestan lo mismo y se pregunta cuánto dinero corresponde a los programas bien evaluados; la validación se limita a comparar con el desglose por programa."
+    },
+    "arriba": {
+      "tramo": "U",
+      "cambios": "Se quita el supuesto de costos iguales: el grupo modela el costo de cada programa como una variable incierta, estima un rango o distribución del monto de los programas bien evaluados, formula un problema de optimización con tope de presupuesto y discute los límites del modelo."
+    }
+  },
+  "recursos_de_entrada": [
+    {
+      "id": "R1",
+      "que_es": "Datos de partida que el grupo recibe en el enunciado",
+      "contenido": "18 programas sociales a eliminar; recorte de 50.615 millones de pesos; 13 de esos programas con evaluación favorable de la Dipres.",
+      "disponibilidad": "de_entrada",
+      "fase": "P1-MRS",
+      "fuente": "noticia, párrafos 25, 29 y 30"
+    }
+  ],
+  "mapa_ciclo": {
+    "P1-MRS": {
+      "decision": "Identificar qué se decide (qué restituir) y qué se sabe: cuántos programas, cuántos bien evaluados y cuánto dinero se recorta.",
+      "evidencia": "Reformulan la pregunta con sus palabras y distinguen cantidad de programas de monto en pesos.",
+      "bloqueo_probable": "B12"
+    },
+    "P2-RM": {
+      "decision": "Decidir cómo repartir el costo entre programas (costos iguales, pesos distintos, programas grandes y pequeños) y qué criterio de prioridad usar.",
+      "evidencia": "Lista escrita de supuestos y petición de tarjetas de costos o de evaluación.",
+      "bloqueo_probable": "B23"
+    },
+    "P3-MM": {
+      "decision": "Traducir el reparto a una relación matemática (proporción de programas por monto promedio, ponderaciones, restricción de presupuesto).",
+      "evidencia": "Expresión o tabla que vincula cantidad de programas, costo por programa y monto total.",
+      "bloqueo_probable": "B34"
+    },
+    "P4-WM": {
+      "decision": "Calcular el monto de los programas bien evaluados para uno o más escenarios y armar la propuesta de restitución.",
+      "evidencia": "Cálculos con montos por escenario y una cifra o rango para la propuesta.",
+      "bloqueo_probable": "B45"
+    },
+    "P5-INT": {
+      "decision": "Traducir el resultado a una recomendación para la comisión y juzgar si es razonable frente a otros recortes y a la desocupación.",
+      "evidencia": "Frase que responde a la comisión en pesos y en programas, citando criterios de prioridad.",
+      "bloqueo_probable": "B56"
+    },
+    "P6-VAL": {
+      "decision": "Contrastar la estimación con el desglose real por programa y revisar el supuesto de costos.",
+      "evidencia": "Comparación entre monto estimado y monto real; ajuste del modelo o explicación de la diferencia.",
+      "bloqueo_probable": "B56"
+    },
+    "P7-EXP": {
+      "decision": "Presentar la recomendación y sus límites a la comisión, con el rango y no solo una cifra.",
+      "evidencia": "Informe o afiche con propuesta, supuestos, rango de resultados y qué cambiaría la recomendación.",
+      "bloqueo_probable": "B67"
+    }
+  },
+  "task_space": {
+    "required_assumptions": [
+      "Cómo se reparte el costo entre los programas (iguales o ponderados por tipo de programa).",
+      "Si los programas con evaluación favorable cuestan más, menos o igual que el promedio.",
+      "Qué criterio se usa para priorizar (evaluación, tipo de programa, contexto de desempleo, personas atendidas).",
+      "Que el recorte informado se corresponde con el monto íntegro de los programas eliminados.",
+      "Cuánto dinero máximo podría restituir la comisión (o si se busca un porcentaje del recorte)."
+    ],
+    "reference_solution": {
+      "steps": "1) Distinguir cantidad de programas (18, de ellos 13 bien evaluados) de monto (50.615 millones de pesos). 2) Con costos iguales, costo medio por programa = 50.615 / 18 ≈ 2.812 millones. 3) Monto de los programas bien evaluados ≈ 13 × 2.812 ≈ 36.555 millones (cerca de 72 % del recorte); los otros cinco ≈ 14.060 millones. 4) Sensibilidad: si los programas bien evaluados fueran entre 30 % más baratos y 30 % más caros que el promedio, su monto iría de unos 25.600 a unos 47.500 millones. 5) Proponer restituir los programas bien evaluados, priorizando los de empleo dado el contexto de desocupación, o, si hay tope de presupuesto, los de mejor relación entre evaluación y costo. 6) Contrastar con el desglose real por programa y ajustar.",
+      "result": "Con costos iguales, restituir los 13 programas bien evaluados costaría cerca de 36.555 millones de pesos (aprox. 72 % del recorte). La recomendación debe darse con rango y con criterio de prioridad explícito.",
+      "acceptable_range": "Entre unos 25.000 y 48.000 millones de pesos para el monto de los programas bien evaluados, según el supuesto de reparto de costos; cualquier propuesta defendible debe declarar su supuesto y su rango."
+    },
+    "routes": [
+      {
+        "id": "R1",
+        "nombre": "Costos iguales y proporción",
+        "nivel": "S1",
+        "modelo": "Costo medio por programa = recorte / cantidad de programas; monto bien evaluados = costo medio × cantidad de programas bien evaluados.",
+        "resultado": "Aprox. 36.555 millones de pesos (72 % del recorte)."
+      },
+      {
+        "id": "R2",
+        "nombre": "Escenarios de costo ponderado",
+        "nivel": "S2",
+        "modelo": "Se asigna un peso de costo distinto a los programas bien evaluados (más caros o más baratos que el promedio) y se calcula el monto en cada escenario, con sensibilidad.",
+        "resultado": "Rango aprox. de 25.600 a 47.500 millones de pesos según el peso supuesto."
+      },
+      {
+        "id": "R3",
+        "nombre": "Restitución con tope de presupuesto",
+        "nivel": "S2",
+        "modelo": "Dado un tope de dinero, se ordenan los programas por una razón evaluación-costo supuesta y se restituyen en ese orden hasta agotar el tope.",
+        "resultado": "Número de programas restituibles según el tope; con tope igual a la mitad del recorte, entre 6 y 9 programas según los costos supuestos."
+      },
+      {
+        "id": "R4",
+        "nombre": "Costos aleatorios por simulación",
+        "nivel": "U",
+        "modelo": "Se modela el costo de cada programa como variable aleatoria con media igual al costo medio, se simula el monto de los programas bien evaluados y se obtiene un intervalo.",
+        "resultado": "Intervalo de monto con probabilidad asociada, centrado cerca de 36.500 millones de pesos."
+      }
+    ],
+    "modelo_inadecuado": {
+      "id": "RX",
+      "por_que_falla": "Dividir el recorte en partes iguales y presentar el resultado como monto exacto, sin rango ni prioridad: ignora que los programas tienen costos distintos y que la comisión debe decidir con criterios, no solo contar programas."
+    },
+    "validation_evidence": "Después de modelar, el grupo recibe el desglose por programa del proyecto de ley de presupuestos publicado por la Dipres (otra fuente) y compara la suma real de los programas bien evaluados con su estimación; ese desglose no se usa para construir el modelo.",
+    "agent_visibility": {
+      "students": [
+        "enunciado_es",
+        "foto_descripcion",
+        "recursos_a_solicitud"
+      ],
+      "coder": [
+        "enunciado_es",
+        "task_space"
+      ],
+      "guide": [
+        "all"
+      ]
+    }
+  },
+  "rubrica_rub01": null,
+  "rubrica_rub02": {
+    "P": null,
+    "S": null,
+    "U": null
+  },
+  "modelo_y_prompt": {
+    "diseñador": "claude-sonnet-5-5",
+    "version_prompt": "1.1",
+    "version_rubrica": "4.0"
+  },
+  "sub_tramo": "S2"
+}

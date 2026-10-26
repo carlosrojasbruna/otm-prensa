@@ -1,0 +1,302 @@
+{
+  "tarea_id": "2026-10-puede-remontar-partido-gobierno",
+  "evaluaciones": [
+    {
+      "iteracion": 1,
+      "version_tarea": 1,
+      "fecha": "2026-10-26T17:08:41Z",
+      "modelo": "claude-opus-5-5",
+      "version_prompt": "1.3",
+      "version_rubrica": "4.0",
+      "corridas": [
+        {
+          "n": 1,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "Plantea una necesidad real de decisión editorial y no entrega ninguna regla ni procedimiento para estimar los votos pendientes.",
+                "cita": "La editora debe decidir si ya puede titular que el partido de gobierno no alcanzará a la lista estudiantil o si es mejor esperar el …"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "Admite varios caminos defendibles (peor caso, proyección proporcional, escenarios con mesas desiguales) y no prescribe método.",
+                "cita": "Ustedes deben asesorarla: ¿qué le recomendarían y qué tan seguros pueden estar de esa recomendación?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Hay que estimar cuántos votos quedan en el 3 % pendiente, suponer cómo votan y cuánto pesan esas mesas, y decidir qué información pedir.",
+                "cita": "no se sabe en qué zonas están ni cuántos votantes tiene cada una."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Decidir cuándo proclamar un resultado con conteo parcial es una situación real del periodismo electoral.",
+                "cita": "Un equipo de noticias sigue en vivo las elecciones parlamentarias anticipadas de Serbia."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los datos del conteo provienen de una cobertura noticiosa declarada y son el núcleo de la tarea, integrados de manera sustantiva.",
+                "cita": "informó 2,25 millones de votos para la lista de los estudiantes y 1,67 millones para el antiguo partido de gobierno."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto electoral, con el tamaño y el comportamiento de las mesas tardías, condiciona los supuestos, y la recomendación y su grado de seguridad deben interpretarse en ese contexto.",
+                "cita": "el equipo debe decidir cuánto margen darle a esa posibilidad."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a comprender el conteo, simplificar sobre las mesas pendientes, matematizar la proporción de votos restantes, calcular, interpretar en un titular y juzgar la seguridad; ninguna fase viene hecha.",
+                "cita": "¿qué le recomendarían y qué tan seguros pueden estar de esa recomendación?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "El conteo final oficial es evidencia independiente, no usada en la construcción, contra la cual contrastar la recomendación.",
+                "cita": "se le muestra el resultado final oficial del conteo publicado por la comisión electoral."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto es comprensible y significativo para 13–15 años, y la matemática (porcentajes, razones, proporcionalidad) está dentro de lo esperable en S1.",
+                "cita": "Cuando la comisión electoral había contado el 97 % de las mesas"
+              },
+              "autodiferenciacion": {
+                "puntaje": 1,
+                "justificacion": "El piso es razonable: basta comparar la diferencia con los votos pendientes. Pero la brecha (~580 mil votos frente a ~130 mil pendientes) es tan amplia que los modelos más refinados apenas cambian la conclusión. Dudo entre 1 y 2 y asigno el menor por techo limitado.",
+                "cita": "las mesas que faltan por contar tienen un tamaño parecido al de las ya contadas"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Permite comparar recomendaciones de peor caso y proporcionales, y abre preguntas como desde qué porcentaje contado ya se podía titular o cuán grandes tendrían que ser las mesas restantes.",
+                "cita": "en esta elección no hay datos públicos sobre si las mesas que se cuentan al final votan distinto de las primeras"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "Los porcentajes, los supuestos del escenario y el conteo final están disponibles a solicitud sin revelar el modelo; el supuesto de tamaño de mesas es un dato del escenario, no la solución.",
+                "cita": "Pueden pedir información adicional."
+              }
+            },
+            "total": 23,
+            "mejoras": [
+              {
+                "criterio": "autodiferenciacion",
+                "mejora_minima": "Situar la decisión en un momento con menos mesas contadas, o agregar en R3 que algunas mesas pendientes podrían ser mucho más grandes, para que los modelos con mesas desiguales o escenarios de sensibilidad produzcan conclusiones distintas y eleven el techo."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgRDQwpGQwohRb2fefxtk",
+            "fecha": "2026-10-26T17:07:26+00:00",
+            "intentos": 1,
+            "costo_usd": 0.068966,
+            "avisos": [
+              "cita_recortada_25:genuino"
+            ]
+          }
+        },
+        {
+          "n": 2,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "Hay una necesidad real de decisión, la de titular o esperar, y no se entrega ninguna regla ni modelo para extrapolar el conteo. Quien resuelve debe construir cómo acotar los votos pendientes.",
+                "cita": "La editora debe decidir si ya puede titular que el partido de gobierno no alcanzará a la lista estudiantil o si es mejor esperar el …"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe procedimiento. Admite varios caminos defendibles, como el peor caso con todos los votos pendientes para el SNS, la extrapolación proporcional o escenarios con mesas finales distintas.",
+                "cita": "Ustedes deben asesorarla: ¿qué le recomendarían y qué tan seguros pueden estar de esa recomendación?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige estimar cuántos votos faltan, para lo cual el total no está dado y hay otras listas. También exige suponer el tamaño de las mesas y el comportamiento de las mesas finales, y solicitar información pertinente.",
+                "cita": "el equipo debe decidir cuánto margen darle a esa posibilidad."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Decidir cuándo un medio puede proyectar un resultado con el conteo casi completo es una situación real del periodismo electoral, no un encuadre forzado.",
+                "cita": "Un equipo de noticias sigue en vivo las elecciones parlamentarias anticipadas de Serbia."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Las cifras del conteo y los porcentajes preliminares provienen de la cobertura noticiosa y son el núcleo de la tarea. También lo es la actividad auténtica de decidir un titular.",
+                "cita": "Con el 97 % de las mesas escrutadas, la lista de los estudiantes tenía 2,25 millones de votos y el antiguo partido de gobierno 1,67 …"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto electoral condiciona los supuestos sobre las mesas pendientes. Además es necesario para traducir el cálculo en una recomendación editorial y juzgar su seguridad.",
+                "cita": "no se sabe en qué zonas están ni cuántos votantes tiene cada una."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a comprender el conteo, simplificar suponiendo que 3 % de mesas equivale aproximadamente a 3 % de votos, matematizar con proporciones, calcular la brecha y volver a la situación para recomendar y validar. Hay una duda menor: el margen amplio hace sencilla la conclusión, pero ninguna fase viene hecha.",
+                "cita": "¿qué le recomendarían y qué tan seguros pueden estar de esa recomendación?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existe evidencia independiente, el conteo final oficial, no usada en la construcción del modelo, con la que contrastar la recomendación.",
+                "cita": "Cuando el grupo entregue su recomendación, se le muestra el resultado final oficial del conteo publicado por la comisión electoral."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto electoral y el lenguaje son comprensibles para S1. La matemática requerida (porcentajes, razones, proporcionalidad y comparación de escenarios) está en las herramientas esperables del sub-tramo.",
+                "cita": "Según cifras preliminares, la lista de los estudiantes tiene 52,7 % de los votos y el Partido Progresista Serbio (SNS) tiene 39,2 %."
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es accesible con la comparación directa de la diferencia frente a una estimación de los votos pendientes. El techo admite análisis más finos, como cuán grandes tendrían que ser las mesas pendientes o qué proporción tendría que ganar el SNS, con escenarios de mesas finales distintas.",
+                "cita": "¿qué le recomendarían y qué tan seguros pueden estar de esa recomendación?"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las soluciones abren preguntas sustantivas: con qué porcentaje contado o con qué margen se podría haber titulado antes, y qué supuestos hacen frágil una proyección. También permiten comparar recomendaciones con distintos grados de seguridad.",
+                "cita": "La editora debe decidir si ya puede titular que el partido de gobierno no alcanzará a la lista estudiantil"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información necesaria está en el enunciado o puede solicitarse. Los recursos describen la situación sin entregar la regla de extrapolación ni la cota de peor caso, aunque R4 orienta levemente sobre qué decidir.",
+                "cita": "Supuesto del escenario: las mesas que faltan por contar tienen un tamaño parecido al de las ya contadas"
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgRDTDqUruFDFSb2425g1",
+            "fecha": "2026-10-26T17:08:04+00:00",
+            "intentos": 1,
+            "costo_usd": 0.086006,
+            "avisos": [
+              "cita_recortada_25:genuino",
+              "cita_recortada_25:autenticidad"
+            ]
+          }
+        },
+        {
+          "n": 3,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La situación plantea una necesidad real de decisión editorial. No entrega ninguna regla ni modelo para proyectar el resultado ni para medir la seguridad.",
+                "cita": "La editora debe decidir si ya puede titular que el partido de gobierno no alcanzará a la lista estudiantil o si es mejor esperar el …"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe procedimiento. Admite varios modelos defendibles, como la extrapolación proporcional, el peor escenario (todo lo pendiente para el SNS) o un umbral de reversión.",
+                "cita": "Ustedes deben asesorarla: ¿qué le recomendarían y qué tan seguros pueden estar de esa recomendación?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige estimar cuántos votos faltan y formular supuestos sobre el tamaño y el comportamiento de las mesas pendientes. También permite solicitar información pertinente (R2–R4).",
+                "cita": "el equipo debe decidir cuánto margen darle a esa posibilidad."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Decidir si se puede anunciar un resultado con un conteo parcial es una situación que existe en las redacciones y no está forzada para insertar un cálculo.",
+                "cita": "Un equipo de noticias sigue en vivo las elecciones parlamentarias anticipadas de Serbia."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los datos del conteo informados por la comisión electoral y la práctica periodística de titular en vivo son componentes extraescolares auténticos. Ambos constituyen el núcleo de la tarea.",
+                "cita": "Cuando la comisión electoral había contado el 97 % de las mesas, informó 2,25 millones de votos para la lista de los estudiantes"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto electoral condiciona los supuestos sobre las mesas pendientes. También es necesario para interpretar la recomendación a la editora y validarla con el conteo final.",
+                "cita": "no se sabe en qué zonas están ni cuántos votantes tiene cada una."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a recorrer todo el ciclo: comprender el conteo, estimar los votos pendientes y suponer su distribución, calcular escenarios, interpretar el resultado como recomendación con grado de certeza y validar. Ninguna fase queda hecha, porque R4 deja al equipo el supuesto clave.",
+                "cita": "¿qué le recomendarían y qué tan seguros pueden estar de esa recomendación?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "El conteo final oficial (R5) es evidencia independiente, no usada en la construcción del modelo, contra la cual contrastar la recomendación.",
+                "cita": "Cuando el grupo entregue su recomendación, se le muestra el resultado final oficial del conteo publicado por la comisión electoral."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto electoral y el lenguaje son comprensibles para estudiantes de 13 a 15 años. La matemática requerida (porcentajes, razones, proporcionalidad, comparación de escenarios) está dentro de lo esperable en S1.",
+                "cita": "Con el 97 % de las mesas escrutadas, la lista de los estudiantes tenía 2,25 millones de votos y el antiguo partido de gobierno 1,67 …"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Hay un piso accesible: comparar los votos que faltan con la diferencia actual. La tarea también admite soluciones más sofisticadas, como el peor escenario, el umbral de reversión según el tamaño de las mesas o la sensibilidad al comportamiento de las mesas tardías.",
+                "cita": "qué tan seguros pueden estar de esa recomendación?"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las distintas recomendaciones y grados de certeza permiten comparar modelos. Además abren preguntas sustantivas, como desde qué porcentaje escrutado es seguro anunciar o qué pasa con márgenes más estrechos.",
+                "cita": "La editora debe decidir si ya puede titular"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información necesaria está en el enunciado o puede solicitarse (R2–R5) y no revela la estructura de la solución. Los recursos describen el contexto, pero no dicen cómo usarlo.",
+                "cita": "Supuesto del escenario: las mesas que faltan por contar tienen un tamaño parecido al de las ya contadas"
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgRDW3NmVWvRYmmj7NBva",
+            "fecha": "2026-10-26T17:08:41+00:00",
+            "intentos": 1,
+            "costo_usd": 0.082326,
+            "avisos": [
+              "cita_recortada_25:genuino",
+              "cita_recortada_25:nivel"
+            ]
+          }
+        }
+      ],
+      "totales": [
+        23,
+        24,
+        24
+      ],
+      "rango_total": 1,
+      "rango_inestable": 4,
+      "evaluacion_inestable": false,
+      "mediana": {
+        "regla": "mediana por criterio (n par: mediana inferior)",
+        "total": 24,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 2
+        },
+        "corrida_fuente": {
+          "genuino": 1,
+          "abierta": 1,
+          "decisiones": 1,
+          "realismo": 1,
+          "autenticidad": 1,
+          "contexto": 1,
+          "ciclo": 1,
+          "validacion": 1,
+          "nivel": 1,
+          "autodiferenciacion": 2,
+          "fecundidad": 1,
+          "recursos": 1
+        }
+      }
+    }
+  ]
+}

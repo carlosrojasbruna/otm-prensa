@@ -1,0 +1,223 @@
+{
+  "id": "2026-10-leer-documento-de-riesgos",
+  "titulo": "¿Cuánto tardaríamos en leer el informe de riesgos de una empresa de IA?",
+  "estado": "evaluada",
+  "version": 1,
+  "fecha": "2026-10-26",
+  "noticia": {
+    "noticia_id": "2026-10-26-bbc-anthropic-warns-of-catastrophic-risk-to",
+    "medio": "BBC News",
+    "titulo": "Anthropic warns of 'catastrophic risk' to humankind ahead of blockbuster share listing",
+    "fecha": "2026-10-26",
+    "url": "https://www.bbc.co.uk/news/articles/cq398p1wd1evo?at_medium=RSS&at_campaign=rss",
+    "resumen_propio": "Anthropic, the developer of the Claude chatbot, has filed documents ahead of a planned US stock market listing. The filing warns that advanced AI could carry grave risks for society if misused or left without oversight. It reports first-half losses larger than revenue, a large cash reserve, and a valuation expected to top that of SpaceX, while listing risks such as dependence on cloud providers and chip makers.",
+    "cifras_usadas": [
+      {
+        "valor": "about 90 pages",
+        "unidad": "páginas",
+        "que_es": "Extensión del documento que detalla los posibles factores de riesgo",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 59"
+        }
+      },
+      {
+        "valor": "more than $1tn",
+        "unidad": "dólares invertidos en IA",
+        "que_es": "Inversión de las empresas tecnológicas en infraestructura y herramientas de IA durante el último año",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 62"
+        }
+      }
+    ]
+  },
+  "nivel_principal": "P",
+  "variantes": {
+    "abajo": null,
+    "arriba": "S"
+  },
+  "area": "economia",
+  "contenidos_matematicos": [
+    "proporcionalidad directa",
+    "medición y unidades de tiempo",
+    "estimación",
+    "razones y reparto proporcional"
+  ],
+  "tiempo_estimado": "2 sesiones de 90 min",
+  "estudiante": {
+    "enunciado_es": "Anthropic, la empresa que creó el chatbot Claude, quiere vender partes de la empresa al público en la bolsa de Estados Unidos. Para eso publicó un documento de unas 90 páginas donde explica sus riesgos, por ejemplo que la inteligencia artificial podría ser peligrosa si se usa mal. Esto interesa mucho, porque en el último año las empresas tecnológicas invirtieron más de 1 billón de dólares en inteligencia artificial. Su grupo es el equipo del diario escolar y quiere leer todo el documento antes de escribir una nota para sus compañeros. ¿Cuánto tiempo necesitarían para leerlo completo y cómo conviene repartirse la lectura para escribir su nota a tiempo? Pueden pedir información adicional.",
+    "foto_descripcion": "Ícono de una pila de hojas con un reloj de arena al lado.",
+    "recursos_a_solicitud": [
+      {
+        "id": "R1",
+        "que_es": "Página de muestra de un texto de lectura habitual",
+        "contenido": "Supuesto del escenario: el profesor entrega una página impresa de un libro de lectura del curso para que cada integrante se cronometre leyéndola.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P3-MM",
+        "fuente": "supuesto del escenario"
+      },
+      {
+        "id": "R2",
+        "que_es": "Reloj o cronómetro",
+        "contenido": "Supuesto del escenario: en la sala hay un reloj o cronómetro que el grupo puede usar para medir tiempos.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P3-MM",
+        "fuente": "supuesto del escenario"
+      },
+      {
+        "id": "R3",
+        "que_es": "Página de muestra de un informe de empresa",
+        "contenido": "Supuesto del escenario: el profesor entrega una página impresa de un informe técnico de una empresa, con vocabulario financiero y tablas, para que el grupo compruebe su estimación.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P6-VAL",
+        "fuente": "supuesto del escenario"
+      },
+      {
+        "id": "R4",
+        "que_es": "Plazo y tiempo disponible del grupo",
+        "contenido": "Supuesto del escenario: el grupo decide cuánto tiempo al día puede dedicar a leer y cuántos días tiene hasta publicar su nota.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P2-RM",
+        "fuente": "supuesto del escenario"
+      }
+    ]
+  },
+  "variantes_detalle": {
+    "abajo": null,
+    "arriba": {
+      "tramo": "S",
+      "cambios": "Se pide comparar dos planes de lectura (todos leen todo frente a repartir por velocidad) considerando que el ritmo baja con el cansancio y con la dificultad técnica del texto, y justificar cuál conviene según un plazo dado por el grupo; se pide además analizar cómo cambia el resultado si cambia la rapidez promedio."
+    }
+  },
+  "recursos_de_entrada": [
+    {
+      "id": "R5",
+      "que_es": "Extensión del documento y contexto de inversión",
+      "contenido": "El documento de riesgos tiene unas 90 páginas. Las empresas tecnológicas invirtieron más de 1 billón de dólares en inteligencia artificial en el último año (dato de contexto).",
+      "disponibilidad": "de_entrada",
+      "fase": "P1-MRS",
+      "fuente": "noticia, párrafos 59 y 62"
+    }
+  ],
+  "mapa_ciclo": {
+    "P1-MRS": {
+      "decision": "Entender que la pregunta combina cuánto tarda alguien en leer 90 páginas y cómo se reparte el trabajo entre varios.",
+      "evidencia": "El grupo explica con sus palabras qué debe averiguar y pregunta por el plazo y el tipo de texto.",
+      "bloqueo_probable": "B12"
+    },
+    "P2-RM": {
+      "decision": "Decidir qué suponer: rapidez de lectura constante, páginas parecidas entre sí, cuánto tiempo al día dedican, si todos leen todo o se reparten.",
+      "evidencia": "Lista de supuestos escrita y plan de medición acordado.",
+      "bloqueo_probable": "B23"
+    },
+    "P3-MM": {
+      "decision": "Medir cuánto tarda cada integrante por página y expresarlo como razón (minutos por página).",
+      "evidencia": "Tabla con tiempos medidos por persona y tiempo por página.",
+      "bloqueo_probable": "B34"
+    },
+    "P4-WM": {
+      "decision": "Calcular el tiempo total multiplicando por el número de páginas y repartir las páginas en proporción a la rapidez de cada uno.",
+      "evidencia": "Cálculos: tiempo por página × número de páginas; reparto de páginas por integrante.",
+      "bloqueo_probable": "B45"
+    },
+    "P5-INT": {
+      "decision": "Traducir el resultado a horas y días de lectura para el equipo y decidir el plan de reparto.",
+      "evidencia": "Calendario o plan de lectura escrito con horas por día y páginas por persona.",
+      "bloqueo_probable": "B56"
+    },
+    "P6-VAL": {
+      "decision": "Contrastar la estimación leyendo una página distinta, de informe técnico, y ajustar el modelo si tarda más.",
+      "evidencia": "Tiempo medido en la página técnica comparado con el previsto y corrección del modelo.",
+      "bloqueo_probable": "B67"
+    },
+    "P7-EXP": {
+      "decision": "Presentar el plan al resto del diario escolar con sus supuestos y el ajuste hecho.",
+      "evidencia": "Cartel o resumen con tabla de tiempos, reparto y comentarios sobre lo que cambió tras validar.",
+      "bloqueo_probable": null
+    }
+  },
+  "task_space": {
+    "required_assumptions": [
+      "La rapidez de lectura de cada integrante se mantiene constante durante toda la sesión.",
+      "Cada página del documento tiene una cantidad de texto parecida a la de la muestra.",
+      "El texto técnico se lee más lento que un texto de lectura habitual; el grupo debe estimar cuánto.",
+      "El número de integrantes y el tiempo disponible por día los define el grupo.",
+      "El documento se lee completo y una sola vez."
+    ],
+    "reference_solution": {
+      "steps": "1) Cada integrante se cronometra leyendo una página de muestra de lectura habitual y obtiene minutos por página. 2) Se promedia o se usan los tiempos individuales. 3) Se multiplica por las unas 90 páginas para obtener el tiempo total de una persona. 4) Para repartir, se asigna a cada persona un número de páginas proporcional a su rapidez, de modo que todos terminen a la vez; si todos leen igual, total ÷ número de integrantes. 5) Se valida cronometrando una página de informe técnico, se calcula el factor entre ambos tiempos y se corrige el total.",
+      "result": "Ejemplo ilustrativo (supuesto del grupo, no dato de la noticia): si una persona tarda 2 minutos por página en un texto común y 3 en uno técnico, leer unas 90 páginas técnicas le toma 270 minutos (4,5 horas); repartidas en partes iguales entre cuatro integrantes, resulta aproximadamente 1,1 horas por persona.",
+      "acceptable_range": "La respuesta depende de la rapidez medida; una estimación razonable para un estudiante de esta edad leyendo texto técnico es de 3 a 6 horas por persona para el documento completo, y de 1 a 2 horas cuando se reparten entre varios, siempre que el grupo explique su medición."
+    },
+    "routes": [
+      {
+        "id": "R1",
+        "nombre": "Promedio del grupo",
+        "nivel": "P",
+        "modelo": "Proporcionalidad directa: tiempo total = minutos por página (promedio medido) × páginas; dividir en partes iguales entre los integrantes.",
+        "resultado": "Tiempo total para una persona y tiempo por integrante con reparto igual."
+      },
+      {
+        "id": "R2",
+        "nombre": "Reparto según rapidez individual",
+        "nivel": "P",
+        "modelo": "Razón de rapideces: cada integrante lee un número de páginas proporcional a su rapidez (páginas por minuto) para que todos terminen juntos.",
+        "resultado": "Número de páginas por persona distinto según la rapidez, con el mismo tiempo para todos."
+      },
+      {
+        "id": "R3",
+        "nombre": "Ajuste por dificultad y cansancio",
+        "nivel": "S",
+        "modelo": "Función lineal por tramos: el tiempo por página crece cierta cantidad después de cada bloque de lectura continua, y se multiplica por un factor de dificultad medido en la página técnica.",
+        "resultado": "Tiempo total mayor que el de R1, con un plan de pausas."
+      }
+    ],
+    "modelo_inadecuado": {
+      "id": "R4",
+      "por_que_falla": "Cronometrar una sola página de texto fácil y multiplicar por 90 sin ajustar por el tipo de documento, subestima el tiempo: el informe de riesgos tiene vocabulario técnico y requiere releer, y la página técnica de comprobación muestra que el tiempo real por página es mayor."
+    },
+    "validation_evidence": "Cronometraje de una página de informe técnico (R3) que no se usó para medir la rapidez inicial: si el tiempo medido difiere del previsto, el modelo debe ajustarse. También sirve, como contraste posterior, que el grupo lea una sección del documento real y compare el tiempo real con el previsto.",
+    "agent_visibility": {
+      "students": [
+        "enunciado_es",
+        "foto_descripcion",
+        "recursos_a_solicitud"
+      ],
+      "coder": [
+        "enunciado_es",
+        "task_space"
+      ],
+      "guide": [
+        "all"
+      ]
+    }
+  },
+  "rubrica_rub01": {
+    "total": 23,
+    "por_criterio": {
+      "genuino": 2,
+      "abierta": 2,
+      "decisiones": 2,
+      "realismo": 1,
+      "autenticidad": 2,
+      "contexto": 2,
+      "ciclo": 2,
+      "validacion": 2,
+      "nivel": 2,
+      "autodiferenciacion": 2,
+      "fecundidad": 2,
+      "recursos": 2
+    }
+  },
+  "rubrica_rub02": {
+    "P": null,
+    "S": null,
+    "U": null
+  },
+  "modelo_y_prompt": {
+    "diseñador": "claude-sonnet-5-5",
+    "version_prompt": "1.1",
+    "version_rubrica": "4.0"
+  }
+}

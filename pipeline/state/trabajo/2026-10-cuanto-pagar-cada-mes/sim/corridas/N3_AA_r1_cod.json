@@ -1,0 +1,160 @@
+{
+  "run": {
+    "id": "N3_AA_r1",
+    "nivel": "N3",
+    "composicion": "AA",
+    "rep": 1,
+    "estilos": [
+      "A",
+      "A"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.07136,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P2-RM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P4-WM",
+        "fase_secundaria": "P2-RM",
+        "eventos": []
+      },
+      {
+        "n": 3,
+        "fase": "P4-WM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 5,
+        "fase": "P5-INT",
+        "fase_secundaria": "EMK",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 6,
+        "fase": "P2-RM",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P3-MM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 8,
+        "fase": "P4-WM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 9,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 10,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 11,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 12,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 13,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 14,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 15,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 16,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 17,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P7-EXP",
+        "eventos": []
+      }
+    ],
+    "bloqueos": [],
+    "supuestos": [
+      "deuda de ejemplo de 4.800.000 pesos",
+      "pie del 10% pagado al contado",
+      "cuotas iguales",
+      "interés inventado de 1% mensual",
+      "interés simple",
+      "deuda promedio igual a la mitad de la deuda inicial",
+      "interés igual en 24 y 48 cuotas (por confirmar)",
+      "criterio según sueldo y disponibilidad del pie"
+    ],
+    "modelo": "proporcional con interés simple",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Con una deuda de 4.800.000 y un interés estimado de 1% mensual (inventado), si a la persona le alcanza para 201.600 al mes y tiene 480.000 de pie, conviene el convenio de 24 cuotas con pie (total 5.318.400); si no, conviene el de 48 cuotas, mejor con pie (111.600 al mes más 480.000). Habría que confirmar con Tesorería si el interés es el mismo en 24 y en 48 cuotas."
+    },
+    "ruta_principal": "R1",
+    "rutas": [
+      "R1",
+      "R4"
+    ]
+  }
+}

@@ -1,0 +1,318 @@
+{
+  "tarea_id": "2026-10-cuanto-le-dura-la-caja",
+  "evaluaciones": [
+    {
+      "iteracion": 1,
+      "version_tarea": 1,
+      "fecha": "2026-10-26T16:53:47Z",
+      "modelo": "claude-opus-5-5",
+      "version_prompt": "1.3",
+      "version_rubrica": "4.0",
+      "corridas": [
+        {
+          "n": 1,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "Plantea una necesidad real: explicar si el dinero alcanza. No entrega una regla ni un modelo; el grupo debe construir la relación entre efectivo y ritmo de pérdidas.",
+                "cita": "Una periodista de un diario escolar quiere explicar a sus lectores si a Anthropic le alcanza el dinero que tiene para seguir funcionando."
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe procedimiento. Admite varios modelos defendibles: comparar en semestres o en meses, incluir o no el dinero de la salida a bolsa, suponer pérdidas constantes o crecientes.",
+                "cita": "¿Qué responderían ustedes y por qué? Pueden pedir información adicional."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Hay que tomar varias decisiones de modelación: si restar o no los ingresos, qué hacer con el dato de SpaceX, suponer que el ritmo de pérdidas se mantiene y decidir si se cuenta el dinero de la bolsa.",
+                "cita": "tuvo pérdidas por 80,7 mil millones de dólares e ingresos por 16,3 mil millones de dólares. También declaró tener 112,4 mil millones"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "La situación de una empresa real que informa sus finanzas antes de salir a bolsa existe fuera de la escuela. El encuadre del diario escolar es plausible.",
+                "cita": "Anthropic, la empresa que creó el chatbot Claude, prepara su salida a la bolsa de Estados Unidos"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los datos financieros declarados por la empresa son el núcleo de la tarea. Se toman como auténticos según la procedencia declarada y están integrados de manera sustantiva.",
+                "cita": "En los documentos que entregó, informó que en el primer semestre del año, la mitad del año, tuvo pérdidas por 80,7 mil millones"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona decisiones (dinero de la salida a bolsa, si las pérdidas se mantienen). También es necesario para interpretar si unos meses de margen significan que «alcanza».",
+                "cita": "si a Anthropic le alcanza el dinero que tiene para seguir funcionando"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a recorrer todo el ciclo: comprender pérdida frente a ingresos, simplificar suponiendo un ritmo constante, matematizar como razón efectivo/pérdida por semestre, calcular, interpretar en tiempo y juzgar la respuesta. Ninguna fase viene hecha en el enunciado.",
+                "cita": "¿Qué responderían ustedes y por qué?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existe evidencia independiente posterior (el nuevo informe) con la cual contrastar el modelo de ritmo de gasto.",
+                "cita": "la empresa publicará más adelante un nuevo informe con sus pérdidas y su dinero disponible del periodo siguiente; la periodista puede revisarlo cuando salga."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "La matemática requerida (comparación, división o estimación proporcional y conversión de semestres a meses) está dentro de las herramientas de P. El vocabulario financiero se aclara a solicitud (R1, R2) y la metáfora de la alcancía lo vuelve comprensible.",
+                "cita": "Ícono sencillo de una alcancía con una flecha hacia abajo y un calendario al lado."
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es accesible: ver que 112,4 supera a 80,7 y concluir «alcanza para algo más de un semestre». El techo admite estimar meses y construir escenarios con dinero de la bolsa o con pérdidas crecientes.",
+                "cita": "Pueden pedir información adicional."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Los resultados abren preguntas nuevas, como cuánto dinero de la bolsa haría falta o qué pasa si las pérdidas crecen. También permiten comparar soluciones con distintos supuestos y discutir los límites del modelo.",
+                "cita": "al salir a bolsa, la empresa puede recibir dinero nuevo por las partes que vende, pero en este problema todavía no se sabe cuánto ni …"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "Los datos están disponibles y nada revela el modelo. Sin embargo, el material entregado de entrada anuncia que el dato de SpaceX sobra, lo que anula esa decisión de selección de información: es una sobreorientación parcial.",
+                "cita": "Valoración inicial de SpaceX: cerca de 1,8 billones de dólares (dato que no es necesario para responder)."
+              }
+            },
+            "total": 23,
+            "mejoras": [
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Eliminar de R5 la anotación «(dato que no es necesario para responder)», para que sea el grupo quien decida qué datos usar."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgRCGJ8Wu2kyXttDNJ3Zq",
+            "fecha": "2026-10-26T16:52:31+00:00",
+            "intentos": 1,
+            "costo_usd": 0.086454,
+            "avisos": [
+              "cita_recortada_25:fecundidad"
+            ]
+          }
+        },
+        {
+          "n": 2,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "Plantea una necesidad real: saber si el dinero alcanza. No entrega ninguna regla ni modelo de cuánto dura el efectivo; R1 solo define el término 'pérdida'.",
+                "cita": "Una periodista de un diario escolar quiere explicar a sus lectores si a Anthropic le alcanza el dinero que tiene para seguir funcionando."
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe procedimiento. Admite varios modelos defendibles, como pérdida constante por semestre o mes, escenarios con o sin dinero de la salida a bolsa y cambios en el ritmo de gasto.",
+                "cita": "¿Qué responderían ustedes y por qué? Pueden pedir información adicional."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige seleccionar información: el dato de SpaceX sobra y los ingresos ya están descontados en la pérdida. También exige suponer un ritmo de pérdida constante y decidir qué hacer con el dinero incierto de la salida a bolsa.",
+                "cita": "Por otro lado, SpaceX salió a bolsa con una valoración inicial de cerca de 1,8 billones de dólares."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Se trata de una empresa real y de una pregunta financiera que un medio plantearía de verdad, por lo que la situación es plausible fuera de la escuela.",
+                "cita": "Anthropic, la empresa que creó el chatbot Claude, prepara su salida a la bolsa de Estados Unidos"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Las cifras se declaran tomadas de los documentos de la empresa (la procedencia se toma como cierta) y son el núcleo de la tarea, de modo que el componente auténtico está integrado de manera sustantiva.",
+                "cita": "En los documentos que entregó, informó que en el primer semestre del año, la mitad del año, tuvo pérdidas por 80,7 mil millones de dólares"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona las decisiones: qué significa pérdida, si el ritmo se mantiene y si llega dinero nuevo. También es necesario para interpretar si el dinero 'alcanza' y para validar con el informe posterior.",
+                "cita": "al salir a bolsa, la empresa puede recibir dinero nuevo por las partes que vende, pero en este problema todavía no se sabe cuánto ni …"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a recorrer el ciclo completo:\n- comprender los términos financieros;\n- simplificar suponiendo un ritmo de pérdida;\n- matematizar como razón entre efectivo y pérdida por periodo;\n- calcular;\n- interpretar en meses y juzgar la respuesta.\n\nNinguna fase queda resuelta por el enunciado.",
+                "cita": "si a Anthropic le alcanza el dinero que tiene para seguir funcionando. ¿Qué responderían ustedes y por qué?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "El informe posterior es evidencia independiente, no usada en la construcción del modelo, con la que contrastar la predicción de cuánto dura el dinero.",
+                "cita": "la empresa publicará más adelante un nuevo informe con sus pérdidas y su dinero disponible del periodo siguiente; la periodista puede revisarlo cuando salga."
+              },
+              "nivel": {
+                "puntaje": 1,
+                "justificacion": "La matemática (división y proporcionalidad con decimales, semestres a meses) está al alcance del nivel P. Sin embargo, el vocabulario financiero ('salida a bolsa', 'valoración', 'efectivo o equivalentes', 'billones') es denso para 10–12 años y requiere ajustes menores. Dudo entre 1 y 2 y asigno el menor.",
+                "cita": "Anthropic, la empresa que creó el chatbot Claude, prepara su salida a la bolsa de Estados Unidos: quiere vender partes de la empresa al público."
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es bajo: basta comparar 112,4 con 80,7 para ver que el dinero alcanza para más de un semestre y menos de dos. El techo es alto: la tarea admite estimaciones mensuales, escenarios con dinero de la salida a bolsa o pérdidas variables.",
+                "cita": "Pueden pedir información adicional."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Los resultados abren preguntas nuevas: cuánto dinero debería traer la salida a bolsa o qué pasa si cambian las pérdidas. También permiten comparar soluciones con supuestos distintos y contrastarlas con el informe siguiente.",
+                "cita": "todavía no se sabe cuánto ni cuándo llegaría"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "La información necesaria está disponible o puede solicitarse sin revelar el modelo. Pero R5, entregado de entrada, señala explícitamente qué dato sobra, lo que es una sobreorientación parcial que anticipa la selección de información. Dudo si los estudiantes ven esa nota y asigno el menor.",
+                "cita": "Valoración inicial de SpaceX: cerca de 1,8 billones de dólares (dato que no es necesario para responder)."
+              }
+            },
+            "total": 22,
+            "mejoras": [
+              {
+                "criterio": "nivel",
+                "mejora_minima": "Reemplazar en el enunciado los términos técnicos por expresiones cotidianas, por ejemplo 'salida a bolsa' por 'vender partes de la empresa a cualquier persona' y 'efectivo o equivalentes' por 'dinero disponible'. Escribir además las cifras grandes en millones (por ejemplo, 1.800.000 millones), manteniendo el contexto."
+              },
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Eliminar de R5 la nota '(dato que no es necesario para responder)', para que la decisión de descartar el dato de SpaceX quede en manos de los estudiantes."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgRCKFPQoi3snr3Nv9cwk",
+            "fecha": "2026-10-26T16:53:11+00:00",
+            "intentos": 1,
+            "costo_usd": 0.093154,
+            "avisos": [
+              "cita_recortada_25:contexto"
+            ]
+          }
+        },
+        {
+          "n": 3,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "Plantea una necesidad real: saber si el dinero alcanza. No entrega ninguna regla ni modelo; quien resuelve debe construir la relación entre efectivo y ritmo de pérdidas.",
+                "cita": "Una periodista de un diario escolar quiere explicar a sus lectores si a Anthropic le alcanza el dinero que tiene para seguir funcionando."
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe procedimiento. Admite varios modelos defendibles, como pérdida constante, ingresos crecientes o la inclusión del dinero de la salida a bolsa.",
+                "cita": "¿Qué responderían ustedes y por qué? Pueden pedir información adicional."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige decidir si los ingresos ya están descontados de la pérdida y suponer un ritmo de gasto (constante o no). También hay que decidir qué hacer con el dinero incierto de la salida a bolsa y descartar el dato de SpaceX.",
+                "cita": "tuvo pérdidas por 80,7 mil millones de dólares e ingresos por 16,3 mil millones de dólares"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Es una situación financiera real de una empresa existente, plausible fuera de la escuela.",
+                "cita": "Anthropic, la empresa que creó el chatbot Claude, prepara su salida a la bolsa de Estados Unidos"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los datos se declaran tomados de los documentos de la empresa para su salida a bolsa y constituyen el núcleo de la tarea. Eso cuenta como un componente auténtico integrado de manera sustantiva.",
+                "cita": "En los documentos que entregó, informó que en el primer semestre del año"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona los supuestos: si los ingresos ya están en la pérdida, la posible entrada de dinero y el ritmo futuro del gasto. También es necesario para interpretar la respuesta a la periodista.",
+                "cita": "al salir a bolsa, la empresa puede recibir dinero nuevo por las partes que vende, pero en este problema todavía no se sabe cuánto ni …"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a comprender la situación, simplificar (suponer un ritmo de pérdidas), matematizar el cociente efectivo/pérdida por periodo y calcular. Después hay que interpretar el resultado en meses y juzgarlo; el enunciado no deja hecha ninguna fase.",
+                "cita": "quiere explicar a sus lectores si a Anthropic le alcanza el dinero que tiene para seguir funcionando"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existe evidencia independiente posterior (el nuevo informe) para contrastar la predicción del modelo.",
+                "cita": "la empresa publicará más adelante un nuevo informe con sus pérdidas y su dinero disponible del periodo siguiente; la periodista puede revisarlo cuando salga"
+              },
+              "nivel": {
+                "puntaje": 1,
+                "justificacion": "La matemática (comparar y dividir cantidades y pasar de semestres a meses) está al alcance de P. El contexto, en cambio, usa vocabulario financiero y cantidades en «mil millones» y «billones» poco accesibles a los 10–12 años. Ese vocabulario («salir a bolsa», «valoración») se explica solo en parte a solicitud, así que el nivel requiere ajustes menores; dudé con 2 y asigné el menor.",
+                "cita": "SpaceX salió a bolsa con una valoración inicial de cerca de 1,8 billones de dólares"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Hay piso razonable: comparar 112,4 con 80,7 ya muestra que alcanza para algo más de un semestre. También hay techo alto: calcular la pérdida mensual, construir escenarios con ingresos crecientes o pérdidas mayores e incluir el dinero de la salida a bolsa.",
+                "cita": "¿Qué responderían ustedes y por qué?"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Los resultados abren nuevas preguntas: qué pasa si cambian las pérdidas, cuánto dinero tendría que traer la salida a bolsa o por qué una empresa pierde tanto. También permiten comparar soluciones con supuestos distintos y contrastarlas con el informe siguiente.",
+                "cita": "pero en este problema todavía no se sabe cuánto ni cuándo llegaría"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "La información necesaria está disponible, pero el recurso R5 declara explícitamente que el dato de SpaceX es innecesario y anula así parte de la selección de información. Hay duda sobre si esa nota llega a los estudiantes; se asigna el menor por sobreorientación parcial.",
+                "cita": "Valoración inicial de SpaceX: cerca de 1,8 billones de dólares (dato que no es necesario para responder)."
+              }
+            },
+            "total": 22,
+            "mejoras": [
+              {
+                "criterio": "nivel",
+                "mejora_minima": "Agregar en el enunciado una frase simple que explique «salir a bolsa» y «valoración», y escribir las cantidades también como «80.700 millones de dólares» para que sean comprensibles a los 10–12 años."
+              },
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Eliminar de R5 el paréntesis «(dato que no es necesario para responder)» para que sea el grupo quien decida qué datos usar."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgRCNE9KcNbgwtX8D4eA3",
+            "fecha": "2026-10-26T16:53:47+00:00",
+            "intentos": 1,
+            "costo_usd": 0.082234,
+            "avisos": [
+              "cita_recortada_25:contexto"
+            ]
+          }
+        }
+      ],
+      "totales": [
+        23,
+        22,
+        22
+      ],
+      "rango_total": 1,
+      "rango_inestable": 4,
+      "evaluacion_inestable": false,
+      "mediana": {
+        "regla": "mediana por criterio (n par: mediana inferior)",
+        "total": 22,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 1,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 1
+        },
+        "corrida_fuente": {
+          "genuino": 1,
+          "abierta": 1,
+          "decisiones": 1,
+          "realismo": 1,
+          "autenticidad": 1,
+          "contexto": 1,
+          "ciclo": 1,
+          "validacion": 1,
+          "nivel": 2,
+          "autodiferenciacion": 1,
+          "fecundidad": 1,
+          "recursos": 1
+        }
+      }
+    }
+  ]
+}

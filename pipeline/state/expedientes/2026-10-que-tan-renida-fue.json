@@ -1,12 +1,12 @@
 {
   "tarea_id": "2026-10-que-tan-renida-fue",
-  "estado": "evaluada",
+  "estado": "revisada",
   "iteraciones": 1,
   "artefactos": {
     "tarea": {
       "id": "2026-10-que-tan-renida-fue",
       "titulo": "¿Qué tan reñida fue la elección en Brasil?",
-      "estado": "evaluada",
+      "estado": "revisada",
       "version": 1,
       "fecha": "2026-10-26",
       "noticia": {
@@ -467,6 +467,12 @@
       "a": "evaluada",
       "iteracion": 1,
       "rub01_total": 24
+    },
+    {
+      "fecha": "2026-10-26T17:19:42+00:00",
+      "de": "evaluada",
+      "a": "revisada",
+      "revisor": "carlos rojas bruna"
     }
   ],
   "marcas": {
@@ -497,6 +503,22 @@
         ],
         "costo_usd": 0.254436,
         "llamadas": 3
+      },
+      "simulador": {
+        "modelo": "claude-sonnet-5-5",
+        "versiones_modelo": [
+          "claude-sonnet-5-5"
+        ],
+        "costo_usd": 0.706566,
+        "llamadas": 116
+      },
+      "simulador_codificador": {
+        "modelo": "claude-opus-5-5",
+        "versiones_modelo": [
+          "claude-opus-5-5"
+        ],
+        "costo_usd": 0.389664,
+        "llamadas": 5
       }
     },
     "costos_compartidos": [
@@ -507,6 +529,11 @@
     "evaluacion_inestable": false,
     "evaluacion_rango_total": 0,
     "evaluacion_corridas": "pipeline/state/trabajo/2026-10-que-tan-renida-fue/evaluacion_corridas.json",
-    "pendiente": "revision_humana_1"
+    "ultimo_error": {
+      "tarea_id": "2026-10-que-tan-renida-fue",
+      "estado": "revisada",
+      "etapa": "revisada",
+      "error": "AislamientoError: aislamiento (invariante 6): 13 palabras consecutivas de task_space en la llamada: «votos de los dos 64 256 232 59 826 041 124 082 273»"
+    }
   }
 }

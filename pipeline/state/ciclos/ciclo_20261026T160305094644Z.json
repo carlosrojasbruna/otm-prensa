@@ -1,0 +1,753 @@
+{
+  "ciclo_id": "ciclo_20261026T160305094644Z",
+  "inicio": "2026-10-26T16:03:05Z",
+  "fin": "2026-10-26T17:08:44Z",
+  "semana": "2026-W44",
+  "parametros": {
+    "tope_semanal_usd": 35.0,
+    "fraccion_detencion": 0.9,
+    "presupuesto_ciclo_usd": null,
+    "limite_usd": 31.5,
+    "gasto_semana_previo_usd": 2.554151,
+    "corridas_evaluador": 3,
+    "rango_inestable": 4,
+    "corridas_simulador": 6,
+    "max_tareas": 3,
+    "nivel": null,
+    "origen": "explorador"
+  },
+  "detenido_por_tope": false,
+  "eventos": [
+    {
+      "fecha": "2026-10-26T16:12:49Z",
+      "tipo": "agente",
+      "agente": "explorador",
+      "tareas": [],
+      "llamadas": 80,
+      "usd": 0.078315
+    },
+    {
+      "fecha": "2026-10-26T16:12:53Z",
+      "tipo": "agente",
+      "agente": "filtro",
+      "tareas": [],
+      "llamadas": 1,
+      "usd": 0.000686
+    },
+    {
+      "fecha": "2026-10-26T16:12:56Z",
+      "tipo": "agente",
+      "agente": "filtro",
+      "tareas": [],
+      "llamadas": 1,
+      "usd": 0.000378
+    },
+    {
+      "fecha": "2026-10-26T16:18:38Z",
+      "tipo": "agente",
+      "agente": "disenador",
+      "tareas": [],
+      "llamadas": 3,
+      "usd": 0.527988
+    },
+    {
+      "fecha": "2026-10-26T16:18:41Z",
+      "tipo": "agente",
+      "agente": "filtro",
+      "tareas": [],
+      "llamadas": 1,
+      "usd": 0.000758
+    },
+    {
+      "fecha": "2026-10-26T16:24:36Z",
+      "tipo": "agente",
+      "agente": "disenador",
+      "tareas": [],
+      "llamadas": 3,
+      "usd": 0.497469
+    },
+    {
+      "fecha": "2026-10-26T16:24:44Z",
+      "tipo": "agente",
+      "agente": "filtro",
+      "tareas": [],
+      "llamadas": 1,
+      "usd": 0.000751
+    },
+    {
+      "fecha": "2026-10-26T16:27:19Z",
+      "tipo": "agente",
+      "agente": "disenador",
+      "tareas": [],
+      "llamadas": 2,
+      "usd": 0.270872
+    },
+    {
+      "fecha": "2026-10-26T16:27:48Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-que-programas-restituir"
+      ],
+      "llamadas": 1,
+      "usd": 0.119016
+    },
+    {
+      "fecha": "2026-10-26T16:28:15Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-que-programas-restituir"
+      ],
+      "llamadas": 1,
+      "usd": 0.066742
+    },
+    {
+      "fecha": "2026-10-26T16:28:54Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-que-programas-restituir"
+      ],
+      "llamadas": 1,
+      "usd": 0.086502
+    },
+    {
+      "fecha": "2026-10-26T16:28:55Z",
+      "tipo": "error",
+      "tarea_id": "2026-10-que-programas-restituir",
+      "estado": "borrador",
+      "etapa": "evaluador",
+      "error": "InvarianteViolada: Invariante 3: texto literal de la noticia\n  - 39 palabras consecutivas de la noticia (> 25): «2026 10 23 fundacion horizonte ciudadano presupuesto 2027 elimina 18 programas sociales por un monto de 50 mil millones utm_source rss utm_medium rss utm_campaign fundacion horizonte ciudadano presupuesto 2027 elimina 18 programas sociales por un monto de 50 mil»",
+      "invariante": true,
+      "traza": "pipeline.orquestador.InvarianteViolada: Invariante 3: texto literal de la noticia\n  - 39 palabras consecutivas de la noticia (> 25): «2026 10 23 fundacion horizonte ciudadano presupuesto 2027 elimina 18 programas sociales por un monto de 50 mil millones utm_source rss utm_medium rss utm_campaign fundacion horizonte ciudadano presupuesto 2027 elimina 18 programas sociales por un monto de 50 mil»\n"
+    },
+    {
+      "fecha": "2026-10-26T16:29:23Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-cual-recorte-duele-mas"
+      ],
+      "llamadas": 1,
+      "usd": 0.067722
+    },
+    {
+      "fecha": "2026-10-26T16:29:55Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-cual-recorte-duele-mas"
+      ],
+      "llamadas": 1,
+      "usd": 0.072782
+    },
+    {
+      "fecha": "2026-10-26T16:30:29Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-cual-recorte-duele-mas"
+      ],
+      "llamadas": 1,
+      "usd": 0.079422
+    },
+    {
+      "fecha": "2026-10-26T16:30:30Z",
+      "tipo": "error",
+      "tarea_id": "2026-10-cual-recorte-duele-mas",
+      "estado": "borrador",
+      "etapa": "evaluador",
+      "error": "InvarianteViolada: Invariante 3: texto literal de la noticia\n  - 39 palabras consecutivas de la noticia (> 25): «2026 10 23 fundacion horizonte ciudadano presupuesto 2027 elimina 18 programas sociales por un monto de 50 mil millones utm_source rss utm_medium rss utm_campaign fundacion horizonte ciudadano presupuesto 2027 elimina 18 programas sociales por un monto de 50 mil»",
+      "invariante": true,
+      "traza": "pipeline.orquestador.InvarianteViolada: Invariante 3: texto literal de la noticia\n  - 39 palabras consecutivas de la noticia (> 25): «2026 10 23 fundacion horizonte ciudadano presupuesto 2027 elimina 18 programas sociales por un monto de 50 mil millones utm_source rss utm_medium rss utm_campaign fundacion horizonte ciudadano presupuesto 2027 elimina 18 programas sociales por un monto de 50 mil»\n"
+    },
+    {
+      "fecha": "2026-10-26T16:30:36Z",
+      "tipo": "agente",
+      "agente": "filtro",
+      "tareas": [],
+      "llamadas": 1,
+      "usd": 0.000705
+    },
+    {
+      "fecha": "2026-10-26T16:32:32Z",
+      "tipo": "agente",
+      "agente": "disenador",
+      "tareas": [],
+      "llamadas": 1,
+      "usd": 0.160287
+    },
+    {
+      "fecha": "2026-10-26T16:33:09Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-dio-resultado-oponerse-tribunales"
+      ],
+      "llamadas": 1,
+      "usd": 0.078318
+    },
+    {
+      "fecha": "2026-10-26T16:33:46Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-dio-resultado-oponerse-tribunales"
+      ],
+      "llamadas": 1,
+      "usd": 0.083938
+    },
+    {
+      "fecha": "2026-10-26T16:34:20Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-dio-resultado-oponerse-tribunales"
+      ],
+      "llamadas": 1,
+      "usd": 0.078898
+    },
+    {
+      "fecha": "2026-10-26T16:34:21Z",
+      "tipo": "error",
+      "tarea_id": "2026-10-dio-resultado-oponerse-tribunales",
+      "estado": "borrador",
+      "etapa": "evaluador",
+      "error": "InvarianteViolada: Invariante 3: texto literal de la noticia\n  - 51 palabras consecutivas de la noticia (> 25): «2026 10 23 este es el argumento con que el gobierno anterior se opuso en tribunales a rebajar las condenas de agresores sexuales de ninos utm_source rss utm_medium rss utm_campaign este es el argumento con que el gobierno anterior se opuso en tribunales a rebajar las condenas de agresores sexuales de»",
+      "invariante": true,
+      "traza": "pipeline.orquestador.InvarianteViolada: Invariante 3: texto literal de la noticia\n  - 51 palabras consecutivas de la noticia (> 25): «2026 10 23 este es el argumento con que el gobierno anterior se opuso en tribunales a rebajar las condenas de agresores sexuales de ninos utm_source rss utm_medium rss utm_campaign este es el argumento con que el gobierno anterior se opuso en tribunales a rebajar las condenas de agresores sexuales de»\n"
+    },
+    {
+      "fecha": "2026-10-26T16:34:59Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-dos-cifras-misma-noticia"
+      ],
+      "llamadas": 1,
+      "usd": 0.083274
+    },
+    {
+      "fecha": "2026-10-26T16:35:45Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-dos-cifras-misma-noticia"
+      ],
+      "llamadas": 1,
+      "usd": 0.105954
+    },
+    {
+      "fecha": "2026-10-26T16:36:28Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-dos-cifras-misma-noticia"
+      ],
+      "llamadas": 1,
+      "usd": 0.094554
+    },
+    {
+      "fecha": "2026-10-26T16:36:29Z",
+      "tipo": "error",
+      "tarea_id": "2026-10-dos-cifras-misma-noticia",
+      "estado": "borrador",
+      "etapa": "evaluador",
+      "error": "InvarianteViolada: Invariante 3: texto literal de la noticia\n  - 51 palabras consecutivas de la noticia (> 25): «2026 10 23 este es el argumento con que el gobierno anterior se opuso en tribunales a rebajar las condenas de agresores sexuales de ninos utm_source rss utm_medium rss utm_campaign este es el argumento con que el gobierno anterior se opuso en tribunales a rebajar las condenas de agresores sexuales de»",
+      "invariante": true,
+      "traza": "pipeline.orquestador.InvarianteViolada: Invariante 3: texto literal de la noticia\n  - 51 palabras consecutivas de la noticia (> 25): «2026 10 23 este es el argumento con que el gobierno anterior se opuso en tribunales a rebajar las condenas de agresores sexuales de ninos utm_source rss utm_medium rss utm_campaign este es el argumento con que el gobierno anterior se opuso en tribunales a rebajar las condenas de agresores sexuales de»\n"
+    },
+    {
+      "fecha": "2026-10-26T16:36:36Z",
+      "tipo": "agente",
+      "agente": "filtro",
+      "tareas": [],
+      "llamadas": 1,
+      "usd": 0.000721
+    },
+    {
+      "fecha": "2026-10-26T16:42:25Z",
+      "tipo": "agente",
+      "agente": "disenador",
+      "tareas": [],
+      "llamadas": 3,
+      "usd": 0.527136
+    },
+    {
+      "fecha": "2026-10-26T16:42:29Z",
+      "tipo": "agente",
+      "agente": "filtro",
+      "tareas": [],
+      "llamadas": 1,
+      "usd": 0.000667
+    },
+    {
+      "fecha": "2026-10-26T16:46:23Z",
+      "tipo": "agente",
+      "agente": "disenador",
+      "tareas": [],
+      "llamadas": 2,
+      "usd": 0.325856
+    },
+    {
+      "fecha": "2026-10-26T16:46:57Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-votos-canal-whatsapp"
+      ],
+      "llamadas": 1,
+      "usd": 0.129128
+    },
+    {
+      "fecha": "2026-10-26T16:47:25Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-votos-canal-whatsapp"
+      ],
+      "llamadas": 1,
+      "usd": 0.066374
+    },
+    {
+      "fecha": "2026-10-26T16:48:06Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-votos-canal-whatsapp"
+      ],
+      "llamadas": 1,
+      "usd": 0.095654
+    },
+    {
+      "fecha": "2026-10-26T16:48:07Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-votos-canal-whatsapp",
+      "de": "borrador",
+      "a": "evaluada"
+    },
+    {
+      "fecha": "2026-10-26T16:48:44Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-audiencia-transmision-vivo"
+      ],
+      "llamadas": 1,
+      "usd": 0.082274
+    },
+    {
+      "fecha": "2026-10-26T16:49:19Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-audiencia-transmision-vivo"
+      ],
+      "llamadas": 1,
+      "usd": 0.075934
+    },
+    {
+      "fecha": "2026-10-26T16:49:50Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-audiencia-transmision-vivo"
+      ],
+      "llamadas": 1,
+      "usd": 0.068914
+    },
+    {
+      "fecha": "2026-10-26T16:49:51Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-audiencia-transmision-vivo",
+      "de": "borrador",
+      "a": "evaluada"
+    },
+    {
+      "fecha": "2026-10-26T16:49:52Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-audiencia-transmision-vivo",
+      "de": "evaluada",
+      "a": "archivada",
+      "motivo": "candidato no elegido: RUB01 22/24 frente a 22/24 de 2026-10-votos-canal-whatsapp (2 candidatos por noticia; se sigue con el mejor)"
+    },
+    {
+      "fecha": "2026-10-26T16:49:55Z",
+      "tipo": "agente",
+      "agente": "filtro",
+      "tareas": [],
+      "llamadas": 1,
+      "usd": 0.000739
+    },
+    {
+      "fecha": "2026-10-26T16:51:51Z",
+      "tipo": "agente",
+      "agente": "disenador",
+      "tareas": [],
+      "llamadas": 1,
+      "usd": 0.19146
+    },
+    {
+      "fecha": "2026-10-26T16:52:31Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-cuanto-le-dura-la-caja"
+      ],
+      "llamadas": 1,
+      "usd": 0.086454
+    },
+    {
+      "fecha": "2026-10-26T16:53:11Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-cuanto-le-dura-la-caja"
+      ],
+      "llamadas": 1,
+      "usd": 0.093154
+    },
+    {
+      "fecha": "2026-10-26T16:53:47Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-cuanto-le-dura-la-caja"
+      ],
+      "llamadas": 1,
+      "usd": 0.082234
+    },
+    {
+      "fecha": "2026-10-26T16:53:48Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-cuanto-le-dura-la-caja",
+      "de": "borrador",
+      "a": "evaluada"
+    },
+    {
+      "fecha": "2026-10-26T16:54:28Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-leer-documento-de-riesgos"
+      ],
+      "llamadas": 1,
+      "usd": 0.086362
+    },
+    {
+      "fecha": "2026-10-26T16:55:05Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-leer-documento-de-riesgos"
+      ],
+      "llamadas": 1,
+      "usd": 0.082822
+    },
+    {
+      "fecha": "2026-10-26T16:55:42Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-leer-documento-de-riesgos"
+      ],
+      "llamadas": 1,
+      "usd": 0.083842
+    },
+    {
+      "fecha": "2026-10-26T16:55:44Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-leer-documento-de-riesgos",
+      "de": "borrador",
+      "a": "evaluada"
+    },
+    {
+      "fecha": "2026-10-26T16:55:45Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-cuanto-le-dura-la-caja",
+      "de": "evaluada",
+      "a": "archivada",
+      "motivo": "candidato no elegido: RUB01 22/24 frente a 23/24 de 2026-10-leer-documento-de-riesgos (2 candidatos por noticia; se sigue con el mejor)"
+    },
+    {
+      "fecha": "2026-10-26T16:55:48Z",
+      "tipo": "agente",
+      "agente": "filtro",
+      "tareas": [],
+      "llamadas": 1,
+      "usd": 0.000767
+    },
+    {
+      "fecha": "2026-10-26T17:01:31Z",
+      "tipo": "agente",
+      "agente": "disenador",
+      "tareas": [],
+      "llamadas": 3,
+      "usd": 0.529452
+    },
+    {
+      "fecha": "2026-10-26T17:01:35Z",
+      "tipo": "agente",
+      "agente": "filtro",
+      "tareas": [],
+      "llamadas": 1,
+      "usd": 0.000754
+    },
+    {
+      "fecha": "2026-10-26T17:05:28Z",
+      "tipo": "agente",
+      "agente": "disenador",
+      "tareas": [],
+      "llamadas": 2,
+      "usd": 0.330588
+    },
+    {
+      "fecha": "2026-10-26T17:05:56Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-escanos-lista-estudiantil-serbia"
+      ],
+      "llamadas": 1,
+      "usd": 0.114564
+    },
+    {
+      "fecha": "2026-10-26T17:06:25Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-escanos-lista-estudiantil-serbia"
+      ],
+      "llamadas": 1,
+      "usd": 0.06897
+    },
+    {
+      "fecha": "2026-10-26T17:06:53Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-escanos-lista-estudiantil-serbia"
+      ],
+      "llamadas": 1,
+      "usd": 0.06745
+    },
+    {
+      "fecha": "2026-10-26T17:06:55Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-escanos-lista-estudiantil-serbia",
+      "de": "borrador",
+      "a": "evaluada"
+    },
+    {
+      "fecha": "2026-10-26T17:07:26Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-puede-remontar-partido-gobierno"
+      ],
+      "llamadas": 1,
+      "usd": 0.068966
+    },
+    {
+      "fecha": "2026-10-26T17:08:04Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-puede-remontar-partido-gobierno"
+      ],
+      "llamadas": 1,
+      "usd": 0.086006
+    },
+    {
+      "fecha": "2026-10-26T17:08:41Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-10-puede-remontar-partido-gobierno"
+      ],
+      "llamadas": 1,
+      "usd": 0.082326
+    },
+    {
+      "fecha": "2026-10-26T17:08:43Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-puede-remontar-partido-gobierno",
+      "de": "borrador",
+      "a": "evaluada"
+    },
+    {
+      "fecha": "2026-10-26T17:08:44Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-puede-remontar-partido-gobierno",
+      "de": "evaluada",
+      "a": "archivada",
+      "motivo": "candidato no elegido: RUB01 24/24 frente a 24/24 de 2026-10-escanos-lista-estudiantil-serbia (2 candidatos por noticia; se sigue con el mejor)"
+    }
+  ],
+  "expedientes": {
+    "2026-10-que-programas-restituir": "borrador",
+    "2026-10-cual-recorte-duele-mas": "borrador",
+    "2026-10-dio-resultado-oponerse-tribunales": "borrador",
+    "2026-10-dos-cifras-misma-noticia": "borrador",
+    "2026-10-votos-canal-whatsapp": "evaluada",
+    "2026-10-audiencia-transmision-vivo": "archivada",
+    "2026-10-cuanto-le-dura-la-caja": "archivada",
+    "2026-10-leer-documento-de-riesgos": "evaluada",
+    "2026-10-escanos-lista-estudiantil-serbia": "evaluada",
+    "2026-10-puede-remontar-partido-gobierno": "archivada"
+  },
+  "noticias": [
+    {
+      "noticia_id": "2026-10-26-latercera-fallece-el-reconocido-empresario-jacob-ergas",
+      "nivel": "S",
+      "resultado": "no pasa el filtro (5/10)"
+    },
+    {
+      "noticia_id": "2026-10-26-latercera-sala-cuna-ya-tiene-respaldo-para",
+      "nivel": "P",
+      "resultado": null
+    },
+    {
+      "noticia_id": "2026-10-26-latercera-fondo-e-joaquin-cortez-revela-las",
+      "nivel": "U",
+      "resultado": null
+    },
+    {
+      "noticia_id": "2026-10-23-ciper-fundacion-horizonte-ciudadano-presupuesto-2027-elimina",
+      "nivel": "S",
+      "resultado": "ningún candidato pudo evaluarse",
+      "candidatos": [
+        "2026-10-que-programas-restituir",
+        "2026-10-cual-recorte-duele-mas"
+      ]
+    },
+    {
+      "noticia_id": "2026-10-23-ciper-este-es-el-argumento-con-que",
+      "nivel": "P",
+      "resultado": "ningún candidato pudo evaluarse",
+      "candidatos": [
+        "2026-10-dio-resultado-oponerse-tribunales",
+        "2026-10-dos-cifras-misma-noticia"
+      ]
+    },
+    {
+      "noticia_id": "2026-10-23-ciper-estados-unidos-permite-que-permanezca-en",
+      "nivel": "U",
+      "resultado": null
+    },
+    {
+      "noticia_id": "2026-10-26-bbc-how-lula-s-army-whatsapp-chat",
+      "nivel": "S",
+      "resultado": "evaluada",
+      "candidatos": [
+        "2026-10-votos-canal-whatsapp",
+        "2026-10-audiencia-transmision-vivo"
+      ],
+      "elegido": "2026-10-votos-canal-whatsapp"
+    },
+    {
+      "noticia_id": "2026-10-26-bbc-anthropic-warns-of-catastrophic-risk-to",
+      "nivel": "P",
+      "resultado": "evaluada",
+      "candidatos": [
+        "2026-10-cuanto-le-dura-la-caja",
+        "2026-10-leer-documento-de-riesgos"
+      ],
+      "elegido": "2026-10-leer-documento-de-riesgos"
+    },
+    {
+      "noticia_id": "2026-10-26-bbc-electricity-restored-to-all-of-ni",
+      "nivel": "U",
+      "resultado": null
+    },
+    {
+      "noticia_id": "2026-10-26-bbc-celebrations-in-serbia-after-veteran-ruler",
+      "nivel": "S",
+      "resultado": "evaluada",
+      "candidatos": [
+        "2026-10-escanos-lista-estudiantil-serbia",
+        "2026-10-puede-remontar-partido-gobierno"
+      ],
+      "elegido": "2026-10-escanos-lista-estudiantil-serbia"
+    }
+  ],
+  "pendientes_humanos": [
+    {
+      "tarea_id": "2026-10-votos-canal-whatsapp",
+      "pendiente": "revision_humana_1",
+      "estado": "evaluada"
+    },
+    {
+      "tarea_id": "2026-10-leer-documento-de-riesgos",
+      "pendiente": "revision_humana_1",
+      "estado": "evaluada"
+    },
+    {
+      "tarea_id": "2026-10-escanos-lista-estudiantil-serbia",
+      "pendiente": "revision_humana_1",
+      "estado": "evaluada"
+    }
+  ],
+  "errores": [
+    {
+      "noticia_id": "2026-10-26-latercera-sala-cuna-ya-tiene-respaldo-para",
+      "etapa": "noticia",
+      "error": "RuntimeError: disenador: la llamada falló tras 3 intentos: stop_reason=max_tokens"
+    },
+    {
+      "noticia_id": "2026-10-26-latercera-fondo-e-joaquin-cortez-revela-las",
+      "etapa": "noticia",
+      "error": "RuntimeError: disenador: la llamada falló tras 3 intentos: stop_reason=max_tokens"
+    },
+    {
+      "tarea_id": "2026-10-que-programas-restituir",
+      "estado": "borrador",
+      "etapa": "evaluador",
+      "error": "InvarianteViolada: Invariante 3: texto literal de la noticia\n  - 39 palabras consecutivas de la noticia (> 25): «2026 10 23 fundacion horizonte ciudadano presupuesto 2027 elimina 18 programas sociales por un monto de 50 mil millones utm_source rss utm_medium rss utm_campaign fundacion horizonte ciudadano presupuesto 2027 elimina 18 programas sociales por un monto de 50 mil»",
+      "invariante": true
+    },
+    {
+      "tarea_id": "2026-10-cual-recorte-duele-mas",
+      "estado": "borrador",
+      "etapa": "evaluador",
+      "error": "InvarianteViolada: Invariante 3: texto literal de la noticia\n  - 39 palabras consecutivas de la noticia (> 25): «2026 10 23 fundacion horizonte ciudadano presupuesto 2027 elimina 18 programas sociales por un monto de 50 mil millones utm_source rss utm_medium rss utm_campaign fundacion horizonte ciudadano presupuesto 2027 elimina 18 programas sociales por un monto de 50 mil»",
+      "invariante": true
+    },
+    {
+      "tarea_id": "2026-10-dio-resultado-oponerse-tribunales",
+      "estado": "borrador",
+      "etapa": "evaluador",
+      "error": "InvarianteViolada: Invariante 3: texto literal de la noticia\n  - 51 palabras consecutivas de la noticia (> 25): «2026 10 23 este es el argumento con que el gobierno anterior se opuso en tribunales a rebajar las condenas de agresores sexuales de ninos utm_source rss utm_medium rss utm_campaign este es el argumento con que el gobierno anterior se opuso en tribunales a rebajar las condenas de agresores sexuales de»",
+      "invariante": true
+    },
+    {
+      "tarea_id": "2026-10-dos-cifras-misma-noticia",
+      "estado": "borrador",
+      "etapa": "evaluador",
+      "error": "InvarianteViolada: Invariante 3: texto literal de la noticia\n  - 51 palabras consecutivas de la noticia (> 25): «2026 10 23 este es el argumento con que el gobierno anterior se opuso en tribunales a rebajar las condenas de agresores sexuales de ninos utm_source rss utm_medium rss utm_campaign este es el argumento con que el gobierno anterior se opuso en tribunales a rebajar las condenas de agresores sexuales de»",
+      "invariante": true
+    },
+    {
+      "noticia_id": "2026-10-23-ciper-estados-unidos-permite-que-permanezca-en",
+      "etapa": "noticia",
+      "error": "RuntimeError: disenador: la llamada falló tras 3 intentos: stop_reason=max_tokens"
+    },
+    {
+      "noticia_id": "2026-10-26-bbc-electricity-restored-to-all-of-ni",
+      "etapa": "noticia",
+      "error": "RuntimeError: disenador: la llamada falló tras 3 intentos: stop_reason=max_tokens"
+    }
+  ],
+  "orden": "tramo_a",
+  "explorador": {
+    "aceptadas": 45,
+    "descartadas": 417
+  },
+  "gasto": {
+    "ciclo_usd": 5.984899,
+    "semana_usd": 8.53905,
+    "limite_usd": 31.5,
+    "llamadas": 140
+  }
+}

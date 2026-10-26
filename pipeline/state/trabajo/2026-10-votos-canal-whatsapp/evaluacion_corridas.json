@@ -1,0 +1,316 @@
+{
+  "tarea_id": "2026-10-votos-canal-whatsapp",
+  "evaluaciones": [
+    {
+      "iteracion": 1,
+      "version_tarea": 1,
+      "fecha": "2026-10-26T16:48:06Z",
+      "modelo": "claude-opus-5-5",
+      "version_prompt": "1.3",
+      "version_rubrica": "4.0",
+      "corridas": [
+        {
+          "n": 1,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La necesidad de la editora es real y el enunciado no entrega ninguna regla ni modelo para estimar votos movidos. Quien resuelve debe construir el modelo.",
+                "cita": "su editora quiere saber si es razonable afirmar que este canal cambió el resultado. Hagan su propia estimación de cuántos votos pudo mover el canal"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe procedimiento y admite varios modelos defendibles. Por ejemplo, cadenas de proporciones, rangos o escenarios.",
+                "cita": "Hagan su propia estimación de cuántos votos pudo mover el canal y decidan con qué confianza la presentarían."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige estimar qué fracción lee, reenvía o es persuadible, formular supuestos sobre votantes ya decididos y decidir qué información solicitar. R2 explicita que el grupo debe proponer y justificar su proporción.",
+                "cita": "Pueden pedir información adicional."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "La situación es un hecho real. La verificación de una afirmación política en un medio es una práctica extraescolar plausible.",
+                "cita": "un canal de WhatsApp llamado «Ejército de Lula» reunió a 10,8 millones de seguidores para apoyar la candidatura de Lula antes de la elección"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El núcleo de la tarea proviene de una noticia real: la cifra del canal y el debate entre aliados e investigadores. Se suman los resultados oficiales del órgano electoral, de modo que los componentes auténticos están integrados sustantivamente.",
+                "cita": "Los aliados del candidato dicen que el canal ayudó a dar vuelta la carrera. Algunos investigadores responden que es muy difícil saber cuántos votos movió"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona los supuestos: seguidores ya simpatizantes, efecto de otras campañas, alcance real de los mensajes. También es necesario para interpretar si la estimación alcanza a cambiar el resultado.",
+                "cita": "es muy difícil saber cuántos votos movió, porque al mismo tiempo hubo campaña en la calle"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a comprender la situación, simplificar con supuestos, matematizar una cadena de proporciones, calcular e interpretar frente a la pregunta de la editora. También obliga a juzgar la confianza del resultado, y ninguna fase queda hecha por el enunciado.",
+                "cita": "Hagan su propia estimación de cuántos votos pudo mover el canal y decidan con qué confianza la presentarían."
+              },
+              "validacion": {
+                "puntaje": 1,
+                "justificacion": "Los votos movidos por el canal no son observables. El total de habilitados y la diferencia final sirven sobre todo para acotar la plausibilidad e interpretar si el efecto alcanzaría a cambiar el resultado, no para contrastar el valor estimado. Dudé con 2 por la restricción contextual que aporta R4, y elegí el menor.",
+                "cita": "incluyen el total de votantes habilitados y la diferencia final de votos entre los candidatos. Se entregan al grupo cuando ya tiene una estimación propia."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto electoral y de redes sociales es comprensible y pertinente para secundaria. La matemática requerida está al alcance de S: proporciones, porcentajes, estimación y comparación de escenarios.",
+                "cita": "Ustedes trabajan en la unidad de verificación de datos de un medio"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Se puede entrar con una cadena simple de porcentajes sobre 10,8 millones. La tarea admite soluciones más sofisticadas: rangos de escenarios, sensibilidad a cada supuesto, alcance de reenvíos fuera del canal y comparación con la diferencia final.",
+                "cita": "Hagan su propia estimación de cuántos votos pudo mover el canal y decidan con qué confianza la presentarían."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las distintas estimaciones y niveles de confianza permiten comparar soluciones entre grupos. También abren preguntas sobre los límites de atribuir votos a una sola causa frente a la campaña en la calle.",
+                "cita": "decidan con qué confianza la presentarían"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "La información es obtenible a solicitud y no da cifras. Sin embargo, R2 y R3 nombran precisamente los dos factores clave del modelo: fracción que lee o reenvía y fracción ya decidida. Eso es una sobreorientación parcial. Dudé con 2 porque solo se entregan si el grupo las pide, y elegí el menor.",
+                "cita": "unirse a un canal de apoyo a una candidatura es algo que hacen sobre todo personas que ya simpatizaban con ella"
+              }
+            },
+            "total": 22,
+            "mejoras": [
+              {
+                "criterio": "validacion",
+                "mejora_minima": "Agregar a R4, a solicitud, un dato independiente que permita contrastar un eslabón del modelo. Por ejemplo, una encuesta publicada sobre qué porcentaje de votantes declara haber cambiado su voto por mensajes de WhatsApp, o datos de lectura y reenvío de canales similares. Así la estimación puede compararse con evidencia no usada en su construcción."
+              },
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Reformular R2 y R3 para que respondan solo a la pregunta concreta que haga el grupo, sin nombrar de antemano los factores del modelo. Por ejemplo: «Si el grupo pregunta por un dato que no existe para este caso, se le indica que debe proponer y justificar una estimación propia»."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgRBrAcAA48QewQF4iKSP",
+            "fecha": "2026-10-26T16:46:57+00:00",
+            "intentos": 1,
+            "costo_usd": 0.129128,
+            "avisos": []
+          }
+        },
+        {
+          "n": 2,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "Plantea una necesidad real de verificación periodística. El enunciado no entrega una regla, un algoritmo ni un modelo para estimar los votos movidos.",
+                "cita": "su editora quiere saber si es razonable afirmar que este canal cambió el resultado. Hagan su propia estimación de cuántos votos pudo mover el canal"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe un procedimiento. Admite varios modelos defendibles, como embudos de alcance, escenarios o rangos, y deja abierta la decisión sobre la confianza.",
+                "cita": "Hagan su propia estimación de cuántos votos pudo mover el canal y decidan con qué confianza la presentarían."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver la tarea exige formular supuestos y estimar proporciones de lectura, reenvío y votantes indecisos. También exige decidir qué información pedir, en línea con el descriptor de 2.",
+                "cita": "no existe una cifra única para este caso; el grupo debe proponer y justificar la suya."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Es un hecho real con una controversia pública genuina, y el rol de verificador de datos es plausible fuera de la escuela.",
+                "cita": "En Brasil, un canal de WhatsApp llamado «Ejército de Lula» reunió a 10,8 millones de seguidores"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El tema, el dato de 10,8 millones y la controversia provienen de la cobertura noticiosa y son el núcleo de la tarea. Los resultados oficiales de R4 son otro componente extraescolar.",
+                "cita": "Algunos investigadores responden que es muy difícil saber cuántos votos movió, porque al mismo tiempo hubo campaña en la calle."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona los supuestos (quién se une, qué otros efectos coexisten) y es necesario para interpretar la estimación frente al resultado electoral.",
+                "cita": "unirse a un canal de apoyo a una candidatura es algo que hacen sobre todo personas que ya simpatizaban con ella"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a comprender la situación, simplificarla con supuestos, matematizar y calcular. Luego hay que interpretar y juzgar la confianza del resultado, y ninguna fase queda hecha por el enunciado.",
+                "cita": "Hagan su propia estimación de cuántos votos pudo mover el canal y decidan con qué confianza la presentarían."
+              },
+              "validacion": {
+                "puntaje": 1,
+                "justificacion": "Estos datos permiten acotar la estimación y compararla con el margen, pero no contrastan el número de votos movidos con evidencia independiente. Dudé entre 1 y 2 y elegí el menor, porque predomina una comprobación de plausibilidad.",
+                "cita": "incluyen el total de votantes habilitados y la diferencia final de votos entre los candidatos."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto de redes sociales y elecciones es comprensible y pertinente para secundaria. La matemática requerida (porcentajes, tasas, escenarios) está al alcance del nivel S.",
+                "cita": "Hagan su propia estimación de cuántos votos pudo mover el canal"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Se puede entrar con un producto de proporciones simples. La tarea admite soluciones más sofisticadas, como rangos, varios escenarios, análisis de sensibilidad o la separación del efecto de la campaña en la calle.",
+                "cita": "Hagan su propia estimación de cuántos votos pudo mover el canal y decidan con qué confianza la presentarían."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las distintas estimaciones y niveles de confianza permiten comparar soluciones y discutir los límites de atribuir causalidad. Abren además preguntas sobre la medición de la influencia en redes.",
+                "cita": "decidan con qué confianza la presentarían"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "Las tarjetas R2 y R3, juntas, señalan los dos factores clave de un modelo de embudo, lo que constituye una sobreorientación parcial aunque se entreguen a solicitud. Dudé entre 1 y 2 y elegí el menor.",
+                "cita": "Supuesto del escenario: no todos los seguidores leen cada mensaje ni lo reenvían."
+              }
+            },
+            "total": 22,
+            "mejoras": [
+              {
+                "criterio": "validacion",
+                "mejora_minima": "Agregar a solicitud una evidencia independiente del efecto del canal, por ejemplo una encuesta publicada sobre cuántos votantes declararon informarse por WhatsApp o cambiar su voto, para contrastar con ella la estimación."
+              },
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Reemplazar R2 y R3 por tarjetas que respondan solo a preguntas específicas del grupo (por ejemplo, datos de alcance típico de canales) sin anunciar los factores del modelo como «supuestos del escenario»."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgRBtfUoMN9XmgV6dBaNn",
+            "fecha": "2026-10-26T16:47:25+00:00",
+            "intentos": 1,
+            "costo_usd": 0.066374,
+            "avisos": []
+          }
+        },
+        {
+          "n": 3,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "Hay una necesidad real: la editora debe saber si la afirmación es razonable. El enunciado no entrega ninguna regla ni modelo; la orientación de las tarjetas a solicitud se considera en el criterio 12.",
+                "cita": "Hagan su propia estimación de cuántos votos pudo mover el canal y decidan con qué confianza la presentarían."
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe procedimiento y admite varios modelos defendibles, como cadenas de proporciones o escenarios. No hay instrucciones posteriores que fijen una ruta.",
+                "cita": "su editora quiere saber si es razonable afirmar que este canal cambió el resultado."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Hay que suponer qué fracción lee y reenvía, qué parte ya estaba decidida y qué efecto de persuasión tiene un mensaje. También hay que decidir qué información pedir, lo que son decisiones de modelación sustantivas.",
+                "cita": "Pueden pedir información adicional."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Es una situación real de una campaña electoral y una pregunta típica del trabajo de verificación periodística.",
+                "cita": "En Brasil, un canal de WhatsApp llamado «Ejército de Lula» reunió a 10,8 millones de seguidores para apoyar la candidatura de Lula"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El tema, la cifra del canal y los resultados oficiales del órgano electoral (R4) son componentes extraescolares auténticos. Forman el núcleo de la tarea y no fueron creados para enseñar.",
+                "cita": "El canal alcanzó 10,8 millones de seguidores en WhatsApp."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "Varios rasgos del contexto condicionan los supuestos: quién se une a un canal, el reenvío y la campaña simultánea. El contexto también es necesario para interpretar la estimación frente a la diferencia de votos.",
+                "cita": "es muy difícil saber cuántos votos movió, porque al mismo tiempo hubo campaña en la calle."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a comprender la situación, simplificar con supuestos, construir y calcular una estimación, interpretarla para la editora y juzgar su confianza. Ninguna fase viene hecha en el enunciado.",
+                "cita": "Se entregan al grupo cuando ya tiene una estimación propia."
+              },
+              "validacion": {
+                "puntaje": 1,
+                "justificacion": "Los votos movidos por el canal no son observables. El resultado oficial solo permite acotar la estimación y compararla con el margen, lo que es una comprobación de plausibilidad y no un contraste independiente del modelo.",
+                "cita": "incluyen el total de votantes habilitados y la diferencia final de votos entre los candidatos."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "Las redes sociales y las elecciones son comprensibles y pertinentes para 13–18 años. La matemática requerida (proporciones, porcentajes, comparación de escenarios) está al alcance del nivel S.",
+                "cita": "Su líder pedía a los miembros que compartieran videos y empujaran etiquetas en redes sociales."
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Se puede empezar multiplicando por porcentajes estimados. La tarea admite soluciones más sofisticadas, como rangos, escenarios extremos y análisis de sensibilidad para fundamentar la confianza.",
+                "cita": "decidan con qué confianza la presentarían."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las estimaciones de distintos grupos pueden compararse según sus supuestos y su confianza. Abren preguntas sobre causalidad, sobre los límites de atribuir votos y sobre cómo comunicar incertidumbre.",
+                "cita": "su editora quiere saber si es razonable afirmar que este canal cambió el resultado."
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "Las tarjetas R2 y R3 nombran de antemano dos factores clave del modelo: la fracción que lee o reenvía y la fracción ya decidida. Así insinúan su estructura multiplicativa, lo que es una sobreorientación parcial.",
+                "cita": "no todos los seguidores leen cada mensaje ni lo reenvían."
+              }
+            },
+            "total": 22,
+            "mejoras": [
+              {
+                "criterio": "validacion",
+                "mejora_minima": "Agregar a R4 un recurso con evidencia independiente del efecto, por ejemplo encuestas de intención de voto antes y después del crecimiento del canal o la variación de votos por región según su penetración, para contrastar la estimación con algo más que el margen."
+              },
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Reemplazar R2 y R3 por tarjetas que respondan solo a preguntas específicas del grupo (por ejemplo, entregar R3 únicamente si el grupo pregunta por la intención de voto previa), sin enunciar de antemano los factores del modelo."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgRBvkj86XZr8MYZ8smUa",
+            "fecha": "2026-10-26T16:48:06+00:00",
+            "intentos": 1,
+            "costo_usd": 0.095654,
+            "avisos": []
+          }
+        }
+      ],
+      "totales": [
+        22,
+        22,
+        22
+      ],
+      "rango_total": 0,
+      "rango_inestable": 4,
+      "evaluacion_inestable": false,
+      "mediana": {
+        "regla": "mediana por criterio (n par: mediana inferior)",
+        "total": 22,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 1,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 1
+        },
+        "corrida_fuente": {
+          "genuino": 1,
+          "abierta": 1,
+          "decisiones": 1,
+          "realismo": 1,
+          "autenticidad": 1,
+          "contexto": 1,
+          "ciclo": 1,
+          "validacion": 1,
+          "nivel": 1,
+          "autodiferenciacion": 1,
+          "fecundidad": 1,
+          "recursos": 1
+        }
+      }
+    }
+  ]
+}

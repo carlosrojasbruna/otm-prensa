@@ -1,0 +1,280 @@
+{
+  "run": {
+    "id": "N1_AA_r1",
+    "nivel": "N1",
+    "composicion": "AA",
+    "rep": 1,
+    "estilos": [
+      "A",
+      "A"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.088356,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P3-MM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P3-MM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": [
+          "PREC"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "PREC"
+        ]
+      },
+      {
+        "n": 6,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P3-MM",
+        "eventos": []
+      },
+      {
+        "n": 7,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 8,
+        "fase": "P4-WM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 9,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 10,
+        "fase": "P5-INT",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME",
+          "DIST"
+        ]
+      },
+      {
+        "n": 11,
+        "fase": "P2-RM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "ASSUME",
+          "DIST"
+        ]
+      },
+      {
+        "n": 12,
+        "fase": "P3-MM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 13,
+        "fase": "P3-MM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 14,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 15,
+        "fase": "P3-MM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 16,
+        "fase": "P3-MM",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 17,
+        "fase": "P5-INT",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 18,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 19,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 20,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 21,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 22,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 23,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 24,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 25,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 26,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 27,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 28,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 29,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 30,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": []
+      }
+    ],
+    "bloqueos": [
+      {
+        "codigo": "B23",
+        "turnos": [
+          10,
+          11,
+          12
+        ],
+        "resolucion": "self",
+        "descripcion": "Tras introducir un interés inventado del 1% mensual no saben cómo traducirlo a un modelo ('no sé cómo seguir'); B prueba interés fijo con dudas y A lo destraba proponiendo calcular mes a mes saldo + interés − cuota."
+      },
+      {
+        "codigo": "B23",
+        "turnos": [
+          16,
+          17,
+          18
+        ],
+        "resolucion": "peer",
+        "descripcion": "Notan que la cuota de 41.666 no alcanza para pagar intereses y no conocen una fórmula para la cuota; B propone probar con una cuota mayor (47.000) y verificar el saldo en la tabla."
+      }
+    ],
+    "supuestos": [
+      "deuda de ejemplo de 1.000.000",
+      "cuotas iguales",
+      "pie del 10% pagado al contado y resto en cuotas",
+      "inicialmente sin intereses",
+      "interés inventado de 1% mensual sobre el saldo",
+      "cuota de prueba de 47.000",
+      "redondeo de intereses a pesos enteros"
+    ],
+    "modelo": "amortización recursiva",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "No llegan a una respuesta final. Sin intereses calculan: 24 cuotas de 41.666, 48 cuotas de 20.833 (la mitad, pero el doble de tiempo, mismo total); con pie de 100.000, 24 cuotas de 37.500 o 48 de 18.750. Luego suponen un 1% mensual y construyen una tabla de saldos con una cuota de prueba de 47.000, llegando al mes 9 con saldo 653.365, sin decidir qué conviene."
+    },
+    "ruta_principal": "otra",
+    "rutas": [
+      "otra",
+      "R1",
+      "R2"
+    ]
+  }
+}

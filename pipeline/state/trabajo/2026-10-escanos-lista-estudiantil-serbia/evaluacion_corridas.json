@@ -1,0 +1,289 @@
+{
+  "tarea_id": "2026-10-escanos-lista-estudiantil-serbia",
+  "evaluaciones": [
+    {
+      "iteracion": 1,
+      "version_tarea": 1,
+      "fecha": "2026-10-26T17:06:53Z",
+      "modelo": "claude-opus-5-5",
+      "version_prompt": "1.3",
+      "version_rubrica": "4.0",
+      "corridas": [
+        {
+          "n": 1,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La tarea plantea una necesidad real: publicar una estimación esa misma noche. No entrega ninguna regla de reparto ni modelo para convertir votos en escaños.",
+                "cita": "un medio que quiere publicar esa misma noche cuántos escaños tendría cada bando y si la lista estudiantil podría formar gobierno sin aliados"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe procedimiento. Admite varios modelos defendibles: proporción simple, reparto con umbral, método de cocientes o escenarios para las mesas restantes. Tampoco hay instrucciones posteriores que encaucen la ruta.",
+                "cita": "¿Qué estimación publicarían y con qué grado de seguridad? Pueden pedir información adicional."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige varias decisiones de modelación: suponer el umbral y el método de reparto, decidir cómo tratar el 8 % restante de votos y las mesas sin contar, y estimar la incertidumbre.",
+                "cita": "El porcentaje exacto es parte de lo que el equipo debe averiguar o suponer."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Proyectar escaños a partir de un conteo parcial es una práctica real de los equipos de datos de los medios en noches electorales.",
+                "cita": "Ustedes son parte del equipo de datos de un medio que quiere publicar esa misma noche cuántos escaños tendría cada bando"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El tema y las cifras del conteo parcial provienen de un hecho noticioso informado por la comisión electoral, y son el núcleo de la tarea. Según la regla, se toma como cierta la procedencia declarada.",
+                "cita": "Cuando la comisión electoral había contado el 97 % de las mesas, informó 2,25 millones de votos para la lista de los estudiantes"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona decisiones clave: el umbral, la mayoría de 126 escaños y las mesas faltantes. También es necesario para interpretar si hay gobierno sin aliados y para juzgar el grado de seguridad.",
+                "cita": "para recibir escaños, una lista debe superar un porcentaje mínimo de los votos válidos; las listas que no lo superan quedan fuera del reparto"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a recorrer todo el ciclo: comprender el sistema electoral, simplificar con supuestos, matematizar el reparto, calcular, interpretar respecto de la mayoría y juzgar la seguridad. Ninguna fase queda hecha en el enunciado.",
+                "cita": "¿Qué estimación publicarían y con qué grado de seguridad?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existe evidencia independiente, no usada en la construcción del modelo, para contrastar la estimación: el resultado oficial final (R5).",
+                "cita": "Cuando el grupo entregue su estimación, se le muestra el reparto final oficial de escaños publicado por la comisión electoral."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto electoral y el lenguaje son comprensibles para S. La matemática requerida (porcentajes, razones, reparto proporcional, comparación de escenarios) está al alcance de las herramientas esperables del nivel.",
+                "cita": "El parlamento tiene 250 escaños."
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es accesible: un reparto proporcional simple con los votos dados. El techo es alto, porque la tarea misma admite soluciones más refinadas: umbral, método de cocientes, escenarios para el 3 % restante y análisis de sensibilidad del margen respecto de la mayoría.",
+                "cita": "Pueden pedir información adicional."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Los distintos supuestos producen proyecciones distintas, lo que permite comparar soluciones. La tarea abre preguntas sobre umbrales, métodos de reparto, la prima de escaños de los partidos grandes y los límites de proyectar con datos incompletos.",
+                "cita": "si la lista estudiantil podría formar gobierno sin aliados"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información necesaria se entrega de entrada o a solicitud (R1–R4), sin revelar el método de reparto. El umbral y el sistema electoral pueden obtenerse con una búsqueda simple o suponerse, como indica R3.",
+                "cita": "Según cifras preliminares, la lista de los estudiantes tiene 52,7 % de los votos y el Partido Progresista Serbio (SNS) tiene 39,2 %."
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgRDJavEehatgGbwhVDUE",
+            "fecha": "2026-10-26T17:05:56+00:00",
+            "intentos": 1,
+            "costo_usd": 0.114564,
+            "avisos": []
+          }
+        },
+        {
+          "n": 2,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "Plantea una necesidad real: publicar una estimación esa noche. No entrega el sistema de reparto, el umbral ni ningún modelo de proyección listo para aplicar.",
+                "cita": "Ustedes son parte del equipo de datos de un medio que quiere publicar esa misma noche cuántos escaños tendría cada bando"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe procedimiento. Admite varios modelos defendibles: proporcional simple, con umbral y redistribución, o métodos de cocientes, además de distintas formas de tratar el 3 % de mesas restante.",
+                "cita": "¿Qué estimación publicarían y con qué grado de seguridad? Pueden pedir información adicional."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige solicitar información y suponer el umbral, el reparto de las demás listas y el comportamiento de las mesas faltantes (R4 lo deja sin informar). También exige decidir el método de asignación.",
+                "cita": "El porcentaje exacto es parte de lo que el equipo debe averiguar o suponer."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Proyectar escaños con un conteo parcial es una práctica real de los equipos de datos de los medios en noches electorales. La situación es plenamente plausible fuera de la escuela.",
+                "cita": "En Serbia hubo elecciones parlamentarias anticipadas, y la lista de un movimiento nacido de protestas estudiantiles enfrentó al partido que gobernaba"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los datos del conteo y los porcentajes preliminares proceden, según se declara, de la comisión electoral y de cifras publicadas. Constituyen el núcleo de la tarea, de modo que el componente auténtico está integrado sustantivamente.",
+                "cita": "Cuando la comisión electoral había contado el 97 % de las mesas, informó 2,25 millones de votos para la lista de los estudiantes"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona el modelo (umbral, listas excluidas, mesas faltantes) y es indispensable para interpretar el resultado frente a la mayoría de 126 escaños. También es necesario para validarlo contra el reparto oficial.",
+                "cita": "si la lista estudiantil podría formar gobierno sin aliados"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a recorrer todo el ciclo sin que el enunciado deje fases hechas. Hay que comprender el sistema electoral, simplificar con supuestos, matematizar el reparto y calcular. Luego hay que interpretar si hay mayoría propia y juzgar la seguridad de la estimación.",
+                "cita": "¿Qué estimación publicarían y con qué grado de seguridad?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "R5 ofrece evidencia independiente, no usada en la construcción del modelo, para contrastar la estimación.",
+                "cita": "Cuando el grupo entregue su estimación, se le muestra el reparto final oficial de escaños publicado por la comisión electoral."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto electoral es comprensible para secundaria. La matemática central (porcentajes, proporcionalidad, redondeo, comparación de escenarios) está al alcance de las herramientas esperables en S.",
+                "cita": "El parlamento tiene 250 escaños."
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Hay un piso accesible: un reparto proporcional directo con los porcentajes. El techo es alto: umbral con redistribución, métodos de cocientes y escenarios para las mesas faltantes, con análisis de sensibilidad del margen sobre la mayoría.",
+                "cita": "Pueden pedir información adicional."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las distintas decisiones (método de reparto, umbral supuesto, tratamiento del 3 % restante) producen estimaciones comparables. Esas diferencias abren preguntas sobre los sistemas electorales y los límites de proyectar con datos parciales.",
+                "cita": "cuántos escaños tendría cada bando y si la lista estudiantil podría formar gobierno sin aliados"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información necesaria está disponible a solicitud, o puede buscarse o suponerse con facilidad (umbral, método de reparto). Ningún material revela la regla de asignación ni el modelo de proyección.",
+                "cita": "Supuesto del escenario: para recibir escaños, una lista debe superar un porcentaje mínimo de los votos válidos"
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgRDLacSd6xugst5qL3EM",
+            "fecha": "2026-10-26T17:06:25+00:00",
+            "intentos": 1,
+            "costo_usd": 0.06897,
+            "avisos": []
+          }
+        },
+        {
+          "n": 3,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "Se plantea una necesidad real: publicar una proyección de escaños. No se entrega el sistema de reparto ni ninguna regla lista para aplicar.",
+                "cita": "Ustedes son parte del equipo de datos de un medio que quiere publicar esa misma noche cuántos escaños tendría cada bando"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe el procedimiento. Admite varios modelos defendibles: proporción simple, umbral con redistribución, métodos de divisores o escenarios para las mesas faltantes.",
+                "cita": "¿Qué estimación publicarían y con qué grado de seguridad? Pueden pedir información adicional."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige varias decisiones de modelación: suponer el umbral y el método de reparto, decidir qué hacer con el voto de otras listas y estimar el efecto del 3 % de mesas no contadas.",
+                "cita": "El porcentaje exacto es parte de lo que el equipo debe averiguar o suponer."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Proyectar escaños la noche electoral a partir de un conteo parcial es una práctica real de los equipos de datos de los medios.",
+                "cita": "En Serbia hubo elecciones parlamentarias anticipadas"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "La tarea declara que los datos provienen del conteo oficial de la comisión electoral, y esos datos son el núcleo de la tarea. El componente auténtico está integrado de manera sustantiva.",
+                "cita": "Cuando la comisión electoral había contado el 97 % de las mesas, informó 2,25 millones de votos para la lista de los estudiantes"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona las decisiones: umbral, listas pequeñas y mesas faltantes. También es necesario para interpretar el resultado (mayoría de 126 de 250) y para juzgar el grado de seguridad.",
+                "cita": "si la lista estudiantil podría formar gobierno sin aliados"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Para responder hay que comprender el sistema electoral, simplificar con supuestos, matematizar el reparto, calcular, interpretar si hay mayoría propia y juzgar la incertidumbre. El enunciado no deja ninguna fase hecha.",
+                "cita": "¿Qué estimación publicarían y con qué grado de seguridad?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existe evidencia independiente no usada en la construcción del modelo: el resultado oficial final, con el cual se contrasta la estimación.",
+                "cita": "Cuando el grupo entregue su estimación, se le muestra el reparto final oficial de escaños publicado por la comisión electoral."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto electoral y el lenguaje son comprensibles para secundaria. La matemática requerida (porcentajes, proporciones, reparto, escenarios) está al alcance de las herramientas esperables del nivel S.",
+                "cita": "El parlamento tiene 250 escaños."
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Hay un piso accesible: un reparto proporcional directo sobre 250 escaños. La tarea admite además soluciones más sofisticadas, como umbral con redistribución, método de divisores, escenarios de mesas faltantes o rangos de seguridad.",
+                "cita": "informó 2,25 millones de votos para la lista de los estudiantes y 1,67 millones para el antiguo partido de gobierno"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Los distintos supuestos producen proyecciones distintas que pueden compararse. Abren preguntas sobre los límites del modelo, el efecto del umbral, el método de reparto y la incertidumbre del conteo parcial.",
+                "cita": "con qué grado de seguridad"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información necesaria se entrega a solicitud, o puede suponerse o buscarse con facilidad (umbral, método de reparto). Ningún material revela el modelo ni la regla de solución.",
+                "cita": "Supuesto del escenario: para recibir escaños, una lista debe superar un porcentaje mínimo de los votos válidos"
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgRDNkBDzAZGoE5D9kPq3",
+            "fecha": "2026-10-26T17:06:53+00:00",
+            "intentos": 1,
+            "costo_usd": 0.06745,
+            "avisos": []
+          }
+        }
+      ],
+      "totales": [
+        24,
+        24,
+        24
+      ],
+      "rango_total": 0,
+      "rango_inestable": 4,
+      "evaluacion_inestable": false,
+      "mediana": {
+        "regla": "mediana por criterio (n par: mediana inferior)",
+        "total": 24,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 2
+        },
+        "corrida_fuente": {
+          "genuino": 1,
+          "abierta": 1,
+          "decisiones": 1,
+          "realismo": 1,
+          "autenticidad": 1,
+          "contexto": 1,
+          "ciclo": 1,
+          "validacion": 1,
+          "nivel": 1,
+          "autodiferenciacion": 1,
+          "fecundidad": 1,
+          "recursos": 1
+        }
+      }
+    }
+  ]
+}

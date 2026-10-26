@@ -1,0 +1,109 @@
+{
+  "tarea_id": "2026-10-leer-documento-de-riesgos",
+  "fecha": "2026-10-26T16:55:42Z",
+  "rub01": {
+    "version_rubrica": "4.0",
+    "criterios": {
+      "genuino": {
+        "puntaje": 2,
+        "justificacion": "Plantea una necesidad concreta: planificar la lectura antes de un plazo. No entrega ninguna regla ni modelo; el grupo debe construir la relación entre páginas, velocidad de lectura y reparto.",
+        "cita": "¿Cuánto tiempo necesitarían para leerlo completo y cómo conviene repartirse la lectura para escribir su nota a tiempo?"
+      },
+      "abierta": {
+        "puntaje": 2,
+        "justificacion": "La pregunta no prescribe procedimiento. Admite varios modelos defendibles: velocidad promedio o individual, reparto equitativo o proporcional, con o sin ajuste por dificultad. No hay instrucciones posteriores que encaucen.",
+        "cita": "cómo conviene repartirse la lectura para escribir su nota a tiempo? Pueden pedir información adicional."
+      },
+      "decisiones": {
+        "puntaje": 2,
+        "justificacion": "Resolver exige estimar la velocidad de lectura midiéndola y suponer que las páginas son similares. También hay que decidir el tiempo diario y el plazo, y elegir qué información solicitar. Son decisiones de modelación sustantivas.",
+        "cita": "Pueden pedir información adicional."
+      },
+      "realismo": {
+        "puntaje": 1,
+        "justificacion": "Estimar el tiempo de lectura y repartir un documento largo es plausible. Pero que estudiantes de 10–12 años quieran leer completo un informe financiero de riesgos de 90 páginas parece un encuadre forzado para insertar el cálculo. Dudé entre 1 y 2 y asigné el menor.",
+        "cita": "Su grupo es el equipo del diario escolar y quiere leer todo el documento antes de escribir una nota para sus compañeros."
+      },
+      "autenticidad": {
+        "puntaje": 2,
+        "justificacion": "La noticia sobre el documento de Anthropic aporta el dato central de extensión (90 páginas), sobre el cual se construye toda la estimación. Es un componente auténtico citado y usado como dato.",
+        "cita": "Para eso publicó un documento de unas 90 páginas donde explica sus riesgos"
+      },
+      "contexto": {
+        "puntaje": 2,
+        "justificacion": "El carácter técnico del informe condiciona la velocidad supuesta, y el plazo del diario condiciona el reparto. Ambos son necesarios para interpretar y validar. El dato de inversión es decorativo, pero el núcleo del contexto no lo es.",
+        "cita": "una página impresa de un informe técnico de una empresa, con vocabulario financiero y tablas, para que el grupo compruebe su estimación"
+      },
+      "ciclo": {
+        "puntaje": 2,
+        "justificacion": "Responder obliga a recorrer todas las fases: comprender la situación y simplificar (página típica, velocidad constante). Luego matematizar con proporcionalidad, calcular, interpretar en un calendario de reparto y validar con una página técnica. Ninguna fase viene hecha.",
+        "cita": "¿Cuánto tiempo necesitarían para leerlo completo y cómo conviene repartirse la lectura para escribir su nota a tiempo?"
+      },
+      "validacion": {
+        "puntaje": 2,
+        "justificacion": "Existe evidencia independiente no usada en la construcción del modelo: cronometrar una página de un informe técnico permite contrastar la velocidad supuesta. Se trata de una medición.",
+        "cita": "el profesor entrega una página impresa de un informe técnico de una empresa, con vocabulario financiero y tablas, para que el grupo compruebe su estimación"
+      },
+      "nivel": {
+        "puntaje": 2,
+        "justificacion": "El contexto se explica en lenguaje accesible para 10–12 años. La matemática requerida (operatoria, proporcionalidad directa, unidades de tiempo, estimación) corresponde a las herramientas esperables del nivel P.",
+        "cita": "quiere vender partes de la empresa al público en la bolsa de Estados Unidos"
+      },
+      "autodiferenciacion": {
+        "puntaje": 2,
+        "justificacion": "El piso es accesible: cronometrar una página y multiplicar por 90. El techo es alto porque la tarea admite soluciones más refinadas: reparto proporcional a velocidades individuales, factor de ajuste por dificultad técnica, incluir el tiempo de escritura en el plan.",
+        "cita": "el profesor entrega una página impresa de un libro de lectura del curso para que cada integrante se cronometre leyéndola"
+      },
+      "fecundidad": {
+        "puntaje": 2,
+        "justificacion": "Las distintas velocidades medidas y los distintos criterios de reparto permiten comparar planes entre grupos. También abren preguntas sobre los límites del modelo, por ejemplo si un texto técnico se lee igual que uno habitual o si conviene leerlo todo.",
+        "cita": "cómo conviene repartirse la lectura para escribir su nota a tiempo?"
+      },
+      "recursos": {
+        "puntaje": 2,
+        "justificacion": "La extensión viene dada; la velocidad se obtiene por medición con R1 y R2, y el plazo lo decide el grupo. Todo es obtenible en el nivel P y ningún material revela la estructura de la solución.",
+        "cita": "Supuesto del escenario: el grupo decide cuánto tiempo al día puede dedicar a leer y cuántos días tiene hasta publicar su nota."
+      }
+    },
+    "total": 23,
+    "mejoras": [
+      {
+        "criterio": "realismo",
+        "mejora_minima": "Reemplazar la meta de leer «todo el documento» por una necesidad propia del diario escolar, por ejemplo leer la sección de riesgos de la IA o decidir si alcanza a leerlo completo antes de la fecha de cierre. Así el encuadre deja de parecer forzado para niños de 10–12 años."
+      }
+    ]
+  },
+  "reproducibilidad": {
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.19146,
+        "version_prompt": "1.1"
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.253026,
+        "version_prompt": "1.3"
+      },
+      "filtro": {
+        "modelo": "claude-haiku-5-5",
+        "version_modelo": "claude-haiku-5-5",
+        "costo_usd": 0.000739,
+        "version_prompt": "1.0"
+      }
+    },
+    "version_prompt": {
+      "disenador": "1.1",
+      "evaluador": "1.3",
+      "filtro": "1.0"
+    },
+    "version_rubrica": "4.0",
+    "version_MAR03": "1.0",
+    "version_MED01": "1.4",
+    "diseno_simulador": null,
+    "fecha": "2026-10-26T16:55:42Z",
+    "costo_usd": 0.445225
+  }
+}

@@ -1,0 +1,356 @@
+{
+  "tarea_id": "2026-10-dos-cifras-misma-noticia",
+  "evaluaciones": [
+    {
+      "iteracion": 1,
+      "version_tarea": 1,
+      "fecha": "2026-10-26T16:36:28Z",
+      "modelo": "claude-opus-5-5",
+      "version_prompt": "1.3",
+      "version_rubrica": "4.0",
+      "corridas": [
+        {
+          "n": 1,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "Hay una necesidad comunicativa real: decidir cómo presentar dos cifras discrepantes. No se entrega ninguna regla ni modelo listo para aplicar.",
+                "cita": "Ustedes preparan una exposición para su curso y quieren que sus compañeros entiendan estas cifras sin confundirse."
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta admite varias explicaciones y recomendaciones defendibles. Tampoco prescribe cómo comparar las cifras (diferencia, razón, etc.).",
+                "cita": "¿Qué podría explicar la diferencia y qué cifra recomendarían usar al hablar del tema?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige formular supuestos sobre qué abarca cada cuenta (período, criterio de conteo), elegir cómo medir la distancia entre cifras y solicitar información pertinente.",
+                "cita": "Pueden pedir información adicional."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Es una discrepancia real entre una investigación periodística y un ministro, un fenómeno que existe fuera de la escuela.",
+                "cita": "En un reportaje sobre condenados por delitos graves contra niños que recibieron una rebaja de su condena aparecen dos cuentas distintas."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Las cifras provienen de un reportaje y de una declaración ministerial, y constituyen el núcleo de la tarea. Es un componente auténtico integrado de forma sustantiva.",
+                "cita": "La investigación periodística registra 56 condenados a quienes el gobierno les rebajó la pena."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "Quién emite cada cifra y a qué gobierno se refiere condiciona la explicación de la diferencia y la recomendación final. El contexto no puede abandonarse.",
+                "cita": "El ministro Rabat afirmó que 275 personas recibieron ese beneficio durante el gobierno anterior."
+              },
+              "ciclo": {
+                "puntaje": 1,
+                "justificacion": "Comprender e interpretar son exigentes, pero la matematización y el trabajo matemático se reducen a una resta o un cociente entre 275 y 56, lo que vuelve triviales esas fases.",
+                "cita": "¿Qué tan distintas son las dos cifras?"
+              },
+              "validacion": {
+                "puntaje": 1,
+                "justificacion": "R4 permite contrastar la explicación (el 56 proviene de un universo acotado), pero lo que se valida es más una hipótesis interpretativa que un modelo matemático. Dudo entre 1 y 2 y asigno el menor: es sobre todo una comprobación de consistencia.",
+                "cita": "La investigación revisó 73 casos de reclamos presentados en tribunales por condenados a quienes se les había negado la rebaja."
+              },
+              "nivel": {
+                "puntaje": 1,
+                "justificacion": "La matemática (diferencia, razón, proporcionalidad) está al alcance del nivel P. Sin embargo, el tema de delitos graves contra niños es sensible y poco pertinente para estudiantes de 10 a 12 años, por lo que requiere ajuste.",
+                "cita": "condenados por delitos graves contra niños que recibieron una rebaja de su condena"
+              },
+              "autodiferenciacion": {
+                "puntaje": 1,
+                "justificacion": "El piso es muy accesible (restar). El techo es bajo, porque sin información sobre los períodos (R3) no caben modelos más refinados, como tasas por año o por universo de casos.",
+                "cita": "¿Qué tan distintas son las dos cifras?"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las recomendaciones de los grupos pueden compararse y abren preguntas sobre criterios de conteo, períodos y uso responsable de estadísticas.",
+                "cita": "qué cifra recomendarían usar al hablar del tema"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "El rótulo de R4 orienta hacia una explicación específica, lo que constituye una sobreorientación parcial. Además, la información clave sobre períodos y criterios no es obtenible según R3.",
+                "cita": "Tamaño de la revisión de la investigación, para contrastar la explicación del grupo"
+              }
+            },
+            "total": 19,
+            "mejoras": [
+              {
+                "criterio": "ciclo",
+                "mejora_minima": "Pedir que estimen cuántos beneficiados por año implica cada cifra, según los períodos que supongan, para que haya una matematización no trivial (tasa) antes de interpretar."
+              },
+              {
+                "criterio": "validacion",
+                "mejora_minima": "Ofrecer a solicitud un dato público independiente (por ejemplo, el número anual de rebajas informado por un registro oficial) contra el cual contrastar la tasa estimada."
+              },
+              {
+                "criterio": "nivel",
+                "mejora_minima": "Sustituir la referencia a delitos contra niños por una formulación más general (condenados que recibieron rebajas de pena) o declarar el nivel S, donde el tema es más pertinente."
+              },
+              {
+                "criterio": "autodiferenciacion",
+                "mejora_minima": "Permitir que los grupos supongan duraciones de cada gobierno y comparen cifras anuales, de modo que haya soluciones más sofisticadas que una simple resta."
+              },
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Retitular R4 de forma neutra (por ejemplo, «Qué casos revisó la investigación») y añadir a solicitud los períodos que cubre cada cifra."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgRAvx6MvvuL4LHsxs57m",
+            "fecha": "2026-10-26T16:34:59+00:00",
+            "intentos": 1,
+            "costo_usd": 0.083274,
+            "avisos": []
+          }
+        },
+        {
+          "n": 2,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 1,
+                "justificacion": "Hay una necesidad comunicativa y no se entrega una regla. Sin embargo, la parte matemática se reduce a comparar dos números dados, y la pregunta insinúa con fuerza una resta o un cociente. Dudé entre 2 y 1 y asigné el menor.",
+                "cita": "¿Qué tan distintas son las dos cifras?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta admite varias explicaciones y recomendaciones defendibles. No hay instrucciones posteriores que prescriban un procedimiento.",
+                "cita": "¿Qué podría explicar la diferencia y qué cifra recomendarían usar al hablar del tema?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Para explicar la diferencia hay que formular supuestos sobre períodos y criterios de conteo, y decidir qué información solicitar. Eso corresponde al descriptor 2.",
+                "cita": "el reportaje no explica con detalle cómo se hizo cada cuenta ni qué períodos abarca cada una."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "La situación proviene de un reportaje real sobre cifras en disputa pública. Es claramente plausible fuera de la escuela.",
+                "cita": "En un reportaje sobre condenados por delitos graves contra niños que recibieron una rebaja de su condena aparecen dos cuentas distintas."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Las cifras de la noticia y de la declaración ministerial son el núcleo de la tarea. Son un componente auténtico integrado de manera sustantiva.",
+                "cita": "El ministro Rabat afirmó que 275 personas recibieron ese beneficio durante el gobierno anterior."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "Quién entrega cada cifra y qué cuenta cada una condicionan la interpretación. Ese contexto también es necesario para recomendar qué cifra usar.",
+                "cita": "Ustedes preparan una exposición para su curso y quieren que sus compañeros entiendan estas cifras sin confundirse."
+              },
+              "ciclo": {
+                "puntaje": 1,
+                "justificacion": "Matematizar y trabajar matemáticamente se vuelve trivial: es una resta o un cociente entre dos números entregados. Así, el ciclo no se recorre de forma no trivial, aunque comprender e interpretar sí estén presentes.",
+                "cita": "¿Qué tan distintas son las dos cifras?"
+              },
+              "validacion": {
+                "puntaje": 1,
+                "justificacion": "R4 no mide lo mismo que las cifras comparadas, y R3 declara que no hay información sobre períodos ni métodos. Por eso solo cabe una comprobación de plausibilidad de la explicación.",
+                "cita": "La investigación revisó 73 casos de reclamos presentados en tribunales por condenados a quienes se les había negado la rebaja."
+              },
+              "nivel": {
+                "puntaje": 1,
+                "justificacion": "La operatoria está al alcance del nivel P. En cambio, el tema (delitos graves contra niños, rebajas de condena) es sensible y poco pertinente para niños de 10 a 12 años. Además, términos como «administración anterior» requieren ajustes.",
+                "cita": "condenados por delitos graves contra niños"
+              },
+              "autodiferenciacion": {
+                "puntaje": 1,
+                "justificacion": "El piso es bajo, pero el techo también lo es. Sin datos de períodos o de tamaño de la población, no hay soluciones matemáticas claramente más sofisticadas que una diferencia o una razón.",
+                "cita": "qué cifra recomendarían usar al hablar del tema"
+              },
+              "fecundidad": {
+                "puntaje": 1,
+                "justificacion": "Comparar las explicaciones y recomendaciones de distintos grupos genera discusión sobre fuentes y criterios de conteo. Pero ofrece pocas extensiones matemáticas sustantivas. Dudé entre 1 y 2 y asigné el menor.",
+                "cita": "Qué podría explicar la diferencia"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "El enunciado ya contrasta «el gobierno» con «el gobierno anterior», lo que orienta parcialmente la explicación. Además, la información clave sobre períodos y métodos no es obtenible: R3 la declara inexistente. Esto corresponde a sobreorientación parcial con información difícil de obtener.",
+                "cita": "La investigación periodística registra 56 condenados a quienes el gobierno les rebajó la pena."
+              }
+            },
+            "total": 17,
+            "mejoras": [
+              {
+                "criterio": "genuino",
+                "mejora_minima": "Reemplazar «¿Qué tan distintas son?» por una necesidad que exija construir un modelo, por ejemplo: «¿Pueden ambas cifras ser correctas a la vez? Muestren cómo», sin sugerir resta ni cociente."
+              },
+              {
+                "criterio": "ciclo",
+                "mejora_minima": "Ofrecer a solicitud la duración de cada período de gobierno, para que los estudiantes deban construir y comparar tasas (condenados por año) en vez de solo restar dos números."
+              },
+              {
+                "criterio": "validacion",
+                "mejora_minima": "Agregar un recurso a solicitud con una tercera cifra independiente (por ejemplo, un dato oficial del Poder Judicial o de Gendarmería para un período definido) contra la cual contrastar la explicación del grupo."
+              },
+              {
+                "criterio": "nivel",
+                "mejora_minima": "Declarar nivel S1, o mantener la estructura de «dos cifras de dos fuentes» con un tema de la misma noticia menos sensible para 10 a 12 años, y glosar términos como «administración anterior»."
+              },
+              {
+                "criterio": "autodiferenciacion",
+                "mejora_minima": "Incluir a solicitud las fechas de cada período, de modo que algunos grupos comparen totales y otros construyan tasas anuales o estimen cuántos casos caerían en períodos superpuestos."
+              },
+              {
+                "criterio": "fecundidad",
+                "mejora_minima": "Añadir una pregunta final: «¿Qué dato adicional necesitarían para decidir si las cifras se contradicen? Estimen cómo cambiaría su recomendación con ese dato»."
+              },
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Neutralizar en el enunciado la referencia a los gobiernos (dejarla solo en R2) y ofrecer a solicitud los períodos que abarca cada cifra, en lugar de declararlos desconocidos."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgRAyj297Cgk7L5Jp4HvN",
+            "fecha": "2026-10-26T16:35:45+00:00",
+            "intentos": 1,
+            "costo_usd": 0.105954,
+            "avisos": []
+          }
+        },
+        {
+          "n": 3,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La tarea plantea una necesidad: explicar dos cifras contradictorias a otros. No entrega ninguna regla ni modelo para comparar o explicar las cifras.",
+                "cita": "Ustedes preparan una exposición para su curso y quieren que sus compañeros entiendan estas cifras sin confundirse."
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La comparación puede hacerse por diferencia o por razón, y las explicaciones y recomendaciones admiten varias posturas defendibles. No hay instrucciones que prescriban el método.",
+                "cita": "¿Qué tan distintas son las dos cifras? ¿Qué podría explicar la diferencia y qué cifra recomendarían usar al hablar del tema?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Para resolver hay que elegir cómo comparar las cifras y formular supuestos sobre períodos y criterios de conteo. También hay que decidir qué información solicitar (R2–R4).",
+                "cita": "Pueden pedir información adicional."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Es una disputa real de cifras en la prensa sobre un tema público. La situación existe fuera de la escuela.",
+                "cita": "El ministro Rabat afirmó que 275 personas recibieron ese beneficio durante el gobierno anterior."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Las cifras del reportaje y la declaración del ministro son el núcleo de la tarea. Son datos de prensa no creados con fines educativos.",
+                "cita": "La investigación periodística registra 56 condenados a quienes el gobierno les rebajó la pena."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "Explicar la diferencia y recomendar una cifra solo es posible atendiendo a quién cuenta, qué y en qué gobierno. El contexto condiciona las decisiones y la interpretación.",
+                "cita": "¿Qué podría explicar la diferencia y qué cifra recomendarían usar al hablar del tema?"
+              },
+              "ciclo": {
+                "puntaje": 1,
+                "justificacion": "Comprender, interpretar y argumentar se exigen. Pero matematizar y trabajar matemáticamente se reducen a una resta o un cociente entre dos números dados, de modo que esas fases son triviales.",
+                "cita": "¿Qué tan distintas son las dos cifras?"
+              },
+              "validacion": {
+                "puntaje": 1,
+                "justificacion": "R4 permite contrastar una explicación con un dato no usado al construirla. Pero se refiere a otra población (rebajas negadas), y R3 declara que no se sabe cómo se hizo cada cuenta. Dudo entre 1 y 2, y asigno el menor: el contraste es sobre todo de plausibilidad y consistencia.",
+                "cita": "La investigación revisó 73 casos de reclamos presentados en tribunales por condenados a quienes se les había negado la rebaja."
+              },
+              "nivel": {
+                "puntaje": 1,
+                "justificacion": "La matemática (diferencia, razón aproximada) está al alcance de P. Pero el tema es delicado para 10–12 años y el lenguaje judicial y político (rebaja de condena, reclamos en tribunales, gobierno anterior) requiere ajustes para ser comprensible y pertinente.",
+                "cita": "En un reportaje sobre condenados por delitos graves contra niños que recibieron una rebaja de su condena aparecen dos cuentas distintas."
+              },
+              "autodiferenciacion": {
+                "puntaje": 1,
+                "justificacion": "El piso es bajo: basta restar. Pero las soluciones más sofisticadas son solo argumentativas; la tarea no admite modelos matemáticos claramente más refinados, por lo que el techo es bajo.",
+                "cita": "¿Qué tan distintas son las dos cifras?"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las distintas explicaciones y recomendaciones permiten comparar soluciones entre grupos. También abren preguntas sobre criterios de conteo, períodos y límites de cada fuente.",
+                "cita": "qué cifra recomendarían usar al hablar del tema"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información pertinente está disponible de entrada o a solicitud. Ningún recurso revela la explicación ni la forma de comparar; la ausencia de detalle es parte deliberada del escenario.",
+                "cita": "Supuesto del escenario: el reportaje no explica con detalle cómo se hizo cada cuenta ni qué períodos abarca cada una."
+              }
+            },
+            "total": 20,
+            "mejoras": [
+              {
+                "criterio": "ciclo",
+                "mejora_minima": "Agregar una pregunta que obligue a construir un modelo simple. Por ejemplo, entregar a solicitud la duración de cada gobierno y preguntar cómo compararían las cifras si los períodos tuvieran distinta duración (rebajas por año)."
+              },
+              {
+                "criterio": "validacion",
+                "mejora_minima": "Ofrecer a solicitud un dato independiente sobre el mismo beneficio (por ejemplo, una cifra de un registro oficial o de otra fuente de prensa para un período definido) contra el cual contrastar la explicación del grupo."
+              },
+              {
+                "criterio": "nivel",
+                "mejora_minima": "Declarar el nivel S, o bien mantener P suavizando el encuadre (\"personas condenadas por delitos graves\") y explicando en lenguaje sencillo qué es una rebaja de condena, acompañado de una nota de mediación docente por la sensibilidad del tema."
+              },
+              {
+                "criterio": "autodiferenciacion",
+                "mejora_minima": "Incluir datos a solicitud (duración de cada período o un desglose por año) que permitan, además de la resta, comparar por razones o tasas anuales y discutir qué comparación es más justa."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgRB36ERoa2ZphgHzpWKN",
+            "fecha": "2026-10-26T16:36:28+00:00",
+            "intentos": 1,
+            "costo_usd": 0.094554,
+            "avisos": []
+          }
+        }
+      ],
+      "totales": [
+        19,
+        17,
+        20
+      ],
+      "rango_total": 3,
+      "rango_inestable": 4,
+      "evaluacion_inestable": false,
+      "mediana": {
+        "regla": "mediana por criterio (n par: mediana inferior)",
+        "total": 19,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 1,
+          "validacion": 1,
+          "nivel": 1,
+          "autodiferenciacion": 1,
+          "fecundidad": 2,
+          "recursos": 1
+        },
+        "corrida_fuente": {
+          "genuino": 1,
+          "abierta": 1,
+          "decisiones": 1,
+          "realismo": 1,
+          "autenticidad": 1,
+          "contexto": 1,
+          "ciclo": 1,
+          "validacion": 1,
+          "nivel": 1,
+          "autodiferenciacion": 1,
+          "fecundidad": 1,
+          "recursos": 1
+        }
+      }
+    }
+  ]
+}

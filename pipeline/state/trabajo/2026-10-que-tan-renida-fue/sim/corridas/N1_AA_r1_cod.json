@@ -1,0 +1,203 @@
+{
+  "run": {
+    "id": "N1_AA_r1",
+    "nivel": "N1",
+    "composicion": "AA",
+    "rep": 1,
+    "estilos": [
+      "A",
+      "A"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.070344,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P3-MM",
+        "fase_secundaria": "P1-MRS",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P3-MM",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 6,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 7,
+        "fase": "P3-MM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 8,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 9,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P4-WM",
+        "eventos": []
+      },
+      {
+        "n": 10,
+        "fase": "P5-INT",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 11,
+        "fase": "P5-INT",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 12,
+        "fase": "P5-INT",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 13,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 14,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P7-EXP",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 15,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 16,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 17,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 18,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 19,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 20,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 21,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P7-EXP",
+        "eventos": []
+      }
+    ],
+    "bloqueos": [
+      {
+        "codigo": "B45",
+        "turnos": [
+          4,
+          5
+        ],
+        "resolucion": "peer",
+        "descripcion": "Con la diferencia de votos y la de porcentajes calculadas, B pregunta cuál indica si fue pareja y A duda ('no sé cuál sirve'); A destraba proponiendo comparar la diferencia con el total."
+      },
+      {
+        "codigo": "B56",
+        "turnos": [
+          10,
+          11,
+          12
+        ],
+        "resolucion": "peer",
+        "descripcion": "B no sabe si 3,58 % es poco o mucho ni con qué compararlo; A propone el criterio de cercanía a 0 en una escala de 0 a 100 y sugiere pedir otras elecciones, aunque la comparación externa queda pendiente."
+      }
+    ],
+    "supuestos": [
+      "solo cuentan los votos de los dos candidatos (los porcentajes suman 100)",
+      "criterio: diferencia cercana a 0 de cada 100 votos significa elección pareja"
+    ],
+    "modelo": "aditivo relativo",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Lula 64.256.232 (51,79 %), Flávio 59.826.041 (48,21 %), diferencia 4.430.191 votos = 3,58 %, o sea 3,58 de cada 100 votos, que está cerca de 0, así que fue bastante pareja, aunque Lula ganó. Falta comparar con otras segundas vueltas."
+    },
+    "ruta_principal": "R1",
+    "rutas": [
+      "R1",
+      "R2"
+    ]
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "ciclo_id": "ciclo_20261026T170916412247Z",
+  "inicio": "2026-10-26T17:09:16Z",
+  "fin": "2026-10-26T17:23:25Z",
+  "semana": "2026-W44",
+  "parametros": {
+    "tope_semanal_usd": 35.0,
+    "fraccion_detencion": 0.9,
+    "presupuesto_ciclo_usd": null,
+    "limite_usd": 31.5,
+    "gasto_semana_previo_usd": 8.53905,
+    "corridas_evaluador": 3,
+    "rango_inestable": 4,
+    "corridas_simulador": 6,
+    "ids": [
+      "2026-10-cuanto-pagar-cada-mes",
+      "2026-10-que-tan-renida-fue"
+    ],
+    "revisor": "carlos rojas bruna"
+  },
+  "detenido_por_tope": false,
+  "eventos": [
+    {
+      "fecha": "2026-10-26T17:09:21Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-cuanto-pagar-cada-mes",
+      "de": "evaluada",
+      "a": "revisada"
+    },
+    {
+      "fecha": "2026-10-26T17:12:33Z",
+      "tipo": "agente",
+      "agente": "simulador",
+      "tareas": [
+        "2026-10-cuanto-pagar-cada-mes"
+      ],
+      "llamadas": 135,
+      "usd": 1.226547
+    },
+    {
+      "fecha": "2026-10-26T17:12:40Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-cuanto-pagar-cada-mes",
+      "de": "revisada",
+      "a": "simulada"
+    },
+    {
+      "fecha": "2026-10-26T17:15:28Z",
+      "tipo": "agente",
+      "agente": "redactor",
+      "tareas": [
+        "2026-10-cuanto-pagar-cada-mes"
+      ],
+      "llamadas": 4,
+      "usd": 0.527843
+    },
+    {
+      "fecha": "2026-10-26T17:15:44Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-cuanto-pagar-cada-mes",
+      "de": "simulada",
+      "a": "con_guia"
+    },
+    {
+      "fecha": "2026-10-26T17:15:50Z",
+      "tipo": "agente",
+      "agente": "ilustrador",
+      "tareas": [
+        "2026-10-cuanto-pagar-cada-mes"
+      ],
+      "llamadas": 1,
+      "usd": 0.013788
+    },
+    {
+      "fecha": "2026-10-26T17:16:03Z",
+      "tipo": "agente",
+      "agente": "verificador",
+      "tareas": [
+        "2026-10-cuanto-pagar-cada-mes"
+      ],
+      "llamadas": 0,
+      "usd": 0
+    },
+    {
+      "fecha": "2026-10-26T17:16:10Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-cuanto-pagar-cada-mes",
+      "de": "con_guia",
+      "a": "simulada",
+      "motivo": "verificador rechaza la guía (rechazo 1): [4] tarea.noticia.cifras_usadas[0]: valor 48 en la tarea, '5 millones' en la noticia (párrafo 5)"
+    },
+    {
+      "fecha": "2026-10-26T17:18:54Z",
+      "tipo": "agente",
+      "agente": "redactor",
+      "tareas": [
+        "2026-10-cuanto-pagar-cada-mes"
+      ],
+      "llamadas": 4,
+      "usd": 0.515552
+    },
+    {
+      "fecha": "2026-10-26T17:19:10Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-cuanto-pagar-cada-mes",
+      "de": "simulada",
+      "a": "con_guia"
+    },
+    {
+      "fecha": "2026-10-26T17:19:22Z",
+      "tipo": "agente",
+      "agente": "verificador",
+      "tareas": [
+        "2026-10-cuanto-pagar-cada-mes"
+      ],
+      "llamadas": 0,
+      "usd": 0
+    },
+    {
+      "fecha": "2026-10-26T17:19:38Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-cuanto-pagar-cada-mes",
+      "de": "con_guia",
+      "a": "archivada",
+      "motivo": "el verificador rechazó la guía 2 veces: [4] tarea.noticia.cifras_usadas[0]: valor 48 en la tarea, '5 millones' en la noticia (párrafo 5)"
+    },
+    {
+      "fecha": "2026-10-26T17:19:42Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-que-tan-renida-fue",
+      "de": "evaluada",
+      "a": "revisada"
+    },
+    {
+      "fecha": "2026-10-26T17:23:25Z",
+      "tipo": "agente",
+      "agente": "simulador",
+      "tareas": [
+        "2026-10-que-tan-renida-fue"
+      ],
+      "llamadas": 121,
+      "usd": 1.09623
+    },
+    {
+      "fecha": "2026-10-26T17:23:25Z",
+      "tipo": "error",
+      "tarea_id": "2026-10-que-tan-renida-fue",
+      "estado": "revisada",
+      "etapa": "revisada",
+      "error": "AislamientoError: aislamiento (invariante 6): 13 palabras consecutivas de task_space en la llamada: «votos de los dos 64 256 232 59 826 041 124 082 273»",
+      "traza": "simulador.adapter.aislamiento.AislamientoError: aislamiento (invariante 6): 13 palabras consecutivas de task_space en la llamada: «votos de los dos 64 256 232 59 826 041 124 082 273»\n"
+    }
+  ],
+  "expedientes": {
+    "2026-10-cuanto-pagar-cada-mes": "archivada",
+    "2026-10-que-tan-renida-fue": "revisada"
+  },
+  "noticias": [],
+  "pendientes_humanos": [],
+  "errores": [
+    {
+      "tarea_id": "2026-10-que-tan-renida-fue",
+      "estado": "revisada",
+      "etapa": "revisada",
+      "error": "AislamientoError: aislamiento (invariante 6): 13 palabras consecutivas de task_space en la llamada: «votos de los dos 64 256 232 59 826 041 124 082 273»"
+    }
+  ],
+  "orden": "tramo_b",
+  "gasto": {
+    "ciclo_usd": 3.37996,
+    "semana_usd": 11.91901,
+    "limite_usd": 31.5,
+    "llamadas": 265
+  }
+}

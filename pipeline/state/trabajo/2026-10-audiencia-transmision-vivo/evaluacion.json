@@ -1,0 +1,113 @@
+{
+  "tarea_id": "2026-10-audiencia-transmision-vivo",
+  "fecha": "2026-10-26T16:49:50Z",
+  "rub01": {
+    "version_rubrica": "4.0",
+    "criterios": {
+      "genuino": {
+        "puntaje": 2,
+        "justificacion": "Plantea una necesidad real del periodista: estimar el alcance a partir de las conexiones simultáneas. No entrega la regla que vincula conectados, tiempo de permanencia y personas distintas.",
+        "cita": "Ustedes asesoran al periodista: ¿cuántas personas distintas pudieron haber visto la transmisión y es creíble que haya alcanzado a una parte importante de los seguidores …"
+      },
+      "abierta": {
+        "puntaje": 2,
+        "justificacion": "La pregunta no prescribe el método. Admite varios modelos defendibles, por ejemplo por bloques horarios, por promedio de conectados o por distintas permanencias, y no hay instrucciones posteriores que encaucen hacia una ruta única.",
+        "cita": "Expliquen qué supuestos usan y decidan cómo presentarían el resultado en una frase para el público."
+      },
+      "decisiones": {
+        "puntaje": 2,
+        "justificacion": "Resolver exige estimar cuántos hay conectados en cada momento y cuánto permanecen, formular supuestos sobre la variación diaria y decidir qué información pedir.",
+        "cita": "El tiempo que permaneció conectada cada persona no se conoce y debe estimarse."
+      },
+      "realismo": {
+        "puntaje": 2,
+        "justificacion": "Distinguir audiencia simultánea de alcance total es un problema real y frecuente en el periodismo sobre transmisiones en vivo. La situación es claramente plausible.",
+        "cita": "un periodista quiere contar cuánta gente participó de verdad"
+      },
+      "autenticidad": {
+        "puntaje": 1,
+        "justificacion": "El tema y los datos de partida (10,8 millones de seguidores, 24 horas) son auténticos, pero no se declara su fuente y los seguidores se usan sobre todo como contraste. El núcleo (curva de conexión, tarjetas R3–R5) es un escenario construido; hay duda entre 1 y 2, por lo que se asigna el menor.",
+        "cita": "Supuesto del escenario: hay más gente conectada por la tarde y la noche, y mucha menos de madrugada."
+      },
+      "contexto": {
+        "puntaje": 2,
+        "justificacion": "El contexto condiciona los supuestos (variación horaria, entradas y salidas) y es necesario para interpretar el resultado frente a los seguidores y redactar la frase para el público.",
+        "cita": "nadie vio la transmisión completa; la gente entraba y salía en momentos distintos del día"
+      },
+      "ciclo": {
+        "puntaje": 2,
+        "justificacion": "Responder obliga a recorrer todas las fases de forma no trivial:\n- comprender la diferencia entre conectados simultáneos y personas distintas;\n- simplificar y matematizar con la tasa de recambio;\n- calcular;\n- interpretar frente a 10,8 millones;\n- validar.",
+        "cita": "¿cuántas personas distintas pudieron haber visto la transmisión y es creíble que haya alcanzado a una parte importante de los seguidores del canal?"
+      },
+      "validacion": {
+        "puntaje": 2,
+        "justificacion": "Existe evidencia independiente, entregada solo después de la estimación propia, para contrastar el modelo. Se suma la restricción del tamaño del canal.",
+        "cita": "terminada la transmisión, la plataforma publica dos datos: el máximo de personas conectadas a la vez y el total de espectadores distintos"
+      },
+      "nivel": {
+        "puntaje": 2,
+        "justificacion": "El contexto (WhatsApp, transmisiones en vivo) es comprensible para S1. La matemática requerida (tasas, promedios, proporciones) está dentro de las herramientas esperables del sub-tramo.",
+        "cita": "Ustedes asesoran al periodista: ¿cuántas personas distintas pudieron haber visto la transmisión"
+      },
+      "autodiferenciacion": {
+        "puntaje": 2,
+        "justificacion": "Admite una entrada elemental, con bloques horarios y una permanencia fija, y soluciones más refinadas: curvas, distribuciones de permanencia, análisis de sensibilidad. Hay piso razonable y techo alto.",
+        "cita": "El grupo puede pedir una forma de describir esa variación o proponer la suya."
+      },
+      "fecundidad": {
+        "puntaje": 2,
+        "justificacion": "Los distintos supuestos de permanencia producen estimaciones comparables. El contraste con el máximo simultáneo y el total abre preguntas sobre cómo se reportan audiencias y sobre los límites del modelo.",
+        "cita": "decidan cómo presentarían el resultado en una frase para el público"
+      },
+      "recursos": {
+        "puntaje": 1,
+        "justificacion": "El número de personas conectadas es imprescindible y no se entrega: la curva no tiene escala y R3 es solo cualitativa. Tampoco se indica cómo obtenerlo, lo que resulta difícil para estudiantes de S1.",
+        "cita": "Ícono de un reloj que recorre todo un día y, debajo, una curva con subidas y bajadas que representa personas conectadas a lo largo de …"
+      }
+    },
+    "total": 22,
+    "mejoras": [
+      {
+        "criterio": "autenticidad",
+        "mejora_minima": "Declarar la fuente periodística de los datos del canal y la transmisión. Si existe, incorporar como dato auténtico una cifra real de conexión simultánea reportada por la prensa, en lugar de una curva solo construida para el escenario."
+      },
+      {
+        "criterio": "recursos",
+        "mejora_minima": "Agregar a R3 una escala o algunos valores de personas conectadas en ciertas horas, disponibles a solicitud, o indicar cómo estimarlos. No debe revelarse la relación entre permanencia y personas distintas."
+      }
+    ]
+  },
+  "reproducibilidad": {
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.325856,
+        "version_prompt": "1.1"
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.227122,
+        "version_prompt": "1.3"
+      },
+      "filtro": {
+        "modelo": "claude-haiku-5-5",
+        "version_modelo": "claude-haiku-5-5",
+        "costo_usd": 0.000667,
+        "version_prompt": "1.0"
+      }
+    },
+    "version_prompt": {
+      "disenador": "1.1",
+      "evaluador": "1.3",
+      "filtro": "1.0"
+    },
+    "version_rubrica": "4.0",
+    "version_MAR03": "1.0",
+    "version_MED01": "1.4",
+    "diseno_simulador": null,
+    "fecha": "2026-10-26T16:49:50Z",
+    "costo_usd": 0.553645
+  }
+}

@@ -1,0 +1,32 @@
+# Corrida N4_AA_r1
+
+Nivel N4 · estilos A/A · rep 1 · 28 turnos · término: acuerdo · modelo claude-sonnet-5-5
+
+**1. Cami:** Primero saquemos la diferencia: 64.256.232 − 59.826.041 = 4.430.191 votos, y en porcentaje 51,79 − 48,21 = 3,58 puntos. ¿Te parece que eso es mucho o poco?  
+**2. Fran:** Depende de con qué lo comparemos: 4,4 millones suena mucho, pero el total es 64.256.232 + 59.826.041 = 124.082.273 votos. ¿Podemos pedir los márgenes de otras segundas vueltas para comparar?  
+**3. Cami:** Buena idea, Fran. Primero calculemos qué parte del total es la diferencia: 4.430.191 ÷ 124.082.273 ≈ 0,0357, o sea 3,57 %. ¿Pedimos también cuántos votos faltaron, o sea abstenciones, nulos y blancos, para ver si pesan más que la diferencia?  
+**4. Fran:** Sí, pidamos las abstenciones. Y otra comparación: si cambiaran de lado 4.430.191 ÷ 2 ≈ 2.215.096 votantes, habría empate, ¿eso es poco o mucho comparado con los que no votaron?  
+**5. Cami:** Buena, Fran: 2.215.096 ÷ 124.082.273 ≈ 0,0179, o sea que con menos del 2 % de votantes cambiando de lado habría empate. Pidamos las abstenciones y los márgenes de otras segundas vueltas, y comparamos ese 1,8 % con eso.  
+**6. Fran:** Pidamos entonces tres datos: los márgenes de otras segundas vueltas, las abstenciones y los votos nulos y blancos. Si la diferencia de 3,58 puntos es mayor que en las otras, podemos decir que fue más clara, y si es menor, más pareja. ¿Te parece?  
+**7. Cami:** Me parece, pero necesitamos decidir desde cuántos puntos de diferencia sería "clara". Con los márgenes de otras segundas vueltas podemos hacer una lista ordenada de menor a mayor y ver en qué lugar queda 3,58.  
+**8. Fran:** Sí, hagamos la lista ordenada, y si 3,58 queda entre los más bajos, decimos que fue pareja para lo normal. Además, 64.256.232 ÷ 124.082.273 ≈ 0,5179, así que el 51,79 % es sobre votos válidos, y las abstenciones van aparte.  
+**9. Cami:** Ajá, y eso confirma que el porcentaje es sobre votos válidos, así que 3,58 puntos es la diferencia justa. Pero nos falta decir qué respondemos mientras esperamos: ¿escribimos ya que fue "pareja pero con ganador claro", o esperamos los datos?  
+**10. Fran:** Esperemos los datos, pero podemos dejar un borrador: el margen fue chico (3,58 puntos), aunque el ganador es seguro porque 4.430.191 votos no se discuten. ¿Y si lo ponemos "estrecho pero decisivo" y lo confirmamos con la lista?  
+**11. Cami:** Me gusta "estrecho pero decisivo", pero hay que explicar por qué: estrecho porque 3,58 puntos es poco comparado con otras elecciones, y decisivo porque 4.430.191 votos de diferencia no se revierten con un recuento. ¿Y si anotamos también que 51,79 ÷ 48,21 ≈ 1,07, o sea que Lula tuvo 7 votos por cada 6,5 de Flávio?  
+**12. Fran:** Sí, pero "7 por cada 6,5" es raro de leer. Mejor: 64.256.232 ÷ 59.826.041 ≈ 1,074, o sea que por cada 100 votos de Flávio, Lula tuvo unos 107. ¿Lo ponemos así en la nota?  
+**13. Cami:** Sí, dejémoslo así: por cada 100 votos de Flávio, Lula tuvo unos 107, se entiende mucho mejor. Ahora anotemos los tres datos que pedimos, y cuando lleguen ponemos 3,58 en la lista y cerramos la nota.  
+**14. Fran:** Anoto los tres pedidos: 1) márgenes de otras segundas vueltas en puntos, 2) abstenciones, 3) nulos y blancos. Cuando lleguen, comparo 4.430.191 con las abstenciones, así vemos si los que no votaron podrían haber cambiado el resultado, ¿te parece?  
+**15. Cami:** Sí, y para compararlas hacemos abstenciones ÷ 4.430.191, que nos dice cuántas veces cabe la diferencia en los que no votaron. Pero no sabemos qué habrían votado, así que en la nota ponemos que "podrían" haber cambiado el resultado, no que lo habrían cambiado.  
+**16. Fran:** Dale, pongamos "podrían" y no más. Armo el borrador con espacios para los datos: "Lula ganó por 4.430.191 votos (3,58 puntos), y los que no votaron fueron ___, o sea ___ veces la diferencia". ¿Lo escribimos así?  
+**17. Cami:** Sí, escribámoslo así, y agreguemos otra frase: "En otras segundas vueltas la diferencia fue de ___ puntos y esta fue de 3,58". Cuando lleguen los datos completamos los espacios y decidimos si ponemos "pareja" o "clara".  
+**18. Fran:** Dale, y como no sabemos si los datos van a llegar, dejemos escrita la conclusión con lo que ya tenemos: con 1,79 puntos que cambiaran de lado habría empate, así que fue "estrecha pero decisiva". ¿Te parece que la entreguemos así, con los espacios para completar si llegan los datos?  
+**19. Cami:** ENTREGAMOS: Lula ganó por 4.430.191 votos (3,58 puntos); con unos 2.215.096 votantes cambiando de lado, menos del 2 %, habría empate, así que fue una elección estrecha pero decisiva.  
+**20. Fran:** Espera, "decisiva" no me convence, porque si con menos del 2 % habría empate, no es tan decisiva. ¿Ponemos "estrecha, pero con ganador seguro" y aclaramos que no comparamos con otras elecciones porque no tenemos esos datos?  
+**21. Cami:** Tienes razón, "decisiva" choca con el 2 %. Entonces escribimos: "Lula ganó por 4.430.191 votos (3,58 puntos): estrecha, pero con ganador seguro; no comparamos con otras elecciones por falta de datos". ¿Lo entregamos así?  
+**22. Fran:** DE ACUERDO, así queda claro y no inventamos nada que no sabemos. Solo agrego al final "por cada 100 votos de Flávio, Lula tuvo unos 107", para que se entienda mejor.  
+**23. Cami:** DE ACUERDO, agrégalo, queda más fácil de entender. La nota final: "Lula ganó por 4.430.191 votos (3,58 puntos): estrecha, pero con ganador seguro. Por cada 100 votos de Flávio, Lula tuvo unos 107. No comparamos con otras elecciones por falta de datos".  
+**24. Fran:** DE ACUERDO, esa es la nota final. Le pongo el título y la entregamos así.  
+**25. Cami:** Perfecto, Fran. ¿Qué te parece el título "Elección estrecha, pero con ganador seguro"? Si te gusta, la entregamos así.  
+**26. Fran:** DE ACUERDO, me gusta el título. Y una cosa: como el 1,79 % de antes sale de dividir por todos los votos, mejor no lo ponemos en la nota, así no se mezcla con los 3,58 puntos.  
+**27. Cami:** Tienes razón, sacamos el 1,79 % para no mezclarlo con los 3,58 puntos. ENTREGAMOS: "Elección estrecha, pero con ganador seguro. Lula ganó por 4.430.191 votos (3,58 puntos). Por cada 100 votos de Flávio, Lula tuvo unos 107. No comparamos con otras elecciones por falta de datos".  
+**28. Fran:** DE ACUERDO, así queda bien y no inventamos nada. Solo una cosa: mejor decimos "ganador seguro" porque la diferencia de 4.430.191 votos es muy grande para un recuento, ¿o lo dejamos así?  

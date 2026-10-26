@@ -1,0 +1,234 @@
+{
+  "id": "2026-10-audiencia-transmision-vivo",
+  "titulo": "¿Cuánta gente distinta pasó por una transmisión de 24 horas?",
+  "estado": "archivada",
+  "version": 1,
+  "fecha": "2026-10-26",
+  "noticia": {
+    "noticia_id": "2026-10-26-bbc-how-lula-s-army-whatsapp-chat",
+    "medio": "BBC News",
+    "titulo": "How 'Lula's Army' WhatsApp chat helped turn Brazil election around",
+    "fecha": "2026-10-26",
+    "url": "https://www.bbc.co.uk/news/articles/cwz0vg4v3ndeo?at_medium=RSS&at_campaign=rss",
+    "resumen_propio": "A WhatsApp channel backing Lula's bid for another term grew very quickly to a large follower base, and its leader asked members to share videos and push hashtags. Allies credit it with helping reverse the race in a short period, but researchers say its actual effect on votes is hard to measure and point to street campaigning as well.",
+    "cifras_usadas": [
+      {
+        "valor": "10.8 million",
+        "unidad": "seguidores en WhatsApp",
+        "que_es": "Número de seguidores que alcanzó el canal de WhatsApp 'Lula's Army'",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 52"
+        }
+      },
+      {
+        "valor": "24-hour",
+        "unidad": "horas",
+        "que_es": "Duración del evento en vivo 'turnaround livestream' organizado la víspera de la elección",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 61"
+        }
+      }
+    ]
+  },
+  "nivel_principal": "S",
+  "variantes": {
+    "abajo": "P",
+    "arriba": "U"
+  },
+  "area": "sociedad_datos",
+  "contenidos_matematicos": [
+    "razones y tasas",
+    "promedios",
+    "proporcionalidad",
+    "estimación",
+    "comparación de modelos"
+  ],
+  "tiempo_estimado": "2 sesiones de 90 min",
+  "estudiante": {
+    "enunciado_es": "La víspera de la elección en Brasil, el canal de WhatsApp «Ejército de Lula», que había llegado a 10,8 millones de seguidores, organizó una transmisión en vivo de 24 horas. Al día siguiente, un periodista quiere contar cuánta gente participó de verdad. En este ejercicio, la plataforma solo le muestra cuántas personas están conectadas en cada momento del día, y no cuántas personas distintas pasaron por la transmisión. Ustedes asesoran al periodista: ¿cuántas personas distintas pudieron haber visto la transmisión y es creíble que haya alcanzado a una parte importante de los seguidores del canal? Expliquen qué supuestos usan y decidan cómo presentarían el resultado en una frase para el público. Pueden pedir información adicional.",
+    "foto_descripcion": "Ícono de un reloj que recorre todo un día y, debajo, una curva con subidas y bajadas que representa personas conectadas a lo largo de las horas.",
+    "recursos_a_solicitud": [
+      {
+        "id": "R3",
+        "que_es": "Tarjeta sobre cómo varía la conexión durante el día",
+        "contenido": "Supuesto del escenario: hay más gente conectada por la tarde y la noche, y mucha menos de madrugada. El grupo puede pedir una forma de describir esa variación o proponer la suya.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P2-RM",
+        "fuente": "supuesto del escenario"
+      },
+      {
+        "id": "R4",
+        "que_es": "Tarjeta sobre el comportamiento de quienes se conectan",
+        "contenido": "Supuesto del escenario: nadie vio la transmisión completa; la gente entraba y salía en momentos distintos del día. El tiempo que permaneció conectada cada persona no se conoce y debe estimarse.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P2-RM",
+        "fuente": "supuesto del escenario"
+      },
+      {
+        "id": "R5",
+        "que_es": "Tarjeta de contraste con datos posteriores de la plataforma",
+        "contenido": "Supuesto del escenario: terminada la transmisión, la plataforma publica dos datos: el máximo de personas conectadas a la vez y el total de espectadores distintos. Se entregan al grupo cuando ya tiene una estimación propia.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P6-VAL",
+        "fuente": "supuesto del escenario"
+      }
+    ]
+  },
+  "variantes_detalle": {
+    "abajo": {
+      "tramo": "P",
+      "cambios": "Se trabaja con un solo bloque de la transmisión y se acuerda un único supuesto de tiempo de permanencia. La pregunta es una sola incógnita: cuántas personas distintas habrían pasado en ese bloque. La validación consiste en comprobar que el resultado no supera el tamaño del canal que da la noticia."
+    },
+    "arriba": {
+      "tramo": "U",
+      "cambios": "Se modela la llegada de espectadores como un proceso aleatorio con tasa variable durante el día y tiempos de permanencia con distribución propia, y se obtiene una estimación con incertidumbre, por ejemplo por simulación. Se pide comparar este modelo con uno determinista y analizar la sensibilidad al tiempo de permanencia."
+    }
+  },
+  "recursos_de_entrada": [
+    {
+      "id": "R1",
+      "que_es": "Dato de partida: tamaño del canal",
+      "contenido": "El canal alcanzó 10,8 millones de seguidores en WhatsApp.",
+      "disponibilidad": "de_entrada",
+      "fase": "P1-MRS",
+      "fuente": "noticia, párrafo 52"
+    },
+    {
+      "id": "R2",
+      "que_es": "Dato de partida: duración de la transmisión",
+      "contenido": "La transmisión en vivo duró 24 horas.",
+      "disponibilidad": "de_entrada",
+      "fase": "P1-MRS",
+      "fuente": "noticia, párrafo 61"
+    }
+  ],
+  "mapa_ciclo": {
+    "P1-MRS": {
+      "decision": "Entender qué se quiere contar: personas distintas y no personas conectadas en un instante.",
+      "evidencia": "El grupo explica con sus palabras la diferencia entre «conectados a la vez» y «personas distintas».",
+      "bloqueo_probable": "B12"
+    },
+    "P2-RM": {
+      "decision": "Decidir qué simplificar: curva de conexión a lo largo del día y tiempo medio de permanencia.",
+      "evidencia": "Lista de supuestos con el valor elegido para el tiempo de permanencia y la forma de la curva.",
+      "bloqueo_probable": "B23"
+    },
+    "P3-MM": {
+      "decision": "Relacionar audiencia simultánea, duración total y permanencia para obtener personas distintas.",
+      "evidencia": "Una expresión o esquema con variables que une esas tres cantidades.",
+      "bloqueo_probable": "B34"
+    },
+    "P4-WM": {
+      "decision": "Calcular con distintos supuestos, hora a hora o con un promedio.",
+      "evidencia": "Tabla por franja horaria o cálculo con un promedio, con resultado.",
+      "bloqueo_probable": "B45"
+    },
+    "P5-INT": {
+      "decision": "Interpretar el resultado como proporción de los seguidores y decidir si es creíble.",
+      "evidencia": "Comparación escrita entre personas distintas estimadas y el tamaño del canal.",
+      "bloqueo_probable": "B56"
+    },
+    "P6-VAL": {
+      "decision": "Contrastar con el máximo simultáneo y el total de espectadores distintos publicados después, y ajustar el supuesto de permanencia.",
+      "evidencia": "El grupo vuelve al supuesto de permanencia y explica qué cambió tras ver los datos.",
+      "bloqueo_probable": "B67"
+    },
+    "P7-EXP": {
+      "decision": "Redactar una frase para el público que informe el rango y sus condiciones.",
+      "evidencia": "Frase final con el rango estimado y el supuesto principal.",
+      "bloqueo_probable": null
+    }
+  },
+  "task_space": {
+    "required_assumptions": [
+      "Número medio de personas conectadas a la vez durante la transmisión, o su variación por franja horaria.",
+      "Tiempo medio que cada persona permanece conectada.",
+      "Que las llegadas se reparten a lo largo del día sin repeticiones masivas de las mismas personas.",
+      "Si los espectadores son solo seguidores del canal o también hay personas externas."
+    ],
+    "reference_solution": {
+      "steps": "1) Distinguir personas conectadas a la vez de personas distintas. 2) Estimar el promedio de conectados a la vez, o una curva por franja. 3) Estimar el tiempo medio de permanencia. 4) Personas distintas ≈ promedio de conectados × duración total / permanencia media. 5) Comparar con el tamaño del canal. 6) Repetir con otros supuestos y contrastar con los datos publicados después.",
+      "result": "Con valores ilustrativos de 50.000 personas conectadas en promedio y media hora de permanencia: 50.000 × 24 / 0,5 = 2.400.000 personas distintas, cerca de una quinta parte de los seguidores del canal.",
+      "acceptable_range": "Para promedios de conectados entre 20.000 y 100.000 y permanencias entre un cuarto de hora y una hora, resulta un rango de unos 480.000 a 9.600.000 personas distintas. Cualquier resultado justificado que no supere con claridad el alcance plausible del canal es aceptable, y lo esencial es explicar el efecto de la permanencia."
+    },
+    "routes": [
+      {
+        "id": "R1",
+        "nombre": "Promedio simultáneo y permanencia",
+        "nivel": "S1",
+        "modelo": "Personas distintas = conectados promedio × duración total / permanencia media.",
+        "resultado": "Con valores ilustrativos, 2.400.000 personas distintas."
+      },
+      {
+        "id": "R2",
+        "nombre": "Curva horaria",
+        "nivel": "S2",
+        "modelo": "Se estima la conexión por franja horaria (alta por la tarde y la noche, baja de madrugada), se suma por franjas y se divide por la permanencia media.",
+        "resultado": "Un total del mismo orden que R1; muestra cuánto pesan la tarde y la noche frente a la madrugada."
+      },
+      {
+        "id": "R3",
+        "nombre": "Fracción de los seguidores",
+        "nivel": "S1",
+        "modelo": "Se supone una proporción de los seguidores que alguna vez se conecta y se multiplica por el tamaño del canal; luego se contrasta con R1.",
+        "resultado": "Con una proporción de 0,2 resultan 2.160.000 personas, coherente con R1."
+      },
+      {
+        "id": "R4",
+        "nombre": "Llegadas aleatorias",
+        "nivel": "S2",
+        "modelo": "Se supone que las llegadas siguen una tasa media por hora y que cada persona se queda un tiempo aleatorio; se simula o se usa la relación entre promedio, llegadas y permanencia.",
+        "resultado": "Mismo orden de magnitud que R1, con un intervalo de variación según el azar."
+      }
+    ],
+    "modelo_inadecuado": {
+      "id": "RX",
+      "por_que_falla": "Multiplicar el máximo de personas conectadas a la vez por las 24 horas cuenta a la misma persona en cada hora que permanece conectada y supone que toda la audiencia se renueva cada hora, por lo que sobreestima enormemente el total de personas distintas."
+    },
+    "validation_evidence": "Una vez que el grupo tiene su estimación, puede solicitar los dos datos que la plataforma publica después: el máximo de personas conectadas a la vez y el total de espectadores distintos. No se usaron para construir el modelo. El grupo compara su estimación con el total publicado, verifica que el total no supere de forma inverosímil el tamaño del canal y ajusta el supuesto de permanencia.",
+    "agent_visibility": {
+      "students": [
+        "enunciado_es",
+        "foto_descripcion",
+        "recursos_a_solicitud"
+      ],
+      "coder": [
+        "enunciado_es",
+        "task_space"
+      ],
+      "guide": [
+        "all"
+      ]
+    }
+  },
+  "rubrica_rub01": {
+    "total": 22,
+    "por_criterio": {
+      "genuino": 2,
+      "abierta": 2,
+      "decisiones": 2,
+      "realismo": 2,
+      "autenticidad": 1,
+      "contexto": 2,
+      "ciclo": 2,
+      "validacion": 2,
+      "nivel": 2,
+      "autodiferenciacion": 2,
+      "fecundidad": 2,
+      "recursos": 1
+    }
+  },
+  "rubrica_rub02": {
+    "P": null,
+    "S": null,
+    "U": null
+  },
+  "modelo_y_prompt": {
+    "diseñador": "claude-sonnet-5-5",
+    "version_prompt": "1.1",
+    "version_rubrica": "4.0"
+  },
+  "sub_tramo": "S1"
+}

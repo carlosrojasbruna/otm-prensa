@@ -1,0 +1,356 @@
+{
+  "tarea_id": "2026-10-dio-resultado-oponerse-tribunales",
+  "evaluaciones": [
+    {
+      "iteracion": 1,
+      "version_tarea": 1,
+      "fecha": "2026-10-26T16:34:20Z",
+      "modelo": "claude-opus-5-5",
+      "version_prompt": "1.3",
+      "version_rubrica": "4.0",
+      "corridas": [
+        {
+          "n": 1,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La tarea plantea una necesidad comunicativa real: evaluar y explicar una estrategia. No entrega ninguna regla ni modelo para juzgar el «resultado», así que cumple el descriptor de 2.",
+                "cita": "quieren explicar a sus compañeros si la estrategia de oponerse en tribunales dio resultado. ¿Dio resultado oponerse?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe el procedimiento. Admite varios caminos defendibles: fracción, porcentaje, gráfico o argumento de costo y esfuerzo. Además, deja abierto qué significa «dar resultado».",
+                "cita": "¿Dio resultado oponerse? ¿Cómo lo mostrarían para que cualquiera lo entienda?"
+              },
+              "decisiones": {
+                "puntaje": 1,
+                "justificacion": "Los datos centrales ya vienen seleccionados y estructurados. La única decisión relevante es qué cuenta como «dar resultado», con la opción de pedir información sobre esfuerzo. Dudo entre 1 y 2: definir el éxito es una decisión real, pero resulta casi automática frente a 68 de 73; asigno el menor.",
+                "cita": "Los periodistas revisaron 73 casos y en 68 causas la justicia terminó obligando al gobierno a conceder la rebaja."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "La situación es real: una investigación periodística sobre litigios del Estado. Existe fuera de la escuela.",
+                "cita": "Una investigación periodística revisó reclamos que presentaron en tribunales personas condenadas por delitos graves contra niños"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los datos de una investigación periodística declarada constituyen el núcleo de la tarea. Es un componente auténtico integrado de manera sustantiva.",
+                "cita": "Una investigación periodística revisó reclamos"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto judicial determina qué se considera éxito, si importan los 5 casos ganados y el esfuerzo de cada juicio. También es necesario para interpretar la cifra y comunicarla.",
+                "cita": "si la estrategia de oponerse en tribunales dio resultado"
+              },
+              "ciclo": {
+                "puntaje": 1,
+                "justificacion": "La situación llega casi simplificada y el trabajo matemático se reduce a una razón o porcentaje de dos números dados. La matematización y el trabajo matemático resultan prácticamente triviales.",
+                "cita": "en 68 causas la justicia terminó obligando al gobierno a conceder la rebaja."
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "R4 ofrece un caso nuevo, independiente de los datos usados, para contrastar la conclusión del grupo. Esto corresponde a evidencia externa.",
+                "cita": "otro grupo de reclamos parecidos, revisado después y no incluido en la investigación original, también terminó en su mayoría con la rebaja obligada"
+              },
+              "nivel": {
+                "puntaje": 1,
+                "justificacion": "La matemática (proporción, porcentaje, gráfico) está al alcance del nivel P. Sin embargo, el tema de delitos graves contra niños y el lenguaje judicial («recurso de amparo», «rebaja de condena») son poco pertinentes para estudiantes de 10 a 12 años y requieren ajustes.",
+                "cita": "personas condenadas por delitos graves contra niños, para que se les rebajara la condena"
+              },
+              "autodiferenciacion": {
+                "puntaje": 1,
+                "justificacion": "El piso es bajo y razonable: basta comparar 68 con 73. Pero con solo dos cifras el techo es bajo, porque las soluciones más sofisticadas apenas difieren en la representación.",
+                "cita": "La investigación revisó 73 casos. En 68 causas la justicia obligó finalmente al gobierno a conceder la rebaja."
+              },
+              "fecundidad": {
+                "puntaje": 1,
+                "justificacion": "R3 permite alguna discusión posterior sobre el costo frente al beneficio de litigar. Sin embargo, la respuesta central se agota rápido y hay pocas extensiones sustantivas. Dudo entre 1 y 2; asigno el menor.",
+                "cita": "cada juicio ocupa a abogados del Estado y a los tribunales durante varias semanas, y no se conoce el costo exacto de cada uno"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información necesaria está en el enunciado o disponible a solicitud (R2 a R4). Ningún recurso revela el modelo ni la forma de juzgar el resultado.",
+                "cita": "Pueden pedir información adicional."
+              }
+            },
+            "total": 19,
+            "mejoras": [
+              {
+                "criterio": "decisiones",
+                "mejora_minima": "Pedir que el grupo decida y justifique un criterio para decir que una estrategia «dio resultado», por ejemplo considerando los casos ganados frente al esfuerzo de los juicios, en lugar de dar solo el conteo 68 de 73."
+              },
+              {
+                "criterio": "ciclo",
+                "mejora_minima": "Agregar en R3 o en el enunciado datos que obliguen a estructurar un modelo: semanas de trabajo por juicio o casos ganados contra casos perdidos. Así el grupo debe estimar el esfuerzo total invertido frente a lo obtenido, y no solo calcular un porcentaje."
+              },
+              {
+                "criterio": "nivel",
+                "mejora_minima": "Mantener la investigación, pero describir los delitos de forma general (por ejemplo, «personas condenadas por delitos graves») y explicar «rebaja de condena» con lenguaje adecuado a 10 a 12 años; o bien declarar nivel S."
+              },
+              {
+                "criterio": "autodiferenciacion",
+                "mejora_minima": "Ofrecer a solicitud datos adicionales, como el desglose por año de los 73 casos o el tiempo de cada juicio. Así los grupos avanzados podrán construir comparaciones o estimaciones más refinadas."
+              },
+              {
+                "criterio": "fecundidad",
+                "mejora_minima": "Añadir una pregunta final que invite a comparar las conclusiones de distintos grupos y a proponer qué otra estrategia podría haber seguido el gobierno con esos datos."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgRAntpwMNYURg1YyGXj9",
+            "fecha": "2026-10-26T16:33:09+00:00",
+            "intentos": 1,
+            "costo_usd": 0.078318,
+            "avisos": []
+          }
+        },
+        {
+          "n": 2,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 1,
+                "justificacion": "No se entrega una regla ni un modelo, pero el dato 68 de 73 deja casi resuelta la respuesta y sugiere con fuerza comparar ambas cifras. Dudo entre 1 y 2 porque hay una necesidad comunicativa real; asigno el menor.",
+                "cita": "Los periodistas revisaron 73 casos y en 68 causas la justicia terminó obligando al gobierno a conceder la rebaja."
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe el procedimiento. Admite varias formas defendibles de definir «dar resultado» y de representarlo (fracción, porcentaje, gráfico, comparación con el esfuerzo).",
+                "cita": "¿Dio resultado oponerse? ¿Cómo lo mostrarían para que cualquiera lo entienda?"
+              },
+              "decisiones": {
+                "puntaje": 1,
+                "justificacion": "Los datos esenciales vienen dados y estructurados. Las decisiones se reducen casi a elegir la representación y a un supuesto casi automático sobre qué cuenta como éxito, lo que corresponde a decisiones menores.",
+                "cita": "Pueden pedir información adicional."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "La situación proviene de una investigación periodística real sobre litigios del Estado, por lo que existe fuera de la escuela.",
+                "cita": "Una investigación periodística revisó reclamos que presentaron en tribunales personas condenadas por delitos graves contra niños"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los datos de una investigación periodística citada (73 casos, 68 causas) constituyen el núcleo de la tarea y no fueron creados para enseñar.",
+                "cita": "Una investigación periodística revisó reclamos que presentaron en tribunales"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto determina qué cuenta como éxito de la estrategia y es indispensable para interpretar 68 de 73 como derrotas del gobierno. Por eso condiciona tanto las decisiones como la interpretación.",
+                "cita": "quieren explicar a sus compañeros si la estrategia de oponerse en tribunales dio resultado"
+              },
+              "ciclo": {
+                "puntaje": 1,
+                "justificacion": "La simplificación ya viene hecha por los datos entregados. El trabajo matemático es trivial (una fracción o un porcentaje), de modo que hay fases prácticamente hechas.",
+                "cita": "La investigación revisó 73 casos. En 68 causas la justicia obligó finalmente al gobierno a conceder la rebaja."
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "R4 ofrece un caso nuevo e independiente, no usado en la construcción, con el cual contrastar la conclusión del grupo.",
+                "cita": "otro grupo de reclamos parecidos, revisado después y no incluido en la investigación original, también terminó en su mayoría con la rebaja obligada"
+              },
+              "nivel": {
+                "puntaje": 1,
+                "justificacion": "La matemática (proporción, porcentaje, gráfico) está al alcance del nivel P. Sin embargo, el tema de delitos graves contra niños y la jerga judicial son poco pertinentes para estudiantes de 10 a 12 años y requieren ajustes. Dudo entre 0 y 1 y asigno 1 porque el contexto sigue siendo comprensible.",
+                "cita": "personas condenadas por delitos graves contra niños, para que se les rebajara la condena"
+              },
+              "autodiferenciacion": {
+                "puntaje": 1,
+                "justificacion": "El piso es muy accesible, pero la tarea admite pocas soluciones claramente más sofisticadas más allá de elegir otra representación, por lo que el techo es bajo.",
+                "cita": "¿Cómo lo mostrarían para que cualquiera lo entienda?"
+              },
+              "fecundidad": {
+                "puntaje": 1,
+                "justificacion": "R3 permite alguna discusión posterior sobre el esfuerzo de litigar. Aun así, la tarea casi se agota al concluir que la estrategia no funcionó y ofrece pocas extensiones sustantivas.",
+                "cita": "cada juicio ocupa a abogados del Estado y a los tribunales durante varias semanas, y no se conoce el costo exacto de cada uno"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información necesaria está en el enunciado o puede solicitarse. Ningún recurso revela cómo modelar o representar la respuesta.",
+                "cita": "R2 (Explicación de qué es un recurso de amparo), disponible a solicitud del grupo"
+              }
+            },
+            "total": 18,
+            "mejoras": [
+              {
+                "criterio": "genuino",
+                "mejora_minima": "Entregar a solicitud datos de otro año o de otra estrategia (por ejemplo, casos en que el gobierno no se opuso), de modo que «dar resultado» exija construir una comparación y no se lea directamente de 68 de 73."
+              },
+              {
+                "criterio": "decisiones",
+                "mejora_minima": "Pedir que el grupo decida y justifique qué significa que la estrategia «dio resultado» (por ejemplo, considerando el tiempo y los recursos de R3) y que estime el esfuerzo total de los 73 juicios a partir de un supuesto propio."
+              },
+              {
+                "criterio": "ciclo",
+                "mejora_minima": "Agregar una pregunta que obligue a matematizar algo no dado, como estimar cuántas semanas de trabajo de abogados del Estado se usaron en total y si valió la pena para los 5 casos ganados."
+              },
+              {
+                "criterio": "nivel",
+                "mejora_minima": "Reemplazar la referencia a delitos graves contra niños por una descripción neutra (por ejemplo, «personas condenadas que pidieron rebajar su condena») y explicar el recurso judicial en lenguaje cotidiano dentro del enunciado."
+              },
+              {
+                "criterio": "autodiferenciacion",
+                "mejora_minima": "Incluir a solicitud una estimación de semanas por juicio, para que los grupos más avanzados puedan relacionar resultados con esfuerzo y no solo presentar el porcentaje."
+              },
+              {
+                "criterio": "fecundidad",
+                "mejora_minima": "Agregar una pregunta final que pida comparar las representaciones de distintos grupos y discutir qué otra estrategia podría haber seguido el gobierno con esos datos."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgRAqdCBgp1u2HLCPiWqP",
+            "fecha": "2026-10-26T16:33:46+00:00",
+            "intentos": 1,
+            "costo_usd": 0.083938,
+            "avisos": []
+          }
+        },
+        {
+          "n": 3,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La situación plantea una necesidad: juzgar y comunicar si una estrategia funcionó. No entrega una regla ni un procedimiento para hacerlo.",
+                "cita": "quieren explicar a sus compañeros si la estrategia de oponerse en tribunales dio resultado."
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe el método. Admite varias formas defendibles de argumentar y representar: fracción, porcentaje, gráfico o consideración del esfuerzo.",
+                "cita": "¿Dio resultado oponerse? ¿Cómo lo mostrarían para que cualquiera lo entienda?"
+              },
+              "decisiones": {
+                "puntaje": 1,
+                "justificacion": "Los datos necesarios vienen dados. Las decisiones se reducen a qué cuenta como «dar resultado» y cómo representarlo, y solicitar R3 es optativo. Dudé con el 2, pero quien resuelve no está obligado a suponer, estimar ni obtener información.",
+                "cita": "Los periodistas revisaron 73 casos y en 68 causas la justicia terminó obligando al gobierno a conceder la rebaja."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "La situación proviene de una investigación periodística real. Evaluar si una estrategia judicial del gobierno funcionó es una pregunta plausible fuera de la escuela.",
+                "cita": "Una investigación periodística revisó reclamos que presentaron en tribunales personas condenadas por delitos graves contra niños"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los datos de la investigación periodística declarada son el núcleo de la tarea, de modo que el componente auténtico está integrado de manera sustantiva. R3 y R4 son supuestos fabricados, pero son secundarios.",
+                "cita": "La investigación revisó 73 casos. En 68 causas la justicia obligó finalmente al gobierno a conceder la rebaja."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto define qué resultado cuenta como éxito o fracaso del gobierno. También es necesario para interpretar la proporción y comunicarla en el diario escolar.",
+                "cita": "si la estrategia de oponerse en tribunales dio resultado"
+              },
+              "ciclo": {
+                "puntaje": 1,
+                "justificacion": "La situación ya viene simplificada en dos cifras. Matematizar y trabajar matemáticamente se reduce a comparar 68 con 73 o con los 5 casos restantes, por lo que esas fases resultan triviales.",
+                "cita": "en 68 causas la justicia terminó obligando al gobierno a conceder la rebaja"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "R4 ofrece un caso nuevo, no usado en la construcción, con el cual contrastar la conclusión del grupo. Esto es evidencia independiente.",
+                "cita": "otro grupo de reclamos parecidos, revisado después y no incluido en la investigación original, también terminó en su mayoría con la rebaja obligada"
+              },
+              "nivel": {
+                "puntaje": 1,
+                "justificacion": "La matemática (proporción, porcentaje simple, gráfico de barras) está al alcance de P. Sin embargo, el tema de delitos graves contra niños y el lenguaje judicial son poco pertinentes y delicados para 10–12 años, y requieren ajustes. Dudé con el 0 y asigné el menor solo porque R2 aclara el lenguaje.",
+                "cita": "personas condenadas por delitos graves contra niños, para que se les rebajara la condena"
+              },
+              "autodiferenciacion": {
+                "puntaje": 1,
+                "justificacion": "El piso es bajo: basta comparar 5 con 68. El techo es limitado, porque aparte de incorporar cualitativamente el esfuerzo de R3 la tarea no admite modelos claramente más sofisticados.",
+                "cita": "¿Cómo lo mostrarían para que cualquiera lo entienda?"
+              },
+              "fecundidad": {
+                "puntaje": 1,
+                "justificacion": "Hay espacio para alguna discusión posterior, por ejemplo qué significa «dar resultado» o el esfuerzo invertido. Las extensiones sustantivas y la comparación entre modelos son pocas.",
+                "cita": "cada juicio ocupa a abogados del Estado y a los tribunales durante varias semanas, y no se conoce el costo exacto de cada uno"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información necesaria está en el enunciado y los recursos R2–R4 se entregan a solicitud. Ninguno revela el modelo ni la forma de mostrar la conclusión.",
+                "cita": "Pueden pedir información adicional."
+              }
+            },
+            "total": 19,
+            "mejoras": [
+              {
+                "criterio": "decisiones",
+                "mejora_minima": "Pedir que el grupo decida y justifique qué entiende por «dar resultado». Por ejemplo, considerar si los casos ganados compensan el esfuerzo de todos los juicios, estimando con R3 cuántas semanas de trabajo se usaron en total."
+              },
+              {
+                "criterio": "ciclo",
+                "mejora_minima": "Agregar una segunda pregunta que obligue a construir un modelo, como estimar el esfuerzo total invertido frente a los 5 casos ganados. Así matematizar deja de ser solo comparar dos cifras."
+              },
+              {
+                "criterio": "nivel",
+                "mejora_minima": "Mantener la investigación sobre la estrategia judicial, pero describir los casos sin detallar el tipo de delito (p. ej., «reclamos de personas condenadas pidiendo rebaja de condena»). Así el tema se vuelve pertinente para 10–12 años."
+              },
+              {
+                "criterio": "autodiferenciacion",
+                "mejora_minima": "Invitar a comparar el resultado con otra forma de medir el éxito, como la proporción de casos ganados frente al tiempo total empleado. Esto permite soluciones más elaboradas además de la fracción simple."
+              },
+              {
+                "criterio": "fecundidad",
+                "mejora_minima": "Cerrar con una pregunta de reflexión: ¿con qué porcentaje de casos ganados habrían dicho que la estrategia sí dio resultado? ¿Por qué distintos grupos podrían concluir distinto?"
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgRAtKLxecsPAqGqmEGdf",
+            "fecha": "2026-10-26T16:34:20+00:00",
+            "intentos": 1,
+            "costo_usd": 0.078898,
+            "avisos": []
+          }
+        }
+      ],
+      "totales": [
+        19,
+        18,
+        19
+      ],
+      "rango_total": 1,
+      "rango_inestable": 4,
+      "evaluacion_inestable": false,
+      "mediana": {
+        "regla": "mediana por criterio (n par: mediana inferior)",
+        "total": 19,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 1,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 1,
+          "validacion": 2,
+          "nivel": 1,
+          "autodiferenciacion": 1,
+          "fecundidad": 1,
+          "recursos": 2
+        },
+        "corrida_fuente": {
+          "genuino": 1,
+          "abierta": 1,
+          "decisiones": 1,
+          "realismo": 1,
+          "autenticidad": 1,
+          "contexto": 1,
+          "ciclo": 1,
+          "validacion": 1,
+          "nivel": 1,
+          "autodiferenciacion": 1,
+          "fecundidad": 1,
+          "recursos": 1
+        }
+      }
+    }
+  ]
+}

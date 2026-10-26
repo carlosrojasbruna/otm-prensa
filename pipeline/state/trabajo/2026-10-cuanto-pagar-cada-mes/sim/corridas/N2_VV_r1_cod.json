@@ -1,0 +1,219 @@
+{
+  "run": {
+    "id": "N2_VV_r1",
+    "nivel": "N2",
+    "composicion": "VV",
+    "rep": 1,
+    "estilos": [
+      "V",
+      "V"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.07924,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P2-RM",
+        "fase_secundaria": "P1-MRS",
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P3-MM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P4-WM",
+        "fase_secundaria": "P3-MM",
+        "eventos": []
+      },
+      {
+        "n": 4,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "PREC",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P5-INT",
+        "fase_secundaria": "P2-RM",
+        "eventos": []
+      },
+      {
+        "n": 6,
+        "fase": "P5-INT",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P3-MM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 8,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 9,
+        "fase": "P5-INT",
+        "fase_secundaria": "P4-WM",
+        "eventos": []
+      },
+      {
+        "n": 10,
+        "fase": "P5-INT",
+        "fase_secundaria": "EMK",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 11,
+        "fase": "P2-RM",
+        "fase_secundaria": "EMK",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 12,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 13,
+        "fase": "P3-MM",
+        "fase_secundaria": "EMK",
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 14,
+        "fase": "P2-RM",
+        "fase_secundaria": "EMK",
+        "eventos": [
+          "ASSUME",
+          "STRAT",
+          "DIST"
+        ]
+      },
+      {
+        "n": 15,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 16,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 17,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 18,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 19,
+        "fase": "P5-INT",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 20,
+        "fase": "P5-INT",
+        "fase_secundaria": "P7-EXP",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 21,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 22,
+        "fase": "P6-VAL",
+        "fase_secundaria": null,
+        "eventos": []
+      }
+    ],
+    "bloqueos": [
+      {
+        "codigo": "B23",
+        "turnos": [
+          13,
+          14
+        ],
+        "resolucion": "peer",
+        "descripcion": "A duda si el interés se cobra sobre toda la deuda o sobre el saldo pendiente y no sabe cómo matematizarlo; B lo destraba suponiendo interés sobre el saldo que se achica."
+      }
+    ],
+    "supuestos": [
+      "deuda de ejemplo de 1.000.000",
+      "cuotas iguales",
+      "pie del 10% pagado al contado",
+      "sin intereses el total pagado es igual",
+      "interés hipotético de 1% mensual",
+      "interés sobre el saldo pendiente"
+    ],
+    "modelo": "proporcional",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Con una deuda de 1.000.000 y un interés supuesto de 1% mensual, 24 cuotas con pie es lo más barato; si la persona no puede pagar esa cuota, 48 cuotas alivia cada mes pero paga más en total. El 1% fue inventado y habría que preguntarlo."
+    },
+    "ruta_principal": "R1",
+    "rutas": [
+      "R1",
+      "R2",
+      "R3"
+    ]
+  }
+}

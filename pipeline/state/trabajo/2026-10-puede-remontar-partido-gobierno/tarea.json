@@ -1,0 +1,260 @@
+{
+  "id": "2026-10-puede-remontar-partido-gobierno",
+  "titulo": "¿Ya está decidida la elección con el 97 % contado?",
+  "estado": "archivada",
+  "version": 1,
+  "fecha": "2026-10-26",
+  "noticia": {
+    "noticia_id": "2026-10-26-bbc-celebrations-in-serbia-after-veteran-ruler",
+    "medio": "BBC News",
+    "titulo": "Celebrations in Serbia after veteran ruler Vučić loses election to student-led protest movement",
+    "fecha": "2026-10-26",
+    "url": "https://www.bbc.co.uk/news/articles/cw5yn3xlprpmo?at_medium=RSS&at_campaign=rss",
+    "resumen_propio": "Serbia's long-serving leader conceded snap parliamentary elections to a movement that grew out of student protests after a deadly canopy collapse at a railway station. Preliminary counts gave the students a clear lead over his governing party, and celebrations spread through major cities. The movement, which fielded candidates from doctors to athletes, now faces forming a government, while a presidential vote is scheduled for December.",
+    "cifras_usadas": [
+      {
+        "valor": "97%",
+        "unidad": "porcentaje de mesas escrutadas",
+        "que_es": "Proporción de casillas contadas cuando la comisión electoral informó los votos de los estudiantes y del partido de gobierno.",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 54"
+        }
+      },
+      {
+        "valor": "2.25 million",
+        "unidad": "votos",
+        "que_es": "Votos obtenidos por la lista de los estudiantes según la comisión electoral.",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 54"
+        }
+      },
+      {
+        "valor": "1.67 million",
+        "unidad": "votos",
+        "que_es": "Votos obtenidos por el antiguo partido gobernante según la comisión electoral.",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 54"
+        }
+      },
+      {
+        "valor": "52.7%",
+        "unidad": "porcentaje de votos",
+        "que_es": "Porcentaje de votos de la lista de los estudiantes según cifras preliminares del movimiento.",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 55"
+        }
+      },
+      {
+        "valor": "39.2%",
+        "unidad": "porcentaje de votos",
+        "que_es": "Porcentaje de votos del Partido Progresista Serbio (SNS) según cifras preliminares.",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 55"
+        }
+      }
+    ]
+  },
+  "nivel_principal": "S",
+  "variantes": {
+    "abajo": "P",
+    "arriba": "U"
+  },
+  "area": "sociedad_datos",
+  "contenidos_matematicos": [
+    "porcentajes y regla de tres",
+    "estimación de cantidades pendientes",
+    "escenarios extremos y cotas",
+    "sensibilidad de una conclusión"
+  ],
+  "tiempo_estimado": "2 sesiones de 90 min",
+  "estudiante": {
+    "enunciado_es": "Un equipo de noticias sigue en vivo las elecciones parlamentarias anticipadas de Serbia. Cuando la comisión electoral había contado el 97 % de las mesas, informó 2,25 millones de votos para la lista de los estudiantes y 1,67 millones para el antiguo partido de gobierno. La editora debe decidir si ya puede titular que el partido de gobierno no alcanzará a la lista estudiantil o si es mejor esperar el resto del conteo. Ustedes deben asesorarla: ¿qué le recomendarían y qué tan seguros pueden estar de esa recomendación? Pueden pedir información adicional.",
+    "foto_descripcion": "Pantalla de televisión con una barra de progreso de conteo casi llena y dos barras de votos sin escala numérica.",
+    "recursos_a_solicitud": [
+      {
+        "id": "R2",
+        "que_es": "Porcentajes preliminares de las dos fuerzas principales",
+        "contenido": "Según cifras preliminares, la lista de los estudiantes tiene 52,7 % de los votos y el Partido Progresista Serbio (SNS) tiene 39,2 %.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P3-MM",
+        "fuente": "noticia, párrafo 55"
+      },
+      {
+        "id": "R3",
+        "que_es": "Información sobre el tamaño de las mesas pendientes",
+        "contenido": "Supuesto del escenario: las mesas que faltan por contar tienen un tamaño parecido al de las ya contadas, pero no se sabe en qué zonas están ni cuántos votantes tiene cada una.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P2-RM",
+        "fuente": "supuesto del escenario"
+      },
+      {
+        "id": "R4",
+        "que_es": "Información sobre el comportamiento de las mesas que se cuentan al final",
+        "contenido": "Supuesto del escenario: en esta elección no hay datos públicos sobre si las mesas que se cuentan al final votan distinto de las primeras; el equipo debe decidir cuánto margen darle a esa posibilidad.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P2-RM",
+        "fuente": "supuesto del escenario"
+      },
+      {
+        "id": "R5",
+        "que_es": "Conteo final oficial para contrastar la recomendación",
+        "contenido": "Cuando el grupo entregue su recomendación, se le muestra el resultado final oficial del conteo publicado por la comisión electoral.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P6-VAL",
+        "fuente": "otra fuente: Comisión Electoral Republicana de Serbia, resultados oficiales"
+      }
+    ]
+  },
+  "variantes_detalle": {
+    "abajo": {
+      "tramo": "P",
+      "cambios": "Se indica de entrada que las mesas que faltan se parecen a las ya contadas y que solo compiten las dos listas. Se pregunta si el resto del conteo alcanza para cambiar quién va primero, usando una cuenta de proporciones simple."
+    },
+    "arriba": {
+      "tramo": "U",
+      "cambios": "Se pide modelar las mesas pendientes como una muestra aleatoria con variabilidad, estimar la probabilidad de que el resultado se revierta con intervalos de confianza y criticar el supuesto de mesas homogéneas."
+    }
+  },
+  "recursos_de_entrada": [
+    {
+      "id": "R1",
+      "que_es": "Datos del conteo parcial entregados al grupo al comenzar",
+      "contenido": "Con el 97 % de las mesas escrutadas, la lista de los estudiantes tenía 2,25 millones de votos y el antiguo partido de gobierno 1,67 millones.",
+      "disponibilidad": "de_entrada",
+      "fase": "P1-MRS",
+      "fuente": "noticia, párrafo 54"
+    }
+  ],
+  "mapa_ciclo": {
+    "P1-MRS": {
+      "decision": "Entender qué significa que falte el 3 % de las mesas y qué quiere decir que el partido de gobierno alcance a la lista estudiantil; decidir qué datos pedir.",
+      "evidencia": "El grupo explica con sus palabras qué debe ocurrir para que cambie el resultado y pide datos sobre tamaño y ubicación de las mesas pendientes.",
+      "bloqueo_probable": "B12"
+    },
+    "P2-RM": {
+      "decision": "Decidir cuántos votos quedan por contar (mesas de tamaño parecido) y qué escenarios considerar, incluido el extremo.",
+      "evidencia": "Lista de supuestos con la estimación de votos pendientes y los escenarios elegidos.",
+      "bloqueo_probable": "B23"
+    },
+    "P3-MM": {
+      "decision": "Expresar la brecha de votos y los votos pendientes y comparar cuánto debería ganar el partido de gobierno en el resto.",
+      "evidencia": "Relación escrita entre brecha, votos pendientes y proporción necesaria.",
+      "bloqueo_probable": "B34"
+    },
+    "P4-WM": {
+      "decision": "Calcular los votos pendientes por regla de tres, la brecha y el tamaño que tendrían que tener las mesas pendientes para cambiar el resultado.",
+      "evidencia": "Cálculos con al menos un escenario extremo y otro más realista.",
+      "bloqueo_probable": "B45"
+    },
+    "P5-INT": {
+      "decision": "Traducir los cálculos a una recomendación para la editora: titular ya o esperar, indicando el margen de seguridad.",
+      "evidencia": "Recomendación escrita con la razón numérica principal.",
+      "bloqueo_probable": "B56"
+    },
+    "P6-VAL": {
+      "decision": "Contrastar con el conteo final oficial y revisar qué supuesto sobre las mesas pendientes pesó más.",
+      "evidencia": "Comparación entre lo estimado y el resultado final, con comentario sobre los supuestos.",
+      "bloqueo_probable": "B67"
+    },
+    "P7-EXP": {
+      "decision": "Comunicar la recomendación a la editora con el argumento numérico y las condiciones bajo las cuales cambiaría de opinión.",
+      "evidencia": "Explicación breve o titular propuesto con su justificación.",
+      "bloqueo_probable": null
+    }
+  },
+  "task_space": {
+    "required_assumptions": [
+      "Las mesas pendientes tienen tamaño parecido al de las ya contadas.",
+      "Se debe decidir cuánto margen se da a que las mesas finales voten distinto.",
+      "Se compara cuántos votos faltan con la brecha entre las dos listas.",
+      "Hay un escenario extremo en que todos los votos pendientes van al partido de gobierno."
+    ],
+    "reference_solution": {
+      "steps": "1) Brecha actual: 2,25 − 1,67 = 0,58 millones de votos. 2) Votos pendientes: con 97 % contado, los votos de las dos listas (3,92 millones) corresponden al 97 %; el 3 % restante son cerca de 0,12 millones de votos de esas dos listas. Si se incluyen otras listas (total contado cerca de 4,27 millones por 52,7 %), quedan cerca de 0,13 millones de votos pendientes en total. 3) Escenario extremo: si todos los pendientes fueran para el partido de gobierno, tendría cerca de 1,80 millones, por debajo de 2,25. 4) Para alcanzarla necesitaría más de 0,58 millones solo en las mesas pendientes, cerca de cuatro a cinco veces lo esperado; es decir, mesas muy grandes y con casi todos los votos. 5) Escenario más realista: si el partido de gobierno obtiene el 70 % de los votos pendientes, gana unos 0,05 millones netos de la brecha, que quedaría cerca de 0,53 millones. 6) Recomendación: sí puede titular que la lista estudiantil gana, con una nota sobre el supuesto de mesas homogéneas.",
+      "result": "El partido de gobierno no puede alcanzar a la lista estudiantil con lo que falta: la brecha de unos 0,58 millones es cerca de cuatro a cinco veces mayor que los votos pendientes estimados (cerca de 0,12 a 0,13 millones).",
+      "acceptable_range": "Votos pendientes entre cerca de 0,12 y 0,14 millones, brecha final entre cerca de 0,45 y 0,58 millones; se aceptan recomendaciones distintas en estilo siempre que justifiquen el supuesto sobre el tamaño de las mesas pendientes y la conclusión sea coherente con los números."
+    },
+    "routes": [
+      {
+        "id": "R1",
+        "nombre": "Regla de tres sobre los votos pendientes",
+        "nivel": "S1",
+        "modelo": "Si el 97 % equivale a los votos contados, el 3 % equivale a esa cantidad dividida por 97 y multiplicada por 3; se compara con la brecha.",
+        "resultado": "Cerca de 0,12 millones pendientes frente a una brecha de 0,58 millones: no hay remontada."
+      },
+      {
+        "id": "R2",
+        "nombre": "Escenario extremo y tamaño necesario",
+        "nivel": "S1",
+        "modelo": "Se calcula cuántos votos adicionales necesitaría el partido de gobierno (más que la brecha) y se compara con los pendientes esperados como múltiplo.",
+        "resultado": "Necesitaría mesas pendientes cerca de cuatro a cinco veces mayores y con todos los votos: se descarta."
+      },
+      {
+        "id": "R3",
+        "nombre": "Tabla de sensibilidad con dos variables",
+        "nivel": "S2",
+        "modelo": "Tabla de dos entradas: tamaño relativo de las mesas pendientes por proporción de votos para el partido de gobierno; se busca la zona donde la brecha se cierra.",
+        "resultado": "La zona de remontada exige tamaños y proporciones fuera de lo plausible."
+      },
+      {
+        "id": "R4",
+        "nombre": "Mesas pendientes como muestra aleatoria",
+        "nivel": "U",
+        "modelo": "Se modela la proporción en las mesas pendientes con intervalo de confianza a partir de la variabilidad entre mesas y se estima la probabilidad de reversión.",
+        "resultado": "Probabilidad de reversión prácticamente nula bajo supuestos razonables."
+      }
+    ],
+    "modelo_inadecuado": {
+      "id": "R5",
+      "por_que_falla": "Concluir solo desde el porcentaje de mesas contadas, como si el 97 % garantizara el resultado o como si el 3 % restante se sumara a ambas listas por igual, no compara la brecha con los votos pendientes; el mismo 97 % no sería suficiente si la brecha fuera menor que lo que puede llegar en el resto del conteo."
+    },
+    "validation_evidence": "Conteo final oficial de la comisión electoral con todas las mesas, que no se usa para construir el modelo: se compara si la lista estudiantil mantuvo el primer lugar y cuánto cambió la brecha respecto de la estimación.",
+    "agent_visibility": {
+      "students": [
+        "enunciado_es",
+        "foto_descripcion",
+        "recursos_a_solicitud"
+      ],
+      "coder": [
+        "enunciado_es",
+        "task_space"
+      ],
+      "guide": [
+        "all"
+      ]
+    }
+  },
+  "rubrica_rub01": {
+    "total": 24,
+    "por_criterio": {
+      "genuino": 2,
+      "abierta": 2,
+      "decisiones": 2,
+      "realismo": 2,
+      "autenticidad": 2,
+      "contexto": 2,
+      "ciclo": 2,
+      "validacion": 2,
+      "nivel": 2,
+      "autodiferenciacion": 2,
+      "fecundidad": 2,
+      "recursos": 2
+    }
+  },
+  "rubrica_rub02": {
+    "P": null,
+    "S": null,
+    "U": null
+  },
+  "modelo_y_prompt": {
+    "diseñador": "claude-sonnet-5-5",
+    "version_prompt": "1.1",
+    "version_rubrica": "4.0"
+  },
+  "sub_tramo": "S1"
+}
