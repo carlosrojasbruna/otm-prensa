@@ -1,0 +1,259 @@
+# Guía docente · ¿Cuántos escaños tendría la lista estudiantil?
+
+Tarea `2026-10-escanos-lista-estudiantil-serbia` · guía versión 1 · 2026-10-26. Licencia CC BY-NC-SA 4.0. Generado desde `guia` (JSON, fuente de verdad).
+
+## 0. Ficha
+
+| Campo | Valor |
+|---|---|
+| Título | ¿Cuántos escaños tendría la lista estudiantil? |
+| Noticia | BBC News, «Celebrations in Serbia after veteran ruler Vučić loses election to student-led protest movement», 2026-10-26, https://www.bbc.co.uk/news/articles/cw5yn3xlprpmo?at_medium=RSS&at_campaign=rss |
+| Nivel principal | S |
+| Variantes | P; U |
+| Contenidos | proporcionalidad y porcentajes; estimación y proyección; comparación de escenarios; reparto proporcional de escaños |
+| Tiempo | 2 sesiones de 90 min |
+| Puntaje RUB01 | 24/24 |
+| Versión y fecha | v1 · 2026-10-26 |
+| Cambios | — |
+
+## 1. Meta de la clase (C1)
+
+Cómo el grupo pasa de un conteo parcial de votos a una estimación de escaños con un rango y un grado de seguridad explícitos. Interesa ver qué supuestos eligen sobre las listas pequeñas y las mesas que faltan, si distinguen votos de escaños y de mayoría, y si contrastan su estimación con el dato oficial y ajustan sus supuestos.
+
+**Contenido.** Proporcionalidad y porcentajes (obtener un total a partir de una cantidad y su porcentaje), reparto proporcional de escaños, estimación y proyección con el 97 % de mesas escrutadas, y comparación de escenarios frente a la mayoría de un parlamento de 250 escaños.
+
+**Subcompetencias de modelación.**
+
+- Comprender la situación: distinguir votos, escaños y mayoría, y decidir qué datos pedir (P1-MRS)
+- Simplificar: elegir y justificar supuestos sobre reparto proporcional, mesas pendientes y listas pequeñas (P2-RM)
+- Matematizar: relacionar votos, porcentaje y escaños sobre los votos que cuentan para el reparto (P3-MM)
+- Trabajar: obtener el total de votos, proyectar el conteo final y calcular escaños en al menos dos escenarios (P4-WM)
+- Interpretar: traducir los cálculos a un rango de escaños y compararlo con la mayoría para gobernar solos (P5-INT)
+- Validar: contrastar con el reparto oficial y revisar la coherencia entre votos y porcentajes (P6-VAL)
+- Comunicar: redactar un aviso con rango, grado de seguridad y supuestos clave (P7-EXP)
+
+**Meta social.** Trabajo cooperativo en grupos pequeños, donde cada integrante verbaliza y justifica los supuestos y los cálculos antes de acordar una sola estimación para el medio.
+
+**Evidencia que se recoge.**
+
+- Reformulación escrita de lo que se estima y lista de datos solicitados (P1-MRS)
+- Hoja de supuestos con su justificación (P2-RM)
+- Expresión o esquema que relaciona votos, porcentaje y escaños (P3-MM)
+- Tabla de cálculos con al menos dos escenarios y los escaños obtenidos (P4-WM)
+- Frase con el rango de escaños que responde si la lista podría gobernar sin aliados (P5-INT)
+- Comparación escrita entre la estimación y el reparto oficial, con ajuste de supuestos (P6-VAL)
+- Aviso breve o cartel para el medio con estimación, supuestos e incertidumbre (P7-EXP)
+
+## 2. Análisis a priori del espacio de soluciones (C2)
+
+### Rutas
+
+| Ruta | Nombre | Nivel | Modelo |
+|---|---|---|---|
+| R1 | Escaños según porcentaje sobre todos los votos | S1 | Escaños = porcentaje preliminar de la lista × 250 escaños; incógnita lineal con regla de tres. |
+| R2 | Reparto entre las dos listas principales | S1 | Proporción de votos de la lista estudiantil entre las dos listas: 2,25 / (2,25 + 1,67) por 250 escaños; tratada como cota superior. |
+| R3 | Escenarios con umbral y mesas pendientes | S2 | Se proyecta el total de votos con el 97 % y se calcula la proporción de la lista sobre los votos que cuentan, probando varios escenarios de listas bajo el umbral y de mesas pendientes. |
+| R4 | Reparto con método de cifra mayor y simulación | U | Reparto por cifra mayor (D'Hondt) con varias listas pequeñas simuladas y mesas pendientes aleatorias; análisis de sensibilidad. |
+
+### Modelo inadecuado (R5)
+
+Suponer que la lista con más votos se lleva todos los escaños, o que el escaño es la diferencia de votos entre listas, ignora que el reparto es proporcional; así la estimación sería 250 o un número sin sentido en vez de cerca de 132 a 143.
+
+### Solución de referencia
+
+1) Con 2,25 millones de votos y 52,7 %, el total de votos contados es cerca de 4,27 millones (coherente con 1,67 millones y 39,2 %). Quedan fuera de las dos listas cerca de 8,1 % de los votos. 2) Mayoría propia: más de la mitad de 250, es decir, al menos 126 escaños. 3) Escenario base sin umbral: 52,7 % de 250, cerca de 132 escaños. 4) Escenario con umbral: si la mitad de ese 8,1 % corresponde a listas bajo el umbral, la lista estudiantil tiene cerca de 54,9 % de los votos que cuentan, o sea cerca de 137 escaños. Si todo el resto queda bajo el umbral, 2,25 de 3,92 es cerca de 57,4 %, o sea cerca de 143 escaños. 5) Sensibilidad al 3 % de mesas pendientes: el total final sería cerca de 4,40 millones; en el caso extremo en que todo lo pendiente fuera de otras listas, la lista estudiantil tendría 2,25 de 4,40, cerca de 51,1 %, o sea cerca de 128 escaños. 6) Comunicar un rango y la conclusión de que lo más probable es una mayoría propia. Resultado: Entre cerca de 132 y 143 escaños según el umbral y las listas pequeñas (estimación central cerca de 137), por encima de los 126 necesarios; incluso en el peor caso para las mesas pendientes serían cerca de 128.
+
+**Rango aceptable.** Se aceptan estimaciones centrales entre 130 y 145 escaños con supuestos explícitos y una conclusión coherente sobre la mayoría; el resultado depende del umbral y de lo que se suponga sobre las mesas pendientes.
+
+### Barreras anticipadas por fase
+
+| Fase | Barrera |
+|---|---|
+| P1-MRS | Confundir votos con escaños, o creer que tener más votos ya equivale a tener mayoría. También leer el 97 % de mesas escrutadas como si fuera el porcentaje de apoyo a la lista, o no ver qué datos faltan (otras listas, mesas pendientes, reglas de reparto). Es el bloqueo B12 de comprender a simplificar. |
+| P2-RM | No ver que hay que decidir supuestos: dar por hecho que solo compiten las dos listas, no preguntar por un porcentaje mínimo para recibir escaños ni por las mesas pendientes. Es probable adoptar el modelo inadecuado de que la lista con más votos se lleva todos los escaños, o de que el escaño es la diferencia de votos. Es el bloqueo B23. |
+| P3-MM | Mezclar las bases del porcentaje: aplicar el porcentaje preliminar a todos los votos o la proporción entre solo dos listas sin notar que cada una responde a un supuesto distinto sobre qué votos cuentan para el reparto. Puede costar expresar la relación entre votos, porcentaje y escaños. Es el bloqueo B34. |
+| P4-WM | Obtener el total de votos a partir de un número de votos y su porcentaje (la incógnita está en la base, no en la parte). Proyectar el conteo final con el 97 % escrutado y sostener más de un escenario sin perder el hilo de los supuestos. Es el bloqueo B45. |
+| P5-INT | Quedarse con un solo número sin rango, o no comparar con la mayoría necesaria, que es más de la mitad de los 250 escaños. También puede costar pasar de un resultado numérico a una respuesta sobre si la lista gobernaría sin aliados. Es el bloqueo B56. |
+| P6-VAL | Tomar el reparto oficial como simple respuesta correcta o incorrecta y no como evidencia para revisar supuestos. Tampoco es evidente revisar la coherencia entre los votos informados y los porcentajes preliminares. Es el bloqueo B67. |
+| P7-EXP | El mapa del ciclo no prevé un bloqueo en esta fase. La dificultad previsible es redactar un aviso que exprese seguridad sin sonar a certeza total ni a duda sin criterio, y que haga visibles los supuestos clave en pocas líneas. |
+
+## 3. Organización (C3, C4, C7)
+
+| Momento | Tiempo | Qué hacen los estudiantes | Qué hace el docente |
+|---|---|---|---|
+| Comprensión y trabajo grupal (sesión 1): comprender, simplificar y matematizar | 70 min | Leen el enunciado y reformulan con sus palabras qué se estima. Anotan qué datos faltan y los piden al docente. Escriben su lista de supuestos con justificación y proponen una primera relación entre votos, porcentaje y escaños. Empiezan los cálculos. | Entrega el enunciado y los datos de entrada. Circula y diagnostica preguntando qué han hecho y qué decidieron y por qué. Entrega los recursos a solicitud (R2, R3, R4) solo cuando el grupo los pide, sin completar sus decisiones. No interviene todavía con ayudas; solo registra bloqueos observados (B12, B23, B34). |
+| Puesta en común (sesión 1) | 20 min | Cada grupo comparte sus supuestos y la relación que propone entre votos y escaños. Comparan qué supuestos eligieron y por qué. | Modera. Pide justificar cada supuesto y hace visibles las diferencias entre grupos sin decir cuál es el correcto. No entrega la regla ni el resultado. |
+| Comprensión y trabajo grupal (sesión 2): trabajar e interpretar | 40 min | Retoman su modelo, obtienen el total de votos, proyectan el conteo final y calculan escaños en al menos dos escenarios. Formulan un rango y responden si la lista podría gobernar sin aliados. Entregan su estimación al docente. | Circula y diagnostica preguntando qué han hecho. Si hay traba, aplica primero la ayuda mínima, una pregunta sobre qué representa cada número, antes de cualquier otra. Registra los bloqueos B45 y B56 y recoge la estimación de cada grupo antes de mostrar R5. |
+| Puesta en común (sesión 2) | 20 min | Presentan su rango de escaños y sus supuestos clave. Comparan rutas y escenarios entre grupos y discuten qué supuestos más mueven el resultado. | Ordena las presentaciones para contrastar rutas (todos los votos, solo dos listas, escenarios con umbral y mesas pendientes). Pregunta qué supone cada una. No declara la mejor. |
+| Validación y cierre | 30 min | Reciben el reparto oficial (R5) y lo comparan por escrito con su estimación. Revisan la coherencia entre votos y porcentajes y ajustan sus supuestos. Redactan el aviso para el medio con rango, grado de seguridad y supuestos. | Entrega R5 solo después de recibir la estimación de cada grupo. Pregunta qué supuesto explica la diferencia y qué cambiarían. Cierra reconociendo las decisiones de modelación tomadas por los grupos. |
+
+**Agrupamiento.** Grupos pequeños y estables durante las dos sesiones, para que cada integrante pueda hablar y decidir. El docente no asigna rutas; cada grupo elige su camino.
+
+**Roles.** Portavoz (presenta y justifica ante el curso), registrador de supuestos (mantiene la hoja de supuestos), responsable de cálculos (ordena la tabla de escenarios) y verificador (pregunta si cada número tiene sentido frente al enunciado). Los roles rotan entre las dos sesiones.
+
+**Producciones que se registran.**
+
+- Reformulación del problema y lista de datos solicitados
+- Hoja de supuestos con justificación
+- Expresión o esquema que relaciona votos, porcentaje y escaños
+- Tabla de cálculos con al menos dos escenarios
+- Frase con el rango de escaños y la respuesta sobre gobernar sin aliados
+- Comparación escrita entre la estimación y el reparto oficial, con ajuste de supuestos
+- Aviso o cartel para el medio con estimación, supuestos e incertidumbre
+
+**Tecnología.** Calculadora u hoja de cálculo permitidas para la fase P4-WM (cálculos, total de votos, proyección y tabla de escenarios). No se usan para decidir supuestos (P2-RM) ni para elegir el modelo (P3-MM). No se consulta el resultado oficial por cuenta propia: lo entrega el docente en P6-VAL.
+
+## 4. Escenarios simulados (C2, C6)
+
+Derivados de las trazas del simulador; cada escenario cita las corridas que lo respaldan.
+
+### E1 · escenarios para las otras listas
+
+| Campo | Valor |
+|---|---|
+| Corridas | N4_VV_r1 |
+| Perfil del grupo | Tramo S (secundaria), nivel N4, estilo VV. |
+| Ruta observada | P4-WM → P2-RM → P4-WM → P6-VAL → P7-EXP |
+| Supuestos que emergieron | escaños proporcionales a los votos; existen otros partidos con votos desconocidos; escenarios de 10 %, 20 % y 30 % para los otros partidos; listas bajo el umbral quedan fuera y sus votos no cuentan en el reparto; mayoría propia con 126 escaños; el 3 % pendiente podría votar distinto (sin cuantificar) |
+| Modelo al que llegaron | proporcional |
+| Dónde se trabaron y cómo se destrabaron | sin bloqueos |
+
+**Qué aprende el curso.** Es la ruta más corta entre las corridas. El grupo arranca calculando, pero no se queda con el reparto solo entre las dos listas. Reconoce que faltan los otros partidos, pide el umbral y el método de reparto, y convierte el dato que falta en escenarios explícitos. Comparado con E2 y E4, el curso ve que un supuesto inventado sirve si se nombra como escenario y se usa para encontrar desde dónde se pierde la mayoría. Además, el umbral cambia qué votos cuentan. El grupo menciona el 3 % pendiente, pero no lo cuantifica: queda abierto qué haría con esas mesas.
+
+**Extracto de diálogo simulado.**
+
+> **Fran:** Mientras nos contestan, hagamos escenarios: que los otros saquen 10 %, 20 % o 30 %, y vemos cuándo la lista estudiantil se cae de los 126 escaños. [dibujo: hemiciclo con una línea en la silla 126]  
+> **Fran:** Me cuadra el 13 %, pero si algunos de los otros no pasan el umbral, sus votos no cuentan y la cuña gris se achica, así que a la lista estudiantil le bastaría con menos del 50 % de los votos. Yo publicaría un rango, tipo 115 a 140 escaños, y diría que la mayoría es probable pero no segura.  
+
+### E2 · bloqueo en matematizar
+
+| Campo | Valor |
+|---|---|
+| Corridas | N1_AA_r1 |
+| Perfil del grupo | Tramo S (secundaria), nivel N1, estilo AA. |
+| Ruta observada | P1-MRS → P3-MM → P2-RM → P4-WM → P6-VAL → P1-MRS → P3-MM → P6-VAL → P2-RM → P4-WM → P6-VAL → P4-WM → P5-INT → P3-MM → P4-WM → P5-INT → P6-VAL → P7-EXP |
+| Supuestos que emergieron | reparto proporcional a los votos; escenario con solo las dos listas principales; existe un umbral mínimo y los votos bajo él no reparten escaños; las mesas pendientes podrían votar distinto (escenarios extremos); mayoría propia = más de la mitad, 126 escaños |
+| Modelo al que llegaron | proporcional |
+| Dónde se trabaron y cómo se destrabaron | B23: Resolución entre pares (peer). El grupo no sabía cómo llevar a una expresión el 97 % de mesas contadas. Cami dudó a qué cantidad aplicar la división por 0,97, porque la suma de las dos listas no es todo lo contado. Fran le confirmó que la división corresponde al total contado, incluidos los otros partidos. Ambos acordaron pedir ese total antes de calcular. |
+
+**Qué aprende el curso.** Es la ruta más larga: el grupo vuelve varias veces a comprender, simplificar y validar. Su traba no es de cálculo. Es decidir sobre qué base se proyecta el conteo final. Frente a E1, el curso ve que proyectar las mesas pendientes exige antes definir qué votos forman el total. También ve que el escenario con solo dos listas se usa como caso de referencia, no como respuesta. El grupo calcula hasta cuánto pueden sumar los otros partidos sin quitarle la mayoría a la lista estudiantil.
+
+**Extracto de diálogo simulado.**
+
+> **Fran:** Sí, pidamos el total de votos o el porcentaje de los otros. Y también el 97 %, porque eso es lo contado y falta un 3 %, ¿lo sumamos o cómo lo hacemos?  
+> **Cami:** Mmm, no sé si se suma. Yo pensaría que lo contado es el 97 %, entonces para el 100 % haría algo como cantidad ÷ 0,97, pero ¿qué cantidad? Porque 3,92 solo son dos listas, no todo lo contado, ¿o me estoy enredando?  
+> **Fran:** No, tienes razón: el ÷ 0,97 sería para el total contado, o sea 3,92 más lo de los otros partidos. Entonces pidamos ese total, y ahí recién hacemos total ÷ 0,97, ¿cierto?  
+
+### E3 · bloqueo en validar
+
+| Campo | Valor |
+|---|---|
+| Corridas | N4_AA_r1 |
+| Perfil del grupo | Tramo S (secundaria), nivel N4, estilo AA. |
+| Ruta observada | P3-MM → P4-WM → P2-RM → P6-VAL → P4-WM → P3-MM → P5-INT → P6-VAL → P3-MM → P7-EXP → P6-VAL |
+| Supuestos que emergieron | solo dos listas (escenario de 143 escaños); mesas faltantes votan igual que las contadas (cuestionado); mayoría propia = más de la mitad de 250 (126 escaños); otras listas suman 20 % (valor hipotético, luego descartado como límite); reparto proporcional a los votos que cuentan; posible umbral mínimo para obtener escaños; con D'Hondt el más votado obtiene algo más que su porcentaje |
+| Modelo al que llegaron | proporcional |
+| Dónde se trabaron y cómo se destrabaron | B67: Quedó sin resolver (sin_resolver). Cami presentó la entrega llamando máximo al escenario con solo dos listas. Fran objetó que eso no es seguro: con D'Hondt el más votado obtiene más que su porcentaje, y las mesas pendientes pueden votar distinto. La corrida termina con esa objeción planteada y sin una versión acordada que la incorpore. |
+
+**Qué aprende el curso.** El grupo descarta como límite un valor que había inventado para las otras listas y lo trata como escenario. Luego discute si el valor calculado con solo dos listas es un techo. El curso ve que validar también es revisar qué afirma el modelo y qué deja fuera: el método de reparto y las mesas pendientes. Sirve para discutir cómo cerrar una comunicación cuando hay una objeción razonable sin resolver.
+
+**Extracto de diálogo simulado.**
+
+> **Cami:** ENTREGAMOS: con el 97 % contado, la lista estudiantil tendría como máximo unos 143 escaños; baja a 126 si las otras listas suman un 12 %. Sin ese dato ni el sistema de reparto, no afirmamos que gobiernen solos, seguridad baja.  
+> **Fran:** No estoy de acuerdo del todo: decir que 143 es "máximo" no es seguro, porque con D'Hondt el más votado se lleva más que su porcentaje y el 3 % que falta puede votar distinto. Pongamos que 143 es el valor proporcional si no hubiera otras listas, y que el 126 también depende del sistema de reparto.  
+
+### E4 · punto de quiebre
+
+| Campo | Valor |
+|---|---|
+| Corridas | N3_AA_r1 |
+| Perfil del grupo | Tramo S (secundaria), nivel N3, estilo AA. |
+| Ruta observada | P4-WM → P2-RM → P4-WM → P2-RM → P4-WM → P6-VAL → P3-MM → P5-INT → P6-VAL → P7-EXP |
+| Supuestos que emergieron | reparto proporcional de escaños; mesas pendientes votan como las contadas; las dos listas suman un porcentaje supuesto del total (85 %, 90 %); votos de listas bajo el umbral no cuentan; mayoría propia = 126 escaños |
+| Modelo al que llegaron | proporcional |
+| Dónde se trabaron y cómo se destrabaron | sin bloqueos |
+
+**Qué aprende el curso.** El grupo prueba valores supuestos para lo que suman las dos listas principales. Luego cambia la pregunta: busca la condición que decide la mayoría. Además verifica que proyectar las mesas pendientes con el mismo factor no altera esa condición. Comparado con E1 y E3, el curso ve que el supuesto de mesas pendientes parecidas a las contadas se puede poner a prueba. También ve que la respuesta puede publicarse como una condición basada en el dato que falta.
+
+**Extracto de diálogo simulado.**
+
+> **Cami:** Ojo, que todo depende de ese 85 % que inventamos: con 90 % sería T = 3,92/0,9 ≈ 4,36 millones, 2,25/4,36 ≈ 52 %, o sea unos 129 escaños, ya mayoría. Entonces el dato clave es qué porcentaje del total suman los dos, y también cuántos votos se pierden en listas bajo el umbral.  
+> **Cami:** Ojo, que ese quiebre no cambia en porcentaje: 4,04/4,64 ≈ 87 %, igual que 3,92/4,5, porque ambos se escalan por 0,97. Entonces lo que decide es si los dos suman más o menos de 87 % de los votos que cuentan, y eso lo publicamos con poca seguridad hasta tenerlo, ¿cierto?  
+
+
+Tabla agregada de bloqueos (6 grupos simulados):
+
+| Transición | Grupos que se trabaron | % |
+|---|---|---|
+| B23 | 1/6 | 17 % |
+| B67 | 1/6 | 17 % |
+
+## 5. Intervenciones graduadas por bloqueo anticipado (C5, C6)
+
+La ayuda mínima primero; diagnosticar antes de intervenir. Ninguna ayuda entrega la regla.
+
+| Bloqueo | Z1–Z2 motivación / retroalimentación | Z3 estratégica general | Z4 estratégica de contenido | Z5 contenido (último recurso) |
+|---|---|---|---|---|
+| B23 | Pregunten: «¿Qué han escrito hasta ahora y qué cantidad quieren proyectar al 100 % de las mesas?». Reconozcan que dudar sobre la base es parte del trabajo. En el escenario E2 la traba no era de cálculo, sino decidir sobre qué votos se proyecta. | Pidan que dibujen un esquema de la situación: todos los votos contados, la parte de la lista estudiantil, la parte del antiguo partido de gobierno y una parte sin nombre. Luego que rotulen cada parte con lo que se sabe y lo que falta. | Pregunten: «Los 2,25 y los 1,67 millones, ¿suman todo lo contado? ¿Qué votos faltan en su esquema y qué dato pedirían para conocerlos?». Si dudan del umbral, remítanlos a la pregunta de qué votos entran al reparto de escaños. | Entreguen, si la piden, la información a solicitud: el recurso R2 de recursos_a_solicitud (porcentajes preliminares) o el R3 (condición del umbral). Pidan que con ese dato escriban con sus palabras qué votos forman el total contado y qué votos cuentan para el reparto. No escriban la expresión por ellos ni el resultado. |
+| B67 | Pregunten: «Lean su aviso como lo leería un lector del medio. ¿Qué afirma y qué deja fuera?». Si hay una objeción dentro del grupo, como en E3, valídenla como parte de la validación y no como un conflicto. | Propongan que hagan una lista de dos columnas: «lo que el modelo afirma» y «lo que el modelo no controla». Que redacten la entrega solo después de completarla. | Pregunten: «¿Pueden asegurar que la cifra con solo dos listas es un techo? ¿Qué supuestos sobre el método de reparto y sobre las mesas pendientes podrían moverla? ¿Qué parte de su aviso debería decir menos seguridad?». | Muestren el recurso R4 (no se sabe dónde están las mesas pendientes) como razón para no cerrar la cifra. Cuando el grupo entregue su estimación, ofrezcan el recurso R5 (reparto final oficial) para que ajuste sus supuestos. Pidan una versión del aviso que incorpore la objeción. No den el rango ni el modelo. |
+| B12 | Pregunten: «¿Qué piden saber las preguntas del enunciado: votos, escaños o mayoría? ¿Qué quiere decir que el 97 % de las mesas esté escrutado?». | Pidan que reformulen la pregunta del medio con sus palabras y que hagan una lista de lo que se sabe y lo que falta. | Pregunten: «¿Con 2,25 millones y 1,67 millones de votos basta para saber cuántos escaños tiene cada bando? ¿Qué más pedirían?». Como en E1 y E2, anímenlos a pedir datos sobre otras listas, umbral y mesas pendientes. | Ofrezcan los recursos R3 y R4 de recursos_a_solicitud para pensar qué simplificar. No indiquen cómo se reparten los escaños. |
+| B56 | Pregunten: «¿Qué dicen sus cálculos respecto de la pregunta del medio? ¿Responden si podrían gobernar sin aliados?». | Pidan que escriban una frase para un lector que no vio los cálculos y que vuelvan al enunciado para comprobar que responde lo preguntado. | Pregunten: «¿Con qué número comparan sus escaños para decidir si gobiernan solos? ¿Su resultado es una cifra o varias según los supuestos?». Como en E4, orienten hacia la condición que decide la mayoría. | Pidan que ordenen sus escenarios de menor a mayor número de escaños y que digan en cuáles se cumple la mayoría propia y en cuáles no. No den el rango ni la conclusión. |
+
+## 6. Puesta en común: orquestar soluciones múltiples (C8)
+
+### Selección y orden
+
+1. Primero E1 (anticipar y monitorear): es la ruta más corta y muestra cómo un dato que falta, los otros partidos, se convierte en escenarios explícitos. Sirve para partir de un grupo que no se queda con el reparto solo entre las dos listas y para que el docente no imponga su propia ruta.
+2. Segundo E2 (seleccionar): muestra la traba al matematizar, sobre qué base se proyecta el 97 % contado. Se presenta después de E1 para que el curso vea por qué el total contado incluye a los otros partidos y por qué el caso de dos listas es solo una referencia.
+3. Tercero E4 (secuenciar): el grupo pasa de probar valores supuestos a buscar la condición que decide la mayoría y comprueba que proyectar las mesas pendientes no la altera. Conecta con E1 y E2: un supuesto inventado sirve si se nombra y se pone a prueba.
+4. Cuarto E3 (conectar): cierra con la validación sin resolver, donde se objeta que la cifra de dos listas sea un techo. Se deja al final para discutir cómo comunicar con seguridad baja y para pasar al contraste con la evidencia independiente.
+
+### Preguntas
+
+- ¿Qué supuestos usaron E1, E2, E3 y E4, y cuáles se repiten? ¿Cuáles son decisiones del grupo y cuáles se piden como dato?
+- ¿Sobre qué votos se calcula la proporción de la lista estudiantil y por qué importa si el total incluye a las listas pequeñas?
+- ¿Por qué en E2 la suma de las dos listas no es todo lo contado? ¿Qué cambia si se la trata como total?
+- ¿Qué cambia si las listas bajo el umbral quedan fuera del reparto? ¿Hacia dónde mueve eso la estimación?
+- ¿Qué supuesto sobre las mesas pendientes se puede poner a prueba, como en E4? ¿Qué significaría que votaran distinto?
+- ¿La cifra con solo dos listas es un techo, como la presenta E3, o depende del método de reparto? ¿Cómo lo dirían en el aviso?
+- ¿Qué ruta es más eficiente para responder si la lista gobierna sin aliados y cuál informa mejor sobre la seguridad?
+- ¿Dónde falla el modelo R5, según el que se lleva todos los escaños o toma la diferencia de votos? ¿Qué en el enunciado lo contradice?
+- ¿Publicarían un número o un rango? ¿Con qué grado de seguridad y con qué supuestos clave escritos en el aviso?
+
+### Contraste con la evidencia independiente
+
+Antes de mostrar nada, cada grupo fija por escrito su estimación y sus supuestos. Luego se muestra el recurso R5, el reparto final oficial de escaños publicado por la comisión electoral, que no se usó para construir ningún modelo. Cada grupo compara su rango con ese dato y dice si lo contiene y si su conclusión sobre la mayoría propia coincide. Si no coincide, identifica cuál supuesto lo explica: umbral, listas pequeñas, mesas pendientes o método de reparto, y lo ajusta. Además, se revisa la coherencia entre los votos informados y los porcentajes preliminares, por ejemplo los 2,25 millones de votos y el 52,7 %. Esa revisión sirve para comprobar el total contado que usó cada grupo.
+
+## 7. Evaluación del trabajo del estudiante
+
+Pendiente en PLT02 v0.1 (rúbrica por fase del ciclo); esta versión de la guía no la incluye.
+
+## 8. Variantes y continuidad (P3, C9)
+
+**Uso de variantes.** Variante hacia abajo (P, 10–12): úsese si el grupo no logra salir de la comprensión y la simplificación (bloqueos B12 y B23) o si el curso es de primaria. Se informa de entrada que solo compiten las dos listas y que cada escaño corresponde a una parte igual de los votos. La pregunta pasa a ser cuántos escaños aproximados tendría cada lista y cuál tendría más. Se omiten el umbral y las mesas pendientes. Variante hacia arriba (U, 18–20): úsese si un grupo resuelve con rapidez las rutas de escenarios con umbral y mesas pendientes y necesita más desafío. Se quitan los porcentajes preliminares y se pide modelar el reparto de escaños con un método explícito entre varias listas, con incertidumbre en las mesas pendientes. Se simulan escenarios, se analiza la sensibilidad a los supuestos y se critica el modelo. Ninguna de las dos variantes es null. Ambas se entregan como cambio del enunciado, sin dar la regla ni el resultado.
+
+**Acostumbramiento.** Si el grupo nunca ha modelado, conviene una actividad previa breve con datos cotidianos, por ejemplo una votación de curso contada a medias: se pide estimar el resultado final, escribir qué se supone sobre lo que falta y decir con qué seguridad se afirma. Así se practica distinguir datos de supuestos y dar un rango antes de enfrentar esta tarea. Por su extensión en dos sesiones y su cadena completa de fases, esta tarea funciona mejor como parte de una secuencia, o como iniciación solo si el docente acompaña con la actividad previa. No es un buen diagnóstico rápido.
+
+**Tarea siguiente.** No definida.
+
+## 9. Materiales
+
+| Material | Archivo |
+|---|---|
+| tarea_pdf | tarea.pdf |
+| recursos_tarjetas | recursos.pdf |
+| notebook | escenarios.ipynb |
+| icono | icono.svg |
+
+## 10. Trazabilidad
+
+| Paso | Registro |
+|---|---|
+| Noticia | https://www.bbc.co.uk/news/articles/cw5yn3xlprpmo?at_medium=RSS&at_campaign=rss |
+| Diseño | claude-sonnet-5-5, prompt 1.1 |
+| RUB01 | 24/24 |
+| Revisión humana 1 | carlos rojas bruna (2026-10-26) |
+| Simulación | 6 grupos, diseño diseno_otm |
+| Guía | redactor: claude-sonnet-5-5, redactor_escenarios: claude-opus-5-5, version_prompt: 1.0 |
+| Revisión humana 2 | carlos rojas bruna (2026-10-26) |
+| Commit | — |
