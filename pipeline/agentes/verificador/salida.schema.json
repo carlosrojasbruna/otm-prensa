@@ -9,7 +9,7 @@
   "properties": {
     "tarea_id": {"type": "string", "minLength": 1},
     "aprobado": {"type": "boolean"},
-    "estado_destino": {"enum": ["verificada", "simulada"]},
+    "estado_destino": {"enum": ["verificada", "simulada", "evaluada"]},
     "hallazgos": {
       "type": "array",
       "items": {
@@ -44,6 +44,13 @@
           },
           "resultado": {"enum": ["coincide", "distinto", "sin_localizador", "localizador_inexistente", "no_verificable"]},
           "metodo": {"enum": ["codigo", "codigo+modelo"]},
+          "localizador_corregido": {
+            "description": "Localizador corregido cuando la cifra está a ±1 párrafo del citado (advertencia).",
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["fuente", "ubicacion"],
+            "properties": {"fuente": {"type": "string"}, "ubicacion": {"type": "string"}}
+          },
           "nota": {"type": "string"}
         }
       }

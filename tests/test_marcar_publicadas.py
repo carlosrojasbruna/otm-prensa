@@ -99,3 +99,9 @@ def test_workflow_publicada_solo_tras_merge_de_publicar():
     assert "merged == true" in cond and "'publicar/'" in cond
     texto = json.dumps(d["jobs"])
     assert "pipeline.marcar_publicadas" in texto and "otm_hook.py staged" in texto and "ANTHROPIC_API_KEY" not in texto
+
+
+def test_publicada_tiene_grupo_de_concurrencia_propio():
+    """El 2026-10-26 un tramo B encolado en el grupo `semanal` canceló la ejecución pendiente de publicada.yml."""
+    d = yaml.safe_load((RAIZ / ".github" / "workflows" / "publicada.yml").read_text(encoding="utf-8"))
+    assert d["concurrency"] == {"group": "publicada", "cancel-in-progress": False}

@@ -282,3 +282,51 @@ def test_fuente_noticia_sin_localizador_se_rechaza_como_en_el_verificador():
     assert errores_fuente_recursos(tarea("noticia"))
     assert not errores_fuente_recursos(tarea("noticia, párrafo 12"))
     assert not errores_fuente_recursos(tarea("noticia, titular"))
+
+
+# --------------------------------------------------------------------------- max_tokens (ciclo 2026-10-26)
+def _caso_diseno_largo():
+    """Un caso de diseño de una ronda con la noticia alargada: 24 cifras (como las notas de La Tercera y CIPER
+    que se cortaron el 2026-10-26) y el resumen al máximo de su contrato."""
+    caso = next(c for c in map(cargar, CASOS) if c["modo"] == "diseno" and c["criterio_aceptacion"].get("rondas", 1) == 1)
+    n = caso["noticia"]
+    extra = [{**copy.deepcopy(n["cifras"][0]), "que_es": f"dato adicional {i} de la nota"} for i in range(24 - len(n["cifras"]))]
+    n["cifras"] = n["cifras"] + extra
+    assert validar_contra_esquema(n, "noticia")
+    return caso
+
+
+def test_max_tokens_reintenta_una_vez_con_salida_corta():
+    caso = _caso_diseno_largo()
+    cliente = ClienteFalso([("max_tokens", '{"candidatos": [{"enfoque": "cortado'),
+                            copy.deepcopy(caso["respuestas_simuladas"][0])])
+    r = dis.disenar(caso["noticia"], caso["nivel"], fecha="2026-10-20", cliente=cliente)
+    assert len(r["candidatos"]) == 2
+    assert len(cliente.llamadas) == 2                       # no 3 intentos iguales
+    primero, segundo = (ll["messages"][0]["content"] for ll in cliente.llamadas)
+    assert dis.INSTRUCCION_SALIDA_CORTA not in primero
+    assert dis.INSTRUCCION_SALIDA_CORTA in segundo
+    assert all(ll["max_tokens"] == dis.CONFIG["max_tokens"] >= 32000 for ll in cliente.llamadas)
+    assert all(ll.get("timeout") for ll in cliente.llamadas)   # la SDK exige timeout explícito sin streaming
+    assert r["meta"]["historial"][0]["errores"] == [(-1, ["stop_reason=max_tokens"])]
+    assert r["meta"]["costo_usd"] > 0                       # el intento cortado también se cuenta
+
+
+def test_max_tokens_dos_veces_falla_con_el_costo_de_ambas():
+    from pipeline.llm import SalidaTruncada
+    caso = _caso_diseno_largo()
+    cliente = ClienteFalso([("max_tokens", "{"), ("max_tokens", "{")])
+    with pytest.raises(SalidaTruncada) as ei:
+        dis.disenar(caso["noticia"], caso["nivel"], fecha="2026-10-20", cliente=cliente)
+    assert len(cliente.llamadas) == 2
+    from pipeline.llm import costo_usd, modelo_de
+    una = costo_usd({"input_tokens": 1000, "output_tokens": 200}, modelo_de("disenador"))
+    assert ei.value.costo_usd == pytest.approx(2 * una)
+
+
+def test_llamar_no_repite_igual_tras_max_tokens():
+    from pipeline.llm import SalidaTruncada, llamar
+    cliente = ClienteFalso([("max_tokens", "{"), {"ok": True}])
+    with pytest.raises(SalidaTruncada):
+        llamar(agente="filtro", system="s", user="u", schema={"type": "object"}, cliente=cliente)
+    assert len(cliente.llamadas) == 1

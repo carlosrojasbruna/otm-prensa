@@ -21,6 +21,7 @@ Uso desde un hook (código de salida 0 = cumple, 2 = bloquea):
 """
 from __future__ import annotations
 
+import html
 import json
 import re
 import sys
@@ -235,13 +236,30 @@ def textos_de(artefacto: Any) -> Iterator[str]:
             yield from textos_de(v)
 
 
+# Metadatos de una cita de noticia (medio, título, fecha, URL e identificadores derivados del titular). No son
+# cuerpo: la URL de un medio suele repetir el titular en su slug (y en `utm_campaign`), y el id de la noticia
+# también. Ciclo 2026-10-26: 4 borradores de CIPER se rechazaron por la URL citada (ver decisiones.md).
+CAMPOS_CITA = frozenset({"titulo", "url", "fecha", "medio", "medio_id", "id", "noticia_id"})
+_URL = re.compile(r"(?i)(?:\bhttps?://|\bwww\.|(?<![\w.])/\d{4}/\d{2}/)\S+")
+
+
+def texto_plano(texto: str) -> str:
+    """Texto de la noticia sin HTML ni URLs. `bajar_cuerpo` devuelve los <p> crudos de la página, que en algunos
+    medios (CIPER) arrastran menús, índices y botones de compartir con enlaces cuyo slug repite el titular. Lo
+    que se compara para la invariante 3 es la prosa del cuerpo, no el marcado."""
+    t = re.sub(r"(?s)<!--.*?-->", " ", texto)
+    t = re.sub(r"(?is)<(script|style|iframe)\b.*?</\1>", " ", t)
+    t = html.unescape(re.sub(r"<[^>]+>", " ", t))
+    return _URL.sub(" ", t)
+
+
 def _es_cita(d: Mapping[str, Any]) -> bool:
     """Cita de una noticia: el artefacto `noticia`, `tarea.noticia` o la `noticia` de una entrada del catálogo."""
     return all(k in d for k in ("medio", "titulo", "url"))
 
 
 def textos_sin_titulares(artefacto: Any) -> tuple[list[str], list[str]]:
-    """(cadenas del artefacto sin el `titulo` de las citas de noticia, titulares encontrados)."""
+    """(cadenas del artefacto sin los metadatos (`CAMPOS_CITA`) de las citas de noticia, titulares encontrados)."""
     textos: list[str] = []
     titulares: list[str] = []
 
@@ -251,8 +269,9 @@ def textos_sin_titulares(artefacto: Any) -> tuple[list[str], list[str]]:
         elif isinstance(x, Mapping):
             cita = _es_cita(x)
             for k, v in x.items():
-                if cita and k == "titulo" and isinstance(v, str):
-                    titulares.append(v)
+                if cita and k in CAMPOS_CITA:
+                    if k == "titulo" and isinstance(v, str):
+                        titulares.append(v)
                 else:
                     rec(v)
         elif isinstance(x, (list, tuple)):
@@ -273,14 +292,18 @@ def cumple_limite_literal(
     El titular se cita completo y queda fuera del conteo (CLAUDE.md, decisión del 2026-10-20; contrato
     `noticia` v1.2): en un artefacto se omite el `titulo` de toda cita de noticia (objeto con `medio`,
     `titulo` y `url`); en una cadena (p. ej. un .md renderizado) se quitan las apariciones exactas de los
-    `titulares` que se entreguen. El límite sigue rigiendo para resumen_propio, enunciado, recursos y guía."""
+    `titulares` que se entreguen. El límite sigue rigiendo para resumen_propio, enunciado, recursos y guía.
+
+    Además (ciclo 2026-10-26) la cita completa queda fuera: también su URL, fecha e ids (`CAMPOS_CITA`), y las URLs
+    no cuentan en ningún lado; `fuente` se reduce a texto plano (`texto_plano`) antes de comparar."""
     if isinstance(texto, str):
         for tit in sorted({t for t in titulares if t and t.strip()}, key=len, reverse=True):
             texto = texto.replace(tit, " ")
         cadenas = [texto]
     else:
         cadenas, _ = textos_sin_titulares(texto)
-    peor, tramo = max_palabras_consecutivas_comunes(" ".join(cadenas), fuente)
+    cadenas = [_URL.sub(" ", c) for c in cadenas]
+    peor, tramo = max_palabras_consecutivas_comunes(" ".join(cadenas), texto_plano(fuente))
     errores = [f"{peor} palabras consecutivas de la noticia (> {limite}): «{tramo}»"] if peor > limite else []
     return Resultado.desde_errores(errores, max_consecutivas=peor)
 

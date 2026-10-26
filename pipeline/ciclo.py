@@ -20,7 +20,15 @@ lo inventa. Por eso:
     `--continuar` también reanuda expedientes que quedaron a medio camino (error o tope): retoma
     desde su estado actual; `--revisor` solo se exige si el expediente está en `evaluada`.
 
-Otras órdenes: `--estado` lista los expedientes y su estado.
+Otras órdenes: `--estado` lista los expedientes y su estado. `--archivar ID ... --motivo M --revisor R` registra
+una revisión humana 1 negativa (`evaluada → archivada`, sin API).
+
+Verificación previa (CP2): antes de pasar a `revisada` y antes de simular corre el verificador solo con código
+sobre la tarea (cifras buscadas en toda la nota, ±1 párrafo; fuentes de recursos; invariante 3). Un hallazgo crítico
+sobre la tarea —aquí o en el verificador después de la guía— deja el expediente en `evaluada` con la marca
+`hallazgos_tarea`, pendiente de la revisión humana 1 (nueva versión, `--archivar` o `--continuar --revisor R
+--aceptar-hallazgos`). `--version-sin-cambios ID --motivo M` rescata una tarea archivada por un falso rechazo
+(v+1 idéntica, evaluación heredada, simulación y guía reutilizables; sin API). Solo un rechazo que concierne a la guía la rehace; al segundo, se archiva.
 
 Invariantes que aplica este módulo además de las del orquestador:
   - Condición 1 de CP1: `evaluador.corridas` corridas por evaluación; puntaje oficial = mediana por
@@ -249,6 +257,11 @@ def _verificar_real(tarea, guia, trazas, noticia, *, cliente, texto_noticia) -> 
     return verificar(tarea, guia, trazas, noticia=noticia, texto_noticia=texto_noticia, cliente=cliente)
 
 
+def _verificar_tarea_real(tarea, noticia, *, texto_noticia) -> dict:
+    from pipeline.agentes.verificador.run import verificar_tarea
+    return verificar_tarea(tarea, noticia, texto_noticia=texto_noticia)
+
+
 def _publicar_dry_run(tarea, guia, evaluacion, trazas, *, texto_noticia) -> dict:
     """Bibliotecario en ensayo: valida y calcula, no escribe ni ejecuta nada."""
     from pipeline.agentes.bibliotecario.run import publicar
@@ -293,6 +306,7 @@ class Agentes:
     redactar: Callable = _redactar_real
     ilustrar: Callable = _ilustrar_real
     verificar: Callable = _verificar_real
+    verificar_tarea: Callable = _verificar_tarea_real   # solo código, sin modelo: antes de simular (CP2)
     publicar: Callable = _publicar_dry_run
     versiones_prompt: Callable = _versiones_prompt
 
@@ -753,9 +767,50 @@ class Ciclo:
             ent["evaluacion_inestable"] = True
         self.registro["pendientes_humanos"].append(ent)
 
+    def _preverificar(self, exp: orq.Expediente) -> dict:
+        """Verificador sobre la tarea antes de simular (decisión de Carlos para CP2): solo código, costo 0.
+        Corrige en la tarea y en la noticia los localizadores corridos ±1 párrafo (advertencia) y anota el
+        informe en `trabajo/<id>/preverificacion.json` y en la marca `preverificacion`."""
+        from pipeline.agentes.verificador.run import aplicar_localizadores
+        art = exp.artefactos
+        inf = self.agentes.verificar_tarea(art["tarea"], art.get("noticia"), texto_noticia=self._texto_de(exp))
+        _escribir(self.rutas.de(exp.tarea_id) / "preverificacion.json", inf)
+        corr = {int(k): v for k, v in (inf.get("localizadores_corregidos") or {}).items()}
+        if corr:
+            tarea, noticia = aplicar_localizadores(art["tarea"], corr, art.get("noticia"))
+            errores = list(inv.validar_contra_esquema(tarea, "tarea").errores)
+            if noticia is not None:
+                errores += inv.validar_contra_esquema(noticia, "noticia").errores
+            if errores:   # invariante 1: no se guarda nada que no valide
+                raise orq.ArtefactoInvalido("localizadores corregidos inválidos", tuple(errores))
+            art["tarea"] = tarea
+            if noticia is not None:
+                art["noticia"] = noticia
+            exp.marcas.setdefault("localizadores_corregidos", []).append(
+                {"fecha": ahora_utc(), "etapa": "preverificacion", "correcciones": {str(k): v for k, v in corr.items()}})
+        aceptados = {c for a in exp.marcas.get("hallazgos_aceptados", []) for c in a["hallazgos"]}
+        criticos = [f"[{h['invariante']}] {h['ubicacion']}: {h['descripcion']}"
+                    for h in inf["hallazgos"] if h["severidad"] == "critico"]
+        pendientes = [c for c in criticos if c not in aceptados]
+        exp.marcas["preverificacion"] = {"fecha": ahora_utc(), "version_tarea": art["tarea"]["version"],
+                                         "aprobado": inf["aprobado"], "criticos": criticos,
+                                         "texto_noticia": bool(self._texto_de(exp))}
+        if pendientes:
+            exp.marcas["hallazgos_tarea"] = pendientes
+        inf["bloquea"] = bool(pendientes)   # críticos que ningún revisor aceptó todavía
+        self.evento("preverificacion", tarea_id=exp.tarea_id, aprobado=inf["aprobado"], criticos=len(criticos),
+                    pendientes=len(pendientes), localizadores_corregidos=len(corr))
+        self._guardar(exp)
+        return inf
+
     def _tras_evaluar(self, exp: orq.Expediente, revisor: str | None) -> orq.Expediente | None:
         ev = exp.artefactos["evaluacion"]
         if inv.cumple_umbral_rub01(ev):
+            # Un hallazgo sobre la tarea (verificador o verificación previa) espera una decisión humana explícita:
+            # nueva versión, archivar o --aceptar-hallazgos. El revisor de esta ejecución no lo resuelve solo.
+            if exp.marcas.get("hallazgos_tarea") or self._preverificar(exp)["bloquea"]:
+                self._pendiente(exp, "revision_humana_1")
+                return None
             if not (revisor and revisor.strip()):
                 self._pendiente(exp, "revision_humana_1")
                 return None
@@ -781,6 +836,16 @@ class Ciclo:
         r = inv.verificar_aislamiento(inv.vista_estudiante(tarea), tarea)   # invariante 6
         if not r:
             raise orq.InvarianteViolada("Invariante 6: la vista de estudiante filtra task_space", r.errores)
+        # Verificación previa (CP2): si la tarea tiene un hallazgo crítico no se gasta en simular. Expedientes que
+        # llegaron a `revisada` antes de esta regla (p. ej. que-tan-renida-fue) también pasan por aquí.
+        if self._preverificar(exp)["bloquea"]:
+            raise ErrorEtapa("la verificación previa encontró hallazgos críticos en la tarea; no se simula: "
+                             + "; ".join(exp.marcas["hallazgos_tarea"])[:900])
+        tarea = exp.artefactos["tarea"]   # con los localizadores corregidos, si los hubo
+        if "trazas_resumen" in exp.artefactos:   # volvió de con_guia por un hallazgo ya resuelto: misma simulación
+            self.evento("simulacion_reutilizada", tarea_id=exp.tarea_id, origen=exp.tarea_id)
+            return self._transicionar(exp, "simulada", artefactos={
+                "evaluacion": self._evaluacion_actualizada(exp, exp.artefactos["trazas_resumen"])})
         if previo := self._simulacion_reutilizable(exp):
             return self._reutilizar_simulacion(exp, previo)
         d = self.rutas.de(exp.tarea_id)
@@ -880,15 +945,34 @@ class Ciclo:
         inf, _ = self._medir("verificador", self.agentes.verificar, art["tarea"], art["guia"], art["trazas_resumen"],
                              art.get("noticia"), cliente=self.contador,
                              texto_noticia=self._texto_de(exp), exps=[exp])
+        from pipeline.agentes.verificador.run import aplicar_localizadores, hallazgos_sobre_tarea, localizadores_corregidos
         n = exp.marcas.get("rechazos_verificador", 0)
         _escribir(self.rutas.de(exp.tarea_id) / f"verificacion_{n + 1}.json", inf)
-        if inf["aprobado"]:
-            return self._transicionar(exp, "verificada", artefactos={"evaluacion": self._evaluacion_actualizada(exp)})
+        fmt = lambda h: f"[{h['invariante']}] {h['ubicacion']}: {h['descripcion']}"  # noqa: E731
+        aceptados = {c for a in exp.marcas.get("hallazgos_aceptados", []) for c in a["hallazgos"]}
+        pendientes = [h for h in inf["hallazgos"] if h["severidad"] == "critico" and fmt(h) not in aceptados]
+        if inf["aprobado"] or not pendientes:   # solo quedan hallazgos que un revisor ya aceptó
+            if not inf["aprobado"]:
+                exp.marcas["verificada_con_hallazgos_aceptados"] = True
+            nuevos = {"evaluacion": self._evaluacion_actualizada(exp)}
+            if corr := localizadores_corregidos(inf):   # localizador corrido ±1 párrafo: advertencia y se corrige
+                nuevos["tarea"], noticia = aplicar_localizadores(art["tarea"], corr, art.get("noticia"))
+                if noticia is not None:
+                    nuevos["noticia"] = noticia
+                exp.marcas.setdefault("localizadores_corregidos", []).append(
+                    {"fecha": ahora_utc(), "etapa": "verificador", "correcciones": {str(k): v for k, v in corr.items()}})
+            return self._transicionar(exp, "verificada", artefactos=nuevos)
+        criticos = [fmt(h) for h in pendientes]
+        resumen = "; ".join(criticos)[:900] or "rechazo sin hallazgos críticos listados"
+        if sobre_tarea := hallazgos_sobre_tarea(pendientes):
+            # Rehacer la guía no corrige la tarea: vuelve a `evaluada` con el hallazgo (no se archiva ni cuenta como
+            # rechazo de guía). Lo resuelve la revisión humana 1: nueva versión, archivar o --aceptar-hallazgos.
+            exp.marcas["hallazgos_tarea"] = [fmt(h) for h in sobre_tarea]
+            exp = self._transicionar(exp, "evaluada", motivo=f"el verificador encontró hallazgos sobre la tarea: {resumen}",
+                                     artefactos={"evaluacion": self._evaluacion_actualizada(exp)})
+            return exp   # el motor sigue en `evaluada`: _tras_evaluar ve `hallazgos_tarea` y lo deja pendiente
         n += 1
         exp.marcas["rechazos_verificador"] = n
-        criticos = [f"[{h['invariante']}] {h['ubicacion']}: {h['descripcion']}"
-                    for h in inf["hallazgos"] if h["severidad"] == "critico"]
-        resumen = "; ".join(criticos)[:900] or "rechazo sin hallazgos críticos listados"
         if n >= MAX_RECHAZOS_VERIFICADOR:
             return self._archivar(exp, f"el verificador rechazó la guía {n} veces: {resumen}")
         return self._transicionar(exp, "simulada", motivo=f"verificador rechaza la guía (rechazo {n}): {resumen}",
@@ -947,11 +1031,13 @@ class Ciclo:
 
     @_con_cierre_de_emergencia
     def continuar(self, ids: list[str], *, revisor: str | None = None,
-                  textos: Mapping[str, str] | None = None) -> dict:
-        """Tramo B (o reanudación). `revisor` aprueba la revisión humana 1 de estos expedientes."""
+                  textos: Mapping[str, str] | None = None, aceptar_hallazgos: bool = False) -> dict:
+        """Tramo B (o reanudación). `revisor` aprueba la revisión humana 1 de estos expedientes.
+        `aceptar_hallazgos`: el revisor leyó los hallazgos del verificador sobre la tarea y decide seguir igual."""
         self._textos.update(textos or {})
         self.registro["orden"] = "tramo_b"
-        self.registro["parametros"].update({"ids": list(ids), "revisor": revisor})
+        self.registro["parametros"].update({"ids": list(ids), "revisor": revisor,
+                                            "aceptar_hallazgos": aceptar_hallazgos})
         try:
             self.contador.verificar()
             for tid in ids:
@@ -959,6 +1045,16 @@ class Ciclo:
                 if exp.estado in orq.TERMINALES:
                     self.registro["errores"].append({"tarea_id": tid, "error": f"expediente en {exp.estado}"})
                     continue
+                if exp.marcas.get("hallazgos_tarea"):
+                    if not (aceptar_hallazgos and revisor and revisor.strip()):
+                        self.registro["errores"].append({"tarea_id": tid, "error": "tiene hallazgos del verificador "
+                                                         "sobre la tarea: nueva versión, --archivar o "
+                                                         "--aceptar-hallazgos con --revisor"})
+                        continue
+                    exp.marcas.setdefault("hallazgos_aceptados", []).append(
+                        {"revisor": revisor.strip(), "fecha": ahora_utc(), "hallazgos": exp.marcas.pop("hallazgos_tarea")})
+                    exp.marcas.pop("preverificacion", None)
+                    self._guardar(exp)
                 if exp.estado == "evaluada" and inv.cumple_umbral_rub01(exp.artefactos["evaluacion"]) and not revisor:
                     self.registro["errores"].append({"tarea_id": tid, "error": "evaluada: falta --revisor "
                                                      "(revisión humana 1)"})
@@ -1012,6 +1108,67 @@ class Ciclo:
                 self.avanzar(exp)
         except TopeAlcanzado as e:
             self._detener(e)
+        return self._cerrar()
+
+    @_con_cierre_de_emergencia
+    def version_sin_cambios(self, ids: list[str], *, motivo: str) -> dict:
+        """Rescate de una tarea archivada (o detenida) por un falso rechazo: v+1 con el MISMO contenido, sin API.
+
+        No llama al diseñador ni al evaluador: la tarea es idéntica salvo `id`, `version` y los localizadores que
+        corrija la verificación previa, así que hereda la evaluación RUB01 de la versión anterior (invariante 2 sobre
+        el mismo texto). Marca `reusar_simulacion_de` y `guia_base_de` como `--nueva-version`. Queda en `evaluada`,
+        pendiente de la revisión humana 1. El expediente anterior no se toca."""
+        self.registro["orden"] = "version_sin_cambios"
+        self.registro["parametros"].update({"ids": list(ids), "motivo": motivo})
+        for tid in ids:
+            previo = orq.cargar(tid, self.rutas.expedientes)
+            ev_previa = previo.artefactos.get("evaluacion")
+            if not ev_previa or not inv.cumple_umbral_rub01(ev_previa):
+                self.registro["errores"].append({"tarea_id": tid, "error": "sin evaluación que cumpla el umbral"})
+                continue
+            tarea = copy.deepcopy(previo.artefactos["tarea"])
+            tarea["version"] = int(tarea["version"]) + 1
+            tarea["id"] = f"{re.sub(r'-v[0-9]+$', '', tid)}-v{tarea['version']}"
+            if (self.rutas.expedientes / f"{tarea['id']}.json").exists():
+                self.registro["errores"].append({"tarea_id": tid, "error": f"ya existe {tarea['id']}"})
+                continue
+            exp = orq.nuevo_expediente(tarea, previo.artefactos.get("noticia"))
+            exp.marcas.update({k: copy.deepcopy(previo.marcas[k]) for k in ("noticia_id", "nivel_objetivo", "agentes",
+                                                                             "version_MAR03") if k in previo.marcas})
+            exp.marcas.update({
+                "ciclo_id": self.ciclo_id, "origen": f"v{tarea['version']} de {tid} sin cambios ({motivo})",
+                "version_de": tid, "evaluacion_heredada_de": tid,
+                "evaluacion_corridas": previo.marcas.get("evaluacion_corridas"),
+                "reusar_simulacion_de": tid if "trazas_resumen" in previo.artefactos
+                else previo.marcas.get("reusar_simulacion_de"),
+                "guia_base_de": tid if "guia" in previo.artefactos else previo.marcas.get("guia_base_de")})
+            if (texto := self._textos.get(tid)) is not None:
+                self._textos[exp.tarea_id] = texto
+            self._guardar(exp)
+            ev = {"tarea_id": exp.tarea_id, "fecha": ahora_utc(), "rub01": copy.deepcopy(ev_previa["rub01"])}
+            ev["reproducibilidad"] = self.reproducibilidad(exp)
+            exp = self._transicionar(exp, "evaluada", artefactos={"evaluacion": ev},
+                                     motivo=f"evaluación heredada de {tid}: mismo contenido")
+            self.avanzar(exp)   # verificación previa (corrige localizadores) y queda pendiente de la revisión 1
+        return self._cerrar()
+
+    @_con_cierre_de_emergencia
+    def archivar(self, ids: list[str], *, motivo: str, revisor: str) -> dict:
+        """Revisión humana 1 negativa: `evaluada → archivada` con motivo y revisor (GOB01 §2). Sin API (costo 0).
+        Solo expedientes en `evaluada`; los demás se informan como error y no se tocan."""
+        if not (revisor and revisor.strip()) or not (motivo and motivo.strip()):
+            raise ValueError("archivar exige `revisor` y `motivo` (revisión humana 1)")
+        self.registro["orden"] = "archivar"
+        self.registro["parametros"].update({"ids": list(ids), "revisor": revisor, "motivo": motivo})
+        for tid in ids:
+            exp = orq.cargar(tid, self.rutas.expedientes)
+            if exp.estado != "evaluada":
+                self.registro["errores"].append({"tarea_id": tid, "error": f"archivar exige `evaluada`, está en {exp.estado}"})
+                continue
+            exp.marcas.pop("pendiente", None)
+            exp.marcas["revision_humana_1"] = {"resultado": "negativa", "revisor": revisor.strip(),
+                                               "fecha": ahora_utc(), "motivo": motivo.strip()}
+            self._archivar(exp, f"{motivo.strip()} ({revisor.strip()})")
         return self._cerrar()
 
     @_con_cierre_de_emergencia
@@ -1128,6 +1285,14 @@ def main(argv: list[str] | None = None) -> int:
                          "pendiente de la revisión humana 1")
     ap.add_argument("--rehacer-guia", metavar="OBSERVACIONES.json",
                     help="revisión humana 2: JSON {tarea_id: [observaciones]}; rehace la guía (exige --revisor)")
+    ap.add_argument("--aceptar-hallazgos", action="store_true",
+                    help="con --continuar y --revisor: el revisor leyó los hallazgos del verificador sobre la tarea "
+                         "(marca hallazgos_tarea) y decide seguir igual")
+    ap.add_argument("--archivar", nargs="+", metavar="TAREA_ID",
+                    help="revisión humana 1 negativa: evaluada → archivada (exige --motivo y --revisor; sin API)")
+    ap.add_argument("--version-sin-cambios", nargs="+", metavar="TAREA_ID",
+                    help="rescate de un falso rechazo: v+1 idéntica que hereda la evaluación (exige --motivo; sin API)")
+    ap.add_argument("--motivo", help="con --archivar o --version-sin-cambios: motivo que queda en el expediente")
     a = ap.parse_args(argv)
 
     rutas = Rutas()
@@ -1139,6 +1304,22 @@ def main(argv: list[str] | None = None) -> int:
                                  "error" if m.get("ultimo_error") else None) if x]
             print(f"{d['tarea_id']}: {d['estado']} (evaluaciones {d['iteraciones']}) {' · '.join(extra)}")
         return 0
+    if a.archivar:
+        if not (a.motivo and a.revisor):
+            ap.error("--archivar exige --motivo y --revisor")
+        ciclo = Ciclo(rutas=rutas)   # sin releer la noticia: archivar no agrega texto
+        reg = ciclo.archivar(a.archivar, motivo=a.motivo, revisor=a.revisor)
+        print(_resumen(reg))
+        return 1 if reg["errores"] else 0
+    if a.version_sin_cambios:
+        if not a.motivo:
+            ap.error("--version-sin-cambios exige --motivo")
+        ciclo = Ciclo(rutas=rutas, releer_noticia=True)   # relee la noticia: invariante 3 y verificación previa
+        reg = ciclo.version_sin_cambios(a.version_sin_cambios, motivo=a.motivo)
+        print(_resumen(reg))
+        return 1 if reg["errores"] else 0
+    if a.aceptar_hallazgos and not (a.continuar and a.revisor):
+        ap.error("--aceptar-hallazgos va con --continuar y --revisor")
     if a.nueva_version:
         mej = json.loads(Path(a.nueva_version).read_text(encoding="utf-8"))
         ciclo = Ciclo(rutas=rutas, presupuesto_ciclo_usd=a.presupuesto_ciclo, releer_noticia=True)
@@ -1163,7 +1344,8 @@ def main(argv: list[str] | None = None) -> int:
     if a.continuar:
         if texto and len(a.continuar) != 1:
             ap.error("--texto-noticia exige un solo id")
-        reg = ciclo.continuar(a.continuar, revisor=a.revisor, textos={a.continuar[0]: texto} if texto else None)
+        reg = ciclo.continuar(a.continuar, revisor=a.revisor, textos={a.continuar[0]: texto} if texto else None,
+                              aceptar_hallazgos=a.aceptar_hallazgos)
     else:
         noticias = _leer_noticias(a.noticia) if a.noticia else None
         textos = None

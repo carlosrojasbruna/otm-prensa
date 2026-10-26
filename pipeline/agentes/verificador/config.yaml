@@ -11,4 +11,5 @@ notebook:
   timeout_s: 60
   red: bloqueada
 estado_si_aprueba: verificada
-estado_si_rechaza: simulada
+estado_si_rechaza: simulada          # hallazgo crítico solo en la guía: se rehace la guía
+estado_si_rechaza_tarea: evaluada   # hallazgo crítico sobre la tarea: vuelve a la revisión humana 1 (no se archiva)

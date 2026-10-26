@@ -106,7 +106,7 @@ def test_modelo_puede_rechazar_pero_no_aprobar_contra_el_codigo():
                  "afirmaciones_no_respaldadas": [{"ubicacion": "guia.escenarios.E1", "afirmacion": "x",
                                                   "motivo": "sin respaldo", "severidad": "advertencia"}]}
     informe = V.verificar(ej["tarea"], ej["guia"], ej["trazas_resumen"], ej["noticia"], cliente=ClienteFalso([respuesta]))
-    assert not informe["aprobado"] and informe["estado_destino"] == "simulada"
+    assert not informe["aprobado"] and informe["estado_destino"] == "evaluada"   # el hallazgo es sobre la tarea
     assert {h["origen"] for h in informe["hallazgos"]
             if h["invariante"] == "semantica" and h["severidad"] == "critico"} == {"modelo"}
     assert not list(Draft202012Validator(ESQUEMA).iter_errors(informe))
@@ -217,7 +217,7 @@ def test_fuente_generica_es_critico_y_no_llama_al_modelo():
     ej = _con_recursos(_recurso("R1", "conocimiento general"))
     cliente = ClienteFalso([])
     informe = V.verificar(ej["tarea"], ej["guia"], ej["trazas_resumen"], ej["noticia"], cliente=cliente)
-    assert not informe["aprobado"] and informe["estado_destino"] == "simulada"
+    assert not informe["aprobado"] and informe["estado_destino"] == "evaluada"   # recurso de la tarea
     crit = _sem(informe, "critico")
     assert len(crit) == 1 and "R1" in crit[0]["ubicacion"] and crit[0]["origen"] == "codigo"
     assert cliente.llamadas == []

@@ -99,7 +99,13 @@ def _a_float(tok: str) -> float:
 
 
 def numeros_en(texto: str) -> list[float]:
-    return [_a_float(t) for t in _NUM.findall(texto)]
+    out = []
+    for t in _NUM.findall(texto):
+        try:
+            out.append(_a_float(t))
+        except ValueError:   # «0.5.8» (versiones, fechas con puntos): no es una cifra
+            continue
+    return out
 
 
 def _iguales(a: float, b: float) -> bool:
@@ -246,12 +252,69 @@ def _invariante3(inf, tarea, guia, noticia, texto_noticia):
             inf.add("3", "critico", nombre, e)
 
 
-def _cifras(inf, tarea, noticia, nb) -> list[dict]:
-    """Invariante 4 en código: localizador presente, existente y con el mismo valor."""
+TOLERANCIA_PARRAFOS = 1   # un localizador corrido en ±1 párrafo se corrige como advertencia (ciclo 2026-10-26)
+
+
+def _en_parrafo(valor: float, parrafo: str) -> bool:
+    """`valor` aparece en el párrafo, también escrito en unidades («4 mil» = 4.000, «5 millones» = 5.000.000)."""
+    return any(_iguales(valor * f, x) for x in numeros_en(parrafo) for f in (1, 1e3, 1e6, 1e9))
+
+
+def parrafos_alineados(texto: str, cifras: list[dict]) -> tuple[list[str], int]:
+    """Párrafos del texto numerados como los numeró el explorador. El explorador numera el cuerpo que leyó (en
+    La Tercera, el del feed RSS); el ciclo relee la página completa, con menús y avisos antes del cuerpo, y la
+    numeración se corre (2026-10-cuanto-pagar-cada-mes: «párrafo 5» del feed = párrafo 151 de la página). Se
+    estima el desfase k con las cifras de la noticia (el k que más cifras pone en su párrafo; 0 en empate o con
+    menos de 2 votos) y se devuelve la lista desplazada para que el índice visible siga partiendo en 1."""
+    ps = parrafos_de(texto)
+    votos: dict[int, int] = {}
+    for c in cifras:
+        ns = _numeros_parrafo(_norm(str((c.get("localizador") or {}).get("ubicacion", ""))))
+        v = parsear_numero(c.get("valor"))
+        if len(ns) != 1 or v is None:
+            continue
+        for k in {i - ns[0] for i, p in enumerate(ps, start=1) if _en_parrafo(v, p)}:
+            votos[k] = votos.get(k, 0) + 1
+    k = max(votos, key=lambda d: (votos[d], -abs(d)), default=0)
+    if votos.get(k, 0) < 2 or votos[k] <= votos.get(0, 0):
+        k = 0
+    return (ps[k:] if k >= 0 else [""] * (-k) + ps), k
+
+
+def _parrafos(texto_noticia: str | None, tarea: dict, noticia: dict | None) -> list[str] | None:
+    if not texto_noticia:
+        return None
+    cifras = (noticia or {}).get("cifras") or tarea.get("noticia", {}).get("cifras_usadas", [])
+    return parrafos_alineados(texto_noticia, cifras)[0]
+
+
+def buscar_cifra(valor: float, parrafos: list[str], citados: list[int]) -> tuple[str, int | None]:
+    """Busca `valor` en toda la nota. Devuelve ("citado", n) si está en un párrafo citado, ("vecino", n) si está a
+    ±TOLERANCIA_PARRAFOS de uno citado, ("lejos", n) si está en otro párrafo y ("ausente", None) si no aparece."""
+    donde = [i for i, p in enumerate(parrafos, start=1) if _en_parrafo(valor, p)]
+    for n in citados:
+        if n in donde:
+            return "citado", n
+    for d in range(1, TOLERANCIA_PARRAFOS + 1):
+        for n in citados:
+            for m in (n - d, n + d):
+                if m in donde:
+                    return "vecino", m
+    return ("lejos", donde[0]) if donde else ("ausente", None)
+
+
+def _cifras(inf, tarea, noticia, nb, parrafos: list[str] | None = None) -> list[dict]:
+    """Invariante 4 en código: localizador presente, existente y con el mismo valor.
+
+    Con el texto de la noticia, además se busca la cifra en toda la nota: si está a ±1 párrafo del citado, el
+    localizador se corrige como advertencia (`localizador_corregido`); si está más lejos o no está, es crítico."""
     out = []
-    por_ubic = {}
+    por_ubic: dict = {}
     if noticia is not None:
-        por_ubic = {(c.get("localizador") or {}).get("ubicacion"): c for c in noticia.get("cifras", [])}
+        # varias cifras pueden compartir párrafo: antes se guardaba solo la última y «48 cuotas (párrafo 5)» se
+        # comparaba con «5 millones (párrafo 5)» (2026-10-cuanto-pagar-cada-mes)
+        for c in noticia.get("cifras", []):
+            por_ubic.setdefault((c.get("localizador") or {}).get("ubicacion"), []).append(c)
     nums_nb = numeros_en(nb["stdout"]) if nb["estado"] == "ejecutado" else []
     cifras = tarea.get("noticia", {}).get("cifras_usadas", [])
     for i, c in enumerate(cifras):
@@ -271,19 +334,54 @@ def _cifras(inf, tarea, noticia, nb) -> list[dict]:
                         "no se entregó la noticia: no se puede contrastar el localizador en código")
                 out.append({**base, "resultado": "no_verificable", "nota": "noticia no entregada"})
                 continue
-            f = por_ubic.get(loc["ubicacion"])
-            if f is None:
+            candidatas = por_ubic.get(loc["ubicacion"], [])
+            f = next((x for x in candidatas if v is not None and parsear_numero(x.get("valor")) is not None
+                      and _iguales(v, parsear_numero(x.get("valor")))), None)
+            citados = _numeros_parrafo(_norm(str(loc["ubicacion"])))
+            if parrafos is not None and v is not None and citados:
+                donde, n = buscar_cifra(v, parrafos, citados)
+                if donde == "citado":
+                    base["valor_fuente"] = c.get("valor")
+                    out.append({**base, "resultado": "coincide", "nota": f"valor presente en el párrafo {n} de la noticia"})
+                    continue
+                if donde == "vecino":
+                    corregido = {"fuente": "noticia", "ubicacion": f"párrafo {n}"}
+                    inf.add("4", "advertencia", ub,
+                            f"localizador corrido: {c.get('valor')!r} no está en «{loc['ubicacion']}» sino en el "
+                            f"párrafo {n}; se corrige el localizador")
+                    base["valor_fuente"] = c.get("valor")
+                    out.append({**base, "resultado": "coincide", "localizador_corregido": corregido,
+                                "nota": f"valor presente en el párrafo {n} (localizador corregido desde «{loc['ubicacion']}»)"})
+                    continue
+                if donde == "lejos":
+                    inf.add("4", "critico", ub,
+                            f"localizador erróneo: {c.get('valor')!r} no está en «{loc['ubicacion']}» (ni a ±"
+                            f"{TOLERANCIA_PARRAFOS} párrafo) sino en el párrafo {n}")
+                    out.append({**base, "resultado": "distinto",
+                                "nota": f"valor en el párrafo {n}, lejos del localizador"})
+                    continue
+                if f is not None:   # ausente del texto (p. ej. escrito con palabras) pero registrado por el explorador
+                    inf.add("4", "advertencia", ub,
+                            f"{c.get('valor')!r} no se encontró como número en el texto; se acepta por noticia.cifras")
+                    base["valor_fuente"] = f.get("valor")
+                    out.append({**base, "resultado": "coincide", "nota": "no hallado en el texto; igual a noticia.cifras"})
+                    continue
+                inf.add("4", "critico", ub, f"{c.get('valor')!r} no aparece en ningún párrafo de la noticia")
+                out.append({**base, "resultado": "distinto", "nota": "valor ausente del texto de la noticia"})
+                continue
+            if not candidatas:
                 inf.add("4", "critico", ub, f"el localizador «{loc['ubicacion']}» no existe en la noticia")
                 out.append({**base, "resultado": "localizador_inexistente",
                             "nota": "ubicación ausente en noticia.cifras"})
                 continue
-            vf = parsear_numero(f.get("valor"))
-            base["valor_fuente"] = f.get("valor")
-            if v is None or vf is None or not _iguales(v, vf):
+            if f is None:
+                otras = ", ".join(repr(x.get("valor")) for x in candidatas)
+                base["valor_fuente"] = candidatas[0].get("valor")
                 inf.add("4", "critico", ub,
-                        f"valor {c.get('valor')!r} en la tarea, {f.get('valor')!r} en la noticia ({loc['ubicacion']})")
+                        f"valor {c.get('valor')!r} en la tarea; en la noticia ({loc['ubicacion']}): {otras}")
                 out.append({**base, "resultado": "distinto", "nota": "valor distinto del de la noticia"})
             else:
+                base["valor_fuente"] = f.get("valor")
                 out.append({**base, "resultado": "coincide", "nota": "valor igual al de la noticia"})
         else:  # notebook
             if nb["estado"] != "ejecutado":
@@ -382,7 +480,7 @@ def parrafos_de(texto: str) -> list[str]:
     return [p for p in partes if len(p) > 3]
 
 
-def _recursos(inf, tarea, texto_noticia):
+def _recursos(inf, tarea, texto_noticia, parrafos: list[str] | None = None):
     """Clasifica la fuente de cada recurso y levanta los hallazgos deterministas. Devuelve
     (recursos a contrastar con el modelo, {n: párrafo citado}). Los párrafos salen del texto en memoria
     y son únicamente los citados por los recursos y por `cifras_usadas`."""
@@ -416,7 +514,7 @@ def _recursos(inf, tarea, texto_noticia):
             pedidos.update(_numeros_parrafo(_norm(str(loc.get("ubicacion", "")))))
     citados: dict[str, str] = {}
     if texto_noticia:
-        todos = parrafos_de(texto_noticia)
+        todos = parrafos if parrafos is not None else parrafos_de(texto_noticia)
         for n in sorted(pedidos):
             if 1 <= n <= len(todos):
                 citados[str(n)] = todos[n - 1]
@@ -518,8 +616,9 @@ def verificar(tarea: dict, guia: dict, trazas: dict, noticia: dict | None = None
         _coherencia(inf, tarea, guia, trazas, noticia)
         _invariante5(inf, guia, trazas)
         _invariante3(inf, tarea, guia, noticia, texto_noticia)
-        cifras = _cifras(inf, tarea, noticia, nb)
-        recursos_modelo, parrafos_citados = _recursos(inf, tarea, texto_noticia)
+        parrafos = _parrafos(texto_noticia, tarea, noticia)
+        cifras = _cifras(inf, tarea, noticia, nb, parrafos)
+        recursos_modelo, parrafos_citados = _recursos(inf, tarea, texto_noticia, parrafos)
     except (KeyError, TypeError, AttributeError) as e:
         inf.add("1", "critico", "(estructura)", f"artefacto con estructura inesperada ({type(e).__name__}: {e})")
     meta_llm, llamado = None, False
@@ -535,13 +634,76 @@ def verificar(tarea: dict, guia: dict, trazas: dict, noticia: dict | None = None
             "costo_usd": meta_llm["costo_usd"] if meta_llm else 0.0,
             "modelo_llamado": llamado, "texto_noticia_recibido": bool(texto_noticia),
             "uso": meta_llm["uso"] if meta_llm else None}
+    # Un hallazgo crítico sobre la TAREA no se arregla reescribiendo la guía: la tarea vuelve a `evaluada`.
+    destino = (CONFIG["estado_si_aprueba"] if aprobado
+               else CONFIG["estado_si_rechaza_tarea"] if hallazgos_sobre_tarea(inf.hallazgos)
+               else CONFIG["estado_si_rechaza"])
     informe = {"tarea_id": tarea.get("id", ""), "aprobado": aprobado,
-               "estado_destino": CONFIG["estado_si_aprueba"] if aprobado else CONFIG["estado_si_rechaza"],
+               "estado_destino": destino,
                "hallazgos": inf.hallazgos, "cifras_contrastadas": cifras,
                "notebook": {k: nb[k] for k in ("estado", "ruta", "salida_resumen")}, "meta": meta}
     errores = list(Draft202012Validator(ESQUEMA_SALIDA).iter_errors(informe))
     if errores:
         raise ValueError("informe no valida contra salida.schema.json: " + "; ".join(e.message for e in errores[:3]))
+    return informe
+
+
+def hallazgos_sobre_tarea(hallazgos: list[dict]) -> list[dict]:
+    """Hallazgos críticos cuya ubicación está en la tarea (no en la guía, las trazas ni el notebook)."""
+    return [h for h in hallazgos if h["severidad"] == "critico" and str(h["ubicacion"]).split(".")[0] == "tarea"]
+
+
+def localizadores_corregidos(informe: dict) -> dict[int, dict]:
+    """{índice en cifras_usadas: localizador corregido} de un informe (advertencias de ±1 párrafo)."""
+    return {c["indice"]: c["localizador_corregido"] for c in informe.get("cifras_contrastadas", [])
+            if c.get("localizador_corregido")}
+
+
+def aplicar_localizadores(tarea: dict, correcciones: dict[int, dict], noticia: dict | None = None) -> tuple[dict, dict | None]:
+    """Copias de la tarea (y de la noticia) con los localizadores corregidos. En la noticia se corrige la cifra
+    con el mismo `que_es` y valor, para que una nueva versión del diseñador copie ya el localizador bueno."""
+    t = json.loads(json.dumps(tarea))
+    n = json.loads(json.dumps(noticia)) if noticia is not None else None
+    for i, loc in correcciones.items():
+        c = t["noticia"]["cifras_usadas"][int(i)]
+        if n is not None:
+            for x in n.get("cifras", []):
+                if x.get("que_es") == c.get("que_es") and x.get("valor") == c.get("valor") \
+                        and x.get("localizador") == c.get("localizador"):
+                    x["localizador"] = dict(loc)
+        c["localizador"] = dict(loc)
+    return t, n
+
+
+def verificar_tarea(tarea: dict, noticia: dict | None = None, texto_noticia: str | None = None) -> dict:
+    """Verificación previa a la simulación (decisión de Carlos para CP2): solo comprobaciones de código sobre la
+    tarea, sin modelo y sin guía ni trazas: contrato, invariante 3, cifras con su localizador (buscadas en toda la
+    nota, ±1 párrafo) y fuentes de los recursos. Costo 0. Si hay hallazgos críticos no se gasta en simular.
+    Pendiente de la misma decisión: ejecutar numéricamente el task_space (solución, rutas y rango)."""
+    inf = _Informe()
+    for nombre, art in (("tarea", tarea), ("noticia", noticia)):
+        if art is not None:
+            for e in inv.validar_contra_esquema(art, nombre).errores:
+                inf.add("1", "critico", nombre, e)
+    nb = {"estado": "no_declarado", "ruta": None, "salida_resumen": "", "stdout": ""}
+    cifras: list[dict] = []
+    try:
+        if texto_noticia:
+            for nombre, art in (("tarea", tarea), ("noticia", noticia)):
+                if art is not None:
+                    for e in inv.cumple_limite_literal(art, texto_noticia).errores:
+                        inf.add("3", "critico", nombre, e)
+        parrafos = _parrafos(texto_noticia, tarea, noticia)
+        cifras = _cifras(inf, tarea, noticia, nb, parrafos)
+        _recursos(inf, tarea, texto_noticia, parrafos)
+    except (KeyError, TypeError, AttributeError) as e:
+        inf.add("1", "critico", "(estructura)", f"tarea con estructura inesperada ({type(e).__name__}: {e})")
+    informe = {"tarea_id": tarea.get("id", ""), "aprobado": not inf.criticos(), "alcance": "tarea",
+               "hallazgos": inf.hallazgos, "cifras_contrastadas": cifras,
+               "meta": {"agente": "verificador", "version_prompt": CONFIG["version_prompt"], "modelo_llamado": False,
+                        "costo_usd": 0.0, "texto_noticia_recibido": bool(texto_noticia),
+                        "fecha": datetime.now(timezone.utc).isoformat(timespec="seconds")}}
+    informe["localizadores_corregidos"] = {str(k): v for k, v in localizadores_corregidos(informe).items()}
     return informe
 
 

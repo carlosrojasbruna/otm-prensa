@@ -38,7 +38,7 @@ if str(RAIZ) not in sys.path:
 from pipeline.invariantes import (  # noqa: E402
     cumple_limite_literal, validar_contra_esquema, verificar_aislamiento, vista_estudiante,
 )
-from pipeline.llm import llamar, modelo_de  # noqa: E402
+from pipeline.llm import SalidaTruncada, llamar, modelo_de  # noqa: E402
 
 DIR = Path(__file__).resolve().parent
 CONFIG = yaml.safe_load((DIR / "config.yaml").read_text(encoding="utf-8"))
@@ -371,6 +371,13 @@ def _mensaje(modo: str, noticia: dict, nivel: str, tarea_prev: dict | None, eval
             f"Nivel objetivo: {nivel}.")
 
 
+INSTRUCCION_SALIDA_CORTA = (
+    "IMPORTANTE: tu respuesta anterior se cortó por exceder el máximo de tokens de salida. Responde de nuevo, "
+    "completa y válida, pero breve: razona poco antes de escribir; enunciado_es de 60 a 140 palabras; cada campo "
+    "de texto del mapa del ciclo, de las rutas y de la solución en 1 o 2 oraciones; como máximo 4 recursos, "
+    "3 rutas y 4 supuestos por candidato. No repitas entre campos lo que ya dijiste.")
+
+
 def _bucle(*, modo, noticia, nivel, tarea_prev, evaluacion, fecha, cliente, texto_noticia, version, id_tarea):
     """Llama al modelo, ensambla y valida; reintenta con errores. Devuelve (items, meta)."""
     system = cargar_system()
@@ -380,10 +387,27 @@ def _bucle(*, modo, noticia, nivel, tarea_prev, evaluacion, fecha, cliente, text
     validos: list[tuple[dict, dict]] = []
     rechazados: list[dict] = []
     ultimo_meta, atencion = None, []
+    acortado = False
     for ronda in range(CONFIG["reparaciones_max"] + 1):
         try:
             r = llamar(agente="disenador", system=system, user=user, schema=esquema_salida(modo),
                        esfuerzo=CONFIG["esfuerzo"], max_tokens=CONFIG["max_tokens"], cliente=cliente)
+        except SalidaTruncada as e:
+            # La misma petición se volvería a cortar: se repite UNA vez pidiendo una salida más corta.
+            costo += getattr(e, "costo_usd", 0.0)
+            if acortado or not CONFIG.get("salida_corta_si_trunca", True):
+                e.costo_usd = costo
+                raise
+            acortado = True
+            historial.append({"ronda": ronda + 1, "validos": 0, "errores": [(-1, ["stop_reason=max_tokens"])]})
+            user0 = user0 + "\n\n" + INSTRUCCION_SALIDA_CORTA
+            user = user + "\n\n" + INSTRUCCION_SALIDA_CORTA
+            try:
+                r = llamar(agente="disenador", system=system, user=user, schema=esquema_salida(modo),
+                           esfuerzo=CONFIG["esfuerzo"], max_tokens=CONFIG["max_tokens"], cliente=cliente)
+            except RuntimeError as e2:
+                e2.costo_usd = costo + getattr(e2, "costo_usd", 0.0)
+                raise
         except RuntimeError as e:
             e.costo_usd = costo + getattr(e, "costo_usd", 0.0)
             raise

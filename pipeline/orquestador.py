@@ -5,6 +5,9 @@
 Retrocesos permitidos (ver pipeline/state/decisiones.md):
   evaluada → borrador     iteración diseñador ↔ evaluador; máx. 3 evaluaciones (GOB01 §1)
   con_guia → simulada     el verificador rechaza la guía; se reescribe desde las mismas trazas
+  con_guia → evaluada     el verificador encuentra un hallazgo crítico sobre la TAREA (no se arregla rehaciendo
+                          la guía): vuelve a la revisión humana 1 con el hallazgo; conserva las trazas, descarta
+                          la guía y no cuenta como evaluación (ciclo 2026-10-26)
   verificada → simulada   la revisión humana 2 rechaza la guía
 Terminal adicional:
   * → archivada           desde cualquier estado no terminal, con `motivo` (GOB01 §1: la noticia
@@ -38,7 +41,7 @@ _AVANCE = {
     "evaluada": {"revisada", "borrador"},
     "revisada": {"simulada"},
     "simulada": {"con_guia"},
-    "con_guia": {"verificada", "simulada"},
+    "con_guia": {"verificada", "simulada", "evaluada"},
     "verificada": {"publicada", "simulada"},
     "publicada": set(),
     "archivada": set(),
@@ -70,7 +73,7 @@ _POST_REVISION = frozenset({"revisada", "simulada", "con_guia", "verificada", "p
 _CON_GUIA = frozenset({"con_guia", "verificada", "publicada"})
 _REQUIEREN_REVISOR = frozenset({"revisada", "publicada"})  # revisiones humanas 1 y 2 (GOB01 §2)
 # Al retroceder se descarta el artefacto que hay que rehacer.
-_DESCARTA_AL_VOLVER = {"borrador": ("evaluacion",), "simulada": ("guia",)}
+_DESCARTA_AL_VOLVER = {"borrador": ("evaluacion",), "simulada": ("guia",), "evaluada": ("guia",)}
 
 
 # --------------------------------------------------------------------------- errores
@@ -213,8 +216,8 @@ def transicionar(
     if artefactos:
         art.update(copy.deepcopy(dict(artefactos)))
 
-    # Iteraciones diseñador ↔ evaluador
-    if destino == "evaluada":
+    # Iteraciones diseñador ↔ evaluador (volver de con_guia a evaluada no es una evaluación nueva)
+    if destino == "evaluada" and origen == "borrador":
         if nuevo.iteraciones >= MAX_ITERACIONES:
             raise LimiteIteraciones(f"{MAX_ITERACIONES} evaluaciones agotadas; solo cabe archivar")
         nuevo.iteraciones += 1
@@ -275,7 +278,7 @@ def transicionar(
         entrada["revisor"] = revisor
     if motivo:
         entrada["motivo"] = motivo
-    if destino == "evaluada":
+    if destino == "evaluada" and origen == "borrador":
         entrada["iteracion"] = nuevo.iteraciones
         entrada["rub01_total"] = art["evaluacion"]["rub01"]["total"]
     nuevo.estado = destino
