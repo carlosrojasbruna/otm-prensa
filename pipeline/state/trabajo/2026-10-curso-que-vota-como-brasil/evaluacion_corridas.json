@@ -1,0 +1,289 @@
+{
+  "tarea_id": "2026-10-curso-que-vota-como-brasil",
+  "evaluaciones": [
+    {
+      "iteracion": 1,
+      "version_tarea": 1,
+      "fecha": "2026-10-26T15:16:02Z",
+      "modelo": "claude-opus-5-5",
+      "version_prompt": "1.3",
+      "version_rubrica": "4.0",
+      "corridas": [
+        {
+          "n": 1,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La tarea plantea una necesidad concreta: representar con personas el resultado electoral de forma comprensible. No entrega ninguna regla ni procedimiento de reparto.",
+                "cita": "Deben decidir cuántas personas participarán y cuántas se ubicarán a cada lado, para que quien mire desde la escalera entienda el resultado a simple vista."
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe método y admite varios repartos defendibles. Por ejemplo: 16-14 en un curso de 30, 15-14 con 29 personas o 52-48 sumando otros cursos.",
+                "cita": "¿Cómo repartirían a las personas para que la actividad represente bien el resultado?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Hay varias decisiones de modelación: elegir el tamaño del grupo, decidir cómo redondear, aceptar o no ampliar a otros cursos y definir qué significa «representar bien».",
+                "cita": "Deben decidir cuántas personas participarán"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Una actividad escolar que representa un resultado electoral real es claramente plausible fuera del aula de matemática.",
+                "cita": "La radio del colegio quiere explicar, con una actividad en el patio, cómo se repartieron los votos en la segunda vuelta presidencial de Brasil."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los resultados de una elección real se toman como ciertos según la procedencia declarada. Esos porcentajes y las cifras de votos de R2 son el núcleo de la tarea.",
+                "cita": "Lula obtuvo el 51,79 % de los votos y Flávio Bolsonaro el 48,21 %."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona las decisiones: el tamaño del curso, que nadie quede sin votar y que la diferencia sea visible. También es necesario para juzgar si el reparto logra su propósito.",
+                "cita": "para que quien mire desde la escalera entienda el resultado a simple vista"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Resolverla obliga a recorrer el ciclo completo: comprender la situación, simplificar (tamaño y redondeo), plantear la proporción, calcular y volver al patio para juzgar si el reparto se entiende. Ninguna fase la deja hecha el enunciado.",
+                "cita": "¿Cómo repartirían a las personas para que la actividad represente bien el resultado?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "El reparto puede contrastarse con las cifras reales de votos de R2. También puede probarse en el patio, comprobando si desde la escalera el resultado se entiende a simple vista; esa es una restricción del contexto que se puede medir.",
+                "cita": "R2 (Cantidad real de votos de cada candidato, para comprobar la actividad)"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto y el lenguaje son comprensibles para 10–12 años. La matemática (porcentajes, proporcionalidad y redondeo) corresponde a las herramientas esperables del nivel P.",
+                "cita": "cada persona 'vota' y se coloca en un lado del patio, de modo que la fila de cada lado muestre cómo votó el país"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es accesible: con 100 personas basta repartir 52 y 48, o puede usarse un reparto aproximado del curso. El techo es alto: se pueden comparar tamaños para minimizar el error (por ejemplo, 29 o 56 personas aproximan muy bien) y analizar la visibilidad.",
+                "cita": "Deben decidir cuántas personas participarán y cuántas se ubicarán a cada lado"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las soluciones permiten comparar repartos y discutir varias tensiones: exactitud frente a visibilidad, qué pasa con un resultado más estrecho y los límites de representar con pocas personas.",
+                "cita": "Pueden pedir información adicional."
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "Toda la información necesaria está entregada o disponible a solicitud (R2–R4). Ningún material revela la regla de reparto ni el tamaño conveniente del grupo.",
+                "cita": "R4 (Posibilidad de sumar más gente a la actividad), disponible a solicitud del grupo"
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgR4pAUra2VKCm1GA6YqR",
+            "fecha": "2026-10-26T15:14:47+00:00",
+            "intentos": 1,
+            "costo_usd": 0.079234,
+            "avisos": []
+          }
+        },
+        {
+          "n": 2,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La tarea plantea una necesidad real: representar un resultado con personas. No entrega una regla de reparto ni el tamaño del grupo, así que quien la resuelve debe construir el modelo proporcional y su redondeo.",
+                "cita": "Deben decidir cuántas personas participarán y cuántas se ubicarán a cada lado, para que quien mire desde la escalera entienda el resultado a simple vista."
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe un método. Hay varios modelos defendibles: usar el curso tal cual, ampliar a 100 personas, buscar el grupo mínimo que distinga a los dos candidatos, entre otros.",
+                "cita": "¿Cómo repartirían a las personas para que la actividad represente bien el resultado?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige varias decisiones: elegir el tamaño del grupo, decidir cómo redondear a personas enteras, ver si conviene sumar otros cursos y juzgar qué diferencia es visible. También puede pedirse información adicional.",
+                "cita": "Deben decidir cuántas personas participarán"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Representar un resultado electoral con personas es una práctica plausible de divulgación escolar. La historia no existe solo para insertar un cálculo: el problema de representación es el centro de la tarea.",
+                "cita": "La radio del colegio quiere explicar, con una actividad en el patio, cómo se repartieron los votos en la segunda vuelta presidencial de Brasil."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los resultados de la elección y los votos reales (R2) se presentan como datos extraescolares. Son el núcleo de la tarea, por lo que el componente auténtico está integrado de manera sustantiva.",
+                "cita": "Lula obtuvo el 51,79 % de los votos y Flávio Bolsonaro el 48,21 %."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona las decisiones: personas enteras, nadie sin votar, tamaño del curso y visibilidad de la diferencia. También es necesario para juzgar si el reparto «representa bien» el resultado.",
+                "cita": "para que quien mire desde la escalera entienda el resultado a simple vista"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a recorrer el ciclo: comprender la representación, simplificar al elegir N, matematizar como proporción y calcular. Luego hay que interpretar el redondeo, por ejemplo que 30 personas dan 15,5 frente a 14,5, y validar si la diferencia se ve. Ninguna fase viene hecha.",
+                "cita": "¿Cómo repartirían a las personas para que la actividad represente bien el resultado?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Además de comparar con los votos reales, el modelo puede someterse a prueba mediante una medición posible: formar las filas y observar desde la escalera si la diferencia se percibe. Esa condición del contexto es independiente del cálculo.",
+                "cita": "R2 (Cantidad real de votos de cada candidato, para comprobar la actividad), disponible a solicitud del grupo"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "Para el nivel P basta con porcentajes, proporcionalidad directa y redondeo, herramientas esperables según MAR03. El contexto de una votación y de una actividad en el patio es comprensible para estudiantes de 10 a 12 años.",
+                "cita": "Lula obtuvo el 51,79 % de los votos y Flávio Bolsonaro el 48,21 %."
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es accesible: dividir el curso «casi a la mitad, un poco más para Lula». El techo es alto: hay soluciones correctas más sofisticadas, como usar 100 personas, analizar el error de redondeo según N o buscar el grupo mínimo que muestre la diferencia.",
+                "cita": "Pueden pedir información adicional."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las soluciones abren preguntas comparables entre grupos: cuántas personas hacen falta para representar fielmente 51,79 % y qué se pierde al redondear. También se puede discutir si una diferencia de unos 3,6 puntos es visible.",
+                "cita": "R4 (Posibilidad de sumar más gente a la actividad), disponible a solicitud del grupo"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "Los porcentajes vienen de entrada, el tamaño del curso es conocido y los recursos a solicitud fijan condiciones del escenario sin revelar el reparto ni la regla de cálculo.",
+                "cita": "R3 (Regla de la actividad sobre quién participa), disponible a solicitud del grupo: Supuesto del escenario: cada integrante del curso representa un voto"
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgR4rzygf1Kykvh5n5HbP",
+            "fecha": "2026-10-26T15:15:27+00:00",
+            "intentos": 1,
+            "costo_usd": 0.084454,
+            "avisos": []
+          }
+        },
+        {
+          "n": 3,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La tarea plantea una necesidad concreta: representar el resultado con personas. No entrega ninguna regla ni procedimiento de reparto, porque el enunciado indica qué se debe lograr y no cómo hacerlo.",
+                "cita": "Deben decidir cuántas personas participarán y cuántas se ubicarán a cada lado, para que quien mire desde la escalera entienda el resultado a simple vista."
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "Son defendibles varios modelos: usar solo el curso y redondear, sumar otros cursos para acercarse al porcentaje, o priorizar que la diferencia se vea. Ninguna instrucción posterior encauza hacia una ruta única.",
+                "cita": "¿Cómo repartirían a las personas para que la actividad represente bien el resultado?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver la tarea exige decidir el tamaño del grupo y cómo redondear a personas enteras. También exige definir qué significa «representar bien» y si conviene pedir más gente, información que puede solicitarse.",
+                "cita": "Deben decidir cuántas personas participarán"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Que la radio escolar explique un resultado electoral real con una representación humana es una situación plausible fuera de la clase de matemática. No se percibe como una excusa para insertar un cálculo.",
+                "cita": "La radio del colegio quiere explicar, con una actividad en el patio, cómo se repartieron los votos en la segunda vuelta presidencial de Brasil."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los porcentajes y los votos absolutos (R2) se presentan como el resultado electoral real, un dato extraescolar que no fue creado para enseñar. Además, son el núcleo de la tarea.",
+                "cita": "Lula obtuvo el 51,79 % de los votos y Flávio Bolsonaro el 48,21 %."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona las decisiones: las personas son enteras, el curso tiene un tamaño dado y la diferencia debe verse desde la escalera. También es necesario para juzgar si el reparto representa bien el resultado.",
+                "cita": "para que quien mire desde la escalera entienda el resultado a simple vista"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a recorrer todas las fases sin que el enunciado deje ninguna hecha:\n- comprender la situación;\n- simplificar (elegir el tamaño del grupo y el criterio de redondeo);\n- matematizar como proporción y calcular;\n- interpretar si el reparto es fiel;\n- validar con los votos reales o con la vista desde la escalera.",
+                "cita": "¿Cómo repartirían a las personas para que la actividad represente bien el resultado?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "El reparto puede contrastarse con los votos absolutos (R2) y con una restricción del contexto que se puede probar físicamente: si la diferencia se percibe desde la escalera. Dudé si R2 aporta solo consistencia, pero la prueba en el patio es evidencia independiente acorde al nivel P.",
+                "cita": "Cantidad real de votos de cada candidato, para comprobar la actividad"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto escolar y el lenguaje son comprensibles para estudiantes de 10 a 12 años. La matemática requerida (porcentajes, proporcionalidad directa, redondeo) corresponde a las herramientas esperables del nivel P.",
+                "cita": "cada persona 'vota' y se coloca en un lado del patio, de modo que la fila de cada lado muestre cómo votó el país"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es accesible: repartir el curso aproximadamente en mitades, con uno o dos más de un lado. El techo es alto: se puede buscar el tamaño de grupo que reproduzca el porcentaje con mínimo error (por ejemplo, 29 de 56) o analizar el error del redondeo.",
+                "cita": "Pueden pedir información adicional."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las soluciones abren nuevas preguntas, como qué tamaño mínimo hace visible la diferencia o cuánto distorsiona el redondeo. También permiten comparar repartos entre grupos y discutir los límites de la representación.",
+                "cita": "para que la actividad represente bien el resultado"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "Toda la información necesaria está en el enunciado o puede solicitarse (R2, R3, R4). Ningún recurso indica cómo calcular el reparto ni qué tamaño elegir.",
+                "cita": "si el grupo lo pide, pueden sumar a otros cursos del colegio hasta el tamaño que necesiten"
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgR4uxTiYKGuMEhecNoQK",
+            "fecha": "2026-10-26T15:16:02+00:00",
+            "intentos": 1,
+            "costo_usd": 0.073494,
+            "avisos": []
+          }
+        }
+      ],
+      "totales": [
+        24,
+        24,
+        24
+      ],
+      "rango_total": 0,
+      "rango_inestable": 4,
+      "evaluacion_inestable": false,
+      "mediana": {
+        "regla": "mediana por criterio (n par: mediana inferior)",
+        "total": 24,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 2
+        },
+        "corrida_fuente": {
+          "genuino": 1,
+          "abierta": 1,
+          "decisiones": 1,
+          "realismo": 1,
+          "autenticidad": 1,
+          "contexto": 1,
+          "ciclo": 1,
+          "validacion": 1,
+          "nivel": 1,
+          "autodiferenciacion": 1,
+          "fecundidad": 1,
+          "recursos": 1
+        }
+      }
+    }
+  ]
+}

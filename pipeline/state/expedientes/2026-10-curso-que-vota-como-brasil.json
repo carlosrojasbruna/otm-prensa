@@ -1,0 +1,507 @@
+{
+  "tarea_id": "2026-10-curso-que-vota-como-brasil",
+  "estado": "archivada",
+  "iteraciones": 1,
+  "artefactos": {
+    "tarea": {
+      "id": "2026-10-curso-que-vota-como-brasil",
+      "titulo": "Si el curso votara como Brasil, ¿cómo nos repartimos?",
+      "estado": "archivada",
+      "version": 1,
+      "fecha": "2026-10-26",
+      "noticia": {
+        "noticia_id": "2026-10-26-latercera-exembajador-depolo-y-postura-de-bolsonaro",
+        "medio": "La Tercera",
+        "titulo": "Exembajador Depolo y postura de Bolsonaro de desconocer triunfo de Lula: “Expresa su prontuario antidemocrático”",
+        "fecha": "2026-10-26",
+        "url": "https://www.latercera.com/politica/noticia/exembajador-depolo-y-postura-de-bolsonaro-de-desconocer-triunfo-de-lula-expresa-su-prontuario-antidemocratico/",
+        "resumen_propio": "Un exembajador chileno en Brasil comenta el balotaje en que Lula superó a Flávio Bolsonaro y el desconocimiento del resultado por parte del bando opositor. Según su visión, esa postura refleja rasgos antidemocráticos, y los partidos de centro podrían acercarse al nuevo gobierno para formar mayorías parlamentarias. También destaca la movilización de la campaña de Lula y ve en el resultado una lección para Chile.",
+        "cifras_usadas": [
+          {
+            "valor": "51,79 %",
+            "unidad": "porcentaje de votos",
+            "que_es": "Proporción de votos obtenida por Lula en el balotaje",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 3"
+            }
+          },
+          {
+            "valor": "64.256.232",
+            "unidad": "votos",
+            "que_es": "Votos obtenidos por Lula en el balotaje",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 3"
+            }
+          },
+          {
+            "valor": "48,21 %",
+            "unidad": "porcentaje de votos",
+            "que_es": "Proporción de votos obtenida por Flávio Bolsonaro en el balotaje",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 3"
+            }
+          },
+          {
+            "valor": "59.826.041",
+            "unidad": "votos",
+            "que_es": "Votos obtenidos por Flávio Bolsonaro en el balotaje",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 3"
+            }
+          }
+        ]
+      },
+      "nivel_principal": "P",
+      "variantes": {
+        "abajo": null,
+        "arriba": "S"
+      },
+      "area": "sociedad_datos",
+      "contenidos_matematicos": [
+        "proporcionalidad directa",
+        "porcentajes simples",
+        "redondeo y estimación",
+        "representación en gráficos de barras"
+      ],
+      "tiempo_estimado": "2 sesiones de 90 min",
+      "estudiante": {
+        "enunciado_es": "La radio del colegio quiere explicar, con una actividad en el patio, cómo se repartieron los votos en la segunda vuelta presidencial de Brasil. Lula obtuvo el 51,79 % de los votos y Flávio Bolsonaro el 48,21 %. La idea es que su curso represente a todos los votantes: cada persona 'vota' y se coloca en un lado del patio, de modo que la fila de cada lado muestre cómo votó el país. Deben decidir cuántas personas participarán y cuántas se ubicarán a cada lado, para que quien mire desde la escalera entienda el resultado a simple vista. ¿Cómo repartirían a las personas para que la actividad represente bien el resultado? Pueden pedir información adicional.",
+        "foto_descripcion": "Dibujo de estudiantes en un patio, separados en dos filas de distinto color a ambos lados de una línea, mirando hacia una escalera.",
+        "recursos_a_solicitud": [
+          {
+            "id": "R2",
+            "que_es": "Cantidad real de votos de cada candidato, para comprobar la actividad",
+            "contenido": "Lula: 64.256.232 votos. Flávio Bolsonaro: 59.826.041 votos.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P6-VAL",
+            "fuente": "noticia, párrafo 3"
+          },
+          {
+            "id": "R3",
+            "que_es": "Regla de la actividad sobre quién participa",
+            "contenido": "Supuesto del escenario: cada integrante del curso representa un voto y debe quedar en uno de los dos lados; nadie se queda sin votar.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P2-RM",
+            "fuente": "supuesto del escenario"
+          },
+          {
+            "id": "R4",
+            "que_es": "Posibilidad de sumar más gente a la actividad",
+            "contenido": "Supuesto del escenario: si el grupo lo pide, pueden sumar a otros cursos del colegio hasta el tamaño que necesiten.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P2-RM",
+            "fuente": "supuesto del escenario"
+          }
+        ]
+      },
+      "variantes_detalle": {
+        "abajo": null,
+        "arriba": {
+          "tramo": "S",
+          "cambios": "No se entregan los porcentajes: solo se dan los votos de cada candidato. Se pide además comparar varios tamaños de grupo y justificar cuál representa mejor el resultado, discutiendo el error por redondeo."
+        }
+      },
+      "recursos_de_entrada": [
+        {
+          "id": "R1",
+          "que_es": "Porcentajes del resultado que el grupo recibe de entrada",
+          "contenido": "Lula: 51,79 % de los votos. Flávio Bolsonaro: 48,21 % de los votos.",
+          "disponibilidad": "de_entrada",
+          "fase": "P1-MRS",
+          "fuente": "noticia, párrafo 3"
+        }
+      ],
+      "mapa_ciclo": {
+        "P1-MRS": {
+          "decision": "Entender qué quiere mostrar la actividad: que el reparto del curso se parezca al reparto del país.",
+          "evidencia": "El grupo explica con un dibujo qué significa que cada lado 'represente' un porcentaje.",
+          "bloqueo_probable": "B12"
+        },
+        "P2-RM": {
+          "decision": "Elegir cuántas personas participan (curso solo o con otros cursos) y aceptar que cada persona es un voto.",
+          "evidencia": "Tamaño del grupo elegido y lista de supuestos con la razón de la elección.",
+          "bloqueo_probable": "B23"
+        },
+        "P3-MM": {
+          "decision": "Plantear la relación entre el porcentaje y el número de personas (por cada cien, regla de tres o fracción del grupo).",
+          "evidencia": "Tabla o esquema con el porcentaje y el número de participantes.",
+          "bloqueo_probable": "B34"
+        },
+        "P4-WM": {
+          "decision": "Calcular cuántas personas van a cada lado y decidir qué hacer con los decimales (redondeo).",
+          "evidencia": "Cálculos con resultados enteros y la regla de redondeo escrita.",
+          "bloqueo_probable": "B45"
+        },
+        "P5-INT": {
+          "decision": "Interpretar el reparto en personas: ¿se ve la ventaja de un lado o se ve igual de largo?",
+          "evidencia": "Frase que dice cuántas personas quedan de cada lado y si se nota la diferencia a simple vista.",
+          "bloqueo_probable": "B56"
+        },
+        "P6-VAL": {
+          "decision": "Pedir los votos reales y comparar el porcentaje del reparto en el curso con el porcentaje real, y probar con otro tamaño de grupo.",
+          "evidencia": "Tabla que contrasta el porcentaje del curso con el calculado desde los votos reales.",
+          "bloqueo_probable": "B67"
+        },
+        "P7-EXP": {
+          "decision": "Presentar a la radio el reparto elegido, con un gráfico de barras y una explicación del redondeo.",
+          "evidencia": "Cartel o gráfico con el número de personas por lado y una frase sobre su exactitud.",
+          "bloqueo_probable": null
+        }
+      },
+      "task_space": {
+        "required_assumptions": [
+          "Cada persona del grupo representa un voto.",
+          "Solo hay dos lados y nadie se abstiene.",
+          "El grupo acepta un pequeño error por redondeo."
+        ],
+        "reference_solution": {
+          "steps": "1) Elegir un tamaño de grupo n. 2) Calcular n × 0,5179 y n × 0,4821 y redondear de modo que la suma sea n. 3) Para n = 100: 52 y 48. Para n = 30: 15,5 y 14,5, que al redondear quedan en 16 y 14 (53,3 % y 46,7 %, error de 1,5 puntos). Para n = 29: 15,02 y 13,98, que quedan en 15 y 14 (51,7 % y 48,3 %, error de unos 0,1 puntos). 4) Comparar con el porcentaje real calculado desde los votos: 64.256.232 ÷ 124.082.273 ≈ 51,79 %. 5) Mostrar el reparto con un gráfico.",
+          "result": "Para un grupo de cien personas, 52 con Lula y 48 con Flávio Bolsonaro; para un curso de unas treinta personas, un reparto de 15 y 14 (para 29) o 16 y 14 (para 30), con errores distintos según el tamaño.",
+          "acceptable_range": "Son defendibles distintos tamaños de grupo siempre que el reparto mantenga a Lula con algo más de la mitad; el error por redondeo debería ser de unos 2 puntos porcentuales o menos para decir que representa bien el resultado."
+        },
+        "routes": [
+          {
+            "id": "R1",
+            "nombre": "Regla de tres con grupos de cien",
+            "nivel": "P",
+            "modelo": "Proporcional: 51,79 de cada 100 personas; se escala al tamaño elegido.",
+            "resultado": "Con cien personas: 52 y 48; con otros tamaños, se multiplica y se redondea."
+          },
+          {
+            "id": "R2",
+            "nombre": "Fracción aproximada del grupo",
+            "nivel": "P",
+            "modelo": "Aproximar 51,79 % a poco más de la mitad y 48,21 % a poco menos; repartir mitad más unas pocas personas.",
+            "resultado": "Un lado con una o dos personas más que el otro; nivel de precisión bajo pero razonable."
+          },
+          {
+            "id": "R3",
+            "nombre": "Multiplicar por el porcentaje y redondear",
+            "nivel": "S1",
+            "modelo": "n × 0,5179 y n × 0,4821 con regla de redondeo para que la suma sea n.",
+            "resultado": "Para n = 29: 15 y 14; para n = 30: 16 y 14."
+          },
+          {
+            "id": "R4",
+            "nombre": "Razón entre los votos reales",
+            "nivel": "S1",
+            "modelo": "Razón de votos 64.256.232 ÷ 59.826.041 ≈ 1,07; se busca un reparto cuya razón se parezca, como 15 a 14.",
+            "resultado": "15 a 14 da una razón de unos 1,07, muy cercana a la real."
+          }
+        ],
+        "modelo_inadecuado": {
+          "id": "RX",
+          "por_que_falla": "Repartir el curso mitad y mitad, o poner a todas las personas del lado de quien ganó, no representa el resultado: en el primer caso se pierde la diferencia y en el segundo se borra al 48,21 % que votó distinto."
+        },
+        "validation_evidence": "Dato independiente de la construcción: los votos reales de cada candidato (64.256.232 y 59.826.041). El grupo calcula el porcentaje que representa su reparto y lo contrasta con el porcentaje calculado desde los votos reales; también puede probar con un tamaño de grupo distinto y comparar el error.",
+        "agent_visibility": {
+          "students": [
+            "enunciado_es",
+            "foto_descripcion",
+            "recursos_a_solicitud"
+          ],
+          "coder": [
+            "enunciado_es",
+            "task_space"
+          ],
+          "guide": [
+            "all"
+          ]
+        }
+      },
+      "rubrica_rub01": {
+        "total": 24,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 2
+        }
+      },
+      "rubrica_rub02": {
+        "P": null,
+        "S": null,
+        "U": null
+      },
+      "modelo_y_prompt": {
+        "diseñador": "claude-sonnet-5-5",
+        "version_prompt": "1.1",
+        "version_rubrica": "4.0"
+      }
+    },
+    "noticia": {
+      "id": "2026-10-26-latercera-exembajador-depolo-y-postura-de-bolsonaro",
+      "medio_id": "latercera",
+      "medio": "La Tercera",
+      "idioma": "es",
+      "titulo": "Exembajador Depolo y postura de Bolsonaro de desconocer triunfo de Lula: “Expresa su prontuario antidemocrático”",
+      "fecha": "2026-10-26",
+      "url": "https://www.latercera.com/politica/noticia/exembajador-depolo-y-postura-de-bolsonaro-de-desconocer-triunfo-de-lula-expresa-su-prontuario-antidemocratico/",
+      "area": "sociedad_datos",
+      "resumen_propio": "Un exembajador chileno en Brasil comenta el balotaje en que Lula superó a Flávio Bolsonaro y el desconocimiento del resultado por parte del bando opositor. Según su visión, esa postura refleja rasgos antidemocráticos, y los partidos de centro podrían acercarse al nuevo gobierno para formar mayorías parlamentarias. También destaca la movilización de la campaña de Lula y ve en el resultado una lección para Chile.",
+      "cifras": [
+        {
+          "valor": 81,
+          "unidad": "años",
+          "que_es": "Edad del político que obtuvo su cuarto mandato (Lula)",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 2"
+          }
+        },
+        {
+          "valor": "51,79 %",
+          "unidad": "porcentaje de votos",
+          "que_es": "Proporción de votos obtenida por Lula en el balotaje",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 3"
+          }
+        },
+        {
+          "valor": "64.256.232",
+          "unidad": "votos",
+          "que_es": "Votos obtenidos por Lula en el balotaje",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 3"
+          }
+        },
+        {
+          "valor": "48,21 %",
+          "unidad": "porcentaje de votos",
+          "que_es": "Proporción de votos obtenida por Flávio Bolsonaro en el balotaje",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 3"
+          }
+        },
+        {
+          "valor": "59.826.041",
+          "unidad": "votos",
+          "que_es": "Votos obtenidos por Flávio Bolsonaro en el balotaje",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 3"
+          }
+        },
+        {
+          "valor": "50,9 %",
+          "unidad": "porcentaje de votos",
+          "que_es": "Proporción de votos obtenida por Lula en la elección de 2022",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 3"
+          }
+        },
+        {
+          "valor": "49,1 %",
+          "unidad": "porcentaje de votos",
+          "que_es": "Proporción de votos obtenida por Jair Bolsonaro en la elección de 2022",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 3"
+          }
+        },
+        {
+          "valor": "21 días",
+          "unidad": "días",
+          "que_es": "Tiempo en que se logró la movilización de la segunda vuelta según el entrevistado",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 12"
+          }
+        }
+      ],
+      "recuperada_en": "2026-10-26T14:41:28Z",
+      "filtro": {
+        "version_rubrica": "4.0",
+        "puntajes": {
+          "genuino": 1,
+          "decisiones": 1,
+          "realismo": 2,
+          "autenticidad": 2,
+          "validacion": 2
+        },
+        "total": 8,
+        "pasa": true,
+        "justificacion": "Noticia real con cifras electorales auténticas y contraste posible, pero predominantemente opinativa; el problema modelable (mayorías parlamentarias) está solo insinuado y requiere supuestos externos a la noticia."
+      }
+    },
+    "evaluacion": {
+      "tarea_id": "2026-10-curso-que-vota-como-brasil",
+      "fecha": "2026-10-26T15:16:02Z",
+      "rub01": {
+        "version_rubrica": "4.0",
+        "criterios": {
+          "genuino": {
+            "puntaje": 2,
+            "justificacion": "La tarea plantea una necesidad concreta: representar con personas el resultado electoral de forma comprensible. No entrega ninguna regla ni procedimiento de reparto.",
+            "cita": "Deben decidir cuántas personas participarán y cuántas se ubicarán a cada lado, para que quien mire desde la escalera entienda el resultado a simple vista."
+          },
+          "abierta": {
+            "puntaje": 2,
+            "justificacion": "La pregunta no prescribe método y admite varios repartos defendibles. Por ejemplo: 16-14 en un curso de 30, 15-14 con 29 personas o 52-48 sumando otros cursos.",
+            "cita": "¿Cómo repartirían a las personas para que la actividad represente bien el resultado?"
+          },
+          "decisiones": {
+            "puntaje": 2,
+            "justificacion": "Hay varias decisiones de modelación: elegir el tamaño del grupo, decidir cómo redondear, aceptar o no ampliar a otros cursos y definir qué significa «representar bien».",
+            "cita": "Deben decidir cuántas personas participarán"
+          },
+          "realismo": {
+            "puntaje": 2,
+            "justificacion": "Una actividad escolar que representa un resultado electoral real es claramente plausible fuera del aula de matemática.",
+            "cita": "La radio del colegio quiere explicar, con una actividad en el patio, cómo se repartieron los votos en la segunda vuelta presidencial de Brasil."
+          },
+          "autenticidad": {
+            "puntaje": 2,
+            "justificacion": "Los resultados de una elección real se toman como ciertos según la procedencia declarada. Esos porcentajes y las cifras de votos de R2 son el núcleo de la tarea.",
+            "cita": "Lula obtuvo el 51,79 % de los votos y Flávio Bolsonaro el 48,21 %."
+          },
+          "contexto": {
+            "puntaje": 2,
+            "justificacion": "El contexto condiciona las decisiones: el tamaño del curso, que nadie quede sin votar y que la diferencia sea visible. También es necesario para juzgar si el reparto logra su propósito.",
+            "cita": "para que quien mire desde la escalera entienda el resultado a simple vista"
+          },
+          "ciclo": {
+            "puntaje": 2,
+            "justificacion": "Resolverla obliga a recorrer el ciclo completo: comprender la situación, simplificar (tamaño y redondeo), plantear la proporción, calcular y volver al patio para juzgar si el reparto se entiende. Ninguna fase la deja hecha el enunciado.",
+            "cita": "¿Cómo repartirían a las personas para que la actividad represente bien el resultado?"
+          },
+          "validacion": {
+            "puntaje": 2,
+            "justificacion": "El reparto puede contrastarse con las cifras reales de votos de R2. También puede probarse en el patio, comprobando si desde la escalera el resultado se entiende a simple vista; esa es una restricción del contexto que se puede medir.",
+            "cita": "R2 (Cantidad real de votos de cada candidato, para comprobar la actividad)"
+          },
+          "nivel": {
+            "puntaje": 2,
+            "justificacion": "El contexto y el lenguaje son comprensibles para 10–12 años. La matemática (porcentajes, proporcionalidad y redondeo) corresponde a las herramientas esperables del nivel P.",
+            "cita": "cada persona 'vota' y se coloca en un lado del patio, de modo que la fila de cada lado muestre cómo votó el país"
+          },
+          "autodiferenciacion": {
+            "puntaje": 2,
+            "justificacion": "El piso es accesible: con 100 personas basta repartir 52 y 48, o puede usarse un reparto aproximado del curso. El techo es alto: se pueden comparar tamaños para minimizar el error (por ejemplo, 29 o 56 personas aproximan muy bien) y analizar la visibilidad.",
+            "cita": "Deben decidir cuántas personas participarán y cuántas se ubicarán a cada lado"
+          },
+          "fecundidad": {
+            "puntaje": 2,
+            "justificacion": "Las soluciones permiten comparar repartos y discutir varias tensiones: exactitud frente a visibilidad, qué pasa con un resultado más estrecho y los límites de representar con pocas personas.",
+            "cita": "Pueden pedir información adicional."
+          },
+          "recursos": {
+            "puntaje": 2,
+            "justificacion": "Toda la información necesaria está entregada o disponible a solicitud (R2–R4). Ningún material revela la regla de reparto ni el tamaño conveniente del grupo.",
+            "cita": "R4 (Posibilidad de sumar más gente a la actividad), disponible a solicitud del grupo"
+          }
+        },
+        "total": 24,
+        "mejoras": []
+      },
+      "reproducibilidad": {
+        "agentes": {
+          "disenador": {
+            "modelo": "claude-sonnet-5-5",
+            "version_modelo": "claude-sonnet-5-5",
+            "costo_usd": 0.137039,
+            "version_prompt": "1.1"
+          },
+          "evaluador": {
+            "modelo": "claude-opus-5-5",
+            "version_modelo": "claude-opus-5-5",
+            "costo_usd": 0.237182,
+            "version_prompt": "1.3"
+          },
+          "filtro": {
+            "modelo": "claude-haiku-5-5",
+            "version_modelo": "claude-haiku-5-5",
+            "costo_usd": 0.000732,
+            "version_prompt": "1.0"
+          }
+        },
+        "version_prompt": {
+          "disenador": "1.1",
+          "evaluador": "1.3",
+          "filtro": "1.0"
+        },
+        "version_rubrica": "4.0",
+        "version_MAR03": "1.0",
+        "version_MED01": "1.4",
+        "diseno_simulador": null,
+        "fecha": "2026-10-26T15:16:02Z",
+        "costo_usd": 0.374953
+      }
+    }
+  },
+  "historial": [
+    {
+      "fecha": "2026-10-26T15:12:34+00:00",
+      "de": null,
+      "a": "borrador"
+    },
+    {
+      "fecha": "2026-10-26T15:16:05+00:00",
+      "de": "borrador",
+      "a": "evaluada",
+      "iteracion": 1,
+      "rub01_total": 24
+    },
+    {
+      "fecha": "2026-10-26T15:16:09+00:00",
+      "de": "evaluada",
+      "a": "archivada",
+      "motivo": "candidato no elegido: RUB01 24/24 frente a 24/24 de 2026-10-que-tan-renida-fue (2 candidatos por noticia; se sigue con el mejor)"
+    }
+  ],
+  "marcas": {
+    "ciclo_id": "ciclo_20261026T144128462641Z",
+    "noticia_id": "2026-10-26-latercera-exembajador-depolo-y-postura-de-bolsonaro",
+    "nivel_objetivo": "P",
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "versiones_modelo": [
+          "claude-sonnet-5-5"
+        ],
+        "costo_usd": 0.137039,
+        "llamadas": 1
+      },
+      "filtro": {
+        "modelo": "claude-haiku-5-5",
+        "versiones_modelo": [
+          "claude-haiku-5-5"
+        ],
+        "costo_usd": 0.000732,
+        "llamadas": 1
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "versiones_modelo": [
+          "claude-opus-5-5"
+        ],
+        "costo_usd": 0.237182,
+        "llamadas": 3
+      }
+    },
+    "costos_compartidos": [
+      "disenador",
+      "filtro"
+    ],
+    "version_MAR03": "1.0",
+    "evaluacion_inestable": false,
+    "evaluacion_rango_total": 0,
+    "evaluacion_corridas": "pipeline/state/trabajo/2026-10-curso-que-vota-como-brasil/evaluacion_corridas.json"
+  }
+}
