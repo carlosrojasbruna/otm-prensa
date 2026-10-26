@@ -1,12 +1,12 @@
 {
   "tarea_id": "2026-10-leer-documento-de-riesgos",
-  "estado": "evaluada",
+  "estado": "archivada",
   "iteraciones": 1,
   "artefactos": {
     "tarea": {
       "id": "2026-10-leer-documento-de-riesgos",
       "titulo": "¿Cuánto tardaríamos en leer el informe de riesgos de una empresa de IA?",
-      "estado": "evaluada",
+      "estado": "archivada",
       "version": 1,
       "fecha": "2026-10-26",
       "noticia": {
@@ -429,6 +429,12 @@
       "a": "evaluada",
       "iteracion": 1,
       "rub01_total": 23
+    },
+    {
+      "fecha": "2026-10-26T18:19:12+00:00",
+      "de": "evaluada",
+      "a": "archivada",
+      "motivo": "revisión humana 1 (Carlos Rojas Bruna)"
     }
   ],
   "marcas": {
@@ -469,6 +475,11 @@
     "evaluacion_inestable": false,
     "evaluacion_rango_total": 2,
     "evaluacion_corridas": "pipeline/state/trabajo/2026-10-leer-documento-de-riesgos/evaluacion_corridas.json",
-    "pendiente": "revision_humana_1"
+    "revision_humana_1": {
+      "resultado": "negativa",
+      "revisor": "Carlos Rojas Bruna",
+      "fecha": "2026-10-26T18:19:12Z",
+      "motivo": "revisión humana 1"
+    }
   }
 }
