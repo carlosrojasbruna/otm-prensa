@@ -1,0 +1,512 @@
+{
+  "tarea_id": "2026-10-que-tan-renida-fue",
+  "estado": "evaluada",
+  "iteraciones": 1,
+  "artefactos": {
+    "tarea": {
+      "id": "2026-10-que-tan-renida-fue",
+      "titulo": "¿Qué tan reñida fue la elección en Brasil?",
+      "estado": "evaluada",
+      "version": 1,
+      "fecha": "2026-10-26",
+      "noticia": {
+        "noticia_id": "2026-10-26-latercera-exembajador-depolo-y-postura-de-bolsonaro",
+        "medio": "La Tercera",
+        "titulo": "Exembajador Depolo y postura de Bolsonaro de desconocer triunfo de Lula: “Expresa su prontuario antidemocrático”",
+        "fecha": "2026-10-26",
+        "url": "https://www.latercera.com/politica/noticia/exembajador-depolo-y-postura-de-bolsonaro-de-desconocer-triunfo-de-lula-expresa-su-prontuario-antidemocratico/",
+        "resumen_propio": "Un exembajador chileno en Brasil comenta el balotaje en que Lula superó a Flávio Bolsonaro y el desconocimiento del resultado por parte del bando opositor. Según su visión, esa postura refleja rasgos antidemocráticos, y los partidos de centro podrían acercarse al nuevo gobierno para formar mayorías parlamentarias. También destaca la movilización de la campaña de Lula y ve en el resultado una lección para Chile.",
+        "cifras_usadas": [
+          {
+            "valor": "51,79 %",
+            "unidad": "porcentaje de votos",
+            "que_es": "Proporción de votos obtenida por Lula en el balotaje",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 3"
+            }
+          },
+          {
+            "valor": "64.256.232",
+            "unidad": "votos",
+            "que_es": "Votos obtenidos por Lula en el balotaje",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 3"
+            }
+          },
+          {
+            "valor": "48,21 %",
+            "unidad": "porcentaje de votos",
+            "que_es": "Proporción de votos obtenida por Flávio Bolsonaro en el balotaje",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 3"
+            }
+          },
+          {
+            "valor": "59.826.041",
+            "unidad": "votos",
+            "que_es": "Votos obtenidos por Flávio Bolsonaro en el balotaje",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 3"
+            }
+          },
+          {
+            "valor": "50,9 %",
+            "unidad": "porcentaje de votos",
+            "que_es": "Proporción de votos obtenida por Lula en la elección de 2022",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 3"
+            }
+          },
+          {
+            "valor": "49,1 %",
+            "unidad": "porcentaje de votos",
+            "que_es": "Proporción de votos obtenida por Jair Bolsonaro en la elección de 2022",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 3"
+            }
+          }
+        ]
+      },
+      "nivel_principal": "P",
+      "variantes": {
+        "abajo": null,
+        "arriba": "S"
+      },
+      "area": "sociedad_datos",
+      "contenidos_matematicos": [
+        "operatoria con números grandes",
+        "comparación y diferencia",
+        "porcentajes simples",
+        "estimación y redondeo"
+      ],
+      "tiempo_estimado": "2 sesiones de 90 min",
+      "estudiante": {
+        "enunciado_es": "En Brasil se hizo una segunda vuelta para elegir presidente. Lula obtuvo 64.256.232 votos, que son el 51,79 % de los votos. Flávio Bolsonaro obtuvo 59.826.041 votos, el 48,21 %. En un programa de radio, una persona dijo que fue una elección muy pareja y otra dijo que Lula ganó con claridad. Ustedes forman el equipo de datos de un diario escolar y deben escribir una nota breve que explique qué tan reñida fue esta elección y cómo lo saben. Decidan qué comparaciones hacer y qué datos les sirven para apoyar su opinión. ¿Fue una elección pareja o clara? Pueden pedir información adicional.",
+        "foto_descripcion": "Dibujo sencillo de una urna de votación y, al lado, dos barras horizontales de colores distintos, sin números.",
+        "recursos_a_solicitud": [
+          {
+            "id": "R2",
+            "que_es": "Resultado de la elección presidencial anterior, como punto de comparación",
+            "contenido": "En la elección presidencial anterior, Lula obtuvo el 50,9 % de los votos y Jair Bolsonaro el 49,1 %.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P6-VAL",
+            "fuente": "noticia, párrafo 3"
+          },
+          {
+            "id": "R3",
+            "que_es": "Aclaración sobre qué votos se cuentan",
+            "contenido": "Supuesto del escenario: para esta nota solo se consideran los votos de los dos candidatos de la segunda vuelta; no se toman en cuenta votos en blanco ni nulos.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P2-RM",
+            "fuente": "supuesto del escenario"
+          }
+        ]
+      },
+      "variantes_detalle": {
+        "abajo": null,
+        "arriba": {
+          "tramo": "S",
+          "cambios": "Se entregan solo los votos (sin porcentajes). Se pide además comparar con la elección anterior discutiendo si conviene medir el margen en votos o en porcentaje, y estimar cuántos votantes habrían tenido que cambiar de bando para llegar a un empate."
+        }
+      },
+      "recursos_de_entrada": [
+        {
+          "id": "R1",
+          "que_es": "Resultados de la segunda vuelta que el grupo recibe de entrada",
+          "contenido": "Lula: 64.256.232 votos (51,79 %). Flávio Bolsonaro: 59.826.041 votos (48,21 %).",
+          "disponibilidad": "de_entrada",
+          "fase": "P1-MRS",
+          "fuente": "noticia, párrafo 3"
+        }
+      ],
+      "mapa_ciclo": {
+        "P1-MRS": {
+          "decision": "Decidir qué significa 'reñida' y qué datos de la situación hablan de eso (no basta saber quién ganó).",
+          "evidencia": "El grupo explica con sus palabras qué sería una elección pareja y subraya los datos que usará.",
+          "bloqueo_probable": "B12"
+        },
+        "P2-RM": {
+          "decision": "Elegir entre mirar votos o porcentajes, aceptar que solo cuentan dos candidatos y fijar un criterio propio de 'pareja'.",
+          "evidencia": "Lista escrita de supuestos y de datos usados o descartados.",
+          "bloqueo_probable": "B23"
+        },
+        "P3-MM": {
+          "decision": "Expresar la ventaja como resta de votos, como parte del total o como diferencia de porcentajes.",
+          "evidencia": "Operaciones planteadas en el cuaderno antes de calcular.",
+          "bloqueo_probable": "B34"
+        },
+        "P4-WM": {
+          "decision": "Restar, sumar para obtener el total y relacionar la diferencia con el total, con números grandes y redondeos.",
+          "evidencia": "Cálculos con resultados redondeados y unidades.",
+          "bloqueo_probable": "B45"
+        },
+        "P5-INT": {
+          "decision": "Traducir 'unos cuatro millones de votos' a 'mucho' o 'poco' según el total de votos.",
+          "evidencia": "Frase de la nota que relaciona el resultado numérico con la palabra pareja o clara.",
+          "bloqueo_probable": "B56"
+        },
+        "P6-VAL": {
+          "decision": "Pedir la elección anterior y comparar márgenes; recalcular el porcentaje a partir de los votos y contrastarlo con el informado.",
+          "evidencia": "Tabla con las dos elecciones y comprobación de que el porcentaje calculado coincide con el publicado.",
+          "bloqueo_probable": "B67"
+        },
+        "P7-EXP": {
+          "decision": "Escribir la nota y elegir una representación (barras o frase) que respalde su conclusión.",
+          "evidencia": "Nota breve con una conclusión, dos cifras y el criterio usado.",
+          "bloqueo_probable": null
+        }
+      },
+      "task_space": {
+        "required_assumptions": [
+          "Solo cuentan los votos de los dos candidatos de la segunda vuelta.",
+          "El grupo acuerda un criterio para decir que una elección es pareja (por ejemplo, una diferencia pequeña respecto del total).",
+          "La elección anterior sirve como referencia de comparación."
+        ],
+        "reference_solution": {
+          "steps": "1) Diferencia de votos: 64.256.232 − 59.826.041 = 4.430.191. 2) Total de votos de los dos: 64.256.232 + 59.826.041 = 124.082.273. 3) Diferencia respecto del total: 4.430.191 ÷ 124.082.273 ≈ 0,036, es decir unos 3,6 puntos porcentuales (51,79 − 48,21 = 3,58). 4) Elección anterior: 50,9 − 49,1 = 1,8 puntos. 5) Conclusión según criterio acordado: aunque la diferencia supera los cuatro millones de votos, equivale a menos de cuatro de cada cien votos; fue ajustada, pero más amplia que la elección anterior.",
+          "result": "Diferencia de unos 4,4 millones de votos, equivalente a unos 3,6 puntos porcentuales; elección ajustada, con un margen cercano al doble del de la elección anterior (1,8 puntos).",
+          "acceptable_range": "Diferencia de votos entre 4,4 y 4,5 millones; diferencia relativa entre 3,5 y 3,6 puntos; son defendibles conclusiones como 'bastante pareja' o 'ganó con claridad moderada', siempre que expliciten el criterio y comparen con el total."
+        },
+        "routes": [
+          {
+            "id": "R1",
+            "nombre": "Resta de votos y comparación con el total",
+            "nivel": "P",
+            "modelo": "Aditivo: diferencia de votos y luego comparación con el total de votos (estimación con millones redondeados).",
+            "resultado": "Unos 4,4 millones de diferencia sobre unos 124 millones de votos: aproximadamente 4 de cada 100."
+          },
+          {
+            "id": "R2",
+            "nombre": "Diferencia de porcentajes y comparación con la elección anterior",
+            "nivel": "P",
+            "modelo": "Aditivo con porcentajes: 51,79 − 48,21 frente a 50,9 − 49,1.",
+            "resultado": "3,58 puntos frente a 1,8 puntos: margen cercano al doble."
+          },
+          {
+            "id": "R3",
+            "nombre": "Razón entre votos",
+            "nivel": "S1",
+            "modelo": "Proporcional: 64.256.232 ÷ 59.826.041 ≈ 1,074, o sea unos 107 votos de Lula por cada 100 de Bolsonaro.",
+            "resultado": "Razón de aproximadamente 1,07; ventaja de unos 7 votos por cada 100 del otro candidato."
+          },
+          {
+            "id": "R4",
+            "nombre": "Cuántos votantes tendrían que cambiar para empatar",
+            "nivel": "S1",
+            "modelo": "Aditivo: la mitad de la diferencia de votos, 4.430.191 ÷ 2.",
+            "resultado": "Unos 2.215.096 votantes tendrían que cambiar de bando."
+          }
+        ],
+        "modelo_inadecuado": {
+          "id": "RX",
+          "por_que_falla": "Decir que fue clara solo porque la diferencia es de millones de votos, sin relacionarla con el total, ignora que una cifra grande puede ser pequeña respecto del total y no permite comparar con otra elección."
+        },
+        "validation_evidence": "Dato independiente de la construcción del modelo: los porcentajes publicados y los de la elección anterior (50,9 % y 49,1 %). El grupo contrasta el porcentaje calculado a partir de los votos con el publicado (coinciden al redondear) y compara el margen actual con el de la elección anterior.",
+        "agent_visibility": {
+          "students": [
+            "enunciado_es",
+            "foto_descripcion",
+            "recursos_a_solicitud"
+          ],
+          "coder": [
+            "enunciado_es",
+            "task_space"
+          ],
+          "guide": [
+            "all"
+          ]
+        }
+      },
+      "rubrica_rub01": {
+        "total": 24,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 2
+        }
+      },
+      "rubrica_rub02": {
+        "P": null,
+        "S": null,
+        "U": null
+      },
+      "modelo_y_prompt": {
+        "diseñador": "claude-sonnet-5-5",
+        "version_prompt": "1.1",
+        "version_rubrica": "4.0"
+      }
+    },
+    "noticia": {
+      "id": "2026-10-26-latercera-exembajador-depolo-y-postura-de-bolsonaro",
+      "medio_id": "latercera",
+      "medio": "La Tercera",
+      "idioma": "es",
+      "titulo": "Exembajador Depolo y postura de Bolsonaro de desconocer triunfo de Lula: “Expresa su prontuario antidemocrático”",
+      "fecha": "2026-10-26",
+      "url": "https://www.latercera.com/politica/noticia/exembajador-depolo-y-postura-de-bolsonaro-de-desconocer-triunfo-de-lula-expresa-su-prontuario-antidemocratico/",
+      "area": "sociedad_datos",
+      "resumen_propio": "Un exembajador chileno en Brasil comenta el balotaje en que Lula superó a Flávio Bolsonaro y el desconocimiento del resultado por parte del bando opositor. Según su visión, esa postura refleja rasgos antidemocráticos, y los partidos de centro podrían acercarse al nuevo gobierno para formar mayorías parlamentarias. También destaca la movilización de la campaña de Lula y ve en el resultado una lección para Chile.",
+      "cifras": [
+        {
+          "valor": 81,
+          "unidad": "años",
+          "que_es": "Edad del político que obtuvo su cuarto mandato (Lula)",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 2"
+          }
+        },
+        {
+          "valor": "51,79 %",
+          "unidad": "porcentaje de votos",
+          "que_es": "Proporción de votos obtenida por Lula en el balotaje",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 3"
+          }
+        },
+        {
+          "valor": "64.256.232",
+          "unidad": "votos",
+          "que_es": "Votos obtenidos por Lula en el balotaje",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 3"
+          }
+        },
+        {
+          "valor": "48,21 %",
+          "unidad": "porcentaje de votos",
+          "que_es": "Proporción de votos obtenida por Flávio Bolsonaro en el balotaje",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 3"
+          }
+        },
+        {
+          "valor": "59.826.041",
+          "unidad": "votos",
+          "que_es": "Votos obtenidos por Flávio Bolsonaro en el balotaje",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 3"
+          }
+        },
+        {
+          "valor": "50,9 %",
+          "unidad": "porcentaje de votos",
+          "que_es": "Proporción de votos obtenida por Lula en la elección de 2022",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 3"
+          }
+        },
+        {
+          "valor": "49,1 %",
+          "unidad": "porcentaje de votos",
+          "que_es": "Proporción de votos obtenida por Jair Bolsonaro en la elección de 2022",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 3"
+          }
+        },
+        {
+          "valor": "21 días",
+          "unidad": "días",
+          "que_es": "Tiempo en que se logró la movilización de la segunda vuelta según el entrevistado",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 12"
+          }
+        }
+      ],
+      "recuperada_en": "2026-10-26T14:41:28Z",
+      "filtro": {
+        "version_rubrica": "4.0",
+        "puntajes": {
+          "genuino": 1,
+          "decisiones": 1,
+          "realismo": 2,
+          "autenticidad": 2,
+          "validacion": 2
+        },
+        "total": 8,
+        "pasa": true,
+        "justificacion": "Noticia real con cifras electorales auténticas y contraste posible, pero predominantemente opinativa; el problema modelable (mayorías parlamentarias) está solo insinuado y requiere supuestos externos a la noticia."
+      }
+    },
+    "evaluacion": {
+      "tarea_id": "2026-10-que-tan-renida-fue",
+      "fecha": "2026-10-26T15:14:04Z",
+      "rub01": {
+        "version_rubrica": "4.0",
+        "criterios": {
+          "genuino": {
+            "puntaje": 2,
+            "justificacion": "La tarea plantea una necesidad real: dirimir si la elección fue pareja o clara para una nota de prensa. No entrega ninguna regla ni criterio para medir qué tan reñida fue.",
+            "cita": "deben escribir una nota breve que explique qué tan reñida fue esta elección y cómo lo saben"
+          },
+          "abierta": {
+            "puntaje": 2,
+            "justificacion": "Hay varios caminos defendibles: diferencia de votos, diferencia en puntos porcentuales, votos que habría que cambiar o comparación con la elección anterior. La pregunta no prescribe ningún procedimiento.",
+            "cita": "Decidan qué comparaciones hacer y qué datos les sirven para apoyar su opinión."
+          },
+          "decisiones": {
+            "puntaje": 2,
+            "justificacion": "Resolver exige definir qué significa «reñida» y elegir qué medida y qué referencia usar. También se puede decidir si solicitar información adicional (elección anterior, tratamiento de blancos y nulos).",
+            "cita": "¿Fue una elección pareja o clara? Pueden pedir información adicional."
+          },
+          "realismo": {
+            "puntaje": 2,
+            "justificacion": "El debate público sobre la estrechez de un resultado electoral es una situación que existe fuera de la escuela, y la nota de un diario escolar es plausible.",
+            "cita": "En un programa de radio, una persona dijo que fue una elección muy pareja y otra dijo que Lula ganó con claridad."
+          },
+          "autenticidad": {
+            "puntaje": 2,
+            "justificacion": "Los resultados electorales y el tema son componentes extraescolares no creados para enseñar, y constituyen el núcleo de la tarea. La verificación de la fuente corresponde a otro agente.",
+            "cita": "Lula obtuvo 64.256.232 votos, que son el 51,79 % de los votos. Flávio Bolsonaro obtuvo 59.826.041 votos, el 48,21 %."
+          },
+          "contexto": {
+            "puntaje": 2,
+            "justificacion": "El contexto electoral condiciona qué medida tiene sentido usar. También es necesario para interpretar si una diferencia de unos 4,4 millones de votos o 3,58 puntos es «pareja» o «clara».",
+            "cita": "una persona dijo que fue una elección muy pareja y otra dijo que Lula ganó con claridad"
+          },
+          "ciclo": {
+            "puntaje": 2,
+            "justificacion": "Responder exige recorrer todas las fases: comprender la disputa, elegir un criterio de comparación, calcular diferencias o proporciones y volver a la situación para juzgar y justificar la respuesta. Ninguna fase queda hecha por el enunciado.",
+            "cita": "escribir una nota breve que explique qué tan reñida fue esta elección y cómo lo saben"
+          },
+          "validacion": {
+            "puntaje": 2,
+            "justificacion": "El juicio sobre qué tan reñida fue puede contrastarse con evidencia independiente. Sirven la elección anterior (50,9 % vs 49,1 %) u otras elecciones públicas, no usadas para construir la medida.",
+            "cita": "R2 (Resultado de la elección presidencial anterior, como punto de comparación)"
+          },
+          "nivel": {
+            "puntaje": 2,
+            "justificacion": "El contexto y el lenguaje son comprensibles para 10–12 años. La matemática requerida (restas, porcentajes simples, comparación de cantidades grandes) está dentro de las herramientas esperables en P.",
+            "cita": "Ustedes forman el equipo de datos de un diario escolar"
+          },
+          "autodiferenciacion": {
+            "puntaje": 2,
+            "justificacion": "El piso es bajo, porque basta restar votos o porcentajes. El techo admite soluciones más sofisticadas: votos que habría que trasladar para empatar, diferencia relativa o comparación con elecciones anteriores.",
+            "cita": "Decidan qué comparaciones hacer y qué datos les sirven para apoyar su opinión."
+          },
+          "fecundidad": {
+            "puntaje": 2,
+            "justificacion": "Las distintas medidas pueden llevar a conclusiones diferentes y permiten comparar soluciones. Además abren preguntas sobre qué umbral define una elección reñida o cómo cambia el juicio con blancos y nulos.",
+            "cita": "¿Fue una elección pareja o clara?"
+          },
+          "recursos": {
+            "puntaje": 2,
+            "justificacion": "La información necesaria está dada o disponible a solicitud (R2, R3), y ningún material indica qué comparación hacer ni revela el criterio de solución.",
+            "cita": "Dibujo sencillo de una urna de votación y, al lado, dos barras horizontales de colores distintos, sin números."
+          }
+        },
+        "total": 24,
+        "mejoras": []
+      },
+      "reproducibilidad": {
+        "agentes": {
+          "disenador": {
+            "modelo": "claude-sonnet-5-5",
+            "version_modelo": "claude-sonnet-5-5",
+            "costo_usd": 0.137039,
+            "version_prompt": "1.1"
+          },
+          "evaluador": {
+            "modelo": "claude-opus-5-5",
+            "version_modelo": "claude-opus-5-5",
+            "costo_usd": 0.254436,
+            "version_prompt": "1.3"
+          },
+          "filtro": {
+            "modelo": "claude-haiku-5-5",
+            "version_modelo": "claude-haiku-5-5",
+            "costo_usd": 0.000732,
+            "version_prompt": "1.0"
+          }
+        },
+        "version_prompt": {
+          "disenador": "1.1",
+          "evaluador": "1.3",
+          "filtro": "1.0"
+        },
+        "version_rubrica": "4.0",
+        "version_MAR03": "1.0",
+        "version_MED01": "1.4",
+        "diseno_simulador": null,
+        "fecha": "2026-10-26T15:14:04Z",
+        "costo_usd": 0.392207
+      }
+    }
+  },
+  "historial": [
+    {
+      "fecha": "2026-10-26T15:12:34+00:00",
+      "de": null,
+      "a": "borrador"
+    },
+    {
+      "fecha": "2026-10-26T15:14:08+00:00",
+      "de": "borrador",
+      "a": "evaluada",
+      "iteracion": 1,
+      "rub01_total": 24
+    }
+  ],
+  "marcas": {
+    "ciclo_id": "ciclo_20261026T144128462641Z",
+    "noticia_id": "2026-10-26-latercera-exembajador-depolo-y-postura-de-bolsonaro",
+    "nivel_objetivo": "P",
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "versiones_modelo": [
+          "claude-sonnet-5-5"
+        ],
+        "costo_usd": 0.137039,
+        "llamadas": 1
+      },
+      "filtro": {
+        "modelo": "claude-haiku-5-5",
+        "versiones_modelo": [
+          "claude-haiku-5-5"
+        ],
+        "costo_usd": 0.000732,
+        "llamadas": 1
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "versiones_modelo": [
+          "claude-opus-5-5"
+        ],
+        "costo_usd": 0.254436,
+        "llamadas": 3
+      }
+    },
+    "costos_compartidos": [
+      "disenador",
+      "filtro"
+    ],
+    "version_MAR03": "1.0",
+    "evaluacion_inestable": false,
+    "evaluacion_rango_total": 0,
+    "evaluacion_corridas": "pipeline/state/trabajo/2026-10-que-tan-renida-fue/evaluacion_corridas.json",
+    "pendiente": "revision_humana_1"
+  }
+}

@@ -1,0 +1,230 @@
+{
+  "id": "2026-10-creible-meta-de-recaudacion",
+  "titulo": "¿Es creíble esa meta de recaudación?",
+  "estado": "archivada",
+  "version": 1,
+  "fecha": "2026-10-26",
+  "noticia": {
+    "noticia_id": "2026-10-26-latercera-ley-de-reconstruccion-tesoreria-destaca-que",
+    "medio": "La Tercera",
+    "titulo": "Ley de Reconstrucción: Tesorería destaca que en sus diez primeros días se han realizado 4 mil consultas o simulaciones de convenios",
+    "fecha": "2026-10-26",
+    "url": "https://www.latercera.com/nacional/noticia/ley-de-reconstruccion-tesoreria-destaca-que-en-sus-diez-primeros-dias-se-han-realizado-4-mil-consultas-o-simulaciones-de-convenios/",
+    "resumen_propio": "Tesorería informó que, en los primeros diez días de la nueva ley de reconstrucción, la plataforma de convenios registró miles de simulaciones y casi dos mil acuerdos de pago. Explica que los deudores del CAE podrán pagar en 48 cuotas, sin el tope de ingresos anterior, y estima cuánto dinero y deuda podrían moverse el próximo año.",
+    "cifras_usadas": [
+      {
+        "valor": 48,
+        "unidad": "cuotas",
+        "que_es": "Número de cuotas del nuevo convenio para deudores del CAE",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 5"
+        }
+      },
+      {
+        "valor": "200 mil millones",
+        "unidad": "pesos en un año",
+        "que_es": "Recaudación estimada que podría generar la movilización de deuda",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 11"
+        }
+      }
+    ]
+  },
+  "nivel_principal": "P",
+  "variantes": {
+    "abajo": null,
+    "arriba": "S"
+  },
+  "area": "economia",
+  "contenidos_matematicos": [
+    "proporcionalidad directa",
+    "números grandes y estimación",
+    "fracciones de un plazo",
+    "orden de magnitud"
+  ],
+  "tiempo_estimado": "2 sesiones de 90 min",
+  "estudiante": {
+    "enunciado_es": "Muchas personas pidieron un crédito para estudiar, llamado CAE, y siguen pagándolo. Tesorería, el organismo del Estado que cobra esas deudas, ofrece convenios de pago en cuotas mensuales: una nueva ley permite que los deudores del CAE paguen en 48 cuotas. Tesorería estima que el Estado podría recaudar 200 mil millones de pesos en un año gracias a estos convenios. Una periodista quiere saber si esa estimación es creíble y cuántas personas tendrían que firmar un convenio para lograrla. Elijan una deuda típica de ejemplo y decidan cómo suponen que se pagan las cuotas a lo largo del año. ¿Cuántas personas tendrían que firmar convenio para que se cumpla esa recaudación? ¿Les parece una meta realista? Pueden pedir información adicional.",
+    "foto_descripcion": "Ícono de una alcancía grande con monedas cayendo y un calendario de meses al lado.",
+    "recursos_a_solicitud": [
+      {
+        "id": "R3",
+        "que_es": "Condiciones simplificadoras del convenio, si el grupo pregunta por intereses o por el monto de las cuotas",
+        "contenido": "Supuesto del escenario: para esta tarea no se consideran intereses ni reajustes; cada persona que firma paga la misma cuota todos los meses y no se atrasa.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P2-RM",
+        "fuente": "supuesto del escenario"
+      },
+      {
+        "id": "R4",
+        "que_es": "Información sobre cuándo firman las personas, si el grupo pregunta por el momento de las firmas",
+        "contenido": "Supuesto del escenario: las personas pueden firmar en distintos momentos del año; el grupo decide qué supone (por ejemplo, todas al comienzo o repartidas durante el año) y justifica su elección.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P2-RM",
+        "fuente": "supuesto del escenario"
+      },
+      {
+        "id": "R5",
+        "que_es": "Dato independiente para contrastar después de modelar",
+        "contenido": "Supuesto del escenario: cuando el grupo tenga su cálculo, el docente entrega el total de deudores del CAE que informa la noticia, para que contrasten si el número de firmantes que calcularon es posible.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P6-VAL",
+        "fuente": "supuesto del escenario"
+      }
+    ]
+  },
+  "variantes_detalle": {
+    "abajo": null,
+    "arriba": {
+      "tramo": "S1",
+      "cambios": "Se pide modelar firmas repartidas a lo largo del año con una tasa de firmas por mes (modelo lineal), calcular cuántas cuotas paga en promedio cada persona en el año y analizar cómo cambia el resultado si el plazo fuera distinto. El contexto es el mismo."
+    }
+  },
+  "recursos_de_entrada": [
+    {
+      "id": "R1",
+      "que_es": "Recaudación estimada para un año",
+      "contenido": "Recaudación estimada: 200 mil millones de pesos en un año.",
+      "disponibilidad": "de_entrada",
+      "fase": "P1-MRS",
+      "fuente": "noticia, párrafo 11"
+    },
+    {
+      "id": "R2",
+      "que_es": "Plazo del nuevo convenio para deudores del CAE",
+      "contenido": "Nuevo convenio para deudores del CAE: 48 cuotas.",
+      "disponibilidad": "de_entrada",
+      "fase": "P1-MRS",
+      "fuente": "noticia, párrafo 5"
+    }
+  ],
+  "mapa_ciclo": {
+    "P1-MRS": {
+      "decision": "Entender que la recaudación de un año son las cuotas pagadas en ese año, no la deuda completa, y que deben averiguar cuántas personas hacen falta.",
+      "evidencia": "El grupo reformula con sus palabras qué significa recaudar en un año y qué incógnita buscan.",
+      "bloqueo_probable": "B12"
+    },
+    "P2-RM": {
+      "decision": "Elegir una deuda típica, decidir si todos firman al inicio o se reparten en el año, y suponer cuotas iguales sin intereses.",
+      "evidencia": "Lista de supuestos con la deuda elegida y la forma de pago acordada.",
+      "bloqueo_probable": "B23"
+    },
+    "P3-MM": {
+      "decision": "Expresar la recaudación como número de personas por cuota mensual por meses pagados en el año.",
+      "evidencia": "Esquema o expresión escrita que relaciona personas, cuota, meses y recaudación.",
+      "bloqueo_probable": "B34"
+    },
+    "P4-WM": {
+      "decision": "Calcular la cuota, los pagos de una persona en un año y el número de personas necesarias, manejando números muy grandes.",
+      "evidencia": "Cálculos escritos con la cuota, el pago anual por persona y el número de firmantes.",
+      "bloqueo_probable": "B45"
+    },
+    "P5-INT": {
+      "decision": "Interpretar el número de personas obtenido y decidir si la meta les parece realista.",
+      "evidencia": "Conclusión escrita para la periodista que cita el número de firmantes y los supuestos.",
+      "bloqueo_probable": "B56"
+    },
+    "P6-VAL": {
+      "decision": "Comparar el número de firmantes con el total de deudores del CAE y revisar si es posible; probar otra deuda o otra forma de firmar.",
+      "evidencia": "Comparación anotada y un segundo cálculo con otro supuesto.",
+      "bloqueo_probable": "B67"
+    },
+    "P7-EXP": {
+      "decision": "Presentar la respuesta a la periodista con la deuda elegida, la forma de pago supuesta y los límites de la estimación.",
+      "evidencia": "Cartel o exposición breve con el cálculo y una frase sobre su credibilidad.",
+      "bloqueo_probable": null
+    }
+  },
+  "task_space": {
+    "required_assumptions": [
+      "El grupo elige un monto de deuda típica y lo justifica como plausible.",
+      "Se ignoran intereses y reajustes.",
+      "Cada persona paga cuotas iguales todos los meses sin atrasarse.",
+      "El grupo acuerda cuándo firman las personas durante el año.",
+      "La recaudación estimada corresponde solo a cuotas de estos convenios dentro de ese año."
+    ],
+    "reference_solution": {
+      "steps": "1) Elegir una deuda típica, por ejemplo 8 millones de pesos. 2) Cuota = deuda dividida en 48, es decir 166.667 pesos aproximadamente. 3) Si todos firman al comienzo, cada persona paga 12 cuotas en el año, es decir unos 2 millones de pesos. 4) Personas necesarias = 200 mil millones de pesos dividido en esos 2 millones de pesos por persona. 5) Si las firmas se reparten durante el año, cada persona paga en promedio unas 6 cuotas, y se necesitan más personas. 6) Comparar con el total de deudores del CAE.",
+      "result": "Con una deuda de 8 millones de pesos y todos firmando al comienzo del año: unas 100.000 personas. Con firmas repartidas durante el año (unas 6 cuotas por persona, es decir, cerca de 1 millón de pesos): unas 200.000 personas. Un año equivale a la cuarta parte de un plazo de 48 cuotas, así que la deuda movida es unas cuatro veces la recaudación del año.",
+      "acceptable_range": "Entre 100.000 y 200.000 personas con una deuda de 8 millones de pesos; el resultado cambia en proporción inversa a la deuda elegida (con una deuda mayor, menos personas) y a la forma de firmar. Es defendible concluir que la meta es realista si el número de firmantes es una fracción posible del total de deudores del CAE."
+    },
+    "routes": [
+      {
+        "id": "R1",
+        "nombre": "Pago anual por persona",
+        "nivel": "P",
+        "modelo": "Personas = recaudación dividida por (cuota mensual por meses pagados en el año), con todos firmando al comienzo.",
+        "resultado": "Con deuda de 8 millones de pesos: unas 100.000 personas."
+      },
+      {
+        "id": "R2",
+        "nombre": "Fracción del plazo",
+        "nivel": "P",
+        "modelo": "Un año es la cuarta parte de un plazo de 48 meses, así que la deuda movida es cuatro veces la recaudación; dividir por la deuda típica.",
+        "resultado": "Con deuda de 8 millones de pesos: unas 100.000 personas, coherente con R1."
+      },
+      {
+        "id": "R3",
+        "nombre": "Firmas repartidas en el año",
+        "nivel": "P",
+        "modelo": "Tabla mes a mes con firmas parejas: en promedio cada persona paga solo la mitad de los meses del año.",
+        "resultado": "Con deuda de 8 millones de pesos: unas 200.000 personas, el doble que en R1."
+      },
+      {
+        "id": "R4",
+        "nombre": "Ecuación con meses pagados variables",
+        "nivel": "S1",
+        "modelo": "N · c · m = recaudación, con c la cuota y m los meses pagados promedio; se despeja N y se analiza cómo cambia con m y con la deuda.",
+        "resultado": "N es inversamente proporcional a la deuda y a m; permite ver el rango entre 100.000 y 200.000 personas para m entre 6 y 12."
+      }
+    ],
+    "modelo_inadecuado": {
+      "id": "R5",
+      "por_que_falla": "Dividir los 200 mil millones de pesos por la deuda completa de una persona, como si todos pagaran su deuda entera en un solo año. Falla porque con 48 cuotas en un año solo se paga una parte del plazo; el cálculo da cuatro veces menos personas de las necesarias y hace parecer la meta más fácil de lo que es."
+    },
+    "validation_evidence": "Después de modelar, el grupo recibe el total de deudores del CAE informado en la noticia (párrafo 5) y contrasta que el número de firmantes calculado sea una fracción posible de ese total. Como evidencia posterior, se puede comparar con el balance de Tesorería sobre convenios firmados y recaudados al cierre del año, que no se usó para construir el modelo.",
+    "agent_visibility": {
+      "students": [
+        "enunciado_es",
+        "foto_descripcion",
+        "recursos_a_solicitud"
+      ],
+      "coder": [
+        "enunciado_es",
+        "task_space"
+      ],
+      "guide": [
+        "all"
+      ]
+    }
+  },
+  "rubrica_rub01": {
+    "total": 22,
+    "por_criterio": {
+      "genuino": 2,
+      "abierta": 2,
+      "decisiones": 2,
+      "realismo": 2,
+      "autenticidad": 2,
+      "contexto": 2,
+      "ciclo": 2,
+      "validacion": 2,
+      "nivel": 1,
+      "autodiferenciacion": 2,
+      "fecundidad": 2,
+      "recursos": 1
+    }
+  },
+  "rubrica_rub02": {
+    "P": null,
+    "S": null,
+    "U": null
+  },
+  "modelo_y_prompt": {
+    "diseñador": "claude-sonnet-5-5",
+    "version_prompt": "1.1",
+    "version_rubrica": "4.0"
+  }
+}

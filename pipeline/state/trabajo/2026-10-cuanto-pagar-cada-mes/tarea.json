@@ -1,0 +1,247 @@
+{
+  "id": "2026-10-cuanto-pagar-cada-mes",
+  "titulo": "¿Cuánto pagar cada mes: convenio antiguo o nuevo?",
+  "estado": "evaluada",
+  "version": 1,
+  "fecha": "2026-10-26",
+  "noticia": {
+    "noticia_id": "2026-10-26-latercera-ley-de-reconstruccion-tesoreria-destaca-que",
+    "medio": "La Tercera",
+    "titulo": "Ley de Reconstrucción: Tesorería destaca que en sus diez primeros días se han realizado 4 mil consultas o simulaciones de convenios",
+    "fecha": "2026-10-26",
+    "url": "https://www.latercera.com/nacional/noticia/ley-de-reconstruccion-tesoreria-destaca-que-en-sus-diez-primeros-dias-se-han-realizado-4-mil-consultas-o-simulaciones-de-convenios/",
+    "resumen_propio": "Tesorería informó que, en los primeros diez días de la nueva ley de reconstrucción, la plataforma de convenios registró miles de simulaciones y casi dos mil acuerdos de pago. Explica que los deudores del CAE podrán pagar en 48 cuotas, sin el tope de ingresos anterior, y estima cuánto dinero y deuda podrían moverse el próximo año.",
+    "cifras_usadas": [
+      {
+        "valor": 48,
+        "unidad": "cuotas",
+        "que_es": "Número de cuotas del nuevo convenio para deudores del CAE",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 5"
+        }
+      },
+      {
+        "valor": 24,
+        "unidad": "cuotas",
+        "que_es": "Número máximo de cuotas que existía antes de la ley",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 7"
+        }
+      },
+      {
+        "valor": "10%",
+        "unidad": "de la deuda",
+        "que_es": "Porcentaje de deuda pagado al contado como ejemplo de pie",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 10"
+        }
+      }
+    ]
+  },
+  "nivel_principal": "P",
+  "variantes": {
+    "abajo": null,
+    "arriba": "S"
+  },
+  "area": "economia",
+  "contenidos_matematicos": [
+    "proporcionalidad directa",
+    "división y reparto equitativo",
+    "porcentajes simples",
+    "tablas de comparación"
+  ],
+  "tiempo_estimado": "2 sesiones de 90 min",
+  "estudiante": {
+    "enunciado_es": "Muchas personas pidieron un crédito para estudiar en la educación superior, llamado CAE, y todavía lo están pagando. Tesorería, el organismo del Estado que cobra esas deudas, ofrece convenios de pago: la persona se compromete a pagar su deuda en cuotas mensuales. Antes de una nueva ley, el máximo era de 24 cuotas. Ahora los deudores del CAE pueden elegir un convenio de 48 cuotas. Además, quien quiera puede pagar al contado un pie, por ejemplo el 10% de la deuda, y repartir el resto en cuotas. Imaginen a una persona que tiene una deuda del CAE cuyo monto ustedes eligen como ejemplo. ¿Qué le conviene más a esa persona: el convenio antiguo o el nuevo, con pie o sin pie? Expliquen su decisión. Pueden pedir información adicional.",
+    "foto_descripcion": "Ilustración sencilla de un calendario con casillas de meses y, al lado, una alcancía con monedas.",
+    "recursos_a_solicitud": [
+      {
+        "id": "R4",
+        "que_es": "Condiciones simplificadoras del convenio, si el grupo pregunta por intereses o por el monto de las cuotas",
+        "contenido": "Supuesto del escenario: para esta tarea no se consideran intereses ni reajustes, y todas las cuotas de un convenio son del mismo monto.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P2-RM",
+        "fuente": "supuesto del escenario"
+      },
+      {
+        "id": "R5",
+        "que_es": "Información sobre la situación de la persona, si el grupo pregunta cuánto gana o cuánto puede pagar",
+        "contenido": "Supuesto del escenario: lo que una persona puede pagar cada mes depende de sus ingresos y de sus otros gastos; el grupo puede elegir un ejemplo y justificarlo. No hay un único monto correcto.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P2-RM",
+        "fuente": "supuesto del escenario"
+      },
+      {
+        "id": "R6",
+        "que_es": "Dato independiente para contrastar después de modelar",
+        "contenido": "Supuesto del escenario: cuando el grupo tenga sus resultados, el docente entrega la cuota que muestra el simulador de convenios de Tesorería para la misma deuda que el grupo eligió, para que la comparen con la suya.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P6-VAL",
+        "fuente": "supuesto del escenario"
+      }
+    ]
+  },
+  "variantes_detalle": {
+    "abajo": null,
+    "arriba": {
+      "tramo": "S1",
+      "cambios": "Se pide además incorporar un interés mensual que el grupo debe buscar o estimar, comparar el total pagado en cada opción y expresar el total como función del plazo y del pie. Se agrega la pregunta de qué pasa si cambia el porcentaje del pie. El contexto es el mismo."
+    }
+  },
+  "recursos_de_entrada": [
+    {
+      "id": "R1",
+      "que_es": "Plazo máximo que existía antes de la ley",
+      "contenido": "Plazo máximo anterior: 24 cuotas.",
+      "disponibilidad": "de_entrada",
+      "fase": "P1-MRS",
+      "fuente": "noticia, párrafo 7"
+    },
+    {
+      "id": "R2",
+      "que_es": "Plazo del nuevo convenio para deudores del CAE",
+      "contenido": "Nuevo convenio para deudores del CAE: 48 cuotas.",
+      "disponibilidad": "de_entrada",
+      "fase": "P1-MRS",
+      "fuente": "noticia, párrafo 5"
+    },
+    {
+      "id": "R3",
+      "que_es": "Ejemplo de pie al contado",
+      "contenido": "Ejemplo de pie: 10% de la deuda pagado al contado.",
+      "disponibilidad": "de_entrada",
+      "fase": "P1-MRS",
+      "fuente": "noticia, párrafo 10"
+    }
+  ],
+  "mapa_ciclo": {
+    "P1-MRS": {
+      "decision": "Entender qué es un convenio, una cuota y un pie, y que deben comparar tres formas de pagar la misma deuda: plazo antiguo, plazo nuevo y plazo nuevo con pie.",
+      "evidencia": "El grupo explica con sus palabras qué paga la persona cada mes y por cuánto tiempo, y anota qué quiere saber.",
+      "bloqueo_probable": "B12"
+    },
+    "P2-RM": {
+      "decision": "Elegir una deuda de ejemplo, acordar si hay o no intereses y definir qué significa que algo le convenga a la persona (cuota baja, menos tiempo endeudada, ingreso).",
+      "evidencia": "Lista escrita de supuestos acordados y del criterio de conveniencia elegido.",
+      "bloqueo_probable": "B23"
+    },
+    "P3-MM": {
+      "decision": "Representar el reparto de la deuda en cuotas iguales, con y sin pie, mediante una tabla o una operación de división.",
+      "evidencia": "Tabla o esquema con deuda, pie, plazo y cuota para cada opción.",
+      "bloqueo_probable": "B34"
+    },
+    "P4-WM": {
+      "decision": "Calcular las cuotas de las tres opciones y el pie, con calculadora o a mano, y revisar que las cuotas sumadas y el pie reconstruyan la deuda.",
+      "evidencia": "Cuadro de resultados con las cuotas calculadas y la comprobación de la suma.",
+      "bloqueo_probable": "B45"
+    },
+    "P5-INT": {
+      "decision": "Interpretar los resultados: la cuota baja con más cuotas pero la persona se endeuda por más tiempo; el pie baja la cuota pero exige dinero hoy.",
+      "evidencia": "Recomendación escrita a la persona con una razón que usa los números obtenidos.",
+      "bloqueo_probable": "B56"
+    },
+    "P6-VAL": {
+      "decision": "Contrastar la cuota calculada con la que entrega el simulador de Tesorería y explicar las diferencias, por ejemplo intereses u otros cargos.",
+      "evidencia": "Comparación anotada entre la cuota del grupo y la del simulador, con una explicación de la diferencia.",
+      "bloqueo_probable": "B67"
+    },
+    "P7-EXP": {
+      "decision": "Presentar la recomendación y el procedimiento en un cartel o una exposición breve a otro grupo.",
+      "evidencia": "Cartel o exposición con la deuda elegida, la tabla, la decisión y las limitaciones.",
+      "bloqueo_probable": null
+    }
+  },
+  "task_space": {
+    "required_assumptions": [
+      "El grupo elige un monto de deuda de ejemplo y lo justifica como plausible.",
+      "Se ignoran intereses y reajustes (o se acuerda cómo tratarlos).",
+      "Todas las cuotas de un convenio son iguales.",
+      "El pie se paga al contado, de una vez, y el resto se reparte en cuotas.",
+      "El criterio de conveniencia se acuerda en el grupo: cuota mensual baja, tiempo total en deuda o relación con el ingreso."
+    ],
+    "reference_solution": {
+      "steps": "1) Elegir una deuda de ejemplo, por ejemplo 6 millones de pesos. 2) Convenio antiguo: deuda dividida en 24 cuotas. 3) Convenio nuevo: deuda dividida en 48 cuotas. 4) Nuevo con pie: pie igual al 10% de la deuda; lo que queda se divide en 48 cuotas (y, si se quiere, también en 24). 5) Comparar cuotas y tiempo total. 6) Decidir según el criterio acordado, que depende del ingreso de la persona. 7) Contrastar con el simulador de Tesorería.",
+      "result": "Con una deuda de 6 millones de pesos: 24 cuotas de 250.000 pesos; 48 cuotas de 125.000 pesos; con pie de 600.000 pesos, 48 cuotas de 112.500 pesos (o 24 cuotas de 225.000 pesos). Pasar de 24 a 48 cuotas reduce la cuota a la mitad, pero duplica el tiempo de pago. La opción más conveniente depende de cuánto puede pagar la persona cada mes y de cuánto le pesa estar endeudada más tiempo.",
+      "acceptable_range": "La cuota es proporcional a la deuda elegida: con el doble de cuotas es la mitad y con pie del 10% es un 10% menor que sin pie. Son defendibles tanto el nuevo convenio sin pie (cuota más baja) como el nuevo con pie (cuota aún menor, pero con pago inicial) o el antiguo (menos tiempo), siempre que se justifique con el ingreso y los números."
+    },
+    "routes": [
+      {
+        "id": "R1",
+        "nombre": "Tabla de cuotas por opción",
+        "nivel": "P",
+        "modelo": "Cuota = deuda dividida en el número de cuotas, calculada para cada opción y ordenada en una tabla.",
+        "resultado": "Para 6 millones de pesos: 250.000, 125.000 y 112.500 pesos por mes, según la opción."
+      },
+      {
+        "id": "R2",
+        "nombre": "Razonamiento proporcional",
+        "nivel": "P",
+        "modelo": "Al duplicar las cuotas, la cuota se reduce a la mitad; el pie quita un décimo de la deuda y reduce la cuota en ese mismo décimo.",
+        "resultado": "La cuota nueva es la mitad de la antigua; con pie es nueve décimos de la cuota nueva."
+      },
+      {
+        "id": "R3",
+        "nombre": "Gráfico de barras de pagos mensuales",
+        "nivel": "P",
+        "modelo": "Barras con la cuota y la duración de cada opción, para ver la relación entre cuota y tiempo (área igual a la deuda).",
+        "resultado": "Barras altas y cortas para el convenio antiguo, bajas y largas para el nuevo; el área total es igual a la deuda, salvo el pie."
+      },
+      {
+        "id": "R4",
+        "nombre": "Cuota como fracción del ingreso",
+        "nivel": "S1",
+        "modelo": "Cuota = (1 − p) · D / n, comparada con una fracción del ingreso mensual elegido para decidir qué plan es sostenible.",
+        "resultado": "Se elige el plan cuya cuota queda bajo la fracción del ingreso que el grupo considera razonable."
+      }
+    ],
+    "modelo_inadecuado": {
+      "id": "R5",
+      "por_que_falla": "Concluir que más cuotas siempre conviene porque la cuota mensual es menor. Falla porque ignora que la persona está endeudada el doble de tiempo, que el criterio depende de la capacidad de pago y que en la realidad puede haber intereses; mirar solo la cuota no responde qué le conviene a esa persona."
+    },
+    "validation_evidence": "Después de modelar, el grupo recibe la cuota que muestra el simulador de convenios de Tesorería para la misma deuda elegida y la compara con la suya; además verifica que cuotas por número de cuotas más el pie reconstruyan la deuda. Las diferencias permiten discutir intereses y otros cargos que el modelo ignoró.",
+    "agent_visibility": {
+      "students": [
+        "enunciado_es",
+        "foto_descripcion",
+        "recursos_a_solicitud"
+      ],
+      "coder": [
+        "enunciado_es",
+        "task_space"
+      ],
+      "guide": [
+        "all"
+      ]
+    }
+  },
+  "rubrica_rub01": {
+    "total": 23,
+    "por_criterio": {
+      "genuino": 2,
+      "abierta": 2,
+      "decisiones": 2,
+      "realismo": 2,
+      "autenticidad": 2,
+      "contexto": 2,
+      "ciclo": 2,
+      "validacion": 2,
+      "nivel": 1,
+      "autodiferenciacion": 2,
+      "fecundidad": 2,
+      "recursos": 2
+    }
+  },
+  "rubrica_rub02": {
+    "P": null,
+    "S": null,
+    "U": null
+  },
+  "modelo_y_prompt": {
+    "diseñador": "claude-sonnet-5-5",
+    "version_prompt": "1.1",
+    "version_rubrica": "4.0"
+  }
+}
