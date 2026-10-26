@@ -1,0 +1,99 @@
+{
+  "run": {
+    "id": "N4_VV_r1",
+    "nivel": "N4",
+    "composicion": "VV",
+    "rep": 1,
+    "estilos": [
+      "V",
+      "V"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.048336,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P2-RM",
+        "fase_secundaria": "P1-MRS",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "EMK",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P2-RM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "STRAT",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P4-WM",
+        "fase_secundaria": "P3-MM",
+        "eventos": []
+      },
+      {
+        "n": 6,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 8,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "STRAT"
+        ]
+      }
+    ],
+    "bloqueos": [],
+    "supuestos": [
+      "escaños proporcionales a los votos",
+      "existen otros partidos con votos desconocidos",
+      "escenarios de 10 %, 20 % y 30 % para los otros partidos",
+      "listas bajo el umbral quedan fuera y sus votos no cuentan en el reparto",
+      "mayoría propia con 126 escaños",
+      "el 3 % pendiente podría votar distinto (sin cuantificar)"
+    ],
+    "modelo": "proporcional",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Entre 115 y 140 escaños para la lista estudiantil (115 si los otros partidos sacan 20 %, 140 casi sin otros; techo teórico 143). Mayoría propia probable pero no segura: se pierde si los otros superan cerca del 13 % y todos pasan el umbral; depende del voto de los otros partidos, del umbral y del 3 % que falta contar."
+    },
+    "ruta_principal": "R3",
+    "rutas": [
+      "R2",
+      "R3"
+    ]
+  }
+}

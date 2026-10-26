@@ -1,0 +1,319 @@
+{
+  "ciclo_id": "ciclo_20261026T192533297307Z",
+  "inicio": "2026-10-26T19:25:33Z",
+  "fin": "2026-10-26T19:39:07Z",
+  "semana": "2026-W44",
+  "parametros": {
+    "tope_semanal_usd": 35.0,
+    "fraccion_detencion": 0.9,
+    "presupuesto_ciclo_usd": null,
+    "limite_usd": 31.5,
+    "gasto_semana_previo_usd": 11.91901,
+    "corridas_evaluador": 3,
+    "rango_inestable": 4,
+    "corridas_simulador": 6,
+    "ids": [
+      "2026-10-cuanto-pagar-cada-mes-v2",
+      "2026-10-que-tan-renida-fue",
+      "2026-10-escanos-lista-estudiantil-serbia"
+    ],
+    "revisor": "carlos rojas bruna",
+    "aceptar_hallazgos": false
+  },
+  "detenido_por_tope": false,
+  "eventos": [
+    {
+      "fecha": "2026-10-26T19:25:36Z",
+      "tipo": "preverificacion",
+      "tarea_id": "2026-10-cuanto-pagar-cada-mes-v2",
+      "aprobado": true,
+      "criticos": 0,
+      "pendientes": 0,
+      "localizadores_corregidos": 0
+    },
+    {
+      "fecha": "2026-10-26T19:25:38Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-cuanto-pagar-cada-mes-v2",
+      "de": "evaluada",
+      "a": "revisada"
+    },
+    {
+      "fecha": "2026-10-26T19:25:40Z",
+      "tipo": "preverificacion",
+      "tarea_id": "2026-10-cuanto-pagar-cada-mes-v2",
+      "aprobado": true,
+      "criticos": 0,
+      "pendientes": 0,
+      "localizadores_corregidos": 0
+    },
+    {
+      "fecha": "2026-10-26T19:25:40Z",
+      "tipo": "simulacion_reutilizada",
+      "tarea_id": "2026-10-cuanto-pagar-cada-mes-v2",
+      "origen": "2026-10-cuanto-pagar-cada-mes"
+    },
+    {
+      "fecha": "2026-10-26T19:25:44Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-cuanto-pagar-cada-mes-v2",
+      "de": "revisada",
+      "a": "simulada"
+    },
+    {
+      "fecha": "2026-10-26T19:27:51Z",
+      "tipo": "agente",
+      "agente": "redactor",
+      "tareas": [
+        "2026-10-cuanto-pagar-cada-mes-v2"
+      ],
+      "llamadas": 4,
+      "usd": 0.571315
+    },
+    {
+      "fecha": "2026-10-26T19:28:00Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-cuanto-pagar-cada-mes-v2",
+      "de": "simulada",
+      "a": "con_guia"
+    },
+    {
+      "fecha": "2026-10-26T19:28:06Z",
+      "tipo": "agente",
+      "agente": "ilustrador",
+      "tareas": [
+        "2026-10-cuanto-pagar-cada-mes-v2"
+      ],
+      "llamadas": 1,
+      "usd": 0.014918
+    },
+    {
+      "fecha": "2026-10-26T19:28:40Z",
+      "tipo": "agente",
+      "agente": "verificador",
+      "tareas": [
+        "2026-10-cuanto-pagar-cada-mes-v2"
+      ],
+      "llamadas": 1,
+      "usd": 0.137412
+    },
+    {
+      "fecha": "2026-10-26T19:28:49Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-cuanto-pagar-cada-mes-v2",
+      "de": "con_guia",
+      "a": "verificada"
+    },
+    {
+      "fecha": "2026-10-26T19:29:04Z",
+      "tipo": "bibliotecario_dry_run",
+      "tarea_id": "2026-10-cuanto-pagar-cada-mes-v2",
+      "ok": true,
+      "ruta": "tareas/2026-10/cuanto-pagar-cada-mes/",
+      "rama": "tareas/semana-2026-W44"
+    },
+    {
+      "fecha": "2026-10-26T19:29:06Z",
+      "tipo": "preverificacion",
+      "tarea_id": "2026-10-que-tan-renida-fue",
+      "aprobado": true,
+      "criticos": 0,
+      "pendientes": 0,
+      "localizadores_corregidos": 0
+    },
+    {
+      "fecha": "2026-10-26T19:30:13Z",
+      "tipo": "agente",
+      "agente": "simulador",
+      "tareas": [
+        "2026-10-que-tan-renida-fue"
+      ],
+      "llamadas": 16,
+      "usd": 0.140185
+    },
+    {
+      "fecha": "2026-10-26T19:30:16Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-que-tan-renida-fue",
+      "de": "revisada",
+      "a": "simulada"
+    },
+    {
+      "fecha": "2026-10-26T19:32:18Z",
+      "tipo": "agente",
+      "agente": "redactor",
+      "tareas": [
+        "2026-10-que-tan-renida-fue"
+      ],
+      "llamadas": 3,
+      "usd": 0.311172
+    },
+    {
+      "fecha": "2026-10-26T19:32:26Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-que-tan-renida-fue",
+      "de": "simulada",
+      "a": "con_guia"
+    },
+    {
+      "fecha": "2026-10-26T19:32:30Z",
+      "tipo": "agente",
+      "agente": "ilustrador",
+      "tareas": [
+        "2026-10-que-tan-renida-fue"
+      ],
+      "llamadas": 1,
+      "usd": 0.006008
+    },
+    {
+      "fecha": "2026-10-26T19:32:56Z",
+      "tipo": "agente",
+      "agente": "verificador",
+      "tareas": [
+        "2026-10-que-tan-renida-fue"
+      ],
+      "llamadas": 1,
+      "usd": 0.102732
+    },
+    {
+      "fecha": "2026-10-26T19:33:04Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-que-tan-renida-fue",
+      "de": "con_guia",
+      "a": "verificada"
+    },
+    {
+      "fecha": "2026-10-26T19:33:18Z",
+      "tipo": "bibliotecario_dry_run",
+      "tarea_id": "2026-10-que-tan-renida-fue",
+      "ok": true,
+      "ruta": "tareas/2026-10/que-tan-renida-fue/",
+      "rama": "tareas/semana-2026-W44"
+    },
+    {
+      "fecha": "2026-10-26T19:33:18Z",
+      "tipo": "preverificacion",
+      "tarea_id": "2026-10-escanos-lista-estudiantil-serbia",
+      "aprobado": true,
+      "criticos": 0,
+      "pendientes": 0,
+      "localizadores_corregidos": 0
+    },
+    {
+      "fecha": "2026-10-26T19:33:19Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-escanos-lista-estudiantil-serbia",
+      "de": "evaluada",
+      "a": "revisada"
+    },
+    {
+      "fecha": "2026-10-26T19:33:19Z",
+      "tipo": "preverificacion",
+      "tarea_id": "2026-10-escanos-lista-estudiantil-serbia",
+      "aprobado": true,
+      "criticos": 0,
+      "pendientes": 0,
+      "localizadores_corregidos": 0
+    },
+    {
+      "fecha": "2026-10-26T19:36:09Z",
+      "tipo": "agente",
+      "agente": "simulador",
+      "tareas": [
+        "2026-10-escanos-lista-estudiantil-serbia"
+      ],
+      "llamadas": 92,
+      "usd": 0.866512
+    },
+    {
+      "fecha": "2026-10-26T19:36:10Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-escanos-lista-estudiantil-serbia",
+      "de": "revisada",
+      "a": "simulada"
+    },
+    {
+      "fecha": "2026-10-26T19:38:38Z",
+      "tipo": "agente",
+      "agente": "redactor",
+      "tareas": [
+        "2026-10-escanos-lista-estudiantil-serbia"
+      ],
+      "llamadas": 4,
+      "usd": 0.486979
+    },
+    {
+      "fecha": "2026-10-26T19:38:39Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-escanos-lista-estudiantil-serbia",
+      "de": "simulada",
+      "a": "con_guia"
+    },
+    {
+      "fecha": "2026-10-26T19:38:45Z",
+      "tipo": "agente",
+      "agente": "ilustrador",
+      "tareas": [
+        "2026-10-escanos-lista-estudiantil-serbia"
+      ],
+      "llamadas": 1,
+      "usd": 0.010606
+    },
+    {
+      "fecha": "2026-10-26T19:39:05Z",
+      "tipo": "agente",
+      "agente": "verificador",
+      "tareas": [
+        "2026-10-escanos-lista-estudiantil-serbia"
+      ],
+      "llamadas": 1,
+      "usd": 0.119176
+    },
+    {
+      "fecha": "2026-10-26T19:39:06Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-escanos-lista-estudiantil-serbia",
+      "de": "con_guia",
+      "a": "verificada"
+    },
+    {
+      "fecha": "2026-10-26T19:39:07Z",
+      "tipo": "bibliotecario_dry_run",
+      "tarea_id": "2026-10-escanos-lista-estudiantil-serbia",
+      "ok": true,
+      "ruta": "tareas/2026-10/escanos-lista-estudiantil-serbia/",
+      "rama": "tareas/semana-2026-W44"
+    }
+  ],
+  "expedientes": {
+    "2026-10-cuanto-pagar-cada-mes-v2": "verificada",
+    "2026-10-que-tan-renida-fue": "verificada",
+    "2026-10-escanos-lista-estudiantil-serbia": "verificada"
+  },
+  "noticias": [],
+  "pendientes_humanos": [
+    {
+      "tarea_id": "2026-10-cuanto-pagar-cada-mes-v2",
+      "pendiente": "revision_humana_2",
+      "estado": "verificada"
+    },
+    {
+      "tarea_id": "2026-10-que-tan-renida-fue",
+      "pendiente": "revision_humana_2",
+      "estado": "verificada"
+    },
+    {
+      "tarea_id": "2026-10-escanos-lista-estudiantil-serbia",
+      "pendiente": "revision_humana_2",
+      "estado": "verificada"
+    }
+  ],
+  "errores": [],
+  "orden": "tramo_b",
+  "gasto": {
+    "ciclo_usd": 2.767015,
+    "semana_usd": 14.686025,
+    "limite_usd": 31.5,
+    "llamadas": 125
+  }
+}

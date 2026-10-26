@@ -1,0 +1,122 @@
+{
+  "tarea_id": "2026-10-que-tan-renida-fue",
+  "aprobado": true,
+  "estado_destino": "verificada",
+  "hallazgos": [
+    {
+      "invariante": "notebook",
+      "severidad": "advertencia",
+      "ubicacion": "guia.materiales.notebook",
+      "descripcion": "notebook escenarios.ipynb no encontrado: ",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "tarea.estudiante.enunciado_es",
+      "descripcion": "En un programa de radio, una persona dijo que fue una elección muy pareja y otra dijo que Lula ganó con claridad. — El episodio radial no aparece en las fuentes. Parece un recurso narrativo de la tarea, pero se presenta como un hecho.",
+      "origen": "modelo"
+    }
+  ],
+  "cifras_contrastadas": [
+    {
+      "indice": 0,
+      "que_es": "Proporción de votos obtenida por Lula en el balotaje",
+      "valor_tarea": "51,79 %",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 3"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "51,79 %",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 3 de la noticia; modelo: El párrafo 3 da ese porcentaje para Lula en el balotaje."
+    },
+    {
+      "indice": 1,
+      "que_es": "Votos obtenidos por Lula en el balotaje",
+      "valor_tarea": "64.256.232",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 3"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "64.256.232",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 3 de la noticia; modelo: El párrafo 3 da esos votos para Lula."
+    },
+    {
+      "indice": 2,
+      "que_es": "Proporción de votos obtenida por Flávio Bolsonaro en el balotaje",
+      "valor_tarea": "48,21 %",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 3"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "48,21 %",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 3 de la noticia; modelo: El párrafo 3 da ese porcentaje para el rival, identificado como Flávio Bolsonaro en el resumen."
+    },
+    {
+      "indice": 3,
+      "que_es": "Votos obtenidos por Flávio Bolsonaro en el balotaje",
+      "valor_tarea": "59.826.041",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 3"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "59.826.041",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 3 de la noticia; modelo: El párrafo 3 da esos votos para el rival de Lula."
+    },
+    {
+      "indice": 4,
+      "que_es": "Proporción de votos obtenida por Lula en la elección de 2022",
+      "valor_tarea": "50,9 %",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 3"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "50,9 %",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 3 de la noticia; modelo: El párrafo 3 da ese porcentaje para Lula en 2022."
+    },
+    {
+      "indice": 5,
+      "que_es": "Proporción de votos obtenida por Jair Bolsonaro en la elección de 2022",
+      "valor_tarea": "49,1 %",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 3"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "49,1 %",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 3 de la noticia; modelo: El párrafo 3 da ese porcentaje para el padre del rival, Jair Bolsonaro, en 2022."
+    }
+  ],
+  "notebook": {
+    "estado": "no_encontrado",
+    "ruta": "escenarios.ipynb",
+    "salida_resumen": ""
+  },
+  "meta": {
+    "agente": "verificador",
+    "version_prompt": "1.1",
+    "modelo": "claude-opus-5-5",
+    "request_id": "req_011CgRQXLsXrFZjoFcQ6dn9W",
+    "fecha": "2026-10-26T19:32:56+00:00",
+    "costo_usd": 0.102732,
+    "modelo_llamado": true,
+    "texto_noticia_recibido": true,
+    "uso": {
+      "input_tokens": 15387,
+      "output_tokens": 2036,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 2320
+    }
+  }
+}

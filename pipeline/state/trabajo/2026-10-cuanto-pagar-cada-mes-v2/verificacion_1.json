@@ -1,0 +1,83 @@
+{
+  "tarea_id": "2026-10-cuanto-pagar-cada-mes-v2",
+  "aprobado": true,
+  "estado_destino": "verificada",
+  "hallazgos": [
+    {
+      "invariante": "notebook",
+      "severidad": "advertencia",
+      "ubicacion": "guia.materiales.notebook",
+      "descripcion": "notebook escenarios.ipynb no encontrado: ",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "guia.intervenciones[B23].z5",
+      "descripcion": "Probar solo algunos meses a mano con una deuda fácil de dividir, como hizo el grupo de E4. — La corrida N1_AA_r1 (E4) usó 1.000.000 y llevó una tabla de saldos hasta el mes 9. La deuda elegida para dividir fácil fue la de N1_VV_r1 (E3, 480.000). Es una diferencia menor de detalle en la atribución.",
+      "origen": "modelo"
+    }
+  ],
+  "cifras_contrastadas": [
+    {
+      "indice": 0,
+      "que_es": "Número de cuotas del nuevo convenio para deudores del CAE",
+      "valor_tarea": 48,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 5"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": 48,
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 5 de la noticia; modelo: El párrafo 5 indica que los convenios para deudores del CAE son a 48 cuotas."
+    },
+    {
+      "indice": 1,
+      "que_es": "Número máximo de cuotas que existía antes de la ley",
+      "valor_tarea": 24,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 7"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": 24,
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 7 de la noticia; modelo: El párrafo 7 indica que antes solo se podía pactar hasta 24 cuotas."
+    },
+    {
+      "indice": 2,
+      "que_es": "Porcentaje de deuda pagado al contado como ejemplo de pie",
+      "valor_tarea": "10%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 10"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "10%",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 10 de la noticia; modelo: El párrafo 10 pone como ejemplo a una persona que paga el 10% de su deuda, que se usa como pie."
+    }
+  ],
+  "notebook": {
+    "estado": "no_encontrado",
+    "ruta": "escenarios.ipynb",
+    "salida_resumen": ""
+  },
+  "meta": {
+    "agente": "verificador",
+    "version_prompt": "1.1",
+    "modelo": "claude-opus-5-5",
+    "request_id": "req_011CgRQBwWq4TyPLz7LshFWS",
+    "fecha": "2026-10-26T19:28:40+00:00",
+    "costo_usd": 0.137412,
+    "modelo_llamado": true,
+    "texto_noticia_recibido": true,
+    "uso": {
+      "input_tokens": 16748,
+      "output_tokens": 2941,
+      "cache_creation_input_tokens": 2320,
+      "cache_read_input_tokens": 0
+    }
+  }
+}

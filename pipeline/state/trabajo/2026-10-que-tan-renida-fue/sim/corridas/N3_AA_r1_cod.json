@@ -1,0 +1,159 @@
+{
+  "run": {
+    "id": "N3_AA_r1",
+    "nivel": "N3",
+    "composicion": "AA",
+    "rep": 1,
+    "estilos": [
+      "A",
+      "A"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.062972,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P4-WM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P3-MM",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "STRAT",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 4,
+        "fase": "P5-INT",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P3-MM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 6,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": [
+          "PREC"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P2-RM",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 8,
+        "fase": "P2-RM",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 9,
+        "fase": "P5-INT",
+        "fase_secundaria": "P7-EXP",
+        "eventos": []
+      },
+      {
+        "n": 10,
+        "fase": "P5-INT",
+        "fase_secundaria": "P7-EXP",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 11,
+        "fase": "P5-INT",
+        "fase_secundaria": "P7-EXP",
+        "eventos": []
+      },
+      {
+        "n": 12,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 13,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 14,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 15,
+        "fase": "OFF",
+        "fase_secundaria": null,
+        "eventos": []
+      }
+    ],
+    "bloqueos": [
+      {
+        "codigo": "B56",
+        "turnos": [
+          7,
+          8,
+          10,
+          11,
+          12,
+          13
+        ],
+        "resolucion": "unresolved",
+        "descripcion": "El par decide que necesita comparar con otras segundas vueltas para validar si fue pareja, repite varias veces que pedirá esos datos y que comparará los 3,58 puntos, pero la comparación nunca se hace; entregan dejando la validación pendiente."
+      }
+    ],
+    "supuestos": [
+      "el total son solo los votos de los dos candidatos",
+      "la diferencia se juzga en relación con el total de votos",
+      "es pareja si basta cambiar pocos votos (≈1,8 %) para dar vuelta el resultado"
+    ],
+    "modelo": "aditivo-porcentual",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Lula ganó por 4.430.191 votos (3,58 puntos), pero cambiando solo el 1,8 % de los votos ganaba Flávio, así que fue bastante pareja. Falta comparar los 3,58 puntos con otras segundas vueltas."
+    },
+    "ruta_principal": "R1",
+    "rutas": [
+      "R1",
+      "R4",
+      "R2"
+    ]
+  }
+}

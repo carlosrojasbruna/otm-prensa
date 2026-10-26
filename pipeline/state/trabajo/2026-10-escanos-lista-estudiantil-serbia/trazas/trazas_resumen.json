@@ -1,0 +1,245 @@
+{
+  "tarea_id": "2026-10-escanos-lista-estudiantil-serbia",
+  "diseno": "diseno_otm",
+  "corridas": 6,
+  "modelo": "claude-sonnet-5-5",
+  "costo_usd": 0.8665,
+  "por_corrida": [
+    {
+      "id": "N1_VV_r1",
+      "perfil": {
+        "nivel_edad": "S",
+        "nivel": "N1",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P6-VAL",
+        "P2-RM",
+        "P5-INT",
+        "P7-EXP",
+        "P6-VAL"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "hay votos de otros partidos además de las dos listas",
+        "los votos contados corresponden al 97 % del total (escalar dividiendo por 0,97)",
+        "las mesas pendientes podrían votar distinto (por eso un rango)",
+        "escaños proporcionales al porcentaje de votos",
+        "mayoría propia es pasar la mitad: 126 escaños",
+        "escenario de prueba con 1 millón de votos de otros",
+        "los partidos muy chicos quedan sin escaños y el reparto es entre los que pasan"
+      ],
+      "modelo": "proporcional",
+      "respuesta_final": "Con el 100 % de las mesas serían unos 2,32 millones de votos para los estudiantes contra 1,72 millones; entre 115 y 143 escaños para la lista estudiantil. Mayoría sola solo si los votos de otros partidos son menos de 0,6 millones; seguridad baja porque falta el total de votos, el mínimo para obtener escaños y el método de reparto.",
+      "validacion": true,
+      "archivo": "N1_VV_r1.json",
+      "costo_usd": 0.13638
+    },
+    {
+      "id": "N1_AA_r1",
+      "perfil": {
+        "nivel_edad": "S",
+        "nivel": "N1",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P3-MM",
+        "P2-RM",
+        "P4-WM",
+        "P6-VAL",
+        "P1-MRS",
+        "P3-MM",
+        "P6-VAL",
+        "P2-RM",
+        "P4-WM",
+        "P6-VAL",
+        "P4-WM",
+        "P5-INT",
+        "P3-MM",
+        "P4-WM",
+        "P5-INT",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B23",
+          "turnos": [
+            6,
+            7
+          ],
+          "resolucion": "peer"
+        }
+      ],
+      "supuestos": [
+        "reparto proporcional a los votos",
+        "escenario con solo las dos listas principales",
+        "existe un umbral mínimo y los votos bajo él no reparten escaños",
+        "las mesas pendientes podrían votar distinto (escenarios extremos)",
+        "mayoría propia = más de la mitad, 126 escaños"
+      ],
+      "modelo": "proporcional",
+      "respuesta_final": "Probable mayoría de 126 escaños o más para los estudiantes (con solo las dos listas saldrían entre 139 y 147), pero sin confirmar. Solo se sostiene si los otros partidos que pasan el mínimo suman menos de un 12 % del total; falta pedir ese dato, el mínimo y el sistema de reparto.",
+      "validacion": true,
+      "archivo": "N1_AA_r1.json",
+      "costo_usd": 0.207036
+    },
+    {
+      "id": "N2_VV_r1",
+      "perfil": {
+        "nivel_edad": "S",
+        "nivel": "N2",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P3-MM",
+        "P2-RM",
+        "P4-WM",
+        "P5-INT",
+        "P4-WM",
+        "P6-VAL",
+        "P4-WM",
+        "P5-INT",
+        "P7-EXP",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "escaños proporcionales a los votos",
+        "existen otras listas que también reciben votos",
+        "mayoría propia = al menos 126 escaños (mitad de 250)",
+        "el 3 % de mesas pendientes se reparte parecido a lo contado",
+        "las otras listas suman entre 0,5 y 1 millón de votos"
+      ],
+      "modelo": "proporcional",
+      "respuesta_final": "Estimamos entre 114 y 127 escaños para la lista estudiantil, así que mayoría propia incierta, con seguridad baja porque supusimos que las otras listas tienen entre 0,5 y 1 millón de votos. Faltan sus votos reales, el mínimo para entrar y las zonas del 3 % sin contar.",
+      "validacion": true,
+      "archivo": "N2_VV_r1.json",
+      "costo_usd": 0.143432
+    },
+    {
+      "id": "N3_AA_r1",
+      "perfil": {
+        "nivel_edad": "S",
+        "nivel": "N3",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P4-WM",
+        "P2-RM",
+        "P4-WM",
+        "P2-RM",
+        "P4-WM",
+        "P6-VAL",
+        "P3-MM",
+        "P5-INT",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "reparto proporcional de escaños",
+        "mesas pendientes votan como las contadas",
+        "las dos listas suman un porcentaje supuesto del total (85 %, 90 %)",
+        "votos de listas bajo el umbral no cuentan",
+        "mayoría propia = 126 escaños"
+      ],
+      "modelo": "proporcional",
+      "respuesta_final": "La lista estudiantil tendría unos 120 a 135 escaños de 250; tendría mayoría sin aliados solo si las dos listas principales suman más del 87 % de los votos válidos para el reparto; seguridad baja hasta conocer el total de votos válidos y el sistema de reparto.",
+      "validacion": true,
+      "archivo": "N3_AA_r1.json",
+      "costo_usd": 0.134252
+    },
+    {
+      "id": "N4_VV_r1",
+      "perfil": {
+        "nivel_edad": "S",
+        "nivel": "N4",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P4-WM",
+        "P2-RM",
+        "P4-WM",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "escaños proporcionales a los votos",
+        "existen otros partidos con votos desconocidos",
+        "escenarios de 10 %, 20 % y 30 % para los otros partidos",
+        "listas bajo el umbral quedan fuera y sus votos no cuentan en el reparto",
+        "mayoría propia con 126 escaños",
+        "el 3 % pendiente podría votar distinto (sin cuantificar)"
+      ],
+      "modelo": "proporcional",
+      "respuesta_final": "Entre 115 y 140 escaños para la lista estudiantil (115 si los otros partidos sacan 20 %, 140 casi sin otros; techo teórico 143). Mayoría propia probable pero no segura: se pierde si los otros superan cerca del 13 % y todos pasan el umbral; depende del voto de los otros partidos, del umbral y del 3 % que falta contar.",
+      "validacion": true,
+      "archivo": "N4_VV_r1.json",
+      "costo_usd": 0.103836
+    },
+    {
+      "id": "N4_AA_r1",
+      "perfil": {
+        "nivel_edad": "S",
+        "nivel": "N4",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P3-MM",
+        "P4-WM",
+        "P2-RM",
+        "P6-VAL",
+        "P4-WM",
+        "P3-MM",
+        "P5-INT",
+        "P6-VAL",
+        "P3-MM",
+        "P7-EXP",
+        "P6-VAL"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B67",
+          "turnos": [
+            11,
+            12
+          ],
+          "resolucion": "sin_resolver"
+        }
+      ],
+      "supuestos": [
+        "solo dos listas (escenario de 143 escaños)",
+        "mesas faltantes votan igual que las contadas (cuestionado)",
+        "mayoría propia = más de la mitad de 250 (126 escaños)",
+        "otras listas suman 20 % (valor hipotético, luego descartado como límite)",
+        "reparto proporcional a los votos que cuentan",
+        "posible umbral mínimo para obtener escaños",
+        "con D'Hondt el más votado obtiene algo más que su porcentaje"
+      ],
+      "modelo": "proporcional",
+      "respuesta_final": "Con el 97 % contado, la lista estudiantil tendría unos 143 escaños si no hubiera otras listas (valor proporcional entre las dos principales); bajaría a unos 126 si las otras listas suman cerca de un 12 % y pasan el umbral. Se publican escenarios 250·0,574·(1−x). Sin el dato de las otras listas ni el sistema de reparto no afirman que puedan gobernar solos; seguridad baja. B objeta llamar 143 'máximo' por D'Hondt y por el 3 % pendiente.",
+      "validacion": true,
+      "archivo": "N4_AA_r1.json",
+      "costo_usd": 0.141596
+    }
+  ],
+  "agregado": {
+    "pct_bloqueo_por_transicion": {
+      "B23": 0.17,
+      "B67": 0.17
+    },
+    "modelos_observados": {
+      "proporcional": 6
+    },
+    "pct_validan": 1.0
+  },
+  "fecha": "2026-10-26T19:36:09Z"
+}
