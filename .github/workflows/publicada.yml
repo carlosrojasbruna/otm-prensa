@@ -18,8 +18,10 @@ on:
 permissions:
   contents: write
 
+# Grupo propio (no `semanal`): en un grupo de concurrencia GitHub deja una sola ejecución pendiente y cancela la
+# anterior, y el 2026-10-26 un tramo B encolado canceló esta. Solo escribe expedientes en `verificada` de main.
 concurrency:
-  group: semanal
+  group: publicada
   cancel-in-progress: false
 
 jobs:
