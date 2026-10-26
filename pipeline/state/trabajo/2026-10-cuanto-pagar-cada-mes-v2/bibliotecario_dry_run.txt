@@ -1,0 +1,29 @@
+# DRY-RUN: no se escribe ningún archivo ni se ejecuta ningún comando
+# tarea 2026-10-cuanto-pagar-cada-mes-v2 v2 -> tareas/2026-10/cuanto-pagar-cada-mes/
+#   escribiría tareas/2026-10/cuanto-pagar-cada-mes/tarea_v2.0_2026-10-26.json
+#   escribiría tareas/2026-10/cuanto-pagar-cada-mes/tarea_v2.0_2026-10-26.md
+#   escribiría tareas/2026-10/cuanto-pagar-cada-mes/guia_v2.0_2026-10-26.json
+#   escribiría tareas/2026-10/cuanto-pagar-cada-mes/guia_v2.0_2026-10-26.md
+#   escribiría tareas/2026-10/cuanto-pagar-cada-mes/evaluacion_v2.0_2026-10-26.json
+#   escribiría tareas/2026-10/cuanto-pagar-cada-mes/trazas_v2.0_2026-10-26.json
+#   actualizaría tareas/catalogo.json (5 tarea(s); valida contra `catalogo`)
+#   el commit del catálogo es el real tras el primer commit (aquí 0000000)
+$ git switch -c tareas/semana-2026-W44
+$ git add -- tareas/2026-10/cuanto-pagar-cada-mes/
+$ git commit -m 'tareas: publica 2026-10-cuanto-pagar-cada-mes-v2 v2'
+$ git add -- tareas/catalogo.json
+$ git commit -m 'tareas: catálogo: 2026-10-cuanto-pagar-cada-mes-v2 v2'
+$ git push -u origin tareas/semana-2026-W44
+$ gh pr create --base main --head tareas/semana-2026-W44 --title 'Tareas de la semana 2026-W44' --body '<cuerpo del PR, ver abajo>'
+# cuerpo del PR:
+#   ## Tareas incluidas
+#   
+#   - `2026-10-cuanto-pagar-cada-mes` v2 · nivel P · RUB01 23/24
+#     - Noticia: La Tercera, «Ley de Reconstrucción: Tesorería destaca que en sus diez primeros días se han realizado 4 mil consultas o simulaciones de convenios», 2026-10-26, https://www.latercera.com/nacional/noticia/ley-de-reconstruccion-tesoreria-destaca-que-en-sus-diez-primeros-dias-se-han-realizado-4-mil-consultas-o-simulaciones-de-convenios/
+#   
+#   ## Revisión (GOB01 §2)
+#   - [ ] Quien revisó la guía aprueba el merge.
+#   - [ ] Cifras con localizador; ningún texto literal de noticia > 25 palabras.
+#   - [ ] Productos bajo CC BY-NC-SA 4.0.
+#   
+#   Generado por el agente bibliotecario (script determinista).

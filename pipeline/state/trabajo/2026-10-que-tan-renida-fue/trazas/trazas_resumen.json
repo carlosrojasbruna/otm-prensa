@@ -1,0 +1,309 @@
+{
+  "tarea_id": "2026-10-que-tan-renida-fue",
+  "diseno": "diseno_otm",
+  "corridas": 6,
+  "modelo": "claude-sonnet-5-5",
+  "costo_usd": 1.2236,
+  "por_corrida": [
+    {
+      "id": "N1_VV_r1",
+      "perfil": {
+        "nivel_edad": "P",
+        "nivel": "N1",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P3-MM",
+        "P4-WM",
+        "P3-MM",
+        "P4-WM",
+        "P5-INT",
+        "P2-RM",
+        "P4-WM",
+        "P6-VAL",
+        "P7-EXP",
+        "P5-INT",
+        "P7-EXP"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B45",
+          "turnos": [
+            6,
+            7,
+            8
+          ],
+          "resolucion": "sin_resolver"
+        }
+      ],
+      "supuestos": [
+        "Total de votos = suma de los votos de los dos candidatos",
+        "Representar los votos como 100 personas/asientos",
+        "Si en otras elecciones la diferencia también fue de unos 4 de 100, esta fue pareja; si fue mayor, fue más reñida"
+      ],
+      "modelo": "aditivo relativo",
+      "respuesta_final": "Fue una elección bastante pareja, aunque Lula ganó, con 3,58 puntos más, como 4 asientos de 100 en el cine (más de 4 millones de votos), y falta comparar con otras elecciones.",
+      "validacion": true,
+      "archivo": "N1_VV_r1.json",
+      "costo_usd": 0.16906
+    },
+    {
+      "id": "N1_AA_r1",
+      "perfil": {
+        "nivel_edad": "P",
+        "nivel": "N1",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P3-MM",
+        "P4-WM",
+        "P3-MM",
+        "P4-WM",
+        "P3-MM",
+        "P4-WM",
+        "P6-VAL",
+        "P5-INT",
+        "P7-EXP",
+        "P6-VAL",
+        "P7-EXP",
+        "P6-VAL"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B45",
+          "turnos": [
+            4,
+            5
+          ],
+          "resolucion": "peer"
+        },
+        {
+          "transicion": "B56",
+          "turnos": [
+            10,
+            11,
+            12
+          ],
+          "resolucion": "peer"
+        }
+      ],
+      "supuestos": [
+        "solo cuentan los votos de los dos candidatos (los porcentajes suman 100)",
+        "criterio: diferencia cercana a 0 de cada 100 votos significa elección pareja"
+      ],
+      "modelo": "aditivo relativo",
+      "respuesta_final": "Lula 64.256.232 (51,79 %), Flávio 59.826.041 (48,21 %), diferencia 4.430.191 votos = 3,58 %, o sea 3,58 de cada 100 votos, que está cerca de 0, así que fue bastante pareja, aunque Lula ganó. Falta comparar con otras segundas vueltas.",
+      "validacion": true,
+      "archivo": "N1_AA_r1.json",
+      "costo_usd": 0.175044
+    },
+    {
+      "id": "N2_VV_r1",
+      "perfil": {
+        "nivel_edad": "P",
+        "nivel": "N2",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P3-MM",
+        "P4-WM",
+        "P3-MM",
+        "P4-WM",
+        "P5-INT",
+        "P2-RM",
+        "P4-WM",
+        "P3-MM",
+        "P6-VAL",
+        "P4-WM",
+        "P6-VAL",
+        "P2-RM",
+        "P7-EXP",
+        "P3-MM",
+        "P6-VAL",
+        "P4-WM",
+        "P5-INT",
+        "P7-EXP",
+        "P5-INT"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B56",
+          "turnos": [
+            23,
+            24,
+            25
+          ],
+          "resolucion": "peer"
+        }
+      ],
+      "supuestos": [
+        "total de votos = suma de los votos de los dos candidatos",
+        "los porcentajes publicados están redondeados",
+        "otras elecciones (la de hace cuatro años) sirven como referencia de comparación",
+        "empate si cambia de voto la mitad de la diferencia",
+        "representar el resultado en una sala de 100 personas"
+      ],
+      "modelo": "aditivo porcentual",
+      "respuesta_final": "Lula ganó con 51,79 % contra 48,21 %, o sea 3,58 de cada 100 votos más, unos 4.430.191 votos de diferencia. Es bastante pareja: con 2 de cada 100 que cambiaran de lado habría empate, aunque no pudimos comparar con otras elecciones.",
+      "validacion": true,
+      "archivo": "N2_VV_r1.json",
+      "costo_usd": 0.276952
+    },
+    {
+      "id": "N3_AA_r1",
+      "perfil": {
+        "nivel_edad": "P",
+        "nivel": "N3",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P4-WM",
+        "P3-MM",
+        "P4-WM",
+        "P5-INT",
+        "P3-MM",
+        "P4-WM",
+        "P2-RM",
+        "P5-INT",
+        "P7-EXP"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B56",
+          "turnos": [
+            7,
+            8,
+            10,
+            11,
+            12,
+            13
+          ],
+          "resolucion": "sin_resolver"
+        }
+      ],
+      "supuestos": [
+        "el total son solo los votos de los dos candidatos",
+        "la diferencia se juzga en relación con el total de votos",
+        "es pareja si basta cambiar pocos votos (≈1,8 %) para dar vuelta el resultado"
+      ],
+      "modelo": "aditivo-porcentual",
+      "respuesta_final": "Lula ganó por 4.430.191 votos (3,58 puntos), pero cambiando solo el 1,8 % de los votos ganaba Flávio, así que fue bastante pareja. Falta comparar los 3,58 puntos con otras segundas vueltas.",
+      "validacion": true,
+      "archivo": "N3_AA_r1.json",
+      "costo_usd": 0.140172
+    },
+    {
+      "id": "N4_VV_r1",
+      "perfil": {
+        "nivel_edad": "P",
+        "nivel": "N4",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P4-WM",
+        "P2-RM",
+        "P6-VAL",
+        "P4-WM",
+        "P6-VAL",
+        "P5-INT",
+        "P2-RM",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "solo cuentan los votos de los dos candidatos (total ≈124 millones)",
+        "simplificar a 100 votantes (52 contra 48)",
+        "comparar con otras segundas vueltas como criterio de pareja o clara",
+        "las abstenciones no cambian quién ganó"
+      ],
+      "modelo": "aditivo",
+      "respuesta_final": "Lula ganó por 4.430.191 votos (3,58 puntos); con que 2 de cada 100 votantes cambiaran de lado habría empate, así que la elección se ve ajustada. Piden las otras segundas vueltas y los votos blancos, nulos y abstenciones para confirmarlo.",
+      "validacion": true,
+      "archivo": "N4_VV_r1.json",
+      "costo_usd": 0.156244
+    },
+    {
+      "id": "N4_AA_r1",
+      "perfil": {
+        "nivel_edad": "P",
+        "nivel": "N4",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P4-WM",
+        "P3-MM",
+        "P4-WM",
+        "P3-MM",
+        "P4-WM",
+        "P2-RM",
+        "P6-VAL",
+        "P5-INT",
+        "P4-WM",
+        "P7-EXP",
+        "P2-RM",
+        "P3-MM",
+        "P7-EXP",
+        "P5-INT",
+        "P7-EXP",
+        "P6-VAL",
+        "P7-EXP",
+        "P6-VAL",
+        "P7-EXP",
+        "P5-INT"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B56",
+          "turnos": [
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "resolucion": "sin_resolver"
+        },
+        {
+          "transicion": "B67",
+          "turnos": [
+            19,
+            20,
+            21
+          ],
+          "resolucion": "self"
+        }
+      ],
+      "supuestos": [
+        "porcentajes calculados solo sobre votos válidos de los dos candidatos (abstenciones aparte)",
+        "criterio de 'pareja' o 'clara' según dónde quede el margen entre otras segundas vueltas",
+        "empate si cambia de lado la mitad de la diferencia",
+        "no se sabe qué habrían votado quienes no votaron"
+      ],
+      "modelo": "aditivo",
+      "respuesta_final": "Elección estrecha, pero con ganador seguro. Lula ganó por 4.430.191 votos (3,58 puntos). Por cada 100 votos de Flávio, Lula tuvo unos 107. No comparamos con otras elecciones por falta de datos.",
+      "validacion": true,
+      "archivo": "N4_AA_r1.json",
+      "costo_usd": 0.306164
+    }
+  ],
+  "agregado": {
+    "pct_bloqueo_por_transicion": {
+      "B45": 0.33,
+      "B56": 0.67,
+      "B67": 0.17
+    },
+    "modelos_observados": {
+      "aditivo relativo": 2,
+      "aditivo porcentual": 1,
+      "aditivo-porcentual": 1,
+      "aditivo": 2
+    },
+    "pct_validan": 1.0
+  },
+  "fecha": "2026-10-26T19:30:13Z"
+}
