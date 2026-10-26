@@ -1,0 +1,256 @@
+{
+  "run": {
+    "id": "N2_VV_r1",
+    "nivel": "N2",
+    "composicion": "VV",
+    "rep": 1,
+    "estilos": [
+      "V",
+      "V"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.086552,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P3-MM",
+        "fase_secundaria": "P1-MRS",
+        "eventos": []
+      },
+      {
+        "n": 3,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 4,
+        "fase": "P3-MM",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 6,
+        "fase": "P5-INT",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 8,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 9,
+        "fase": "P4-WM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 10,
+        "fase": "P3-MM",
+        "fase_secundaria": null,
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 11,
+        "fase": "P3-MM",
+        "fase_secundaria": null,
+        "eventos": [
+          "DIST",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 12,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 13,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 14,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P4-WM",
+        "eventos": []
+      },
+      {
+        "n": 15,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 16,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT",
+          "DIST"
+        ]
+      },
+      {
+        "n": 17,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT",
+          "DIST"
+        ]
+      },
+      {
+        "n": 18,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 19,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 20,
+        "fase": "P3-MM",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "PREC"
+        ]
+      },
+      {
+        "n": 21,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P3-MM",
+        "eventos": []
+      },
+      {
+        "n": 22,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "PREC"
+        ]
+      },
+      {
+        "n": 23,
+        "fase": "P5-INT",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 24,
+        "fase": "P5-INT",
+        "fase_secundaria": "P7-EXP",
+        "eventos": []
+      },
+      {
+        "n": 25,
+        "fase": "P5-INT",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 26,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 27,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 28,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 29,
+        "fase": "P5-INT",
+        "fase_secundaria": null,
+        "eventos": []
+      }
+    ],
+    "bloqueos": [
+      {
+        "codigo": "B56",
+        "turnos": [
+          23,
+          24,
+          25
+        ],
+        "resolucion": "peer",
+        "descripcion": "El par no logra decidir si el margen es pareja o clara porque espera datos de otras elecciones que no llegan; A expresa duda explícita y se repite 'esperemos las otras elecciones'. B destraba en el turno 26 proponiendo 'bastante pareja, aunque Lula ganó' y aclarar que no se pudo comparar."
+      }
+    ],
+    "supuestos": [
+      "total de votos = suma de los votos de los dos candidatos",
+      "los porcentajes publicados están redondeados",
+      "otras elecciones (la de hace cuatro años) sirven como referencia de comparación",
+      "empate si cambia de voto la mitad de la diferencia",
+      "representar el resultado en una sala de 100 personas"
+    ],
+    "modelo": "aditivo porcentual",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Lula ganó con 51,79 % contra 48,21 %, o sea 3,58 de cada 100 votos más, unos 4.430.191 votos de diferencia. Es bastante pareja: con 2 de cada 100 que cambiaran de lado habría empate, aunque no pudimos comparar con otras elecciones."
+    },
+    "ruta_principal": "R1",
+    "rutas": [
+      "R1",
+      "R2",
+      "R4"
+    ]
+  }
+}

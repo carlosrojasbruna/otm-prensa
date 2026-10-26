@@ -1,0 +1,33 @@
+# Corrida N2_VV_r1
+
+Nivel N2 · estilos V/V · rep 1 · 29 turnos · término: acuerdo · modelo claude-sonnet-5-5
+
+**1. Cami:** Mmm, yo me imagino las dos barras de la imagen, una un poquito más larga que la otra, ¿no? Creo que Lula ganó, pero no sé si "con claridad", ¿restamos los votos para ver cuántos más tuvo?  
+**2. Fran:** Sí, restemos con la calculadora: 64.256.232 − 59.826.041. Y yo me imagino una cancha llena de gente, así que quiero ver cuánta gente sería esa diferencia.  
+**3. Cami:** [cálculo: 64.256.232 − 59.826.041 = 4.430.191] ¡Da 4.430.191, como 4 millones y medio más! Eso suena a mucha gente, pero no sé si es mucho comparado con el total, ¿cómo lo vemos?  
+**4. Fran:** Yo me imagino una sala con 100 personas: 52 votan por Lula y 48 por Flávio, o sea, solo 4 de diferencia. Ahí se ve más parejo, ¿o no? Miremos los porcentajes: 51,79 − 48,21, ¿lo hacemos con la calculadora?  
+**5. Cami:** [cálculo: 51,79 − 48,21 = 3,58] ¡Da 3,58! O sea que de cada 100 personas, Lula tiene como 3 o 4 más, ¿y eso es poco o mucho? Yo me imagino la cancha con 100 personas y casi no se nota la diferencia.  
+**6. Fran:** Mmm, es raro: en la sala de 100 se ve poquito, pero 4 millones serían como un montón de canchas llenas. ¿Y si pedimos cómo fueron otras elecciones, para ver si 3,58 es poco o normal?  
+**7. Cami:** ¡Sí, pidamos otras elecciones para comparar! Yo me imagino dos barras por cada elección, y así vemos si la de Brasil es más parejita o más separada que las otras.  
+**8. Fran:** Yo pediría la diferencia en porcentaje de otras segundas vueltas, por ejemplo la de Brasil de hace cuatro años. [dibujo: una fila de barras dobles, una pareja por elección, para comparar] ¿Y si también pedimos cuántas personas votaron en total, para saber cuántas canchas serían 4 millones?  
+**9. Cami:** ¡Pero el total lo podemos sacar sumando los dos! [cálculo: 64.256.232 + 59.826.041 = 124.082.273] Son como 124 millones, ¿y si pedimos mejor cuántos caben en una cancha para imaginarnos las canchas?  
+**10. Fran:** Dale, pidamos cuántos caben en una cancha, y con ese dato divido 4.430.191 ÷ ese número en la calculadora. Pero igual me pregunto si esas canchas llenas son mucho o poco, porque en total son 124 millones. ¿Cuántas canchas serían todos?  
+**11. Cami:** Ah, entonces hacemos las dos divisiones con la calculadora: 124.082.273 ÷ lo que cabe en la cancha y 4.430.191 ÷ lo mismo. Yo me imagino dibujando todas las canchas y pintando solo unas poquitas de otro color, ¿así se ve si es poco?  
+**12. Fran:** ¡Sí, y creo que pintaríamos como 3 o 4 canchas de cada 100, igual que en mi sala de 100! Pero ¿para qué dividir tanto, si eso ya es el 3,58? ¿Mejor lo probamos con la calculadora para ver si da parecido?  
+**13. Cami:** ¡Sí, probemos! [cálculo: 4.430.191 ÷ 124.082.273 = ...] Si da como 0,03 y algo, es lo mismo que los 3,58 de cada 100, y no hace falta saber cuántos caben en la cancha.  
+**14. Fran:** [cálculo: 4.430.191 ÷ 124.082.273 = 0,0357] ¡Da 0,0357, o sea 3,57 de cada 100, casi igual que los 3,58! Debe ser porque los porcentajes vienen redondeados. Entonces ya no necesitamos las canchas, pero igual pidamos otras elecciones para saber si 3,6 es poco o mucho.  
+**15. Cami:** ¡Qué bueno que dio casi igual! Entonces pidamos las otras segundas vueltas, y yo dibujaría las barras dobles de cada elección una al lado de la otra para ver si la de Brasil es de las más juntitas. ¿Qué pedimos primero, la de hace cuatro años?  
+**16. Fran:** Sí, pidamos primero la de hace cuatro años con los porcentajes de los dos, y también algunas de otros países para tener varias. Así dibujamos las barras dobles todas en fila y vemos si la de Brasil es de las más juntitas.  
+**17. Cami:** ¡Dale, pedimos las de hace cuatro años y otras de países distintos, y dibujo las barras dobles en fila con el porcentaje de cada uno abajo! Después pintamos la de Brasil de otro color para ver si es de las más juntitas.  
+**18. Fran:** Dale, pedimos eso. Mientras llega, ¿escribimos lo que ya sabemos? Lula ganó con 51,79 % contra 48,21 %, unos 4.430.191 votos más, y después ponemos si es pareja o clara según las barras.  
+**19. Cami:** Dale, escribamos: "Lula tuvo 51,79 % y Flávio 48,21 %, o sea 3,58 de cada 100 votos más, unos 4.430.191 votos de diferencia". Y dejamos un espacio abajo para pegar las barras de las otras elecciones, porque todavía no sé si decir "pareja" o "clara".  
+**20. Fran:** Dale, y pongamos también el dibujo de la sala de 100 personas, 52 y 48. Otra idea: si como 2 millones doscientos mil hubieran cambiado su voto, habrían empatado, [cálculo: 4.430.191 ÷ 2 = 2.215.095,5], ¿eso lo ponemos también?  
+**21. Cami:** ¡Sí, pongámoslo! Yo me imagino pasando gente de la barra de Lula a la de Flávio: cada persona que pasa achica la diferencia de a dos, por eso es la mitad. ¿Y lo comparamos con los 124 millones para ver si 2 millones es poco?  
+**22. Fran:** Dale, lo hago con la calculadora: [cálculo: 2.215.095,5 ÷ 124.082.273 = 0,0178]. ¡Da como 1,8 de cada 100, que es la mitad de 3,58, o sea que con menos de 2 personas de cada 100 que cambiaran habrían empatado!  
+**23. Cami:** ¡Ah, en mi sala de 100 personas, con que 2 se cambien de lado ya quedan 50 y 50! Eso suena bien parejo, pero igual esperemos las otras elecciones para comparar, ¿lo anotamos así?  
+**24. Fran:** Sí, anotémoslo, pero dejemos escrito que son 2 de cada 100, y que a la vez son más de 2 millones de personas, así que depende de con qué lo comparemos. Cuando lleguen las otras elecciones, vemos si 3,58 es de las más juntitas.  
+**25. Cami:** Listo, anotado: "con 2 de cada 100 que cambiaran de lado habría empate". Yo me imagino la sala de 100 y, si las otras elecciones no llegan, me inclinaría por decir "bastante pareja", pero me da duda porque no tengo con qué comparar, ¿tú qué dirías?  
+**26. Fran:** Yo diría que Lula ganó, pero por poquito: en mi sala de 100, con 2 que se cambien ya empatan. Si no llegan las otras elecciones, escribamos "bastante pareja, aunque Lula ganó" y aclaremos que no pudimos comparar. ¿Te parece?  
+**27. Cami:** Sí, me parece, pero pongamos también los 4 millones de votos de diferencia, para que se vean las dos cosas: poquito en la sala de 100, pero harta gente en total. ¿Lo escribimos así y lo entregamos?  
+**28. Fran:** ENTREGAMOS: "Lula ganó con 51,79 % contra 48,21 %, o sea 3,58 de cada 100 votos más, unos 4.430.191 votos de diferencia. Es bastante pareja: con 2 de cada 100 que cambiaran de lado habría empate, aunque no pudimos comparar con otras elecciones.  
+**29. Cami:** DE ACUERDO. Aunque me quedé pensando que las barras de la imagen se ven casi igual de largas, así que "bastante pareja" me suena bien.  

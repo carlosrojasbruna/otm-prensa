@@ -1,0 +1,151 @@
+{
+  "run": {
+    "id": "N4_AA_r1",
+    "nivel": "N4",
+    "composicion": "AA",
+    "rep": 1,
+    "estilos": [
+      "A",
+      "A"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.060616,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P4-WM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 3,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 4,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "ASSUME",
+          "DIST",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 6,
+        "fase": "P3-MM",
+        "fase_secundaria": "EMK",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 8,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 9,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 10,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 11,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 12,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 13,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 14,
+        "fase": "P5-INT",
+        "fase_secundaria": "P7-EXP",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 15,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 16,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      }
+    ],
+    "bloqueos": [],
+    "supuestos": [
+      "deuda de ejemplo de 6.000.000",
+      "pie del 10% pagado al contado",
+      "cuotas iguales",
+      "sin interés el total pagado es igual a la deuda",
+      "interés de 1% mensual sobre el saldo adeudado",
+      "criterio: costo total y capacidad de pago mensual"
+    ],
+    "modelo": "anualidad (interés compuesto)",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Con una deuda de 6.000.000 y 1% mensual, lo más barato es 24 cuotas con pie (6.700.728). Si no alcanza para 254.197 al mes, conviene 48 con pie (142.203 al mes, total 7.425.744)."
+    },
+    "ruta_principal": "otra",
+    "rutas": [
+      "otra",
+      "R1",
+      "R2"
+    ]
+  }
+}

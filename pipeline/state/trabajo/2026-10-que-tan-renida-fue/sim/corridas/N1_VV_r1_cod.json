@@ -1,0 +1,183 @@
+{
+  "run": {
+    "id": "N1_VV_r1",
+    "nivel": "N1",
+    "composicion": "VV",
+    "rep": 1,
+    "estilos": [
+      "V",
+      "V"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.07026,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P3-MM",
+        "fase_secundaria": "P1-MRS",
+        "eventos": []
+      },
+      {
+        "n": 3,
+        "fase": "P4-WM",
+        "fase_secundaria": "P3-MM",
+        "eventos": []
+      },
+      {
+        "n": 4,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 5,
+        "fase": "P3-MM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 6,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 7,
+        "fase": "P5-INT",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 8,
+        "fase": "P5-INT",
+        "fase_secundaria": "EMK",
+        "eventos": []
+      },
+      {
+        "n": 9,
+        "fase": "P2-RM",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 10,
+        "fase": "P4-WM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 11,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 12,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 13,
+        "fase": "P6-VAL",
+        "fase_secundaria": "EMK",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 14,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "ASSUME",
+          "DIST",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 15,
+        "fase": "OFF",
+        "fase_secundaria": "P7-EXP",
+        "eventos": [
+          "STRAT",
+          "DIST"
+        ]
+      },
+      {
+        "n": 16,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 17,
+        "fase": "P5-INT",
+        "fase_secundaria": "P7-EXP",
+        "eventos": []
+      },
+      {
+        "n": 18,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 19,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 20,
+        "fase": "OFF",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      }
+    ],
+    "bloqueos": [
+      {
+        "codigo": "B45",
+        "turnos": [
+          6,
+          7,
+          8
+        ],
+        "resolucion": "unresolved",
+        "descripcion": "Obtienen 3,58 puntos de diferencia pero dudan explícitamente si es 'poco o harto'; proponen pedir otras elecciones para comparar, pero nunca obtienen ese dato y la conclusión ('bastante pareja') queda declarada como provisoria."
+      }
+    ],
+    "supuestos": [
+      "Total de votos = suma de los votos de los dos candidatos",
+      "Representar los votos como 100 personas/asientos",
+      "Si en otras elecciones la diferencia también fue de unos 4 de 100, esta fue pareja; si fue mayor, fue más reñida"
+    ],
+    "modelo": "aditivo relativo",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Fue una elección bastante pareja, aunque Lula ganó, con 3,58 puntos más, como 4 asientos de 100 en el cine (más de 4 millones de votos), y falta comparar con otras elecciones."
+    },
+    "ruta_principal": "R1",
+    "rutas": [
+      "R1",
+      "R2"
+    ]
+  }
+}

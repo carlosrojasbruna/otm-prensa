@@ -1,0 +1,263 @@
+{
+  "run": {
+    "id": "N4_AA_r1",
+    "nivel": "N4",
+    "composicion": "AA",
+    "rep": 1,
+    "estilos": [
+      "A",
+      "A"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.097964,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P3-MM",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P4-WM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P3-MM",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 6,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT",
+          "ASSUME",
+          "DIST"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 8,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 9,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P7-EXP",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 10,
+        "fase": "P5-INT",
+        "fase_secundaria": "P7-EXP",
+        "eventos": []
+      },
+      {
+        "n": 11,
+        "fase": "P5-INT",
+        "fase_secundaria": "P4-WM",
+        "eventos": []
+      },
+      {
+        "n": 12,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 13,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 14,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT",
+          "DIST"
+        ]
+      },
+      {
+        "n": 15,
+        "fase": "P3-MM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "DIST",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 16,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 17,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 18,
+        "fase": "P5-INT",
+        "fase_secundaria": "P7-EXP",
+        "eventos": []
+      },
+      {
+        "n": 19,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 20,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 21,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 22,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 23,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 24,
+        "fase": "P7-EXP",
+        "fase_secundaria": "OFF",
+        "eventos": []
+      },
+      {
+        "n": 25,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 26,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P7-EXP",
+        "eventos": []
+      },
+      {
+        "n": 27,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 28,
+        "fase": "P5-INT",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      }
+    ],
+    "bloqueos": [
+      {
+        "codigo": "B56",
+        "turnos": [
+          13,
+          14,
+          15,
+          16,
+          17,
+          18
+        ],
+        "resolucion": "unresolved",
+        "descripcion": "El par repite la petición de márgenes de otras segundas vueltas y abstenciones para contrastar su interpretación, deja espacios en blanco a la espera de datos que no llegan y finalmente abandona la comparación con otras elecciones."
+      },
+      {
+        "codigo": "B67",
+        "turnos": [
+          19,
+          20,
+          21
+        ],
+        "resolucion": "self",
+        "descripcion": "Tras entregar 'estrecha pero decisiva', B objeta que 'decisiva' choca con que menos del 2 % de votantes cambiando bastaría para empatar; el mismo B propone 'estrecha, pero con ganador seguro' y A lo acepta."
+      }
+    ],
+    "supuestos": [
+      "porcentajes calculados solo sobre votos válidos de los dos candidatos (abstenciones aparte)",
+      "criterio de 'pareja' o 'clara' según dónde quede el margen entre otras segundas vueltas",
+      "empate si cambia de lado la mitad de la diferencia",
+      "no se sabe qué habrían votado quienes no votaron"
+    ],
+    "modelo": "aditivo",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Elección estrecha, pero con ganador seguro. Lula ganó por 4.430.191 votos (3,58 puntos). Por cada 100 votos de Flávio, Lula tuvo unos 107. No comparamos con otras elecciones por falta de datos."
+    },
+    "ruta_principal": "R1",
+    "rutas": [
+      "R1",
+      "R2",
+      "R3",
+      "R4"
+    ]
+  }
+}

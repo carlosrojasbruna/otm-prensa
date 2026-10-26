@@ -1,0 +1,144 @@
+{
+  "run": {
+    "id": "N4_VV_r1",
+    "nivel": "N4",
+    "composicion": "VV",
+    "rep": 1,
+    "estilos": [
+      "V",
+      "V"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.064544,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 3,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P2-RM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 6,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 8,
+        "fase": "P5-INT",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 9,
+        "fase": "P2-RM",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "DIST",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 10,
+        "fase": "P2-RM",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 11,
+        "fase": "P6-VAL",
+        "fase_secundaria": "EMK",
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 12,
+        "fase": "P6-VAL",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 13,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 14,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      }
+    ],
+    "bloqueos": [],
+    "supuestos": [
+      "solo cuentan los votos de los dos candidatos (total ≈124 millones)",
+      "simplificar a 100 votantes (52 contra 48)",
+      "comparar con otras segundas vueltas como criterio de pareja o clara",
+      "las abstenciones no cambian quién ganó"
+    ],
+    "modelo": "aditivo",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Lula ganó por 4.430.191 votos (3,58 puntos); con que 2 de cada 100 votantes cambiaran de lado habría empate, así que la elección se ve ajustada. Piden las otras segundas vueltas y los votos blancos, nulos y abstenciones para confirmarlo."
+    },
+    "ruta_principal": "R1",
+    "rutas": [
+      "R1",
+      "R4",
+      "R2"
+    ]
+  }
+}

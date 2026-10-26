@@ -1,0 +1,78 @@
+{
+  "tarea_id": "2026-10-cuanto-pagar-cada-mes",
+  "aprobado": false,
+  "estado_destino": "simulada",
+  "hallazgos": [
+    {
+      "invariante": "notebook",
+      "severidad": "advertencia",
+      "ubicacion": "guia.materiales.notebook",
+      "descripcion": "notebook escenarios.ipynb no encontrado: ",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "4",
+      "severidad": "critico",
+      "ubicacion": "tarea.noticia.cifras_usadas[0]",
+      "descripcion": "valor 48 en la tarea, '5 millones' en la noticia (párrafo 5)",
+      "origen": "codigo"
+    }
+  ],
+  "cifras_contrastadas": [
+    {
+      "indice": 0,
+      "que_es": "Número de cuotas del nuevo convenio para deudores del CAE",
+      "valor_tarea": 48,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 5"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "5 millones",
+      "resultado": "distinto",
+      "nota": "valor distinto del de la noticia"
+    },
+    {
+      "indice": 1,
+      "que_es": "Número máximo de cuotas que existía antes de la ley",
+      "valor_tarea": 24,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 7"
+      },
+      "metodo": "codigo",
+      "valor_fuente": 24,
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia"
+    },
+    {
+      "indice": 2,
+      "que_es": "Porcentaje de deuda pagado al contado como ejemplo de pie",
+      "valor_tarea": "10%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 10"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "10%",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia"
+    }
+  ],
+  "notebook": {
+    "estado": "no_encontrado",
+    "ruta": "escenarios.ipynb",
+    "salida_resumen": ""
+  },
+  "meta": {
+    "agente": "verificador",
+    "version_prompt": "1.1",
+    "modelo": null,
+    "request_id": null,
+    "fecha": "2026-10-26T17:19:22+00:00",
+    "costo_usd": 0.0,
+    "modelo_llamado": false,
+    "texto_noticia_recibido": true,
+    "uso": null
+  }
+}

@@ -1,0 +1,26 @@
+# Corrida N2_VV_r1
+
+Nivel N2 · estilos V/V · rep 1 · 22 turnos · término: acuerdo · modelo claude-sonnet-5-5
+
+**1. Cami:** Yo me imagino un calendario con meses, uno al lado del otro, y en cada mes una moneda cayendo a la alcancía. ¿Y si elegimos una deuda fácil, como 1.000.000, para ver cuánto sale cada cuota?  
+**2. Fran:** Ya, 1.000.000 está bien. [dibujo: dos filas de casillas, una con 24 y otra con 48, y una moneda en cada una] Con la calculadora hago 1.000.000 : 24 y 1.000.000 : 48.  
+**3. Cami:** Ya, dale. Yo creo que 1.000.000 : 24 da como 41.000 y algo, y con 48 debería dar la mitad, o sea como 20.000, ¿no? Mira qué sale en la calculadora.  
+**4. Fran:** Salió 1.000.000 : 24 = 41.666,66 y 1.000.000 : 48 = 20.833,33, así que sí, es la mitad. [dibujo: moneda grande en cada casilla de la fila de 24, moneda chica en cada casilla de la fila de 48] ¿Pero eso quiere decir que 48 cuotas conviene más, si la cuota es más chica?  
+**5. Cami:** Mmm, en el dibujo las monedas chicas son más, la fila es el doble de larga, o sea que pagas el doble de tiempo. ¿Y si cobran algo extra por cada mes? Habría que preguntar si hay intereses.  
+**6. Fran:** Ya, preguntemos si hay intereses, porque si no cobran nada extra, pagas lo mismo en total, solo que más despacio. [dibujo: bajo cada fila, una moneda grande × 24 y una chica × 48, y las dos suman igual] ¿Y el pie del 10% serían 100.000 al tiro, y el resto 900.000 en cuotas?  
+**7. Cami:** Sí, 100.000 al tiro, y quedan 900.000 para las cuotas. [dibujo: una moneda gigante al principio de la fila y después las monedas más chicas] ¿Calculamos 900.000 : 24 y 900.000 : 48 para ver cuánto baja cada cuota?  
+**8. Fran:** Ya, dale, lo hago: 900.000 : 24 = 37.500 y 900.000 : 48 = 18.750. [dibujo: monedas más chicas en las dos filas] O sea que con pie la cuota baja como 4.000 en la de 24 y 2.000 en la de 48, ¿cierto?  
+**9. Cami:** Sí, casi: 41.666 − 37.500 me da como 4.166, y 20.833 − 18.750 da 2.083. Pero en mi dibujo la moneda gigante del principio son los 100.000, así que al final pagas lo mismo, ¿no? ¿Entonces el pie solo sirve si hay intereses?  
+**10. Fran:** Yo creo que sí, Cami: sin intereses el pie solo cambia cuándo pagas, no cuánto. [dibujo: la moneda gigante al principio + las chicas = el mismo montón que antes] Pero si hay intereses, quizás el pie ayuda porque debes menos plata y te cobran menos sobre eso, ¿pedimos esa información?  
+**11. Cami:** Sí, pidamos la información: si hay interés y de cuánto es al mes. Con eso podríamos ver si en 48 cuotas pagas más en total, aunque cada cuota sea más chica. [dibujo: la fila de 48 con una moneda extra chiquita arriba de cada casilla]  
+**12. Fran:** Ya, pidamos la información: si hay interés y cuánto es al mes. [dibujo: arriba de cada casilla de la fila de 48, una moneda chiquita extra] Y si nos dicen, por ejemplo, 1% al mes, ¿lo calculamos con la calculadora para las dos filas?  
+**13. Cami:** Ya, probemos con 1%: yo creo que 1% de 1.000.000 son 10.000 al mes, ¿eso se suma a cada cuota? Pero no sé si el interés se cobra sobre toda la deuda o solo sobre lo que te falta pagar, ¿lo preguntamos también?  
+**14. Fran:** Ya, preguntémoslo también. [dibujo: una pila de monedas que se achica cada mes, con una monedita de interés arriba de cada pila] Yo creo que si es sobre lo que te falta, el interés va bajando, porque la pila se achica, ¿cierto?  
+**15. Cami:** Sí po, si la pila se achica, el interés baja: el primer mes son 10.000 y el segundo 1% de 958.334, unos 9.583. ¿Probamos varios meses en la calculadora para ver cuánto suma en 24 y en 48?  
+**16. Fran:** Ya, pero hacer 48 meses uno por uno es larguísimo. [dibujo: dos pilas de monedas, la de 48 meses baja más lento que la de 24] ¿Hacemos solo unos 3 meses en cada una para ver si en la de 48 el interés dura más y por eso pagas más?  
+**17. Cami:** Ya, hagamos 3 meses. En la de 48 el primer mes es 10.000 y el segundo es 1% de 979.167 (1.000.000 − 20.833), o sea como 9.791, y en la de 24 era 9.583. ¿Seguimos con el tercero?  
+**18. Fran:** Ya, el tercero: en la de 24 quedan 1.000.000 − 83.333 = 916.667, o sea 9.166 de interés, y en la de 48 quedan 958.333, o sea 9.583. [dibujo: dos pilas, la de 24 más bajita que la de 48, cada una con su monedita de interés] ¿Ves que la de 48 siempre cobra más interés cada mes?  
+**19. Cami:** Sí, en mi dibujo la pila de 48 queda siempre más alta, así que cobran interés sobre más plata y por más meses. Entonces pagas menos total con 24, pero la cuota es más grande, ¿o sea que depende de si puedes pagar esa cuota?  
+**20. Fran:** Sí po, depende: si puedes pagar la cuota grande, 24 te sale más barato, pero si no, 48 te alivia cada mes aunque pagues más en total. ¿Escribimos eso, y que el pie ayuda a pagar menos interés porque la pila empieza más baja, ojo que con el 1% que supusimos?  
+**21. Cami:** Ya, escribámoslo, pero ponemos que es con 1.000.000 y 1% al mes inventado. ENTREGAMOS: con 1% y deuda de 1.000.000, 24 cuotas con pie es lo más barato; si no puedes pagar esa cuota, 48 alivia cada mes pero pagas más.  
+**22. Fran:** DE ACUERDO. Solo pondría también que no sabemos si el interés es 1% de verdad, porque eso lo inventamos y habría que preguntarlo.  

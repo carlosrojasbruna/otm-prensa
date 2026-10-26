@@ -1,0 +1,460 @@
+{
+  "tarea_id": "2026-10-cuanto-pagar-cada-mes",
+  "version": 1,
+  "fecha": "2026-10-26",
+  "ficha": {
+    "titulo": "¿Cuánto pagar cada mes: convenio antiguo o nuevo?",
+    "noticia": {
+      "medio": "La Tercera",
+      "titulo": "Ley de Reconstrucción: Tesorería destaca que en sus diez primeros días se han realizado 4 mil consultas o simulaciones de convenios",
+      "fecha": "2026-10-26",
+      "url": "https://www.latercera.com/nacional/noticia/ley-de-reconstruccion-tesoreria-destaca-que-en-sus-diez-primeros-dias-se-han-realizado-4-mil-consultas-o-simulaciones-de-convenios/"
+    },
+    "nivel_principal": "P",
+    "variantes": [
+      "S"
+    ],
+    "contenidos": [
+      "proporcionalidad directa",
+      "división y reparto equitativo",
+      "porcentajes simples",
+      "tablas de comparación"
+    ],
+    "tiempo": "2 sesiones de 90 min",
+    "puntaje_rub01": 23,
+    "version": 1,
+    "fecha": "2026-10-26",
+    "cambios": ""
+  },
+  "meta": {
+    "que_observar": "Cómo el grupo convierte una pregunta abierta de pagos de deuda (¿convenio antiguo o nuevo, con pie o sin pie?) en un problema que puede resolver. Interesa ver si acuerdan una deuda de ejemplo, un supuesto sobre intereses y un criterio de conveniencia antes de calcular, y si su recomendación usa los números obtenidos y no solo la cuota más baja.",
+    "contenido": "Proporcionalidad directa (con el doble de cuotas, la cuota es la mitad), división y reparto equitativo de una deuda en cuotas iguales, porcentajes simples (el pie) y tablas de comparación.",
+    "subcompetencias": [
+      "Comprender la situación: distinguir qué es convenio, cuota y pie (P1-MRS)",
+      "Simplificar: elegir una deuda de ejemplo, decidir sobre los intereses y definir qué significa 'conviene' (P2-RM)",
+      "Matematizar: representar el reparto en cuotas iguales, con y sin pie, en una tabla o una división (P3-MM)",
+      "Trabajar con el modelo: calcular las cuotas y comprobar que cuotas y pie reconstruyen la deuda (P4-WM)",
+      "Interpretar: relacionar cuota, tiempo endeudado y dinero inicial con la situación de la persona (P5-INT)",
+      "Validar: contrastar con la cuota del simulador de Tesorería y explicar la diferencia (P6-VAL)",
+      "Comunicar: presentar recomendación, procedimiento y limitaciones (P7-EXP)"
+    ],
+    "meta_social": "Trabajo cooperativo en grupos pequeños: acordar supuestos y criterio de conveniencia por consenso, argumentar la recomendación ante otro grupo y aceptar que distintas recomendaciones pueden ser defendibles.",
+    "evidencia": [
+      "Lista escrita de supuestos acordados y del criterio de conveniencia elegido (P2-RM)",
+      "Tabla o esquema con deuda, pie, plazo y cuota de cada opción (P3-MM)",
+      "Cuadro de resultados con las cuotas calculadas y la comprobación de la suma (P4-WM)",
+      "Recomendación escrita a la persona con una razón que use los números obtenidos (P5-INT)",
+      "Comparación anotada entre la cuota del grupo y la del simulador, con explicación de la diferencia (P6-VAL)",
+      "Cartel o exposición breve con la deuda elegida, la tabla, la decisión y las limitaciones (P7-EXP)"
+    ]
+  },
+  "analisis_a_priori": {
+    "rutas": [
+      {
+        "id": "R1",
+        "nombre": "Tabla de cuotas por opción",
+        "nivel": "P",
+        "modelo": "Cuota = deuda dividida en el número de cuotas, calculada para cada opción y ordenada en una tabla."
+      },
+      {
+        "id": "R2",
+        "nombre": "Razonamiento proporcional",
+        "nivel": "P",
+        "modelo": "Al duplicar las cuotas, la cuota se reduce a la mitad; el pie quita un décimo de la deuda y reduce la cuota en ese mismo décimo."
+      },
+      {
+        "id": "R3",
+        "nombre": "Gráfico de barras de pagos mensuales",
+        "nivel": "P",
+        "modelo": "Barras con la cuota y la duración de cada opción, para ver la relación entre cuota y tiempo (área igual a la deuda)."
+      },
+      {
+        "id": "R4",
+        "nombre": "Cuota como fracción del ingreso",
+        "nivel": "S1",
+        "modelo": "Cuota = (1 − p) · D / n, comparada con una fracción del ingreso mensual elegido para decidir qué plan es sostenible."
+      }
+    ],
+    "modelo_inadecuado": {
+      "id": "R5",
+      "por_que_falla": "Concluir que más cuotas siempre conviene porque la cuota mensual es menor. Falla porque ignora que la persona está endeudada el doble de tiempo, que el criterio depende de la capacidad de pago y que en la realidad puede haber intereses; mirar solo la cuota no responde qué le conviene a esa persona."
+    },
+    "solucion_referencia": "1) Elegir una deuda de ejemplo, por ejemplo 6 millones de pesos. 2) Convenio antiguo: deuda dividida en 24 cuotas. 3) Convenio nuevo: deuda dividida en 48 cuotas. 4) Nuevo con pie: pie igual al 10% de la deuda; lo que queda se divide en 48 cuotas (y, si se quiere, también en 24). 5) Comparar cuotas y tiempo total. 6) Decidir según el criterio acordado, que depende del ingreso de la persona. 7) Contrastar con el simulador de Tesorería. Resultado: Con una deuda de 6 millones de pesos: 24 cuotas de 250.000 pesos; 48 cuotas de 125.000 pesos; con pie de 600.000 pesos, 48 cuotas de 112.500 pesos (o 24 cuotas de 225.000 pesos). Pasar de 24 a 48 cuotas reduce la cuota a la mitad, pero duplica el tiempo de pago. La opción más conveniente depende de cuánto puede pagar la persona cada mes y de cuánto le pesa estar endeudada más tiempo.",
+    "rango_aceptable": "La cuota es proporcional a la deuda elegida: con el doble de cuotas es la mitad y con pie del 10% es un 10% menor que sin pie. Son defendibles tanto el nuevo convenio sin pie (cuota más baja) como el nuevo con pie (cuota aún menor, pero con pago inicial) o el antiguo (menos tiempo), siempre que se justifique con el ingreso y los números.",
+    "barreras_por_fase": [
+      {
+        "fase": "P1-MRS",
+        "barrera": "Bloqueo probable B12. Los grupos pueden tratar los tres datos de entrada como números sueltos y no ver que describen tres formas de pagar la misma deuda. También pueden confundir pie con cuota, o no distinguir cuánto paga la persona cada mes de por cuánto tiempo.  Esto les dificulta decidir qué simplificar."
+      },
+      {
+        "fase": "P2-RM",
+        "barrera": "Bloqueo probable B23. Cuesta aceptar que no hay una deuda ni un ingreso 'correctos' y que deben elegirlos ellos. Pueden empezar a calcular sin acordar si hay intereses ni qué significa que algo 'convenga' (cuota baja, menos tiempo endeudada, relación con el ingreso). Sin ese criterio, la comparación posterior queda sin sentido."
+      },
+      {
+        "fase": "P3-MM",
+        "barrera": "Bloqueo probable B34. Pasar del enunciado a una operación: decidir que la cuota sale de repartir la deuda en partes iguales. Con pie, hay confusión sobre dónde se aplica el 10%: puede aplicarse a la deuda antes de repartir o, por error, a la cuota. También pueden construir una tabla sin dejar claras las columnas de deuda, pie, plazo y cuota."
+      },
+      {
+        "fase": "P4-WM",
+        "barrera": "Bloqueo probable B45. Errores de cálculo al obtener el pie y al dividir, sobre todo con el pie descontado. Algunos grupos pueden saltarse la comprobación de que cuotas más pie reconstruyen la deuda, y así no detectan resultados inconsistentes antes de interpretar."
+      },
+      {
+        "fase": "P5-INT",
+        "barrera": "Bloqueo probable B56. Tentación del modelo inadecuado: concluir que más cuotas siempre conviene porque la cuota mensual es menor, sin considerar que la persona queda endeudada más tiempo ni que la conveniencia depende de lo que puede pagar. Con el pie, puede olvidarse que exige dinero hoy."
+      },
+      {
+        "fase": "P6-VAL",
+        "barrera": "Bloqueo probable B67. Al recibir la cuota del simulador, el grupo puede entender que su resultado está 'mal' en lugar de ver que el modelo ignoró intereses u otros cargos. También puede descartar la diferencia sin explicarla o pasar a exponer sin incorporarla como limitación."
+      }
+    ]
+  },
+  "organizacion": {
+    "momentos": [
+      {
+        "momento": "Comprensión y trabajo grupal (sesión 1): comprender y simplificar",
+        "tiempo": "30 min",
+        "estudiantes": "Leen el enunciado y los datos de entrada. Explican con sus palabras qué paga la persona cada mes y por cuánto tiempo, y anotan qué quieren saber. Eligen una deuda de ejemplo, deciden qué hacen con los intereses y acuerdan qué significa que una opción convenga. Pueden pedir información adicional.",
+        "docente": "Presenta la situación sin resolverla. Circula y diagnostica preguntando qué han entendido y qué han decidido hasta ahora. No interviene todavía con ayudas. Entrega un recurso a solicitud solo si el grupo pregunta por intereses, monto de cuotas o ingresos de la persona."
+      },
+      {
+        "momento": "Comprensión y trabajo grupal (sesión 1): matematizar y calcular",
+        "tiempo": "45 min",
+        "estudiantes": "Representan el reparto de la deuda en cuotas iguales para las opciones antigua, nueva y nueva con pie, mediante tabla o división. Calculan las cuotas y el pie y comprueban que cuotas y pie reconstruyan la deuda. Registran todo en su tabla y cuadro de resultados.",
+        "docente": "Circula y pregunta qué han hecho y por qué, antes de ayudar. Si un grupo se traba, ofrece primero la ayuda mínima, una pregunta sobre lo que ya tienen escrito. Nunca entrega la operación, el modelo ni el resultado de la solución de referencia."
+      },
+      {
+        "momento": "Puesta en común intermedia (sesión 1)",
+        "tiempo": "15 min",
+        "estudiantes": "Dos o tres grupos muestran sus supuestos y su tabla. El curso compara qué deuda y qué criterio eligió cada grupo y por qué sus resultados difieren.",
+        "docente": "Modera. Hace notar que las deudas distintas llevan a cuotas distintas sin que alguien se equivoque. No valida resultados. Anota las rutas que aparecen (tabla, razonamiento proporcional, gráfico) para la sesión siguiente."
+      },
+      {
+        "momento": "Comprensión y trabajo grupal (sesión 2): interpretar y contrastar",
+        "tiempo": "35 min",
+        "estudiantes": "Releen sus resultados e interpretan qué cambia al tener más cuotas y al pagar un pie. Escriben una recomendación a la persona con una razón basada en sus números. Cuando tienen resultados, piden al docente el dato del simulador y comparan su cuota con la que muestra. Anotan la diferencia y una explicación posible. Preparan el cartel.",
+        "docente": "Circula y diagnostica preguntando qué recomiendan y en qué números se apoyan. Si el grupo mira solo la cuota, pregunta qué le pasa a la persona en el tiempo, sin dar la conclusión. Entrega el dato del simulador solo cuando el grupo ya tiene resultados propios."
+      },
+      {
+        "momento": "Puesta en común (sesión 2)",
+        "tiempo": "25 min",
+        "estudiantes": "Cada grupo presenta su cartel o una exposición breve a otro grupo: deuda elegida, tabla, decisión y limitaciones. El grupo oyente pregunta por el criterio de conveniencia y por los supuestos.",
+        "docente": "Asigna parejas de grupos y cuida los tiempos. Escucha cómo justifican la decisión y si las recomendaciones distintas se sostienen con números y con el criterio acordado. Registra qué rutas usaron."
+      },
+      {
+        "momento": "Validación y cierre",
+        "tiempo": "30 min",
+        "estudiantes": "En plenario, comparan las diferencias entre sus cuotas y las del simulador y discuten qué las explica (intereses, otros cargos). Revisan qué recomendación cambiarían y qué limitaciones agregarían. Cierran con lo que aprendieron de comparar cuota y tiempo.",
+        "docente": "Conduce la discusión con preguntas abiertas. Contrasta la opción 'más cuotas siempre conviene' con los argumentos de los grupos, sin dar la respuesta. Cierra señalando que la mejor opción depende de la capacidad de pago de la persona y de cuánto le pesa estar endeudada más tiempo."
+      }
+    ],
+    "agrupamiento": "Grupos de tres a cuatro estudiantes, estables en las dos sesiones, para que cada integrante pueda verbalizar sus decisiones. En la puesta en común se forman parejas de grupos para exponer y escuchar.",
+    "roles": "Rotativos dentro del grupo: quien lee y parafrasea el enunciado, quien registra supuestos y tabla, quien calcula y comprueba, y quien presenta. Quien registra anota también las preguntas que el grupo le hace al docente.",
+    "producciones": [
+      "Lista de supuestos y criterio de conveniencia",
+      "Tabla o esquema de cuotas por opción",
+      "Cuadro de resultados con comprobación de la suma",
+      "Recomendación escrita con su razón",
+      "Comparación anotada con la cuota del simulador",
+      "Cartel o exposición breve"
+    ],
+    "tecnologia": "Se permite calculadora en P4-WM para dividir y obtener el pie; no puede sustituir las decisiones de P2-RM ni la elección del criterio. Una hoja de cálculo es opcional para ordenar la tabla de P3-MM, solo si el grupo ya la maneja. El simulador de Tesorería no lo usan los estudiantes de forma directa: el docente entrega su cuota en P6-VAL, cuando el grupo ya tiene sus resultados."
+  },
+  "escenarios": [
+    {
+      "id": "E1",
+      "nombre": "ruta esperada",
+      "corridas": [
+        "N4_VV_r1"
+      ],
+      "perfil": "Tramo P (primaria), nivel N4, estilo VV.",
+      "ruta": [
+        "P2-RM",
+        "P4-WM",
+        "P5-INT",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P5-INT",
+        "P7-EXP"
+      ],
+      "supuestos": [
+        "deuda de ejemplo de 1.200.000 pesos",
+        "cuotas iguales",
+        "pie del 10% pagado al contado",
+        "sin intereses (cálculo inicial)",
+        "interés de 1% mensual",
+        "deuda promedio igual a la mitad de la deuda",
+        "conveniencia depende del ingreso y del costo total"
+      ],
+      "modelo": "proporcional",
+      "bloqueos": [],
+      "que_aprende": "El grupo divide la deuda en 24 y 48 cuotas, con y sin pie, y nota que sin intereses el total no cambia. Luego agrega un interés supuesto con una estimación sencilla: la deuda promedio es la mitad. Decide con un criterio explícito (ingreso y costo total), no solo con la cuota más baja. Deja escrito que el interés fue supuesto y que falta saber cuánto gana la persona. Sirve de referencia para comparar los demás escenarios. Su ruta no pasa por P6-VAL: el docente puede usarlo para preguntar al curso cómo contrastarían su cuota con la del simulador de Tesorería.",
+      "extracto_dialogo": [
+        {
+          "hablante": "Fran",
+          "texto": "Sí, y también pidamos cuánto gana la persona al mes, porque si le alcanza para 50.000, quizás no le conviene alargar a 48. Mientras tanto, supongamos un 1% mensual y estimemos cuánto subiría el total."
+        },
+        {
+          "hablante": "Cami",
+          "texto": "Sí, depende. Si tiene los 120.000 para el pie y le alcanzan los 45.000 al mes, le conviene 24 cuotas con pie, y si no, 48 aunque pague más. Entreguemos eso, aclarando que supusimos 1% y que falta saber cuánto gana."
+        }
+      ]
+    },
+    {
+      "id": "E2",
+      "nombre": "tentación de más cuotas",
+      "corridas": [
+        "N2_VV_r1"
+      ],
+      "perfil": "Tramo P (primaria), nivel N2, estilo VV.",
+      "ruta": [
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P5-INT",
+        "P3-MM",
+        "P4-WM",
+        "P5-INT",
+        "P2-RM",
+        "P3-MM",
+        "P2-RM",
+        "P4-WM",
+        "P2-RM",
+        "P4-WM",
+        "P5-INT",
+        "P7-EXP",
+        "P6-VAL"
+      ],
+      "supuestos": [
+        "deuda de ejemplo de 1.000.000",
+        "cuotas iguales",
+        "pie del 10% pagado al contado",
+        "sin intereses el total pagado es igual",
+        "interés hipotético de 1% mensual",
+        "interés sobre el saldo pendiente"
+      ],
+      "modelo": "proporcional",
+      "bloqueos": [
+        {
+          "transicion": "B23",
+          "como_se_destrabo": "Resolución entre pares (peer). Cami no sabía si el 1% se cobra sobre toda la deuda o solo sobre lo que falta pagar. Fran dibujó una pila de monedas que se achica cada mes y propuso que, si el interés se cobra sobre el saldo, va bajando. Con esa imagen calcularon algunos meses para comparar 24 y 48 cuotas."
+        }
+      ],
+      "que_aprende": "Muestra el modelo inadecuado previsto en la tarea: concluir que más cuotas siempre conviene porque la cuota es menor. Ninguna corrida lo adoptó, pero aquí aparece como pregunta explícita. El grupo lo descarta al ver que con 48 cuotas se paga el doble de tiempo. Después pregunta por los intereses y por cómo se cobran. El curso puede comparar este escenario con E1: los dos llegan a una decisión condicionada a la capacidad de pago y declaran que el interés fue inventado.",
+      "extracto_dialogo": [
+        {
+          "hablante": "Fran",
+          "texto": "Salió 1.000.000 : 24 = 41.666,66 y 1.000.000 : 48 = 20.833,33, así que sí, es la mitad. [dibujo: moneda grande en cada casilla de la fila de 24, moneda chica en cada casilla de la fila de 48] ¿Pero eso quiere decir que 48 cuotas conviene más, si la cuota es más chica?"
+        },
+        {
+          "hablante": "Cami",
+          "texto": "Mmm, en el dibujo las monedas chicas son más, la fila es el doble de larga, o sea que pagas el doble de tiempo. ¿Y si cobran algo extra por cada mes? Habría que preguntar si hay intereses."
+        }
+      ]
+    },
+    {
+      "id": "E3",
+      "nombre": "bloqueo en matematizar",
+      "corridas": [
+        "N1_VV_r1"
+      ],
+      "perfil": "Tramo P (primaria), nivel N1, estilo VV.",
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P4-WM",
+        "P6-VAL",
+        "P5-INT",
+        "P2-RM",
+        "P4-WM",
+        "P3-MM",
+        "P4-WM",
+        "P6-VAL",
+        "P5-INT",
+        "P2-RM",
+        "P4-WM",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P6-VAL",
+        "P4-WM",
+        "P3-MM",
+        "P4-WM",
+        "P3-MM",
+        "P4-WM",
+        "P5-INT",
+        "P4-WM",
+        "P5-INT",
+        "P4-WM",
+        "P3-MM",
+        "P4-WM"
+      ],
+      "supuestos": [
+        "deuda de ejemplo de 480.000 para dividir fácil",
+        "cuotas iguales",
+        "pie del 10% pagado de una vez y descontado de la deuda",
+        "caso base sin intereses",
+        "interés inventado de 1% mensual sobre el saldo pendiente",
+        "criterio: capacidad de pagar la cuota mensual"
+      ],
+      "modelo": "proporcional y aritmético",
+      "bloqueos": [
+        {
+          "transicion": "B23",
+          "como_se_destrabo": "Resolución entre pares (peer). Al representar el interés sobre el saldo, Cami restó el interés a la deuda en vez de restar la cuota. Fran, con el dibujo de la pila de monedas, le preguntó de dónde salía ese saldo. Cami reconoció que lo que baja la pila es la cuota y corrigió. Desde ahí vieron que el interés baja de forma regular y lo sumaron doblando la escalera."
+        }
+      ],
+      "que_aprende": "Ninguna corrida registra el bloqueo B12: el único bloqueo observado en las trazas es B23. Este escenario muestra en qué consiste: pasar de la idea de que el interés se cobra sobre lo que se debe a una cuenta concreta. Una pregunta del compañero apoyada en un dibujo basta para destrabar, sin entregar la regla. El grupo también comprueba que cuota por número de cuotas más el pie reconstruye la deuda, que es una de las validaciones previstas por la tarea. No llega a una exposición final.",
+      "extracto_dialogo": [
+        {
+          "hablante": "Cami",
+          "texto": "Sí, porque el segundo mes debes menos, así que el 1% sería como 1% de 475.200, que me da 4.752, o sea un poquito menos. ¿Lo vamos haciendo mes a mes en la calculadora o mejor pedimos que nos den la fórmula?"
+        },
+        {
+          "hablante": "Fran",
+          "texto": "Mes a mes serían 48 veces, ¡se me va a acabar la calculadora! [dibujo: la pila de monedas, y le saco una cuota de 10.000 cada mes] Pero ojo, la pila baja 10.000 por mes, no 4.800, ¿o el 475.200 lo sacaste de otra forma?"
+        },
+        {
+          "hablante": "Cami",
+          "texto": "Ay, tienes razón, yo le resté los 4.800 del interés a 480.000, y eso estaba mal porque lo que baja la pila es la cuota. Si pagas 10.000 quedan 470.000, y el 1% de eso sería 4.700, ¿te parece?"
+        }
+      ]
+    },
+    {
+      "id": "E4",
+      "nombre": "modelo sin cierre",
+      "corridas": [
+        "N1_AA_r1"
+      ],
+      "perfil": "Tramo P (primaria), nivel N1, estilo AA.",
+      "ruta": [
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P6-VAL",
+        "P4-WM",
+        "P5-INT",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P3-MM",
+        "P5-INT",
+        "P2-RM",
+        "P4-WM"
+      ],
+      "supuestos": [
+        "deuda de ejemplo de 1.000.000",
+        "cuotas iguales",
+        "pie del 10% pagado al contado y resto en cuotas",
+        "inicialmente sin intereses",
+        "interés inventado de 1% mensual sobre el saldo",
+        "cuota de prueba de 47.000",
+        "redondeo de intereses a pesos enteros"
+      ],
+      "modelo": "amortización recursiva",
+      "bloqueos": [
+        {
+          "transicion": "B23",
+          "como_se_destrabo": "El grupo se trabó dos veces en esta transición. Primero (turnos 10 a 12) lo resolvió solo (self): tras inventar el 1%, multiplicaron el interés del primer mes por el número de meses, y ellas mismas notaron que la deuda baja con cada cuota y que esa cuenta exagera el interés, así que pasaron a calcular mes a mes. Después (turnos 16 a 18) lo resolvieron entre pares (peer): Fran sospechó que la cuota sin interés no alcanzaba a pagar la deuda en 24 meses y Cami lo confirmó; como no conocían una fórmula, acordaron pedir la cuota real y, mientras tanto, probar una cuota mayor en la tabla."
+        }
+      ],
+      "que_aprende": "Contrasta con E1 y E2: este grupo elige representar el interés con una tabla de saldos mes a mes. Es un modelo correcto en su idea, pero tan largo que consume la sesión. Termina sin decidir qué conviene y sin criterio de conveniencia. El curso ve que una simplificación más gruesa, como la deuda promedio de E1, habría permitido llegar a una recomendación. También ve que pedir la cuota del simulador de Tesorería es una salida legítima.",
+      "extracto_dialogo": [
+        {
+          "hablante": "Cami",
+          "texto": "Yo creo que sí va a quedar deuda, porque 41.666 × 24 es justo 1.000.000 y no alcanza para pagar también el interés. ¿Entonces habría que calcular una cuota más grande, o pedimos la info de cuánto es la cuota de verdad?"
+        },
+        {
+          "hablante": "Fran",
+          "texto": "Pidamos la info de la cuota de verdad, porque una fórmula para calcularla no la sabemos. Si no, probamos con una cuota más grande, tipo 47.000, y vemos con la tabla cuánto queda de saldo al mes 24, ¿te parece?"
+        }
+      ]
+    }
+  ],
+  "tabla_bloqueos": {
+    "B23": 0.5
+  },
+  "intervenciones": [
+    {
+      "bloqueo": "B23",
+      "z1_z2": "Pregunten qué han acordado hasta ahora: qué deuda eligieron, si hay intereses y qué significa que algo le convenga a la persona. Pidan que lo lean de su lista de supuestos. Después preguntan: ¿qué parte de la situación les cuesta pasar a una tabla o a una operación?",
+      "z3": "Propongan hacer un dibujo de la situación, por ejemplo una fila de casillas con una moneda por cada cuota o una pila de monedas que cambia cada mes, y anotar al lado qué representa cada elemento. En los escenarios E2 y E3 un dibujo así permitió que los pares se entendieran.",
+      "z4": "Si ya hablan de interés: «¿qué es lo que va bajando cada mes y qué hace que baje?». Si no, pregunten: «¿qué datos necesitan para calcular la cuota de cada opción y cuáles ya tienen?». Si el grupo mezcla qué se cobra y qué se paga, pidan que expliquen de dónde sale cada número de su tabla. Es la pregunta que usó Fran en E3 con la pila de monedas, y destrabó sin entregar ninguna regla.",
+      "z5": "Ofrezcan el recurso R4 (condiciones simplificadoras): para esta tarea no se consideran intereses ni reajustes y todas las cuotas de un convenio son del mismo monto. Si el grupo igual quiere explorar el interés, sugieran probar solo algunos meses a mano con una deuda fácil de dividir, como hizo el grupo de E4, y decidir luego si basta una simplificación más gruesa, como la de E1. No den fórmula ni la operación que se debe hacer."
+    },
+    {
+      "bloqueo": "B12",
+      "z1_z2": "Pregunten: «¿qué entienden que paga la persona cada mes y por cuánto tiempo?». Pidan que lo digan con sus palabras antes de decir nada más. Reconozcan lo que ya tienen claro.",
+      "z3": "Sugieran escribir qué es un convenio, una cuota y un pie, y qué quieren averiguar. Pueden hacer un esquema de las tres formas de pagar la misma deuda: plazo antiguo, plazo nuevo y plazo nuevo con pie.",
+      "z4": "Pregunten: «¿qué cambia y qué se mantiene entre el convenio antiguo y el nuevo? ¿Y qué cambia cuando se paga el pie?». Pidan que lo relacionen con lo que paga la persona cada mes.",
+      "z5": "Si el grupo sigue sin distinguir las opciones, lean juntos el enunciado y pidan que cada integrante explique una de las tres opciones a otro compañero. No digan cómo se calcula la cuota. Si el grupo pregunta por intereses o por el monto de las cuotas, entreguen el recurso R4."
+    },
+    {
+      "bloqueo": "B56",
+      "z1_z2": "Pregunten: «¿qué números obtuvieron y qué dicen de la persona?». Pidan que muestren su cuadro de resultados y expliquen qué comparan.",
+      "z3": "Propongan escribir una recomendación para la persona en dos columnas: qué gana y qué pierde con cada opción. Pueden apoyarse en el dibujo o la tabla que ya hicieron.",
+      "z4": "Pregunten: «si la cuota es menor, ¿qué pasa con el tiempo que la persona está endeudada? ¿Y qué le exige el pie hoy?». Pregunten también qué necesitarían saber de la persona para recomendar. Esto apunta al error de decidir solo por la cuota baja, que apareció como pregunta en E2, y no entrega la decisión.",
+      "z5": "Ofrezcan el recurso R5: lo que una persona puede pagar cada mes depende de sus ingresos y de sus otros gastos, y el grupo puede elegir un ejemplo y justificarlo. No hay un único monto correcto. Pidan que su recomendación use esa información con sus propios números, sin decir qué opción elegir."
+    },
+    {
+      "bloqueo": "B67",
+      "z1_z2": "Pregunten: «¿cómo sabrían si su cuota es razonable?». Pidan que digan si ya revisaron que las cuotas y el pie reconstruyen la deuda.",
+      "z3": "Sugieran anotar dos columnas, la cuota del grupo y una columna vacía para el dato independiente, y dejar espacio para explicar cualquier diferencia que aparezca.",
+      "z4": "Pregunten: «¿qué cosas de la realidad dejó afuera su modelo y podrían cambiar la cuota?». Orienten hacia los supuestos que acordaron, sin decir cuánto debería dar.",
+      "z5": "Entreguen el recurso R6: la cuota que muestra el simulador de convenios de Tesorería para la misma deuda que eligió el grupo. Pidan que la comparen con la suya y expliquen la diferencia con lo que ya hablaron, como intereses u otros cargos. No digan cuál es la causa."
+    }
+  ],
+  "puesta_en_comun": {
+    "seleccion_y_orden": [
+      "Anticipar y monitorear: durante el trabajo, recorran los grupos y registren qué decisión toman sobre intereses, qué criterio de conveniencia eligen y quién llegó a la recomendación. Así se decide qué trabajos mostrar sin partir por la ruta del docente.",
+      "Primero E2: se parte de la pregunta explícita de si más cuotas siempre conviene, porque pone a la vista el modelo inadecuado R5 con un dibujo que cualquier grupo entiende. Seleccionar.",
+      "Segundo E3: se conecta con E2 mostrando cómo un error al representar el saldo se corrigió con una pregunta apoyada en un dibujo. Además aparece la verificación de que cuotas por número de cuotas más el pie reconstruyen la deuda. Secuenciar.",
+      "Tercero E4: se contrasta un modelo correcto pero muy largo, que consumió la sesión y quedó sin decisión, con las simplificaciones de los escenarios anteriores. Se muestra también que pedir la cuota al simulador es una salida legítima. Secuenciar.",
+      "Último E1: se cierra con la simplificación más gruesa que permitió llegar a una recomendación condicionada con criterio explícito. Se conectan todos los escenarios y se usa que no pasa por P6-VAL para preguntar cómo contrastarían su cuota con la de Tesorería. Conectar."
+    ],
+    "preguntas": [
+      "¿Qué supuestos acordó cada grupo sobre intereses y sobre el pie? ¿Cambiaría la decisión si fueran otros?",
+      "¿Qué criterio de conveniencia usaron: cuota baja, tiempo en deuda o relación con el ingreso? ¿Por qué ese y no otro?",
+      "En E2 se preguntó si 48 cuotas conviene porque la cuota es menor. ¿Qué le responderían y con qué números?",
+      "¿Qué simplificación del interés les permitió llegar a una recomendación y cuál los dejó sin tiempo? ¿Qué se pierde al simplificar?",
+      "¿Cómo comprobaron que sus cuotas y el pie reconstruyen la deuda?",
+      "¿Hasta dónde sirve su modelo? ¿Qué casos de la realidad no cubre?",
+      "Si la persona ganara más o menos, ¿cambiaría su recomendación? ¿Cómo lo muestran en su tabla o gráfico?"
+    ],
+    "contraste_validacion": "Después de que los grupos presenten sus modelos, entreguen a cada uno la cuota que muestra el simulador de convenios de Tesorería para la misma deuda que eligió (recurso R6) y pidan que la comparen con la suya. Antes, pidan que verifiquen que las cuotas por el número de cuotas más el pie reconstruyen la deuda. Luego pidan que expliquen las diferencias que encuentren y discutan qué intereses u otros cargos ignoró su modelo. Cierren preguntando si esa diferencia cambia la recomendación, sin agregar datos que no estén en la tarea."
+  },
+  "variantes_y_continuidad": {
+    "uso_variantes": "Variante hacia abajo: no existe (es null en la tarea). Si un grupo se traba, no se cambia la tarea: se usa la ayuda mínima (preguntar qué han hecho) y los recursos a solicitud sobre intereses, ingresos o contraste. Variante hacia arriba (S1): se usa con grupos que terminaron el cálculo y la comprobación con seguridad, o con un curso de secundaria. Pide incorporar un interés mensual que el grupo debe buscar o estimar, comparar el total pagado en cada opción y expresar el total como función del plazo y del pie. Agrega la pregunta de qué pasa si cambia el porcentaje del pie. El contexto es el mismo. Al aplicarla, no se entrega el supuesto de ignorar intereses y reajustes, porque la variante lo contradice. Los grupos que la usen pueden apoyarse en la ruta de cuota como fracción del ingreso, propia de S1.",
+    "acostumbramiento": "Si el grupo nunca ha modelado, conviene una actividad previa corta, sin noticia, de reparto equitativo de un monto en partes iguales con plazos distintos. En ella el grupo decide qué datos faltan, qué supuestos acordar y cómo comparar opciones antes de calcular. Esta tarea es de nivel primaria y puede funcionar como iniciación a la modelación: tiene tres rutas accesibles y dos sesiones para recorrer el ciclo completo. Con grupos que ya modelan, puede ser parte de una secuencia que continúe con la variante hacia arriba, donde aparecen intereses y funciones.",
+    "tarea_siguiente": null
+  },
+  "materiales": {
+    "tarea_pdf": "tarea.pdf",
+    "recursos_tarjetas": "recursos.pdf",
+    "notebook": "escenarios.ipynb",
+    "icono": "icono.svg"
+  },
+  "trazabilidad": {
+    "noticia_url": "https://www.latercera.com/nacional/noticia/ley-de-reconstruccion-tesoreria-destaca-que-en-sus-diez-primeros-dias-se-han-realizado-4-mil-consultas-o-simulaciones-de-convenios/",
+    "diseno": {
+      "modelo": "claude-sonnet-5-5",
+      "version_prompt": "1.1"
+    },
+    "rub01_total": 23,
+    "revision_humana_1": {
+      "revisor": "carlos rojas bruna",
+      "fecha": "2026-10-26"
+    },
+    "simulacion": {
+      "n_grupos": 6,
+      "diseno": "diseno_otm"
+    },
+    "revision_humana_2": null,
+    "commit": null
+  },
+  "modelo_y_prompt": {
+    "redactor": "claude-sonnet-5-5",
+    "redactor_escenarios": "claude-opus-5-5",
+    "version_prompt": "1.0"
+  }
+}
