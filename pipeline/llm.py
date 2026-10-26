@@ -12,6 +12,10 @@ Reglas (ver pipeline/state/decisiones.md):
 - La salida estructurada se fuerza con output_config.format (json_schema); no hay tool_choice forzado.
 - El costo se calcula con la tabla `precios_modelos` de pipeline/config.yaml.
 - En tests se inyecta `cliente` (un objeto con .messages.create) para no gastar.
+- stop_reason=max_tokens no se reintenta igual (la misma petición vuelve a cortarse y se paga entera):
+  se lanza `SalidaTruncada` al primer corte y el agente decide (p. ej. el diseñador pide una salida más corta).
+- Con max_tokens > MAX_TOKENS_SIN_TIMEOUT se pasa `timeout` explícito: la SDK rechaza peticiones sin streaming
+  cuyo tiempo esperado supera 10 min, y en los modelos 5.5 el razonamiento adaptativo cuenta en max_tokens.
 """
 from __future__ import annotations
 
@@ -31,6 +35,12 @@ if str(RAIZ) not in sys.path:
 
 CONFIG_PATH = RAIZ / "pipeline" / "config.yaml"
 CLAVES_USO = ("input_tokens", "output_tokens", "cache_creation_input_tokens", "cache_read_input_tokens")
+MAX_TOKENS_SIN_TIMEOUT = 21000   # sobre esto la SDK exige streaming salvo timeout explícito
+TIMEOUT_LARGO_S = 1800
+
+
+class SalidaTruncada(RuntimeError):
+    """La respuesta llegó cortada por max_tokens. Lleva .costo_usd y .uso; no se reintenta igual."""
 
 
 @lru_cache(maxsize=1)
@@ -99,6 +109,8 @@ def llamar(*, agente: str, system: str, user: str, schema: dict | None = None,
         output_config["effort"] = esfuerzo
     if output_config:
         kwargs["output_config"] = output_config
+    if max_tokens > MAX_TOKENS_SIN_TIMEOUT:
+        kwargs["timeout"] = TIMEOUT_LARGO_S
 
     uso = dict.fromkeys(CLAVES_USO, 0)
     ultimo_error: Exception | None = None
@@ -116,6 +128,12 @@ def llamar(*, agente: str, system: str, user: str, schema: dict | None = None,
         for k in CLAVES_USO:
             uso[k] += getattr(r.usage, k, 0) or 0
         texto = "".join(b.text for b in r.content if getattr(b, "type", None) == "text")
+        if r.stop_reason == "max_tokens":
+            err = SalidaTruncada(f"{agente}: stop_reason=max_tokens (max_tokens={max_tokens}, "
+                                 f"output_tokens={getattr(r.usage, 'output_tokens', '?')}); no se reintenta igual")
+            err.costo_usd = costo_usd(uso, modelo)
+            err.uso = dict(uso)
+            raise err
         try:
             if r.stop_reason != "end_turn":
                 raise ValueError(f"stop_reason={r.stop_reason}")
@@ -154,7 +172,10 @@ class ClienteFalso:
         from types import SimpleNamespace as NS
         self.llamadas.append(kwargs)
         resp = self._respuestas.pop(0)
+        stop = "end_turn"
+        if isinstance(resp, tuple):   # (stop_reason, respuesta): p. ej. ("max_tokens", "{...cortado")
+            stop, resp = resp
         texto = resp if isinstance(resp, str) else json.dumps(resp, ensure_ascii=False)
-        return NS(content=[NS(type="text", text=texto)], stop_reason="end_turn", model=kwargs["model"],
+        return NS(content=[NS(type="text", text=texto)], stop_reason=stop, model=kwargs["model"],
                   usage=NS(input_tokens=1000, output_tokens=200, cache_creation_input_tokens=0,
                            cache_read_input_tokens=0))

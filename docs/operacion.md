@@ -20,7 +20,7 @@ Los workflows que aceptan inputs (`workflow_dispatch`) son estos:
 
 | Workflow | Cuándo corre | Inputs | Qué hace | Estado de los expedientes al terminar |
 |---|---|---|---|---|
-| `semanal.yml` | Cron los lunes 09:00 UTC, y a mano | `max_tareas` (3), `presupuesto_ciclo` (vacío), `noticia_prueba` (vacío), `ejecutar_ciclo` (`true`) | Verifica MED01 y corre el tramo A. Abre o actualiza el PR `semanal/AAAA-WW` | `evaluada` |
+| `semanal.yml` | Cron los lunes 09:17 UTC, y a mano | `max_tareas` (3), `presupuesto_ciclo` (vacío), `noticia_prueba` (vacío), `ejecutar_ciclo` (`true`) | Verifica MED01 y corre el tramo A. Abre o actualiza el PR `semanal/AAAA-WW` | `evaluada` |
 | `tramo_b.yml` | A mano | `revisor` (obligatorio), `ids` (obligatorio salvo con `solo_comprobar`), `presupuesto_ciclo` (vacío), `solo_comprobar` (`false`) | Corre el tramo B. Abre o actualiza el PR `semanal/AAAA-WW` | `verificada` |
 | `publicar.yml` | A mano | `ids` (obligatorio), `revisor` (obligatorio), `dry_run` (`false`) | Ejecuta el bibliotecario y abre el PR `publicar/<fecha>-<n>` | Sigue en `verificada`. Tras el merge de su PR, `publicada.yml` lo pasa a `publicada` (sección 5.6) |
 | `deploy.yml` | Cada push a `main`, y a mano | Ninguno | Aplica migraciones, construye el sitio, lo publica en Pages y corre el staging | Sitio en producción |
@@ -34,7 +34,7 @@ Los workflows que aceptan inputs (`workflow_dispatch`) son estos:
 
 ### Programación
 
-`.github/workflows/semanal.yml` tiene el cron `0 9 * * 1`: los lunes a las 09:00 UTC. Eso es 06:00 en Chile durante el horario de verano. En invierno corre a las 05:00 hora local, el mismo lunes. GitHub puede retrasar los cron unos minutos. Si el cron no aparece en Actions o no corre, revisa que los workflows estén habilitados; GitHub puede deshabilitarlos en repositorios sin actividad.
+`.github/workflows/semanal.yml` tiene el cron `17 9 * * 1`: los lunes a las 09:17 UTC. Eso es 06:17 en Chile durante el horario de verano. En invierno corre a las 05:17 hora local, el mismo lunes. GitHub puede retrasar los cron; los de la hora en punto son los que más se atrasan (el 2026-10-26 el de las 09:00 se disparó 7 horas tarde), por eso el minuto 17. Si el cron no aparece en Actions o no corre, revisa que los workflows estén habilitados; GitHub puede deshabilitarlos en repositorios sin actividad.
 
 El workflow tiene dos jobs:
 
@@ -103,13 +103,36 @@ Los archivos están en `pipeline/state/`:
 
 ### 3.3 Qué significa aprobar
 
-- **Aprobar** significa mergear el PR. El merge no publica nada. Es necesario, además, porque `tramo_b.yml` toma los expedientes de `main`: su input `ids` exige que estén en `evaluada` **y en main**. Por eso el merge incluye también los expedientes que no avanzan. Quedan en `evaluada`; anota el motivo en `decisiones.md`. No hay comando para descartar un `evaluada` (**pendiente**).
+- **Aprobar** significa mergear el PR. El merge no publica nada. Es necesario, además, porque `tramo_b.yml` toma los expedientes de `main`: su input `ids` exige que estén en `evaluada` **y en main**. Por eso el merge incluye también los expedientes que no avanzan. Si la revisión es negativa, archiva el expediente con su motivo (sección 3.4) en vez de dejarlo en `evaluada`.
 - Cada push a `main` dispara `deploy.yml`. Como el catálogo no cambia con este merge, el sitio queda igual.
 - Después del merge, lanza el tramo B (sección 4) con el nombre de quien hizo esta revisión en `revisor`.
 
+### 3.4 Archivar un expediente (revisión humana 1 negativa)
+
+En la máquina local, desde la raíz del repositorio y en una rama (los cambios van por PR):
+
+```bash
+python -m pipeline.ciclo --archivar <tarea_id> [<tarea_id> ...] --motivo "revisión humana 1" --revisor "Nombre Apellido"
+```
+
+- Solo acepta expedientes en `evaluada`; cualquier otro estado se informa como error y no se toca.
+- Hace la transición `evaluada → archivada` con el orquestador (valida contra `contratos/`). El motivo queda en el historial como `«<motivo> (<revisor>)»` y en la marca `revision_humana_1` (`resultado: negativa`, revisor, fecha, motivo). Quita la marca `pendiente`.
+- No usa la API (costo 0). Deja un registro de ciclo `orden: archivar` en `pipeline/state/ciclos/`.
+- Commitea `pipeline/state/` con el prefijo `pipeline:` y abre el PR. Ejemplo del 2026-10-26: `votos-canal-whatsapp` y `leer-documento-de-riesgos`, motivo «revisión humana 1», Carlos Rojas Bruna.
+
+### 3.5 Hallazgos del verificador sobre la tarea
+
+El verificador corre dos veces. La primera es **antes de simular**: solo código, costo 0, sobre la tarea (cifras buscadas en toda la nota con tolerancia de ±1 párrafo, fuentes de los recursos, invariante 3). Corre al final del tramo A y otra vez antes del simulador. La segunda es después de la guía. Un localizador corrido en un párrafo se corrige solo y queda como advertencia (marca `localizadores_corregidos`). Un hallazgo crítico **sobre la tarea**, en cualquiera de las dos pasadas, deja el expediente en `evaluada` con la marca `hallazgos_tarea` y `pendiente: revision_humana_1`. No se archiva, y la guía no se rehace porque no lo arreglaría. Para resolverlo:
+
+- **Corregir la tarea:** `python -m pipeline.ciclo --nueva-version MEJORAS.json` (usa API: diseñador y evaluador).
+- **Seguir igual** (el hallazgo es un falso positivo): `python -m pipeline.ciclo --continuar <id> --revisor "Nombre Apellido" --aceptar-hallazgos`. La aceptación queda en la marca `hallazgos_aceptados`. Si el expediente ya tenía simulación, se reutiliza.
+- **Descartar:** `--archivar` (sección 3.4).
+
+Si una tarea quedó `archivada` por un falso rechazo, `python -m pipeline.ciclo --version-sin-cambios <id> --motivo "..."` crea la v+1 idéntica, sin API. La v+1 hereda la evaluación RUB01, reutiliza la simulación y parte de la guía anterior. Queda en `evaluada`, pendiente de la revisión humana 1.
+
 ## 4. Tramo B (manual, desde la web)
 
-El tramo B lleva un expediente de `evaluada` a `verificada`: `evaluada → revisada → simulada → con_guia → verificada`. Corre el simulador (seis corridas por tarea, `simulador.corridas_por_tarea`), el redactor (la guía por secciones), el ilustrador (no bloqueante) y el verificador (contrasta cifras y afirmaciones con la noticia). Si el verificador rechaza la guía, el ciclo la rehace una vez; al segundo rechazo, la tarea queda `archivada`. El tramo B nunca publica.
+El tramo B lleva un expediente de `evaluada` a `verificada`: `evaluada → revisada → simulada → con_guia → verificada`. Corre el simulador (seis corridas por tarea, `simulador.corridas_por_tarea`), el redactor (la guía por secciones), el ilustrador (no bloqueante) y el verificador (contrasta cifras y afirmaciones con la noticia). Antes de simular corre la verificación previa (sección 3.5): si encuentra un hallazgo crítico en la tarea, no se simula y no se gasta. Si el verificador rechaza la guía por un hallazgo **de la guía**, el ciclo la rehace una vez; al segundo rechazo, la tarea queda `archivada`. Si el hallazgo es **sobre la tarea**, el expediente vuelve a `evaluada` (sección 3.5). El tramo B nunca publica.
 
 ### 4.1 Lanzarlo
 
@@ -349,8 +372,8 @@ Cambiar un modelo de partida (`pipeline/config.yaml`, `modelos:`) exige evidenci
 
 ## 12. Pendientes que afectan la operación
 
-- **Corregir o rechazar desde la web:** `--rehacer-guia`, `--nueva-version` y el descarte de un `evaluada` no tienen workflow. Requieren la máquina local.
-- **Rechazo del verificador por un defecto de la tarea:** vuelve a `simulada` y gasta la guía (`decisiones.md`).
+- **Corregir o rechazar desde la web:** `--rehacer-guia`, `--nueva-version`, `--archivar`, `--aceptar-hallazgos` y `--version-sin-cambios` no tienen workflow. Requieren la máquina local.
+- **Verificación previa:** todavía no ejecuta numéricamente el `task_space` (solución, rutas y rango), que también se decidió para CP2.
 - **Monto definitivo del tope semanal** (**[D]**, 35 USD es provisional).
 - **Kappa reportable:** doble codificación humana pendiente (sección 10).
 - **Push de `publicada.yml` si `main` tiene protección:** el repositorio no documenta cómo se resuelve (sección 11).

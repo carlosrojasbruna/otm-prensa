@@ -1,0 +1,56 @@
+{
+  "tarea_id": "2026-10-cuanto-pagar-cada-mes-v2",
+  "aprobado": true,
+  "alcance": "tarea",
+  "hallazgos": [],
+  "cifras_contrastadas": [
+    {
+      "indice": 0,
+      "que_es": "Número de cuotas del nuevo convenio para deudores del CAE",
+      "valor_tarea": 48,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 5"
+      },
+      "metodo": "codigo",
+      "valor_fuente": 48,
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 5 de la noticia"
+    },
+    {
+      "indice": 1,
+      "que_es": "Número máximo de cuotas que existía antes de la ley",
+      "valor_tarea": 24,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 7"
+      },
+      "metodo": "codigo",
+      "valor_fuente": 24,
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 7 de la noticia"
+    },
+    {
+      "indice": 2,
+      "que_es": "Porcentaje de deuda pagado al contado como ejemplo de pie",
+      "valor_tarea": "10%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 10"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "10%",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 10 de la noticia"
+    }
+  ],
+  "meta": {
+    "agente": "verificador",
+    "version_prompt": "1.1",
+    "modelo_llamado": false,
+    "costo_usd": 0.0,
+    "texto_noticia_recibido": true,
+    "fecha": "2026-10-26T18:19:23+00:00"
+  },
+  "localizadores_corregidos": {}
+}

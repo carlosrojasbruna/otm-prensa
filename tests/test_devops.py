@@ -214,7 +214,7 @@ def test_workflows_son_yaml_validos(nombre):
 
 def test_semanal_cron_lunes_y_dispatch():
     d = _wf("semanal.yml")
-    assert d["on"]["schedule"][0]["cron"] == "0 9 * * 1"
+    assert d["on"]["schedule"][0]["cron"] == "17 9 * * 1"
     entradas = d["on"]["workflow_dispatch"]["inputs"]
     assert {"max_tareas", "presupuesto_ciclo", "noticia_prueba"} <= set(entradas)
     assert d["concurrency"]["cancel-in-progress"] is False

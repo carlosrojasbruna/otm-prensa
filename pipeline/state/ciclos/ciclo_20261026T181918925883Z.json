@@ -1,0 +1,59 @@
+{
+  "ciclo_id": "ciclo_20261026T181918925883Z",
+  "inicio": "2026-10-26T18:19:18Z",
+  "fin": "2026-10-26T18:19:23Z",
+  "semana": "2026-W44",
+  "parametros": {
+    "tope_semanal_usd": 35.0,
+    "fraccion_detencion": 0.9,
+    "presupuesto_ciclo_usd": null,
+    "limite_usd": 31.5,
+    "gasto_semana_previo_usd": 11.91901,
+    "corridas_evaluador": 3,
+    "rango_inestable": 4,
+    "corridas_simulador": 6,
+    "ids": [
+      "2026-10-cuanto-pagar-cada-mes"
+    ],
+    "motivo": "rescate: la v1 se archivó por un falso rechazo del verificador (cifras del mismo párrafo y numeración del feed vs. página)"
+  },
+  "detenido_por_tope": false,
+  "eventos": [
+    {
+      "fecha": "2026-10-26T18:19:21Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-cuanto-pagar-cada-mes-v2",
+      "de": "borrador",
+      "a": "evaluada",
+      "motivo": "evaluación heredada de 2026-10-cuanto-pagar-cada-mes: mismo contenido"
+    },
+    {
+      "fecha": "2026-10-26T18:19:23Z",
+      "tipo": "preverificacion",
+      "tarea_id": "2026-10-cuanto-pagar-cada-mes-v2",
+      "aprobado": true,
+      "criticos": 0,
+      "pendientes": 0,
+      "localizadores_corregidos": 0
+    }
+  ],
+  "expedientes": {
+    "2026-10-cuanto-pagar-cada-mes-v2": "evaluada"
+  },
+  "noticias": [],
+  "pendientes_humanos": [
+    {
+      "tarea_id": "2026-10-cuanto-pagar-cada-mes-v2",
+      "pendiente": "revision_humana_1",
+      "estado": "evaluada"
+    }
+  ],
+  "errores": [],
+  "orden": "version_sin_cambios",
+  "gasto": {
+    "ciclo_usd": 0.0,
+    "semana_usd": 11.91901,
+    "limite_usd": 31.5,
+    "llamadas": 0
+  }
+}

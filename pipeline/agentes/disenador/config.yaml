@@ -8,7 +8,9 @@ version_plantilla: "PLT01 v0.2"
 modelo_de_partida: claude-sonnet-5-5   # informativo; manda pipeline/config.yaml
 temperatura: "default"                 # los modelos 5.5 no aceptan temperature (decisiones.md)
 esfuerzo: null                         # output_config.effort; null = default del modelo
-max_tokens: 16000
+max_tokens: 32000                      # 16000 no bastaba: el razonamiento adaptativo de Sonnet 5.5 (esfuerzo high
+                                       # por defecto) cuenta en max_tokens y 7 noticias se cortaron el 2026-10-26
+salida_corta_si_trunca: true           # al primer max_tokens no se repite igual: una vez, con instrucción de salida corta
 candidatos_por_noticia: 2
 reparaciones_max: 2                    # reintentos con la lista de errores si la salida no valida
 max_iteraciones_evaluador: 3           # GOB01 §1 (lo hace cumplir el orquestador)

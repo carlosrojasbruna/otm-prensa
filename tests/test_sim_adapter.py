@@ -2,6 +2,7 @@
 
 Los tests que necesitan sim.py, INS08 o INS09 (repo externo del simulador, config simulador.repo)
 se omiten si ese repo no está disponible (p. ej. en CI)."""
+import copy
 import json
 import threading
 from pathlib import Path
@@ -270,3 +271,56 @@ def test_lanzar_aborta_si_el_hook_detecta_filtracion(tarea, tmp_path, monkeypatc
     with pytest.raises(AislamientoError):
         lanzador.lanzar(tarea, tmp_path, backend="api", cliente=c, workers=1)
     assert c.llamadas == []
+
+
+# --------------------------------------------------------------------------- caso real 2026-10-26 (que-tan-renida-fue)
+def _renida():
+    from pipeline import orquestador as orq
+    return orq.cargar("2026-10-que-tan-renida-fue").artefactos["tarea"]
+
+
+def _llamada_renida(tarea, conversacion):
+    v = vista_estudiante(tarea)
+    user = (f"TAREA:\n{v['enunciado_es']}\n{v['foto_descripcion']}\n\n{aislamiento.MARCA_CONVERSACION}\n"
+            + conversacion + "\n\nTe toca.")
+    return "Eres Fran, estudiante de 11 años.", user
+
+
+def test_renida_suma_de_los_estudiantes_no_es_filtracion():
+    """El tramo B se cortó con «13 palabras consecutivas de task_space: votos de los dos 64 256 232 59 826 041
+    124 082 273»: los estudiantes sumaron los votos (cifras del enunciado) igual que la solución de referencia."""
+    tarea = _renida()
+    system, user = _llamada_renida(tarea, "**1. Fran:** Sumemos los votos de los dos: 64.256.232 + 59.826.041 = "
+                                          "124.082.273, y la diferencia es 4.430.191.")
+    aislamiento.verificar_llamada_estudiante(system, user, tarea)
+
+
+def test_renida_task_space_en_las_entradas_sigue_bloqueado():
+    tarea = _renida()
+    system, user = _llamada_renida(tarea, "**1. Fran:** hola")
+    pista = tarea["task_space"]["modelo_inadecuado"]["por_que_falla"]
+    with pytest.raises(AislamientoError, match="task_space"):
+        aislamiento.verificar_llamada_estudiante(system + " Pista: " + pista, user, tarea)
+    # un tramo largo parafraseado en mayúsculas y sin puntuación (no es la cadena exacta) también
+    tramo = " ".join(inv_palabras(pista)[:14]).upper()
+    with pytest.raises(AislamientoError, match="palabras consecutivas"):
+        aislamiento.verificar_llamada_estudiante(system + " Ojo: " + tramo, user, tarea)
+    # y las claves reservadas se buscan también en la conversación
+    system, user = _llamada_renida(tarea, "**1. Fran:** miremos el reference_solution")
+    with pytest.raises(AislamientoError, match="clave reservada"):
+        aislamiento.verificar_llamada_estudiante(system, user, tarea)
+
+
+def test_texto_de_task_space_que_ya_esta_en_el_enunciado_no_cuenta():
+    tarea = copy.deepcopy(_renida())
+    frase = tarea["estudiante"]["enunciado_es"].split(". ")[3]   # «En un programa de radio, …» (22 palabras)
+    # dentro de un texto más largo del task_space (la cadena exacta la sigue vigilando verificar_aislamiento)
+    tarea["task_space"]["validation_evidence"] += " Recordar el dato: " + frase
+    system, user = _llamada_renida(tarea, "**1. Fran:** hola")
+    # el simulador puede reformatear el enunciado (aquí, en mayúsculas): no es la cadena exacta, pero sí es vista
+    aislamiento.verificar_llamada_estudiante(system + " Recuerda: " + frase.upper(), user, tarea)
+
+
+def inv_palabras(t):
+    from pipeline.invariantes import palabras_normalizadas
+    return palabras_normalizadas(t)

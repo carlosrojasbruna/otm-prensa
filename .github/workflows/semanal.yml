@@ -5,7 +5,8 @@
 # 09:00 UTC = 06:00 en horario de verano chileno (el que rige cuando se escribió este archivo, octubre);
 # en invierno corre a las 05:00 hora de Chile, el mismo lunes. Si Carlos prefiere las 06:00 todo el año,
 # hay que cambiar el cron dos veces al año (10:00 UTC en invierno). Nota: GitHub puede retrasar los cron
-# varios minutos en horas de alta carga.
+# varios minutos en horas de alta carga; el minuto 17 (y no :00) es a propósito: los cron en la hora en punto
+# son los más demorados (el 2026-10-26 el de "0 9 * * 1" se disparó 7 h tarde, decisiones.md).
 #
 # QUE CORRE. Solo el TRAMO A del ciclo (explorador -> filtro -> diseñador -> evaluador x3, hasta `evaluada`;
 # python -m pipeline.ciclo). El tramo B exige revisor humano y el simulador externo: ver tramo_b.yml.
@@ -29,7 +30,7 @@ name: semanal
 
 on:
   schedule:
-    - cron: "0 9 * * 1"     # lunes 09:00 UTC = 06:00 Chile en horario de verano (ver arriba)
+    - cron: "17 9 * * 1"    # lunes 09:17 UTC = 06:17 Chile en horario de verano (ver arriba)
   workflow_dispatch:
     inputs:
       max_tareas:

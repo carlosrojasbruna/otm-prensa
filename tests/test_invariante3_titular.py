@@ -74,3 +74,57 @@ def test_hook_excluye_el_titular_en_json():
     assert h.chequear_texto("tareas/2026-10/x/tarea_v1.0_2026-10-21.json", texto, [("n", FUENTE)]) == []
     malo = json.dumps(_tarea_con(TITULAR, CUERPO_26), ensure_ascii=False)
     assert h.chequear_texto("tareas/2026-10/x/tarea_v1.0_2026-10-21.json", malo, [("n", FUENTE)])
+
+
+# --------------------------------------------------------------------------- caso real del ciclo 2026-10-26
+def _pagina_ciper(noticia: dict) -> str:
+    """HTML como el que devuelve `bajar_cuerpo` para una nota de CIPER: los <p> arrastran el índice lateral y los
+    botones de compartir, con enlaces cuyo slug repite fecha y titular (y `utm_campaign` otra vez el slug). El
+    cuerpo es sintético: el texto real de la noticia no se guarda en el repo (invariante 3)."""
+    ruta = noticia["url"].split("ciperchile.cl", 1)[1]
+    return (f'<p class="fecha">23.10.2026</p>\n<p><ul><li><a class="aside-indice-link" href="{ruta}">- INICIO</a>'
+            f'</li></ul><!-- <a href="{noticia["url"]}">compartir</a> --></p>\n'
+            f'<p><a href="https://twitter.com/intent/tweet?url={noticia["url"]}">X</a></p>\n'
+            "<p>" + CUERPO_26 + " según el informe técnico entregado al concejo municipal la semana pasada.</p>\n")
+
+
+def _expediente_real(tid="2026-10-que-programas-restituir"):
+    from pipeline import orquestador as orq
+    return orq.cargar(tid)
+
+
+def test_ciclo_20261026_url_citada_no_cuenta_como_cuerpo():
+    """4 borradores (que-programas-restituir, cual-recorte-duele-mas, dio-resultado-oponerse-tribunales,
+    dos-cifras-misma-noticia) se rechazaron con «2026 10 23 fundacion horizonte ciudadano … utm_source rss …»:
+    la URL de la cita contra los enlaces del HTML. Con los artefactos reales del expediente, pasa."""
+    exp = _expediente_real()
+    fuente = _pagina_ciper(exp.artefactos["noticia"])
+    viejo = inv.max_palabras_consecutivas_comunes(" ".join(inv.textos_de(exp.artefactos)), fuente)[0]
+    assert viejo > 25                       # así fallaba antes: sin quitar la cita ni el marcado
+    r = inv.cumple_limite_literal(exp.artefactos, fuente)
+    assert r, r.errores
+    assert r.detalle["max_consecutivas"] < 10
+
+
+def test_ciclo_20261026_el_orquestador_aplica_la_exclusion():
+    from pipeline import orquestador as orq
+    exp = _expediente_real()
+    fuente = _pagina_ciper(exp.artefactos["noticia"])
+    nuevo = orq.transicionar(exp, "archivada", motivo="test", texto_noticia=fuente)   # comprueba la invariante 3
+    assert nuevo.estado == "archivada"
+
+
+def test_ciclo_20261026_el_cuerpo_copiado_sigue_fallando():
+    from pipeline import orquestador as orq
+    import pytest
+    exp = _expediente_real()
+    fuente = _pagina_ciper(exp.artefactos["noticia"])
+    exp.artefactos["tarea"]["estudiante"]["enunciado_es"] += " " + CUERPO_26
+    with pytest.raises(orq.InvarianteViolada, match="26 palabras"):
+        orq.transicionar(exp, "archivada", motivo="test", texto_noticia=fuente)
+
+
+def test_texto_plano_quita_marcado_y_urls():
+    t = inv.texto_plano('<p>Hola <a href="https://x.cl/2026/10/23/a-b-c/?utm_source=rss">mundo</a> &amp; '
+                        'más /2026/10/23/slug-del-titular/ www.medio.cl/a</p><script>var a=1;</script>')
+    assert inv.palabras_normalizadas(t) == ["hola", "mundo", "mas"]
