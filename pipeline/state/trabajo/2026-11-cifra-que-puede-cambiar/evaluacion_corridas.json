@@ -1,0 +1,334 @@
+{
+  "tarea_id": "2026-11-cifra-que-puede-cambiar",
+  "evaluaciones": [
+    {
+      "iteracion": 1,
+      "version_tarea": 1,
+      "fecha": "2026-11-02T19:59:29Z",
+      "modelo": "claude-opus-5-5",
+      "version_prompt": "1.3",
+      "version_rubrica": "4.0",
+      "corridas": [
+        {
+          "n": 1,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "Plantea una necesidad real, una estimación para informar, y no entrega ninguna regla ni modelo para combinar las cifras.",
+                "cita": "El equipo de la radio quiere darle a su audiencia una estimación honesta de cuántas personas podrían haber muerto en total."
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "Admite un número puntual, un rango o una estimación ponderada, y no prescribe el procedimiento.",
+                "cita": "¿Qué número o rango le recomendarían a la radio y cómo le explicarían a la audiencia qué tan segura es esa estimación?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Hay que suponer qué parte de los desaparecidos podría estar ya contada, seguir bajo los escombros o estar a salvo, y decidir si se pide información adicional.",
+                "cita": "Hasta ahora se confirman 24 personas muertas y, al comienzo, se informó de 27 personas desaparecidas."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Es un hecho noticioso real y una radio escolar que informa sobre él es claramente plausible.",
+                "cita": "La radio del colegio prepara una nota sobre un ataque aéreo a un centro de ayuda humanitaria en un pueblo del sur de Ucrania."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Las cifras de la noticia (18, 24 y 27) son el núcleo de la tarea y no fueron creadas para enseñar.",
+                "cita": "La primera cifra, dada por el presidente Zelensky, fue 18 muertos. Después, el servicio estatal de emergencias confirmó 24 personas muertas"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona los supuestos sobre los desaparecidos y es necesario para comunicar la incertidumbre a la audiencia.",
+                "cita": "Había gente atrapada bajo los escombros, los drones interrumpieron varias veces la búsqueda"
+              },
+              "ciclo": {
+                "puntaje": 1,
+                "justificacion": "Comprender, suponer, interpretar y validar se exigen, pero el trabajo matemático puede reducirse a sumar 24 y 27 para obtener un rango. Dudo entre 1 y 2 por esa fase casi trivial y asigno el menor.",
+                "cita": "Hasta ahora se confirman 24 personas muertas y, al comienzo, se informó de 27 personas desaparecidas."
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existe un dato posterior independiente con el cual contrastar la estimación.",
+                "cita": "se le entrega la última cifra oficial de personas muertas publicada después de esta noticia, que el grupo no usó para construir su estimación"
+              },
+              "nivel": {
+                "puntaje": 1,
+                "justificacion": "La matemática (operatoria y estimación) está al alcance de P, pero el contexto de muertes en un ataque bélico es delicado para estudiantes de 10 a 12 años. Dudo de su pertinencia para ese nivel y asigno el menor.",
+                "cita": "Es un tema doloroso y quieren informar con respeto y cuidado."
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Se puede entrar con una suma simple, y la tarea admite soluciones más sofisticadas: rangos justificados, ponderación de los desaparecidos o uso de la corrección de 18 a 24.",
+                "cita": "¿Qué número o rango le recomendarían a la radio y cómo le explicarían a la audiencia qué tan segura es esa estimación?"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Abre la comparación de rangos entre grupos, la discusión de por qué cambian los conteos y el contraste con la cifra final.",
+                "cita": "las autoridades advierten que la cifra de muertos todavía podría subir"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "R2 entrega ya clasificados los tres casos posibles de los desaparecidos, que son la estructura clave de los supuestos: es una sobreorientación parcial.",
+                "cita": "algunas personas reportadas como desaparecidas podrían estar ya contadas entre las personas muertas, otras podrían seguir bajo los escombros y otras podrían haber llegado a …"
+              }
+            },
+            "total": 21,
+            "mejoras": [
+              {
+                "criterio": "ciclo",
+                "mejora_minima": "Pedir que la estimación considere también cuánto podría seguir subiendo la cifra a partir de cómo cambió de 18 a 24, para que el trabajo matemático no se agote en una suma."
+              },
+              {
+                "criterio": "nivel",
+                "mejora_minima": "Ajustar el encuadre para 10–12 años: centrar la pregunta en por qué cambian las cifras y cómo informar con cuidado, y prever una mediación docente explícita del tema."
+              },
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Reemplazar R2 por una tarjeta que solo defina «desaparecido» en la noticia, sin enumerar los posibles destinos, para que el grupo formule sus propios supuestos."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011Cgeh5X32WgPnWvjBqQTtS",
+            "fecha": "2026-11-02T19:58:07+00:00",
+            "intentos": 1,
+            "costo_usd": 0.070994,
+            "avisos": [
+              "cita_recortada_25:recursos"
+            ]
+          }
+        },
+        {
+          "n": 2,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "Plantea una necesidad comunicativa real, estimar una cifra aún incierta, sin entregar regla ni modelo para combinar muertos y desaparecidos.",
+                "cita": "El equipo de la radio quiere darle a su audiencia una estimación honesta de cuántas personas podrían haber muerto en total."
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "Admite un número o un rango y distintos supuestos sobre los desaparecidos. No prescribe el procedimiento ni hay instrucciones posteriores que encaucen la ruta.",
+                "cita": "¿Qué número o rango le recomendarían a la radio y cómo le explicarían a la audiencia qué tan segura es esa estimación?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige suponer cuántos desaparecidos ya están contados, siguen bajo los escombros o están a salvo, y decidir si pedir información adicional.",
+                "cita": "Hasta ahora se confirman 24 personas muertas y, al comienzo, se informó de 27 personas desaparecidas."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Comunicar una cifra provisional de víctimas es una situación real del periodismo, y una radio escolar que informa sobre ella es plausible.",
+                "cita": "las autoridades advierten que la cifra de muertos todavía podría subir."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Las cifras y la corrección del conteo provienen de la noticia y son el núcleo de la tarea, así que el componente auténtico está integrado de manera sustantiva.",
+                "cita": "La primera cifra, dada por el presidente Zelensky, fue 18 muertos. Después, el servicio estatal de emergencias confirmó 24 personas muertas"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona los supuestos sobre los desaparecidos y es necesario para explicar qué tan segura es la estimación.",
+                "cita": "Había gente atrapada bajo los escombros, los drones interrumpieron varias veces la búsqueda"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "La pregunta obliga a recorrer el ciclo completo: comprender, suponer escenarios, construir y calcular un rango, e interpretar su certeza para la audiencia. Hubo una duda leve porque el cálculo es aditivo sencillo, pero construir escenarios lo hace no trivial para el nivel P.",
+                "cita": "¿Qué número o rango le recomendarían a la radio y cómo le explicarían a la audiencia qué tan segura es esa estimación?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "R4 aporta evidencia independiente posterior para contrastar la estimación.",
+                "cita": "se le entrega la última cifra oficial de personas muertas publicada después de esta noticia, que el grupo no usó para construir su estimación."
+              },
+              "nivel": {
+                "puntaje": 1,
+                "justificacion": "La matemática (suma, rangos, estimación) está al alcance del nivel P. Sin embargo, estimar muertes en un ataque bélico es un contexto delicado para niños de 10 a 12 años que requiere ajustes de pertinencia. Dudé entre 2 y 1 y asigné el menor.",
+                "cita": "un ataque aéreo a un centro de ayuda humanitaria en un pueblo del sur de Ucrania. Es un tema doloroso"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es bajo: basta sumar 24 y 27 para obtener un rango. El techo es alto: la tarea admite escenarios ponderados sobre los desaparecidos, el uso de la corrección 18→24 y una argumentación de la incertidumbre.",
+                "cita": "¿Qué número o rango le recomendarían a la radio"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Comparar los rangos y supuestos de distintos grupos con la cifra posterior abre discusiones sobre la incertidumbre, la comunicación responsable y los límites del modelo.",
+                "cita": "cómo le explicarían a la audiencia qué tan segura es esa estimación?"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "R2 entrega ya hecha la clasificación de los desaparecidos en tres casos, que es la decisión central de modelación; eso constituye una sobreorientación parcial.",
+                "cita": "algunas personas reportadas como desaparecidas podrían estar ya contadas entre las personas muertas, otras podrían seguir bajo los escombros y otras podrían haber llegado a …"
+              }
+            },
+            "total": 22,
+            "mejoras": [
+              {
+                "criterio": "nivel",
+                "mejora_minima": "Declarar la tarea para nivel S1, o añadir al enunciado una indicación de mediación docente y una opción de salida para estudiantes afectados, manteniendo el foco en la responsabilidad de comunicar cifras inciertas."
+              },
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Reescribir R2 para que solo explique qué significa oficialmente «desaparecido» (persona sin contacto confirmado), sin enumerar los posibles destinos, de modo que el grupo formule por sí mismo los escenarios."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011Cgeh8Zm4mZL3BEXA5AEGv",
+            "fecha": "2026-11-02T19:58:46+00:00",
+            "intentos": 1,
+            "costo_usd": 0.067894,
+            "avisos": [
+              "cita_recortada_25:recursos"
+            ]
+          }
+        },
+        {
+          "n": 3,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La radio tiene una necesidad real de comunicar una cifra y la tarea no entrega ninguna regla ni modelo para pasar de los datos a la estimación.",
+                "cita": "El equipo de la radio quiere darle a su audiencia una estimación honesta de cuántas personas podrían haber muerto en total."
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta admite un número o un rango y distintos razonamientos defendibles sobre los desaparecidos, sin prescribir el procedimiento.",
+                "cita": "¿Qué número o rango le recomendarían a la radio y cómo le explicarían a la audiencia qué tan segura es esa estimación?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Hay que formular supuestos sobre cuántos desaparecidos podrían haber muerto o ya estar contados y decidir qué información pedir, lo que corresponde al descriptor de 2.",
+                "cita": "Hasta ahora se confirman 24 personas muertas y, al comienzo, se informó de 27 personas desaparecidas."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Es un hecho real, y una radio escolar que informa con cuidado sobre una cifra que todavía puede cambiar es una situación plausible.",
+                "cita": "La radio del colegio prepara una nota sobre un ataque aéreo a un centro de ayuda humanitaria en un pueblo del sur de Ucrania."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Las cifras de la noticia, incluida su corrección durante el día, son el núcleo de la tarea, por lo que el componente auténtico está integrado de manera sustantiva.",
+                "cita": "La primera cifra, dada por el presidente Zelensky, fue 18 muertos. Después, el servicio estatal de emergencias confirmó 24 personas muertas"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona los supuestos sobre los desaparecidos y se necesita también para interpretar la seguridad de la estimación y explicarla a la audiencia.",
+                "cita": "Había gente atrapada bajo los escombros, los drones interrumpieron varias veces la búsqueda y las autoridades advierten que la cifra de muertos todavía podría subir."
+              },
+              "ciclo": {
+                "puntaje": 1,
+                "justificacion": "La tarea exige comprender, suponer, interpretar y validar, pero el trabajo matemático se reduce a sumar o tomar una parte de 27 sobre 24, lo que es casi trivial. Dudo entre 1 y 2 y asigno el menor.",
+                "cita": "Se confirman 24 personas muertas. Al comienzo se informó de 27 personas desaparecidas."
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "R4 aporta un dato posterior e independiente con el cual contrastar la estimación.",
+                "cita": "se le entrega la última cifra oficial de personas muertas publicada después de esta noticia, que el grupo no usó para construir su estimación."
+              },
+              "nivel": {
+                "puntaje": 1,
+                "justificacion": "La matemática (operatoria, rangos y estimación) está al alcance del nivel P, pero estimar el número de muertos de un ataque bélico puede requerir ajustes en el encuadre para estudiantes de 10 a 12 años. Dudo entre 1 y 2 y asigno el menor.",
+                "cita": "Es un tema doloroso y quieren informar con respeto y cuidado."
+              },
+              "autodiferenciacion": {
+                "puntaje": 1,
+                "justificacion": "El piso es bajo (un rango de 24 a 51), pero con solo dos o tres cifras el techo queda limitado: hay pocas soluciones claramente más sofisticadas, más allá de escenarios con proporciones de desaparecidos.",
+                "cita": "¿Qué número o rango le recomendarían a la radio"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Permite comparar rangos entre grupos, discutir cómo se comunica la incertidumbre y contrastar con la cifra final de R4, lo que abre nuevas preguntas.",
+                "cita": "cómo le explicarían a la audiencia qué tan segura es esa estimación?"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "La información es accesible, pero R2 entrega ya la clasificación de los desaparecidos en tres casos, que es el núcleo de la simplificación. Eso constituye una sobreorientación parcial.",
+                "cita": "algunas personas reportadas como desaparecidas podrían estar ya contadas entre las personas muertas, otras podrían seguir bajo los escombros y otras podrían haber llegado a …"
+              }
+            },
+            "total": 20,
+            "mejoras": [
+              {
+                "criterio": "ciclo",
+                "mejora_minima": "Pedir que el rango se justifique con al menos dos escenarios en los que el grupo asigne cantidades o proporciones a los desaparecidos, de modo que el trabajo matemático deje de ser una sola suma."
+              },
+              {
+                "criterio": "nivel",
+                "mejora_minima": "Agregar una consigna breve que oriente al docente a abrir con una conversación sobre el cuidado al hablar de víctimas y que centre la tarea en cómo informar cifras inciertas."
+              },
+              {
+                "criterio": "autodiferenciacion",
+                "mejora_minima": "Ofrecer a solicitud cifras de otros eventos en que las autoridades corrigieron el número de muertos, para que los grupos más avanzados puedan estimar cuánto suelen subir las cifras."
+              },
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Reformular R2 para que solo indique que «desaparecido» no significa necesariamente muerto y que sea el grupo quien proponga las posibles situaciones."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgehBSMfmNrq5P9jUMXE9",
+            "fecha": "2026-11-02T19:59:29+00:00",
+            "intentos": 1,
+            "costo_usd": 0.072494,
+            "avisos": [
+              "cita_recortada_25:recursos"
+            ]
+          }
+        }
+      ],
+      "totales": [
+        21,
+        22,
+        20
+      ],
+      "rango_total": 2,
+      "rango_inestable": 4,
+      "evaluacion_inestable": false,
+      "mediana": {
+        "regla": "mediana por criterio (n par: mediana inferior)",
+        "total": 21,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 1,
+          "validacion": 2,
+          "nivel": 1,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 1
+        },
+        "corrida_fuente": {
+          "genuino": 1,
+          "abierta": 1,
+          "decisiones": 1,
+          "realismo": 1,
+          "autenticidad": 1,
+          "contexto": 1,
+          "ciclo": 1,
+          "validacion": 1,
+          "nivel": 1,
+          "autodiferenciacion": 1,
+          "fecundidad": 1,
+          "recursos": 1
+        }
+      }
+    }
+  ]
+}

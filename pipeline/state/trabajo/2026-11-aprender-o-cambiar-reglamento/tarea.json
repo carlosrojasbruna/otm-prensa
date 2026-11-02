@@ -1,0 +1,231 @@
+{
+  "id": "2026-11-aprender-o-cambiar-reglamento",
+  "titulo": "¿Aprendió el piloto o cambió el auto? Descomponiendo un salto al título",
+  "estado": "archivada",
+  "version": 1,
+  "fecha": "2026-11-02",
+  "noticia": {
+    "noticia_id": "2026-11-02-latercera-aprendizaje-y-adaptacion-las-claves-que",
+    "medio": "La Tercera",
+    "titulo": "Aprendizaje y adaptación: las claves que llevaron a Kimi Antonelli a ser el campeón más joven en la historia de la Fórmula 1",
+    "fecha": "2026-11-02",
+    "url": "https://www.latercera.com/el-deportivo/noticia/aprendizaje-y-adaptacion-las-claves-que-llevaron-a-kimi-antonelli-a-ser-el-campeon-mas-joven-en-la-historia-de-la-formula-1/",
+    "resumen_propio": "Crónica del título mundial del piloto italiano de Mercedes, Kimi Antonelli, quien se convirtió en el campeón más joven del automovilismo de élite tras una temporada 2026 dominante. La nota muestra cómo aprendió de su irregular año de debut, se acomodó al nuevo reglamento y a los monoplazas más livianos, y manejó la presión frente a su compañero Russell. Además, compara su récord con los de Vettel, Hamilton y Alonso.",
+    "cifras_usadas": [
+      {
+        "valor": "20 años",
+        "unidad": "años",
+        "que_es": "edad del piloto al ser coronado campeón",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 1"
+        }
+      },
+      {
+        "valor": 150,
+        "unidad": "puntos",
+        "que_es": "unidades obtenidas por Antonelli en su primera temporada 2025",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 4"
+        }
+      },
+      {
+        "valor": "768 kg",
+        "unidad": "kilogramos",
+        "que_es": "peso al que se redujeron los monoplazas en 2026",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 9"
+        }
+      }
+    ]
+  },
+  "nivel_principal": "U",
+  "variantes": {
+    "abajo": "S",
+    "arriba": null
+  },
+  "area": "deporte",
+  "contenidos_matematicos": [
+    "modelos multiplicativos y logaritmos",
+    "modelos dinámicos discretos de aprendizaje",
+    "comparación con grupo de control",
+    "sensibilidad e incertidumbre"
+  ],
+  "tiempo_estimado": "2 sesiones de 90 min",
+  "estudiante": {
+    "enunciado_es": "Un equipo de análisis de datos de un medio deportivo prepara un reportaje sobre Kimi Antonelli, piloto de Mercedes. En su primera temporada en la Fórmula Uno sumó 150 puntos, con un año irregular. En la temporada siguiente se coronó campeón con 20 años. Entre ambas campañas cambió el reglamento y los monoplazas se redujeron a 768 kg. Además, el piloto tuvo un año completo para aprender, y comparte equipo con George Russell. El editor pregunta: ¿cuánto de ese salto se debe a que el piloto aprendió y cuánto al nuevo reglamento y a los autos? Necesita una explicación cuantitativa que resista las críticas de ingenieros de otras escuderías, y quiere saber qué tan segura es. Pueden pedir información adicional.",
+    "foto_descripcion": "Ícono de un monoplaza de carreras visto de lado, junto a un gráfico de dos barras de distinta altura.",
+    "recursos_a_solicitud": [
+      {
+        "id": "R2",
+        "que_es": "Tabla de puntos finales por piloto de las dos temporadas",
+        "contenido": "Tabla con los puntos finales de cada piloto en ambas temporadas, tomada de la clasificación oficial publicada; el profesor la entrega con los pilotos que el grupo indique. El grupo decide a quiénes consultar.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P3-MM",
+        "fuente": "otra fuente: clasificación oficial del campeonato de pilotos, formula1.com"
+      },
+      {
+        "id": "R3",
+        "que_es": "Condición de los autos del equipo",
+        "contenido": "Supuesto del escenario: en cada temporada, los dos pilotos de Mercedes disponen de monoplazas de especificación equivalente.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P2-RM",
+        "fuente": "supuesto del escenario"
+      },
+      {
+        "id": "R4",
+        "que_es": "Cómo se obtienen los puntos",
+        "contenido": "Los puntos de cada carrera dependen de la posición de llegada, con más puntos para los primeros lugares; el total anual depende además de cuántas carreras tiene el calendario.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P3-MM",
+        "fuente": "otra fuente: Reglamento Deportivo de la Fórmula Uno (FIA)"
+      }
+    ]
+  },
+  "variantes_detalle": {
+    "abajo": {
+      "tramo": "S2",
+      "cambios": "Se entregan los puntos finales de Antonelli y su compañero en ambas temporadas y el número de carreras de cada calendario. La pregunta se reduce a comparar cuánto mejoró cada uno y qué parte del salto podría explicar el cambio de reglamento. Se pide solo un escenario y una validación informal."
+    },
+    "arriba": null
+  },
+  "recursos_de_entrada": [
+    {
+      "id": "R1",
+      "que_es": "Datos iniciales de la situación, incluidos en el enunciado",
+      "contenido": "Primera temporada del piloto: 150 puntos. Edad al ser campeón: 20 años. Peso al que se redujeron los monoplazas con el nuevo reglamento: 768 kg.",
+      "disponibilidad": "de_entrada",
+      "fase": "P1-MRS",
+      "fuente": "noticia, párrafo 4; párrafo 1; párrafo 9"
+    }
+  ],
+  "mapa_ciclo": {
+    "P1-MRS": {
+      "decision": "Precisar qué significa «salto» (puntos, razón, posición) y qué entienden por aprendizaje y por efecto del reglamento.",
+      "evidencia": "El grupo reformula la pregunta por escrito y lista qué datos faltan.",
+      "bloqueo_probable": null
+    },
+    "P2-RM": {
+      "decision": "Decidir si el compañero sirve de referencia, si normalizar por número de carreras y si el efecto del reglamento es común a ambos pilotos.",
+      "evidencia": "Lista de supuestos jerarquizados y razones de cada exclusión.",
+      "bloqueo_probable": "B12"
+    },
+    "P3-MM": {
+      "decision": "Elegir estructura aditiva o multiplicativa y, para el aprendizaje, un modelo dinámico (mejora gradual hacia un techo) o un salto único.",
+      "evidencia": "Ecuación o esquema con variables definidas, y pedido de la tabla de puntos.",
+      "bloqueo_probable": "B23"
+    },
+    "P4-WM": {
+      "decision": "Estimar los parámetros con los puntos de ambos pilotos, descomponer el factor total y probar variaciones de los supuestos.",
+      "evidencia": "Cálculos y tabla de sensibilidad con al menos dos escenarios.",
+      "bloqueo_probable": "B34"
+    },
+    "P5-INT": {
+      "decision": "Traducir la descomposición a una frase periodística con un rango, no un solo valor.",
+      "evidencia": "Texto del reportaje con porcentajes o factores y su incertidumbre.",
+      "bloqueo_probable": "B45"
+    },
+    "P6-VAL": {
+      "decision": "Contrastar el factor de reglamento con parejas de otros equipos y la curva de Antonelli dentro de la temporada.",
+      "evidencia": "Comparación predicción versus datos nuevos y lista de límites del modelo.",
+      "bloqueo_probable": "B56"
+    },
+    "P7-EXP": {
+      "decision": "Presentar la conclusión con el gráfico de descomposición y las condiciones en que dejaría de valer.",
+      "evidencia": "Póster o informe breve con el modelo, la sensibilidad y la crítica.",
+      "bloqueo_probable": "B67"
+    }
+  },
+  "task_space": {
+    "required_assumptions": [
+      "En cada temporada ambos pilotos de Mercedes tuvieron monoplazas equivalentes.",
+      "El efecto del cambio de reglamento es multiplicativo y común a los dos pilotos.",
+      "Los puntos se normalizan por número de carreras para comparar temporadas.",
+      "El nivel del compañero de equipo no cambió por aprendizaje propio en el período.",
+      "El aprendizaje del piloto se manifiesta como mejora de su rendimiento relativo."
+    ],
+    "reference_solution": {
+      "steps": "1) Pedir los puntos finales de ambas temporadas de Antonelli y de su compañero, y el número de carreras de cada calendario. 2) Normalizar a puntos por carrera. 3) Modelo multiplicativo: puntos(i,t) = a(i)·g(t), con a el nivel del piloto y g el efecto de la temporada (reglamento y auto). 4) Estimar g con la razón de mejora del compañero y el aprendizaje como la razón de mejora de Antonelli dividida por la del compañero; en logaritmos, las contribuciones se suman. 5) Alternativa dinámica: nivel x(n+1) = x(n) + r·(L − x(n)) con techo L y tasa r ajustada con las carreras de la primera temporada, más un cambio de escala g al cambiar el reglamento. 6) Sensibilidad: variar g entre pilotos, el techo L y el tratamiento de las carreras abandonadas. 7) Expresar la contribución con intervalo.",
+      "result": "No hay un valor único. La mejora total se escribe como producto: factor de reglamento y auto por factor de aprendizaje, o como suma en logaritmos. El factor de reglamento se estima con el compañero y el residual de Antonelli se atribuye al aprendizaje, con un intervalo que depende de los supuestos.",
+      "acceptable_range": "Es aceptable cualquier atribución defendible que controle el cambio de reglamento, normalice por número de carreras y entregue incertidumbre. Atribuir todo el salto a un solo factor exige justificación explícita."
+    },
+    "routes": [
+      {
+        "id": "R1",
+        "nombre": "Razones de mejora frente al compañero",
+        "nivel": "S1",
+        "modelo": "Razón de puntos entre temporadas para cada piloto; el cociente de ambas razones aísla lo propio de Antonelli.",
+        "resultado": "Factor de aprendizaje igual al cociente de razones; factor de reglamento igual a la razón del compañero."
+      },
+      {
+        "id": "R2",
+        "nombre": "Modelo multiplicativo con logaritmos",
+        "nivel": "S2",
+        "modelo": "log puntos = efecto piloto + efecto temporada; descomposición aditiva en logaritmos con sensibilidad por escenarios.",
+        "resultado": "Porcentajes de contribución de reglamento y aprendizaje con rango según escenarios."
+      },
+      {
+        "id": "R3",
+        "nombre": "Curva de aprendizaje discreta con cambio de escala",
+        "nivel": "U",
+        "modelo": "x(n+1) = x(n) + r·(L − x(n)) por carrera, con un salto de escala por el reglamento, ajustado a las carreras de ambos pilotos.",
+        "resultado": "Estimación de r, L y del factor de escala, con comparación de qué parte del salto queda sin explicar."
+      },
+      {
+        "id": "R4",
+        "nombre": "Comparación con muchas parejas de pilotos",
+        "nivel": "U",
+        "modelo": "Modelo de efectos mixtos o bayesiano con pilotos y equipos como efectos, y la temporada como efecto común.",
+        "resultado": "Efecto de aprendizaje de Antonelli con intervalo creíble y comparación con otros pilotos de segundo año."
+      }
+    ],
+    "modelo_inadecuado": {
+      "id": "RX: restar los puntos de ambas temporadas y atribuir toda la diferencia al aprendizaje del piloto.",
+      "por_que_falla": "Ignora que cambió el reglamento y el auto (que afecta a todos), que los calendarios pueden tener distinto número de carreras y que el sistema de puntos premia mucho a los primeros lugares. La diferencia absoluta mezcla todos esos efectos."
+    },
+    "validation_evidence": "Datos independientes que el grupo consigue después de modelar: los resultados por carrera de otras parejas de pilotos que vivieron el mismo cambio de reglamento y la evolución de Antonelli dentro de la temporada. El factor de reglamento estimado debe predecir razonablemente lo observado en otras parejas, y la curva de aprendizaje debe ser consistente con la trayectoria por carrera, que no se usó para ajustarlo.",
+    "agent_visibility": {
+      "students": [
+        "enunciado_es",
+        "foto_descripcion",
+        "recursos_a_solicitud"
+      ],
+      "coder": [
+        "enunciado_es",
+        "task_space"
+      ],
+      "guide": [
+        "all"
+      ]
+    }
+  },
+  "rubrica_rub01": {
+    "total": 23,
+    "por_criterio": {
+      "genuino": 2,
+      "abierta": 2,
+      "decisiones": 2,
+      "realismo": 2,
+      "autenticidad": 2,
+      "contexto": 2,
+      "ciclo": 2,
+      "validacion": 2,
+      "nivel": 2,
+      "autodiferenciacion": 2,
+      "fecundidad": 2,
+      "recursos": 1
+    }
+  },
+  "rubrica_rub02": {
+    "P": null,
+    "S": null,
+    "U": null
+  },
+  "modelo_y_prompt": {
+    "diseñador": "claude-sonnet-5-5",
+    "version_prompt": "1.1",
+    "version_rubrica": "4.0"
+  }
+}

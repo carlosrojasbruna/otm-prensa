@@ -1,0 +1,128 @@
+{
+  "tarea_id": "2026-11-traslado-partido-concepcion-hinchas",
+  "aprobado": false,
+  "alcance": "tarea",
+  "hallazgos": [
+    {
+      "invariante": "4",
+      "severidad": "critico",
+      "ubicacion": "tarea.noticia.cifras_usadas[0]",
+      "descripcion": "localizador erróneo: '6-1' no está en «párrafo 1» (ni a ±1 párrafo) sino en el párrafo 3",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "4",
+      "severidad": "advertencia",
+      "ubicacion": "tarea.noticia.cifras_usadas[2]",
+      "descripcion": "localizador corrido: '12 mil' no está en «párrafo 5» sino en el párrafo 6; se corrige el localizador",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "4",
+      "severidad": "advertencia",
+      "ubicacion": "tarea.noticia.cifras_usadas[3]",
+      "descripcion": "localizador corrido: 7.5 no está en «párrafo 5» sino en el párrafo 6; se corrige el localizador",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "4",
+      "severidad": "critico",
+      "ubicacion": "estudiante.enunciado_es",
+      "descripcion": "cifra 1 sin localizador (no figura en noticia.cifras_usadas)",
+      "origen": "codigo"
+    }
+  ],
+  "cifras_contrastadas": [
+    {
+      "indice": 0,
+      "que_es": "marcador con que Colo Colo goleó a Universidad de Concepción",
+      "valor_tarea": "6-1",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 1"
+      },
+      "metodo": "codigo",
+      "valor_fuente": null,
+      "resultado": "distinto",
+      "nota": "valor en el párrafo 3, lejos del localizador"
+    },
+    {
+      "indice": 1,
+      "que_es": "título de liga que aseguraría Colo Colo con una victoria sobre Ñublense",
+      "valor_tarea": "35ª",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 2"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "35ª",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 2 de la noticia"
+    },
+    {
+      "indice": 2,
+      "que_es": "capacidad del estadio Nelson Oyarzún",
+      "valor_tarea": "12 mil",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 5"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "12 mil",
+      "resultado": "coincide",
+      "localizador_corregido": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 6"
+      },
+      "nota": "valor presente en el párrafo 6 (localizador corregido desde «párrafo 5»)"
+    },
+    {
+      "indice": 3,
+      "que_es": "aforo autorizado por la Delegación Presidencial para el partido",
+      "valor_tarea": 7.5,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 5"
+      },
+      "metodo": "codigo",
+      "valor_fuente": 7.5,
+      "resultado": "coincide",
+      "localizador_corregido": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 6"
+      },
+      "nota": "valor presente en el párrafo 6 (localizador corregido desde «párrafo 5»)"
+    },
+    {
+      "indice": 4,
+      "que_es": "capacidad autorizada del estadio de Concepción",
+      "valor_tarea": "30 mil",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 11"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "30 mil",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 11 de la noticia"
+    }
+  ],
+  "meta": {
+    "agente": "verificador",
+    "version_prompt": "1.1",
+    "modelo_llamado": false,
+    "costo_usd": 0.0,
+    "texto_noticia_recibido": true,
+    "fecha": "2026-11-02T19:49:11+00:00"
+  },
+  "localizadores_corregidos": {
+    "2": {
+      "fuente": "noticia",
+      "ubicacion": "párrafo 6"
+    },
+    "3": {
+      "fuente": "noticia",
+      "ubicacion": "párrafo 6"
+    }
+  }
+}

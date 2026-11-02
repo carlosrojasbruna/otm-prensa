@@ -1,0 +1,230 @@
+{
+  "id": "2026-11-primera-cifra-o-esperar",
+  "titulo": "¿Publicar la primera cifra o esperar la confirmación?",
+  "estado": "archivada",
+  "version": 1,
+  "fecha": "2026-11-02",
+  "noticia": {
+    "noticia_id": "2026-11-02-bbc-russian-bombing-kills-24-people-at",
+    "medio": "BBC News",
+    "titulo": "Russian bombing kills 24 people at Ukraine aid centre, Kyiv says",
+    "fecha": "2026-11-02",
+    "url": "https://www.bbc.co.uk/news/articles/cjy56dndlyz0o?at_medium=RSS&at_campaign=rss",
+    "resumen_propio": "A Russian aerial attack hit a humanitarian aid point in a village of southern Ukraine's Zaporizhzhia region, leaving many dead and wounded. Officials report people still trapped under debris, and rescue work was repeatedly interrupted by drones. The initial death count was revised upward once the emergency service confirmed the figures, and officials warn the toll may still grow.",
+    "cifras_usadas": [
+      {
+        "valor": 27,
+        "unidad": "personas desaparecidas",
+        "que_es": "Número de personas reportadas inicialmente como desaparecidas",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 52"
+        }
+      },
+      {
+        "valor": 18,
+        "unidad": "muertos",
+        "que_es": "Cifra inicial de muertos dada por Zelensky, luego revisada",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 58"
+        }
+      },
+      {
+        "valor": 24,
+        "unidad": "personas confirmadas como muertas",
+        "que_es": "Cifra confirmada posteriormente por el servicio estatal de emergencias, incluidos rescatistas y policías",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 58"
+        }
+      }
+    ]
+  },
+  "nivel_principal": "P",
+  "variantes": {
+    "abajo": null,
+    "arriba": "S"
+  },
+  "area": "sociedad_datos",
+  "contenidos_matematicos": [
+    "diferencia absoluta y relativa",
+    "razón y porcentaje simple",
+    "proyección aditiva o proporcional",
+    "rangos"
+  ],
+  "tiempo_estimado": "2 sesiones de 45 min",
+  "estudiante": {
+    "enunciado_es": "El diario del colegio prepara una nota sobre un ataque aéreo a un centro de ayuda humanitaria en un pueblo del sur de Ucrania. Primero, el presidente ucraniano habló de 18 muertos. Más tarde, el servicio estatal de emergencias confirmó 24 personas muertas, entre ellas rescatistas y policías. Las autoridades advierten que la cifra todavía podría subir, y la búsqueda bajo los escombros fue interrumpida varias veces por drones. La editora debe decidir si publica enseguida la primera cifra o si espera las confirmaciones, y qué decirle al lector sobre cuánto puede cambiar el número. ¿Qué le recomendarían a la editora y cómo fundamentarían su recomendación? Pueden pedir información adicional.",
+    "foto_descripcion": "Ícono sencillo de un diario con un titular en blanco y un reloj de arena al lado.",
+    "recursos_a_solicitud": [
+      {
+        "id": "R2",
+        "que_es": "Tarjeta sobre personas desaparecidas",
+        "contenido": "Al comienzo se informó de 27 personas desaparecidas.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P2-RM",
+        "fuente": "noticia, párrafo 52"
+      },
+      {
+        "id": "R3",
+        "que_es": "Tarjeta sobre por qué los conteos se revisan",
+        "contenido": "Supuesto del escenario: en las primeras horas después de un ataque, el conteo de víctimas se revisa porque la búsqueda continúa y se verifican los nombres de las personas.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P2-RM",
+        "fuente": "supuesto del escenario"
+      },
+      {
+        "id": "R4",
+        "que_es": "Tarjeta de contraste que se entrega después de que el grupo haya hecho su recomendación",
+        "contenido": "Supuesto del escenario: cuando el grupo ya entregó su recomendación, se le da la última cifra oficial de personas muertas publicada después de esta noticia, que no usó para construir su proyección.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P6-VAL",
+        "fuente": "supuesto del escenario"
+      }
+    ]
+  },
+  "variantes_detalle": {
+    "abajo": null,
+    "arriba": {
+      "tramo": "S1",
+      "cambios": "Se pide expresar el cambio como porcentaje, comparar al menos dos modelos de proyección (aumento fijo frente a aumento proporcional) y explicar por qué un aumento proporcional repetido sin límite no es razonable. La validación incluye discutir la sensibilidad de la proyección a cada supuesto."
+    }
+  },
+  "recursos_de_entrada": [
+    {
+      "id": "R1",
+      "que_es": "Las dos cifras de partida, tal como aparecen en el enunciado",
+      "contenido": "La primera cifra fue 18 muertos. Después, el servicio estatal de emergencias confirmó 24 personas muertas, incluidos rescatistas y policías.",
+      "disponibilidad": "de_entrada",
+      "fase": "P1-MRS",
+      "fuente": "noticia, párrafo 58"
+    }
+  ],
+  "mapa_ciclo": {
+    "P1-MRS": {
+      "decision": "Entender que la primera cifra y la confirmada son momentos distintos de un mismo conteo y que la cifra puede seguir subiendo.",
+      "evidencia": "El grupo explica con sus palabras por qué hay dos números y qué significa que el conteo esté abierto.",
+      "bloqueo_probable": "B12"
+    },
+    "P2-RM": {
+      "decision": "Decidir qué datos sirven (18 y 24; quizás pedir las personas desaparecidas) y acordar un supuesto sobre cómo seguirá cambiando el conteo.",
+      "evidencia": "Lista escrita de datos elegidos y del supuesto acordado.",
+      "bloqueo_probable": "B23"
+    },
+    "P3-MM": {
+      "decision": "Escoger cómo medir el cambio (cuántas más o cuánto más en proporción) y cómo proyectar la próxima cifra.",
+      "evidencia": "Una resta, una razón o una fracción escrita, y una expresión para la proyección.",
+      "bloqueo_probable": "B34"
+    },
+    "P4-WM": {
+      "decision": "Calcular la diferencia, la razón o porcentaje y la proyección de la cifra futura; construir el rango.",
+      "evidencia": "Cálculos con el cambio observado y el valor proyectado.",
+      "bloqueo_probable": "B45"
+    },
+    "P5-INT": {
+      "decision": "Traducir los resultados a la decisión editorial: publicar ya con advertencia o esperar, y cuánto podría variar.",
+      "evidencia": "Recomendación escrita que cita el cambio calculado y el rango proyectado.",
+      "bloqueo_probable": "B56"
+    },
+    "P6-VAL": {
+      "decision": "Comprobar que la proyección sea razonable frente a las personas desaparecidas y frente a la cifra oficial posterior entregada.",
+      "evidencia": "Comentario de si la cifra posterior cae dentro del rango y qué ajustarían en el supuesto.",
+      "bloqueo_probable": "B67"
+    },
+    "P7-EXP": {
+      "decision": "Redactar la recomendación y una frase para el lector que distinga cifra confirmada de provisoria.",
+      "evidencia": "Recomendación a la editora y titular o frase de advertencia redactados por el grupo.",
+      "bloqueo_probable": null
+    }
+  },
+  "task_space": {
+    "required_assumptions": [
+      "Que la corrección de 18 a 24 es una buena pista de cuánto puede cambiar el conteo en la siguiente revisión.",
+      "Que la cifra final no puede ser menor que la confirmada.",
+      "Que el conteo tiene un tope razonable, ligado a las personas atrapadas o desaparecidas.",
+      "Un criterio de redondeo: las personas se cuentan enteras."
+    ],
+    "reference_solution": {
+      "steps": "1) Calcular el cambio absoluto: 24 − 18 = 6. 2) Calcular el cambio relativo: 6 de 18 es un tercio, unos 33,3 %. 3) Proyectar la próxima cifra con aumento fijo (24 + 6 = 30) o con el mismo aumento proporcional (24 y un tercio más = 32). 4) Opcionalmente, usar las personas desaparecidas como cota máxima (24 + 27 = 51) y comprobar que la proyección está muy por debajo. 5) Decidir: publicar enseguida solo con la advertencia de cifra provisoria, o esperar la confirmación; la cifra confirmada es más confiable. 6) Contrastar con la última cifra oficial entregada después.",
+      "result": "Se recomienda publicar la cifra confirmada (24 personas muertas), señalando que es provisoria, y avisar que podría subir hasta alrededor de 30 a 32 según el patrón observado. La primera cifra (18) quedó unas 6 personas, un tercio, por debajo de la confirmada.",
+      "acceptable_range": "Proyecciones entre 28 y 35 personas son razonables con supuesto explícito; cotas lógicas entre 24 y 51. Es inaceptable proyectar una cifra menor a 24 o repetir el aumento proporcional muchas veces hasta superar la cota de las desaparecidas."
+    },
+    "routes": [
+      {
+        "id": "R1",
+        "nombre": "Diferencia absoluta repetida",
+        "nivel": "P",
+        "modelo": "Cambio = 24 − 18 = 6; si vuelve a subir lo mismo, el total sería 24 + 6.",
+        "resultado": "Rango de 24 a 30 personas; recomendación de publicar con advertencia."
+      },
+      {
+        "id": "R2",
+        "nombre": "Aumento proporcional de un tercio",
+        "nivel": "P",
+        "modelo": "La razón 24 : 18 equivale a un tercio más; aplicar un tercio más sobre 24.",
+        "resultado": "Unas 32 personas como proyección alta."
+      },
+      {
+        "id": "R3",
+        "nombre": "Tope por personas desaparecidas",
+        "nivel": "P",
+        "modelo": "Cota máxima = 24 + 27 = 51; comparar con las proyecciones para juzgar su plausibilidad.",
+        "resultado": "Rango teórico de 24 a 51; las proyecciones de R1 y R2 quedan en la parte baja."
+      },
+      {
+        "id": "R4",
+        "nombre": "Revisiones que se achican",
+        "nivel": "S2",
+        "modelo": "Cada revisión suma la mitad de la anterior: 6, 3, 1,5, y así sucesivamente (serie geométrica).",
+        "resultado": "El total se acerca a 30 personas y no lo supera."
+      }
+    ],
+    "modelo_inadecuado": {
+      "id": "RX: repetir el aumento de un tercio revisión tras revisión sin límite (24, 32, unas 43, unas 57, ...).",
+      "por_que_falla": "Supone un crecimiento sin tope que supera pronto las 51 personas posibles y no considera que el conteo termina cuando la búsqueda concluye; el contexto da un límite que el modelo ignora."
+    },
+    "validation_evidence": "La última cifra oficial de personas muertas publicada después de la noticia, entregada solo después de la recomendación, permite ver si cae dentro del rango proyectado. También se puede contrastar el supuesto con información posterior sobre las personas desaparecidas.",
+    "agent_visibility": {
+      "students": [
+        "enunciado_es",
+        "foto_descripcion",
+        "recursos_a_solicitud"
+      ],
+      "coder": [
+        "enunciado_es",
+        "task_space"
+      ],
+      "guide": [
+        "all"
+      ]
+    }
+  },
+  "rubrica_rub01": {
+    "total": 21,
+    "por_criterio": {
+      "genuino": 2,
+      "abierta": 2,
+      "decisiones": 2,
+      "realismo": 2,
+      "autenticidad": 2,
+      "contexto": 2,
+      "ciclo": 1,
+      "validacion": 2,
+      "nivel": 1,
+      "autodiferenciacion": 1,
+      "fecundidad": 2,
+      "recursos": 2
+    }
+  },
+  "rubrica_rub02": {
+    "P": null,
+    "S": null,
+    "U": null
+  },
+  "modelo_y_prompt": {
+    "diseñador": "claude-sonnet-5-5",
+    "version_prompt": "1.1",
+    "version_rubrica": "4.0"
+  }
+}

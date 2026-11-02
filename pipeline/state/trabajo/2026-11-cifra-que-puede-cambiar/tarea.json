@@ -1,0 +1,239 @@
+{
+  "id": "2026-11-cifra-que-puede-cambiar",
+  "titulo": "Cuando el número todavía puede cambiar: ¿qué le decimos a la radio?",
+  "estado": "evaluada",
+  "version": 1,
+  "fecha": "2026-11-02",
+  "noticia": {
+    "noticia_id": "2026-11-02-bbc-russian-bombing-kills-24-people-at",
+    "medio": "BBC News",
+    "titulo": "Russian bombing kills 24 people at Ukraine aid centre, Kyiv says",
+    "fecha": "2026-11-02",
+    "url": "https://www.bbc.co.uk/news/articles/cjy56dndlyz0o?at_medium=RSS&at_campaign=rss",
+    "resumen_propio": "A Russian aerial attack hit a humanitarian aid point in a village of southern Ukraine's Zaporizhzhia region, leaving many dead and wounded. Officials report people still trapped under debris, and rescue work was repeatedly interrupted by drones. The initial death count was revised upward once the emergency service confirmed the figures, and officials warn the toll may still grow.",
+    "cifras_usadas": [
+      {
+        "valor": 24,
+        "unidad": "personas muertas",
+        "que_es": "Número de personas muertas por los bombardeos en el centro de ayuda",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 51"
+        }
+      },
+      {
+        "valor": 27,
+        "unidad": "personas desaparecidas",
+        "que_es": "Número de personas reportadas inicialmente como desaparecidas",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 52"
+        }
+      },
+      {
+        "valor": 18,
+        "unidad": "muertos",
+        "que_es": "Cifra inicial de muertos dada por Zelensky, luego revisada",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 58"
+        }
+      },
+      {
+        "valor": 24,
+        "unidad": "personas confirmadas como muertas",
+        "que_es": "Cifra confirmada posteriormente por el servicio estatal de emergencias, incluidos rescatistas y policías",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 58"
+        }
+      }
+    ]
+  },
+  "nivel_principal": "P",
+  "variantes": {
+    "abajo": null,
+    "arriba": "S"
+  },
+  "area": "sociedad_datos",
+  "contenidos_matematicos": [
+    "suma y resta",
+    "fracciones y porcentajes simples",
+    "estimación y redondeo",
+    "rangos y cotas"
+  ],
+  "tiempo_estimado": "2 sesiones de 45 min",
+  "estudiante": {
+    "enunciado_es": "La radio del colegio prepara una nota sobre un ataque aéreo a un centro de ayuda humanitaria en un pueblo del sur de Ucrania. Es un tema doloroso y quieren informar con respeto y cuidado. Hasta ahora se confirman 24 personas muertas y, al comienzo, se informó de 27 personas desaparecidas. Había gente atrapada bajo los escombros, los drones interrumpieron varias veces la búsqueda y las autoridades advierten que la cifra de muertos todavía podría subir. El equipo de la radio quiere darle a su audiencia una estimación honesta de cuántas personas podrían haber muerto en total. ¿Qué número o rango le recomendarían a la radio y cómo le explicarían a la audiencia qué tan segura es esa estimación? Pueden pedir información adicional.",
+    "foto_descripcion": "Ícono sencillo de un micrófono de radio escolar junto a una cinta de papel con un número seguido de puntos suspensivos.",
+    "recursos_a_solicitud": [
+      {
+        "id": "R2",
+        "que_es": "Tarjeta sobre qué puede significar que alguien figure como desaparecido",
+        "contenido": "Supuesto del escenario: algunas personas reportadas como desaparecidas podrían estar ya contadas entre las personas muertas, otras podrían seguir bajo los escombros y otras podrían haber llegado a un lugar seguro sin avisar.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P2-RM",
+        "fuente": "supuesto del escenario"
+      },
+      {
+        "id": "R3",
+        "que_es": "Tarjeta sobre cómo se corrigió el conteo de muertos durante el día",
+        "contenido": "La primera cifra, dada por el presidente Zelensky, fue 18 muertos. Después, el servicio estatal de emergencias confirmó 24 personas muertas, incluidos rescatistas y policías.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P2-RM",
+        "fuente": "noticia, párrafo 58"
+      },
+      {
+        "id": "R4",
+        "que_es": "Tarjeta de contraste que se entrega después de que el grupo tenga su estimación",
+        "contenido": "Supuesto del escenario: cuando el grupo ya presentó su estimación, se le entrega la última cifra oficial de personas muertas publicada después de esta noticia, que el grupo no usó para construir su estimación.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P6-VAL",
+        "fuente": "supuesto del escenario"
+      }
+    ]
+  },
+  "variantes_detalle": {
+    "abajo": null,
+    "arriba": {
+      "tramo": "S1",
+      "cambios": "Se pide comparar al menos tres escenarios de qué parte de las personas desaparecidas pudo fallecer, expresados como porcentajes, y justificar cuál es el más defendible. Además, deben mostrar cómo cambia la estimación total si el supuesto varía (sensibilidad informal) y decidir qué escenario sería irresponsable publicar."
+    }
+  },
+  "recursos_de_entrada": [
+    {
+      "id": "R1",
+      "que_es": "Datos de partida del caso, tal como aparecen en el enunciado",
+      "contenido": "Se confirman 24 personas muertas. Al comienzo se informó de 27 personas desaparecidas.",
+      "disponibilidad": "de_entrada",
+      "fase": "P1-MRS",
+      "fuente": "noticia, párrafo 51; noticia, párrafo 52"
+    }
+  ],
+  "mapa_ciclo": {
+    "P1-MRS": {
+      "decision": "Entender qué se sabe con certeza (personas muertas confirmadas) y qué no (desaparecidas, gente atrapada); distinguir desaparecida de fallecida.",
+      "evidencia": "El grupo explica con sus palabras qué cifra es segura, cuál es incierta y por qué el número podría subir.",
+      "bloqueo_probable": "B12"
+    },
+    "P2-RM": {
+      "decision": "Elegir qué datos usar (24 y 27, y si piden la corrección del conteo) y acordar un supuesto sobre qué parte de las personas desaparecidas pudo haber fallecido.",
+      "evidencia": "Lista escrita con el supuesto acordado y los datos que descartan o usan.",
+      "bloqueo_probable": "B23"
+    },
+    "P3-MM": {
+      "decision": "Expresar el total como la cifra confirmada más una parte de las personas desaparecidas; decidir si hablar de un número o de un rango.",
+      "evidencia": "Esquema, barra o expresión del tipo confirmadas + parte de las desaparecidas.",
+      "bloqueo_probable": "B34"
+    },
+    "P4-WM": {
+      "decision": "Calcular la parte de las desaparecidas según el supuesto, sumar, redondear y calcular los límites del rango.",
+      "evidencia": "Cálculos escritos con el total estimado y los extremos del rango.",
+      "bloqueo_probable": "B45"
+    },
+    "P5-INT": {
+      "decision": "Traducir el resultado a un mensaje comprensible: qué es seguro, qué es estimación y cuánto podría variar.",
+      "evidencia": "Frase que distingue la cifra confirmada de la estimación y nombra el rango.",
+      "bloqueo_probable": "B56"
+    },
+    "P6-VAL": {
+      "decision": "Contrastar la estimación con el límite lógico (no puede ser menor que lo confirmado) y con la última cifra oficial entregada después; revisar el supuesto si no calza.",
+      "evidencia": "Comentario escrito de si la cifra posterior cae dentro del rango y qué cambiarían del supuesto.",
+      "bloqueo_probable": "B67"
+    },
+    "P7-EXP": {
+      "decision": "Redactar el mensaje breve para la audiencia de la radio, con respeto y con la incertidumbre explicada.",
+      "evidencia": "Texto o guion de la nota con el número o rango y la explicación de su grado de seguridad.",
+      "bloqueo_probable": null
+    }
+  },
+  "task_space": {
+    "required_assumptions": [
+      "Qué parte de las personas desaparecidas pudo haber fallecido (por ejemplo, ninguna, la mitad o todas), explicitada y acordada por el grupo.",
+      "Que algunas personas desaparecidas ya podrían estar contadas entre las muertas, o haber llegado a un lugar seguro, y que la noticia no lo aclara.",
+      "Que la cifra de muertos confirmada no baja, solo puede mantenerse o subir.",
+      "Criterio de redondeo: las personas se cuentan enteras."
+    ],
+    "reference_solution": {
+      "steps": "1) Distinguir lo confirmado (24 personas muertas) de lo incierto (27 personas desaparecidas). 2) Fijar los límites lógicos: como mínimo 24; como máximo, si todas las desaparecidas hubieran fallecido y ninguna estuviera ya contada, 24 + 27 = 51. 3) Acordar un supuesto sobre la fracción de desaparecidas que pudo fallecer (por ejemplo, un cuarto, la mitad o tres cuartos). 4) Calcular el total: 24 + fracción de 27 (un cuarto: 24 + 6,75, unas 31; la mitad: 24 + 13,5, unas 37 o 38; tres cuartos: 24 + 20,25, unas 44). 5) Opcionalmente, mirar cómo subió el conteo de 18 a 24 (seis más) como pista de la magnitud de revisiones. 6) Comunicar un rango con una frase que distinga lo confirmado de lo estimado. 7) Contrastar con la última cifra oficial entregada después.",
+      "result": "Una estimación defendible sería un rango como 'entre 24 (ya confirmadas) y unas 40 personas', con valor central cercano a 31–38 según el supuesto. Lo esencial es declarar que 24 es lo confirmado, que la cifra puede subir y que 51 es solo un máximo teórico muy improbable.",
+      "acceptable_range": "Cualquier rango entre 24 y 51 con supuesto explícito y coherente es aceptable; valores centrales entre 28 y 45 son razonables si se justifican. No es aceptable dar un total menor a 24 ni afirmar 51 como cifra de muertos sin matices."
+    },
+    "routes": [
+      {
+        "id": "R1",
+        "nombre": "Cotas lógicas",
+        "nivel": "P",
+        "modelo": "Mínimo igual a lo confirmado; máximo igual a confirmadas más todas las desaparecidas.",
+        "resultado": "Rango entre 24 y 51; comunica la incertidumbre pero es poco informativo."
+      },
+      {
+        "id": "R2",
+        "nombre": "Mitad de las desaparecidas",
+        "nivel": "P",
+        "modelo": "Total = 24 + la mitad de 27, con redondeo a personas enteras.",
+        "resultado": "Alrededor de 37 o 38 personas, con rango de unas cuantas personas hacia cada lado."
+      },
+      {
+        "id": "R3",
+        "nombre": "Repetir el aumento observado",
+        "nivel": "P",
+        "modelo": "Con los datos de la corrección (de 18 a 24, seis más), suponer que otra revisión sumaría una cantidad parecida: 24 + 6.",
+        "resultado": "Alrededor de 30 personas."
+      },
+      {
+        "id": "R4",
+        "nombre": "Escenarios por porcentaje",
+        "nivel": "S1",
+        "modelo": "Total = 24 + p·27 para p igual a 25 %, 50 % y 75 %, y comparación de escenarios con su plausibilidad.",
+        "resultado": "Aproximadamente 31, 37 o 38, y 44 personas; el grupo elige y justifica un escenario central."
+      }
+    ],
+    "modelo_inadecuado": {
+      "id": "RX: presentar 24 + 27 = 51 como el número de personas muertas.",
+      "por_que_falla": "Supone que todas las personas desaparecidas murieron y que ninguna estaba ya contada entre las 24, lo que la noticia no dice; confunde persona desaparecida con persona fallecida y entrega a la audiencia una cifra mucho más alta que lo razonable."
+    },
+    "validation_evidence": "La última cifra oficial de personas muertas publicada después de la noticia (entregada solo tras presentar la estimación) permite ver si cae dentro del rango propuesto. Además, la información posterior sobre cuántas personas desaparecidas aparecieron con vida contrasta el supuesto sobre la fracción.",
+    "agent_visibility": {
+      "students": [
+        "enunciado_es",
+        "foto_descripcion",
+        "recursos_a_solicitud"
+      ],
+      "coder": [
+        "enunciado_es",
+        "task_space"
+      ],
+      "guide": [
+        "all"
+      ]
+    }
+  },
+  "rubrica_rub01": {
+    "total": 21,
+    "por_criterio": {
+      "genuino": 2,
+      "abierta": 2,
+      "decisiones": 2,
+      "realismo": 2,
+      "autenticidad": 2,
+      "contexto": 2,
+      "ciclo": 1,
+      "validacion": 2,
+      "nivel": 1,
+      "autodiferenciacion": 2,
+      "fecundidad": 2,
+      "recursos": 1
+    }
+  },
+  "rubrica_rub02": {
+    "P": null,
+    "S": null,
+    "U": null
+  },
+  "modelo_y_prompt": {
+    "diseñador": "claude-sonnet-5-5",
+    "version_prompt": "1.1",
+    "version_rubrica": "4.0"
+  }
+}
