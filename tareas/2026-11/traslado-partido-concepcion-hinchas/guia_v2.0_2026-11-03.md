@@ -1,0 +1,255 @@
+# Guía docente · ¿Cuántos hinchas más habrían entrado si el partido se jugaba en Concepción?
+
+Tarea `2026-11-traslado-partido-concepcion-hinchas-v2` · guía versión 2 · 2026-11-03. Licencia CC BY-NC-SA 4.0. Generado desde `guia` (JSON, fuente de verdad).
+
+## 0. Ficha
+
+| Campo | Valor |
+|---|---|
+| Título | ¿Cuántos hinchas más habrían entrado si el partido se jugaba en Concepción? |
+| Noticia | La Tercera, «La estrella 35 a la vista: la limitada fiesta que tendrá Colo Colo en Chillán en la visita a Ñublense», 2026-11-02, https://www.latercera.com/el-deportivo/noticia/la-estrella-35-a-la-vista-la-limitada-fiesta-que-tendra-colo-colo-en-chillan-en-la-visita-a-nublense/ |
+| Nivel principal | P |
+| Variantes | S |
+| Contenidos | proporcionalidad directa; porcentajes simples; comparación de cantidades; estimación |
+| Tiempo | 2 sesiones de 45 min |
+| Puntaje RUB01 | 24/24 |
+| Versión y fecha | v2 · 2026-11-03 |
+| Cambios | rev. 2 de la guía: correcciones de texto de la revisión humana 2 (Carlos Rojas Bruna): rutas de E1 y E3 por corrida, B45 z4 y supuesto del viaje de hinchas |
+
+## 1. Meta de la clase (C1)
+
+Observar si los grupos distinguen entre capacidad del estadio y público realmente autorizado, si eligen y declaran un criterio para estimar el público en Concepción, si pasan de comparar capacidades a una relación proporcional, y si contrastan su estimación con asistencias reales y la comunican con sus límites en una nota periodística.
+
+**Contenido.** Proporcionalidad directa, porcentajes simples, comparación de cantidades y estimación, aplicados a la capacidad y al aforo de los estadios de Chillán y Concepción.
+
+**Subcompetencias de modelación.**
+
+- Comprender la situación: separar capacidad de aforo autorizado (P1-MRS)
+- Simplificar: elegir el criterio para estimar el público en Concepción y decidir qué factores dejar de lado (P2-RM)
+- Matematizar: escribir una relación proporcional o aditiva entre capacidad y público permitido (P3-MM)
+- Trabajar con el modelo: calcular el público posible y la diferencia con Chillán (P4-WM)
+- Interpretar: decir qué significa la diferencia para los hinchas, con al menos un factor no matemático (P5-INT)
+- Validar: contrastar con asistencias reales informadas en prensa y ajustar con razones (P6-VAL)
+- Comunicar: redactar la nota con cantidades, supuestos y recomendación (P7-EXP)
+
+**Meta social.** Trabajo cooperativo en grupos pequeños: cada grupo explica en voz alta sus decisiones de modelación y las defiende ante otros grupos que eligieron un criterio distinto.
+
+**Evidencia que se recoge.**
+
+- Hoja de supuestos con la lista de tarjetas pedidas (R2, R3 o R4) y el motivo de cada pedido (P2-RM)
+- Esquema o regla de tres escrita para pasar de Chillán a Concepción (P3-MM)
+- Cálculos con porcentajes, multiplicaciones y restas, con el criterio elegido a la vista (P4-WM)
+- Frase de conclusión que incluya al menos un factor no matemático, como viaje o seguridad (P5-INT)
+- Comparación entre su estimación y asistencias reales informadas en prensa, con el ajuste razonado (P6-VAL)
+- Nota periodística breve con las cantidades, los supuestos y la recomendación (P7-EXP)
+
+## 2. Análisis a priori del espacio de soluciones (C2)
+
+### Rutas
+
+| Ruta | Nombre | Nivel | Modelo |
+|---|---|---|---|
+| R1 | Misma fracción de ocupación | P | Proporción 7.500/12.000 = 62,5% aplicada a 30.000. |
+| R2 | Razón entre capacidades | P | 30.000/12.000 = 2,5; el público permitido se multiplica por 2,5. |
+| R3 | Estadio completo | P | Aforo igual a la capacidad de Concepción y resta con el aforo de Chillán. |
+| R4 | Función del porcentaje de ocupación | S1 | Hinchas más = p x 30.000 - 7.500, con p variable. |
+
+### Modelo inadecuado (RX)
+
+Restar capacidades (30.000 - 12.000 = 18.000 más) ignora que en Chillán el público permitido era solo 7.500 y que en Concepción tampoco necesariamente se llenaría; compara capacidades en lugar de público realmente autorizado.
+
+### Solución de referencia
+
+1) Distinguir capacidad y aforo en Chillán: 7.500 de 12.000 = 62,5%. 2) Elegir un criterio para Concepción: (a) mismo porcentaje: 62,5% x 30.000 = 18.750; (b) estadio completo: 30.000; (c) un porcentaje menor, por ejemplo la mitad: 15.000. 3) Diferencia con Chillán: 18.750 - 7.500 = 11.250 más; 30.000 - 7.500 = 22.500 más; 15.000 - 7.500 = 7.500 más. 4) Interpretar con factores como viaje y seguridad, y declarar como supuesto cuántos hinchas viajarían desde Chillán (la noticia no lo informa). 5) Contrastar con asistencias reales. Resultado: Con la misma fracción de ocupación (62,5%), unos 18.750 hinchas en Concepción, es decir 11.250 más que en Chillán, aproximadamente 2,5 veces el público.
+
+**Rango aceptable.** Entre 7.500 y 22.500 hinchas más, según el aforo supuesto para Concepción; la respuesta debe ser coherente con el criterio elegido.
+
+### Barreras anticipadas por fase
+
+| Fase | Barrera |
+|---|---|
+| P1-MRS | Se anticipa el bloqueo B12: los grupos pueden quedarse con las dos capacidades (12 mil y 30 mil) como datos principales y no ver que lo que se compara es el público permitido en Chillán (7,5 mil) con el que podría permitirse en Concepción. También puede costar leer 7,5 como 7,5 mil fanáticos y no como un número suelto. |
+| P2-RM | Se anticipa el bloqueo B23: el enunciado no dice cuánto público autorizaría Concepción, y a los grupos les cuesta decidir un criterio (todo el estadio, la misma fracción de ocupación u otro) y declararlo como supuesto. También pueden suponer sin decirlo que los hinchas llenarían todas las entradas permitidas, o mezclar viaje y seguridad con el cálculo antes de fijar el criterio. |
+| P3-MM | Se anticipa el bloqueo B34: pasar del criterio elegido a una relación escrita, sea proporcional o aditiva. El modelo inadecuado más probable es restar capacidades (30.000 - 12.000), que compara estadios y no público autorizado, porque en Chillán el público permitido era solo 7,5 mil y en Concepción tampoco se llenaría necesariamente. Otra dificultad es no reconocer que la fracción de ocupación de Chillán se puede trasladar a Concepción. |
+| P4-WM | Se anticipa el bloqueo B45: calcular con porcentajes, aplicar el porcentaje sobre la capacidad correcta y luego restar el público de Chillán. Puede haber errores al operar con miles o al confundir qué cantidad se resta de cuál, y los grupos pueden no revisar si el resultado es coherente con el criterio elegido. |
+| P5-INT | Se anticipa el bloqueo B56: los grupos pueden quedarse con la cifra de hinchas más como respuesta final, sin decir qué significa para los hinchas ni si convenía trasladar el partido. Los factores no matemáticos (viaje, seguridad) suelen quedar fuera si no se piden de forma explícita, y cuántos hinchas viajarían desde Chillán es un supuesto que hay que declarar: la noticia no lo dice. |
+| P6-VAL | Se anticipa el bloqueo B67: no se acostumbra contrastar un modelo con datos externos. Los grupos pueden dar por buena su estimación sin buscar asistencias reales en prensa, o encontrarlas y no compararlas con el porcentaje de ocupación que usaron. También puede costar ajustar el supuesto con razones y no solo cambiar el número. |
+
+## 3. Organización (C3, C4, C7)
+
+| Momento | Tiempo | Qué hacen los estudiantes | Qué hace el docente |
+|---|---|---|---|
+| Comprensión y trabajo grupal (primera sesión) | 30 min | Leen el enunciado y los datos de capacidad y aforo (R1). Explican con sus palabras qué cantidades se comparan. Deciden cómo estimar el público en Concepción, anotan sus supuestos y piden, si lo consideran necesario, las tarjetas R2, R3 o R4. Escriben una relación entre Chillán y Concepción y empiezan a calcular. | Circula y diagnostica sin intervenir aún: pregunta qué han hecho y qué cantidades comparan. Registra qué ruta sigue cada grupo (misma fracción de ocupación, razón entre capacidades, estadio completo, resta de capacidades). Entrega las tarjetas solo cuando las piden. No entrega la regla, el modelo ni el resultado. |
+| Puesta en común (primera sesión) | 15 min | Grupos con criterios distintos presentan su supuesto, su relación y su resultado, y se hacen preguntas entre sí sobre qué cantidad compara cada uno. | Elige grupos con rutas diferentes, incluida la que resta capacidades si aparece. Ordena la discusión sin decir cuál es correcta y pide que cada grupo explique por qué su criterio es razonable. Deja abierta la pregunta de qué cantidad se está comparando en cada caso. |
+| Trabajo grupal: interpretación, validación y nota (segunda sesión) | 35 min | Terminan los cálculos y escriben la frase de conclusión con al menos un factor no matemático. Buscan en prensa asistencias reales de otros partidos de Colo Colo en estadios de distinto tamaño y comparan el porcentaje de ocupación real con el que usaron. Ajustan sus supuestos con razones y redactan la nota periodística con cantidades, supuestos y recomendación. | Circula y diagnostica antes de ayudar: pregunta qué han hecho y qué evidencia usan. La ayuda mínima va primero, en forma de pregunta (qué significa esta diferencia para un hincha, con qué datos reales se podría contrastar). No entrega el modelo ni el resultado de la solución de referencia. |
+| Validación y cierre (segunda sesión) | 10 min | Algunos grupos leen su nota y explican cómo cambió su estimación al contrastarla con asistencias reales. Comparan qué supuestos movieron más el resultado. | Guía la comparación entre notas: qué cantidades aparecen, qué supuestos se declaran y qué límites se reconocen. Cierra con el ciclo de modelación completo, nombrando dónde decidió cada grupo y qué cambió tras validar. |
+
+**Agrupamiento.** Grupos pequeños y estables durante las dos sesiones, formados para que cada integrante pueda hablar. En la puesta en común se reagrupa por criterio elegido, para comparar rutas distintas.
+
+**Roles.** Cada grupo asigna, y rota entre sesiones, quien registra la hoja de supuestos, quien lleva los cálculos, quien pide las tarjetas y quien presenta ante el curso. Todos deben poder explicar el criterio elegido.
+
+**Producciones que se registran.**
+
+- Hoja de supuestos con las tarjetas pedidas
+- Esquema o regla de tres para pasar de Chillán a Concepción
+- Cálculos con el criterio elegido
+- Frase de conclusión con al menos un factor no matemático
+- Comparación con asistencias reales de prensa y ajuste razonado
+- Nota periodística breve con cantidades, supuestos y recomendación
+
+**Tecnología.** Calculadora permitida en P4-WM, solo para operar. Buscador y sitios de prensa permitidos en P6-VAL, para obtener asistencias reales de otros partidos. Procesador de texto permitido en P7-EXP, para redactar la nota. No se usa tecnología para elegir el criterio ni para decidir qué factores considerar (P2-RM, P3-MM, P5-INT).
+
+## 4. Escenarios simulados (C2, C6)
+
+Derivados de las trazas del simulador; cada escenario cita las corridas que lo respaldan.
+
+### E1 · ruta esperada con dos criterios
+
+| Campo | Valor |
+|---|---|
+| Corridas | N3_AA_r1, N4_VV_r1 |
+| Perfil del grupo | N3_AA_r1: tramo P, nivel N3, estilo AA. N4_VV_r1: tramo P, nivel N4, estilo VV. Ruta: la de N3_AA_r1; N4_VV_r1 siguió P2-RM → P4-WM → P5-INT → P7-EXP. |
+| Ruta observada | P4-WM → P3-MM → P4-WM → P5-INT → P7-EXP |
+| Supuestos que emergieron | Concepción con el estadio completo (30 000); mismo porcentaje de ocupación que en Chillán (62,5 %); a los hinchas de Colo Colo Concepción les queda más lejos, por lo que podrían viajar menos; Concepción con el mismo porcentaje de aforo que Chillán (62,5%) |
+| Modelo al que llegaron | proporcional |
+| Dónde se trabaron y cómo se destrabaron | sin bloqueos |
+
+**Qué aprende el curso.** El curso ve que la cantidad de hinchas más no es un número único: depende del aforo que se suponga para Concepción. N3_AA_r1 parte restando con el estadio lleno, se pregunta si allá también habría límite y agrega un segundo criterio, la misma fracción de ocupación que en Chillán. N4_VV_r1 plantea de entrada la duda sobre el límite (nombra el estadio lleno solo como hipótesis) y pasa enseguida a la fracción de ocupación. Comparado con E2 y E3, muestra que nombrar el supuesto convierte la respuesta en un rango justificado. También muestra un límite: ninguno de los dos contrasta su porcentaje con asistencias reales de otros partidos, así que la validación queda pendiente.
+
+**Extracto de diálogo simulado.**
+
+> **Cami:** Okey, primero lo de cuántos más: en Chillán dejaron 7,5 mil y en Concepción caben 30 mil, entonces 30 000 − 7 500 = 22 500 hinchas más, ¿no? Aunque ojo, ahí no sé si en Concepción también iban a dejar solo una parte.  
+> **Fran:** Sí, 22 500 sale si llenaran todo Concepción, pero buena observación: si dejaran el mismo porcentaje que en Chillán, que es 7 500 : 12 000 = 0,625, o sea 62,5 %, serían 30 000 × 0,625 = 18 750. ¿Y si pedimos el dato de cuánto permitirían allá?  
+> **Cami:** Ya, entonces con ese porcentaje la diferencia sería 18 750 − 7 500 = 11 250 hinchas más, y si llenan todo serían 22 500, así que damos las dos cifras. Pidamos también el aforo permitido en Concepción, la distancia entre las dos ciudades y cuánto costaría viajar.  
+
+### E2 · asoma la resta de capacidades
+
+| Campo | Valor |
+|---|---|
+| Corridas | N1_AA_r1 |
+| Perfil del grupo | Tramo P, nivel N1, estilo AA. |
+| Ruta observada | P3-MM → P4-WM → P2-RM → P4-WM → P3-MM → P4-WM → P7-EXP |
+| Supuestos que emergieron | en Concepción entrarían los 30 mil (estadio lleno); el resultado depende de lo que autoricen en Concepción; escenario hipotético: en Chillán dejan llenar los 12 mil |
+| Modelo al que llegaron | diferencia aditiva |
+| Dónde se trabaron y cómo se destrabaron | sin bloqueos |
+
+**Qué aprende el curso.** El grupo distingue al principio capacidad de aforo autorizado, pero más adelante propone restar las dos capacidades, que es el modelo inadecuado previsto en la tarea, y quiere anotarlo como una segunda comparación. El curso puede discutir qué compara cada resta: una compara público permitido y la otra compara tamaños de estadio. Frente a E1, se ve que tener el supuesto escrito no basta si después se mezcla con otra comparación que lo contradice.
+
+**Extracto de diálogo simulado.**
+
+> **Cami:** Ah, es verdad, la capacidad autorizada no es lo mismo que cuántos dejarían entrar. Podríamos pedir ese dato, ¿o hacemos como si entraran 30 mil, y después anotamos que depende?  
+> **Cami:** Sí, anotémoslo así: 4 veces la gente y 22,5 mil más. Pero el estadio de Chillán tiene capacidad para 12 mil, ¿y si después dejan entrar más, la diferencia sería 30 - 12 = 18 mil, no?  
+> **Fran:** Sí, 30 - 12 = 18, o sea 18 mil más si en Chillán dejaran llenar el estadio. Entonces anotemos las dos comparaciones: 22,5 mil más que los 7,5 mil permitidos y 18 mil más que la capacidad de 12 mil, ¿te parece?  
+
+### E3 · estadio lleno con apoyo visual
+
+| Campo | Valor |
+|---|---|
+| Corridas | N2_VV_r1, N1_VV_r1 |
+| Perfil del grupo | N2_VV_r1: tramo P, nivel N2, estilo VV. N1_VV_r1: tramo P, nivel N1, estilo VV. Ruta: la de N2_VV_r1; N1_VV_r1 siguió P1-MRS → P3-MM → P4-WM → P2-RM → P4-WM → P2-RM → P7-EXP. |
+| Ruta observada | P3-MM → P2-RM → P4-WM → P6-VAL → P5-INT → P7-EXP |
+| Supuestos que emergieron | en Concepción se llena el estadio completo (30 mil); en Chillán entran 7,5 mil; alternativa condicional: en Concepción se autoriza un poco más de la mitad, como en Chillán |
+| Modelo al que llegaron | diferencia aditiva |
+| Dónde se trabaron y cómo se destrabaron | sin bloqueos |
+
+**Qué aprende el curso.** Estos grupos se quedan con el estadio lleno como criterio principal. Con dibujos, uno separa el público total de los hinchas que se suman; el otro estima a ojo la fracción ocupada en Chillán y la deja como condición. El curso compara este razonamiento visual con el proporcional de E1. Ambos notan que en Concepción también podría haber límite, pero E1 lo convierte en un cálculo y aquí queda como pregunta o estimación aproximada.
+
+**Extracto de diálogo simulado.**
+
+> **Fran:** Ya po, anotemos todo eso. Y mira, 7 500 + 7 500 + 7 500 + 7 500 = 30 000, o sea en Concepción cabría cuatro veces más gente, ¡eso sí que cambiaría la fiesta!  
+> **Cami:** [dibujo: 4 cuadraditos de 7 500 en fila, el primero pintado] Mira, el primero ya cabe en Chillán, así que los que se suman son 3 cuadraditos, o sea 22 500. ¿Será que son cuatro veces la gente, pero no cuatro veces más?  
+> **Fran:** ¡Ah, claro! Se ve en el dibujo: son cuatro veces la gente, pero los que se suman son 3 cuadraditos, o sea 22 500 más. Pongamos eso en la nota y después lo de los kilómetros, las entradas ya compradas y la seguridad, ¿ya?  
+
+### E4 · duda del supuesto de llenado
+
+| Campo | Valor |
+|---|---|
+| Corridas | N4_AA_r1 |
+| Perfil del grupo | Tramo P, nivel N4, estilo AA. |
+| Ruta observada | P4-WM → P3-MM → P6-VAL → P7-EXP |
+| Supuestos que emergieron | Concepción con estadio completo (30 000); Concepción con el mismo porcentaje de aforo que Chillán (62,5 %); Los hinchas comprarían todas las entradas permitidas (puesto en duda); Distancia Chillán–Concepción de unos 100 km (por confirmar) |
+| Modelo al que llegaron | proporcional |
+| Dónde se trabaron y cómo se destrabaron | sin bloqueos |
+
+**Qué aprende el curso.** Llega al mismo rango que E1, pero revisa un supuesto que los demás dan por cierto: que los hinchas compren todas las entradas permitidas. Si la demanda es baja, el traslado no cambia nada. El grupo también marca como dato por confirmar una distancia que no le entregaron. El curso aprende que validar incluye cuestionar los supuestos y separar los datos propios de los que hay que verificar. Lo que este escenario no hace es contrastar con asistencias reales.
+
+**Extracto de diálogo simulado.**
+
+> **Fran:** Sí, y también habría que pedir cuántas entradas se vendieron o cuántos socios hay, porque si piden solo 12 mil entradas, el traslado no cambiaría nada. Además, ¿cuánto cuesta el viaje, hay seguridad y transporte suficiente, y hay otro partido ese día en el estadio de Concepción?  
+> **Fran:** DE ACUERDO. Solo agregaría que Chillán y Concepción quedan a unos 100 km, pero eso lo tendríamos que confirmar, porque no es un dato que tengamos.  
+
+
+Tabla agregada: ninguno de los 6 grupos simulados registró bloqueos.
+
+## 5. Intervenciones graduadas por bloqueo anticipado (C5, C6)
+
+La ayuda mínima primero; diagnosticar antes de intervenir. Ninguna ayuda entrega la regla.
+
+| Bloqueo | Z1–Z2 motivación / retroalimentación | Z3 estratégica general | Z4 estratégica de contenido | Z5 contenido (último recurso) |
+|---|---|---|---|---|
+| B12 | Pregunten: ¿qué cantidades del enunciado están comparando y de dónde sale cada una? Reconozcan lo que ya hayan identificado antes de seguir. Este bloqueo viene del mapa del ciclo y no se observó en las corridas simuladas. | Hagan un dibujo de los dos estadios, el de Chillán y el de Concepción. Marquen en cada uno cuánta gente cabe y cuánta se dejó entrar. | ¿Capacidad del estadio y público permitido son lo mismo? ¿Qué cantidad de Chillán se compara con qué cantidad de Concepción? En E2 el grupo distinguió ambas ideas apenas se lo preguntó. | Pídanles que ubiquen en el enunciado la cifra del público permitido en Chillán y la capacidad de Concepción, y que expliquen con sus palabras qué representa cada una. No indiquen qué operación hacer. |
+| B23 | Pregunten: ¿qué supuestos han puesto hasta ahora para Concepción y cuáles faltan? Pidan que lean en voz alta lo que han anotado. Este bloqueo viene del mapa del ciclo y no se observó en las corridas simuladas. | Armen una tabla con tres columnas: lo que sabemos, lo que suponemos y lo que necesitamos pedir. | Si la autoridad de Concepción aún no informa cuánto público permitiría, ¿qué formas distintas se les ocurren para estimarlo? ¿Qué factores dejarían fuera y por qué? En E1 y E4 los grupos pidieron datos y fijaron más de un criterio. | Ofrezcan la tarjeta a solicitud R2 (aforo posible en Concepción), que dice que ese dato no está informado y que el grupo debe decidir cómo estimarlo. Si lo piden, ofrezcan también la tarjeta R3 (viaje de los hinchas). Ninguna da el criterio a usar. |
+| B34 | Pregunten: ¿cómo piensan pasar de lo que ocurrió en Chillán a lo que podría ocurrir en Concepción? Pídanles que muestren lo que ya escribieron. Este bloqueo viene del mapa del ciclo y no se observó en las corridas simuladas. | Hagan un esquema o una tabla con lo que cambia y lo que se mantiene entre las dos ciudades. | ¿Qué relación hay en Chillán entre el público permitido y la capacidad del estadio? ¿Esa relación les serviría para Concepción? ¿Sumar o multiplicar describe mejor lo que quieren comparar? | Pídanles que prueben su relación en un caso más simple, donde ya sepan la respuesta, y vean si funciona. Si trabajan la variante de S1 y necesitan estimar buses, ofrezcan la tarjeta a solicitud R4 (transporte de hinchas). No escriban la relación por ellos. |
+| B45 | Pregunten: ¿qué cálculos han hecho y qué significa cada resultado? Pidan que nombren la cantidad que obtuvieron en cada paso. Este bloqueo viene del mapa del ciclo y no se observó en las corridas simuladas. | Escriban junto a cada cálculo una frase que diga qué cantidad es: público, capacidad o diferencia. | En cada resta, ¿qué están comparando: público permitido o tamaño de estadio? ¿Responde eso a cuántos hinchas más podrían ver el partido? En E3 la frase "cuatro veces la gente" se separó de "cuántos más" al rotular el dibujo; en E2 el grupo se quedó con "4 veces más gente". | Revisen con ellos paso a paso un cálculo propio, con los números del enunciado y con cada cantidad rotulada. Si una resta mezcla capacidad con público permitido, pídanles que expliquen por qué esa resta respondería a la pregunta de los hinchas. No digan cuál es el resultado correcto. |
+| B56 | Pregunten: si tuvieran que decirle a un lector qué significa su diferencia, ¿qué le dirían? Escuchen y reconozcan lo que ya incluyeron. Este bloqueo viene del mapa del ciclo y no se observó en las corridas simuladas. | Imaginen a un hincha de Chillán que lee la nota. Anoten qué le importaría además del número. | ¿Qué factores no matemáticos podrían cambiar la decisión de trasladar el partido? ¿Cómo afectaría cada uno al número que calcularon? Los grupos de E1, E3 y E4 mencionaron viaje, seguridad, entradas y otros partidos. | Si piden información sobre el viaje, entreguen la tarjeta a solicitud R3. Luego pídanles que escriban una frase de conclusión que combine su cantidad con al menos un factor no matemático. No redacten la conclusión por ellos. |
+| B67 | Pregunten: ¿cómo saben que su estimación es razonable? ¿Qué han revisado hasta ahora? Este bloqueo viene del mapa del ciclo y no se observó en las corridas simuladas. En E1, E3 y E4 la validación con datos externos quedó pendiente o parcial. | Hagan una lista de los datos de prensa que podrían buscar para comparar con su estimación. | ¿Qué información de otros partidos de Colo Colo en estadios de distinto tamaño les diría si el porcentaje de ocupación que usaron es razonable? ¿Qué harían con su supuesto si no coincide? | Orienten la búsqueda: asistencia informada en prensa de otros partidos de Colo Colo en estadios de distinto tamaño, comparando el porcentaje de ocupación real con el que ellos usaron. No les den cifras ni les digan cómo ajustar. |
+
+## 6. Puesta en común: orquestar soluciones múltiples (C8)
+
+### Selección y orden
+
+1. Anticipar y monitorear: antes de la clase, resuelvan la tarea por sus propias rutas. Durante el trabajo, anoten qué aforo supuso cada grupo para Concepción y si compararon público permitido o capacidades. No empiecen por su propia ruta.
+2. Primero E3: es el razonamiento más accesible, con dibujo y estadio lleno como criterio. Sirve para que todos vean la diferencia entre "cuatro veces la gente" y "cuántos se suman".
+3. Segundo E2: muestra la resta de capacidades junto a la resta con el público permitido. Se secuencia después de E3 para que el curso discuta qué compara cada resta y por qué una de ellas no responde la pregunta.
+4. Tercero E1: pasa del estadio lleno al mismo porcentaje de ocupación que en Chillán y presenta la respuesta como un rango justificado. Conecta con el dibujo de E3 y con la corrección de E2.
+5. Cuarto E4: cuestiona que los hinchas compren todas las entradas y separa datos propios de datos por confirmar. Cierra la secuencia llevando la discusión de los modelos a la validación.
+6. Conectar: pidan al curso ordenar los criterios de E1, E2, E3 y E4 por supuesto necesario y por qué cambia el resultado, sin declarar un único ganador.
+
+### Preguntas
+
+- ¿Qué supuesto sobre el público permitido en Concepción hizo cada grupo y qué cambia en el resultado si ese supuesto cambia?
+- ¿Qué compara cada resta que aparece en E2 y en E3? ¿Cuál responde a cuántos hinchas más podrían ver el partido?
+- ¿Por qué en E3 "cuatro veces la gente" no es lo mismo que "cuatro veces más"?
+- ¿Qué ventaja tiene usar el mismo porcentaje de ocupación de Chillán, como en E1, frente a suponer el estadio lleno? ¿Qué limitación tiene?
+- ¿Qué pasa con la respuesta si los hinchas no compran todas las entradas permitidas, como plantea E4?
+- ¿Qué datos del enunciado son seguros y cuáles hay que confirmar, como la distancia en E4?
+- ¿Qué factores no matemáticos cambiarían su recomendación sobre trasladar el partido y cómo los incluirían en la nota?
+- ¿Qué rango de respuestas les parece razonable y qué decisión de cada grupo lo justifica?
+
+### Contraste con la evidencia independiente
+
+Pidan a cada grupo que busque en prensa la asistencia informada de otros partidos de Colo Colo en estadios de distinto tamaño. Luego deben comparar el porcentaje de ocupación real de esos partidos con el que usó su modelo, sea el de Chillán, el estadio lleno u otro. Señalen que E1, E3 y E4 no hicieron este paso y que ahí queda pendiente la validación. Si el porcentaje real difiere del supuesto, el grupo ajusta el supuesto con una razón, recalcula y presenta el rango en la nota con sus límites. Esta guía no entrega datos de asistencia, así que las cifras salen de lo que los grupos encuentren.
+
+## 7. Evaluación del trabajo del estudiante
+
+Pendiente en PLT02 v0.1 (rúbrica por fase del ciclo); esta versión de la guía no la incluye.
+
+## 8. Variantes y continuidad (P3, C9)
+
+**Uso de variantes.** Variante hacia abajo: no existe (es null en variantes_detalle). Si un grupo se bloquea, se apoya con preguntas de diagnóstico y con las tarjetas a solicitud, sin cambiar la tarea. Variante hacia arriba (tramo S1): usarla con grupos que ya resolvieron la tarea base con el criterio de la misma fracción de ocupación y la validaron, o en cursos de nivel S1. Cambios que dice la tarea: comparar dos formas de estimar el aforo en Concepción (misma cantidad que en Chillán y misma proporción de la capacidad), expresar la cantidad de hinchas más en función del porcentaje de ocupación permitido, y estimar cuántos buses harían falta para llevar a los hinchas de Chillán. Se mantiene el contexto. La tarjeta R4 sobre los asientos de un bus interurbano común sirve de apoyo para la parte de buses. En la ruta R4 de la tarea, la función se puede trabajar con tabla o gráfico.
+
+**Acostumbramiento.** Si el grupo nunca ha modelado, conviene una actividad previa breve con una noticia deportiva sin cifras exactas: se pide listar qué datos faltan y qué se supondría para responder, y explicar con un recinto conocido la diferencia entre capacidad y público permitido. Así se practican P1-MRS y P2-RM antes de esta tarea. Esta tarea funciona como iniciación a la modelación de nivel P, con dos sesiones para recorrer el ciclo completo: supuestos, relación proporcional, interpretación, validación con prensa y nota. Puede ser parte de una secuencia que luego pase a la variante hacia arriba.
+
+**Tarea siguiente.** No definida.
+
+## 9. Materiales
+
+| Material | Archivo |
+|---|---|
+| tarea_pdf | tarea.pdf |
+| recursos_tarjetas | recursos.pdf |
+| notebook | escenarios.ipynb |
+| icono | icono.svg |
+
+## 10. Trazabilidad
+
+| Paso | Registro |
+|---|---|
+| Noticia | https://www.latercera.com/el-deportivo/noticia/la-estrella-35-a-la-vista-la-limitada-fiesta-que-tendra-colo-colo-en-chillan-en-la-visita-a-nublense/ |
+| Diseño | claude-sonnet-5-5, prompt 1.1 |
+| RUB01 | 24/24 |
+| Revisión humana 1 | Carlos Rojas Bruna (2026-11-03) |
+| Simulación | 6 grupos, diseño diseno_otm |
+| Guía | redactor: claude-sonnet-5-5, redactor_escenarios: claude-opus-5-5, version_prompt: 1.0 |
+| Revisión humana 2 | Carlos Rojas Bruna (2026-11-03) |
+| Commit | — |
