@@ -1,12 +1,12 @@
 {
   "tarea_id": "2026-10-dos-cifras-misma-noticia",
-  "estado": "borrador",
+  "estado": "archivada",
   "iteraciones": 0,
   "artefactos": {
     "tarea": {
       "id": "2026-10-dos-cifras-misma-noticia",
       "titulo": "Dos cuentas para un mismo tema: ¿cuál creerle?",
-      "estado": "borrador",
+      "estado": "archivada",
       "version": 1,
       "fecha": "2026-10-26",
       "noticia": {
@@ -285,6 +285,12 @@
       "fecha": "2026-10-26T16:32:32+00:00",
       "de": null,
       "a": "borrador"
+    },
+    {
+      "fecha": "2026-11-03T12:21:31+00:00",
+      "de": "borrador",
+      "a": "archivada",
+      "motivo": "revisión humana 1: tema inadecuado para el nivel P (Carlos Rojas Bruna)"
     }
   ],
   "marcas": {
@@ -325,12 +331,11 @@
     "evaluacion_inestable": false,
     "evaluacion_rango_total": 3,
     "evaluacion_corridas": "pipeline/state/trabajo/2026-10-dos-cifras-misma-noticia/evaluacion_corridas.json",
-    "ultimo_error": {
-      "tarea_id": "2026-10-dos-cifras-misma-noticia",
-      "estado": "borrador",
-      "etapa": "evaluador",
-      "error": "InvarianteViolada: Invariante 3: texto literal de la noticia\n  - 51 palabras consecutivas de la noticia (> 25): «2026 10 23 este es el argumento con que el gobierno anterior se opuso en tribunales a rebajar las condenas de agresores sexuales de ninos utm_source rss utm_medium rss utm_campaign este es el argumento con que el gobierno anterior se opuso en tribunales a rebajar las condenas de agresores sexuales de»",
-      "invariante": true
+    "revision_humana_1": {
+      "resultado": "negativa",
+      "revisor": "Carlos Rojas Bruna",
+      "fecha": "2026-11-03T12:21:31Z",
+      "motivo": "revisión humana 1: tema inadecuado para el nivel P"
     }
   }
 }

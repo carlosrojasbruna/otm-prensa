@@ -542,9 +542,47 @@ def test_rehacer_guia_por_revision_humana_2(rutas):
     exp = orq.cargar(TID, rutas.expedientes)
     assert exp.estado == "verificada" and exp.marcas["pendiente"] == "revision_humana_2"
     assert [h["a"] for h in exp.historial][-4:] == ["verificada", "simulada", "con_guia", "verificada"]
-    assert exp.historial[-3]["motivo"].startswith("revisión humana 2 rechaza la guía v1")
+    assert exp.historial[-3]["motivo"].startswith("revisión humana 2 rechaza la guía rev. 1")
     ctx = redacciones[-1]
-    assert ctx["observaciones_revision"] == obs and ctx["version"] == 2 and "v2" in ctx["cambios"]
+    v = exp.artefactos["tarea"]["version"]
+    assert ctx["observaciones_revision"] == obs and ctx["version"] == v and ctx["cambios"].startswith("rev. 2 de la guía")
+    assert exp.marcas["revision_2"]["revision_guia"] == 2 and exp.marcas["revision_2"]["version_guia"] == v
+
+    # segundo rechazo: rev. 3, misma versión
+    c3 = nuevo_ciclo(rutas, [], agentes=_agentes_tramo_b([True], redacciones))
+    c3.rehacer_guia({TID: ["otra"]}, revisor=REVISOR)
+    exp = orq.cargar(TID, rutas.expedientes)
+    assert exp.marcas["revision_2"]["revision_guia"] == 3 and redacciones[-1]["version"] == v
+
+
+def test_rehacer_guia_conserva_version_y_pasa_el_bibliotecario(rutas, tmp_path):
+    """Caso de cuanto-pagar-cada-mes-v2: la guía rehecha salía con versión 3 y la tarea con 2, y publicar.yml
+    (bibliotecario) la rechazaba. El redactor falso toma la versión de `contexto["version"]`, como el real
+    (redactor/run.py), y las entradas se validan con la misma función que usa el bibliotecario."""
+    from pipeline.agentes.bibliotecario import run as bib
+    tramo_a(rutas, [rub(OK_23)] * 3)
+    c = nuevo_ciclo(rutas, respuestas_simulador(6), agentes=_agentes_tramo_b([True], []))
+    c.continuar([TID], revisor=REVISOR)
+    exp = orq.cargar(TID, rutas.expedientes)
+    assert exp.estado == "verificada"
+    ag = _agentes_tramo_b([True], [])
+    redactar_base = ag.redactar
+
+    def redactar_como_el_real(tarea, trazas, transcripciones, contexto, **kw):
+        r = redactar_base(tarea, trazas, transcripciones, contexto, **kw)
+        r["guia"]["version"] = r["guia"]["ficha"]["version"] = contexto.get("version", 1)
+        r["guia"]["ficha"]["cambios"] = contexto.get("cambios", "")
+        return r
+    ag.redactar = redactar_como_el_real
+    llamadas = []
+    ag.publicar = lambda *a, **k: llamadas.append(a) or {"ruta": "x", "rama": "y", "lineas": []}
+    nuevo_ciclo(rutas, [], agentes=ag).rehacer_guia({TID: ["x"]}, revisor=REVISOR)
+    exp = orq.cargar(TID, rutas.expedientes)
+    guia, tarea = exp.artefactos["guia"], exp.artefactos["tarea"]
+    assert llamadas, "el ensayo del bibliotecario debe repetirse con la guía nueva"
+    assert guia["version"] == guia["ficha"]["version"] == tarea["version"]
+    assert guia["ficha"]["cambios"].startswith("rev. 2 de la guía")
+    bib._validar_entradas(tarea, guia, exp.artefactos["evaluacion"], exp.artefactos["trazas_resumen"], None)
 
 
 def test_rehacer_guia_exige_verificada_y_revisor(rutas):

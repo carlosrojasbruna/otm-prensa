@@ -20,8 +20,10 @@ lo inventa. Por eso:
     `--continuar` también reanuda expedientes que quedaron a medio camino (error o tope): retoma
     desde su estado actual; `--revisor` solo se exige si el expediente está en `evaluada`.
 
-Otras órdenes: `--estado` lista los expedientes y su estado. `--archivar ID ... --motivo M --revisor R` registra
-una revisión humana 1 negativa (`evaluada → archivada`, sin API).
+Otras órdenes: `--estado` lista los expedientes y su estado. `--archivar ID ... --motivo M --revisor R` archiva
+desde cualquier estado no terminal, sin API: en `borrador`/`evaluada` es una revisión humana 1 negativa; más adelante
+(versión intermedia reemplazada) queda la marca `archivo_humano`. `--continuar ID ... --hasta-evaluada` (sin
+`--revisor`) reanuda borradores solo hasta `evaluada`, pendientes de la revisión humana 1.
 
 Verificación previa (CP2): antes de pasar a `revisada` y antes de simular corre el verificador solo con código
 sobre la tarea (cifras buscadas en toda la nota, ±1 párrafo; fuentes de recursos; invariante 3). Un hallazgo crítico
@@ -1031,19 +1033,32 @@ class Ciclo:
 
     @_con_cierre_de_emergencia
     def continuar(self, ids: list[str], *, revisor: str | None = None,
-                  textos: Mapping[str, str] | None = None, aceptar_hallazgos: bool = False) -> dict:
+                  textos: Mapping[str, str] | None = None, aceptar_hallazgos: bool = False,
+                  hasta_evaluada: bool = False) -> dict:
         """Tramo B (o reanudación). `revisor` aprueba la revisión humana 1 de estos expedientes.
-        `aceptar_hallazgos`: el revisor leyó los hallazgos del verificador sobre la tarea y decide seguir igual."""
+        `aceptar_hallazgos`: el revisor leyó los hallazgos del verificador sobre la tarea y decide seguir igual.
+        `hasta_evaluada`: reanuda borradores (evaluador e iteraciones del diseñador) y se detiene en `evaluada`,
+        pendiente de la revisión humana 1; no admite revisor ni expedientes más allá de `evaluada`."""
+        if hasta_evaluada and (revisor or aceptar_hallazgos):
+            raise ValueError("hasta_evaluada no marca la revisión humana 1: va sin revisor ni aceptar_hallazgos")
         self._textos.update(textos or {})
-        self.registro["orden"] = "tramo_b"
+        self.registro["orden"] = "hasta_evaluada" if hasta_evaluada else "tramo_b"
         self.registro["parametros"].update({"ids": list(ids), "revisor": revisor,
-                                            "aceptar_hallazgos": aceptar_hallazgos})
+                                            "aceptar_hallazgos": aceptar_hallazgos,
+                                            **({"hasta_evaluada": True} if hasta_evaluada else {})})
         try:
             self.contador.verificar()
             for tid in ids:
                 exp = orq.cargar(tid, self.rutas.expedientes)
                 if exp.estado in orq.TERMINALES:
                     self.registro["errores"].append({"tarea_id": tid, "error": f"expediente en {exp.estado}"})
+                    continue
+                if hasta_evaluada:
+                    if exp.estado not in ("borrador", "evaluada"):
+                        self.registro["errores"].append({"tarea_id": tid, "error": f"hasta_evaluada exige `borrador` "
+                                                         f"o `evaluada`, está en {exp.estado}"})
+                        continue
+                    self.avanzar(exp)   # sin revisor: _tras_evaluar lo deja pendiente de la revisión humana 1
                     continue
                 if exp.marcas.get("hallazgos_tarea"):
                     if not (aceptar_hallazgos and revisor and revisor.strip()):
@@ -1154,27 +1169,36 @@ class Ciclo:
 
     @_con_cierre_de_emergencia
     def archivar(self, ids: list[str], *, motivo: str, revisor: str) -> dict:
-        """Revisión humana 1 negativa: `evaluada → archivada` con motivo y revisor (GOB01 §2). Sin API (costo 0).
-        Solo expedientes en `evaluada`; los demás se informan como error y no se tocan."""
+        """Archivo humano con motivo y revisor (GOB01 §2). Sin API (costo 0). Desde cualquier estado no terminal:
+        en `borrador` o `evaluada` es la revisión humana 1 negativa (marca `revision_humana_1`); más adelante
+        (p. ej. una versión intermedia reemplazada por la publicada) queda la marca `archivo_humano`. Los
+        terminales se informan como error y no se tocan. Archivar no borra artefactos ni `trabajo/<id>/`: las
+        versiones posteriores que apuntan a este expediente (`reusar_simulacion_de`, `guia_base_de`) lo siguen
+        leyendo."""
         if not (revisor and revisor.strip()) or not (motivo and motivo.strip()):
             raise ValueError("archivar exige `revisor` y `motivo` (revisión humana 1)")
         self.registro["orden"] = "archivar"
         self.registro["parametros"].update({"ids": list(ids), "revisor": revisor, "motivo": motivo})
         for tid in ids:
             exp = orq.cargar(tid, self.rutas.expedientes)
-            if exp.estado != "evaluada":
-                self.registro["errores"].append({"tarea_id": tid, "error": f"archivar exige `evaluada`, está en {exp.estado}"})
+            if exp.estado in orq.TERMINALES:
+                self.registro["errores"].append({"tarea_id": tid, "error": f"archivar: el expediente ya está en "
+                                                 f"{exp.estado} (terminal)"})
                 continue
             exp.marcas.pop("pendiente", None)
-            exp.marcas["revision_humana_1"] = {"resultado": "negativa", "revisor": revisor.strip(),
-                                               "fecha": ahora_utc(), "motivo": motivo.strip()}
+            marca = {"revisor": revisor.strip(), "fecha": ahora_utc(), "motivo": motivo.strip()}
+            if exp.estado in ("borrador", "evaluada"):
+                exp.marcas["revision_humana_1"] = {"resultado": "negativa", **marca}
+            else:
+                exp.marcas["archivo_humano"] = {"estado_previo": exp.estado, **marca}
             self._archivar(exp, f"{motivo.strip()} ({revisor.strip()})")
         return self._cerrar()
 
     @_con_cierre_de_emergencia
     def rehacer_guia(self, observaciones: Mapping[str, list[str]], *, revisor: str) -> dict:
         """La revisión humana 2 rechaza la guía: `verificada → simulada` y se reescribe desde las mismas trazas
-        con las observaciones del revisor (versión de guía + 1). Luego ilustrador, verificador y bibliotecario en
+        con las observaciones del revisor. La guía conserva la versión de la tarea; sube la revisión de la guía
+        (`marcas.revision_2.revision_guia`, 2 en el primer rechazo) y queda en `ficha.cambios`. Luego ilustrador, verificador y bibliotecario en
         dry-run; el expediente vuelve a quedar pendiente de la revisión humana 2."""
         if not (revisor and revisor.strip()):
             raise ValueError("rehacer la guía exige `revisor` (revisión humana 2)")
@@ -1188,13 +1212,20 @@ class Ciclo:
                     self.registro["errores"].append(
                         {"tarea_id": tid, "error": f"rehacer guía exige `verificada`, está en {exp.estado}"})
                     continue
-                version = int(exp.artefactos["guia"].get("version", 1)) + 1
+                # La guía es de una versión de la tarea: `guia.version` = `tarea.version` (lo exige el bibliotecario).
+                # La revisión de la guía dentro de esa versión (1 = la original) va en la marca y en ficha.cambios;
+                # el contrato `guia` no tiene un campo propio para ella.
+                previa = exp.marcas.get("revision_2") or {}
+                rev = int(previa.get("revision_guia") or (2 if previa else 1)) + 1
                 exp.marcas["revision_2"] = {"revisor": revisor, "fecha": ahora_utc(), "observaciones": list(obs),
-                                            "version_guia": version,
-                                            "cambios": f"v{version}: correcciones de la revisión humana 2 ({revisor})"}
+                                            "version_guia": int(exp.artefactos["tarea"]["version"]),
+                                            "revision_guia": rev,
+                                            "cambios": f"rev. {rev} de la guía: correcciones de la revisión humana 2 "
+                                                       f"({revisor})"}
                 exp.marcas.pop("pendiente", None)
+                exp.marcas.pop("bibliotecario_dry_run", None)   # la guía nueva vuelve a pasar el ensayo
                 exp = self._transicionar(exp, "simulada", revisor=revisor, motivo=(
-                    f"revisión humana 2 rechaza la guía v{version - 1} ({len(obs)} observaciones)"))
+                    f"revisión humana 2 rechaza la guía rev. {rev - 1} ({len(obs)} observaciones)"))
                 self.avanzar(exp)
         except TopeAlcanzado as e:
             self._detener(e)
@@ -1289,9 +1320,13 @@ def main(argv: list[str] | None = None) -> int:
                     help="con --continuar y --revisor: el revisor leyó los hallazgos del verificador sobre la tarea "
                          "(marca hallazgos_tarea) y decide seguir igual")
     ap.add_argument("--archivar", nargs="+", metavar="TAREA_ID",
-                    help="revisión humana 1 negativa: evaluada → archivada (exige --motivo y --revisor; sin API)")
+                    help="archivo humano desde cualquier estado no terminal (en borrador/evaluada: revisión humana 1 "
+                         "negativa); exige --motivo y --revisor; sin API")
     ap.add_argument("--version-sin-cambios", nargs="+", metavar="TAREA_ID",
                     help="rescate de un falso rechazo: v+1 idéntica que hereda la evaluación (exige --motivo; sin API)")
+    ap.add_argument("--hasta-evaluada", action="store_true",
+                    help="con --continuar y sin --revisor: reanuda borradores solo hasta `evaluada` (pendiente de la "
+                         "revisión humana 1)")
     ap.add_argument("--motivo", help="con --archivar o --version-sin-cambios: motivo que queda en el expediente")
     a = ap.parse_args(argv)
 
@@ -1318,6 +1353,10 @@ def main(argv: list[str] | None = None) -> int:
         reg = ciclo.version_sin_cambios(a.version_sin_cambios, motivo=a.motivo)
         print(_resumen(reg))
         return 1 if reg["errores"] else 0
+    if a.hasta_evaluada and not a.continuar:
+        ap.error("--hasta-evaluada va con --continuar")
+    if a.hasta_evaluada and (a.revisor or a.aceptar_hallazgos):
+        ap.error("--hasta-evaluada no marca la revisión humana 1: va sin --revisor ni --aceptar-hallazgos")
     if a.aceptar_hallazgos and not (a.continuar and a.revisor):
         ap.error("--aceptar-hallazgos va con --continuar y --revisor")
     if a.nueva_version:
@@ -1345,7 +1384,7 @@ def main(argv: list[str] | None = None) -> int:
         if texto and len(a.continuar) != 1:
             ap.error("--texto-noticia exige un solo id")
         reg = ciclo.continuar(a.continuar, revisor=a.revisor, textos={a.continuar[0]: texto} if texto else None,
-                              aceptar_hallazgos=a.aceptar_hallazgos)
+                              aceptar_hallazgos=a.aceptar_hallazgos, hasta_evaluada=a.hasta_evaluada)
     else:
         noticias = _leer_noticias(a.noticia) if a.noticia else None
         textos = None
