@@ -1,20 +1,20 @@
 # DRY-RUN: no se escribe ningún archivo ni se ejecuta ningún comando
 # tarea 2026-10-cuanto-pagar-cada-mes-v2 v2 -> tareas/2026-10/cuanto-pagar-cada-mes/
-#   escribiría tareas/2026-10/cuanto-pagar-cada-mes/tarea_v2.0_2026-10-26.json
-#   escribiría tareas/2026-10/cuanto-pagar-cada-mes/tarea_v2.0_2026-10-26.md
-#   escribiría tareas/2026-10/cuanto-pagar-cada-mes/guia_v2.0_2026-10-26.json
-#   escribiría tareas/2026-10/cuanto-pagar-cada-mes/guia_v2.0_2026-10-26.md
-#   escribiría tareas/2026-10/cuanto-pagar-cada-mes/evaluacion_v2.0_2026-10-26.json
-#   escribiría tareas/2026-10/cuanto-pagar-cada-mes/trazas_v2.0_2026-10-26.json
-#   actualizaría tareas/catalogo.json (5 tarea(s); valida contra `catalogo`)
+#   escribiría tareas/2026-10/cuanto-pagar-cada-mes/tarea_v2.0_2026-11-03.json
+#   escribiría tareas/2026-10/cuanto-pagar-cada-mes/tarea_v2.0_2026-11-03.md
+#   escribiría tareas/2026-10/cuanto-pagar-cada-mes/guia_v2.0_2026-11-03.json
+#   escribiría tareas/2026-10/cuanto-pagar-cada-mes/guia_v2.0_2026-11-03.md
+#   escribiría tareas/2026-10/cuanto-pagar-cada-mes/evaluacion_v2.0_2026-11-03.json
+#   escribiría tareas/2026-10/cuanto-pagar-cada-mes/trazas_v2.0_2026-11-03.json
+#   actualizaría tareas/catalogo.json (7 tarea(s); valida contra `catalogo`)
 #   el commit del catálogo es el real tras el primer commit (aquí 0000000)
-$ git switch -c tareas/semana-2026-W44
+$ git switch -c tareas/semana-2026-W45
 $ git add -- tareas/2026-10/cuanto-pagar-cada-mes/
 $ git commit -m 'tareas: publica 2026-10-cuanto-pagar-cada-mes-v2 v2'
 $ git add -- tareas/catalogo.json
 $ git commit -m 'tareas: catálogo: 2026-10-cuanto-pagar-cada-mes-v2 v2'
-$ git push -u origin tareas/semana-2026-W44
-$ gh pr create --base main --head tareas/semana-2026-W44 --title 'Tareas de la semana 2026-W44' --body '<cuerpo del PR, ver abajo>'
+$ git push -u origin tareas/semana-2026-W45
+$ gh pr create --base main --head tareas/semana-2026-W45 --title 'Tareas de la semana 2026-W45' --body '<cuerpo del PR, ver abajo>'
 # cuerpo del PR:
 #   ## Tareas incluidas
 #   
