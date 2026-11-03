@@ -1,0 +1,515 @@
+{
+  "tarea_id": "2026-11-traslado-partido-concepcion-hinchas",
+  "estado": "evaluada",
+  "iteraciones": 1,
+  "artefactos": {
+    "tarea": {
+      "id": "2026-11-traslado-partido-concepcion-hinchas",
+      "titulo": "¿Cuántos hinchas más habrían entrado si el partido se jugaba en Concepción?",
+      "estado": "evaluada",
+      "version": 1,
+      "fecha": "2026-11-02",
+      "noticia": {
+        "noticia_id": "2026-11-02-latercera-la-estrella-35-a-la-vista",
+        "medio": "La Tercera",
+        "titulo": "La estrella 35 a la vista: la limitada fiesta que tendrá Colo Colo en Chillán en la visita a Ñublense",
+        "fecha": "2026-11-02",
+        "url": "https://www.latercera.com/el-deportivo/noticia/la-estrella-35-a-la-vista-la-limitada-fiesta-que-tendra-colo-colo-en-chillan-en-la-visita-a-nublense/",
+        "resumen_propio": "Colo Colo, tras golear 6-1 a Universidad de Concepción, podría coronarse campeón con una victoria sobre Ñublense en Chillán. La Delegación Presidencial local redujo el aforo del estadio y se discute cómo repartir los sectores entre hinchas de ambos equipos. También se evaluó trasladar el partido a Concepción, pero esa solicitud no se tramitó a tiempo.",
+        "cifras_usadas": [
+          {
+            "valor": "6-1",
+            "unidad": "resultado del partido",
+            "que_es": "marcador con que Colo Colo goleó a Universidad de Concepción",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 1"
+            }
+          },
+          {
+            "valor": "35ª",
+            "unidad": "corona",
+            "que_es": "título de liga que aseguraría Colo Colo con una victoria sobre Ñublense",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 2"
+            }
+          },
+          {
+            "valor": "12 mil",
+            "unidad": "espectadores",
+            "que_es": "capacidad del estadio Nelson Oyarzún",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 6"
+            }
+          },
+          {
+            "valor": 7.5,
+            "unidad": "fanáticos",
+            "que_es": "aforo autorizado por la Delegación Presidencial para el partido",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 6"
+            }
+          },
+          {
+            "valor": "30 mil",
+            "unidad": "espectadores",
+            "que_es": "capacidad autorizada del estadio de Concepción",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 11"
+            }
+          }
+        ]
+      },
+      "nivel_principal": "P",
+      "variantes": {
+        "abajo": null,
+        "arriba": "S"
+      },
+      "area": "deporte",
+      "contenidos_matematicos": [
+        "proporcionalidad directa",
+        "porcentajes simples",
+        "comparación de cantidades",
+        "estimación"
+      ],
+      "tiempo_estimado": "2 sesiones de 45 min",
+      "estudiante": {
+        "enunciado_es": "Colo Colo, que goleó 6-1 a Universidad de Concepción, puede asegurar su 35ª corona con un triunfo en Chillán. Allí la autoridad permitió solo 7,5 mil fanáticos en un estadio con capacidad para 12 mil. Se habló de jugar el partido en Concepción, cuyo estadio tiene una capacidad autorizada de 30 mil espectadores, pero el trámite no se alcanzó a hacer a tiempo. Imaginen que lo hubieran pedido a tiempo. Ustedes son periodistas de un diario deportivo y deben explicar a los lectores si el traslado habría cambiado mucho la fiesta de los hinchas. ¿Cuántos hinchas más habrían podido ver el partido y qué otras cosas habría que considerar para decidir si convenía trasladarlo? Pueden pedir información adicional.",
+        "foto_descripcion": "Dibujo sencillo de un mapa con dos estadios marcados con íconos de balón, uno al norte y otro al sur, unidos por una línea de ruta, sin distancias ni números.",
+        "recursos_a_solicitud": [
+          {
+            "id": "R2",
+            "que_es": "Tarjeta sobre el aforo posible en Concepción",
+            "contenido": "Supuesto del escenario: la autoridad de Concepción aún no ha informado cuánto público autorizaría para este partido; el grupo debe decidir cómo estimarlo.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P2-RM",
+            "fuente": "supuesto del escenario"
+          },
+          {
+            "id": "R3",
+            "que_es": "Tarjeta sobre el viaje de los hinchas",
+            "contenido": "Supuesto del escenario: viajar entre Chillán y Concepción en bus toma un rato largo, pero se puede hacer en el día.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P2-RM",
+            "fuente": "supuesto del escenario"
+          },
+          {
+            "id": "R4",
+            "que_es": "Tarjeta sobre el transporte de hinchas",
+            "contenido": "Supuesto del escenario: los buses que llevarían hinchas tienen una cantidad de asientos parecida a la de un bus interurbano común.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P3-MM",
+            "fuente": "supuesto del escenario"
+          }
+        ]
+      },
+      "variantes_detalle": {
+        "abajo": null,
+        "arriba": {
+          "tramo": "S1",
+          "cambios": "Se pide además comparar dos formas de estimar el aforo en Concepción (misma cantidad que en Chillán, misma proporción de la capacidad) y expresar la cantidad de hinchas más en función del porcentaje de ocupación permitido; se agrega estimar cuántos buses harían falta para llevar a los hinchas de Chillán. Se mantiene el contexto."
+        }
+      },
+      "recursos_de_entrada": [
+        {
+          "id": "R1",
+          "que_es": "Datos de capacidad y aforo de los dos estadios",
+          "contenido": "Estadio de Chillán: capacidad 12 mil espectadores y aforo autorizado de 7,5 mil fanáticos. Estadio de Concepción: capacidad autorizada de 30 mil espectadores.",
+          "disponibilidad": "de_entrada",
+          "fase": "P1-MRS",
+          "fuente": "noticia, párrafos 5 y 11"
+        }
+      ],
+      "mapa_ciclo": {
+        "P1-MRS": {
+          "decision": "Entender que se compara lo que se permitió en Chillán con lo que podría permitirse en Concepción, no solo las capacidades.",
+          "evidencia": "El grupo explica con sus palabras qué cantidades compara y por qué la capacidad no es lo mismo que el aforo autorizado.",
+          "bloqueo_probable": "B12"
+        },
+        "P2-RM": {
+          "decision": "Elegir el criterio para estimar el público en Concepción (todo el estadio, misma fracción de ocupación u otro) y qué factores dejar de lado.",
+          "evidencia": "Lista de supuestos y de tarjetas pedidas.",
+          "bloqueo_probable": "B23"
+        },
+        "P3-MM": {
+          "decision": "Escribir una relación proporcional o aditiva entre capacidad y público permitido.",
+          "evidencia": "Esquema o regla de tres escrita para pasar de Chillán a Concepción.",
+          "bloqueo_probable": "B34"
+        },
+        "P4-WM": {
+          "decision": "Calcular el público posible en Concepción y la diferencia con Chillán.",
+          "evidencia": "Cálculos con porcentajes, multiplicaciones y restas.",
+          "bloqueo_probable": "B45"
+        },
+        "P5-INT": {
+          "decision": "Decir qué significa la diferencia para los hinchas y si convenía trasladar el partido, considerando viaje y seguridad.",
+          "evidencia": "Frase de conclusión que incluye al menos un factor no matemático.",
+          "bloqueo_probable": "B56"
+        },
+        "P6-VAL": {
+          "decision": "Contrastar la estimación con asistencias reales de otros partidos y revisar los supuestos.",
+          "evidencia": "Comparación entre su estimación y asistencias reales informadas en prensa, con ajuste razonado.",
+          "bloqueo_probable": "B67"
+        },
+        "P7-EXP": {
+          "decision": "Escribir la nota periodística con el resultado y sus límites.",
+          "evidencia": "Nota breve con las cantidades, los supuestos y la recomendación.",
+          "bloqueo_probable": null
+        }
+      },
+      "task_space": {
+        "required_assumptions": [
+          "La cifra de aforo autorizado (idx 3, valor 7,5) se interpreta como 7,5 mil fanáticos, coherente con la capacidad de 12 mil.",
+          "El grupo supone qué parte de la capacidad de Concepción se habría autorizado, por ejemplo la misma fracción que en Chillán o todo el estadio.",
+          "Se supone que los hinchas llenarían las entradas permitidas.",
+          "El grupo decide qué factores no matemáticos considerar, como viaje o seguridad."
+        ],
+        "reference_solution": {
+          "steps": "1) Distinguir capacidad y aforo en Chillán: 7.500 de 12.000 = 62,5%. 2) Elegir un criterio para Concepción: (a) mismo porcentaje: 62,5% x 30.000 = 18.750; (b) estadio completo: 30.000; (c) un porcentaje menor, por ejemplo la mitad: 15.000. 3) Diferencia con Chillán: 18.750 - 7.500 = 11.250 más; 30.000 - 7.500 = 22.500 más; 15.000 - 7.500 = 7.500 más. 4) Interpretar con factores como viaje, seguridad y que muchos hinchas viajarían desde Chillán. 5) Contrastar con asistencias reales.",
+          "result": "Con la misma fracción de ocupación (62,5%), unos 18.750 hinchas en Concepción, es decir 11.250 más que en Chillán, aproximadamente 2,5 veces el público.",
+          "acceptable_range": "Entre 7.500 y 22.500 hinchas más, según el aforo supuesto para Concepción; la respuesta debe ser coherente con el criterio elegido."
+        },
+        "routes": [
+          {
+            "id": "R1",
+            "nombre": "Misma fracción de ocupación",
+            "nivel": "P",
+            "modelo": "Proporción 7.500/12.000 = 62,5% aplicada a 30.000.",
+            "resultado": "18.750 hinchas; 11.250 más que en Chillán."
+          },
+          {
+            "id": "R2",
+            "nombre": "Razón entre capacidades",
+            "nivel": "P",
+            "modelo": "30.000/12.000 = 2,5; el público permitido se multiplica por 2,5.",
+            "resultado": "7.500 x 2,5 = 18.750."
+          },
+          {
+            "id": "R3",
+            "nombre": "Estadio completo",
+            "nivel": "P",
+            "modelo": "Aforo igual a la capacidad de Concepción y resta con el aforo de Chillán.",
+            "resultado": "22.500 hinchas más."
+          },
+          {
+            "id": "R4",
+            "nombre": "Función del porcentaje de ocupación",
+            "nivel": "S1",
+            "modelo": "Hinchas más = p x 30.000 - 7.500, con p variable.",
+            "resultado": "Tabla o gráfico de la ganancia según p; la ganancia es cero cuando p vale 0,25."
+          }
+        ],
+        "modelo_inadecuado": {
+          "id": "RX",
+          "por_que_falla": "Restar capacidades (30.000 - 12.000 = 18.000 más) ignora que en Chillán el público permitido era solo 7.500 y que en Concepción tampoco necesariamente se llenaría; compara capacidades en lugar de público realmente autorizado."
+        },
+        "validation_evidence": "Después de modelar, el grupo busca en prensa la asistencia informada de otros partidos de Colo Colo en estadios de distinto tamaño y compara, en cada caso, el porcentaje de ocupación real con el que usó en su modelo.",
+        "agent_visibility": {
+          "students": [
+            "enunciado_es",
+            "foto_descripcion",
+            "recursos_a_solicitud"
+          ],
+          "coder": [
+            "enunciado_es",
+            "task_space"
+          ],
+          "guide": [
+            "all"
+          ]
+        }
+      },
+      "rubrica_rub01": {
+        "total": 24,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 2
+        }
+      },
+      "rubrica_rub02": {
+        "P": null,
+        "S": null,
+        "U": null
+      },
+      "modelo_y_prompt": {
+        "diseñador": "claude-sonnet-5-5",
+        "version_prompt": "1.1",
+        "version_rubrica": "4.0"
+      }
+    },
+    "noticia": {
+      "id": "2026-11-02-latercera-la-estrella-35-a-la-vista",
+      "medio_id": "latercera",
+      "medio": "La Tercera",
+      "idioma": "es",
+      "titulo": "La estrella 35 a la vista: la limitada fiesta que tendrá Colo Colo en Chillán en la visita a Ñublense",
+      "fecha": "2026-11-02",
+      "url": "https://www.latercera.com/el-deportivo/noticia/la-estrella-35-a-la-vista-la-limitada-fiesta-que-tendra-colo-colo-en-chillan-en-la-visita-a-nublense/",
+      "area": "deporte",
+      "resumen_propio": "Colo Colo, tras golear 6-1 a Universidad de Concepción, podría coronarse campeón con una victoria sobre Ñublense en Chillán. La Delegación Presidencial local redujo el aforo del estadio y se discute cómo repartir los sectores entre hinchas de ambos equipos. También se evaluó trasladar el partido a Concepción, pero esa solicitud no se tramitó a tiempo.",
+      "cifras": [
+        {
+          "valor": "6-1",
+          "unidad": "resultado del partido",
+          "que_es": "marcador con que Colo Colo goleó a Universidad de Concepción",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 1"
+          }
+        },
+        {
+          "valor": "35ª",
+          "unidad": "corona",
+          "que_es": "título de liga que aseguraría Colo Colo con una victoria sobre Ñublense",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 2"
+          }
+        },
+        {
+          "valor": "12 mil",
+          "unidad": "espectadores",
+          "que_es": "capacidad del estadio Nelson Oyarzún",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 6"
+          }
+        },
+        {
+          "valor": 7.5,
+          "unidad": "fanáticos",
+          "que_es": "aforo autorizado por la Delegación Presidencial para el partido",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 6"
+          }
+        },
+        {
+          "valor": "30 mil",
+          "unidad": "espectadores",
+          "que_es": "capacidad autorizada del estadio de Concepción",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 11"
+          }
+        }
+      ],
+      "recuperada_en": "2026-11-02T19:31:24Z",
+      "filtro": {
+        "version_rubrica": "4.0",
+        "puntajes": {
+          "genuino": 1,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "validacion": 2
+        },
+        "total": 9,
+        "pasa": true,
+        "justificacion": "Noticia con cifras reales de aforo y capacidad que permiten modelar un reparto de sectores bajo restricción. Hay decisiones y validación posible con el resultado y la asistencia efectiva; el genuino es parcial porque la pregunta se acerca a una operación directa con las cifras."
+      }
+    },
+    "evaluacion": {
+      "tarea_id": "2026-11-traslado-partido-concepcion-hinchas",
+      "fecha": "2026-11-02T19:49:06Z",
+      "rub01": {
+        "version_rubrica": "4.0",
+        "criterios": {
+          "genuino": {
+            "puntaje": 2,
+            "justificacion": "La tarea plantea una necesidad real: informar si convenía el traslado. No entrega ninguna regla ni modelo; «cuántos más» es el sentido natural de la pregunta y no una pista de procedimiento, porque el aforo efectivo en Concepción queda por estimar.",
+            "cita": "deben explicar a los lectores si el traslado habría cambiado mucho la fiesta de los hinchas"
+          },
+          "abierta": {
+            "puntaje": 2,
+            "justificacion": "La pregunta no prescribe el método. Admite varios caminos defendibles: estimar el aforo de distintas formas y ponderar distintos factores (viaje, buses).",
+            "cita": "¿Cuántos hinchas más habrían podido ver el partido y qué otras cosas habría que considerar para decidir si convenía trasladarlo?"
+          },
+          "decisiones": {
+            "puntaje": 2,
+            "justificacion": "Resolver exige formular supuestos y estimar el aforo posible, por ejemplo con la proporción de Chillán. También exige decidir qué factores considerar y solicitar información.",
+            "cita": "la autoridad de Concepción aún no ha informado cuánto público autorizaría para este partido; el grupo debe decidir cómo estimarlo."
+          },
+          "realismo": {
+            "puntaje": 2,
+            "justificacion": "Restringir el aforo y evaluar el cambio de sede de un partido decisivo son situaciones reales del fútbol chileno. El escenario contrafactual es claramente plausible.",
+            "cita": "Allí la autoridad permitió solo 7,5 mil fanáticos en un estadio con capacidad para 12 mil."
+          },
+          "autenticidad": {
+            "puntaje": 2,
+            "justificacion": "La noticia deportiva y sus cifras de capacidad y aforo son el núcleo de la tarea. Constituyen un componente auténtico integrado de manera sustantiva.",
+            "cita": "Colo Colo, que goleó 6-1 a Universidad de Concepción, puede asegurar su 35ª corona con un triunfo en Chillán."
+          },
+          "contexto": {
+            "puntaje": 2,
+            "justificacion": "Las restricciones de aforo de la autoridad condicionan cómo estimar el público. El contexto es necesario para interpretar si el cambio sería «mucho» y para juzgar la conveniencia del traslado.",
+            "cita": "Se habló de jugar el partido en Concepción, cuyo estadio tiene una capacidad autorizada de 30 mil espectadores, pero el trámite no se alcanzó a …"
+          },
+          "ciclo": {
+            "puntaje": 2,
+            "justificacion": "Responder obliga a recorrer el ciclo completo: comprender la diferencia entre capacidad y aforo, suponer el aforo posible, calcular la diferencia o la proporción e interpretar el resultado para los lectores. También obliga a validar contra la cota de 30 mil y el caso de Chillán. Ninguna fase queda hecha.",
+            "cita": "Imaginen que lo hubieran pedido a tiempo. Ustedes son periodistas de un diario deportivo y deben explicar a los lectores"
+          },
+          "validacion": {
+            "puntaje": 2,
+            "justificacion": "La estimación puede contrastarse con una restricción del contexto (la capacidad máxima). También puede contrastarse con datos públicos de asistencia a partidos en el estadio de Concepción, accesibles con una búsqueda simple.",
+            "cita": "Estadio de Concepción: capacidad autorizada de 30 mil espectadores."
+          },
+          "nivel": {
+            "puntaje": 2,
+            "justificacion": "El contexto futbolístico es comprensible y significativo para estudiantes de 10 a 12 años. La matemática requerida (resta, proporcionalidad directa, división para buses) corresponde a las herramientas del nivel P.",
+            "cita": "¿Cuántos hinchas más habrían podido ver el partido"
+          },
+          "autodiferenciacion": {
+            "puntaje": 2,
+            "justificacion": "El piso es bajo: se puede empezar con una resta usando las cifras dadas. El techo es alto: la tarea admite estimar el aforo por proporción y calcular la cantidad de buses y la logística del viaje.",
+            "cita": "los buses que llevarían hinchas tienen una cantidad de asientos parecida a la de un bus interurbano común."
+          },
+          "fecundidad": {
+            "puntaje": 2,
+            "justificacion": "Las decisiones sobre el aforo supuesto y los factores logísticos generan soluciones distintas que pueden compararse. Además abren preguntas sobre los límites de la estimación.",
+            "cita": "qué otras cosas habría que considerar para decidir si convenía trasladarlo?"
+          },
+          "recursos": {
+            "puntaje": 2,
+            "justificacion": "La información necesaria está en el enunciado, en las tarjetas a solicitud o es estimable con conocimiento cotidiano. Ninguna tarjeta revela el modelo; el mapa sin números no orienta la solución.",
+            "cita": "Pueden pedir información adicional."
+          }
+        },
+        "total": 24,
+        "mejoras": []
+      },
+      "reproducibilidad": {
+        "agentes": {
+          "disenador": {
+            "modelo": "claude-sonnet-5-5",
+            "version_modelo": "claude-sonnet-5-5",
+            "costo_usd": 0.256961,
+            "version_prompt": "1.1"
+          },
+          "evaluador": {
+            "modelo": "claude-opus-5-5",
+            "version_modelo": "claude-opus-5-5",
+            "costo_usd": 0.288666,
+            "version_prompt": "1.3"
+          },
+          "filtro": {
+            "modelo": "claude-haiku-5-5",
+            "version_modelo": "claude-haiku-5-5",
+            "costo_usd": 0.000336,
+            "version_prompt": "1.0"
+          }
+        },
+        "version_prompt": {
+          "disenador": "1.1",
+          "evaluador": "1.3",
+          "filtro": "1.0"
+        },
+        "version_rubrica": "4.0",
+        "version_MAR03": "1.0",
+        "version_MED01": "1.4",
+        "diseno_simulador": null,
+        "fecha": "2026-11-02T19:49:06Z",
+        "costo_usd": 0.545963
+      }
+    }
+  },
+  "historial": [
+    {
+      "fecha": "2026-11-02T19:45:00+00:00",
+      "de": null,
+      "a": "borrador"
+    },
+    {
+      "fecha": "2026-11-02T19:49:08+00:00",
+      "de": "borrador",
+      "a": "evaluada",
+      "iteracion": 1,
+      "rub01_total": 24
+    }
+  ],
+  "marcas": {
+    "ciclo_id": "ciclo_20261102T193124474857Z",
+    "noticia_id": "2026-11-02-latercera-la-estrella-35-a-la-vista",
+    "nivel_objetivo": "P",
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "versiones_modelo": [
+          "claude-sonnet-5-5"
+        ],
+        "costo_usd": 0.256961,
+        "llamadas": 2
+      },
+      "filtro": {
+        "modelo": "claude-haiku-5-5",
+        "versiones_modelo": [
+          "claude-haiku-5-5"
+        ],
+        "costo_usd": 0.000336,
+        "llamadas": 1
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "versiones_modelo": [
+          "claude-opus-5-5"
+        ],
+        "costo_usd": 0.288666,
+        "llamadas": 3
+      }
+    },
+    "costos_compartidos": [
+      "disenador",
+      "filtro"
+    ],
+    "version_MAR03": "1.0",
+    "evaluacion_inestable": false,
+    "evaluacion_rango_total": 1,
+    "evaluacion_corridas": "pipeline/state/trabajo/2026-11-traslado-partido-concepcion-hinchas/evaluacion_corridas.json",
+    "localizadores_corregidos": [
+      {
+        "fecha": "2026-11-02T19:49:11Z",
+        "etapa": "preverificacion",
+        "correcciones": {
+          "2": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 6"
+          },
+          "3": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 6"
+          }
+        }
+      }
+    ],
+    "preverificacion": {
+      "fecha": "2026-11-02T19:49:11Z",
+      "version_tarea": 1,
+      "aprobado": false,
+      "criticos": [
+        "[4] tarea.noticia.cifras_usadas[0]: localizador erróneo: '6-1' no está en «párrafo 1» (ni a ±1 párrafo) sino en el párrafo 3",
+        "[4] estudiante.enunciado_es: cifra 1 sin localizador (no figura en noticia.cifras_usadas)"
+      ],
+      "texto_noticia": true
+    },
+    "hallazgos_tarea": [
+      "[4] tarea.noticia.cifras_usadas[0]: localizador erróneo: '6-1' no está en «párrafo 1» (ni a ±1 párrafo) sino en el párrafo 3",
+      "[4] estudiante.enunciado_es: cifra 1 sin localizador (no figura en noticia.cifras_usadas)"
+    ],
+    "pendiente": "revision_humana_1"
+  }
+}

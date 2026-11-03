@@ -1,0 +1,98 @@
+{
+  "tarea_id": "2026-11-campeon-mas-joven-cuan-raro",
+  "aprobado": false,
+  "alcance": "tarea",
+  "hallazgos": [
+    {
+      "invariante": "4",
+      "severidad": "critico",
+      "ubicacion": "tarea.noticia.cifras_usadas[0]",
+      "descripcion": "localizador erróneo: '20 años' no está en «párrafo 1» (ni a ±1 párrafo) sino en el párrafo 3",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "4",
+      "severidad": "critico",
+      "ubicacion": "estudiante.enunciado_es",
+      "descripcion": "cifra 134 sin localizador (no figura en noticia.cifras_usadas)",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "4",
+      "severidad": "critico",
+      "ubicacion": "estudiante.enunciado_es",
+      "descripcion": "cifra 300 sin localizador (no figura en noticia.cifras_usadas)",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "4",
+      "severidad": "critico",
+      "ubicacion": "estudiante.enunciado_es",
+      "descripcion": "cifra 58 sin localizador (no figura en noticia.cifras_usadas)",
+      "origen": "codigo"
+    }
+  ],
+  "cifras_contrastadas": [
+    {
+      "indice": 0,
+      "que_es": "edad del piloto al ser coronado campeón",
+      "valor_tarea": "20 años",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 1"
+      },
+      "metodo": "codigo",
+      "valor_fuente": null,
+      "resultado": "distinto",
+      "nota": "valor en el párrafo 3, lejos del localizador"
+    },
+    {
+      "indice": 1,
+      "que_es": "edad de Vettel al coronarse campeón en 2010",
+      "valor_tarea": "23 años y 134 días",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 14"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "23 años y 134 días",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 14 de la noticia"
+    },
+    {
+      "indice": 2,
+      "que_es": "edad de Hamilton al coronarse campeón en 2008",
+      "valor_tarea": "23 años y 300 días",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 14"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "23 años y 300 días",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 14 de la noticia"
+    },
+    {
+      "indice": 3,
+      "que_es": "edad de Alonso al coronarse campeón en 2005",
+      "valor_tarea": "24 años y 58 días",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 14"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "24 años y 58 días",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 14 de la noticia"
+    }
+  ],
+  "meta": {
+    "agente": "verificador",
+    "version_prompt": "1.1",
+    "modelo_llamado": false,
+    "costo_usd": 0.0,
+    "texto_noticia_recibido": true,
+    "fecha": "2026-11-02T19:55:34+00:00"
+  },
+  "localizadores_corregidos": {}
+}

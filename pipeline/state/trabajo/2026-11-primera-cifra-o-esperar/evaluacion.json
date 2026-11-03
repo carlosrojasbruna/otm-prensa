@@ -1,0 +1,117 @@
+{
+  "tarea_id": "2026-11-primera-cifra-o-esperar",
+  "fecha": "2026-11-02T20:01:32Z",
+  "rub01": {
+    "version_rubrica": "4.0",
+    "criterios": {
+      "genuino": {
+        "puntaje": 2,
+        "justificacion": "La situación plantea una necesidad real de decisión editorial. No entrega ninguna regla ni modelo para estimar cuánto puede cambiar la cifra.",
+        "cita": "La editora debe decidir si publica enseguida la primera cifra o si espera las confirmaciones, y qué decirle al lector sobre cuánto puede cambiar el …"
+      },
+      "abierta": {
+        "puntaje": 2,
+        "justificacion": "La pregunta admite varias recomendaciones y fundamentos defendibles. No prescribe ningún procedimiento ni hay instrucciones posteriores que encaucen la ruta.",
+        "cita": "¿Qué le recomendarían a la editora y cómo fundamentarían su recomendación? Pueden pedir información adicional."
+      },
+      "decisiones": {
+        "puntaje": 2,
+        "justificacion": "Para responder hay que decidir qué información usar (por ejemplo, pedir el dato de desaparecidos), suponer cómo evolucionará el conteo y estimar un rango de cambio.",
+        "cita": "Las autoridades advierten que la cifra todavía podría subir, y la búsqueda bajo los escombros fue interrumpida varias veces por drones."
+      },
+      "realismo": {
+        "puntaje": 2,
+        "justificacion": "Decidir cómo informar una cifra de víctimas que aún se revisa es una práctica periodística real. El hecho descrito es plausible fuera de la escuela.",
+        "cita": "Primero, el presidente ucraniano habló de 18 muertos. Más tarde, el servicio estatal de emergencias confirmó 24 personas muertas"
+      },
+      "autenticidad": {
+        "puntaje": 2,
+        "justificacion": "Las cifras y la secuencia de informes provienen de una noticia y forman el núcleo de la tarea. La práctica editorial de manejar cifras provisionales es un componente auténtico.",
+        "cita": "el servicio estatal de emergencias confirmó 24 personas muertas, entre ellas rescatistas y policías"
+      },
+      "contexto": {
+        "puntaje": 2,
+        "justificacion": "La búsqueda en curso, los desaparecidos y la verificación de nombres condicionan los supuestos sobre la evolución de la cifra. El contexto es imprescindible para formular y juzgar la recomendación al lector.",
+        "cita": "la búsqueda bajo los escombros fue interrumpida varias veces por drones"
+      },
+      "ciclo": {
+        "puntaje": 1,
+        "justificacion": "La tarea exige comprender, suponer, interpretar y validar. Sin embargo, con solo dos cifras y sin tiempos, el trabajo matemático tiende a reducirse a una resta o un porcentaje simple, por lo que esa fase queda casi trivial. Hay duda entre 1 y 2 y se asigna el menor.",
+        "cita": "qué decirle al lector sobre cuánto puede cambiar el número"
+      },
+      "validacion": {
+        "puntaje": 2,
+        "justificacion": "R4 ofrece evidencia independiente posterior para contrastar la proyección del grupo, lo que corresponde a validación externa.",
+        "cita": "se le da la última cifra oficial de personas muertas publicada después de esta noticia, que no usó para construir su proyección"
+      },
+      "nivel": {
+        "puntaje": 1,
+        "justificacion": "El lenguaje y la matemática (diferencias, proporciones, estimación) están al alcance de P. Pero un conteo de víctimas de guerra, que incluye rescatistas muertos, es un tema sensible para niños de 10 a 12 años y requiere ajustes de encuadre. Hay duda entre 1 y 2 y se asigna el menor.",
+        "cita": "un ataque aéreo a un centro de ayuda humanitaria en un pueblo del sur de Ucrania"
+      },
+      "autodiferenciacion": {
+        "puntaje": 1,
+        "justificacion": "El piso es bajo, porque cualquier grupo puede recomendar esperar o publicar y calcular la diferencia. El techo queda limitado: sin datos de tiempos ni más cifras, las soluciones más sofisticadas se reducen a acotar con los desaparecidos.",
+        "cita": "Al comienzo se informó de 27 personas desaparecidas."
+      },
+      "fecundidad": {
+        "puntaje": 2,
+        "justificacion": "Las recomendaciones pueden compararse entre grupos y contrastarse con la cifra final. Además, abren preguntas sobre cómo comunicar la incertidumbre y sobre los límites de las proyecciones.",
+        "cita": "qué decirle al lector sobre cuánto puede cambiar el número"
+      },
+      "recursos": {
+        "puntaje": 2,
+        "justificacion": "La información pertinente está en el enunciado o se obtiene a solicitud mediante las tarjetas. Ninguna tarjeta revela un modelo o una regla para proyectar la cifra.",
+        "cita": "R2 (Tarjeta sobre personas desaparecidas), disponible a solicitud del grupo"
+      }
+    },
+    "total": 21,
+    "mejoras": [
+      {
+        "criterio": "ciclo",
+        "mejora_minima": "Agregar una tarjeta a solicitud con la hora de cada informe (por ejemplo, 18 a las 10:00 y 24 a las 16:00), para que el grupo pueda construir una proyección cuantitativa de la cifra y no solo calcular una diferencia."
+      },
+      {
+        "criterio": "nivel",
+        "mejora_minima": "Reformular el encuadre con lenguaje menos crudo (por ejemplo, «personas fallecidas» y sin detallar víctimas rescatistas). Agregar una nota que centre la tarea en cómo informar cifras provisionales con cuidado."
+      },
+      {
+        "criterio": "autodiferenciacion",
+        "mejora_minima": "Incluir a solicitud una tarjeta con la secuencia de cifras informadas en distintos momentos. Así se admiten soluciones más sofisticadas, como rangos, ritmo de aumento o una cota con los desaparecidos."
+      }
+    ]
+  },
+  "reproducibilidad": {
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.152967,
+        "version_prompt": "1.1"
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.211662,
+        "version_prompt": "1.3"
+      },
+      "filtro": {
+        "modelo": "claude-haiku-5-5",
+        "version_modelo": "claude-haiku-5-5",
+        "costo_usd": 0.000345,
+        "version_prompt": "1.0"
+      }
+    },
+    "version_prompt": {
+      "disenador": "1.1",
+      "evaluador": "1.3",
+      "filtro": "1.0"
+    },
+    "version_rubrica": "4.0",
+    "version_MAR03": "1.0",
+    "version_MED01": "1.4",
+    "diseno_simulador": null,
+    "fecha": "2026-11-02T20:01:32Z",
+    "costo_usd": 0.364974
+  }
+}

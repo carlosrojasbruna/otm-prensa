@@ -1,0 +1,109 @@
+{
+  "tarea_id": "2026-11-aprender-o-cambiar-reglamento",
+  "fecha": "2026-11-02T19:54:11Z",
+  "rub01": {
+    "version_rubrica": "4.0",
+    "criterios": {
+      "genuino": {
+        "puntaje": 2,
+        "justificacion": "La tarea plantea una necesidad real del editor, una explicación cuantitativa, y no entrega una regla ni un modelo de descomposición. La mención de Russell sugiere una comparación posible, pero no fija el procedimiento.",
+        "cita": "¿cuánto de ese salto se debe a que el piloto aprendió y cuánto al nuevo reglamento y a los autos?"
+      },
+      "abierta": {
+        "puntaje": 2,
+        "justificacion": "La pregunta no prescribe el método. Admite varios modelos defendibles: comparar con el compañero, comparar con otros pilotos, normalizar por carrera o descomponer posiciones.",
+        "cita": "Necesita una explicación cuantitativa que resista las críticas de ingenieros de otras escuderías, y quiere saber qué tan segura es."
+      },
+      "decisiones": {
+        "puntaje": 2,
+        "justificacion": "Resolver exige elegir los pilotos de referencia, solicitar información, suponer qué parte del cambio es común al auto y normalizar por calendario. Son decisiones de modelación sustantivas.",
+        "cita": "El grupo decide a quiénes consultar."
+      },
+      "realismo": {
+        "puntaje": 2,
+        "justificacion": "Separar el efecto del piloto del efecto del auto es una discusión real y habitual en la Fórmula Uno y en el periodismo deportivo, de modo que la situación es claramente plausible.",
+        "cita": "Un equipo de análisis de datos de un medio deportivo prepara un reportaje sobre Kimi Antonelli, piloto de Mercedes."
+      },
+      "autenticidad": {
+        "puntaje": 2,
+        "justificacion": "Los datos centrales provienen de la clasificación oficial y el tema es una situación deportiva real. Están integrados como núcleo de la tarea y no fueron creados para enseñar.",
+        "cita": "Tabla con los puntos finales de cada piloto en ambas temporadas, tomada de la clasificación oficial publicada"
+      },
+      "contexto": {
+        "puntaje": 2,
+        "justificacion": "El contexto condiciona el modelo: el cambio de autos es común a ambos pilotos del equipo, el calendario influye en el total y hay que defender el resultado ante ingenieros. Es necesario para modelar, interpretar y validar.",
+        "cita": "Entre ambas campañas cambió el reglamento y los monoplazas se redujeron a 768 kg."
+      },
+      "ciclo": {
+        "puntaje": 2,
+        "justificacion": "Responder obliga a comprender la confusión entre piloto y auto, simplificar con supuestos, matematizar la descomposición, calcularla e interpretarla. También exige validar, porque se pide estimar qué tan segura es. R3 entrega un supuesto, pero solo a solicitud y sin resolver la estructuración.",
+        "cita": "¿cuánto de ese salto se debe a que el piloto aprendió y cuánto al nuevo reglamento y a los autos?"
+      },
+      "validacion": {
+        "puntaje": 2,
+        "justificacion": "El modelo puede contrastarse con evidencia independiente accesible: otros pares de compañeros de equipo, el segundo año de otros novatos y resultados carrera a carrera.",
+        "cita": "Pueden pedir información adicional."
+      },
+      "nivel": {
+        "puntaje": 2,
+        "justificacion": "Para el nivel U, el contexto es comprensible y la demanda matemática es adecuada: comparación de diferencias, normalización y cuantificación de incertidumbre con probabilidad y estadística.",
+        "cita": "Necesita una explicación cuantitativa que resista las críticas de ingenieros de otras escuderías, y quiere saber qué tan segura es."
+      },
+      "autodiferenciacion": {
+        "puntaje": 2,
+        "justificacion": "Hay un piso accesible: comparar el cambio de puntos de ambos compañeros con aritmética. El techo es alto: modelos por carrera, normalización, controles con varios pilotos e intervalos de incertidumbre.",
+        "cita": "comparte equipo con George Russell"
+      },
+      "fecundidad": {
+        "puntaje": 2,
+        "justificacion": "Las distintas decisiones (qué referencia usar, cómo tratar el calendario) producen modelos comparables. Además abren preguntas sobre los límites de atribuir causas con pocos datos.",
+        "cita": "quiere saber qué tan segura es"
+      },
+      "recursos": {
+        "puntaje": 1,
+        "justificacion": "La información es obtenible a solicitud. Sin embargo, R3 entrega ya formulado el supuesto que hace válido usar al compañero como control y, junto con la mención de Russell, orienta en parte la estructura de la solución. Es una sobreorientación parcial.",
+        "cita": "Supuesto del escenario: en cada temporada, los dos pilotos de Mercedes disponen de monoplazas de especificación equivalente."
+      }
+    },
+    "total": 23,
+    "mejoras": [
+      {
+        "criterio": "recursos",
+        "mejora_minima": "Reemplazar R3 por información técnica neutra (por ejemplo, la declaración del equipo sobre las especificaciones de los autos) o eliminarlo, para que el grupo formule y justifique por sí mismo el supuesto de autos equivalentes."
+      }
+    ]
+  },
+  "reproducibilidad": {
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.297616,
+        "version_prompt": "1.1"
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.244378,
+        "version_prompt": "1.3"
+      },
+      "filtro": {
+        "modelo": "claude-haiku-5-5",
+        "version_modelo": "claude-haiku-5-5",
+        "costo_usd": 0.000717,
+        "version_prompt": "1.0"
+      }
+    },
+    "version_prompt": {
+      "disenador": "1.1",
+      "evaluador": "1.3",
+      "filtro": "1.0"
+    },
+    "version_rubrica": "4.0",
+    "version_MAR03": "1.0",
+    "version_MED01": "1.4",
+    "diseno_simulador": null,
+    "fecha": "2026-11-02T19:54:11Z",
+    "costo_usd": 0.542711
+  }
+}

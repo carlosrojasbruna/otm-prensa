@@ -1,0 +1,303 @@
+{
+  "tarea_id": "2026-11-aprender-o-cambiar-reglamento",
+  "evaluaciones": [
+    {
+      "iteracion": 1,
+      "version_tarea": 1,
+      "fecha": "2026-11-02T19:54:11Z",
+      "modelo": "claude-opus-5-5",
+      "version_prompt": "1.3",
+      "version_rubrica": "4.0",
+      "corridas": [
+        {
+          "n": 1,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La tarea plantea una necesidad real del editor, una explicación cuantitativa, y no entrega una regla ni un modelo de descomposición. La mención de Russell sugiere una comparación posible, pero no fija el procedimiento.",
+                "cita": "¿cuánto de ese salto se debe a que el piloto aprendió y cuánto al nuevo reglamento y a los autos?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe el método. Admite varios modelos defendibles: comparar con el compañero, comparar con otros pilotos, normalizar por carrera o descomponer posiciones.",
+                "cita": "Necesita una explicación cuantitativa que resista las críticas de ingenieros de otras escuderías, y quiere saber qué tan segura es."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige elegir los pilotos de referencia, solicitar información, suponer qué parte del cambio es común al auto y normalizar por calendario. Son decisiones de modelación sustantivas.",
+                "cita": "El grupo decide a quiénes consultar."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Separar el efecto del piloto del efecto del auto es una discusión real y habitual en la Fórmula Uno y en el periodismo deportivo, de modo que la situación es claramente plausible.",
+                "cita": "Un equipo de análisis de datos de un medio deportivo prepara un reportaje sobre Kimi Antonelli, piloto de Mercedes."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los datos centrales provienen de la clasificación oficial y el tema es una situación deportiva real. Están integrados como núcleo de la tarea y no fueron creados para enseñar.",
+                "cita": "Tabla con los puntos finales de cada piloto en ambas temporadas, tomada de la clasificación oficial publicada"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona el modelo: el cambio de autos es común a ambos pilotos del equipo, el calendario influye en el total y hay que defender el resultado ante ingenieros. Es necesario para modelar, interpretar y validar.",
+                "cita": "Entre ambas campañas cambió el reglamento y los monoplazas se redujeron a 768 kg."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a comprender la confusión entre piloto y auto, simplificar con supuestos, matematizar la descomposición, calcularla e interpretarla. También exige validar, porque se pide estimar qué tan segura es. R3 entrega un supuesto, pero solo a solicitud y sin resolver la estructuración.",
+                "cita": "¿cuánto de ese salto se debe a que el piloto aprendió y cuánto al nuevo reglamento y a los autos?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "El modelo puede contrastarse con evidencia independiente accesible: otros pares de compañeros de equipo, el segundo año de otros novatos y resultados carrera a carrera.",
+                "cita": "Pueden pedir información adicional."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "Para el nivel U, el contexto es comprensible y la demanda matemática es adecuada: comparación de diferencias, normalización y cuantificación de incertidumbre con probabilidad y estadística.",
+                "cita": "Necesita una explicación cuantitativa que resista las críticas de ingenieros de otras escuderías, y quiere saber qué tan segura es."
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Hay un piso accesible: comparar el cambio de puntos de ambos compañeros con aritmética. El techo es alto: modelos por carrera, normalización, controles con varios pilotos e intervalos de incertidumbre.",
+                "cita": "comparte equipo con George Russell"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las distintas decisiones (qué referencia usar, cómo tratar el calendario) producen modelos comparables. Además abren preguntas sobre los límites de atribuir causas con pocos datos.",
+                "cita": "quiere saber qué tan segura es"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "La información es obtenible a solicitud. Sin embargo, R3 entrega ya formulado el supuesto que hace válido usar al compañero como control y, junto con la mención de Russell, orienta en parte la estructura de la solución. Es una sobreorientación parcial.",
+                "cita": "Supuesto del escenario: en cada temporada, los dos pilotos de Mercedes disponen de monoplazas de especificación equivalente."
+              }
+            },
+            "total": 23,
+            "mejoras": [
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Reemplazar R3 por información técnica neutra (por ejemplo, la declaración del equipo sobre las especificaciones de los autos) o eliminarlo, para que el grupo formule y justifique por sí mismo el supuesto de autos equivalentes."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011Cgeggs5PchUn7JPr8D2YK",
+            "fecha": "2026-11-02T19:52:54+00:00",
+            "intentos": 1,
+            "costo_usd": 0.077546,
+            "avisos": []
+          }
+        },
+        {
+          "n": 2,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La situación plantea una necesidad real: el editor necesita atribuir causas a un salto de rendimiento. No se entrega regla ni modelo de descomposición. La mención del compañero de equipo es un dato del contexto: sugiere una vía, pero no dicta el procedimiento.",
+                "cita": "El editor pregunta: ¿cuánto de ese salto se debe a que el piloto aprendió y cuánto al nuevo reglamento y a los autos?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe el método. Admite varios modelos defendibles: comparación con el compañero, normalización por calendario o sistema de puntos, uso de toda la parrilla o métricas por carrera.",
+                "cita": "Necesita una explicación cuantitativa que resista las críticas de ingenieros de otras escuderías, y quiere saber qué tan segura es."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Hay que seleccionar datos y descartar los irrelevantes (768 kg, edad). También hay que decidir qué pilotos consultar y formular supuestos sobre la igualdad de autos o el aprendizaje del compañero. Todo eso exige decisiones de modelación sustantivas.",
+                "cita": "Pueden pedir información adicional."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Separar el aporte del piloto del aporte del auto es una pregunta habitual en el periodismo y el análisis de la Fórmula Uno. La situación existe fuera de la escuela.",
+                "cita": "Un equipo de análisis de datos de un medio deportivo prepara un reportaje sobre Kimi Antonelli, piloto de Mercedes."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Son componentes auténticos e integrados de manera sustantiva: el tema y la práctica reales, más los datos de la clasificación oficial, que son el núcleo del modelo.",
+                "cita": "Tabla con los puntos finales de cada piloto en ambas temporadas, tomada de la clasificación oficial publicada"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El sistema de puntos, el calendario y la estructura de equipos condicionan las decisiones del modelo. El contexto también es necesario para interpretar el resultado y defenderlo ante ingenieros.",
+                "cita": "Los puntos de cada carrera dependen de la posición de llegada, con más puntos para los primeros lugares; el total anual depende además de cuántas …"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a comprender la situación, simplificar (supuestos sobre autos y aprendizaje), matematizar la descomposición, calcular, interpretar y juzgar la seguridad del resultado. El enunciado no deja ninguna fase hecha.",
+                "cita": "¿cuánto de ese salto se debe a que el piloto aprendió y cuánto al nuevo reglamento y a los autos?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Hay evidencia independiente accesible para contrastar el modelo: resultados carrera a carrera, otros pares de compañeros de equipo y otras escuderías afectadas por el mismo cambio reglamentario.",
+                "cita": "quiere saber qué tan segura es"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto es comprensible y pertinente para universitarios de primer y segundo año. La descomposición y la cuantificación de incertidumbre usan modelos y probabilidad esperables en el nivel U.",
+                "cita": "Necesita una explicación cuantitativa que resista las críticas de ingenieros de otras escuderías"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es accesible: se puede comparar la variación de puntos con la del compañero usando aritmética. El techo es alto: modelos con toda la parrilla, normalización por carreras, regresión o análisis de sensibilidad e incertidumbre.",
+                "cita": "El grupo decide a quiénes consultar."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las decisiones abren preguntas sustantivas: identificabilidad de los efectos, el carácter relativo de los puntos y el aprendizaje del propio compañero. También permiten comparar modelos y sus límites.",
+                "cita": "Necesita una explicación cuantitativa que resista las críticas de ingenieros de otras escuderías"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información necesaria se entrega a solicitud o se obtiene con una búsqueda simple (calendario, resultados). El supuesto de autos equivalentes solo responde a quien ya formuló esa pregunta, de modo que no revela el modelo.",
+                "cita": "Supuesto del escenario: en cada temporada, los dos pilotos de Mercedes disponen de monoplazas de especificación equivalente."
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgegjXNoSbC3bz6fR18Zs",
+            "fecha": "2026-11-02T19:53:38+00:00",
+            "intentos": 1,
+            "costo_usd": 0.093086,
+            "avisos": [
+              "cita_recortada_25:contexto"
+            ]
+          }
+        },
+        {
+          "n": 3,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "El editor plantea una necesidad real de atribuir el salto entre dos causas. La tarea no entrega ninguna regla ni modelo de descomposición; la mención del compañero de equipo es un dato del contexto, no un procedimiento.",
+                "cita": "¿cuánto de ese salto se debe a que el piloto aprendió y cuánto al nuevo reglamento y a los autos?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe un método. Admite varios modelos defendibles: comparación con el compañero, normalización por carrera, comparación con otros pilotos o modelos de efectos piloto/auto.",
+                "cita": "Necesita una explicación cuantitativa que resista las críticas de ingenieros de otras escuderías, y quiere saber qué tan segura es."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige elegir con qué pilotos comparar, pedir información y suponer cómo se separan el efecto del auto y el del piloto. También hay que decidir cómo tratar el cambio de calendario y del sistema de puntos.",
+                "cita": "Tabla con los puntos finales de cada piloto en ambas temporadas [...] El grupo decide a quiénes consultar."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Separar el mérito del piloto del rendimiento del auto es una discusión real y frecuente en el periodismo y el análisis de Fórmula Uno. La situación es claramente plausible fuera de la escuela.",
+                "cita": "Un equipo de análisis de datos de un medio deportivo prepara un reportaje sobre Kimi Antonelli, piloto de Mercedes."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El tema (un piloto real, el cambio de reglamento a 768 kg) y los datos de la clasificación oficial son componentes extraescolares auténticos. Esos datos constituyen el núcleo de la tarea.",
+                "cita": "tomada de la clasificación oficial publicada"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona las decisiones: qué controla el compañero de equipo y cómo normalizar por calendario y por sistema de puntos. También es necesario para interpretar el resultado ante los ingenieros y juzgar su seguridad.",
+                "cita": "el total anual depende además de cuántas carreras tiene el calendario."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a comprender la situación, simplificar (identificar los efectos), matematizar y calcular, y luego interpretar y juzgar la seguridad del resultado. El enunciado no deja ninguna fase hecha.",
+                "cita": "quiere saber qué tan segura es. Pueden pedir información adicional."
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Hay evidencia independiente accesible para contrastar el modelo: otros pares de compañeros de equipo, la segunda temporada de otros novatos y los resultados carrera a carrera o de clasificación.",
+                "cita": "Necesita una explicación cuantitativa que resista las críticas de ingenieros de otras escuderías"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto es comprensible y significativo para estudiantes universitarios de primeros años. Separar efectos y cuantificar la incertidumbre está al alcance de las herramientas de probabilidad, estadística y modelación esperables en U.",
+                "cita": "¿cuánto de ese salto se debe a que el piloto aprendió y cuánto al nuevo reglamento y a los autos?"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es accesible: basta comparar el cambio de puntos del piloto con el de su compañero. El techo es alto: normalizar por carrera, usar varios equipos, plantear modelos piloto-auto y cuantificar la incertidumbre.",
+                "cita": "El grupo decide a quiénes consultar."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Distintos supuestos de identificación llevan a atribuciones distintas, lo que permite comparar soluciones. Además abre preguntas sobre los límites del modelo, como la equivalencia de autos, la experiencia del compañero y la suerte.",
+                "cita": "quiere saber qué tan segura es."
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "Los datos necesarios se pueden solicitar o buscar con facilidad. Sin embargo, R3 entrega ya formulado el supuesto clave que convierte al compañero en control del efecto auto, lo que es una sobreorientación parcial hacia la estructura del modelo.",
+                "cita": "Supuesto del escenario: en cada temporada, los dos pilotos de Mercedes disponen de monoplazas de especificación equivalente."
+              }
+            },
+            "total": 23,
+            "mejoras": [
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Reemplazar R3 por información técnica neutra (por ejemplo, «ambos pilotos de Mercedes usan el mismo chasis y unidad de potencia según el reglamento; pueden diferir en puesta a punto y actualizaciones»), de modo que el grupo formule y justifique por sí mismo el supuesto de autos equivalentes."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011Cgegnk2u4ZxZBhEPEqpFj",
+            "fecha": "2026-11-02T19:54:11+00:00",
+            "intentos": 1,
+            "costo_usd": 0.073746,
+            "avisos": [
+              "cita_no_literal:decisiones"
+            ]
+          }
+        }
+      ],
+      "totales": [
+        23,
+        24,
+        23
+      ],
+      "rango_total": 1,
+      "rango_inestable": 4,
+      "evaluacion_inestable": false,
+      "mediana": {
+        "regla": "mediana por criterio (n par: mediana inferior)",
+        "total": 23,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 1
+        },
+        "corrida_fuente": {
+          "genuino": 1,
+          "abierta": 1,
+          "decisiones": 1,
+          "realismo": 1,
+          "autenticidad": 1,
+          "contexto": 1,
+          "ciclo": 1,
+          "validacion": 1,
+          "nivel": 1,
+          "autodiferenciacion": 1,
+          "fecundidad": 1,
+          "recursos": 1
+        }
+      }
+    }
+  ]
+}
