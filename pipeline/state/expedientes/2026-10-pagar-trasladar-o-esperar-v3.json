@@ -1,12 +1,12 @@
 {
   "tarea_id": "2026-10-pagar-trasladar-o-esperar-v3",
-  "estado": "verificada",
+  "estado": "archivada",
   "iteraciones": 1,
   "artefactos": {
     "tarea": {
       "id": "2026-10-pagar-trasladar-o-esperar-v3",
       "titulo": "¿Pagar, trasladar o esperar? Un arancel con juicio en curso",
-      "estado": "verificada",
+      "estado": "archivada",
       "version": 3,
       "fecha": "2026-10-20",
       "noticia": {
@@ -1141,6 +1141,12 @@
       "fecha": "2026-10-20T22:14:45+00:00",
       "de": "con_guia",
       "a": "verificada"
+    },
+    {
+      "fecha": "2026-11-03T12:21:31+00:00",
+      "de": "verificada",
+      "a": "archivada",
+      "motivo": "reemplazada por la versión publicada (Carlos Rojas Bruna)"
     }
   ],
   "marcas": {
@@ -1251,12 +1257,17 @@
       "ruta": "tareas/2026-10/pagar-trasladar-o-esperar-v3/",
       "rama": "tareas/semana-2026-W43"
     },
-    "pendiente": "nueva_version",
     "revision_humana_2": {
       "revisor": "Carlos Rojas Bruna",
       "fecha": "2026-10-20T22:18:38Z",
       "resultado": "guia_aprobada_tarea_rechazada",
       "nota": "tarea rechazada hasta v4: corregir el traslado óptimo con demanda de elasticidad constante"
+    },
+    "archivo_humano": {
+      "estado_previo": "verificada",
+      "revisor": "Carlos Rojas Bruna",
+      "fecha": "2026-11-03T12:21:31Z",
+      "motivo": "reemplazada por la versión publicada"
     }
   }
 }
