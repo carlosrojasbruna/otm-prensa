@@ -36,6 +36,8 @@ Los workflows que aceptan inputs (`workflow_dispatch`) son estos:
 
 `.github/workflows/semanal.yml` tiene el cron `17 9 * * 1`: los lunes a las 09:17 UTC. Eso es 06:17 en Chile durante el horario de verano. En invierno corre a las 05:17 hora local, el mismo lunes. GitHub puede retrasar los cron; los de la hora en punto son los que más se atrasan (el 2026-10-26 el de las 09:00 se disparó 7 horas tarde), por eso el minuto 17. Si el cron no aparece en Actions o no corre, revisa que los workflows estén habilitados; GitHub puede deshabilitarlos en repositorios sin actividad.
 
+`.github/workflows/supabase_keepalive.yml` tiene el cron `17 12 * * 3` (miércoles, 12:17 UTC). Hace una consulta de solo lectura a `rpc/resumen_valoraciones` con la clave publicable, para que Supabase no pause el proyecto gratuito tras 7 días sin actividad. Así ocurrió entre el 2026-10-26 y el 2026-11-03, y staging dejó de funcionar. También se puede lanzar con **Run workflow**. Si falla con «Supabase no responde», el proyecto ya está pausado: restáuralo en el panel de Supabase, porque una consulta no lo reactiva.
+
 El workflow tiene dos jobs:
 
 - **`medios`**: ejecuta `python -m pipeline.verificar_medios`. Revisa `robots.txt` y los RSS de MED01 (la versión más alta de `insumos/medios/`). No llama a ningún modelo y su costo es cero. Escribe `pipeline/state/medios/verificacion_<AAAA-MM-DD>.json` y lo sube como artefacto. Sale con código 0 aunque haya medios caídos, porque el flag `--estricto` no se usa.
