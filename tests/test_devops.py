@@ -223,9 +223,24 @@ def test_semanal_cron_lunes_y_dispatch():
 def test_tramo_b_solo_manual_con_revisor_y_guarda_de_secrets():
     d = _wf("tramo_b.yml")
     assert set(d["on"]) == {"workflow_dispatch"}
-    assert d["on"]["workflow_dispatch"]["inputs"]["revisor"]["required"] is True
     texto = (RAIZ / ".github" / "workflows" / "tramo_b.yml").read_text(encoding="utf-8")
     assert "SIM_REPO" in texto and "SIM_REPO_TOKEN" in texto
+    # revisor no es `required` en el formulario (hasta_evaluada va sin él), pero el job lo exige en los demás modos
+    comprobar = d["jobs"]["tramo_b"]["steps"][0]["run"]
+    assert "El input revisor es obligatorio" in comprobar and "IN_HASTA_EVALUADA" in comprobar
+
+
+def test_tramo_b_hasta_evaluada_y_observaciones_guia():
+    d = _wf("tramo_b.yml")
+    entradas = d["on"]["workflow_dispatch"]["inputs"]
+    assert entradas["hasta_evaluada"]["type"] == "boolean" and entradas["hasta_evaluada"]["default"] is False
+    assert entradas["observaciones_guia"]["type"] == "string" and entradas["observaciones_guia"]["default"] == ""
+    ciclo = next(s for s in d["jobs"]["tramo_b"]["steps"] if s.get("id") == "ciclo")["run"]
+    assert "--hasta-evaluada" in ciclo and "--rehacer-guia" in ciclo
+    # el texto de la observación llega por variable de entorno, nunca interpolado con ${{ }} en el script
+    assert "${{" not in ciclo and "IN_OBS_GUIA" in ciclo
+    comprobar = d["jobs"]["tramo_b"]["steps"][0]["run"]
+    assert "excluyentes" in comprobar and "deja revisor vacío" in comprobar
 
 
 def test_tramo_b_solo_comprobar_no_usa_api_ni_escribe():
