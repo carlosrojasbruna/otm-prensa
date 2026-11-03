@@ -1,0 +1,451 @@
+{
+  "tarea_id": "2026-11-campeon-mas-joven-cuan-raro-v2",
+  "version": 2,
+  "fecha": "2026-11-03",
+  "ficha": {
+    "titulo": "¿Cuán raro es un campeón mundial de veinte años?",
+    "noticia": {
+      "medio": "La Tercera",
+      "titulo": "Aprendizaje y adaptación: las claves que llevaron a Kimi Antonelli a ser el campeón más joven en la historia de la Fórmula 1",
+      "fecha": "2026-11-02",
+      "url": "https://www.latercera.com/el-deportivo/noticia/aprendizaje-y-adaptacion-las-claves-que-llevaron-a-kimi-antonelli-a-ser-el-campeon-mas-joven-en-la-historia-de-la-formula-1/"
+    },
+    "nivel_principal": "U",
+    "variantes": [
+      "S"
+    ],
+    "contenidos": [
+      "inferencia con muestras pequeñas",
+      "distribuciones de cola pesada",
+      "incertidumbre de medición",
+      "modelos de mezcla y cambio de régimen"
+    ],
+    "tiempo": "2 sesiones de 90 min",
+    "puntaje_rub01": 24,
+    "version": 2,
+    "fecha": "2026-11-03",
+    "cambios": ""
+  },
+  "meta": {
+    "que_observar": "Observar si el grupo trata la edad de un campeón como una variable con incertidumbre y no como un dato exacto, y si acompaña su respuesta sobre lo excepcional de la marca de 20 años con un rango, un modelo explícito y los límites de la muestra. También interesa ver si el grupo reconoce que los tres campeones de referencia fueron elegidos por la crónica y que una edad mínima de licencia acota la cola inferior.",
+    "contenido": "Inferencia con muestras pequeñas, distribuciones de cola pesada, incertidumbre de medición y modelos de mezcla y cambio de régimen, aplicados a la edad al coronarse campeón mundial.",
+    "subcompetencias": [
+      "Simplificar (P2-RM): decidir qué se modela, cómo tratar la edad de Antonelli, dada solo en años cumplidos, y si los tres campeones forman una muestra representativa.",
+      "Matematizar (P3-MM): pasar las edades a años decimales y elegir una distribución (normal, t o mezcla de dos poblaciones).",
+      "Trabajar con el modelo (P4-WM): calcular media, dispersión y probabilidades bajo más de un modelo y para los dos extremos de la edad.",
+      "Interpretar (P5-INT): traducir las probabilidades a una frase para la radio y explicar por qué los modelos discrepan.",
+      "Validar (P6-VAL): contrastar los modelos con la lista histórica completa de campeones, que no se usó para construirlos.",
+      "Comunicar (P7-EXP): presentar la conclusión con un gráfico y sus límites."
+    ],
+    "meta_social": "Trabajo cooperativo en grupos que deben justificar su respuesta ante oyentes críticos, con verbalización de supuestos y desacuerdos entre modelos.",
+    "evidencia": [
+      "Reescritura de la pregunta con palabras propias y señalamiento del dato impreciso (P1-MRS).",
+      "Lista de supuestos con una frase sobre el sesgo de selección y otra sobre la edad mínima de licencia (P2-RM).",
+      "Tabla de edades en años decimales y distribución elegida con sus parámetros (P3-MM).",
+      "Cálculos con al menos dos modelos y dos valores para la edad de Antonelli (P4-WM).",
+      "Texto para el aire con una cifra aproximada de frecuencia y una advertencia sobre su fiabilidad (P5-INT).",
+      "Comparación escrita entre lo que predice cada modelo y la distribución histórica real de edades (P6-VAL).",
+      "Guion breve y gráfico con las distribuciones comparadas (P7-EXP)."
+    ]
+  },
+  "analisis_a_priori": {
+    "rutas": [
+      {
+        "id": "R1",
+        "nombre": "Brecha respecto del récord y de la dispersión",
+        "nivel": "S1",
+        "modelo": "Diferencia de edades en años decimales y comparación con el rango de los tres campeones, con los dos extremos de la edad de Antonelli."
+      },
+      {
+        "id": "R2",
+        "nombre": "Puntaje z con distribución normal",
+        "nivel": "S2",
+        "modelo": "Media y desviación de los tres campeones; z para la edad de Antonelli en ambos extremos."
+      },
+      {
+        "id": "R3",
+        "nombre": "Predictiva de cola pesada",
+        "nivel": "U",
+        "modelo": "Distribución t predictiva con muestra pequeña para la edad al título de un nuevo campeón."
+      },
+      {
+        "id": "R4",
+        "nombre": "Cambio de régimen con mezcla bayesiana",
+        "nivel": "U",
+        "modelo": "Mezcla de campeones tardíos y tempranos con proporción desconocida; actualización beta con previa uniforme."
+      }
+    ],
+    "modelo_inadecuado": {
+      "id": "RX: suponer una distribución normal con la media y desviación de los tres campeones y concluir que un título a los 20 años es imposible.",
+      "por_que_falla": "Con solo tres datos, la desviación es muy incierta y la normal subestima las colas. La muestra es seleccionada, porque son los tres campeones que la crónica eligió como referencia. Además, el piso de edad de licencia y la edad de Antonelli en años cumplidos ya muestran que el modelo no refleja la realidad del problema."
+    },
+    "solucion_referencia": "1) Pasar a años decimales: Vettel 23,367; Hamilton 23,822; Alonso 24,159; media 23,783 y desviación muestral cercana a 0,40; Antonelli entre 20,0 y 21,0. 2) Brecha con el récord previo: entre 2,4 y 3,4 años, de 3 a 4 veces el rango observado de los otros tres (0,79). 3) Modelo normal con esos parámetros: z entre -7 y -9,5, probabilidad prácticamente cero, lo que rechaza que Antonelli salga de la misma población. 4) Modelo con cola pesada (predictiva t con dos grados de libertad y escala 0,46): probabilidad entre 0,7 % y 1,3 % por título. 5) Modelo de mezcla: con una observación temprana de cuatro y previa uniforme, la proporción de campeones tempranos tendría media cercana a 0,33, pero la muestra está seleccionada. 6) Sensibilidad: las conclusiones sobre frecuencia dependen fuertemente del modelo y del tamaño muestral; considerar también la edad mínima de licencia (en torno a 18 años, a verificar), que acota cuánto más joven puede ser un campeón. Resultado: La marca es muy excepcional: queda fuera de lo observado en la referencia. Su frecuencia estimada varía de casi cero (normal) a cerca de 1 % por título (cola pesada) o a una fracción mucho mayor si se supone un cambio de régimen. Una afirmación honesta indica un rango y las limitaciones por la muestra pequeña y seleccionada.",
+    "rango_aceptable": "Se acepta cualquier conclusión que trate la incertidumbre de la edad, explicite el modelo y reconozca el sesgo de selección y el piso de edad. Una probabilidad de un solo valor sin discusión de sensibilidad no es suficiente.",
+    "barreras_por_fase": [
+      {
+        "fase": "P1-MRS",
+        "barrera": "No se anticipa un bloqueo fuerte. La dificultad previsible es que los grupos lean «excepcional» y «repetirse» como obvios y no noten que las edades de los tres campeones vienen en años y días, y la de Antonelli solo en años cumplidos."
+      },
+      {
+        "fase": "P2-RM",
+        "barrera": "Bloqueo B12. Los grupos tienden a usar los datos tal como vienen: toman 20 años como valor exacto y los tres campeones como si fueran toda la población. Les cuesta ver que la crónica eligió esos tres, que hay campeones más antiguos fuera de la lista y que existe una edad mínima de licencia que la noticia no entrega."
+      },
+      {
+        "fase": "P3-MM",
+        "barrera": "Bloqueo B23. Con solo tres datos, la distribución normal aparece como opción por defecto y es el modelo inadecuado previsto (suponer que un título a los 20 años es imposible). Cuesta justificar una cola pesada o una mezcla de dos poblaciones sin saber aún cuánto se equivoca la normal. También cuesta decidir cómo pasar días a años decimales."
+      },
+      {
+        "fase": "P4-WM",
+        "barrera": "Bloqueo B34. La desviación calculada con tres datos es muy incierta y los grupos pueden no registrarla. Calcular bajo más de un modelo y para los dos extremos de la edad de Antonelli multiplica el trabajo. La t con muestra pequeña y la actualización bayesiana de la mezcla pueden exceder lo que el grupo domina."
+      },
+      {
+        "fase": "P5-INT",
+        "barrera": "Bloqueo B45. Los modelos dan resultados muy distintos entre sí, desde casi cero hasta una fracción mucho mayor. La tentación es quedarse con una sola cifra y no explicar la discrepancia. Cuesta redactar una frase para el aire que dé un orden de magnitud con una advertencia honesta."
+      },
+      {
+        "fase": "P6-VAL",
+        "barrera": "Bloqueo B56. Al ver la lista histórica completa, algunos grupos pueden querer reajustar el modelo hasta que coincida, en vez de juzgar cuál falló y por qué. Les cuesta reconocer el sesgo de selección y la edad mínima como causas de la discrepancia, y no solo la «mala suerte» de la muestra."
+      },
+      {
+        "fase": "P7-EXP",
+        "barrera": "Bloqueo B67. Se tiende a presentar una probabilidad única con falsa precisión. Cuesta construir un gráfico que muestre las colas de cada modelo y comunicar los límites sin perder la claridad que exige la radio."
+      }
+    ]
+  },
+  "organizacion": {
+    "momentos": [
+      {
+        "momento": "Comprensión y trabajo grupal (sesión 1): lanzamiento y comprensión",
+        "tiempo": "15 min",
+        "estudiantes": "Leen el enunciado, reescriben la pregunta con sus palabras y señalan qué dato les parece impreciso. Anotan qué entienden por «excepcional» y por «repetirse».",
+        "docente": "Presenta el escenario de la radio sin aludir a la noticia más allá del enunciado. Aclara solo que pueden pedir información adicional. No entrega ningún modelo ni resultado."
+      },
+      {
+        "momento": "Comprensión y trabajo grupal (sesión 1): supuestos y modelo",
+        "tiempo": "60 min",
+        "estudiantes": "Deciden qué modelan y cómo tratan los 20 años. Evalúan si los tres campeones son una muestra representativa y piden los recursos que consideren necesarios (R2, R3, R4). Convierten las edades a años decimales y eligen una distribución. Empiezan los cálculos.",
+        "docente": "Circula y diagnostica preguntando qué han hecho y qué dato les falta. Entrega un recurso a solicitud (R2, R3 o R4) solo cuando el grupo lo pide. No interviene todavía en la elección del modelo. Toma nota de los bloqueos B12, B23 y B34 que observa."
+      },
+      {
+        "momento": "Puesta en común (sesión 1): supuestos",
+        "tiempo": "15 min",
+        "estudiantes": "Cada grupo presenta en pocas frases su lista de supuestos y la distribución que eligió, sin mostrar aún conclusiones finales.",
+        "docente": "Reúne en la pizarra los supuestos y los modelos elegidos, sin juzgarlos. Pregunta por qué eligieron cada uno y deja abiertas las diferencias para la sesión siguiente."
+      },
+      {
+        "momento": "Comprensión y trabajo grupal (sesión 2): cálculo e interpretación",
+        "tiempo": "35 min",
+        "estudiantes": "Completan los cálculos con al menos dos modelos y dos valores para la edad de Antonelli. Redactan el texto para el aire con una cifra aproximada de frecuencia y una advertencia sobre su fiabilidad. Intentan explicar por qué los modelos discrepan.",
+        "docente": "Circula y diagnostica con preguntas sobre lo hecho: qué compararon, qué cambia al mover la edad de Antonelli. Ofrece primero la ayuda mínima, sin dar la regla, el modelo ni el resultado. Registra los bloqueos B45 que aparecen."
+      },
+      {
+        "momento": "Puesta en común (sesión 2): contraste entre modelos",
+        "tiempo": "25 min",
+        "estudiantes": "Los grupos exponen sus modelos, sus cifras y su frase para el aire. Comparan por qué difieren y qué supuesto pesa más en cada resultado.",
+        "docente": "Modera la comparación y destaca las discrepancias entre grupos sin declarar cuál es correcta. Pide que cada grupo anticipe qué debería mostrar la lista histórica si su modelo fuera bueno."
+      },
+      {
+        "momento": "Validación y cierre (sesión 2)",
+        "tiempo": "30 min",
+        "estudiantes": "Reciben la lista completa de edades de los campeones históricos y contrastan lo que predice cada modelo con la distribución real. Juzgan el sesgo de selección y la edad mínima de licencia. Preparan el guion breve y el gráfico con las colas de los modelos y cierran con la conclusión y sus límites.",
+        "docente": "Entrega la lista histórica solo en este momento, porque no debe usarse para construir los modelos. Pide que cada grupo diga qué modelo quedó mejor o peor y por qué. Cierra con una reflexión sobre la diferencia entre una afirmación con un solo valor y una con rango y límites."
+      }
+    ],
+    "agrupamiento": "Grupos de tres o cuatro estudiantes que se mantienen durante las dos sesiones, para que los supuestos y modelos de la primera sesión se retomen en la segunda. Los grupos más pequeños favorecen que todos opinen sobre las decisiones de simplificación y de elección del modelo.",
+    "roles": "Cada grupo rota o asigna roles: quien registra los supuestos, quien calcula, quien redacta el texto para el aire y quien actúa como «oyente crítico» que cuestiona las decisiones del grupo. El rol de oyente crítico ayuda a verbalizar el sesgo de selección, la edad mínima y la incertidumbre de la edad.",
+    "producciones": [
+      "Reescritura de la pregunta con palabras propias.",
+      "Lista de supuestos con una frase sobre el sesgo de selección y sobre la edad mínima de licencia.",
+      "Tabla de edades en años decimales con la distribución elegida y sus parámetros.",
+      "Cálculos con al menos dos modelos y dos valores para la edad de Antonelli.",
+      "Texto para el aire con una cifra aproximada de frecuencia y una advertencia sobre su fiabilidad.",
+      "Comparación entre lo que predice cada modelo y la distribución histórica real.",
+      "Guion breve y gráfico con las distribuciones comparadas."
+    ],
+    "tecnologia": "Se permite calculadora y hoja de cálculo o software estadístico para convertir edades, calcular media y dispersión, y evaluar probabilidades (P3-MM y P4-WM), y para el gráfico final (P7-EXP). La tecnología no decide la distribución ni los supuestos: esas decisiones de P2-RM y P3-MM las toma el grupo. Se permite buscar en internet la edad mínima de licencia cuando el grupo solicita R3. La lista histórica de campeones se consulta solo en la fase de validación (P6-VAL)."
+  },
+  "escenarios": [
+    {
+      "id": "E1",
+      "nombre": "ruta esperada",
+      "corridas": [
+        "N4_VV_r1"
+      ],
+      "perfil": "Tramo U, nivel N4, estilo VV.",
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P2-RM",
+        "P4-WM",
+        "P2-RM",
+        "P4-WM",
+        "P5-INT",
+        "P3-MM",
+        "P6-VAL",
+        "P3-MM",
+        "P7-EXP",
+        "P6-VAL"
+      ],
+      "supuestos": [
+        "edad de Antonelli entre 20 y 21 años (solo años cumplidos)",
+        "los tres campeones de la crónica pueden ser una selección sesgada",
+        "piso de edad mínima de superlicencia en 18 años",
+        "unos 75 campeones, uno por temporada",
+        "normal truncada en 18 años"
+      ],
+      "modelo": "brecha de edades",
+      "bloqueos": [],
+      "que_aprende": "Es la corrida que reúne los supuestos que la tarea pide. Trata la edad de Antonelli como un intervalo y no como un valor exacto, sospecha que los tres campeones de la crónica son una selección y reconoce el piso de edad de la superlicencia. Vuelve varias veces a simplificar antes de cerrar el modelo. Al compararla con las demás, el curso ve que la brecha con el récord se informa como rango y que una normal sin piso inventa la cola inferior. Por eso el grupo la corta y la contrasta con la lista empírica.",
+      "extracto_dialogo": [
+        {
+          "hablante": "Cami",
+          "texto": "Dale, y yo le pondría una recta de tendencia a ese gráfico, pero ojo: Antonelli sería un punto muy alejado de la recta, así que habría que ver si la recta cambia mucho con y sin él. Además, ¿los tres de la crónica son los más jóvenes antes de él o solo los que eligió el periodista?"
+        },
+        {
+          "hablante": "Fran",
+          "texto": "Vale, pero ojo: dice \"20 años\" sin días, así que 3 años y 134 días es el máximo de diferencia con Vettel; podría ser casi un año menos. Pidamos su fecha de nacimiento y la fecha exacta del título, y lo dejamos como \"entre 2 años y medio y 3 años y 134 días\"."
+        },
+        {
+          "hablante": "Fran",
+          "texto": "Me gustan los dos modelos, pero la normal no sabe que existe un piso de edad. [dibujo: campana con la cola izquierda cortada en una línea vertical a los 18] Esa cola sale inventada, así que la compararía con la empírica y lo diríamos al aire."
+        }
+      ]
+    },
+    {
+      "id": "E2",
+      "nombre": "normal descartada",
+      "corridas": [
+        "N4_AA_r1"
+      ],
+      "perfil": "Tramo U, nivel N4, estilo AA.",
+      "ruta": [
+        "P2-RM",
+        "P4-WM",
+        "P6-VAL",
+        "P3-MM",
+        "P4-WM",
+        "P2-RM",
+        "P6-VAL",
+        "P3-MM",
+        "P4-WM",
+        "P7-EXP"
+      ],
+      "supuestos": [
+        "edad de Antonelli tomada como 20 años exactos en el z",
+        "los tres campeones de la crónica no son una muestra aleatoria",
+        "distribución de edades probablemente asimétrica, no normal",
+        "tasa constante de títulos jóvenes (Poisson)",
+        "superlicencia exige 18 años desde 2016 (piso de edad)"
+      ],
+      "modelo": "poisson",
+      "bloqueos": [],
+      "que_aprende": "El grupo parte por el camino que la tarea marca como modelo inadecuado: normal con los tres campeones y puntaje z. No concluye que el título sea imposible. Valida de inmediato: con tres datos la desviación está subestimada, la muestra la eligió la crónica y la normalidad no está justificada. Entonces cambia a frecuencia empírica y a un modelo de Poisson, y declara que la tasa constante es dudosa por el piso de edad. El curso ve que la validación temprana evita convertir un z extremo en una conclusión. Queda abierto que el z usó la edad de 20 años exactos.",
+      "extracto_dialogo": [
+        {
+          "hablante": "Fran",
+          "texto": "Paso a años: 23,37; 23,82; 24,16, media ≈ 23,78 y s ≈ 0,40, así que z ≈ (20 − 23,78)/0,40 ≈ −9,5. Pero ojo, esos tres los eligió la crónica, no son una muestra al azar."
+        },
+        {
+          "hablante": "Cami",
+          "texto": "Buen punto, Fran: con un z de −9,5 y n = 3 la desviación está subestimada, y además no sabemos si las edades siguen una normal, así que ese número casi no significa nada. Pidamos la lista completa de campeones mundiales con su edad, y ahí sí modelamos."
+        }
+      ]
+    },
+    {
+      "id": "E3",
+      "nombre": "bloqueo en matematizar",
+      "corridas": [
+        "N1_VV_r1"
+      ],
+      "perfil": "Tramo U, nivel N1, estilo VV.",
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P2-RM",
+        "P3-MM",
+        "P2-RM",
+        "P6-VAL",
+        "P7-EXP",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "supuestos": [
+        "tres campeones son muestra insuficiente",
+        "con un solo caso solo se puede decir 'pasó una vez en tantos años'",
+        "con cuatro puntos no se puede inferir tendencia"
+      ],
+      "modelo": "comparación cualitativa",
+      "bloqueos": [
+        {
+          "transicion": "B23",
+          "como_se_destrabo": "Quedó sin resolver. El grupo no supo traducir la seguridad de su respuesta a una medida («no sé cómo ponerle un número a eso») y osciló entre simplificar y matematizar. Se quedó en una comparación cualitativa con dibujos de puntos y cerró diciendo solo que pasó una vez en tantos años."
+        }
+      ],
+      "que_aprende": "Muestra un grupo que identifica bien el problema de la muestra pequeña y la debilidad de una tendencia con pocos puntos, pero nunca elige una distribución ni una medida de incertidumbre. Al compararlo con E1 y E2, el curso ve que reconocer la limitación no reemplaza el paso a un modelo. Ve también que la falta de un modelo le impide responder con qué frecuencia podría repetirse. No aparecen la edad como intervalo ni el piso de licencia.",
+      "extracto_dialogo": [
+        {
+          "hablante": "Cami",
+          "texto": "Ya, y con el dibujo podríamos ver si la mayoría se junta como en 27 o 30, y entonces Kimi quedaría súper lejos. Pero no sé cómo decir \"qué tan seguros estamos\" con eso, ¿o solo contamos cuántos hay bajo 24?"
+        },
+        {
+          "hablante": "Fran",
+          "texto": "Mmm, contar cuántos hay bajo 24 puede servir, porque ahí podríamos decir \"de tantos campeones, solo tantos fueron tan jóvenes\". Pero igual con pocos datos no podemos estar tan seguros, ¿o cómo se mide eso?"
+        },
+        {
+          "hablante": "Cami",
+          "texto": "Yo creo que mientras más campeones tengamos, más seguros estamos, como cuando el dibujo se llena de puntitos y ya se nota la forma. Pero no sé cómo ponerle un número a eso; ¿y si pedimos también las edades de los segundos y terceros de cada año, para tener más puntitos?"
+        }
+      ]
+    },
+    {
+      "id": "E4",
+      "nombre": "bloqueo en validar",
+      "corridas": [
+        "N2_VV_r1"
+      ],
+      "perfil": "Tramo U, nivel N2, estilo VV.",
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P5-INT",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "supuestos": [
+        "edad de Antonelli tratada como 20 exactos",
+        "récord previo es Vettel entre los tres de referencia",
+        "Antonelli único campeón menor de 22",
+        "unos 75 campeones en la historia"
+      ],
+      "modelo": "diferencia de edades",
+      "bloqueos": [
+        {
+          "transicion": "B56",
+          "como_se_destrabo": "Se resolvió entre pares. Cami cuestionó qué tan confiable era la proporción basada en un solo caso y preguntó cómo decir qué tan seguros estaban. Fran respondió que no correspondía dar un número exacto y propuso pedir las edades por década para contrastar si la distribución se desplaza hacia edades menores."
+        }
+      ],
+      "que_aprende": "Recorre el ciclo en orden, pero con supuestos que no revisa: la edad de Antonelli como 20 exactos y Vettel como récord previo, tomado de los tres que eligió la crónica. Al compararlo con E1, el curso ve que la misma brecha puede informarse como un valor único o como un rango. La validación aquí detecta que un solo caso no sostiene una frecuencia, pero no detecta el sesgo de selección ni el piso de edad.",
+      "extracto_dialogo": [
+        {
+          "hablante": "Fran",
+          "texto": "Ya, pero si el único menor de 22 es Antonelli, el porcentaje sería 1 entre unos 75 campeones, y con un solo caso no sé qué tan confiable sea. [dibujo: la barrita con una rayita finita pintada al final] ¿Y si pedimos también el campeón más joven antes que él, para ver qué tan lejos quedaba del 20?"
+        },
+        {
+          "hablante": "Cami",
+          "texto": "Sí, eso sirve: según los tres que nos dieron, el récord anterior sería Vettel con 23 años y 134 días, así que Antonelli le gana por más de tres años. [dibujo: la recta con una flechita entre el 20 y el 23,4] Pero igual ese \"1 entre 75\" es medio frágil, ¿no? ¿Cómo diríamos qué tan seguros estamos?"
+        },
+        {
+          "hablante": "Fran",
+          "texto": "Yo diría que no hay un número exacto, solo que hasta ahora fue rarísimo, porque le ganó por más de tres años al récord. [dibujo: la recta con la nube de puntos entre 25 y 35 y una flecha larga hasta el 20] Y para saber si viene una época de jóvenes, pediría las edades por década, a ver si la nube se corre a la izquierda."
+        }
+      ]
+    }
+  ],
+  "tabla_bloqueos": {
+    "B23": 0.33,
+    "B56": 0.17
+  },
+  "intervenciones": [
+    {
+      "bloqueo": "B12",
+      "z1_z2": "Pregunten: «¿Qué datos de la crónica tienen y cuáles les parecen imprecisos? ¿Qué decidieron dejar fuera?». Escuchen antes de ayudar. Reconozcan lo que ya identificaron.",
+      "z3": "Pidan que escriban en una lista qué suponen sobre la edad de Antonelli, sobre los tres campeones y sobre lo que se modela.",
+      "z4": "Pregunten: «¿La edad de Antonelli se conoce igual que la de los otros tres? ¿Los tres campeones son todos los campeones o los eligió la crónica? ¿Algo limita cuán joven puede ser un piloto?».",
+      "z5": "Si siguen sin avanzar, ofrezcan los recursos a solicitud R2 (precisión de la edad del piloto actual), R4 (alcance de la comparación) y R3 (edad mínima para competir). Pidan que digan cómo cambia cada uno su lista de supuestos."
+    },
+    {
+      "bloqueo": "B23",
+      "z1_z2": "Pregunten: «¿Qué han hecho hasta ahora con las edades? ¿Qué parte de la pregunta no saben cómo expresar con números?». Reconozcan que ya vieron el problema de la muestra pequeña, como el grupo de E3.",
+      "z3": "Pidan que dibujen las edades de los tres campeones en una recta y marquen dónde caería Antonelli, con los dos extremos de su edad.",
+      "z4": "Pregunten: «¿Qué cantidad resume dónde se centran las edades y cuál resume cuánto varían? ¿Qué distribución podría describir la edad al título de un campeón? ¿Cómo pondrían un número a «qué tan seguros estamos»?». No nombren el modelo.",
+      "z5": "Pidan que elijan al menos dos distribuciones candidatas para la edad al título, escriban qué supone cada una y calculen con ambas. Que conviertan antes las edades a años con decimales. No les digan cuál es la adecuada ni qué resultado debería salir."
+    },
+    {
+      "bloqueo": "B34",
+      "z1_z2": "Pregunten: «¿Qué cálculo están haciendo ahora y con qué valores de edad?». Reconozcan lo avanzado en el modelo elegido.",
+      "z3": "Pidan que ordenen los cálculos en una tabla, con un modelo por columna y un extremo de la edad de Antonelli por fila.",
+      "z4": "Pregunten: «¿Qué parámetros usa cada modelo y de dónde salen? ¿Calcularon lo mismo para el extremo bajo y para el alto de la edad de Antonelli?».",
+      "z5": "Pidan que rehagan la conversión de cada edad (años más días entre 365) y repitan el cálculo en cada modelo con esos valores. No les den ningún resultado intermedio."
+    },
+    {
+      "bloqueo": "B45",
+      "z1_z2": "Pregunten: «¿Qué dirían hoy al aire con lo que calcularon? ¿Qué les incomoda de esa frase?».",
+      "z3": "Pidan que escriban la frase para el periodista en lenguaje de oyente, sin símbolos ni fórmulas.",
+      "z4": "Pregunten: «¿Sus modelos dan la misma frecuencia? Si difieren, ¿qué supone cada uno que explique la diferencia? ¿Qué advertencia sobre fiabilidad debería ir junto a la cifra?».",
+      "z5": "Pidan que la frase incluya una cifra aproximada de frecuencia, o un rango, y una advertencia sobre su fiabilidad. Que expliquen por qué los modelos discrepan. No les entreguen la cifra ni el rango."
+    },
+    {
+      "bloqueo": "B56",
+      "z1_z2": "Pregunten: «¿Cómo comprobaron que su respuesta es razonable? ¿Con qué la compararon?». Reconozcan, como en E4, que dudar de un solo caso es una buena señal.",
+      "z3": "Pidan que listen qué podría estar mal en su modelo y qué información independiente les permitiría comprobarlo.",
+      "z4": "Pregunten: «¿Los tres campeones de la crónica son todos o los eligió alguien? ¿Hay una regla que limite cuán joven puede ser un campeón? ¿Qué lista podrían conseguir que no usaron para construir el modelo?».",
+      "z5": "Entreguen la lista completa de campeones históricos (registro oficial, formula1.com) y, si no lo pidieron, el recurso R3. Pidan que comparen lo que predice cada modelo con lo observado. No les digan qué modelo queda mejor."
+    },
+    {
+      "bloqueo": "B67",
+      "z1_z2": "Pregunten: «¿Qué quieren que entienda el oyente al final? ¿Qué parte de su trabajo cuesta más contar?».",
+      "z3": "Pidan un esquema del mensaje en tres partes: qué concluyen, con qué lo respaldan y qué límites tiene.",
+      "z4": "Pregunten: «¿Qué gráfico mostraría las edades reales y la cola de cada modelo en un mismo dibujo? ¿Dónde se ven los límites de lo que afirman?».",
+      "z5": "Propongan un guion breve con un gráfico que compare las distribuciones de los modelos con las edades, y que cierre indicando los límites. El contenido de la conclusión debe salir del grupo."
+    }
+  ],
+  "puesta_en_comun": {
+    "seleccion_y_orden": [
+      "Primero E4 (anticipar y monitorear): su brecha informada como un valor único es accesible para todos, y deja ver un supuesto sin revisar: la edad tratada como 20 exactos y los tres de la crónica como si fueran todos.",
+      "Segundo E3 (seleccionar): muestra un grupo que ve el problema de la muestra pequeña pero no llega a un modelo. Sirve para discutir que reconocer la limitación no reemplaza matematizar y por qué se trabó en B23.",
+      "Tercero E2 (secuenciar): parte de la normal con los tres campeones y valida pronto. Permite contrastar con E4 qué cambia cuando se valida antes de concluir y discutir el z calculado con 20 años exactos.",
+      "Cuarto E1 (conectar): cierra con la edad como intervalo, la sospecha de selección, el piso de edad y la normal cortada. Permite conectar todo lo anterior y comparar con la lista empírica. El docente no presenta su propia ruta antes de que hayan hablado los grupos."
+    ],
+    "preguntas": [
+      "¿Qué supuestos hizo cada grupo sobre la edad de Antonelli y cómo cambia la conclusión si es otro?",
+      "¿Los tres campeones de la crónica sirven como muestra de todos los campeones? ¿Qué sesgo trae haberlos elegido así?",
+      "¿Por qué una normal construida con tres datos puede dar una conclusión engañosa? ¿Qué supone sobre las colas?",
+      "¿Qué aporta la edad mínima para competir a la cola inferior de cada modelo?",
+      "¿Qué modelo fue más económico de usar y cuál respondió mejor «con qué frecuencia podría repetirse»?",
+      "¿Qué se pierde al decir un solo número y qué se gana al decir un rango con sus límites?",
+      "¿Cómo supo cada grupo que su modelo era razonable? ¿Qué evidencia independiente usó o podría usar?"
+    ],
+    "contraste_validacion": "Entreguen la lista completa de edades de todos los campeones mundiales históricos (registro oficial, formula1.com), que ningún grupo usó para construir su modelo. Pidan que contrasten la frecuencia observada de títulos antes de cierta edad con lo que predijo cada modelo, que miren la forma de la distribución real y que usen la edad mínima de licencia como restricción. Cierren preguntando qué modelos resisten el contraste, cuáles no y qué límites hay que decir al aire."
+  },
+  "variantes_y_continuidad": {
+    "uso_variantes": "Variante hacia abajo (S2): conviene usarla si el grupo no maneja inferencia con muestras pequeñas ni distribuciones de probabilidad, o si el tiempo no alcanza para las cuatro rutas. Los cambios son los de la tarea: se entregan las edades convertidas a años con decimales y se explica que la edad de Antonelli solo se conoce en años cumplidos. La pregunta se reduce a cuánto se aleja la marca del récord anterior y de la dispersión de los otros tres campeones, sin exigir modelo de probabilidad. Con esa variante el grupo no practica la conversión a decimales, que es parte de P3-MM, y la validación pierde peso. La ruta R1 (brecha respecto del récord y de la dispersión) es el camino natural. Variante hacia arriba: no existe (es null en la tarea), así que no hay un enunciado más exigente que ofrecer. Si un grupo avanza rápido, el docente puede pedirle, dentro de la tarea original, que compare las rutas R3 (cola pesada) y R4 (mezcla bayesiana) y explique por qué difieren, pero esto no es una variante diseñada.",
+    "acostumbramiento": "Si el grupo nunca ha modelado, conviene una actividad previa breve con un problema de datos escasos o ambiguos, en que los estudiantes solo listen supuestos y digan qué dato falta, sin calcular. Así practican P1-MRS y P2-RM antes de abordar esta tarea, donde la sensibilidad al modelo es central. Esta tarea es exigente para su nivel principal (U) y funciona mejor como parte de una secuencia, tras haber trabajado distribuciones y muestras pequeñas, que como iniciación a la modelación. Para un grupo sin experiencia, la variante S2 sirve como primera aproximación.",
+    "tarea_siguiente": null
+  },
+  "materiales": {
+    "tarea_pdf": "tarea.pdf",
+    "recursos_tarjetas": "recursos.pdf",
+    "notebook": "escenarios.ipynb",
+    "icono": "icono.svg"
+  },
+  "trazabilidad": {
+    "noticia_url": "https://www.latercera.com/el-deportivo/noticia/aprendizaje-y-adaptacion-las-claves-que-llevaron-a-kimi-antonelli-a-ser-el-campeon-mas-joven-en-la-historia-de-la-formula-1/",
+    "diseno": {
+      "modelo": "claude-sonnet-5-5",
+      "version_prompt": "1.1"
+    },
+    "rub01_total": 24,
+    "revision_humana_1": {
+      "revisor": "Carlos Rojas Bruna",
+      "fecha": "2026-11-03"
+    },
+    "simulacion": {
+      "n_grupos": 6,
+      "diseno": "diseno_otm"
+    },
+    "revision_humana_2": {
+      "revisor": "Carlos Rojas Bruna",
+      "fecha": "2026-11-03"
+    },
+    "commit": null
+  },
+  "modelo_y_prompt": {
+    "redactor": "claude-sonnet-5-5",
+    "redactor_escenarios": "claude-opus-5-5",
+    "version_prompt": "1.0"
+  }
+}
