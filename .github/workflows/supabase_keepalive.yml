@@ -1,0 +1,68 @@
+# Keep-alive de Supabase: una consulta mínima a la API REST cada semana para que el proyecto gratuito no se pause.
+#
+# Supabase pausa los proyectos del plan gratuito tras 7 días sin actividad. Entre el 2026-10-26 y el 2026-11-03 el
+# proyecto se pausó y rompió staging. Este workflow llama a la función pública `resumen_valoraciones()`
+# (sitio/db/aplicar_todo.sql; `grant execute ... to anon`), que lee la base de datos y devuelve pocas filas.
+# No escribe nada. Usa solo la clave publicable, nunca la de servicio.
+#
+# Cron: miércoles a las 12:17 UTC (minuto 17: los cron a la hora en punto son los que más se atrasan). Queda a
+# mitad de camino entre los lunes de `semanal.yml`, así que nunca pasan más de ~4 días sin actividad. GitHub
+# solo corre los cron desde la rama por defecto y puede deshabilitarlos tras 60 días sin commits en el repo.
+#
+# Secrets (docs/secrets.md): SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY. No usa la API de Anthropic.
+name: supabase-keepalive
+
+on:
+  schedule:
+    - cron: "17 12 * * 3"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: supabase-keepalive
+  cancel-in-progress: false
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      SUPABASE_PUBLISHABLE_KEY: ${{ secrets.SUPABASE_PUBLISHABLE_KEY }}
+    steps:
+      - name: Comprobar los secrets (no se imprimen)
+        run: |
+          faltan=""
+          [ -n "$SUPABASE_URL" ] || faltan="$faltan SUPABASE_URL"
+          [ -n "$SUPABASE_PUBLISHABLE_KEY" ] || faltan="$faltan SUPABASE_PUBLISHABLE_KEY"
+          if [ -n "$faltan" ]; then
+            echo "::error title=Faltan secrets::$faltan (ver docs/secrets.md)"; exit 1
+          fi
+          echo "::add-mask::$SUPABASE_PUBLISHABLE_KEY"
+
+      - name: Consulta mínima a la API REST
+        run: |
+          url="${SUPABASE_URL%/}/rest/v1/rpc/resumen_valoraciones"
+          codigo=""
+          for intento in 1 2 3; do
+            codigo=$(curl -sS -o "$RUNNER_TEMP/respuesta.json" -w "%{http_code}" --max-time 30 \
+              -X POST "$url" \
+              -H "apikey: $SUPABASE_PUBLISHABLE_KEY" \
+              -H "Content-Type: application/json" \
+              -d '{}' || echo "000")
+            case "$codigo" in
+              2??) break ;;
+            esac
+            echo "Intento $intento: HTTP $codigo"
+            sleep 20
+          done
+          case "$codigo" in
+            2??)
+              filas=$(python3 -c "import json,sys; print(len(json.load(open(sys.argv[1]))))" "$RUNNER_TEMP/respuesta.json" 2>/dev/null || echo "?")
+              echo "Supabase responde (HTTP $codigo, $filas filas de resumen_valoraciones)." ;;
+            *)
+              echo "::error title=Supabase no responde (HTTP $codigo)::Si el proyecto está pausado, restaurarlo en el panel de Supabase (Project > Restore). Una consulta no reactiva un proyecto ya pausado."
+              exit 1 ;;
+          esac
