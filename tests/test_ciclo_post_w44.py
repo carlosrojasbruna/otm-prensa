@@ -136,7 +136,47 @@ def test_archivar_evaluada_con_motivo_y_revisor(rutas):
     assert exp.marcas["revision_humana_1"]["resultado"] == "negativa" and "pendiente" not in exp.marcas
     assert reg["gasto"]["ciclo_usd"] == 0 and reg["orden"] == "archivar"
     reg2 = C.Ciclo(rutas=rutas, salida=lambda s: None).archivar([TID], motivo="otra vez", revisor=REVISOR)
-    assert "exige `evaluada`" in reg2["errores"][0]["error"]
+    assert "terminal" in reg2["errores"][0]["error"]
+
+
+def test_archivar_version_intermedia_verificada_conserva_artefactos(rutas):
+    """Una versión intermedia en `verificada`, reemplazada por la publicada: se archiva con `archivo_humano` (no es
+    una revisión humana 1) y conserva trazas y guía, que las versiones posteriores siguen leyendo."""
+    tramo_a(rutas, [rub(OK_23)] * 3)
+    ag = _agentes([], [], [])
+    ag.verificar = _verificar_con([[]])
+    nuevo_ciclo(rutas, respuestas_simulador(6), agentes=ag).continuar([TID], revisor=REVISOR)
+    assert orq.cargar(TID, rutas.expedientes).estado == "verificada"
+    reg = C.Ciclo(rutas=rutas, salida=lambda s: None).archivar([TID], motivo="reemplazada por la versión publicada",
+                                                               revisor=REVISOR)
+    exp = orq.cargar(TID, rutas.expedientes)
+    assert exp.estado == "archivada" and not reg["errores"]
+    assert exp.marcas["archivo_humano"]["estado_previo"] == "verificada"
+    assert "revision_humana_1" not in exp.marcas and "pendiente" not in exp.marcas
+    assert {"trazas_resumen", "guia"} <= set(exp.artefactos)
+
+
+def test_archivar_borrador_es_revision_1_negativa(rutas):
+    tramo_a(rutas, [rub(OK_23)] * 3)
+    exp = orq.cargar(TID, rutas.expedientes)
+    exp = orq.transicionar(exp, "borrador", motivo="prueba")   # como los borradores de CIPER que quedaron con error
+    orq.guardar(exp, rutas.expedientes)
+    C.Ciclo(rutas=rutas, salida=lambda s: None).archivar([TID], motivo="tema inadecuado", revisor=REVISOR)
+    exp = orq.cargar(TID, rutas.expedientes)
+    assert exp.estado == "archivada" and exp.marcas["revision_humana_1"]["resultado"] == "negativa"
+
+
+# --------------------------------------------------------------------------- --hasta-evaluada
+def test_hasta_evaluada_no_marca_revision_1_ni_pasa_de_evaluada(rutas):
+    tramo_a(rutas, [rub(OK_23)] * 3)
+    reg = C.Ciclo(rutas=rutas, salida=lambda s: None).continuar([TID], hasta_evaluada=True)
+    exp = orq.cargar(TID, rutas.expedientes)
+    assert exp.estado == "evaluada" and exp.marcas["pendiente"] == "revision_humana_1"
+    assert reg["orden"] == "hasta_evaluada" and not reg["errores"]
+    with pytest.raises(ValueError):
+        C.Ciclo(rutas=rutas, salida=lambda s: None).continuar([TID], revisor=REVISOR, hasta_evaluada=True)
+    with pytest.raises(SystemExit):
+        C.main(["--continuar", TID, "--hasta-evaluada", "--revisor", REVISOR])
 
 
 def test_archivar_exige_motivo_y_revisor(rutas):

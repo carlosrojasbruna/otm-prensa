@@ -5,6 +5,12 @@
 # SOLO MANUAL. workflow_dispatch con `revisor` OBLIGATORIO: es quien hizo la revisión humana 1 de esos
 # expedientes (GOB01 §2); el ciclo nunca inventa un revisor. No tiene cron ni se dispara por push.
 #
+# Dos modos además del tramo B normal (excluyentes entre sí):
+# - `hasta_evaluada=true`: `--continuar <ids> --hasta-evaluada`. Reanuda borradores (evaluador e iteraciones) y se
+#   detiene en `evaluada`, pendientes de la revisión humana 1. NO marca la revisión 1: `revisor` debe ir vacío.
+# - `observaciones_guia` no vacío: revisión humana 2 negativa. `--rehacer-guia` sobre cada id (en `verificada`) con
+#   ese texto como observación; `revisor` = quien hizo la revisión humana 2. Quedan otra vez en `verificada`.
+#
 # SOLO SI EXISTEN LOS SECRETS SIM_REPO Y SIM_REPO_TOKEN. El simulador (sim.py) vive en un repo externo del
 # equipo (decisiones.md, fase 5: no se sube a este repo público). SIM_REPO = "dueño/repo" cuya raíz es la
 # carpeta `IDEA MODELAMIENTO/` (contiene `simulacion/sim.py` e `insumos/`); SIM_REPO_TOKEN = token fino de
@@ -21,9 +27,10 @@ on:
   workflow_dispatch:
     inputs:
       revisor:
-        description: "Nombre de quien hizo la revisión humana 1 de estos expedientes (obligatorio)"
-        required: true
+        description: "Quien hizo la revisión humana 1 (o la 2, con observaciones_guia). Obligatorio salvo con hasta_evaluada, que va sin revisor"
+        required: false
         type: string
+        default: ""
       ids:
         description: "Ids de expediente (tarea_id) separados por espacio; deben estar en `evaluada` y en main (obligatorio salvo con solo_comprobar)"
         required: false
@@ -31,6 +38,16 @@ on:
         default: ""
       presupuesto_ciclo:
         description: "Tope adicional en USD solo para este ciclo (vacío = 90 % del tope semanal)"
+        required: false
+        type: string
+        default: ""
+      hasta_evaluada:
+        description: "Reanudar borradores solo hasta `evaluada` (evaluador; sin marcar la revisión humana 1; revisor vacío)"
+        required: false
+        type: boolean
+        default: false
+      observaciones_guia:
+        description: "Revisión humana 2 negativa: observación para rehacer la guía de los ids (en `verificada`). Vacío = tramo B normal"
         required: false
         type: string
         default: ""
@@ -137,6 +154,8 @@ jobs:
       IN_REVISOR: ${{ github.event.inputs.revisor }}
       IN_IDS: ${{ github.event.inputs.ids }}
       IN_PRESUPUESTO: ${{ github.event.inputs.presupuesto_ciclo }}
+      IN_HASTA_EVALUADA: ${{ inputs.hasta_evaluada }}
+      IN_OBS_GUIA: ${{ github.event.inputs.observaciones_guia }}
       PYTHONUTF8: "1"
     steps:
       - name: Comprobar secrets y entradas (no se imprimen)
@@ -148,7 +167,12 @@ jobs:
             echo "::error title=Faltan secrets::Crear en Settings > Secrets and variables > Actions:$faltan (ver docs/secrets.md)"
             exit 1
           fi
-          [ "${#IN_REVISOR}" -ge 3 ] || { echo "::error::El input revisor es obligatorio (nombre y apellido de quien hizo la revisión humana 1)"; exit 1; }
+          if [ "$IN_HASTA_EVALUADA" = "true" ]; then
+            [ -z "${IN_OBS_GUIA// /}" ] || { echo "::error::hasta_evaluada y observaciones_guia son excluyentes"; exit 1; }
+            [ -z "${IN_REVISOR// /}" ] || { echo "::error::hasta_evaluada no marca la revisión humana 1: deja revisor vacío"; exit 1; }
+          else
+            [ "${#IN_REVISOR}" -ge 3 ] || { echo "::error::El input revisor es obligatorio (nombre y apellido de quien hizo la revisión humana 1, o la 2 con observaciones_guia)"; exit 1; }
+          fi
           [ -n "${IN_IDS// /}" ] || { echo "::error::El input ids es obligatorio para correr el tramo B"; exit 1; }
           [[ "$IN_IDS" =~ ^[A-Za-z0-9._\ -]+$ ]] || { echo "::error::ids: solo letras, números, punto, guion y espacios"; exit 1; }
           if [ -n "$IN_PRESUPUESTO" ]; then
@@ -201,12 +225,26 @@ jobs:
           echo "semana=$semana" >> "$GITHUB_OUTPUT"
           echo "rama=$rama" >> "$GITHUB_OUTPUT"
 
-      - name: Tramo B (hasta `verificada`)
+      - name: Tramo B (hasta `verificada`), hasta `evaluada` o guía rehecha
         id: ciclo
         run: |
           set +e
           read -r -a ids <<< "$IN_IDS"
-          args=(--continuar "${ids[@]}" --revisor "$IN_REVISOR")
+          if [ -n "${IN_OBS_GUIA// /}" ]; then
+            # {id: [observación]} para cada id; el texto va por variable de entorno, nunca interpolado en el script
+            python - "$RUNNER_TEMP/observaciones_guia.json" "${ids[@]}" <<'PY'
+          import json, os, sys
+          ruta, ids = sys.argv[1], sys.argv[2:]
+          obs = os.environ["IN_OBS_GUIA"].strip()
+          with open(ruta, "w", encoding="utf-8") as f:
+              json.dump({i: [obs] for i in ids}, f, ensure_ascii=False)
+          PY
+            args=(--rehacer-guia "$RUNNER_TEMP/observaciones_guia.json" --revisor "$IN_REVISOR")
+          elif [ "$IN_HASTA_EVALUADA" = "true" ]; then
+            args=(--continuar "${ids[@]}" --hasta-evaluada)
+          else
+            args=(--continuar "${ids[@]}" --revisor "$IN_REVISOR")
+          fi
           [ -z "$IN_PRESUPUESTO" ] || args+=(--presupuesto-ciclo "$IN_PRESUPUESTO")
           python -m pipeline.ciclo "${args[@]}" 2>&1 | tee "$RUNNER_TEMP/resumen.txt"
           echo "rc=${PIPESTATUS[0]}" >> "$GITHUB_OUTPUT"
@@ -231,18 +269,31 @@ jobs:
           URL_RUN: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           set -euo pipefail
+          if [ -n "${IN_OBS_GUIA// /}" ]; then
+            modo="guía rehecha de $IN_IDS (revisión humana 2: $IN_REVISOR, workflow)"
+            cabeza="Guía rehecha ($SEMANA): $IN_IDS. Revisión humana 2 negativa por **$IN_REVISOR**."
+            cierre="Los expedientes vuelven a \`verificada\`, pendientes de la revisión humana 2 de la guía nueva. Nada se publica desde este workflow."
+          elif [ "$IN_HASTA_EVALUADA" = "true" ]; then
+            modo="borradores de $IN_IDS hasta evaluada (workflow)"
+            cabeza="Borradores hasta \`evaluada\` ($SEMANA): $IN_IDS. Sin revisión humana 1."
+            cierre="Los expedientes quedan en \`evaluada\` (o \`archivada\` si no llegan al umbral), pendientes de la revisión humana 1."
+          else
+            modo="tramo B de $IN_IDS (revisor: $IN_REVISOR, workflow)"
+            cabeza="Tramo B ($SEMANA): $IN_IDS. Revisión humana 1 por **$IN_REVISOR**."
+            cierre="Los expedientes quedan en \`verificada\`, pendientes de la revisión humana 2 de la guía. Nada se publica desde este workflow."
+          fi
           if ! git diff --cached --quiet; then
-            git commit -q -m "pipeline: tramo B de $IN_IDS (revisor: $IN_REVISOR, workflow)"
+            git commit -q -m "pipeline: $modo"
             git push origin "$RAMA"
           fi
           {
-            echo "Tramo B ($SEMANA): $IN_IDS. Revisión humana 1 por **$IN_REVISOR**. Ejecución: $URL_RUN"
+            echo "$cabeza Ejecución: $URL_RUN"
             echo
             echo '```'
             cat "$RUNNER_TEMP/resumen.txt"
             echo '```'
             echo
-            echo "Los expedientes quedan en \`verificada\`, pendientes de la revisión humana 2 de la guía. Nada se publica desde este workflow."
+            echo "$cierre"
           } > "$RUNNER_TEMP/cuerpo.md"
           n="$(gh pr list --head "$RAMA" --base main --state open --json number --jq '.[0].number // empty')"
           if [ -z "$n" ]; then

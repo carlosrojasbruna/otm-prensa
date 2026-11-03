@@ -21,7 +21,7 @@ Los workflows que aceptan inputs (`workflow_dispatch`) son estos:
 | Workflow | Cuándo corre | Inputs | Qué hace | Estado de los expedientes al terminar |
 |---|---|---|---|---|
 | `semanal.yml` | Cron los lunes 09:17 UTC, y a mano | `max_tareas` (3), `presupuesto_ciclo` (vacío), `noticia_prueba` (vacío), `ejecutar_ciclo` (`true`) | Verifica MED01 y corre el tramo A. Abre o actualiza el PR `semanal/AAAA-WW` | `evaluada` |
-| `tramo_b.yml` | A mano | `revisor` (obligatorio), `ids` (obligatorio salvo con `solo_comprobar`), `presupuesto_ciclo` (vacío), `solo_comprobar` (`false`) | Corre el tramo B. Abre o actualiza el PR `semanal/AAAA-WW` | `verificada` |
+| `tramo_b.yml` | A mano | `revisor` (obligatorio salvo con `hasta_evaluada`), `ids` (obligatorio salvo con `solo_comprobar`), `presupuesto_ciclo` (vacío), `hasta_evaluada` (`false`), `observaciones_guia` (vacío), `solo_comprobar` (`false`) | Corre el tramo B; o, con `hasta_evaluada`, reanuda borradores hasta `evaluada`; o, con `observaciones_guia`, rehace la guía (sección 4.4). Abre o actualiza el PR `semanal/AAAA-WW` | `verificada` (`evaluada` con `hasta_evaluada`) |
 | `publicar.yml` | A mano | `ids` (obligatorio), `revisor` (obligatorio), `dry_run` (`false`) | Ejecuta el bibliotecario y abre el PR `publicar/<fecha>-<n>` | Sigue en `verificada`. Tras el merge de su PR, `publicada.yml` lo pasa a `publicada` (sección 5.6) |
 | `deploy.yml` | Cada push a `main`, y a mano | Ninguno | Aplica migraciones, construye el sitio, lo publica en Pages y corre el staging | Sitio en producción |
 | `ci.yml` | Cada push y cada pull request | Ninguno | Pruebas, contratos, invariantes y escaneo de secretos | Solo informa |
@@ -115,8 +115,10 @@ En la máquina local, desde la raíz del repositorio y en una rama (los cambios 
 python -m pipeline.ciclo --archivar <tarea_id> [<tarea_id> ...] --motivo "revisión humana 1" --revisor "Nombre Apellido"
 ```
 
-- Solo acepta expedientes en `evaluada`; cualquier otro estado se informa como error y no se toca.
-- Hace la transición `evaluada → archivada` con el orquestador (valida contra `contratos/`). El motivo queda en el historial como `«<motivo> (<revisor>)»` y en la marca `revision_humana_1` (`resultado: negativa`, revisor, fecha, motivo). Quita la marca `pendiente`.
+- Acepta cualquier estado no terminal. Un expediente ya `publicada` o `archivada` se informa como error y no se toca.
+- Hace la transición `→ archivada` con el orquestador (valida contra `contratos/`). El motivo queda en el historial como `«<motivo> (<revisor>)»`. Quita la marca `pendiente`.
+- En `borrador` o `evaluada` es la revisión humana 1 negativa: marca `revision_humana_1` (`resultado: negativa`, revisor, fecha, motivo). Desde un estado posterior (por ejemplo, una versión intermedia en `verificada` que quedó reemplazada por la versión publicada) deja en su lugar la marca `archivo_humano` (`estado_previo`, revisor, fecha, motivo).
+- No borra artefactos ni `pipeline/state/trabajo/<tarea_id>/`. Una versión posterior que apunte al expediente archivado con `reusar_simulacion_de` o `guia_base_de` lo sigue leyendo igual.
 - No usa la API (costo 0). Deja un registro de ciclo `orden: archivar` en `pipeline/state/ciclos/`.
 - Commitea `pipeline/state/` con el prefijo `pipeline:` y abre el PR. Ejemplo del 2026-10-26: `votos-canal-whatsapp` y `leer-documento-de-riesgos`, motivo «revisión humana 1», Carlos Rojas Bruna.
 
@@ -141,6 +143,8 @@ Lanza `tramo_b.yml` desde `main` con:
 - `revisor`: nombre y apellido de quien hizo la revisión humana 1. Es obligatorio, debe tener al menos 3 caracteres y el ciclo no lo inventa.
 - `ids`: los ids de expediente separados por espacios, todos en `evaluada` y en `main`. Usa el id exacto del expediente (formato `AAAA-MM-slug`, por ejemplo `2026-10-<slug>`). Solo letras, números, puntos, guiones bajos, guiones y espacios.
 - `presupuesto_ciclo`: opcional, en USD. Vacío significa solo el 90 % del tope semanal.
+- `hasta_evaluada`: `false`. Ver la sección 4.4.
+- `observaciones_guia`: vacío. Ver la sección 4.4.
 - `solo_comprobar`: `false`. Para comprobar el acceso al simulador, ver la sección 8.
 
 El workflow hace checkout de `SIM_REPO` (el repositorio privado del simulador) en `_sim/`, lo enlaza donde `config.yaml` lo espera, instala dependencias y ejecuta `python -m pipeline.ciclo --continuar <ids> --revisor <revisor>`. El PR `semanal/AAAA-WW` se crea, o se actualiza con un comentario si ya existe.
@@ -164,6 +168,13 @@ Lee la guía en el propio PR (sección 5.1).
 
 Costo: un tramo B con simulación nueva cuesta entre 1,7 y 2,5 USD. Si reutiliza una simulación ya hecha, cuesta entre 0,55 y 1,0 USD.
 
+### 4.4 Otros dos modos: `hasta_evaluada` y `observaciones_guia`
+
+Los dos son excluyentes entre sí. Usan el mismo PR `semanal/AAAA-WW`, el mismo tope y la misma guarda de secrets que el tramo B.
+
+- **`hasta_evaluada` = `true`**: reanuda expedientes en `borrador` (por ejemplo, los que quedaron con error antes de evaluarse) y los lleva solo hasta `evaluada`. Corre el evaluador (tres corridas) y, si no llegan al umbral, las iteraciones del diseñador; al agotar las tres evaluaciones, el expediente queda `archivada`. **No marca la revisión humana 1**: deja `revisor` vacío (si lo llenas, el job falla). Ejecuta `python -m pipeline.ciclo --continuar <ids> --hasta-evaluada`. Los ids deben estar en `borrador` o `evaluada`; los demás se informan como error y no se tocan. Al terminar quedan pendientes de la revisión humana 1 (sección 3). Costo: ≈ 0,25 USD por expediente si no hay iteraciones.
+- **`observaciones_guia` con texto**: es la revisión humana 2 negativa de la guía (sección 5.2) sin pasar por la máquina local. Cada id debe estar en `verificada`. El workflow arma `{<id>: [<texto>]}` para todos los ids (la misma observación para cada uno; si las observaciones son distintas, lanza una ejecución por id) y ejecuta `python -m pipeline.ciclo --rehacer-guia <archivo> --revisor <revisor>`. `revisor` es quien hizo la revisión humana 2. Reutiliza la simulación; corren el redactor, el ilustrador (solo si la tarea no tiene ícono) y el verificador. Los expedientes vuelven a `verificada`, pendientes de una nueva revisión humana 2. Costo: ≈ 0,8 USD por guía.
+
 ## 5. Revisión humana 2, publicación y verificación
 
 ### 5.1 Revisar la guía
@@ -179,7 +190,7 @@ Comprueba que el enunciado de `tarea.json` no haya cambiado respecto de la revis
 
 ### 5.2 Si hay defectos (solo en local)
 
-Hoy ningún workflow corrige la guía ni la tarea. Estos comandos corren en tu máquina, con `OTM_API_KEY`, y dejan sus cambios de estado en tu copia del repositorio. Para que lleguen a `main`, commitéalos en una rama y abre un PR:
+`--rehacer-guia` también se puede lanzar desde la web con `tramo_b.yml` e `observaciones_guia` (sección 4.4). Lo demás no tiene workflow. Estos comandos corren en tu máquina, con `OTM_API_KEY`, y dejan sus cambios de estado en tu copia del repositorio. Para que lleguen a `main`, commitéalos en una rama y abre un PR:
 
 - **Defecto de la guía** (redacción, escenario mal respaldado):
 
@@ -372,7 +383,7 @@ Cambiar un modelo de partida (`pipeline/config.yaml`, `modelos:`) exige evidenci
 
 ## 12. Pendientes que afectan la operación
 
-- **Corregir o rechazar desde la web:** `--rehacer-guia`, `--nueva-version`, `--archivar`, `--aceptar-hallazgos` y `--version-sin-cambios` no tienen workflow. Requieren la máquina local.
+- **Corregir o rechazar desde la web:** `--nueva-version`, `--archivar`, `--aceptar-hallazgos` y `--version-sin-cambios` no tienen workflow. Requieren la máquina local. `--rehacer-guia` sí lo tiene (`tramo_b.yml` con `observaciones_guia`, sección 4.4).
 - **Verificación previa:** todavía no ejecuta numéricamente el `task_space` (solución, rutas y rango), que también se decidió para CP2.
 - **Monto definitivo del tope semanal** (**[D]**, 35 USD es provisional).
 - **Kappa reportable:** doble codificación humana pendiente (sección 10).
