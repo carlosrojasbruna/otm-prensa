@@ -1,0 +1,111 @@
+{
+  "tarea_id": "2026-11-traslado-partido-concepcion-hinchas-v2",
+  "aprobado": true,
+  "estado_destino": "verificada",
+  "hallazgos": [
+    {
+      "invariante": "notebook",
+      "severidad": "advertencia",
+      "ubicacion": "guia.materiales.notebook",
+      "descripcion": "notebook escenarios.ipynb no encontrado: ",
+      "origen": "codigo"
+    }
+  ],
+  "cifras_contrastadas": [
+    {
+      "indice": 0,
+      "que_es": "marcador con que Colo Colo goleó a Universidad de Concepción",
+      "valor_tarea": "6-1",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 3"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "6-1",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 3 de la noticia"
+    },
+    {
+      "indice": 1,
+      "que_es": "título de liga que aseguraría Colo Colo con una victoria sobre Ñublense",
+      "valor_tarea": "35ª",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 2"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "35ª",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 2 de la noticia"
+    },
+    {
+      "indice": 2,
+      "que_es": "capacidad del estadio Nelson Oyarzún",
+      "valor_tarea": "12 mil",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 6"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "12 mil",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 6 de la noticia"
+    },
+    {
+      "indice": 3,
+      "que_es": "aforo autorizado por la Delegación Presidencial para el partido",
+      "valor_tarea": 7.5,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 6"
+      },
+      "metodo": "codigo",
+      "valor_fuente": 7.5,
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 6 de la noticia"
+    },
+    {
+      "indice": 4,
+      "que_es": "capacidad autorizada del estadio de Concepción",
+      "valor_tarea": "30 mil",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 11"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "30 mil",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 11 de la noticia"
+    },
+    {
+      "indice": 5,
+      "que_es": "goles de Universidad de Concepción en la derrota 6-1 (segundo número del marcador)",
+      "valor_tarea": 1,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 3"
+      },
+      "metodo": "codigo",
+      "valor_fuente": 1,
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 3 de la noticia"
+    }
+  ],
+  "notebook": {
+    "estado": "no_encontrado",
+    "ruta": "escenarios.ipynb",
+    "salida_resumen": ""
+  },
+  "meta": {
+    "agente": "verificador",
+    "version_prompt": "1.1",
+    "modelo": null,
+    "request_id": null,
+    "fecha": "2026-11-03T13:51:25+00:00",
+    "costo_usd": 0.0,
+    "modelo_llamado": false,
+    "texto_noticia_recibido": true,
+    "uso": null,
+    "nota": "solo código, sin contraste semántico (corrección manual de la guía)"
+  }
+}
