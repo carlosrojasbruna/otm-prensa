@@ -1,0 +1,84 @@
+{
+  "ciclo_id": "ciclo_20261103T121101240251Z",
+  "inicio": "2026-11-03T12:11:01Z",
+  "fin": "2026-11-03T12:16:24Z",
+  "semana": "2026-W45",
+  "parametros": {
+    "tope_semanal_usd": 35.0,
+    "fraccion_detencion": 0.9,
+    "presupuesto_ciclo_usd": 1.0,
+    "limite_usd": 1.0,
+    "gasto_semana_previo_usd": 0.0,
+    "corridas_evaluador": 3,
+    "rango_inestable": 4,
+    "corridas_simulador": 6,
+    "ids": [
+      "2026-10-cuanto-pagar-cada-mes-v2"
+    ],
+    "revisor": "Carlos Rojas Bruna"
+  },
+  "detenido_por_tope": false,
+  "eventos": [
+    {
+      "fecha": "2026-11-03T12:11:07Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-cuanto-pagar-cada-mes-v2",
+      "de": "verificada",
+      "a": "simulada",
+      "motivo": "revisión humana 2 rechaza la guía v2 (1 observaciones)"
+    },
+    {
+      "fecha": "2026-11-03T12:15:04Z",
+      "tipo": "agente",
+      "agente": "redactor",
+      "tareas": [
+        "2026-10-cuanto-pagar-cada-mes-v2"
+      ],
+      "llamadas": 4,
+      "usd": 0.692969
+    },
+    {
+      "fecha": "2026-11-03T12:15:23Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-cuanto-pagar-cada-mes-v2",
+      "de": "simulada",
+      "a": "con_guia"
+    },
+    {
+      "fecha": "2026-11-03T12:16:03Z",
+      "tipo": "agente",
+      "agente": "verificador",
+      "tareas": [
+        "2026-10-cuanto-pagar-cada-mes-v2"
+      ],
+      "llamadas": 1,
+      "usd": 0.128568
+    },
+    {
+      "fecha": "2026-11-03T12:16:24Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-10-cuanto-pagar-cada-mes-v2",
+      "de": "con_guia",
+      "a": "verificada"
+    }
+  ],
+  "expedientes": {
+    "2026-10-cuanto-pagar-cada-mes-v2": "verificada"
+  },
+  "noticias": [],
+  "pendientes_humanos": [
+    {
+      "tarea_id": "2026-10-cuanto-pagar-cada-mes-v2",
+      "pendiente": "revision_humana_2",
+      "estado": "verificada"
+    }
+  ],
+  "errores": [],
+  "orden": "rehacer_guia",
+  "gasto": {
+    "ciclo_usd": 0.821537,
+    "semana_usd": 0.821537,
+    "limite_usd": 1.0,
+    "llamadas": 5
+  }
+}
