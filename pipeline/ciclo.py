@@ -1197,7 +1197,8 @@ class Ciclo:
     @_con_cierre_de_emergencia
     def rehacer_guia(self, observaciones: Mapping[str, list[str]], *, revisor: str) -> dict:
         """La revisión humana 2 rechaza la guía: `verificada → simulada` y se reescribe desde las mismas trazas
-        con las observaciones del revisor (versión de guía + 1). Luego ilustrador, verificador y bibliotecario en
+        con las observaciones del revisor. La guía conserva la versión de la tarea; sube la revisión de la guía
+        (`marcas.revision_2.revision_guia`, 2 en el primer rechazo) y queda en `ficha.cambios`. Luego ilustrador, verificador y bibliotecario en
         dry-run; el expediente vuelve a quedar pendiente de la revisión humana 2."""
         if not (revisor and revisor.strip()):
             raise ValueError("rehacer la guía exige `revisor` (revisión humana 2)")
@@ -1211,13 +1212,20 @@ class Ciclo:
                     self.registro["errores"].append(
                         {"tarea_id": tid, "error": f"rehacer guía exige `verificada`, está en {exp.estado}"})
                     continue
-                version = int(exp.artefactos["guia"].get("version", 1)) + 1
+                # La guía es de una versión de la tarea: `guia.version` = `tarea.version` (lo exige el bibliotecario).
+                # La revisión de la guía dentro de esa versión (1 = la original) va en la marca y en ficha.cambios;
+                # el contrato `guia` no tiene un campo propio para ella.
+                previa = exp.marcas.get("revision_2") or {}
+                rev = int(previa.get("revision_guia") or (2 if previa else 1)) + 1
                 exp.marcas["revision_2"] = {"revisor": revisor, "fecha": ahora_utc(), "observaciones": list(obs),
-                                            "version_guia": version,
-                                            "cambios": f"v{version}: correcciones de la revisión humana 2 ({revisor})"}
+                                            "version_guia": int(exp.artefactos["tarea"]["version"]),
+                                            "revision_guia": rev,
+                                            "cambios": f"rev. {rev} de la guía: correcciones de la revisión humana 2 "
+                                                       f"({revisor})"}
                 exp.marcas.pop("pendiente", None)
+                exp.marcas.pop("bibliotecario_dry_run", None)   # la guía nueva vuelve a pasar el ensayo
                 exp = self._transicionar(exp, "simulada", revisor=revisor, motivo=(
-                    f"revisión humana 2 rechaza la guía v{version - 1} ({len(obs)} observaciones)"))
+                    f"revisión humana 2 rechaza la guía rev. {rev - 1} ({len(obs)} observaciones)"))
                 self.avanzar(exp)
         except TopeAlcanzado as e:
             self._detener(e)
