@@ -1,0 +1,238 @@
+{
+  "ciclo_id": "ciclo_20261103T133304321850Z",
+  "inicio": "2026-11-03T13:33:04Z",
+  "fin": "2026-11-03T13:44:05Z",
+  "semana": "2026-W45",
+  "parametros": {
+    "tope_semanal_usd": 35.0,
+    "fraccion_detencion": 0.9,
+    "presupuesto_ciclo_usd": null,
+    "limite_usd": 31.5,
+    "gasto_semana_previo_usd": 3.040897,
+    "corridas_evaluador": 3,
+    "rango_inestable": 4,
+    "corridas_simulador": 6,
+    "ids": [
+      "2026-11-traslado-partido-concepcion-hinchas-v2",
+      "2026-11-campeon-mas-joven-cuan-raro-v2"
+    ],
+    "revisor": "Carlos Rojas Bruna",
+    "aceptar_hallazgos": false
+  },
+  "detenido_por_tope": false,
+  "eventos": [
+    {
+      "fecha": "2026-11-03T13:33:06Z",
+      "tipo": "preverificacion",
+      "tarea_id": "2026-11-traslado-partido-concepcion-hinchas-v2",
+      "aprobado": true,
+      "criticos": 0,
+      "pendientes": 0,
+      "localizadores_corregidos": 0
+    },
+    {
+      "fecha": "2026-11-03T13:33:08Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-traslado-partido-concepcion-hinchas-v2",
+      "de": "evaluada",
+      "a": "revisada"
+    },
+    {
+      "fecha": "2026-11-03T13:33:10Z",
+      "tipo": "preverificacion",
+      "tarea_id": "2026-11-traslado-partido-concepcion-hinchas-v2",
+      "aprobado": true,
+      "criticos": 0,
+      "pendientes": 0,
+      "localizadores_corregidos": 0
+    },
+    {
+      "fecha": "2026-11-03T13:34:39Z",
+      "tipo": "agente",
+      "agente": "simulador",
+      "tareas": [
+        "2026-11-traslado-partido-concepcion-hinchas-v2"
+      ],
+      "llamadas": 61,
+      "usd": 0.532185
+    },
+    {
+      "fecha": "2026-11-03T13:34:41Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-traslado-partido-concepcion-hinchas-v2",
+      "de": "revisada",
+      "a": "simulada"
+    },
+    {
+      "fecha": "2026-11-03T13:37:03Z",
+      "tipo": "agente",
+      "agente": "redactor",
+      "tareas": [
+        "2026-11-traslado-partido-concepcion-hinchas-v2"
+      ],
+      "llamadas": 3,
+      "usd": 0.343819
+    },
+    {
+      "fecha": "2026-11-03T13:37:09Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-traslado-partido-concepcion-hinchas-v2",
+      "de": "simulada",
+      "a": "con_guia"
+    },
+    {
+      "fecha": "2026-11-03T13:37:14Z",
+      "tipo": "agente",
+      "agente": "ilustrador",
+      "tareas": [
+        "2026-11-traslado-partido-concepcion-hinchas-v2"
+      ],
+      "llamadas": 1,
+      "usd": 0.011056
+    },
+    {
+      "fecha": "2026-11-03T13:37:50Z",
+      "tipo": "agente",
+      "agente": "verificador",
+      "tareas": [
+        "2026-11-traslado-partido-concepcion-hinchas-v2"
+      ],
+      "llamadas": 1,
+      "usd": 0.140984
+    },
+    {
+      "fecha": "2026-11-03T13:37:56Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-traslado-partido-concepcion-hinchas-v2",
+      "de": "con_guia",
+      "a": "verificada"
+    },
+    {
+      "fecha": "2026-11-03T13:38:08Z",
+      "tipo": "bibliotecario_dry_run",
+      "tarea_id": "2026-11-traslado-partido-concepcion-hinchas-v2",
+      "ok": true,
+      "ruta": "tareas/2026-11/traslado-partido-concepcion-hinchas/",
+      "rama": "tareas/semana-2026-W45"
+    },
+    {
+      "fecha": "2026-11-03T13:38:10Z",
+      "tipo": "preverificacion",
+      "tarea_id": "2026-11-campeon-mas-joven-cuan-raro-v2",
+      "aprobado": true,
+      "criticos": 0,
+      "pendientes": 0,
+      "localizadores_corregidos": 0
+    },
+    {
+      "fecha": "2026-11-03T13:38:13Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-campeon-mas-joven-cuan-raro-v2",
+      "de": "evaluada",
+      "a": "revisada"
+    },
+    {
+      "fecha": "2026-11-03T13:38:15Z",
+      "tipo": "preverificacion",
+      "tarea_id": "2026-11-campeon-mas-joven-cuan-raro-v2",
+      "aprobado": true,
+      "criticos": 0,
+      "pendientes": 0,
+      "localizadores_corregidos": 0
+    },
+    {
+      "fecha": "2026-11-03T13:40:54Z",
+      "tipo": "agente",
+      "agente": "simulador",
+      "tareas": [
+        "2026-11-campeon-mas-joven-cuan-raro-v2"
+      ],
+      "llamadas": 103,
+      "usd": 0.857844
+    },
+    {
+      "fecha": "2026-11-03T13:40:58Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-campeon-mas-joven-cuan-raro-v2",
+      "de": "revisada",
+      "a": "simulada"
+    },
+    {
+      "fecha": "2026-11-03T13:43:00Z",
+      "tipo": "agente",
+      "agente": "redactor",
+      "tareas": [
+        "2026-11-campeon-mas-joven-cuan-raro-v2"
+      ],
+      "llamadas": 3,
+      "usd": 0.324929
+    },
+    {
+      "fecha": "2026-11-03T13:43:08Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-campeon-mas-joven-cuan-raro-v2",
+      "de": "simulada",
+      "a": "con_guia"
+    },
+    {
+      "fecha": "2026-11-03T13:43:13Z",
+      "tipo": "agente",
+      "agente": "ilustrador",
+      "tareas": [
+        "2026-11-campeon-mas-joven-cuan-raro-v2"
+      ],
+      "llamadas": 1,
+      "usd": 0.011692
+    },
+    {
+      "fecha": "2026-11-03T13:43:42Z",
+      "tipo": "agente",
+      "agente": "verificador",
+      "tareas": [
+        "2026-11-campeon-mas-joven-cuan-raro-v2"
+      ],
+      "llamadas": 1,
+      "usd": 0.124744
+    },
+    {
+      "fecha": "2026-11-03T13:43:51Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-campeon-mas-joven-cuan-raro-v2",
+      "de": "con_guia",
+      "a": "verificada"
+    },
+    {
+      "fecha": "2026-11-03T13:44:05Z",
+      "tipo": "bibliotecario_dry_run",
+      "tarea_id": "2026-11-campeon-mas-joven-cuan-raro-v2",
+      "ok": true,
+      "ruta": "tareas/2026-11/campeon-mas-joven-cuan-raro/",
+      "rama": "tareas/semana-2026-W45"
+    }
+  ],
+  "expedientes": {
+    "2026-11-traslado-partido-concepcion-hinchas-v2": "verificada",
+    "2026-11-campeon-mas-joven-cuan-raro-v2": "verificada"
+  },
+  "noticias": [],
+  "pendientes_humanos": [
+    {
+      "tarea_id": "2026-11-traslado-partido-concepcion-hinchas-v2",
+      "pendiente": "revision_humana_2",
+      "estado": "verificada"
+    },
+    {
+      "tarea_id": "2026-11-campeon-mas-joven-cuan-raro-v2",
+      "pendiente": "revision_humana_2",
+      "estado": "verificada"
+    }
+  ],
+  "errores": [],
+  "orden": "tramo_b",
+  "gasto": {
+    "ciclo_usd": 2.347253,
+    "semana_usd": 5.38815,
+    "limite_usd": 31.5,
+    "llamadas": 174
+  }
+}

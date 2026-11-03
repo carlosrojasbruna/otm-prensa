@@ -1,0 +1,80 @@
+{
+  "run": {
+    "id": "N4_VV_r1",
+    "nivel": "N4",
+    "composicion": "VV",
+    "rep": 1,
+    "estilos": [
+      "V",
+      "V"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.041284,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P2-RM",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P2-RM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P4-WM",
+        "fase_secundaria": "EMK",
+        "eventos": []
+      },
+      {
+        "n": 4,
+        "fase": "EMK",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 5,
+        "fase": "P5-INT",
+        "fase_secundaria": "EMK",
+        "eventos": []
+      },
+      {
+        "n": 6,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 7,
+        "fase": "OFF",
+        "fase_secundaria": null,
+        "eventos": []
+      }
+    ],
+    "bloqueos": [],
+    "supuestos": [
+      "Concepción con el estadio completo (30 mil)",
+      "Concepción con el mismo porcentaje de aforo que Chillán (62,5%)"
+    ],
+    "modelo": "proporcional",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Habrían podido ver el partido entre 11 250 y 22 500 hinchas más, según el límite que pusieran en Concepción. Para decidir habría que saber la distancia, si alcanza el tiempo para vender entradas, la seguridad, los buses y cuánto gastaría la gente en viajar."
+    },
+    "ruta_principal": "R1",
+    "rutas": [
+      "R1",
+      "R3"
+    ]
+  }
+}

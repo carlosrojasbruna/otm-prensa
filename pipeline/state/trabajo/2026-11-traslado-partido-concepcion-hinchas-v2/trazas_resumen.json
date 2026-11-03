@@ -1,0 +1,176 @@
+{
+  "tarea_id": "2026-11-traslado-partido-concepcion-hinchas-v2",
+  "diseno": "diseno_otm",
+  "corridas": 6,
+  "modelo": "claude-sonnet-5-5",
+  "costo_usd": 0.5322,
+  "por_corrida": [
+    {
+      "id": "N1_VV_r1",
+      "perfil": {
+        "nivel_edad": "P",
+        "nivel": "N1",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P3-MM",
+        "P4-WM",
+        "P2-RM",
+        "P4-WM",
+        "P2-RM",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "7,5 mil equivale a 7.500 personas",
+        "en Concepción se autoriza el estadio completo (30.000)",
+        "alternativa condicional: en Concepción se autoriza un poco más de la mitad, como en Chillán"
+      ],
+      "modelo": "diferencia aditiva",
+      "respuesta_final": "Habrían podido entrar hasta 22.500 hinchas más (30.000 - 7.500), pero faltaría saber cuántos autorizan de verdad, qué tan lejos queda, cuánto costaría viajar, la seguridad y los hinchas rivales. Se propone agregar que, si dejaran entrar un poco más de la mitad como en Chillán, serían como 15 mil.",
+      "validacion": true,
+      "archivo": "N1_VV_r1.json",
+      "costo_usd": 0.097284
+    },
+    {
+      "id": "N1_AA_r1",
+      "perfil": {
+        "nivel_edad": "P",
+        "nivel": "N1",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P3-MM",
+        "P4-WM",
+        "P2-RM",
+        "P4-WM",
+        "P3-MM",
+        "P4-WM",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "en Concepción entrarían los 30 mil (estadio lleno)",
+        "el resultado depende de lo que autoricen en Concepción",
+        "escenario hipotético: en Chillán dejan llenar los 12 mil"
+      ],
+      "modelo": "diferencia aditiva",
+      "respuesta_final": "En Concepción podrían ver el partido hasta 22,5 mil hinchas más que los 7,5 mil de Chillán, si llenan los 30 mil, 4 veces más gente. Y también habría que ver la distancia, el costo del viaje, el tiempo para vender entradas y la seguridad.",
+      "validacion": true,
+      "archivo": "N1_AA_r1.json",
+      "costo_usd": 0.10786
+    },
+    {
+      "id": "N2_VV_r1",
+      "perfil": {
+        "nivel_edad": "P",
+        "nivel": "N2",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P3-MM",
+        "P2-RM",
+        "P4-WM",
+        "P6-VAL",
+        "P5-INT",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "en Concepción se llena el estadio completo (30 mil)",
+        "en Chillán entran 7,5 mil"
+      ],
+      "modelo": "diferencia aditiva",
+      "respuesta_final": "Habrían podido ver el partido 22 500 hinchas más (30 000 − 7 500), o sea cuatro veces la gente, y eso cambiaría mucho la fiesta si dejan llenar el estadio. Para decidir hay que ver cuántos kilómetros hay, si en Concepción también pondrían límite, qué pasa con las entradas ya compradas, la seguridad y la plata del bus.",
+      "validacion": true,
+      "archivo": "N2_VV_r1.json",
+      "costo_usd": 0.09696
+    },
+    {
+      "id": "N3_AA_r1",
+      "perfil": {
+        "nivel_edad": "P",
+        "nivel": "N3",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P4-WM",
+        "P3-MM",
+        "P4-WM",
+        "P5-INT",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "Concepción con el estadio completo (30 000)",
+        "mismo porcentaje de ocupación que en Chillán (62,5 %)",
+        "a los hinchas de Colo Colo Concepción les queda más lejos, por lo que podrían viajar menos"
+      ],
+      "modelo": "proporcional",
+      "respuesta_final": "Cabrían entre 11 250 y 22 500 hinchas más: 11 250 si en Concepción se autoriza el mismo 62,5 % que en Chillán (18 750 − 7 500), y 22 500 si se llena todo el estadio (30 000 − 7 500). Falta considerar distancia, costo, seguridad, transporte y cuántos hinchas querrían ir.",
+      "validacion": true,
+      "archivo": "N3_AA_r1.json",
+      "costo_usd": 0.079812
+    },
+    {
+      "id": "N4_VV_r1",
+      "perfil": {
+        "nivel_edad": "P",
+        "nivel": "N4",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P2-RM",
+        "P4-WM",
+        "P5-INT",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "Concepción con el estadio completo (30 mil)",
+        "Concepción con el mismo porcentaje de aforo que Chillán (62,5%)"
+      ],
+      "modelo": "proporcional",
+      "respuesta_final": "Habrían podido ver el partido entre 11 250 y 22 500 hinchas más, según el límite que pusieran en Concepción. Para decidir habría que saber la distancia, si alcanza el tiempo para vender entradas, la seguridad, los buses y cuánto gastaría la gente en viajar.",
+      "validacion": true,
+      "archivo": "N4_VV_r1.json",
+      "costo_usd": 0.082784
+    },
+    {
+      "id": "N4_AA_r1",
+      "perfil": {
+        "nivel_edad": "P",
+        "nivel": "N4",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P4-WM",
+        "P3-MM",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "Concepción con estadio completo (30 000)",
+        "Concepción con el mismo porcentaje de aforo que Chillán (62,5 %)",
+        "Los hinchas comprarían todas las entradas permitidas (puesto en duda)",
+        "Distancia Chillán–Concepción de unos 100 km (por confirmar)"
+      ],
+      "modelo": "proporcional",
+      "respuesta_final": "Habrían podido ver el partido entre 11 250 y 22 500 hinchas más, según si limitan el aforo al 62,5 % (18 750 − 7 500) o llenan los 30 000. Para decidir, habría que ver cuántas entradas se venden, la distancia, la seguridad, el transporte, los costos y si hay otro partido ese día.",
+      "validacion": true,
+      "archivo": "N4_AA_r1.json",
+      "costo_usd": 0.067488
+    }
+  ],
+  "agregado": {
+    "pct_bloqueo_por_transicion": {},
+    "modelos_observados": {
+      "diferencia aditiva": 3,
+      "proporcional": 3
+    },
+    "pct_validan": 1.0
+  },
+  "fecha": "2026-11-03T13:34:39Z"
+}

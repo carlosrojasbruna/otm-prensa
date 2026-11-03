@@ -1,0 +1,141 @@
+{
+  "run": {
+    "id": "N4_AA_r1",
+    "nivel": "N4",
+    "composicion": "AA",
+    "rep": 1,
+    "estilos": [
+      "A",
+      "A"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.059316,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P2-RM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 3,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P3-MM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P3-MM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 6,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 7,
+        "fase": "P2-RM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "STRAT",
+          "DIST"
+        ]
+      },
+      {
+        "n": 8,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P3-MM",
+        "eventos": []
+      },
+      {
+        "n": 9,
+        "fase": "EMK",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 10,
+        "fase": "EMK",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME",
+          "DIST"
+        ]
+      },
+      {
+        "n": 11,
+        "fase": "P3-MM",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 12,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 13,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 14,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      }
+    ],
+    "bloqueos": [],
+    "supuestos": [
+      "edad de Antonelli tomada como 20 años exactos en el z",
+      "los tres campeones de la crónica no son una muestra aleatoria",
+      "distribución de edades probablemente asimétrica, no normal",
+      "lista completa con Antonelli como único campeón de 20 años o menos (k = 1)",
+      "unas 75 temporadas de campeonato",
+      "tasa constante de títulos jóvenes (Poisson)",
+      "superlicencia exige 18 años desde 2016 (piso de edad)"
+    ],
+    "modelo": "Poisson",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Antonelli es el único campeón de 20 años o menos en unas 75 temporadas, pero un solo caso no prueba tendencia. Con un modelo de Poisson, la tasa va de una vez cada ~13 años a una cada ~3.000, así que con estos datos no se sostiene ni 'irrepetible' ni 'nueva época'."
+    },
+    "ruta_principal": "otra",
+    "rutas": [
+      "otra",
+      "R2"
+    ]
+  }
+}

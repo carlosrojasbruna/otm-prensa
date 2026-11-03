@@ -1,0 +1,127 @@
+{
+  "run": {
+    "id": "N1_AA_r1",
+    "nivel": "N1",
+    "composicion": "AA",
+    "rep": 1,
+    "estilos": [
+      "A",
+      "A"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.05306,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P3-MM",
+        "fase_secundaria": "P1-MRS",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 3,
+        "fase": "P2-RM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P2-RM",
+        "fase_secundaria": "EMK",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "EMK",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 6,
+        "fase": "EMK",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 7,
+        "fase": "P4-WM",
+        "fase_secundaria": "EMK",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 8,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 9,
+        "fase": "P3-MM",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 10,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 11,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 12,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 13,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      }
+    ],
+    "bloqueos": [],
+    "supuestos": [
+      "en Concepción entrarían los 30 mil (estadio lleno)",
+      "el resultado depende de lo que autoricen en Concepción",
+      "escenario hipotético: en Chillán dejan llenar los 12 mil"
+    ],
+    "modelo": "diferencia aditiva",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "En Concepción podrían ver el partido hasta 22,5 mil hinchas más que los 7,5 mil de Chillán, si llenan los 30 mil, 4 veces más gente. Y también habría que ver la distancia, el costo del viaje, el tiempo para vender entradas y la seguridad."
+    },
+    "ruta_principal": "R3",
+    "rutas": [
+      "R3",
+      "RX"
+    ]
+  }
+}

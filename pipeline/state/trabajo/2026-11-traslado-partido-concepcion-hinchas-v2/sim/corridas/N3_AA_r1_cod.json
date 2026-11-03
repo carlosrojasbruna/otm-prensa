@@ -1,0 +1,83 @@
+{
+  "run": {
+    "id": "N3_AA_r1",
+    "nivel": "N3",
+    "composicion": "AA",
+    "rep": 1,
+    "estilos": [
+      "A",
+      "A"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.045312,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P3-MM",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P5-INT",
+        "fase_secundaria": "EMK",
+        "eventos": []
+      },
+      {
+        "n": 5,
+        "fase": "EMK",
+        "fase_secundaria": "P7-EXP",
+        "eventos": []
+      },
+      {
+        "n": 6,
+        "fase": "P7-EXP",
+        "fase_secundaria": "EMK",
+        "eventos": []
+      },
+      {
+        "n": 7,
+        "fase": "P7-EXP",
+        "fase_secundaria": "OFF",
+        "eventos": []
+      }
+    ],
+    "bloqueos": [],
+    "supuestos": [
+      "Concepción con el estadio completo (30 000)",
+      "mismo porcentaje de ocupación que en Chillán (62,5 %)",
+      "a los hinchas de Colo Colo Concepción les queda más lejos, por lo que podrían viajar menos"
+    ],
+    "modelo": "proporcional",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Cabrían entre 11 250 y 22 500 hinchas más: 11 250 si en Concepción se autoriza el mismo 62,5 % que en Chillán (18 750 − 7 500), y 22 500 si se llena todo el estadio (30 000 − 7 500). Falta considerar distancia, costo, seguridad, transporte y cuántos hinchas querrían ir."
+    },
+    "ruta_principal": "R1",
+    "rutas": [
+      "R1",
+      "R3"
+    ]
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "tarea_id": "2026-11-campeon-mas-joven-cuan-raro-v2",
+  "aprobado": true,
+  "estado_destino": "verificada",
+  "hallazgos": [
+    {
+      "invariante": "notebook",
+      "severidad": "advertencia",
+      "ubicacion": "guia.materiales.notebook",
+      "descripcion": "notebook escenarios.ipynb no encontrado: ",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "task_space.reference_solution.steps (paso 6) y guia.analisis_a_priori.solucion_referencia",
+      "descripcion": "Edad mínima de licencia en torno a 18 años. — La noticia no entrega la edad mínima de licencia. Proviene de conocimiento externo, aunque está marcada como dato a verificar y coincide con supuestos de las corridas N4.",
+      "origen": "modelo"
+    }
+  ],
+  "cifras_contrastadas": [
+    {
+      "indice": 0,
+      "que_es": "edad del piloto al ser coronado campeón",
+      "valor_tarea": "20 años",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 3"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "20 años",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 3 de la noticia; modelo: El párrafo 3 describe al italiano con 20 años; coincide en valor, unidad y significado."
+    },
+    {
+      "indice": 1,
+      "que_es": "edad de Vettel al coronarse campeón en 2010",
+      "valor_tarea": "23 años y 134 días",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 14"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "23 años y 134 días",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 14 de la noticia; modelo: El párrafo 14 da esa edad para Vettel al titularse en 2010."
+    },
+    {
+      "indice": 2,
+      "que_es": "edad de Hamilton al coronarse campeón en 2008",
+      "valor_tarea": "23 años y 300 días",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 14"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "23 años y 300 días",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 14 de la noticia; modelo: El párrafo 14 da esa edad para Hamilton al titularse en 2008."
+    },
+    {
+      "indice": 3,
+      "que_es": "edad de Alonso al coronarse campeón en 2005",
+      "valor_tarea": "24 años y 58 días",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 14"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "24 años y 58 días",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 14 de la noticia; modelo: El párrafo 14 da esa edad para Alonso al titularse en 2005."
+    },
+    {
+      "indice": 4,
+      "que_es": "días, además de los años cumplidos, de la edad de Vettel al coronarse en 2010",
+      "valor_tarea": "134 días",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 14"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "134 días",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 14 de la noticia; modelo: Es la parte en días de la edad de Vettel en el párrafo 14."
+    },
+    {
+      "indice": 5,
+      "que_es": "días, además de los años cumplidos, de la edad de Hamilton al coronarse en 2008",
+      "valor_tarea": "300 días",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 14"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "300 días",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 14 de la noticia; modelo: Es la parte en días de la edad de Hamilton en el párrafo 14."
+    },
+    {
+      "indice": 6,
+      "que_es": "días, además de los años cumplidos, de la edad de Alonso al coronarse en 2005",
+      "valor_tarea": "58 días",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 14"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "58 días",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 14 de la noticia; modelo: Es la parte en días de la edad de Alonso en el párrafo 14."
+    }
+  ],
+  "notebook": {
+    "estado": "no_encontrado",
+    "ruta": "escenarios.ipynb",
+    "salida_resumen": ""
+  },
+  "meta": {
+    "agente": "verificador",
+    "version_prompt": "1.1",
+    "modelo": "claude-opus-5-5",
+    "request_id": "req_011Cgg6MrwUShBJ34Qafjwxb",
+    "fecha": "2026-11-03T13:43:42+00:00",
+    "costo_usd": 0.124744,
+    "modelo_llamado": true,
+    "texto_noticia_recibido": true,
+    "uso": {
+      "input_tokens": 16691,
+      "output_tokens": 2319,
+      "cache_creation_input_tokens": 2320,
+      "cache_read_input_tokens": 0
+    }
+  }
+}

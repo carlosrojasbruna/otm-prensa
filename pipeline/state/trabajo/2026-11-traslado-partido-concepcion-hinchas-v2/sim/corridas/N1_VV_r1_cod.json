@@ -1,0 +1,109 @@
+{
+  "run": {
+    "id": "N1_VV_r1",
+    "nivel": "N1",
+    "composicion": "VV",
+    "rep": 1,
+    "estilos": [
+      "V",
+      "V"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.045684,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "fase_secundaria": "P3-MM",
+        "eventos": []
+      },
+      {
+        "n": 2,
+        "fase": "P3-MM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 6,
+        "fase": "P2-RM",
+        "fase_secundaria": "EMK",
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "EMK",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 8,
+        "fase": "EMK",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 9,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 10,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      }
+    ],
+    "bloqueos": [],
+    "supuestos": [
+      "7,5 mil equivale a 7.500 personas",
+      "en Concepción se autoriza el estadio completo (30.000)",
+      "alternativa condicional: en Concepción se autoriza un poco más de la mitad, como en Chillán"
+    ],
+    "modelo": "diferencia aditiva",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Habrían podido entrar hasta 22.500 hinchas más (30.000 - 7.500), pero faltaría saber cuántos autorizan de verdad, qué tan lejos queda, cuánto costaría viajar, la seguridad y los hinchas rivales. Se propone agregar que, si dejaran entrar un poco más de la mitad como en Chillán, serían como 15 mil."
+    },
+    "ruta_principal": "R3",
+    "rutas": [
+      "R3",
+      "R1"
+    ]
+  }
+}

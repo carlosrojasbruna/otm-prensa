@@ -1,0 +1,248 @@
+{
+  "tarea_id": "2026-11-campeon-mas-joven-cuan-raro-v2",
+  "diseno": "diseno_otm",
+  "corridas": 6,
+  "modelo": "claude-sonnet-5-5",
+  "costo_usd": 0.8578,
+  "por_corrida": [
+    {
+      "id": "N1_VV_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N1",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P2-RM",
+        "P3-MM",
+        "P2-RM",
+        "P6-VAL",
+        "P7-EXP",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B23",
+          "turnos": [
+            5,
+            6,
+            7
+          ],
+          "resolucion": "sin_resolver"
+        }
+      ],
+      "supuestos": [
+        "tres campeones son muestra insuficiente",
+        "con un solo caso solo se puede decir 'pasó una vez en tantos años'",
+        "con cuatro puntos no se puede inferir tendencia"
+      ],
+      "modelo": "comparación cualitativa",
+      "respuesta_final": "Por ahora parece rareza, pero faltan las edades de todos los campeones para saber cada cuánto pasa algo así, y con solo cuatro puntitos no se puede hablar de 'época'.",
+      "validacion": true,
+      "archivo": "N1_VV_r1.json",
+      "costo_usd": 0.13092
+    },
+    {
+      "id": "N1_AA_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N1",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P4-WM",
+        "P2-RM",
+        "P3-MM",
+        "P6-VAL",
+        "P3-MM",
+        "P6-VAL",
+        "P4-WM",
+        "P6-VAL",
+        "P3-MM",
+        "P5-INT",
+        "P6-VAL",
+        "P7-EXP",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B23",
+          "turnos": [
+            5,
+            6
+          ],
+          "resolucion": "self"
+        }
+      ],
+      "supuestos": [
+        "edad de Antonelli tomada como 20 exactos (luego puesta en duda)",
+        "se pueden pedir las edades de todos los campeones desde 1950",
+        "el z requiere distribución en forma de campana",
+        "un campeón por temporada",
+        "la recta edad vs. año no sirve para extrapolar al futuro"
+      ],
+      "modelo": "proporción empírica",
+      "respuesta_final": "Pedimos edad y año de título de todos los campeones desde 1950, vemos qué tan raro es con el histograma y la proporción bajo 24 años, y para el \"cada cuánto\" usamos 1/p̂ con p̂ = campeones de 20 años o menos sobre el total, con su intervalo. La recta edad vs. año solo sirve para el pasado, y con un solo caso decimos que es una estimación gruesa e incierta.",
+      "validacion": true,
+      "archivo": "N1_AA_r1.json",
+      "costo_usd": 0.180988
+    },
+    {
+      "id": "N2_VV_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N2",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P5-INT",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B56",
+          "turnos": [
+            6,
+            7
+          ],
+          "resolucion": "peer"
+        }
+      ],
+      "supuestos": [
+        "edad de Antonelli tratada como 20 exactos",
+        "récord previo es Vettel entre los tres de referencia",
+        "Antonelli único campeón menor de 22",
+        "unos 75 campeones en la historia"
+      ],
+      "modelo": "diferencia de edades",
+      "respuesta_final": "A los 20 es rarísimo hasta ahora: le ganó por más de 3 años al récord de los tres de referencia (Vettel, 23 años y 134 días). Con tan pocos casos no dan una frecuencia exacta, y pedirían las edades de todos los campeones por década para ver si hay tendencia.",
+      "validacion": true,
+      "archivo": "N2_VV_r1.json",
+      "costo_usd": 0.1208
+    },
+    {
+      "id": "N3_AA_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N3",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "edades de campeones iid (sin tendencia)",
+        "n≈70 campeones (supuesto hasta tener la lista)",
+        "las edades no necesariamente siguen una normal",
+        "tendencia lineal de la edad con el año"
+      ],
+      "modelo": "probabilidad de récord (1/n)",
+      "respuesta_final": "Pediríamos la lista completa de campeones con edad y año. Con n≈70 supuesto, bajo iid la probabilidad de que el último campeón sea el más joven sería 1/n ≈ 1,4 %, y la compararíamos con una recta edad vs. año (intervalo de predicción). Al aire: \"récord histórico, pero con una sola observación no se puede prometer una época\".",
+      "validacion": true,
+      "archivo": "N3_AA_r1.json",
+      "costo_usd": 0.109172
+    },
+    {
+      "id": "N4_VV_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N4",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P2-RM",
+        "P4-WM",
+        "P2-RM",
+        "P4-WM",
+        "P5-INT",
+        "P3-MM",
+        "P6-VAL",
+        "P3-MM",
+        "P7-EXP",
+        "P6-VAL"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "edad de Antonelli entre 20 y 21 años (solo años cumplidos)",
+        "los tres campeones de la crónica pueden ser una selección sesgada",
+        "piso de edad mínima de superlicencia en 18 años",
+        "unos 75 campeones, uno por temporada",
+        "normal truncada en 18 años"
+      ],
+      "modelo": "brecha de edades",
+      "respuesta_final": "Antonelli es excepcional: entre 2 años y 135 días y 3 años y 134 días menor que Vettel, pero con un solo caso no hay una frecuencia confiable. Contrastarían la lista empírica de campeones con una normal truncada en 18 años. Agregan (turno 15) que un solo punto no muestra una tendencia a campeones más jóvenes, que hay que revisar la pendiente con y sin Antonelli, y que piden la lista completa, las fechas exactas y desde cuándo rige el piso de edad.",
+      "validacion": true,
+      "archivo": "N4_VV_r1.json",
+      "costo_usd": 0.172652
+    },
+    {
+      "id": "N4_AA_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N4",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P2-RM",
+        "P4-WM",
+        "P6-VAL",
+        "P3-MM",
+        "P4-WM",
+        "P2-RM",
+        "P6-VAL",
+        "P3-MM",
+        "P4-WM",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "edad de Antonelli tomada como 20 años exactos en el z",
+        "los tres campeones de la crónica no son una muestra aleatoria",
+        "distribución de edades probablemente asimétrica, no normal",
+        "lista completa con Antonelli como único campeón de 20 años o menos (k = 1)",
+        "unas 75 temporadas de campeonato",
+        "tasa constante de títulos jóvenes (Poisson)",
+        "superlicencia exige 18 años desde 2016 (piso de edad)"
+      ],
+      "modelo": "poisson",
+      "respuesta_final": "Antonelli es el único campeón de 20 años o menos en unas 75 temporadas, pero un solo caso no prueba tendencia. Con un modelo de Poisson, la tasa va de una vez cada ~13 años a una cada ~3.000, así que con estos datos no se sostiene ni 'irrepetible' ni 'nueva época'.",
+      "validacion": true,
+      "archivo": "N4_AA_r1.json",
+      "costo_usd": 0.143316
+    }
+  ],
+  "agregado": {
+    "pct_bloqueo_por_transicion": {
+      "B23": 0.33,
+      "B56": 0.17
+    },
+    "modelos_observados": {
+      "comparación cualitativa": 1,
+      "proporción empírica": 1,
+      "diferencia de edades": 1,
+      "probabilidad de récord (1/n)": 1,
+      "brecha de edades": 1,
+      "poisson": 1
+    },
+    "pct_validan": 1.0
+  },
+  "fecha": "2026-11-03T13:40:54Z"
+}

@@ -1,0 +1,134 @@
+{
+  "run": {
+    "id": "N2_VV_r1",
+    "nivel": "N2",
+    "composicion": "VV",
+    "rep": 1,
+    "estilos": [
+      "V",
+      "V"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.0593,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P2-RM",
+        "fase_secundaria": "P1-MRS",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P2-RM",
+        "fase_secundaria": "EMK",
+        "eventos": [
+          "STRAT",
+          "DIST"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "EMK",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P3-MM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 6,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 8,
+        "fase": "P5-INT",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 9,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 10,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 11,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 12,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      }
+    ],
+    "bloqueos": [
+      {
+        "codigo": "B56",
+        "turnos": [
+          6,
+          7
+        ],
+        "resolucion": "peer",
+        "descripcion": "Tras estimar '1 entre 75' y la brecha con Vettel, ambos dudan repetidamente de la confiabilidad ('no sé qué tan confiable', 'medio frágil, ¿cómo diríamos qué tan seguros estamos?') sin avanzar; B lo destraba en el turno 8 proponiendo decir que no hay número exacto, solo que fue rarísimo."
+      }
+    ],
+    "supuestos": [
+      "edad de Antonelli tratada como 20 exactos",
+      "récord previo es Vettel entre los tres de referencia",
+      "Antonelli único campeón menor de 22",
+      "unos 75 campeones en la historia"
+    ],
+    "modelo": "diferencia de edades",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "A los 20 es rarísimo hasta ahora: le ganó por más de 3 años al récord de los tres de referencia (Vettel, 23 años y 134 días). Con tan pocos casos no dan una frecuencia exacta, y pedirían las edades de todos los campeones por década para ver si hay tendencia."
+    },
+    "ruta_principal": "R1",
+    "rutas": [
+      "R1"
+    ]
+  }
+}

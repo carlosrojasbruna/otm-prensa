@@ -1,0 +1,80 @@
+{
+  "run": {
+    "id": "N4_AA_r1",
+    "nivel": "N4",
+    "composicion": "AA",
+    "rep": 1,
+    "estilos": [
+      "A",
+      "A"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.037488,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P4-WM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P3-MM",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "EMK",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 5,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 6,
+        "fase": "EMK",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "DIST"
+        ]
+      }
+    ],
+    "bloqueos": [],
+    "supuestos": [
+      "Concepción con estadio completo (30 000)",
+      "Concepción con el mismo porcentaje de aforo que Chillán (62,5 %)",
+      "Los hinchas comprarían todas las entradas permitidas (puesto en duda)",
+      "Distancia Chillán–Concepción de unos 100 km (por confirmar)"
+    ],
+    "modelo": "proporcional",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Habrían podido ver el partido entre 11 250 y 22 500 hinchas más, según si limitan el aforo al 62,5 % (18 750 − 7 500) o llenan los 30 000. Para decidir, habría que ver cuántas entradas se venden, la distancia, la seguridad, el transporte, los costos y si hay otro partido ese día."
+    },
+    "ruta_principal": "R1",
+    "rutas": [
+      "R1",
+      "R3"
+    ]
+  }
+}
