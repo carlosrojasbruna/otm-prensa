@@ -1,0 +1,151 @@
+{
+  "tarea_id": "2026-11-invertir-o-esperar-permiso",
+  "fecha": "2026-11-09T14:22:59Z",
+  "rub01": {
+    "version_rubrica": "4.0",
+    "criterios": {
+      "genuino": {
+        "puntaje": 2,
+        "justificacion": "La situación plantea una decisión de inversión bajo incertidumbre que hay que resolver. Ni el enunciado ni los recursos entregan una regla o un modelo; R3 describe la mecánica del escenario, pero deja al grupo la representación.",
+        "cita": "¿Cuánto de sus utilidades debería comprometer, y cuándo conviene empezar?"
+      },
+      "abierta": {
+        "puntaje": 2,
+        "justificacion": "La pregunta no prescribe procedimiento. Admite modelos deterministas por escenarios, de valor esperado o probabilísticos mes a mes, todos defendibles.",
+        "cita": "El grupo debe decidir cómo representar la espera."
+      },
+      "decisiones": {
+        "puntaje": 2,
+        "justificacion": "Resolver exige estimar magnitudes, formular supuestos sobre la distribución del plazo del permiso y simplificar la estructura de costos e ingresos.",
+        "cita": "El tamaño del proyecto, su costo y sus ingresos los debe estimar el grupo."
+      },
+      "realismo": {
+        "puntaje": 2,
+        "justificacion": "Decidir si invertir antes o esperar un permiso de tramitación incierta es una situación real y frecuente en empresas, ligada al debate de la noticia.",
+        "cita": "un gran proyecto que depende de un permiso cuya tramitación es incierta"
+      },
+      "autenticidad": {
+        "puntaje": 1,
+        "justificacion": "La noticia (declaraciones, utilidades, leyes de permisos) y las estadísticas de R4 son auténticas, pero el núcleo es un proyecto hipotético construido para la actividad: la cifra de utilidades sirve solo de escala y R4 de contraste posterior. Dudé entre 1 y 2 porque el tema de los permisos sí atraviesa la segunda pregunta; asigno el menor.",
+        "cita": "Imaginen que el directorio de una empresa de este tipo estudia un gran proyecto que depende de un permiso cuya tramitación es incierta."
+      },
+      "contexto": {
+        "puntaje": 2,
+        "justificacion": "El contexto define el trade-off que estructura el modelo. También es necesario para interpretar la recomendación y validarla con los tiempos reales de tramitación.",
+        "cita": "Si empieza a prepararse antes, gasta en estudios y personal sin saber si el permiso llegará; si espera, retrasa los ingresos futuros del proyecto."
+      },
+      "ciclo": {
+        "puntaje": 2,
+        "justificacion": "Responder obliga a recorrer el ciclo completo: comprender, suponer plazos y montos, matematizar la espera, calcular, interpretar una recomendación y revisarla. Ninguna fase la deja hecha el enunciado.",
+        "cita": "¿Cómo cambiaría su recomendación si los trámites se hicieran más rápidos?"
+      },
+      "validacion": {
+        "puntaje": 2,
+        "justificacion": "R4 aporta evidencia independiente, no usada en la construcción del modelo, para contrastar los plazos supuestos por el grupo.",
+        "cita": "Estadísticas e informes públicos sobre proyectos de inversión evaluados en el sistema de evaluación ambiental, con información sobre cuánto demoran sus trámites"
+      },
+      "nivel": {
+        "puntaje": 2,
+        "justificacion": "El contexto empresarial y el lenguaje son comprensibles para universitarios. Modelar la espera con probabilidad, modelos discretos y optimización corresponde a las herramientas esperables del nivel U.",
+        "cita": "el permiso puede resolverse favorablemente en cualquier mes, sin que se sepa de antemano cuándo"
+      },
+      "autodiferenciacion": {
+        "puntaje": 2,
+        "justificacion": "Hay entrada elemental: comparar dos escenarios con plazos fijos. La tarea admite soluciones más sofisticadas, como valor esperado con distribución del plazo, decisión óptima de inicio o análisis de sensibilidad.",
+        "cita": "Pueden pedir información adicional."
+      },
+      "fecundidad": {
+        "puntaje": 2,
+        "justificacion": "La tarea abre análisis de escenarios y permite comparar modelos y supuestos entre grupos. Además, la contrastación con R4 invita a discutir los límites del modelo.",
+        "cita": "¿Cómo cambiaría su recomendación si los trámites se hicieran más rápidos?"
+      },
+      "recursos": {
+        "puntaje": 2,
+        "justificacion": "La información se obtiene a solicitud o por estimación; montos de proyectos y plazos son buscables por universitarios. Los recursos describen el escenario sin revelar el modelo ni la regla de decisión.",
+        "cita": "Preparar el proyecto antes de tener el permiso tiene un costo mensual, pero puede acortar la construcción una vez aprobado."
+      }
+    },
+    "total": 23,
+    "mejoras": [
+      {
+        "criterio": "autenticidad",
+        "mejora_minima": "Reemplazar el proyecto imaginado por un proyecto real de inversión con permiso en trámite (citado de la prensa o del SEIA). Así el monto de inversión y su estado de tramitación serían los datos núcleo del modelo."
+      }
+    ]
+  },
+  "reproducibilidad": {
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.228644,
+        "version_prompt": "1.1"
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.21689,
+        "version_prompt": "1.3"
+      },
+      "filtro": {
+        "modelo": "claude-haiku-5-5",
+        "version_modelo": "claude-haiku-5-5",
+        "costo_usd": 0.000698,
+        "version_prompt": "1.0"
+      },
+      "ilustrador": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.012214,
+        "version_prompt": "1.0"
+      },
+      "redactor": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.141751,
+        "version_prompt": "1.0"
+      },
+      "redactor_escenarios": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.198096,
+        "version_prompt": "1.0"
+      },
+      "simulador": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.563965,
+        "version_prompt": "PROMPTS.md"
+      },
+      "simulador_codificador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.393224,
+        "version_prompt": "PROMPTS.md"
+      },
+      "verificador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.12348,
+        "version_prompt": "1.1"
+      }
+    },
+    "version_prompt": {
+      "disenador": "1.1",
+      "evaluador": "1.3",
+      "filtro": "1.0",
+      "ilustrador": "1.0",
+      "redactor": "1.0",
+      "redactor_escenarios": "1.0",
+      "simulador": "PROMPTS.md",
+      "simulador_codificador": "PROMPTS.md",
+      "verificador": "1.1"
+    },
+    "version_rubrica": "4.0",
+    "version_MAR03": "1.0",
+    "version_MED01": "1.4",
+    "diseno_simulador": "diseno_otm",
+    "fecha": "2026-11-09T17:06:00Z",
+    "costo_usd": 1.878962
+  }
+}
