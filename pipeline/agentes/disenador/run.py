@@ -143,12 +143,15 @@ def _recurso(r: dict, disponibilidad: str) -> dict:
 def ensamblar(cand: dict, noticia: dict, *, fecha: str, version: int = 1, id_tarea: str | None = None,
               modelo: str | None = None) -> dict:
     """Candidato del modelo -> `tarea` completa en estado borrador."""
+    from pipeline.agentes.verificador.run import expandir_marcadores   # fuente única (import local: evita ciclo)
     n_cifras = len(noticia.get("cifras", []))
     idx = sorted({i for i in cand["cifras_usadas_idx"] if isinstance(i, int) and 0 <= i < n_cifras})
     cita = {
         "noticia_id": noticia["id"], "medio": noticia["medio"], "titulo": noticia["titulo"],
         "fecha": noticia["fecha"], "url": noticia["url"], "resumen_propio": noticia["resumen_propio"],
-        "cifras_usadas": [copy.deepcopy(noticia["cifras"][i]) for i in idx],
+        # un marcador «2-1» se emite con su segundo número (1) aparte: el verificador exige localizador para cada
+        # número del enunciado (falsos positivos W45 «6-1» y W46 «2-1»)
+        "cifras_usadas": expandir_marcadores([noticia["cifras"][i] for i in idx]),
     }
     ts = {
         "required_assumptions": list(cand["required_assumptions"]),
@@ -320,7 +323,8 @@ def validar_tarea(tarea: dict, noticia: dict, texto_noticia: str | None = None) 
             if not (_canon(tok) & permitidos):
                 errores.append(f"cifra sin localizador en {donde}: «{tok}» no está entre las cifras de la noticia")
     # cifras_usadas deben ser las de la noticia (mismos localizadores)
-    por_valor = {json.dumps(c, sort_keys=True) for c in noticia.get("cifras", [])}
+    from pipeline.agentes.verificador.run import expandir_marcadores
+    por_valor = {json.dumps(c, sort_keys=True) for c in expandir_marcadores(noticia.get("cifras", []))}
     for c in tarea["noticia"]["cifras_usadas"]:
         if json.dumps(c, sort_keys=True) not in por_valor:
             errores.append(f"cifra usada ajena a la noticia: {c.get('que_es')}")

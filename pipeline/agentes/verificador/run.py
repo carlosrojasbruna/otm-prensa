@@ -98,7 +98,50 @@ def _a_float(tok: str) -> float:
     return float(tok)
 
 
+# Marcador deportivo «N-M» (2026-11, W45 «6-1» y W46 «2-1»): `parsear_numero` lee solo el primer número, así que
+# el segundo quedaba «sin localizador» en el enunciado. Uno o dos dígitos por lado: «2025-2026» no es un marcador.
+_MARCADOR = re.compile(r"^\s*(\d{1,2})\s*[-–]\s*(\d{1,2})\s*$")
+
+
+def marcador(x) -> tuple[int, int] | None:
+    """'2-1' -> (2, 1); '6 – 1' -> (6, 1); cualquier otro valor -> None."""
+    if not isinstance(x, str):
+        return None
+    m = _MARCADOR.match(x)
+    return (int(m.group(1)), int(m.group(2))) if m else None
+
+
+def numeros_de_valor(x) -> list[float]:
+    """Todos los números que registra el valor de una cifra: los dos de un marcador «N-M»; si no, el de
+    `parsear_numero` (o ninguno)."""
+    mc = marcador(x)
+    if mc:
+        return [float(mc[0]), float(mc[1])]
+    v = parsear_numero(x)
+    return [] if v is None else [v]
+
+
+def expandir_marcadores(cifras: list[dict]) -> list[dict]:
+    """Copia de `cifras` con, tras cada marcador «N-M», la cifra M (segundo número) con el mismo localizador, salvo
+    que ya esté. Fuente única para el diseñador (la emite en `cifras_usadas`) y el verificador (la acepta como cifra
+    de la noticia aunque el explorador solo haya registrado el marcador)."""
+    out: list[dict] = []
+    for c in cifras:
+        out.append(copy.deepcopy(c))
+        mc = marcador(c.get("valor"))
+        if not mc:
+            continue
+        loc = copy.deepcopy(c.get("localizador"))
+        if any(x.get("valor") == mc[1] and x.get("localizador") == loc for x in cifras):
+            continue
+        out.append({"valor": mc[1], "unidad": c.get("unidad") or "goles",
+                    "que_es": f"{c.get('que_es', '')} (segundo número del marcador {c.get('valor')})".strip(),
+                    "localizador": loc})
+    return out
+
+
 def numeros_en(texto: str) -> list[float]:
+    """Números del texto. Un marcador «2-1» da los dos números (2 y 1): el guion no forma parte del número."""
     out = []
     for t in _NUM.findall(texto):
         try:
@@ -255,8 +298,11 @@ def _invariante3(inf, tarea, guia, noticia, texto_noticia):
 TOLERANCIA_PARRAFOS = 1   # un localizador corrido en ±1 párrafo se corrige como advertencia (ciclo 2026-10-26)
 
 
-def _en_parrafo(valor: float, parrafo: str) -> bool:
-    """`valor` aparece en el párrafo, también escrito en unidades («4 mil» = 4.000, «5 millones» = 5.000.000)."""
+def _en_parrafo(valor, parrafo: str) -> bool:
+    """`valor` aparece en el párrafo, también escrito en unidades («4 mil» = 4.000, «5 millones» = 5.000.000).
+    Un marcador (tupla (N, M)) se busca como «N-M» (o «N – M»), no como el número N suelto."""
+    if isinstance(valor, tuple):
+        return re.search(rf"(?<![\w.,]){valor[0]}\s*[-–]\s*{valor[1]}(?![\d])", parrafo) is not None
     return any(_iguales(valor * f, x) for x in numeros_en(parrafo) for f in (1, 1e3, 1e6, 1e9))
 
 
@@ -270,7 +316,7 @@ def parrafos_alineados(texto: str, cifras: list[dict]) -> tuple[list[str], int]:
     votos: dict[int, int] = {}
     for c in cifras:
         ns = _numeros_parrafo(_norm(str((c.get("localizador") or {}).get("ubicacion", ""))))
-        v = parsear_numero(c.get("valor"))
+        v = marcador(c.get("valor")) or parsear_numero(c.get("valor"))
         if len(ns) != 1 or v is None:
             continue
         for k in {i - ns[0] for i, p in enumerate(ps, start=1) if _en_parrafo(v, p)}:
@@ -288,7 +334,7 @@ def _parrafos(texto_noticia: str | None, tarea: dict, noticia: dict | None) -> l
     return parrafos_alineados(texto_noticia, cifras)[0]
 
 
-def buscar_cifra(valor: float, parrafos: list[str], citados: list[int]) -> tuple[str, int | None]:
+def buscar_cifra(valor, parrafos: list[str], citados: list[int]) -> tuple[str, int | None]:
     """Busca `valor` en toda la nota. Devuelve ("citado", n) si está en un párrafo citado, ("vecino", n) si está a
     ±TOLERANCIA_PARRAFOS de uno citado, ("lejos", n) si está en otro párrafo y ("ausente", None) si no aparece."""
     donde = [i for i, p in enumerate(parrafos, start=1) if _en_parrafo(valor, p)]
@@ -313,7 +359,7 @@ def _cifras(inf, tarea, noticia, nb, parrafos: list[str] | None = None) -> list[
     if noticia is not None:
         # varias cifras pueden compartir párrafo: antes se guardaba solo la última y «48 cuotas (párrafo 5)» se
         # comparaba con «5 millones (párrafo 5)» (2026-10-cuanto-pagar-cada-mes)
-        for c in noticia.get("cifras", []):
+        for c in expandir_marcadores(noticia.get("cifras", [])):
             por_ubic.setdefault((c.get("localizador") or {}).get("ubicacion"), []).append(c)
     nums_nb = numeros_en(nb["stdout"]) if nb["estado"] == "ejecutado" else []
     cifras = tarea.get("noticia", {}).get("cifras_usadas", [])
@@ -328,6 +374,7 @@ def _cifras(inf, tarea, noticia, nb, parrafos: list[str] | None = None) -> list[
             out.append({**base, "resultado": "sin_localizador", "nota": "falta localizador"})
             continue
         v = parsear_numero(c.get("valor"))
+        mc = marcador(c.get("valor"))
         if loc["fuente"] == "noticia":
             if noticia is None:
                 inf.add("4", "advertencia", ub,
@@ -335,11 +382,14 @@ def _cifras(inf, tarea, noticia, nb, parrafos: list[str] | None = None) -> list[
                 out.append({**base, "resultado": "no_verificable", "nota": "noticia no entregada"})
                 continue
             candidatas = por_ubic.get(loc["ubicacion"], [])
-            f = next((x for x in candidatas if v is not None and parsear_numero(x.get("valor")) is not None
-                      and _iguales(v, parsear_numero(x.get("valor")))), None)
+            if mc:
+                f = next((x for x in candidatas if marcador(x.get("valor")) == mc), None)
+            else:
+                f = next((x for x in candidatas if v is not None and parsear_numero(x.get("valor")) is not None
+                          and _iguales(v, parsear_numero(x.get("valor")))), None)
             citados = _numeros_parrafo(_norm(str(loc["ubicacion"])))
             if parrafos is not None and v is not None and citados:
-                donde, n = buscar_cifra(v, parrafos, citados)
+                donde, n = buscar_cifra(mc or v, parrafos, citados)
                 if donde == "citado":
                     base["valor_fuente"] = c.get("valor")
                     out.append({**base, "resultado": "coincide", "nota": f"valor presente en el párrafo {n} de la noticia"})
@@ -393,7 +443,7 @@ def _cifras(inf, tarea, noticia, nb, parrafos: list[str] | None = None) -> list[
                 inf.add("4", "critico", ub, f"valor {c.get('valor')!r} no aparece en la salida del notebook")
                 out.append({**base, "resultado": "distinto", "nota": "valor ausente en la salida del notebook"})
     # cifras en el texto que ve el estudiante sin entrada en cifras_usadas
-    permitidas = [p for p in (parsear_numero(c.get("valor")) for c in cifras) if p is not None]
+    permitidas = [p for c in cifras for p in numeros_de_valor(c.get("valor"))]   # «2-1» permite el 2 y el 1
     est = tarea.get("estudiante", {})
     textos = [("estudiante.enunciado_es", est.get("enunciado_es", ""))]
     textos += [(f"estudiante.recursos_a_solicitud[{r.get('id')}]", r.get("contenido", ""))
