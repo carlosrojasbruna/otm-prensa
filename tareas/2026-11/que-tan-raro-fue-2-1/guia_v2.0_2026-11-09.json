@@ -1,0 +1,444 @@
+{
+  "tarea_id": "2026-11-que-tan-raro-fue-2-1-v2",
+  "version": 2,
+  "fecha": "2026-11-09",
+  "ficha": {
+    "titulo": "¿Qué tan sorprendente fue un 2-1?",
+    "noticia": {
+      "medio": "La Tercera",
+      "titulo": "La tabla tras el título de Colo Colo: revisa cómo queda la lucha por el Chile 2 y por la permanencia tras la Fecha 27",
+      "fecha": "2026-11-09",
+      "url": "https://www.latercera.com/el-deportivo/noticia/la-tabla-tras-el-titulo-de-colo-colo-revisa-como-queda-la-lucha-por-el-chile-2-y-por-la-permanencia-tras-la-fecha-27/"
+    },
+    "nivel_principal": "S",
+    "variantes": [
+      "S",
+      "U"
+    ],
+    "contenidos": [
+      "probabilidad",
+      "modelos de conteo (distribución de goles)",
+      "estadística descriptiva",
+      "sensibilidad de supuestos"
+    ],
+    "tiempo": "2 sesiones de 90 min",
+    "puntaje_rub01": 23,
+    "version": 2,
+    "fecha": "2026-11-09",
+    "cambios": "rev. 2 de la guía: correcciones de texto de la revisión humana 2 (Carlos Rojas Bruna): párrafo de los marcadores, E2.que_aprende y B23 z4",
+    "sub_tramo": "S2"
+  },
+  "meta": {
+    "que_observar": "Se quiere observar cómo un grupo pasa de la pregunta de la radio ('¿es raro un 2-1?') a un modelo de goles con supuestos explícitos: qué promedio de goles asume, si trata a los equipos como parejos, si los goles son independientes, y cómo compara el 2-1 con 1-1, 1-0 y otros marcadores. También se observa si contrasta su modelo con los marcadores de los demás partidos de la fecha 27 y si revisa el promedio supuesto.",
+    "contenido": "Probabilidad y modelos de conteo para los goles (distribución tipo Poisson o tabla de probabilidades asignadas), combinación de probabilidades independientes, estadística descriptiva para contrastar frecuencias observadas y esperadas, y sensibilidad de los supuestos.",
+    "subcompetencias": [
+      "Comprender qué significa 'raro' o 'común' para un marcador y qué datos entrega la noticia (P1-MRS)",
+      "Simplificar: estimar el promedio de goles, decidir si los equipos son parejos y si los goles son independientes (P2-RM)",
+      "Matematizar los goles de cada equipo con una distribución de conteo o una tabla de probabilidades (P3-MM)",
+      "Trabajar con el modelo: combinar probabilidades de ambos equipos para marcadores concretos y para partidos de un gol de diferencia (P4-WM)",
+      "Interpretar las probabilidades en frases para un público de radio (P5-INT)",
+      "Validar con los marcadores de los otros partidos y revisar el promedio supuesto (P6-VAL)",
+      "Comunicar respuesta, supuestos y límites al locutor (P7-EXP)"
+    ],
+    "meta_social": "Trabajo cooperativo en pares o grupos pequeños, con verbalización de supuestos: cada integrante debe poder explicar de dónde sale el promedio de goles elegido y por qué se aceptó o se descartó cada supuesto.",
+    "evidencia": [
+      "Explicación escrita, con palabras del grupo, de qué probabilidad se quiere calcular y para qué audiencia (P1-MRS)",
+      "Hoja de supuestos con el promedio de goles estimado y su justificación, y registro de si el grupo pidió la tarjeta de supuestos (P2-RM)",
+      "Fórmula o tabla de probabilidades por cantidad de goles de cada equipo (P3-MM)",
+      "Cálculos de la probabilidad de varios marcadores y de la suma de los casos con un gol de diferencia (P4-WM)",
+      "Frase final para la radio que compara el 2-1 con 1-1, 1-0 y otros marcadores (P5-INT)",
+      "Pedido de los marcadores de la fecha y tabla que compara frecuencia observada y esperada, con el ajuste del promedio (P6-VAL)",
+      "Guion breve para el locutor con respuesta, supuestos y advertencias (P7-EXP)"
+    ]
+  },
+  "analisis_a_priori": {
+    "rutas": [
+      {
+        "id": "R1",
+        "nombre": "Tabla de probabilidades asignadas",
+        "nivel": "S1",
+        "modelo": "Probabilidades por cantidad de goles (cero, uno, dos, tres o más) elegidas por el grupo y producto para cada marcador"
+      },
+      {
+        "id": "R2",
+        "nombre": "Goles independientes con distribución Poisson",
+        "nivel": "S2",
+        "modelo": "Probabilidad de k goles con promedio estimado; marcador como producto de dos probabilidades"
+      },
+      {
+        "id": "R3",
+        "nombre": "Modelo por diferencia de goles",
+        "nivel": "S2",
+        "modelo": "Distribución de la diferencia de goles centrada en cero para equipos parejos y desplazada hacia cerca de 1,07 para un equipo dominante, usando la cifra de Colo Colo como referencia"
+      },
+      {
+        "id": "R4",
+        "nombre": "Simulación con ventaja de local",
+        "nivel": "U",
+        "modelo": "Simulación de muchos partidos con promedios distintos para local y visita y comparación con la frecuencia de marcadores de la fecha"
+      }
+    ],
+    "modelo_inadecuado": {
+      "id": "R5",
+      "por_que_falla": "Suponer que todos los marcadores posibles hasta un máximo de goles son equiprobables hace que 2-1 y 7-6 parezcan igual de probables; ignora que los goles altos son raros y que 0-0, 1-0 y 1-1 son más frecuentes."
+    },
+    "solucion_referencia": "1) Estimar el promedio de goles por equipo, por ejemplo 1,3. 2) Con Poisson: P(0) = 0,273; P(1) = 0,354; P(2) = 0,230; P(3) = 0,100; P(4) = 0,032. 3) P(2-1 exacto, con orden fijado) = P(2)·P(1) = 0,230 · 0,354, cerca de 0,082. 4) Comparar: 1-1 cerca de 0,125, 1-0 cerca de 0,097, 0-0 cerca de 0,074. 5) P(diferencia exacta de un gol) = 2·Σ P(k)·P(k+1), cerca de 0,41. 6) Sensibilidad: con promedio 1,1 y con 1,5 los resultados cambian poco. 7) Contrastar con los marcadores de la fecha. 8) Usar la diferencia de goles de +29 en 27 partidos (cerca de 1,07 por partido) como referencia de un equipo dominante, que desplaza las probabilidades hacia márgenes mayores. Resultado: Con promedio de 1,3 goles por equipo, un 2-1 exacto tenía cerca de 8 % de probabilidad y partidos con un gol de diferencia cerca de 41 %: 2-1 es un resultado habitual, aunque 1-1 es más probable.",
+    "rango_aceptable": "Probabilidad del marcador 2-1 exacto entre 7 % y 9 % para promedios de goles entre 1,1 y 1,5; partidos con diferencia exacta de un gol entre 38 % y 43 %. Otros valores son aceptables si el supuesto del promedio está justificado y los cálculos son coherentes.",
+    "barreras_por_fase": [
+      {
+        "fase": "P1-MRS",
+        "barrera": "Es probable que el grupo no precise qué quiere decir 'raro' o 'común' y se quede con el marcador 2-1 como dato aislado, sin plantear una probabilidad comparable con otros marcadores. La cifra de Colo Colo (27 partidos, +29) puede leerse como parte del problema sin decidir para qué sirve. Esto frena el paso a simplificar (B12)."
+      },
+      {
+        "fase": "P2-RM",
+        "barrera": "Estimar cuántos goles anota un equipo típico por partido sin datos de la liga resulta incómodo: algunos grupos esperarán que la noticia lo entregue o fijarán un valor sin justificarlo. También cuesta ver que 'equipos parejos' y 'goles independientes' son supuestos que se eligen, no datos. Previsible traba al matematizar (B23)."
+      },
+      {
+        "fase": "P3-MM",
+        "barrera": "Elegir cómo representar los goles de cada equipo. Algunos grupos repartirán la probabilidad por igual entre todos los marcadores posibles hasta un máximo (modelo inadecuado), de modo que 2-1 y un marcador muy alto parecen igual de probables, sin notar que los goles altos son raros. Otros no sabrán pasar de un promedio a probabilidades por cantidad de goles (B34)."
+      },
+      {
+        "fase": "P4-WM",
+        "barrera": "Combinar las probabilidades de los dos equipos: confundir el producto de probabilidades independientes con una suma, o tomar 2-1 como si no importara quién anota cada cantidad. Al pasar a 'partidos de un gol de diferencia' es fácil contar solo un sentido del resultado o dejar casos fuera de la suma. Los errores de cálculo bloquean el paso a interpretar (B45)."
+      },
+      {
+        "fase": "P5-INT",
+        "barrera": "Traducir probabilidades a una frase para la radio ('de cada cien partidos...') y decidir si el 2-1 es común o raro. Hay riesgo de concluir 'raro' porque su probabilidad individual es baja, sin compararla con la de otros marcadores, o de reportar el número sin sentido para el oyente (B56)."
+      },
+      {
+        "fase": "P6-VAL",
+        "barrera": "Contrastar con los otros partidos de la fecha exige pedir los marcadores y aceptar que pocos partidos dan una comparación gruesa. Algunos grupos darán el modelo por bueno sin contrastarlo, o bien lo descartarán por una diferencia pequeña. Revisar el promedio de goles supuesto (sensibilidad) no es espontáneo (B56)."
+      },
+      {
+        "fase": "P7-EXP",
+        "barrera": "Comunicar el resultado con sus límites: los grupos tienden a dar solo la cifra final y a omitir que hay pocos partidos de contraste y que los equipos no son idénticos. Difícil escribir para un locutor sin tecnicismos (B67)."
+      }
+    ]
+  },
+  "organizacion": {
+    "momentos": [
+      {
+        "momento": "Comprensión y trabajo grupal, sesión 1: lectura y comprensión",
+        "tiempo": "15 min",
+        "estudiantes": "Leen el enunciado y los datos de partida (marcador 2-1, Colo Colo con 27 partidos y diferencia de +29). Cada grupo explica con sus palabras qué probabilidad quiere calcular y para qué audiencia.",
+        "docente": "Presenta el contexto con palabras propias, sin leer la noticia. Pide a cada grupo que diga qué entiende por 'común' o 'raro'. No da método ni modelo."
+      },
+      {
+        "momento": "Comprensión y trabajo grupal, sesión 1: supuestos y modelo",
+        "tiempo": "60 min",
+        "estudiantes": "Estiman el promedio de goles por equipo, deciden si los equipos son parejos y si los goles son independientes, y eligen cómo representar los goles (distribución de conteo o tabla de probabilidades). Pueden pedir la tarjeta de supuestos. Empiezan a calcular marcadores.",
+        "docente": "Circula y diagnostica preguntando qué han hecho y qué piensan hacer ('¿de dónde sale este promedio?', '¿qué supone esto sobre los marcadores altos?'). Todavía no interviene con ayudas: observa y anota rutas y bloqueos. Entrega la tarjeta de supuestos solo si el grupo la pide."
+      },
+      {
+        "momento": "Comprensión y trabajo grupal, sesión 1: registro de supuestos",
+        "tiempo": "15 min",
+        "estudiantes": "Cierran la sesión dejando por escrito la hoja de supuestos, el promedio con su justificación y el estado de su modelo.",
+        "docente": "Recoge las hojas de supuestos para organizar la puesta en común. No corrige ni señala errores."
+      },
+      {
+        "momento": "Comprensión y trabajo grupal, sesión 2: cálculo e interpretación",
+        "tiempo": "30 min",
+        "estudiantes": "Calculan la probabilidad del 2-1, de otros marcadores y de los partidos con un gol de diferencia. Redactan la frase para la radio comparando marcadores.",
+        "docente": "Circula y diagnostica: pide que expliquen qué cuenta cada cálculo. Si un grupo está bloqueado, usa primero la ayuda mínima (una pregunta sobre lo que ya hizo) y no entrega regla, modelo ni resultado."
+      },
+      {
+        "momento": "Puesta en común",
+        "tiempo": "25 min",
+        "estudiantes": "Grupos con rutas distintas (tabla de probabilidades, Poisson, diferencia de goles) presentan supuestos, modelo y frase final. Los demás comparan promedios elegidos y resultados.",
+        "docente": "Selecciona grupos con rutas distintas, y, si aparece, un grupo con el reparto equiprobable de marcadores, sin anunciar que es inadecuado. Modera con preguntas ('¿qué cambia si el promedio es otro?') y hace que los grupos contrasten entre sí."
+      },
+      {
+        "momento": "Validación y cierre",
+        "tiempo": "35 min",
+        "estudiantes": "Los grupos con probabilidades calculadas piden los marcadores de los demás partidos de la fecha, comparan frecuencia observada y esperada, ajustan el promedio y redactan el guion para el locutor con respuesta, supuestos y límites.",
+        "docente": "Entrega los marcadores de la fecha solo a los grupos que ya tienen sus probabilidades. Pregunta qué esperaban ver y qué vieron. Cierra recogiendo los límites: pocos partidos, equipos no idénticos."
+      }
+    ],
+    "agrupamiento": "Pares o grupos pequeños que mantienen su composición en las dos sesiones, para que los supuestos de la sesión 1 sigan en la sesión 2. Cada grupo trabaja en una sola hoja compartida.",
+    "roles": "Portavoz (explica al docente y al curso qué hicieron), registrador de supuestos (anota cada supuesto con su justificación), calculista (ejecuta y verifica los cálculos) y verificador (pregunta '¿de dónde sale esto?' y revisa la coherencia). En pares, se reparten los roles y los intercambian entre sesiones.",
+    "producciones": [
+      "Hoja de supuestos con promedio de goles y justificación",
+      "Tabla o fórmula de probabilidades por cantidad de goles",
+      "Cálculos de probabilidad de 2-1, 1-1, 1-0 y de partidos con un gol de diferencia",
+      "Frase final para la radio con la comparación entre marcadores",
+      "Tabla de frecuencia observada y esperada con los marcadores de la fecha y ajuste del promedio",
+      "Guion breve para el locutor con respuesta, supuestos y advertencias"
+    ],
+    "tecnologia": "Calculadora o planilla permitidas para los cálculos (P4-WM) y para armar la tabla de frecuencia observada y esperada (P6-VAL). No se usan para decidir el promedio de goles, los supuestos ni el modelo (P2-RM, P3-MM), que son decisiones del grupo. Si un grupo elige Poisson, puede usar la función de la planilla solo después de haber explicado qué representa. En la variante universitaria, la simulación por computador se permite para comparar modelos."
+  },
+  "escenarios": [
+    {
+      "id": "E1",
+      "nombre": "ruta esperada",
+      "corridas": [
+        "N4_AA_r1"
+      ],
+      "perfil": "Tramo S2, nivel N4, estilo AA.",
+      "ruta": [
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "supuestos": [
+        "goles de cada equipo siguen una Poisson",
+        "promedio de 1,3 goles por equipo (a confirmar con el dato de la liga)",
+        "goles de ambos equipos independientes",
+        "equipos parejos"
+      ],
+      "modelo": "poisson",
+      "bloqueos": [],
+      "que_aprende": "El grupo declara desde el inicio el modelo (Poisson, independencia, mismo promedio para equipos parejos) y deja el promedio de 1,3 como supuesto provisorio. Su validación es de sensibilidad: prueba otros promedios y ve que el porcentaje de partidos de un gol casi no cambia. También nombra qué supuesto podría fallar (la independencia) y cómo revisarlo con los empates reales. No pide los marcadores de la fecha. Al compararlo con E2 y E3, el curso ve que el promedio de goles es un supuesto que se puede variar y controlar, y que validar exige decir qué dato real desmentiría el modelo.",
+      "extracto_dialogo": [
+        {
+          "hablante": "Fran",
+          "texto": "Revisé tus productos y me dan igual, así que 0,41 cuadra. Ojo que el 2-1 exacto es 0,08, pero un \"resultado como 2-1\" incluye también el 1-2, o sea ≈ 0,16. Cuando llegue el dato real de la liga rehacemos todo con ese λ y probamos con 1,1 y 1,5 para ver cuánto se mueve el 0,41."
+        },
+        {
+          "hablante": "Cami",
+          "texto": "Hice la sensibilidad: con λ = 1,1 me da ≈ 0,42 y con λ = 1,5 ≈ 0,39, así que el 0,41 casi no se mueve. Lo que sí podría cambiar es el supuesto de independencia, así que cuando llegue el dato real habría que ver si los empates salen más seguido que en el modelo."
+        }
+      ]
+    },
+    {
+      "id": "E2",
+      "nombre": "tabla de probabilidades inventada",
+      "corridas": [
+        "N1_VV_r1"
+      ],
+      "perfil": "Tramo S2, nivel N1, estilo VV.",
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P6-VAL",
+        "P3-MM",
+        "P4-WM",
+        "P7-EXP"
+      ],
+      "supuestos": [
+        "1,2 goles por equipo y por partido",
+        "Colo Colo se excluye por no ser equipo parejo",
+        "distribución de goles por equipo inventada: 0,30/0,35/0,20/0,10/0,05",
+        "goles de ambos equipos independientes (producto)"
+      ],
+      "modelo": "tabla de probabilidades (producto)",
+      "bloqueos": [
+        {
+          "transicion": "B23",
+          "como_se_destrabo": "Resolución peer, en dos momentos de la misma traba. Primero (turnos 6 a 8), Cami propone marcar como más probables las casillas cuya suma de goles se acerca al promedio; Fran objeta que el 3-0 y el 2-1 suman lo mismo y no son igual de comunes, y el grupo pasa a mirar la diferencia de goles (casillas junto a la diagonal). Después (turnos 16 y 17), Fran no sabe cómo obtener el número de cada casilla; Cami imagina una barra de frecuencias para cada equipo y propone multiplicar las dos barras, como el área de un rectángulo. Así nace la tabla de probabilidades por cantidad de goles y el producto para cada marcador."
+        }
+      ],
+      "que_aprende": "Sin conocer Poisson, el grupo construye la ruta de tabla asignada (R1). Inventa un reparto de goles por equipo y lo completa para que sume 1. Su primer impulso, mirar solo la suma de goles, se descarta al notar que 3-0 y 2-1 no son igual de comunes; es una conversación cercana al modelo inadecuado de marcadores equiprobables. Comparado con E1, el curso ve que una tabla elegida por el grupo sirve como modelo si se declara inventada y se plantea confrontarla con datos reales.",
+      "extracto_dialogo": [
+        {
+          "hablante": "Cami",
+          "texto": "Mmm, no sé bien cómo, pero si el promedio es como 2,5 goles por partido, un 2-1 que suma 3 goles me suena bastante normal, ¿cachai? Podríamos dibujar la cuadrícula y pintar más fuerte las casillas cuyos goles suman cerca del promedio, aunque no sé si eso sirve para sacar una probabilidad."
+        },
+        {
+          "hablante": "Fran",
+          "texto": "Ojo, que en la cuadrícula el 3-0 y el 2-1 también suman 3, y no creo que sean igual de comunes. Pero los partidos de un gol de diferencia quedarían en las casillas pegadas a la diagonal (1-0, 2-1, 2-3...), así que podríamos pintar esas aparte, ¿cachai?"
+        },
+        {
+          "hablante": "Fran",
+          "texto": "Ya, probemos con 1,2. Yo me imagino la cuadrícula más oscura al medio, en el 1-1, el 1-0 y el 2-1, y que se va aclarando hacia las esquinas, pero no sé cómo sacar el número de cada casilla, ¿tú sabes?"
+        },
+        {
+          "hablante": "Cami",
+          "texto": "No sé fórmula, pero me imagino una barra para cada equipo: de 100 partidos, tal vez 30 meten 0 goles, 35 meten 1 y 20 meten 2. Y cada casilla sería multiplicar las dos barras, como el área de un rectángulo, ¿te cuadra?"
+        }
+      ]
+    },
+    {
+      "id": "E3",
+      "nombre": "frecuencia empírica sin modelo",
+      "corridas": [
+        "N1_AA_r1"
+      ],
+      "perfil": "Tramo S2, nivel N1, estilo AA.",
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P2-RM",
+        "P3-MM",
+        "P2-RM",
+        "P7-EXP"
+      ],
+      "supuestos": [
+        "probabilidad = frecuencia relativa de marcadores observados",
+        "separar 2-1 y 1-2 según local y visita",
+        "excluir partidos de Colo Colo por no ser parejo",
+        "equipos parejos: diferencia entre sus diferencias de gol menor que 3 (o menor que 5)",
+        "mínimo de unos 50 partidos para que el porcentaje sea estable"
+      ],
+      "modelo": "frecuencia empírica",
+      "bloqueos": [
+        {
+          "transicion": "B23",
+          "como_se_destrabo": "Resolución peer (turnos 3 y 4). Cami no sabe cómo pasar del promedio de goles a la probabilidad de un 2-1. Fran tampoco conoce una fórmula y propone pedir todos los resultados y contar casos favorables sobre casos totales. El bloqueo se destraba esquivando el modelo de conteo: el grupo reemplaza el modelo por un pedido de datos."
+        }
+      ],
+      "que_aprende": "El grupo dedica la discusión a simplificar: qué es un partido parejo, si separa 2-1 de 1-2, cuántos partidos necesita. No construye un modelo que produzca probabilidades. Termina sin calcular un valor y sin validar, porque su respuesta depende por completo de datos que aún no tiene. Contrastado con E1 y E2, el curso ve que un modelo, incluso con supuestos provisorios, permite responder y después contrastar. Solo contar exige datos que la noticia no trae y deja al locutor sin respuesta.",
+      "extracto_dialogo": [
+        {
+          "hablante": "Cami",
+          "texto": "Ya, ¿y el promedio sería goles a favor más en contra, dividido por los partidos jugados? Pero igual no sé cómo pasar de ese promedio a la probabilidad de un 2-1, ¿hay alguna fórmula para eso?"
+        },
+        {
+          "hablante": "Fran",
+          "texto": "No sé si hay una fórmula para pasar del promedio a la probabilidad, la verdad. Pero podríamos pedir los resultados de todos los partidos y hacer casos favorables sobre casos totales: partidos que terminaron 2-1 divididos por todos los partidos, ¿te parece?"
+        },
+        {
+          "hablante": "Fran",
+          "texto": "No sé cuántos hacen falta, la verdad, pero yo diría que unos 50 como mínimo, si no el porcentaje se mueve mucho con un solo partido más. Primero contemos cuántos nos quedan con |dif. − dif.| < 3, y si son pocos, aflojamos la condición a menos de 5, ¿te parece?"
+        }
+      ]
+    },
+    {
+      "id": "E4",
+      "nombre": "ventaja de local y sensibilidad",
+      "corridas": [
+        "N4_VV_r1"
+      ],
+      "perfil": "Tramo S2, nivel N4, estilo VV.",
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P4-WM",
+        "P6-VAL",
+        "P4-WM",
+        "P6-VAL",
+        "P4-WM",
+        "P7-EXP"
+      ],
+      "supuestos": [
+        "goles de cada equipo siguen una Poisson",
+        "goles de ambos equipos independientes",
+        "ventaja de local (promedio local mayor que visita)",
+        "promedios de goles por equipo entre 1,0 y 1,5",
+        "equipos parejos con promedios iguales (1,2 y 1,2)"
+      ],
+      "modelo": "poisson independiente",
+      "bloqueos": [],
+      "que_aprende": "El grupo parte con promedios distintos para local y visita y después prueba el caso de equipos parejos con promedios iguales. Alterna varias veces entre trabajar y validar: cada cambio de promedio sirve para ver si cambia el orden de los marcadores. Al compararlo con E1, el curso ve que la ventaja de local es un supuesto que se puede activar o desactivar. La pregunta pide equipos parejos, y la conclusión vale si se mantiene estable ante esos cambios. Ambos grupos dejan pendiente el contraste con los datos reales de la liga.",
+      "extracto_dialogo": [
+        {
+          "hablante": "Cami",
+          "texto": "Calza, el 2-1 queda tercero, y como 40% por un gol me parece estable. Probemos con λ más bajos, 1,3 y 1,0, para ver si se mueve mucho, y ojo que la Poisson independiente puede fallar con los empates, por eso igual necesitamos los datos reales de la liga."
+        },
+        {
+          "hablante": "Fran",
+          "texto": "Con 1,3 y 1,0 el 2-1 baja a 0,230·0,368 ≈ 0,085, o sea 8,5%, y el 1-0 y el 1-1 me dan 13% cada uno. Los partidos por un gol suben un poco, a ≈ 0,235 + 0,181 ≈ 42%, así que el orden casi no cambia y el 40% parece bastante robusto."
+        }
+      ]
+    }
+  ],
+  "tabla_bloqueos": {
+    "B23": 0.5
+  },
+  "intervenciones": [
+    {
+      "bloqueo": "B12",
+      "z1_z2": "Pregunten al grupo qué han entendido hasta ahora: '¿Qué quieren responderle al locutor? ¿Qué dato trae la noticia sobre el partido?'. Reconozcan lo que ya identificaron antes de sugerir nada.",
+      "z3": "Pídanles que reescriban la pregunta del locutor con sus palabras y que hagan un esquema de lo que sí tienen (un marcador, una diferencia de goles) y de lo que les falta.",
+      "z4": "Pregunten: '¿Qué significa para ustedes que un marcador sea común o raro? ¿Con qué otros marcadores lo compararían?'. No digan cómo medirlo.",
+      "z5": "Aclaren que lo que se busca es qué tan probable era el 2-1 frente a otros marcadores y qué tan seguido se dan los partidos de un gol de diferencia. No sugieran método ni valores."
+    },
+    {
+      "bloqueo": "B23",
+      "z1_z2": "Antes de ayudar, pregunten: '¿Qué han decidido sobre los equipos y los goles? ¿Dónde se quedaron?'. En los grupos simulados la mitad se trabó aquí: tenían un promedio de goles, pero no sabían cómo pasar a la probabilidad de un marcador. Reconozcan el promedio que ya estimaron.",
+      "z3": "Sugieran un dibujo de la situación, por ejemplo una cuadrícula con los goles de un equipo en un eje y los del otro en el otro. Pregunten qué casillas corresponderían a un partido de un gol de diferencia.",
+      "z4": "Pregunten: '¿Cómo podrían asignar un número a cada cantidad de goles de un solo equipo? ¿Cómo se combinan los dos equipos para llenar una casilla?'. En la simulación (N1_VV_r1) el grupo notó que el criterio de la suma de goles iguala marcadores que no son igual de comunes, como 3-0 y 2-1, y se destrabó al multiplicar las dos tablas por equipo. Si no la han pedido, ofrezcan la tarjeta R2 sobre los supuestos de los equipos.",
+      "z5": "Entreguen la tarjeta R2 y propongan que armen una tabla con la probabilidad de que un equipo anote cero, uno, dos o más goles, con valores elegidos por ellos y justificados. Tampoco aquí den los valores ni la forma de combinar. Si el grupo propone esperar datos reales, acepten que ese contraste viene después, pero pídanles antes un primer resultado provisorio."
+    },
+    {
+      "bloqueo": "B34",
+      "z1_z2": "Pregunten: '¿Cómo representan hoy los goles de un equipo? ¿Qué les impide seguir?'. Valoren cualquier representación que tengan, aunque sea provisoria.",
+      "z3": "Propongan escribir en una tabla simple las cantidades de goles posibles de un equipo (cero, uno, dos, tres o más) y una columna vacía para su probabilidad.",
+      "z4": "Pregunten: '¿Deberían ser igual de probables los goles altos y los bajos? ¿Qué sabe cualquier hincha sobre 0-0, 1-0 o 1-1 frente a marcadores muy altos?'. Así se descarta el reparto equiprobable (R5) sin dar el modelo correcto.",
+      "z5": "Digan que pueden elegir entre una tabla de probabilidades propia o una fórmula de conteo que ya conozcan, y que lo importante es declarar el supuesto y que las probabilidades de un equipo sumen un total coherente. No indiquen cuál usar ni los valores."
+    },
+    {
+      "bloqueo": "B45",
+      "z1_z2": "Pregunten: '¿Qué probabilidades ya tienen para cada equipo? ¿Qué cálculo intentaron con ellas?'. Reconozcan lo que ya hicieron.",
+      "z3": "Pídanles que ubiquen en la cuadrícula o en un árbol el marcador 2-1 y los demás marcadores que quieren comparar, y que marquen aparte los casos de un gol de diferencia.",
+      "z4": "Pregunten: '¿Qué supuesto sobre los goles de ambos equipos les permite pasar de las probabilidades de cada uno a la del marcador? ¿Cómo reunirían los distintos casos de un gol de diferencia?'. No den la operación.",
+      "z5": "Pidan que calculen primero un marcador sencillo, como 1-1, y expliquen con palabras qué hicieron; luego que repitan el procedimiento con 2-1 y decidan qué casos deben juntar para un gol de diferencia. No entreguen resultados."
+    },
+    {
+      "bloqueo": "B56",
+      "z1_z2": "Pregunten: '¿Qué resultado les dio y cómo sabrían si es creíble? ¿Qué le dirían al locutor?'. Atención: en la simulación algunos grupos no pidieron nunca los marcadores de la fecha y su validación se quedó en variar el promedio de goles.",
+      "z3": "Sugieran que escriban en una frase corta, para la radio, qué tan frecuente es el 2-1 y cómo se compara con 1-1 y 1-0, y luego una lista de lo que cambiaría su conclusión.",
+      "z4": "Pregunten: '¿Qué dato real, que no hayan usado para construir el modelo, podría contradecir su respuesta? ¿Qué pasaría si cambian el promedio de goles que supusieron?'. En los grupos simulados esta pregunta llevó a probar otros promedios y a nombrar qué supuesto podía fallar.",
+      "z5": "Cuando el grupo ya tenga sus probabilidades calculadas, entreguen el recurso R3 (marcadores de los demás partidos de la fecha) y pidan que armen una tabla que compare lo observado con lo esperado. No digan si el modelo 'pasa' o 'no pasa' la prueba."
+    },
+    {
+      "bloqueo": "B67",
+      "z1_z2": "Pregunten: '¿A quién le hablan y qué necesita saber esa persona? ¿Qué parte de su trabajo no cabe en una frase?'. Reconozcan lo ya redactado.",
+      "z3": "Propongan un guion de tres partes: respuesta, supuestos que usaron y advertencias.",
+      "z4": "Pregunten: '¿Qué límites tiene su respuesta, por ejemplo por pocos partidos o por equipos que no son idénticos? ¿Qué supuesto es el más débil?'.",
+      "z5": "Pidan que escriban una advertencia para cada supuesto que declararon y que señalen qué dato permitiría revisarlo. No les dicten el texto ni el resultado."
+    }
+  ],
+  "puesta_en_comun": {
+    "seleccion_y_orden": [
+      "Primero E3 (frecuencia empírica sin modelo): anticipa y hace visible el bloqueo B23 de forma temprana; el grupo queda sin respuesta porque depende de datos que la noticia no trae. Así el curso siente la necesidad de un modelo antes de ver uno. El docente no parte con su propia ruta.",
+      "Segundo E2 (tabla de probabilidades inventada): muestra cómo otro grupo destrabó el mismo B23 con una cuadrícula y la combinación de dos tablas por equipo. Se selecciona porque conecta con E3 (de contar a modelar) y permite discutir su primer impulso de mirar solo la suma de goles, cercano al modelo inadecuado R5.",
+      "Tercero E1 (ruta esperada, goles independientes con distribución de conteo): se secuencia después para que el curso vea una forma más compacta de lo que E2 hizo con una tabla. Se destaca su validación por sensibilidad y que nombra qué supuesto podría fallar.",
+      "Cuarto E4 (ventaja de local y sensibilidad): cierra conectando todas las rutas. Ayuda a ver que la ventaja de local es un supuesto que se activa o se desactiva, y que la conclusión vale si es estable ante esos cambios. Durante el trabajo en grupos, el docente monitorea qué ruta usa cada grupo para asignarla a uno de estos escenarios."
+    ],
+    "preguntas": [
+      "¿Qué supuesto sobre los equipos y sobre los goles hay detrás de cada resultado? ¿Cuál es el más débil?",
+      "¿Por qué en E2 se descartó mirar solo la suma de goles? ¿Qué marcadores quedan igual de probables si se aplica ese criterio y por qué eso no es razonable?",
+      "¿En qué se parecen la tabla de E2 y el modelo de E1? ¿Cuál de los dos es más económico para comparar muchos marcadores?",
+      "¿Qué cambió y qué no cambió en la conclusión cuando se varió el promedio de goles (E1, E4)?",
+      "¿Qué significa 'un resultado como el 2-1': solo ese orden o también el inverso? ¿Cómo cambia la respuesta según se interprete?",
+      "¿Qué dato real contradiría su modelo? ¿Cómo lo sabrían con los marcadores de la fecha?",
+      "¿Por qué Colo Colo se excluyó en E2 y E3? ¿Qué pasaría con la respuesta si se incluyera un equipo dominante?",
+      "¿Qué le diría cada grupo al locutor, y con qué advertencias?"
+    ],
+    "contraste_validacion": "Entreguen a todos los grupos, una vez que tengan sus probabilidades, los marcadores de los demás partidos de la fecha 27 que trae la noticia (recurso R3; están en el párrafo 13 de la noticia). Esos marcadores no se usaron para construir ningún modelo. Pidan una tabla que compare la frecuencia observada con la esperada de empates, de partidos de un gol de diferencia y de marcadores altos, y que se pregunten si el promedio de goles supuesto parece razonable. Cada grupo decide si ajusta el promedio o un supuesto, y lo justifica. Adviertan que con tan pocos partidos la comparación es orientativa, no una prueba definitiva, y úsenla para discutir el límite que se declararía ante el locutor. No agreguen más datos que los de la noticia."
+  },
+  "variantes_y_continuidad": {
+    "uso_variantes": "Variante hacia abajo (S1): úsela con grupos que se traban al pasar de simplificar a matematizar, o que no manejan distribuciones de conteo. Cambia la distribución de goles por un árbol o tabla de doble entrada con los goles de cada equipo (cero, uno, dos o más) con probabilidades asignadas por el grupo, y pide comparar el 2-1 con 1-1 y 1-0. No incluye sensibilidad, así que en el cierre se omite el ajuste del promedio. Variante hacia arriba (U): úsela con grupos que modelan con rapidez y justifican bien sus supuestos. Pide ajustar el modelo con ventaja de local y fuerzas distintas, calibrar un equipo dominante con la diferencia de goles de Colo Colo, hacer sensibilidad formal al promedio de goles, juzgar si la independencia entre equipos es razonable y comparar al menos dos modelos. Como esta variante se aparta del supuesto de equipos parejos sin ventaja de local, la tarjeta de supuestos de la tarea original no debe darse tal cual. Ambas variantes existen; ninguna es null.",
+    "acostumbramiento": "Si el grupo nunca ha modelado, conviene una actividad previa breve con un marcador de otro partido, donde se pida, sin calcular, qué datos faltan para decir si es común o raro y qué supuestos tomarían para responder. Así practican simplificar y explicitar supuestos antes de enfrentar esta tarea. Esta tarea sirve como iniciación a la modelación con la variante hacia abajo, y como parte de una secuencia, con la ruta Poisson o la de diferencia de goles, cuando el grupo ya ha trabajado supuestos y validación. También permite diagnosticar cómo simplifican y validan los estudiantes.",
+    "tarea_siguiente": null
+  },
+  "materiales": {
+    "tarea_pdf": "tarea.pdf",
+    "recursos_tarjetas": "recursos.pdf",
+    "notebook": "escenarios.ipynb",
+    "icono": "icono.svg"
+  },
+  "trazabilidad": {
+    "noticia_url": "https://www.latercera.com/el-deportivo/noticia/la-tabla-tras-el-titulo-de-colo-colo-revisa-como-queda-la-lucha-por-el-chile-2-y-por-la-permanencia-tras-la-fecha-27/",
+    "diseno": {
+      "modelo": "claude-sonnet-5-5",
+      "version_prompt": "1.1"
+    },
+    "rub01_total": 23,
+    "revision_humana_1": {
+      "revisor": "Carlos Rojas Bruna",
+      "fecha": "2026-11-09"
+    },
+    "simulacion": {
+      "n_grupos": 6,
+      "diseno": "diseno_otm"
+    },
+    "revision_humana_2": {
+      "revisor": "Carlos Rojas Bruna",
+      "fecha": "2026-11-09"
+    },
+    "commit": null
+  },
+  "modelo_y_prompt": {
+    "redactor": "claude-sonnet-5-5",
+    "redactor_escenarios": "claude-opus-5-5",
+    "version_prompt": "1.0"
+  }
+}
