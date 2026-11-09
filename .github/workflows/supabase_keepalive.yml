@@ -1,13 +1,17 @@
-# Keep-alive de Supabase: una consulta mínima a la API REST cada semana para que el proyecto gratuito no se pause.
+# Keep-alive de Supabase: una consulta mínima a la API REST dos veces al día para que el proyecto gratuito no se
+# pause.
 #
-# Supabase pausa los proyectos del plan gratuito tras 7 días sin actividad. Entre el 2026-10-26 y el 2026-11-03 el
-# proyecto se pausó y rompió staging. Este workflow llama a la función pública `resumen_valoraciones()`
+# Supabase pausa los proyectos del plan gratuito por baja actividad: evalúa la actividad de la semana previa y pide
+# unas pocas consultas al día, no una por semana. Entre el 2026-10-26 y el 2026-11-03 el proyecto se pausó y rompió
+# staging; el 2026-11-09, todavía con el ping semanal (miércoles 12:17 UTC), Supabase volvió a avisar de pausa. Por
+# eso corre dos veces al día. Este workflow llama a la función pública `resumen_valoraciones()`
 # (sitio/db/aplicar_todo.sql; `grant execute ... to anon`), que lee la base de datos y devuelve pocas filas.
 # No escribe nada. Usa solo la clave publicable, nunca la de servicio.
 #
-# Cron: miércoles a las 12:17 UTC (minuto 17: los cron a la hora en punto son los que más se atrasan). Queda a
-# mitad de camino entre los lunes de `semanal.yml`, así que nunca pasan más de ~4 días sin actividad. GitHub
-# solo corre los cron desde la rama por defecto y puede deshabilitarlos tras 60 días sin commits en el repo.
+# Cron: todos los días a las 02:17 y 14:17 UTC (23:17 y 11:17 en Chile en horario de verano; minuto 17 porque los
+# cron a la hora en punto son los que más se atrasan). Aunque GitHub retrase o se salte una corrida, quedan varias
+# consultas por día. GitHub solo corre los cron desde la rama por defecto y puede deshabilitarlos tras 60 días sin
+# commits en el repo.
 #
 # Secrets (docs/secrets.md): SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY. No usa la API de Anthropic.
 name: supabase-keepalive
