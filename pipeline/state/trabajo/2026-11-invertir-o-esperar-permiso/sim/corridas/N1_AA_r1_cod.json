@@ -1,0 +1,148 @@
+{
+  "run": {
+    "id": "N1_AA_r1",
+    "nivel": "N1",
+    "composicion": "AA",
+    "rep": 1,
+    "estilos": [
+      "A",
+      "A"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.070316,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P2-RM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P3-MM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 4,
+        "fase": "P3-MM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P3-MM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 6,
+        "fase": "P3-MM",
+        "fase_secundaria": null,
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 8,
+        "fase": "P5-INT",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 9,
+        "fase": "P5-INT",
+        "fase_secundaria": "P1-MRS",
+        "eventos": []
+      },
+      {
+        "n": 10,
+        "fase": "P5-INT",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 11,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 12,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 13,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 14,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      }
+    ],
+    "bloqueos": [
+      {
+        "codigo": "B23",
+        "turnos": [
+          3,
+          4,
+          5
+        ],
+        "resolucion": "peer",
+        "descripcion": "A no sabe cómo incorporar el tiempo en G·p − C; B propone G − D·t y A objeta que falta p y duda de restar D·t a G; B lo destraba en el turno 6 con p·(G − D·t), dejando D como letra aparte."
+      }
+    ],
+    "supuestos": [
+      "costo de prepararse C fijo, en millones de USD",
+      "ganancia del proyecto G",
+      "probabilidad p de que salga el permiso, igual en ambas estrategias",
+      "pérdida lineal D por cada mes de retraso (D·t)",
+      "plazo del permiso t fijo",
+      "D como parámetro aparte, no necesariamente G dividido en meses",
+      "monto comprometido = C, fracción C/1000 de las utilidades (sin anualizar)"
+    ],
+    "modelo": "valor esperado lineal",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Piden los datos C (en millones de USD), p, D y t. Conviene empezar ya si C < p·D·t y comprometer C, es decir C/1000 de las utilidades; si no, conviene esperar. Si los trámites se aceleran (t baja), adelantarse conviene menos."
+    },
+    "ruta_principal": "R5",
+    "rutas": [
+      "R5",
+      "R3"
+    ]
+  }
+}

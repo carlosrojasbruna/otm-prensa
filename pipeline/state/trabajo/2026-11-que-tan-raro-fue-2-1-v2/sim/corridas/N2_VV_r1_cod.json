@@ -1,0 +1,169 @@
+{
+  "run": {
+    "id": "N2_VV_r1",
+    "nivel": "N2",
+    "composicion": "VV",
+    "rep": 1,
+    "estilos": [
+      "V",
+      "V"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.0678,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P2-RM",
+        "fase_secundaria": "P1-MRS",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P2-RM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P3-MM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 5,
+        "fase": "P3-MM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 6,
+        "fase": "P3-MM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 8,
+        "fase": "P3-MM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 9,
+        "fase": "P3-MM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 10,
+        "fase": "P2-RM",
+        "fase_secundaria": "EMK",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 11,
+        "fase": "P2-RM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 12,
+        "fase": "P2-RM",
+        "fase_secundaria": "EMK",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 13,
+        "fase": "P2-RM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 14,
+        "fase": "P2-RM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 15,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 16,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      }
+    ],
+    "bloqueos": [
+      {
+        "codigo": "B23",
+        "turnos": [
+          4,
+          5,
+          6
+        ],
+        "resolucion": "peer",
+        "descripcion": "B duda cómo pasar del promedio de goles a la probabilidad de un 2-1; A propone pedir porcentajes reales de 0, 1, 2 y 3 goles y multiplicar, y B lo acepta armando la grilla de productos (la duda reaparece en 13 y se resuelve igual, pidiendo datos)."
+      }
+    ],
+    "supuestos": [
+      "goles de ambos equipos independientes",
+      "mismo promedio de goles para equipos parejos (1,3 cada uno)",
+      "ventaja de local como alternativa (1,5 local y 1,1 visita)",
+      "marcadores con más de 4 goles por equipo son despreciables"
+    ],
+    "modelo": "producto de probabilidades",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Pediríamos goles totales, partidos y el porcentaje de partidos con 0, 1, 2 y 3 goles por equipo, y armaríamos dos grillas (1,3 y 1,3; 1,5 y 1,1) multiplicando P(2)×P(1) para el 2-1 y sumando la diagonal de un gol. Supusimos que los goles de cada equipo son independientes y lo revisaríamos comparando con los marcadores reales. Sumaríamos hasta 4 goles y revisaríamos cuánto falta para llegar al 100 %. No se obtuvo un valor numérico."
+    },
+    "ruta_principal": "R1",
+    "rutas": [
+      "R1",
+      "R4"
+    ]
+  }
+}

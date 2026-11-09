@@ -1,0 +1,339 @@
+{
+  "ciclo_id": "ciclo_20261109T164755938720Z",
+  "inicio": "2026-11-09T16:47:55Z",
+  "fin": "2026-11-09T17:06:22Z",
+  "semana": "2026-W46",
+  "parametros": {
+    "tope_semanal_usd": 35.0,
+    "fraccion_detencion": 0.9,
+    "presupuesto_ciclo_usd": null,
+    "limite_usd": 31.5,
+    "gasto_semana_previo_usd": 2.248688,
+    "corridas_evaluador": 3,
+    "rango_inestable": 4,
+    "corridas_simulador": 6,
+    "ids": [
+      "2026-11-que-tan-raro-fue-2-1-v2",
+      "2026-11-modulos-de-atencion-familias",
+      "2026-11-invertir-o-esperar-permiso"
+    ],
+    "revisor": "Carlos Rojas Bruna",
+    "aceptar_hallazgos": false
+  },
+  "detenido_por_tope": false,
+  "eventos": [
+    {
+      "fecha": "2026-11-09T16:47:58Z",
+      "tipo": "preverificacion",
+      "tarea_id": "2026-11-que-tan-raro-fue-2-1-v2",
+      "aprobado": true,
+      "criticos": 0,
+      "pendientes": 0,
+      "localizadores_corregidos": 0
+    },
+    {
+      "fecha": "2026-11-09T16:48:00Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-que-tan-raro-fue-2-1-v2",
+      "de": "evaluada",
+      "a": "revisada"
+    },
+    {
+      "fecha": "2026-11-09T16:48:02Z",
+      "tipo": "preverificacion",
+      "tarea_id": "2026-11-que-tan-raro-fue-2-1-v2",
+      "aprobado": true,
+      "criticos": 0,
+      "pendientes": 0,
+      "localizadores_corregidos": 0
+    },
+    {
+      "fecha": "2026-11-09T16:50:47Z",
+      "tipo": "agente",
+      "agente": "simulador",
+      "tareas": [
+        "2026-11-que-tan-raro-fue-2-1-v2"
+      ],
+      "llamadas": 115,
+      "usd": 1.089383
+    },
+    {
+      "fecha": "2026-11-09T16:50:50Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-que-tan-raro-fue-2-1-v2",
+      "de": "revisada",
+      "a": "simulada"
+    },
+    {
+      "fecha": "2026-11-09T16:53:48Z",
+      "tipo": "agente",
+      "agente": "redactor",
+      "tareas": [
+        "2026-11-que-tan-raro-fue-2-1-v2"
+      ],
+      "llamadas": 4,
+      "usd": 0.559629
+    },
+    {
+      "fecha": "2026-11-09T16:53:57Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-que-tan-raro-fue-2-1-v2",
+      "de": "simulada",
+      "a": "con_guia"
+    },
+    {
+      "fecha": "2026-11-09T16:54:02Z",
+      "tipo": "agente",
+      "agente": "ilustrador",
+      "tareas": [
+        "2026-11-que-tan-raro-fue-2-1-v2"
+      ],
+      "llamadas": 1,
+      "usd": 0.01068
+    },
+    {
+      "fecha": "2026-11-09T16:54:44Z",
+      "tipo": "agente",
+      "agente": "verificador",
+      "tareas": [
+        "2026-11-que-tan-raro-fue-2-1-v2"
+      ],
+      "llamadas": 1,
+      "usd": 0.70028
+    },
+    {
+      "fecha": "2026-11-09T16:54:52Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-que-tan-raro-fue-2-1-v2",
+      "de": "con_guia",
+      "a": "verificada"
+    },
+    {
+      "fecha": "2026-11-09T16:55:06Z",
+      "tipo": "bibliotecario_dry_run",
+      "tarea_id": "2026-11-que-tan-raro-fue-2-1-v2",
+      "ok": true,
+      "ruta": "tareas/2026-11/que-tan-raro-fue-2-1/",
+      "rama": "tareas/semana-2026-W46"
+    },
+    {
+      "fecha": "2026-11-09T16:55:08Z",
+      "tipo": "preverificacion",
+      "tarea_id": "2026-11-modulos-de-atencion-familias",
+      "aprobado": true,
+      "criticos": 0,
+      "pendientes": 0,
+      "localizadores_corregidos": 0
+    },
+    {
+      "fecha": "2026-11-09T16:55:10Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-modulos-de-atencion-familias",
+      "de": "evaluada",
+      "a": "revisada"
+    },
+    {
+      "fecha": "2026-11-09T16:55:12Z",
+      "tipo": "preverificacion",
+      "tarea_id": "2026-11-modulos-de-atencion-familias",
+      "aprobado": true,
+      "criticos": 0,
+      "pendientes": 0,
+      "localizadores_corregidos": 0
+    },
+    {
+      "fecha": "2026-11-09T16:56:52Z",
+      "tipo": "agente",
+      "agente": "simulador",
+      "tareas": [
+        "2026-11-modulos-de-atencion-familias"
+      ],
+      "llamadas": 77,
+      "usd": 0.606418
+    },
+    {
+      "fecha": "2026-11-09T16:56:55Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-modulos-de-atencion-familias",
+      "de": "revisada",
+      "a": "simulada"
+    },
+    {
+      "fecha": "2026-11-09T16:59:13Z",
+      "tipo": "agente",
+      "agente": "redactor",
+      "tareas": [
+        "2026-11-modulos-de-atencion-familias"
+      ],
+      "llamadas": 3,
+      "usd": 0.325479
+    },
+    {
+      "fecha": "2026-11-09T16:59:20Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-modulos-de-atencion-familias",
+      "de": "simulada",
+      "a": "con_guia"
+    },
+    {
+      "fecha": "2026-11-09T16:59:25Z",
+      "tipo": "agente",
+      "agente": "ilustrador",
+      "tareas": [
+        "2026-11-modulos-de-atencion-familias"
+      ],
+      "llamadas": 1,
+      "usd": 0.013026
+    },
+    {
+      "fecha": "2026-11-09T16:59:53Z",
+      "tipo": "agente",
+      "agente": "verificador",
+      "tareas": [
+        "2026-11-modulos-de-atencion-familias"
+      ],
+      "llamadas": 1,
+      "usd": 0.120512
+    },
+    {
+      "fecha": "2026-11-09T17:00:00Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-modulos-de-atencion-familias",
+      "de": "con_guia",
+      "a": "verificada"
+    },
+    {
+      "fecha": "2026-11-09T17:00:13Z",
+      "tipo": "bibliotecario_dry_run",
+      "tarea_id": "2026-11-modulos-de-atencion-familias",
+      "ok": true,
+      "ruta": "tareas/2026-11/modulos-de-atencion-familias/",
+      "rama": "tareas/semana-2026-W46"
+    },
+    {
+      "fecha": "2026-11-09T17:00:15Z",
+      "tipo": "preverificacion",
+      "tarea_id": "2026-11-invertir-o-esperar-permiso",
+      "aprobado": true,
+      "criticos": 0,
+      "pendientes": 0,
+      "localizadores_corregidos": 0
+    },
+    {
+      "fecha": "2026-11-09T17:00:18Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-invertir-o-esperar-permiso",
+      "de": "evaluada",
+      "a": "revisada"
+    },
+    {
+      "fecha": "2026-11-09T17:00:19Z",
+      "tipo": "preverificacion",
+      "tarea_id": "2026-11-invertir-o-esperar-permiso",
+      "aprobado": true,
+      "criticos": 0,
+      "pendientes": 0,
+      "localizadores_corregidos": 0
+    },
+    {
+      "fecha": "2026-11-09T17:03:12Z",
+      "tipo": "agente",
+      "agente": "simulador",
+      "tareas": [
+        "2026-11-invertir-o-esperar-permiso"
+      ],
+      "llamadas": 101,
+      "usd": 0.957189
+    },
+    {
+      "fecha": "2026-11-09T17:03:15Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-invertir-o-esperar-permiso",
+      "de": "revisada",
+      "a": "simulada"
+    },
+    {
+      "fecha": "2026-11-09T17:05:20Z",
+      "tipo": "agente",
+      "agente": "redactor",
+      "tareas": [
+        "2026-11-invertir-o-esperar-permiso"
+      ],
+      "llamadas": 3,
+      "usd": 0.339847
+    },
+    {
+      "fecha": "2026-11-09T17:05:28Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-invertir-o-esperar-permiso",
+      "de": "simulada",
+      "a": "con_guia"
+    },
+    {
+      "fecha": "2026-11-09T17:05:33Z",
+      "tipo": "agente",
+      "agente": "ilustrador",
+      "tareas": [
+        "2026-11-invertir-o-esperar-permiso"
+      ],
+      "llamadas": 1,
+      "usd": 0.012214
+    },
+    {
+      "fecha": "2026-11-09T17:06:00Z",
+      "tipo": "agente",
+      "agente": "verificador",
+      "tareas": [
+        "2026-11-invertir-o-esperar-permiso"
+      ],
+      "llamadas": 1,
+      "usd": 0.12348
+    },
+    {
+      "fecha": "2026-11-09T17:06:09Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-invertir-o-esperar-permiso",
+      "de": "con_guia",
+      "a": "verificada"
+    },
+    {
+      "fecha": "2026-11-09T17:06:22Z",
+      "tipo": "bibliotecario_dry_run",
+      "tarea_id": "2026-11-invertir-o-esperar-permiso",
+      "ok": true,
+      "ruta": "tareas/2026-11/invertir-o-esperar-permiso/",
+      "rama": "tareas/semana-2026-W46"
+    }
+  ],
+  "expedientes": {
+    "2026-11-que-tan-raro-fue-2-1-v2": "verificada",
+    "2026-11-modulos-de-atencion-familias": "verificada",
+    "2026-11-invertir-o-esperar-permiso": "verificada"
+  },
+  "noticias": [],
+  "pendientes_humanos": [
+    {
+      "tarea_id": "2026-11-que-tan-raro-fue-2-1-v2",
+      "pendiente": "revision_humana_2",
+      "estado": "verificada"
+    },
+    {
+      "tarea_id": "2026-11-modulos-de-atencion-familias",
+      "pendiente": "revision_humana_2",
+      "estado": "verificada"
+    },
+    {
+      "tarea_id": "2026-11-invertir-o-esperar-permiso",
+      "pendiente": "revision_humana_2",
+      "estado": "verificada"
+    }
+  ],
+  "errores": [],
+  "orden": "tramo_b",
+  "gasto": {
+    "ciclo_usd": 4.858137,
+    "semana_usd": 7.106825,
+    "limite_usd": 31.5,
+    "llamadas": 309
+  }
+}

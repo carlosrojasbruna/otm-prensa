@@ -1,0 +1,131 @@
+{
+  "run": {
+    "id": "N4_VV_r1",
+    "nivel": "N4",
+    "composicion": "VV",
+    "rep": 1,
+    "estilos": [
+      "V",
+      "V"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.058396,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P2-RM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "ASSUME",
+          "DIST",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P2-RM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P4-WM",
+        "fase_secundaria": "P3-MM",
+        "eventos": []
+      },
+      {
+        "n": 5,
+        "fase": "P4-WM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 6,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 7,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "STRAT",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 8,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 9,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 10,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 11,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 12,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 13,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      }
+    ],
+    "bloqueos": [],
+    "supuestos": [
+      "goles de cada equipo siguen una Poisson",
+      "goles de ambos equipos independientes",
+      "ventaja de local (promedio local mayor que visita)",
+      "promedios de goles por equipo entre 1,0 y 1,5",
+      "equipos parejos con promedios iguales (1,2 y 1,2)"
+    ],
+    "modelo": "Poisson independiente",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Con Poisson independiente y promedios supuestos (λ entre 1,0 y 1,5), el 2-1 tenía 8-9% de probabilidad, detrás del 1-1 y el 1-0; los partidos decididos por un gol serían 40-42%; con equipos parejos 2-1 o 1-2 juntos cerca de 16%. Debe confirmarse con los goles reales de la liga."
+    },
+    "ruta_principal": "R2",
+    "rutas": [
+      "R2"
+    ]
+  }
+}

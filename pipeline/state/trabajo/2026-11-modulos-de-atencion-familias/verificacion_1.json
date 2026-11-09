@@ -1,0 +1,97 @@
+{
+  "tarea_id": "2026-11-modulos-de-atencion-familias",
+  "aprobado": true,
+  "estado_destino": "verificada",
+  "hallazgos": [
+    {
+      "invariante": "notebook",
+      "severidad": "advertencia",
+      "ubicacion": "guia.materiales.notebook",
+      "descripcion": "notebook escenarios.ipynb no encontrado: ",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "guia.escenarios[E1].ruta",
+      "descripcion": "Ruta P1-MRS, P2-RM, P3-MM, P4-WM, P5-INT, P6-VAL, P7-EXP, P6-VAL atribuida a N1_AA_r1 y N2_VV_r1 — Solo corresponde a N1_AA_r1. N2_VV_r1 siguió P1-MRS, P2-RM, P4-WM, P6-VAL, P7-EXP, sin P3-MM ni P5-INT.",
+      "origen": "modelo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "guia.escenarios[E4].ruta",
+      "descripcion": "Ruta P2-RM, P4-WM, P3-MM, P6-VAL, P4-WM, P6-VAL, P5-INT, P7-EXP atribuida a N3_AA_r1 y N4_VV_r1 — Solo corresponde a N3_AA_r1. N4_VV_r1 siguió P1-MRS, P4-WM, P6-VAL, P4-WM, P7-EXP, P6-VAL.",
+      "origen": "modelo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "guia.escenarios[E1].que_aprende; intervenciones[B56].z1_z2; puesta_en_comun.seleccion_y_orden[0]",
+      "descripcion": "La validación de las corridas de E1 consistió en revisar las cuentas al revés y listar datos a confirmar con la jefa. — Las trazas solo registran validacion=true y respuestas que piden confirmar datos. El detalle de revisar cuentas al revés no aparece en el resumen de las corridas, salvo una verificación en el extracto de diálogo.",
+      "origen": "modelo"
+    }
+  ],
+  "cifras_contrastadas": [
+    {
+      "indice": 0,
+      "que_es": "Superficie de la franja prioritaria incluida en la primera fase del desalojo",
+      "valor_tarea": 3,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 3"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": 3,
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 3 de la noticia; modelo: Coincide: superficie de la franja prioritaria de la primera fase."
+    },
+    {
+      "indice": 1,
+      "que_es": "Cantidad de casas emplazadas en el sector que será desalojado",
+      "valor_tarea": 300,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 3"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": 300,
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 3 de la noticia; modelo: Coincide: cantidad aproximada de viviendas en la franja."
+    },
+    {
+      "indice": 2,
+      "que_es": "Cantidad aproximada de habitantes que viven en las viviendas del sector",
+      "valor_tarea": 800,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 3"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": 800,
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 3 de la noticia; modelo: Coincide: habitantes aproximados de esas viviendas."
+    }
+  ],
+  "notebook": {
+    "estado": "no_encontrado",
+    "ruta": "escenarios.ipynb",
+    "salida_resumen": ""
+  },
+  "meta": {
+    "agente": "verificador",
+    "version_prompt": "1.1",
+    "modelo": "claude-opus-5-5",
+    "request_id": "req_011CgsiB6N462MQEaH76kdmx",
+    "fecha": "2026-11-09T16:59:53+00:00",
+    "costo_usd": 0.120512,
+    "modelo_llamado": true,
+    "texto_noticia_recibido": true,
+    "uso": {
+      "input_tokens": 14983,
+      "output_tokens": 2449,
+      "cache_creation_input_tokens": 2320,
+      "cache_read_input_tokens": 0
+    }
+  }
+}

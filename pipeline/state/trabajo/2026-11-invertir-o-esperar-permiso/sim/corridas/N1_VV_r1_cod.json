@@ -1,0 +1,178 @@
+{
+  "run": {
+    "id": "N1_VV_r1",
+    "nivel": "N1",
+    "composicion": "VV",
+    "rep": 1,
+    "estilos": [
+      "V",
+      "V"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.071168,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P1-MRS",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 6,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P3-MM",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 8,
+        "fase": "P3-MM",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 9,
+        "fase": "P4-WM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 10,
+        "fase": "P5-INT",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 11,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 12,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 13,
+        "fase": "P5-INT",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 14,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 15,
+        "fase": "P5-INT",
+        "fase_secundaria": "P7-EXP",
+        "eventos": []
+      },
+      {
+        "n": 16,
+        "fase": "P6-VAL",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 17,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 18,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      }
+    ],
+    "bloqueos": [],
+    "supuestos": [
+      "costo del proyecto 300 millones",
+      "permiso demora 1 o 2 años",
+      "prepararse antes cuesta 30 millones (10%)",
+      "proyecto rinde 60 millones al año",
+      "probabilidad de que salga el permiso 70%",
+      "los 30 se pierden si el permiso no llega",
+      "partir antes elimina el retraso",
+      "utilidades de 1.000 millones sin anualizar"
+    ],
+    "modelo": "árbol de decisión",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Con datos inventados (proyecto 300 millones, preparación 30, rendimiento 60 al año, probabilidad de permiso 70%), comprometer al inicio solo los 30 millones (3% de las utilidades) y el resto cuando salga el permiso; partir antes si el trámite demora más de unos 3 meses y esperar si es más corto. Si los trámites son más rápidos, la ventaja de partir antes se achica; si baja la probabilidad del permiso, el punto de indiferencia se mueve. Riesgo: los 30 se pierden si el permiso no llega; pedirían los datos reales."
+    },
+    "ruta_principal": "R3",
+    "rutas": [
+      "R3",
+      "R5"
+    ]
+  }
+}

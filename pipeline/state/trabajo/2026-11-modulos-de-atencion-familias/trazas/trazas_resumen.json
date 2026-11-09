@@ -1,0 +1,217 @@
+{
+  "tarea_id": "2026-11-modulos-de-atencion-familias",
+  "diseno": "diseno_otm",
+  "corridas": 6,
+  "modelo": "claude-sonnet-5-5",
+  "costo_usd": 0.6065,
+  "por_corrida": [
+    {
+      "id": "N1_VV_r1",
+      "perfil": {
+        "nivel_edad": "P",
+        "nivel": "N1",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P5-INT",
+        "P4-WM",
+        "P5-INT",
+        "P6-VAL",
+        "P7-EXP",
+        "P6-VAL"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B45",
+          "turnos": [
+            10,
+            11
+          ],
+          "resolucion": "peer"
+        }
+      ],
+      "supuestos": [
+        "una familia por vivienda (300 familias, no 800 personas)",
+        "15 minutos de atención por familia",
+        "cada mesa atiende 4 familias por hora",
+        "las mesas atienden al mismo tiempo y al mismo ritmo"
+      ],
+      "modelo": "proporcional (tasa)",
+      "respuesta_final": "Recomiendan 10 mesas funcionando 7 horas y media para atender a las 300 familias, si cada una se demora 15 minutos; señalan que falta saber el tiempo real por familia y si llegan todas juntas o repartidas en el día.",
+      "validacion": true,
+      "archivo": "N1_VV_r1.json",
+      "costo_usd": 0.128324
+    },
+    {
+      "id": "N1_AA_r1",
+      "perfil": {
+        "nivel_edad": "P",
+        "nivel": "N1",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P5-INT",
+        "P6-VAL",
+        "P7-EXP",
+        "P6-VAL"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "una familia por vivienda (300 familias)",
+        "15 minutos por familia",
+        "los módulos atienden en paralelo y el total se reparte por igual",
+        "5 horas de funcionamiento al día"
+      ],
+      "modelo": "proporcional",
+      "respuesta_final": "10 módulos funcionando 5 horas al día durante 2 días (un día de 5 horas y otro de 2,5 horas), porque 300 × 15 ÷ 60 ÷ 10 = 7,5 horas (75 horas de módulo en total). Hay que confirmar con la jefa los minutos por familia y si son 300 familias; si fueran 800 personas o más de 15 minutos, se recalcula.",
+      "validacion": true,
+      "archivo": "N1_AA_r1.json",
+      "costo_usd": 0.107428
+    },
+    {
+      "id": "N2_VV_r1",
+      "perfil": {
+        "nivel_edad": "P",
+        "nivel": "N2",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P4-WM",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "una vivienda = una familia",
+        "se atiende una persona por familia",
+        "15 minutos por familia",
+        "las mesas atienden al mismo tiempo y se reparten las familias por igual",
+        "las familias llegan repartidas durante el día",
+        "pausa para almorzar"
+      ],
+      "modelo": "proporcional",
+      "respuesta_final": "Con 10 mesas y si cada familia demora 15 minutos, se atienden las 300 familias en 7 horas y media (300 × 15 = 4500 min = 75 h; 75 ÷ 10 = 7,5 h), y los funcionarios necesitan un rato para almorzar. Le preguntan a la jefa el tiempo real, cuántos funcionarios hay y cómo llegan las familias.",
+      "validacion": true,
+      "archivo": "N2_VV_r1.json",
+      "costo_usd": 0.0914
+    },
+    {
+      "id": "N3_AA_r1",
+      "perfil": {
+        "nivel_edad": "P",
+        "nivel": "N3",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P2-RM",
+        "P4-WM",
+        "P3-MM",
+        "P6-VAL",
+        "P4-WM",
+        "P6-VAL",
+        "P5-INT",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "una atención por vivienda (300 atenciones)",
+        "15 minutos por familia",
+        "módulos trabajan en paralelo y reparten igual el tiempo",
+        "1 hora de descanso por jornada (luego 15 min en la opción de dos días)",
+        "jornada de un día de unas 7-8 horas como límite",
+        "la gente no llega toda junta"
+      ],
+      "modelo": "proporcional",
+      "respuesta_final": "Con 15 min por familia son 75 horas de atención: 10 módulos en 2 días (3,75 h por día más descanso) o 12 módulos en 1 día (7,25 h). Falta confirmar con la jefa cuántos funcionarios hay y cuánto demora de verdad cada atención.",
+      "validacion": true,
+      "archivo": "N3_AA_r1.json",
+      "costo_usd": 0.09144
+    },
+    {
+      "id": "N4_VV_r1",
+      "perfil": {
+        "nivel_edad": "P",
+        "nivel": "N4",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P4-WM",
+        "P6-VAL",
+        "P4-WM",
+        "P7-EXP",
+        "P6-VAL"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "una familia por vivienda (300 familias)",
+        "15 minutos de atención por familia",
+        "módulos atienden al mismo tiempo",
+        "colchón de tiempo por pausas y demoras",
+        "familias citadas en distintos horarios"
+      ],
+      "modelo": "proporcional",
+      "respuesta_final": "Recomiendan 15 módulos funcionando 6 horas (5 horas de atención más un colchón por pausas y demoras), suponiendo 15 minutos por familia y 300 familias, es decir, 75 horas de atención en total. Piden confirmar con la jefa cuánto dura realmente cada atención y si hay más de una familia por vivienda, y sugieren citar a las familias en distintos horarios.",
+      "validacion": true,
+      "archivo": "N4_VV_r1.json",
+      "costo_usd": 0.080308
+    },
+    {
+      "id": "N4_AA_r1",
+      "perfil": {
+        "nivel_edad": "P",
+        "nivel": "N4",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P2-RM",
+        "P4-WM",
+        "P5-INT",
+        "P4-WM",
+        "P6-VAL",
+        "P3-MM",
+        "P5-INT",
+        "P6-VAL",
+        "P7-EXP",
+        "P6-VAL"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "una familia por vivienda (300 atenciones)",
+        "15 minutos por atención",
+        "jornada de 8 horas",
+        "módulos trabajan a la vez con igual rapidez",
+        "peor caso: todas las familias llegan juntas",
+        "familias llegan repartidas en la jornada",
+        "2 módulos de reserva por demoras mayores"
+      ],
+      "modelo": "tasa de atención",
+      "respuesta_final": "Recomiendan 12 módulos (10 más 2 de reserva) funcionando 8 horas, suponiendo 15 minutos por familia (75 horas de atención en total; 300 familias repartidas en 8 horas son 37,5 por hora y cada módulo atiende 4 por hora). Piden el dato de cuántas familias llegan por hora y cuánto demora realmente cada atención para ajustar, y advierten revisar si hay más de una familia por vivienda.",
+      "validacion": true,
+      "archivo": "N4_AA_r1.json",
+      "costo_usd": 0.107552
+    }
+  ],
+  "agregado": {
+    "pct_bloqueo_por_transicion": {
+      "B45": 0.17
+    },
+    "modelos_observados": {
+      "proporcional (tasa)": 1,
+      "proporcional": 4,
+      "tasa de atención": 1
+    },
+    "pct_validan": 1.0
+  },
+  "fecha": "2026-11-09T16:56:52Z"
+}

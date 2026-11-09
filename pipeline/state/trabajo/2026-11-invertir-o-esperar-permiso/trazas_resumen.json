@@ -1,0 +1,243 @@
+{
+  "tarea_id": "2026-11-invertir-o-esperar-permiso",
+  "diseno": "diseno_otm",
+  "corridas": 6,
+  "modelo": "claude-sonnet-5-5",
+  "costo_usd": 0.9571,
+  "por_corrida": [
+    {
+      "id": "N1_VV_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N1",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P5-INT",
+        "P4-WM",
+        "P5-INT",
+        "P4-WM",
+        "P5-INT",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "costo del proyecto 300 millones",
+        "permiso demora 1 o 2 años",
+        "prepararse antes cuesta 30 millones (10%)",
+        "proyecto rinde 60 millones al año",
+        "probabilidad de que salga el permiso 70%",
+        "los 30 se pierden si el permiso no llega",
+        "partir antes elimina el retraso",
+        "utilidades de 1.000 millones sin anualizar"
+      ],
+      "modelo": "árbol de decisión",
+      "respuesta_final": "Con datos inventados (proyecto 300 millones, preparación 30, rendimiento 60 al año, probabilidad de permiso 70%), comprometer al inicio solo los 30 millones (3% de las utilidades) y el resto cuando salga el permiso; partir antes si el trámite demora más de unos 3 meses y esperar si es más corto. Si los trámites son más rápidos, la ventaja de partir antes se achica; si baja la probabilidad del permiso, el punto de indiferencia se mueve. Riesgo: los 30 se pierden si el permiso no llega; pedirían los datos reales.",
+      "validacion": true,
+      "archivo": "N1_VV_r1.json",
+      "costo_usd": 0.175768
+    },
+    {
+      "id": "N1_AA_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N1",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P5-INT",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B23",
+          "turnos": [
+            3,
+            4,
+            5
+          ],
+          "resolucion": "peer"
+        }
+      ],
+      "supuestos": [
+        "costo de prepararse C fijo, en millones de USD",
+        "ganancia del proyecto G",
+        "probabilidad p de que salga el permiso, igual en ambas estrategias",
+        "pérdida lineal D por cada mes de retraso (D·t)",
+        "plazo del permiso t fijo",
+        "D como parámetro aparte, no necesariamente G dividido en meses",
+        "monto comprometido = C, fracción C/1000 de las utilidades (sin anualizar)"
+      ],
+      "modelo": "valor esperado lineal",
+      "respuesta_final": "Piden los datos C (en millones de USD), p, D y t. Conviene empezar ya si C < p·D·t y comprometer C, es decir C/1000 de las utilidades; si no, conviene esperar. Si los trámites se aceleran (t baja), adelantarse conviene menos.",
+      "validacion": true,
+      "archivo": "N1_AA_r1.json",
+      "costo_usd": 0.137516
+    },
+    {
+      "id": "N2_VV_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N2",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P5-INT",
+        "P3-MM",
+        "P6-VAL",
+        "P4-WM",
+        "P5-INT",
+        "P4-WM",
+        "P6-VAL",
+        "P3-MM",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "escenarios discretos de plazo del permiso (3, 6, 12 meses)",
+        "costo de estudios inventado de 50 millones",
+        "ingresos de 20 millones por mes",
+        "preparación de 6 meses tras el permiso",
+        "probabilidad de que salga el permiso (50%, 20%, 80%)",
+        "el gasto de preparación se pierde si el permiso no sale",
+        "costo de esperar = ingresos atrasados",
+        "tiempo ahorrado = mínimo entre plazo del permiso y preparación"
+      ],
+      "modelo": "árbol de decisión",
+      "respuesta_final": "Conviene empezar antes si p > 50/(50 + 20·mín(permiso, preparación)). Con números inventados da p ≈ 0,29 a 6 meses y 0,45 a 3, o sea comprometer ~5% de las utilidades, y con trámites rápidos hay que estar más seguro; faltan los datos reales.",
+      "validacion": true,
+      "archivo": "N2_VV_r1.json",
+      "costo_usd": 0.247048
+    },
+    {
+      "id": "N3_AA_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N3",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P2-RM",
+        "P3-MM",
+        "P5-INT",
+        "P4-WM",
+        "P3-MM",
+        "P7-EXP",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "costo de preparación C que se pierde si el permiso no sale",
+        "probabilidad p de que salga el permiso",
+        "ingresos del proyecto constantes B por mes",
+        "plazo del trámite T fijo",
+        "prepararse adelanta el proyecto s meses",
+        "tasa de descuento r mencionada pero no usada",
+        "valores inventados: C = 20, B = 10 al mes, p = 0,6, T = 12 o 3",
+        "monto comprometido como fracción chica de los 1.000 millones, sin anualizar",
+        "gasto por etapas"
+      ],
+      "modelo": "lineal determinista",
+      "respuesta_final": "Prepararse ya si C < p·B·s. Ejemplo con datos inventados: 20 < 0,6·10·s, es decir s > 3,3 meses, lo que equivale a comprometer cerca de un 2% de las utilidades. Conviene gastar por etapas. Si los trámites se aceleran, hay que recalcular s y p, porque no siempre conviene esperar. Se piden los datos reales de C, B, p y s.",
+      "validacion": true,
+      "archivo": "N3_AA_r1.json",
+      "costo_usd": 0.119564
+    },
+    {
+      "id": "N4_VV_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N4",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P2-RM",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "probabilidad p de que salga el permiso",
+        "ingreso mensual I constante",
+        "gasto previo se pierde si el permiso no sale",
+        "gasto no se pierde si el permiso sale",
+        "gasto mensual g de preparación",
+        "tope de 5-10% de las utilidades (no es un dato)",
+        "utilidades no equivalen a caja disponible",
+        "trámites más rápidos reducen T y su incertidumbre, no p"
+      ],
+      "modelo": "valor esperado",
+      "respuesta_final": "Comprometer como máximo 5-10% de las utilidades (50 a 100 millones USD) y empezar a preparar mientras p·I > (1-p)·g por mes; si los trámites se aceleran, baja T y su incertidumbre, por lo que se prepara menos meses antes de T. Piden capex, p, T esperado y caja disponible; el 5-10% es un supuesto propio.",
+      "validacion": true,
+      "archivo": "N4_VV_r1.json",
+      "costo_usd": 0.144064
+    },
+    {
+      "id": "N4_AA_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N4",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P3-MM",
+        "P6-VAL",
+        "P4-WM",
+        "P6-VAL",
+        "P4-WM",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "probabilidad de aprobación p (0,6; 0,3 en sensibilidad)",
+        "tiempo de tramitación fijo T = 2 años",
+        "descuento exponencial continuo r = 10%",
+        "valor del proyecto V = 3.000 millones",
+        "retraso L = 1 año si se prepara después",
+        "el gasto de preparación C se pierde si no sale el permiso",
+        "al esperar, C solo se gasta si se aprueba",
+        "trámites rápidos: T = 1 año y p = 0,8",
+        "C como porcentaje de los 1.000 millones (sin anualizar)"
+      ],
+      "modelo": "valor esperado descontado",
+      "respuesta_final": "Empezar a preparar conviene si p·V·e^(-rT)(1−e^(-rL)) > C(1−p·e^(-rT)). Con V = 3.000, r = 10%, T = 2, L = 1 y p = 0,6 el punto de indiferencia es C ≈ 275 millones (27% de las utilidades), pero con p = 0,3 baja a ≈ 93 millones; por la sensibilidad a p recomiendan un tope de 10-15% de las utilidades. Si los trámites se aceleran (T = 1, p = 0,8) el punto de indiferencia sube a ≈ 750 millones y el tope podría subir a 15-20%. Piden el costo real del proyecto y la probabilidad del permiso para afinar el tope.",
+      "validacion": true,
+      "archivo": "N4_AA_r1.json",
+      "costo_usd": 0.133164
+    }
+  ],
+  "agregado": {
+    "pct_bloqueo_por_transicion": {
+      "B23": 0.17
+    },
+    "modelos_observados": {
+      "árbol de decisión": 2,
+      "valor esperado lineal": 1,
+      "lineal determinista": 1,
+      "valor esperado": 1,
+      "valor esperado descontado": 1
+    },
+    "pct_validan": 1.0
+  },
+  "fecha": "2026-11-09T17:03:12Z"
+}

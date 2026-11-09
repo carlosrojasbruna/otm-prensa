@@ -1,0 +1,243 @@
+{
+  "tarea_id": "2026-11-que-tan-raro-fue-2-1-v2",
+  "diseno": "diseno_otm",
+  "corridas": 6,
+  "modelo": "claude-sonnet-5-5",
+  "costo_usd": 1.0894,
+  "por_corrida": [
+    {
+      "id": "N1_VV_r1",
+      "perfil": {
+        "nivel_edad": "S2",
+        "nivel": "N1",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P6-VAL",
+        "P3-MM",
+        "P4-WM",
+        "P7-EXP"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B23",
+          "turnos": [
+            6,
+            7,
+            8
+          ],
+          "resolucion": "peer"
+        },
+        {
+          "transicion": "B23",
+          "turnos": [
+            16,
+            17
+          ],
+          "resolucion": "peer"
+        }
+      ],
+      "supuestos": [
+        "promedio de 2,5 goles por partido",
+        "1,2 goles por equipo y por partido",
+        "Colo Colo se excluye por no ser equipo parejo",
+        "distribución de goles por equipo inventada: 0,30/0,35/0,20/0,10/0,05",
+        "goles de ambos equipos independientes (producto)",
+        "mismo reparto para local y visita"
+      ],
+      "modelo": "tabla de probabilidades (producto)",
+      "respuesta_final": "Con probabilidades supuestas por cantidad de goles (0: 0,30; 1: 0,35; 2: 0,20; 3: 0,10; 4 o más: 0,05) y goles independientes, un 2-1 tiene cerca de 7 % de probabilidad. Es menos probable que el 1-1 (12 %) o el 1-0 (10,5 %). Los partidos decididos por un gol son cerca de 40 % y los empates cerca de 26,5 %. Hay que confirmarlo con datos reales de la liga.",
+      "validacion": true,
+      "archivo": "N1_VV_r1.json",
+      "costo_usd": 0.294956
+    },
+    {
+      "id": "N1_AA_r1",
+      "perfil": {
+        "nivel_edad": "S2",
+        "nivel": "N1",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P2-RM",
+        "P3-MM",
+        "P2-RM",
+        "P7-EXP"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B23",
+          "turnos": [
+            3,
+            4
+          ],
+          "resolucion": "peer"
+        }
+      ],
+      "supuestos": [
+        "probabilidad = frecuencia relativa de marcadores observados",
+        "separar 2-1 y 1-2 según local y visita",
+        "excluir partidos de Colo Colo por no ser parejo",
+        "equipos parejos: diferencia entre sus diferencias de gol menor que 3 (o menor que 5)",
+        "mínimo de unos 50 partidos para que el porcentaje sea estable"
+      ],
+      "modelo": "frecuencia empírica",
+      "respuesta_final": "No calculan un valor. Proponen pedir la tabla con goles a favor y en contra y todos los resultados con local, visita, fecha y temporadas anteriores; usar solo partidos parejos (|dif. de goles de uno − dif. del otro| < 3, o < 5 si quedan menos de 50 partidos) y estimar P(2-1) = partidos 2-1 / total, y P(un gol de diferencia) = partidos con diferencia 1 / total.",
+      "validacion": false,
+      "archivo": "N1_AA_r1.json",
+      "costo_usd": 0.178572
+    },
+    {
+      "id": "N2_VV_r1",
+      "perfil": {
+        "nivel_edad": "S2",
+        "nivel": "N2",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P6-VAL",
+        "P3-MM",
+        "P2-RM",
+        "P7-EXP"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B23",
+          "turnos": [
+            4,
+            5,
+            6
+          ],
+          "resolucion": "peer"
+        }
+      ],
+      "supuestos": [
+        "goles de ambos equipos independientes",
+        "mismo promedio de goles para equipos parejos (1,3 cada uno)",
+        "ventaja de local como alternativa (1,5 local y 1,1 visita)",
+        "marcadores con más de 4 goles por equipo son despreciables"
+      ],
+      "modelo": "producto de probabilidades",
+      "respuesta_final": "Pediríamos goles totales, partidos y el porcentaje de partidos con 0, 1, 2 y 3 goles por equipo, y armaríamos dos grillas (1,3 y 1,3; 1,5 y 1,1) multiplicando P(2)×P(1) para el 2-1 y sumando la diagonal de un gol. Supusimos que los goles de cada equipo son independientes y lo revisaríamos comparando con los marcadores reales. Sumaríamos hasta 4 goles y revisaríamos cuánto falta para llegar al 100 %. No se obtuvo un valor numérico.",
+      "validacion": true,
+      "archivo": "N2_VV_r1.json",
+      "costo_usd": 0.1564
+    },
+    {
+      "id": "N3_AA_r1",
+      "perfil": {
+        "nivel_edad": "S2",
+        "nivel": "N3",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P3-MM",
+        "P4-WM",
+        "P6-VAL",
+        "P4-WM",
+        "P5-INT",
+        "P3-MM",
+        "P2-RM",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "goles de cada equipo siguen distribución Poisson",
+        "goles de ambos equipos independientes",
+        "mismo λ para ambos equipos (equipos parejos)",
+        "λ = 1,3 goles por equipo (promedio 2,6 por partido, valor de ejemplo provisorio)",
+        "la localía podría aumentar el λ del local (no aplicada)"
+      ],
+      "modelo": "poisson",
+      "respuesta_final": "Valores provisorios con λ = 1,3 goles por equipo, Poisson e independencia: 2-1 de U de Chile ≈ 8 % (≈ 16 % sumando ambos sentidos), 1-1 ≈ 12,5 % (el más probable), 1-0 ≈ 9,6 %, partidos decididos por un gol ≈ 41 %. Se pide la tabla completa, goles a favor y en contra de ambos equipos, localía y los marcadores reales para ajustar λ y comparar.",
+      "validacion": true,
+      "archivo": "N3_AA_r1.json",
+      "costo_usd": 0.17524
+    },
+    {
+      "id": "N4_VV_r1",
+      "perfil": {
+        "nivel_edad": "S2",
+        "nivel": "N4",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P4-WM",
+        "P6-VAL",
+        "P4-WM",
+        "P6-VAL",
+        "P4-WM",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "goles de cada equipo siguen una Poisson",
+        "goles de ambos equipos independientes",
+        "ventaja de local (promedio local mayor que visita)",
+        "promedios de goles por equipo entre 1,0 y 1,5",
+        "equipos parejos con promedios iguales (1,2 y 1,2)"
+      ],
+      "modelo": "poisson independiente",
+      "respuesta_final": "Con Poisson independiente y promedios supuestos (λ entre 1,0 y 1,5), el 2-1 tenía 8-9% de probabilidad, detrás del 1-1 y el 1-0; los partidos decididos por un gol serían 40-42%; con equipos parejos 2-1 o 1-2 juntos cerca de 16%. Debe confirmarse con los goles reales de la liga.",
+      "validacion": true,
+      "archivo": "N4_VV_r1.json",
+      "costo_usd": 0.183096
+    },
+    {
+      "id": "N4_AA_r1",
+      "perfil": {
+        "nivel_edad": "S2",
+        "nivel": "N4",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "goles de cada equipo siguen una Poisson",
+        "promedio de 1,3 goles por equipo (a confirmar con el dato de la liga)",
+        "goles de ambos equipos independientes",
+        "equipos parejos"
+      ],
+      "modelo": "poisson",
+      "respuesta_final": "Con goles Poisson independientes y λ≈1,3 por equipo (a confirmar con el promedio real de la liga), el 2-1 exacto tiene P≈0,08 (≈0,16 si se cuenta también el 1-2), menos que el 1-1 (≈0,126). Se esperaría que ≈41 % de los partidos se decidan por un gol (entre 0,39 y 0,42 con λ entre 1,1 y 1,5); habría que revisar el supuesto de independencia con los empates reales.",
+      "validacion": true,
+      "archivo": "N4_AA_r1.json",
+      "costo_usd": 0.101176
+    }
+  ],
+  "agregado": {
+    "pct_bloqueo_por_transicion": {
+      "B23": 0.5
+    },
+    "modelos_observados": {
+      "tabla de probabilidades (producto)": 1,
+      "frecuencia empírica": 1,
+      "producto de probabilidades": 1,
+      "poisson": 2,
+      "poisson independiente": 1
+    },
+    "pct_validan": 0.83
+  },
+  "fecha": "2026-11-09T16:50:47Z"
+}

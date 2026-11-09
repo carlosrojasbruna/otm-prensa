@@ -1,0 +1,157 @@
+{
+  "run": {
+    "id": "N1_VV_r1",
+    "nivel": "N1",
+    "composicion": "VV",
+    "rep": 1,
+    "estilos": [
+      "V",
+      "V"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.064024,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "fase_secundaria": "EMK",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P1-MRS",
+        "fase_secundaria": "EMK",
+        "eventos": []
+      },
+      {
+        "n": 3,
+        "fase": "P2-RM",
+        "fase_secundaria": "P1-MRS",
+        "eventos": [
+          "ASSUME",
+          "DIST"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "ASSUME",
+          "DIST"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P2-RM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 6,
+        "fase": "P3-MM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P3-MM",
+        "fase_secundaria": "P4-WM",
+        "eventos": []
+      },
+      {
+        "n": 8,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 9,
+        "fase": "P5-INT",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 10,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 11,
+        "fase": "P5-INT",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 12,
+        "fase": "P5-INT",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 13,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P7-EXP",
+        "eventos": []
+      },
+      {
+        "n": 14,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 15,
+        "fase": "P6-VAL",
+        "fase_secundaria": null,
+        "eventos": []
+      }
+    ],
+    "bloqueos": [
+      {
+        "codigo": "B45",
+        "turnos": [
+          10,
+          11
+        ],
+        "resolucion": "peer",
+        "descripcion": "B obtiene 7,5 en la calculadora y no entiende qué significa la parte decimal (piensa en 7 horas con 5 minutos); A lo destraba al explicar que ,5 es la mitad, o sea 30 minutos."
+      }
+    ],
+    "supuestos": [
+      "una familia por vivienda (300 familias, no 800 personas)",
+      "15 minutos de atención por familia",
+      "cada mesa atiende 4 familias por hora",
+      "las mesas atienden al mismo tiempo y al mismo ritmo"
+    ],
+    "modelo": "proporcional (tasa)",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Recomiendan 10 mesas funcionando 7 horas y media para atender a las 300 familias, si cada una se demora 15 minutos; señalan que falta saber el tiempo real por familia y si llegan todas juntas o repartidas en el día."
+    },
+    "ruta_principal": "R1",
+    "rutas": [
+      "R1",
+      "R2"
+    ]
+  }
+}

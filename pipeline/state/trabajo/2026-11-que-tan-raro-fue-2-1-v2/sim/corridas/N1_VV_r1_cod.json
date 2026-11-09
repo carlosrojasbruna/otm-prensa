@@ -1,0 +1,255 @@
+{
+  "run": {
+    "id": "N1_VV_r1",
+    "nivel": "N1",
+    "composicion": "VV",
+    "rep": 1,
+    "estilos": [
+      "V",
+      "V"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.089356,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 2,
+        "fase": "P1-MRS",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 3,
+        "fase": "P1-MRS",
+        "fase_secundaria": "P2-RM",
+        "eventos": []
+      },
+      {
+        "n": 4,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 6,
+        "fase": "P2-RM",
+        "fase_secundaria": "P3-MM",
+        "eventos": []
+      },
+      {
+        "n": 7,
+        "fase": "P3-MM",
+        "fase_secundaria": null,
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 8,
+        "fase": "P3-MM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 9,
+        "fase": "P3-MM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 10,
+        "fase": "P3-MM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 11,
+        "fase": "P3-MM",
+        "fase_secundaria": "P2-RM",
+        "eventos": []
+      },
+      {
+        "n": 12,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 13,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 14,
+        "fase": "P2-RM",
+        "fase_secundaria": "EMK",
+        "eventos": []
+      },
+      {
+        "n": 15,
+        "fase": "P2-RM",
+        "fase_secundaria": "EMK",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 16,
+        "fase": "P3-MM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 17,
+        "fase": "P3-MM",
+        "fase_secundaria": null,
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 18,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 19,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 20,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 21,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 22,
+        "fase": "P6-VAL",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 23,
+        "fase": "P3-MM",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 24,
+        "fase": "P4-WM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 25,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 26,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 27,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 28,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 29,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      }
+    ],
+    "bloqueos": [
+      {
+        "codigo": "B23",
+        "turnos": [
+          6,
+          7,
+          8
+        ],
+        "resolucion": "peer",
+        "descripcion": "No saben cómo pasar del promedio de goles a la probabilidad de un marcador. A duda («no sé bien cómo», «no sé si eso sirve») y B objeta que 3-0 y 2-1 suman lo mismo. B reorienta el trabajo hacia las casillas pegadas a la diagonal."
+      },
+      {
+        "codigo": "B23",
+        "turnos": [
+          16,
+          17
+        ],
+        "resolucion": "peer",
+        "descripcion": "B no sabe cómo calcular el número de cada casilla de la cuadrícula. A lo destraba proponiendo barras de frecuencias por cantidad de goles y multiplicarlas como el área de un rectángulo."
+      }
+    ],
+    "supuestos": [
+      "promedio de 2,5 goles por partido",
+      "1,2 goles por equipo y por partido",
+      "Colo Colo se excluye por no ser equipo parejo",
+      "distribución de goles por equipo inventada: 0,30/0,35/0,20/0,10/0,05",
+      "goles de ambos equipos independientes (producto)",
+      "mismo reparto para local y visita"
+    ],
+    "modelo": "tabla de probabilidades (producto)",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Con probabilidades supuestas por cantidad de goles (0: 0,30; 1: 0,35; 2: 0,20; 3: 0,10; 4 o más: 0,05) y goles independientes, un 2-1 tiene cerca de 7 % de probabilidad. Es menos probable que el 1-1 (12 %) o el 1-0 (10,5 %). Los partidos decididos por un gol son cerca de 40 % y los empates cerca de 26,5 %. Hay que confirmarlo con datos reales de la liga."
+    },
+    "ruta_principal": "R1",
+    "rutas": [
+      "R1"
+    ]
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "run": {
+    "id": "N4_VV_r1",
+    "nivel": "N4",
+    "composicion": "VV",
+    "rep": 1,
+    "estilos": [
+      "V",
+      "V"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.055664,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P2-RM",
+        "fase_secundaria": "P1-MRS",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P3-MM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P3-MM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P3-MM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 6,
+        "fase": "P2-RM",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "STRAT",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P6-VAL",
+        "fase_secundaria": "EMK",
+        "eventos": []
+      },
+      {
+        "n": 8,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 9,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P3-MM",
+        "eventos": []
+      },
+      {
+        "n": 10,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 11,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 12,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "ASSUME"
+        ]
+      }
+    ],
+    "bloqueos": [],
+    "supuestos": [
+      "probabilidad p de que salga el permiso",
+      "ingreso mensual I constante",
+      "gasto previo se pierde si el permiso no sale",
+      "gasto no se pierde si el permiso sale",
+      "gasto mensual g de preparación",
+      "tope de 5-10% de las utilidades (no es un dato)",
+      "utilidades no equivalen a caja disponible",
+      "trámites más rápidos reducen T y su incertidumbre, no p"
+    ],
+    "modelo": "valor esperado",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Comprometer como máximo 5-10% de las utilidades (50 a 100 millones USD) y empezar a preparar mientras p·I > (1-p)·g por mes; si los trámites se aceleran, baja T y su incertidumbre, por lo que se prepara menos meses antes de T. Piden capex, p, T esperado y caja disponible; el 5-10% es un supuesto propio."
+    },
+    "ruta_principal": "R3",
+    "rutas": [
+      "R3"
+    ]
+  }
+}

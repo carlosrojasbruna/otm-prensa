@@ -1,0 +1,112 @@
+{
+  "run": {
+    "id": "N2_VV_r1",
+    "nivel": "N2",
+    "composicion": "VV",
+    "rep": 1,
+    "estilos": [
+      "V",
+      "V"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.0453,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P2-RM",
+        "fase_secundaria": "P1-MRS",
+        "eventos": [
+          "ASSUME",
+          "DIST"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P2-RM",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P4-WM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 6,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 8,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 9,
+        "fase": "P7-EXP",
+        "fase_secundaria": "EMK",
+        "eventos": []
+      },
+      {
+        "n": 10,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      }
+    ],
+    "bloqueos": [],
+    "supuestos": [
+      "una vivienda = una familia",
+      "se atiende una persona por familia",
+      "15 minutos por familia",
+      "las mesas atienden al mismo tiempo y se reparten las familias por igual",
+      "las familias llegan repartidas durante el día",
+      "pausa para almorzar"
+    ],
+    "modelo": "proporcional",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Con 10 mesas y si cada familia demora 15 minutos, se atienden las 300 familias en 7 horas y media (300 × 15 = 4500 min = 75 h; 75 ÷ 10 = 7,5 h), y los funcionarios necesitan un rato para almorzar. Le preguntan a la jefa el tiempo real, cuántos funcionarios hay y cómo llegan las familias."
+    },
+    "ruta_principal": "R1",
+    "rutas": [
+      "R1"
+    ]
+  }
+}

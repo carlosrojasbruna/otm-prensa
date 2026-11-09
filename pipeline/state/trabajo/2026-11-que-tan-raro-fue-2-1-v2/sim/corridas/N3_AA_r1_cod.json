@@ -1,0 +1,166 @@
+{
+  "run": {
+    "id": "N3_AA_r1",
+    "nivel": "N3",
+    "composicion": "AA",
+    "rep": 1,
+    "estilos": [
+      "A",
+      "A"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.06104,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P3-MM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P3-MM",
+        "fase_secundaria": null,
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P4-WM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 6,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 7,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 8,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 9,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 10,
+        "fase": "P5-INT",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 11,
+        "fase": "P3-MM",
+        "fase_secundaria": null,
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 12,
+        "fase": "P2-RM",
+        "fase_secundaria": "EMK",
+        "eventos": [
+          "DIST",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 13,
+        "fase": "OFF",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 14,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 15,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 16,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 17,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": [
+          "ASSUME"
+        ]
+      }
+    ],
+    "bloqueos": [],
+    "supuestos": [
+      "goles de cada equipo siguen distribución Poisson",
+      "goles de ambos equipos independientes",
+      "mismo λ para ambos equipos (equipos parejos)",
+      "λ = 1,3 goles por equipo (promedio 2,6 por partido, valor de ejemplo provisorio)",
+      "la localía podría aumentar el λ del local (no aplicada)"
+    ],
+    "modelo": "Poisson",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Valores provisorios con λ = 1,3 goles por equipo, Poisson e independencia: 2-1 de U de Chile ≈ 8 % (≈ 16 % sumando ambos sentidos), 1-1 ≈ 12,5 % (el más probable), 1-0 ≈ 9,6 %, partidos decididos por un gol ≈ 41 %. Se pide la tabla completa, goles a favor y en contra de ambos equipos, localía y los marcadores reales para ajustar λ y comparar."
+    },
+    "ruta_principal": "R2",
+    "rutas": [
+      "R2"
+    ]
+  }
+}
