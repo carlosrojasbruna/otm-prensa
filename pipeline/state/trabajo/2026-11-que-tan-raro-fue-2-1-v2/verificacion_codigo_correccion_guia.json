@@ -1,0 +1,85 @@
+{
+  "tarea_id": "2026-11-que-tan-raro-fue-2-1-v2",
+  "aprobado": true,
+  "estado_destino": "verificada",
+  "hallazgos": [
+    {
+      "invariante": "notebook",
+      "severidad": "advertencia",
+      "ubicacion": "guia.materiales.notebook",
+      "descripcion": "notebook escenarios.ipynb no encontrado: ",
+      "origen": "codigo"
+    }
+  ],
+  "cifras_contrastadas": [
+    {
+      "indice": 0,
+      "que_es": "Partidos disputados por cada equipo en la tabla tras la fecha 27",
+      "valor_tarea": 27,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 13"
+      },
+      "metodo": "codigo",
+      "valor_fuente": 27,
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 13 de la noticia"
+    },
+    {
+      "indice": 1,
+      "que_es": "Diferencia de goles de Colo Colo, la mejor de la tabla",
+      "valor_tarea": "+29",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 13"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "+29",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 13 de la noticia"
+    },
+    {
+      "indice": 2,
+      "que_es": "Resultado del partido entre Universidad de Chile y Cobresal",
+      "valor_tarea": "2-1",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 13"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "2-1",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 13 de la noticia"
+    },
+    {
+      "indice": 3,
+      "que_es": "goles de Cobresal en la derrota 2-1 ante Universidad de Chile (segundo número del marcador)",
+      "valor_tarea": 1,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 13"
+      },
+      "metodo": "codigo",
+      "valor_fuente": 1,
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 13 de la noticia"
+    }
+  ],
+  "notebook": {
+    "estado": "no_encontrado",
+    "ruta": "escenarios.ipynb",
+    "salida_resumen": ""
+  },
+  "meta": {
+    "agente": "verificador",
+    "version_prompt": "1.1",
+    "modelo": null,
+    "request_id": null,
+    "fecha": "2026-11-09T17:38:29+00:00",
+    "costo_usd": 0.0,
+    "modelo_llamado": false,
+    "texto_noticia_recibido": true,
+    "uso": null,
+    "nota": "solo código, sin contraste semántico (corrección manual de la guía)"
+  }
+}

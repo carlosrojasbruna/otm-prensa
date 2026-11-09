@@ -1,0 +1,72 @@
+{
+  "tarea_id": "2026-11-modulos-de-atencion-familias",
+  "aprobado": true,
+  "estado_destino": "verificada",
+  "hallazgos": [
+    {
+      "invariante": "notebook",
+      "severidad": "advertencia",
+      "ubicacion": "guia.materiales.notebook",
+      "descripcion": "notebook escenarios.ipynb no encontrado: ",
+      "origen": "codigo"
+    }
+  ],
+  "cifras_contrastadas": [
+    {
+      "indice": 0,
+      "que_es": "Superficie de la franja prioritaria incluida en la primera fase del desalojo",
+      "valor_tarea": 3,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 3"
+      },
+      "metodo": "codigo",
+      "valor_fuente": 3,
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 3 de la noticia"
+    },
+    {
+      "indice": 1,
+      "que_es": "Cantidad de casas emplazadas en el sector que será desalojado",
+      "valor_tarea": 300,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 3"
+      },
+      "metodo": "codigo",
+      "valor_fuente": 300,
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 3 de la noticia"
+    },
+    {
+      "indice": 2,
+      "que_es": "Cantidad aproximada de habitantes que viven en las viviendas del sector",
+      "valor_tarea": 800,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 3"
+      },
+      "metodo": "codigo",
+      "valor_fuente": 800,
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 3 de la noticia"
+    }
+  ],
+  "notebook": {
+    "estado": "no_encontrado",
+    "ruta": "escenarios.ipynb",
+    "salida_resumen": ""
+  },
+  "meta": {
+    "agente": "verificador",
+    "version_prompt": "1.1",
+    "modelo": null,
+    "request_id": null,
+    "fecha": "2026-11-09T17:38:43+00:00",
+    "costo_usd": 0.0,
+    "modelo_llamado": false,
+    "texto_noticia_recibido": true,
+    "uso": null,
+    "nota": "solo código, sin contraste semántico (corrección manual de la guía)"
+  }
+}

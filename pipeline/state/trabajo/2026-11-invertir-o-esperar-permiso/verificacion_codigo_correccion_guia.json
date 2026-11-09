@@ -1,0 +1,46 @@
+{
+  "tarea_id": "2026-11-invertir-o-esperar-permiso",
+  "aprobado": true,
+  "estado_destino": "verificada",
+  "hallazgos": [
+    {
+      "invariante": "notebook",
+      "severidad": "advertencia",
+      "ubicacion": "guia.materiales.notebook",
+      "descripcion": "notebook escenarios.ipynb no encontrado: ",
+      "origen": "codigo"
+    }
+  ],
+  "cifras_contrastadas": [
+    {
+      "indice": 0,
+      "que_es": "Utilidades de Empresas Copec a septiembre",
+      "valor_tarea": "US$ 1.000 millones",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 2"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "US$ 1.000 millones",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 2 de la noticia"
+    }
+  ],
+  "notebook": {
+    "estado": "no_encontrado",
+    "ruta": "escenarios.ipynb",
+    "salida_resumen": ""
+  },
+  "meta": {
+    "agente": "verificador",
+    "version_prompt": "1.1",
+    "modelo": null,
+    "request_id": null,
+    "fecha": "2026-11-09T17:38:55+00:00",
+    "costo_usd": 0.0,
+    "modelo_llamado": false,
+    "texto_noticia_recibido": true,
+    "uso": null,
+    "nota": "solo código, sin contraste semántico (corrección manual de la guía)"
+  }
+}
