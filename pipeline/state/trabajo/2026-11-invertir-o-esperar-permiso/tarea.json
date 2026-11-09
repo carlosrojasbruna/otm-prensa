@@ -1,0 +1,213 @@
+{
+  "id": "2026-11-invertir-o-esperar-permiso",
+  "titulo": "¿Invertir ya o esperar el permiso?",
+  "estado": "evaluada",
+  "version": 1,
+  "fecha": "2026-11-09",
+  "noticia": {
+    "noticia_id": "2026-11-09-latercera-navarro-de-empresas-copec-dice-que",
+    "medio": "La Tercera",
+    "titulo": "Navarro de Empresas Copec dice que no esperaba un 2026 con “malas cifras económicas”, pero tiene optimismo sobre 2027",
+    "fecha": "2026-11-09",
+    "url": "https://www.latercera.com/pulso/noticia/navarro-de-empresas-copec-dice-que-no-esperaba-un-2026-con-malas-cifras-economicas-pero-tiene-optimismo-sobre-2027/",
+    "resumen_propio": "Un alto ejecutivo de Empresas Copec reconoce que el año económico va peor de lo previsto, por tensiones comerciales, encarecimiento de la energía, inflación y tasas altas que afectan a una economía exportadora como la chilena. Pese a ello, se muestra optimista para el próximo año gracias a leyes que buscan impulsar la inversión y los permisos, aunque advierte que hay que pasar de las señales a la acción, con un desempleo elevado y trámites más ágiles para destrabar inversiones.",
+    "cifras_usadas": [
+      {
+        "valor": "US$ 1.000 millones",
+        "unidad": "dólares (millones)",
+        "que_es": "Utilidades de Empresas Copec a septiembre",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 2"
+        }
+      }
+    ]
+  },
+  "nivel_principal": "U",
+  "variantes": {
+    "abajo": "S",
+    "arriba": null
+  },
+  "area": "economia",
+  "contenidos_matematicos": [
+    "probabilidad y variables aleatorias de tiempo de espera",
+    "valor esperado y descuento",
+    "optimización con restricciones",
+    "análisis de sensibilidad"
+  ],
+  "tiempo_estimado": "2 sesiones de 90 min",
+  "estudiante": {
+    "enunciado_es": "Un alto ejecutivo de Empresas Copec dijo que este año ha sido más débil de lo que esperaba, pero que ve con optimismo el próximo si las leyes que buscan agilizar permisos pasan de la promesa a la práctica. La empresa tuvo utilidades por 1.000 millones de dólares a septiembre. Imaginen que el directorio de una empresa de este tipo estudia un gran proyecto que depende de un permiso cuya tramitación es incierta. Si empieza a prepararse antes, gasta en estudios y personal sin saber si el permiso llegará; si espera, retrasa los ingresos futuros del proyecto. ¿Cuánto de sus utilidades debería comprometer, y cuándo conviene empezar? ¿Cómo cambiaría su recomendación si los trámites se hicieran más rápidos? Pueden pedir información adicional.",
+    "foto_descripcion": "Ilustración sencilla de un semáforo en amarillo junto a un plano de obra con una grúa detenida.",
+    "recursos_a_solicitud": [
+      {
+        "id": "R2",
+        "que_es": "Descripción del proyecto hipotético",
+        "contenido": "Supuesto del escenario: una vez aprobado el permiso y construido el proyecto, este genera ingresos netos cada mes durante varios años. Mientras no se construye, no genera ingresos. El tamaño del proyecto, su costo y sus ingresos los debe estimar el grupo.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P2-RM",
+        "fuente": "supuesto del escenario"
+      },
+      {
+        "id": "R3",
+        "que_es": "Descripción del trámite del permiso",
+        "contenido": "Supuesto del escenario: el permiso puede resolverse favorablemente en cualquier mes, sin que se sepa de antemano cuándo. Preparar el proyecto antes de tener el permiso tiene un costo mensual, pero puede acortar la construcción una vez aprobado. El grupo debe decidir cómo representar la espera.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P3-MM",
+        "fuente": "supuesto del escenario"
+      },
+      {
+        "id": "R4",
+        "que_es": "Información pública sobre tiempos reales de evaluación de proyectos (se entrega después de que el grupo presente su modelo)",
+        "contenido": "Estadísticas e informes públicos sobre proyectos de inversión evaluados en el sistema de evaluación ambiental, con información sobre cuánto demoran sus trámites, para comparar con los plazos que supuso el grupo.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P6-VAL",
+        "fuente": "otra fuente: Servicio de Evaluación Ambiental (SEA), estadísticas e informes públicos del Sistema de Evaluación de Impacto Ambiental (SEIA)"
+      }
+    ]
+  },
+  "variantes_detalle": {
+    "abajo": {
+      "tramo": "S2",
+      "cambios": "Se entregan como datos los plazos posibles del permiso (rápido o lento) con sus probabilidades, y la pregunta pide comparar dos estrategias con un árbol de decisión y valor esperado; no se pide optimizar la fracción de utilidades ni modelar la espera como variable aleatoria continua."
+    },
+    "arriba": null
+  },
+  "recursos_de_entrada": [
+    {
+      "id": "R1",
+      "que_es": "Dato de partida sobre utilidades de la empresa",
+      "contenido": "Empresas Copec tuvo utilidades por 1.000 millones de dólares a septiembre.",
+      "disponibilidad": "de_entrada",
+      "fase": "P1-MRS",
+      "fuente": "noticia, párrafo 2"
+    }
+  ],
+  "mapa_ciclo": {
+    "P1-MRS": {
+      "decision": "Entender qué decide el directorio: cuánto comprometer y cuándo empezar a gastar, y qué significa que las utilidades a septiembre sirvan de escala del presupuesto anual.",
+      "evidencia": "Reformulación por escrito de la decisión, con la pregunta de qué costos y qué ingresos están en juego; solicitud de información sobre el proyecto y el trámite.",
+      "bloqueo_probable": "B12"
+    },
+    "P2-RM": {
+      "decision": "Decidir cómo pasar de las utilidades a septiembre a un presupuesto anual, qué fracción es comprometible, y simplificar el proyecto en costo, ingresos mensuales y duración de construcción.",
+      "evidencia": "Lista de supuestos con valores propuestos y justificados.",
+      "bloqueo_probable": "B23"
+    },
+    "P3-MM": {
+      "decision": "Representar el tiempo de espera del permiso como variable aleatoria y definir el valor esperado de cada estrategia (esperar o preparar antes) con descuento.",
+      "evidencia": "Fórmulas o árbol que comparan ambas estrategias, con parámetros nombrados.",
+      "bloqueo_probable": "B34"
+    },
+    "P4-WM": {
+      "decision": "Calcular o simular el valor esperado de cada estrategia y encontrar la condición o la fracción que maximiza el valor.",
+      "evidencia": "Cálculo analítico o simulación con tabla de resultados por estrategia.",
+      "bloqueo_probable": "B45"
+    },
+    "P5-INT": {
+      "decision": "Traducir el resultado a una recomendación: cuánto comprometer, cuándo empezar y qué pasa si el trámite fuera más rápido.",
+      "evidencia": "Recomendación escrita con cifras en dólares y plazos, y con su condición de validez.",
+      "bloqueo_probable": "B56"
+    },
+    "P6-VAL": {
+      "decision": "Contrastar los plazos supuestos con plazos reales de tramitación y probar sensibilidad a descuento, plazo medio y costo de preparación.",
+      "evidencia": "Comparación entre la distribución de plazos supuesta y la real; tabla de sensibilidad.",
+      "bloqueo_probable": "B67"
+    },
+    "P7-EXP": {
+      "decision": "Presentar al directorio la recomendación con riesgos, supuestos y qué información nueva la cambiaría.",
+      "evidencia": "Informe o presentación con estrategia recomendada y límites del modelo.",
+      "bloqueo_probable": null
+    }
+  },
+  "task_space": {
+    "required_assumptions": [
+      "Las utilidades a septiembre se anualizan suponiendo un ritmo parecido en los meses restantes.",
+      "Solo una fracción de las utilidades anuales puede destinarse al proyecto.",
+      "El proyecto entrega ingresos netos mensuales constantes una vez construido, y el valor se mide con una tasa de descuento elegida por el grupo.",
+      "El tiempo hasta obtener el permiso es aleatorio con una distribución propuesta (por ejemplo exponencial).",
+      "Preparar antes del permiso tiene un costo mensual y acorta la construcción en un tiempo fijo."
+    ],
+    "reference_solution": {
+      "steps": "1) Anualizar utilidades: 1.000 millones × 12/9 ≈ 1.333 millones de dólares. 2) Supuestos ilustrativos: se compromete 30%, es decir C ≈ 400 millones; el valor neto al entrar en operación es V = 25% de C = 100 millones; tasa mensual ρ = 0,008; construcción τ = 24 meses; tiempo hasta el permiso T exponencial con tasa λ = 1/18 por mes. 3) Esperar: valor = [λ/(λ + ρ)] e^(−ρτ) V ≈ 0,874 × 0,825 × 100 ≈ 72 millones. 4) Preparar antes, con costo mensual c, y acortar la construcción en Δ = 6 meses: valor = [λ/(λ + ρ)] e^(−ρ(τ − Δ)) V − c/(λ + ρ). 5) Diferencia (preparar − esperar) = [λ/(λ + ρ)] e^(−ρτ)(e^(ρΔ) − 1)V − c/(λ + ρ). Conviene preparar si λ e^(−ρτ)(e^(ρΔ) − 1)V > c, es decir c < ≈ 0,23 millones por mes. 6) Con trámites más rápidos (λ doble) el umbral sube a ≈ 0,45 millones por mes. 7) Optimización de la fracción de utilidades: maximizar el valor esperado por dólar comprometido sujeto a una pérdida máxima tolerable si el permiso se demora demasiado. 8) Sensibilidad a ρ, λ, c, Δ.",
+      "result": "Con los valores ilustrativos, esperar vale unos 72 millones de dólares y preparar antes solo conviene si el costo mensual de preparación es menor que unos 0,23 millones de dólares; con trámites el doble de rápidos el umbral sube a unos 0,45 millones. La recomendación depende de costo de preparación, tiempo ahorrado y plazo esperado del permiso.",
+      "acceptable_range": "Se aceptan recomendaciones distintas si se derivan de supuestos explícitos y coherentes: fracción comprometida entre 10% y 50% de las utilidades anualizadas, plazos esperados de varios meses a pocos años, y un criterio claro (valor esperado, pérdida máxima o ambos). El umbral de costo mensual para preparar debe ser consistente con la estructura del modelo."
+    },
+    "routes": [
+      {
+        "id": "R1",
+        "nombre": "Valor esperado con tiempo de espera exponencial",
+        "nivel": "U",
+        "modelo": "Valor presente esperado con descuento y tiempo hasta el permiso exponencial; condición cerrada para preparar antes: λ e^(−ρτ)(e^(ρΔ) − 1)V > c.",
+        "resultado": "Con los valores ilustrativos, esperar vale unos 72 millones de dólares; preparar conviene si c es menor que unos 0,23 millones por mes."
+      },
+      {
+        "id": "R2",
+        "nombre": "Simulación de plazos con distribución empírica",
+        "nivel": "U",
+        "modelo": "Simulación de muchos plazos de permiso con una distribución de cola larga (por ejemplo lognormal); se compara el valor medio y la pérdida en el peor decil de cada estrategia.",
+        "resultado": "Rango del valor esperado por estrategia y de la pérdida en escenarios de demora larga; puede cambiar la recomendación respecto de R1 cuando la cola es pesada."
+      },
+      {
+        "id": "R3",
+        "nombre": "Árbol de decisión con escenarios discretos",
+        "nivel": "S2",
+        "modelo": "Dos o más escenarios de plazo (permiso rápido o lento) con probabilidades supuestas; valor esperado de esperar frente a preparar antes.",
+        "resultado": "Estrategia de mayor valor esperado según las probabilidades; punto de equilibrio en la probabilidad de permiso rápido."
+      },
+      {
+        "id": "R4",
+        "nombre": "Optimización de la fracción comprometida",
+        "nivel": "U",
+        "modelo": "Maximizar el valor esperado en función de la fracción de utilidades comprometida, con restricción de capital disponible y de pérdida máxima tolerable si el permiso se retrasa.",
+        "resultado": "Fracción óptima intermedia (por ejemplo cerca de 30% de las utilidades anualizadas en el caso base); disminuye si aumenta la dispersión del plazo o la aversión al riesgo."
+      }
+    ],
+    "modelo_inadecuado": {
+      "id": "R5",
+      "por_que_falla": "Comparar el costo del proyecto con las utilidades a septiembre usando un plazo fijo igual al promedio, mediante un valor neto determinista, oculta la dispersión del plazo del permiso: no distingue entre trámites que se resuelven pronto y casos de demora larga donde el gasto de preparación se pierde o el proyecto se posterga, y tampoco considera que las utilidades a septiembre son un ritmo parcial del año."
+    },
+    "validation_evidence": "Información pública y estadísticas de evaluación de proyectos en el Sistema de Evaluación de Impacto Ambiental (Servicio de Evaluación Ambiental, SEA) sobre plazos reales de tramitación, entregadas después de modelar: se contrasta la distribución de plazos supuesta por el grupo y se verifica si la recomendación se mantiene con los plazos observados; esos datos no se usan para construir el modelo.",
+    "agent_visibility": {
+      "students": [
+        "enunciado_es",
+        "foto_descripcion",
+        "recursos_a_solicitud"
+      ],
+      "coder": [
+        "enunciado_es",
+        "task_space"
+      ],
+      "guide": [
+        "all"
+      ]
+    }
+  },
+  "rubrica_rub01": {
+    "total": 23,
+    "por_criterio": {
+      "genuino": 2,
+      "abierta": 2,
+      "decisiones": 2,
+      "realismo": 2,
+      "autenticidad": 1,
+      "contexto": 2,
+      "ciclo": 2,
+      "validacion": 2,
+      "nivel": 2,
+      "autodiferenciacion": 2,
+      "fecundidad": 2,
+      "recursos": 2
+    }
+  },
+  "rubrica_rub02": {
+    "P": null,
+    "S": null,
+    "U": null
+  },
+  "modelo_y_prompt": {
+    "diseñador": "claude-sonnet-5-5",
+    "version_prompt": "1.1",
+    "version_rubrica": "4.0"
+  }
+}

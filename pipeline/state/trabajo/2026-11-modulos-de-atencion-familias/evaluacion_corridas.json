@@ -1,0 +1,295 @@
+{
+  "tarea_id": "2026-11-modulos-de-atencion-familias",
+  "evaluaciones": [
+    {
+      "iteracion": 1,
+      "version_tarea": 1,
+      "fecha": "2026-11-09T14:16:59Z",
+      "modelo": "claude-opus-5-5",
+      "version_prompt": "1.3",
+      "version_rubrica": "4.0",
+      "corridas": [
+        {
+          "n": 1,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "Plantea una necesidad real de planificación (cuántos módulos y cuántas horas) sin entregar ninguna regla ni modelo para calcularla.",
+                "cita": "La jefa del equipo debe decidir cuántos módulos instalar y por cuántas horas funcionarán, para que las familias no esperen demasiado."
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "Admite varios planes defendibles, por ejemplo más módulos con menos horas o al revés, y la pregunta no prescribe el procedimiento.",
+                "cita": "¿Qué plan de atención le recomendarían y cuánto tiempo estiman que se necesita?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Hay que decidir si se atiende por vivienda o por persona, estimar la duración de una atención, interpretar «no esperen demasiado» y solicitar información. Son decisiones de modelación sustantivas.",
+                "cita": "Pueden pedir información adicional."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "El operativo es un hecho real, y que un equipo municipal registre a las familias durante él es claramente plausible fuera de la escuela.",
+                "cita": "Las autoridades de Cerrillos, en la Región Metropolitana, comenzaron a retirar un asentamiento irregular en una franja de 3 hectáreas"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los datos de la noticia (300 viviendas, unas 800 personas) son el insumo central del modelo, de modo que el componente auténtico está integrado de manera sustantiva.",
+                "cita": "R1 (Datos de la noticia que se entregan desde el inicio)"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona las decisiones (familias o personas, jornada, colación, espera aceptable). También es necesario para interpretar y juzgar si el plan es razonable.",
+                "cita": "Cada módulo es una mesa con un funcionario, y cada familia se atiende una sola vez."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a comprender la situación, simplificarla y estimar tiempos, calcular el tiempo total según el número de módulos, y volver al contexto para recomendar y juzgar el plan. Las aclaraciones R2 y R3 solo se entregan a solicitud y no dejan hecha ninguna fase.",
+                "cita": "¿Qué plan de atención le recomendarían y cuánto tiempo estiman que se necesita?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "El simulacro cronometrado es una medición independiente que permite contrastar el plan con un caso nuevo.",
+                "cita": "el profesor puede organizar que un grupo de compañeros haga el papel de familias y que el grupo atienda con los módulos de su plan, …"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto y el lenguaje son comprensibles para 10–12 años. La matemática requerida (operatoria, reparto, estimación, conversión de minutos a horas) está entre las herramientas esperables del nivel P.",
+                "cita": "Cada módulo es una mesa con un funcionario, y cada familia se atiende una sola vez."
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Se puede entrar con una división simple de 300 atenciones entre módulos. La tarea admite soluciones más sofisticadas que consideran la llegada repartida, la colación, la variabilidad de tiempos y el equilibrio entre módulos y horas.",
+                "cita": "para que las familias no esperen demasiado"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "La relación entre módulos y horas permite comparar planes distintos y abre preguntas sobre la espera, los costos y los límites del modelo.",
+                "cita": "La jefa del equipo debe decidir cuántos módulos instalar y por cuántas horas funcionarán"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "El dato clave (la duración de una atención) puede medirse en clase, y las aclaraciones a solicitud precisan el escenario sin revelar la relación entre módulos, horas y familias.",
+                "cita": "El grupo puede llenarla entre compañeros con un cronómetro para estimar cuánto demora una atención."
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgsVehTQnyqrTHxDMF81B",
+            "fecha": "2026-11-09T14:15:49+00:00",
+            "intentos": 1,
+            "costo_usd": 0.074318,
+            "avisos": [
+              "cita_recortada_25:validacion"
+            ]
+          }
+        },
+        {
+          "n": 2,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La situación plantea una necesidad real de planificación. No se entrega ninguna regla ni modelo para calcular módulos u horas.",
+                "cita": "La jefa del equipo debe decidir cuántos módulos instalar y por cuántas horas funcionarán, para que las familias no esperen demasiado."
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta admite varios planes defendibles, porque se puede intercambiar cantidad de módulos por horas de funcionamiento. No prescribe un procedimiento.",
+                "cita": "¿Qué plan de atención le recomendarían y cuánto tiempo estiman que se necesita?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige decidir varias cosas: si se atiende por vivienda o por persona, cuánto dura una atención, cuántas horas tiene la jornada y qué es «no esperar demasiado». También se puede solicitar información.",
+                "cita": "Pueden pedir información adicional."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Instalar módulos municipales de registro durante un operativo de este tipo es claramente plausible fuera de la escuela.",
+                "cita": "Las autoridades de Cerrillos, en la Región Metropolitana, comenzaron a retirar un asentamiento irregular en una franja de 3 hectáreas"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los datos de la noticia (300 viviendas, unas 800 personas) son el insumo central para dimensionar la atención. Están integrados de manera sustantiva.",
+                "cita": "R1 (Datos de la noticia que se entregan desde el inicio)"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona las decisiones: quién se registra, cuánto dura la jornada, la pausa de colación y la espera aceptable. También es necesario para juzgar si el plan es razonable.",
+                "cita": "Cada módulo es una mesa con un funcionario, y cada familia se atiende una sola vez."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a recorrer todas las fases: comprender el operativo, simplificar (atenciones por hogar, duración), matematizar (familias × tiempo ÷ módulos), calcular, interpretar el plan y juzgarlo. Las aclaraciones solo se entregan si el grupo las pide.",
+                "cita": "¿Qué plan de atención le recomendarían y cuánto tiempo estiman que se necesita?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "El simulacro cronometrado es una medición independiente con la que se puede contrastar el plan modelado.",
+                "cita": "el profesor puede organizar que un grupo de compañeros haga el papel de familias y que el grupo atienda con los módulos de su plan, …"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "Hacer fila para ser atendido es una experiencia comprensible a los 10–12 años. La matemática requerida (operatoria, proporcionalidad, estimación y unidades de tiempo) corresponde al nivel P.",
+                "cita": "Cada módulo es una mesa con un funcionario, y cada familia se atiende una sola vez."
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Hay una entrada elemental: repartir 300 atenciones entre módulos. También admite soluciones más refinadas, como considerar la llegada repartida, la espera, la pausa o duraciones distintas según el tamaño del hogar.",
+                "cita": "Las familias llegan repartidas a lo largo de la jornada, sin hora fija, y el equipo hace una pausa de colación"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Los planes pueden compararse según el equilibrio entre módulos y horas, y según la espera. Además abren preguntas nuevas, por ejemplo qué pasa si se registra a cada persona o si llegan todos a la misma hora.",
+                "cita": "para que las familias no esperen demasiado"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información necesaria se entrega a solicitud o se obtiene midiendo con el cronómetro, sin que se revele el cálculo del plan. Hay una duda leve: R4 orienta hacia medir la duración de una atención. Aun así, solo llega si el grupo lo pide, así que no se rebaja.",
+                "cita": "El grupo puede llenarla entre compañeros con un cronómetro para estimar cuánto demora una atención."
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgsVh3wXA9JTVwiRGkQsf",
+            "fecha": "2026-11-09T14:16:22+00:00",
+            "intentos": 1,
+            "costo_usd": 0.072518,
+            "avisos": [
+              "cita_recortada_25:validacion"
+            ]
+          }
+        },
+        {
+          "n": 3,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La situación plantea una necesidad concreta de planificación y no entrega ninguna regla ni modelo para calcular módulos u horas.",
+                "cita": "La jefa del equipo debe decidir cuántos módulos instalar y por cuántas horas funcionarán, para que las familias no esperen demasiado."
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "Hay varios planes defendibles: más módulos y menos horas, o al revés, uno o varios días. La pregunta no prescribe el procedimiento y no hay instrucciones posteriores que encaucen una ruta.",
+                "cita": "¿Qué plan de atención le recomendarían y cuánto tiempo estiman que se necesita?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Hay que elegir si se atienden viviendas o personas, estimar cuánto dura una atención y fijar qué es una espera aceptable y cuánto dura la jornada. Son supuestos y estimaciones sustantivos.",
+                "cita": "hay 300 viviendas y viven unas 800 personas"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "El operativo es un hecho real. Instalar módulos municipales de registro durante un desalojo es una práctica plausible fuera de la escuela.",
+                "cita": "Las autoridades de Cerrillos, en la Región Metropolitana, comenzaron a retirar un asentamiento irregular en una franja de 3 hectáreas"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los datos de la noticia, en particular las 300 viviendas, son el núcleo cuantitativo del que depende el plan. Es un componente auténtico integrado de manera sustantiva.",
+                "cita": "R1 (Datos de la noticia que se entregan desde el inicio), entregado de entrada (ya escrito en el enunciado): La primera etapa cubre una franja …"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona las decisiones: quién se registra, duración de la jornada, colación y espera tolerable. También es necesario para interpretar si el plan es razonable para las familias.",
+                "cita": "para que las familias no esperen demasiado"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a pasar por todas las fases: comprender el operativo, simplificar (hogares, tiempo por atención), plantear un modelo proporcional, calcular, interpretarlo como un plan y juzgarlo. Ninguna fase viene hecha en el enunciado.",
+                "cita": "¿Qué plan de atención le recomendarían y cuánto tiempo estiman que se necesita?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "El simulacro es una medición independiente, no usada para construir el modelo, con la que se puede contrastar el plan. Se suman las restricciones de la jornada laboral.",
+                "cita": "el grupo atienda con los módulos de su plan, cronometrando el tiempo total."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto es comprensible para 10–12 años. La matemática necesaria (multiplicación, división, proporcionalidad, estimación y conversión de minutos a horas) está dentro de las herramientas esperables del nivel P.",
+                "cita": "El grupo puede llenarla entre compañeros con un cronómetro para estimar cuánto demora una atención."
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Se puede empezar con una estimación simple y una división. La tarea también admite soluciones más refinadas: comparar planes, considerar la colación, la variabilidad de la atención o la espera en fila.",
+                "cita": "Las familias llegan repartidas a lo largo de la jornada, sin hora fija, y el equipo hace una pausa de colación"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Comparar planes alternativos (módulos frente a horas) abre preguntas nuevas: costo de personal, varios días de atención o qué pasa si se registra a cada persona.",
+                "cita": "cuántos módulos instalar y por cuántas horas funcionarán"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "Los datos necesarios se pueden obtener: el tiempo por atención se mide con la ficha y el cronómetro, y la jornada se estima con conocimiento cotidiano. Las aclaraciones se entregan a solicitud y no revelan el modelo.",
+                "cita": "Pueden pedir información adicional."
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgsVjUZfHAxH1YCbFjdDB",
+            "fecha": "2026-11-09T14:16:59+00:00",
+            "intentos": 1,
+            "costo_usd": 0.082018,
+            "avisos": [
+              "cita_recortada_25:autenticidad"
+            ]
+          }
+        }
+      ],
+      "totales": [
+        24,
+        24,
+        24
+      ],
+      "rango_total": 0,
+      "rango_inestable": 4,
+      "evaluacion_inestable": false,
+      "mediana": {
+        "regla": "mediana por criterio (n par: mediana inferior)",
+        "total": 24,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 2
+        },
+        "corrida_fuente": {
+          "genuino": 1,
+          "abierta": 1,
+          "decisiones": 1,
+          "realismo": 1,
+          "autenticidad": 1,
+          "contexto": 1,
+          "ciclo": 1,
+          "validacion": 1,
+          "nivel": 1,
+          "autodiferenciacion": 1,
+          "fecundidad": 1,
+          "recursos": 1
+        }
+      }
+    }
+  ]
+}

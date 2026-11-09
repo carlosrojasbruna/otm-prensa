@@ -1,0 +1,238 @@
+{
+  "id": "2026-11-cuanto-espacio-por-vivienda",
+  "titulo": "¿Qué tan apretado es el lugar donde viven?",
+  "estado": "archivada",
+  "version": 1,
+  "fecha": "2026-11-09",
+  "noticia": {
+    "noticia_id": "2026-11-09-latercera-inician-desalojo-de-toma-nuevo-amanecer",
+    "medio": "La Tercera",
+    "titulo": "Inician desalojo de toma “Nuevo Amanecer” en Cerrillos: más de 800 personas viven en el sector",
+    "fecha": "2026-11-09",
+    "url": "https://www.latercera.com/nacional/noticia/inician-desalojo-de-toma-nuevo-amanecer-en-cerrillos-mas-de-800-personas-viven-en-el-sector/",
+    "resumen_propio": "Autoridades comenzaron la primera etapa de retiro de un asentamiento irregular en Cerrillos, Región Metropolitana, con apoyo de policías y funcionarios municipales y estatales. La medida cubre una franja de terreno y responde a órdenes judiciales vinculadas a delitos y a obras viales. El ministro de Seguridad defendió la estrategia de desalojos semanales como forma de recuperar el espacio público.",
+    "cifras_usadas": [
+      {
+        "valor": 3,
+        "unidad": "hectáreas",
+        "que_es": "Superficie de la franja prioritaria incluida en la primera fase del desalojo",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 3"
+        }
+      },
+      {
+        "valor": 300,
+        "unidad": "viviendas",
+        "que_es": "Cantidad de casas emplazadas en el sector que será desalojado",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 3"
+        }
+      },
+      {
+        "valor": 800,
+        "unidad": "personas",
+        "que_es": "Cantidad aproximada de habitantes que viven en las viviendas del sector",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 3"
+        }
+      }
+    ]
+  },
+  "nivel_principal": "P",
+  "variantes": {
+    "abajo": null,
+    "arriba": "S"
+  },
+  "area": "sociedad_datos",
+  "contenidos_matematicos": [
+    "unidades de superficie y conversión",
+    "división como reparto",
+    "comparación y estimación",
+    "razón entre cantidades"
+  ],
+  "tiempo_estimado": "2 sesiones de 90 min",
+  "estudiante": {
+    "enunciado_es": "En Cerrillos, en la Región Metropolitana, las autoridades comenzaron a retirar un asentamiento irregular, es decir, casas levantadas sin permiso en un terreno. La primera etapa cubre una franja de 3 hectáreas, donde hay 300 viviendas y viven unas 800 personas. Un grupo de periodistas escolares de su colegio quiere contar esta noticia a los cursos menores y necesita que los niños puedan imaginarse el tamaño del lugar y cuánto espacio hay para cada vivienda y para cada persona. Ustedes deben ayudarles a mostrarlo comparándolo con algo que los niños conozcan, como el patio del colegio o una cancha de fútbol. ¿Cómo lo explicarían y qué tan amplio o estrecho les parece el lugar? Pueden pedir información adicional.",
+    "foto_descripcion": "Dibujo simple visto desde arriba: una franja de terreno con muchas casitas dibujadas como cuadraditos y, al lado, un patio de colegio dibujado con una cancha, para poder compararlos.",
+    "recursos_a_solicitud": [
+      {
+        "id": "R2",
+        "que_es": "Tarjeta de definición de la unidad hectárea",
+        "contenido": "Una hectárea es la superficie de un cuadrado que mide cien metros de lado.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P3-MM",
+        "fuente": "otra fuente: Oficina Internacional de Pesas y Medidas (BIPM), unidades aceptadas para uso con el Sistema Internacional"
+      },
+      {
+        "id": "R3",
+        "que_es": "Aclaración sobre qué abarca el terreno",
+        "contenido": "Supuesto del escenario: la superficie, las viviendas y las personas se refieren al mismo terreno, y ese terreno incluye pasajes, calles y espacios comunes, no solo el sitio de cada casa. El equipo periodístico no tiene el plano, así que la forma exacta de la franja no se conoce.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P2-RM",
+        "fuente": "supuesto del escenario"
+      },
+      {
+        "id": "R4",
+        "que_es": "Permiso para medir un espacio conocido del colegio",
+        "contenido": "Supuesto del escenario: el profesor autoriza al grupo a medir con pasos o con huincha el patio o la cancha del colegio.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P4-WM",
+        "fuente": "supuesto del escenario"
+      },
+      {
+        "id": "R5",
+        "que_es": "Vista aérea de un barrio cercano para contrastar",
+        "contenido": "Imagen aérea de un sector de la comuna del colegio donde se ven casas, calles y una regla de escala, para contar casas y estimar la superficie ocupada.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P6-VAL",
+        "fuente": "otra fuente: OpenStreetMap (mapa de la comuna del colegio)"
+      }
+    ]
+  },
+  "variantes_detalle": {
+    "abajo": null,
+    "arriba": {
+      "tramo": "S1",
+      "cambios": "No se ofrece la tarjeta con la equivalencia de la hectárea: el grupo debe conseguirla. Se agrega la pregunta de qué medidas podría tener un sitio cuadrado por vivienda si el resto del terreno fueran calles y áreas comunes, y se pide comparar dos escenarios de reparto. La validación usa la vista aérea de un barrio real para estimar qué fracción del terreno ocupan las calles."
+    }
+  },
+  "recursos_de_entrada": [
+    {
+      "id": "R1",
+      "que_es": "Datos de la noticia que se entregan desde el inicio",
+      "contenido": "La primera etapa cubre una franja de 3 hectáreas, con 300 viviendas y unas 800 personas.",
+      "disponibilidad": "de_entrada",
+      "fase": "P1-MRS",
+      "fuente": "noticia, párrafo 3"
+    }
+  ],
+  "mapa_ciclo": {
+    "P1-MRS": {
+      "decision": "Entender qué son una hectárea, una vivienda y una persona en el terreno, y qué hay que mostrar a los niños.",
+      "evidencia": "El grupo explica con sus palabras qué significa «espacio por vivienda» y «espacio por persona».",
+      "bloqueo_probable": null
+    },
+    "P2-RM": {
+      "decision": "Decidir qué datos usar (superficie, viviendas, personas) y suponer que el espacio se reparte parejo y que incluye calles y áreas comunes.",
+      "evidencia": "Lista escrita de supuestos y de los datos elegidos.",
+      "bloqueo_probable": "B12"
+    },
+    "P3-MM": {
+      "decision": "Expresar el reparto como una división de superficie entre viviendas o personas, y elegir con qué espacio conocido comparar.",
+      "evidencia": "Esquema, dibujo o expresión que relaciona superficie, viviendas y personas, con una conversión de hectáreas a metros cuadrados.",
+      "bloqueo_probable": "B23"
+    },
+    "P4-WM": {
+      "decision": "Convertir unidades, dividir y medir el patio o la cancha para obtener cuántos caben.",
+      "evidencia": "Cálculos en el cuaderno y medidas tomadas del patio.",
+      "bloqueo_probable": "B34"
+    },
+    "P5-INT": {
+      "decision": "Traducir los números a frases como «cada vivienda dispone de un espacio parecido a…» y juzgar si el lugar es amplio o estrecho.",
+      "evidencia": "Frases de comparación con el patio o la cancha y una conclusión argumentada.",
+      "bloqueo_probable": "B45"
+    },
+    "P6-VAL": {
+      "decision": "Contrastar el resultado con la superficie por casa que se obtiene al contar casas en una vista aérea de un barrio cercano.",
+      "evidencia": "Tabla que compara el valor propio con el del barrio, con un comentario sobre calles y espacios comunes.",
+      "bloqueo_probable": "B56"
+    },
+    "P7-EXP": {
+      "decision": "Preparar la explicación para los cursos menores con una comparación visual y los supuestos usados.",
+      "evidencia": "Afiche o esquema con la comparación y una nota con lo que se supuso.",
+      "bloqueo_probable": "B67"
+    }
+  },
+  "task_space": {
+    "required_assumptions": [
+      "Las hectáreas, las viviendas y las personas corresponden al mismo terreno.",
+      "El terreno incluye calles, pasajes y espacios comunes, y se reparte de modo uniforme.",
+      "Se usa una referencia medida por el grupo, por ejemplo el patio o la cancha del colegio.",
+      "Una vivienda corresponde a un hogar."
+    ],
+    "reference_solution": {
+      "steps": "1) Convertir 3 hectáreas a metros cuadrados: una hectárea son 10.000 m², así que son 30.000 m². 2) Espacio bruto por vivienda: 30.000 ÷ 300 = 100 m². 3) Espacio bruto por persona: 30.000 ÷ 800 = 37,5 m². 4) Personas por vivienda: 800 ÷ 300, cerca de 2,7. 5) Comparar con una referencia medida: si el patio mide unos 600 m² (valor de ejemplo que el grupo debe medir), la franja equivale a unos 50 patios; una cancha de fútbol ocupa entre 0,5 y 0,8 hectáreas, así que la franja equivale a unas 4 a 6 canchas. 6) Interpretar: el espacio bruto de 100 m² por vivienda incluye calles y áreas comunes, por lo que el sitio de cada casa es menor.",
+      "result": "Cerca de 100 m² por vivienda y unos 37,5 m² por persona de espacio bruto, equivalentes a varias canchas de fútbol. Se puede concluir que el sitio de cada casa es pequeño comparado con una cancha, y que las personas conviven en poco espacio por vivienda.",
+      "acceptable_range": "Entre 60 y 100 m² por vivienda según cuánto se descuente para calles y áreas comunes; entre 22 y 37,5 m² por persona; la franja equivale a entre 3 y 6 canchas de fútbol según la cancha que se use como referencia."
+    },
+    "routes": [
+      {
+        "id": "R1",
+        "nombre": "Reparto directo en metros cuadrados",
+        "nivel": "P",
+        "modelo": "Convertir 3 hectáreas a m² y dividir entre viviendas y entre personas.",
+        "resultado": "100 m² por vivienda y 37,5 m² por persona."
+      },
+      {
+        "id": "R2",
+        "nombre": "Equivalencia con patios o canchas",
+        "nivel": "P",
+        "modelo": "Medir el patio y repetirlo hasta cubrir la superficie total; luego repartir los patios entre las viviendas.",
+        "resultado": "Unos 50 patios de 600 m² (según la medida del grupo), es decir, un patio alcanza para unas 6 viviendas."
+      },
+      {
+        "id": "R3",
+        "nombre": "Dibujo en cuadrícula a escala",
+        "nivel": "P",
+        "modelo": "Dibujar tres cuadrados que representan hectáreas y repartir las viviendas en partes iguales sobre cada cuadrado.",
+        "resultado": "100 viviendas por hectárea, con unos 100 m² de espacio bruto por cada una."
+      },
+      {
+        "id": "R4",
+        "nombre": "Sitio cuadrado por vivienda más calles",
+        "nivel": "S1",
+        "modelo": "Suponer que una fracción del terreno son calles y que cada sitio es un cuadrado; hallar el lado con raíz cuadrada.",
+        "resultado": "Con 30 % de calles, queda un sitio de 70 m², de unos 8 m de lado."
+      }
+    ],
+    "modelo_inadecuado": {
+      "id": "RX",
+      "por_que_falla": "Dividir la superficie solo entre las personas y decir que cada persona tiene un sitio propio de 37,5 m² para vivir. Falla porque las personas comparten vivienda (cerca de 2,7 por casa) y porque el terreno incluye calles y espacios comunes, así que ese espacio no es el sitio habitable de cada persona."
+    },
+    "validation_evidence": "Después de modelar, contar las casas de un sector de un barrio cercano en una vista aérea con escala y estimar los metros cuadrados brutos por casa. Se compara con el resultado propio para ver si es del mismo orden de magnitud (decenas a pocos cientos de m² por vivienda) y se discute la diferencia por calles y áreas comunes. Esos datos no se usan para construir el modelo.",
+    "agent_visibility": {
+      "students": [
+        "enunciado_es",
+        "foto_descripcion",
+        "recursos_a_solicitud"
+      ],
+      "coder": [
+        "enunciado_es",
+        "task_space"
+      ],
+      "guide": [
+        "all"
+      ]
+    }
+  },
+  "rubrica_rub01": {
+    "total": 23,
+    "por_criterio": {
+      "genuino": 1,
+      "abierta": 2,
+      "decisiones": 2,
+      "realismo": 2,
+      "autenticidad": 2,
+      "contexto": 2,
+      "ciclo": 2,
+      "validacion": 2,
+      "nivel": 2,
+      "autodiferenciacion": 2,
+      "fecundidad": 2,
+      "recursos": 2
+    }
+  },
+  "rubrica_rub02": {
+    "P": null,
+    "S": null,
+    "U": null
+  },
+  "modelo_y_prompt": {
+    "diseñador": "claude-sonnet-5-5",
+    "version_prompt": "1.1",
+    "version_rubrica": "4.0"
+  }
+}

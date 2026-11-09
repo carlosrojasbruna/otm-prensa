@@ -1,0 +1,113 @@
+{
+  "tarea_id": "2026-11-empleo-nuevo-desempleo",
+  "fecha": "2026-11-09T14:21:22Z",
+  "rub01": {
+    "version_rubrica": "4.0",
+    "criterios": {
+      "genuino": {
+        "puntaje": 1,
+        "justificacion": "La tarea plantea una necesidad real y no entrega ninguna ecuación. Sin embargo, nombrar los dos flujos (pérdida y obtención de empleo) y pedir un cambio «mes a mes», junto con la imagen de la puerta giratoria, insinúa con fuerza la estructura de stock-flujo. Dudo entre 2 y 1 y asigno el menor.",
+        "cita": "La comisión no conoce cuánta gente pierde su trabajo ni cuánta lo encuentra en un mes típico. Propongan un modelo de cómo cambia el desempleo …"
+      },
+      "abierta": {
+        "puntaje": 2,
+        "justificacion": "La pregunta admite varios modelos defendibles: conteos o tasas, dos o tres estados, estado estacionario o simulación. No prescribe el procedimiento de cálculo.",
+        "cita": "¿cuántos empleos nuevos por mes harían falta, y durante cuánto tiempo, para que el desempleo baje de manera sostenida?"
+      },
+      "decisiones": {
+        "puntaje": 2,
+        "justificacion": "Resolverla exige formular supuestos sobre los flujos y la fuerza de trabajo, estimar valores desconocidos y solicitar información pertinente.",
+        "cita": "indiquen qué supuestos hacen y qué información necesitan, y recomienden si la meta es realista. Pueden pedir información adicional."
+      },
+      "realismo": {
+        "puntaje": 2,
+        "justificacion": "La asesoría sobre metas de empleo ante políticas de inversión es una situación claramente plausible fuera de la escuela.",
+        "cita": "Una comisión regional de empleo les pide asesoría: si los permisos más rápidos lograran aumentar las contrataciones"
+      },
+      "autenticidad": {
+        "puntaje": 2,
+        "justificacion": "La declaración de prensa y el dato de desempleo citado, junto con la serie histórica real de R4, son componentes extraescolares integrados al núcleo de la tarea.",
+        "cita": "Un alto ejecutivo de Empresas Copec comentó que este año la economía chilena ha rendido menos de lo que esperaba"
+      },
+      "contexto": {
+        "puntaje": 2,
+        "justificacion": "El contexto laboral condiciona la definición de estados y flujos del modelo. También es necesario para interpretar si la meta es realista y para validar con la serie histórica.",
+        "cita": "Quien deja de buscar trabajo sale de la fuerza de trabajo y deja de contar como desocupado."
+      },
+      "ciclo": {
+        "puntaje": 2,
+        "justificacion": "La tarea obliga a comprender la situación, simplificar mediante supuestos, matematizar un modelo dinámico, calcularlo, interpretarlo como recomendación y contrastarlo con R4. Ninguna fase queda hecha por el enunciado.",
+        "cita": "Propongan un modelo de cómo cambia el desempleo mes a mes, indiquen qué supuestos hacen y qué información necesitan, y recomienden si la meta es …"
+      },
+      "validacion": {
+        "puntaje": 2,
+        "justificacion": "Existe evidencia independiente, entregada después de construir el modelo, para contrastar sus predicciones.",
+        "cita": "Serie histórica de la tasa nacional de desempleo, por trimestres móviles, de años anteriores, incluidos períodos de recuperación económica, para comparar con lo que predice …"
+      },
+      "nivel": {
+        "puntaje": 2,
+        "justificacion": "Un modelo dinámico discreto con supuestos explícitos y crítica de su realismo corresponde a las herramientas esperables del nivel U. El contexto es comprensible y pertinente.",
+        "cita": "Propongan un modelo de cómo cambia el desempleo mes a mes"
+      },
+      "autodiferenciacion": {
+        "puntaje": 2,
+        "justificacion": "El piso es accesible: basta un balance mensual simple de entradas y salidas. El techo es alto: admite tasas de transición, estado estacionario, tres estados con salida de la fuerza de trabajo y análisis de sensibilidad.",
+        "cita": "¿cuántos empleos nuevos por mes harían falta, y durante cuánto tiempo, para que el desempleo baje de manera sostenida?"
+      },
+      "fecundidad": {
+        "puntaje": 2,
+        "justificacion": "Los modelos permiten comparar supuestos, discutir el efecto de los desalentados y analizar los límites del modelo frente a la serie histórica, lo que abre nuevas preguntas.",
+        "cita": "recomienden si la meta es realista"
+      },
+      "recursos": {
+        "puntaje": 1,
+        "justificacion": "R3 enumera las tres transiciones del modelo de tres estados, lo que constituye una sobreorientación parcial de la estructura. Además, no queda claro si los datos de flujos se entregan o si los estudiantes deben buscarlos, y son difíciles de obtener.",
+        "cita": "se puede consultar información sobre cuánta gente cambia de situación laboral en un mes típico (de empleo a desempleo, de desempleo a empleo, hacia fuera …"
+      }
+    },
+    "total": 22,
+    "mejoras": [
+      {
+        "criterio": "genuino",
+        "mejora_minima": "Reemplazar «La comisión no conoce cuánta gente pierde su trabajo ni cuánta lo encuentra en un mes típico» por una formulación que no nombre los flujos (por ejemplo, «La comisión no sabe qué determina cómo evoluciona el desempleo»). Además, sustituir la imagen de la puerta giratoria por una ilustración neutra."
+      },
+      {
+        "criterio": "recursos",
+        "mejora_minima": "Redactar R3 sin enumerar las transiciones: «Pueden solicitar datos sobre movimientos laborales mensuales». Indicar además que la fuente es la estadística oficial de flujos del mercado laboral, y que el grupo debe precisar qué datos pide."
+      }
+    ]
+  },
+  "reproducibilidad": {
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.228644,
+        "version_prompt": "1.1"
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.253614,
+        "version_prompt": "1.3"
+      },
+      "filtro": {
+        "modelo": "claude-haiku-5-5",
+        "version_modelo": "claude-haiku-5-5",
+        "costo_usd": 0.000698,
+        "version_prompt": "1.0"
+      }
+    },
+    "version_prompt": {
+      "disenador": "1.1",
+      "evaluador": "1.3",
+      "filtro": "1.0"
+    },
+    "version_rubrica": "4.0",
+    "version_MAR03": "1.0",
+    "version_MED01": "1.4",
+    "diseno_simulador": null,
+    "fecha": "2026-11-09T14:21:22Z",
+    "costo_usd": 0.482956
+  }
+}

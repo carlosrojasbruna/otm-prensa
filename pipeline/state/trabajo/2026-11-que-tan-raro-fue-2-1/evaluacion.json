@@ -1,0 +1,109 @@
+{
+  "tarea_id": "2026-11-que-tan-raro-fue-2-1",
+  "fecha": "2026-11-09T14:10:55Z",
+  "rub01": {
+    "version_rubrica": "4.0",
+    "criterios": {
+      "genuino": {
+        "puntaje": 2,
+        "justificacion": "La situación plantea una necesidad real: el programa quiere informar a la audiencia. El enunciado no entrega ninguna regla, distribución ni modelo para calcular la probabilidad de un marcador.",
+        "cita": "Un programa deportivo de radio quiere decir en el aire si un resultado como el 2-1 es algo común o raro en esta liga"
+      },
+      "abierta": {
+        "puntaje": 2,
+        "justificacion": "La pregunta no prescribe el método. Admite varios caminos defendibles: frecuencias empíricas de la liga, productos de distribuciones de goles por equipo o simulación.",
+        "cita": "¿qué tan probable era un 2-1 en ese partido, comparado con otros marcadores, y qué tan seguido esperarían partidos decididos por un solo gol?"
+      },
+      "decisiones": {
+        "puntaje": 2,
+        "justificacion": "Resolver la tarea exige varias decisiones de modelación. Hay que decidir qué hacer con el dato de Colo Colo, que no informa el total de goles, obtener el promedio de goles de la liga y suponer cómo se distribuyen los goles de cada equipo.",
+        "cita": "Expliquen con qué datos y supuestos llegaron a su respuesta. Pueden pedir información adicional."
+      },
+      "realismo": {
+        "puntaje": 2,
+        "justificacion": "Que un programa deportivo comente qué tan raro es un marcador es una situación plausible fuera de la escuela. Los partidos y la tabla de posiciones son reales.",
+        "cita": "En la fecha 27 del fútbol chileno, Universidad de Chile venció a Cobresal por 2-1."
+      },
+      "autenticidad": {
+        "puntaje": 2,
+        "justificacion": "La tarea usa como núcleo resultados y datos reales de la liga tomados de una noticia: el 2-1 que motiva la pregunta y los marcadores para contrastar. Estos datos no fueron creados para enseñar el contenido.",
+        "cita": "Resultados de los otros partidos de la fecha 27 tal como figuran en la noticia."
+      },
+      "contexto": {
+        "puntaje": 2,
+        "justificacion": "El contexto condiciona decisiones de modelación: fuerza de los equipos, localía y nivel goleador de la liga. También es necesario para interpretar el resultado y validarlo con los marcadores reales de la fecha.",
+        "cita": "qué marcadores debería esperar un hincha antes de un partido entre equipos parejos"
+      },
+      "ciclo": {
+        "puntaje": 2,
+        "justificacion": "Responder obliga a recorrer todo el ciclo: comprender la situación, simplificar, construir un modelo probabilístico, calcular, interpretar y contrastar con otros marcadores. El enunciado no deja hecha ninguna fase. Hay una duda: la tarjeta R2 entrega los supuestos si se solicita; eso se descuenta en el criterio de recursos.",
+        "cita": "¿qué tan probable era un 2-1 en ese partido, comparado con otros marcadores"
+      },
+      "validacion": {
+        "puntaje": 2,
+        "justificacion": "El modelo puede contrastarse con evidencia independiente que no se usó para construirlo: los marcadores de los demás partidos de la fecha. También pueden usarse datos públicos de la temporada.",
+        "cita": "Se entrega solo cuando el grupo ya tiene sus probabilidades calculadas."
+      },
+      "nivel": {
+        "puntaje": 2,
+        "justificacion": "El fútbol chileno y el lenguaje son comprensibles y significativos para S2. La tarea puede resolverse con estadística descriptiva y probabilidad elemental de eventos independientes, al alcance del nivel.",
+        "cita": "Un programa deportivo de radio quiere decir en el aire si un resultado como el 2-1 es algo común o raro"
+      },
+      "autodiferenciacion": {
+        "puntaje": 2,
+        "justificacion": "Tiene un piso razonable: contar frecuencias de marcadores en la liga. Tiene techo alto: distribuciones de goles por equipo, ventaja de local o sensibilidad al promedio de goles.",
+        "cita": "comparado con otros marcadores, y qué tan seguido esperarían partidos decididos por un solo gol"
+      },
+      "fecundidad": {
+        "puntaje": 2,
+        "justificacion": "Los distintos supuestos y modelos permiten comparar soluciones y discutir límites, como la independencia de los goles o los equipos dispares. También abren nuevas preguntas sobre otros marcadores y otros partidos.",
+        "cita": "Expliquen con qué datos y supuestos llegaron a su respuesta."
+      },
+      "recursos": {
+        "puntaje": 1,
+        "justificacion": "La tarjeta R2 entrega ya formulados los supuestos clave del modelo (fuerza pareja, sin localía, independencia), lo que es una sobreorientación parcial hacia la estructura de la solución. Además, el dato imprescindible de goles promedio de la liga no figura entre los recursos declarados.",
+        "cita": "los goles de cada equipo como independientes entre sí."
+      }
+    },
+    "total": 23,
+    "mejoras": [
+      {
+        "criterio": "recursos",
+        "mejora_minima": "Reemplazar la tarjeta R2 por información a solicitud sobre la liga (goles a favor y en contra por equipo o promedio de goles por partido en la temporada), sin enunciar supuestos de fuerza pareja ni de independencia, para que el grupo los formule."
+      }
+    ]
+  },
+  "reproducibilidad": {
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.23042,
+        "version_prompt": "1.1"
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.215402,
+        "version_prompt": "1.3"
+      },
+      "filtro": {
+        "modelo": "claude-haiku-5-5",
+        "version_modelo": "claude-haiku-5-5",
+        "costo_usd": 0.000693,
+        "version_prompt": "1.0"
+      }
+    },
+    "version_prompt": {
+      "disenador": "1.1",
+      "evaluador": "1.3",
+      "filtro": "1.0"
+    },
+    "version_rubrica": "4.0",
+    "version_MAR03": "1.0",
+    "version_MED01": "1.4",
+    "diseno_simulador": null,
+    "fecha": "2026-11-09T14:10:55Z",
+    "costo_usd": 0.446515
+  }
+}

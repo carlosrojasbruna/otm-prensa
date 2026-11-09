@@ -1,0 +1,344 @@
+{
+  "tarea_id": "2026-11-campana-del-campeon",
+  "evaluaciones": [
+    {
+      "iteracion": 1,
+      "version_tarea": 1,
+      "fecha": "2026-11-09T14:08:47Z",
+      "modelo": "claude-opus-5-5",
+      "version_prompt": "1.3",
+      "version_rubrica": "4.0",
+      "corridas": [
+        {
+          "n": 1,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 1,
+                "justificacion": "No entrega la regla de puntaje, que solo está disponible a solicitud. Sin embargo, la pregunta nombra las tres incógnitas y pide «combinaciones posibles» con totales fijos, lo que insinúa con fuerza la estructura de un sistema de restricciones que hay que enumerar. Dudé entre 1 y 2 y asigno el menor.",
+                "cita": "¿Qué combinaciones de victorias, empates y derrotas son posibles para Colo Colo, y cuál le parece la más razonable para su nota?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "El conjunto de combinaciones posibles es cerrado (cuatro soluciones). Aun así, elegir la «más razonable» admite decisiones y varias respuestas defendibles, por ejemplo usando la diferencia de goles o lo típico de un campeón, y no se prescribe ningún método.",
+                "cita": "cuál le parece la más razonable para su nota? Justifiquen su elección."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Hay que solicitar u obtener el sistema de puntaje y decidir qué datos usar, ya que la diferencia de goles solo sirve para la elección. También hay que formular supuestos sobre qué campaña es plausible para un campeón.",
+                "cita": "Pueden pedir información adicional."
+              },
+              "realismo": {
+                "puntaje": 1,
+                "justificacion": "El campeonato y la tabla son reales. Pero la columna perdida y la imposibilidad de volver a mirar una tabla pública son un encuadre forzado para insertar el cálculo.",
+                "cita": "en su borrador se perdió la columna que decía cuántos partidos ganó, cuántos empató y cuántos perdió el campeón"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los datos de la tabla real de la noticia (27 partidos, 61 puntos, +29) son el núcleo de la tarea y no fueron creados para enseñar el contenido.",
+                "cita": "Columnas de partidos ganados, empatados y perdidos de Colo Colo tal como figuran en la tabla de la noticia."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto determina el sistema de puntaje que se usa en la matemática. Además es necesario para interpretar cuál combinación es razonable para un campeón con esa diferencia de goles, y para validar contra el registro real.",
+                "cita": "su diferencia de goles es de +29, la mejor de todos"
+              },
+              "ciclo": {
+                "puntaje": 1,
+                "justificacion": "La interpretación y la validación se exigen. En cambio, la simplificación y estructuración quedan prácticamente hechas: con los totales dados y la regla de puntaje, el modelo queda determinado sin decisiones de simplificación relevantes. Dudé entre 1 y 2 y asigno el menor.",
+                "cita": "cada equipo ha disputado 27 partidos, Colo Colo suma 61 puntos"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existe evidencia independiente, no usada en la construcción del modelo, para contrastar la elección: el registro real, que se entrega después de que el grupo formula su propuesta.",
+                "cita": "Registro real de victorias, empates y derrotas de Colo Colo, para contrastar la propuesta del grupo"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El fútbol chileno es un contexto comprensible y significativo para estudiantes de 13 a 15 años. La matemática requerida (ecuaciones de primer grado, tanteo sistemático) está dentro de las herramientas de S1.",
+                "cita": "¿Qué combinaciones de victorias, empates y derrotas son posibles para Colo Colo"
+              },
+              "autodiferenciacion": {
+                "puntaje": 1,
+                "justificacion": "El piso es bajo, porque se puede entrar por ensayo y error. El techo es limitado: el espacio matemático se agota en cuatro soluciones y la sofisticación posible se reduce a sistematizar con ecuaciones o inecuaciones y a argumentar la elección. Dudé entre 1 y 2.",
+                "cita": "¿Qué combinaciones de victorias, empates y derrotas son posibles"
+              },
+              "fecundidad": {
+                "puntaje": 1,
+                "justificacion": "La tarea permite comparar las elecciones de distintos grupos y discutir que los datos no determinan una única respuesta. Pero, una vez halladas las combinaciones y contrastadas con el registro, hay pocas extensiones sustantivas propias de la tarea. Dudé entre 1 y 2 y asigno el menor.",
+                "cita": "Justifiquen su elección."
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información necesaria está en el enunciado o puede solicitarse, y es de conocimiento cotidiano. El registro real se entrega solo después de la propuesta, así que ningún material revela la solución.",
+                "cita": "Supuesto del escenario: una victoria entrega tres puntos, un empate entrega un punto y una derrota no entrega ninguno."
+              }
+            },
+            "total": 19,
+            "mejoras": [
+              {
+                "criterio": "genuino",
+                "mejora_minima": "Reemplazar la pregunta por una necesidad de la periodista (por ejemplo, «¿qué puede afirmar con seguridad sobre la campaña del campeón y qué no?») sin nombrar las tres incógnitas ni pedir «combinaciones posibles»."
+              },
+              {
+                "criterio": "realismo",
+                "mejora_minima": "Plantear un encuadre plausible: la periodista solo dispone de los puntos y la diferencia de goles en una nota breve o en un titular, y debe estimar cómo fue la campaña antes de que se publique la tabla completa."
+              },
+              {
+                "criterio": "ciclo",
+                "mejora_minima": "No dar los partidos jugados de Colo Colo; indicar solo la fecha y que en el torneo cada equipo juega una vez por fecha, de modo que los estudiantes deban estructurar la situación y decidir qué restricciones usar."
+              },
+              {
+                "criterio": "autodiferenciacion",
+                "mejora_minima": "Agregar una segunda pregunta que admita modelos más refinados, por ejemplo usar la diferencia de goles +29 para estimar goles a favor y en contra y decidir qué combinación es coherente con ellos."
+              },
+              {
+                "criterio": "fecundidad",
+                "mejora_minima": "Añadir una pregunta final que abra comparación y límites, por ejemplo: «¿Cambiaría su elección si la victoria valiera dos puntos, como en torneos antiguos? ¿Qué dato mínimo necesitaría la periodista para no equivocarse?»"
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgsUzLbzK3JUupVU5MtRT",
+            "fecha": "2026-11-09T14:07:19+00:00",
+            "intentos": 1,
+            "costo_usd": 0.139924,
+            "avisos": []
+          }
+        },
+        {
+          "n": 2,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La periodista necesita reconstruir y elegir qué contar. La tarea no entrega ninguna regla ni modelo: el sistema de puntaje solo se da a solicitud y queda en manos del grupo plantear la relación entre partidos y puntos.",
+                "cita": "¿Qué combinaciones de victorias, empates y derrotas son posibles para Colo Colo, y cuál le parece la más razonable para su nota?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "Hay varios caminos posibles (ensayo y error, tabla sistemática, ecuaciones) y la elección de la combinación más razonable admite respuestas defendibles distintas. La pregunta no prescribe el método.",
+                "cita": "cuál le parece la más razonable para su nota? Justifiquen su elección. Pueden pedir información adicional."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Para resolver hay que obtener o suponer el sistema de puntaje y decidir qué información usar, como la diferencia de goles o la condición de campeón. También hay que fijar criterios de plausibilidad para elegir entre las combinaciones posibles.",
+                "cita": "su diferencia de goles es de +29, la mejor de todos"
+              },
+              "realismo": {
+                "puntaje": 1,
+                "justificacion": "El campeonato y la tabla son reales. Sin embargo, la historia de la columna perdida y la prohibición de volver a mirar la tabla solo se sostienen para insertar el cálculo, porque una periodista simplemente consultaría el dato.",
+                "cita": "en su borrador se perdió la columna que decía cuántos partidos ganó, cuántos empató y cuántos perdió el campeón. Tiene que decidir qué contar sin …"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los datos de partida (27 partidos, 61 puntos, +29) y el registro de contraste provienen de la tabla de una noticia real. Son el núcleo de la tarea, de modo que el componente auténtico está integrado de manera sustantiva.",
+                "cita": "Columnas de partidos ganados, empatados y perdidos de Colo Colo tal como figuran en la tabla de la noticia."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona el modelo (sistema de puntaje, número de partidos). También es indispensable para interpretar cuál combinación es plausible para un campeón con la mejor diferencia de goles y para validar con el registro real.",
+                "cita": "cuál le parece la más razonable para su nota? Justifiquen su elección."
+              },
+              "ciclo": {
+                "puntaje": 1,
+                "justificacion": "Con la regla de puntaje, la situación queda prácticamente estructurada como un sistema lineal con restricciones enteras, por lo que la simplificación y la matematización son casi directas. La interpretación y la validación sí son exigidas; dudo entre 1 y 2 y asigno el menor.",
+                "cita": "cada equipo ha disputado 27 partidos, Colo Colo suma 61 puntos"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existe evidencia independiente, el registro real, que no se usó en la construcción y se entrega después de la propuesta. Con ella se contrasta la combinación elegida.",
+                "cita": "Registro real de victorias, empates y derrotas de Colo Colo, para contrastar la propuesta del grupo"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto futbolístico es comprensible y cercano para estudiantes de 13 a 15 años. La matemática requerida (ecuaciones de primer grado, razonamiento con restricciones) corresponde a las herramientas esperables en S1.",
+                "cita": "Colo Colo se coronó campeón del fútbol chileno"
+              },
+              "autodiferenciacion": {
+                "puntaje": 1,
+                "justificacion": "El piso es bajo, porque se puede empezar por ensayo y error. En cambio, el núcleo matemático se agota en cuatro combinaciones y la sofisticación posterior es sobre todo argumentativa; dudo entre techo alto y limitado y asigno el menor.",
+                "cita": "¿Qué combinaciones de victorias, empates y derrotas son posibles para Colo Colo"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las distintas elecciones de los grupos permiten comparar criterios de plausibilidad y discutir los límites de inferir un registro a partir de puntos y diferencia de goles. También abren preguntas como otros equipos u otros sistemas de puntaje.",
+                "cita": "cuál le parece la más razonable para su nota? Justifiquen su elección."
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información necesaria está en el enunciado o se obtiene a solicitud (sistema de puntaje), y el registro real se reserva para validar. Ningún material revela el modelo de solución.",
+                "cita": "Se entrega solo cuando el grupo ya tiene su propuesta de combinación."
+              }
+            },
+            "total": 21,
+            "mejoras": [
+              {
+                "criterio": "realismo",
+                "mejora_minima": "Reemplazar la columna perdida por una necesidad plausible. Por ejemplo, que la periodista prepare antes del cierre de la tabla oficial una nota que anticipe qué campaña es compatible con los puntos anunciados en el estadio, y que deba justificar ante su editor la combinación que propone."
+              },
+              {
+                "criterio": "ciclo",
+                "mejora_minima": "Pedir que los grupos decidan y declaren qué supuestos usan para juzgar la plausibilidad. Por ejemplo, cómo se relacionan la diferencia de goles o las campañas típicas de campeones con el número de victorias y derrotas, de modo que la fase de simplificación no quede reducida a la regla de puntaje."
+              },
+              {
+                "criterio": "autodiferenciacion",
+                "mejora_minima": "Agregar la pregunta de cómo podrían usar la diferencia de goles u otra información solicitable para descartar o ponderar combinaciones. Así se abre un techo más alto, con modelos que relacionen goles y resultados."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgsV3Rr63wzTXXJVYWEd4",
+            "fecha": "2026-11-09T14:08:04+00:00",
+            "intentos": 1,
+            "costo_usd": 0.09553,
+            "avisos": [
+              "cita_recortada_25:realismo"
+            ]
+          }
+        },
+        {
+          "n": 3,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La tarea plantea una necesidad: reconstruir la campaña para la nota. No entrega la regla de puntaje, que queda a solicitud, ni las ecuaciones que relacionan partidos y puntos.",
+                "cita": "¿Qué combinaciones de victorias, empates y derrotas son posibles para Colo Colo, y cuál le parece la más razonable para su nota?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "Hay varias combinaciones posibles y la elección de la más razonable admite argumentos distintos y defendibles. La pregunta no prescribe el método.",
+                "cita": "cuál le parece la más razonable para su nota? Justifiquen su elección."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Hay que suponer u obtener el sistema de puntaje y decidir qué información usar (diferencia de goles, condición de campeón). También hay que formular supuestos sobre qué campaña es plausible para elegir una combinación.",
+                "cita": "su diferencia de goles es de +29, la mejor de todos"
+              },
+              "realismo": {
+                "puntaje": 1,
+                "justificacion": "La campaña del campeón es real, pero el encuadre de la columna perdida y la prohibición de mirar la tabla solo se sostiene para insertar el cálculo: una periodista real consultaría la tabla.",
+                "cita": "en su borrador se perdió la columna que decía cuántos partidos ganó, cuántos empató y cuántos perdió el campeón. Tiene que decidir qué contar sin …"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los datos provienen de la tabla real de la noticia, que se toma como procedencia cierta. Son el núcleo de la tarea, y el registro real (R3) se usa para contrastar.",
+                "cita": "cada equipo ha disputado 27 partidos, Colo Colo suma 61 puntos y su diferencia de goles es de +29"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "La condición de campeón y la mejor diferencia de goles son necesarias para decidir qué combinación es razonable. El contexto también sirve para validar contra el registro real.",
+                "cita": "la mejor de la tabla tras la fecha 27"
+              },
+              "ciclo": {
+                "puntaje": 1,
+                "justificacion": "Interpretar y validar se exigen, pero simplificar y estructurar queda prácticamente hecho: el enunciado entrega justo los dos datos que llevan a un sistema lineal único y típico de ejercicio escolar. Hay duda entre 1 y 2 porque elegir la combinación razonable agrega algo de estructuración; se asigna el menor.",
+                "cita": "Colo Colo: 27 partidos jugados, 61 puntos, diferencia de goles de +29"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "La propuesta puede contrastarse con evidencia independiente no usada en su construcción: el registro real de la noticia.",
+                "cita": "Registro real de victorias, empates y derrotas de Colo Colo, para contrastar la propuesta del grupo"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El fútbol chileno es un contexto comprensible y significativo para S1. Plantear y resolver ecuaciones de primer grado con soluciones enteras está dentro de las herramientas esperables del tramo.",
+                "cita": "cuántos partidos ganó, cuántos empató y cuántos perdió el campeón"
+              },
+              "autodiferenciacion": {
+                "puntaje": 1,
+                "justificacion": "El piso es razonable, porque basta con tanteo o tablas. Pero solo hay cuatro combinaciones posibles (17-10-0, 18-7-1, 19-4-2, 20-1-6), y la sofisticación de la elección queda acotada: el techo es bajo. Hay duda con el 2; se asigna el menor.",
+                "cita": "¿Qué combinaciones de victorias, empates y derrotas son posibles para Colo Colo"
+              },
+              "fecundidad": {
+                "puntaje": 1,
+                "justificacion": "Permite comparar las elecciones de los grupos y contrastarlas con R3, pero con cuatro combinaciones la discusión se agota pronto y la tarea misma abre pocas extensiones sustantivas.",
+                "cita": "Justifiquen su elección."
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información necesaria está en el enunciado o puede solicitarse, y es de conocimiento común. Ningún material revela el modelo, y el registro real se entrega solo tras la propuesta.",
+                "cita": "Supuesto del escenario: una victoria entrega tres puntos, un empate entrega un punto y una derrota no entrega ninguno."
+              }
+            },
+            "total": 20,
+            "mejoras": [
+              {
+                "criterio": "realismo",
+                "mejora_minima": "Reemplazar la columna perdida por una necesidad plausible. Por ejemplo, que la periodista, antes del último partido, quiera saber qué combinaciones de resultados le bastan a un rival para alcanzar a Colo Colo, o anticipar cuántos puntos sumará el campeón al final del torneo."
+              },
+              {
+                "criterio": "ciclo",
+                "mejora_minima": "No entregar solo los dos datos clave. Dar la tabla de posiciones de la noticia (sin la columna) y dejar que el grupo seleccione qué datos usar y formule el sistema de puntaje como supuesto."
+              },
+              {
+                "criterio": "autodiferenciacion",
+                "mejora_minima": "Añadir una pregunta dentro de la misma tarea: usar la diferencia de goles +29 (y, si la piden, los goles a favor y en contra) para estimar cuál combinación es más probable. Esto admite modelos más refinados, como goles por partido según el resultado."
+              },
+              {
+                "criterio": "fecundidad",
+                "mejora_minima": "Pedir que, tras recibir R3, el grupo explique en qué falló o acertó su criterio y lo aplique a otro equipo de la misma tabla para ver si se sostiene."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgsV6iwZsjT1SXR1JFa44",
+            "fecha": "2026-11-09T14:08:47+00:00",
+            "intentos": 1,
+            "costo_usd": 0.09435,
+            "avisos": [
+              "cita_recortada_25:realismo"
+            ]
+          }
+        }
+      ],
+      "totales": [
+        19,
+        21,
+        20
+      ],
+      "rango_total": 2,
+      "rango_inestable": 4,
+      "evaluacion_inestable": false,
+      "mediana": {
+        "regla": "mediana por criterio (n par: mediana inferior)",
+        "total": 20,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 1,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 1,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 1,
+          "fecundidad": 1,
+          "recursos": 2
+        },
+        "corrida_fuente": {
+          "genuino": 2,
+          "abierta": 1,
+          "decisiones": 1,
+          "realismo": 1,
+          "autenticidad": 1,
+          "contexto": 1,
+          "ciclo": 1,
+          "validacion": 1,
+          "nivel": 1,
+          "autodiferenciacion": 1,
+          "fecundidad": 1,
+          "recursos": 1
+        }
+      }
+    }
+  ]
+}
