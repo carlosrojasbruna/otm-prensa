@@ -1,0 +1,110 @@
+{
+  "tarea_id": "2026-11-que-tan-raro-fue-2-1-v2",
+  "aprobado": true,
+  "estado_destino": "verificada",
+  "hallazgos": [
+    {
+      "invariante": "notebook",
+      "severidad": "advertencia",
+      "ubicacion": "guia.materiales.notebook",
+      "descripcion": "notebook escenarios.ipynb no encontrado: ",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "tarea.task_space.validation_evidence",
+      "descripcion": "Ubica los marcadores de los demás partidos de la fecha en el párrafo 8 de la noticia. — El recurso R3 y los localizadores de las cifras sitúan esos marcadores en el párrafo 13, donde efectivamente aparecen. El párrafo 8 no se recibió, así que la referencia es inconsistente y no se puede verificar. La propia guía ya advierte la discrepancia.",
+      "origen": "modelo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "guia.escenarios[E2].que_aprende",
+      "descripcion": "El grupo completa el reparto para que sume 1 y comprueba que la cuadrícula entera cierra en 1. — La traza N1_VV_r1 registra un reparto 0,30/0,35/0,20/0,10/0,05, que suma 1. Sin embargo, no registra que el grupo comprobara que la cuadrícula completa suma 1. Es un detalle que sobreinterpreta la corrida.",
+      "origen": "modelo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "guia.intervenciones[B23].z4",
+      "descripcion": "El grupo se destrabó al notar que mirar solo la suma de goles no distingue marcadores igual de comunes. — La redacción invierte el sentido. En la corrida se notó que el criterio de la suma iguala marcadores que no son igual de comunes (3-0 y 2-1). Además, el destrabe final vino de multiplicar las dos tablas por equipo (turnos 16 y 17).",
+      "origen": "modelo"
+    }
+  ],
+  "cifras_contrastadas": [
+    {
+      "indice": 0,
+      "que_es": "Partidos disputados por cada equipo en la tabla tras la fecha 27",
+      "valor_tarea": 27,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 13"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": 27,
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 13 de la noticia; modelo: En la tabla del párrafo 13 todos los equipos, incluido Colo Colo, figuran con 27 partidos jugados."
+    },
+    {
+      "indice": 1,
+      "que_es": "Diferencia de goles de Colo Colo, la mejor de la tabla",
+      "valor_tarea": "+29",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 13"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "+29",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 13 de la noticia; modelo: La tabla da a Colo Colo +29. Es la mayor diferencia de goles; la siguiente es Universidad de Chile con +25."
+    },
+    {
+      "indice": 2,
+      "que_es": "Resultado del partido entre Universidad de Chile y Cobresal",
+      "valor_tarea": "2-1",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 13"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "2-1",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 13 de la noticia; modelo: Entre los resultados de la fecha aparece Universidad de Chile 2-1 Cobresal."
+    },
+    {
+      "indice": 3,
+      "que_es": "goles de Cobresal en la derrota 2-1 ante Universidad de Chile (segundo número del marcador)",
+      "valor_tarea": 1,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 13"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": 1,
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 13 de la noticia; modelo: Cobresal anotó 1 gol en la derrota 2-1."
+    }
+  ],
+  "notebook": {
+    "estado": "no_encontrado",
+    "ruta": "escenarios.ipynb",
+    "salida_resumen": ""
+  },
+  "meta": {
+    "agente": "verificador",
+    "version_prompt": "1.1",
+    "modelo": "claude-opus-5-5",
+    "request_id": "req_011CgshmG2YvjMpBoW3KniY5",
+    "fecha": "2026-11-09T16:54:44+00:00",
+    "costo_usd": 0.70028,
+    "modelo_llamado": true,
+    "texto_noticia_recibido": true,
+    "uso": {
+      "input_tokens": 155540,
+      "output_tokens": 3326,
+      "cache_creation_input_tokens": 2320,
+      "cache_read_input_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "tarea_id": "2026-11-invertir-o-esperar-permiso",
+  "aprobado": true,
+  "estado_destino": "verificada",
+  "hallazgos": [
+    {
+      "invariante": "notebook",
+      "severidad": "advertencia",
+      "ubicacion": "guia.materiales.notebook",
+      "descripcion": "notebook escenarios.ipynb no encontrado: ",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "tarea.estudiante.enunciado_es",
+      "descripcion": "La empresa tuvo utilidades por 1.000 millones de dólares a septiembre. — La fuente dice que las utilidades superan esa cifra. El enunciado la presenta como monto exacto. No cambia la cifra usada, pero pierde ese matiz.",
+      "origen": "modelo"
+    }
+  ],
+  "cifras_contrastadas": [
+    {
+      "indice": 0,
+      "que_es": "Utilidades de Empresas Copec a septiembre",
+      "valor_tarea": "US$ 1.000 millones",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 2"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "US$ 1.000 millones",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 2 de la noticia; modelo: Mismo valor, unidad y significado: utilidades de Empresas Copec acumuladas a septiembre. La fuente lo da como piso, no como monto exacto."
+    }
+  ],
+  "notebook": {
+    "estado": "no_encontrado",
+    "ruta": "escenarios.ipynb",
+    "salida_resumen": ""
+  },
+  "meta": {
+    "agente": "verificador",
+    "version_prompt": "1.1",
+    "modelo": "claude-opus-5-5",
+    "request_id": "req_011CgsieFftQ5AKMciaTzjwx",
+    "fecha": "2026-11-09T17:06:00+00:00",
+    "costo_usd": 0.12348,
+    "modelo_llamado": true,
+    "texto_noticia_recibido": true,
+    "uso": {
+      "input_tokens": 17040,
+      "output_tokens": 2186,
+      "cache_creation_input_tokens": 2320,
+      "cache_read_input_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,29 @@
+# DRY-RUN: no se escribe ningún archivo ni se ejecuta ningún comando
+# tarea 2026-11-que-tan-raro-fue-2-1-v2 v2 -> tareas/2026-11/que-tan-raro-fue-2-1/
+#   escribiría tareas/2026-11/que-tan-raro-fue-2-1/tarea_v2.0_2026-11-09.json
+#   escribiría tareas/2026-11/que-tan-raro-fue-2-1/tarea_v2.0_2026-11-09.md
+#   escribiría tareas/2026-11/que-tan-raro-fue-2-1/guia_v2.0_2026-11-09.json
+#   escribiría tareas/2026-11/que-tan-raro-fue-2-1/guia_v2.0_2026-11-09.md
+#   escribiría tareas/2026-11/que-tan-raro-fue-2-1/evaluacion_v2.0_2026-11-09.json
+#   escribiría tareas/2026-11/que-tan-raro-fue-2-1/trazas_v2.0_2026-11-09.json
+#   actualizaría tareas/catalogo.json (10 tarea(s); valida contra `catalogo`)
+#   el commit del catálogo es el real tras el primer commit (aquí 0000000)
+$ git switch -c tareas/semana-2026-W46
+$ git add -- tareas/2026-11/que-tan-raro-fue-2-1/
+$ git commit -m 'tareas: publica 2026-11-que-tan-raro-fue-2-1-v2 v2'
+$ git add -- tareas/catalogo.json
+$ git commit -m 'tareas: catálogo: 2026-11-que-tan-raro-fue-2-1-v2 v2'
+$ git push -u origin tareas/semana-2026-W46
+$ gh pr create --base main --head tareas/semana-2026-W46 --title 'Tareas de la semana 2026-W46' --body '<cuerpo del PR, ver abajo>'
+# cuerpo del PR:
+#   ## Tareas incluidas
+#   
+#   - `2026-11-que-tan-raro-fue-2-1` v2 · nivel S · RUB01 23/24
+#     - Noticia: La Tercera, «La tabla tras el título de Colo Colo: revisa cómo queda la lucha por el Chile 2 y por la permanencia tras la Fecha 27», 2026-11-09, https://www.latercera.com/el-deportivo/noticia/la-tabla-tras-el-titulo-de-colo-colo-revisa-como-queda-la-lucha-por-el-chile-2-y-por-la-permanencia-tras-la-fecha-27/
+#   
+#   ## Revisión (GOB01 §2)
+#   - [ ] Quien revisó la guía aprueba el merge.
+#   - [ ] Cifras con localizador; ningún texto literal de noticia > 25 palabras.
+#   - [ ] Productos bajo CC BY-NC-SA 4.0.
+#   
+#   Generado por el agente bibliotecario (script determinista).

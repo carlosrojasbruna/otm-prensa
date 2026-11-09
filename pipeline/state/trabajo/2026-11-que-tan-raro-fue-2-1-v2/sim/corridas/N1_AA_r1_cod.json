@@ -1,0 +1,197 @@
+{
+  "run": {
+    "id": "N1_AA_r1",
+    "nivel": "N1",
+    "composicion": "AA",
+    "rep": 1,
+    "estilos": [
+      "A",
+      "A"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.071072,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P2-RM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P3-MM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 4,
+        "fase": "P3-MM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P3-MM",
+        "fase_secundaria": "P1-MRS",
+        "eventos": []
+      },
+      {
+        "n": 6,
+        "fase": "P3-MM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 7,
+        "fase": "P3-MM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 8,
+        "fase": "P2-RM",
+        "fase_secundaria": "EMK",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 9,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 10,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 11,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 12,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 13,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 14,
+        "fase": "P2-RM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 15,
+        "fase": "P3-MM",
+        "fase_secundaria": "P4-WM",
+        "eventos": []
+      },
+      {
+        "n": 16,
+        "fase": "P2-RM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "STRAT",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 17,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 18,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 19,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 20,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 21,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      }
+    ],
+    "bloqueos": [
+      {
+        "codigo": "B23",
+        "turnos": [
+          3,
+          4
+        ],
+        "resolucion": "peer",
+        "descripcion": "A no sabe cómo pasar del promedio de goles a la probabilidad de un 2-1 y pregunta por una fórmula; B reconoce que tampoco la conoce, pero destraba proponiendo usar frecuencias observadas (casos favorables sobre casos totales)."
+      }
+    ],
+    "supuestos": [
+      "probabilidad = frecuencia relativa de marcadores observados",
+      "separar 2-1 y 1-2 según local y visita",
+      "excluir partidos de Colo Colo por no ser parejo",
+      "equipos parejos: diferencia entre sus diferencias de gol menor que 3 (o menor que 5)",
+      "mínimo de unos 50 partidos para que el porcentaje sea estable"
+    ],
+    "modelo": "frecuencia empírica",
+    "validacion": false,
+    "respuesta_final": {
+      "texto": "No calculan un valor. Proponen pedir la tabla con goles a favor y en contra y todos los resultados con local, visita, fecha y temporadas anteriores; usar solo partidos parejos (|dif. de goles de uno − dif. del otro| < 3, o < 5 si quedan menos de 50 partidos) y estimar P(2-1) = partidos 2-1 / total, y P(un gol de diferencia) = partidos con diferencia 1 / total."
+    },
+    "ruta_principal": "otra",
+    "rutas": [
+      "otra"
+    ]
+  }
+}

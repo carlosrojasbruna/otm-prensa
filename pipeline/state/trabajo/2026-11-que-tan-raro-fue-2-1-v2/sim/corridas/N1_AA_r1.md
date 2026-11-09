@@ -1,0 +1,25 @@
+# Corrida N1_AA_r1
+
+Nivel N1 · estilos A/A · rep 1 · 21 turnos · término: acuerdo · modelo claude-sonnet-5-5
+
+**1. Cami:** Uf, esto no trae casi datos, ¿no? Solo dice el 2-1 y lo de Colo Colo, y yo no sé ni por dónde empezar... ¿Pedimos la tabla con los goles a favor y en contra de todos los equipos?  
+**2. Fran:** Sí, pidamos la tabla, porque así no tenemos ninguna fórmula ni nada para calcular. Con los goles a favor y en contra y los partidos jugados de cada equipo, ¿sacamos un promedio de goles por partido?  
+**3. Cami:** Ya, ¿y el promedio sería goles a favor más en contra, dividido por los partidos jugados? Pero igual no sé cómo pasar de ese promedio a la probabilidad de un 2-1, ¿hay alguna fórmula para eso?  
+**4. Fran:** No sé si hay una fórmula para pasar del promedio a la probabilidad, la verdad. Pero podríamos pedir los resultados de todos los partidos y hacer casos favorables sobre casos totales: partidos que terminaron 2-1 divididos por todos los partidos, ¿te parece?  
+**5. Cami:** Ya, me parece, casos favorables sobre casos totales lo entiendo. Pero si cuento solo los 2-1, ¿no serían pocos partidos? Y los que se deciden por un gol, ¿serían los 1-0, 2-1, 3-2 y también los 0-1, 1-2, todos juntos?  
+**6. Fran:** Sí, todos esos juntos: cualquier partido donde la diferencia sea 1, para un lado o para el otro. Y sí, los 2-1 solos serían pocos, pero igual los contamos, y después comparamos con cuántos terminaron 1-0, 0-0, 1-1 y así, ¿te parece?  
+**7. Cami:** Me parece, hagamos una tablita con cada marcador y cuántas veces salió, y lo dividimos por el total de partidos. Pero una duda: ¿el 2-1 de la U contra Cobresal cuenta igual que un 1-2, o los separamos según quién es local?  
+**8. Fran:** Mmm, yo diría que el 2-1 y el 1-2 los separamos al principio, porque no es lo mismo que gane el local que el visita. Pero para lo de partidos decididos por un gol los juntamos igual, ¿o tú los juntarías también para el 2-1?  
+**9. Cami:** Yo los dejaría separados, porque la pregunta es por el 2-1 de la U, pero igual anotemos los dos en la tablita y después vemos si salen parecidos. Ah, y pidamos también quién jugaba de local en cada partido, ¿no?  
+**10. Fran:** Sí, pidamos quién era local en cada partido, así anotamos bien el 2-1 y el 1-2 en la tablita. Y también pidamos de qué fechas son los resultados, porque con los 27 partidos de cada equipo ya tendríamos bastantes datos, ¿no?  
+**11. Cami:** Ya, pidamos las fechas, y con 27 partidos por equipo igual son bastantes datos. Pero la tarea habla de equipos parejos, y Colo Colo con +29 no es parejo con nadie, ¿dejamos esos partidos fuera o usamos todos?  
+**12. Fran:** Mmm, yo sacaría los de Colo Colo, porque con tantas goleadas nos cambiaría los porcentajes, aunque no sé si nos quedarían suficientes partidos. ¿Y cómo definimos "parejos", con la diferencia de goles de cada equipo, por ejemplo entre -5 y +5?  
+**13. Cami:** Ya, entre -5 y +5 me parece bien, así es un número fijo y lo entiendo. Pero ojo, sería parejo cuando los dos equipos del partido tienen esa diferencia, ¿no? Si juega uno de +3 contra uno de -4, ¿lo contamos o no?  
+**14. Fran:** Yo diría que sí, que los dos tienen que estar entre -5 y +5, así que +3 contra -4 entra. Pero ahí hay 7 de diferencia entre ellos, ¿y si mejor miramos que la resta entre sus diferencias de gol sea chica, por ejemplo menos de 3?  
+**15. Cami:** Ya, esa me gusta más: |dif. de uno − dif. de otro| < 3, o sea, +3 contra -4 daría |3 − (−4)| = 7 y quedaría fuera. Pero ojo, con una condición tan estricta nos pueden quedar muy pocos partidos, ¿cuántos necesitaríamos para que el porcentaje sirva?  
+**16. Fran:** No sé cuántos hacen falta, la verdad, pero yo diría que unos 50 como mínimo, si no el porcentaje se mueve mucho con un solo partido más. Primero contemos cuántos nos quedan con |dif. − dif.| < 3, y si son pocos, aflojamos la condición a menos de 5, ¿te parece?  
+**17. Cami:** Ya, me parece, contamos con menos de 3 y si salen menos de 50 partidos pasamos a menos de 5. Resumamos qué pedimos: la tabla con goles a favor y en contra, y todos los resultados con local, visita y fecha, ¿falta algo?  
+**18. Fran:** Creo que con eso alcanza, pero por si no llegamos a los 50 partidos, pidamos también los resultados de temporadas anteriores. Después de contar, ¿hacemos la tablita con cada marcador dividido por el total, como dijimos?  
+**19. Cami:** Ya, pidamos también las temporadas anteriores, y sí, hacemos la tablita con cada marcador dividido por el total. Entonces armemos la respuesta: ¿ENTREGAMOS pidiendo esos datos y explicando que la probabilidad del 2-1 sería esa fracción de la tablita?  
+**20. Fran:** ENTREGAMOS: pedimos la tabla y los resultados con local, visita, fecha y temporadas anteriores. Usamos solo partidos parejos (|dif. − dif.| < 3, o < 5 si hay menos de 50), y P(2-1) = partidos 2-1 / total, igual que los de un gol (diferencia 1) / total.  
+**21. Cami:** DE ACUERDO. Ojalá que con esa tablita salga parecido al 2-1 de la U, pero igual queda explicado cómo lo calcularíamos.  

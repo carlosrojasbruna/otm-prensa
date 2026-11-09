@@ -1,0 +1,29 @@
+# DRY-RUN: no se escribe ningún archivo ni se ejecuta ningún comando
+# tarea 2026-11-invertir-o-esperar-permiso v1 -> tareas/2026-11/invertir-o-esperar-permiso/
+#   escribiría tareas/2026-11/invertir-o-esperar-permiso/tarea_v1.0_2026-11-09.json
+#   escribiría tareas/2026-11/invertir-o-esperar-permiso/tarea_v1.0_2026-11-09.md
+#   escribiría tareas/2026-11/invertir-o-esperar-permiso/guia_v1.0_2026-11-09.json
+#   escribiría tareas/2026-11/invertir-o-esperar-permiso/guia_v1.0_2026-11-09.md
+#   escribiría tareas/2026-11/invertir-o-esperar-permiso/evaluacion_v1.0_2026-11-09.json
+#   escribiría tareas/2026-11/invertir-o-esperar-permiso/trazas_v1.0_2026-11-09.json
+#   actualizaría tareas/catalogo.json (10 tarea(s); valida contra `catalogo`)
+#   el commit del catálogo es el real tras el primer commit (aquí 0000000)
+$ git switch -c tareas/semana-2026-W46
+$ git add -- tareas/2026-11/invertir-o-esperar-permiso/
+$ git commit -m 'tareas: publica 2026-11-invertir-o-esperar-permiso v1'
+$ git add -- tareas/catalogo.json
+$ git commit -m 'tareas: catálogo: 2026-11-invertir-o-esperar-permiso v1'
+$ git push -u origin tareas/semana-2026-W46
+$ gh pr create --base main --head tareas/semana-2026-W46 --title 'Tareas de la semana 2026-W46' --body '<cuerpo del PR, ver abajo>'
+# cuerpo del PR:
+#   ## Tareas incluidas
+#   
+#   - `2026-11-invertir-o-esperar-permiso` v1 · nivel U · RUB01 23/24
+#     - Noticia: La Tercera, «Navarro de Empresas Copec dice que no esperaba un 2026 con “malas cifras económicas”, pero tiene optimismo sobre 2027», 2026-11-09, https://www.latercera.com/pulso/noticia/navarro-de-empresas-copec-dice-que-no-esperaba-un-2026-con-malas-cifras-economicas-pero-tiene-optimismo-sobre-2027/
+#   
+#   ## Revisión (GOB01 §2)
+#   - [ ] Quien revisó la guía aprueba el merge.
+#   - [ ] Cifras con localizador; ningún texto literal de noticia > 25 palabras.
+#   - [ ] Productos bajo CC BY-NC-SA 4.0.
+#   
+#   Generado por el agente bibliotecario (script determinista).
