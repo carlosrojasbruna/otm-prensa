@@ -1,0 +1,505 @@
+{
+  "tarea_id": "2026-11-dinero-extra-en-un-ano",
+  "estado": "archivada",
+  "iteraciones": 1,
+  "artefactos": {
+    "tarea": {
+      "id": "2026-11-dinero-extra-en-un-ano",
+      "titulo": "¿Cuánto dinero extra recibe en un año quien gana el mínimo?",
+      "estado": "archivada",
+      "version": 1,
+      "fecha": "2026-11-09",
+      "noticia": {
+        "noticia_id": "2026-11-09-latercera-sindicatos-de-francia-rechazan-reajuste-del",
+        "medio": "La Tercera",
+        "titulo": "Sindicatos de Francia rechazan reajuste del salario mínimo anunciado por el Gobierno y convocan una nueva huelga",
+        "fecha": "2026-11-09",
+        "url": "https://www.latercera.com/mundo/noticia/sindicatos-de-francia-rechazan-reajuste-del-salario-minimo-anunciado-por-el-gobierno-y-convocan-una-nueva-huelga/",
+        "resumen_propio": "Los principales sindicatos de Francia consideran escaso el aumento del mínimo legal anunciado por el Ejecutivo y convocan a otra jornada de protesta a mediados de noviembre. El primer ministro defiende la medida como relevante, aunque reconoce que no basta y que hay tensiones políticas por delante.",
+        "cifras_usadas": [
+          {
+            "valor": 1.502,
+            "unidad": "euros",
+            "que_es": "Nuevo salario mínimo a partir del 1 de diciembre",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 5"
+            }
+          },
+          {
+            "valor": 23,
+            "unidad": "euros",
+            "que_es": "Aumento total anunciado del salario mínimo",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 6"
+            }
+          },
+          {
+            "valor": 18,
+            "unidad": "euros",
+            "que_es": "Parte del aumento correspondiente al incremento automático previsto para el 1 de enero",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 6"
+            }
+          },
+          {
+            "valor": 5,
+            "unidad": "euros",
+            "que_es": "Diferencia real de aumento del salario mínimo",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 6"
+            }
+          },
+          {
+            "valor": 20,
+            "unidad": "años",
+            "que_es": "Período en que el aumento sería el segundo más alto según el primer ministro",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 7"
+            }
+          }
+        ]
+      },
+      "nivel_principal": "P",
+      "variantes": {
+        "abajo": null,
+        "arriba": "S"
+      },
+      "area": "economia",
+      "contenidos_matematicos": [
+        "multiplicación y suma en el tiempo",
+        "comparación de escenarios",
+        "estimación",
+        "porcentajes simples"
+      ],
+      "tiempo_estimado": "2 sesiones de 90 min",
+      "estudiante": {
+        "enunciado_es": "En Francia, el Gobierno anunció que, desde diciembre, el salario mínimo sube 23 euros y llega a 1.502 euros. El primer ministro asegura que es el segundo mayor aumento en 20 años. Los sindicatos creen que es escaso y convocan a una huelga. Algunas personas dicen que parte de ese aumento ya estaba previsto y habría llegado igual a comienzos de año. Una radio quiere contarle a su audiencia cuánto dinero extra recibirá durante un año una persona que gana el mínimo gracias a la decisión del Gobierno. ¿Qué cantidad anual darían ustedes? ¿Cómo la justifican, y por qué otros podrían dar una cifra distinta? Pueden pedir información adicional.",
+        "foto_descripcion": "Dibujo sencillo de un micrófono de radio junto a un calendario con una flecha que sube.",
+        "recursos_a_solicitud": [
+          {
+            "id": "R2",
+            "que_es": "Tarjeta sobre la parte del aumento que ya estaba prevista",
+            "contenido": "Una parte del aumento anunciado corresponde a un incremento automático previsto para comienzo de año: 18 euros.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P2-RM",
+            "fuente": "noticia, párrafo 6"
+          },
+          {
+            "id": "R3",
+            "que_es": "Tarjeta sobre cómo se paga el salario",
+            "contenido": "Supuesto del escenario: el salario mínimo se paga una vez al mes durante todo el año y la persona trabaja jornada completa sin interrupciones.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P2-RM",
+            "fuente": "supuesto del escenario"
+          },
+          {
+            "id": "R4",
+            "que_es": "Tarjeta para contrastar después de modelar",
+            "contenido": "La diferencia real de aumento del salario mínimo, según la noticia, es de 5 euros.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P6-VAL",
+            "fuente": "noticia, párrafo 6"
+          }
+        ]
+      },
+      "variantes_detalle": {
+        "abajo": null,
+        "arriba": {
+          "tramo": "S1",
+          "cambios": "Se pide además expresar el beneficio anual como porcentaje del ingreso anual que habría tenido la persona sin la medida y analizar cómo cambia el resultado si el pago empieza en otro mes. No se entrega ninguna base de comparación: deben construirla."
+        }
+      },
+      "recursos_de_entrada": [
+        {
+          "id": "R1",
+          "que_es": "Datos iniciales de la noticia, ya escritos en el enunciado",
+          "contenido": "Desde diciembre el salario mínimo sube 23 euros y llega a 1.502 euros. El primer ministro dice que es el segundo mayor aumento en 20 años.",
+          "disponibilidad": "de_entrada",
+          "fase": "P1-MRS",
+          "fuente": "noticia, párrafo 5; noticia, párrafo 6; noticia, párrafo 7"
+        }
+      ],
+      "mapa_ciclo": {
+        "P1-MRS": {
+          "decision": "Entender qué significa 'extra gracias a la decisión del Gobierno' y distinguirlo del aumento anunciado.",
+          "evidencia": "Reformulan la pregunta con sus palabras y piden saber qué parte del aumento ya estaba prevista.",
+          "bloqueo_probable": "B12"
+        },
+        "P2-RM": {
+          "decision": "Fijar el período (un año desde diciembre), suponer pago mensual y decidir qué habría pasado sin la medida.",
+          "evidencia": "Línea de tiempo o tabla mensual y lista de supuestos acordados.",
+          "bloqueo_probable": "B23"
+        },
+        "P3-MM": {
+          "decision": "Decidir cómo comparar mes a mes el sueldo con la medida y sin ella, y sumar las diferencias.",
+          "evidencia": "Tabla de dos columnas por mes o una expresión como 'diferencia del primer mes más diferencia de los meses restantes'.",
+          "bloqueo_probable": "B34"
+        },
+        "P4-WM": {
+          "decision": "Calcular la diferencia mensual en cada tramo del año y acumularla.",
+          "evidencia": "Cálculos ordenados con unidades y total anual en euros.",
+          "bloqueo_probable": "B45"
+        },
+        "P5-INT": {
+          "decision": "Interpretar el total: qué cifra darían a la radio y por qué otras cifras (como 23 por cada mes) se pueden confundir con la ganancia real.",
+          "evidencia": "Frase para la radio que incluye la cifra y su supuesto principal.",
+          "bloqueo_probable": "B56"
+        },
+        "P6-VAL": {
+          "decision": "Contrastar la diferencia mensual que obtuvieron con el dato de la diferencia real y revisar la razonabilidad del total.",
+          "evidencia": "Comparan sus diferencias mensuales con la tarjeta de validación y corrigen si hay discrepancia.",
+          "bloqueo_probable": "B67"
+        },
+        "P7-EXP": {
+          "decision": "Redactar una frase de radio y explicar por qué varias cifras anuales son defendibles.",
+          "evidencia": "Texto breve con cifra, supuestos y comparación con otra interpretación.",
+          "bloqueo_probable": null
+        }
+      },
+      "task_space": {
+        "required_assumptions": [
+          "El salario se paga mensualmente durante todo el año con jornada completa.",
+          "El año que se analiza parte en diciembre, con el nuevo mínimo desde ese mes.",
+          "Sin la decisión, el salario anterior seguiría igual hasta comienzos de año, cuando llegaría el incremento automático previsto.",
+          "El incremento automático y el aumento anunciado se consideran parte de un mismo total, no dos aumentos sumados.",
+          "Se ignoran impuestos, descuentos y diferencias de jornada."
+        ],
+        "reference_solution": {
+          "steps": "1) Salario anterior: 1.502 menos 23 igual a 1.479 euros. 2) Pedir el dato del incremento automático: 18 euros. 3) Sin la medida: diciembre a 1.479 euros; desde comienzos de año a 1.497 euros (1.479 más 18). 4) Con la medida: 1.502 euros desde diciembre. 5) Diferencia mensual: diciembre 23 euros (1.502 menos 1.479); los once meses siguientes 5 euros cada uno (1.502 menos 1.497). 6) Total anual: 23 más 11 por 5 igual a 78 euros. 7) Comparar con 5 por 12 igual a 60 euros (ignora diciembre) y con 23 por 12 igual a 276 euros (cuenta como nuevo lo que ya estaba previsto).",
+          "result": "Con los supuestos del escenario, la ganancia extra en un año es de unos 78 euros. Una versión más sencilla, 5 euros por doce meses, da 60 euros. El total no es 276 euros, pues los 18 euros llegarían igual.",
+          "acceptable_range": "Entre 60 y 78 euros al año se consideran razonables según el tratamiento de diciembre; 276 euros es el techo que sale al contar todo el aumento como nuevo, y debe justificarse o descartarse con el dato prevista."
+        },
+        "routes": [
+          {
+            "id": "R1",
+            "nombre": "Diferencia mensual real por doce meses",
+            "nivel": "P",
+            "modelo": "Aumento nuevo igual a 23 menos 18 igual a 5 euros; multiplicado por doce meses.",
+            "resultado": "60 euros al año."
+          },
+          {
+            "id": "R2",
+            "nombre": "Tabla mes a mes con y sin la medida",
+            "nivel": "P",
+            "modelo": "Tabla de doce filas con sueldo con medida, sueldo sin medida y diferencia; suma de las diferencias.",
+            "resultado": "78 euros al año (23 en diciembre y 5 en cada uno de los once meses siguientes)."
+          },
+          {
+            "id": "R3",
+            "nombre": "Beneficio como porcentaje del ingreso anual",
+            "nivel": "S1",
+            "modelo": "Ingreso anual sin la medida igual a 1.479 más once veces 1.497; razón entre el beneficio anual y ese ingreso.",
+            "resultado": "Alrededor de 0,4% del ingreso anual (78 dividido por 17.946)."
+          },
+          {
+            "id": "R4",
+            "nombre": "Comparación con el titular del aumento",
+            "nivel": "P",
+            "modelo": "Contraste del beneficio anual real con lo que se obtendría al repetir 23 euros durante doce meses.",
+            "resultado": "276 euros frente a 78 euros: el titular sobreestima el efecto."
+          }
+        ],
+        "modelo_inadecuado": {
+          "id": "R5",
+          "por_que_falla": "Multiplicar 23 euros por doce meses supone que los 23 euros son una mejora nueva cada mes. Pero 18 euros llegarían igual a comienzos de año, así que el cálculo sobreestima la ganancia atribuible a la decisión del Gobierno."
+        },
+        "validation_evidence": "La tarjeta con la diferencia real de aumento según la noticia (5 euros): el grupo compara su diferencia mensual de los meses siguientes con ese dato y comprueba si su total anual es coherente. Se entrega después de modelar y no se usa para construir el modelo.",
+        "agent_visibility": {
+          "students": [
+            "enunciado_es",
+            "foto_descripcion",
+            "recursos_a_solicitud"
+          ],
+          "coder": [
+            "enunciado_es",
+            "task_space"
+          ],
+          "guide": [
+            "all"
+          ]
+        }
+      },
+      "rubrica_rub01": {
+        "total": 23,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 1
+        }
+      },
+      "rubrica_rub02": {
+        "P": null,
+        "S": null,
+        "U": null
+      },
+      "modelo_y_prompt": {
+        "diseñador": "claude-sonnet-5-5",
+        "version_prompt": "1.1",
+        "version_rubrica": "4.0"
+      }
+    },
+    "noticia": {
+      "id": "2026-11-09-latercera-sindicatos-de-francia-rechazan-reajuste-del",
+      "medio_id": "latercera",
+      "medio": "La Tercera",
+      "idioma": "es",
+      "titulo": "Sindicatos de Francia rechazan reajuste del salario mínimo anunciado por el Gobierno y convocan una nueva huelga",
+      "fecha": "2026-11-09",
+      "url": "https://www.latercera.com/mundo/noticia/sindicatos-de-francia-rechazan-reajuste-del-salario-minimo-anunciado-por-el-gobierno-y-convocan-una-nueva-huelga/",
+      "area": "economia",
+      "resumen_propio": "Los principales sindicatos de Francia consideran escaso el aumento del mínimo legal anunciado por el Ejecutivo y convocan a otra jornada de protesta a mediados de noviembre. El primer ministro defiende la medida como relevante, aunque reconoce que no basta y que hay tensiones políticas por delante.",
+      "cifras": [
+        {
+          "valor": "1,6%",
+          "unidad": "porcentaje de alza del salario mínimo",
+          "que_es": "Aumento del salario mínimo que la CFDT considera insuficiente",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 5"
+          }
+        },
+        {
+          "valor": 1.502,
+          "unidad": "euros",
+          "que_es": "Nuevo salario mínimo a partir del 1 de diciembre",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 5"
+          }
+        },
+        {
+          "valor": 23,
+          "unidad": "euros",
+          "que_es": "Aumento total anunciado del salario mínimo",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 6"
+          }
+        },
+        {
+          "valor": 18,
+          "unidad": "euros",
+          "que_es": "Parte del aumento correspondiente al incremento automático previsto para el 1 de enero",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 6"
+          }
+        },
+        {
+          "valor": 5,
+          "unidad": "euros",
+          "que_es": "Diferencia real de aumento del salario mínimo",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 6"
+          }
+        },
+        {
+          "valor": 20,
+          "unidad": "años",
+          "que_es": "Período en que el aumento sería el segundo más alto según el primer ministro",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 7"
+          }
+        }
+      ],
+      "recuperada_en": "2026-11-09T19:52:27Z",
+      "filtro": {
+        "version_rubrica": "4.0",
+        "puntajes": {
+          "genuino": 1,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "validacion": 2
+        },
+        "total": 9,
+        "pasa": true,
+        "justificacion": "Noticia con cifras reales y un debate sobre suficiencia del reajuste que exige decisiones de modelación. El problema es parcialmente abierto, pero la regla de cálculo queda algo dada por el anuncio oficial."
+      }
+    },
+    "evaluacion": {
+      "tarea_id": "2026-11-dinero-extra-en-un-ano",
+      "fecha": "2026-11-09T20:10:05Z",
+      "rub01": {
+        "version_rubrica": "4.0",
+        "criterios": {
+          "genuino": {
+            "puntaje": 2,
+            "justificacion": "Plantea una necesidad comunicativa real. No entrega regla ni modelo: hay que decidir qué parte del aumento se debe a la decisión y cómo acumularla en el año.",
+            "cita": "Una radio quiere contarle a su audiencia cuánto dinero extra recibirá durante un año una persona que gana el mínimo gracias a la decisión del …"
+          },
+          "abierta": {
+            "puntaje": 2,
+            "justificacion": "La pregunta admite varias cifras defendibles (23×12, 5×12, diciembre completo más 5 en los meses siguientes) y no prescribe procedimiento. Además pide reconocer modelos alternativos.",
+            "cita": "¿Qué cantidad anual darían ustedes? ¿Cómo la justifican, y por qué otros podrían dar una cifra distinta?"
+          },
+          "decisiones": {
+            "puntaje": 2,
+            "justificacion": "Resolver exige decidir qué cuenta como efecto de la decisión, qué período abarca «un año» y cómo se paga el salario. También exige solicitar información (R2, R3).",
+            "cita": "Algunas personas dicen que parte de ese aumento ya estaba previsto y habría llegado igual a comienzos de año."
+          },
+          "realismo": {
+            "puntaje": 2,
+            "justificacion": "La situación es real: un anuncio salarial discutido públicamente y una radio que informa a su audiencia. El encuadre no se percibe forzado.",
+            "cita": "En Francia, el Gobierno anunció que, desde diciembre, el salario mínimo sube 23 euros y llega a 1.502 euros."
+          },
+          "autenticidad": {
+            "puntaje": 2,
+            "justificacion": "Los datos y la controversia provienen de una noticia declarada y son el núcleo de la tarea, por lo que el componente auténtico está integrado de manera sustantiva.",
+            "cita": "La diferencia real de aumento del salario mínimo, según la noticia, es de 5 euros."
+          },
+          "contexto": {
+            "puntaje": 2,
+            "justificacion": "El contexto (fecha de inicio en diciembre, aumento previsto, debate político) condiciona el modelo. También es necesario para interpretar qué cifra comunicar y por qué difiere de otras.",
+            "cita": "parte de ese aumento ya estaba previsto y habría llegado igual a comienzos de año"
+          },
+          "ciclo": {
+            "puntaje": 2,
+            "justificacion": "Responder obliga a comprender la controversia, simplificar (período, pago mensual), matematizar con operatoria, calcular y volver a la situación para justificar y juzgar la cifra. El enunciado no deja ninguna fase hecha.",
+            "cita": "¿Qué cantidad anual darían ustedes? ¿Cómo la justifican, y por qué otros podrían dar una cifra distinta?"
+          },
+          "validacion": {
+            "puntaje": 2,
+            "justificacion": "Existe una cifra de la noticia para contrastar después de modelar. Hay además restricciones del contexto (inicio en diciembre) y datos públicos del salario mínimo francés, como espera MAR03 para P.",
+            "cita": "R4 (Tarjeta para contrastar después de modelar)"
+          },
+          "nivel": {
+            "puntaje": 2,
+            "justificacion": "El contexto de salario y aumento es comprensible para 10–12 años. La matemática requerida (sumas, restas, multiplicación por meses) corresponde a la operatoria esperable en P.",
+            "cita": "el salario mínimo sube 23 euros y llega a 1.502 euros"
+          },
+          "autodiferenciacion": {
+            "puntaje": 2,
+            "justificacion": "El piso es bajo: basta multiplicar 23 por 12. El techo es alto: se puede distinguir el efecto contrafactual, tratar diciembre aparte, discutir qué año se considera y comparar cifras.",
+            "cita": "Pueden pedir información adicional."
+          },
+          "fecundidad": {
+            "puntaje": 2,
+            "justificacion": "La tarea obliga a comparar soluciones y abre preguntas sobre cómo los actores (Gobierno, sindicatos) presentan cifras. También permite discutir los límites de cada modelo.",
+            "cita": "por qué otros podrían dar una cifra distinta"
+          },
+          "recursos": {
+            "puntaje": 1,
+            "justificacion": "R4 puede solicitarse en cualquier momento y revela la idea clave del modelo (solo 5 euros se deben a la decisión). R3 entrega un supuesto ya formulado. Hay sobreorientación parcial.",
+            "cita": "R4 (Tarjeta para contrastar después de modelar), disponible a solicitud del grupo: La diferencia real de aumento del salario mínimo, según la noticia, es de …"
+          }
+        },
+        "total": 23,
+        "mejoras": [
+          {
+            "criterio": "recursos",
+            "mejora_minima": "Indicar que R4 solo se entrega después de que el grupo comunique su cifra anual y su justificación, para que no revele el modelo durante la construcción."
+          }
+        ]
+      },
+      "reproducibilidad": {
+        "agentes": {
+          "disenador": {
+            "modelo": "claude-sonnet-5-5",
+            "version_modelo": "claude-sonnet-5-5",
+            "costo_usd": 0.19339,
+            "version_prompt": "1.1"
+          },
+          "evaluador": {
+            "modelo": "claude-opus-5-5",
+            "version_modelo": "claude-opus-5-5",
+            "costo_usd": 0.245606,
+            "version_prompt": "1.3"
+          },
+          "filtro": {
+            "modelo": "claude-haiku-5-5",
+            "version_modelo": "claude-haiku-5-5",
+            "costo_usd": 0.000373,
+            "version_prompt": "1.0"
+          }
+        },
+        "version_prompt": {
+          "disenador": "1.1",
+          "evaluador": "1.3",
+          "filtro": "1.0"
+        },
+        "version_rubrica": "4.0",
+        "version_MAR03": "1.0",
+        "version_MED01": "1.4",
+        "diseno_simulador": null,
+        "fecha": "2026-11-09T20:10:05Z",
+        "costo_usd": 0.439369
+      }
+    }
+  },
+  "historial": [
+    {
+      "fecha": "2026-11-09T20:06:07+00:00",
+      "de": null,
+      "a": "borrador"
+    },
+    {
+      "fecha": "2026-11-09T20:10:06+00:00",
+      "de": "borrador",
+      "a": "evaluada",
+      "iteracion": 1,
+      "rub01_total": 23
+    },
+    {
+      "fecha": "2026-11-09T20:10:08+00:00",
+      "de": "evaluada",
+      "a": "archivada",
+      "motivo": "candidato no elegido: RUB01 23/24 frente a 23/24 de 2026-11-aumento-minimo-poco-o-mucho (2 candidatos por noticia; se sigue con el mejor)"
+    }
+  ],
+  "marcas": {
+    "ciclo_id": "ciclo_20261109T195226942479Z",
+    "noticia_id": "2026-11-09-latercera-sindicatos-de-francia-rechazan-reajuste-del",
+    "nivel_objetivo": "P",
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "versiones_modelo": [
+          "claude-sonnet-5-5"
+        ],
+        "costo_usd": 0.19339,
+        "llamadas": 1
+      },
+      "filtro": {
+        "modelo": "claude-haiku-5-5",
+        "versiones_modelo": [
+          "claude-haiku-5-5"
+        ],
+        "costo_usd": 0.000373,
+        "llamadas": 1
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "versiones_modelo": [
+          "claude-opus-5-5"
+        ],
+        "costo_usd": 0.245606,
+        "llamadas": 3
+      }
+    },
+    "costos_compartidos": [
+      "disenador",
+      "filtro"
+    ],
+    "version_MAR03": "1.0",
+    "evaluacion_inestable": false,
+    "evaluacion_rango_total": 0,
+    "evaluacion_corridas": "pipeline/state/trabajo/2026-11-dinero-extra-en-un-ano/evaluacion_corridas.json"
+  }
+}

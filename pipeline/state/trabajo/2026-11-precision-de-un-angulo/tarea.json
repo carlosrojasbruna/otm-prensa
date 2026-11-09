@@ -1,0 +1,217 @@
+{
+  "id": "2026-11-precision-de-un-angulo",
+  "titulo": "¿Qué tan precisa debe ser la medición de un ángulo para confiar en un peritaje?",
+  "estado": "archivada",
+  "version": 1,
+  "fecha": "2026-11-09",
+  "noticia": {
+    "noticia_id": "2026-11-09-latercera-caso-alto-mando-fiscalia-recibe-peritaje",
+    "medio": "La Tercera",
+    "titulo": "Caso Alto Mando: Fiscalía recibe peritaje internacional sobre actuación policial durante el estallido social",
+    "fecha": "2026-11-09",
+    "url": "https://www.latercera.com/nacional/noticia/caso-alto-mando-fiscalia-recibe-peritaje-internacional-sobre-actuacion-policial-durante-el-estallido-social/",
+    "resumen_propio": "La noticia informa de que un tribunal amplió el plazo de la investigación del caso Alto Mando, que revisa omisiones de exjefes de Carabineros durante el estallido social. Los querellantes presentaron un peritaje de una organización británica que reconstruyó en tres dimensiones el uso de escopetas antidisturbios y concluyó que hubo desviaciones de protocolo y registros incompletos.",
+    "cifras_usadas": [
+      {
+        "valor": "89 grados",
+        "unidad": "grados",
+        "que_es": "ángulo de uso de las escopetas antidisturbios que da nombre al informe pericial",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 7"
+        }
+      }
+    ]
+  },
+  "nivel_principal": "S",
+  "variantes": {
+    "abajo": "S",
+    "arriba": "U"
+  },
+  "area": "sociedad_datos",
+  "contenidos_matematicos": [
+    "trigonometría (tangente)",
+    "sensibilidad y error de medición",
+    "modelos lineal frente a no lineal",
+    "escala y geometría"
+  ],
+  "tiempo_estimado": "2 sesiones de 90 min",
+  "estudiante": {
+    "enunciado_es": "Un peritaje internacional presentado a la Fiscalía en el caso Alto Mando reconstruyó en tres dimensiones cómo se usaron escopetas antidisturbios durante el estallido social. El informe se conoce por un ángulo de uso: 89 grados. Una reconstrucción así depende de medir ángulos y distancias, y toda medición tiene algo de error. Imaginen que su grupo debe explicar a personas no expertas por qué la precisión importa: si un ángulo como ese se midiera con un pequeño error, ¿cuánto podría cambiar el lugar al que se concluye que apuntaba el arma, a distintas distancias? Ustedes deciden respecto de qué se mide el ángulo y qué distancias consideran. No se trata de juzgar el caso, sino de entender la medición. ¿Qué precisión exigirían para confiar en una conclusión de ese tipo? Pueden pedir información adicional.",
+    "foto_descripcion": "Esquema sencillo de una persona de pie, una línea recta que sale hacia un muro y un arco que marca un ángulo, con una regla dibujada en el suelo.",
+    "recursos_a_solicitud": [
+      {
+        "id": "R2",
+        "que_es": "Herramienta para estimar distancias reales de una calle o plaza",
+        "contenido": "Mapa en línea con herramienta de medición de distancias, para que el grupo estime por su cuenta distancias reales en una calle o plaza conocida de su ciudad.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P2-RM",
+        "fuente": "otra fuente: Google Maps, herramienta de medir distancia"
+      },
+      {
+        "id": "R3",
+        "que_es": "Margen de error de la medición",
+        "contenido": "Supuesto del escenario: si el grupo pregunta por el margen de error de la medición del ángulo, se le responde que lo estime a partir de la precisión de lectura de un transportador escolar y de la dificultad de apuntar con exactitud.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P2-RM",
+        "fuente": "supuesto del escenario"
+      },
+      {
+        "id": "R4",
+        "que_es": "Materiales para una maqueta de comprobación",
+        "contenido": "Supuesto del escenario: si el grupo pide materiales después de modelar, recibe transportador, cinta métrica, un puntero láser de aula o una varilla y un muro o panel vertical para comprobar sus predicciones.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P6-VAL",
+        "fuente": "supuesto del escenario"
+      }
+    ]
+  },
+  "variantes_detalle": {
+    "abajo": {
+      "tramo": "S1",
+      "cambios": "Se pide trabajar con un dibujo a escala y transportador (sin tangente): el grupo traza líneas con ángulos distintos sobre papel, mide alturas en un muro dibujado y describe cómo cambian; la referencia del ángulo se acuerda en la clase."
+    },
+    "arriba": {
+      "tramo": "U",
+      "cambios": "Se pide un modelo de propagación del error: derivada de la altura respecto del ángulo, error aleatorio con distribución normal y probabilidad de que el punto de llegada quede fuera de un margen dado; el grupo discute las limitaciones de suponer una recta ideal."
+    }
+  },
+  "recursos_de_entrada": [
+    {
+      "id": "R1",
+      "que_es": "Ángulo que da nombre al informe pericial",
+      "contenido": "El informe se conoce por un ángulo de uso de 89 grados.",
+      "disponibilidad": "de_entrada",
+      "fase": "P1-MRS",
+      "fuente": "noticia, párrafo 7"
+    }
+  ],
+  "mapa_ciclo": {
+    "P1-MRS": {
+      "decision": "Entender que se pide estudiar la sensibilidad de una conclusión a un error de medición (no juzgar el caso) y reconocer que falta definir respecto de qué se mide el ángulo.",
+      "evidencia": "Reformulación de la pregunta y lista de datos o aclaraciones solicitadas.",
+      "bloqueo_probable": "B12"
+    },
+    "P2-RM": {
+      "decision": "Decidir la referencia del ángulo, representar la línea de tiro como una recta, elegir distancias típicas y estimar un margen de error.",
+      "evidencia": "Esquema con referencia del ángulo, distancias elegidas y margen de error justificado.",
+      "bloqueo_probable": "B23"
+    },
+    "P3-MM": {
+      "decision": "Relacionar ángulo, distancia y altura de llegada con un triángulo rectángulo y expresar el cambio de altura al variar el ángulo.",
+      "evidencia": "Fórmula o tabla que conecta ángulo, distancia y altura.",
+      "bloqueo_probable": "B34"
+    },
+    "P4-WM": {
+      "decision": "Calcular alturas para el ángulo central y para ángulos con error a varias distancias; comparar con una aproximación lineal.",
+      "evidencia": "Tabla de alturas por distancia y por error; gráfico de sensibilidad.",
+      "bloqueo_probable": "B45"
+    },
+    "P5-INT": {
+      "decision": "Interpretar qué significa el cambio de altura en la conclusión y decidir qué precisión angular exigir según el margen tolerable.",
+      "evidencia": "Enunciado de una precisión mínima con su justificación.",
+      "bloqueo_probable": "B56"
+    },
+    "P6-VAL": {
+      "decision": "Construir una maqueta y comparar las alturas medidas con las predichas; revisar el modelo si hay diferencia.",
+      "evidencia": "Medidas de la maqueta frente a predicciones y análisis de diferencias.",
+      "bloqueo_probable": "B67"
+    },
+    "P7-EXP": {
+      "decision": "Explicar a no expertos por qué un pequeño error angular importa más cuando la distancia crece, con un esquema y una tabla.",
+      "evidencia": "Presentación con esquema, tabla de sensibilidad y precisión recomendada.",
+      "bloqueo_probable": null
+    }
+  },
+  "task_space": {
+    "required_assumptions": [
+      "Respecto de qué se mide el ángulo: la horizontal o la vertical; el grupo debe fijarlo y explorar qué cambia con cada elección.",
+      "La línea de tiro se aproxima por una recta (sin considerar gravedad ni viento) hasta una superficie vertical o el suelo.",
+      "Distancias consideradas, estimadas por el grupo.",
+      "Margen de error de la medición del ángulo, estimado por el grupo.",
+      "Tolerancia aceptable para la altura de llegada."
+    ],
+    "reference_solution": {
+      "steps": "1) Fijar referencia. Si 89 grados se mide desde la vertical, la línea queda a 1 grado de la horizontal; si se mide desde la horizontal, es casi vertical y sobre un muro la altura de llegada deja de ser una cantidad útil. 2) Para elevación e sobre la horizontal y un muro a distancia d: h = d·tan(e). Con e = 1 grado, tan(1°) ≈ 0,0175. 3) Alturas: a 10 m, 0,17 m; a 20 m, 0,35 m; a 50 m, 0,87 m. 4) Con error de ±0,5 grados a 20 m: tan(0,5°) ≈ 0,0087 y tan(1,5°) ≈ 0,0262, o sea alturas entre 0,17 m y 0,52 m (error relativo de ±50 %). 5) Sensibilidad lineal: Δh ≈ d·Δe (en radianes), por lo que el error crece proporcionalmente con la distancia. 6) Precisión requerida: si se tolera un error de 0,10 m a 20 m, Δe ≤ 0,10/20 ≈ 0,005 radianes ≈ 0,29 grados. 7) Si la referencia es la horizontal, a 89 grados la tangente es 57,3 y a 88 grados es 28,6: un pequeño error duplica el valor, lo que muestra la sensibilidad cerca de la vertical.",
+      "result": "Un error angular pequeño produce un cambio de altura que crece proporcionalmente con la distancia (unos 0,17 m por cada medio grado a 20 m) y, para tolerancias del orden de una decena de centímetros a distancias del orden de decenas de metros, se necesitan precisiones de décimas de grado; cerca de 90 grados desde la horizontal la sensibilidad es mucho mayor.",
+      "acceptable_range": "Precisión recomendada entre unos 0,1 y 0,5 grados según la tolerancia (entre 5 cm y 20 cm) y la distancia considerada (entre 10 m y 50 m); la variación de altura por un grado de error va de unos 0,17 m a 10 m hasta unos 0,87 m a 50 m."
+    },
+    "routes": [
+      {
+        "id": "R1",
+        "nombre": "Dibujo a escala y medición directa",
+        "nivel": "S1",
+        "modelo": "El grupo dibuja líneas con ángulos distintos sobre papel cuadriculado, mide alturas en un muro dibujado a escala y compara cómo cambian al variar el ángulo.",
+        "resultado": "Alturas aproximadas a distintas distancias y la observación de que el cambio crece con la distancia."
+      },
+      {
+        "id": "R2",
+        "nombre": "Modelo trigonométrico exacto",
+        "nivel": "S2",
+        "modelo": "h = d·tan(e) con e el ángulo de elevación según la referencia elegida; se calcula para el valor central y los valores extremos del error.",
+        "resultado": "Entre 0,17 m y 0,52 m a 20 m para un error de ±0,5 grados; precisión requerida de unos 0,3 grados para una tolerancia de 0,10 m."
+      },
+      {
+        "id": "R3",
+        "nombre": "Aproximación lineal para ángulos pequeños",
+        "nivel": "S2",
+        "modelo": "Para ángulos pequeños, tan(e) ≈ e en radianes, de modo que Δh ≈ d·Δe; permite estimar el error sin calculadora y muestra proporcionalidad con la distancia.",
+        "resultado": "Unos 0,017 m de error por cada grado y por cada metro de distancia dividido en cien; coincide con el modelo exacto en ángulos pequeños."
+      },
+      {
+        "id": "R4",
+        "nombre": "Propagación de error con derivada",
+        "nivel": "U",
+        "modelo": "Se deriva h(e) = d·tan(e), se obtiene dh = d·sec²(e)·de y se modela el error del ángulo como variable aleatoria para estimar la probabilidad de superar la tolerancia.",
+        "resultado": "Desviación estándar de la altura proporcional a la distancia y a la desviación del ángulo; probabilidad de exceder 0,10 m a 20 m según la desviación supuesta."
+      }
+    ],
+    "modelo_inadecuado": {
+      "id": "R5",
+      "por_que_falla": "Tratar los grados como proporcionales a la altura (por ejemplo, 89 de 90 grados significa casi toda la altura posible, o regla de tres entre grados y metros) ignora que la relación es no lineal (tangente) y que depende de la referencia del ángulo; predice cambios pequeños donde en realidad son grandes cerca de la vertical y no explica por qué el error crece con la distancia."
+    },
+    "validation_evidence": "Después de modelar, el grupo monta una maqueta: fija un puntero o varilla a un ángulo medido con transportador, mide con cinta métrica la altura de llegada en un muro vertical a distancias distintas, repite con variaciones pequeñas del ángulo y compara con sus predicciones. Esa medición independiente no se usó para construir el modelo.",
+    "agent_visibility": {
+      "students": [
+        "enunciado_es",
+        "foto_descripcion",
+        "recursos_a_solicitud"
+      ],
+      "coder": [
+        "enunciado_es",
+        "task_space"
+      ],
+      "guide": [
+        "all"
+      ]
+    }
+  },
+  "rubrica_rub01": {
+    "total": 23,
+    "por_criterio": {
+      "genuino": 2,
+      "abierta": 2,
+      "decisiones": 2,
+      "realismo": 2,
+      "autenticidad": 2,
+      "contexto": 2,
+      "ciclo": 2,
+      "validacion": 2,
+      "nivel": 2,
+      "autodiferenciacion": 2,
+      "fecundidad": 2,
+      "recursos": 1
+    }
+  },
+  "rubrica_rub02": {
+    "P": null,
+    "S": null,
+    "U": null
+  },
+  "modelo_y_prompt": {
+    "diseñador": "claude-sonnet-5-5",
+    "version_prompt": "1.1",
+    "version_rubrica": "4.0"
+  },
+  "sub_tramo": "S2"
+}

@@ -1,0 +1,324 @@
+{
+  "tarea_id": "2026-11-que-descuenta-el-precio-del-petroleo",
+  "evaluaciones": [
+    {
+      "iteracion": 1,
+      "version_tarea": 1,
+      "fecha": "2026-11-09T20:16:34Z",
+      "modelo": "claude-opus-5-5",
+      "version_prompt": "1.3",
+      "version_rubrica": "4.0",
+      "corridas": [
+        {
+          "n": 1,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 1,
+                "justificacion": "Hay una necesidad real: inferir la probabilidad implícita para decidir el inventario. Sin embargo, el enunciado entrega la estructura del modelo, un precio como mezcla ponderada de dos escenarios, y el ícono de la balanza la refuerza. Eso es una insinuación fuerte de la estructura.",
+                "cita": "Una analista de una empresa chilena piensa que el precio de hoy mezcla dos futuros posibles"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta final no prescribe procedimiento. Admite varios caminos defendibles: precios de escenario, referencia elegida, tratamiento de la incertidumbre y cómo traducir la lectura en una decisión de inventario.",
+                "cita": "¿Qué le responderían? Pueden pedir información adicional."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolverla exige suponer el precio en cada escenario (por ejemplo, el previo a la tensión a partir del alza de 52%), atribuir la caída del día, elegir la referencia y solicitar información. Son decisiones de modelación sustantivas.",
+                "cita": "cuánto más probable se volvió el acuerdo a ojos del mercado y cuánto confiar en esa lectura"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Leer probabilidades implícitas en precios de mercado para decidir inventarios es una práctica plausible en empresas reales. La situación no está forzada para insertar un cálculo.",
+                "cita": "antes de decidir si la empresa aumenta o reduce su inventario de combustible"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Las cifras de prensa y la serie pública de la EIA son componentes extraescolares auténticos. Constituyen el núcleo de la tarea.",
+                "cita": "Tras caer 4,67% en un día, el WTI, referencia para Chile, quedó en 93,74 dólares por barril"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto geopolítico y el del mercado condicionan los precios de escenario y la atribución de la caída. También es necesario para interpretar la confianza en la lectura y la decisión de inventario.",
+                "cita": "La prensa atribuye la baja a que podrían avanzar conversaciones entre Estados Unidos e Irán."
+              },
+              "ciclo": {
+                "puntaje": 1,
+                "justificacion": "Las fases de matematizar, calcular, interpretar y validar son exigidas. Pero la simplificación de la situación a dos escenarios discretos queda hecha por el enunciado. Dudé con el 2, porque aún deben estimarse los precios de escenario; asigno el menor.",
+                "cita": "que haya acuerdo y la tensión se disipe, o que las conversaciones fracasen y la tensión continúe"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existe evidencia independiente accesible para contrastar el modelo: la trayectoria posterior del precio, otra referencia del crudo (R2) y el desenlace real de las conversaciones.",
+                "cita": "Los valores los obtiene el grupo en la serie diaria pública de precios spot del WTI de la EIA"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "Para nivel U, el lenguaje financiero es comprensible y pertinente. La demanda de probabilidad, valor esperado y decisión bajo incertidumbre está al alcance de las herramientas esperables.",
+                "cita": "cuánto más probable se volvió el acuerdo a ojos del mercado y cuánto confiar en esa lectura"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es accesible: una interpolación lineal entre dos precios de escenario. El techo es alto: análisis de sensibilidad, varias referencias, intervalos para la probabilidad y modelos de decisión de inventario con costos asimétricos.",
+                "cita": "¿Qué le responderían? Pueden pedir información adicional."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Los resultados abren preguntas sobre la confianza en la lectura, sobre diferencias entre referencias y sobre la decisión con costos asimétricos. Permiten comparar soluciones y límites del modelo.",
+                "cita": "Comprar de más sale caro si el precio baja, y quedarse corta sale caro si el precio sube."
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "La tarea presenta dos precios distintos del mismo día bajo el nombre «WTI»: el de la «referencia para Chile», 93,74, presumiblemente Brent, y el de Nueva York, 87,68. Además, R4 remite a la serie WTI de la EIA, lo que vuelve ambigua la información base y su contraste. La balanza agrega cierta sobreorientación.",
+                "cita": "El WTI que se transa en Nueva York cayó 3,37% en el día y quedó en 87,68 dólares por barril"
+              }
+            },
+            "total": 21,
+            "mejoras": [
+              {
+                "criterio": "genuino",
+                "mejora_minima": "Reemplazar «piensa que el precio de hoy mezcla dos futuros posibles» por una frase neutra, por ejemplo «cree que el precio refleja lo que el mercado espera de las conversaciones». Sustituir el ícono de la balanza por una imagen que no sugiera la ponderación de dos escenarios."
+              },
+              {
+                "criterio": "ciclo",
+                "mejora_minima": "No entregar la reducción a dos escenarios: dejar que el grupo decida cómo representar los futuros posibles (dos escenarios, varios o un continuo) y qué precio asociar a cada uno."
+              },
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Corregir la denominación de las referencias para que sea coherente con la fuente, por ejemplo «el Brent, referencia para Chile» frente a «el WTI que se transa en Nueva York». Indicar en R4 la serie pública que corresponde a cada referencia."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011Cgsy36nNJH1w1EVeQ17iE",
+            "fecha": "2026-11-09T20:15:14+00:00",
+            "intentos": 1,
+            "costo_usd": 0.111154,
+            "avisos": []
+          }
+        },
+        {
+          "n": 2,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 1,
+                "justificacion": "Hay una necesidad real: leer cuánto más probable ve el mercado un acuerdo antes de decidir el inventario. Pero el enunciado insinúa con fuerza la estructura del modelo, un precio como mezcla ponderada de dos escenarios. Dudo entre 1 y 2 y asigno el menor.",
+                "cita": "piensa que el precio de hoy mezcla dos futuros posibles: que haya acuerdo y la tensión se disipe, o que las conversaciones fracasen"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe procedimiento. Admite varios caminos defendibles: cómo fijar los precios de cada escenario, qué referencia usar, cómo cuantificar la confianza y cómo traducirla en una recomendación de inventario.",
+                "cita": "¿Qué le responderían? Pueden pedir información adicional."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige varias decisiones: estimar el precio en cada escenario (por ejemplo, a partir del alza anual), suponer que otros factores no movieron el precio, elegir la referencia y solicitar información adicional.",
+                "cita": "Su jefa quiere saber cuánto más probable se volvió el acuerdo a ojos del mercado y cuánto confiar en esa lectura"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Leer probabilidades implícitas en precios de mercado para decidir inventario es una práctica real y plausible fuera de la escuela.",
+                "cita": "Una analista de una empresa chilena piensa que el precio de hoy mezcla dos futuros posibles"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Las cifras de una noticia real son el núcleo de la tarea, y se suma la serie pública de la EIA. Son componentes auténticos integrados de manera sustantiva.",
+                "cita": "Tras caer 4,67% en un día, el WTI, referencia para Chile, quedó en 93,74 dólares por barril"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona los precios que se asignan a cada escenario. También es necesario para interpretar cuánto confiar en la lectura y para traducirla en la decisión de inventario.",
+                "cita": "antes de decidir si la empresa aumenta o reduce su inventario de combustible"
+              },
+              "ciclo": {
+                "puntaje": 1,
+                "justificacion": "La fase de simplificación y estructuración queda prácticamente hecha: el enunciado entrega la reducción a dos escenarios que se ponderan. Las demás fases sí se exigen.",
+                "cita": "el precio de hoy mezcla dos futuros posibles"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "La serie posterior de la EIA y el otro precio de referencia (R2) son evidencia independiente y accesible para contrastar la lectura del modelo.",
+                "cita": "Trayectoria del precio de cierre del WTI en los días y semanas posteriores a la fecha de la noticia."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto es comprensible para universitarios. La matemática requerida (probabilidad, valor esperado, sensibilidad y decisión bajo incertidumbre) corresponde a las herramientas esperables del nivel U.",
+                "cita": "cuánto más probable se volvió el acuerdo a ojos del mercado y cuánto confiar en esa lectura"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Hay un piso razonable: una interpolación entre dos precios de escenario. El techo es alto: análisis de sensibilidad, primas de riesgo, comparación de referencias y vínculo explícito con la decisión de inventario.",
+                "cita": "cuánto confiar en esa lectura"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Los resultados abren nuevas preguntas: qué inventario conviene según la probabilidad estimada, por qué difieren las dos referencias y qué tan sensible es la lectura. También permiten comparar soluciones y sus límites.",
+                "cita": "Comprar de más sale caro si el precio baja, y quedarse corta sale caro si el precio sube."
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "La imagen de la balanza sugiere un promedio ponderado entre dos escenarios, lo que sobreorienta hacia el modelo. Además, R1 y R2 llaman «WTI» a dos precios distintos (93,74 y 87,68), lo que vuelve confusa la información de partida y la serie de contraste.",
+                "cita": "Ícono de una balanza con dos platos: en uno, una paloma de la paz; en el otro, un barril de petróleo"
+              }
+            },
+            "total": 21,
+            "mejoras": [
+              {
+                "criterio": "genuino",
+                "mejora_minima": "Eliminar la frase en que la analista afirma que el precio mezcla dos futuros posibles y dejar solo la pregunta de la jefa, para que los estudiantes construyan ellos mismos la estructura de escenarios."
+              },
+              {
+                "criterio": "ciclo",
+                "mejora_minima": "Quitar del enunciado la reducción a dos escenarios, de modo que simplificar y estructurar la situación (cuántos escenarios, qué precio en cada uno) quede a cargo de los estudiantes."
+              },
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Reemplazar el ícono de la balanza por una imagen neutra, como una foto de un terminal de combustible. Corregir los rótulos: identificar el precio de 93,74 como la referencia para Chile (Brent) y el de R2 como WTI de Nueva York, e indicar la serie correspondiente en R4."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011Cgsy6gwXc9oBjyoH1vZ9V",
+            "fecha": "2026-11-09T20:15:52+00:00",
+            "intentos": 1,
+            "costo_usd": 0.087334,
+            "avisos": []
+          }
+        },
+        {
+          "n": 3,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 1,
+                "justificacion": "Hay una necesidad real: la jefa debe decidir sobre el inventario. Sin embargo, el enunciado y la imagen de la balanza insinúan con fuerza la estructura del modelo, un promedio ponderado de dos escenarios, aunque no dan la fórmula. Corresponde al descriptor 1.",
+                "cita": "piensa que el precio de hoy mezcla dos futuros posibles"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe procedimiento. Admite varios modelos defendibles según cómo se fijen los precios de cada escenario, cómo se trate la prima de riesgo y cómo se conecte con la decisión. No hay instrucciones posteriores que encaucen la resolución.",
+                "cita": "¿Qué le responderían? Pueden pedir información adicional."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a decidir y estimar varias cosas: el precio en cada escenario (a partir del nivel de inicio de año o del previo a la caída), la neutralidad al riesgo y qué precio de referencia usar. También hay que solicitar información.",
+                "cita": "cuánto más probable se volvió el acuerdo a ojos del mercado y cuánto confiar en esa lectura"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Leer probabilidades implícitas en precios de mercado para decidir inventario es una práctica real y plausible en una empresa.",
+                "cita": "antes de decidir si la empresa aumenta o reduce su inventario de combustible."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Las cifras provienen de una noticia y son el núcleo del cálculo. La validación usa la serie pública de la EIA, un recurso extraescolar no creado para enseñar.",
+                "cita": "Tras caer 4,67% en un día, el WTI, referencia para Chile, quedó en 93,74 dólares por barril"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto geopolítico y de mercado condiciona los precios de cada escenario. También es necesario para juzgar cuánto confiar en la lectura y para traducirla a la decisión de inventario.",
+                "cita": "La prensa atribuye la baja a que podrían avanzar conversaciones entre Estados Unidos e Irán."
+              },
+              "ciclo": {
+                "puntaje": 1,
+                "justificacion": "El enunciado entrega ya simplificada la situación en dos escenarios. Con ello deja prácticamente hecha la fase de simplificar/estructurar, aunque matematizar, interpretar y validar siguen siendo exigentes.",
+                "cita": "que haya acuerdo y la tensión se disipe, o que las conversaciones fracasen y la tensión continúe"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Hay evidencia independiente accesible para contrastar la lectura: la trayectoria posterior del precio y el otro precio de referencia (R2). Ninguna de las dos se usa al construir el modelo.",
+                "cita": "Los valores los obtiene el grupo en la serie diaria pública de precios spot del WTI de la EIA, una vez formulada su respuesta."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "Probabilidad, valor esperado, sensibilidad y decisión bajo incertidumbre están dentro de las herramientas esperables para U. El contexto financiero es comprensible y pertinente para ese nivel.",
+                "cita": "cuánto más probable se volvió el acuerdo a ojos del mercado"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Un modelo de dos escenarios con aritmética de porcentajes da un piso accesible. El techo es alto: sensibilidad a los precios de escenario, prima de riesgo, comparación entre referencias y decisión con costos asimétricos.",
+                "cita": "y cuánto confiar en esa lectura"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Distintos supuestos de escenario producen probabilidades distintas que pueden compararse. Eso abre preguntas sobre los límites del modelo y sobre cómo decidir con costos asimétricos.",
+                "cita": "Comprar de más sale caro si el precio baja, y quedarse corta sale caro si el precio sube."
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información necesaria está dada, puede derivarse de los porcentajes o puede solicitarse, y no revela el modelo. Una salvedad: ambos precios se llaman WTI, lo que puede confundir, aunque no impide obtener la información.",
+                "cita": "El WTI que se transa en Nueva York cayó 3,37% en el día y quedó en 87,68 dólares por barril"
+              }
+            },
+            "total": 22,
+            "mejoras": [
+              {
+                "criterio": "genuino",
+                "mejora_minima": "Reemplazar la frase de la analista sobre «dos futuros posibles» por algo como «la analista cree que el precio refleja lo que el mercado espera de las conversaciones». Retirar la imagen de la balanza con dos platos para que los estudiantes construyan por sí mismos la estructura de escenarios."
+              },
+              {
+                "criterio": "ciclo",
+                "mejora_minima": "No describir los dos escenarios en el enunciado. Así los estudiantes deben decidir cuántos y cuáles escenarios considerar y con qué precio asociar cada uno, lo que vuelve no trivial la fase de simplificar/estructurar."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011Cgsy9VZWD61bRP7CNaTbD",
+            "fecha": "2026-11-09T20:16:34+00:00",
+            "intentos": 1,
+            "costo_usd": 0.100034,
+            "avisos": []
+          }
+        }
+      ],
+      "totales": [
+        21,
+        21,
+        22
+      ],
+      "rango_total": 1,
+      "rango_inestable": 4,
+      "evaluacion_inestable": false,
+      "mediana": {
+        "regla": "mediana por criterio (n par: mediana inferior)",
+        "total": 21,
+        "por_criterio": {
+          "genuino": 1,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 1,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 1
+        },
+        "corrida_fuente": {
+          "genuino": 1,
+          "abierta": 1,
+          "decisiones": 1,
+          "realismo": 1,
+          "autenticidad": 1,
+          "contexto": 1,
+          "ciclo": 1,
+          "validacion": 1,
+          "nivel": 1,
+          "autodiferenciacion": 1,
+          "fecundidad": 1,
+          "recursos": 1
+        }
+      }
+    }
+  ]
+}
