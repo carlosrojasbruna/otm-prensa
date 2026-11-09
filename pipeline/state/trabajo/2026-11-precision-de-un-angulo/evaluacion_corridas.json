@@ -1,0 +1,314 @@
+{
+  "tarea_id": "2026-11-precision-de-un-angulo",
+  "evaluaciones": [
+    {
+      "iteracion": 1,
+      "version_tarea": 1,
+      "fecha": "2026-11-09T20:23:26Z",
+      "modelo": "claude-opus-5-5",
+      "version_prompt": "1.3",
+      "version_rubrica": "4.0",
+      "corridas": [
+        {
+          "n": 1,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La tarea plantea una necesidad real: explicar y fijar una precisión confiable. No entrega fórmula ni modelo para relacionar el error angular con el desplazamiento.",
+                "cita": "Imaginen que su grupo debe explicar a personas no expertas por qué la precisión importa"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe el procedimiento. Admite varios modelos defendibles: dibujo a escala, diferencia de tangentes, aproximación de ángulo pequeño o planteo inverso desde la precisión exigida.",
+                "cita": "Ustedes deciden respecto de qué se mide el ángulo y qué distancias consideran."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolverla exige varias decisiones: elegir la referencia del ángulo y las distancias, estimar el margen de error (R3) y fijar qué desviación es aceptable. Son supuestos sustantivos.",
+                "cita": "Ustedes deciden respecto de qué se mide el ángulo y qué distancias consideran."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "La situación es real: la confiabilidad de una reconstrucción pericial depende de la precisión angular. Es una pregunta plausible fuera de la escuela.",
+                "cita": "Un peritaje internacional presentado a la Fiscalía en el caso Alto Mando reconstruyó en tres dimensiones cómo se usaron escopetas antidisturbios"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El peritaje real y su dato son el núcleo temático de la tarea, y la pregunta sobre la precisión de una reconstrucción forense no fue creada para enseñar trigonometría. Se toma como cierta la procedencia declarada.",
+                "cita": "El informe se conoce por un ángulo de uso: 89 grados."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona las decisiones: distancias realistas en una calle y qué desviación cambia la conclusión sobre dónde apuntaba el arma. También es necesario para interpretar si el error es aceptable.",
+                "cita": "¿Qué precisión exigirían para confiar en una conclusión de ese tipo?"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a recorrer todo el ciclo: comprender la situación, fijar referencia y error, matematizar con trigonometría, calcular, interpretar la precisión exigible y validar con la maqueta.",
+                "cita": "si un ángulo como ese se midiera con un pequeño error, ¿cuánto podría cambiar el lugar al que se concluye que apuntaba el arma, a …"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "La maqueta permite contrastar las predicciones del modelo con mediciones independientes que no se usaron para construirlo.",
+                "cita": "recibe transportador, cinta métrica, un puntero láser de aula o una varilla y un muro o panel vertical para comprobar sus predicciones"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto es comprensible y significativo para estudiantes chilenos de S2. La matemática requerida (trigonometría, sensibilidad informal) corresponde a las herramientas esperables del sub-tramo.",
+                "cita": "No se trata de juzgar el caso, sino de entender la medición."
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es accesible, porque se puede empezar con un dibujo a escala y un transportador. El techo es alto: tangentes, aproximación lineal del error, dependencia con la distancia y problema inverso de la precisión requerida.",
+                "cita": "¿cuánto podría cambiar el lugar al que se concluye que apuntaba el arma, a distintas distancias?"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Los resultados abren preguntas nuevas: cómo crece el error con la distancia, qué supuestos de referencia importan y cuáles son los límites de una reconstrucción. También permiten comparar soluciones entre grupos.",
+                "cita": "¿Qué precisión exigirían para confiar en una conclusión de ese tipo?"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "La información necesaria es obtenible (mapa en línea, estimación con transportador). Pero la imagen entregada de entrada anticipa la configuración geométrica del modelo (blanco en un muro, distancia horizontal y ángulo), lo que constituye una sobreorientación parcial. Hay duda entre 1 y 2, porque el enunciado ya sugiere parte de esa estructura; se asigna el menor.",
+                "cita": "Esquema sencillo de una persona de pie, una línea recta que sale hacia un muro y un arco que marca un ángulo, con una regla …"
+              }
+            },
+            "total": 23,
+            "mejoras": [
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Reemplazar el esquema geométrico por una fotografía o ilustración de una calle o plaza sin líneas, arcos ni regla, de modo que el grupo decida por sí mismo cómo representar el ángulo, la distancia y el lugar de impacto."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgsybVjPQ14bbtohT59D3",
+            "fecha": "2026-11-09T20:22:22+00:00",
+            "intentos": 1,
+            "costo_usd": 0.08091,
+            "avisos": [
+              "cita_recortada_25:ciclo",
+              "cita_recortada_25:recursos"
+            ]
+          }
+        },
+        {
+          "n": 2,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La situación plantea una necesidad: explicar y decidir qué precisión exigir. No entrega fórmula ni modelo para relacionar error angular, distancia y desplazamiento. El esquema orienta la geometría, pero no da la regla; eso se descuenta en el criterio 12.",
+                "cita": "Imaginen que su grupo debe explicar a personas no expertas por qué la precisión importa"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta deja abiertas decisiones clave: la referencia del ángulo, las distancias y el umbral de precisión. Admite varios modelos defendibles (dibujo a escala, trigonometría, aproximación lineal) y no prescribe el método.",
+                "cita": "Ustedes deciden respecto de qué se mide el ángulo y qué distancias consideran."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige varios supuestos: la referencia del ángulo de 89°, el margen de error plausible, las distancias realistas y el criterio de confianza. También permite solicitar información.",
+                "cita": "¿Qué precisión exigirían para confiar en una conclusión de ese tipo? Pueden pedir información adicional."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "La precisión de las mediciones en una reconstrucción pericial es un problema real fuera de la escuela. El encuadre de explicarlo a no expertos es plausible.",
+                "cita": "Un peritaje internacional presentado a la Fiscalía en el caso Alto Mando reconstruyó en tres dimensiones cómo se usaron escopetas antidisturbios"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Un peritaje real presentado a la Fiscalía, con su dato de 89°, es el núcleo de la tarea: el análisis de sensibilidad se construye en torno a ese ángulo. No fue creado para enseñar el contenido.",
+                "cita": "El informe se conoce por un ángulo de uso: 89 grados."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona decisiones de modelación: la referencia del ángulo (cerca de 90° la sensibilidad cambia mucho) y las distancias realistas. También es necesario para juzgar qué precisión basta para confiar en la conclusión.",
+                "cita": "si un ángulo como ese se midiera con un pequeño error, ¿cuánto podría cambiar el lugar al que se concluye que apuntaba el arma, a …"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a comprender la situación, fijar supuestos, matematizar la relación ángulo-distancia-desplazamiento, calcular, interpretar para no expertos y juzgar la precisión necesaria. Ninguna fase viene hecha.",
+                "cita": "¿Qué precisión exigirían para confiar en una conclusión de ese tipo?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Hay evidencia independiente accesible: una medición física con láser y muro contrasta los desplazamientos predichos por el modelo.",
+                "cita": "recibe transportador, cinta métrica, un puntero láser de aula o una varilla y un muro o panel vertical para comprobar sus predicciones"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "La matemática requerida (trigonometría y análisis informal de sensibilidad) corresponde a las herramientas de S2. El contexto, aunque sensible, se acota a la medición y es comprensible y pertinente para estudiantes de 16 a 18 años.",
+                "cita": "No se trata de juzgar el caso, sino de entender la medición."
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es accesible: dibujo a escala con transportador y regla. El techo es alto: tangente, comparación de referencias del ángulo, aproximación lineal del error y extensión a tres dimensiones.",
+                "cita": "si un ángulo como ese se midiera con un pequeño error, ¿cuánto podría cambiar el lugar"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las distintas referencias, distancias y umbrales elegidos permiten comparar soluciones y discutir límites del modelo. También abren preguntas sobre la propagación de errores en reconstrucciones 3D.",
+                "cita": "¿Qué precisión exigirían para confiar en una conclusión de ese tipo?"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "La información es obtenible: distancias con mapa en línea y error estimado con un transportador. Pero el esquema dibuja la configuración geométrica (distancia en el suelo, ángulo marcado, muro) y anticipa la estructura del modelo y la referencia del ángulo que la tarea dice dejar a decisión del grupo. Es sobreorientación parcial; dudé con 2 y asigno el menor.",
+                "cita": "Esquema sencillo de una persona de pie, una línea recta que sale hacia un muro y un arco que marca un ángulo, con una regla …"
+              }
+            },
+            "total": 23,
+            "mejoras": [
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Reemplazar el esquema por una imagen de la escena sin marcas geométricas (por ejemplo, una foto de una calle con un muro), eliminando el arco del ángulo y la regla en el suelo, para que el grupo decida por sí mismo la referencia del ángulo y la representación."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgsyeDfLMwNLJ63mU3kq6",
+            "fecha": "2026-11-09T20:22:56+00:00",
+            "intentos": 1,
+            "costo_usd": 0.07969,
+            "avisos": [
+              "cita_recortada_25:contexto",
+              "cita_recortada_25:recursos"
+            ]
+          }
+        },
+        {
+          "n": 3,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La tarea plantea una necesidad: explicar a no expertos por qué importa la precisión. No entrega ninguna regla ni modelo de propagación del error; el grupo debe construirlo.",
+                "cita": "si un ángulo como ese se midiera con un pequeño error, ¿cuánto podría cambiar el lugar al que se concluye que apuntaba el arma, a …"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe el procedimiento. Admite varios modelos defendibles: dibujo a escala, tangente, diferencia de tangentes cerca de 89° o longitud de arco, con distintas referencias y distancias.",
+                "cita": "Ustedes deciden respecto de qué se mide el ángulo y qué distancias consideran."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige varias decisiones: elegir la referencia del ángulo, elegir distancias, estimar el margen de error, solicitar información y fijar un criterio de confianza.",
+                "cita": "¿Qué precisión exigirían para confiar en una conclusión de ese tipo? Pueden pedir información adicional."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "La situación existe: la precisión de mediciones angulares en reconstrucciones periciales es una cuestión real y relevante fuera de la escuela.",
+                "cita": "Un peritaje internacional presentado a la Fiscalía en el caso Alto Mando reconstruyó en tres dimensiones cómo se usaron escopetas antidisturbios"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El peritaje real y su dato de 89° se toman de la noticia y son el núcleo de la tarea. Constituyen un componente auténtico integrado de manera sustantiva.",
+                "cita": "El informe se conoce por un ángulo de uso: 89 grados."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona decisiones: distancias plausibles en una calle, dificultad de apuntar y referencia del ángulo. También es necesario para interpretar qué precisión basta para una conclusión pericial.",
+                "cita": "No se trata de juzgar el caso, sino de entender la medición. ¿Qué precisión exigirían para confiar en una conclusión de ese tipo?"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a recorrer todas las fases: comprender la situación, simplificar (referencia, error, distancias), matematizar con trigonometría, calcular, interpretar una precisión exigible y validar con la maqueta.",
+                "cita": "si un ángulo como ese se midiera con un pequeño error, ¿cuánto podría cambiar el lugar al que se concluye que apuntaba el arma, a …"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "El modelo puede contrastarse con una medición física independiente, no usada en su construcción.",
+                "cita": "recibe transportador, cinta métrica, un puntero láser de aula o una varilla y un muro o panel vertical para comprobar sus predicciones"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto es comprensible y pertinente para secundaria en Chile. La demanda trigonométrica corresponde a las herramientas esperables en S2.",
+                "cita": "Una reconstrucción así depende de medir ángulos y distancias, y toda medición tiene algo de error."
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es razonable: se puede empezar con un dibujo a escala y un transportador. El techo es alto: análisis de la sensibilidad de la tangente cerca de 89°, error relativo o geometría tridimensional.",
+                "cita": "Ustedes deciden respecto de qué se mide el ángulo y qué distancias consideran."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las distintas referencias, distancias y márgenes de error permiten comparar soluciones. Además abren preguntas sobre los límites de la medición pericial y la sensibilidad según el ángulo.",
+                "cita": "¿Qué precisión exigirían para confiar en una conclusión de ese tipo?"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "La información necesaria se puede obtener (R2, R3, R4). Sin embargo, el esquema que acompaña el enunciado sugiere la configuración del triángulo (distancia al muro en el suelo y ángulo marcado), lo que es una sobreorientación parcial hacia el modelo. Hay duda con el 2, pero el esquema anticipa parte de la decisión sobre la referencia del ángulo.",
+                "cita": "Esquema sencillo de una persona de pie, una línea recta que sale hacia un muro y un arco que marca un ángulo, con una regla …"
+              }
+            },
+            "total": 23,
+            "mejoras": [
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Reemplazar el esquema por una foto o imagen sin el arco ni la regla marcados, por ejemplo una calle con un muro, o entregarlo solo a solicitud después de que el grupo haya formulado su modelo."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgsygkjvVbr9whdB6KS4w",
+            "fecha": "2026-11-09T20:23:26+00:00",
+            "intentos": 1,
+            "costo_usd": 0.06811,
+            "avisos": [
+              "cita_recortada_25:genuino",
+              "cita_recortada_25:ciclo",
+              "cita_recortada_25:recursos"
+            ]
+          }
+        }
+      ],
+      "totales": [
+        23,
+        23,
+        23
+      ],
+      "rango_total": 0,
+      "rango_inestable": 4,
+      "evaluacion_inestable": false,
+      "mediana": {
+        "regla": "mediana por criterio (n par: mediana inferior)",
+        "total": 23,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 1
+        },
+        "corrida_fuente": {
+          "genuino": 1,
+          "abierta": 1,
+          "decisiones": 1,
+          "realismo": 1,
+          "autenticidad": 1,
+          "contexto": 1,
+          "ciclo": 1,
+          "validacion": 1,
+          "nivel": 1,
+          "autodiferenciacion": 1,
+          "fecundidad": 1,
+          "recursos": 1
+        }
+      }
+    }
+  ]
+}

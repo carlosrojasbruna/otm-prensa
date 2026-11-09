@@ -1,0 +1,289 @@
+{
+  "tarea_id": "2026-11-cubrirse-o-esperar-petroleo",
+  "evaluaciones": [
+    {
+      "iteracion": 1,
+      "version_tarea": 1,
+      "fecha": "2026-11-09T20:14:23Z",
+      "modelo": "claude-opus-5-5",
+      "version_prompt": "1.3",
+      "version_rubrica": "4.0",
+      "corridas": [
+        {
+          "n": 1,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "Plantea una decisión real (cubrirse o esperar) sin entregar regla, fórmula ni modelo de precios que aplicar; quien resuelve debe construirlo.",
+                "cita": "Puede cerrar hoy el precio con un banco, pagando un costo por la cobertura, o esperar y pagar el precio que haya ese día."
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe el procedimiento. Admite modelos defendibles distintos (escenarios, volatilidad histórica, caminata aleatoria, simulación, punto de equilibrio del costo de cobertura), y la mención de variación y riesgo orienta el contenido sin fijar la ruta.",
+                "cita": "¿Qué le recomendarían y qué tan segura es su recomendación? Pueden pedir información adicional."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige estimar la variabilidad del precio a un mes, suponer el costo de cobertura, el tamaño del cargamento y la tolerancia al riesgo, y solicitar información pertinente.",
+                "cita": "Su gerente financiero les pide una recomendación que considere cuánto podría variar el precio y cuánto riesgo puede soportar la empresa."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "La decisión de cubrir o no el precio de un insumo importado es una práctica financiera real y frecuente en empresas importadoras.",
+                "cita": "Una empresa chilena que importa combustible debe comprar un cargamento dentro de un mes."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los datos de la noticia son el punto de partida del modelo y la serie pública de la EIA se usa para contrastarlo. Ambos son componentes extraescolares integrados de manera sustantiva.",
+                "cita": "El WTI, referencia para Chile, bajó 4,67% en un día y quedó en 93,74 dólares por barril"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona las decisiones de modelación (tolerancia al riesgo, estructura de pagos) y es necesario para interpretar el resultado como recomendación y juzgar su seguridad.",
+                "cita": "La empresa no puede traspasar de un día para otro a sus clientes una diferencia grande de costo."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a comprender la cobertura, simplificar la dinámica del precio, matematizarla, calcular escenarios o probabilidades, traducirlo a una recomendación y juzgar su confianza. Ninguna fase viene hecha: R3 solo describe la regla de pago del contexto, no el modelo del precio.",
+                "cita": "¿Qué le recomendarían y qué tan segura es su recomendación?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existe evidencia independiente accesible (la serie pública de la EIA), usada después de construir el modelo, para contrastar el rango o la distribución proyectada.",
+                "cita": "Trayectoria del precio de cierre del WTI en las semanas posteriores a la fecha de la noticia."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El enunciado explica el contexto financiero en lenguaje accesible, y la demanda (modelo probabilístico o dinámico del precio, decisión bajo incertidumbre, sensibilidad) corresponde a las herramientas esperables en el nivel U.",
+                "cita": "cuánto podría variar el precio y cuánto riesgo puede soportar la empresa"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Hay un piso accesible: comparar escenarios con variaciones como la del 4,67% diario. El techo es alto: estimar la volatilidad con la serie, simular trayectorias, calcular el riesgo de pérdida o la cobertura parcial óptima.",
+                "cita": "Pueden pedir información adicional."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las decisiones abren preguntas nuevas, como el costo máximo aceptable de la cobertura, la cobertura parcial o la sensibilidad a la tolerancia al riesgo. También permiten comparar recomendaciones y sus límites frente a la trayectoria real.",
+                "cita": "No hay un valor único y el grupo debe estimarlo o discutir hasta qué valor le conviene pagar."
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información necesaria se entrega o se obtiene con búsquedas simples (serie pública), y los parámetros restantes se estiman como supuestos. Los recursos describen el escenario sin revelar el modelo; la sugerencia de R2 de discutir un valor límite no impone la estructura de solución.",
+                "cita": "Los valores los obtiene el grupo en la serie diaria pública de precios spot del WTI de la EIA, una vez construido su modelo."
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgsxvqP1CqBcaUavsNt7E",
+            "fecha": "2026-11-09T20:13:30+00:00",
+            "intentos": 1,
+            "costo_usd": 0.06645,
+            "avisos": []
+          }
+        },
+        {
+          "n": 2,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La situación plantea una necesidad real de decisión (cubrir o esperar). No entrega una regla ni un modelo de riesgo o de variación del precio para aplicar.",
+                "cita": "Su gerente financiero les pide una recomendación que considere cuánto podría variar el precio y cuánto riesgo puede soportar la empresa."
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta admite varios modelos defendibles: escenarios, volatilidad histórica, modelos probabilísticos o umbral de costo de cobertura. Nombra los aspectos a considerar, pero no prescribe ningún procedimiento.",
+                "cita": "¿Qué le recomendarían y qué tan segura es su recomendación? Pueden pedir información adicional."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige estimar el costo de la cobertura, la variabilidad del precio a un mes, el tamaño del cargamento y la tolerancia al riesgo, y solicitar información pertinente.",
+                "cita": "No hay un valor único y el grupo debe estimarlo o discutir hasta qué valor le conviene pagar."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "La decisión de cubrir el precio de un insumo importado es una práctica financiera real y habitual de las empresas importadoras.",
+                "cita": "Una empresa chilena que importa combustible debe comprar un cargamento dentro de un mes. Puede cerrar hoy el precio con un banco"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Las cifras de la noticia y la serie pública de precios spot del WTI de la EIA son componentes extraescolares auténticos. Ambos están integrados como núcleo de la tarea.",
+                "cita": "El WTI, referencia para Chile, bajó 4,67% en un día y quedó en 93,74 dólares por barril"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona las decisiones de modelación (tolerancia al riesgo, estructura de pagos) y es indispensable para interpretar la recomendación y su grado de seguridad.",
+                "cita": "La empresa no puede traspasar de un día para otro a sus clientes una diferencia grande de costo."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a recorrer el ciclo completo: comprender la cobertura, simplificar con supuestos sobre precio y costo, matematizar la variación, calcular, interpretar como recomendación y juzgar su seguridad. Ninguna fase queda hecha por el enunciado.",
+                "cita": "¿Qué le recomendarían y qué tan segura es su recomendación?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existe evidencia independiente y accesible, la serie EIA posterior y la histórica, para contrastar el modelo con datos no usados en su construcción.",
+                "cita": "Trayectoria del precio de cierre del WTI en las semanas posteriores a la fecha de la noticia."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El enunciado explica en lenguaje llano la noción financiera. La demanda (modelo probabilístico de precios, análisis de riesgo y sensibilidad) corresponde a las herramientas esperables del nivel U.",
+                "cita": "Puede cerrar hoy el precio con un banco, pagando un costo por la cobertura, o esperar y pagar el precio que haya ese día."
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es razonable: se puede entrar comparando escenarios de alza y baja con porcentajes. El techo es alto: admite modelos estocásticos, estimación de volatilidad desde datos y análisis de sensibilidad al costo de cobertura.",
+                "cita": "considere cuánto podría variar el precio y cuánto riesgo puede soportar la empresa"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las decisiones sobre volatilidad, costo máximo aceptable y tolerancia al riesgo permiten comparar recomendaciones y discutir los límites del modelo frente a shocks geopolíticos.",
+                "cita": "La baja se atribuye a un clima menos tenso en Medio Oriente, pero esa tensión podría volver."
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información necesaria está disponible a solicitud o es obtenible por estudiantes universitarios con una búsqueda simple, y los materiales no revelan el modelo. La sugerencia de discutir hasta qué valor conviene pagar se ofrece como opción y no prescribe la solución.",
+                "cita": "Los valores los obtiene el grupo en la serie diaria pública de precios spot del WTI de la EIA, una vez construido su modelo."
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011Cgsxy25zNfvBW4iweZN9W",
+            "fecha": "2026-11-09T20:13:56+00:00",
+            "intentos": 1,
+            "costo_usd": 0.06523,
+            "avisos": []
+          }
+        },
+        {
+          "n": 3,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "Plantea una necesidad real de decisión (cubrir o no) sin entregar regla ni modelo de variación del precio. Lo que pide el gerente nombra los factores a considerar, pero no un procedimiento.",
+                "cita": "Puede cerrar hoy el precio con un banco, pagando un costo por la cobertura, o esperar y pagar el precio que haya ese día."
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe método. Admite modelos defendibles distintos: escenarios, volatilidad histórica, simulación o análisis de punto de equilibrio del costo de cobertura.",
+                "cita": "¿Qué le recomendarían y qué tan segura es su recomendación? Pueden pedir información adicional."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige varias cosas: estimar la variabilidad del precio a un mes, suponer el costo de la cobertura y el tamaño del cargamento, definir la tolerancia al riesgo y buscar datos.",
+                "cita": "No hay un valor único y el grupo debe estimarlo o discutir hasta qué valor le conviene pagar."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "La decisión de cubrir el precio de un insumo importado es una práctica financiera real y habitual fuera de la escuela.",
+                "cita": "Una empresa chilena que importa combustible debe comprar un cargamento dentro de un mes."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los datos provienen de una noticia y son el punto de partida de la tarea. Además se usa la serie pública de la EIA, de modo que hay componentes auténticos integrados sustantivamente.",
+                "cita": "El WTI, referencia para Chile, bajó 4,67% en un día y quedó en 93,74 dólares por barril"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona los supuestos de riesgo y el criterio de decisión. También es indispensable para interpretar la recomendación y su grado de seguridad.",
+                "cita": "La empresa no puede traspasar de un día para otro a sus clientes una diferencia grande de costo."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Para responder hay que recorrer todo el ciclo: comprender la cobertura, simplificar la incertidumbre del precio, matematizarla, calcular, interpretar como recomendación y validar. Ninguna fase viene hecha.",
+                "cita": "¿Qué le recomendarían y qué tan segura es su recomendación?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existen datos posteriores, independientes y públicos (serie EIA), no usados en la construcción, con los que se puede contrastar el modelo.",
+                "cita": "Trayectoria del precio de cierre del WTI en las semanas posteriores a la fecha de la noticia."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto financiero está explicado en lenguaje accesible para nivel U. La matemática requerida (probabilidad, modelos de variación, decisión bajo riesgo) corresponde a las herramientas esperables.",
+                "cita": "Su gerente financiero les pide una recomendación que considere cuánto podría variar el precio y cuánto riesgo puede soportar la empresa."
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Se puede entrar comparando escenarios de alza y baja con aritmética simple. La tarea admite además soluciones mucho más sofisticadas, como modelos estocásticos, simulación, análisis de sensibilidad al costo de cobertura o cobertura parcial.",
+                "cita": "Pueden pedir información adicional."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las distintas tolerancias al riesgo y los supuestos de costo producen recomendaciones comparables. Esto abre preguntas como la cobertura parcial, los plazos o la contrastación con el precio realizado.",
+                "cita": "No hay un valor único y el grupo debe estimarlo o discutir hasta qué valor le conviene pagar."
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información necesaria está en la noticia, puede solicitarse o puede obtenerse con una búsqueda simple de series históricas. Los materiales describen condiciones del escenario sin revelar el modelo.",
+                "cita": "Los valores los obtiene el grupo en la serie diaria pública de precios spot del WTI de la EIA, una vez construido su modelo."
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011Cgsxzy9gVFpnao49kuJGA",
+            "fecha": "2026-11-09T20:14:23+00:00",
+            "intentos": 1,
+            "costo_usd": 0.06561,
+            "avisos": []
+          }
+        }
+      ],
+      "totales": [
+        24,
+        24,
+        24
+      ],
+      "rango_total": 0,
+      "rango_inestable": 4,
+      "evaluacion_inestable": false,
+      "mediana": {
+        "regla": "mediana por criterio (n par: mediana inferior)",
+        "total": 24,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 2
+        },
+        "corrida_fuente": {
+          "genuino": 1,
+          "abierta": 1,
+          "decisiones": 1,
+          "realismo": 1,
+          "autenticidad": 1,
+          "contexto": 1,
+          "ciclo": 1,
+          "validacion": 1,
+          "nivel": 1,
+          "autodiferenciacion": 1,
+          "fecundidad": 1,
+          "recursos": 1
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "tarea_id": "2026-11-aumento-minimo-poco-o-mucho",
+  "fecha": "2026-11-09T20:08:10Z",
+  "rub01": {
+    "version_rubrica": "4.0",
+    "criterios": {
+      "genuino": {
+        "puntaje": 2,
+        "justificacion": "La tarea plantea una necesidad real: explicar a lectores si el aumento es significativo. No entrega ninguna regla ni procedimiento, así que el grupo debe construir su propio criterio de comparación.",
+        "cita": "¿El aumento es poco o es mucho? ¿Qué números usarían para convencer a un lector de que su opinión es razonable?"
+      },
+      "abierta": {
+        "puntaje": 2,
+        "justificacion": "Hay varios caminos defendibles: diferencia absoluta, porcentaje, monto por día, parte realmente nueva o comparación con precios. Ninguna instrucción posterior encauza hacia una ruta única.",
+        "cita": "¿Qué números usarían para convencer a un lector de que su opinión es razonable?"
+      },
+      "decisiones": {
+        "puntaje": 2,
+        "justificacion": "Resolver exige varias decisiones de modelación: elegir con qué comparar el aumento, decidir si contar los 18 euros ya previstos, suponer la situación de la persona y solicitar información.",
+        "cita": "Imaginen que ustedes forman el equipo de un diario escolar y quieren explicar a sus lectores qué significa esto para una persona que gana el …"
+      },
+      "realismo": {
+        "puntaje": 2,
+        "justificacion": "Es un hecho real de actualidad. El debate entre gobierno y sindicatos sobre si el aumento basta existe fuera de la escuela.",
+        "cita": "En Francia, el Gobierno anunció un aumento del salario mínimo: sube 23 euros y llega a 1.502 euros."
+      },
+      "autenticidad": {
+        "puntaje": 2,
+        "justificacion": "La noticia y sus cifras (23 euros, 1.502 euros, la postura sindical del 1,6%) son el núcleo de la tarea. Se usan como datos y no fueron creadas para enseñar.",
+        "cita": "Los sindicatos la consideran escasa y convocan a una nueva huelga; además, dicen que una parte de ese aumento no es realmente nueva."
+      },
+      "contexto": {
+        "puntaje": 2,
+        "justificacion": "El contexto condiciona las decisiones de modelación: qué cuenta como aumento real y qué gasta la persona. También es necesario para interpretar si el resultado es «poco o mucho».",
+        "cita": "Una parte del aumento anunciado corresponde a un incremento automático previsto para comienzo de año: 18 euros."
+      },
+      "ciclo": {
+        "puntaje": 2,
+        "justificacion": "Responder obliga a recorrer el ciclo completo: comprender la noticia, elegir una medida de comparación, calcularla, interpretarla para el lector y defenderla. Las tarjetas de supuestos están disponibles solo a solicitud, por lo que no dejan fases hechas.",
+        "cita": "¿El aumento es poco o es mucho?"
+      },
+      "validacion": {
+        "puntaje": 2,
+        "justificacion": "Existe una cifra independiente de la noticia, no usada en la construcción del modelo, para contrastar el cálculo y la conclusión. Esto coincide con la validación esperable en P según MAR03.",
+        "cita": "El sindicato CFDT considera insuficiente un alza del salario mínimo de 1,6%."
+      },
+      "nivel": {
+        "puntaje": 2,
+        "justificacion": "El encuadre de diario escolar y el lenguaje son comprensibles para 10–12 años. La matemática requerida (diferencias, porcentajes, monto por día, comparación con precios) está dentro de las herramientas esperables en P.",
+        "cita": "quieren explicar a sus lectores qué significa esto para una persona que gana el mínimo"
+      },
+      "autodiferenciacion": {
+        "puntaje": 2,
+        "justificacion": "El piso es accesible: basta comparar 23 euros con precios cotidianos. El techo es alto: porcentaje, monto diario, separar la parte nueva de la prevista o relacionarla con los gastos de la persona.",
+        "cita": "Pueden pedir información adicional."
+      },
+      "fecundidad": {
+        "puntaje": 2,
+        "justificacion": "Las distintas medidas de comparación llevan a conclusiones opuestas y defendibles, lo que permite comparar soluciones. También abre preguntas sobre costo de vida y sobre qué cuenta como aumento.",
+        "cita": "El primer ministro dice que la medida es importante, aunque reconoce que no basta."
+      },
+      "recursos": {
+        "puntaje": 1,
+        "justificacion": "La tarjeta orienta a comparar con gastos, pero ningún recurso entrega precios en Francia, que son difíciles de obtener para estudiantes de primaria. Además, R5 entrega el 1,6% y, si se solicita antes de modelar, revela el resultado del cálculo porcentual. Hay duda entre 1 y 2; se asigna el menor.",
+        "cita": "Supuesto del escenario: la persona vive sola y gasta casi todo su sueldo en arriendo, comida y transporte."
+      }
+    },
+    "total": 23,
+    "mejoras": [
+      {
+        "criterio": "recursos",
+        "mejora_minima": "Agregar una tarjeta a solicitud con precios aproximados en Francia (arriendo mensual, pan, pasaje de transporte) e indicar que R5 se entrega solo después de que el grupo presente su modelo."
+      }
+    ]
+  },
+  "reproducibilidad": {
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.19339,
+        "version_prompt": "1.1"
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.31326,
+        "version_prompt": "1.3"
+      },
+      "filtro": {
+        "modelo": "claude-haiku-5-5",
+        "version_modelo": "claude-haiku-5-5",
+        "costo_usd": 0.000373,
+        "version_prompt": "1.0"
+      }
+    },
+    "version_prompt": {
+      "disenador": "1.1",
+      "evaluador": "1.3",
+      "filtro": "1.0"
+    },
+    "version_rubrica": "4.0",
+    "version_MAR03": "1.0",
+    "version_MED01": "1.4",
+    "diseno_simulador": null,
+    "fecha": "2026-11-09T20:08:10Z",
+    "costo_usd": 0.507023
+  }
+}

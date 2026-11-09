@@ -1,0 +1,313 @@
+{
+  "tarea_id": "2026-11-dinero-extra-en-un-ano",
+  "evaluaciones": [
+    {
+      "iteracion": 1,
+      "version_tarea": 1,
+      "fecha": "2026-11-09T20:10:05Z",
+      "modelo": "claude-opus-5-5",
+      "version_prompt": "1.3",
+      "version_rubrica": "4.0",
+      "corridas": [
+        {
+          "n": 1,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "Plantea una necesidad comunicativa real. No entrega regla ni modelo: hay que decidir qué parte del aumento se debe a la decisión y cómo acumularla en el año.",
+                "cita": "Una radio quiere contarle a su audiencia cuánto dinero extra recibirá durante un año una persona que gana el mínimo gracias a la decisión del …"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta admite varias cifras defendibles (23×12, 5×12, diciembre completo más 5 en los meses siguientes) y no prescribe procedimiento. Además pide reconocer modelos alternativos.",
+                "cita": "¿Qué cantidad anual darían ustedes? ¿Cómo la justifican, y por qué otros podrían dar una cifra distinta?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige decidir qué cuenta como efecto de la decisión, qué período abarca «un año» y cómo se paga el salario. También exige solicitar información (R2, R3).",
+                "cita": "Algunas personas dicen que parte de ese aumento ya estaba previsto y habría llegado igual a comienzos de año."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "La situación es real: un anuncio salarial discutido públicamente y una radio que informa a su audiencia. El encuadre no se percibe forzado.",
+                "cita": "En Francia, el Gobierno anunció que, desde diciembre, el salario mínimo sube 23 euros y llega a 1.502 euros."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los datos y la controversia provienen de una noticia declarada y son el núcleo de la tarea, por lo que el componente auténtico está integrado de manera sustantiva.",
+                "cita": "La diferencia real de aumento del salario mínimo, según la noticia, es de 5 euros."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto (fecha de inicio en diciembre, aumento previsto, debate político) condiciona el modelo. También es necesario para interpretar qué cifra comunicar y por qué difiere de otras.",
+                "cita": "parte de ese aumento ya estaba previsto y habría llegado igual a comienzos de año"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a comprender la controversia, simplificar (período, pago mensual), matematizar con operatoria, calcular y volver a la situación para justificar y juzgar la cifra. El enunciado no deja ninguna fase hecha.",
+                "cita": "¿Qué cantidad anual darían ustedes? ¿Cómo la justifican, y por qué otros podrían dar una cifra distinta?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existe una cifra de la noticia para contrastar después de modelar. Hay además restricciones del contexto (inicio en diciembre) y datos públicos del salario mínimo francés, como espera MAR03 para P.",
+                "cita": "R4 (Tarjeta para contrastar después de modelar)"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto de salario y aumento es comprensible para 10–12 años. La matemática requerida (sumas, restas, multiplicación por meses) corresponde a la operatoria esperable en P.",
+                "cita": "el salario mínimo sube 23 euros y llega a 1.502 euros"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es bajo: basta multiplicar 23 por 12. El techo es alto: se puede distinguir el efecto contrafactual, tratar diciembre aparte, discutir qué año se considera y comparar cifras.",
+                "cita": "Pueden pedir información adicional."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "La tarea obliga a comparar soluciones y abre preguntas sobre cómo los actores (Gobierno, sindicatos) presentan cifras. También permite discutir los límites de cada modelo.",
+                "cita": "por qué otros podrían dar una cifra distinta"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "R4 puede solicitarse en cualquier momento y revela la idea clave del modelo (solo 5 euros se deben a la decisión). R3 entrega un supuesto ya formulado. Hay sobreorientación parcial.",
+                "cita": "R4 (Tarjeta para contrastar después de modelar), disponible a solicitud del grupo: La diferencia real de aumento del salario mínimo, según la noticia, es de …"
+              }
+            },
+            "total": 23,
+            "mejoras": [
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Indicar que R4 solo se entrega después de que el grupo comunique su cifra anual y su justificación, para que no revele el modelo durante la construcción."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgsxZaWhadwvDhKMc2LFi",
+            "fecha": "2026-11-09T20:08:52+00:00",
+            "intentos": 1,
+            "costo_usd": 0.083522,
+            "avisos": [
+              "cita_recortada_25:genuino",
+              "cita_recortada_25:recursos"
+            ]
+          }
+        },
+        {
+          "n": 2,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La necesidad es real: informar una cifra anual atribuible a la decisión. Ninguna regla o modelo viene dado y quien resuelve debe construir cómo calcular ese «extra».",
+                "cita": "Una radio quiere contarle a su audiencia cuánto dinero extra recibirá durante un año una persona que gana el mínimo gracias a la decisión del …"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe procedimiento. Admite varios modelos defendibles: 23×12; 23 en diciembre más 5 en los meses siguientes; solo los 5 euros no previstos. Además pide reconocer esa diversidad.",
+                "cita": "¿Qué cantidad anual darían ustedes? ¿Cómo la justifican, y por qué otros podrían dar una cifra distinta?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige varias decisiones: qué parte del aumento atribuir al Gobierno, qué meses cuentan desde diciembre y cómo se paga el salario. También exige solicitar información pertinente (R2, R3).",
+                "cita": "Algunas personas dicen que parte de ese aumento ya estaba previsto y habría llegado igual a comienzos de año."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Es un hecho real de la prensa. Que una radio quiera traducirlo a una cifra anual para su audiencia es claramente plausible fuera de la escuela.",
+                "cita": "En Francia, el Gobierno anunció que, desde diciembre, el salario mínimo sube 23 euros y llega a 1.502 euros."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El tema y los datos de la noticia (23 euros, 1.502 euros, la parte prevista) son el núcleo de la tarea. No fueron creados para enseñar el contenido.",
+                "cita": "El primer ministro asegura que es el segundo mayor aumento en 20 años. Los sindicatos creen que es escaso y convocan a una huelga."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto define qué cuenta como «gracias a la decisión del Gobierno», condiciona el modelo y es indispensable para interpretar la cifra y explicar por qué otros darían otra.",
+                "cita": "parte de ese aumento ya estaba previsto y habría llegado igual a comienzos de año"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a recorrer todo el ciclo: comprender la disputa sobre el aumento, simplificar (meses, parte prevista), calcular, interpretar la cifra para la radio y juzgar alternativas. El cálculo es sencillo, pero adecuado a P, y ninguna fase la entrega el enunciado.",
+                "cita": "¿Qué cantidad anual darían ustedes? ¿Cómo la justifican, y por qué otros podrían dar una cifra distinta?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existe una cifra de la noticia con la cual contrastar la interpretación del modelo, lo que corresponde a la validación esperable en P. También hay datos públicos sobre el salario mínimo francés.",
+                "cita": "R4 (Tarjeta para contrastar después de modelar): La diferencia real de aumento del salario mínimo, según la noticia, es de 5 euros."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto (salario, aumento, huelga) y el lenguaje son comprensibles para 10–12 años. La matemática requerida (operatoria, multiplicación por meses, restas) está dentro de las herramientas esperables de P.",
+                "cita": "cuánto dinero extra recibirá durante un año una persona que gana el mínimo"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es bajo: basta multiplicar 23 por 12. La tarea admite soluciones claramente más refinadas, que separan diciembre del resto del año y descuentan la parte prevista. Aunque toda la matemática es aritmética, la sofisticación del modelo varía.",
+                "cita": "¿Cómo la justifican, y por qué otros podrían dar una cifra distinta?"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "La tarea pide comparar cifras y supuestos, y abre preguntas sobre las afirmaciones del Gobierno y de los sindicatos y sobre cómo se comunica una cifra.",
+                "cita": "y por qué otros podrían dar una cifra distinta?"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "La información está disponible a solicitud, pero hay sobreorientación parcial: R3 entrega un supuesto ya formulado. R4, si se pide antes de modelar, revela la interpretación clave (solo 5 euros atribuibles). La duda entre 1 y 2 se resuelve en el menor.",
+                "cita": "R4 (Tarjeta para contrastar después de modelar): La diferencia real de aumento del salario mínimo, según la noticia, es de 5 euros."
+              }
+            },
+            "total": 23,
+            "mejoras": [
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Entregar R4 solo después de que el grupo comunique su cifra anual y su justificación (no a solicitud libre). Reformular R3 como información sobre cómo se paga el salario en Francia, sin presentarla como «supuesto del escenario» ya decidido."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgsxcXwG8u7XBRJdfR7UB",
+            "fecha": "2026-11-09T20:09:30+00:00",
+            "intentos": 1,
+            "costo_usd": 0.085402,
+            "avisos": [
+              "cita_recortada_25:genuino",
+              "cita_no_literal:validacion",
+              "cita_no_literal:recursos"
+            ]
+          }
+        },
+        {
+          "n": 3,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "Plantea una necesidad comunicativa real (informar una cifra anual) sin entregar regla ni procedimiento. Quien resuelve debe decidir qué parte del aumento se atribuye a la decisión.",
+                "cita": "Una radio quiere contarle a su audiencia cuánto dinero extra recibirá durante un año una persona que gana el mínimo gracias a la decisión del …"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta admite varias cifras defendibles (23×12, solo la parte no prevista, contar desde diciembre o por año calendario) y no prescribe el método.",
+                "cita": "¿Qué cantidad anual darían ustedes? ¿Cómo la justifican, y por qué otros podrían dar una cifra distinta?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Hay que decidir qué cuenta como dinero «gracias a la decisión», qué período de un año considerar y si pedir información adicional. Son supuestos y selección de información sustantivos.",
+                "cita": "Algunas personas dicen que parte de ese aumento ya estaba previsto y habría llegado igual a comienzos de año."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "La situación es real: un anuncio de alza del salario mínimo y un medio que quiere informar su efecto anual.",
+                "cita": "En Francia, el Gobierno anunció que, desde diciembre, el salario mínimo sube 23 euros y llega a 1.502 euros."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "La tarea declara que los datos y la controversia provienen de una noticia, y son el núcleo de la tarea. El componente auténtico está integrado sustantivamente.",
+                "cita": "El primer ministro asegura que es el segundo mayor aumento en 20 años. Los sindicatos creen que es escaso y convocan a una huelga."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona la decisión central de qué parte del alza atribuir al Gobierno. También es necesario para interpretar la cifra y explicar por qué otros dan otra.",
+                "cita": "parte de ese aumento ya estaba previsto y habría llegado igual a comienzos de año"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a comprender la controversia, simplificar (qué meses y qué parte del alza), matematizar y calcular, y luego interpretar y defender la cifra. Ninguna fase viene hecha en el enunciado; los supuestos de R3 solo se entregan a solicitud.",
+                "cita": "¿Qué cantidad anual darían ustedes? ¿Cómo la justifican, y por qué otros podrían dar una cifra distinta?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existe una cifra de la noticia para contrastar el modelo después de construirlo, lo que corresponde a la validación esperable en el nivel P. También hay datos públicos sobre el alza.",
+                "cita": "La diferencia real de aumento del salario mínimo, según la noticia, es de 5 euros."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "La matemática requerida (restas, multiplicar por meses, sumas) está dentro de la operatoria esperable para P. El contexto de salario, aumento y huelga es comprensible con el lenguaje del enunciado.",
+                "cita": "desde diciembre, el salario mínimo sube 23 euros y llega a 1.502 euros"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es accesible (23×12). El techo es alto: separar la parte prevista, considerar que diciembre adelanta el alza y combinar 23 con 5 euros mensuales según el período. Así se admiten soluciones correctas de distinta sofisticación.",
+                "cita": "¿Cómo la justifican, y por qué otros podrían dar una cifra distinta?"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "La tarea invita a comparar cifras y supuestos. Además abre preguntas sobre quién tiene razón (Gobierno o sindicatos) y sobre cómo comunicar una cifra en la radio.",
+                "cita": "por qué otros podrían dar una cifra distinta"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "La información es obtenible a solicitud, pero R4 puede pedirse en cualquier momento y entrega la idea clave del modelo: solo 5 euros serían atribuibles. Junto con R2, esto constituye una sobreorientación parcial; dudé entre 1 y 2 y elegí el menor.",
+                "cita": "La diferencia real de aumento del salario mínimo, según la noticia, es de 5 euros."
+              }
+            },
+            "total": 23,
+            "mejoras": [
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Indicar que R4 solo se entrega después de que el grupo comunique su cifra anual. Además, reformularla como dato de contraste (por ejemplo, la cifra anual que publicó un medio) en vez de declarar «la diferencia real» mensual."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgsxfMRKsQQxF5V5CrfuN",
+            "fecha": "2026-11-09T20:10:05+00:00",
+            "intentos": 1,
+            "costo_usd": 0.076682,
+            "avisos": [
+              "cita_recortada_25:genuino"
+            ]
+          }
+        }
+      ],
+      "totales": [
+        23,
+        23,
+        23
+      ],
+      "rango_total": 0,
+      "rango_inestable": 4,
+      "evaluacion_inestable": false,
+      "mediana": {
+        "regla": "mediana por criterio (n par: mediana inferior)",
+        "total": 23,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 1
+        },
+        "corrida_fuente": {
+          "genuino": 1,
+          "abierta": 1,
+          "decisiones": 1,
+          "realismo": 1,
+          "autenticidad": 1,
+          "contexto": 1,
+          "ciclo": 1,
+          "validacion": 1,
+          "nivel": 1,
+          "autodiferenciacion": 1,
+          "fecundidad": 1,
+          "recursos": 1
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,447 @@
+{
+  "tarea_id": "2026-11-repartir-plazo-investigacion",
+  "estado": "evaluada",
+  "iteraciones": 1,
+  "artefactos": {
+    "tarea": {
+      "id": "2026-11-repartir-plazo-investigacion",
+      "titulo": "¿Alcanza el tiempo? Planificar una investigación con plazo ampliado",
+      "estado": "evaluada",
+      "version": 1,
+      "fecha": "2026-11-09",
+      "noticia": {
+        "noticia_id": "2026-11-09-latercera-caso-alto-mando-fiscalia-recibe-peritaje",
+        "medio": "La Tercera",
+        "titulo": "Caso Alto Mando: Fiscalía recibe peritaje internacional sobre actuación policial durante el estallido social",
+        "fecha": "2026-11-09",
+        "url": "https://www.latercera.com/nacional/noticia/caso-alto-mando-fiscalia-recibe-peritaje-internacional-sobre-actuacion-policial-durante-el-estallido-social/",
+        "resumen_propio": "La noticia informa de que un tribunal amplió el plazo de la investigación del caso Alto Mando, que revisa omisiones de exjefes de Carabineros durante el estallido social. Los querellantes presentaron un peritaje de una organización británica que reconstruyó en tres dimensiones el uso de escopetas antidisturbios y concluyó que hubo desviaciones de protocolo y registros incompletos.",
+        "cifras_usadas": [
+          {
+            "valor": "120 días",
+            "unidad": "días",
+            "que_es": "ampliación del plazo de la investigación concedida por el Séptimo Juzgado de Garantía",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 1"
+            }
+          }
+        ]
+      },
+      "nivel_principal": "S",
+      "variantes": {
+        "abajo": null,
+        "arriba": "U"
+      },
+      "area": "sociedad_datos",
+      "contenidos_matematicos": [
+        "proporcionalidad y tasas de trabajo",
+        "calendario y conteo de días hábiles",
+        "comparación de escenarios",
+        "estimación con margen de incertidumbre"
+      ],
+      "tiempo_estimado": "2 sesiones de 90 min",
+      "estudiante": {
+        "enunciado_es": "Un juzgado de garantía amplió en 120 días el plazo para investigar el caso Alto Mando, que revisa si antiguos altos jefes de Carabineros dejaron de cumplir deberes durante el estallido social. Además, los querellantes entregaron a la Fiscalía un peritaje internacional que reconstruyó en tres dimensiones cómo se usaron ciertas armas antidisturbios. Imaginen que su grupo asesora al equipo de la Fiscalía y debe proponer cómo repartir esos 120 días entre las tareas que quedan: estudiar el peritaje, tomar declaraciones y ordenar los registros de lo ocurrido. No se trata de opinar sobre el caso, sino de planificar. ¿Cómo organizarían el tiempo para que el trabajo esencial quede terminado dentro del plazo, y qué tan seguros están de que alcanzará? Pueden pedir información adicional.",
+        "foto_descripcion": "Ícono de un calendario con una franja resaltada que representa el plazo ampliado, junto a tres carpetas de distinto grosor.",
+        "recursos_a_solicitud": [
+          {
+            "id": "R2",
+            "que_es": "Descripción de los tipos de trabajo pendientes",
+            "contenido": "Supuesto del escenario: el equipo fiscal tiene pendientes tres tipos de trabajo: estudiar el peritaje, tomar declaraciones a personas citadas y ordenar registros de actuaciones. Todos requieren personas del equipo y algunas declaraciones dependen de lo que muestre el peritaje. El tamaño de cada trabajo no se conoce: el grupo debe estimarlo y justificar su estimación.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P2-RM",
+            "fuente": "supuesto del escenario"
+          },
+          {
+            "id": "R3",
+            "que_es": "Regla de conteo del plazo y jornada del equipo",
+            "contenido": "Supuesto del escenario: si el grupo pregunta cómo se cuenta el plazo, se le responde que corre en días corridos, pero que el equipo trabaja solo de lunes a viernes y no trabaja en feriados legales.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P2-RM",
+            "fuente": "supuesto del escenario"
+          },
+          {
+            "id": "R4",
+            "que_es": "Calendario de feriados legales del período",
+            "contenido": "Listado oficial de los feriados legales de Chile que caen dentro del período del plazo, para que el grupo los identifique y los cuente por su cuenta.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P3-MM",
+            "fuente": "otra fuente: Biblioteca del Congreso Nacional de Chile, calendario de feriados legales"
+          },
+          {
+            "id": "R5",
+            "que_es": "Documento de práctica para medir el ritmo propio de trabajo",
+            "contenido": "Supuesto del escenario: si el grupo lo pide después de planificar, recibe un texto largo de práctica y una lista de datos desordenados para medir cuánto demora en leerlos, resumirlos y ordenarlos, y así contrastar sus estimaciones de ritmo.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P6-VAL",
+            "fuente": "supuesto del escenario"
+          }
+        ]
+      },
+      "variantes_detalle": {
+        "abajo": null,
+        "arriba": {
+          "tramo": "U",
+          "cambios": "Se pide además un modelo de programación de actividades con dependencias, duraciones aleatorias (optimista, probable, pesimista) y una probabilidad de terminar dentro del plazo; el grupo analiza qué actividad conviene reforzar con más personal (sensibilidad) y critica los límites del modelo."
+        }
+      },
+      "recursos_de_entrada": [
+        {
+          "id": "R1",
+          "que_es": "Plazo ampliado de la investigación",
+          "contenido": "El juzgado concedió 120 días más para la investigación.",
+          "disponibilidad": "de_entrada",
+          "fase": "P1-MRS",
+          "fuente": "noticia, párrafo 1"
+        }
+      ],
+      "mapa_ciclo": {
+        "P1-MRS": {
+          "decision": "Entender que se pide planificar (no opinar sobre el caso), identificar el plazo ampliado y los tipos de trabajo pendientes, y decidir qué información solicitar.",
+          "evidencia": "Reformulación escrita de la pregunta y lista de datos pedidos (tareas, regla de conteo, personal).",
+          "bloqueo_probable": "B12"
+        },
+        "P2-RM": {
+          "decision": "Decidir si el plazo se cuenta en días corridos o hábiles, cuántas personas hay, qué tamaño estiman para cada tarea y qué dependencias aceptan.",
+          "evidencia": "Lista de supuestos escritos con su justificación.",
+          "bloqueo_probable": "B23"
+        },
+        "P3-MM": {
+          "decision": "Expresar los días disponibles (días corridos, descontando fines de semana y feriados) y la duración de cada tarea como cantidad dividida por ritmo; elegir entre un modelo secuencial o con trabajo simultáneo.",
+          "evidencia": "Expresiones o tabla con duraciones, ritmos y dependencias.",
+          "bloqueo_probable": "B34"
+        },
+        "P4-WM": {
+          "decision": "Calcular días hábiles disponibles, duración total en cada escenario y holgura, y variar los supuestos más inciertos.",
+          "evidencia": "Cálculos de días disponibles, duración total y holgura para al menos dos escenarios.",
+          "bloqueo_probable": "B45"
+        },
+        "P5-INT": {
+          "decision": "Traducir los resultados a una recomendación: qué tareas priorizar, qué holgura dejar y qué ocurre si una tarea se atrasa.",
+          "evidencia": "Recomendación escrita con el reparto de días propuesto y su margen de seguridad.",
+          "bloqueo_probable": "B56"
+        },
+        "P6-VAL": {
+          "decision": "Medir el ritmo propio con la tarea de práctica y comparar con el ritmo supuesto; revisar el modelo si difieren mucho.",
+          "evidencia": "Ritmo medido frente a ritmo supuesto y ajuste del plan.",
+          "bloqueo_probable": "B67"
+        },
+        "P7-EXP": {
+          "decision": "Presentar el plan, sus supuestos y su nivel de seguridad a un público no experto, con una visual del calendario.",
+          "evidencia": "Cronograma o diagrama con la justificación de cada decisión.",
+          "bloqueo_probable": null
+        }
+      },
+      "task_space": {
+        "required_assumptions": [
+          "Cómo se cuenta el plazo (días corridos o hábiles) y qué días no se trabaja.",
+          "Cuántas personas trabajan en cada tarea y si pueden trabajar en paralelo.",
+          "Tamaño de cada trabajo (por ejemplo, cantidad de declaraciones o registros) y ritmo de avance por tarea, estimados por el grupo.",
+          "Qué dependencias existen entre tareas y cuánta holgura se considera razonable."
+        ],
+        "reference_solution": {
+          "steps": "1) Días disponibles: 120 días corridos son unas 17 semanas más un día. Con cinco días de trabajo por semana quedan alrededor de 86 días hábiles; se descuentan los feriados del período (por ejemplo, tres o cuatro), con lo que quedan unos 82. 2) Se estima cada tarea con un ejemplo de supuestos: estudiar el peritaje, 10 días hábiles con todo el equipo; tomar declaraciones, 24 declaraciones a media jornada cada una con dos fiscales, unos 6 días hábiles tras el peritaje; ordenar registros, 30 días hábiles de una persona, en paralelo. 3) En un plan secuencial el total es 46 días hábiles; en paralelo, el camino más largo es peritaje más declaraciones (16 días) frente a registros (30 días), así que el total es 30. 4) Se compara con los días disponibles, se calcula la holgura (más del 60 % en el ejemplo) y se prueba qué pasa si los ritmos son la mitad de lo supuesto. 5) Se recomienda un reparto con un margen de seguridad explícito.",
+          "result": "No hay una única respuesta: con los supuestos del ejemplo el trabajo esencial cabe en el plazo con holgura amplia; la recomendación depende de los supuestos sobre tamaño de tareas, personal y margen de seguridad.",
+          "acceptable_range": "Entre unos 80 y 86 días hábiles disponibles según los feriados considerados; un plan es defendible si deja un margen explícito (por ejemplo, 20 % a 30 % del tiempo disponible sin comprometer) y se sostiene aun si los ritmos resultan peores de lo supuesto."
+        },
+        "routes": [
+          {
+            "id": "R1",
+            "nombre": "Suma secuencial de tareas",
+            "nivel": "S",
+            "modelo": "Se convierte el plazo en días hábiles (proporción cinco de siete, menos feriados) y se suman las duraciones de las tareas hechas una tras otra, comparando el total con los días disponibles.",
+            "resultado": "Unos 82 días hábiles disponibles frente a unos 46 de trabajo en el ejemplo: sobra tiempo."
+          },
+          {
+            "id": "R2",
+            "nombre": "Trabajo en paralelo con dependencias",
+            "nivel": "S",
+            "modelo": "Las tareas independientes se hacen a la vez; la duración total es la del camino más largo de tareas encadenadas (ruta crítica).",
+            "resultado": "Unos 30 días hábiles de duración total en el ejemplo; la tarea que más pesa es ordenar los registros."
+          },
+          {
+            "id": "R3",
+            "nombre": "Escenarios con holgura y sensibilidad",
+            "nivel": "S2",
+            "modelo": "Se plantean un escenario optimista y uno pesimista para cada ritmo, se calcula la duración total en cada uno y se define la holgura como diferencia con los días disponibles.",
+            "resultado": "Con ritmos a la mitad, el total pasa de 30 a 60 días hábiles aproximadamente: todavía cabe, pero la holgura se reduce a la mitad."
+          },
+          {
+            "id": "R4",
+            "nombre": "Optimización de asignación de personal",
+            "nivel": "U",
+            "modelo": "Programación lineal o heurística que reparte horas de personal entre tareas para minimizar la duración total sujeta a dependencias y disponibilidad.",
+            "resultado": "Reparto de personal que reduce el camino crítico y propone reforzar la tarea con mayor incertidumbre."
+          }
+        ],
+        "modelo_inadecuado": {
+          "id": "R5",
+          "por_que_falla": "Dividir los 120 días en partes iguales entre las tres tareas (y no descontar fines de semana ni feriados) ignora que las tareas tienen cargas distintas, que algunas pueden hacerse a la vez y que no todos los días corridos son de trabajo; da un plan que sobrepasa el tiempo real o desperdicia el de las tareas pequeñas."
+        },
+        "validation_evidence": "Después de planificar, el grupo mide su propio ritmo con el documento de práctica (por ejemplo, cuántas páginas resume o cuántos registros ordena por hora) y compara con el ritmo que había supuesto en el modelo; además contrasta su conteo de días hábiles con el calendario oficial de feriados. Estos datos no se usaron para construir el modelo.",
+        "agent_visibility": {
+          "students": [
+            "enunciado_es",
+            "foto_descripcion",
+            "recursos_a_solicitud"
+          ],
+          "coder": [
+            "enunciado_es",
+            "task_space"
+          ],
+          "guide": [
+            "all"
+          ]
+        }
+      },
+      "rubrica_rub01": {
+        "total": 23,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 1
+        }
+      },
+      "rubrica_rub02": {
+        "P": null,
+        "S": null,
+        "U": null
+      },
+      "modelo_y_prompt": {
+        "diseñador": "claude-sonnet-5-5",
+        "version_prompt": "1.1",
+        "version_rubrica": "4.0"
+      }
+    },
+    "noticia": {
+      "id": "2026-11-09-latercera-caso-alto-mando-fiscalia-recibe-peritaje",
+      "medio_id": "latercera",
+      "medio": "La Tercera",
+      "idioma": "es",
+      "titulo": "Caso Alto Mando: Fiscalía recibe peritaje internacional sobre actuación policial durante el estallido social",
+      "fecha": "2026-11-09",
+      "url": "https://www.latercera.com/nacional/noticia/caso-alto-mando-fiscalia-recibe-peritaje-internacional-sobre-actuacion-policial-durante-el-estallido-social/",
+      "area": "sociedad_datos",
+      "resumen_propio": "La noticia informa de que un tribunal amplió el plazo de la investigación del caso Alto Mando, que revisa omisiones de exjefes de Carabineros durante el estallido social. Los querellantes presentaron un peritaje de una organización británica que reconstruyó en tres dimensiones el uso de escopetas antidisturbios y concluyó que hubo desviaciones de protocolo y registros incompletos.",
+      "cifras": [
+        {
+          "valor": "120 días",
+          "unidad": "días",
+          "que_es": "ampliación del plazo de la investigación concedida por el Séptimo Juzgado de Garantía",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 1"
+          }
+        },
+        {
+          "valor": "89 grados",
+          "unidad": "grados",
+          "que_es": "ángulo de uso de las escopetas antidisturbios que da nombre al informe pericial",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 7"
+          }
+        }
+      ],
+      "recuperada_en": "2026-11-09T19:52:27Z",
+      "filtro": {
+        "version_rubrica": "4.0",
+        "puntajes": {
+          "genuino": 2,
+          "decisiones": 1,
+          "realismo": 2,
+          "autenticidad": 1,
+          "validacion": 1
+        },
+        "total": 7,
+        "pasa": true,
+        "justificacion": "Noticia con una pregunta real y contexto auténtico, pero con cifras escasas (un ángulo y un plazo) y datos de contraste no explicitados. Potencial modelable moderado, con riesgo de quedar en lo cualitativo."
+      }
+    },
+    "evaluacion": {
+      "tarea_id": "2026-11-repartir-plazo-investigacion",
+      "fecha": "2026-11-09T20:21:43Z",
+      "rub01": {
+        "version_rubrica": "4.0",
+        "criterios": {
+          "genuino": {
+            "puntaje": 2,
+            "justificacion": "La tarea plantea una necesidad real de planificación sin entregar una regla ni un modelo de reparto. La dependencia entre tareas que menciona R2 es información del contexto, no un procedimiento.",
+            "cita": "debe proponer cómo repartir esos 120 días entre las tareas que quedan: estudiar el peritaje, tomar declaraciones y ordenar los registros"
+          },
+          "abierta": {
+            "puntaje": 2,
+            "justificacion": "La pregunta no prescribe un método. Admite varios repartos y modelos defendibles, por ejemplo proporcional, secuencial con dependencias o con holgura.",
+            "cita": "¿Cómo organizarían el tiempo para que el trabajo esencial quede terminado dentro del plazo, y qué tan seguros están de que alcanzará?"
+          },
+          "decisiones": {
+            "puntaje": 2,
+            "justificacion": "Resolver exige estimar volúmenes y ritmos, decidir qué es «esencial», solicitar la regla de conteo y los feriados, y suponer cuántas personas trabajan.",
+            "cita": "El tamaño de cada trabajo no se conoce: el grupo debe estimarlo y justificar su estimación."
+          },
+          "realismo": {
+            "puntaje": 2,
+            "justificacion": "Planificar un plazo judicial real es una situación existente fuera de la escuela. El rol de asesor es un encuadre plausible, no un pretexto para insertar un cálculo.",
+            "cita": "Un juzgado de garantía amplió en 120 días el plazo para investigar el caso Alto Mando"
+          },
+          "autenticidad": {
+            "puntaje": 2,
+            "justificacion": "El plazo de 120 días proviene de la noticia y es la restricción central de la tarea. El calendario oficial de feriados también es un componente auténtico integrado de forma sustantiva.",
+            "cita": "Listado oficial de los feriados legales de Chile que caen dentro del período del plazo"
+          },
+          "contexto": {
+            "puntaje": 2,
+            "justificacion": "El contexto condiciona el modelo (días hábiles, feriados, dependencia de las declaraciones respecto del peritaje). También es necesario para interpretar si el trabajo esencial alcanza.",
+            "cita": "corre en días corridos, pero que el equipo trabaja solo de lunes a viernes y no trabaja en feriados legales"
+          },
+          "ciclo": {
+            "puntaje": 2,
+            "justificacion": "Responder obliga a recorrer todas las fases: comprender el caso, simplificar estimando tamaños, matematizar el calendario y el reparto, calcular, interpretar el margen y juzgar la seguridad del plan. Ninguna fase viene hecha.",
+            "cita": "¿Cómo organizarían el tiempo para que el trabajo esencial quede terminado dentro del plazo, y qué tan seguros están de que alcanzará?"
+          },
+          "validacion": {
+            "puntaje": 2,
+            "justificacion": "R5 permite contrastar las estimaciones de ritmo con una medición no usada en la construcción del plan, y el calendario oficial permite verificar el conteo. Queda la duda de que el ritmo del grupo es solo un proxy del ritmo del equipo fiscal.",
+            "cita": "recibe un texto largo de práctica y una lista de datos desordenados para medir cuánto demora en leerlos, resumirlos y ordenarlos"
+          },
+          "nivel": {
+            "puntaje": 2,
+            "justificacion": "El contexto es comprensible y pertinente para secundaria. La matemática requerida (conteo de días hábiles, proporciones, tasas, programación simple) está al alcance del nivel S.",
+            "cita": "No se trata de opinar sobre el caso, sino de planificar."
+          },
+          "autodiferenciacion": {
+            "puntaje": 2,
+            "justificacion": "Se puede entrar con un reparto simple de los días. El techo es alto: dependencias secuenciales, ruta crítica, holguras y escenarios de incertidumbre.",
+            "cita": "algunas declaraciones dependen de lo que muestre el peritaje"
+          },
+          "fecundidad": {
+            "puntaje": 2,
+            "justificacion": "La pregunta por la seguridad del plan abre la comparación entre planes, el análisis de márgenes y riesgos y la discusión de los límites de las estimaciones.",
+            "cita": "y qué tan seguros están de que alcanzará?"
+          },
+          "recursos": {
+            "puntaje": 1,
+            "justificacion": "Los materiales no revelan el modelo. Pero datos imprescindibles, como el número de personas citadas, el tamaño del equipo o la extensión del peritaje, son difíciles de estimar con conocimiento cotidiano para el nivel S, y la tarea no los entrega ni indica cómo conseguirlos.",
+            "cita": "El tamaño de cada trabajo no se conoce: el grupo debe estimarlo y justificar su estimación."
+          }
+        },
+        "total": 23,
+        "mejoras": [
+          {
+            "criterio": "recursos",
+            "mejora_minima": "Agregar un recurso a solicitud (R6) con órdenes de magnitud del escenario: tamaño del equipo fiscal, número aproximado de personas por declarar y extensión del peritaje. Otra opción es indicar qué fuentes de prensa sobre el caso permiten estimarlos."
+          }
+        ]
+      },
+      "reproducibilidad": {
+        "agentes": {
+          "disenador": {
+            "modelo": "claude-sonnet-5-5",
+            "version_modelo": "claude-sonnet-5-5",
+            "costo_usd": 0.244142,
+            "version_prompt": "1.1"
+          },
+          "evaluador": {
+            "modelo": "claude-opus-5-5",
+            "version_modelo": "claude-opus-5-5",
+            "costo_usd": 0.299994,
+            "version_prompt": "1.3"
+          },
+          "filtro": {
+            "modelo": "claude-haiku-5-5",
+            "version_modelo": "claude-haiku-5-5",
+            "costo_usd": 0.000664,
+            "version_prompt": "1.0"
+          }
+        },
+        "version_prompt": {
+          "disenador": "1.1",
+          "evaluador": "1.3",
+          "filtro": "1.0"
+        },
+        "version_rubrica": "4.0",
+        "version_MAR03": "1.0",
+        "version_MED01": "1.4",
+        "diseno_simulador": null,
+        "fecha": "2026-11-09T20:21:43Z",
+        "costo_usd": 0.5448
+      }
+    }
+  },
+  "historial": [
+    {
+      "fecha": "2026-11-09T20:19:23+00:00",
+      "de": null,
+      "a": "borrador"
+    },
+    {
+      "fecha": "2026-11-09T20:21:45+00:00",
+      "de": "borrador",
+      "a": "evaluada",
+      "iteracion": 1,
+      "rub01_total": 23
+    }
+  ],
+  "marcas": {
+    "ciclo_id": "ciclo_20261109T195226942479Z",
+    "noticia_id": "2026-11-09-latercera-caso-alto-mando-fiscalia-recibe-peritaje",
+    "nivel_objetivo": "S",
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "versiones_modelo": [
+          "claude-sonnet-5-5"
+        ],
+        "costo_usd": 0.244142,
+        "llamadas": 1
+      },
+      "filtro": {
+        "modelo": "claude-haiku-5-5",
+        "versiones_modelo": [
+          "claude-haiku-5-5"
+        ],
+        "costo_usd": 0.000664,
+        "llamadas": 1
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "versiones_modelo": [
+          "claude-opus-5-5"
+        ],
+        "costo_usd": 0.299994,
+        "llamadas": 3
+      }
+    },
+    "costos_compartidos": [
+      "disenador",
+      "filtro"
+    ],
+    "version_MAR03": "1.0",
+    "evaluacion_inestable": false,
+    "evaluacion_rango_total": 1,
+    "evaluacion_corridas": "pipeline/state/trabajo/2026-11-repartir-plazo-investigacion/evaluacion_corridas.json",
+    "preverificacion": {
+      "fecha": "2026-11-09T20:23:32Z",
+      "version_tarea": 1,
+      "aprobado": false,
+      "criticos": [
+        "[4] tarea.noticia.cifras_usadas[0]: localizador erróneo: '120 días' no está en «párrafo 1» (ni a ±1 párrafo) sino en el párrafo 146"
+      ],
+      "texto_noticia": true
+    },
+    "hallazgos_tarea": [
+      "[4] tarea.noticia.cifras_usadas[0]: localizador erróneo: '120 días' no está en «párrafo 1» (ni a ±1 párrafo) sino en el párrafo 146"
+    ],
+    "pendiente": "revision_humana_1"
+  }
+}

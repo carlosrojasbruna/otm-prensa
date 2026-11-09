@@ -1,0 +1,248 @@
+{
+  "id": "2026-11-aumento-minimo-poco-o-mucho",
+  "titulo": "¿Poco o mucho? Lo que de verdad sube el sueldo mínimo",
+  "estado": "evaluada",
+  "version": 1,
+  "fecha": "2026-11-09",
+  "noticia": {
+    "noticia_id": "2026-11-09-latercera-sindicatos-de-francia-rechazan-reajuste-del",
+    "medio": "La Tercera",
+    "titulo": "Sindicatos de Francia rechazan reajuste del salario mínimo anunciado por el Gobierno y convocan una nueva huelga",
+    "fecha": "2026-11-09",
+    "url": "https://www.latercera.com/mundo/noticia/sindicatos-de-francia-rechazan-reajuste-del-salario-minimo-anunciado-por-el-gobierno-y-convocan-una-nueva-huelga/",
+    "resumen_propio": "Los principales sindicatos de Francia consideran escaso el aumento del mínimo legal anunciado por el Ejecutivo y convocan a otra jornada de protesta a mediados de noviembre. El primer ministro defiende la medida como relevante, aunque reconoce que no basta y que hay tensiones políticas por delante.",
+    "cifras_usadas": [
+      {
+        "valor": "1,6%",
+        "unidad": "porcentaje de alza del salario mínimo",
+        "que_es": "Aumento del salario mínimo que la CFDT considera insuficiente",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 5"
+        }
+      },
+      {
+        "valor": 1.502,
+        "unidad": "euros",
+        "que_es": "Nuevo salario mínimo a partir del 1 de diciembre",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 5"
+        }
+      },
+      {
+        "valor": 23,
+        "unidad": "euros",
+        "que_es": "Aumento total anunciado del salario mínimo",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 6"
+        }
+      },
+      {
+        "valor": 18,
+        "unidad": "euros",
+        "que_es": "Parte del aumento correspondiente al incremento automático previsto para el 1 de enero",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 6"
+        }
+      }
+    ]
+  },
+  "nivel_principal": "P",
+  "variantes": {
+    "abajo": null,
+    "arriba": "S"
+  },
+  "area": "economia",
+  "contenidos_matematicos": [
+    "comparación y resta de cantidades",
+    "porcentajes simples",
+    "fracciones y proporcionalidad",
+    "estimación"
+  ],
+  "tiempo_estimado": "2 sesiones de 90 min",
+  "estudiante": {
+    "enunciado_es": "En Francia, el Gobierno anunció un aumento del salario mínimo: sube 23 euros y llega a 1.502 euros. El primer ministro dice que la medida es importante, aunque reconoce que no basta. Los sindicatos la consideran escasa y convocan a una nueva huelga; además, dicen que una parte de ese aumento no es realmente nueva. Imaginen que ustedes forman el equipo de un diario escolar y quieren explicar a sus lectores qué significa esto para una persona que gana el mínimo. ¿El aumento es poco o es mucho? ¿Qué números usarían para convencer a un lector de que su opinión es razonable? Pueden pedir información adicional.",
+    "foto_descripcion": "Ícono de una billetera abierta con monedas de euro y una flecha pequeña hacia arriba.",
+    "recursos_a_solicitud": [
+      {
+        "id": "R2",
+        "que_es": "Tarjeta sobre la parte del aumento que ya estaba prevista",
+        "contenido": "Una parte del aumento anunciado corresponde a un incremento automático previsto para comienzo de año: 18 euros.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P2-RM",
+        "fuente": "noticia, párrafo 6"
+      },
+      {
+        "id": "R3",
+        "que_es": "Tarjeta sobre cómo se paga el salario",
+        "contenido": "Supuesto del escenario: el salario mínimo se paga una vez al mes y la persona lo recibe completo, sin descuentos adicionales.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P2-RM",
+        "fuente": "supuesto del escenario"
+      },
+      {
+        "id": "R4",
+        "que_es": "Tarjeta sobre la situación de la persona que gana el mínimo",
+        "contenido": "Supuesto del escenario: la persona vive sola y gasta casi todo su sueldo en arriendo, comida y transporte.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P5-INT",
+        "fuente": "supuesto del escenario"
+      },
+      {
+        "id": "R5",
+        "que_es": "Tarjeta con la opinión de un sindicato, para contrastar después de modelar",
+        "contenido": "El sindicato CFDT considera insuficiente un alza del salario mínimo de 1,6%.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P6-VAL",
+        "fuente": "noticia, párrafo 5"
+      }
+    ]
+  },
+  "variantes_detalle": {
+    "abajo": null,
+    "arriba": {
+      "tramo": "S1",
+      "cambios": "Se pide además comparar dos formas de medir el aumento (en euros y en tasa porcentual sobre el salario anterior), explicar qué base usa cada vocero y probar cómo cambia la conclusión si el supuesto de pago cambia. No se entrega el salario anterior: deben obtenerlo."
+    }
+  },
+  "recursos_de_entrada": [
+    {
+      "id": "R1",
+      "que_es": "Datos iniciales del aumento, ya escritos en el enunciado",
+      "contenido": "El aumento anunciado del salario mínimo es de 23 euros y el nuevo salario mínimo es de 1.502 euros.",
+      "disponibilidad": "de_entrada",
+      "fase": "P1-MRS",
+      "fuente": "noticia, párrafo 5; noticia, párrafo 6"
+    }
+  ],
+  "mapa_ciclo": {
+    "P1-MRS": {
+      "decision": "Entender qué se anuncia y qué dicen el Gobierno y los sindicatos; distinguir 'aumento anunciado' de 'aumento realmente nuevo'.",
+      "evidencia": "Explican con sus palabras la diferencia entre ambas cosas y piden información sobre la parte del aumento que no es nueva.",
+      "bloqueo_probable": "B12"
+    },
+    "P2-RM": {
+      "decision": "Decidir qué datos usar (23, 1.502, la parte prevista), suponer que el pago es mensual y decidir con qué se compara el aumento.",
+      "evidencia": "Lista escrita de datos elegidos, datos descartados y supuestos acordados.",
+      "bloqueo_probable": "B23"
+    },
+    "P3-MM": {
+      "decision": "Traducir la idea a operaciones: resta para el aumento nuevo, y fracción, porcentaje o reparto diario para medir su tamaño.",
+      "evidencia": "Expresiones como 23 menos la parte prevista, o esa diferencia dividida por el salario anterior.",
+      "bloqueo_probable": "B34"
+    },
+    "P4-WM": {
+      "decision": "Calcular el aumento nuevo, el salario anterior (1.502 menos 23) y las medidas relativas elegidas.",
+      "evidencia": "Cálculos ordenados con unidades (euros, euros por día, porcentaje).",
+      "bloqueo_probable": "B45"
+    },
+    "P5-INT": {
+      "decision": "Interpretar los resultados para una persona concreta y concluir si es poco o mucho, con argumentos.",
+      "evidencia": "Frase de opinión respaldada con al menos una cifra y una mención al supuesto de gasto.",
+      "bloqueo_probable": "B56"
+    },
+    "P6-VAL": {
+      "decision": "Contrastar su porcentaje del aumento total con el que usa el sindicato y revisar si sus supuestos son razonables.",
+      "evidencia": "Comparan su valor con la tarjeta de la opinión del sindicato y comentan la diferencia.",
+      "bloqueo_probable": "B67"
+    },
+    "P7-EXP": {
+      "decision": "Escribir una nota breve para el diario escolar con la opinión y los números que la sostienen.",
+      "evidencia": "Texto o cartel con una cifra clave, un supuesto declarado y la conclusión.",
+      "bloqueo_probable": null
+    }
+  },
+  "task_space": {
+    "required_assumptions": [
+      "El salario mínimo se paga mensualmente y se recibe completo.",
+      "Los 23 euros son el aumento total respecto del salario anterior, que se obtiene como 1.502 menos 23.",
+      "El incremento automático previsto de comienzo de año habría ocurrido igual, así que no es una mejora nueva.",
+      "Un mes se toma de unos treinta días para el reparto diario.",
+      "Para decidir si es poco o mucho, se compara con el sueldo, con el gasto cotidiano o con el aumento total anunciado."
+    ],
+    "reference_solution": {
+      "steps": "1) Pedir el dato de la parte prevista: 18 euros. 2) Aumento realmente nuevo: 23 menos 18 igual a 5 euros al mes. 3) Salario anterior: 1.502 menos 23 igual a 1.479 euros. 4) Medidas: 5 euros mensuales equivalen a unos 0,17 euros diarios (5 dividido por 30); la parte nueva es 5/23, cerca de 22% del aumento anunciado; respecto del salario anterior es 5/1.479, cerca de 0,34%. 5) El aumento total anunciado es 23/1.479, cerca de 1,56%, que coincide aproximadamente con el 1,6% que cita el sindicato. 6) Opinar con apoyo en esas cifras y en el supuesto de gasto.",
+      "result": "El aumento realmente nuevo es de unos 5 euros al mes (cerca de 0,34% del salario anterior), alrededor de una quinta parte del aumento anunciado. El aumento total equivale a cerca de 1,6%. Conclusión esperable: es un aumento pequeño para quien gasta casi todo su sueldo en necesidades básicas, aunque la valoración depende del criterio elegido.",
+      "acceptable_range": "Aumento nuevo: 5 euros mensuales (si se acepta la interpretación del dato prevista). Porcentaje nuevo entre 0,3% y 0,4%; porcentaje total entre 1,5% y 1,6%. Las conclusiones 'poco' o 'mucho' son defendibles si se justifican con cifras y supuestos explícitos."
+    },
+    "routes": [
+      {
+        "id": "R1",
+        "nombre": "Diferencia en euros y reparto diario",
+        "nivel": "P",
+        "modelo": "Resta 23 menos 18 para el aumento nuevo y división por días del mes para expresarlo por día.",
+        "resultado": "5 euros al mes, unos 0,17 euros por día."
+      },
+      {
+        "id": "R2",
+        "nombre": "Fracción del aumento anunciado que es nueva",
+        "nivel": "P",
+        "modelo": "Razón entre la parte nueva y el aumento total: 5 de 23, expresada como fracción o porcentaje; se muestra en un gráfico de barras.",
+        "resultado": "Cerca de 22% (más o menos una quinta parte) del aumento anunciado es nueva."
+      },
+      {
+        "id": "R3",
+        "nombre": "Porcentaje sobre el salario anterior",
+        "nivel": "S1",
+        "modelo": "Salario anterior igual a 1.502 menos 23; tasa de aumento nueva igual a 5 dividido por el salario anterior; comparación con la tasa total.",
+        "resultado": "Aumento nuevo cerca de 0,34%; aumento total cerca de 1,56%, coherente con 1,6%."
+      },
+      {
+        "id": "R4",
+        "nombre": "Comparación con el gasto básico (proporcionalidad)",
+        "nivel": "P",
+        "modelo": "Se estima qué parte del sueldo se va en necesidades básicas y se compara el aumento nuevo con ese gasto.",
+        "resultado": "Si casi todo el sueldo se gasta, 5 euros mensuales alcanzan a cubrir muy poco; conclusión según la estimación elegida."
+      }
+    ],
+    "modelo_inadecuado": {
+      "id": "RX",
+      "por_que_falla": "Sumar 23 y 18 como si fueran dos aumentos distintos (41 euros) o tomar 23 euros como la mejora real: la parte prevista está incluida en los 23 euros, no se suma, y esa parte no es una mejora nueva; el resultado sobreestima el aumento real."
+    },
+    "validation_evidence": "La tarjeta con la opinión del sindicato, que habla de un alza de 1,6%: el grupo compara su porcentaje del aumento total con ese valor y revisa si usó la misma base. Se entrega después de modelar y no se usa para construir el modelo.",
+    "agent_visibility": {
+      "students": [
+        "enunciado_es",
+        "foto_descripcion",
+        "recursos_a_solicitud"
+      ],
+      "coder": [
+        "enunciado_es",
+        "task_space"
+      ],
+      "guide": [
+        "all"
+      ]
+    }
+  },
+  "rubrica_rub01": {
+    "total": 23,
+    "por_criterio": {
+      "genuino": 2,
+      "abierta": 2,
+      "decisiones": 2,
+      "realismo": 2,
+      "autenticidad": 2,
+      "contexto": 2,
+      "ciclo": 2,
+      "validacion": 2,
+      "nivel": 2,
+      "autodiferenciacion": 2,
+      "fecundidad": 2,
+      "recursos": 1
+    }
+  },
+  "rubrica_rub02": {
+    "P": null,
+    "S": null,
+    "U": null
+  },
+  "modelo_y_prompt": {
+    "diseñador": "claude-sonnet-5-5",
+    "version_prompt": "1.1",
+    "version_rubrica": "4.0"
+  }
+}
