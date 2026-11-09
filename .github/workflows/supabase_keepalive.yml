@@ -14,7 +14,7 @@ name: supabase-keepalive
 
 on:
   schedule:
-    - cron: "17 12 * * 3"
+    - cron: "17 2,14 * * *"    # dos veces al día (23:17 y 11:17 Chile en verano)
   workflow_dispatch:
 
 permissions:
