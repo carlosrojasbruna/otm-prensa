@@ -1,0 +1,323 @@
+{
+  "tarea_id": "2026-11-empleo-nuevo-desempleo",
+  "evaluaciones": [
+    {
+      "iteracion": 1,
+      "version_tarea": 1,
+      "fecha": "2026-11-09T14:21:22Z",
+      "modelo": "claude-opus-5-5",
+      "version_prompt": "1.3",
+      "version_rubrica": "4.0",
+      "corridas": [
+        {
+          "n": 1,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 1,
+                "justificacion": "La tarea plantea una necesidad real y no entrega ninguna ecuación. Sin embargo, nombrar los dos flujos (pérdida y obtención de empleo) y pedir un cambio «mes a mes», junto con la imagen de la puerta giratoria, insinúa con fuerza la estructura de stock-flujo. Dudo entre 2 y 1 y asigno el menor.",
+                "cita": "La comisión no conoce cuánta gente pierde su trabajo ni cuánta lo encuentra en un mes típico. Propongan un modelo de cómo cambia el desempleo …"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta admite varios modelos defendibles: conteos o tasas, dos o tres estados, estado estacionario o simulación. No prescribe el procedimiento de cálculo.",
+                "cita": "¿cuántos empleos nuevos por mes harían falta, y durante cuánto tiempo, para que el desempleo baje de manera sostenida?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolverla exige formular supuestos sobre los flujos y la fuerza de trabajo, estimar valores desconocidos y solicitar información pertinente.",
+                "cita": "indiquen qué supuestos hacen y qué información necesitan, y recomienden si la meta es realista. Pueden pedir información adicional."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "La asesoría sobre metas de empleo ante políticas de inversión es una situación claramente plausible fuera de la escuela.",
+                "cita": "Una comisión regional de empleo les pide asesoría: si los permisos más rápidos lograran aumentar las contrataciones"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "La declaración de prensa y el dato de desempleo citado, junto con la serie histórica real de R4, son componentes extraescolares integrados al núcleo de la tarea.",
+                "cita": "Un alto ejecutivo de Empresas Copec comentó que este año la economía chilena ha rendido menos de lo que esperaba"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto laboral condiciona la definición de estados y flujos del modelo. También es necesario para interpretar si la meta es realista y para validar con la serie histórica.",
+                "cita": "Quien deja de buscar trabajo sale de la fuerza de trabajo y deja de contar como desocupado."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "La tarea obliga a comprender la situación, simplificar mediante supuestos, matematizar un modelo dinámico, calcularlo, interpretarlo como recomendación y contrastarlo con R4. Ninguna fase queda hecha por el enunciado.",
+                "cita": "Propongan un modelo de cómo cambia el desempleo mes a mes, indiquen qué supuestos hacen y qué información necesitan, y recomienden si la meta es …"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existe evidencia independiente, entregada después de construir el modelo, para contrastar sus predicciones.",
+                "cita": "Serie histórica de la tasa nacional de desempleo, por trimestres móviles, de años anteriores, incluidos períodos de recuperación económica, para comparar con lo que predice …"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "Un modelo dinámico discreto con supuestos explícitos y crítica de su realismo corresponde a las herramientas esperables del nivel U. El contexto es comprensible y pertinente.",
+                "cita": "Propongan un modelo de cómo cambia el desempleo mes a mes"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es accesible: basta un balance mensual simple de entradas y salidas. El techo es alto: admite tasas de transición, estado estacionario, tres estados con salida de la fuerza de trabajo y análisis de sensibilidad.",
+                "cita": "¿cuántos empleos nuevos por mes harían falta, y durante cuánto tiempo, para que el desempleo baje de manera sostenida?"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Los modelos permiten comparar supuestos, discutir el efecto de los desalentados y analizar los límites del modelo frente a la serie histórica, lo que abre nuevas preguntas.",
+                "cita": "recomienden si la meta es realista"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "R3 enumera las tres transiciones del modelo de tres estados, lo que constituye una sobreorientación parcial de la estructura. Además, no queda claro si los datos de flujos se entregan o si los estudiantes deben buscarlos, y son difíciles de obtener.",
+                "cita": "se puede consultar información sobre cuánta gente cambia de situación laboral en un mes típico (de empleo a desempleo, de desempleo a empleo, hacia fuera …"
+              }
+            },
+            "total": 22,
+            "mejoras": [
+              {
+                "criterio": "genuino",
+                "mejora_minima": "Reemplazar «La comisión no conoce cuánta gente pierde su trabajo ni cuánta lo encuentra en un mes típico» por una formulación que no nombre los flujos (por ejemplo, «La comisión no sabe qué determina cómo evoluciona el desempleo»). Además, sustituir la imagen de la puerta giratoria por una ilustración neutra."
+              },
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Redactar R3 sin enumerar las transiciones: «Pueden solicitar datos sobre movimientos laborales mensuales». Indicar además que la fuente es la estadística oficial de flujos del mercado laboral, y que el grupo debe precisar qué datos pide."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgsVyPo4UCjcwMEpk3aV5",
+            "fecha": "2026-11-09T14:20:04+00:00",
+            "intentos": 1,
+            "costo_usd": 0.074498,
+            "avisos": [
+              "cita_recortada_25:genuino",
+              "cita_recortada_25:ciclo",
+              "cita_recortada_25:validacion",
+              "cita_recortada_25:recursos"
+            ]
+          }
+        },
+        {
+          "n": 2,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 1,
+                "justificacion": "Hay una necesidad real de asesoría y no se entrega una regla lista para aplicar. Sin embargo, el enunciado nombra los dos flujos (salidas y entradas al empleo) y el paso mensual, y la imagen de la puerta giratoria refuerza esa misma idea, de modo que la estructura de stock y flujo queda fuertemente insinuada. Dudé entre 2 y 1 y asigno el menor.",
+                "cita": "La comisión no conoce cuánta gente pierde su trabajo ni cuánta lo encuentra en un mes típico. Propongan un modelo de cómo cambia el desempleo …"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta admite modelos defendibles distintos: de dos o tres estados, con tasas o con cantidades absolutas, con o sin crecimiento de la fuerza de trabajo. Ninguna instrucción posterior encauza hacia una ruta única.",
+                "cita": "¿cuántos empleos nuevos por mes harían falta, y durante cuánto tiempo, para que el desempleo baje de manera sostenida?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver la tarea exige estimar o solicitar los flujos laborales, suponer el tamaño de la fuerza de trabajo y decidir qué significa «baja sostenida», lo que corresponde al descriptor de 2.",
+                "cita": "indiquen qué supuestos hacen y qué información necesitan"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Un ejecutivo que opina sobre el desempleo y una comisión que evalúa metas de empleo son situaciones que existen fuera de la escuela.",
+                "cita": "Una comisión regional de empleo les pide asesoría: si los permisos más rápidos lograran aumentar las contrataciones"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "La declaración de prensa y la cifra del 10% son el punto de partida, y la serie histórica de desempleo (R4) es un dato real. Ambos componentes auténticos están integrados de manera sustantiva.",
+                "cita": "Un alto ejecutivo de Empresas Copec comentó que este año la economía chilena ha rendido menos de lo que esperaba"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto laboral condiciona las decisiones de modelación: qué cuenta como desocupado y cómo influye la participación. También es necesario para juzgar si la meta es realista.",
+                "cita": "Quien deja de buscar trabajo sale de la fuerza de trabajo y deja de contar como desocupado."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "La tarea obliga a comprender la situación, estructurarla, matematizar una dinámica, calcularla, interpretar una recomendación y validarla contra datos. Aunque los flujos están insinuados, las fases de simplificación (participación, crecimiento de la fuerza de trabajo) siguen siendo no triviales.",
+                "cita": "Propongan un modelo de cómo cambia el desempleo mes a mes, indiquen qué supuestos hacen y qué información necesitan, y recomienden si la meta es …"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "La serie R4 se entrega después de construir el modelo, por lo que es evidencia independiente para contrastar sus predicciones.",
+                "cita": "Serie histórica de la tasa nacional de desempleo, por trimestres móviles, de años anteriores, incluidos períodos de recuperación económica"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "Los modelos dinámicos discretos son herramientas esperables en el nivel U según MAR03, y el contexto económico es pertinente para estudiantes universitarios.",
+                "cita": "Propongan un modelo de cómo cambia el desempleo mes a mes"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es razonable: un balance aritmético de entradas y salidas permite empezar. El techo es alto, porque la tarea admite cadenas de Markov de tres estados, estados estacionarios y análisis de sensibilidad.",
+                "cita": "Si el grupo no la consigue, debe proponer valores razonables y justificarlos."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las soluciones pueden compararse según los supuestos sobre participación y flujos. Además, abren preguntas sobre trabajadores desalentados, el horizonte temporal y los límites del modelo.",
+                "cita": "y recomienden si la meta es realista"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información puede solicitarse o estimarse con valores justificados, y R3 no entrega cifras ni la ecuación del modelo. Por eso no revela la regla de solución.",
+                "cita": "se puede consultar información sobre cuánta gente cambia de situación laboral en un mes típico"
+              }
+            },
+            "total": 23,
+            "mejoras": [
+              {
+                "criterio": "genuino",
+                "mejora_minima": "Eliminar la frase «La comisión no conoce cuánta gente pierde su trabajo ni cuánta lo encuentra en un mes típico» y reemplazar la imagen de la puerta giratoria por una foto neutra (por ejemplo, una oficina de empleo), para que el grupo identifique por sí mismo la estructura de flujos."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgsW1oyuahsgpsBy3gZLh",
+            "fecha": "2026-11-09T14:20:43+00:00",
+            "intentos": 1,
+            "costo_usd": 0.089278,
+            "avisos": [
+              "cita_recortada_25:genuino",
+              "cita_recortada_25:ciclo"
+            ]
+          }
+        },
+        {
+          "n": 3,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 1,
+                "justificacion": "La situación plantea una necesidad real (asesorar a la comisión) y no entrega el modelo. Sin embargo, el enunciado nombra los dos flujos clave y el paso mensual, lo que, junto a la imagen de la puerta giratoria, insinúa con fuerza la estructura de un modelo de stocks y flujos. Dudé entre 1 y 2 y asigné el menor.",
+                "cita": "La comisión no conoce cuánta gente pierde su trabajo ni cuánta lo encuentra en un mes típico. Propongan un modelo de cómo cambia el desempleo …"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta admite varios modelos defendibles: conteos o tasas, con o sin crecimiento de la fuerza de trabajo, con distintos escenarios de contratación. No prescribe el método.",
+                "cita": "¿cuántos empleos nuevos por mes harían falta, y durante cuánto tiempo, para que el desempleo baje de manera sostenida?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige estimar o solicitar las tasas de transición, definir qué significa una baja sostenida y suponer el tamaño de la fuerza de trabajo. Son decisiones de modelación sustantivas.",
+                "cita": "indiquen qué supuestos hacen y qué información necesitan, y recomienden si la meta es realista. Pueden pedir información adicional."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "La situación es plausible fuera de la escuela: una comisión que evalúa metas de empleo ante nuevas leyes de inversión.",
+                "cita": "Una comisión regional de empleo les pide asesoría: si los permisos más rápidos lograran aumentar las contrataciones"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "La declaración de prensa se usa como dato de partida (el 10%). La serie histórica oficial de desempleo (R4) es un recurso extraescolar auténtico e integrado en la validación.",
+                "cita": "Un alto ejecutivo de Empresas Copec comentó que este año la economía chilena ha rendido menos de lo que esperaba"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona las decisiones de modelación: la definición de la tasa y la salida de la fuerza de trabajo cambian el modelo. También es necesario para juzgar si la meta es realista.",
+                "cita": "Quien deja de buscar trabajo sale de la fuerza de trabajo y deja de contar como desocupado."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "La tarea obliga a recorrer todo el ciclo: comprender la tasa, simplificar con supuestos, plantear la dinámica, calcular, interpretar la recomendación y validarla con R4. Ninguna fase queda resuelta por el enunciado.",
+                "cita": "Propongan un modelo de cómo cambia el desempleo mes a mes, indiquen qué supuestos hacen y qué información necesitan, y recomienden si la meta es …"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "El modelo puede contrastarse con datos independientes que se entregan después de construirlo.",
+                "cita": "Serie histórica de la tasa nacional de desempleo, por trimestres móviles, de años anteriores, incluidos períodos de recuperación económica"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "Para el nivel U, un modelo dinámico discreto con estado estacionario y análisis de escenarios está dentro de las herramientas esperables según MAR03. El contexto económico es comprensible y pertinente para ese nivel.",
+                "cita": "Propongan un modelo de cómo cambia el desempleo mes a mes"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Hay un piso razonable: un balance aritmético de desocupados y empleos netos. El techo es alto: cadenas de Markov con tres estados, equilibrio, sensibilidad a las tasas y efecto de los trabajadores desalentados.",
+                "cita": "¿cuántos empleos nuevos por mes harían falta, y durante cuánto tiempo"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las distintas tasas supuestas y la inclusión o no de la salida de la fuerza de trabajo permiten comparar modelos y discutir sus límites. También abren preguntas nuevas, como si el desempleo baja por más empleo o por desaliento.",
+                "cita": "recomienden si la meta es realista"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "La información se puede solicitar o estimar, pero R3 enumera explícitamente las tres transiciones del modelo de estados. Eso entrega parte de la estructura de la solución: hay sobreorientación parcial.",
+                "cita": "cuánta gente cambia de situación laboral en un mes típico (de empleo a desempleo, de desempleo a empleo, hacia fuera de la fuerza de trabajo)"
+              }
+            },
+            "total": 22,
+            "mejoras": [
+              {
+                "criterio": "genuino",
+                "mejora_minima": "Reemplazar «La comisión no conoce cuánta gente pierde su trabajo ni cuánta lo encuentra en un mes típico. Propongan un modelo de cómo cambia el desempleo mes a mes» por «La comisión no tiene datos detallados del mercado laboral. Propongan un modelo de cómo evoluciona el desempleo en el tiempo», sin nombrar los flujos ni el paso temporal."
+              },
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Redactar R3 como «se puede consultar información pública sobre movimientos del mercado laboral en un mes típico; si no la consiguen, propongan valores razonables y justifíquenlos», sin enumerar las transiciones entre estados."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgsW4jRQ3wmzeXg67qKgv",
+            "fecha": "2026-11-09T14:21:22+00:00",
+            "intentos": 1,
+            "costo_usd": 0.089838,
+            "avisos": [
+              "cita_recortada_25:genuino",
+              "cita_recortada_25:ciclo"
+            ]
+          }
+        }
+      ],
+      "totales": [
+        22,
+        23,
+        22
+      ],
+      "rango_total": 1,
+      "rango_inestable": 4,
+      "evaluacion_inestable": false,
+      "mediana": {
+        "regla": "mediana por criterio (n par: mediana inferior)",
+        "total": 22,
+        "por_criterio": {
+          "genuino": 1,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 1
+        },
+        "corrida_fuente": {
+          "genuino": 1,
+          "abierta": 1,
+          "decisiones": 1,
+          "realismo": 1,
+          "autenticidad": 1,
+          "contexto": 1,
+          "ciclo": 1,
+          "validacion": 1,
+          "nivel": 1,
+          "autodiferenciacion": 1,
+          "fecundidad": 1,
+          "recursos": 1
+        }
+      }
+    }
+  ]
+}

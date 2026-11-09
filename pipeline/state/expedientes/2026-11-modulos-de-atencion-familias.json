@@ -1,0 +1,465 @@
+{
+  "tarea_id": "2026-11-modulos-de-atencion-familias",
+  "estado": "evaluada",
+  "iteraciones": 1,
+  "artefactos": {
+    "tarea": {
+      "id": "2026-11-modulos-de-atencion-familias",
+      "titulo": "¿Cuántos módulos hacen falta para atender a todas las familias?",
+      "estado": "evaluada",
+      "version": 1,
+      "fecha": "2026-11-09",
+      "noticia": {
+        "noticia_id": "2026-11-09-latercera-inician-desalojo-de-toma-nuevo-amanecer",
+        "medio": "La Tercera",
+        "titulo": "Inician desalojo de toma “Nuevo Amanecer” en Cerrillos: más de 800 personas viven en el sector",
+        "fecha": "2026-11-09",
+        "url": "https://www.latercera.com/nacional/noticia/inician-desalojo-de-toma-nuevo-amanecer-en-cerrillos-mas-de-800-personas-viven-en-el-sector/",
+        "resumen_propio": "Autoridades comenzaron la primera etapa de retiro de un asentamiento irregular en Cerrillos, Región Metropolitana, con apoyo de policías y funcionarios municipales y estatales. La medida cubre una franja de terreno y responde a órdenes judiciales vinculadas a delitos y a obras viales. El ministro de Seguridad defendió la estrategia de desalojos semanales como forma de recuperar el espacio público.",
+        "cifras_usadas": [
+          {
+            "valor": 3,
+            "unidad": "hectáreas",
+            "que_es": "Superficie de la franja prioritaria incluida en la primera fase del desalojo",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 3"
+            }
+          },
+          {
+            "valor": 300,
+            "unidad": "viviendas",
+            "que_es": "Cantidad de casas emplazadas en el sector que será desalojado",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 3"
+            }
+          },
+          {
+            "valor": 800,
+            "unidad": "personas",
+            "que_es": "Cantidad aproximada de habitantes que viven en las viviendas del sector",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 3"
+            }
+          }
+        ]
+      },
+      "nivel_principal": "P",
+      "variantes": {
+        "abajo": null,
+        "arriba": "S"
+      },
+      "area": "sociedad_datos",
+      "contenidos_matematicos": [
+        "multiplicación y división",
+        "tasas y proporcionalidad",
+        "tablas de valores",
+        "estimación de tiempo"
+      ],
+      "tiempo_estimado": "2 sesiones de 90 min",
+      "estudiante": {
+        "enunciado_es": "Las autoridades de Cerrillos, en la Región Metropolitana, comenzaron a retirar un asentamiento irregular en una franja de 3 hectáreas, donde hay 300 viviendas y viven unas 800 personas. Imaginen que ustedes forman parte de un equipo municipal que, durante ese operativo, instala módulos de atención para registrar a las familias y entregarles información sobre ayudas. Cada módulo es una mesa con un funcionario, y cada familia se atiende una sola vez. La jefa del equipo debe decidir cuántos módulos instalar y por cuántas horas funcionarán, para que las familias no esperen demasiado. ¿Qué plan de atención le recomendarían y cuánto tiempo estiman que se necesita? Pueden pedir información adicional.",
+        "foto_descripcion": "Dibujo simple de varias mesas de atención con carteles numerados y una fila de personas dibujadas con trazos sencillos frente a ellas.",
+        "recursos_a_solicitud": [
+          {
+            "id": "R2",
+            "que_es": "Aclaración sobre quién se registra",
+            "contenido": "Supuesto del escenario: se registra una persona adulta por hogar, y cada vivienda corresponde a un hogar. La atención consiste en llenar una ficha con datos y entregar un papel con información.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P2-RM",
+            "fuente": "supuesto del escenario"
+          },
+          {
+            "id": "R3",
+            "que_es": "Aclaración sobre el funcionamiento de la jornada",
+            "contenido": "Supuesto del escenario: los módulos funcionan al mismo tiempo, cada uno con un funcionario. Las familias llegan repartidas a lo largo de la jornada, sin hora fija, y el equipo hace una pausa de colación que no se cuenta como atención.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P2-RM",
+            "fuente": "supuesto del escenario"
+          },
+          {
+            "id": "R4",
+            "que_es": "Ficha de ejemplo para practicar el registro",
+            "contenido": "Supuesto del escenario: ficha de registro de ejemplo con los campos nombre de la persona responsable, dirección, cantidad de integrantes del hogar y teléfono de contacto. El grupo puede llenarla entre compañeros con un cronómetro para estimar cuánto demora una atención.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P3-MM",
+            "fuente": "supuesto del escenario"
+          },
+          {
+            "id": "R5",
+            "que_es": "Simulacro en la sala para contrastar el plan",
+            "contenido": "Supuesto del escenario: el profesor puede organizar que un grupo de compañeros haga el papel de familias y que el grupo atienda con los módulos de su plan, cronometrando el tiempo total.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P6-VAL",
+            "fuente": "supuesto del escenario"
+          }
+        ]
+      },
+      "variantes_detalle": {
+        "abajo": null,
+        "arriba": {
+          "tramo": "S1",
+          "cambios": "Se pide comparar dos planes (más módulos por menos horas frente a menos módulos por más horas) considerando que las familias llegan más en las primeras horas de la jornada, y se pide ver cómo cambia el plan si el tiempo de atención varía por encima o por debajo de lo estimado. La validación incluye contrastar el tiempo estimado con una entrevista a un funcionario de atención al público."
+        }
+      },
+      "recursos_de_entrada": [
+        {
+          "id": "R1",
+          "que_es": "Datos de la noticia que se entregan desde el inicio",
+          "contenido": "La primera etapa cubre una franja de 3 hectáreas, con 300 viviendas y unas 800 personas.",
+          "disponibilidad": "de_entrada",
+          "fase": "P1-MRS",
+          "fuente": "noticia, párrafo 3"
+        }
+      ],
+      "mapa_ciclo": {
+        "P1-MRS": {
+          "decision": "Entender que hay que decidir cuántos módulos y cuántas horas para atender a todas las familias de una jornada.",
+          "evidencia": "El grupo reformula la meta como atender a todas las familias sin esperas largas.",
+          "bloqueo_probable": null
+        },
+        "P2-RM": {
+          "decision": "Elegir qué dato sirve (viviendas, personas o hectáreas), suponer una atención por hogar y suponer un tiempo por familia.",
+          "evidencia": "Lista de supuestos y de datos descartados, por ejemplo las hectáreas.",
+          "bloqueo_probable": "B12"
+        },
+        "P3-MM": {
+          "decision": "Relacionar familias, tiempo por familia, número de módulos y horas de jornada, y estimar el tiempo de atención con la ficha.",
+          "evidencia": "Tabla o esquema que relaciona módulos con horas necesarias; tiempos medidos con cronómetro.",
+          "bloqueo_probable": "B23"
+        },
+        "P4-WM": {
+          "decision": "Calcular el tiempo total de atención y repartirlo entre módulos que trabajan a la vez, y probar varias opciones.",
+          "evidencia": "Tabla de valores con distintas cantidades de módulos y las horas resultantes.",
+          "bloqueo_probable": "B34"
+        },
+        "P5-INT": {
+          "decision": "Traducir los cálculos a una recomendación con un número de módulos y una duración de jornada, y juzgar cuál es razonable.",
+          "evidencia": "Recomendación escrita con módulos, horas y justificación.",
+          "bloqueo_probable": "B45"
+        },
+        "P6-VAL": {
+          "decision": "Hacer un simulacro en la sala y comparar el tiempo observado con el tiempo previsto por el plan.",
+          "evidencia": "Registro de tiempos del simulacro y comparación con la predicción, con un ajuste del plan si hace falta.",
+          "bloqueo_probable": "B56"
+        },
+        "P7-EXP": {
+          "decision": "Presentar el plan a la jefa del equipo con sus supuestos y su margen de error.",
+          "evidencia": "Cartel o informe breve con tabla, recomendación y supuestos.",
+          "bloqueo_probable": "B67"
+        }
+      },
+      "task_space": {
+        "required_assumptions": [
+          "Una vivienda corresponde a un hogar y se atiende una persona adulta por hogar.",
+          "El tiempo de atención por familia se estima midiéndolo con una ficha de ejemplo y con un cronómetro.",
+          "Los módulos trabajan al mismo tiempo y con la misma rapidez.",
+          "La jornada tiene una duración definida por el grupo, y las pausas no cuentan como atención.",
+          "Las familias llegan repartidas durante la jornada."
+        ],
+        "reference_solution": {
+          "steps": "1) Elegir 300 hogares como cantidad de atenciones, porque se registra un hogar por vivienda; las hectáreas no influyen. 2) Estimar el tiempo por familia con la ficha, por ejemplo 10 minutos. 3) Tiempo total de trabajo: 300 × 10 = 3.000 min = 50 horas de módulo. 4) Repartir entre módulos que trabajan a la vez: con 5 módulos, 10 horas; con 6 módulos, unas 8,3 horas; con 8 módulos, unas 6,3 horas. 5) Para una jornada de 8 horas se necesitan al menos 7 módulos; añadiendo un margen por esperas, un plan razonable es 8 módulos funcionando 8 horas. 6) Variante: si se atiende a cada una de las 800 personas con 5 minutos cada una, son 4.000 min, unas 67 horas de módulo.",
+          "result": "Plan de unos 7 a 8 módulos funcionando una jornada de 8 horas, con unas 50 horas de trabajo total de atención si se usan 10 minutos por familia.",
+          "acceptable_range": "Entre 40 y 75 horas de módulo en total, y entre 5 y 9 módulos para una jornada de 8 horas, según el tiempo por familia (de 8 a 15 minutos), si se atiende por hogar o por persona, y el margen por esperas."
+        },
+        "routes": [
+          {
+            "id": "R1",
+            "nombre": "Tiempo total repartido entre módulos",
+            "nivel": "P",
+            "modelo": "Familias × minutos por familia = tiempo total; dividir entre el número de módulos.",
+            "resultado": "50 horas de módulo; 7 módulos para 8 horas."
+          },
+          {
+            "id": "R2",
+            "nombre": "Tabla de prueba de módulos",
+            "nivel": "P",
+            "modelo": "Armar una tabla con 4, 6 y 8 módulos y calcular cuántas familias atiende cada uno en la jornada.",
+            "resultado": "Con 8 módulos y un ritmo de 6 familias por hora cada uno, se atienden 384 familias en 8 horas, más que las 300 necesarias."
+          },
+          {
+            "id": "R3",
+            "nombre": "Atención por persona en vez de por hogar",
+            "nivel": "P",
+            "modelo": "Usar 800 personas con un tiempo menor por atención individual y repartir entre módulos.",
+            "resultado": "Unas 67 horas de módulo y 9 módulos para 8 horas (plan más exigente)."
+          },
+          {
+            "id": "R4",
+            "nombre": "Tasa de atención por módulo con margen",
+            "nivel": "S1",
+            "modelo": "Tasa de familias por hora por módulo, con un factor de eficiencia menor que 1 por esperas e interrupciones; resolver una ecuación para el número de módulos.",
+            "resultado": "Con 6 familias por hora y 80 % de eficiencia, hacen falta unos 8 módulos para 8 horas."
+          }
+        ],
+        "modelo_inadecuado": {
+          "id": "RX",
+          "por_que_falla": "Decidir el número de módulos a partir de las 3 hectáreas, por ejemplo uno por hectárea. Falla porque el tiempo de atención depende de cuántas familias hay y cuánto demora cada una, no del tamaño del terreno; además deja el plan sin relación con la jornada."
+        },
+        "validation_evidence": "Un simulacro en la sala donde compañeros que no participaron en la estimación hacen de familias y son atendidos con los módulos del plan. Se cronometra el tiempo total y se compara con el predicho, escalando la cantidad de familias. También se puede entrevistar a un funcionario de una oficina de atención al público sobre cuánto demora una atención típica. Estos datos no se usan para construir el modelo.",
+        "agent_visibility": {
+          "students": [
+            "enunciado_es",
+            "foto_descripcion",
+            "recursos_a_solicitud"
+          ],
+          "coder": [
+            "enunciado_es",
+            "task_space"
+          ],
+          "guide": [
+            "all"
+          ]
+        }
+      },
+      "rubrica_rub01": {
+        "total": 24,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 2
+        }
+      },
+      "rubrica_rub02": {
+        "P": null,
+        "S": null,
+        "U": null
+      },
+      "modelo_y_prompt": {
+        "diseñador": "claude-sonnet-5-5",
+        "version_prompt": "1.1",
+        "version_rubrica": "4.0"
+      }
+    },
+    "noticia": {
+      "id": "2026-11-09-latercera-inician-desalojo-de-toma-nuevo-amanecer",
+      "medio_id": "latercera",
+      "medio": "La Tercera",
+      "idioma": "es",
+      "titulo": "Inician desalojo de toma “Nuevo Amanecer” en Cerrillos: más de 800 personas viven en el sector",
+      "fecha": "2026-11-09",
+      "url": "https://www.latercera.com/nacional/noticia/inician-desalojo-de-toma-nuevo-amanecer-en-cerrillos-mas-de-800-personas-viven-en-el-sector/",
+      "area": "sociedad_datos",
+      "resumen_propio": "Autoridades comenzaron la primera etapa de retiro de un asentamiento irregular en Cerrillos, Región Metropolitana, con apoyo de policías y funcionarios municipales y estatales. La medida cubre una franja de terreno y responde a órdenes judiciales vinculadas a delitos y a obras viales. El ministro de Seguridad defendió la estrategia de desalojos semanales como forma de recuperar el espacio público.",
+      "cifras": [
+        {
+          "valor": 3,
+          "unidad": "hectáreas",
+          "que_es": "Superficie de la franja prioritaria incluida en la primera fase del desalojo",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 3"
+          }
+        },
+        {
+          "valor": 300,
+          "unidad": "viviendas",
+          "que_es": "Cantidad de casas emplazadas en el sector que será desalojado",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 3"
+          }
+        },
+        {
+          "valor": 800,
+          "unidad": "personas",
+          "que_es": "Cantidad aproximada de habitantes que viven en las viviendas del sector",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 3"
+          }
+        }
+      ],
+      "recuperada_en": "2026-11-09T13:53:25Z",
+      "filtro": {
+        "version_rubrica": "4.0",
+        "puntajes": {
+          "genuino": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "validacion": 2
+        },
+        "total": 10,
+        "pasa": true,
+        "justificacion": "Noticia con problema social real y tres cifras auténticas que permiten estimar densidad y población. Admite decisiones de supuestos y contraste con censos o registros municipales posteriores. Alta modelabilidad, aunque sensible en lo ético."
+      }
+    },
+    "evaluacion": {
+      "tarea_id": "2026-11-modulos-de-atencion-familias",
+      "fecha": "2026-11-09T14:16:59Z",
+      "rub01": {
+        "version_rubrica": "4.0",
+        "criterios": {
+          "genuino": {
+            "puntaje": 2,
+            "justificacion": "Plantea una necesidad real de planificación (cuántos módulos y cuántas horas) sin entregar ninguna regla ni modelo para calcularla.",
+            "cita": "La jefa del equipo debe decidir cuántos módulos instalar y por cuántas horas funcionarán, para que las familias no esperen demasiado."
+          },
+          "abierta": {
+            "puntaje": 2,
+            "justificacion": "Admite varios planes defendibles, por ejemplo más módulos con menos horas o al revés, y la pregunta no prescribe el procedimiento.",
+            "cita": "¿Qué plan de atención le recomendarían y cuánto tiempo estiman que se necesita?"
+          },
+          "decisiones": {
+            "puntaje": 2,
+            "justificacion": "Hay que decidir si se atiende por vivienda o por persona, estimar la duración de una atención, interpretar «no esperen demasiado» y solicitar información. Son decisiones de modelación sustantivas.",
+            "cita": "Pueden pedir información adicional."
+          },
+          "realismo": {
+            "puntaje": 2,
+            "justificacion": "El operativo es un hecho real, y que un equipo municipal registre a las familias durante él es claramente plausible fuera de la escuela.",
+            "cita": "Las autoridades de Cerrillos, en la Región Metropolitana, comenzaron a retirar un asentamiento irregular en una franja de 3 hectáreas"
+          },
+          "autenticidad": {
+            "puntaje": 2,
+            "justificacion": "Los datos de la noticia (300 viviendas, unas 800 personas) son el insumo central del modelo, de modo que el componente auténtico está integrado de manera sustantiva.",
+            "cita": "R1 (Datos de la noticia que se entregan desde el inicio)"
+          },
+          "contexto": {
+            "puntaje": 2,
+            "justificacion": "El contexto condiciona las decisiones (familias o personas, jornada, colación, espera aceptable). También es necesario para interpretar y juzgar si el plan es razonable.",
+            "cita": "Cada módulo es una mesa con un funcionario, y cada familia se atiende una sola vez."
+          },
+          "ciclo": {
+            "puntaje": 2,
+            "justificacion": "Responder obliga a comprender la situación, simplificarla y estimar tiempos, calcular el tiempo total según el número de módulos, y volver al contexto para recomendar y juzgar el plan. Las aclaraciones R2 y R3 solo se entregan a solicitud y no dejan hecha ninguna fase.",
+            "cita": "¿Qué plan de atención le recomendarían y cuánto tiempo estiman que se necesita?"
+          },
+          "validacion": {
+            "puntaje": 2,
+            "justificacion": "El simulacro cronometrado es una medición independiente que permite contrastar el plan con un caso nuevo.",
+            "cita": "el profesor puede organizar que un grupo de compañeros haga el papel de familias y que el grupo atienda con los módulos de su plan, …"
+          },
+          "nivel": {
+            "puntaje": 2,
+            "justificacion": "El contexto y el lenguaje son comprensibles para 10–12 años. La matemática requerida (operatoria, reparto, estimación, conversión de minutos a horas) está entre las herramientas esperables del nivel P.",
+            "cita": "Cada módulo es una mesa con un funcionario, y cada familia se atiende una sola vez."
+          },
+          "autodiferenciacion": {
+            "puntaje": 2,
+            "justificacion": "Se puede entrar con una división simple de 300 atenciones entre módulos. La tarea admite soluciones más sofisticadas que consideran la llegada repartida, la colación, la variabilidad de tiempos y el equilibrio entre módulos y horas.",
+            "cita": "para que las familias no esperen demasiado"
+          },
+          "fecundidad": {
+            "puntaje": 2,
+            "justificacion": "La relación entre módulos y horas permite comparar planes distintos y abre preguntas sobre la espera, los costos y los límites del modelo.",
+            "cita": "La jefa del equipo debe decidir cuántos módulos instalar y por cuántas horas funcionarán"
+          },
+          "recursos": {
+            "puntaje": 2,
+            "justificacion": "El dato clave (la duración de una atención) puede medirse en clase, y las aclaraciones a solicitud precisan el escenario sin revelar la relación entre módulos, horas y familias.",
+            "cita": "El grupo puede llenarla entre compañeros con un cronómetro para estimar cuánto demora una atención."
+          }
+        },
+        "total": 24,
+        "mejoras": []
+      },
+      "reproducibilidad": {
+        "agentes": {
+          "disenador": {
+            "modelo": "claude-sonnet-5-5",
+            "version_modelo": "claude-sonnet-5-5",
+            "costo_usd": 0.216802,
+            "version_prompt": "1.1"
+          },
+          "evaluador": {
+            "modelo": "claude-opus-5-5",
+            "version_modelo": "claude-opus-5-5",
+            "costo_usd": 0.228854,
+            "version_prompt": "1.3"
+          },
+          "filtro": {
+            "modelo": "claude-haiku-5-5",
+            "version_modelo": "claude-haiku-5-5",
+            "costo_usd": 0.000684,
+            "version_prompt": "1.0"
+          }
+        },
+        "version_prompt": {
+          "disenador": "1.1",
+          "evaluador": "1.3",
+          "filtro": "1.0"
+        },
+        "version_rubrica": "4.0",
+        "version_MAR03": "1.0",
+        "version_MED01": "1.4",
+        "diseno_simulador": null,
+        "fecha": "2026-11-09T14:16:59Z",
+        "costo_usd": 0.44634
+      }
+    }
+  },
+  "historial": [
+    {
+      "fecha": "2026-11-09T14:13:24+00:00",
+      "de": null,
+      "a": "borrador"
+    },
+    {
+      "fecha": "2026-11-09T14:17:01+00:00",
+      "de": "borrador",
+      "a": "evaluada",
+      "iteracion": 1,
+      "rub01_total": 24
+    }
+  ],
+  "marcas": {
+    "ciclo_id": "ciclo_20261109T135325190319Z",
+    "noticia_id": "2026-11-09-latercera-inician-desalojo-de-toma-nuevo-amanecer",
+    "nivel_objetivo": "P",
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "versiones_modelo": [
+          "claude-sonnet-5-5"
+        ],
+        "costo_usd": 0.216802,
+        "llamadas": 1
+      },
+      "filtro": {
+        "modelo": "claude-haiku-5-5",
+        "versiones_modelo": [
+          "claude-haiku-5-5"
+        ],
+        "costo_usd": 0.000684,
+        "llamadas": 1
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "versiones_modelo": [
+          "claude-opus-5-5"
+        ],
+        "costo_usd": 0.228854,
+        "llamadas": 3
+      }
+    },
+    "costos_compartidos": [
+      "disenador",
+      "filtro"
+    ],
+    "version_MAR03": "1.0",
+    "evaluacion_inestable": false,
+    "evaluacion_rango_total": 0,
+    "evaluacion_corridas": "pipeline/state/trabajo/2026-11-modulos-de-atencion-familias/evaluacion_corridas.json",
+    "preverificacion": {
+      "fecha": "2026-11-09T14:17:05Z",
+      "version_tarea": 1,
+      "aprobado": true,
+      "criticos": [],
+      "texto_noticia": true
+    },
+    "pendiente": "revision_humana_1"
+  }
+}

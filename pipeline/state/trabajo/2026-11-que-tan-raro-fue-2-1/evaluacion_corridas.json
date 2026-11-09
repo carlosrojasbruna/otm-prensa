@@ -1,0 +1,306 @@
+{
+  "tarea_id": "2026-11-que-tan-raro-fue-2-1",
+  "evaluaciones": [
+    {
+      "iteracion": 1,
+      "version_tarea": 1,
+      "fecha": "2026-11-09T14:10:55Z",
+      "modelo": "claude-opus-5-5",
+      "version_prompt": "1.3",
+      "version_rubrica": "4.0",
+      "corridas": [
+        {
+          "n": 1,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La situación plantea una necesidad real: el programa quiere informar a la audiencia. El enunciado no entrega ninguna regla, distribución ni modelo para calcular la probabilidad de un marcador.",
+                "cita": "Un programa deportivo de radio quiere decir en el aire si un resultado como el 2-1 es algo común o raro en esta liga"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe el método. Admite varios caminos defendibles: frecuencias empíricas de la liga, productos de distribuciones de goles por equipo o simulación.",
+                "cita": "¿qué tan probable era un 2-1 en ese partido, comparado con otros marcadores, y qué tan seguido esperarían partidos decididos por un solo gol?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver la tarea exige varias decisiones de modelación. Hay que decidir qué hacer con el dato de Colo Colo, que no informa el total de goles, obtener el promedio de goles de la liga y suponer cómo se distribuyen los goles de cada equipo.",
+                "cita": "Expliquen con qué datos y supuestos llegaron a su respuesta. Pueden pedir información adicional."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Que un programa deportivo comente qué tan raro es un marcador es una situación plausible fuera de la escuela. Los partidos y la tabla de posiciones son reales.",
+                "cita": "En la fecha 27 del fútbol chileno, Universidad de Chile venció a Cobresal por 2-1."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "La tarea usa como núcleo resultados y datos reales de la liga tomados de una noticia: el 2-1 que motiva la pregunta y los marcadores para contrastar. Estos datos no fueron creados para enseñar el contenido.",
+                "cita": "Resultados de los otros partidos de la fecha 27 tal como figuran en la noticia."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona decisiones de modelación: fuerza de los equipos, localía y nivel goleador de la liga. También es necesario para interpretar el resultado y validarlo con los marcadores reales de la fecha.",
+                "cita": "qué marcadores debería esperar un hincha antes de un partido entre equipos parejos"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a recorrer todo el ciclo: comprender la situación, simplificar, construir un modelo probabilístico, calcular, interpretar y contrastar con otros marcadores. El enunciado no deja hecha ninguna fase. Hay una duda: la tarjeta R2 entrega los supuestos si se solicita; eso se descuenta en el criterio de recursos.",
+                "cita": "¿qué tan probable era un 2-1 en ese partido, comparado con otros marcadores"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "El modelo puede contrastarse con evidencia independiente que no se usó para construirlo: los marcadores de los demás partidos de la fecha. También pueden usarse datos públicos de la temporada.",
+                "cita": "Se entrega solo cuando el grupo ya tiene sus probabilidades calculadas."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El fútbol chileno y el lenguaje son comprensibles y significativos para S2. La tarea puede resolverse con estadística descriptiva y probabilidad elemental de eventos independientes, al alcance del nivel.",
+                "cita": "Un programa deportivo de radio quiere decir en el aire si un resultado como el 2-1 es algo común o raro"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Tiene un piso razonable: contar frecuencias de marcadores en la liga. Tiene techo alto: distribuciones de goles por equipo, ventaja de local o sensibilidad al promedio de goles.",
+                "cita": "comparado con otros marcadores, y qué tan seguido esperarían partidos decididos por un solo gol"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Los distintos supuestos y modelos permiten comparar soluciones y discutir límites, como la independencia de los goles o los equipos dispares. También abren nuevas preguntas sobre otros marcadores y otros partidos.",
+                "cita": "Expliquen con qué datos y supuestos llegaron a su respuesta."
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "La tarjeta R2 entrega ya formulados los supuestos clave del modelo (fuerza pareja, sin localía, independencia), lo que es una sobreorientación parcial hacia la estructura de la solución. Además, el dato imprescindible de goles promedio de la liga no figura entre los recursos declarados.",
+                "cita": "los goles de cada equipo como independientes entre sí."
+              }
+            },
+            "total": 23,
+            "mejoras": [
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Reemplazar la tarjeta R2 por información a solicitud sobre la liga (goles a favor y en contra por equipo o promedio de goles por partido en la temporada), sin enunciar supuestos de fuerza pareja ni de independencia, para que el grupo los formule."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgsVA7JZ2HCZumWpBxUL2",
+            "fecha": "2026-11-09T14:09:35+00:00",
+            "intentos": 1,
+            "costo_usd": 0.077034,
+            "avisos": []
+          }
+        },
+        {
+          "n": 2,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La situación plantea una necesidad real: el programa quiere comunicar si el resultado es común o raro. El enunciado no entrega ninguna distribución, regla ni modelo de goles para aplicar.",
+                "cita": "Un programa deportivo de radio quiere decir en el aire si un resultado como el 2-1 es algo común o raro en esta liga"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe método. Admite caminos defendibles distintos: frecuencias empíricas de la temporada, un modelo de goles independientes o una simulación.",
+                "cita": "¿qué tan probable era un 2-1 en ese partido, comparado con otros marcadores, y qué tan seguido esperarían partidos decididos por un solo gol?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige seleccionar datos y descartar los poco útiles, como la diferencia de goles de Colo Colo. También exige obtener la tasa de goles de la liga y formular supuestos sobre fuerza de los equipos, localía e independencia.",
+                "cita": "Expliquen con qué datos y supuestos llegaron a su respuesta. Pueden pedir información adicional."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Es un partido real de una liga real. La pregunta de un programa radial sobre qué tan raro es un marcador es claramente plausible fuera de la escuela.",
+                "cita": "En la fecha 27 del fútbol chileno, Universidad de Chile venció a Cobresal por 2-1."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El tema (marcadores de la liga chilena) y los datos de la noticia son componentes extraescolares auténticos. Se integran en el núcleo de la tarea y en la validación.",
+                "cita": "Resultados de los otros partidos de la fecha 27 tal como figuran en la noticia."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona decisiones de modelación: equipos parejos, localía y qué liga tomar como referencia. También es necesario para interpretar el resultado como una afirmación radial y para validarlo con los marcadores de la fecha.",
+                "cita": "qué marcadores debería esperar un hincha antes de un partido entre equipos parejos"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "El enunciado no deja hecha ninguna fase, porque los supuestos de R2 solo se entregan si el grupo los pide. Responder obliga a comprender, simplificar, construir un modelo probabilístico, calcular, interpretar para la radio y validar.",
+                "cita": "Ayúdenlo: ¿qué tan probable era un 2-1 en ese partido, comparado con otros marcadores"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existe evidencia independiente para contrastar el modelo: los marcadores de la fecha (R3) y los resultados públicos del resto de la temporada, que no se usaron para construirlo.",
+                "cita": "Se entrega solo cuando el grupo ya tiene sus probabilidades calculadas."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto futbolístico es comprensible y significativo en S2. La demanda puede abordarse con estadística descriptiva (frecuencias relativas de marcadores), que está dentro de las herramientas esperables; un modelo tipo Poisson es opcional y no imprescindible.",
+                "cita": "si un resultado como el 2-1 es algo común o raro en esta liga"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es razonable, porque se puede entrar contando frecuencias de marcadores. El techo es alto: la tarea admite modelos de goles independientes, ajuste por localía o fuerza y análisis de sensibilidad.",
+                "cita": "qué tan seguido esperarían partidos decididos por un solo gol"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Los modelos abren nuevas preguntas, como empates, el efecto de equipos dispares o la independencia de los goles. También permiten comparar soluciones empíricas con soluciones teóricas y discutir sus límites.",
+                "cita": "comparado con otros marcadores, y qué tan seguido esperarían partidos decididos por un solo gol"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "R2 entrega hechos los supuestos clave, incluida la independencia de los goles, que orienta hacia la estructura del modelo (producto de distribuciones marginales): es una sobreorientación parcial. Además, el dato imprescindible de goles promedio por partido en la liga no se entrega ni se indica cómo obtenerlo, y el dato de Colo Colo no lo reemplaza.",
+                "cita": "se puede tratar a Universidad de Chile y a Cobresal como equipos de fuerza parecida, sin ventaja especial de local, y los goles de cada …"
+              }
+            },
+            "total": 23,
+            "mejoras": [
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Reemplazar R2 por una tarjeta con preguntas (por ejemplo, «¿los equipos son parejos?, ¿importa la localía?, ¿los goles de un equipo afectan los del otro?») en lugar de los supuestos ya formulados. Agregar como recurso a solicitud la tabla de la liga con goles a favor y en contra, o indicar dónde encontrarla."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgsVDTBjKVJvUcJxbG4sV",
+            "fecha": "2026-11-09T14:10:15+00:00",
+            "intentos": 1,
+            "costo_usd": 0.068514,
+            "avisos": [
+              "cita_recortada_25:recursos"
+            ]
+          }
+        },
+        {
+          "n": 3,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La situación plantea una necesidad real: el programa debe informar si el 2-1 es común. El enunciado no entrega una regla ni un modelo probabilístico listo para aplicar.",
+                "cita": "Un programa deportivo de radio quiere decir en el aire si un resultado como el 2-1 es algo común o raro en esta liga"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe el método. Admite caminos defendibles distintos, como frecuencias empíricas de la liga, un modelo de goles por equipo o una distribución tipo Poisson.",
+                "cita": "¿qué tan probable era un 2-1 en ese partido, comparado con otros marcadores, y qué tan seguido esperarían partidos decididos por un solo gol?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige obtener información que no se entrega (goles por partido en la liga) y descartar datos poco pertinentes, como la diferencia de Colo Colo. También exige formular supuestos sobre fuerza, localía e independencia.",
+                "cita": "Expliquen con qué datos y supuestos llegaron a su respuesta. Pueden pedir información adicional."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Un comentario radial sobre qué marcadores esperar en un partido parejo es una situación claramente plausible fuera de la escuela.",
+                "cita": "En la fecha 27 del fútbol chileno, Universidad de Chile venció a Cobresal por 2-1."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El resultado, la tabla y los marcadores de la fecha provienen de una noticia real de la liga chilena. Son el núcleo de la tarea y no fueron creados para enseñar el contenido.",
+                "cita": "Resultados de los otros partidos de la fecha 27 tal como figuran en la noticia."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona las decisiones de modelación: qué tan parejos son los equipos, la localía y la tasa de goles de la liga. También es necesario para interpretar la respuesta y validarla con los otros partidos.",
+                "cita": "qué marcadores debería esperar un hincha antes de un partido entre equipos parejos"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a comprender, simplificar, matematizar, calcular probabilidades e interpretarlas para la radio. La tarjeta R2 de simplificación solo se entrega a solicitud, de modo que el enunciado no deja hecha esa fase.",
+                "cita": "Ayúdenlo: ¿qué tan probable era un 2-1 en ese partido, comparado con otros marcadores"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Los marcadores de los demás partidos (R3) y los registros históricos públicos de la liga son evidencia independiente, no usada en la construcción del modelo, con la cual contrastarlo.",
+                "cita": "Se entrega solo cuando el grupo ya tiene sus probabilidades calculadas."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El fútbol es un contexto comprensible y significativo para S2. La demanda (frecuencias relativas, probabilidad con independencia, estadística descriptiva) está al alcance de las herramientas esperables del sub-tramo.",
+                "cita": "qué tan seguido esperarían partidos decididos por un solo gol"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Se puede empezar contando frecuencias de marcadores en la liga, sin depender de una idea clave única. La tarea también admite soluciones más sofisticadas, como modelos de goles independientes, ajuste por fuerza de cada equipo o localía.",
+                "cita": "Expliquen con qué datos y supuestos llegaron a su respuesta."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Los modelos permiten comparar marcadores y supuestos, y abren preguntas sobre localía y equipos desiguales. También permiten discutir los límites del supuesto de independencia.",
+                "cita": "comparado con otros marcadores, y qué tan seguido esperarían partidos decididos por un solo gol"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "La tarjeta R2 entrega los supuestos clave, incluida la independencia de goles, que sugiere la estructura del modelo: es una sobreorientación parcial. Además, ningún recurso entrega ni indica cómo obtener el dato imprescindible de goles por partido de la liga.",
+                "cita": "los goles de cada equipo como independientes entre sí"
+              }
+            },
+            "total": 23,
+            "mejoras": [
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Reemplazar R2 por una tarjeta que solo confirme que los equipos pueden considerarse parejos, sin mencionar la independencia de goles. Agregar un recurso a solicitud con los goles por partido o los marcadores de la temporada de la liga, o indicar dónde encontrarlos."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgsVGP7zXUjqPA9et4Xgg",
+            "fecha": "2026-11-09T14:10:55+00:00",
+            "intentos": 1,
+            "costo_usd": 0.069854,
+            "avisos": []
+          }
+        }
+      ],
+      "totales": [
+        23,
+        23,
+        23
+      ],
+      "rango_total": 0,
+      "rango_inestable": 4,
+      "evaluacion_inestable": false,
+      "mediana": {
+        "regla": "mediana por criterio (n par: mediana inferior)",
+        "total": 23,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 1
+        },
+        "corrida_fuente": {
+          "genuino": 1,
+          "abierta": 1,
+          "decisiones": 1,
+          "realismo": 1,
+          "autenticidad": 1,
+          "contexto": 1,
+          "ciclo": 1,
+          "validacion": 1,
+          "nivel": 1,
+          "autodiferenciacion": 1,
+          "fecundidad": 1,
+          "recursos": 1
+        }
+      }
+    }
+  ]
+}

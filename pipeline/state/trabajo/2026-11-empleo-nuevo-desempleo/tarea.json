@@ -1,0 +1,213 @@
+{
+  "id": "2026-11-empleo-nuevo-desempleo",
+  "titulo": "¿Cuánto empleo nuevo hace falta para que el desempleo baje de verdad?",
+  "estado": "archivada",
+  "version": 1,
+  "fecha": "2026-11-09",
+  "noticia": {
+    "noticia_id": "2026-11-09-latercera-navarro-de-empresas-copec-dice-que",
+    "medio": "La Tercera",
+    "titulo": "Navarro de Empresas Copec dice que no esperaba un 2026 con “malas cifras económicas”, pero tiene optimismo sobre 2027",
+    "fecha": "2026-11-09",
+    "url": "https://www.latercera.com/pulso/noticia/navarro-de-empresas-copec-dice-que-no-esperaba-un-2026-con-malas-cifras-economicas-pero-tiene-optimismo-sobre-2027/",
+    "resumen_propio": "Un alto ejecutivo de Empresas Copec reconoce que el año económico va peor de lo previsto, por tensiones comerciales, encarecimiento de la energía, inflación y tasas altas que afectan a una economía exportadora como la chilena. Pese a ello, se muestra optimista para el próximo año gracias a leyes que buscan impulsar la inversión y los permisos, aunque advierte que hay que pasar de las señales a la acción, con un desempleo elevado y trámites más ágiles para destrabar inversiones.",
+    "cifras_usadas": [
+      {
+        "valor": "10%",
+        "unidad": "porcentaje",
+        "que_es": "Tasa de desempleo en Chile mencionada por el ejecutivo",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 10"
+        }
+      }
+    ]
+  },
+  "nivel_principal": "U",
+  "variantes": {
+    "abajo": "S",
+    "arriba": null
+  },
+  "area": "economia",
+  "contenidos_matematicos": [
+    "modelos dinámicos discretos",
+    "cadenas de Markov / ecuaciones en diferencias",
+    "valores propios y estado estacionario",
+    "análisis de sensibilidad"
+  ],
+  "tiempo_estimado": "2 sesiones de 90 min",
+  "estudiante": {
+    "enunciado_es": "Un alto ejecutivo de Empresas Copec comentó que este año la economía chilena ha rendido menos de lo que esperaba, pero que ve con optimismo el próximo si las nuevas leyes para impulsar la inversión y agilizar permisos se transforman en proyectos reales. Entre sus preocupaciones mencionó que el desempleo en Chile ronda el 10%. Una comisión regional de empleo les pide asesoría: si los permisos más rápidos lograran aumentar las contrataciones, ¿cuántos empleos nuevos por mes harían falta, y durante cuánto tiempo, para que el desempleo baje de manera sostenida? La comisión no conoce cuánta gente pierde su trabajo ni cuánta lo encuentra en un mes típico. Propongan un modelo de cómo cambia el desempleo mes a mes, indiquen qué supuestos hacen y qué información necesitan, y recomienden si la meta es realista. Pueden pedir información adicional.",
+    "foto_descripcion": "Ilustración sencilla de una puerta giratoria de oficina: personas entran por un lado con un cartel de 'se busca' y otras salen por el otro lado.",
+    "recursos_a_solicitud": [
+      {
+        "id": "R2",
+        "que_es": "Nota sobre qué mide la tasa de desempleo",
+        "contenido": "Supuesto del escenario: la tasa de desempleo es la proporción de personas desocupadas dentro de la fuerza de trabajo, es decir, entre quienes tienen empleo y quienes buscan uno activamente. Quien deja de buscar trabajo sale de la fuerza de trabajo y deja de contar como desocupado.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P1-MRS",
+        "fuente": "supuesto del escenario"
+      },
+      {
+        "id": "R3",
+        "que_es": "Aclaración sobre la información de movimientos laborales",
+        "contenido": "Supuesto del escenario: se puede consultar información sobre cuánta gente cambia de situación laboral en un mes típico (de empleo a desempleo, de desempleo a empleo, hacia fuera de la fuerza de trabajo). Si el grupo no la consigue, debe proponer valores razonables y justificarlos.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P2-RM",
+        "fuente": "supuesto del escenario"
+      },
+      {
+        "id": "R4",
+        "que_es": "Serie histórica de desempleo para contrastar el modelo (se entrega después de que el grupo presente su modelo)",
+        "contenido": "Serie histórica de la tasa nacional de desempleo, por trimestres móviles, de años anteriores, incluidos períodos de recuperación económica, para comparar con lo que predice el modelo del grupo.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P6-VAL",
+        "fuente": "otra fuente: Instituto Nacional de Estadísticas (INE), Encuesta Nacional de Empleo"
+      }
+    ]
+  },
+  "variantes_detalle": {
+    "abajo": {
+      "tramo": "S2",
+      "cambios": "Se entregan como datos las proporciones mensuales de gente que pierde y que encuentra empleo; la pregunta pide comparar dos escenarios de contratación con una relación recurrente mes a mes, sin matrices ni valores propios; la validación se limita a contrastar con la serie histórica."
+    },
+    "arriba": null
+  },
+  "recursos_de_entrada": [
+    {
+      "id": "R1",
+      "que_es": "Dato de partida sobre desempleo",
+      "contenido": "El ejecutivo mencionó que el desempleo en Chile ronda el 10%.",
+      "disponibilidad": "de_entrada",
+      "fase": "P1-MRS",
+      "fuente": "noticia, párrafo 10"
+    }
+  ],
+  "mapa_ciclo": {
+    "P1-MRS": {
+      "decision": "Distinguir el desempleo como proporción (stock) de los movimientos mensuales (flujos) y precisar qué significa 'bajar de manera sostenida'.",
+      "evidencia": "El grupo reformula con sus palabras qué mide la tasa y solicita información sobre cómo se mide y qué movimientos mensuales existen.",
+      "bloqueo_probable": "B12"
+    },
+    "P2-RM": {
+      "decision": "Elegir qué variables incluir (ocupados, desocupados, inactivos), si las tasas son constantes, si la población es cerrada y cuál es el horizonte.",
+      "evidencia": "Lista escrita de supuestos y de lo que se deja fuera.",
+      "bloqueo_probable": "B23"
+    },
+    "P3-MM": {
+      "decision": "Formular la evolución mensual como ecuación en diferencias o matriz de transición, y definir cómo se representan las contrataciones adicionales.",
+      "evidencia": "Ecuaciones con parámetros nombrados y estados definidos.",
+      "bloqueo_probable": "B34"
+    },
+    "P4-WM": {
+      "decision": "Obtener el equilibrio y la velocidad de ajuste (analítica o por simulación) para distintos niveles de contratación.",
+      "evidencia": "Tabla o gráfico del desempleo mes a mes en cada escenario.",
+      "bloqueo_probable": "B45"
+    },
+    "P5-INT": {
+      "decision": "Traducir tasas a empleos adicionales por mes y a meses de espera, y decidir si es realista.",
+      "evidencia": "Frase de recomendación con rango de empleos mensuales y de plazo.",
+      "bloqueo_probable": "B56"
+    },
+    "P6-VAL": {
+      "decision": "Contrastar la velocidad de ajuste y el nivel de equilibrio con la serie histórica; probar sensibilidad a las tasas supuestas.",
+      "evidencia": "Comparación gráfica modelo vs. serie; variación del resultado al cambiar las tasas.",
+      "bloqueo_probable": "B67"
+    },
+    "P7-EXP": {
+      "decision": "Comunicar a la comisión una recomendación con sus supuestos, límites y qué datos nuevos cambiarían la conclusión.",
+      "evidencia": "Informe breve o presentación con modelo, resultado e incertidumbre.",
+      "bloqueo_probable": null
+    }
+  },
+  "task_space": {
+    "required_assumptions": [
+      "Población y fuerza de trabajo aproximadamente constantes durante el horizonte.",
+      "Tasas mensuales de pérdida y de hallazgo de empleo constantes en cada escenario.",
+      "Las contrataciones adicionales aumentan la tasa de hallazgo de empleo sin cambiar la tasa de pérdida de empleo.",
+      "Se ignora o se trata como constante el movimiento entre inactividad y fuerza de trabajo, o se modela explícitamente.",
+      "Los valores de las tasas son estimados o supuestos por el grupo y justificados."
+    ],
+    "reference_solution": {
+      "steps": "1) Sea u la tasa de desempleo, s la proporción mensual de ocupados que pierde su empleo y f la proporción mensual de desocupados que encuentra uno. 2) Con fuerza de trabajo constante: u(t+1) = u(t)(1 − s − f) + s. 3) Equilibrio u* = s/(s + f); el factor de ajuste es (1 − s − f), con vida media ln(0,5)/ln(1 − s − f). 4) Calibrar para reproducir u* = 0,10 (por ejemplo s = 0,02 y f = 0,18, valores ilustrativos). 5) Si las contrataciones adicionales elevan f a f', el nuevo equilibrio es s/(s + f'). Para u* = 0,09 se necesita f' = 0,2022. 6) Contrataciones extra iniciales ≈ (f' − f) × desocupados = 0,0222 × 0,10 = 0,00222 de la fuerza de trabajo por mes. 7) Con factor de ajuste 0,7778, la mitad del camino se recorre en unos 2,8 meses y cerca de nueve de cada diez décimas en unos 9 meses. 8) Sensibilidad: repetir con s y f distintos, y con inactivos explícitos.",
+      "result": "Con los valores ilustrativos, bajar el equilibrio de 10% a 9% requiere sostener unas 0,22% de la fuerza de trabajo en contrataciones adicionales cada mes (como ilustración, unos 22.000 empleos mensuales por cada diez millones de personas en la fuerza de trabajo), y la mayor parte del ajuste ocurre en unos 6 a 9 meses. La conclusión depende de s, f y de si las nuevas contrataciones son netas.",
+      "acceptable_range": "Cualquier resultado coherente con tasas que reproduzcan un equilibrio cercano a 10% es aceptable; para bajar un punto porcentual, entre 0,1% y 0,5% de la fuerza de trabajo en contrataciones adicionales mensuales, con ajuste de entre 3 y 12 meses, según las tasas supuestas y siempre que el grupo justifique la calibración y analice sensibilidad."
+    },
+    "routes": [
+      {
+        "id": "R1",
+        "nombre": "Cadena de Markov de tres estados",
+        "nivel": "U",
+        "modelo": "Matriz de transición mensual entre ocupado, desocupado e inactivo; distribución estacionaria y valores propios para la velocidad de ajuste; las contrataciones modifican la probabilidad de pasar de desocupado a ocupado.",
+        "resultado": "Distribución estacionaria con desempleo cercano a 10% en la calibración base y cercano a 9% con contrataciones adicionales de alrededor de 0,2% de la fuerza de trabajo por mes; el segundo valor propio da una vida media de pocos meses."
+      },
+      {
+        "id": "R2",
+        "nombre": "Ecuación en diferencias de dos estados",
+        "nivel": "U",
+        "modelo": "u(t+1) = u(t)(1 − s − f) + s, con solución cerrada y equilibrio s/(s + f).",
+        "resultado": "Equilibrio u* = s/(s + f); con s = 0,02 y f' = 0,2022 se obtiene 9% y la mitad del ajuste en unos 2,8 meses."
+      },
+      {
+        "id": "R3",
+        "nombre": "Simulación con tasas inciertas",
+        "nivel": "U",
+        "modelo": "Simulación mensual con s y f aleatorias dentro de rangos plausibles; intervalo para el tiempo de ajuste y para las contrataciones necesarias.",
+        "resultado": "Rango de contrataciones adicionales y de meses de espera con intervalo de confianza; muestra qué parámetro domina la incertidumbre."
+      },
+      {
+        "id": "R4",
+        "nombre": "Balance lineal de desocupados",
+        "nivel": "S2",
+        "modelo": "Cada mes, desocupados = desocupados anteriores − contrataciones + nuevos despedidos (constante), con la fuerza de trabajo fija; se compara con un escenario base.",
+        "resultado": "Contrataciones netas mensuales necesarias aproximadas según el tamaño de la fuerza de trabajo estimada; sin vida media pero con orden de magnitud correcto."
+      }
+    ],
+    "modelo_inadecuado": {
+      "id": "R5",
+      "por_que_falla": "Restar de los desocupados actuales el número de empleos nuevos creados, sin considerar la gente que pierde su empleo cada mes ni la que entra a buscar trabajo, sobreestima la caída del desempleo: ignora la rotación y que el desempleo tiende a un equilibrio determinado por ambas tasas, no a cero."
+    },
+    "validation_evidence": "La serie histórica de la tasa nacional de desempleo del INE (Encuesta Nacional de Empleo), por trimestres móviles, entregada después de modelar: se contrasta la velocidad de ajuste predicha con la observada en períodos de recuperación y el equilibrio calibrado con los niveles históricos; ningún dato de la serie se usa para construir el modelo.",
+    "agent_visibility": {
+      "students": [
+        "enunciado_es",
+        "foto_descripcion",
+        "recursos_a_solicitud"
+      ],
+      "coder": [
+        "enunciado_es",
+        "task_space"
+      ],
+      "guide": [
+        "all"
+      ]
+    }
+  },
+  "rubrica_rub01": {
+    "total": 22,
+    "por_criterio": {
+      "genuino": 1,
+      "abierta": 2,
+      "decisiones": 2,
+      "realismo": 2,
+      "autenticidad": 2,
+      "contexto": 2,
+      "ciclo": 2,
+      "validacion": 2,
+      "nivel": 2,
+      "autodiferenciacion": 2,
+      "fecundidad": 2,
+      "recursos": 1
+    }
+  },
+  "rubrica_rub02": {
+    "P": null,
+    "S": null,
+    "U": null
+  },
+  "modelo_y_prompt": {
+    "diseñador": "claude-sonnet-5-5",
+    "version_prompt": "1.1",
+    "version_rubrica": "4.0"
+  }
+}
