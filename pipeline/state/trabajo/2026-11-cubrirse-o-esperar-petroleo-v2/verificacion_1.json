@@ -1,0 +1,111 @@
+{
+  "tarea_id": "2026-11-cubrirse-o-esperar-petroleo-v2",
+  "aprobado": true,
+  "estado_destino": "verificada",
+  "hallazgos": [
+    {
+      "invariante": "notebook",
+      "severidad": "advertencia",
+      "ubicacion": "guia.materiales.notebook",
+      "descripcion": "notebook escenarios.ipynb no encontrado: ",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "guia.escenarios[E1].ruta",
+      "descripcion": "Ruta P1-MRS → P3-MM → P2-RM → P4-WM → P6-VAL → … → P6-VAL atribuida a N3_AA_r1 y N4_AA_r1 — La ruta solo reproduce la de N3_AA_r1. N4_AA_r1 no pasa por P1-MRS ni por P6-VAL. El relato no menciona esa diferencia entre las dos corridas citadas.",
+      "origen": "modelo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "guia.escenarios[E1].que_aprende",
+      "descripcion": "La volatilidad se supone en lugar de estimarse con el movimiento diario de la noticia, que este grupo decide no usar. — Solo N3_AA_r1 declara que ignora la caída de 4,67%. N4_AA_r1 sube la volatilidad a 60% por la semana brusca, así que sí la toma en cuenta de forma cualitativa.",
+      "origen": "modelo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "guia.escenarios[E3].ruta",
+      "descripcion": "Ruta P1-MRS → P2-RM → P3-MM → P4-WM → P5-INT → P7-EXP atribuida a N2_VV_r1 y N1_VV_r1 — Solo corresponde a N2_VV_r1. N1_VV_r1 sí pasa por P6-VAL y omite P3-MM. Además, la traza de N2_VV_r1 marca validacion: true aunque su ruta no incluye P6-VAL.",
+      "origen": "modelo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "guia.escenarios[E4].que_aprende",
+      "descripcion": "Introduce decisiones que otros grupos no tomaron: cubrir solo una parte del cargamento. — N4_AA_r1 (escenario E1) también recomienda cubrir al menos una parte del cargamento, así que la decisión no es exclusiva de E4.",
+      "origen": "modelo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "guia.escenarios[E3].que_aprende",
+      "descripcion": "Corresponde a la ruta R1. — La ruta R1 define tres escenarios con movimientos basados en el porcentaje de la noticia. Las corridas de E3 usan dos extremos inventados (80 y 110). Es una correspondencia aproximada, no exacta.",
+      "origen": "modelo"
+    }
+  ],
+  "cifras_contrastadas": [
+    {
+      "indice": 0,
+      "que_es": "Caída del precio del Brent al cierre de la edición",
+      "valor_tarea": "4,67%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 3"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "4,67%",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 3 de la noticia; modelo: El párrafo 3 da esa caída diaria del Brent al cierre de la edición."
+    },
+    {
+      "indice": 1,
+      "que_es": "Precio del Brent tras la caída diaria",
+      "valor_tarea": "US$ 93,74",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 3"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "US$ 93,74",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 3 de la noticia; modelo: El párrafo 3 da ese precio del Brent tras la caída."
+    },
+    {
+      "indice": 2,
+      "que_es": "Alza acumulada de ambos barriles en lo que va del año",
+      "valor_tarea": "52%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 5"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "52%",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 5 de la noticia; modelo: El párrafo 5 da un alza acumulada en el año de más de 52% para ambos barriles. La tarea lo trata correctamente como cota inferior."
+    }
+  ],
+  "notebook": {
+    "estado": "no_encontrado",
+    "ruta": "escenarios.ipynb",
+    "salida_resumen": ""
+  },
+  "meta": {
+    "agente": "verificador",
+    "version_prompt": "1.1",
+    "modelo": "claude-opus-5-5",
+    "request_id": "req_011Ch6iWrvWhHjGQqM5JrDVy",
+    "fecha": "2026-11-16T13:52:16+00:00",
+    "costo_usd": 0.149404,
+    "modelo_llamado": true,
+    "texto_noticia_recibido": true,
+    "uso": {
+      "input_tokens": 16906,
+      "output_tokens": 3509,
+      "cache_creation_input_tokens": 2320,
+      "cache_read_input_tokens": 0
+    }
+  }
+}

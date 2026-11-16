@@ -1,0 +1,158 @@
+{
+  "run": {
+    "id": "N1_AA_r1",
+    "nivel": "N1",
+    "composicion": "AA",
+    "rep": 1,
+    "estilos": [
+      "A",
+      "A"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.063408,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P1-MRS",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P4-WM",
+        "fase_secundaria": "P1-MRS",
+        "eventos": []
+      },
+      {
+        "n": 4,
+        "fase": "P3-MM",
+        "fase_secundaria": "P1-MRS",
+        "eventos": []
+      },
+      {
+        "n": 5,
+        "fase": "P3-MM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 6,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P2-RM",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 8,
+        "fase": "P4-WM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 9,
+        "fase": "P3-MM",
+        "fase_secundaria": "P4-WM",
+        "eventos": []
+      },
+      {
+        "n": 10,
+        "fase": "P5-INT",
+        "fase_secundaria": "P4-WM",
+        "eventos": []
+      },
+      {
+        "n": 11,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "ASSUME",
+          "DIST"
+        ]
+      },
+      {
+        "n": 12,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 13,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 14,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 15,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 16,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      }
+    ],
+    "bloqueos": [
+      {
+        "codigo": "B23",
+        "turnos": [
+          4,
+          5,
+          6
+        ],
+        "resolucion": "peer",
+        "descripcion": "No saben cómo traducir la variación diaria a una variación mensual: dudan ('¿cómo calculamos eso?', '¿habrá alguna fórmula?'), descartan la extrapolación lineal 4,59×30 y proponen pedir el dato; A destraba en el turno 7 suponiendo una variación de ±10% en un mes."
+      }
+    ],
+    "supuestos": [
+      "el precio no baja igual todos los días",
+      "variación de ±10% del precio en un mes",
+      "costo de cobertura de 2 dólares por barril",
+      "100.000 barriles como ejemplo"
+    ],
+    "modelo": "escenarios discretos",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Recomendación condicionada: si 7,37 dólares por barril × número de barriles supera la pérdida que la empresa puede soportar, contratar la cobertura; si no, esperar. Con ±10% el precio a un mes quedaría entre 84,37 y 103,11, con equilibrio en 95,74 (cobertura de 2 dólares). La recomendación es poco segura porque el ±10% y los 2 dólares son supuestos, y faltan la volatilidad, el costo real de la cobertura y la cantidad de barriles."
+    },
+    "ruta_principal": "R1",
+    "rutas": [
+      "R1"
+    ]
+  }
+}

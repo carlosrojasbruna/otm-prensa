@@ -1,0 +1,79 @@
+{
+  "tarea_id": "2026-11-cubrirse-o-esperar-petroleo-v2",
+  "aprobado": true,
+  "estado_destino": "verificada",
+  "hallazgos": [
+    {
+      "invariante": "notebook",
+      "severidad": "advertencia",
+      "ubicacion": "guia.materiales.notebook",
+      "descripcion": "notebook escenarios.ipynb no encontrado: ",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "tarea.recursos_de_entrada[R1]",
+      "descripcion": "no se pudo contrastar con el texto: el ciclo no entregó `texto_noticia`; la afirmación del recurso solo se juzgó contra título, resumen y cifras",
+      "origen": "codigo"
+    }
+  ],
+  "cifras_contrastadas": [
+    {
+      "indice": 0,
+      "que_es": "Caída del precio del Brent al cierre de la edición",
+      "valor_tarea": "4,67%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 3"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "4,67%",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia"
+    },
+    {
+      "indice": 1,
+      "que_es": "Precio del Brent tras la caída diaria",
+      "valor_tarea": "US$ 93,74",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 3"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "US$ 93,74",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia"
+    },
+    {
+      "indice": 2,
+      "que_es": "Alza acumulada de ambos barriles en lo que va del año",
+      "valor_tarea": "52%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 5"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "52%",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia"
+    }
+  ],
+  "notebook": {
+    "estado": "no_encontrado",
+    "ruta": "escenarios.ipynb",
+    "salida_resumen": ""
+  },
+  "meta": {
+    "agente": "verificador",
+    "version_prompt": "1.1",
+    "modelo": null,
+    "request_id": null,
+    "fecha": "2026-11-16T13:59:30+00:00",
+    "costo_usd": 0.0,
+    "modelo_llamado": false,
+    "texto_noticia_recibido": false,
+    "uso": null,
+    "nota": "solo código, sin contraste semántico y sin el texto de la noticia (corrección manual de la guía; la nota no se pudo releer desde el entorno de Claude)"
+  }
+}

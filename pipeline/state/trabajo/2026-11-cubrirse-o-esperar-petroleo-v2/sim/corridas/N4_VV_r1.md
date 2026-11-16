@@ -1,0 +1,15 @@
+# Corrida N4_VV_r1
+
+Nivel N4 · estilos V/V · rep 1 · 11 turnos · término: acuerdo · modelo claude-sonnet-5-5
+
+**1. Cami:** Yo me imagino el gráfico del Brent como una montaña rusa: subió 52% en el año y ahora cae 4,67% en un día, así que la volatilidad es enorme. Antes de recomendar nada, ¿qué te parece si pedimos cuánto cuesta la cobertura y cuántos barriles es el cargamento?  
+**2. Fran:** Sí, pidámoslos, y también cuánta pérdida aguanta la empresa. Yo dibujaría dos escenarios a un mes, [dibujo: una línea en 93,74 que se abre como abanico hacia arriba y hacia abajo], para comparar lo que pagarías cubierto contra lo que pagarías si el precio sube fuerte.  
+**3. Cami:** Buena idea el abanico. Pongámosle números: si la volatilidad anual fuera como 40%, a un mes sería 40%/√12 ≈ 11,5%, o sea el precio podría moverse más o menos entre 83 y 105 dólares; pero ese 40% me lo estoy inventando, habría que pedirlo.  
+**4. Fran:** Ojo que ese ±11,5% es una sola desviación estándar, o sea cubre como 68% de los casos; con dos serían unos 72 a 116 dólares. Y como la tensión en Medio Oriente puede volver, dibujaría el abanico más largo hacia arriba, que es justo donde le duele a un importador.  
+**5. Cami:** Me gusta lo del abanico sesgado hacia arriba, porque al importador solo le duele que suba. Entonces mi idea es cubrir al menos una parte si el costo de la cobertura es bajo frente a lo que perdería con 116 dólares y si la empresa no aguanta ese golpe, pero depende de los datos que pidamos.  
+**6. Fran:** Yo diría que sí, cubrir una parte, pero comparemos el costo de la cobertura con la pérdida extra en el escenario malo: [dibujo: barra del costo fijo al lado de una barra de 116 menos 93,74 = 22,26 dólares por barril]. Ahí se ve si vale la pena.  
+**7. Cami:** Va, y ojo que 22,26 por barril es el escenario malo con dos desviaciones, no el esperado, así que habría que ponerle probabilidad (como 2,5% de pasar de 116). Propongo escribir lo que le pedimos al gerente: costo de la cobertura por barril, cantidad de barriles y pérdida máxima que aguanta.  
+**8. Fran:** Agreguemos preguntar si la cobertura es un forward o una opción, porque con forward, si el precio baja a 72, igual pagas lo fijado y pierdes ese ahorro. Y que nos den la volatilidad real del mercado, no la que nos inventamos.  
+**9. Cami:** Buen punto lo del forward, y ojo que la normal subestima los saltos si vuelve la tensión, así que ese 2,5% es optimista. Entonces propongo recomendar cubrir una parte, digamos la mitad, con confianza media, hasta tener el costo, los barriles y la pérdida máxima. ¿Lo escribimos así?  
+**10. Fran:** Sí, pero dejemos la mitad como punto de partida: si la empresa aguanta poca pérdida, cubrimos más. ENTREGAMOS: cubrir cerca de 50%, confianza media, hasta tener costo, barriles, pérdida máxima, tipo de cobertura y volatilidad real.  
+**11. Cami:** DE ACUERDO. Solo agregaría una nota: la confianza es media porque los 72 a 116 salen de una volatilidad que inventamos, así que si la real es mucho mayor, cubrimos más.  

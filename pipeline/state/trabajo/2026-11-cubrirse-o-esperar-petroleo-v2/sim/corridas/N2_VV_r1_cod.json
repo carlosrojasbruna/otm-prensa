@@ -1,0 +1,123 @@
+{
+  "run": {
+    "id": "N2_VV_r1",
+    "nivel": "N2",
+    "composicion": "VV",
+    "rep": 1,
+    "estilos": [
+      "V",
+      "V"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.051536,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P2-RM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "DIST",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P3-MM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME",
+          "DIST"
+        ]
+      },
+      {
+        "n": 6,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "STRAT",
+          "DIST"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 8,
+        "fase": "P5-INT",
+        "fase_secundaria": "EMK",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 9,
+        "fase": "P5-INT",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 10,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 11,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      }
+    ],
+    "bloqueos": [],
+    "supuestos": [
+      "rango de precio a un mes entre 80 y 110 US$/barril (inventado)",
+      "cargamento de 10.000 barriles (provisorio)",
+      "costo de cobertura de 1 US$/barril (provisorio)",
+      "precio cubierto = precio actual + costo del banco",
+      "110 como peor caso y 80 como caso bueno",
+      "la tensión en Medio Oriente puede volver y hacer más probable el alza"
+    ],
+    "modelo": "escenarios discretos",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Recomendamos cubrir si la empresa no aguanta perder unos 150 mil dólares, pero con baja seguridad porque usamos números inventados; faltan volatilidad, costo del banco, barriles y cuánta pérdida soporta."
+    },
+    "ruta_principal": "R1",
+    "rutas": [
+      "R1"
+    ]
+  }
+}

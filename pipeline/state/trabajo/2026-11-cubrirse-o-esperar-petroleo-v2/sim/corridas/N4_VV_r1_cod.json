@@ -1,0 +1,117 @@
+{
+  "run": {
+    "id": "N4_VV_r1",
+    "nivel": "N4",
+    "composicion": "VV",
+    "rep": 1,
+    "estilos": [
+      "V",
+      "V"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.056252,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT",
+          "DIST"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P3-MM",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P4-WM",
+        "fase_secundaria": "EMK",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P5-INT",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 6,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 8,
+        "fase": "EMK",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 9,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P7-EXP",
+        "eventos": []
+      },
+      {
+        "n": 10,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 11,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P7-EXP",
+        "eventos": []
+      }
+    ],
+    "bloqueos": [],
+    "supuestos": [
+      "volatilidad anual de 40% (inventada)",
+      "volatilidad escala con raíz del tiempo (40%/√12)",
+      "distribución normal de la variación del precio",
+      "intervalo de dos desviaciones estándar como escenario malo",
+      "riesgo sesgado al alza si vuelve la tensión en Medio Oriente",
+      "al importador solo le perjudica la subida del precio"
+    ],
+    "modelo": "normal (caminata aleatoria)",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Cubrir cerca de 50% del cargamento como punto de partida, con confianza media; cubrir más si la empresa tolera poca pérdida o si la volatilidad real es mayor. Rango a un mes de unos 72 a 116 dólares por barril (dos desviaciones, con volatilidad anual supuesta de 40%). Se condiciona a conocer el costo de la cobertura, la cantidad de barriles, la pérdida máxima tolerable, el tipo de cobertura (forward u opción) y la volatilidad real."
+    },
+    "ruta_principal": "R2",
+    "rutas": [
+      "R2",
+      "R4"
+    ]
+  }
+}

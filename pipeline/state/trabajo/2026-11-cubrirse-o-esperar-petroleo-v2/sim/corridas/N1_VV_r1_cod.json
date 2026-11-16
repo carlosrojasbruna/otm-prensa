@@ -1,0 +1,121 @@
+{
+  "run": {
+    "id": "N1_VV_r1",
+    "nivel": "N1",
+    "composicion": "VV",
+    "rep": 1,
+    "estilos": [
+      "V",
+      "V"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.050428,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 2,
+        "fase": "P1-MRS",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P2-RM",
+        "fase_secundaria": "P1-MRS",
+        "eventos": [
+          "STRAT",
+          "DIST"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P2-RM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "STRAT",
+          "DIST"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P4-WM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME",
+          "DIST"
+        ]
+      },
+      {
+        "n": 6,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P4-WM",
+        "eventos": []
+      },
+      {
+        "n": 8,
+        "fase": "P5-INT",
+        "fase_secundaria": "EMK",
+        "eventos": []
+      },
+      {
+        "n": 9,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 10,
+        "fase": "P5-INT",
+        "fase_secundaria": "P7-EXP",
+        "eventos": []
+      },
+      {
+        "n": 11,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 12,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      }
+    ],
+    "bloqueos": [],
+    "supuestos": [
+      "cargamento de 10.000 barriles",
+      "variación de ±10 dólares por barril en un mes",
+      "la tensión podría volver y aumentar la variación"
+    ],
+    "modelo": "escenarios discretos",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Si la empresa no aguanta perder unos 100.000 dólares (suponiendo 10.000 barriles y un salto de 10 dólares por barril), conviene cerrar hoy, siempre que la cobertura cueste menos que eso. Están poco seguras hasta conocer el costo de la cobertura, el tamaño del cargamento y cuánto riesgo tolera la empresa."
+    },
+    "ruta_principal": "R1",
+    "rutas": [
+      "R1"
+    ]
+  }
+}
