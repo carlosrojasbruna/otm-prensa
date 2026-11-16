@@ -1,12 +1,12 @@
 {
   "tarea_id": "2026-11-cubrirse-o-esperar-petroleo",
-  "estado": "evaluada",
+  "estado": "archivada",
   "iteraciones": 1,
   "artefactos": {
     "tarea": {
       "id": "2026-11-cubrirse-o-esperar-petroleo",
       "titulo": "¿Cerrar el precio hoy o esperar al barril de mañana?",
-      "estado": "evaluada",
+      "estado": "archivada",
       "version": 1,
       "fecha": "2026-11-09",
       "noticia": {
@@ -709,6 +709,12 @@
       "de": "con_guia",
       "a": "evaluada",
       "motivo": "el verificador encontró hallazgos sobre la tarea: [semantica] tarea.noticia.cifras_usadas[0]: el modelo no encuentra respaldo para la cifra: El párrafo 3 atribuye la caída de 4,67% al Brent, no al WTI. El valor coincide, pero el significado no: según el párrafo 4 (no recibido), el WTI cayó 3,37%.; [semantica] tarea.noticia.cifras_usadas[1]: el modelo no encuentra respaldo para la cifra: En el párrafo 3, 93,74 dólares es el precio del Brent tras la caída. Según la lista de cifras, el WTI quedó en 87,68. Es otro barril.; [semantica] tarea.estudiante.enunciado_es: El WTI, referencia para Chile, bajó 4,67% en un día y quedó en 93,74 dólares por barril — Según el párrafo 3, el barril de referencia para Chile es el Brent, y es el Brent el que cae 4,67% y queda en 93,74. El WTI tiene otras cifras (3,37% y 87,68). El resumen propio arrastra la misma confusión.; [semantica] task_space.validation_evidence / recurso R4 / guia.contraste_validacion "
+    },
+    {
+      "fecha": "2026-11-16T13:44:54+00:00",
+      "de": "evaluada",
+      "a": "archivada",
+      "motivo": "reemplazada por la v2 (cifras del Brent) (Carlos Rojas Bruna)"
     }
   ],
   "marcas": {
@@ -828,6 +834,11 @@
       "[semantica] tarea.estudiante.enunciado_es: El WTI, referencia para Chile, bajó 4,67% en un día y quedó en 93,74 dólares por barril — Según el párrafo 3, el barril de referencia para Chile es el Brent, y es el Brent el que cae 4,67% y queda en 93,74. El WTI tiene otras cifras (3,37% y 87,68). El resumen propio arrastra la misma confusión.",
       "[semantica] tarea.recursos_de_entrada[R1]: el recurso contradice los párrafos citados de la noticia: El párrafo 3 atribuye la caída de 4,67% y el precio de 93,74 al Brent, no al WTI. El alza anual es de más de 52%."
     ],
-    "pendiente": "revision_humana_1"
+    "revision_humana_1": {
+      "resultado": "negativa",
+      "revisor": "Carlos Rojas Bruna",
+      "fecha": "2026-11-16T13:44:54Z",
+      "motivo": "reemplazada por la v2 (cifras del Brent)"
+    }
   }
 }
