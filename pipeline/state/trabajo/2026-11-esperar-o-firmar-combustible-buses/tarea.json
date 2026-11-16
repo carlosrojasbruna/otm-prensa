@@ -1,0 +1,275 @@
+{
+  "id": "2026-11-esperar-o-firmar-combustible-buses",
+  "titulo": "¿Esperar o firmar hoy el combustible de los buses?",
+  "estado": "evaluada",
+  "version": 1,
+  "fecha": "2026-11-16",
+  "noticia": {
+    "noticia_id": "2026-11-16-latercera-petroleo-cae-mas-de-3-mientras",
+    "medio": "La Tercera",
+    "titulo": "Petróleo cae más de 3% mientras Goldman Sachs espera que el barril esté debajo de los US$ 80 a fines de 2027",
+    "fecha": "2026-11-16",
+    "url": "https://www.latercera.com/pulso/noticia/petroleo-caida-goldman-sachs-debajo-de-us-80-a-fines-de-2027/",
+    "resumen_propio": "El precio del crudo cae con fuerza tras un informe de la agencia energética que anticipa exceso de oferta. El banco Goldman Sachs publica su proyección de precios para 2027, con Brent y WTI bajando hacia fin de año, aunque advierte riesgos alcistas de corto plazo por ataques a barcos en Medio Oriente.",
+    "cifras_usadas": [
+      {
+        "valor": "3,39%",
+        "unidad": "variación porcentual diaria del Brent",
+        "que_es": "caída del precio del barril Brent en la jornada",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 3"
+        }
+      },
+      {
+        "valor": "US$ 92,59",
+        "unidad": "dólares por barril",
+        "que_es": "cotización del Brent al cierre de la edición",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 3"
+        }
+      },
+      {
+        "valor": "US$ 85,63",
+        "unidad": "dólares por barril",
+        "que_es": "cotización del WTI al momento del reporte",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 3"
+        }
+      },
+      {
+        "valor": "12,26%",
+        "unidad": "variación porcentual mensual",
+        "que_es": "descenso acumulado del Brent en el último mes",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 4"
+        }
+      },
+      {
+        "valor": "más de 1,7 millones",
+        "unidad": "barriles diarios",
+        "que_es": "superávit de oferta mundial esperado en el cuarto trimestre de 2026",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 5"
+        }
+      },
+      {
+        "valor": "US$ 78",
+        "unidad": "dólares por barril",
+        "que_es": "precio proyectado del Brent en diciembre de 2027",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 10"
+        }
+      },
+      {
+        "valor": "US$ 70",
+        "unidad": "dólares por barril",
+        "que_es": "precio proyectado del WTI al cierre de 2027",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 10"
+        }
+      }
+    ]
+  },
+  "nivel_principal": "P",
+  "variantes": {
+    "abajo": null,
+    "arriba": "S"
+  },
+  "area": "economia",
+  "contenidos_matematicos": [
+    "porcentajes",
+    "variación constante por tramos",
+    "estimación",
+    "tablas y gráficos de líneas"
+  ],
+  "tiempo_estimado": "2 sesiones de 90 min",
+  "estudiante": {
+    "enunciado_es": "Un banco de inversión pronostica que el barril de petróleo Brent, que hoy se cotiza en US$ 92,59, valdrá US$ 78 en diciembre del próximo año. En un solo día el precio cayó 3,39% y, en el último mes, bajó 12,26%. Una empresa de buses de tu ciudad usa combustible cuyo precio sigue al del petróleo, y debe decidir si firma ahora un contrato de compra por varios meses o si espera. Tu grupo asesora a la empresa: ¿cómo creen que cambiará el precio del barril en los próximos meses y qué le recomendarían hacer? Pueden pedir información adicional.",
+    "foto_descripcion": "Ícono de un barril de petróleo con una flecha que baja y, al lado, un bus pequeño.",
+    "recursos_a_solicitud": [
+      {
+        "id": "R2",
+        "que_es": "Razón por la que el precio ha bajado",
+        "contenido": "Una agencia de energía anticipa que sobrará petróleo en el mercado: más de 1,7 millones de barriles diarios en el cuarto trimestre de este año.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P2-RM",
+        "fuente": "noticia, párrafo 5"
+      },
+      {
+        "id": "R3",
+        "que_es": "Otro tipo de petróleo para comparar la proyección",
+        "contenido": "El WTI, otro tipo de petróleo, se cotiza hoy en US$ 85,63 por barril y el mismo banco proyecta que cerrará el próximo año en US$ 70 por barril.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P6-VAL",
+        "fuente": "noticia, párrafo 3; noticia, párrafo 11"
+      },
+      {
+        "id": "R4",
+        "que_es": "Posibles riesgos de corto plazo para el precio",
+        "contenido": "Supuesto del escenario: si hay ataques a barcos que transportan petróleo, el precio puede subir de golpe durante algunos días, aunque la tendencia general sea a la baja.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P2-RM",
+        "fuente": "supuesto del escenario"
+      },
+      {
+        "id": "R5",
+        "que_es": "Precios reales del Brent de los días posteriores a la noticia, para comparar con lo que el grupo esperaba",
+        "contenido": "Tabla con el precio de cierre diario del Brent en las semanas siguientes a la noticia, para contrastarla con la estimación del grupo. El grupo la pide una vez que tiene su propia estimación.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P6-VAL",
+        "fuente": "otra fuente: U.S. Energy Information Administration (EIA), serie Europe Brent Spot Price FOB"
+      }
+    ]
+  },
+  "variantes_detalle": {
+    "abajo": null,
+    "arriba": {
+      "tramo": "S1",
+      "cambios": "Se entrega además la proyección del WTI desde el inicio y se pide comparar un modelo lineal con uno de porcentaje constante por mes, justificando cuál representa mejor la proyección y cómo cambia la recomendación según el modelo elegido. El contexto no cambia."
+    }
+  },
+  "recursos_de_entrada": [
+    {
+      "id": "R1",
+      "que_es": "Datos de partida que ya están escritos en el enunciado",
+      "contenido": "Brent hoy: US$ 92,59 por barril. Proyección del banco para diciembre del próximo año: US$ 78 por barril. Caída en un día: 3,39%. Caída en el último mes: 12,26%.",
+      "disponibilidad": "de_entrada",
+      "fase": "P1-MRS",
+      "fuente": "noticia, párrafo 3; noticia, párrafo 4; noticia, párrafo 10"
+    }
+  ],
+  "mapa_ciclo": {
+    "P1-MRS": {
+      "decision": "Distinguir qué se sabe (precio hoy, caída reciente, proyección) de qué se pregunta (cómo evolucionará y qué recomendar).",
+      "evidencia": "El grupo reformula la pregunta con sus palabras y anota los datos que cree útiles y los que le faltan.",
+      "bloqueo_probable": "B12"
+    },
+    "P2-RM": {
+      "decision": "Decidir qué forma tendrá la caída (pareja cada mes, rápida al comienzo y luego más lenta, o con subidas por ataques) y cuántos meses hay hasta diciembre del próximo año.",
+      "evidencia": "Lista escrita de supuestos y cuenta de meses; solicitud de tarjetas con información adicional.",
+      "bloqueo_probable": "B23"
+    },
+    "P3-MM": {
+      "decision": "Convertir el supuesto en una relación matemática: bajada igual por mes, porcentaje fijo por mes o tramos distintos.",
+      "evidencia": "Tabla mes a mes, esquema o gráfico de líneas con el precio.",
+      "bloqueo_probable": "B34"
+    },
+    "P4-WM": {
+      "decision": "Calcular la bajada total, la bajada por mes y el precio en distintos meses; comparar el ritmo de la última caída con el de la proyección.",
+      "evidencia": "Cálculos con diferencias, divisiones y porcentajes; tabla completada.",
+      "bloqueo_probable": null
+    },
+    "P5-INT": {
+      "decision": "Traducir los números a una recomendación (firmar ahora, esperar o contrato corto) y decir cuánto dinero por barril podría ganar o perder la empresa.",
+      "evidencia": "Recomendación escrita con el ahorro o riesgo estimado por barril.",
+      "bloqueo_probable": "B56"
+    },
+    "P6-VAL": {
+      "decision": "Contrastar el modelo con el WTI y con los precios reales posteriores; revisar si el supuesto de caída fue razonable.",
+      "evidencia": "Comparación escrita entre lo previsto y los datos nuevos, con una frase sobre qué ajustarían.",
+      "bloqueo_probable": "B67"
+    },
+    "P7-EXP": {
+      "decision": "Presentar la recomendación al gerente de la empresa con una tabla o gráfico y sus supuestos.",
+      "evidencia": "Cartel o informe breve con tabla, gráfico y la recomendación.",
+      "bloqueo_probable": null
+    }
+  },
+  "task_space": {
+    "required_assumptions": [
+      "Entre la fecha de la noticia y diciembre del próximo año hay unos trece meses.",
+      "El precio que paga la empresa por su combustible sigue al del Brent.",
+      "El grupo decide cómo cae el precio: de forma pareja, con un porcentaje fijo por mes o frenándose con el tiempo.",
+      "La proyección del banco es una referencia, no una certeza.",
+      "La empresa consume aproximadamente lo mismo cada mes."
+    ],
+    "reference_solution": {
+      "steps": "1) Bajada total proyectada: 92,59 − 78 = 14,59 dólares por barril. 2) Con unos trece meses hasta diciembre del próximo año, la bajada pareja es de alrededor de 1,12 dólares por mes. 3) Tabla: mes 1 ≈ 91,5; mes 6 ≈ 85,9; mes 13 = 78. 4) Comparar con la caída reciente: 12,26% de 92,59 son unos 11 a 13 dólares en un mes, cerca de diez veces el ritmo proyectado; por lo tanto esa velocidad no puede mantenerse. 5) Elegir un escenario (por ejemplo caída rápida al inicio y luego estabilización) y decidir. 6) Considerar el riesgo de subidas bruscas por ataques a barcos. 7) Contrastar con el WTI y con precios reales posteriores.",
+      "result": "Respuesta abierta. Con el modelo lineal el precio baja unos 1,12 dólares por mes y el promedio de los próximos seis meses ronda los 89 dólares, menos que los 92,59 de hoy. Una recomendación defendible es esperar o firmar un contrato corto y renovable. También es defendible fijar una parte hoy si el grupo da peso al riesgo de alzas por ataques.",
+      "acceptable_range": "Precio estimado a seis meses entre unos 80 y 92 dólares por barril según el modelo. Recomendación coherente con el modelo y los supuestos elegidos."
+    },
+    "routes": [
+      {
+        "id": "R1",
+        "nombre": "Caída pareja por mes",
+        "nivel": "P",
+        "modelo": "Aditivo: bajada total (14,59) dividida en unos trece meses, tabla mes a mes",
+        "resultado": "Baja unos 1,12 dólares por mes; en seis meses ≈ 85,9; promedio de seis meses ≈ 89"
+      },
+      {
+        "id": "R2",
+        "nombre": "Comparar el ritmo reciente con el proyectado",
+        "nivel": "P",
+        "modelo": "Porcentaje simple: 12,26% de 92,59 comparado con la bajada mensual del modelo pareja",
+        "resultado": "El último mes bajó unos 11 a 13 dólares, cerca de diez veces el ritmo proyectado; la caída reciente debe frenarse"
+      },
+      {
+        "id": "R3",
+        "nombre": "Caída rápida al inicio y luego estabilización",
+        "nivel": "P",
+        "modelo": "Dos tramos: primeros meses con bajada mayor y luego precio casi constante hasta llegar a 78",
+        "resultado": "Precio de unos 80 en pocos meses y luego estable; recomienda esperar un poco y firmar después"
+      },
+      {
+        "id": "R4",
+        "nombre": "Porcentaje fijo por mes",
+        "nivel": "S1",
+        "modelo": "Función exponencial decreciente: factor mensual (78 ÷ 92,59) elevado a 1/13",
+        "resultado": "Baja cerca de 1,3% por mes; en seis meses ≈ 85,5, similar al modelo pareja"
+      }
+    ],
+    "modelo_inadecuado": {
+      "id": "RX",
+      "por_que_falla": "Suponer que el precio sigue bajando 12,26% cada mes durante trece meses (o 3,39% cada día) lleva a un precio cercano a 17 dólares, muy por debajo de la proyección del banco y poco plausible para el mercado. Una caída de corto plazo no representa la tendencia de todo un año."
+    },
+    "validation_evidence": "Después de modelar, el grupo compara con (a) los precios reales de cierre del Brent de las semanas siguientes (serie diaria de la EIA): ¿el modelo acertó el primer mes? (b) la proyección del WTI (85,63 hoy y 70 al cierre del próximo año), para ver si la forma de caída elegida da una bajada parecida a la proyectada para otro tipo de petróleo. Ninguno de estos datos se usa para construir el modelo.",
+    "agent_visibility": {
+      "students": [
+        "enunciado_es",
+        "foto_descripcion",
+        "recursos_a_solicitud"
+      ],
+      "coder": [
+        "enunciado_es",
+        "task_space"
+      ],
+      "guide": [
+        "all"
+      ]
+    }
+  },
+  "rubrica_rub01": {
+    "total": 23,
+    "por_criterio": {
+      "genuino": 2,
+      "abierta": 2,
+      "decisiones": 2,
+      "realismo": 2,
+      "autenticidad": 2,
+      "contexto": 2,
+      "ciclo": 2,
+      "validacion": 2,
+      "nivel": 1,
+      "autodiferenciacion": 2,
+      "fecundidad": 2,
+      "recursos": 2
+    }
+  },
+  "rubrica_rub02": {
+    "P": null,
+    "S": null,
+    "U": null
+  },
+  "modelo_y_prompt": {
+    "diseñador": "claude-sonnet-5-5",
+    "version_prompt": "1.1",
+    "version_rubrica": "4.0"
+  }
+}

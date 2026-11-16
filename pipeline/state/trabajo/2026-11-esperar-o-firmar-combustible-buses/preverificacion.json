@@ -1,0 +1,125 @@
+{
+  "tarea_id": "2026-11-esperar-o-firmar-combustible-buses",
+  "aprobado": true,
+  "alcance": "tarea",
+  "hallazgos": [
+    {
+      "invariante": "4",
+      "severidad": "advertencia",
+      "ubicacion": "tarea.noticia.cifras_usadas[6]",
+      "descripcion": "localizador corrido: 'US$ 70' no está en «párrafo 11» sino en el párrafo 10; se corrige el localizador",
+      "origen": "codigo"
+    }
+  ],
+  "cifras_contrastadas": [
+    {
+      "indice": 0,
+      "que_es": "caída del precio del barril Brent en la jornada",
+      "valor_tarea": "3,39%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 3"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "3,39%",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 3 de la noticia"
+    },
+    {
+      "indice": 1,
+      "que_es": "cotización del Brent al cierre de la edición",
+      "valor_tarea": "US$ 92,59",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 3"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "US$ 92,59",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 3 de la noticia"
+    },
+    {
+      "indice": 2,
+      "que_es": "cotización del WTI al momento del reporte",
+      "valor_tarea": "US$ 85,63",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 3"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "US$ 85,63",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 3 de la noticia"
+    },
+    {
+      "indice": 3,
+      "que_es": "descenso acumulado del Brent en el último mes",
+      "valor_tarea": "12,26%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 4"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "12,26%",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 4 de la noticia"
+    },
+    {
+      "indice": 4,
+      "que_es": "superávit de oferta mundial esperado en el cuarto trimestre de 2026",
+      "valor_tarea": "más de 1,7 millones",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 5"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "más de 1,7 millones",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 5 de la noticia"
+    },
+    {
+      "indice": 5,
+      "que_es": "precio proyectado del Brent en diciembre de 2027",
+      "valor_tarea": "US$ 78",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 10"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "US$ 78",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 10 de la noticia"
+    },
+    {
+      "indice": 6,
+      "que_es": "precio proyectado del WTI al cierre de 2027",
+      "valor_tarea": "US$ 70",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 11"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "US$ 70",
+      "resultado": "coincide",
+      "localizador_corregido": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 10"
+      },
+      "nota": "valor presente en el párrafo 10 (localizador corregido desde «párrafo 11»)"
+    }
+  ],
+  "meta": {
+    "agente": "verificador",
+    "version_prompt": "1.1",
+    "modelo_llamado": false,
+    "costo_usd": 0.0,
+    "texto_noticia_recibido": true,
+    "fecha": "2026-11-16T19:56:01+00:00"
+  },
+  "localizadores_corregidos": {
+    "6": {
+      "fuente": "noticia",
+      "ubicacion": "párrafo 10"
+    }
+  }
+}

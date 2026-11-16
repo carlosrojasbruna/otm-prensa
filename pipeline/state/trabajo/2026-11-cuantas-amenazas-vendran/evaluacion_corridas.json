@@ -1,0 +1,291 @@
+{
+  "tarea_id": "2026-11-cuantas-amenazas-vendran",
+  "evaluaciones": [
+    {
+      "iteracion": 1,
+      "version_tarea": 1,
+      "fecha": "2026-11-16T20:07:35Z",
+      "modelo": "claude-opus-5-5",
+      "version_prompt": "1.3",
+      "version_rubrica": "4.0",
+      "corridas": [
+        {
+          "n": 1,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La tarea plantea una necesidad de planificación sin entregar fórmula ni modelo de crecimiento. Los estudiantes deben construir cómo proyectar la serie.",
+                "cita": "Imaginen que forman parte de un equipo que debe decidir cuántas personas destinar el año siguiente al último registrado a recibir y revisar denuncias de …"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe procedimiento. Admite varios modelos defendibles (lineal, exponencial, tasa del último año, escenarios), y ninguna instrucción posterior encauza la ruta.",
+                "cita": "¿Cuántos casos de amenazas a internos recomendarían prever para ese año siguiente, y qué tan confiable les parece esa recomendación?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige suponer la forma del crecimiento con solo tres puntos y un hueco de varios años, decidir qué información solicitar y estimar un margen. Son decisiones de modelación sustantivas.",
+                "cita": "No saben cuántas denuncias llegarán; solo tienen estos tres datos y lo que decidan pedir."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Se trata de datos reales sobre un fenómeno existente. Proyectar la demanda para dimensionar personal es una situación claramente plausible fuera de la escuela.",
+                "cita": "Un observatorio universitario registró cuántas amenazas contra internos hubo en las cárceles chilenas a lo largo de una década"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Las cifras proceden de un registro externo declarado y son el núcleo de la tarea. Además, los recursos reproducen cómo el propio observatorio describe el cambio, así que el componente auténtico está integrado de manera sustantiva.",
+                "cita": "Un observatorio universitario registró cuántas amenazas contra internos hubo en las cárceles chilenas"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El costo asimétrico de equivocarse condiciona qué cifra recomendar. El contexto también es necesario para juzgar la confiabilidad de la recomendación, por lo que no puede abandonarse tras matematizar.",
+                "cita": "No pueden quedarse cortos, pero tampoco contratar gente de sobra."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a comprender la serie, simplificar eligiendo un patrón de crecimiento, matematizarlo, calcular, interpretar la cifra para la dotación y juzgar su confiabilidad. Ninguna fase viene hecha.",
+                "cita": "¿Cuántos casos de amenazas a internos recomendarían prever para ese año siguiente, y qué tan confiable les parece esa recomendación?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "El total acumulado es evidencia independiente, no usada para construir el modelo, contra la cual contrastar la serie supuesta. A eso se suma el dato real del año siguiente cuando se publique.",
+                "cita": "En toda la década se registraron 2.322 casos de amenazas a internos."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "Para S2, comparar crecimiento lineal y exponencial y considerar varios supuestos está dentro de las herramientas esperables. El contexto, aunque sensible, es comprensible y pertinente para estudiantes de 16 a 18 años.",
+                "cita": "62 casos en el primer año, 235 casos en el año anterior al último y 548 casos en el último año."
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Hay un piso razonable: se puede entrar extrapolando la diferencia o la razón del último año. El techo es alto: ajuste exponencial, contraste con el total acumulado, escenarios e intervalos de confianza.",
+                "cita": "solo tienen estos tres datos y lo que decidan pedir."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "La pregunta por la confiabilidad abre la comparación entre modelos, sus límites y la traducción a dotación de personal. Los recursos opcionales (regiones, agresiones) permiten extensiones sustantivas.",
+                "cita": "y qué tan confiable les parece esa recomendación?"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "Los datos necesarios están en el enunciado y los complementarios se entregan a solicitud. Ninguno revela el modelo: los porcentajes del observatorio describen el cambio sin indicar cómo proyectarlo.",
+                "cita": "Pueden pedir información adicional."
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011Ch7D5LEyarYQ2gvuLANWY",
+            "fecha": "2026-11-16T20:06:41+00:00",
+            "intentos": 1,
+            "costo_usd": 0.065838,
+            "avisos": [
+              "cita_recortada_25:genuino"
+            ]
+          }
+        },
+        {
+          "n": 2,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La situación plantea una necesidad real de planificación. No entrega regla, fórmula ni modelo de proyección: el grupo debe construirlo a partir de tres cifras.",
+                "cita": "decidir cuántas personas destinar el año siguiente al último registrado a recibir y revisar denuncias de amenazas en todo el país"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe procedimiento y admite varios modelos defendibles: lineal con los dos últimos años, exponencial desde el primer año, o uno ajustado con el total acumulado. No hay instrucciones posteriores que encaucen hacia una ruta única.",
+                "cita": "¿Cuántos casos de amenazas a internos recomendarían prever para ese año siguiente, y qué tan confiable les parece esa recomendación?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige suponer cómo evolucionaron los años no informados, elegir el tipo de crecimiento y decidir qué información solicitar. También hay que fijar un margen frente a la asimetría entre quedarse corto y contratar de sobra.",
+                "cita": "No saben cuántas denuncias llegarán; solo tienen estos tres datos y lo que decidan pedir."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Proyectar demanda a partir de registros para dimensionar un equipo es una situación que existe fuera de la escuela. Los datos no parecen inventados para insertar un cálculo.",
+                "cita": "Un observatorio universitario registró cuántas amenazas contra internos hubo en las cárceles chilenas a lo largo de una década"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los datos se declaran como procedentes de un registro real de un observatorio y son el núcleo de la tarea. El componente auténtico está, por tanto, integrado de manera sustantiva.",
+                "cita": "Un observatorio universitario registró cuántas amenazas contra internos hubo en las cárceles chilenas"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona la decisión: el costo asimétrico del error influye en qué cifra recomendar y con qué margen. Además, es necesario para juzgar la confiabilidad de la proyección.",
+                "cita": "No pueden quedarse cortos, pero tampoco contratar gente de sobra."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a recorrer todas las fases: comprender la situación, simplificar los años faltantes, elegir un modelo de crecimiento, calcular y volver a la situación para recomendar. La pregunta explícita por la confiabilidad exige además validar, y ninguna fase viene hecha.",
+                "cita": "¿Cuántos casos de amenazas a internos recomendarían prever para ese año siguiente, y qué tan confiable les parece esa recomendación?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "El total acumulado (R4) es evidencia independiente, no usada para construir la serie, que permite contrastar el modelo supuesto. Por ejemplo, un exponencial suave desde 62 hasta 548 no reproduce ese total. Los datos del año siguiente también son evidencia externa obtenible.",
+                "cita": "En toda la década se registraron 2.322 casos de amenazas a internos."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "Comparar crecimiento lineal y exponencial y usar sumas de series está al alcance de las herramientas esperables en S2 según MAR03. El contexto es comprensible y pertinente como tema social chileno.",
+                "cita": "62 casos en el primer año, 235 casos en el año anterior al último y 548 casos en el último año"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es razonable: una extrapolación lineal con los dos últimos años es accesible. El techo es alto: ajustar un modelo exponencial, imponer la restricción del total acumulado o comparar escenarios con rangos de confianza son soluciones correctas más sofisticadas.",
+                "cita": "solo tienen estos tres datos y lo que decidan pedir"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Los distintos modelos producen recomendaciones muy diferentes, lo que abre la comparación entre soluciones. También abre discusión sobre los límites de extrapolar con pocos datos y sobre la relación con otras formas de violencia (R5).",
+                "cita": "y qué tan confiable les parece esa recomendación?"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información adicional está disponible a solicitud. R2 solo reexpresa variaciones derivables de los datos y no entrega el modelo ni la regla de solución.",
+                "cita": "El aumento de amenazas en toda la década fue de 784%, y el aumento del último año respecto del anterior fue de 133%."
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011Ch7D7J54gZfisoZuR1wYc",
+            "fecha": "2026-11-16T20:07:08+00:00",
+            "intentos": 1,
+            "costo_usd": 0.064318,
+            "avisos": []
+          }
+        },
+        {
+          "n": 3,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La situación plantea una necesidad real de planificación y no entrega ninguna regla ni modelo de proyección. Quien resuelve debe construirlo a partir de tres datos.",
+                "cita": "Imaginen que forman parte de un equipo que debe decidir cuántas personas destinar el año siguiente al último registrado a recibir y revisar denuncias"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe un procedimiento. Admite varios modelos defendibles (lineal, exponencial, tasa del último año, rango de escenarios) y no hay instrucciones posteriores que encaucen una ruta.",
+                "cita": "¿Cuántos casos de amenazas a internos recomendarían prever para ese año siguiente, y qué tan confiable les parece esa recomendación?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige suponer la forma de crecimiento entre puntos muy espaciados y decidir qué información solicitar. También obliga a estimar con margen, porque no pueden quedarse cortos ni excederse.",
+                "cita": "No saben cuántas denuncias llegarán; solo tienen estos tres datos y lo que decidan pedir."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Estimar la demanda de denuncias para dimensionar un equipo es una situación plausible fuera de la escuela, basada en un registro real.",
+                "cita": "Un observatorio universitario registró cuántas amenazas contra internos hubo en las cárceles chilenas a lo largo de una década"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los datos declarados de un observatorio real (y sus cifras derivadas en R2-R5) son el núcleo de la tarea. Están integrados de manera sustantiva y no fueron creados para enseñar el contenido.",
+                "cita": "Un observatorio universitario registró cuántas amenazas contra internos hubo en las cárceles chilenas"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El costo asimétrico de equivocarse condiciona la elección entre una cifra puntual o un margen. El contexto es necesario para juzgar qué tan confiable es la recomendación.",
+                "cita": "No pueden quedarse cortos, pero tampoco contratar gente de sobra."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a recorrer todas las fases sin que el enunciado deje ninguna hecha: comprender el registro, elegir supuestos de crecimiento, matematizar, calcular, interpretar la cifra para la planificación y juzgar su confiabilidad.",
+                "cita": "¿Cuántos casos de amenazas a internos recomendarían prever para ese año siguiente, y qué tan confiable les parece esa recomendación?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "El total acumulado (R4) no se usa para construir el modelo y permite contrastar la serie supuesta para los años intermedios. Es evidencia independiente; además, el dato del año siguiente sería verificable.",
+                "cita": "En toda la década se registraron 2.322 casos de amenazas a internos."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto es comprensible para estudiantes de 16 a 18 años. Comparar crecimiento lineal y exponencial y evaluar la incertidumbre corresponde a las herramientas de S2.",
+                "cita": "62 casos en el primer año, 235 casos en el año anterior al último y 548 casos en el último año."
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Hay piso razonable: se puede extrapolar sumando el último aumento. El techo es alto, porque admite ajustes exponenciales, contraste con el acumulado, rangos de escenarios y análisis de sensibilidad.",
+                "cita": "solo tienen estos tres datos y lo que decidan pedir."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las distintas proyecciones permiten comparar modelos y discutir sus límites. Los recursos abren preguntas nuevas, como por qué las amenazas crecen mucho más que las agresiones o cómo se distribuyen por región.",
+                "cita": "Agresiones a internos en el último año: 6.365, el máximo histórico del registro; 9,3% más que en el año anterior."
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "Los datos imprescindibles están en el enunciado y los complementarios se entregan a solicitud. R2 solo reexpresa las cifras como porcentajes y no revela un modelo ni la regla de solución.",
+                "cita": "Pueden pedir información adicional."
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011Ch7D9HhYzRBARBWC36Q9Z",
+            "fecha": "2026-11-16T20:07:35+00:00",
+            "intentos": 1,
+            "costo_usd": 0.064298,
+            "avisos": []
+          }
+        }
+      ],
+      "totales": [
+        24,
+        24,
+        24
+      ],
+      "rango_total": 0,
+      "rango_inestable": 4,
+      "evaluacion_inestable": false,
+      "mediana": {
+        "regla": "mediana por criterio (n par: mediana inferior)",
+        "total": 24,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 2
+        },
+        "corrida_fuente": {
+          "genuino": 1,
+          "abierta": 1,
+          "decisiones": 1,
+          "realismo": 1,
+          "autenticidad": 1,
+          "contexto": 1,
+          "ciclo": 1,
+          "validacion": 1,
+          "nivel": 1,
+          "autodiferenciacion": 1,
+          "fecundidad": 1,
+          "recursos": 1
+        }
+      }
+    }
+  ]
+}

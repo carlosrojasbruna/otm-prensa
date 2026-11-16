@@ -1,0 +1,113 @@
+{
+  "tarea_id": "2026-11-cuanto-petroleo-sobra-recorte",
+  "fecha": "2026-11-16T19:55:58Z",
+  "rub01": {
+    "version_rubrica": "4.0",
+    "criterios": {
+      "genuino": {
+        "puntaje": 2,
+        "justificacion": "La situación plantea una necesidad real (diseñar un recorte para eliminar un exceso). El enunciado no entrega regla ni modelo de reparto.",
+        "cita": "¿cuánto y quiénes deberían reducir su producción para que el petróleo deje de sobrar? Expliquen y justifiquen su propuesta."
+      },
+      "abierta": {
+        "puntaje": 2,
+        "justificacion": "Admite varios modelos defendibles: reparto igualitario o proporcional, número de países, qué cifra de exceso usar. Ninguna instrucción posterior prescribe la ruta.",
+        "cita": "Tu grupo es el equipo asesor que prepara una propuesta de recorte para esa reunión"
+      },
+      "decisiones": {
+        "puntaje": 2,
+        "justificacion": "Hay que elegir entre dos estimaciones del exceso, decidir cuántos y cuáles países participan y suponer el grado de cumplimiento. Además hay que descartar información no necesaria, como el precio.",
+        "cita": "sobrarán más de 1,7 millones de barriles diarios en el mundo, y un banco proyecta que el exceso será de 2 millones"
+      },
+      "realismo": {
+        "puntaje": 2,
+        "justificacion": "Las reuniones de productores para acordar recortes existen fuera de la escuela. El encuadre no es forzado.",
+        "cita": "los países productores de petróleo se reúnen para decidir si reducen su producción y así evitar que el precio siga cayendo"
+      },
+      "autenticidad": {
+        "puntaje": 2,
+        "justificacion": "Las cifras de agencia, banco y producción rusa, y el comunicado real de la OPEP (R5), son componentes extraescolares. Constituyen el núcleo de la tarea.",
+        "cita": "Una agencia de energía calcula que en el cuarto trimestre de este año sobrarán más de 1,7 millones de barriles diarios"
+      },
+      "contexto": {
+        "puntaje": 2,
+        "justificacion": "El contexto condiciona decisiones como el cumplimiento, quiénes recortan y qué horizonte usar. También es necesario para interpretar la propuesta y compararla con recortes reales.",
+        "cita": "los países pueden cumplir todo lo que prometen o solo una parte; no se sabe de antemano cuál de las dos cosas pasará"
+      },
+      "ciclo": {
+        "puntaje": 2,
+        "justificacion": "Resolver obliga a comprender el problema, simplificar (cuántos países, qué exceso), matematizar el reparto, calcular, interpretar la propuesta y juzgarla. El enunciado no deja hecha ninguna fase.",
+        "cita": "Expliquen y justifiquen su propuesta. Pueden pedir información adicional."
+      },
+      "validacion": {
+        "puntaje": 2,
+        "justificacion": "La propuesta puede contrastarse con un recorte real no usado en su construcción. También con datos posteriores de exceso.",
+        "cita": "Comunicado de la OPEP sobre un recorte anterior de producción, con el volumen total acordado y los países que participaron."
+      },
+      "nivel": {
+        "puntaje": 1,
+        "justificacion": "La matemática (operatoria con decimales, reparto, proporcionalidad) está al alcance de P. El contexto de mercados petroleros, trimestres y proyecciones bancarias es comprensible pero lejano y poco significativo a los 10–12 años. Hay duda entre 1 y 2; se asigna el menor.",
+        "cita": "en el cuarto trimestre de este año sobrarán más de 1,7 millones de barriles diarios"
+      },
+      "autodiferenciacion": {
+        "puntaje": 2,
+        "justificacion": "Se puede entrar dividiendo el exceso en partes iguales entre algunos países. Admite soluciones más sofisticadas: reparto proporcional a la producción, margen por incumplimiento o escenarios con 1,7 y 2 millones.",
+        "cita": "¿cuánto y quiénes deberían reducir su producción para que el petróleo deje de sobrar?"
+      },
+      "fecundidad": {
+        "puntaje": 2,
+        "justificacion": "Las propuestas pueden compararse entre grupos y con el recorte real de la OPEP. Esto abre preguntas sobre equidad del reparto, cumplimiento y efecto en el precio.",
+        "cita": "El grupo lo pide una vez que tiene su propuesta."
+      },
+      "recursos": {
+        "puntaje": 1,
+        "justificacion": "R2 sobreorienta al sugerir el supuesto de productores iguales, lo que encamina a un reparto igualitario. Además no entrega ni indica cómo obtener la producción real de los países, dato difícil de conseguir para estudiantes de P.",
+        "cita": "El grupo puede elegir cuántos y suponer que cada uno produce más o menos lo mismo que Rusia."
+      }
+    },
+    "total": 22,
+    "mejoras": [
+      {
+        "criterio": "nivel",
+        "mejora_minima": "Añadir una frase que traduzca la escala a algo cercano, por ejemplo cuántos barriles produce cada día un país conocido. También reemplazar «cuarto trimestre» y «proyecta» por «los últimos tres meses del año» y «calcula»."
+      },
+      {
+        "criterio": "recursos",
+        "mejora_minima": "Reemplazar el supuesto de R2 por una tabla breve con la producción diaria de cinco o seis grandes productores, sin sugerir cómo repartir el recorte."
+      }
+    ]
+  },
+  "reproducibilidad": {
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.217112,
+        "version_prompt": "1.1"
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.274534,
+        "version_prompt": "1.3"
+      },
+      "filtro": {
+        "modelo": "claude-haiku-5-5",
+        "version_modelo": "claude-haiku-5-5",
+        "costo_usd": 0.000428,
+        "version_prompt": "1.0"
+      }
+    },
+    "version_prompt": {
+      "disenador": "1.1",
+      "evaluador": "1.3",
+      "filtro": "1.0"
+    },
+    "version_rubrica": "4.0",
+    "version_MAR03": "1.0",
+    "version_MED01": "1.5",
+    "diseno_simulador": null,
+    "fecha": "2026-11-16T19:55:58Z",
+    "costo_usd": 0.492074
+  }
+}

@@ -1,0 +1,433 @@
+{
+  "ciclo_id": "ciclo_20261116T193836758402Z",
+  "inicio": "2026-11-16T19:38:36Z",
+  "fin": "2026-11-16T20:07:39Z",
+  "semana": "2026-W47",
+  "parametros": {
+    "tope_semanal_usd": 35.0,
+    "fraccion_detencion": 0.9,
+    "presupuesto_ciclo_usd": null,
+    "limite_usd": 31.5,
+    "gasto_semana_previo_usd": 2.841033,
+    "corridas_evaluador": 3,
+    "rango_inestable": 4,
+    "corridas_simulador": 6,
+    "max_tareas": 3,
+    "nivel": null,
+    "origen": "explorador"
+  },
+  "detenido_por_tope": false,
+  "eventos": [
+    {
+      "fecha": "2026-11-16T19:49:57Z",
+      "tipo": "agente",
+      "agente": "explorador",
+      "tareas": [],
+      "llamadas": 104,
+      "usd": 0.090644
+    },
+    {
+      "fecha": "2026-11-16T19:50:02Z",
+      "tipo": "agente",
+      "agente": "filtro",
+      "tareas": [],
+      "llamadas": 1,
+      "usd": 0.000693
+    },
+    {
+      "fecha": "2026-11-16T19:50:05Z",
+      "tipo": "agente",
+      "agente": "filtro",
+      "tareas": [],
+      "llamadas": 1,
+      "usd": 0.000428
+    },
+    {
+      "fecha": "2026-11-16T19:52:19Z",
+      "tipo": "agente",
+      "agente": "disenador",
+      "tareas": [],
+      "llamadas": 1,
+      "usd": 0.217112
+    },
+    {
+      "fecha": "2026-11-16T19:52:50Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-11-esperar-o-firmar-combustible-buses"
+      ],
+      "llamadas": 1,
+      "usd": 0.124272
+    },
+    {
+      "fecha": "2026-11-16T19:53:25Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-11-esperar-o-firmar-combustible-buses"
+      ],
+      "llamadas": 1,
+      "usd": 0.076958
+    },
+    {
+      "fecha": "2026-11-16T19:53:55Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-11-esperar-o-firmar-combustible-buses"
+      ],
+      "llamadas": 1,
+      "usd": 0.069558
+    },
+    {
+      "fecha": "2026-11-16T19:53:56Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-esperar-o-firmar-combustible-buses",
+      "de": "borrador",
+      "a": "evaluada"
+    },
+    {
+      "fecha": "2026-11-16T19:54:38Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-11-cuanto-petroleo-sobra-recorte"
+      ],
+      "llamadas": 1,
+      "usd": 0.091318
+    },
+    {
+      "fecha": "2026-11-16T19:55:15Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-11-cuanto-petroleo-sobra-recorte"
+      ],
+      "llamadas": 1,
+      "usd": 0.083018
+    },
+    {
+      "fecha": "2026-11-16T19:55:58Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-11-cuanto-petroleo-sobra-recorte"
+      ],
+      "llamadas": 1,
+      "usd": 0.100198
+    },
+    {
+      "fecha": "2026-11-16T19:55:59Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-cuanto-petroleo-sobra-recorte",
+      "de": "borrador",
+      "a": "evaluada"
+    },
+    {
+      "fecha": "2026-11-16T19:56:00Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-cuanto-petroleo-sobra-recorte",
+      "de": "evaluada",
+      "a": "archivada",
+      "motivo": "candidato no elegido: RUB01 22/24 frente a 23/24 de 2026-11-esperar-o-firmar-combustible-buses (2 candidatos por noticia; se sigue con el mejor)"
+    },
+    {
+      "fecha": "2026-11-16T19:56:01Z",
+      "tipo": "preverificacion",
+      "tarea_id": "2026-11-esperar-o-firmar-combustible-buses",
+      "aprobado": true,
+      "criticos": 0,
+      "pendientes": 0,
+      "localizadores_corregidos": 1
+    },
+    {
+      "fecha": "2026-11-16T19:56:06Z",
+      "tipo": "agente",
+      "agente": "filtro",
+      "tareas": [],
+      "llamadas": 1,
+      "usd": 0.000678
+    },
+    {
+      "fecha": "2026-11-16T19:58:09Z",
+      "tipo": "agente",
+      "agente": "disenador",
+      "tareas": [],
+      "llamadas": 1,
+      "usd": 0.203368
+    },
+    {
+      "fecha": "2026-11-16T19:58:39Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-11-alertas-reconocimiento-facial"
+      ],
+      "llamadas": 1,
+      "usd": 0.067778
+    },
+    {
+      "fecha": "2026-11-16T19:59:11Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-11-alertas-reconocimiento-facial"
+      ],
+      "llamadas": 1,
+      "usd": 0.070998
+    },
+    {
+      "fecha": "2026-11-16T19:59:42Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-11-alertas-reconocimiento-facial"
+      ],
+      "llamadas": 1,
+      "usd": 0.070038
+    },
+    {
+      "fecha": "2026-11-16T19:59:43Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-alertas-reconocimiento-facial",
+      "de": "borrador",
+      "a": "evaluada"
+    },
+    {
+      "fecha": "2026-11-16T20:00:12Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-11-auditoria-coleccion-fotos"
+      ],
+      "llamadas": 1,
+      "usd": 0.067958
+    },
+    {
+      "fecha": "2026-11-16T20:00:44Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-11-auditoria-coleccion-fotos"
+      ],
+      "llamadas": 1,
+      "usd": 0.073338
+    },
+    {
+      "fecha": "2026-11-16T20:01:10Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-11-auditoria-coleccion-fotos"
+      ],
+      "llamadas": 1,
+      "usd": 0.062838
+    },
+    {
+      "fecha": "2026-11-16T20:01:11Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-auditoria-coleccion-fotos",
+      "de": "borrador",
+      "a": "evaluada"
+    },
+    {
+      "fecha": "2026-11-16T20:01:12Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-auditoria-coleccion-fotos",
+      "de": "evaluada",
+      "a": "archivada",
+      "motivo": "candidato no elegido: RUB01 24/24 frente a 24/24 de 2026-11-alertas-reconocimiento-facial (2 candidatos por noticia; se sigue con el mejor)"
+    },
+    {
+      "fecha": "2026-11-16T20:01:13Z",
+      "tipo": "preverificacion",
+      "tarea_id": "2026-11-alertas-reconocimiento-facial",
+      "aprobado": true,
+      "criticos": 0,
+      "pendientes": 0,
+      "localizadores_corregidos": 0
+    },
+    {
+      "fecha": "2026-11-16T20:01:17Z",
+      "tipo": "agente",
+      "agente": "filtro",
+      "tareas": [],
+      "llamadas": 1,
+      "usd": 0.000915
+    },
+    {
+      "fecha": "2026-11-16T20:04:32Z",
+      "tipo": "agente",
+      "agente": "disenador",
+      "tareas": [],
+      "llamadas": 2,
+      "usd": 0.327652
+    },
+    {
+      "fecha": "2026-11-16T20:05:07Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-11-carceles-mas-seguras-o-peligrosas"
+      ],
+      "llamadas": 1,
+      "usd": 0.074574
+    },
+    {
+      "fecha": "2026-11-16T20:05:38Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-11-carceles-mas-seguras-o-peligrosas"
+      ],
+      "llamadas": 1,
+      "usd": 0.069574
+    },
+    {
+      "fecha": "2026-11-16T20:06:13Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-11-carceles-mas-seguras-o-peligrosas"
+      ],
+      "llamadas": 1,
+      "usd": 0.074874
+    },
+    {
+      "fecha": "2026-11-16T20:06:15Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-carceles-mas-seguras-o-peligrosas",
+      "de": "borrador",
+      "a": "evaluada"
+    },
+    {
+      "fecha": "2026-11-16T20:06:41Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-11-cuantas-amenazas-vendran"
+      ],
+      "llamadas": 1,
+      "usd": 0.065838
+    },
+    {
+      "fecha": "2026-11-16T20:07:08Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-11-cuantas-amenazas-vendran"
+      ],
+      "llamadas": 1,
+      "usd": 0.064318
+    },
+    {
+      "fecha": "2026-11-16T20:07:35Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-11-cuantas-amenazas-vendran"
+      ],
+      "llamadas": 1,
+      "usd": 0.064298
+    },
+    {
+      "fecha": "2026-11-16T20:07:37Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-cuantas-amenazas-vendran",
+      "de": "borrador",
+      "a": "evaluada"
+    },
+    {
+      "fecha": "2026-11-16T20:07:38Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-cuantas-amenazas-vendran",
+      "de": "evaluada",
+      "a": "archivada",
+      "motivo": "candidato no elegido: RUB01 24/24 frente a 24/24 de 2026-11-carceles-mas-seguras-o-peligrosas (2 candidatos por noticia; se sigue con el mejor)"
+    },
+    {
+      "fecha": "2026-11-16T20:07:39Z",
+      "tipo": "preverificacion",
+      "tarea_id": "2026-11-carceles-mas-seguras-o-peligrosas",
+      "aprobado": false,
+      "criticos": 2,
+      "pendientes": 2,
+      "localizadores_corregidos": 6
+    }
+  ],
+  "expedientes": {
+    "2026-11-esperar-o-firmar-combustible-buses": "evaluada",
+    "2026-11-cuanto-petroleo-sobra-recorte": "archivada",
+    "2026-11-alertas-reconocimiento-facial": "evaluada",
+    "2026-11-auditoria-coleccion-fotos": "archivada",
+    "2026-11-carceles-mas-seguras-o-peligrosas": "evaluada",
+    "2026-11-cuantas-amenazas-vendran": "archivada"
+  },
+  "noticias": [
+    {
+      "noticia_id": "2026-11-16-latercera-kast-llega-a-china-este-martes",
+      "nivel": "S",
+      "resultado": "no pasa el filtro (5/10)"
+    },
+    {
+      "noticia_id": "2026-11-16-latercera-petroleo-cae-mas-de-3-mientras",
+      "nivel": "P",
+      "resultado": "evaluada",
+      "candidatos": [
+        "2026-11-esperar-o-firmar-combustible-buses",
+        "2026-11-cuanto-petroleo-sobra-recorte"
+      ],
+      "elegido": "2026-11-esperar-o-firmar-combustible-buses"
+    },
+    {
+      "noticia_id": "2026-11-16-latercera-como-israel-cargo-3-5-millones",
+      "nivel": "U",
+      "resultado": "evaluada",
+      "candidatos": [
+        "2026-11-alertas-reconocimiento-facial",
+        "2026-11-auditoria-coleccion-fotos"
+      ],
+      "elegido": "2026-11-alertas-reconocimiento-facial"
+    },
+    {
+      "noticia_id": "2026-11-16-latercera-informe-unab-homicidios-en-carceles-caen",
+      "nivel": "S",
+      "resultado": "evaluada",
+      "candidatos": [
+        "2026-11-carceles-mas-seguras-o-peligrosas",
+        "2026-11-cuantas-amenazas-vendran"
+      ],
+      "elegido": "2026-11-carceles-mas-seguras-o-peligrosas"
+    }
+  ],
+  "pendientes_humanos": [
+    {
+      "tarea_id": "2026-11-esperar-o-firmar-combustible-buses",
+      "pendiente": "revision_humana_1",
+      "estado": "evaluada"
+    },
+    {
+      "tarea_id": "2026-11-alertas-reconocimiento-facial",
+      "pendiente": "revision_humana_1",
+      "estado": "evaluada"
+    },
+    {
+      "tarea_id": "2026-11-carceles-mas-seguras-o-peligrosas",
+      "pendiente": "revision_humana_1",
+      "estado": "evaluada"
+    }
+  ],
+  "errores": [],
+  "orden": "tramo_a",
+  "explorador": {
+    "aceptadas": 44,
+    "descartadas": 167
+  },
+  "gasto": {
+    "ciclo_usd": 2.213236,
+    "semana_usd": 5.054269,
+    "limite_usd": 31.5,
+    "llamadas": 130
+  }
+}

@@ -1,0 +1,324 @@
+{
+  "tarea_id": "2026-11-cuanto-petroleo-sobra-recorte",
+  "evaluaciones": [
+    {
+      "iteracion": 1,
+      "version_tarea": 1,
+      "fecha": "2026-11-16T19:55:58Z",
+      "modelo": "claude-opus-5-5",
+      "version_prompt": "1.3",
+      "version_rubrica": "4.0",
+      "corridas": [
+        {
+          "n": 1,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La situación plantea una necesidad real (diseñar un recorte para eliminar un exceso). El enunciado no entrega regla ni modelo de reparto.",
+                "cita": "¿cuánto y quiénes deberían reducir su producción para que el petróleo deje de sobrar? Expliquen y justifiquen su propuesta."
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "Admite varios modelos defendibles: reparto igualitario o proporcional, número de países, qué cifra de exceso usar. Ninguna instrucción posterior prescribe la ruta.",
+                "cita": "Tu grupo es el equipo asesor que prepara una propuesta de recorte para esa reunión"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Hay que elegir entre dos estimaciones del exceso, decidir cuántos y cuáles países participan y suponer el grado de cumplimiento. Además hay que descartar información no necesaria, como el precio.",
+                "cita": "sobrarán más de 1,7 millones de barriles diarios en el mundo, y un banco proyecta que el exceso será de 2 millones"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Las reuniones de productores para acordar recortes existen fuera de la escuela. El encuadre no es forzado.",
+                "cita": "los países productores de petróleo se reúnen para decidir si reducen su producción y así evitar que el precio siga cayendo"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Las cifras de agencia, banco y producción rusa, y el comunicado real de la OPEP (R5), son componentes extraescolares. Constituyen el núcleo de la tarea.",
+                "cita": "Una agencia de energía calcula que en el cuarto trimestre de este año sobrarán más de 1,7 millones de barriles diarios"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona decisiones como el cumplimiento, quiénes recortan y qué horizonte usar. También es necesario para interpretar la propuesta y compararla con recortes reales.",
+                "cita": "los países pueden cumplir todo lo que prometen o solo una parte; no se sabe de antemano cuál de las dos cosas pasará"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Resolver obliga a comprender el problema, simplificar (cuántos países, qué exceso), matematizar el reparto, calcular, interpretar la propuesta y juzgarla. El enunciado no deja hecha ninguna fase.",
+                "cita": "Expliquen y justifiquen su propuesta. Pueden pedir información adicional."
+              },
+              "validacion": {
+                "puntaje": 1,
+                "justificacion": "La comparación con un recorte anterior sirve sobre todo como chequeo de plausibilidad u orden de magnitud de una propuesta normativa. Hay duda entre 1 y 2, porque datos posteriores del exceso podrían contrastarla, pero solo si el recorte real coincidiera con el propuesto; se asigna el menor.",
+                "cita": "Comunicado de la OPEP sobre un recorte anterior de producción, con el volumen total acordado y los países que participaron."
+              },
+              "nivel": {
+                "puntaje": 1,
+                "justificacion": "La matemática (operatoria con decimales, reparto, proporcionalidad) está al alcance de P. El contexto de mercados petroleros, trimestres y proyecciones bancarias es comprensible pero lejano y poco significativo a los 10–12 años. Hay duda entre 1 y 2; se asigna el menor.",
+                "cita": "en el cuarto trimestre de este año sobrarán más de 1,7 millones de barriles diarios"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Se puede entrar dividiendo el exceso en partes iguales entre algunos países. Admite soluciones más sofisticadas: reparto proporcional a la producción, margen por incumplimiento o escenarios con 1,7 y 2 millones.",
+                "cita": "¿cuánto y quiénes deberían reducir su producción para que el petróleo deje de sobrar?"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las propuestas pueden compararse entre grupos y con el recorte real de la OPEP. Esto abre preguntas sobre equidad del reparto, cumplimiento y efecto en el precio.",
+                "cita": "El grupo lo pide una vez que tiene su propuesta."
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "R2 sobreorienta al sugerir el supuesto de productores iguales, lo que encamina a un reparto igualitario. Además no entrega ni indica cómo obtener la producción real de los países, dato difícil de conseguir para estudiantes de P.",
+                "cita": "El grupo puede elegir cuántos y suponer que cada uno produce más o menos lo mismo que Rusia."
+              }
+            },
+            "total": 21,
+            "mejoras": [
+              {
+                "criterio": "validacion",
+                "mejora_minima": "Agregar a R5 la cifra del exceso informado por la agencia en el trimestre posterior a ese recorte anterior. Así el grupo puede contrastar si un recorte de ese tamaño efectivamente eliminó el exceso."
+              },
+              {
+                "criterio": "nivel",
+                "mejora_minima": "Añadir una frase que traduzca la escala a algo cercano, por ejemplo cuántos barriles produce cada día un país conocido. También reemplazar «cuarto trimestre» y «proyecta» por «los últimos tres meses del año» y «calcula»."
+              },
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Reemplazar el supuesto de R2 por una tabla breve con la producción diaria de cinco o seis grandes productores, sin sugerir cómo repartir el recorte."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011Ch7C8tsVDMjNnnm6RLqGx",
+            "fecha": "2026-11-16T19:54:38+00:00",
+            "intentos": 1,
+            "costo_usd": 0.091318,
+            "avisos": []
+          }
+        },
+        {
+          "n": 2,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "Plantea una necesidad real: diseñar un recorte. No entrega ninguna regla ni modelo para calcularlo ni para repartirlo.",
+                "cita": "¿cuánto y quiénes deberían reducir su producción para que el petróleo deje de sobrar? Expliquen y justifiquen su propuesta."
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "Admite varias propuestas defendibles: qué exceso cubrir, cuántos países participan, reparto igual o proporcional y margen por incumplimiento. Ninguna instrucción prescribe el procedimiento.",
+                "cita": "Tu grupo es el equipo asesor que prepara una propuesta de recorte para esa reunión"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Hay que elegir entre dos cifras de exceso y suponer cuántos y qué países recortan. También hay que decidir si los acuerdos se cumplen o no (R4) y pedir información.",
+                "cita": "sobrarán más de 1,7 millones de barriles diarios en el mundo, y un banco proyecta que el exceso será de 2 millones"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Los recortes acordados entre productores son una situación real y frecuente fuera de la escuela.",
+                "cita": "los países productores de petróleo se reúnen para decidir si reducen su producción y así evitar que el precio siga cayendo"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los datos de exceso, de producción y del precio del Brent provienen de información periodística real y son el núcleo de la tarea. A esto se suma el comunicado real de la OPEP (R5).",
+                "cita": "Rusia produjo 8,73 millones de barriles diarios en octubre."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona decisiones como qué exceso cubrir, quiénes participan y el margen por incumplimiento. También es necesario para interpretar la propuesta y compararla con recortes reales.",
+                "cita": "los países pueden cumplir todo lo que prometen o solo una parte; no se sabe de antemano cuál de las dos cosas pasará"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Resolver obliga a comprender el exceso, simplificar (cifra, número de países, cumplimiento), calcular, interpretar y contrastar con R5. Ninguna fase queda hecha en el enunciado.",
+                "cita": "Expliquen y justifiquen su propuesta. Pueden pedir información adicional."
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "La propuesta puede contrastarse con un recorte real no usado en su construcción. También con datos posteriores de exceso.",
+                "cita": "Comunicado de la OPEP sobre un recorte anterior de producción, con el volumen total acordado y los países que participaron."
+              },
+              "nivel": {
+                "puntaje": 1,
+                "justificacion": "La matemática (restas, divisiones, porcentajes simples con decimales) está al alcance de P. Pero el contexto geopolítico y términos como «trimestre», «proyecta» o «se cotiza» son poco significativos para niños de 10–12 años y requieren ajustes menores. Dudé entre 1 y 2 y asigné el menor.",
+                "cita": "Una agencia de energía calcula que en el cuarto trimestre de este año sobrarán más de 1,7 millones de barriles diarios"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Se puede entrar con un reparto igual del exceso entre algunos países. También admite soluciones más sofisticadas: recortes proporcionales, margen por incumplimiento o escenarios con 1,7 y con 2 millones.",
+                "cita": "¿cuánto y quiénes deberían reducir su producción para que el petróleo deje de sobrar?"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las propuestas pueden compararse entre grupos y con el recorte real. Además abren preguntas sobre equidad del reparto, incumplimiento y efecto en el precio.",
+                "cita": "Comunicado de la OPEP sobre un recorte anterior de producción, con el volumen total acordado y los países que participaron."
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "R2 entrega el supuesto simplificador que conduce directamente a un reparto igual, lo que es una sobreorientación parcial. Además, la producción de otros países no está disponible y es difícil de obtener para P.",
+                "cita": "El grupo puede elegir cuántos y suponer que cada uno produce más o menos lo mismo que Rusia."
+              }
+            },
+            "total": 22,
+            "mejoras": [
+              {
+                "criterio": "nivel",
+                "mejora_minima": "Reescribir el enunciado con lenguaje de 5°–7° básico: cambiar «cuarto trimestre» por «los últimos tres meses del año», eliminar «proyecta» y «se cotiza», y añadir una frase breve que explique por qué sobra petróleo y qué significa para las personas, por ejemplo el precio de la bencina."
+              },
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Reemplazar el supuesto de R2 por una tabla breve con la producción aproximada de 5–6 grandes productores, sin sugerir cómo repartir el recorte, para que el grupo decida el reparto."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011Ch7CBy1cVY9kquaYi2cfX",
+            "fecha": "2026-11-16T19:55:15+00:00",
+            "intentos": 1,
+            "costo_usd": 0.083018,
+            "avisos": []
+          }
+        },
+        {
+          "n": 3,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La tarea plantea una necesidad real: proponer un recorte para una reunión de productores. No entrega ninguna regla ni modelo de reparto; el grupo debe construir el criterio para decidir cuánto y quiénes recortan.",
+                "cita": "¿cuánto y quiénes deberían reducir su producción para que el petróleo deje de sobrar?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "Hay varias propuestas defendibles: qué exceso usar, cuántos países incluir y si el recorte se reparte en partes iguales o proporcionales. Ninguna instrucción prescribe el procedimiento.",
+                "cita": "Tu grupo es el equipo asesor que prepara una propuesta de recorte para esa reunión"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige elegir entre dos cifras de exceso (1,7 o 2 millones), decidir cuántos países participan y cómo repartir el recorte. También obliga a suponer cuánto cumplirán los países y a pedir la información pertinente.",
+                "cita": "un banco proyecta que el exceso será de 2 millones de barriles diarios el próximo año"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Las reuniones de productores que acuerdan recortes para sostener el precio existen en el mundo real. La situación no se percibe forzada para insertar un cálculo.",
+                "cita": "Imagina que los países productores de petróleo se reúnen para decidir si reducen su producción y así evitar que el precio siga cayendo."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El tema, las cifras de exceso y de producción rusa, el precio del Brent y un comunicado real de la OPEP son componentes extraescolares. Están integrados como datos centrales y como material de contraste.",
+                "cita": "Comunicado de la OPEP sobre un recorte anterior de producción, con el volumen total acordado y los países que participaron."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona decisiones de modelación: quiénes recortan y qué margen dejar por incumplimiento. También es necesario para interpretar la propuesta y para validarla frente al recorte real de la OPEP.",
+                "cita": "los países pueden cumplir todo lo que prometen o solo una parte; no se sabe de antemano cuál de las dos cosas pasará."
+              },
+              "ciclo": {
+                "puntaje": 1,
+                "justificacion": "La pregunta abierta obliga a recorrer el ciclo. Sin embargo, R2 entrega la simplificación clave (productores iguales a Rusia), y con ella el trabajo matemático se reduce casi a una división. Hay duda entre 1 y 2 porque R2 solo se entrega a solicitud; por la regla, se asigna el menor.",
+                "cita": "El grupo puede elegir cuántos y suponer que cada uno produce más o menos lo mismo que Rusia."
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "El comunicado de la OPEP sobre un recorte anterior es evidencia independiente, no usada en la construcción del modelo. Permite contrastar el volumen y los participantes de la propuesta.",
+                "cita": "El grupo lo pide una vez que tiene su propuesta."
+              },
+              "nivel": {
+                "puntaje": 1,
+                "justificacion": "La matemática (restas, divisiones, decimales, porcentajes simples) está al alcance del nivel P. Pero el lenguaje («cuarto trimestre», «se cotiza», «Brent») y la lógica del mercado petrolero requieren ajustes para estudiantes de 10 a 12 años. Hay duda entre 1 y 2; se asigna el menor.",
+                "cita": "Una agencia de energía calcula que en el cuarto trimestre de este año sobrarán más de 1,7 millones de barriles diarios en el mundo"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es accesible: dividir el exceso en partes iguales entre algunos países. El techo es alto: repartos proporcionales, márgenes por incumplimiento y comparación de ambos escenarios de exceso.",
+                "cita": "Supuesto del escenario: los países pueden cumplir todo lo que prometen o solo una parte"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las distintas propuestas de reparto y los supuestos de cumplimiento permiten comparar soluciones. La contrastación con recortes reales abre preguntas sobre los límites del modelo y la equidad del reparto.",
+                "cita": "Recortes reales de producción acordados por países productores en años anteriores, para comparar con la propuesta del grupo"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "La información es accesible a solicitud, pero R2 sobreorienta parcialmente: entrega el supuesto que estructura el reparto en lugar de datos de producción de otros países.",
+                "cita": "El grupo puede elegir cuántos y suponer que cada uno produce más o menos lo mismo que Rusia."
+              }
+            },
+            "total": 21,
+            "mejoras": [
+              {
+                "criterio": "ciclo",
+                "mejora_minima": "Reemplazar el supuesto de R2 por una lista de producciones aproximadas de varios países productores, para que el grupo decida por sí mismo cómo simplificar y repartir el recorte."
+              },
+              {
+                "criterio": "nivel",
+                "mejora_minima": "Reescribir los términos técnicos en lenguaje cotidiano para 10-12 años, por ejemplo «entre octubre y diciembre» en vez de «cuarto trimestre» y «el precio del petróleo» en vez de «el Brent se cotiza»."
+              },
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Cambiar R2 para que entregue datos aproximados de producción de los principales países (o indique dónde buscarlos) sin sugerir que todos producen lo mismo que Rusia."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011Ch7CEiiiVCkfTBJpnUx1B",
+            "fecha": "2026-11-16T19:55:58+00:00",
+            "intentos": 1,
+            "costo_usd": 0.100198,
+            "avisos": []
+          }
+        }
+      ],
+      "totales": [
+        21,
+        22,
+        21
+      ],
+      "rango_total": 1,
+      "rango_inestable": 4,
+      "evaluacion_inestable": false,
+      "mediana": {
+        "regla": "mediana por criterio (n par: mediana inferior)",
+        "total": 22,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 1,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 1
+        },
+        "corrida_fuente": {
+          "genuino": 1,
+          "abierta": 1,
+          "decisiones": 1,
+          "realismo": 1,
+          "autenticidad": 1,
+          "contexto": 1,
+          "ciclo": 1,
+          "validacion": 2,
+          "nivel": 1,
+          "autodiferenciacion": 1,
+          "fecundidad": 1,
+          "recursos": 1
+        }
+      }
+    }
+  ]
+}

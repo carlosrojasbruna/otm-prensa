@@ -1,0 +1,266 @@
+{
+  "tarea_id": "2026-11-carceles-mas-seguras-o-peligrosas",
+  "aprobado": false,
+  "alcance": "tarea",
+  "hallazgos": [
+    {
+      "invariante": "4",
+      "severidad": "advertencia",
+      "ubicacion": "tarea.noticia.cifras_usadas[5]",
+      "descripcion": "localizador corrido: 2.322 no está en «párrafo 8» sino en el párrafo 7; se corrige el localizador",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "4",
+      "severidad": "advertencia",
+      "ubicacion": "tarea.noticia.cifras_usadas[6]",
+      "descripcion": "localizador corrido: 62 no está en «párrafo 8» sino en el párrafo 7; se corrige el localizador",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "4",
+      "severidad": "advertencia",
+      "ubicacion": "tarea.noticia.cifras_usadas[7]",
+      "descripcion": "localizador corrido: 235 no está en «párrafo 8» sino en el párrafo 7; se corrige el localizador",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "4",
+      "severidad": "advertencia",
+      "ubicacion": "tarea.noticia.cifras_usadas[8]",
+      "descripcion": "localizador corrido: 548 no está en «párrafo 8» sino en el párrafo 7; se corrige el localizador",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "4",
+      "severidad": "advertencia",
+      "ubicacion": "tarea.noticia.cifras_usadas[9]",
+      "descripcion": "localizador corrido: 6.365 no está en «párrafo 11» sino en el párrafo 10; se corrige el localizador",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "4",
+      "severidad": "advertencia",
+      "ubicacion": "tarea.noticia.cifras_usadas[10]",
+      "descripcion": "localizador corrido: '9,3%' no está en «párrafo 11» sino en el párrafo 10; se corrige el localizador",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "4",
+      "severidad": "critico",
+      "ubicacion": "estudiante.recursos_a_solicitud[R2]",
+      "descripcion": "cifra 6365 sin localizador (no figura en noticia.cifras_usadas)",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "4",
+      "severidad": "critico",
+      "ubicacion": "estudiante.recursos_a_solicitud[R4]",
+      "descripcion": "cifra 2322 sin localizador (no figura en noticia.cifras_usadas)",
+      "origen": "codigo"
+    }
+  ],
+  "cifras_contrastadas": [
+    {
+      "indice": 0,
+      "que_es": "Homicidios al interior de penales en 2025, la cifra más baja del periodo analizado",
+      "valor_tarea": 27,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 3"
+      },
+      "metodo": "codigo",
+      "valor_fuente": 27,
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 3 de la noticia"
+    },
+    {
+      "indice": 1,
+      "que_es": "Total de homicidios en cárceles entre 2015 y 2025",
+      "valor_tarea": 491,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 4"
+      },
+      "metodo": "codigo",
+      "valor_fuente": 491,
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 4 de la noticia"
+    },
+    {
+      "indice": 2,
+      "que_es": "Homicidios en cárceles registrados en 2015",
+      "valor_tarea": 56,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 4"
+      },
+      "metodo": "codigo",
+      "valor_fuente": 56,
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 4 de la noticia"
+    },
+    {
+      "indice": 3,
+      "que_es": "Máximo de homicidios en cárceles del periodo, registrado en 2020",
+      "valor_tarea": 61,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 4"
+      },
+      "metodo": "codigo",
+      "valor_fuente": 61,
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 4 de la noticia"
+    },
+    {
+      "indice": 4,
+      "que_es": "Homicidios en cárceles registrados en 2024",
+      "valor_tarea": 48,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 4"
+      },
+      "metodo": "codigo",
+      "valor_fuente": 48,
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 4 de la noticia"
+    },
+    {
+      "indice": 5,
+      "que_es": "Registros de amenazas entre 2015 y 2025",
+      "valor_tarea": 2.322,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 8"
+      },
+      "metodo": "codigo",
+      "valor_fuente": 2.322,
+      "resultado": "coincide",
+      "localizador_corregido": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 7"
+      },
+      "nota": "valor presente en el párrafo 7 (localizador corregido desde «párrafo 8»)"
+    },
+    {
+      "indice": 6,
+      "que_es": "Casos de amenazas a internos en 2015",
+      "valor_tarea": 62,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 8"
+      },
+      "metodo": "codigo",
+      "valor_fuente": 62,
+      "resultado": "coincide",
+      "localizador_corregido": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 7"
+      },
+      "nota": "valor presente en el párrafo 7 (localizador corregido desde «párrafo 8»)"
+    },
+    {
+      "indice": 7,
+      "que_es": "Casos de amenazas a internos en 2024",
+      "valor_tarea": 235,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 8"
+      },
+      "metodo": "codigo",
+      "valor_fuente": 235,
+      "resultado": "coincide",
+      "localizador_corregido": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 7"
+      },
+      "nota": "valor presente en el párrafo 7 (localizador corregido desde «párrafo 8»)"
+    },
+    {
+      "indice": 8,
+      "que_es": "Casos de amenazas a internos en 2025",
+      "valor_tarea": 548,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 8"
+      },
+      "metodo": "codigo",
+      "valor_fuente": 548,
+      "resultado": "coincide",
+      "localizador_corregido": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 7"
+      },
+      "nota": "valor presente en el párrafo 7 (localizador corregido desde «párrafo 8»)"
+    },
+    {
+      "indice": 9,
+      "que_es": "Agresiones a internos registradas en 2025, máximo histórico",
+      "valor_tarea": 6.365,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 11"
+      },
+      "metodo": "codigo",
+      "valor_fuente": 6.365,
+      "resultado": "coincide",
+      "localizador_corregido": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 10"
+      },
+      "nota": "valor presente en el párrafo 10 (localizador corregido desde «párrafo 11»)"
+    },
+    {
+      "indice": 10,
+      "que_es": "Aumento de agresiones en 2025 respecto de 2024",
+      "valor_tarea": "9,3%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 11"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "9,3%",
+      "resultado": "coincide",
+      "localizador_corregido": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 10"
+      },
+      "nota": "valor presente en el párrafo 10 (localizador corregido desde «párrafo 11»)"
+    }
+  ],
+  "meta": {
+    "agente": "verificador",
+    "version_prompt": "1.1",
+    "modelo_llamado": false,
+    "costo_usd": 0.0,
+    "texto_noticia_recibido": true,
+    "fecha": "2026-11-16T20:07:39+00:00"
+  },
+  "localizadores_corregidos": {
+    "5": {
+      "fuente": "noticia",
+      "ubicacion": "párrafo 7"
+    },
+    "6": {
+      "fuente": "noticia",
+      "ubicacion": "párrafo 7"
+    },
+    "7": {
+      "fuente": "noticia",
+      "ubicacion": "párrafo 7"
+    },
+    "8": {
+      "fuente": "noticia",
+      "ubicacion": "párrafo 7"
+    },
+    "9": {
+      "fuente": "noticia",
+      "ubicacion": "párrafo 10"
+    },
+    "10": {
+      "fuente": "noticia",
+      "ubicacion": "párrafo 10"
+    }
+  }
+}
