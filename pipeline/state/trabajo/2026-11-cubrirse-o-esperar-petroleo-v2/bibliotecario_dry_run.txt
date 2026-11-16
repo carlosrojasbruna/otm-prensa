@@ -1,0 +1,29 @@
+# DRY-RUN: no se escribe ningún archivo ni se ejecuta ningún comando
+# tarea 2026-11-cubrirse-o-esperar-petroleo-v2 v2 -> tareas/2026-11/cubrirse-o-esperar-petroleo/
+#   escribiría tareas/2026-11/cubrirse-o-esperar-petroleo/tarea_v2.0_2026-11-16.json
+#   escribiría tareas/2026-11/cubrirse-o-esperar-petroleo/tarea_v2.0_2026-11-16.md
+#   escribiría tareas/2026-11/cubrirse-o-esperar-petroleo/guia_v2.0_2026-11-16.json
+#   escribiría tareas/2026-11/cubrirse-o-esperar-petroleo/guia_v2.0_2026-11-16.md
+#   escribiría tareas/2026-11/cubrirse-o-esperar-petroleo/evaluacion_v2.0_2026-11-16.json
+#   escribiría tareas/2026-11/cubrirse-o-esperar-petroleo/trazas_v2.0_2026-11-16.json
+#   actualizaría tareas/catalogo.json (13 tarea(s); valida contra `catalogo`)
+#   el commit del catálogo es el real tras el primer commit (aquí 0000000)
+$ git switch -c tareas/semana-2026-W47
+$ git add -- tareas/2026-11/cubrirse-o-esperar-petroleo/
+$ git commit -m 'tareas: publica 2026-11-cubrirse-o-esperar-petroleo-v2 v2'
+$ git add -- tareas/catalogo.json
+$ git commit -m 'tareas: catálogo: 2026-11-cubrirse-o-esperar-petroleo-v2 v2'
+$ git push -u origin tareas/semana-2026-W47
+$ gh pr create --base main --head tareas/semana-2026-W47 --title 'Tareas de la semana 2026-W47' --body '<cuerpo del PR, ver abajo>'
+# cuerpo del PR:
+#   ## Tareas incluidas
+#   
+#   - `2026-11-cubrirse-o-esperar-petroleo` v2 · nivel U · RUB01 24/24
+#     - Noticia: La Tercera, «Precio del petróleo registra otra fuerte caída y el barril se aleja cada vez más de los US$ 100», 2026-11-09, https://www.latercera.com/pulso/noticia/precio-del-petroleo-registra-otra-fuerte-caida-y-el-barril-se-aleja-cada-vez-mas-de-los-us-100/
+#   
+#   ## Revisión (GOB01 §2)
+#   - [ ] Quien revisó la guía aprueba el merge.
+#   - [ ] Cifras con localizador; ningún texto literal de noticia > 25 palabras.
+#   - [ ] Productos bajo CC BY-NC-SA 4.0.
+#   
+#   Generado por el agente bibliotecario (script determinista).

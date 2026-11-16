@@ -1,0 +1,16 @@
+# Corrida N1_VV_r1
+
+Nivel N1 · estilos V/V · rep 1 · 12 turnos · término: acuerdo · modelo claude-sonnet-5-5
+
+**1. Cami:** Uf, esto no trae números para calcular, ¿no? Yo me imagino el gráfico subiendo y bajando como montaña rusa, y la empresa mirando sin saber si cerrar hoy el precio o esperar... ¿tú cómo lo ves, Fran?  
+**2. Fran:** Yo también me lo imagino como una montaña rusa, y la empresa parada en la cima sin saber si viene la bajada o la subida. [dibujo: una línea en zigzag con un punto en 93,74 y una flecha hacia arriba y otra hacia abajo] ¿Y si le pedimos al gerente cuánto cuesta la cobertura y cuánto aguantaría perder?  
+**3. Cami:** Sí, buena idea, porque sin saber cuánto cuesta la cobertura no podemos comparar nada. [dibujo: dos caminos desde el punto de 93,74, uno que dice "cerrar hoy" y otro "esperar" con una nube de signos de pregunta] ¿Y si también preguntamos cuántos barriles son el cargamento, para imaginarnos cuánta plata se juega?  
+**4. Fran:** Sí, los barriles también, porque si son miles, un salto de 10 dólares ya es harto. [dibujo: una barra en 93,74 con una banda arriba y abajo] ¿Probamos con un ejemplo, que el precio suba o baje 10 y vemos cuánto cambia lo que pagan?  
+**5. Cami:** Dale, supongamos 10.000 barriles: a 93,74 pagarían 937.400 dólares, pero si sube 10 serían 103,74 × 10.000 = 1.037.400, o sea un millón más. [dibujo: dos barras, una chiquita a 93,74 y otra más alta a 103,74] ¿Y cuánto se mueve normalmente en un mes, será que 10 es mucho o poco?  
+**6. Fran:** Oye, espera, ¿no sería cien mil más y no un millón? Porque 10 × 10.000 = 100.000, o sea como un 10% más. [dibujo: la barra alta con un pedacito de arriba marcado "+100.000"] Y 10 dólares sobre 93,74 es harto, si el otro día bajó 4,67% en un solo día.  
+**7. Cami:** Ay, tienes razón, 1.037.400 menos 937.400 son 100.000, me confundí con el millón del total. Y si en un solo día bajó 4,67%, que son como 4,4 dólares, en un mes un salto de 10 no suena tan raro, ¿no?  
+**8. Fran:** Sí, no suena raro, y hasta podría moverse más si la tensión vuelve. [dibujo: una banda de 84 a 104 alrededor del punto en 93,74] ¿Y si decimos que si la empresa no aguanta perder unos 100.000, conviene cerrar hoy, siempre que la cobertura cueste menos que eso?  
+**9. Cami:** Mmm, puede ser, pero si cerramos hoy y el precio baja 10, pagamos 100.000 de más igual, más lo que cuesta la cobertura. [dibujo: dos flechas desde 93,74, la de subida con "te salvas" y la de bajada con "pierdes + costo"] ¿No habría que preguntar cuánto cuesta la cobertura y cuánta pérdida aguanta la empresa antes de decidir?  
+**10. Fran:** Sí po, eso mismo: sin el costo de la cobertura y sin saber cuánta pérdida aguanta la empresa no podemos decidir. [dibujo: una balanza, de un lado "costo fijo seguro", del otro "puede subir o bajar 100.000"] ¿Entregamos una recomendación condicional, que si no aguantan perder 100.000 cierren hoy, y que estamos poco seguras sin esos datos?  
+**11. Cami:** ENTREGAMOS: Si la empresa no aguanta perder unos 100.000 (supusimos 10.000 barriles y un salto de 10 dólares), conviene cerrar hoy, siempre que la cobertura cueste menos que eso. Estamos poco seguras hasta saber el costo, el tamaño del cargamento y cuánto riesgo tolera.  
+**12. Fran:** DE ACUERDO  

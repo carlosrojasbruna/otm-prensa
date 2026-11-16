@@ -1,0 +1,143 @@
+{
+  "ciclo_id": "ciclo_20261116T134729720921Z",
+  "inicio": "2026-11-16T13:47:29Z",
+  "fin": "2026-11-16T13:52:34Z",
+  "semana": "2026-W47",
+  "parametros": {
+    "tope_semanal_usd": 35.0,
+    "fraccion_detencion": 0.9,
+    "presupuesto_ciclo_usd": null,
+    "limite_usd": 31.5,
+    "gasto_semana_previo_usd": 1.649664,
+    "corridas_evaluador": 3,
+    "rango_inestable": 4,
+    "corridas_simulador": 6,
+    "ids": [
+      "2026-11-cubrirse-o-esperar-petroleo-v2"
+    ],
+    "revisor": "Carlos Rojas Bruna",
+    "aceptar_hallazgos": false
+  },
+  "detenido_por_tope": false,
+  "eventos": [
+    {
+      "fecha": "2026-11-16T13:47:32Z",
+      "tipo": "preverificacion",
+      "tarea_id": "2026-11-cubrirse-o-esperar-petroleo-v2",
+      "aprobado": true,
+      "criticos": 0,
+      "pendientes": 0,
+      "localizadores_corregidos": 0
+    },
+    {
+      "fecha": "2026-11-16T13:47:34Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-cubrirse-o-esperar-petroleo-v2",
+      "de": "evaluada",
+      "a": "revisada"
+    },
+    {
+      "fecha": "2026-11-16T13:47:36Z",
+      "tipo": "preverificacion",
+      "tarea_id": "2026-11-cubrirse-o-esperar-petroleo-v2",
+      "aprobado": true,
+      "criticos": 0,
+      "pendientes": 0,
+      "localizadores_corregidos": 0
+    },
+    {
+      "fecha": "2026-11-16T13:47:36Z",
+      "tipo": "simulacion_no_reutilizable",
+      "tarea_id": "2026-11-cubrirse-o-esperar-petroleo-v2",
+      "origen": "2026-11-cubrirse-o-esperar-petroleo"
+    },
+    {
+      "fecha": "2026-11-16T13:49:25Z",
+      "tipo": "agente",
+      "agente": "simulador",
+      "tareas": [
+        "2026-11-cubrirse-o-esperar-petroleo-v2"
+      ],
+      "llamadas": 83,
+      "usd": 0.711312
+    },
+    {
+      "fecha": "2026-11-16T13:49:28Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-cubrirse-o-esperar-petroleo-v2",
+      "de": "revisada",
+      "a": "simulada"
+    },
+    {
+      "fecha": "2026-11-16T13:51:26Z",
+      "tipo": "agente",
+      "agente": "redactor",
+      "tareas": [
+        "2026-11-cubrirse-o-esperar-petroleo-v2"
+      ],
+      "llamadas": 3,
+      "usd": 0.320979
+    },
+    {
+      "fecha": "2026-11-16T13:51:33Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-cubrirse-o-esperar-petroleo-v2",
+      "de": "simulada",
+      "a": "con_guia"
+    },
+    {
+      "fecha": "2026-11-16T13:51:37Z",
+      "tipo": "agente",
+      "agente": "ilustrador",
+      "tareas": [
+        "2026-11-cubrirse-o-esperar-petroleo-v2"
+      ],
+      "llamadas": 1,
+      "usd": 0.009674
+    },
+    {
+      "fecha": "2026-11-16T13:52:16Z",
+      "tipo": "agente",
+      "agente": "verificador",
+      "tareas": [
+        "2026-11-cubrirse-o-esperar-petroleo-v2"
+      ],
+      "llamadas": 1,
+      "usd": 0.149404
+    },
+    {
+      "fecha": "2026-11-16T13:52:22Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-cubrirse-o-esperar-petroleo-v2",
+      "de": "con_guia",
+      "a": "verificada"
+    },
+    {
+      "fecha": "2026-11-16T13:52:34Z",
+      "tipo": "bibliotecario_dry_run",
+      "tarea_id": "2026-11-cubrirse-o-esperar-petroleo-v2",
+      "ok": true,
+      "ruta": "tareas/2026-11/cubrirse-o-esperar-petroleo/",
+      "rama": "tareas/semana-2026-W47"
+    }
+  ],
+  "expedientes": {
+    "2026-11-cubrirse-o-esperar-petroleo-v2": "verificada"
+  },
+  "noticias": [],
+  "pendientes_humanos": [
+    {
+      "tarea_id": "2026-11-cubrirse-o-esperar-petroleo-v2",
+      "pendiente": "revision_humana_2",
+      "estado": "verificada"
+    }
+  ],
+  "errores": [],
+  "orden": "tramo_b",
+  "gasto": {
+    "ciclo_usd": 1.191369,
+    "semana_usd": 2.841033,
+    "limite_usd": 31.5,
+    "llamadas": 88
+  }
+}
