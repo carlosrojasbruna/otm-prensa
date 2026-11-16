@@ -1,0 +1,117 @@
+{
+  "tarea_id": "2026-11-que-descuenta-el-precio-del-petroleo",
+  "fecha": "2026-11-09T20:16:34Z",
+  "rub01": {
+    "version_rubrica": "4.0",
+    "criterios": {
+      "genuino": {
+        "puntaje": 1,
+        "justificacion": "Hay una necesidad real: inferir la probabilidad implícita para decidir el inventario. Sin embargo, el enunciado entrega la estructura del modelo, un precio como mezcla ponderada de dos escenarios, y el ícono de la balanza la refuerza. Eso es una insinuación fuerte de la estructura.",
+        "cita": "Una analista de una empresa chilena piensa que el precio de hoy mezcla dos futuros posibles"
+      },
+      "abierta": {
+        "puntaje": 2,
+        "justificacion": "La pregunta final no prescribe procedimiento. Admite varios caminos defendibles: precios de escenario, referencia elegida, tratamiento de la incertidumbre y cómo traducir la lectura en una decisión de inventario.",
+        "cita": "¿Qué le responderían? Pueden pedir información adicional."
+      },
+      "decisiones": {
+        "puntaje": 2,
+        "justificacion": "Resolverla exige suponer el precio en cada escenario (por ejemplo, el previo a la tensión a partir del alza de 52%), atribuir la caída del día, elegir la referencia y solicitar información. Son decisiones de modelación sustantivas.",
+        "cita": "cuánto más probable se volvió el acuerdo a ojos del mercado y cuánto confiar en esa lectura"
+      },
+      "realismo": {
+        "puntaje": 2,
+        "justificacion": "Leer probabilidades implícitas en precios de mercado para decidir inventarios es una práctica plausible en empresas reales. La situación no está forzada para insertar un cálculo.",
+        "cita": "antes de decidir si la empresa aumenta o reduce su inventario de combustible"
+      },
+      "autenticidad": {
+        "puntaje": 2,
+        "justificacion": "Las cifras de prensa y la serie pública de la EIA son componentes extraescolares auténticos. Constituyen el núcleo de la tarea.",
+        "cita": "Tras caer 4,67% en un día, el WTI, referencia para Chile, quedó en 93,74 dólares por barril"
+      },
+      "contexto": {
+        "puntaje": 2,
+        "justificacion": "El contexto geopolítico y el del mercado condicionan los precios de escenario y la atribución de la caída. También es necesario para interpretar la confianza en la lectura y la decisión de inventario.",
+        "cita": "La prensa atribuye la baja a que podrían avanzar conversaciones entre Estados Unidos e Irán."
+      },
+      "ciclo": {
+        "puntaje": 1,
+        "justificacion": "Las fases de matematizar, calcular, interpretar y validar son exigidas. Pero la simplificación de la situación a dos escenarios discretos queda hecha por el enunciado. Dudé con el 2, porque aún deben estimarse los precios de escenario; asigno el menor.",
+        "cita": "que haya acuerdo y la tensión se disipe, o que las conversaciones fracasen y la tensión continúe"
+      },
+      "validacion": {
+        "puntaje": 2,
+        "justificacion": "Existe evidencia independiente accesible para contrastar el modelo: la trayectoria posterior del precio, otra referencia del crudo (R2) y el desenlace real de las conversaciones.",
+        "cita": "Los valores los obtiene el grupo en la serie diaria pública de precios spot del WTI de la EIA"
+      },
+      "nivel": {
+        "puntaje": 2,
+        "justificacion": "Para nivel U, el lenguaje financiero es comprensible y pertinente. La demanda de probabilidad, valor esperado y decisión bajo incertidumbre está al alcance de las herramientas esperables.",
+        "cita": "cuánto más probable se volvió el acuerdo a ojos del mercado y cuánto confiar en esa lectura"
+      },
+      "autodiferenciacion": {
+        "puntaje": 2,
+        "justificacion": "El piso es accesible: una interpolación lineal entre dos precios de escenario. El techo es alto: análisis de sensibilidad, varias referencias, intervalos para la probabilidad y modelos de decisión de inventario con costos asimétricos.",
+        "cita": "¿Qué le responderían? Pueden pedir información adicional."
+      },
+      "fecundidad": {
+        "puntaje": 2,
+        "justificacion": "Los resultados abren preguntas sobre la confianza en la lectura, sobre diferencias entre referencias y sobre la decisión con costos asimétricos. Permiten comparar soluciones y límites del modelo.",
+        "cita": "Comprar de más sale caro si el precio baja, y quedarse corta sale caro si el precio sube."
+      },
+      "recursos": {
+        "puntaje": 1,
+        "justificacion": "La tarea presenta dos precios distintos del mismo día bajo el nombre «WTI»: el de la «referencia para Chile», 93,74, presumiblemente Brent, y el de Nueva York, 87,68. Además, R4 remite a la serie WTI de la EIA, lo que vuelve ambigua la información base y su contraste. La balanza agrega cierta sobreorientación.",
+        "cita": "El WTI que se transa en Nueva York cayó 3,37% en el día y quedó en 87,68 dólares por barril"
+      }
+    },
+    "total": 21,
+    "mejoras": [
+      {
+        "criterio": "genuino",
+        "mejora_minima": "Reemplazar «piensa que el precio de hoy mezcla dos futuros posibles» por una frase neutra, por ejemplo «cree que el precio refleja lo que el mercado espera de las conversaciones». Sustituir el ícono de la balanza por una imagen que no sugiera la ponderación de dos escenarios."
+      },
+      {
+        "criterio": "ciclo",
+        "mejora_minima": "No entregar la reducción a dos escenarios: dejar que el grupo decida cómo representar los futuros posibles (dos escenarios, varios o un continuo) y qué precio asociar a cada uno."
+      },
+      {
+        "criterio": "recursos",
+        "mejora_minima": "Corregir la denominación de las referencias para que sea coherente con la fuente, por ejemplo «el Brent, referencia para Chile» frente a «el WTI que se transa en Nueva York». Indicar en R4 la serie pública que corresponde a cada referencia."
+      }
+    ]
+  },
+  "reproducibilidad": {
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.261654,
+        "version_prompt": "1.1"
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.298522,
+        "version_prompt": "1.3"
+      },
+      "filtro": {
+        "modelo": "claude-haiku-5-5",
+        "version_modelo": "claude-haiku-5-5",
+        "costo_usd": 0.000708,
+        "version_prompt": "1.0"
+      }
+    },
+    "version_prompt": {
+      "disenador": "1.1",
+      "evaluador": "1.3",
+      "filtro": "1.0"
+    },
+    "version_rubrica": "4.0",
+    "version_MAR03": "1.0",
+    "version_MED01": "1.4",
+    "diseno_simulador": null,
+    "fecha": "2026-11-09T20:16:34Z",
+    "costo_usd": 0.560884
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "tarea_id": "2026-11-repartir-plazo-investigacion",
+  "aprobado": false,
+  "alcance": "tarea",
+  "hallazgos": [
+    {
+      "invariante": "4",
+      "severidad": "critico",
+      "ubicacion": "tarea.noticia.cifras_usadas[0]",
+      "descripcion": "localizador erróneo: '120 días' no está en «párrafo 1» (ni a ±1 párrafo) sino en el párrafo 146",
+      "origen": "codigo"
+    }
+  ],
+  "cifras_contrastadas": [
+    {
+      "indice": 0,
+      "que_es": "ampliación del plazo de la investigación concedida por el Séptimo Juzgado de Garantía",
+      "valor_tarea": "120 días",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 1"
+      },
+      "metodo": "codigo",
+      "valor_fuente": null,
+      "resultado": "distinto",
+      "nota": "valor en el párrafo 146, lejos del localizador"
+    }
+  ],
+  "meta": {
+    "agente": "verificador",
+    "version_prompt": "1.1",
+    "modelo_llamado": false,
+    "costo_usd": 0.0,
+    "texto_noticia_recibido": true,
+    "fecha": "2026-11-09T20:23:32+00:00"
+  },
+  "localizadores_corregidos": {}
+}

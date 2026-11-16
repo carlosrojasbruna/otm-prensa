@@ -1,0 +1,77 @@
+{
+  "tarea_id": "2026-11-aumento-minimo-poco-o-mucho",
+  "aprobado": false,
+  "alcance": "tarea",
+  "hallazgos": [
+    {
+      "invariante": "4",
+      "severidad": "critico",
+      "ubicacion": "estudiante.enunciado_es",
+      "descripcion": "cifra 1502 sin localizador (no figura en noticia.cifras_usadas)",
+      "origen": "codigo"
+    }
+  ],
+  "cifras_contrastadas": [
+    {
+      "indice": 0,
+      "que_es": "Aumento del salario mínimo que la CFDT considera insuficiente",
+      "valor_tarea": "1,6%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 5"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "1,6%",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 5 de la noticia"
+    },
+    {
+      "indice": 1,
+      "que_es": "Nuevo salario mínimo a partir del 1 de diciembre",
+      "valor_tarea": 1.502,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 5"
+      },
+      "metodo": "codigo",
+      "valor_fuente": 1.502,
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 5 de la noticia"
+    },
+    {
+      "indice": 2,
+      "que_es": "Aumento total anunciado del salario mínimo",
+      "valor_tarea": 23,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 6"
+      },
+      "metodo": "codigo",
+      "valor_fuente": 23,
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 6 de la noticia"
+    },
+    {
+      "indice": 3,
+      "que_es": "Parte del aumento correspondiente al incremento automático previsto para el 1 de enero",
+      "valor_tarea": 18,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 6"
+      },
+      "metodo": "codigo",
+      "valor_fuente": 18,
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 6 de la noticia"
+    }
+  ],
+  "meta": {
+    "agente": "verificador",
+    "version_prompt": "1.1",
+    "modelo_llamado": false,
+    "costo_usd": 0.0,
+    "texto_noticia_recibido": true,
+    "fecha": "2026-11-09T20:10:10+00:00"
+  },
+  "localizadores_corregidos": {}
+}

@@ -1,0 +1,233 @@
+{
+  "id": "2026-11-cubrirse-o-esperar-petroleo",
+  "titulo": "¿Cerrar el precio hoy o esperar al barril de mañana?",
+  "estado": "evaluada",
+  "version": 1,
+  "fecha": "2026-11-09",
+  "noticia": {
+    "noticia_id": "2026-11-09-latercera-precio-del-petroleo-registra-otra-fuerte",
+    "medio": "La Tercera",
+    "titulo": "Precio del petróleo registra otra fuerte caída y el barril se aleja cada vez más de los US$ 100",
+    "fecha": "2026-11-09",
+    "url": "https://www.latercera.com/pulso/noticia/precio-del-petroleo-registra-otra-fuerte-caida-y-el-barril-se-aleja-cada-vez-mas-de-los-us-100/",
+    "resumen_propio": "El crudo volvió a bajar con fuerza y se acerca a los niveles previos a la crisis, después de su peor semana desde la pandemia. La caída responde a un clima menos tenso en Medio Oriente, donde podrían avanzar conversaciones entre Estados Unidos e Irán. El WTI, referencia para Chile, retrocede más de cuatro por ciento y queda en valores de comienzos de septiembre, aunque en lo que va del año acumula un alza superior a la mitad.",
+    "cifras_usadas": [
+      {
+        "valor": "4,67%",
+        "unidad": "variación porcentual diaria del WTI",
+        "que_es": "Caída del precio del WTI al cierre de la edición",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 3"
+        }
+      },
+      {
+        "valor": "US$ 93,74",
+        "unidad": "dólares por barril",
+        "que_es": "Precio del WTI tras la caída diaria",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 3"
+        }
+      },
+      {
+        "valor": "52%",
+        "unidad": "variación porcentual acumulada en el año",
+        "que_es": "Alza acumulada de ambos barriles en lo que va del año",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 5"
+        }
+      }
+    ]
+  },
+  "nivel_principal": "U",
+  "variantes": {
+    "abajo": "S",
+    "arriba": null
+  },
+  "area": "economia",
+  "contenidos_matematicos": [
+    "procesos estocásticos discretos y caminata aleatoria",
+    "distribución lognormal y cuantiles",
+    "estimación de volatilidad",
+    "simulación Monte Carlo",
+    "decisión bajo incertidumbre"
+  ],
+  "tiempo_estimado": "2 sesiones de 90 min",
+  "estudiante": {
+    "enunciado_es": "El precio del petróleo cayó con fuerza. El WTI, referencia para Chile, bajó 4,67% en un día y quedó en 93,74 dólares por barril, después de su peor semana desde la pandemia. Aun así, en lo que va del año el barril acumula un alza de 52%. La baja se atribuye a un clima menos tenso en Medio Oriente, pero esa tensión podría volver.\n\nUna empresa chilena que importa combustible debe comprar un cargamento dentro de un mes. Puede cerrar hoy el precio con un banco, pagando un costo por la cobertura, o esperar y pagar el precio que haya ese día. Su gerente financiero les pide una recomendación que considere cuánto podría variar el precio y cuánto riesgo puede soportar la empresa.\n\n¿Qué le recomendarían y qué tan segura es su recomendación? Pueden pedir información adicional.",
+    "foto_descripcion": "Ícono de un barril de petróleo con una flecha descendente y, al lado, una línea de gráfico muy irregular que termina en un signo de interrogación.",
+    "recursos_a_solicitud": [
+      {
+        "id": "R2",
+        "que_es": "Información sobre el costo de la cobertura",
+        "contenido": "Supuesto del escenario: el banco cobra por cerrar el precio hoy un costo que es una fracción modesta del precio del barril. No hay un valor único y el grupo debe estimarlo o discutir hasta qué valor le conviene pagar.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P2-RM",
+        "fuente": "supuesto del escenario"
+      },
+      {
+        "id": "R3",
+        "que_es": "Condiciones de pago de la empresa",
+        "contenido": "Supuesto del escenario: si no cubre, la empresa paga el precio de contado vigente el día de la compra; si cubre, paga el precio cerrado hoy más el costo de la cobertura. La empresa no puede traspasar de un día para otro a sus clientes una diferencia grande de costo.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P2-RM",
+        "fuente": "supuesto del escenario"
+      },
+      {
+        "id": "R4",
+        "que_es": "Evolución posterior del precio, para contrastar el modelo",
+        "contenido": "Trayectoria del precio de cierre del WTI en las semanas posteriores a la fecha de la noticia. Los valores los obtiene el grupo en la serie diaria pública de precios spot del WTI de la EIA, una vez construido su modelo.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P6-VAL",
+        "fuente": "otra fuente: U.S. Energy Information Administration (EIA), serie diaria de precios spot del WTI en Cushing"
+      }
+    ]
+  },
+  "variantes_detalle": {
+    "abajo": {
+      "tramo": "S2",
+      "cambios": "El grupo compara solo escenarios definidos por ellos (por ejemplo, el precio vuelve al nivel anterior a la caída, se mantiene o sigue bajando), usando los porcentajes de la noticia como tamaño de los movimientos. Se pide la diferencia de costo entre cubrir y esperar en cada escenario y un criterio informal de riesgo; no se exige estimar volatilidad ni construir distribución. La validación consiste en comparar con el precio observado un mes después."
+    },
+    "arriba": null
+  },
+  "recursos_de_entrada": [
+    {
+      "id": "R1",
+      "que_es": "Cifras de partida de la noticia, ya incluidas en el enunciado",
+      "contenido": "El WTI cayó 4,67% en el día y quedó en 93,74 dólares por barril; en lo que va del año acumula un alza de 52%.",
+      "disponibilidad": "de_entrada",
+      "fase": "P1-MRS",
+      "fuente": "noticia, párrafo 3 y párrafo 5"
+    }
+  ],
+  "mapa_ciclo": {
+    "P1-MRS": {
+      "decision": "Identificar qué se decide (cubrir o esperar), que el precio futuro es incierto, que el horizonte es de un mes y qué datos de la noticia sirven y cuáles faltan (costo de cobertura, variabilidad típica).",
+      "evidencia": "Parafrasean la situación, listan los datos útiles y piden información sobre costo de cobertura y condiciones de pago.",
+      "bloqueo_probable": "B12"
+    },
+    "P2-RM": {
+      "decision": "Tratar el precio como variable aleatoria, fijar el horizonte en días hábiles, decidir si se ignora el tipo de cambio, el drift y los saltos, y definir un criterio de riesgo para la empresa.",
+      "evidencia": "Lista escrita de supuestos con su justificación y un criterio de riesgo explícito (por ejemplo, probabilidad de superar un precio tolerable).",
+      "bloqueo_probable": "B23"
+    },
+    "P3-MM": {
+      "decision": "Elegir el modelo (escenarios, caminata aleatoria lognormal, reversión a la media o regímenes de tensión y calma) y estimar la volatilidad diaria con los pocos datos disponibles.",
+      "evidencia": "Expresión matemática del precio a un mes con parámetros identificados y su fuente (los movimientos diarios de la noticia, información pedida).",
+      "bloqueo_probable": "B34"
+    },
+    "P4-WM": {
+      "decision": "Calcular el rango y los cuantiles del precio a un mes, el costo esperado y la cola de riesgo, de forma analítica o por simulación.",
+      "evidencia": "Hoja de cálculo o código con la distribución del precio y la comparación de costos entre cubrir y esperar.",
+      "bloqueo_probable": "B45"
+    },
+    "P5-INT": {
+      "decision": "Traducir resultados a una recomendación: costo máximo razonable de cobertura según la aversión al riesgo, y cómo cambia con la volatilidad supuesta.",
+      "evidencia": "Recomendación formulada en lenguaje del gerente con condiciones del tipo: cubrir si el costo es menor que cierto valor.",
+      "bloqueo_probable": "B56"
+    },
+    "P6-VAL": {
+      "decision": "Contrastar el rango proyectado con la trayectoria posterior del precio y comparar modelos alternativos; criticar la volatilidad estimada con solo dos días extremos.",
+      "evidencia": "El precio observado cae dentro o fuera del intervalo del modelo; ajustan la volatilidad o el modelo y lo explican.",
+      "bloqueo_probable": "B67"
+    },
+    "P7-EXP": {
+      "decision": "Presentar al gerente una recomendación breve con el rango de precios, los supuestos clave y los límites del modelo.",
+      "evidencia": "Informe o exposición de una página que separa lo estimado de lo supuesto.",
+      "bloqueo_probable": null
+    }
+  },
+  "task_space": {
+    "required_assumptions": [
+      "Horizonte de un mes equivale a unos veintiún días hábiles.",
+      "El precio sigue una caminata aleatoria multiplicativa (retornos logarítmicos independientes) con deriva cercana a cero a un mes.",
+      "La volatilidad diaria se estima con los movimientos diarios disponibles, y se discute que son días extremos de una semana de crisis.",
+      "El tipo de cambio y los costos de almacenamiento se ignoran.",
+      "El costo de la cobertura es una fracción modesta del precio y se estima o se discute como umbral.",
+      "El criterio de riesgo de la empresa lo define el grupo (probabilidad de superar un precio tolerable o pérdida en el peor caso razonable)."
+    ],
+    "reference_solution": {
+      "steps": "1) Con los movimientos diarios de la noticia (4,67% y, si se pide, 3,37%) se estima una volatilidad diaria extrema cercana a 4,1% (raíz de la media de los cuadrados). Como son días de crisis, un valor de calma más razonable es cercano a 2%. 2) Para un mes (unos veintiún días hábiles) la volatilidad mensual es sigma*raíz(21): cerca de 18,7% (caso extremo) o 9,2% (caso calmo). 3) Con deriva cero y precio lognormal, el intervalo central de 90% a un mes es 93,74*exp(±1,645*sigma_mensual): aproximadamente entre 69 y 128 dólares por barril (caso extremo) o entre 81 y 109 (caso calmo). 4) El costo esperado de esperar es cercano al de cubrir si la cobertura es justa; la decisión depende del costo de la cobertura y del riesgo tolerable. Como referencia, el valor de una cobertura tipo opción en el precio actual es aproximadamente 0,4*sigma_mensual*93,74, es decir cerca de 3,4 a 7,0 dólares por barril. 5) Se recomienda cubrir si el costo de cobertura es menor que ese orden de magnitud o si el exceso sobre el precio tolerable tiene probabilidad apreciable; esperar si la cobertura es cara. 6) Contrastar con la trayectoria real posterior del precio.",
+      "result": "Recomendación condicionada: cubrir si el costo de la cobertura queda por debajo de aproximadamente 3 a 7 dólares por barril (según la volatilidad supuesta) o si la empresa no tolera un precio del orden de 109 a 128 dólares por barril; esperar en caso contrario. Rango de precio a un mes: entre 69 y 128 dólares por barril con volatilidad extrema, y entre 81 y 109 con volatilidad moderada.",
+      "acceptable_range": "Se aceptan recomendaciones distintas (cubrir o esperar) si dependen explícitamente de la volatilidad estimada, del costo de cobertura y del criterio de riesgo, con un rango de precio a un mes coherente con una volatilidad diaria de entre 2% y 4%. No se acepta una proyección determinista única sin incertidumbre."
+    },
+    "routes": [
+      {
+        "id": "R1",
+        "nombre": "Escenarios discretos",
+        "nivel": "S2",
+        "modelo": "Tres escenarios para el precio a un mes (vuelve al nivel anterior a la caída, se mantiene, sigue bajando) con movimientos de tamaño dado por los porcentajes de la noticia; comparación de costo en cada uno con y sin cobertura.",
+        "resultado": "El nivel previo a la caída era de unos 98,3 dólares por barril (alza de unos 4,9% respecto de hoy). Cubrir solo gana si el precio sube más que el costo de cobertura; sin probabilidades no hay decisión única."
+      },
+      {
+        "id": "R2",
+        "nombre": "Caminata aleatoria lognormal",
+        "nivel": "U",
+        "modelo": "ln(S_T) = ln(S_0) + mu*T + sigma*raíz(T)*Z con sigma estimada a partir de datos diarios y deriva cero.",
+        "resultado": "Intervalo de 90% a un mes entre 69 y 128 dólares por barril con sigma diaria cercana a 4,1%, y entre 81 y 109 con sigma cercana a 2%; costo de cobertura justo de unos 3,4 a 7,0 dólares por barril."
+      },
+      {
+        "id": "R3",
+        "nombre": "Reversión a la media",
+        "nivel": "U",
+        "modelo": "Proceso de Ornstein-Uhlenbeck sobre el logaritmo del precio, con nivel de largo plazo cercano al precio de comienzos de año (unos 61,7 dólares por barril, obtenido de 93,74/1,52) y velocidad de reversión supuesta.",
+        "resultado": "La media del precio a un mes queda bajo el actual y la dispersión es menor que en R2; esperar resulta más atractivo, pero la conclusión es muy sensible a la velocidad de reversión supuesta."
+      },
+      {
+        "id": "R4",
+        "nombre": "Regímenes de tensión y calma",
+        "nivel": "U",
+        "modelo": "Cadena de Markov de dos estados con volatilidades distintas y probabilidades de transición supuestas; simulación Monte Carlo del precio a un mes.",
+        "resultado": "Distribución con cola derecha gruesa o bimodal; la probabilidad de superar un precio tolerable es mayor que en R2 si la tensión puede volver. Favorece cubrir en empresas con baja tolerancia al riesgo."
+      }
+    ],
+    "modelo_inadecuado": {
+      "id": "R5",
+      "por_que_falla": "Extrapolar la caída diaria de 4,67% durante un mes compuesto (93,74*0,9533^21 ≈ 34 dólares por barril) o prolongar linealmente el alza anual de 52% trata un movimiento extremo de un día o un acumulado de diez meses como una tendencia estable. Conduce a precios absurdos, ignora la incertidumbre y no sirve para decidir cubrirse."
+    },
+    "validation_evidence": "Trayectoria posterior del precio de cierre del WTI en las semanas siguientes a la fecha de la noticia (serie diaria de la EIA), no usada para construir el modelo: se comprueba si el precio observado a un mes cae dentro del intervalo proyectado y si la volatilidad realizada es compatible con la estimada.",
+    "agent_visibility": {
+      "students": [
+        "enunciado_es",
+        "foto_descripcion",
+        "recursos_a_solicitud"
+      ],
+      "coder": [
+        "enunciado_es",
+        "task_space"
+      ],
+      "guide": [
+        "all"
+      ]
+    }
+  },
+  "rubrica_rub01": {
+    "total": 24,
+    "por_criterio": {
+      "genuino": 2,
+      "abierta": 2,
+      "decisiones": 2,
+      "realismo": 2,
+      "autenticidad": 2,
+      "contexto": 2,
+      "ciclo": 2,
+      "validacion": 2,
+      "nivel": 2,
+      "autodiferenciacion": 2,
+      "fecundidad": 2,
+      "recursos": 2
+    }
+  },
+  "rubrica_rub02": {
+    "P": null,
+    "S": null,
+    "U": null
+  },
+  "modelo_y_prompt": {
+    "diseñador": "claude-sonnet-5-5",
+    "version_prompt": "1.1",
+    "version_rubrica": "4.0"
+  }
+}

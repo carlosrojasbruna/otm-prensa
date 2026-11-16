@@ -1,0 +1,249 @@
+{
+  "id": "2026-11-que-descuenta-el-precio-del-petroleo",
+  "titulo": "¿Cuánto cree el mercado en un acuerdo?",
+  "estado": "archivada",
+  "version": 1,
+  "fecha": "2026-11-09",
+  "noticia": {
+    "noticia_id": "2026-11-09-latercera-precio-del-petroleo-registra-otra-fuerte",
+    "medio": "La Tercera",
+    "titulo": "Precio del petróleo registra otra fuerte caída y el barril se aleja cada vez más de los US$ 100",
+    "fecha": "2026-11-09",
+    "url": "https://www.latercera.com/pulso/noticia/precio-del-petroleo-registra-otra-fuerte-caida-y-el-barril-se-aleja-cada-vez-mas-de-los-us-100/",
+    "resumen_propio": "El crudo volvió a bajar con fuerza y se acerca a los niveles previos a la crisis, después de su peor semana desde la pandemia. La caída responde a un clima menos tenso en Medio Oriente, donde podrían avanzar conversaciones entre Estados Unidos e Irán. El WTI, referencia para Chile, retrocede más de cuatro por ciento y queda en valores de comienzos de septiembre, aunque en lo que va del año acumula un alza superior a la mitad.",
+    "cifras_usadas": [
+      {
+        "valor": "4,67%",
+        "unidad": "variación porcentual diaria del WTI",
+        "que_es": "Caída del precio del WTI al cierre de la edición",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 3"
+        }
+      },
+      {
+        "valor": "US$ 93,74",
+        "unidad": "dólares por barril",
+        "que_es": "Precio del WTI tras la caída diaria",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 3"
+        }
+      },
+      {
+        "valor": "3,37%",
+        "unidad": "variación porcentual diaria del WTI en Nueva York",
+        "que_es": "Caída del WTI que se transa en Nueva York",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 4"
+        }
+      },
+      {
+        "valor": "US$ 87,68",
+        "unidad": "dólares por barril",
+        "que_es": "Precio del WTI en Nueva York",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 4"
+        }
+      },
+      {
+        "valor": "52%",
+        "unidad": "variación porcentual acumulada en el año",
+        "que_es": "Alza acumulada de ambos barriles en lo que va del año",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 5"
+        }
+      }
+    ]
+  },
+  "nivel_principal": "U",
+  "variantes": {
+    "abajo": "S",
+    "arriba": null
+  },
+  "area": "economia",
+  "contenidos_matematicos": [
+    "probabilidad condicional y esperanza",
+    "actualización bayesiana",
+    "modelos de mezcla de escenarios",
+    "análisis de sensibilidad e identificabilidad"
+  ],
+  "tiempo_estimado": "2 sesiones de 90 min",
+  "estudiante": {
+    "enunciado_es": "Tras caer 4,67% en un día, el WTI, referencia para Chile, quedó en 93,74 dólares por barril, mientras en lo que va del año acumula un alza de 52%. La prensa atribuye la baja a que podrían avanzar conversaciones entre Estados Unidos e Irán.\n\nUna analista de una empresa chilena piensa que el precio de hoy mezcla dos futuros posibles: que haya acuerdo y la tensión se disipe, o que las conversaciones fracasen y la tensión continúe. Su jefa quiere saber cuánto más probable se volvió el acuerdo a ojos del mercado y cuánto confiar en esa lectura, antes de decidir si la empresa aumenta o reduce su inventario de combustible.\n\n¿Qué le responderían? Pueden pedir información adicional.",
+    "foto_descripcion": "Ícono de una balanza con dos platos: en uno, una paloma de la paz; en el otro, un barril de petróleo; entre ambos, una flecha que apunta hacia abajo.",
+    "recursos_a_solicitud": [
+      {
+        "id": "R2",
+        "que_es": "Otro precio de referencia del crudo, para contrastar",
+        "contenido": "El WTI que se transa en Nueva York cayó 3,37% en el día y quedó en 87,68 dólares por barril; su alza acumulada en el año es también de 52%.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P6-VAL",
+        "fuente": "noticia, párrafo 4 y párrafo 5"
+      },
+      {
+        "id": "R3",
+        "que_es": "Cómo decide la empresa sobre su inventario",
+        "contenido": "Supuesto del escenario: la empresa mantiene inventario de combustible para cubrir sus ventas de varias semanas y puede aumentarlo o reducirlo de manera gradual. Comprar de más sale caro si el precio baja, y quedarse corta sale caro si el precio sube.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P5-INT",
+        "fuente": "supuesto del escenario"
+      },
+      {
+        "id": "R4",
+        "que_es": "Evolución posterior del precio, para contrastar la lectura",
+        "contenido": "Trayectoria del precio de cierre del WTI en los días y semanas posteriores a la fecha de la noticia. Los valores los obtiene el grupo en la serie diaria pública de precios spot del WTI de la EIA, una vez formulada su respuesta.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P6-VAL",
+        "fuente": "otra fuente: U.S. Energy Information Administration (EIA), serie diaria de precios spot del WTI en Cushing"
+      }
+    ]
+  },
+  "variantes_detalle": {
+    "abajo": {
+      "tramo": "S2",
+      "cambios": "El grupo define dos precios de escenario (acuerdo y tensión) con justificación y calcula el cambio de probabilidad con una mezcla lineal. No se pide actualización bayesiana ni análisis de identificabilidad; la validación compara con la segunda referencia de precio."
+    },
+    "arriba": null
+  },
+  "recursos_de_entrada": [
+    {
+      "id": "R1",
+      "que_es": "Cifras de partida de la noticia, ya incluidas en el enunciado",
+      "contenido": "El WTI cayó 4,67% en el día y quedó en 93,74 dólares por barril; en lo que va del año acumula un alza de 52%.",
+      "disponibilidad": "de_entrada",
+      "fase": "P1-MRS",
+      "fuente": "noticia, párrafo 3 y párrafo 5"
+    }
+  ],
+  "mapa_ciclo": {
+    "P1-MRS": {
+      "decision": "Entender que el precio de hoy es un promedio de expectativas sobre dos futuros, que lo que importa es el cambio de probabilidad y no el cambio de precio, y qué datos faltan (precios de cada escenario).",
+      "evidencia": "Reformulan la pregunta como cuánto cambió la probabilidad de acuerdo y piden precios de escenario o los definen por su cuenta.",
+      "bloqueo_probable": "B12"
+    },
+    "P2-RM": {
+      "decision": "Decidir qué precio representa el escenario de acuerdo y cuál el de tensión, con qué datos de la noticia (por ejemplo, el nivel de comienzos de año), y que el cambio de precio se debe solo a las expectativas.",
+      "evidencia": "Lista de supuestos y de valores de escenario justificados con información de la noticia y del contexto.",
+      "bloqueo_probable": "B23"
+    },
+    "P3-MM": {
+      "decision": "Formalizar P = p*A + (1-p)*T, derivar el precio previo a partir del porcentaje de caída y plantear el cambio de p; o formular una actualización bayesiana con prior y verosimilitudes.",
+      "evidencia": "Ecuaciones con parámetros definidos, incluido el precio previo calculado a partir de la caída.",
+      "bloqueo_probable": "B34"
+    },
+    "P4-WM": {
+      "decision": "Calcular el precio previo, la probabilidad implícita antes y después, y barrer los valores de A y T para ver la sensibilidad del resultado.",
+      "evidencia": "Tabla o gráfico de la probabilidad implícita según A y T.",
+      "bloqueo_probable": "B45"
+    },
+    "P5-INT": {
+      "decision": "Interpretar el cambio de probabilidad como aproximado y condicional a los supuestos, y traducirlo a una decisión sobre inventario según el costo de errar en cada dirección.",
+      "evidencia": "Recomendación sobre inventario que declara la probabilidad implícita como rango, no como valor único.",
+      "bloqueo_probable": "B56"
+    },
+    "P6-VAL": {
+      "decision": "Repetir el cálculo con la segunda referencia de precio (Nueva York) y comparar; contrastar con lo ocurrido en los días posteriores; discutir qué otras causas mueven el precio.",
+      "evidencia": "Comparan los cambios de probabilidad obtenidos con ambas referencias, cuantifican la diferencia y la usan para juzgar el modelo.",
+      "bloqueo_probable": "B67"
+    },
+    "P7-EXP": {
+      "decision": "Exponer un rango de cambio de probabilidad, los supuestos de escenario y las razones por las que la lectura es aproximada.",
+      "evidencia": "Informe breve o exposición con el rango, el gráfico de sensibilidad y las limitaciones.",
+      "bloqueo_probable": null
+    }
+  },
+  "task_space": {
+    "required_assumptions": [
+      "El precio de hoy es una mezcla ponderada de dos precios de escenario: acuerdo y tensión.",
+      "Entre el día anterior y hoy solo cambió la probabilidad de acuerdo; los precios de cada escenario no cambiaron.",
+      "Hay que definir precios de escenario con justificación (por ejemplo, el nivel de comienzos de año para el acuerdo y un nivel alto de la crisis para la tensión).",
+      "Se ignoran la prima de riesgo, el tipo de cambio y otros factores que mueven el precio.",
+      "Se discute si la lectura puede trasladarse a la segunda referencia con la misma diferencia de escenarios."
+    ],
+    "reference_solution": {
+      "steps": "1) Precio previo a la caída: 93,74/(1-0,0467) ≈ 98,3 dólares por barril; cambio de precio ≈ -4,6. 2) Precio al comienzo del año, si se interpreta el 52% sobre ese precio: 93,74/1,52 ≈ 61,7; puede ser el escenario de acuerdo A. 3) Se supone un escenario de tensión T (por ejemplo 110, supuesto del grupo). 4) Modelo: P = p*A + (1-p)*T, entonces p = (T-P)/(T-A). Hoy p1 ≈ (110-93,74)/(110-61,7) ≈ 0,34; antes p0 ≈ (110-98,3)/48,3 ≈ 0,24; el cambio es de unos 10 puntos porcentuales. 5) Sensibilidad: con T entre 105 y 120 y A entre 61,7 y 75 el cambio varía entre unos 8 y 15 puntos porcentuales; el nivel absoluto de p depende mucho más de A y T. 6) Contraste con Nueva York: precio previo 87,68/(1-0,0337) ≈ 90,7, cambio ≈ -3,1; con escenarios desplazados por la diferencia entre referencias (A' ≈ 57,7 de 87,68/1,52 y T' ≈ 104), el cambio es de unos 7 puntos porcentuales. La diferencia de unos 3 puntos con la primera referencia es una medida del error del modelo.",
+      "result": "El cambio de probabilidad de acuerdo implícito en la caída es del orden de 7 a 15 puntos porcentuales (unos 10 con A cercano a 61,7 y T cercano a 110). El nivel de la probabilidad no es identificable sin fijar los precios de escenario. La lectura es solo una aproximación: depende de los supuestos y es sensible a la elección de A y T.",
+      "acceptable_range": "Se aceptan estimaciones del cambio de probabilidad entre aproximadamente 5 y 20 puntos porcentuales si los precios de escenario están justificados y si se declara que el nivel absoluto de la probabilidad depende de ellos. No se acepta equiparar el porcentaje de caída del precio con un cambio de probabilidad."
+    },
+    "routes": [
+      {
+        "id": "R1",
+        "nombre": "Mezcla lineal de dos escenarios",
+        "nivel": "S2",
+        "modelo": "P = p*A + (1-p)*T con A y T elegidos; el cambio de p se obtiene como (P1-P0)/(A-T).",
+        "resultado": "Cambio de probabilidad de unos 10 puntos porcentuales con A cercano a 61,7 y T cercano a 110; rango de 8 a 15 puntos si se varían A y T."
+      },
+      {
+        "id": "R2",
+        "nombre": "Actualización bayesiana",
+        "nivel": "U",
+        "modelo": "Prior de acuerdo p0; verosimilitud de observar una caída de ese tamaño bajo cada escenario (retornos normales con medias y dispersiones distintas); posterior por la regla de Bayes.",
+        "resultado": "La probabilidad posterior es del mismo orden que en R1, pero depende de la dispersión supuesta para cada escenario; un día extremo informa poco si la volatilidad es alta."
+      },
+      {
+        "id": "R3",
+        "nombre": "Mezcla con prima de riesgo",
+        "nivel": "U",
+        "modelo": "El precio incorpora además una prima por incertidumbre: P = p*A + (1-p)*T + prima(p), con una prima que decrece cuando la incertidumbre baja.",
+        "resultado": "Parte de la caída se explica por menor prima y no por mayor probabilidad de acuerdo; el cambio de p implícito baja respecto de R1."
+      },
+      {
+        "id": "R4",
+        "nombre": "Sensibilidad e identificabilidad con dos referencias",
+        "nivel": "U",
+        "modelo": "Sistema con las dos referencias de precio (WTI y WTI de Nueva York) para estimar conjuntamente el cambio de probabilidad y la diferencia entre escenarios; barrido de A y T.",
+        "resultado": "El cambio de probabilidad queda en una banda de 7 a 15 puntos y el nivel absoluto de p no es identificable con estos datos."
+      }
+    ],
+    "modelo_inadecuado": {
+      "id": "R5",
+      "por_que_falla": "Interpretar el 4,67% de caída como una caída de 4,67 puntos en la probabilidad de tensión confunde una variación relativa de precio con un cambio de probabilidad. Ignora la distancia entre los precios de escenario, no es dimensionalmente consistente y da resultados distintos según la referencia de precio."
+    },
+    "validation_evidence": "Segunda referencia de precio (el WTI de Nueva York) y la trayectoria posterior del precio según la serie diaria de la EIA, ninguna usada para construir el modelo: el cambio de probabilidad estimado con la segunda referencia debe ser compatible con el de la primera, y los días posteriores muestran si la lectura de mayor probabilidad de acuerdo se confirma o se revierte.",
+    "agent_visibility": {
+      "students": [
+        "enunciado_es",
+        "foto_descripcion",
+        "recursos_a_solicitud"
+      ],
+      "coder": [
+        "enunciado_es",
+        "task_space"
+      ],
+      "guide": [
+        "all"
+      ]
+    }
+  },
+  "rubrica_rub01": {
+    "total": 21,
+    "por_criterio": {
+      "genuino": 1,
+      "abierta": 2,
+      "decisiones": 2,
+      "realismo": 2,
+      "autenticidad": 2,
+      "contexto": 2,
+      "ciclo": 1,
+      "validacion": 2,
+      "nivel": 2,
+      "autodiferenciacion": 2,
+      "fecundidad": 2,
+      "recursos": 1
+    }
+  },
+  "rubrica_rub02": {
+    "P": null,
+    "S": null,
+    "U": null
+  },
+  "modelo_y_prompt": {
+    "diseñador": "claude-sonnet-5-5",
+    "version_prompt": "1.1",
+    "version_rubrica": "4.0"
+  }
+}

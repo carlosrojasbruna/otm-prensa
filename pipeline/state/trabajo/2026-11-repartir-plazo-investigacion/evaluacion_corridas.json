@@ -1,0 +1,310 @@
+{
+  "tarea_id": "2026-11-repartir-plazo-investigacion",
+  "evaluaciones": [
+    {
+      "iteracion": 1,
+      "version_tarea": 1,
+      "fecha": "2026-11-09T20:21:43Z",
+      "modelo": "claude-opus-5-5",
+      "version_prompt": "1.3",
+      "version_rubrica": "4.0",
+      "corridas": [
+        {
+          "n": 1,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La tarea plantea una necesidad real de planificación sin entregar una regla ni un modelo de reparto. La dependencia entre tareas que menciona R2 es información del contexto, no un procedimiento.",
+                "cita": "debe proponer cómo repartir esos 120 días entre las tareas que quedan: estudiar el peritaje, tomar declaraciones y ordenar los registros"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe un método. Admite varios repartos y modelos defendibles, por ejemplo proporcional, secuencial con dependencias o con holgura.",
+                "cita": "¿Cómo organizarían el tiempo para que el trabajo esencial quede terminado dentro del plazo, y qué tan seguros están de que alcanzará?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige estimar volúmenes y ritmos, decidir qué es «esencial», solicitar la regla de conteo y los feriados, y suponer cuántas personas trabajan.",
+                "cita": "El tamaño de cada trabajo no se conoce: el grupo debe estimarlo y justificar su estimación."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Planificar un plazo judicial real es una situación existente fuera de la escuela. El rol de asesor es un encuadre plausible, no un pretexto para insertar un cálculo.",
+                "cita": "Un juzgado de garantía amplió en 120 días el plazo para investigar el caso Alto Mando"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El plazo de 120 días proviene de la noticia y es la restricción central de la tarea. El calendario oficial de feriados también es un componente auténtico integrado de forma sustantiva.",
+                "cita": "Listado oficial de los feriados legales de Chile que caen dentro del período del plazo"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona el modelo (días hábiles, feriados, dependencia de las declaraciones respecto del peritaje). También es necesario para interpretar si el trabajo esencial alcanza.",
+                "cita": "corre en días corridos, pero que el equipo trabaja solo de lunes a viernes y no trabaja en feriados legales"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a recorrer todas las fases: comprender el caso, simplificar estimando tamaños, matematizar el calendario y el reparto, calcular, interpretar el margen y juzgar la seguridad del plan. Ninguna fase viene hecha.",
+                "cita": "¿Cómo organizarían el tiempo para que el trabajo esencial quede terminado dentro del plazo, y qué tan seguros están de que alcanzará?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "R5 permite contrastar las estimaciones de ritmo con una medición no usada en la construcción del plan, y el calendario oficial permite verificar el conteo. Queda la duda de que el ritmo del grupo es solo un proxy del ritmo del equipo fiscal.",
+                "cita": "recibe un texto largo de práctica y una lista de datos desordenados para medir cuánto demora en leerlos, resumirlos y ordenarlos"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto es comprensible y pertinente para secundaria. La matemática requerida (conteo de días hábiles, proporciones, tasas, programación simple) está al alcance del nivel S.",
+                "cita": "No se trata de opinar sobre el caso, sino de planificar."
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Se puede entrar con un reparto simple de los días. El techo es alto: dependencias secuenciales, ruta crítica, holguras y escenarios de incertidumbre.",
+                "cita": "algunas declaraciones dependen de lo que muestre el peritaje"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "La pregunta por la seguridad del plan abre la comparación entre planes, el análisis de márgenes y riesgos y la discusión de los límites de las estimaciones.",
+                "cita": "y qué tan seguros están de que alcanzará?"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "Los materiales no revelan el modelo. Pero datos imprescindibles, como el número de personas citadas, el tamaño del equipo o la extensión del peritaje, son difíciles de estimar con conocimiento cotidiano para el nivel S, y la tarea no los entrega ni indica cómo conseguirlos.",
+                "cita": "El tamaño de cada trabajo no se conoce: el grupo debe estimarlo y justificar su estimación."
+              }
+            },
+            "total": 23,
+            "mejoras": [
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Agregar un recurso a solicitud (R6) con órdenes de magnitud del escenario: tamaño del equipo fiscal, número aproximado de personas por declarar y extensión del peritaje. Otra opción es indicar qué fuentes de prensa sobre el caso permiten estimarlos."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgsyR2aihvpdMQMSdG7x8",
+            "fecha": "2026-11-09T20:20:02+00:00",
+            "intentos": 1,
+            "costo_usd": 0.086238,
+            "avisos": []
+          }
+        },
+        {
+          "n": 2,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La tarea plantea una necesidad real de planificación bajo plazo. No entrega ninguna regla, algoritmo ni modelo de reparto. Enumerar las tres tareas delimita la situación, pero no insinúa el procedimiento.",
+                "cita": "debe proponer cómo repartir esos 120 días entre las tareas que quedan: estudiar el peritaje, tomar declaraciones y ordenar los registros de lo ocurrido"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe método. Admite distintos repartos defendibles (proporcional, secuencial por dependencias, con holguras), y ninguna instrucción posterior encauza hacia una ruta única.",
+                "cita": "¿Cómo organizarían el tiempo para que el trabajo esencial quede terminado dentro del plazo, y qué tan seguros están de que alcanzará?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige estimar el tamaño de cada trabajo, decidir qué es «esencial» y considerar dependencias entre tareas. También exige solicitar información sobre el conteo del plazo y los feriados y convertir días corridos en días hábiles.",
+                "cita": "El tamaño de cada trabajo no se conoce: el grupo debe estimarlo y justificar su estimación."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Se trata de un caso judicial real con un plazo real. Planificar trabajo bajo un plazo fijo es una necesidad genuina de un equipo fiscal, no un encuadre forzado para insertar un cálculo.",
+                "cita": "Un juzgado de garantía amplió en 120 días el plazo para investigar el caso Alto Mando"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Hay componentes auténticos integrados de manera sustantiva: el plazo de 120 días proviene de la noticia y es la restricción central, y se usa el calendario oficial de feriados. Aunque los tamaños de trabajo son supuestos del escenario, el núcleo de la tarea descansa en estos datos reales.",
+                "cita": "Listado oficial de los feriados legales de Chile que caen dentro del período del plazo"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona las decisiones de modelación: los días hábiles, los feriados y la dependencia de las declaraciones respecto del peritaje. También es necesario para juzgar qué tan seguro es que el plan alcance.",
+                "cita": "corre en días corridos, pero que el equipo trabaja solo de lunes a viernes y no trabaja en feriados legales"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a recorrer el ciclo completo de forma no trivial:\n- comprender la situación;\n- simplificar (qué es esencial, tamaño de cada trabajo);\n- matematizar (días hábiles, asignación y secuencia);\n- calcular;\n- interpretar y validar el grado de seguridad del plan.",
+                "cita": "¿Cómo organizarían el tiempo para que el trabajo esencial quede terminado dentro del plazo, y qué tan seguros están de que alcanzará?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "R5 ofrece una medición independiente, no usada en la construcción, para contrastar las estimaciones de ritmo, lo que corresponde al descriptor 2. Hay una duda: la medición es un sustituto del ritmo del equipo fiscal, pero el descriptor se satisface.",
+                "cita": "recibe un texto largo de práctica y una lista de datos desordenados para medir cuánto demora en leerlos, resumirlos y ordenarlos, y así contrastar sus …"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto (estallido social, plazo judicial) es comprensible y pertinente para estudiantes chilenos de secundaria. La matemática requerida (conteo de días, razones, reparto y estimación) está al alcance de las herramientas de S.",
+                "cita": "No se trata de opinar sobre el caso, sino de planificar."
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es bajo, porque es posible repartir los 120 días entre tres tareas con operatoria simple. El techo es alto: se pueden considerar dependencias y secuencias, días hábiles y feriados, holguras y escenarios de incertidumbre.",
+                "cita": "algunas declaraciones dependen de lo que muestre el peritaje"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Los distintos planes y supuestos de tamaño permiten comparar soluciones. También abren preguntas sobre holguras, riesgos de retraso y sobre qué pasa si el peritaje toma más de lo previsto.",
+                "cita": "y qué tan seguros están de que alcanzará?"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "Los materiales no revelan el modelo. Sin embargo, datos imprescindibles como el tamaño del equipo, el número de declaraciones y la extensión del peritaje son difíciles de estimar para estudiantes de secundaria sin conocimiento cotidiano, y la tarea no indica cómo obtenerlos.",
+                "cita": "Todos requieren personas del equipo y algunas declaraciones dependen de lo que muestre el peritaje. El tamaño de cada trabajo no se conoce"
+              }
+            },
+            "total": 23,
+            "mejoras": [
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Agregar un recurso a solicitud con órdenes de magnitud del escenario (por ejemplo, número aproximado de personas del equipo y de declaraciones pendientes, o extensión del peritaje en páginas), o indicar fuentes públicas donde buscarlos. Así las estimaciones de tamaño quedarían al alcance del nivel S sin revelar el reparto."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgsyTuJWP9JjNydhxeMtF",
+            "fecha": "2026-11-09T20:20:49+00:00",
+            "intentos": 1,
+            "costo_usd": 0.102158,
+            "avisos": [
+              "cita_recortada_25:validacion"
+            ]
+          }
+        },
+        {
+          "n": 3,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La situación plantea una necesidad real: planificar un plazo limitado. No se entrega ninguna regla, algoritmo ni modelo de reparto para aplicar.",
+                "cita": "debe proponer cómo repartir esos 120 días entre las tareas que quedan: estudiar el peritaje, tomar declaraciones y ordenar los registros de lo ocurrido"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe un procedimiento. Admite varios planes defendibles, por ejemplo repartos proporcionales, secuencias con dependencias o márgenes de holgura, y no hay instrucciones posteriores que encaucen una ruta.",
+                "cita": "¿Cómo organizarían el tiempo para que el trabajo esencial quede terminado dentro del plazo, y qué tan seguros están de que alcanzará?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver la tarea exige estimar el tamaño de cada trabajo, suponer qué es lo «esencial», decidir cómo contar los días hábiles y solicitar información pertinente.",
+                "cita": "El tamaño de cada trabajo no se conoce: el grupo debe estimarlo y justificar su estimación."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "La ampliación del plazo es un hecho real, y planificar el trabajo pendiente dentro de ese plazo es una necesidad plausible para un equipo fiscal. El encuadre no parece forzado para insertar un cálculo.",
+                "cita": "Un juzgado de garantía amplió en 120 días el plazo para investigar el caso Alto Mando"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El plazo real de 120 días tomado de la noticia y el calendario oficial de feriados son componentes extraescolares integrados en el núcleo del problema. Los tipos de trabajo y sus dependencias son, en cambio, supuestos del escenario.",
+                "cita": "Listado oficial de los feriados legales de Chile que caen dentro del período del plazo"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona las decisiones de modelación: días hábiles, feriados y la dependencia de las declaraciones respecto del peritaje. También es necesario para interpretar y juzgar si el plan alcanza.",
+                "cita": "corre en días corridos, pero que el equipo trabaja solo de lunes a viernes y no trabaja en feriados legales"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a comprender la situación, estimar y simplificar los trabajos, convertir el plazo a días hábiles, construir un calendario con dependencias y juzgar su seguridad. Ninguna fase queda hecha por el enunciado.",
+                "cita": "¿Cómo organizarían el tiempo para que el trabajo esencial quede terminado dentro del plazo, y qué tan seguros están de que alcanzará?"
+              },
+              "validacion": {
+                "puntaje": 1,
+                "justificacion": "La medición del ritmo propio es evidencia independiente, pero mide a estudiantes y no al equipo fiscal, y no permite contrastar la duración de las declaraciones. Dudo entre 1 y 2 y asigno el menor: la validación queda limitada a la plausibilidad y la consistencia con el plazo.",
+                "cita": "recibe un texto largo de práctica y una lista de datos desordenados para medir cuánto demora en leerlos, resumirlos y ordenarlos"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto es un tema público relevante en Chile y el lenguaje legal es comprensible con el apoyo del enunciado. La matemática requerida (conteo de días, proporciones, secuenciación) está al alcance de secundaria.",
+                "cita": "Imaginen que su grupo asesora al equipo de la Fiscalía"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es accesible: contar días y repartirlos en partes iguales. El techo es alto: secuenciación con dependencias, escenarios optimista y pesimista y márgenes de seguridad.",
+                "cita": "algunas declaraciones dependen de lo que muestre el peritaje"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Los distintos repartos y estimaciones permiten comparar planes, discutir la incertidumbre y los límites del modelo, y plantear nuevas preguntas, por ejemplo qué pasa si el peritaje tarda más.",
+                "cita": "y qué tan seguros están de que alcanzará?"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "Ningún material revela el modelo, pero hay datos imprescindibles difíciles de estimar para estudiantes de secundaria y que la tarea no entrega ni indica cómo obtener: tamaño del equipo, número de citados, extensión del peritaje y duración típica de una declaración.",
+                "cita": "El tamaño de cada trabajo no se conoce: el grupo debe estimarlo y justificar su estimación."
+              }
+            },
+            "total": 22,
+            "mejoras": [
+              {
+                "criterio": "validacion",
+                "mejora_minima": "Agregar, a solicitud del grupo, datos públicos sobre investigaciones comparables (por ejemplo, duración reportada de declaraciones o etapas en otro caso informado por la prensa) para contrastar las estimaciones de ritmo después de planificar."
+              },
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Incluir en R2, disponible a solicitud, rangos de referencia: número aproximado de personas citadas, tamaño del equipo y extensión del peritaje, de modo que las estimaciones tengan una base obtenible sin revelar el reparto."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgsyXPaCvwCEegdH6qS7j",
+            "fecha": "2026-11-09T20:21:43+00:00",
+            "intentos": 1,
+            "costo_usd": 0.111598,
+            "avisos": []
+          }
+        }
+      ],
+      "totales": [
+        23,
+        23,
+        22
+      ],
+      "rango_total": 1,
+      "rango_inestable": 4,
+      "evaluacion_inestable": false,
+      "mediana": {
+        "regla": "mediana por criterio (n par: mediana inferior)",
+        "total": 23,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 1
+        },
+        "corrida_fuente": {
+          "genuino": 1,
+          "abierta": 1,
+          "decisiones": 1,
+          "realismo": 1,
+          "autenticidad": 1,
+          "contexto": 1,
+          "ciclo": 1,
+          "validacion": 1,
+          "nivel": 1,
+          "autodiferenciacion": 1,
+          "fecundidad": 1,
+          "recursos": 1
+        }
+      }
+    }
+  ]
+}
