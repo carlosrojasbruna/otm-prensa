@@ -1,0 +1,8 @@
+{
+  "2026-11-cubrirse-o-esperar-petroleo": [
+    {
+      "criterio": "autenticidad",
+      "mejora_minima": "Corregir la atribución de las cifras según el texto de la noticia (hallazgos del verificador del 2026-11-16, que hay que confirmar en la nota): el barril de referencia para Chile es el Brent, y es el Brent el que cae 4,67% y queda en 93,74 dólares; el WTI tiene otras cifras (3,37% y 87,68 según el verificador). (1) Cambiar WTI por Brent en estudiante.enunciado_es, en el recurso R1 y en noticia.resumen_propio. (2) En noticia.cifras_usadas[0] y [1], corregir que_es (son la caída y el precio del Brent) y dejar el localizador del párrafo donde la noticia los da. (3) El alza acumulada en el año es de «más de 52%», no de «52%»: ajustar el enunciado, R1 y cifras_usadas[2]. (4) Ajustar R4 para que la serie de validación sea la del mismo barril (precio spot diario del Brent) y revisar task_space (reference_solution, rutas y validation_evidence) para que no quede ninguna cifra del Brent atribuida al WTI. No cambiar la decisión que se pide (cerrar el precio hoy o esperar), el nivel, foto_descripcion ni los demás recursos."
+    }
+  ]
+}
