@@ -1,0 +1,130 @@
+{
+  "ciclo_id": "ciclo_20261116T132704639203Z",
+  "inicio": "2026-11-16T13:27:04Z",
+  "fin": "2026-11-16T13:33:05Z",
+  "semana": "2026-W47",
+  "parametros": {
+    "tope_semanal_usd": 35.0,
+    "fraccion_detencion": 0.9,
+    "presupuesto_ciclo_usd": null,
+    "limite_usd": 31.5,
+    "gasto_semana_previo_usd": 0.0,
+    "corridas_evaluador": 3,
+    "rango_inestable": 4,
+    "corridas_simulador": 6,
+    "ids": [
+      "2026-11-cubrirse-o-esperar-petroleo"
+    ],
+    "revisor": "Carlos Rojas Bruna",
+    "aceptar_hallazgos": false
+  },
+  "detenido_por_tope": false,
+  "eventos": [
+    {
+      "fecha": "2026-11-16T13:27:07Z",
+      "tipo": "preverificacion",
+      "tarea_id": "2026-11-cubrirse-o-esperar-petroleo",
+      "aprobado": true,
+      "criticos": 0,
+      "pendientes": 0,
+      "localizadores_corregidos": 0
+    },
+    {
+      "fecha": "2026-11-16T13:27:10Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-cubrirse-o-esperar-petroleo",
+      "de": "evaluada",
+      "a": "revisada"
+    },
+    {
+      "fecha": "2026-11-16T13:27:12Z",
+      "tipo": "preverificacion",
+      "tarea_id": "2026-11-cubrirse-o-esperar-petroleo",
+      "aprobado": true,
+      "criticos": 0,
+      "pendientes": 0,
+      "localizadores_corregidos": 0
+    },
+    {
+      "fecha": "2026-11-16T13:29:13Z",
+      "tipo": "agente",
+      "agente": "simulador",
+      "tareas": [
+        "2026-11-cubrirse-o-esperar-petroleo"
+      ],
+      "llamadas": 78,
+      "usd": 0.68526
+    },
+    {
+      "fecha": "2026-11-16T13:29:16Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-cubrirse-o-esperar-petroleo",
+      "de": "revisada",
+      "a": "simulada"
+    },
+    {
+      "fecha": "2026-11-16T13:32:05Z",
+      "tipo": "agente",
+      "agente": "redactor",
+      "tareas": [
+        "2026-11-cubrirse-o-esperar-petroleo"
+      ],
+      "llamadas": 4,
+      "usd": 0.418901
+    },
+    {
+      "fecha": "2026-11-16T13:32:12Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-cubrirse-o-esperar-petroleo",
+      "de": "simulada",
+      "a": "con_guia"
+    },
+    {
+      "fecha": "2026-11-16T13:32:18Z",
+      "tipo": "agente",
+      "agente": "ilustrador",
+      "tareas": [
+        "2026-11-cubrirse-o-esperar-petroleo"
+      ],
+      "llamadas": 1,
+      "usd": 0.010572
+    },
+    {
+      "fecha": "2026-11-16T13:33:01Z",
+      "tipo": "agente",
+      "agente": "verificador",
+      "tareas": [
+        "2026-11-cubrirse-o-esperar-petroleo"
+      ],
+      "llamadas": 1,
+      "usd": 0.157612
+    },
+    {
+      "fecha": "2026-11-16T13:33:05Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-cubrirse-o-esperar-petroleo",
+      "de": "con_guia",
+      "a": "evaluada",
+      "motivo": "el verificador encontró hallazgos sobre la tarea: [semantica] tarea.noticia.cifras_usadas[0]: el modelo no encuentra respaldo para la cifra: El párrafo 3 atribuye la caída de 4,67% al Brent, no al WTI. El valor coincide, pero el significado no: según el párrafo 4 (no recibido), el WTI cayó 3,37%.; [semantica] tarea.noticia.cifras_usadas[1]: el modelo no encuentra respaldo para la cifra: En el párrafo 3, 93,74 dólares es el precio del Brent tras la caída. Según la lista de cifras, el WTI quedó en 87,68. Es otro barril.; [semantica] tarea.estudiante.enunciado_es: El WTI, referencia para Chile, bajó 4,67% en un día y quedó en 93,74 dólares por barril — Según el párrafo 3, el barril de referencia para Chile es el Brent, y es el Brent el que cae 4,67% y queda en 93,74. El WTI tiene otras cifras (3,37% y 87,68). El resumen propio arrastra la misma confusión.; [semantica] task_space.validation_evidence / recurso R4 / guia.contraste_validacion "
+    }
+  ],
+  "expedientes": {
+    "2026-11-cubrirse-o-esperar-petroleo": "evaluada"
+  },
+  "noticias": [],
+  "pendientes_humanos": [
+    {
+      "tarea_id": "2026-11-cubrirse-o-esperar-petroleo",
+      "pendiente": "revision_humana_1",
+      "estado": "evaluada"
+    }
+  ],
+  "errores": [],
+  "orden": "tramo_b",
+  "gasto": {
+    "ciclo_usd": 1.272345,
+    "semana_usd": 1.272345,
+    "limite_usd": 31.5,
+    "llamadas": 84
+  }
+}

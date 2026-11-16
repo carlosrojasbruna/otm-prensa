@@ -1,0 +1,18 @@
+# Corrida N2_VV_r1
+
+Nivel N2 · estilos V/V · rep 1 · 14 turnos · término: acuerdo · modelo claude-sonnet-5-5
+
+**1. Cami:** Mmm, yo me imagino un gráfico del precio subiendo y bajando como montaña rusa, y que dentro de un mes puede estar mucho más arriba o más abajo de 93,74. ¿Tú cómo lo ves, Fran, qué datos nos faltan para decidir, como cuánto cuesta la cobertura?  
+**2. Fran:** Yo también me lo imagino como la montaña rusa, y la empresa parada en el carro sin saber si viene una bajada o una subida. Sí, falta saber cuánto cuesta la cobertura, cuántos barriles son y cuánta pérdida aguanta la empresa, ¿te parece si empezamos dibujando el precio hoy y dos o tres escenarios a un mes?  
+**3. Cami:** Dale, hago el dibujo: [dibujo: una línea horizontal en 93,74 y desde ahí tres flechas, una que sube a unos 110, otra que se queda igual y otra que baja a unos 80]. Pero ¿de dónde sacamos cuánto puede variar en un mes, nos inventamos los números o los pedimos?  
+**4. Fran:** Yo diría que pidámoslos, pero mientras tanto podemos usar el dato de la caída de 4,67% en un día para imaginar qué tan nerviosa está la cosa. Si en un día se mueve casi 5%, en un mes podría moverse bastante más, ¿no?  
+**5. Cami:** Sí, 4,67% de 93,74 son como 4,4 dólares en un día, y si eso se repite varios días el barril podría moverse harto en un mes. Pero no sé si se suman así o se compensan, ¿tú sabes cómo se calcula eso?  
+**6. Fran:** Yo creo que no se suman tal cual, porque unos días sube y otros baja, como la montaña rusa, pero igual el vaivén va juntando. Podríamos pedir la volatilidad del mes; mientras, probemos con un rango: si se mueve 10% son ±9,4 dólares, ¿lo dibujamos?  
+**7. Cami:** Dale, lo dibujo: [dibujo: línea en 93,74 con una banda hacia arriba hasta 103,1 y hacia abajo hasta 84,3]. Ahora, si la empresa compra, digamos, 100.000 barriles, ese ±9,4 serían casi un millón de dólares de diferencia, ¿eso sí lo aguantaría?  
+**8. Fran:** Depende de qué tan grande sea la empresa, porque casi un millón puede ser un susto o puede dejarla en el suelo, así que habría que preguntarle al gerente cuánta pérdida aguanta. Y dibujaría al lado el costo de la cobertura, como un peaje fijo, para compararlo con esos ±940.000 que podrían pasar, ¿te parece?  
+**9. Cami:** Me gusta lo del peaje: [dibujo: al lado de la banda, una caja con "costo cobertura = ?" y debajo "±940.000 si no cubrimos"]. Si el peaje es bastante menor que ese susto, yo cubriría, pero sin saber el precio ni cuánto aguanta la empresa no me siento segura, ¿pedimos esos dos datos?  
+**10. Fran:** Sí, pidámoslos, y también la volatilidad del mes, porque ese 10% nos lo inventamos nosotras. Y anotemos que cubrir te protege si sube, pero si baja pierdes ese ahorro, ¿lo dibujamos al otro lado de la banda?  
+**11. Cami:** Dale, lo dibujo: [dibujo: flecha hacia abajo "si baja, pagamos de más" y flecha hacia arriba "si sube, nos salva"]. ¿Armamos la recomendación así: cubrir si el peaje es chico y el gerente no aguanta el susto, pero con la salvedad de que faltan esos tres datos?  
+**12. Fran:** Sí, armémosla así, y agreguemos que la tensión en Medio Oriente puede volver, así que una alza es posible. Dejemos claro que los 100.000 barriles y el 10% son supuestos nuestros, ¿escribimos el ENTREGAMOS?  
+**13. Cami:** ENTREGAMOS: Cubriría si el costo de la cobertura es bastante menor que el susto (±940.000 USD, con 100.000 barriles y 10% supuestos) y la empresa no lo aguanta. Seguridad media, porque faltan el costo, la tolerancia al riesgo y la volatilidad.  
+**14. Fran:** DE ACUERDO. Aunque ojalá aclaremos que, si la empresa aguanta bien el susto, quizás no vale la pena pagar el peaje.  
