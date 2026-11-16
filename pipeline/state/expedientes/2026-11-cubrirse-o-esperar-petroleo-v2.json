@@ -693,7 +693,7 @@
         "puntaje_rub01": 24,
         "version": 2,
         "fecha": "2026-11-16",
-        "cambios": ""
+        "cambios": "rev. 2 de la guía: correcciones de texto de la revisión humana 2 (Carlos Rojas Bruna): rutas y diferencias por corrida en E1 y E3, correspondencia de E3 con R1 y decisiones de E4"
       },
       "meta": {
         "que_observar": "Observar si el grupo convierte la pregunta de la empresa importadora (cerrar el precio hoy o esperar) en un modelo que trata el precio del Brent como incierto, con supuestos explícitos y un criterio propio de riesgo, y si condiciona la recomendación al costo de la cobertura y a la volatilidad supuesta. Interesa especialmente cómo tratan la caída de un solo día de crisis como dato para estimar la variabilidad, y si contrastan el modelo con la evolución posterior del precio.",
@@ -834,7 +834,7 @@
             "N3_AA_r1",
             "N4_AA_r1"
           ],
-          "perfil": "Tramo U, niveles N3 y N4, estilo AA en ambas corridas.",
+          "perfil": "N3_AA_r1: tramo U, nivel N3, estilo AA. N4_AA_r1: tramo U, nivel N4, estilo AA. Ruta: la de N3_AA_r1; N4_AA_r1 siguió P3-MM → P2-RM → P4-WM → P5-INT → P4-WM → P5-INT → P7-EXP (no pasa por P1-MRS ni por P6-VAL).",
           "ruta": [
             "P1-MRS",
             "P3-MM",
@@ -848,15 +848,15 @@
           ],
           "supuestos": [
             "precio lognormal (P₁ = P₀·e^X con X normal)",
-            "volatilidad anual 40%, con sensibilidad 30% y 50%",
+            "volatilidad anual 40%, con sensibilidad 30% y 50% (N3_AA_r1)",
             "precio esperado a un mes igual al actual (sin tendencia)",
-            "se ignoran la caída diaria de 4,67% y el alza anual de 52%",
-            "volatilidad 60% anual por semana brusca",
-            "sin saltos por Medio Oriente"
+            "se ignoran la caída diaria de 4,67% y el alza anual de 52% (N3_AA_r1)",
+            "volatilidad 60% anual por semana brusca (N4_AA_r1)",
+            "sin saltos por Medio Oriente (N4_AA_r1)"
           ],
           "modelo": "lognormal",
           "bloqueos": [],
-          "que_aprende": "Es el escenario más cercano a la ruta R2: precio lognormal, deriva cero, cola superior como medida de riesgo y recomendación condicionada al costo de la cobertura y a la pérdida tolerable. Al compararlo con los demás, el curso ve que la sensibilidad a la volatilidad (probar varios valores) reemplaza a un único número inventado. También deja una pregunta abierta para discutir: la volatilidad se supone en vez de estimarse a partir del movimiento diario de la noticia, que este grupo decide no usar; contrastar esa decisión con la ruta de referencia, que trata ese día como observación extrema y lo compara con un valor de calma.",
+          "que_aprende": "Es el escenario más cercano a la ruta R2: precio lognormal, deriva cero, cola superior como medida de riesgo y recomendación condicionada al costo de la cobertura y a la pérdida tolerable. Al compararlo con los demás, el curso ve que la sensibilidad a la volatilidad (probar varios valores) reemplaza a un único número inventado. También deja una pregunta abierta para discutir: en las dos corridas la volatilidad se supone en vez de estimarse a partir del movimiento diario de la noticia. N3_AA_r1 declara que no usa la caída de 4,67%; N4_AA_r1 sí la toma en cuenta, pero solo de forma cualitativa: repite la cuenta con 60% porque, con una semana tan brusca, el 40% podría quedarse corto. Contrastar ambas decisiones con la ruta de referencia, que trata ese día como observación extrema y lo compara con un valor de calma.",
           "extracto_dialogo": [
             {
               "hablante": "Fran",
@@ -931,7 +931,7 @@
             "N2_VV_r1",
             "N1_VV_r1"
           ],
-          "perfil": "Tramo U, niveles N2 y N1, estilo VV en ambas corridas.",
+          "perfil": "N2_VV_r1: tramo U, nivel N2, estilo VV. N1_VV_r1: tramo U, nivel N1, estilo VV. Ruta: la de N2_VV_r1; N1_VV_r1 siguió P1-MRS → P2-RM → P4-WM → P6-VAL → P5-INT → P6-VAL → P5-INT → P7-EXP (pasa dos veces por P6-VAL y omite P3-MM).",
           "ruta": [
             "P1-MRS",
             "P2-RM",
@@ -950,7 +950,7 @@
           ],
           "modelo": "escenarios discretos",
           "bloqueos": [],
-          "que_aprende": "Corresponde a la ruta R1: un caso bueno y un caso malo dibujados a partir de un rango imaginado, sin probabilidades. Al compararlo con E1 y E4, el curso discute que la recomendación depende de dónde salen los extremos del rango: aquí el grupo reconoce que el peor caso lo inventó y que podría ser peor. La ruta de N2_VV_r1 no pasa por validar, lo que permite preguntar qué faltaría para contrastar ese rango.",
+          "que_aprende": "Se aproxima a la ruta R1 sin corresponder del todo: R1 arma tres escenarios con movimientos del tamaño del porcentaje de la noticia, y aquí hay un caso bueno y un caso malo dibujados a partir de un rango imaginado (80 y 110 en N2_VV_r1; ±10 dólares en N1_VV_r1), sin probabilidades. Al compararlo con E1 y E4, el curso discute que la recomendación depende de dónde salen los extremos del rango: aquí el grupo reconoce que el peor caso lo inventó y que podría ser peor. La ruta de N2_VV_r1 no pasa por validar. La de N1_VV_r1 sí: el grupo corrige un error de cálculo (un millón por cien mil) y contrasta su salto de 10 dólares con la caída de 4,67% en un día. La diferencia permite preguntar qué faltaría para contrastar el rango de N2_VV_r1.",
           "extracto_dialogo": [
             {
               "hablante": "Fran",
@@ -994,7 +994,7 @@
           ],
           "modelo": "normal (caminata aleatoria)",
           "bloqueos": [],
-          "que_aprende": "Usa una caminata aleatoria con distribución normal en vez de lognormal y razona sobre la asimetría del riesgo para un importador. Comparado con E1, el curso puede discutir si una normal simétrica es adecuada para un precio y por qué el grupo dibuja el abanico más largo hacia arriba. Además introduce decisiones que otros grupos no tomaron: cubrir solo una parte del cargamento y preguntar si la cobertura es forward u opción.",
+          "que_aprende": "Usa una caminata aleatoria con distribución normal en vez de lognormal y razona sobre la asimetría del riesgo para un importador. Comparado con E1, el curso puede discutir si una normal simétrica es adecuada para un precio y por qué el grupo dibuja el abanico más largo hacia arriba. Además lleva más lejos dos ideas que también asoman en N4_AA_r1 (E1), que recomienda cubrir al menos una parte del cargamento y pide el tipo de cobertura: aquí el grupo propone cubrir cerca de la mitad como punto de partida y explica por qué importa si la cobertura es forward u opción (con un forward, si el precio baja, igual se paga lo fijado).",
           "extracto_dialogo": [
             {
               "hablante": "Fran",
@@ -1256,6 +1256,18 @@
       "ruta": "tareas/2026-11/cubrirse-o-esperar-petroleo/",
       "rama": "tareas/semana-2026-W47"
     },
-    "pendiente": "revision_humana_2"
+    "pendiente": "revision_humana_2",
+    "correccion_manual_guia": {
+      "revisor": "Carlos Rojas Bruna",
+      "fecha": "2026-11-16T13:59:30Z",
+      "etapa": "revision_humana_2",
+      "version_guia": 2,
+      "cambios": [
+        "E1: que_aprende distingue N3_AA_r1 (no usa la caída de 4,67%) de N4_AA_r1 (sube a 60% por la semana brusca); ruta de N4_AA_r1 anotada en perfil; supuestos rotulados por corrida",
+        "E3: «se aproxima a R1» en vez de «corresponde»; ruta de N1_VV_r1 anotada en perfil (la ruta es la de N2_VV_r1); N1_VV_r1 sí valida",
+        "E4: cubrir una parte y preguntar por el tipo de cobertura también aparecen en N4_AA_r1; lo propio de E4 es la mitad como punto de partida y el porqué de forward u opción"
+      ],
+      "verificacion_codigo": "verificacion_codigo_correccion_guia.json"
+    }
   }
 }
