@@ -1,0 +1,106 @@
+{
+  "run": {
+    "id": "N4_VV_r1",
+    "nivel": "N4",
+    "composicion": "VV",
+    "rep": 1,
+    "estilos": [
+      "V",
+      "V"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.0478,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P2-RM",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 4,
+        "fase": "P5-INT",
+        "fase_secundaria": "P1-MRS",
+        "eventos": [
+          "STRAT",
+          "DIST"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P6-VAL",
+        "fase_secundaria": "EMK",
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 6,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 8,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 9,
+        "fase": "OFF",
+        "fase_secundaria": null,
+        "eventos": []
+      }
+    ],
+    "bloqueos": [],
+    "supuestos": [
+      "volatilidad anual de 40% (luego 30% y 50%)",
+      "volatilidad escala con la raíz del tiempo (anual/√12 para un mes)",
+      "precio centrado en el actual 93,74 (sin deriva)",
+      "bandas simétricas de ±1σ y ±2σ"
+    ],
+    "modelo": "caminata aleatoria",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Cubrir entre 50% y 70% del cargamento, y más si la prima es menor que el riesgo (+16 a +27 USD por barril a 2σ, con volatilidad anual supuesta de 30-50%); seguridad media-baja porque faltan la prima, el tamaño del cargamento y la pérdida que aguanta la empresa."
+    },
+    "ruta_principal": "R2",
+    "rutas": [
+      "R2"
+    ]
+  }
+}

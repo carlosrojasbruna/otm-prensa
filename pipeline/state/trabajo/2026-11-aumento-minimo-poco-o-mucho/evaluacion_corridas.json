@@ -1,0 +1,301 @@
+{
+  "tarea_id": "2026-11-aumento-minimo-poco-o-mucho",
+  "evaluaciones": [
+    {
+      "iteracion": 1,
+      "version_tarea": 1,
+      "fecha": "2026-11-09T20:08:10Z",
+      "modelo": "claude-opus-5-5",
+      "version_prompt": "1.3",
+      "version_rubrica": "4.0",
+      "corridas": [
+        {
+          "n": 1,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La tarea plantea una necesidad real: explicar a lectores si el aumento es significativo. No entrega ninguna regla ni procedimiento, así que el grupo debe construir su propio criterio de comparación.",
+                "cita": "¿El aumento es poco o es mucho? ¿Qué números usarían para convencer a un lector de que su opinión es razonable?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "Hay varios caminos defendibles: diferencia absoluta, porcentaje, monto por día, parte realmente nueva o comparación con precios. Ninguna instrucción posterior encauza hacia una ruta única.",
+                "cita": "¿Qué números usarían para convencer a un lector de que su opinión es razonable?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige varias decisiones de modelación: elegir con qué comparar el aumento, decidir si contar los 18 euros ya previstos, suponer la situación de la persona y solicitar información.",
+                "cita": "Imaginen que ustedes forman el equipo de un diario escolar y quieren explicar a sus lectores qué significa esto para una persona que gana el …"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Es un hecho real de actualidad. El debate entre gobierno y sindicatos sobre si el aumento basta existe fuera de la escuela.",
+                "cita": "En Francia, el Gobierno anunció un aumento del salario mínimo: sube 23 euros y llega a 1.502 euros."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "La noticia y sus cifras (23 euros, 1.502 euros, la postura sindical del 1,6%) son el núcleo de la tarea. Se usan como datos y no fueron creadas para enseñar.",
+                "cita": "Los sindicatos la consideran escasa y convocan a una nueva huelga; además, dicen que una parte de ese aumento no es realmente nueva."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona las decisiones de modelación: qué cuenta como aumento real y qué gasta la persona. También es necesario para interpretar si el resultado es «poco o mucho».",
+                "cita": "Una parte del aumento anunciado corresponde a un incremento automático previsto para comienzo de año: 18 euros."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a recorrer el ciclo completo: comprender la noticia, elegir una medida de comparación, calcularla, interpretarla para el lector y defenderla. Las tarjetas de supuestos están disponibles solo a solicitud, por lo que no dejan fases hechas.",
+                "cita": "¿El aumento es poco o es mucho?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existe una cifra independiente de la noticia, no usada en la construcción del modelo, para contrastar el cálculo y la conclusión. Esto coincide con la validación esperable en P según MAR03.",
+                "cita": "El sindicato CFDT considera insuficiente un alza del salario mínimo de 1,6%."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El encuadre de diario escolar y el lenguaje son comprensibles para 10–12 años. La matemática requerida (diferencias, porcentajes, monto por día, comparación con precios) está dentro de las herramientas esperables en P.",
+                "cita": "quieren explicar a sus lectores qué significa esto para una persona que gana el mínimo"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es accesible: basta comparar 23 euros con precios cotidianos. El techo es alto: porcentaje, monto diario, separar la parte nueva de la prevista o relacionarla con los gastos de la persona.",
+                "cita": "Pueden pedir información adicional."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las distintas medidas de comparación llevan a conclusiones opuestas y defendibles, lo que permite comparar soluciones. También abre preguntas sobre costo de vida y sobre qué cuenta como aumento.",
+                "cita": "El primer ministro dice que la medida es importante, aunque reconoce que no basta."
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "La tarjeta orienta a comparar con gastos, pero ningún recurso entrega precios en Francia, que son difíciles de obtener para estudiantes de primaria. Además, R5 entrega el 1,6% y, si se solicita antes de modelar, revela el resultado del cálculo porcentual. Hay duda entre 1 y 2; se asigna el menor.",
+                "cita": "Supuesto del escenario: la persona vive sola y gasta casi todo su sueldo en arriendo, comida y transporte."
+              }
+            },
+            "total": 23,
+            "mejoras": [
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Agregar una tarjeta a solicitud con precios aproximados en Francia (arriendo mensual, pan, pasaje de transporte) e indicar que R5 se entrega solo después de que el grupo presente su modelo."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgsxQMkkGhfJdc8FE3NXH",
+            "fecha": "2026-11-09T20:06:45+00:00",
+            "intentos": 1,
+            "costo_usd": 0.134196,
+            "avisos": [
+              "cita_recortada_25:decisiones"
+            ]
+          }
+        },
+        {
+          "n": 2,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La situación plantea una necesidad real: explicar a lectores el significado del aumento. No se entrega ninguna regla ni medida de comparación; los estudiantes deben construirla (porcentaje, monto por día o parte realmente nueva).",
+                "cita": "¿El aumento es poco o es mucho? ¿Qué números usarían para convencer a un lector de que su opinión es razonable?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta admite varios caminos defendibles: comparar en porcentaje, por día o solo con la parte nueva del aumento. No hay instrucciones posteriores que prescriban el método.",
+                "cita": "¿Qué números usarían para convencer a un lector de que su opinión es razonable?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Para resolver hay que elegir qué cifra cuenta como aumento, qué medida usar para juzgar «poco o mucho» y solicitar información pertinente. Las tarjetas de supuestos se entregan solo si el grupo las pide.",
+                "cita": "además, dicen que una parte de ese aumento no es realmente nueva"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Es un hecho real de actualidad. El encargo de explicarlo en un diario escolar es plausible fuera de la escuela.",
+                "cita": "En Francia, el Gobierno anunció un aumento del salario mínimo: sube 23 euros y llega a 1.502 euros."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los datos y el debate provienen de una noticia real y son el núcleo de la tarea, por lo que el componente auténtico está integrado de manera sustantiva. La opinión de la CFDT es otro componente auténtico.",
+                "cita": "Los sindicatos la consideran escasa y convocan a una nueva huelga"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona qué se cuenta como aumento (la parte prevista) y qué comparación tiene sentido. También es imprescindible para interpretar y defender la opinión ante el lector.",
+                "cita": "qué significa esto para una persona que gana el mínimo"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a comprender la noticia, decidir una medida de comparación, calcularla, interpretarla para el lector y contrastarla. Las tarjetas de supuestos solo se entregan a solicitud y no dejan hecha la simplificación central.",
+                "cita": "Imaginen que ustedes forman el equipo de un diario escolar y quieren explicar a sus lectores qué significa esto"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "El 1,6% de la CFDT es un dato independiente, no usado en la construcción, con el cual contrastar el cálculo y la opinión. Esto coincide con la validación esperable en el nivel P.",
+                "cita": "Tarjeta con la opinión de un sindicato, para contrastar después de modelar"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "La matemática requerida está al alcance de las herramientas de P: restas, división por días, porcentaje aproximado y estimación. El salario y el encargo periodístico son comprensibles para 10–12 años. Hubo una duda leve sobre la lejanía del contexto francés, pero no impide la comprensión.",
+                "cita": "sube 23 euros y llega a 1.502 euros"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es razonable: basta comparar 23 con 1.502 o repartir el aumento por día. El techo es alto: la tarea admite usar porcentajes, separar la parte ya prevista (5 euros nuevos) y relacionarla con los gastos.",
+                "cita": "¿El aumento es poco o es mucho?"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las distintas medidas elegidas llevan a conclusiones distintas que pueden compararse. Además abren preguntas sobre gastos, la parte no nueva y la opinión sindical.",
+                "cita": "El primer ministro dice que la medida es importante, aunque reconoce que no basta."
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información necesaria está en el enunciado o puede solicitarse, y ninguna tarjeta indica qué medida usar. El 1,6% está rotulado para contrastar después de modelar, por lo que no revela el modelo.",
+                "cita": "Una parte del aumento anunciado corresponde a un incremento automático previsto para comienzo de año: 18 euros."
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgsxTAQhXvybZUtVNMLPi",
+            "fecha": "2026-11-09T20:07:29+00:00",
+            "intentos": 1,
+            "costo_usd": 0.094442,
+            "avisos": []
+          }
+        },
+        {
+          "n": 3,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "Hay una necesidad real: explicar a lectores si el alza es poca o mucha. La tarea no entrega ninguna regla ni modelo para decidirlo.",
+                "cita": "¿El aumento es poco o es mucho? ¿Qué números usarían para convencer a un lector de que su opinión es razonable?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta admite varios caminos defendibles (porcentaje, monto por día, parte realmente nueva, comparación con gastos) y no prescribe procedimiento.",
+                "cita": "¿Qué números usarían para convencer a un lector de que su opinión es razonable?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige decidir con qué medir si el alza es «poca o mucha», seleccionar datos, solicitar información (como la parte ya prevista) y formular supuestos sobre la persona.",
+                "cita": "Pueden pedir información adicional."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Es un hecho real de actualidad, y el debate sobre si un alza es suficiente existe fuera de la escuela.",
+                "cita": "En Francia, el Gobierno anunció un aumento del salario mínimo: sube 23 euros y llega a 1.502 euros."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los datos y la controversia provienen de una noticia y son el núcleo de la tarea, integrados de manera sustantiva.",
+                "cita": "Los sindicatos la consideran escasa y convocan a una nueva huelga; además, dicen que una parte de ese aumento no es realmente nueva."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona qué comparar (sueldo mensual, gastos, parte no nueva) y es necesario para interpretar el resultado y juzgar si la opinión es razonable.",
+                "cita": "qué significa esto para una persona que gana el mínimo"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Para responder hay que recorrer todas las fases sin que el enunciado deje ninguna hecha: comprender la noticia, elegir una medida, calcularla (por ejemplo, el porcentaje o el monto por día), interpretarla para el lector y defenderla.",
+                "cita": "quieren explicar a sus lectores qué significa esto para una persona que gana el mínimo. ¿El aumento es poco o es mucho?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existe una cifra independiente de otra fuente para contrastar el cálculo y el juicio, como espera MAR03 para el nivel P.",
+                "cita": "El sindicato CFDT considera insuficiente un alza del salario mínimo de 1,6%."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El encuadre de diario escolar y el lenguaje son comprensibles para 10–12 años. La matemática requerida (diferencias, proporcionalidad, porcentajes simples) está dentro de las herramientas del nivel P.",
+                "cita": "Imaginen que ustedes forman el equipo de un diario escolar"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Se puede entrar comparando 23 con 1.502 o dividiendo por días. Hay techo alto: porcentaje sobre el sueldo anterior, descontar los 18 euros ya previstos o relacionar el alza con los gastos.",
+                "cita": "¿Qué números usarían para convencer a un lector de que su opinión es razonable?"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las distintas medidas llevan a conclusiones diferentes, lo que permite comparar soluciones. Además, abre preguntas sobre la parte realmente nueva, el costo de vida y la suficiencia del alza.",
+                "cita": "dicen que una parte de ese aumento no es realmente nueva"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "Hay sobreorientación parcial: R5 entrega el 1,6% (una cifra clave de solución) y puede pedirse en cualquier momento. Además, no hay datos de precios o gastos en euros, difíciles de estimar para estudiantes P. Dudé entre 1 y 2 y asigno el menor.",
+                "cita": "R5 (Tarjeta con la opinión de un sindicato, para contrastar después de modelar), disponible a solicitud del grupo"
+              }
+            },
+            "total": 23,
+            "mejoras": [
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Indicar que R5 se entrega solo después de que el grupo presente su respuesta. Agregar una tarjeta a solicitud con precios de referencia en Francia (por ejemplo, una baguette, un pasaje de metro o un mes de arriendo) para quien quiera comparar el alza con los gastos."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011CgsxWQDkJQSEdqKLaTQFN",
+            "fecha": "2026-11-09T20:08:10+00:00",
+            "intentos": 1,
+            "costo_usd": 0.084622,
+            "avisos": []
+          }
+        }
+      ],
+      "totales": [
+        23,
+        24,
+        23
+      ],
+      "rango_total": 1,
+      "rango_inestable": 4,
+      "evaluacion_inestable": false,
+      "mediana": {
+        "regla": "mediana por criterio (n par: mediana inferior)",
+        "total": 23,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 1
+        },
+        "corrida_fuente": {
+          "genuino": 1,
+          "abierta": 1,
+          "decisiones": 1,
+          "realismo": 1,
+          "autenticidad": 1,
+          "contexto": 1,
+          "ciclo": 1,
+          "validacion": 1,
+          "nivel": 1,
+          "autodiferenciacion": 1,
+          "fecundidad": 1,
+          "recursos": 1
+        }
+      }
+    }
+  ]
+}

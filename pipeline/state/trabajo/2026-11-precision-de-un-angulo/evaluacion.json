@@ -1,0 +1,109 @@
+{
+  "tarea_id": "2026-11-precision-de-un-angulo",
+  "fecha": "2026-11-09T20:23:26Z",
+  "rub01": {
+    "version_rubrica": "4.0",
+    "criterios": {
+      "genuino": {
+        "puntaje": 2,
+        "justificacion": "La tarea plantea una necesidad real: explicar y fijar una precisión confiable. No entrega fórmula ni modelo para relacionar el error angular con el desplazamiento.",
+        "cita": "Imaginen que su grupo debe explicar a personas no expertas por qué la precisión importa"
+      },
+      "abierta": {
+        "puntaje": 2,
+        "justificacion": "La pregunta no prescribe el procedimiento. Admite varios modelos defendibles: dibujo a escala, diferencia de tangentes, aproximación de ángulo pequeño o planteo inverso desde la precisión exigida.",
+        "cita": "Ustedes deciden respecto de qué se mide el ángulo y qué distancias consideran."
+      },
+      "decisiones": {
+        "puntaje": 2,
+        "justificacion": "Resolverla exige varias decisiones: elegir la referencia del ángulo y las distancias, estimar el margen de error (R3) y fijar qué desviación es aceptable. Son supuestos sustantivos.",
+        "cita": "Ustedes deciden respecto de qué se mide el ángulo y qué distancias consideran."
+      },
+      "realismo": {
+        "puntaje": 2,
+        "justificacion": "La situación es real: la confiabilidad de una reconstrucción pericial depende de la precisión angular. Es una pregunta plausible fuera de la escuela.",
+        "cita": "Un peritaje internacional presentado a la Fiscalía en el caso Alto Mando reconstruyó en tres dimensiones cómo se usaron escopetas antidisturbios"
+      },
+      "autenticidad": {
+        "puntaje": 2,
+        "justificacion": "El peritaje real y su dato son el núcleo temático de la tarea, y la pregunta sobre la precisión de una reconstrucción forense no fue creada para enseñar trigonometría. Se toma como cierta la procedencia declarada.",
+        "cita": "El informe se conoce por un ángulo de uso: 89 grados."
+      },
+      "contexto": {
+        "puntaje": 2,
+        "justificacion": "El contexto condiciona las decisiones: distancias realistas en una calle y qué desviación cambia la conclusión sobre dónde apuntaba el arma. También es necesario para interpretar si el error es aceptable.",
+        "cita": "¿Qué precisión exigirían para confiar en una conclusión de ese tipo?"
+      },
+      "ciclo": {
+        "puntaje": 2,
+        "justificacion": "Responder obliga a recorrer todo el ciclo: comprender la situación, fijar referencia y error, matematizar con trigonometría, calcular, interpretar la precisión exigible y validar con la maqueta.",
+        "cita": "si un ángulo como ese se midiera con un pequeño error, ¿cuánto podría cambiar el lugar al que se concluye que apuntaba el arma, a …"
+      },
+      "validacion": {
+        "puntaje": 2,
+        "justificacion": "La maqueta permite contrastar las predicciones del modelo con mediciones independientes que no se usaron para construirlo.",
+        "cita": "recibe transportador, cinta métrica, un puntero láser de aula o una varilla y un muro o panel vertical para comprobar sus predicciones"
+      },
+      "nivel": {
+        "puntaje": 2,
+        "justificacion": "El contexto es comprensible y significativo para estudiantes chilenos de S2. La matemática requerida (trigonometría, sensibilidad informal) corresponde a las herramientas esperables del sub-tramo.",
+        "cita": "No se trata de juzgar el caso, sino de entender la medición."
+      },
+      "autodiferenciacion": {
+        "puntaje": 2,
+        "justificacion": "El piso es accesible, porque se puede empezar con un dibujo a escala y un transportador. El techo es alto: tangentes, aproximación lineal del error, dependencia con la distancia y problema inverso de la precisión requerida.",
+        "cita": "¿cuánto podría cambiar el lugar al que se concluye que apuntaba el arma, a distintas distancias?"
+      },
+      "fecundidad": {
+        "puntaje": 2,
+        "justificacion": "Los resultados abren preguntas nuevas: cómo crece el error con la distancia, qué supuestos de referencia importan y cuáles son los límites de una reconstrucción. También permiten comparar soluciones entre grupos.",
+        "cita": "¿Qué precisión exigirían para confiar en una conclusión de ese tipo?"
+      },
+      "recursos": {
+        "puntaje": 1,
+        "justificacion": "La información necesaria es obtenible (mapa en línea, estimación con transportador). Pero la imagen entregada de entrada anticipa la configuración geométrica del modelo (blanco en un muro, distancia horizontal y ángulo), lo que constituye una sobreorientación parcial. Hay duda entre 1 y 2, porque el enunciado ya sugiere parte de esa estructura; se asigna el menor.",
+        "cita": "Esquema sencillo de una persona de pie, una línea recta que sale hacia un muro y un arco que marca un ángulo, con una regla …"
+      }
+    },
+    "total": 23,
+    "mejoras": [
+      {
+        "criterio": "recursos",
+        "mejora_minima": "Reemplazar el esquema geométrico por una fotografía o ilustración de una calle o plaza sin líneas, arcos ni regla, de modo que el grupo decida por sí mismo cómo representar el ángulo, la distancia y el lugar de impacto."
+      }
+    ]
+  },
+  "reproducibilidad": {
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.244142,
+        "version_prompt": "1.1"
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.22871,
+        "version_prompt": "1.3"
+      },
+      "filtro": {
+        "modelo": "claude-haiku-5-5",
+        "version_modelo": "claude-haiku-5-5",
+        "costo_usd": 0.000664,
+        "version_prompt": "1.0"
+      }
+    },
+    "version_prompt": {
+      "disenador": "1.1",
+      "evaluador": "1.3",
+      "filtro": "1.0"
+    },
+    "version_rubrica": "4.0",
+    "version_MAR03": "1.0",
+    "version_MED01": "1.4",
+    "diseno_simulador": null,
+    "fecha": "2026-11-09T20:23:26Z",
+    "costo_usd": 0.473516
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "ciclo_id": "ciclo_20261116T133850386291Z",
+  "inicio": "2026-11-16T13:38:50Z",
+  "fin": "2026-11-16T13:41:25Z",
+  "semana": "2026-W47",
+  "parametros": {
+    "tope_semanal_usd": 35.0,
+    "fraccion_detencion": 0.9,
+    "presupuesto_ciclo_usd": null,
+    "limite_usd": 31.5,
+    "gasto_semana_previo_usd": 1.272345,
+    "corridas_evaluador": 3,
+    "rango_inestable": 4,
+    "corridas_simulador": 6,
+    "ids": [
+      "2026-11-cubrirse-o-esperar-petroleo"
+    ],
+    "motivo": "revisión humana"
+  },
+  "detenido_por_tope": false,
+  "eventos": [
+    {
+      "fecha": "2026-11-16T13:39:46Z",
+      "tipo": "agente",
+      "agente": "disenador",
+      "tareas": [],
+      "llamadas": 1,
+      "usd": 0.132319
+    },
+    {
+      "fecha": "2026-11-16T13:40:19Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-11-cubrirse-o-esperar-petroleo-v2"
+      ],
+      "llamadas": 1,
+      "usd": 0.119376
+    },
+    {
+      "fecha": "2026-11-16T13:40:45Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-11-cubrirse-o-esperar-petroleo-v2"
+      ],
+      "llamadas": 1,
+      "usd": 0.060862
+    },
+    {
+      "fecha": "2026-11-16T13:41:12Z",
+      "tipo": "agente",
+      "agente": "evaluador",
+      "tareas": [
+        "2026-11-cubrirse-o-esperar-petroleo-v2"
+      ],
+      "llamadas": 1,
+      "usd": 0.064762
+    },
+    {
+      "fecha": "2026-11-16T13:41:19Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-cubrirse-o-esperar-petroleo-v2",
+      "de": "borrador",
+      "a": "evaluada"
+    },
+    {
+      "fecha": "2026-11-16T13:41:25Z",
+      "tipo": "preverificacion",
+      "tarea_id": "2026-11-cubrirse-o-esperar-petroleo-v2",
+      "aprobado": true,
+      "criticos": 0,
+      "pendientes": 0,
+      "localizadores_corregidos": 0
+    }
+  ],
+  "expedientes": {
+    "2026-11-cubrirse-o-esperar-petroleo-v2": "evaluada"
+  },
+  "noticias": [],
+  "pendientes_humanos": [
+    {
+      "tarea_id": "2026-11-cubrirse-o-esperar-petroleo-v2",
+      "pendiente": "revision_humana_1",
+      "estado": "evaluada"
+    }
+  ],
+  "errores": [],
+  "orden": "nueva_version",
+  "gasto": {
+    "ciclo_usd": 0.377319,
+    "semana_usd": 1.649664,
+    "limite_usd": 31.5,
+    "llamadas": 4
+  }
+}

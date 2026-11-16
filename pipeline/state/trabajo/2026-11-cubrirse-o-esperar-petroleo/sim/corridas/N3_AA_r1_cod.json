@@ -1,0 +1,99 @@
+{
+  "run": {
+    "id": "N3_AA_r1",
+    "nivel": "N3",
+    "composicion": "AA",
+    "rep": 1,
+    "estilos": [
+      "A",
+      "A"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.051468,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P2-RM",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P4-WM",
+        "fase_secundaria": "P1-MRS",
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 6,
+        "fase": "P5-INT",
+        "fase_secundaria": "P7-EXP",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 8,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P7-EXP",
+        "eventos": [
+          "ASSUME"
+        ]
+      }
+    ],
+    "bloqueos": [],
+    "supuestos": [
+      "volatilidad anual de 40% (y alternativa de 60%)",
+      "la volatilidad escala con la raíz del tiempo (un mes = 1/12 de año)",
+      "rango del precio a un mes de ±1 y ±2 desviaciones estándar en torno al precio actual",
+      "una sola caída diaria no basta para estimar la volatilidad",
+      "la decisión depende del costo de cobertura y de la pérdida tolerable por la empresa"
+    ],
+    "modelo": "caminata aleatoria",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Recomiendan cubrir si el costo por barril es bastante menor que 10 a 16 USD (1 sigma mensual, con volatilidad supuesta de 40 a 60% anual) y una pérdida de 2 sigmas (rango aproximado de 72 a 115 USD con 40% anual) supera lo que aguanta la empresa. Declaran una seguridad media, condicionada a conocer el costo de la cobertura, el tamaño del cargamento y la tolerancia al riesgo. Aclaran que la volatilidad es un supuesto propio y que habría que recalcular con la real."
+    },
+    "ruta_principal": "R2",
+    "rutas": [
+      "R2"
+    ]
+  }
+}
