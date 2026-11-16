@@ -1,0 +1,219 @@
+{
+  "tarea_id": "2026-11-cubrirse-o-esperar-petroleo-v2",
+  "diseno": "diseno_otm",
+  "corridas": 6,
+  "modelo": "claude-sonnet-5-5",
+  "costo_usd": 0.7114,
+  "por_corrida": [
+    {
+      "id": "N1_VV_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N1",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P4-WM",
+        "P6-VAL",
+        "P5-INT",
+        "P6-VAL",
+        "P5-INT",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "cargamento de 10.000 barriles",
+        "variación de ±10 dólares por barril en un mes",
+        "la tensión podría volver y aumentar la variación"
+      ],
+      "modelo": "escenarios discretos",
+      "respuesta_final": "Si la empresa no aguanta perder unos 100.000 dólares (suponiendo 10.000 barriles y un salto de 10 dólares por barril), conviene cerrar hoy, siempre que la cobertura cueste menos que eso. Están poco seguras hasta conocer el costo de la cobertura, el tamaño del cargamento y cuánto riesgo tolera la empresa.",
+      "validacion": true,
+      "archivo": "N1_VV_r1.json",
+      "costo_usd": 0.110928
+    },
+    {
+      "id": "N1_AA_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N1",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P4-WM",
+        "P3-MM",
+        "P2-RM",
+        "P4-WM",
+        "P3-MM",
+        "P5-INT",
+        "P4-WM",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B23",
+          "turnos": [
+            4,
+            5,
+            6
+          ],
+          "resolucion": "peer"
+        }
+      ],
+      "supuestos": [
+        "el precio no baja igual todos los días",
+        "variación de ±10% del precio en un mes",
+        "costo de cobertura de 2 dólares por barril",
+        "100.000 barriles como ejemplo"
+      ],
+      "modelo": "escenarios discretos",
+      "respuesta_final": "Recomendación condicionada: si 7,37 dólares por barril × número de barriles supera la pérdida que la empresa puede soportar, contratar la cobertura; si no, esperar. Con ±10% el precio a un mes quedaría entre 84,37 y 103,11, con equilibrio en 95,74 (cobertura de 2 dólares). La recomendación es poco segura porque el ±10% y los 2 dólares son supuestos, y faltan la volatilidad, el costo real de la cobertura y la cantidad de barriles.",
+      "validacion": true,
+      "archivo": "N1_AA_r1.json",
+      "costo_usd": 0.140608
+    },
+    {
+      "id": "N2_VV_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N2",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P5-INT",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "rango de precio a un mes entre 80 y 110 US$/barril (inventado)",
+        "cargamento de 10.000 barriles (provisorio)",
+        "costo de cobertura de 1 US$/barril (provisorio)",
+        "precio cubierto = precio actual + costo del banco",
+        "110 como peor caso y 80 como caso bueno",
+        "la tensión en Medio Oriente puede volver y hacer más probable el alza"
+      ],
+      "modelo": "escenarios discretos",
+      "respuesta_final": "Recomendamos cubrir si la empresa no aguanta perder unos 150 mil dólares, pero con baja seguridad porque usamos números inventados; faltan volatilidad, costo del banco, barriles y cuánta pérdida soporta.",
+      "validacion": true,
+      "archivo": "N2_VV_r1.json",
+      "costo_usd": 0.105136
+    },
+    {
+      "id": "N3_AA_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N3",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P3-MM",
+        "P2-RM",
+        "P4-WM",
+        "P6-VAL",
+        "P5-INT",
+        "P4-WM",
+        "P7-EXP",
+        "P6-VAL"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "precio lognormal (P₁ = P₀·e^X con X normal)",
+        "volatilidad anual 40%, con sensibilidad 30% y 50%",
+        "precio esperado a un mes igual al actual (sin tendencia)",
+        "caminata aleatoria sin tendencia",
+        "se ignoran la caída diaria de 4,67% y el alza anual de 52%"
+      ],
+      "modelo": "lognormal",
+      "respuesta_final": "Cubrirse si el costo de la cobertura c es bastante menor que el alza de cola (P95 a un mes entre 108 y 119 US$/barril, es decir 14 a 25 US$/barril sobre el precio actual, con σ anual de 30-50%) y la empresa no tolera esa pérdida multiplicada por el volumen del cargamento. Se pide el volumen, c y la pérdida máxima tolerable. La seguridad de la recomendación es media-baja.",
+      "validacion": true,
+      "archivo": "N3_AA_r1.json",
+      "costo_usd": 0.124928
+    },
+    {
+      "id": "N4_VV_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N4",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P5-INT",
+        "P4-WM",
+        "P6-VAL",
+        "P7-EXP",
+        "P6-VAL"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "volatilidad anual de 40% (inventada)",
+        "volatilidad escala con raíz del tiempo (40%/√12)",
+        "distribución normal de la variación del precio",
+        "intervalo de dos desviaciones estándar como escenario malo",
+        "riesgo sesgado al alza si vuelve la tensión en Medio Oriente",
+        "al importador solo le perjudica la subida del precio"
+      ],
+      "modelo": "normal (caminata aleatoria)",
+      "respuesta_final": "Cubrir cerca de 50% del cargamento como punto de partida, con confianza media; cubrir más si la empresa tolera poca pérdida o si la volatilidad real es mayor. Rango a un mes de unos 72 a 116 dólares por barril (dos desviaciones, con volatilidad anual supuesta de 40%). Se condiciona a conocer el costo de la cobertura, la cantidad de barriles, la pérdida máxima tolerable, el tipo de cobertura (forward u opción) y la volatilidad real.",
+      "validacion": true,
+      "archivo": "N4_VV_r1.json",
+      "costo_usd": 0.107752
+    },
+    {
+      "id": "N4_AA_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N4",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P3-MM",
+        "P2-RM",
+        "P4-WM",
+        "P5-INT",
+        "P4-WM",
+        "P5-INT",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "precio lognormal",
+        "deriva cero",
+        "horizonte T = 1/12 año",
+        "volatilidad 40% anual",
+        "volatilidad 60% anual por semana brusca",
+        "cargamento de N barriles",
+        "sin saltos por Medio Oriente"
+      ],
+      "modelo": "lognormal",
+      "respuesta_final": "Recomiendan cubrir al menos una parte del cargamento. Con σ entre 40% y 60% anual, deriva cero y precio lognormal, el peor caso unilateral al 95% a un mes es de unos 113 a 125 USD por barril, es decir, entre +20 y +31 USD por barril sobre el precio actual. La cobertura funciona como un seguro: conviene si su costo c·N es razonable frente a esa pérdida potencial. Declaran que la seguridad de la recomendación es baja mientras no se conozcan σ, el costo c y el límite de pérdida de la empresa. Advierten además que los saltos por Medio Oriente podrían superar ese peor caso.",
+      "validacion": true,
+      "archivo": "N4_AA_r1.json",
+      "costo_usd": 0.12204
+    }
+  ],
+  "agregado": {
+    "pct_bloqueo_por_transicion": {
+      "B23": 0.17
+    },
+    "modelos_observados": {
+      "escenarios discretos": 3,
+      "lognormal": 2,
+      "normal (caminata aleatoria)": 1
+    },
+    "pct_validan": 1.0
+  },
+  "fecha": "2026-11-16T13:49:25Z"
+}
