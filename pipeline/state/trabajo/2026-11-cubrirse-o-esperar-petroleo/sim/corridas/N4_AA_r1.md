@@ -1,0 +1,15 @@
+# Corrida N4_AA_r1
+
+Nivel N4 · estilos A/A · rep 1 · 11 turnos · término: acuerdo · modelo claude-sonnet-5-5
+
+**1. Cami:** Parto por lo básico: hay que saber cuánto cuesta la cobertura y cuántos barriles compra la empresa, porque no vienen los datos. Yo modelaría el precio a un mes como lognormal con una volatilidad σ, ¿qué opinas, Fran?  
+**2. Fran:** Me parece bien lo lognormal: S_T = 93,74·exp((μ−σ²/2)T + σ√T·Z), con T = 1/12. Pero ojo con la σ, porque una caída de 4,67% en un día y +52% en el año sugieren una volatilidad altísima, así que habría que estimarla o pedirla al banco.  
+**3. Cami:** Tiene sentido. Propongo asumir un σ anual de, digamos, 50%, así que a un mes σ√T = 0,5·√(1/12) ≈ 0,144, o sea unos ±14% (±13,5 dólares) a una desviación estándar. ¿Les pedimos al banco el precio de cobertura para comparar?  
+**4. Fran:** Sí, pidámosle al banco el precio de cobertura, y ojo que el 50% es un supuesto nuestro. Con ese σ, el peor caso al 95% sería 1,645·13,5 ≈ 22 USD/barril sobre el precio de hoy, y eso lo comparamos con la prima.  
+**5. Cami:** Ojo que con lognormal el 95% queda en 93,74·exp(1,645·0,144 − 0,0104) ≈ 117,6, o sea unos +24 USD y no 22, porque la cola de arriba es más gorda. Igual la decisión depende de cuántos barriles compran y de cuánta pérdida aguanta la empresa, así que eso también hay que preguntarlo.  
+**6. Fran:** Tienes razón, con la lognormal da 117,6, o sea +24 USD; yo usé la aproximación normal y subestimé la cola de arriba (asumiendo μ≈0). Entonces la regla sería: si la prima es chica frente a esos ~24 USD/barril por la cantidad de barriles, y la pérdida a ese nivel supera lo que aguanta la empresa, recomendamos cubrir.  
+**7. Cami:** Probemos sensibilidad al σ: con 35% el percentil 95 queda en ~110 (+16 USD) y con 60% en ~123 (+29 USD). Así que cubrir solo se justifica si la prima es bastante menor que eso y la empresa no aguanta esa pérdida, y la seguridad de la recomendación depende de σ.  
+**8. Fran:** Ojo, la prima no se compara directo con el percentil 95: ese es el peor caso, sirve para ver si la empresa aguanta la pérdida, y la prima es lo que cuesta eliminar esa cola. Pidamos barriles, pérdida máxima tolerable y prima, y recomendamos cubrir si (P95 − 93,74)·barriles supera lo que aguanta.  
+**9. Cami:** Cierto, la prima es el sobreprecio sobre el precio esperado, o sea lo que pagamos por sacarnos la cola. Entonces cubrir si (P95 − 93,74)·barriles supera lo tolerable, con seguridad media, porque σ es supuesto y si vuelve la tensión las colas serían más gordas que la lognormal.  
+**10. Fran:** ENTREGAMOS: Recomendamos cubrir si (P95 − 93,74)·barriles supera lo que la empresa tolera y la prima es razonable. Con σ entre 35% y 60%, ese P95 es +16 a +29 USD/barril. Seguridad media, porque σ es supuesto y faltan barriles, tolerancia y prima.  
+**11. Cami:** DE ACUERDO. Solo agregaría que la prima hay que compararla también con la pérdida esperada de no cubrir, pero con los datos que tenemos, esa es la recomendación.  
