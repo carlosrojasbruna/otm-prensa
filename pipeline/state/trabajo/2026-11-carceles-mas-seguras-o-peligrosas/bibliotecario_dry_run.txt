@@ -1,0 +1,29 @@
+# DRY-RUN: no se escribe ningún archivo ni se ejecuta ningún comando
+# tarea 2026-11-carceles-mas-seguras-o-peligrosas v1 -> tareas/2026-11/carceles-mas-seguras-o-peligrosas/
+#   escribiría tareas/2026-11/carceles-mas-seguras-o-peligrosas/tarea_v1.0_2026-11-17.json
+#   escribiría tareas/2026-11/carceles-mas-seguras-o-peligrosas/tarea_v1.0_2026-11-17.md
+#   escribiría tareas/2026-11/carceles-mas-seguras-o-peligrosas/guia_v1.0_2026-11-17.json
+#   escribiría tareas/2026-11/carceles-mas-seguras-o-peligrosas/guia_v1.0_2026-11-17.md
+#   escribiría tareas/2026-11/carceles-mas-seguras-o-peligrosas/evaluacion_v1.0_2026-11-17.json
+#   escribiría tareas/2026-11/carceles-mas-seguras-o-peligrosas/trazas_v1.0_2026-11-17.json
+#   actualizaría tareas/catalogo.json (14 tarea(s); valida contra `catalogo`)
+#   el commit del catálogo es el real tras el primer commit (aquí 0000000)
+$ git switch -c tareas/semana-2026-W47
+$ git add -- tareas/2026-11/carceles-mas-seguras-o-peligrosas/
+$ git commit -m 'tareas: publica 2026-11-carceles-mas-seguras-o-peligrosas v1'
+$ git add -- tareas/catalogo.json
+$ git commit -m 'tareas: catálogo: 2026-11-carceles-mas-seguras-o-peligrosas v1'
+$ git push -u origin tareas/semana-2026-W47
+$ gh pr create --base main --head tareas/semana-2026-W47 --title 'Tareas de la semana 2026-W47' --body '<cuerpo del PR, ver abajo>'
+# cuerpo del PR:
+#   ## Tareas incluidas
+#   
+#   - `2026-11-carceles-mas-seguras-o-peligrosas` v1 · nivel S · RUB01 24/24
+#     - Noticia: La Tercera, «Informe UNAB: homicidios en cárceles caen a su mínimo, pero agresiones y amenazas alcanzan récord en última década», 2026-11-16, https://www.latercera.com/nacional/noticia/informe-unab-homicidios-en-carceles-caen-a-su-minimo-pero-agresiones-y-amenazas-alcanzan-record-en-ultima-decada/
+#   
+#   ## Revisión (GOB01 §2)
+#   - [ ] Quien revisó la guía aprueba el merge.
+#   - [ ] Cifras con localizador; ningún texto literal de noticia > 25 palabras.
+#   - [ ] Productos bajo CC BY-NC-SA 4.0.
+#   
+#   Generado por el agente bibliotecario (script determinista).
