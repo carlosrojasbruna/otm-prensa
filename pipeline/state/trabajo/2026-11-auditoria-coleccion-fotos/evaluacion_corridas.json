@@ -1,0 +1,299 @@
+{
+  "tarea_id": "2026-11-auditoria-coleccion-fotos",
+  "evaluaciones": [
+    {
+      "iteracion": 1,
+      "version_tarea": 1,
+      "fecha": "2026-11-16T20:01:10Z",
+      "modelo": "claude-opus-5-5",
+      "version_prompt": "1.3",
+      "version_rubrica": "4.0",
+      "corridas": [
+        {
+          "n": 1,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "Plantea una necesidad real: auditar una colección inabarcable con recursos limitados. No entrega fórmula de tamaño muestral ni esquema de muestreo, así que el diseño queda en manos de los estudiantes.",
+                "cita": "¿Cómo diseñarían el trabajo del equipo para poder afirmar, con un grado de certeza que ustedes definan, qué parte de la colección proviene de puestos …"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "No prescribe método y admite varios diseños defendibles (muestreo aleatorio simple, estratificado por orden de carga, secuencial, bayesiano), con distintos compromisos entre esfuerzo y certeza.",
+                "cita": "¿Cuánto esfuerzo exigiría su plan y qué tan seguros quedarían de la conclusión? Pueden pedir información adicional."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Los estudiantes deben decidir el grado de certeza, estimar horas y tiempos, suponer cómo tratar las dudas y discrepancias entre revisores y considerar el orden de carga. Son decisiones de modelación sustantivas.",
+                "cita": "el grupo debe fijar con criterio razonable (cantidad de revisores, jornada, tiempo por imagen), y dos revisores distintos pueden discrepar en parte de las imágenes."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "La auditoría por muestreo de una gran colección de datos es una práctica real y claramente plausible a partir del hecho reportado. El encuadre no está forzado para insertar un cálculo.",
+                "cita": "Imaginen que un equipo de auditoría independiente obtiene acceso a la colección, pero no puede examinar todo por falta de tiempo y de personal."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "La tarea cita la noticia y la usa como núcleo: el tamaño de la colección y la incertidumbre sobre su origen, que el reportaje reconoce, originan la pregunta. Es un componente auténtico integrado de manera sustantiva.",
+                "cita": "Según una investigación periodística, un área militar israelí habría subido 3,5 millones de fotografías de palestinos a la nube de Amazon"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "Varios rasgos del contexto condicionan el modelo: el orden de carga (riesgo de sesgo), la clasificación ambigua y el tiempo limitado. El contexto también es necesario para interpretar qué certeza es aceptable para una auditoría.",
+                "cita": "las imágenes se entregan en el orden en que fueron cargadas, sin etiquetas de lugar; un revisor puede clasificar cada una mirándola como 'de puesto …"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a recorrer todas las fases: comprender la situación, simplificarla (tipo de muestra, error de clasificación), formular un modelo probabilístico, calcular tamaño y esfuerzo, interpretar la certeza y validar el plan. Ninguna fase viene hecha.",
+                "cita": "¿Cómo diseñarían el trabajo del equipo para poder afirmar, con un grado de certeza que ustedes definan, qué parte de la colección proviene de puestos …"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existe una prueba independiente de la construcción del modelo: una colección simulada con proporción conocida permite contrastar si el plan alcanza la certeza declarada.",
+                "cita": "el equipo puede generar en computador una colección sintética del mismo tamaño, con una proporción de imágenes 'de control' fijada por ustedes, de modo que …"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "Para el nivel U, la tarea pide muestreo, estimación de proporciones con intervalos de confianza, error de clasificación y simulación computacional. Todo eso cae en probabilidad y programación, herramientas esperables del nivel, y el contexto es comprensible para universitarios.",
+                "cita": "¿Cuánto esfuerzo exigiría su plan y qué tan seguros quedarían de la conclusión?"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Hay un piso razonable: tomar una muestra al azar y calcular la proporción con su margen. También hay un techo alto: estratificar, corregir por error y discrepancia entre revisores, diseñar un muestreo secuencial o simular el plan.",
+                "cita": "con un grado de certeza que ustedes definan"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las decisiones abren preguntas nuevas: cuánto afecta el desacuerdo entre revisores, qué sesgo introduce el orden de carga y qué cuesta pasar de una certeza a otra. Además, los planes de distintos grupos pueden compararse por su esfuerzo y su certeza.",
+                "cita": "y dos revisores distintos pueden discrepar en parte de las imágenes."
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "Los recursos R3–R5 están disponibles a solicitud y describen condiciones del escenario sin revelar el diseño muestral ni las fórmulas. El resto de los parámetros puede estimarse razonablemente por los estudiantes.",
+                "cita": "Pueden pedir información adicional."
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011Ch7CaVMrTPQFuhiaBmUkK",
+            "fecha": "2026-11-16T20:00:12+00:00",
+            "intentos": 1,
+            "costo_usd": 0.067958,
+            "avisos": [
+              "cita_recortada_25:genuino",
+              "cita_recortada_25:contexto",
+              "cita_recortada_25:ciclo",
+              "cita_recortada_25:validacion"
+            ]
+          }
+        },
+        {
+          "n": 2,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La tarea plantea una necesidad real: concluir sin revisar todo. No entrega ninguna regla ni fórmula de muestreo o de tamaño muestral, así que el método queda por construir.",
+                "cita": "Imaginen que un equipo de auditoría independiente obtiene acceso a la colección, pero no puede examinar todo por falta de tiempo y de personal."
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe el procedimiento. Admite varios diseños defendibles, como muestreo aleatorio simple, estratificado, secuencial o bayesiano, y deja al grupo la definición de la certeza.",
+                "cita": "¿Cómo diseñarían el trabajo del equipo para poder afirmar, con un grado de certeza que ustedes definan, qué parte de la colección proviene de puestos …"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige varias decisiones del grupo: fijar el nivel de certeza, estimar tiempos y personal, decidir cómo tratar las dudas y discrepancias entre revisores y solicitar información.",
+                "cita": "un número limitado de horas de revisión que el grupo debe fijar con criterio razonable (cantidad de revisores, jornada, tiempo por imagen)"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "El hecho proviene de una noticia real. Una auditoría independiente con recursos limitados es una situación claramente plausible fuera de la escuela.",
+                "cita": "Según una investigación periodística, un área militar israelí habría subido 3,5 millones de fotografías de palestinos a la nube de Amazon"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El tema, el tamaño de la colección y la incertidumbre sobre el origen de las fotos provienen del reportaje citado. Esa incertidumbre es justamente el núcleo de la pregunta, por lo que el componente auténtico está integrado de manera sustantiva.",
+                "cita": "El propio reportaje reconoce que no está claro si esas fotos fueron tomadas en esos puestos."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona decisiones de modelación: el orden de carga obliga a aleatorizar, y las dudas y errores de clasificación deben tratarse. También es necesario para interpretar el esfuerzo en horas y la certeza de la conclusión.",
+                "cita": "un revisor puede clasificar cada una mirándola como 'de puesto de control' o 'de otro origen', y a veces dudar."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a recorrer todo el ciclo: comprender la situación, simplificarla, modelar el muestreo, calcular tamaños y errores, e interpretar el esfuerzo y la certeza. La validación es posible con la colección de prueba. Ninguna fase viene hecha.",
+                "cita": "¿Cuánto esfuerzo exigiría su plan y qué tan seguros quedarían de la conclusión?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "El plan puede contrastarse con una prueba no usada en su construcción: una colección con respuesta conocida. Además, la doble revisión permite contrastar la tasa de discrepancia entre revisores.",
+                "cita": "una colección sintética del mismo tamaño, con una proporción de imágenes 'de control' fijada por ustedes, de modo que la respuesta correcta se conoce"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto y el lenguaje son comprensibles para universitarios. La matemática requerida (probabilidad, estimación de proporciones, simulación por programación) corresponde a las herramientas esperables del nivel U.",
+                "cita": "¿Cómo diseñarían el trabajo del equipo para poder afirmar, con un grado de certeza que ustedes definan"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es accesible: una muestra aleatoria simple con un intervalo para la proporción. El techo es alto: estratificación, muestreo secuencial, corrección por error de clasificación y simulación del plan.",
+                "cita": "Pueden pedir información adicional."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las decisiones abren comparaciones entre planes, en particular el compromiso entre esfuerzo y certeza. También plantean preguntas nuevas, como el efecto del desacuerdo entre revisores y los límites de la conclusión.",
+                "cita": "dos revisores distintos pueden discrepar en parte de las imágenes."
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información necesaria se entrega a solicitud o puede fijarse con criterio razonable. Los recursos describen el escenario sin revelar el diseño de muestreo ni la fórmula de tamaño muestral.",
+                "cita": "las imágenes se entregan en el orden en que fueron cargadas, sin etiquetas de lugar"
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011Ch7Ccd9itdBEjYvT925kb",
+            "fecha": "2026-11-16T20:00:44+00:00",
+            "intentos": 1,
+            "costo_usd": 0.073338,
+            "avisos": [
+              "cita_recortada_25:abierta"
+            ]
+          }
+        },
+        {
+          "n": 3,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La tarea plantea una necesidad real: estimar una proporción sin poder revisarlo todo. No entrega ninguna regla, fórmula de tamaño muestral ni procedimiento de muestreo.",
+                "cita": "¿Cómo diseñarían el trabajo del equipo para poder afirmar, con un grado de certeza que ustedes definan, qué parte de la colección proviene de puestos …"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "Admite varios diseños defendibles (muestreo aleatorio simple, estratificado o sistemático, doble revisión) y diversos compromisos entre esfuerzo y certeza. No hay instrucciones que encaucen hacia una ruta única.",
+                "cita": "¿Cuánto esfuerzo exigiría su plan y qué tan seguros quedarían de la conclusión? Pueden pedir información adicional."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Hay que fijar el nivel de certeza, estimar las horas y los tiempos de revisión, decidir cómo tratar las dudas y las discrepancias entre revisores y solicitar información. Son decisiones de modelación sustantivas.",
+                "cita": "un número limitado de horas de revisión que el grupo debe fijar con criterio razonable (cantidad de revisores, jornada, tiempo por imagen)"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Auditar por muestreo una colección masiva de imágenes es una práctica real y claramente plausible. El encuadre responde a la duda que deja la propia noticia, no a la necesidad de insertar un cálculo.",
+                "cita": "un equipo de auditoría independiente obtiene acceso a la colección, pero no puede examinar todo por falta de tiempo y de personal"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El tema, el dato del tamaño de la colección y la incertidumbre reconocida por el reportaje provienen de una noticia y forman el núcleo de la pregunta. Es un componente auténtico integrado de manera sustantiva.",
+                "cita": "Según una investigación periodística, un área militar israelí habría subido 3,5 millones de fotografías de palestinos a la nube de Amazon"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El orden de carga, la falta de etiquetas, las dudas de clasificación y el límite de personal condicionan el diseño del muestreo. Además, el contexto es necesario para interpretar qué certeza es suficiente.",
+                "cita": "las imágenes se entregan en el orden en que fueron cargadas, sin etiquetas de lugar; un revisor puede clasificar cada una mirándola"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a comprender el escenario, simplificarlo y fijar supuestos, formular un modelo de muestreo, calcular el tamaño de la muestra y el esfuerzo, y luego interpretar y juzgar la certeza alcanzada. Ninguna fase viene hecha.",
+                "cita": "¿Cómo diseñarían el trabajo del equipo para poder afirmar, con un grado de certeza que ustedes definan, qué parte de la colección proviene de puestos …"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "La colección simulada con respuesta conocida es evidencia independiente para someter a prueba el plan, sin haberse usado en su construcción.",
+                "cita": "una colección sintética del mismo tamaño, con una proporción de imágenes 'de control' fijada por ustedes, de modo que la respuesta correcta se conoce"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "Para el nivel U la tarea moviliza probabilidad, estimación por intervalos y simulación con programación, que son herramientas esperables según MAR03. El contexto y el lenguaje son comprensibles y pertinentes para universitarios.",
+                "cita": "Supuesto del escenario: el equipo puede generar en computador una colección sintética del mismo tamaño"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Hay un piso accesible: revisar una muestra al azar y extrapolar la proporción. El techo es alto: intervalos de confianza, corrección por error de clasificación, acuerdo entre revisores, estratificación y simulación.",
+                "cita": "a veces dudar"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Los distintos planes permiten comparar compromisos entre esfuerzo y certeza. También abren preguntas sobre sesgos de clasificación, límites del muestreo y el uso de evidencia estadística en auditorías.",
+                "cita": "dos revisores distintos pueden discrepar en parte de las imágenes"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información necesaria se entrega o puede solicitarse y es estimable por universitarios. Los materiales describen el escenario sin revelar el método de muestreo ni la fórmula de tamaño muestral.",
+                "cita": "R3 (Descripción de cómo llegan las imágenes al equipo auditor), disponible a solicitud del grupo"
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011Ch7CewTMHopMzdh4gjzW6",
+            "fecha": "2026-11-16T20:01:10+00:00",
+            "intentos": 1,
+            "costo_usd": 0.062838,
+            "avisos": [
+              "cita_recortada_25:genuino",
+              "cita_recortada_25:ciclo"
+            ]
+          }
+        }
+      ],
+      "totales": [
+        24,
+        24,
+        24
+      ],
+      "rango_total": 0,
+      "rango_inestable": 4,
+      "evaluacion_inestable": false,
+      "mediana": {
+        "regla": "mediana por criterio (n par: mediana inferior)",
+        "total": 24,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 2
+        },
+        "corrida_fuente": {
+          "genuino": 1,
+          "abierta": 1,
+          "decisiones": 1,
+          "realismo": 1,
+          "autenticidad": 1,
+          "contexto": 1,
+          "ciclo": 1,
+          "validacion": 1,
+          "nivel": 1,
+          "autodiferenciacion": 1,
+          "fecundidad": 1,
+          "recursos": 1
+        }
+      }
+    }
+  ]
+}

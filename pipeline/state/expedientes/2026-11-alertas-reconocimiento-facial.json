@@ -1,0 +1,431 @@
+{
+  "tarea_id": "2026-11-alertas-reconocimiento-facial",
+  "estado": "evaluada",
+  "iteraciones": 1,
+  "artefactos": {
+    "tarea": {
+      "id": "2026-11-alertas-reconocimiento-facial",
+      "titulo": "¿Cuánto creerle a una alerta de reconocimiento facial?",
+      "estado": "evaluada",
+      "version": 1,
+      "fecha": "2026-11-16",
+      "noticia": {
+        "noticia_id": "2026-11-16-latercera-como-israel-cargo-3-5-millones",
+        "medio": "La Tercera",
+        "titulo": "Cómo Israel cargó 3,5 millones de fotografías en plataforma de Amazon para rastrear a palestinos",
+        "fecha": "2026-11-16",
+        "url": "https://www.latercera.com/mundo/noticia/como-israel-cargo-35-millones-de-fotografias-en-plataforma-de-amazon-para-rastrear-a-palestinos/",
+        "resumen_propio": "Una investigación periodística describe que un área militar israelí habría subido a la nube de Amazon un gran volumen de fotos de palestinos para probar reconocimiento facial, con posibles usos de vigilancia en puestos de control de Gaza y Cisjordania. Amazon afirma que no ve el contenido de las cargas de sus clientes y que sus reuniones con ellos son rutinarias. El texto reconoce que no está claro si esas imágenes se tomaron en los controles.",
+        "cifras_usadas": [
+          {
+            "valor": "3,5 millones",
+            "unidad": "imágenes",
+            "que_es": "Cantidad de imágenes subidas a la plataforma Rekognition de Amazon, cuya procedencia no está clara",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 8"
+            }
+          }
+        ]
+      },
+      "nivel_principal": "U",
+      "variantes": {
+        "abajo": "S",
+        "arriba": null
+      },
+      "area": "sociedad_datos",
+      "contenidos_matematicos": [
+        "probabilidad condicional y teorema de Bayes",
+        "distribución binomial y aproximación de Poisson",
+        "tasas de error y curvas ROC",
+        "análisis de sensibilidad",
+        "órdenes de magnitud"
+      ],
+      "tiempo_estimado": "2 sesiones de 90 min",
+      "estudiante": {
+        "enunciado_es": "Una investigación periodística informó que un área militar israelí habría subido 3,5 millones de imágenes de palestinos a Rekognition, el servicio de reconocimiento facial de Amazon, para probar esa tecnología con posible uso en puestos de control. Todavía no está claro de dónde salieron esas imágenes. Una organización de derechos digitales debe asesorar a un grupo de ciudadanos sobre cuánto confiar en un sistema así. Imaginen un puesto de control donde el rostro de cada persona que pasa se compara con una base del tamaño de esa colección, y el sistema avisa a un agente cuando cree reconocer a alguien. ¿Qué tan confiable es una alerta de ese sistema y bajo qué condiciones recomendarían tomarla en serio? Pueden pedir información adicional.",
+        "foto_descripcion": "Ícono de una cámara apuntando a una fila de siluetas de personas, con una de ellas marcada por un recuadro y un signo de exclamación.",
+        "recursos_a_solicitud": [
+          {
+            "id": "R2",
+            "que_es": "Descripción del funcionamiento supuesto del puesto de control",
+            "contenido": "Supuesto del escenario: cada persona que llega se fotografía y su rostro se compara con la base; si el sistema declara una coincidencia, se emite una alerta que un agente debe atender.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P1-MRS",
+            "fuente": "supuesto del escenario"
+          },
+          {
+            "id": "R3",
+            "que_es": "Respuesta a la consulta sobre flujo de personas y proporción de personas buscadas",
+            "contenido": "Supuesto del escenario: no hay cifras públicas confiables sobre cuántas personas pasan por el puesto ni cuántas son realmente buscadas; el grupo debe proponer rangos plausibles y justificarlos.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P2-RM",
+            "fuente": "supuesto del escenario"
+          },
+          {
+            "id": "R4",
+            "que_es": "Referencia externa sobre desempeño medido de algoritmos de reconocimiento facial",
+            "contenido": "El NIST publica evaluaciones independientes de algoritmos comerciales de reconocimiento facial, con tasas de error medidas en pruebas controladas, que cambian según la calidad de la imagen y el grupo de personas.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P6-VAL",
+            "fuente": "otra fuente: NIST, Face Recognition Vendor Test (FRVT)"
+          }
+        ]
+      },
+      "variantes_detalle": {
+        "abajo": {
+          "tramo": "S",
+          "cambios": "Se pide solo estimar cuántas falsas alertas esperaría el puesto en una jornada, sin exigir la probabilidad de que una alerta sea correcta; el grupo estima por su cuenta la tasa de error y compara dos o tres valores (comparación de escenarios, sin Bayes formal). El contexto no cambia."
+        },
+        "arriba": null
+      },
+      "recursos_de_entrada": [
+        {
+          "id": "R1",
+          "que_es": "Dato central de la noticia sobre el tamaño de la colección",
+          "contenido": "Se habrían subido 3,5 millones de imágenes a la plataforma Rekognition de Amazon; su procedencia no está clara.",
+          "disponibilidad": "de_entrada",
+          "fase": "P1-MRS",
+          "fuente": "noticia, párrafo 8"
+        }
+      ],
+      "mapa_ciclo": {
+        "P1-MRS": {
+          "decision": "Distinguir las imágenes de la base de las personas que pasan, y precisar qué significa que una alerta sea confiable (probabilidad de que la persona sea realmente la buscada).",
+          "evidencia": "Reformulan la pregunta con sus palabras y piden tasa de error del sistema, flujo de personas y proporción de buscadas.",
+          "bloqueo_probable": "B12"
+        },
+        "P2-RM": {
+          "decision": "Simplificar: comparaciones independientes, tasa de falsa coincidencia constante, relación entre imágenes y personas distintas, rango de proporción de buscadas.",
+          "evidencia": "Lista escrita de supuestos con valores o rangos justificados.",
+          "bloqueo_probable": "B23"
+        },
+        "P3-MM": {
+          "decision": "Modelar la probabilidad de al menos una falsa coincidencia entre muchas comparaciones y la probabilidad condicional de que una alerta sea acierto.",
+          "evidencia": "Expresiones con símbolos definidos para tasa de error, número de comparaciones y tasa base.",
+          "bloqueo_probable": "B34"
+        },
+        "P4-WM": {
+          "decision": "Calcular para varios valores de la tasa de error y de la tasa base, usando aproximaciones o software.",
+          "evidencia": "Tabla o gráfico de la confiabilidad de la alerta según los parámetros.",
+          "bloqueo_probable": "B45"
+        },
+        "P5-INT": {
+          "decision": "Traducir resultados: de cada cien alertas cuántas serían ciertas y qué condiciones harían razonable confiar.",
+          "evidencia": "Frases en contexto que dicen qué debería cumplir el sistema y qué decisión se recomienda.",
+          "bloqueo_probable": "B56"
+        },
+        "P6-VAL": {
+          "decision": "Contrastar las tasas de error supuestas con evaluaciones independientes y discutir los límites del modelo (imágenes versus personas distintas, calidad de captura).",
+          "evidencia": "Comparación explícita entre sus rangos y la referencia externa, con ajuste de supuestos.",
+          "bloqueo_probable": "B67"
+        },
+        "P7-EXP": {
+          "decision": "Redactar la recomendación a la organización con rangos y advertencias.",
+          "evidencia": "Informe breve o presentación con la recomendación, supuestos y sensibilidad.",
+          "bloqueo_probable": null
+        }
+      },
+      "task_space": {
+        "required_assumptions": [
+          "Cada persona que pasa se compara con la base completa y la comparación es independiente entre imágenes",
+          "Existe una tasa de falsa coincidencia por comparación (o por persona) constante, que el grupo debe estimar o variar",
+          "La proporción de personas realmente buscadas entre quienes pasan es pequeña y debe estimarse",
+          "La sensibilidad del sistema (probabilidad de reconocer a una persona buscada) es alta pero no perfecta",
+          "Se debe decidir si las imágenes corresponden a personas distintas o hay varias imágenes por persona"
+        ],
+        "reference_solution": {
+          "steps": "1) Sea N el número de comparaciones por persona (como máximo 3,5 millones si cada imagen cuenta como una identidad) y f la probabilidad de falsa coincidencia por comparación. 2) Probabilidad de falsa alerta para una persona no buscada: q = 1-(1-f)^N, aproximadamente 1-exp(-N f). 3) Sea pi la proporción de personas buscadas entre quienes pasan y s la sensibilidad. 4) Valor predictivo de la alerta (Bayes): VPP = s·pi / (s·pi + (1-pi)·q). 5) Variar f, pi y N (sensibilidad) y observar que VPP es muy bajo si q es mayor que pi. 6) Condición para VPP mayor o igual a 0,5: q menor o igual a s·pi/(1-pi), o sea f aproximadamente menor que s·pi/N.",
+          "result": "Ejemplo ilustrativo: con f = 10^-7, N = 3,5 millones, q aproximadamente 0,29; con pi = una persona buscada cada diez mil y s = 0,9, el VPP es aproximadamente 0,0003, es decir, casi todas las alertas serían falsas. Para que la mitad de las alertas fueran ciertas, f debería ser del orden de 10^-11 o menor. La conclusión robusta: la confiabilidad de una alerta depende más de la tasa base y del número de comparaciones que de la exactitud declarada.",
+          "acceptable_range": "Cualquier conclusión cualitativa que muestre VPP bajo cuando la tasa de falsa alerta por persona supera la tasa base es aceptable; los valores numéricos dependen de los rangos supuestos para f (varios órdenes de magnitud), pi y s. Si se supone una sola identidad por persona y menos identidades que imágenes, N baja y el VPP sube, pero sigue siendo bajo para tasas base pequeñas."
+        },
+        "routes": [
+          {
+            "id": "R1",
+            "nombre": "Estimación por órdenes de magnitud",
+            "nivel": "S",
+            "modelo": "Falsas alertas esperadas = (personas que pasan) × N × f, comparando con el número esperado de personas realmente buscadas.",
+            "resultado": "Para varios f plausibles, las falsas alertas superan por mucho a las verdaderas cuando N es del orden de millones."
+          },
+          {
+            "id": "R2",
+            "nombre": "Probabilidad de al menos una falsa coincidencia",
+            "nivel": "S2",
+            "modelo": "q = 1-(1-f)^N con aproximación de Poisson 1-exp(-N f); tabla según f.",
+            "resultado": "q pasa de casi 0 a casi 1 al subir f unas pocas potencias de diez; el punto de quiebre es N f del orden de uno."
+          },
+          {
+            "id": "R3",
+            "nombre": "Teorema de Bayes con tasa base",
+            "nivel": "U",
+            "modelo": "VPP = s·pi / (s·pi + (1-pi)·q), con análisis de sensibilidad en pi, q y s.",
+            "resultado": "VPP muy bajo en el escenario base; condición cuantitativa sobre f para que la alerta sea confiable."
+          },
+          {
+            "id": "R4",
+            "nombre": "Modelo de umbral con distribuciones de puntajes",
+            "nivel": "U",
+            "modelo": "Puntajes de similitud con distribuciones para pares iguales y distintos; el umbral fija f y s (curva ROC); se optimiza el umbral con costos asimétricos de error.",
+            "resultado": "Existe un umbral que equilibra falsas alertas y omisiones, pero con tasa base pequeña exige umbral muy estricto y sacrifica sensibilidad."
+          }
+        ],
+        "modelo_inadecuado": {
+          "id": "RX",
+          "por_que_falla": "Tomar la exactitud alta declarada de un sistema como la probabilidad de que una alerta sea correcta: confunde sensibilidad o exactitud global con valor predictivo, ignora la tasa base y que cada persona se compara con millones de imágenes."
+        },
+        "validation_evidence": "Evaluaciones independientes publicadas de algoritmos de reconocimiento facial (NIST FRVT) con tasas de falsa coincidencia medidas en pruebas controladas; el grupo contrasta sus rangos de f con esas tasas y con una simulación en computador con distribuciones de puntajes, dato no usado al construir el modelo.",
+        "agent_visibility": {
+          "students": [
+            "enunciado_es",
+            "foto_descripcion",
+            "recursos_a_solicitud"
+          ],
+          "coder": [
+            "enunciado_es",
+            "task_space"
+          ],
+          "guide": [
+            "all"
+          ]
+        }
+      },
+      "rubrica_rub01": {
+        "total": 24,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 2
+        }
+      },
+      "rubrica_rub02": {
+        "P": null,
+        "S": null,
+        "U": null
+      },
+      "modelo_y_prompt": {
+        "diseñador": "claude-sonnet-5-5",
+        "version_prompt": "1.1",
+        "version_rubrica": "4.0"
+      }
+    },
+    "noticia": {
+      "id": "2026-11-16-latercera-como-israel-cargo-3-5-millones",
+      "medio_id": "latercera",
+      "medio": "La Tercera",
+      "idioma": "es",
+      "titulo": "Cómo Israel cargó 3,5 millones de fotografías en plataforma de Amazon para rastrear a palestinos",
+      "fecha": "2026-11-16",
+      "url": "https://www.latercera.com/mundo/noticia/como-israel-cargo-35-millones-de-fotografias-en-plataforma-de-amazon-para-rastrear-a-palestinos/",
+      "area": "sociedad_datos",
+      "resumen_propio": "Una investigación periodística describe que un área militar israelí habría subido a la nube de Amazon un gran volumen de fotos de palestinos para probar reconocimiento facial, con posibles usos de vigilancia en puestos de control de Gaza y Cisjordania. Amazon afirma que no ve el contenido de las cargas de sus clientes y que sus reuniones con ellos son rutinarias. El texto reconoce que no está claro si esas imágenes se tomaron en los controles.",
+      "cifras": [
+        {
+          "valor": "3,5 millones",
+          "unidad": "fotografías",
+          "que_es": "Cantidad de imágenes de palestinos que las fuerzas israelíes habrían subido a la plataforma en la nube de Amazon",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 1"
+          }
+        },
+        {
+          "valor": "3,5 millones",
+          "unidad": "imágenes",
+          "que_es": "Cantidad de imágenes subidas a la plataforma Rekognition de Amazon, cuya procedencia no está clara",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 8"
+          }
+        }
+      ],
+      "recuperada_en": "2026-11-16T19:38:36Z",
+      "filtro": {
+        "version_rubrica": "4.0",
+        "puntajes": {
+          "genuino": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 1,
+          "validacion": 1
+        },
+        "total": 8,
+        "pasa": true,
+        "justificacion": "Noticia con una pregunta real y decisiones de modelación claras, pero con una sola cifra central de procedencia incierta y validación solo parcial. Aporta contexto sensible y verificable en parte, lo que la deja en nivel intermedio."
+      }
+    },
+    "evaluacion": {
+      "tarea_id": "2026-11-alertas-reconocimiento-facial",
+      "fecha": "2026-11-16T19:59:42Z",
+      "rub01": {
+        "version_rubrica": "4.0",
+        "criterios": {
+          "genuino": {
+            "puntaje": 2,
+            "justificacion": "Plantea una necesidad real de asesoría sin entregar regla, fórmula ni modelo. El razonamiento sobre falsos positivos y tasas base debe construirlo el grupo.",
+            "cita": "Una organización de derechos digitales debe asesorar a un grupo de ciudadanos sobre cuánto confiar en un sistema así."
+          },
+          "abierta": {
+            "puntaje": 2,
+            "justificacion": "La pregunta no prescribe procedimiento. Admite varios modelos defendibles, como un conteo esperado de falsas alertas, un enfoque bayesiano o un análisis de umbrales y escenarios.",
+            "cita": "¿Qué tan confiable es una alerta de ese sistema y bajo qué condiciones recomendarían tomarla en serio?"
+          },
+          "decisiones": {
+            "puntaje": 2,
+            "justificacion": "Resolver exige estimar el flujo, la proporción de personas buscadas y las tasas de error, formular supuestos y solicitar información pertinente.",
+            "cita": "no hay cifras públicas confiables sobre cuántas personas pasan por el puesto ni cuántas son realmente buscadas; el grupo debe proponer rangos plausibles y justificarlos."
+          },
+          "realismo": {
+            "puntaje": 2,
+            "justificacion": "Se trata de una situación real reportada por la prensa. El puesto de control con comparación 1:N es claramente plausible.",
+            "cita": "Una investigación periodística informó que un área militar israelí habría subido 3,5 millones de imágenes de palestinos a Rekognition"
+          },
+          "autenticidad": {
+            "puntaje": 2,
+            "justificacion": "El dato de la noticia fija el tamaño de la base, que es central para la comparación 1:N. La referencia a las evaluaciones del NIST es otro componente extraescolar auténtico integrado.",
+            "cita": "Se habrían subido 3,5 millones de imágenes a la plataforma Rekognition de Amazon; su procedencia no está clara."
+          },
+          "contexto": {
+            "puntaje": 2,
+            "justificacion": "El contexto condiciona las decisiones de modelación: tamaño de la base, flujo y proporción de buscados. También es necesario para interpretar en qué condiciones conviene tomar en serio una alerta.",
+            "cita": "Imaginen un puesto de control donde el rostro de cada persona que pasa se compara con una base del tamaño de esa colección"
+          },
+          "ciclo": {
+            "puntaje": 2,
+            "justificacion": "Responder obliga a comprender el escenario, simplificarlo con supuestos, matematizarlo en términos de probabilidad condicional, calcular y volver a la situación para recomendar. El enunciado no deja ninguna fase hecha.",
+            "cita": "¿Qué tan confiable es una alerta de ese sistema y bajo qué condiciones recomendarían tomarla en serio?"
+          },
+          "validacion": {
+            "puntaje": 2,
+            "justificacion": "Existe evidencia independiente accesible para contrastar el modelo: datos publicados del NIST y despliegues reales documentados que sirven como caso nuevo. Hay una duda menor, porque el puesto concreto carece de datos públicos, pero la validación externa es posible.",
+            "cita": "El NIST publica evaluaciones independientes de algoritmos comerciales de reconocimiento facial, con tasas de error medidas en pruebas controladas"
+          },
+          "nivel": {
+            "puntaje": 2,
+            "justificacion": "Para el nivel U, el contexto es comprensible y significativo. La matemática requerida (probabilidad, razonamiento bayesiano, análisis de escenarios) corresponde a las herramientas esperables en MAR03.",
+            "cita": "¿Qué tan confiable es una alerta de ese sistema y bajo qué condiciones recomendarían tomarla en serio?"
+          },
+          "autodiferenciacion": {
+            "puntaje": 2,
+            "justificacion": "El piso es razonable: basta estimar falsas alertas multiplicando el flujo por una tasa de error. El techo es alto: admite modelos 1:N dependientes del tamaño de la base, umbrales, sensibilidad y sesgos por grupo.",
+            "cita": "el grupo debe proponer rangos plausibles y justificarlos."
+          },
+          "fecundidad": {
+            "puntaje": 2,
+            "justificacion": "Las decisiones y los resultados abren preguntas nuevas, por ejemplo sobre umbrales, sesgos demográficos, tamaño de la base y costos de los errores. También permiten comparar recomendaciones entre grupos.",
+            "cita": "tasas de error medidas en pruebas controladas, que cambian según la calidad de la imagen y el grupo de personas."
+          },
+          "recursos": {
+            "puntaje": 2,
+            "justificacion": "La información necesaria se solicita o se obtiene con búsquedas al alcance del nivel U, como los informes públicos del NIST. Ningún material revela el modelo de solución.",
+            "cita": "Pueden pedir información adicional."
+          }
+        },
+        "total": 24,
+        "mejoras": []
+      },
+      "reproducibilidad": {
+        "agentes": {
+          "disenador": {
+            "modelo": "claude-sonnet-5-5",
+            "version_modelo": "claude-sonnet-5-5",
+            "costo_usd": 0.203368,
+            "version_prompt": "1.1"
+          },
+          "evaluador": {
+            "modelo": "claude-opus-5-5",
+            "version_modelo": "claude-opus-5-5",
+            "costo_usd": 0.208814,
+            "version_prompt": "1.3"
+          },
+          "filtro": {
+            "modelo": "claude-haiku-5-5",
+            "version_modelo": "claude-haiku-5-5",
+            "costo_usd": 0.000678,
+            "version_prompt": "1.0"
+          }
+        },
+        "version_prompt": {
+          "disenador": "1.1",
+          "evaluador": "1.3",
+          "filtro": "1.0"
+        },
+        "version_rubrica": "4.0",
+        "version_MAR03": "1.0",
+        "version_MED01": "1.5",
+        "diseno_simulador": null,
+        "fecha": "2026-11-16T19:59:42Z",
+        "costo_usd": 0.41286
+      }
+    }
+  },
+  "historial": [
+    {
+      "fecha": "2026-11-16T19:58:09+00:00",
+      "de": null,
+      "a": "borrador"
+    },
+    {
+      "fecha": "2026-11-16T19:59:43+00:00",
+      "de": "borrador",
+      "a": "evaluada",
+      "iteracion": 1,
+      "rub01_total": 24
+    }
+  ],
+  "marcas": {
+    "ciclo_id": "ciclo_20261116T193836758402Z",
+    "noticia_id": "2026-11-16-latercera-como-israel-cargo-3-5-millones",
+    "nivel_objetivo": "U",
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "versiones_modelo": [
+          "claude-sonnet-5-5"
+        ],
+        "costo_usd": 0.203368,
+        "llamadas": 1
+      },
+      "filtro": {
+        "modelo": "claude-haiku-5-5",
+        "versiones_modelo": [
+          "claude-haiku-5-5"
+        ],
+        "costo_usd": 0.000678,
+        "llamadas": 1
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "versiones_modelo": [
+          "claude-opus-5-5"
+        ],
+        "costo_usd": 0.208814,
+        "llamadas": 3
+      }
+    },
+    "costos_compartidos": [
+      "disenador",
+      "filtro"
+    ],
+    "version_MAR03": "1.0",
+    "evaluacion_inestable": false,
+    "evaluacion_rango_total": 0,
+    "evaluacion_corridas": "pipeline/state/trabajo/2026-11-alertas-reconocimiento-facial/evaluacion_corridas.json",
+    "preverificacion": {
+      "fecha": "2026-11-16T20:01:13Z",
+      "version_tarea": 1,
+      "aprobado": true,
+      "criticos": [],
+      "texto_noticia": true
+    },
+    "pendiente": "revision_humana_1"
+  }
+}

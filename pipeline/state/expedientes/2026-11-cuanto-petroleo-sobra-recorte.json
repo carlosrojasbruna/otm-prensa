@@ -1,0 +1,571 @@
+{
+  "tarea_id": "2026-11-cuanto-petroleo-sobra-recorte",
+  "estado": "archivada",
+  "iteraciones": 1,
+  "artefactos": {
+    "tarea": {
+      "id": "2026-11-cuanto-petroleo-sobra-recorte",
+      "titulo": "¿Cuánto petróleo sobra y quién debería producir menos?",
+      "estado": "archivada",
+      "version": 1,
+      "fecha": "2026-11-16",
+      "noticia": {
+        "noticia_id": "2026-11-16-latercera-petroleo-cae-mas-de-3-mientras",
+        "medio": "La Tercera",
+        "titulo": "Petróleo cae más de 3% mientras Goldman Sachs espera que el barril esté debajo de los US$ 80 a fines de 2027",
+        "fecha": "2026-11-16",
+        "url": "https://www.latercera.com/pulso/noticia/petroleo-caida-goldman-sachs-debajo-de-us-80-a-fines-de-2027/",
+        "resumen_propio": "El precio del crudo cae con fuerza tras un informe de la agencia energética que anticipa exceso de oferta. El banco Goldman Sachs publica su proyección de precios para 2027, con Brent y WTI bajando hacia fin de año, aunque advierte riesgos alcistas de corto plazo por ataques a barcos en Medio Oriente.",
+        "cifras_usadas": [
+          {
+            "valor": "US$ 92,59",
+            "unidad": "dólares por barril",
+            "que_es": "cotización del Brent al cierre de la edición",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 3"
+            }
+          },
+          {
+            "valor": "12,26%",
+            "unidad": "variación porcentual mensual",
+            "que_es": "descenso acumulado del Brent en el último mes",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 4"
+            }
+          },
+          {
+            "valor": "más de 1,7 millones",
+            "unidad": "barriles diarios",
+            "que_es": "superávit de oferta mundial esperado en el cuarto trimestre de 2026",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 5"
+            }
+          },
+          {
+            "valor": "8,73 millones",
+            "unidad": "barriles diarios",
+            "que_es": "producción de crudo de Rusia en octubre",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 7"
+            }
+          },
+          {
+            "valor": "2 millones",
+            "unidad": "barriles diarios",
+            "que_es": "superávit de oferta proyectado para 2027 en el escenario base de Goldman",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 12"
+            }
+          }
+        ]
+      },
+      "nivel_principal": "P",
+      "variantes": {
+        "abajo": null,
+        "arriba": "S"
+      },
+      "area": "economia",
+      "contenidos_matematicos": [
+        "proporcionalidad",
+        "porcentajes",
+        "reparto equitativo",
+        "estimación de grandes números"
+      ],
+      "tiempo_estimado": "2 sesiones de 45 min",
+      "estudiante": {
+        "enunciado_es": "Imagina que los países productores de petróleo se reúnen para decidir si reducen su producción y así evitar que el precio siga cayendo. Una agencia de energía calcula que en el cuarto trimestre de este año sobrarán más de 1,7 millones de barriles diarios en el mundo, y un banco proyecta que el exceso será de 2 millones de barriles diarios el próximo año. Rusia produjo 8,73 millones de barriles diarios en octubre. Tu grupo es el equipo asesor que prepara una propuesta de recorte para esa reunión: ¿cuánto y quiénes deberían reducir su producción para que el petróleo deje de sobrar? Expliquen y justifiquen su propuesta. Pueden pedir información adicional.",
+        "foto_descripcion": "Ícono de varios barriles de petróleo junto a una balanza inclinada hacia el lado de los barriles.",
+        "recursos_a_solicitud": [
+          {
+            "id": "R2",
+            "que_es": "Información sobre qué países participan en el recorte",
+            "contenido": "Supuesto del escenario: participan varios productores grandes. El grupo puede elegir cuántos y suponer que cada uno produce más o menos lo mismo que Rusia.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P2-RM",
+            "fuente": "supuesto del escenario"
+          },
+          {
+            "id": "R3",
+            "que_es": "Estado reciente del precio del petróleo, que motiva el recorte",
+            "contenido": "El petróleo Brent se cotiza en US$ 92,59 por barril y bajó 12,26% en el último mes.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P1-MRS",
+            "fuente": "noticia, párrafo 3; noticia, párrafo 4"
+          },
+          {
+            "id": "R4",
+            "que_es": "Información sobre el cumplimiento de los acuerdos",
+            "contenido": "Supuesto del escenario: los países pueden cumplir todo lo que prometen o solo una parte; no se sabe de antemano cuál de las dos cosas pasará.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P5-INT",
+            "fuente": "supuesto del escenario"
+          },
+          {
+            "id": "R5",
+            "que_es": "Recortes reales de producción acordados por países productores en años anteriores, para comparar con la propuesta del grupo",
+            "contenido": "Comunicado de la OPEP sobre un recorte anterior de producción, con el volumen total acordado y los países que participaron. El grupo lo pide una vez que tiene su propuesta.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P6-VAL",
+            "fuente": "otra fuente: comunicados de prensa de la OPEP (opec.org)"
+          }
+        ]
+      },
+      "variantes_detalle": {
+        "abajo": null,
+        "arriba": {
+          "tramo": "S2",
+          "cambios": "Se pide una propuesta que considere que no todos los países cumplen lo prometido y que el exceso crece entre el cuarto trimestre de este año y el próximo año, comparando al menos dos escenarios y analizando qué pasa si cambia el cumplimiento. El contexto no cambia."
+        }
+      },
+      "recursos_de_entrada": [
+        {
+          "id": "R1",
+          "que_es": "Datos de partida que ya están escritos en el enunciado",
+          "contenido": "Exceso de petróleo en el cuarto trimestre de este año: más de 1,7 millones de barriles diarios. Exceso proyectado para el próximo año: 2 millones de barriles diarios. Producción de Rusia en octubre: 8,73 millones de barriles diarios.",
+          "disponibilidad": "de_entrada",
+          "fase": "P1-MRS",
+          "fuente": "noticia, párrafo 5; noticia, párrafo 12; noticia, párrafo 7"
+        }
+      ],
+      "mapa_ciclo": {
+        "P1-MRS": {
+          "decision": "Entender que las cifras son barriles por día y que sobrar significa producir más de lo que se consume; definir qué debe lograr el recorte.",
+          "evidencia": "El grupo explica con sus palabras qué significa que sobre petróleo y qué cifra quiere eliminar.",
+          "bloqueo_probable": "B12"
+        },
+        "P2-RM": {
+          "decision": "Elegir cuál exceso eliminar (1,7 o 2 millones), cuántos países recortan y si recortan todos igual o según su tamaño.",
+          "evidencia": "Supuestos escritos y solicitud de tarjetas sobre los países participantes.",
+          "bloqueo_probable": "B23"
+        },
+        "P3-MM": {
+          "decision": "Expresar el recorte como reparto del exceso y como porcentaje de la producción de cada país.",
+          "evidencia": "Esquema de reparto y operación escrita (exceso dividido en partes y comparado con 8,73 millones).",
+          "bloqueo_probable": "B34"
+        },
+        "P4-WM": {
+          "decision": "Dividir, calcular porcentajes y comparar propuestas con distinto número de países.",
+          "evidencia": "Tabla con recorte por país en millones de barriles diarios y como porcentaje.",
+          "bloqueo_probable": null
+        },
+        "P5-INT": {
+          "decision": "Decidir si la propuesta es realista para un país (¿es mucho o poco recortar ese porcentaje?) y qué pasa si algunos no cumplen.",
+          "evidencia": "Texto que explica la propuesta y comenta el efecto de que alguien incumpla.",
+          "bloqueo_probable": "B56"
+        },
+        "P6-VAL": {
+          "decision": "Comparar la propuesta con recortes reales anteriores y con el tamaño total del mercado mundial.",
+          "evidencia": "Comparación escrita entre la propuesta del grupo y el comunicado de la OPEP, con un ajuste si es necesario.",
+          "bloqueo_probable": "B67"
+        },
+        "P7-EXP": {
+          "decision": "Presentar la propuesta ante la reunión con una tabla y los supuestos.",
+          "evidencia": "Tabla o cartel breve con el recorte por país y su justificación.",
+          "bloqueo_probable": null
+        }
+      },
+      "task_space": {
+        "required_assumptions": [
+          "Se elige cuál exceso se quiere eliminar: el del cuarto trimestre de este año o el del próximo año.",
+          "Se acuerda cuántos países participan y que producen cerca de lo mismo que Rusia.",
+          "Los recortes se reparten en partes iguales o en proporción a lo que produce cada país.",
+          "Se supone que el consumo mundial se mantiene sin cambios.",
+          "Se decide si los países cumplen todo lo prometido o solo una parte."
+        ],
+        "reference_solution": {
+          "steps": "1) Elegir el exceso a eliminar: 2 millones de barriles diarios (el mayor, para quedar del lado seguro) o 1,7 millones. 2) Elegir el número de países que recortan, por ejemplo cuatro con producción parecida a la de Rusia. 3) Reparto igual: 2 ÷ 4 = 0,5 millones por país. 4) Como porcentaje de la producción de Rusia: 0,5 ÷ 8,73 ≈ 5,7%. 5) Comparar con recorte solo de Rusia: 2 ÷ 8,73 ≈ 23%. 6) Comentar que 23% es mucho para un solo país y que repartir baja el esfuerzo individual. 7) Contrastar con recortes reales anteriores y con el consumo mundial.",
+          "result": "Respuesta abierta. Por ejemplo, con cuatro países similares a Rusia, cada uno recorta unos 0,5 millones de barriles diarios, cerca de 6% de su producción. Si recorta solo Rusia, tendría que bajar cerca de 23%. Cualquier reparto que sume entre 1,7 y 2 millones diarios y esté justificado es defendible.",
+          "acceptable_range": "Recorte total entre 1,7 y 2 millones de barriles diarios (hasta unos 2,5 millones si se supone incumplimiento parcial). Recorte por país entre unos 4% y 23% de la producción, según cuántos participen."
+        },
+        "routes": [
+          {
+            "id": "R1",
+            "nombre": "Solo Rusia recorta",
+            "nivel": "P",
+            "modelo": "Proporción: exceso dividido por la producción de Rusia",
+            "resultado": "2 ÷ 8,73 ≈ 23% (con 1,7 millones, unos 19%)"
+          },
+          {
+            "id": "R2",
+            "nombre": "Reparto igual entre varios países",
+            "nivel": "P",
+            "modelo": "División del exceso entre n países similares a Rusia y luego porcentaje de la producción",
+            "resultado": "Con n = 4, 0,5 millones por país, cerca de 6%; con n = 2, 1 millón por país, cerca de 11,5%"
+          },
+          {
+            "id": "R3",
+            "nombre": "Recorte por etapas",
+            "nivel": "S1",
+            "modelo": "Primero eliminar 1,7 millones y luego sumar el aumento hasta 2 millones, usando el porcentaje de crecimiento del exceso",
+            "resultado": "El exceso crece cerca de 18%; recorte inicial más pequeño y ajuste posterior"
+          },
+          {
+            "id": "R4",
+            "nombre": "Recorte con cumplimiento parcial",
+            "nivel": "S2",
+            "modelo": "Recorte necesario = exceso ÷ fracción de cumplimiento, con sensibilidad a esa fracción",
+            "resultado": "Si cumple solo 80%, hay que prometer 2,5 millones para lograr efectivamente 2 millones"
+          }
+        ],
+        "modelo_inadecuado": {
+          "id": "RX",
+          "por_que_falla": "Leer los 2 millones de barriles diarios como el recorte que debe hacer cada país: con cuatro países se recortarían 8 millones, cuatro veces el exceso, y el mercado pasaría de sobrar petróleo a faltar. La cifra es del mercado completo, no por país."
+        },
+        "validation_evidence": "Después de modelar, el grupo compara su propuesta con (a) un recorte real anterior acordado entre países productores, por ejemplo el de 2 millones de barriles diarios decidido por la OPEP+ en octubre de 2022, viendo cuánto recortó cada país y qué porcentaje de la producción total representó, y (b) el tamaño del consumo mundial (del orden de cien millones de barriles diarios), para ver si el exceso es una fracción pequeña. Estos datos no se usan para construir el modelo.",
+        "agent_visibility": {
+          "students": [
+            "enunciado_es",
+            "foto_descripcion",
+            "recursos_a_solicitud"
+          ],
+          "coder": [
+            "enunciado_es",
+            "task_space"
+          ],
+          "guide": [
+            "all"
+          ]
+        }
+      },
+      "rubrica_rub01": {
+        "total": 22,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 1,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 1
+        }
+      },
+      "rubrica_rub02": {
+        "P": null,
+        "S": null,
+        "U": null
+      },
+      "modelo_y_prompt": {
+        "diseñador": "claude-sonnet-5-5",
+        "version_prompt": "1.1",
+        "version_rubrica": "4.0"
+      }
+    },
+    "noticia": {
+      "id": "2026-11-16-latercera-petroleo-cae-mas-de-3-mientras",
+      "medio_id": "latercera",
+      "medio": "La Tercera",
+      "idioma": "es",
+      "titulo": "Petróleo cae más de 3% mientras Goldman Sachs espera que el barril esté debajo de los US$ 80 a fines de 2027",
+      "fecha": "2026-11-16",
+      "url": "https://www.latercera.com/pulso/noticia/petroleo-caida-goldman-sachs-debajo-de-us-80-a-fines-de-2027/",
+      "area": "economia",
+      "resumen_propio": "El precio del crudo cae con fuerza tras un informe de la agencia energética que anticipa exceso de oferta. El banco Goldman Sachs publica su proyección de precios para 2027, con Brent y WTI bajando hacia fin de año, aunque advierte riesgos alcistas de corto plazo por ataques a barcos en Medio Oriente.",
+      "cifras": [
+        {
+          "valor": "3,39%",
+          "unidad": "variación porcentual diaria del Brent",
+          "que_es": "caída del precio del barril Brent en la jornada",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 3"
+          }
+        },
+        {
+          "valor": "US$ 92,59",
+          "unidad": "dólares por barril",
+          "que_es": "cotización del Brent al cierre de la edición",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 3"
+          }
+        },
+        {
+          "valor": "US$ 85,63",
+          "unidad": "dólares por barril",
+          "que_es": "cotización del WTI al momento del reporte",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 3"
+          }
+        },
+        {
+          "valor": "12,26%",
+          "unidad": "variación porcentual mensual",
+          "que_es": "descenso acumulado del Brent en el último mes",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 4"
+          }
+        },
+        {
+          "valor": "más de 1,7 millones",
+          "unidad": "barriles diarios",
+          "que_es": "superávit de oferta mundial esperado en el cuarto trimestre de 2026",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 5"
+          }
+        },
+        {
+          "valor": "8,73 millones",
+          "unidad": "barriles diarios",
+          "que_es": "producción de crudo de Rusia en octubre",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 7"
+          }
+        },
+        {
+          "valor": "US$ 88",
+          "unidad": "dólares por barril",
+          "que_es": "promedio proyectado del Brent en 2027",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 10"
+          }
+        },
+        {
+          "valor": "US$ 78",
+          "unidad": "dólares por barril",
+          "que_es": "precio proyectado del Brent en diciembre de 2027",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 10"
+          }
+        },
+        {
+          "valor": "US$ 78",
+          "unidad": "dólares por barril",
+          "que_es": "promedio proyectado del WTI en 2027",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 11"
+          }
+        },
+        {
+          "valor": "US$ 70",
+          "unidad": "dólares por barril",
+          "que_es": "precio proyectado del WTI al cierre de 2027",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 11"
+          }
+        },
+        {
+          "valor": "2 millones",
+          "unidad": "barriles diarios",
+          "que_es": "superávit de oferta proyectado para 2027 en el escenario base de Goldman",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 12"
+          }
+        },
+        {
+          "valor": "US$ 150",
+          "unidad": "dólares por barril",
+          "que_es": "precio promedio proyectado del diésel mayorista en Estados Unidos en 2027",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 16"
+          }
+        }
+      ],
+      "recuperada_en": "2026-11-16T19:38:36Z",
+      "filtro": {
+        "version_rubrica": "4.0",
+        "puntajes": {
+          "genuino": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "validacion": 2
+        },
+        "total": 10,
+        "pasa": true,
+        "justificacion": "Noticia muy modelable: pregunta real sobre la evolución del precio del crudo, cifras auténticas abundantes y proyecciones verificables con datos futuros. Requiere decisiones de supuestos y selección de datos, sin regla dada."
+      }
+    },
+    "evaluacion": {
+      "tarea_id": "2026-11-cuanto-petroleo-sobra-recorte",
+      "fecha": "2026-11-16T19:55:58Z",
+      "rub01": {
+        "version_rubrica": "4.0",
+        "criterios": {
+          "genuino": {
+            "puntaje": 2,
+            "justificacion": "La situación plantea una necesidad real (diseñar un recorte para eliminar un exceso). El enunciado no entrega regla ni modelo de reparto.",
+            "cita": "¿cuánto y quiénes deberían reducir su producción para que el petróleo deje de sobrar? Expliquen y justifiquen su propuesta."
+          },
+          "abierta": {
+            "puntaje": 2,
+            "justificacion": "Admite varios modelos defendibles: reparto igualitario o proporcional, número de países, qué cifra de exceso usar. Ninguna instrucción posterior prescribe la ruta.",
+            "cita": "Tu grupo es el equipo asesor que prepara una propuesta de recorte para esa reunión"
+          },
+          "decisiones": {
+            "puntaje": 2,
+            "justificacion": "Hay que elegir entre dos estimaciones del exceso, decidir cuántos y cuáles países participan y suponer el grado de cumplimiento. Además hay que descartar información no necesaria, como el precio.",
+            "cita": "sobrarán más de 1,7 millones de barriles diarios en el mundo, y un banco proyecta que el exceso será de 2 millones"
+          },
+          "realismo": {
+            "puntaje": 2,
+            "justificacion": "Las reuniones de productores para acordar recortes existen fuera de la escuela. El encuadre no es forzado.",
+            "cita": "los países productores de petróleo se reúnen para decidir si reducen su producción y así evitar que el precio siga cayendo"
+          },
+          "autenticidad": {
+            "puntaje": 2,
+            "justificacion": "Las cifras de agencia, banco y producción rusa, y el comunicado real de la OPEP (R5), son componentes extraescolares. Constituyen el núcleo de la tarea.",
+            "cita": "Una agencia de energía calcula que en el cuarto trimestre de este año sobrarán más de 1,7 millones de barriles diarios"
+          },
+          "contexto": {
+            "puntaje": 2,
+            "justificacion": "El contexto condiciona decisiones como el cumplimiento, quiénes recortan y qué horizonte usar. También es necesario para interpretar la propuesta y compararla con recortes reales.",
+            "cita": "los países pueden cumplir todo lo que prometen o solo una parte; no se sabe de antemano cuál de las dos cosas pasará"
+          },
+          "ciclo": {
+            "puntaje": 2,
+            "justificacion": "Resolver obliga a comprender el problema, simplificar (cuántos países, qué exceso), matematizar el reparto, calcular, interpretar la propuesta y juzgarla. El enunciado no deja hecha ninguna fase.",
+            "cita": "Expliquen y justifiquen su propuesta. Pueden pedir información adicional."
+          },
+          "validacion": {
+            "puntaje": 2,
+            "justificacion": "La propuesta puede contrastarse con un recorte real no usado en su construcción. También con datos posteriores de exceso.",
+            "cita": "Comunicado de la OPEP sobre un recorte anterior de producción, con el volumen total acordado y los países que participaron."
+          },
+          "nivel": {
+            "puntaje": 1,
+            "justificacion": "La matemática (operatoria con decimales, reparto, proporcionalidad) está al alcance de P. El contexto de mercados petroleros, trimestres y proyecciones bancarias es comprensible pero lejano y poco significativo a los 10–12 años. Hay duda entre 1 y 2; se asigna el menor.",
+            "cita": "en el cuarto trimestre de este año sobrarán más de 1,7 millones de barriles diarios"
+          },
+          "autodiferenciacion": {
+            "puntaje": 2,
+            "justificacion": "Se puede entrar dividiendo el exceso en partes iguales entre algunos países. Admite soluciones más sofisticadas: reparto proporcional a la producción, margen por incumplimiento o escenarios con 1,7 y 2 millones.",
+            "cita": "¿cuánto y quiénes deberían reducir su producción para que el petróleo deje de sobrar?"
+          },
+          "fecundidad": {
+            "puntaje": 2,
+            "justificacion": "Las propuestas pueden compararse entre grupos y con el recorte real de la OPEP. Esto abre preguntas sobre equidad del reparto, cumplimiento y efecto en el precio.",
+            "cita": "El grupo lo pide una vez que tiene su propuesta."
+          },
+          "recursos": {
+            "puntaje": 1,
+            "justificacion": "R2 sobreorienta al sugerir el supuesto de productores iguales, lo que encamina a un reparto igualitario. Además no entrega ni indica cómo obtener la producción real de los países, dato difícil de conseguir para estudiantes de P.",
+            "cita": "El grupo puede elegir cuántos y suponer que cada uno produce más o menos lo mismo que Rusia."
+          }
+        },
+        "total": 22,
+        "mejoras": [
+          {
+            "criterio": "nivel",
+            "mejora_minima": "Añadir una frase que traduzca la escala a algo cercano, por ejemplo cuántos barriles produce cada día un país conocido. También reemplazar «cuarto trimestre» y «proyecta» por «los últimos tres meses del año» y «calcula»."
+          },
+          {
+            "criterio": "recursos",
+            "mejora_minima": "Reemplazar el supuesto de R2 por una tabla breve con la producción diaria de cinco o seis grandes productores, sin sugerir cómo repartir el recorte."
+          }
+        ]
+      },
+      "reproducibilidad": {
+        "agentes": {
+          "disenador": {
+            "modelo": "claude-sonnet-5-5",
+            "version_modelo": "claude-sonnet-5-5",
+            "costo_usd": 0.217112,
+            "version_prompt": "1.1"
+          },
+          "evaluador": {
+            "modelo": "claude-opus-5-5",
+            "version_modelo": "claude-opus-5-5",
+            "costo_usd": 0.274534,
+            "version_prompt": "1.3"
+          },
+          "filtro": {
+            "modelo": "claude-haiku-5-5",
+            "version_modelo": "claude-haiku-5-5",
+            "costo_usd": 0.000428,
+            "version_prompt": "1.0"
+          }
+        },
+        "version_prompt": {
+          "disenador": "1.1",
+          "evaluador": "1.3",
+          "filtro": "1.0"
+        },
+        "version_rubrica": "4.0",
+        "version_MAR03": "1.0",
+        "version_MED01": "1.5",
+        "diseno_simulador": null,
+        "fecha": "2026-11-16T19:55:58Z",
+        "costo_usd": 0.492074
+      }
+    }
+  },
+  "historial": [
+    {
+      "fecha": "2026-11-16T19:52:19+00:00",
+      "de": null,
+      "a": "borrador"
+    },
+    {
+      "fecha": "2026-11-16T19:55:59+00:00",
+      "de": "borrador",
+      "a": "evaluada",
+      "iteracion": 1,
+      "rub01_total": 22
+    },
+    {
+      "fecha": "2026-11-16T19:56:00+00:00",
+      "de": "evaluada",
+      "a": "archivada",
+      "motivo": "candidato no elegido: RUB01 22/24 frente a 23/24 de 2026-11-esperar-o-firmar-combustible-buses (2 candidatos por noticia; se sigue con el mejor)"
+    }
+  ],
+  "marcas": {
+    "ciclo_id": "ciclo_20261116T193836758402Z",
+    "noticia_id": "2026-11-16-latercera-petroleo-cae-mas-de-3-mientras",
+    "nivel_objetivo": "P",
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "versiones_modelo": [
+          "claude-sonnet-5-5"
+        ],
+        "costo_usd": 0.217112,
+        "llamadas": 1
+      },
+      "filtro": {
+        "modelo": "claude-haiku-5-5",
+        "versiones_modelo": [
+          "claude-haiku-5-5"
+        ],
+        "costo_usd": 0.000428,
+        "llamadas": 1
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "versiones_modelo": [
+          "claude-opus-5-5"
+        ],
+        "costo_usd": 0.274534,
+        "llamadas": 3
+      }
+    },
+    "costos_compartidos": [
+      "disenador",
+      "filtro"
+    ],
+    "version_MAR03": "1.0",
+    "evaluacion_inestable": false,
+    "evaluacion_rango_total": 1,
+    "evaluacion_corridas": "pipeline/state/trabajo/2026-11-cuanto-petroleo-sobra-recorte/evaluacion_corridas.json"
+  }
+}

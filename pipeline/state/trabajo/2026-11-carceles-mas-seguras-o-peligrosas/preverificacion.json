@@ -1,0 +1,190 @@
+{
+  "tarea_id": "2026-11-carceles-mas-seguras-o-peligrosas",
+  "aprobado": true,
+  "alcance": "tarea",
+  "hallazgos": [
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "tarea.estudiante.recursos_a_solicitud[R2]",
+      "descripcion": "no se pudo contrastar con el texto: el ciclo no entregó `texto_noticia`; la afirmación del recurso solo se juzgó contra título, resumen y cifras",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "tarea.estudiante.recursos_a_solicitud[R3]",
+      "descripcion": "no se pudo contrastar con el texto: el ciclo no entregó `texto_noticia`; la afirmación del recurso solo se juzgó contra título, resumen y cifras",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "tarea.estudiante.recursos_a_solicitud[R4]",
+      "descripcion": "no se pudo contrastar con el texto: el ciclo no entregó `texto_noticia`; la afirmación del recurso solo se juzgó contra título, resumen y cifras",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "tarea.recursos_de_entrada[R1]",
+      "descripcion": "no se pudo contrastar con el texto: el ciclo no entregó `texto_noticia`; la afirmación del recurso solo se juzgó contra título, resumen y cifras",
+      "origen": "codigo"
+    }
+  ],
+  "cifras_contrastadas": [
+    {
+      "indice": 0,
+      "que_es": "Homicidios al interior de penales en 2025, la cifra más baja del periodo analizado",
+      "valor_tarea": 27,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 3"
+      },
+      "metodo": "codigo",
+      "valor_fuente": 27,
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia"
+    },
+    {
+      "indice": 1,
+      "que_es": "Total de homicidios en cárceles entre 2015 y 2025",
+      "valor_tarea": 491,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 4"
+      },
+      "metodo": "codigo",
+      "valor_fuente": 491,
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia"
+    },
+    {
+      "indice": 2,
+      "que_es": "Homicidios en cárceles registrados en 2015",
+      "valor_tarea": 56,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 4"
+      },
+      "metodo": "codigo",
+      "valor_fuente": 56,
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia"
+    },
+    {
+      "indice": 3,
+      "que_es": "Máximo de homicidios en cárceles del periodo, registrado en 2020",
+      "valor_tarea": 61,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 4"
+      },
+      "metodo": "codigo",
+      "valor_fuente": 61,
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia"
+    },
+    {
+      "indice": 4,
+      "que_es": "Homicidios en cárceles registrados en 2024",
+      "valor_tarea": 48,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 4"
+      },
+      "metodo": "codigo",
+      "valor_fuente": 48,
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia"
+    },
+    {
+      "indice": 5,
+      "que_es": "Registros de amenazas entre 2015 y 2025",
+      "valor_tarea": "2.322",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 7"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "2.322",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia"
+    },
+    {
+      "indice": 6,
+      "que_es": "Casos de amenazas a internos en 2015",
+      "valor_tarea": 62,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 7"
+      },
+      "metodo": "codigo",
+      "valor_fuente": 62,
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia"
+    },
+    {
+      "indice": 7,
+      "que_es": "Casos de amenazas a internos en 2024",
+      "valor_tarea": 235,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 7"
+      },
+      "metodo": "codigo",
+      "valor_fuente": 235,
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia"
+    },
+    {
+      "indice": 8,
+      "que_es": "Casos de amenazas a internos en 2025",
+      "valor_tarea": 548,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 7"
+      },
+      "metodo": "codigo",
+      "valor_fuente": 548,
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia"
+    },
+    {
+      "indice": 9,
+      "que_es": "Agresiones a internos registradas en 2025, máximo histórico",
+      "valor_tarea": "6.365",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 10"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "6.365",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia"
+    },
+    {
+      "indice": 10,
+      "que_es": "Aumento de agresiones en 2025 respecto de 2024",
+      "valor_tarea": "9,3%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 10"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "9,3%",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia"
+    }
+  ],
+  "meta": {
+    "agente": "verificador",
+    "version_prompt": "1.1",
+    "modelo_llamado": false,
+    "costo_usd": 0.0,
+    "texto_noticia_recibido": false,
+    "fecha": "2026-11-17T12:29:33+00:00",
+    "nota": "solo código y sin el texto de la noticia (corrección manual; La Tercera no se puede leer desde el entorno de Claude). El tramo B vuelve a preverificar con el texto."
+  },
+  "localizadores_corregidos": {}
+}

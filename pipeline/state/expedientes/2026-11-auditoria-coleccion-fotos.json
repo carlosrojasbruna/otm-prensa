@@ -1,0 +1,437 @@
+{
+  "tarea_id": "2026-11-auditoria-coleccion-fotos",
+  "estado": "archivada",
+  "iteraciones": 1,
+  "artefactos": {
+    "tarea": {
+      "id": "2026-11-auditoria-coleccion-fotos",
+      "titulo": "¿Cuántas fotos hay que mirar para saber de dónde vienen?",
+      "estado": "archivada",
+      "version": 1,
+      "fecha": "2026-11-16",
+      "noticia": {
+        "noticia_id": "2026-11-16-latercera-como-israel-cargo-3-5-millones",
+        "medio": "La Tercera",
+        "titulo": "Cómo Israel cargó 3,5 millones de fotografías en plataforma de Amazon para rastrear a palestinos",
+        "fecha": "2026-11-16",
+        "url": "https://www.latercera.com/mundo/noticia/como-israel-cargo-35-millones-de-fotografias-en-plataforma-de-amazon-para-rastrear-a-palestinos/",
+        "resumen_propio": "Una investigación periodística describe que un área militar israelí habría subido a la nube de Amazon un gran volumen de fotos de palestinos para probar reconocimiento facial, con posibles usos de vigilancia en puestos de control de Gaza y Cisjordania. Amazon afirma que no ve el contenido de las cargas de sus clientes y que sus reuniones con ellos son rutinarias. El texto reconoce que no está claro si esas imágenes se tomaron en los controles.",
+        "cifras_usadas": [
+          {
+            "valor": "3,5 millones",
+            "unidad": "fotografías",
+            "que_es": "Cantidad de imágenes de palestinos que las fuerzas israelíes habrían subido a la plataforma en la nube de Amazon",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 1"
+            }
+          }
+        ]
+      },
+      "nivel_principal": "U",
+      "variantes": {
+        "abajo": "S",
+        "arriba": null
+      },
+      "area": "sociedad_datos",
+      "contenidos_matematicos": [
+        "muestreo e intervalos de confianza para proporciones",
+        "tamaño de muestra y presupuesto",
+        "estimación con error de clasificación",
+        "inferencia bayesiana básica",
+        "simulación Monte Carlo"
+      ],
+      "tiempo_estimado": "2 sesiones de 90 min",
+      "estudiante": {
+        "enunciado_es": "Según una investigación periodística, un área militar israelí habría subido 3,5 millones de fotografías de palestinos a la nube de Amazon para probar reconocimiento facial, con posible uso en puestos de control de Gaza y Cisjordania. El propio reportaje reconoce que no está claro si esas fotos fueron tomadas en esos puestos. Imaginen que un equipo de auditoría independiente obtiene acceso a la colección, pero no puede examinar todo por falta de tiempo y de personal. ¿Cómo diseñarían el trabajo del equipo para poder afirmar, con un grado de certeza que ustedes definan, qué parte de la colección proviene de puestos de control? ¿Cuánto esfuerzo exigiría su plan y qué tan seguros quedarían de la conclusión? Pueden pedir información adicional.",
+        "foto_descripcion": "Ícono de una pila enorme de fotografías con una lupa sobre unas pocas de ellas.",
+        "recursos_a_solicitud": [
+          {
+            "id": "R3",
+            "que_es": "Descripción de cómo llegan las imágenes al equipo auditor",
+            "contenido": "Supuesto del escenario: las imágenes se entregan en el orden en que fueron cargadas, sin etiquetas de lugar; un revisor puede clasificar cada una mirándola como 'de puesto de control' o 'de otro origen', y a veces dudar.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P2-RM",
+            "fuente": "supuesto del escenario"
+          },
+          {
+            "id": "R4",
+            "que_es": "Recursos de revisión disponibles para el equipo",
+            "contenido": "Supuesto del escenario: el equipo cuenta con un número limitado de horas de revisión que el grupo debe fijar con criterio razonable (cantidad de revisores, jornada, tiempo por imagen), y dos revisores distintos pueden discrepar en parte de las imágenes.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P2-RM",
+            "fuente": "supuesto del escenario"
+          },
+          {
+            "id": "R5",
+            "que_es": "Posibilidad de probar el plan en una colección de prueba",
+            "contenido": "Supuesto del escenario: el equipo puede generar en computador una colección sintética del mismo tamaño, con una proporción de imágenes 'de control' fijada por ustedes, de modo que la respuesta correcta se conoce y sirve para probar el plan de revisión.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P6-VAL",
+            "fuente": "supuesto del escenario"
+          }
+        ]
+      },
+      "variantes_detalle": {
+        "abajo": {
+          "tramo": "S",
+          "cambios": "Se pide un plan para estimar la proporción con un margen de error elegido por el grupo, sin exigir corrección por error del revisor ni comparación formal de métodos; basta con comparar dos o tres tamaños de revisión y su costo en horas. El contexto no cambia."
+        },
+        "arriba": null
+      },
+      "recursos_de_entrada": [
+        {
+          "id": "R1",
+          "que_es": "Dato central de la noticia sobre el tamaño de la colección",
+          "contenido": "Se habrían subido 3,5 millones de fotografías de palestinos a la plataforma en la nube de Amazon.",
+          "disponibilidad": "de_entrada",
+          "fase": "P1-MRS",
+          "fuente": "noticia, párrafo 1"
+        },
+        {
+          "id": "R2",
+          "que_es": "Incertidumbre que reconoce la noticia sobre el origen de las imágenes",
+          "contenido": "El reportaje no aclara si las imágenes fueron tomadas en los puestos de control.",
+          "disponibilidad": "de_entrada",
+          "fase": "P1-MRS",
+          "fuente": "noticia, párrafo 8"
+        }
+      ],
+      "mapa_ciclo": {
+        "P1-MRS": {
+          "decision": "Entender que se desconoce la proporción de imágenes de puestos de control y definir qué se quiere afirmar y con qué certeza.",
+          "evidencia": "Reformulan el objetivo como estimar una proporción o decidir si existe una fracción relevante, y piden información sobre etiquetas y recursos.",
+          "bloqueo_probable": "B12"
+        },
+        "P2-RM": {
+          "decision": "Simplificar: muestra aleatoria de imágenes, clasificación binaria con error del revisor, presupuesto de horas y tiempo por imagen.",
+          "evidencia": "Lista de supuestos con valores o rangos justificados.",
+          "bloqueo_probable": "B23"
+        },
+        "P3-MM": {
+          "decision": "Modelar la proporción desconocida, su estimador, el margen de error y la relación entre tamaño de revisión y horas.",
+          "evidencia": "Expresión del tamaño de muestra en función de margen, confianza y proporción posible, y del costo en horas.",
+          "bloqueo_probable": "B34"
+        },
+        "P4-WM": {
+          "decision": "Calcular tamaños para varios márgenes y niveles de confianza, y para proporciones pequeñas o intermedias.",
+          "evidencia": "Tabla de tamaño de muestra y horas; observación de la poca dependencia respecto del tamaño total.",
+          "bloqueo_probable": "B45"
+        },
+        "P5-INT": {
+          "decision": "Interpretar qué se puede afirmar con cada plan y qué pasa si la proporción es muy pequeña o el revisor se equivoca.",
+          "evidencia": "Frases en contexto que dicen qué conclusión sostendría la auditoría y con qué incertidumbre.",
+          "bloqueo_probable": "B56"
+        },
+        "P6-VAL": {
+          "decision": "Probar el plan en una colección sintética de proporción conocida y comparar revisores.",
+          "evidencia": "Resultados de simulación: frecuencia con que el intervalo contiene el valor verdadero y sesgo por error del revisor.",
+          "bloqueo_probable": "B67"
+        },
+        "P7-EXP": {
+          "decision": "Redactar el plan de auditoría con tamaño de revisión, horas, conclusión posible y límites.",
+          "evidencia": "Documento breve con el plan, supuestos y resultados de la validación.",
+          "bloqueo_probable": null
+        }
+      },
+      "task_space": {
+        "required_assumptions": [
+          "La colección puede muestrearse de forma aleatoria (no solo las primeras imágenes cargadas)",
+          "Cada imagen se clasifica como de puesto de control o no; existe una tasa de error del revisor",
+          "El tiempo de revisión por imagen y las horas disponibles deben estimarse",
+          "La proporción verdadera es desconocida y se debe considerar tanto un valor intermedio como uno pequeño",
+          "El grupo debe elegir margen de error y nivel de confianza"
+        ],
+        "reference_solution": {
+          "steps": "1) Sea p la proporción de imágenes de puestos de control entre las 3,5 millones. 2) Muestra aleatoria simple de n imágenes; estimador p-hat y margen de error e = z·raíz(p(1-p)/n). 3) Tamaño de muestra: n = z²·p(1-p)/e²; caso conservador p = 0,5. La corrección por población finita es despreciable por el tamaño de la colección. 4) Costo: horas = n × tiempo por imagen, dividido entre revisores. 5) Si el revisor tiene sensibilidad y especificidad conocidas, corregir: p = (p-hat + especificidad - 1)/(sensibilidad + especificidad - 1), con intervalo más ancho. 6) Si p es pequeño, usar intervalo de Wilson o exacto, o dimensionar para detectar al menos una imagen de control con probabilidad 0,95 si p es al menos q: n ≈ ln(0,05)/ln(1-q), aproximadamente 3/q. 7) Alternativa de muestreo estratificado o secuencial por lotes.",
+          "result": "Con confianza de 95 % y margen de error de 0,02, el peor caso exige unas 2.401 imágenes; con margen de 0,05 bastan unas 385 y con 0,01 unas 9.604. A treinta segundos por imagen, 2.401 imágenes son unas 20 horas de revisión. El tamaño necesario casi no depende de que la colección tenga 3,5 millones de fotografías.",
+          "acceptable_range": "De cerca de 400 a unas 10.000 imágenes según margen (0,05 a 0,01) y confianza elegidos; para detectar presencia de una fracción rara se requieren miles de imágenes. Cualquier plan que justifique n con margen y confianza declarados y calcule horas es aceptable."
+        },
+        "routes": [
+          {
+            "id": "R1",
+            "nombre": "Muestreo aleatorio con aproximación normal",
+            "nivel": "S2",
+            "modelo": "n = z²p(1-p)/e² con p = 0,5 como caso conservador; horas = n × tiempo por imagen.",
+            "resultado": "Alrededor de dos mil a nueve mil imágenes según el margen elegido; horas proporcionales."
+          },
+          {
+            "id": "R2",
+            "nombre": "Muestreo con corrección por error del revisor",
+            "nivel": "U",
+            "modelo": "Proporción observada corregida por sensibilidad y especificidad del revisor; intervalo de Wilson o exacto; revisión doble en una submuestra para estimar el error.",
+            "resultado": "Tamaño mayor que en R1 cuando el revisor es poco fiable; intervalo más ancho que el ingenuo."
+          },
+          {
+            "id": "R3",
+            "nombre": "Diseño bayesiano secuencial",
+            "nivel": "U",
+            "modelo": "Distribución previa Beta para p, actualización por lotes de imágenes revisadas y parada cuando el intervalo creíble es suficientemente estrecho.",
+            "resultado": "Menos revisión si p resulta lejos de 0,5; plan adaptativo con regla de parada explícita."
+          },
+          {
+            "id": "R4",
+            "nombre": "Exploración por simulación",
+            "nivel": "S",
+            "modelo": "Simular muestras de distinto tamaño sobre una colección sintética de proporción conocida y observar la dispersión de las estimaciones.",
+            "resultado": "La dispersión baja con la raíz del tamaño de muestra, no con el tamaño de la colección."
+          }
+        ],
+        "modelo_inadecuado": {
+          "id": "RX",
+          "por_que_falla": "Revisar una fracción fija de la colección o solo las primeras imágenes cargadas: el esfuerzo crece sin necesidad con el tamaño total, el orden de carga puede sesgar la muestra y no se cuantifica la incertidumbre de la conclusión."
+        },
+        "validation_evidence": "Simulación en computador con una colección sintética del mismo tamaño y proporción conocida, repitiendo el plan muchas veces para ver con qué frecuencia el intervalo contiene el valor verdadero; además, doble revisión de una submuestra para estimar la discrepancia entre revisores. Ninguno de estos datos se usa al construir el modelo.",
+        "agent_visibility": {
+          "students": [
+            "enunciado_es",
+            "foto_descripcion",
+            "recursos_a_solicitud"
+          ],
+          "coder": [
+            "enunciado_es",
+            "task_space"
+          ],
+          "guide": [
+            "all"
+          ]
+        }
+      },
+      "rubrica_rub01": {
+        "total": 24,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 2
+        }
+      },
+      "rubrica_rub02": {
+        "P": null,
+        "S": null,
+        "U": null
+      },
+      "modelo_y_prompt": {
+        "diseñador": "claude-sonnet-5-5",
+        "version_prompt": "1.1",
+        "version_rubrica": "4.0"
+      }
+    },
+    "noticia": {
+      "id": "2026-11-16-latercera-como-israel-cargo-3-5-millones",
+      "medio_id": "latercera",
+      "medio": "La Tercera",
+      "idioma": "es",
+      "titulo": "Cómo Israel cargó 3,5 millones de fotografías en plataforma de Amazon para rastrear a palestinos",
+      "fecha": "2026-11-16",
+      "url": "https://www.latercera.com/mundo/noticia/como-israel-cargo-35-millones-de-fotografias-en-plataforma-de-amazon-para-rastrear-a-palestinos/",
+      "area": "sociedad_datos",
+      "resumen_propio": "Una investigación periodística describe que un área militar israelí habría subido a la nube de Amazon un gran volumen de fotos de palestinos para probar reconocimiento facial, con posibles usos de vigilancia en puestos de control de Gaza y Cisjordania. Amazon afirma que no ve el contenido de las cargas de sus clientes y que sus reuniones con ellos son rutinarias. El texto reconoce que no está claro si esas imágenes se tomaron en los controles.",
+      "cifras": [
+        {
+          "valor": "3,5 millones",
+          "unidad": "fotografías",
+          "que_es": "Cantidad de imágenes de palestinos que las fuerzas israelíes habrían subido a la plataforma en la nube de Amazon",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 1"
+          }
+        },
+        {
+          "valor": "3,5 millones",
+          "unidad": "imágenes",
+          "que_es": "Cantidad de imágenes subidas a la plataforma Rekognition de Amazon, cuya procedencia no está clara",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 8"
+          }
+        }
+      ],
+      "recuperada_en": "2026-11-16T19:38:36Z",
+      "filtro": {
+        "version_rubrica": "4.0",
+        "puntajes": {
+          "genuino": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 1,
+          "validacion": 1
+        },
+        "total": 8,
+        "pasa": true,
+        "justificacion": "Noticia con una pregunta real y decisiones de modelación claras, pero con una sola cifra central de procedencia incierta y validación solo parcial. Aporta contexto sensible y verificable en parte, lo que la deja en nivel intermedio."
+      }
+    },
+    "evaluacion": {
+      "tarea_id": "2026-11-auditoria-coleccion-fotos",
+      "fecha": "2026-11-16T20:01:10Z",
+      "rub01": {
+        "version_rubrica": "4.0",
+        "criterios": {
+          "genuino": {
+            "puntaje": 2,
+            "justificacion": "Plantea una necesidad real: auditar una colección inabarcable con recursos limitados. No entrega fórmula de tamaño muestral ni esquema de muestreo, así que el diseño queda en manos de los estudiantes.",
+            "cita": "¿Cómo diseñarían el trabajo del equipo para poder afirmar, con un grado de certeza que ustedes definan, qué parte de la colección proviene de puestos …"
+          },
+          "abierta": {
+            "puntaje": 2,
+            "justificacion": "No prescribe método y admite varios diseños defendibles (muestreo aleatorio simple, estratificado por orden de carga, secuencial, bayesiano), con distintos compromisos entre esfuerzo y certeza.",
+            "cita": "¿Cuánto esfuerzo exigiría su plan y qué tan seguros quedarían de la conclusión? Pueden pedir información adicional."
+          },
+          "decisiones": {
+            "puntaje": 2,
+            "justificacion": "Los estudiantes deben decidir el grado de certeza, estimar horas y tiempos, suponer cómo tratar las dudas y discrepancias entre revisores y considerar el orden de carga. Son decisiones de modelación sustantivas.",
+            "cita": "el grupo debe fijar con criterio razonable (cantidad de revisores, jornada, tiempo por imagen), y dos revisores distintos pueden discrepar en parte de las imágenes."
+          },
+          "realismo": {
+            "puntaje": 2,
+            "justificacion": "La auditoría por muestreo de una gran colección de datos es una práctica real y claramente plausible a partir del hecho reportado. El encuadre no está forzado para insertar un cálculo.",
+            "cita": "Imaginen que un equipo de auditoría independiente obtiene acceso a la colección, pero no puede examinar todo por falta de tiempo y de personal."
+          },
+          "autenticidad": {
+            "puntaje": 2,
+            "justificacion": "La tarea cita la noticia y la usa como núcleo: el tamaño de la colección y la incertidumbre sobre su origen, que el reportaje reconoce, originan la pregunta. Es un componente auténtico integrado de manera sustantiva.",
+            "cita": "Según una investigación periodística, un área militar israelí habría subido 3,5 millones de fotografías de palestinos a la nube de Amazon"
+          },
+          "contexto": {
+            "puntaje": 2,
+            "justificacion": "Varios rasgos del contexto condicionan el modelo: el orden de carga (riesgo de sesgo), la clasificación ambigua y el tiempo limitado. El contexto también es necesario para interpretar qué certeza es aceptable para una auditoría.",
+            "cita": "las imágenes se entregan en el orden en que fueron cargadas, sin etiquetas de lugar; un revisor puede clasificar cada una mirándola como 'de puesto …"
+          },
+          "ciclo": {
+            "puntaje": 2,
+            "justificacion": "Responder obliga a recorrer todas las fases: comprender la situación, simplificarla (tipo de muestra, error de clasificación), formular un modelo probabilístico, calcular tamaño y esfuerzo, interpretar la certeza y validar el plan. Ninguna fase viene hecha.",
+            "cita": "¿Cómo diseñarían el trabajo del equipo para poder afirmar, con un grado de certeza que ustedes definan, qué parte de la colección proviene de puestos …"
+          },
+          "validacion": {
+            "puntaje": 2,
+            "justificacion": "Existe una prueba independiente de la construcción del modelo: una colección simulada con proporción conocida permite contrastar si el plan alcanza la certeza declarada.",
+            "cita": "el equipo puede generar en computador una colección sintética del mismo tamaño, con una proporción de imágenes 'de control' fijada por ustedes, de modo que …"
+          },
+          "nivel": {
+            "puntaje": 2,
+            "justificacion": "Para el nivel U, la tarea pide muestreo, estimación de proporciones con intervalos de confianza, error de clasificación y simulación computacional. Todo eso cae en probabilidad y programación, herramientas esperables del nivel, y el contexto es comprensible para universitarios.",
+            "cita": "¿Cuánto esfuerzo exigiría su plan y qué tan seguros quedarían de la conclusión?"
+          },
+          "autodiferenciacion": {
+            "puntaje": 2,
+            "justificacion": "Hay un piso razonable: tomar una muestra al azar y calcular la proporción con su margen. También hay un techo alto: estratificar, corregir por error y discrepancia entre revisores, diseñar un muestreo secuencial o simular el plan.",
+            "cita": "con un grado de certeza que ustedes definan"
+          },
+          "fecundidad": {
+            "puntaje": 2,
+            "justificacion": "Las decisiones abren preguntas nuevas: cuánto afecta el desacuerdo entre revisores, qué sesgo introduce el orden de carga y qué cuesta pasar de una certeza a otra. Además, los planes de distintos grupos pueden compararse por su esfuerzo y su certeza.",
+            "cita": "y dos revisores distintos pueden discrepar en parte de las imágenes."
+          },
+          "recursos": {
+            "puntaje": 2,
+            "justificacion": "Los recursos R3–R5 están disponibles a solicitud y describen condiciones del escenario sin revelar el diseño muestral ni las fórmulas. El resto de los parámetros puede estimarse razonablemente por los estudiantes.",
+            "cita": "Pueden pedir información adicional."
+          }
+        },
+        "total": 24,
+        "mejoras": []
+      },
+      "reproducibilidad": {
+        "agentes": {
+          "disenador": {
+            "modelo": "claude-sonnet-5-5",
+            "version_modelo": "claude-sonnet-5-5",
+            "costo_usd": 0.203368,
+            "version_prompt": "1.1"
+          },
+          "evaluador": {
+            "modelo": "claude-opus-5-5",
+            "version_modelo": "claude-opus-5-5",
+            "costo_usd": 0.204134,
+            "version_prompt": "1.3"
+          },
+          "filtro": {
+            "modelo": "claude-haiku-5-5",
+            "version_modelo": "claude-haiku-5-5",
+            "costo_usd": 0.000678,
+            "version_prompt": "1.0"
+          }
+        },
+        "version_prompt": {
+          "disenador": "1.1",
+          "evaluador": "1.3",
+          "filtro": "1.0"
+        },
+        "version_rubrica": "4.0",
+        "version_MAR03": "1.0",
+        "version_MED01": "1.5",
+        "diseno_simulador": null,
+        "fecha": "2026-11-16T20:01:10Z",
+        "costo_usd": 0.40818
+      }
+    }
+  },
+  "historial": [
+    {
+      "fecha": "2026-11-16T19:58:09+00:00",
+      "de": null,
+      "a": "borrador"
+    },
+    {
+      "fecha": "2026-11-16T20:01:11+00:00",
+      "de": "borrador",
+      "a": "evaluada",
+      "iteracion": 1,
+      "rub01_total": 24
+    },
+    {
+      "fecha": "2026-11-16T20:01:12+00:00",
+      "de": "evaluada",
+      "a": "archivada",
+      "motivo": "candidato no elegido: RUB01 24/24 frente a 24/24 de 2026-11-alertas-reconocimiento-facial (2 candidatos por noticia; se sigue con el mejor)"
+    }
+  ],
+  "marcas": {
+    "ciclo_id": "ciclo_20261116T193836758402Z",
+    "noticia_id": "2026-11-16-latercera-como-israel-cargo-3-5-millones",
+    "nivel_objetivo": "U",
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "versiones_modelo": [
+          "claude-sonnet-5-5"
+        ],
+        "costo_usd": 0.203368,
+        "llamadas": 1
+      },
+      "filtro": {
+        "modelo": "claude-haiku-5-5",
+        "versiones_modelo": [
+          "claude-haiku-5-5"
+        ],
+        "costo_usd": 0.000678,
+        "llamadas": 1
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "versiones_modelo": [
+          "claude-opus-5-5"
+        ],
+        "costo_usd": 0.204134,
+        "llamadas": 3
+      }
+    },
+    "costos_compartidos": [
+      "disenador",
+      "filtro"
+    ],
+    "version_MAR03": "1.0",
+    "evaluacion_inestable": false,
+    "evaluacion_rango_total": 0,
+    "evaluacion_corridas": "pipeline/state/trabajo/2026-11-auditoria-coleccion-fotos/evaluacion_corridas.json"
+  }
+}

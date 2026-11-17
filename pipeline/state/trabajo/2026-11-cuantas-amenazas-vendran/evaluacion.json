@@ -1,0 +1,104 @@
+{
+  "tarea_id": "2026-11-cuantas-amenazas-vendran",
+  "fecha": "2026-11-16T20:07:35Z",
+  "rub01": {
+    "version_rubrica": "4.0",
+    "criterios": {
+      "genuino": {
+        "puntaje": 2,
+        "justificacion": "La tarea plantea una necesidad de planificación sin entregar fórmula ni modelo de crecimiento. Los estudiantes deben construir cómo proyectar la serie.",
+        "cita": "Imaginen que forman parte de un equipo que debe decidir cuántas personas destinar el año siguiente al último registrado a recibir y revisar denuncias de …"
+      },
+      "abierta": {
+        "puntaje": 2,
+        "justificacion": "La pregunta no prescribe procedimiento. Admite varios modelos defendibles (lineal, exponencial, tasa del último año, escenarios), y ninguna instrucción posterior encauza la ruta.",
+        "cita": "¿Cuántos casos de amenazas a internos recomendarían prever para ese año siguiente, y qué tan confiable les parece esa recomendación?"
+      },
+      "decisiones": {
+        "puntaje": 2,
+        "justificacion": "Resolver exige suponer la forma del crecimiento con solo tres puntos y un hueco de varios años, decidir qué información solicitar y estimar un margen. Son decisiones de modelación sustantivas.",
+        "cita": "No saben cuántas denuncias llegarán; solo tienen estos tres datos y lo que decidan pedir."
+      },
+      "realismo": {
+        "puntaje": 2,
+        "justificacion": "Se trata de datos reales sobre un fenómeno existente. Proyectar la demanda para dimensionar personal es una situación claramente plausible fuera de la escuela.",
+        "cita": "Un observatorio universitario registró cuántas amenazas contra internos hubo en las cárceles chilenas a lo largo de una década"
+      },
+      "autenticidad": {
+        "puntaje": 2,
+        "justificacion": "Las cifras proceden de un registro externo declarado y son el núcleo de la tarea. Además, los recursos reproducen cómo el propio observatorio describe el cambio, así que el componente auténtico está integrado de manera sustantiva.",
+        "cita": "Un observatorio universitario registró cuántas amenazas contra internos hubo en las cárceles chilenas"
+      },
+      "contexto": {
+        "puntaje": 2,
+        "justificacion": "El costo asimétrico de equivocarse condiciona qué cifra recomendar. El contexto también es necesario para juzgar la confiabilidad de la recomendación, por lo que no puede abandonarse tras matematizar.",
+        "cita": "No pueden quedarse cortos, pero tampoco contratar gente de sobra."
+      },
+      "ciclo": {
+        "puntaje": 2,
+        "justificacion": "Responder obliga a comprender la serie, simplificar eligiendo un patrón de crecimiento, matematizarlo, calcular, interpretar la cifra para la dotación y juzgar su confiabilidad. Ninguna fase viene hecha.",
+        "cita": "¿Cuántos casos de amenazas a internos recomendarían prever para ese año siguiente, y qué tan confiable les parece esa recomendación?"
+      },
+      "validacion": {
+        "puntaje": 2,
+        "justificacion": "El total acumulado es evidencia independiente, no usada para construir el modelo, contra la cual contrastar la serie supuesta. A eso se suma el dato real del año siguiente cuando se publique.",
+        "cita": "En toda la década se registraron 2.322 casos de amenazas a internos."
+      },
+      "nivel": {
+        "puntaje": 2,
+        "justificacion": "Para S2, comparar crecimiento lineal y exponencial y considerar varios supuestos está dentro de las herramientas esperables. El contexto, aunque sensible, es comprensible y pertinente para estudiantes de 16 a 18 años.",
+        "cita": "62 casos en el primer año, 235 casos en el año anterior al último y 548 casos en el último año."
+      },
+      "autodiferenciacion": {
+        "puntaje": 2,
+        "justificacion": "Hay un piso razonable: se puede entrar extrapolando la diferencia o la razón del último año. El techo es alto: ajuste exponencial, contraste con el total acumulado, escenarios e intervalos de confianza.",
+        "cita": "solo tienen estos tres datos y lo que decidan pedir."
+      },
+      "fecundidad": {
+        "puntaje": 2,
+        "justificacion": "La pregunta por la confiabilidad abre la comparación entre modelos, sus límites y la traducción a dotación de personal. Los recursos opcionales (regiones, agresiones) permiten extensiones sustantivas.",
+        "cita": "y qué tan confiable les parece esa recomendación?"
+      },
+      "recursos": {
+        "puntaje": 2,
+        "justificacion": "Los datos necesarios están en el enunciado y los complementarios se entregan a solicitud. Ninguno revela el modelo: los porcentajes del observatorio describen el cambio sin indicar cómo proyectarlo.",
+        "cita": "Pueden pedir información adicional."
+      }
+    },
+    "total": 24,
+    "mejoras": []
+  },
+  "reproducibilidad": {
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.327652,
+        "version_prompt": "1.1"
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.194454,
+        "version_prompt": "1.3"
+      },
+      "filtro": {
+        "modelo": "claude-haiku-5-5",
+        "version_modelo": "claude-haiku-5-5",
+        "costo_usd": 0.000915,
+        "version_prompt": "1.0"
+      }
+    },
+    "version_prompt": {
+      "disenador": "1.1",
+      "evaluador": "1.3",
+      "filtro": "1.0"
+    },
+    "version_rubrica": "4.0",
+    "version_MAR03": "1.0",
+    "version_MED01": "1.5",
+    "diseno_simulador": null,
+    "fecha": "2026-11-16T20:07:35Z",
+    "costo_usd": 0.523021
+  }
+}

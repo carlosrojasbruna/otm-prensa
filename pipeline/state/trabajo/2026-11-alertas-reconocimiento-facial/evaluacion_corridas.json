@@ -1,0 +1,291 @@
+{
+  "tarea_id": "2026-11-alertas-reconocimiento-facial",
+  "evaluaciones": [
+    {
+      "iteracion": 1,
+      "version_tarea": 1,
+      "fecha": "2026-11-16T19:59:42Z",
+      "modelo": "claude-opus-5-5",
+      "version_prompt": "1.3",
+      "version_rubrica": "4.0",
+      "corridas": [
+        {
+          "n": 1,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "Plantea una necesidad real de asesoría sin entregar regla, fórmula ni modelo. El razonamiento sobre falsos positivos y tasas base debe construirlo el grupo.",
+                "cita": "Una organización de derechos digitales debe asesorar a un grupo de ciudadanos sobre cuánto confiar en un sistema así."
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe procedimiento. Admite varios modelos defendibles, como un conteo esperado de falsas alertas, un enfoque bayesiano o un análisis de umbrales y escenarios.",
+                "cita": "¿Qué tan confiable es una alerta de ese sistema y bajo qué condiciones recomendarían tomarla en serio?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige estimar el flujo, la proporción de personas buscadas y las tasas de error, formular supuestos y solicitar información pertinente.",
+                "cita": "no hay cifras públicas confiables sobre cuántas personas pasan por el puesto ni cuántas son realmente buscadas; el grupo debe proponer rangos plausibles y justificarlos."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Se trata de una situación real reportada por la prensa. El puesto de control con comparación 1:N es claramente plausible.",
+                "cita": "Una investigación periodística informó que un área militar israelí habría subido 3,5 millones de imágenes de palestinos a Rekognition"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El dato de la noticia fija el tamaño de la base, que es central para la comparación 1:N. La referencia a las evaluaciones del NIST es otro componente extraescolar auténtico integrado.",
+                "cita": "Se habrían subido 3,5 millones de imágenes a la plataforma Rekognition de Amazon; su procedencia no está clara."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona las decisiones de modelación: tamaño de la base, flujo y proporción de buscados. También es necesario para interpretar en qué condiciones conviene tomar en serio una alerta.",
+                "cita": "Imaginen un puesto de control donde el rostro de cada persona que pasa se compara con una base del tamaño de esa colección"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a comprender el escenario, simplificarlo con supuestos, matematizarlo en términos de probabilidad condicional, calcular y volver a la situación para recomendar. El enunciado no deja ninguna fase hecha.",
+                "cita": "¿Qué tan confiable es una alerta de ese sistema y bajo qué condiciones recomendarían tomarla en serio?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existe evidencia independiente accesible para contrastar el modelo: datos publicados del NIST y despliegues reales documentados que sirven como caso nuevo. Hay una duda menor, porque el puesto concreto carece de datos públicos, pero la validación externa es posible.",
+                "cita": "El NIST publica evaluaciones independientes de algoritmos comerciales de reconocimiento facial, con tasas de error medidas en pruebas controladas"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "Para el nivel U, el contexto es comprensible y significativo. La matemática requerida (probabilidad, razonamiento bayesiano, análisis de escenarios) corresponde a las herramientas esperables en MAR03.",
+                "cita": "¿Qué tan confiable es una alerta de ese sistema y bajo qué condiciones recomendarían tomarla en serio?"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es razonable: basta estimar falsas alertas multiplicando el flujo por una tasa de error. El techo es alto: admite modelos 1:N dependientes del tamaño de la base, umbrales, sensibilidad y sesgos por grupo.",
+                "cita": "el grupo debe proponer rangos plausibles y justificarlos."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las decisiones y los resultados abren preguntas nuevas, por ejemplo sobre umbrales, sesgos demográficos, tamaño de la base y costos de los errores. También permiten comparar recomendaciones entre grupos.",
+                "cita": "tasas de error medidas en pruebas controladas, que cambian según la calidad de la imagen y el grupo de personas."
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información necesaria se solicita o se obtiene con búsquedas al alcance del nivel U, como los informes públicos del NIST. Ningún material revela el modelo de solución.",
+                "cita": "Pueden pedir información adicional."
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011Ch7CTYj4reDTgCYXHLkfu",
+            "fecha": "2026-11-16T19:58:39+00:00",
+            "intentos": 1,
+            "costo_usd": 0.067778,
+            "avisos": []
+          }
+        },
+        {
+          "n": 2,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "Plantea una necesidad real de asesoría. No entrega ninguna regla ni modelo (por ejemplo, el razonamiento bayesiano o el cálculo de falsos positivos en búsquedas 1:N): quien resuelve debe construirlo.",
+                "cita": "Una organización de derechos digitales debe asesorar a un grupo de ciudadanos sobre cuánto confiar en un sistema así."
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe procedimiento. Admite varios modelos defendibles, como frecuencias naturales, el teorema de Bayes o un modelo de errores que crecen con el tamaño de la base, y distintas recomendaciones condicionadas.",
+                "cita": "¿Qué tan confiable es una alerta de ese sistema y bajo qué condiciones recomendarían tomarla en serio? Pueden pedir información adicional."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Hay que estimar el flujo de personas, la proporción de personas buscadas y las tasas de error. También hay que suponer la calidad de imagen y el umbral del sistema, y decidir qué información pedir: son decisiones de modelación sustantivas.",
+                "cita": "no hay cifras públicas confiables sobre cuántas personas pasan por el puesto ni cuántas son realmente buscadas; el grupo debe proponer rangos plausibles y justificarlos."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "La situación proviene de un hecho reportado. El escenario del puesto de control corresponde al uso mencionado en la propia noticia, por lo que es claramente plausible y no forzado.",
+                "cita": "Una investigación periodística informó que un área militar israelí habría subido 3,5 millones de imágenes de palestinos a Rekognition"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El dato de la noticia fija el tamaño de la base, que es central en el modelo. Las evaluaciones del NIST son un recurso extraescolar auténtico integrado de manera sustantiva.",
+                "cita": "Se habrían subido 3,5 millones de imágenes a la plataforma Rekognition de Amazon; su procedencia no está clara."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto determina los parámetros clave: tamaño de la base, prevalencia de personas buscadas, calidad de imagen y costo de una falsa alerta. También es indispensable para formular la recomendación final.",
+                "cita": "Imaginen un puesto de control donde el rostro de cada persona que pasa se compara con una base del tamaño de esa colección"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Resolver obliga a comprender el funcionamiento, simplificar con supuestos, matematizar la probabilidad de que una alerta sea correcta, calcular, interpretar y juzgar condiciones. Ninguna fase queda hecha por el enunciado.",
+                "cita": "¿Qué tan confiable es una alerta de ese sistema y bajo qué condiciones recomendarían tomarla en serio?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existe evidencia independiente accesible para contrastar el modelo: las tasas medidas por el NIST y los reportes públicos de despliegues reales con proporción de falsas alertas.",
+                "cita": "El NIST publica evaluaciones independientes de algoritmos comerciales de reconocimiento facial, con tasas de error medidas en pruebas controladas"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "Para el nivel U, la demanda (probabilidad condicional, Bayes, efecto de comparaciones múltiples, análisis de sensibilidad) calza con las herramientas esperables. El contexto es comprensible y significativo.",
+                "cita": "¿Qué tan confiable es una alerta de ese sistema y bajo qué condiciones recomendarían tomarla en serio?"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Se puede entrar con conteos elementales de alertas verdaderas y falsas sobre un flujo supuesto. La tarea también admite soluciones más sofisticadas: crecimiento del error con N, umbrales, diferencias por grupo y sensibilidad a los rangos.",
+                "cita": "el grupo debe proponer rangos plausibles y justificarlos."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Abre preguntas sobre umbrales, sesgos por grupo, tamaño de la base y consecuencias éticas. Permite comparar las recomendaciones y los rangos de distintos grupos.",
+                "cita": "que cambian según la calidad de la imagen y el grupo de personas."
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información está disponible a solicitud o es estimable, y R4 indica dónde obtener las tasas de error. Ningún recurso revela el modelo probabilístico de la solución.",
+                "cita": "R4 (Referencia externa sobre desempeño medido de algoritmos de reconocimiento facial), disponible a solicitud del grupo"
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011Ch7CVm5WvGSWZrGKe8gVX",
+            "fecha": "2026-11-16T19:59:11+00:00",
+            "intentos": 1,
+            "costo_usd": 0.070998,
+            "avisos": []
+          }
+        },
+        {
+          "n": 3,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "Hay una necesidad real de asesoría, y ni el enunciado ni los recursos entregan una regla o modelo para calcular la confiabilidad de una alerta.",
+                "cita": "Una organización de derechos digitales debe asesorar a un grupo de ciudadanos sobre cuánto confiar en un sistema así."
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe procedimiento y admite varios modelos defendibles: conteo esperado de falsas alertas, razonamiento bayesiano con tasas base, o el efecto del tamaño de la base en comparaciones 1:N.",
+                "cita": "¿Qué tan confiable es una alerta de ese sistema y bajo qué condiciones recomendarían tomarla en serio?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige suponer el flujo y la proporción de personas buscadas, y además buscar y seleccionar tasas de error. Esas decisiones de modelación no son automáticas.",
+                "cita": "no hay cifras públicas confiables sobre cuántas personas pasan por el puesto ni cuántas son realmente buscadas; el grupo debe proponer rangos plausibles y justificarlos."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "La situación proviene de un hecho reportado. Un puesto de control con alertas de reconocimiento facial es claramente plausible, pues la noticia menciona ese posible uso.",
+                "cita": "Una investigación periodística informó que un área militar israelí habría subido 3,5 millones de imágenes de palestinos a Rekognition"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El dato de la noticia fija el tamaño de la base y es central en el modelo. Las evaluaciones del NIST (R4) son otro componente auténtico extraescolar.",
+                "cita": "Se habrían subido 3,5 millones de imágenes a la plataforma Rekognition de Amazon; su procedencia no está clara."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona las decisiones (flujo, proporción de buscados, calidad de imagen) y es necesario para interpretar qué significa una alerta y para recomendar cuándo atenderla.",
+                "cita": "el sistema avisa a un agente cuando cree reconocer a alguien"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a recorrer todo el ciclo: comprender el escenario, simplificar con supuestos, matematizar con probabilidad condicional, calcular, interpretar y juzgar condiciones. R2 solo describe el escenario, sin dar el modelo.",
+                "cita": "¿Qué tan confiable es una alerta de ese sistema y bajo qué condiciones recomendarían tomarla en serio?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "El modelo puede contrastarse con evidencia independiente accesible, como los informes públicos de pruebas policiales en terreno con proporciones de falsas alertas o los datos del NIST bajo otras condiciones de imagen y grupo.",
+                "cita": "El NIST publica evaluaciones independientes de algoritmos comerciales de reconocimiento facial, con tasas de error medidas en pruebas controladas"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto es comprensible y pertinente para universitarios. La demanda (probabilidad condicional, tasas base, sensibilidad) corresponde a las herramientas esperables en U según MAR03.",
+                "cita": "Imaginen un puesto de control donde el rostro de cada persona que pasa se compara con una base del tamaño de esa colección"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es accesible, porque se puede estimar el número de falsas alertas diarias con aritmética y rangos plausibles. El techo es alto: modelos bayesianos, escalamiento 1:N, umbrales, diferencias por grupo demográfico y análisis de sensibilidad.",
+                "cita": "Pueden pedir información adicional."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las soluciones abren preguntas sobre umbrales, sesgos por grupo, el rol del agente humano y los límites del modelo, y permiten comparar las recomendaciones de distintos grupos.",
+                "cita": "bajo qué condiciones recomendarían tomarla en serio?"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "Los recursos a solicitud indican dónde obtener tasas de error y exigen proponer rangos, sin revelar el razonamiento de tasas base ni la estructura de la solución. Los datos del NIST son públicos y obtenibles por universitarios.",
+                "cita": "El NIST publica evaluaciones independientes de algoritmos comerciales de reconocimiento facial, con tasas de error medidas en pruebas controladas, que cambian según la calidad de …"
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011Ch7CY5bosK4CXSW5Mksot",
+            "fecha": "2026-11-16T19:59:42+00:00",
+            "intentos": 1,
+            "costo_usd": 0.070038,
+            "avisos": [
+              "cita_recortada_25:recursos"
+            ]
+          }
+        }
+      ],
+      "totales": [
+        24,
+        24,
+        24
+      ],
+      "rango_total": 0,
+      "rango_inestable": 4,
+      "evaluacion_inestable": false,
+      "mediana": {
+        "regla": "mediana por criterio (n par: mediana inferior)",
+        "total": 24,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 2
+        },
+        "corrida_fuente": {
+          "genuino": 1,
+          "abierta": 1,
+          "decisiones": 1,
+          "realismo": 1,
+          "autenticidad": 1,
+          "contexto": 1,
+          "ciclo": 1,
+          "validacion": 1,
+          "nivel": 1,
+          "autodiferenciacion": 1,
+          "fecundidad": 1,
+          "recursos": 1
+        }
+      }
+    }
+  ]
+}
