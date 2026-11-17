@@ -120,3 +120,27 @@ def test_cifra_verificada():
     assert ex.cifra_verificada("38 %", ps, 2)
     assert not ex.cifra_verificada("38 %", ps, 1)
     assert not ex.cifra_verificada("38", ps, 3)
+
+
+def test_valor_con_punto_de_miles_no_se_convierte_en_decimal():
+    """«2.322» en un medio en español son miles (casos reales: 1.502, 2.322 y 6.365 quedaron como decimales)."""
+    from pipeline.agentes.verificador.run import parsear_numero
+    assert ex._valor("2.322") == "2.322" and ex._valor("6.365", "es") == "6.365"
+    assert parsear_numero(ex._valor("2.322")) == 2322 and parsear_numero(ex._valor("58.455")) == 58455
+    assert ex._valor("1.234.567") == "1.234.567"
+    assert ex._valor("2.322", "en") == 2.322            # en inglés el punto es decimal
+    assert ex._valor("3.5") == 3.5 and ex._valor("0.125") == 0.125 and ex._valor("12.26") == 12.26
+    assert ex._valor("548") == 548 and ex._valor("38 %") == "38 %" and ex._valor("92,59") == "92,59"
+
+
+def test_explorar_noticia_conserva_los_miles_como_aparecen():
+    caso = _caso(0)
+    entrada = dict(caso["entrada"])
+    entrada["cuerpo_html"] += "<p>En el periodo se registraron 2.322 mediciones sintéticas del nivel.</p>"
+    resp = json.loads(json.dumps(caso["respuestas_modelo"]))
+    resp[0]["cifras"].append({"valor": "2.322", "unidad": "mediciones", "que_es": "mediciones del periodo", "parrafo": 4})
+    res = ex.explorar_noticia(_candidato(entrada), cliente=ClienteFalso(resp), ahora=AHORA, bajar=None)
+    n = res["noticia"]
+    assert n is not None, res["descartada"]
+    assert n["cifras"][-1]["valor"] == "2.322" and inv.validar_contra_esquema(n, "noticia")
+
