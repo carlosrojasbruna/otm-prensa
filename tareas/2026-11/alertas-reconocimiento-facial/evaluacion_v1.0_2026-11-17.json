@@ -1,0 +1,146 @@
+{
+  "tarea_id": "2026-11-alertas-reconocimiento-facial",
+  "fecha": "2026-11-16T19:59:42Z",
+  "rub01": {
+    "version_rubrica": "4.0",
+    "criterios": {
+      "genuino": {
+        "puntaje": 2,
+        "justificacion": "Plantea una necesidad real de asesoría sin entregar regla, fórmula ni modelo. El razonamiento sobre falsos positivos y tasas base debe construirlo el grupo.",
+        "cita": "Una organización de derechos digitales debe asesorar a un grupo de ciudadanos sobre cuánto confiar en un sistema así."
+      },
+      "abierta": {
+        "puntaje": 2,
+        "justificacion": "La pregunta no prescribe procedimiento. Admite varios modelos defendibles, como un conteo esperado de falsas alertas, un enfoque bayesiano o un análisis de umbrales y escenarios.",
+        "cita": "¿Qué tan confiable es una alerta de ese sistema y bajo qué condiciones recomendarían tomarla en serio?"
+      },
+      "decisiones": {
+        "puntaje": 2,
+        "justificacion": "Resolver exige estimar el flujo, la proporción de personas buscadas y las tasas de error, formular supuestos y solicitar información pertinente.",
+        "cita": "no hay cifras públicas confiables sobre cuántas personas pasan por el puesto ni cuántas son realmente buscadas; el grupo debe proponer rangos plausibles y justificarlos."
+      },
+      "realismo": {
+        "puntaje": 2,
+        "justificacion": "Se trata de una situación real reportada por la prensa. El puesto de control con comparación 1:N es claramente plausible.",
+        "cita": "Una investigación periodística informó que un área militar israelí habría subido 3,5 millones de imágenes de palestinos a Rekognition"
+      },
+      "autenticidad": {
+        "puntaje": 2,
+        "justificacion": "El dato de la noticia fija el tamaño de la base, que es central para la comparación 1:N. La referencia a las evaluaciones del NIST es otro componente extraescolar auténtico integrado.",
+        "cita": "Se habrían subido 3,5 millones de imágenes a la plataforma Rekognition de Amazon; su procedencia no está clara."
+      },
+      "contexto": {
+        "puntaje": 2,
+        "justificacion": "El contexto condiciona las decisiones de modelación: tamaño de la base, flujo y proporción de buscados. También es necesario para interpretar en qué condiciones conviene tomar en serio una alerta.",
+        "cita": "Imaginen un puesto de control donde el rostro de cada persona que pasa se compara con una base del tamaño de esa colección"
+      },
+      "ciclo": {
+        "puntaje": 2,
+        "justificacion": "Responder obliga a comprender el escenario, simplificarlo con supuestos, matematizarlo en términos de probabilidad condicional, calcular y volver a la situación para recomendar. El enunciado no deja ninguna fase hecha.",
+        "cita": "¿Qué tan confiable es una alerta de ese sistema y bajo qué condiciones recomendarían tomarla en serio?"
+      },
+      "validacion": {
+        "puntaje": 2,
+        "justificacion": "Existe evidencia independiente accesible para contrastar el modelo: datos publicados del NIST y despliegues reales documentados que sirven como caso nuevo. Hay una duda menor, porque el puesto concreto carece de datos públicos, pero la validación externa es posible.",
+        "cita": "El NIST publica evaluaciones independientes de algoritmos comerciales de reconocimiento facial, con tasas de error medidas en pruebas controladas"
+      },
+      "nivel": {
+        "puntaje": 2,
+        "justificacion": "Para el nivel U, el contexto es comprensible y significativo. La matemática requerida (probabilidad, razonamiento bayesiano, análisis de escenarios) corresponde a las herramientas esperables en MAR03.",
+        "cita": "¿Qué tan confiable es una alerta de ese sistema y bajo qué condiciones recomendarían tomarla en serio?"
+      },
+      "autodiferenciacion": {
+        "puntaje": 2,
+        "justificacion": "El piso es razonable: basta estimar falsas alertas multiplicando el flujo por una tasa de error. El techo es alto: admite modelos 1:N dependientes del tamaño de la base, umbrales, sensibilidad y sesgos por grupo.",
+        "cita": "el grupo debe proponer rangos plausibles y justificarlos."
+      },
+      "fecundidad": {
+        "puntaje": 2,
+        "justificacion": "Las decisiones y los resultados abren preguntas nuevas, por ejemplo sobre umbrales, sesgos demográficos, tamaño de la base y costos de los errores. También permiten comparar recomendaciones entre grupos.",
+        "cita": "tasas de error medidas en pruebas controladas, que cambian según la calidad de la imagen y el grupo de personas."
+      },
+      "recursos": {
+        "puntaje": 2,
+        "justificacion": "La información necesaria se solicita o se obtiene con búsquedas al alcance del nivel U, como los informes públicos del NIST. Ningún material revela el modelo de solución.",
+        "cita": "Pueden pedir información adicional."
+      }
+    },
+    "total": 24,
+    "mejoras": []
+  },
+  "reproducibilidad": {
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.203368,
+        "version_prompt": "1.1"
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.208814,
+        "version_prompt": "1.3"
+      },
+      "filtro": {
+        "modelo": "claude-haiku-5-5",
+        "version_modelo": "claude-haiku-5-5",
+        "costo_usd": 0.000678,
+        "version_prompt": "1.0"
+      },
+      "ilustrador": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.015104,
+        "version_prompt": "1.0"
+      },
+      "redactor": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.145737,
+        "version_prompt": "1.0"
+      },
+      "redactor_escenarios": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.178616,
+        "version_prompt": "1.0"
+      },
+      "simulador": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.48108,
+        "version_prompt": "PROMPTS.md"
+      },
+      "simulador_codificador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.346404,
+        "version_prompt": "PROMPTS.md"
+      },
+      "verificador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.118584,
+        "version_prompt": "1.1"
+      }
+    },
+    "version_prompt": {
+      "disenador": "1.1",
+      "evaluador": "1.3",
+      "filtro": "1.0",
+      "ilustrador": "1.0",
+      "redactor": "1.0",
+      "redactor_escenarios": "1.0",
+      "simulador": "PROMPTS.md",
+      "simulador_codificador": "PROMPTS.md",
+      "verificador": "1.1"
+    },
+    "version_rubrica": "4.0",
+    "version_MAR03": "1.0",
+    "version_MED01": "1.5",
+    "diseno_simulador": "diseno_otm",
+    "fecha": "2026-11-17T12:45:05Z",
+    "costo_usd": 1.698385
+  }
+}
