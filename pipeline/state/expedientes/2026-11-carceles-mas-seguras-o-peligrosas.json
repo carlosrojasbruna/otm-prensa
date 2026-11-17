@@ -63,7 +63,7 @@
             }
           },
           {
-            "valor": 2.322,
+            "valor": "2.322",
             "unidad": "amenazas a internos",
             "que_es": "Registros de amenazas entre 2015 y 2025",
             "localizador": {
@@ -99,7 +99,7 @@
             }
           },
           {
-            "valor": 6.365,
+            "valor": "6.365",
             "unidad": "agresiones en 2025",
             "que_es": "Agresiones a internos registradas en 2025, máximo histórico",
             "localizador": {
@@ -428,7 +428,7 @@
           }
         },
         {
-          "valor": 2.322,
+          "valor": "2.322",
           "unidad": "amenazas a internos",
           "que_es": "Registros de amenazas entre 2015 y 2025",
           "localizador": {
@@ -500,7 +500,7 @@
           }
         },
         {
-          "valor": 6.365,
+          "valor": "6.365",
           "unidad": "agresiones en 2025",
           "que_es": "Agresiones a internos registradas en 2025, máximo histórico",
           "localizador": {
@@ -732,19 +732,23 @@
       }
     ],
     "preverificacion": {
-      "fecha": "2026-11-16T20:07:39Z",
+      "fecha": "2026-11-17T12:29:33Z",
       "version_tarea": 1,
-      "aprobado": false,
-      "criticos": [
-        "[4] estudiante.recursos_a_solicitud[R2]: cifra 6365 sin localizador (no figura en noticia.cifras_usadas)",
-        "[4] estudiante.recursos_a_solicitud[R4]: cifra 2322 sin localizador (no figura en noticia.cifras_usadas)"
-      ],
-      "texto_noticia": true
+      "aprobado": true,
+      "criticos": [],
+      "texto_noticia": false
     },
-    "hallazgos_tarea": [
-      "[4] estudiante.recursos_a_solicitud[R2]: cifra 6365 sin localizador (no figura en noticia.cifras_usadas)",
-      "[4] estudiante.recursos_a_solicitud[R4]: cifra 2322 sin localizador (no figura en noticia.cifras_usadas)"
+    "pendiente": "revision_humana_1",
+    "hallazgos_resueltos": [
+      {
+        "fecha": "2026-11-17T12:29:33Z",
+        "por": "corrección manual del valor de dos cifras (punto de miles leído como decimal)",
+        "hallazgos": [
+          "[4] estudiante.recursos_a_solicitud[R2]: cifra 6365 sin localizador (no figura en noticia.cifras_usadas)",
+          "[4] estudiante.recursos_a_solicitud[R4]: cifra 2322 sin localizador (no figura en noticia.cifras_usadas)"
+        ]
+      }
     ],
-    "pendiente": "revision_humana_1"
+    "correccion_manual_cifra": "valores 2.322 y 6.365 guardados como decimales por el explorador; corregidos a mano a «2.322» y «6.365» (miles) en tarea.noticia.cifras_usadas y en noticia.cifras (orden de Carlos Rojas Bruna, revisión humana 1, 2026-11-17); localizadores y lo que ve el estudiante sin cambio; ver decisiones.md"
   }
 }

@@ -1,62 +1,34 @@
 {
   "tarea_id": "2026-11-carceles-mas-seguras-o-peligrosas",
-  "aprobado": false,
+  "aprobado": true,
   "alcance": "tarea",
   "hallazgos": [
     {
-      "invariante": "4",
+      "invariante": "semantica",
       "severidad": "advertencia",
-      "ubicacion": "tarea.noticia.cifras_usadas[5]",
-      "descripcion": "localizador corrido: 2.322 no está en «párrafo 8» sino en el párrafo 7; se corrige el localizador",
+      "ubicacion": "tarea.estudiante.recursos_a_solicitud[R2]",
+      "descripcion": "no se pudo contrastar con el texto: el ciclo no entregó `texto_noticia`; la afirmación del recurso solo se juzgó contra título, resumen y cifras",
       "origen": "codigo"
     },
     {
-      "invariante": "4",
+      "invariante": "semantica",
       "severidad": "advertencia",
-      "ubicacion": "tarea.noticia.cifras_usadas[6]",
-      "descripcion": "localizador corrido: 62 no está en «párrafo 8» sino en el párrafo 7; se corrige el localizador",
+      "ubicacion": "tarea.estudiante.recursos_a_solicitud[R3]",
+      "descripcion": "no se pudo contrastar con el texto: el ciclo no entregó `texto_noticia`; la afirmación del recurso solo se juzgó contra título, resumen y cifras",
       "origen": "codigo"
     },
     {
-      "invariante": "4",
+      "invariante": "semantica",
       "severidad": "advertencia",
-      "ubicacion": "tarea.noticia.cifras_usadas[7]",
-      "descripcion": "localizador corrido: 235 no está en «párrafo 8» sino en el párrafo 7; se corrige el localizador",
+      "ubicacion": "tarea.estudiante.recursos_a_solicitud[R4]",
+      "descripcion": "no se pudo contrastar con el texto: el ciclo no entregó `texto_noticia`; la afirmación del recurso solo se juzgó contra título, resumen y cifras",
       "origen": "codigo"
     },
     {
-      "invariante": "4",
+      "invariante": "semantica",
       "severidad": "advertencia",
-      "ubicacion": "tarea.noticia.cifras_usadas[8]",
-      "descripcion": "localizador corrido: 548 no está en «párrafo 8» sino en el párrafo 7; se corrige el localizador",
-      "origen": "codigo"
-    },
-    {
-      "invariante": "4",
-      "severidad": "advertencia",
-      "ubicacion": "tarea.noticia.cifras_usadas[9]",
-      "descripcion": "localizador corrido: 6.365 no está en «párrafo 11» sino en el párrafo 10; se corrige el localizador",
-      "origen": "codigo"
-    },
-    {
-      "invariante": "4",
-      "severidad": "advertencia",
-      "ubicacion": "tarea.noticia.cifras_usadas[10]",
-      "descripcion": "localizador corrido: '9,3%' no está en «párrafo 11» sino en el párrafo 10; se corrige el localizador",
-      "origen": "codigo"
-    },
-    {
-      "invariante": "4",
-      "severidad": "critico",
-      "ubicacion": "estudiante.recursos_a_solicitud[R2]",
-      "descripcion": "cifra 6365 sin localizador (no figura en noticia.cifras_usadas)",
-      "origen": "codigo"
-    },
-    {
-      "invariante": "4",
-      "severidad": "critico",
-      "ubicacion": "estudiante.recursos_a_solicitud[R4]",
-      "descripcion": "cifra 2322 sin localizador (no figura en noticia.cifras_usadas)",
+      "ubicacion": "tarea.recursos_de_entrada[R1]",
+      "descripcion": "no se pudo contrastar con el texto: el ciclo no entregó `texto_noticia`; la afirmación del recurso solo se juzgó contra título, resumen y cifras",
       "origen": "codigo"
     }
   ],
@@ -72,7 +44,7 @@
       "metodo": "codigo",
       "valor_fuente": 27,
       "resultado": "coincide",
-      "nota": "valor presente en el párrafo 3 de la noticia"
+      "nota": "valor igual al de la noticia"
     },
     {
       "indice": 1,
@@ -85,7 +57,7 @@
       "metodo": "codigo",
       "valor_fuente": 491,
       "resultado": "coincide",
-      "nota": "valor presente en el párrafo 4 de la noticia"
+      "nota": "valor igual al de la noticia"
     },
     {
       "indice": 2,
@@ -98,7 +70,7 @@
       "metodo": "codigo",
       "valor_fuente": 56,
       "resultado": "coincide",
-      "nota": "valor presente en el párrafo 4 de la noticia"
+      "nota": "valor igual al de la noticia"
     },
     {
       "indice": 3,
@@ -111,7 +83,7 @@
       "metodo": "codigo",
       "valor_fuente": 61,
       "resultado": "coincide",
-      "nota": "valor presente en el párrafo 4 de la noticia"
+      "nota": "valor igual al de la noticia"
     },
     {
       "indice": 4,
@@ -124,24 +96,20 @@
       "metodo": "codigo",
       "valor_fuente": 48,
       "resultado": "coincide",
-      "nota": "valor presente en el párrafo 4 de la noticia"
+      "nota": "valor igual al de la noticia"
     },
     {
       "indice": 5,
       "que_es": "Registros de amenazas entre 2015 y 2025",
-      "valor_tarea": 2.322,
+      "valor_tarea": "2.322",
       "localizador": {
-        "fuente": "noticia",
-        "ubicacion": "párrafo 8"
-      },
-      "metodo": "codigo",
-      "valor_fuente": 2.322,
-      "resultado": "coincide",
-      "localizador_corregido": {
         "fuente": "noticia",
         "ubicacion": "párrafo 7"
       },
-      "nota": "valor presente en el párrafo 7 (localizador corregido desde «párrafo 8»)"
+      "metodo": "codigo",
+      "valor_fuente": "2.322",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia"
     },
     {
       "indice": 6,
@@ -149,16 +117,12 @@
       "valor_tarea": 62,
       "localizador": {
         "fuente": "noticia",
-        "ubicacion": "párrafo 8"
+        "ubicacion": "párrafo 7"
       },
       "metodo": "codigo",
       "valor_fuente": 62,
       "resultado": "coincide",
-      "localizador_corregido": {
-        "fuente": "noticia",
-        "ubicacion": "párrafo 7"
-      },
-      "nota": "valor presente en el párrafo 7 (localizador corregido desde «párrafo 8»)"
+      "nota": "valor igual al de la noticia"
     },
     {
       "indice": 7,
@@ -166,16 +130,12 @@
       "valor_tarea": 235,
       "localizador": {
         "fuente": "noticia",
-        "ubicacion": "párrafo 8"
+        "ubicacion": "párrafo 7"
       },
       "metodo": "codigo",
       "valor_fuente": 235,
       "resultado": "coincide",
-      "localizador_corregido": {
-        "fuente": "noticia",
-        "ubicacion": "párrafo 7"
-      },
-      "nota": "valor presente en el párrafo 7 (localizador corregido desde «párrafo 8»)"
+      "nota": "valor igual al de la noticia"
     },
     {
       "indice": 8,
@@ -183,33 +143,25 @@
       "valor_tarea": 548,
       "localizador": {
         "fuente": "noticia",
-        "ubicacion": "párrafo 8"
+        "ubicacion": "párrafo 7"
       },
       "metodo": "codigo",
       "valor_fuente": 548,
       "resultado": "coincide",
-      "localizador_corregido": {
-        "fuente": "noticia",
-        "ubicacion": "párrafo 7"
-      },
-      "nota": "valor presente en el párrafo 7 (localizador corregido desde «párrafo 8»)"
+      "nota": "valor igual al de la noticia"
     },
     {
       "indice": 9,
       "que_es": "Agresiones a internos registradas en 2025, máximo histórico",
-      "valor_tarea": 6.365,
+      "valor_tarea": "6.365",
       "localizador": {
-        "fuente": "noticia",
-        "ubicacion": "párrafo 11"
-      },
-      "metodo": "codigo",
-      "valor_fuente": 6.365,
-      "resultado": "coincide",
-      "localizador_corregido": {
         "fuente": "noticia",
         "ubicacion": "párrafo 10"
       },
-      "nota": "valor presente en el párrafo 10 (localizador corregido desde «párrafo 11»)"
+      "metodo": "codigo",
+      "valor_fuente": "6.365",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia"
     },
     {
       "indice": 10,
@@ -217,16 +169,12 @@
       "valor_tarea": "9,3%",
       "localizador": {
         "fuente": "noticia",
-        "ubicacion": "párrafo 11"
+        "ubicacion": "párrafo 10"
       },
       "metodo": "codigo",
       "valor_fuente": "9,3%",
       "resultado": "coincide",
-      "localizador_corregido": {
-        "fuente": "noticia",
-        "ubicacion": "párrafo 10"
-      },
-      "nota": "valor presente en el párrafo 10 (localizador corregido desde «párrafo 11»)"
+      "nota": "valor igual al de la noticia"
     }
   ],
   "meta": {
@@ -234,33 +182,9 @@
     "version_prompt": "1.1",
     "modelo_llamado": false,
     "costo_usd": 0.0,
-    "texto_noticia_recibido": true,
-    "fecha": "2026-11-16T20:07:39+00:00"
+    "texto_noticia_recibido": false,
+    "fecha": "2026-11-17T12:29:33+00:00",
+    "nota": "solo código y sin el texto de la noticia (corrección manual; La Tercera no se puede leer desde el entorno de Claude). El tramo B vuelve a preverificar con el texto."
   },
-  "localizadores_corregidos": {
-    "5": {
-      "fuente": "noticia",
-      "ubicacion": "párrafo 7"
-    },
-    "6": {
-      "fuente": "noticia",
-      "ubicacion": "párrafo 7"
-    },
-    "7": {
-      "fuente": "noticia",
-      "ubicacion": "párrafo 7"
-    },
-    "8": {
-      "fuente": "noticia",
-      "ubicacion": "párrafo 7"
-    },
-    "9": {
-      "fuente": "noticia",
-      "ubicacion": "párrafo 10"
-    },
-    "10": {
-      "fuente": "noticia",
-      "ubicacion": "párrafo 10"
-    }
-  }
+  "localizadores_corregidos": {}
 }
