@@ -489,7 +489,122 @@ def test_explorador_aplica_filtro_y_descarta(rutas):
     assert reg["explorador"] == {"aceptadas": 2, "descartadas": 0}
     exp = orq.cargar(TID, rutas.expedientes)
     assert exp.artefactos["noticia"]["filtro"]["pasa"] is True
-    assert exp.marcas["nivel_objetivo"] == "P"      # rotación S, P, U por noticia
+    assert exp.marcas["nivel_objetivo"] == "S"      # rotación S, P, U por tarea lograda (antes: por noticia vista)
+    assert "filtro" in exp.marcas["costos_compartidos"]   # el filtro corrió antes, su gasto se anota igual
+
+
+# =========================================================================== selección por puntaje y cuotas (MED01)
+REGLAS = {"version_med01": "prueba", "cuota_por_medio": 1, "cuotas_por_area": {"economia": 1, "salud": 1},
+          "medios": ["latercera", "bbc", "bbcmundo", "npr"]}
+
+
+def noticia_de(medio_id: str, slug: str, total: int, *, area: str = "medio_ambiente", fecha: str = "2026-10-14") -> dict:
+    n = dict(cargar_ejemplo("noticia"), id=f"{fecha}-{medio_id}-{slug}", medio_id=medio_id, area=area, fecha=fecha)
+    n["filtro"] = {"version_rubrica": "4.0", "puntajes": {k: 2 for k in
+                   ("genuino", "decisiones", "realismo", "autenticidad", "validacion")},
+                   "total": total, "pasa": total >= 6, "justificacion": "prueba"}
+    assert inv.validar_contra_esquema(n, "noticia")
+    return n
+
+
+def ciclo_con_seleccion(rutas, noticias: list[dict], n_tareas: int, *, reglas: dict = REGLAS, semana: str = "2026-W40"):
+    """Explorador y filtro falsos (el filtro devuelve el puntaje que ya trae la noticia); evaluador real, 23/24."""
+    ag = C.Agentes(explorar=lambda *, cliente, tope_usd: {"noticias": noticias, "descartes": []},
+                   filtrar=lambda noticia, *, cliente: {"noticia": copy.deepcopy(noticia), "meta": {}},
+                   disenar=disenar_falso(1))
+    c = nuevo_ciclo(rutas, [rub(OK_23)] * 3 * n_tareas, agentes=ag, seleccion=reglas)
+    c.semana = semana
+    return c
+
+
+def resultados(reg: dict) -> dict:
+    return {n["noticia_id"]: n["resultado"] for n in reg["noticias"]}
+
+
+def test_seleccion_procesa_primero_el_mayor_puntaje_del_filtro(rutas):
+    ns = [noticia_de("latercera", "a", 7), noticia_de("bbc", "b", 10), noticia_de("npr", "c", 8),
+          noticia_de("latercera", "d", 4)]
+    reg = ciclo_con_seleccion(rutas, ns, 1).correr(max_tareas=1)
+    res = resultados(reg)
+    assert res[ns[1]["id"]] == "evaluada"                      # el 10/10, aunque el explorador lo entregó segundo
+    assert res[ns[0]["id"]].startswith("no procesada") and res[ns[2]["id"]].startswith("no procesada")
+    assert res[ns[3]["id"]] == "no pasa el filtro (4/10)"
+    puestos = {n["noticia_id"]: n.get("puesto") for n in reg["noticias"]}
+    assert (puestos[ns[1]["id"]], puestos[ns[2]["id"]], puestos[ns[0]["id"]]) == (1, 2, 3)
+    assert reg["seleccion"]["tareas_por_medio"] == {"bbc": 1}
+    assert reg["seleccion"]["filtradas"] == 4 and reg["seleccion"]["pasan_el_filtro"] == 3
+
+
+def test_seleccion_respeta_la_cuota_por_medio(rutas):
+    ns = [noticia_de("latercera", "a", 10), noticia_de("latercera", "b", 9), noticia_de("npr", "c", 7)]
+    reg = ciclo_con_seleccion(rutas, ns, 2).correr(max_tareas=2)
+    res = resultados(reg)
+    assert res[ns[0]["id"]] == "evaluada" and res[ns[2]["id"]] == "evaluada"
+    assert res[ns[1]["id"]] == "omitida: cuota por medio (latercera)"
+    assert reg["seleccion"]["tareas_por_medio"] == {"latercera": 1, "npr": 1}
+    niveles = {n["noticia_id"]: n["nivel"] for n in reg["noticias"]}
+    assert (niveles[ns[0]["id"]], niveles[ns[2]["id"]]) == ("S", "P")   # el nivel rota por tarea lograda
+
+
+def test_seleccion_bbc_mundo_cuenta_como_bbc(rutas):
+    ns = [noticia_de("bbc", "a", 10), noticia_de("bbcmundo", "b", 9), noticia_de("npr", "c", 7)]
+    res = resultados(ciclo_con_seleccion(rutas, ns, 2).correr(max_tareas=2))
+    assert res[ns[1]["id"]] == "omitida: cuota por medio (bbc)"
+    assert res[ns[0]["id"]] == "evaluada" and res[ns[2]["id"]] == "evaluada"
+
+
+def test_seleccion_respeta_la_cuota_por_area(rutas):
+    ns = [noticia_de("latercera", "a", 10, area="economia"), noticia_de("bbc", "b", 9, area="economia"),
+          noticia_de("npr", "c", 7, area="salud")]
+    reg = ciclo_con_seleccion(rutas, ns, 2).correr(max_tareas=2)
+    res = resultados(reg)
+    assert res[ns[1]["id"]] == "omitida: cuota por área (economia)"
+    assert res[ns[0]["id"]] == "evaluada" and res[ns[2]["id"]] == "evaluada"
+    assert reg["seleccion"]["tareas_por_area"] == {"economia": 1, "salud": 1}
+
+
+def test_seleccion_una_cuota_se_consume_solo_con_una_tarea_lograda(rutas):
+    """Si la noticia del medio termina archivada (bajo el umbral), la siguiente de ese medio sigue disponible."""
+    ns = [noticia_de("latercera", "a", 10), noticia_de("latercera", "b", 9)]
+    ag = C.Agentes(explorar=lambda *, cliente, tope_usd: {"noticias": ns, "descartes": []},
+                   filtrar=lambda noticia, *, cliente: {"noticia": copy.deepcopy(noticia), "meta": {}},
+                   disenar=disenar_falso(1), iterar=iterar_falso)
+    c = nuevo_ciclo(rutas, [rub(BAJO_18)] * 9 + [rub(OK_23)] * 3, agentes=ag, seleccion=REGLAS)
+    res = resultados(c.correr(max_tareas=1))
+    assert res[ns[0]["id"]] != "evaluada" and res[ns[1]["id"]] == "evaluada"
+
+
+def test_orden_de_seleccion_desempata_rotando_el_medio_por_semana():
+    medios = ["latercera", "bbc", "npr"]
+    ns = [noticia_de("latercera", "a", 8), noticia_de("bbc", "b", 8), noticia_de("npr", "c", 8),
+          noticia_de("npr", "d", 9)]
+    ids = lambda semana: [n["medio_id"] for n in C.orden_de_seleccion(ns, medios, semana)]   # noqa: E731
+    assert ids(0) == ["npr", "latercera", "bbc", "npr"]        # el 9/10 primero; el resto, orden de MED01
+    assert ids(1) == ["npr", "bbc", "npr", "latercera"]        # una semana después parte el segundo medio
+    assert ids(2) == ["npr", "npr", "latercera", "bbc"]
+    assert ids(3) == ids(0)
+
+
+def test_orden_de_seleccion_en_el_mismo_medio_prefiere_la_fecha_mas_reciente():
+    ns = [noticia_de("bbc", "a", 8, fecha="2026-10-12"), noticia_de("bbc", "b", 8, fecha="2026-10-14"),
+          noticia_de("otro", "c", 8)]
+    orden = [n["id"] for n in C.orden_de_seleccion(ns, ["bbc"], 0)]
+    assert orden == [ns[1]["id"], ns[0]["id"], ns[2]["id"]]    # un medio fuera de MED01 va al final de los empates
+
+
+def test_reglas_de_seleccion_salen_de_la_med01_vigente():
+    r = C.reglas_seleccion()
+    assert r["version_med01"] == C.version_med01() and r["cuota_por_medio"] == 1
+    assert r["cuotas_por_area"]["economia"] == 1 and {"latercera", "npr", "cbsnews"} <= set(r["medios"])
+
+
+def test_con_noticias_de_archivo_el_orden_no_cambia(rutas):
+    """`--noticia`: sin explorador no hay selección ni cuotas; se procesan en el orden dado."""
+    ns = [noticia_de("latercera", "a", 7), noticia_de("latercera", "b", 10)]
+    ag = C.Agentes(disenar=disenar_falso(1))
+    reg = nuevo_ciclo(rutas, [rub(OK_23)] * 6, agentes=ag, seleccion=REGLAS).correr(noticias=ns, max_tareas=2)
+    assert [n["noticia_id"] for n in reg["noticias"]] == [ns[0]["id"], ns[1]["id"]]
+    assert all(n["resultado"] == "evaluada" for n in reg["noticias"]) and "seleccion" not in reg
 
 
 # =========================================================================== invariante 3 con texto releído

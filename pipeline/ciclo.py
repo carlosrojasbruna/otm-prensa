@@ -10,6 +10,11 @@ lo inventa. Por eso:
     → se elige el mejor candidato (el otro queda `archivada`) → iteración diseñador ↔ evaluador
     (máx. 3 evaluaciones; si no llega al umbral: `archivada` con diagnóstico).
     Cada tarea que alcanza el umbral queda en `evaluada`, pendiente de la revisión humana 1.
+    Selección (solo con el explorador): el filtro corre sobre TODAS las noticias aceptadas; las que pasan se
+    ordenan por puntaje del filtro (mayor primero; en empate, medio rotado por semana ISO, fecha más reciente y
+    orden del explorador) y se procesan en ese orden respetando `cuota_por_medio` y `cuotas_por_area` de MED01,
+    hasta juntar `--max-tareas`. El nivel rota S, P, U según las tareas ya logradas. Con `--noticia` no cambia
+    nada: las noticias del archivo se procesan en el orden dado.
 
   Tramo B (lo lanza quien hizo la revisión humana 1 de ESOS expedientes):
     python -m pipeline.ciclo --continuar ID [ID ...] --revisor "Nombre Apellido"
@@ -125,6 +130,41 @@ def version_med01() -> str:
 
     rutas = sorted((RAIZ / "insumos" / "medios").glob("MED01_*.yaml"), key=inv._version_de_archivo)
     return str(yaml.safe_load(rutas[-1].read_text(encoding="utf-8"))["version"])
+
+
+# MED01: BBC Mundo es el «mismo medio que `bbc`» y «cuenta como BBC a efectos de cuota por medio».
+MISMO_MEDIO = {"bbcmundo": "bbc"}
+
+
+def reglas_seleccion() -> dict:
+    """Cuotas y orden de medios de la MED01 vigente, para elegir entre las noticias que pasan el filtro."""
+    import yaml
+
+    rutas = sorted((RAIZ / "insumos" / "medios").glob("MED01_*.yaml"), key=inv._version_de_archivo)
+    med = yaml.safe_load(rutas[-1].read_text(encoding="utf-8"))
+    return {"version_med01": str(med["version"]), "cuota_por_medio": med.get("cuota_por_medio"),
+            "cuotas_por_area": dict(med.get("cuotas_por_area") or {}),
+            "medios": [m["id"] for m in med.get("medios", [])]}
+
+
+def orden_de_seleccion(noticias: list[dict], medios: list[str], n_semana: int) -> list[dict]:
+    """Noticias ya filtradas, en el orden en que el ciclo las procesa: puntaje del filtro (mayor primero); en
+    empate, el medio según el orden de MED01 rotado `n_semana` posiciones (así ningún medio gana siempre los
+    empates), luego la fecha más reciente y, al final, el orden en que las entregó el explorador."""
+    n_medios = max(len(medios), 1)
+
+    def clave(par):
+        i, n = par
+        try:
+            pos = (medios.index(n.get("medio_id")) - n_semana) % n_medios
+        except ValueError:          # medio fuera de MED01: al final de los empates
+            pos = n_medios
+        try:
+            dia = date.fromisoformat(str(n.get("fecha", ""))[:10]).toordinal()
+        except ValueError:
+            dia = 0
+        return (-int(n["filtro"]["total"]), pos, -dia, i)
+    return [n for _, n in sorted(enumerate(noticias), key=clave)]
 
 
 class TopeAlcanzado(Exception):
@@ -429,6 +469,8 @@ class Ciclo:
     # (solo en memoria, respetando robots.txt). La CLI lo activa; los tests no tocan la red.
     releer_noticia: bool = False
     leer_noticia: Callable[[str], str] | None = None
+    # Reglas de selección entre noticias filtradas (cuotas y orden de medios). None = MED01 vigente.
+    seleccion: dict | None = None
 
     def __post_init__(self):
         cfg = config()
@@ -644,14 +686,17 @@ class Ciclo:
                 f"no cumple: {'; '.join(r.errores) or 'umbral'}; criterios bajo 2: {bajos or 'ninguno'}")
 
     # ------------------------------------------------------------------ tramo A
-    def procesar_noticia(self, noticia: dict, nivel: str, *, filtrar: bool) -> orq.Expediente | None:
+    def procesar_noticia(self, noticia: dict, nivel: str, *, filtrar: bool,
+                         llamadas_filtro: list[dict] | None = None) -> orq.Expediente | None:
         """Noticia → (filtro) → 2 candidatos evaluados → mejor candidato iterado hasta el umbral o archivado.
-        Devuelve el expediente elegido (en `evaluada` si cumple, `archivada` si no) o None."""
+        Devuelve el expediente elegido (en `evaluada` si cumple, `archivada` si no) o None.
+        `llamadas_filtro`: el filtro ya corrió antes (selección por puntaje); su gasto se anota igual en los
+        expedientes de esta noticia (invariante 8)."""
         nid = noticia.get("id", "?")
         texto = self._texto(nid, noticia.get("url"))
         info = {"noticia_id": nid, "nivel": nivel, "resultado": None}
         self.registro["noticias"].append(info)
-        llam_filtro: list[dict] = []
+        llam_filtro: list[dict] = list(llamadas_filtro or [])
         if filtrar:
             r, llam_filtro = self._medir("filtro", self.agentes.filtrar, noticia, cliente=self.contador)
             noticia = r["noticia"]
@@ -673,7 +718,7 @@ class Ciclo:
                 self._textos[exp.tarea_id] = texto
             exps.append(self._guardar(exp))
         self._anotar_compartido(exps, "disenador", llam_dis)
-        if filtrar:
+        if filtrar or llamadas_filtro is not None:
             self._anotar_compartido(exps, "filtro", llam_filtro)
         info["candidatos"] = [e.tarea_id for e in exps]
         if not exps:
@@ -995,6 +1040,79 @@ class Ciclo:
         self._guardar(exp)
 
     # ------------------------------------------------------------------ órdenes
+    def _tramo_a_con_seleccion(self, noticias: list[dict], max_tareas: int, nivel: str | None) -> None:
+        """Tramo A con el explorador: filtra todas las aceptadas, las ordena con `orden_de_seleccion` y procesa
+        en ese orden las que caben en las cuotas de MED01, hasta `max_tareas` tareas en `evaluada`.
+        Una cuota se consume solo con una tarea lograda: si la noticia de un medio termina archivada, el
+        siguiente candidato de ese medio sigue disponible. Todo queda en `registro["noticias"]` y `["seleccion"]`."""
+        reglas = self.seleccion if self.seleccion is not None else reglas_seleccion()
+        cuota_medio = reglas.get("cuota_por_medio")
+        cuotas_area = reglas.get("cuotas_por_area") or {}
+
+        def ficha(n: dict) -> dict:
+            return {"medio_id": n.get("medio_id"), "area": n.get("area"), "filtro_total": n["filtro"]["total"]}
+
+        pasan: list[dict] = []
+        llamadas: dict[str, list[dict]] = {}
+        for noticia in noticias:
+            try:
+                r, llam = self._medir("filtro", self.agentes.filtrar, noticia, cliente=self.contador)
+            except TopeAlcanzado:
+                raise
+            except Exception as err:  # noqa: BLE001 — una noticia que falla en el filtro no detiene el ciclo
+                self.registro["errores"].append({"noticia_id": noticia.get("id"), "etapa": "filtro",
+                                                 "error": f"{type(err).__name__}: {err}"[:2000]})
+                continue
+            n = r["noticia"]
+            if not n["filtro"]["pasa"]:
+                self.registro["noticias"].append({"noticia_id": n.get("id", "?"), "nivel": None, **ficha(n),
+                                                  "resultado": f"no pasa el filtro ({n['filtro']['total']}/10)"})
+                continue
+            pasan.append(n)
+            llamadas[n.get("id", "?")] = llam
+        n_semana = int(self.semana.rsplit("W", 1)[1])
+        orden = orden_de_seleccion(pasan, list(reglas.get("medios") or []), n_semana)
+        por_medio: dict[str, int] = {}
+        por_area: dict[str, int] = {}
+        listas = 0
+        for puesto, n in enumerate(orden, start=1):
+            nid, area = n.get("id", "?"), n.get("area")
+            medio = MISMO_MEDIO.get(n.get("medio_id"), n.get("medio_id"))
+            motivo = None
+            if listas >= max_tareas:
+                motivo = f"no procesada: el ciclo ya juntó {max_tareas} tarea(s)"
+            elif cuota_medio is not None and por_medio.get(medio, 0) >= cuota_medio:
+                motivo = f"omitida: cuota por medio ({medio})"
+            elif area in cuotas_area and por_area.get(area, 0) >= cuotas_area[area]:
+                motivo = f"omitida: cuota por área ({area})"
+            if motivo:
+                self.registro["noticias"].append({"noticia_id": nid, "nivel": None, **ficha(n), "puesto": puesto,
+                                                  "resultado": motivo})
+                continue
+            niv = nivel or NIVELES_ROTACION[listas % len(NIVELES_ROTACION)]
+            antes = len(self.registro["noticias"])
+            try:
+                exp = self.procesar_noticia(n, niv, filtrar=False, llamadas_filtro=llamadas.get(nid, []))
+            except TopeAlcanzado:
+                raise
+            except Exception as err:  # noqa: BLE001 — la noticia falla; el ciclo sigue
+                self.registro["errores"].append({"noticia_id": nid, "etapa": "noticia",
+                                                 "error": f"{type(err).__name__}: {err}"[:2000]})
+                continue
+            finally:
+                for info in self.registro["noticias"][antes:]:
+                    info.update(ficha(n), puesto=puesto)
+            if exp is not None and exp.estado == "evaluada":
+                listas += 1
+                por_medio[medio] = por_medio.get(medio, 0) + 1
+                por_area[area] = por_area.get(area, 0) + 1
+        self.registro["seleccion"] = {
+            "criterio": "puntaje del filtro (mayor primero); empates: medio de MED01 rotado por semana ISO, "
+                        "fecha más reciente, orden del explorador",
+            "version_med01": reglas.get("version_med01"), "cuota_por_medio": cuota_medio,
+            "cuotas_por_area": cuotas_area, "filtradas": len(noticias), "pasan_el_filtro": len(pasan),
+            "tareas_por_medio": por_medio, "tareas_por_area": por_area}
+
     @_con_cierre_de_emergencia
     def correr(self, *, noticias: list[dict] | None = None, max_tareas: int = 3, nivel: str | None = None,
                filtrar: bool | None = None, textos: Mapping[str, str] | None = None) -> dict:
@@ -1011,6 +1129,9 @@ class Ciclo:
                 noticias = list(res.get("noticias", []))
                 self.registro["explorador"] = {"aceptadas": len(noticias), "descartadas": len(res.get("descartes", []))}
                 filtrar = True if filtrar is None else filtrar
+                if filtrar:   # origen explorador: filtro a todas, orden por puntaje y cuotas de MED01
+                    self._tramo_a_con_seleccion(noticias, max_tareas, nivel)
+                    return self._cerrar()
             filtrar = bool(filtrar)
             listas = 0
             for i, noticia in enumerate(noticias):
@@ -1287,6 +1408,11 @@ def _resumen(reg: dict) -> str:
         L.append(f"DETENIDO POR TOPE: {reg.get('motivo_detencion')}")
     for tid, est in reg["expedientes"].items():
         L.append(f"  {tid}: {est}")
+    sel = reg.get("seleccion")
+    if sel:
+        medios = ", ".join(f"{m} ({k})" for m, k in sel["tareas_por_medio"].items()) or "ninguno"
+        L.append(f"  selección: {sel['pasan_el_filtro']} de {sel['filtradas']} noticias pasan el filtro · "
+                 f"tareas por medio: {medios}")
     for p in reg["pendientes_humanos"]:
         extra = " · EVALUACIÓN INESTABLE (ver evaluacion_corridas.json)" if p.get("evaluacion_inestable") else ""
         L.append(f"  pendiente {p['pendiente']}: {p['tarea_id']}{extra}")

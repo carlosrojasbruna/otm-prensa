@@ -341,3 +341,17 @@ Encargo de Carlos Rojas Bruna, tras su revisión humana 1 positiva de los tres e
   - **No se tocó:** `noticia.cifras[23]` (58.455, también decimal; la tarea no la usa) ni la `fuente` de los recursos R1–R4, que cita los párrafos 8 y 11 donde los localizadores corregidos por la preverificación dicen 7 y 10.
   - **Observaciones del ciclo:** `npr` y `cbsnews` verificados `ok` desde Actions; 4 medios sin acceso (emol, cnnchile, canal13, reuters). Las 4 noticias procesadas fueron de La Tercera: el ciclo recorre las aceptadas en el orden de MED01 y se detiene al juntar `max_tareas`. Carlos pidió cambiarlo (orden por puntaje del filtro y cuota por medio): va en un PR aparte.
   - **Pendiente:** que el explorador no emita como decimal una cifra con punto de miles.
+
+- 2026-11-17 · Claude (encargo de Carlos) · **Tramo A: las noticias se eligen por puntaje del filtro y con las cuotas de MED01** (`pipeline/ciclo.py`).
+  - **Problema:** el ciclo recorría las noticias aceptadas en el orden de MED01 y se detenía al juntar `max_tareas`. Como La Tercera va primero, las 3 tareas `evaluada` del segundo ciclo W46 y las 4 noticias procesadas del ciclo W47 fueron de La Tercera, con 14 medios `ok` y 44 noticias aceptadas. `cuota_por_medio` y `cuotas_por_area` estaban declaradas en MED01 y sin implementar.
+  - **Decisión de Carlos (opción 1 de tres):** pasar el filtro a todas las aceptadas, ordenarlas por puntaje y elegir con un máximo de una tarea por medio.
+  - **Implementación:** solo cuando el origen es el explorador. `orden_de_seleccion`: puntaje del filtro (mayor primero); empates por medio en el orden de MED01 rotado por semana ISO, luego fecha más reciente, luego orden del explorador. `_tramo_a_con_seleccion` procesa en ese orden hasta `max_tareas` tareas en `evaluada` y se salta lo que exceda las cuotas, leídas de la MED01 vigente (`reglas_seleccion`). El gasto del filtro se sigue anotando en los expedientes (invariante 8). El registro del ciclo gana, por noticia, `medio_id`, `area`, `filtro_total` y `puesto`, y un bloque `seleccion`.
+  - **Lecturas de Claude (Carlos puede cambiarlas):**
+    - Se aplica también `cuotas_por_area` (1 por área): Carlos aprobó la cuota por medio; la de área está en la misma MED01 y la noticia ya trae `area`. Para quitarla basta dejar `cuotas_por_area` vacío en una MED01 nueva o borrar una rama del `if`.
+    - Una cuota se consume solo con una tarea lograda (`evaluada`), no con una noticia que termina archivada.
+    - BBC Mundo cuenta como BBC (nota de MED01), con la constante `MISMO_MEDIO`; MED01 no tiene un campo para eso.
+    - El nivel rota S, P, U por tarea lograda. Antes rotaba por posición en la lista del explorador, que ya no significa nada.
+    - El desempate por medio rota con la semana para que ningún medio gane siempre los empates, que serán frecuentes: el puntaje del filtro es un entero de 0 a 10.
+  - **Costo y tiempo:** una llamada de filtro por noticia aceptada. En el ciclo W47 cada una costó menos de 0,001 USD y tardó unos 3 s: con 44 noticias, centavos y 2 a 3 minutos más. No se probó contra la API: los tests usan explorador y filtro falsos.
+  - **Sin cambio:** `--noticia` (archivo) procesa en el orden dado, sin cuotas; contratos, explorador, filtro y MED01 no se tocan.
+  - **Pendiente:** que el explorador no emita como decimal una cifra con punto de miles (2.322, 6.365, 1.502).
