@@ -1,0 +1,238 @@
+{
+  "ciclo_id": "ciclo_20261117T123944705113Z",
+  "inicio": "2026-11-17T12:39:44Z",
+  "fin": "2026-11-17T12:51:19Z",
+  "semana": "2026-W47",
+  "parametros": {
+    "tope_semanal_usd": 35.0,
+    "fraccion_detencion": 0.9,
+    "presupuesto_ciclo_usd": null,
+    "limite_usd": 31.5,
+    "gasto_semana_previo_usd": 5.054269,
+    "corridas_evaluador": 3,
+    "rango_inestable": 4,
+    "corridas_simulador": 6,
+    "ids": [
+      "2026-11-alertas-reconocimiento-facial",
+      "2026-11-carceles-mas-seguras-o-peligrosas"
+    ],
+    "revisor": "Carlos Rojas Bruna",
+    "aceptar_hallazgos": false
+  },
+  "detenido_por_tope": false,
+  "eventos": [
+    {
+      "fecha": "2026-11-17T12:39:47Z",
+      "tipo": "preverificacion",
+      "tarea_id": "2026-11-alertas-reconocimiento-facial",
+      "aprobado": true,
+      "criticos": 0,
+      "pendientes": 0,
+      "localizadores_corregidos": 0
+    },
+    {
+      "fecha": "2026-11-17T12:39:49Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-alertas-reconocimiento-facial",
+      "de": "evaluada",
+      "a": "revisada"
+    },
+    {
+      "fecha": "2026-11-17T12:39:51Z",
+      "tipo": "preverificacion",
+      "tarea_id": "2026-11-alertas-reconocimiento-facial",
+      "aprobado": true,
+      "criticos": 0,
+      "pendientes": 0,
+      "localizadores_corregidos": 0
+    },
+    {
+      "fecha": "2026-11-17T12:42:15Z",
+      "tipo": "agente",
+      "agente": "simulador",
+      "tareas": [
+        "2026-11-alertas-reconocimiento-facial"
+      ],
+      "llamadas": 96,
+      "usd": 0.827484
+    },
+    {
+      "fecha": "2026-11-17T12:42:19Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-alertas-reconocimiento-facial",
+      "de": "revisada",
+      "a": "simulada"
+    },
+    {
+      "fecha": "2026-11-17T12:44:23Z",
+      "tipo": "agente",
+      "agente": "redactor",
+      "tareas": [
+        "2026-11-alertas-reconocimiento-facial"
+      ],
+      "llamadas": 3,
+      "usd": 0.324353
+    },
+    {
+      "fecha": "2026-11-17T12:44:32Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-alertas-reconocimiento-facial",
+      "de": "simulada",
+      "a": "con_guia"
+    },
+    {
+      "fecha": "2026-11-17T12:44:38Z",
+      "tipo": "agente",
+      "agente": "ilustrador",
+      "tareas": [
+        "2026-11-alertas-reconocimiento-facial"
+      ],
+      "llamadas": 1,
+      "usd": 0.015104
+    },
+    {
+      "fecha": "2026-11-17T12:45:05Z",
+      "tipo": "agente",
+      "agente": "verificador",
+      "tareas": [
+        "2026-11-alertas-reconocimiento-facial"
+      ],
+      "llamadas": 1,
+      "usd": 0.118584
+    },
+    {
+      "fecha": "2026-11-17T12:45:13Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-alertas-reconocimiento-facial",
+      "de": "con_guia",
+      "a": "verificada"
+    },
+    {
+      "fecha": "2026-11-17T12:45:27Z",
+      "tipo": "bibliotecario_dry_run",
+      "tarea_id": "2026-11-alertas-reconocimiento-facial",
+      "ok": true,
+      "ruta": "tareas/2026-11/alertas-reconocimiento-facial/",
+      "rama": "tareas/semana-2026-W47"
+    },
+    {
+      "fecha": "2026-11-17T12:45:30Z",
+      "tipo": "preverificacion",
+      "tarea_id": "2026-11-carceles-mas-seguras-o-peligrosas",
+      "aprobado": true,
+      "criticos": 0,
+      "pendientes": 0,
+      "localizadores_corregidos": 0
+    },
+    {
+      "fecha": "2026-11-17T12:45:33Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-carceles-mas-seguras-o-peligrosas",
+      "de": "evaluada",
+      "a": "revisada"
+    },
+    {
+      "fecha": "2026-11-17T12:45:36Z",
+      "tipo": "preverificacion",
+      "tarea_id": "2026-11-carceles-mas-seguras-o-peligrosas",
+      "aprobado": true,
+      "criticos": 0,
+      "pendientes": 0,
+      "localizadores_corregidos": 0
+    },
+    {
+      "fecha": "2026-11-17T12:47:53Z",
+      "tipo": "agente",
+      "agente": "simulador",
+      "tareas": [
+        "2026-11-carceles-mas-seguras-o-peligrosas"
+      ],
+      "llamadas": 85,
+      "usd": 0.716797
+    },
+    {
+      "fecha": "2026-11-17T12:47:56Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-carceles-mas-seguras-o-peligrosas",
+      "de": "revisada",
+      "a": "simulada"
+    },
+    {
+      "fecha": "2026-11-17T12:50:08Z",
+      "tipo": "agente",
+      "agente": "redactor",
+      "tareas": [
+        "2026-11-carceles-mas-seguras-o-peligrosas"
+      ],
+      "llamadas": 3,
+      "usd": 0.345077
+    },
+    {
+      "fecha": "2026-11-17T12:50:16Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-carceles-mas-seguras-o-peligrosas",
+      "de": "simulada",
+      "a": "con_guia"
+    },
+    {
+      "fecha": "2026-11-17T12:50:22Z",
+      "tipo": "agente",
+      "agente": "ilustrador",
+      "tareas": [
+        "2026-11-carceles-mas-seguras-o-peligrosas"
+      ],
+      "llamadas": 1,
+      "usd": 0.013786
+    },
+    {
+      "fecha": "2026-11-17T12:50:58Z",
+      "tipo": "agente",
+      "agente": "verificador",
+      "tareas": [
+        "2026-11-carceles-mas-seguras-o-peligrosas"
+      ],
+      "llamadas": 1,
+      "usd": 0.147872
+    },
+    {
+      "fecha": "2026-11-17T12:51:05Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-carceles-mas-seguras-o-peligrosas",
+      "de": "con_guia",
+      "a": "verificada"
+    },
+    {
+      "fecha": "2026-11-17T12:51:19Z",
+      "tipo": "bibliotecario_dry_run",
+      "tarea_id": "2026-11-carceles-mas-seguras-o-peligrosas",
+      "ok": true,
+      "ruta": "tareas/2026-11/carceles-mas-seguras-o-peligrosas/",
+      "rama": "tareas/semana-2026-W47"
+    }
+  ],
+  "expedientes": {
+    "2026-11-alertas-reconocimiento-facial": "verificada",
+    "2026-11-carceles-mas-seguras-o-peligrosas": "verificada"
+  },
+  "noticias": [],
+  "pendientes_humanos": [
+    {
+      "tarea_id": "2026-11-alertas-reconocimiento-facial",
+      "pendiente": "revision_humana_2",
+      "estado": "verificada"
+    },
+    {
+      "tarea_id": "2026-11-carceles-mas-seguras-o-peligrosas",
+      "pendiente": "revision_humana_2",
+      "estado": "verificada"
+    }
+  ],
+  "errores": [],
+  "orden": "tramo_b",
+  "gasto": {
+    "ciclo_usd": 2.509057,
+    "semana_usd": 7.563326,
+    "limite_usd": 31.5,
+    "llamadas": 191
+  }
+}

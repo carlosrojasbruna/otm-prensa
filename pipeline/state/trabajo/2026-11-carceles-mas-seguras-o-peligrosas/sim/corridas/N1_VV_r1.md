@@ -1,0 +1,24 @@
+# Corrida N1_VV_r1
+
+Nivel N1 · estilos V/V · rep 1 · 20 turnos · término: acuerdo · modelo claude-sonnet-5-5
+
+**1. Cami:** Mmm, a ver, yo me imagino una cárcel y... los homicidios bajaron de 56 a 27, o sea casi a la mitad, pero las amenazas subieron un montón, de 62 a 548. ¿Cuál cuenta más para decir si es más segura o no?  
+**2. Fran:** Yo me imagino la cárcel como un edificio con gente adentro, y morir es lo peor que te puede pasar, así que quizás pesa más que bajaron los homicidios. Pero igual 548 amenazas es un montón de gente asustada, ¿no?  
+**3. Cami:** Yo igual me las imagino como dos cosas distintas: una te mata y la otra te asusta, pero vivir con miedo todos los días tampoco es seguro. ¿Y si preguntamos cuánta gente había presa en cada año? Porque si ahora hay mucha más, los números cambian.  
+**4. Fran:** Sí, buena idea, porque no es lo mismo 27 homicidios en una cárcel llena que en una vacía. [dibujo: dos edificios, uno con pocas personitas y otro con muchas] ¿Cómo haríamos para compararlos, dividimos por la cantidad de presos?  
+**5. Cami:** Sí, creo que dividir, porque así sale cuántos casos hay por cada preso, o algo así. [dibujo: una fila de puntitos que son presos y al lado cuántos tienen una cruz] Pero no sé si da con decimales chiquititos, ¿y si mejor lo hacemos por cada mil presos?  
+**6. Fran:** Ya, por cada mil suena mejor, así los números no quedan tan chiquititos. Pero no tenemos cuántos presos había en cada año, ¿se lo pedimos a la profe o inventamos un número para probar?  
+**7. Cami:** Mejor se lo pedimos a la profe, porque si inventamos puede salir cualquier cosa. Pero mientras, podemos probar con un número inventado, tipo 40.000 presos en los dos años, para ver si cambia algo. [dibujo: dos edificios iguales de llenos, uno con 56 cruces y otro con 27]  
+**8. Fran:** Ya, si son 40.000 y lo queremos por cada mil, ¿sería dividir 56 ÷ 40? Me da 1,4 en el primer año y 27 ÷ 40 = 0,675 en el último, pero no sé si esa cuenta está bien.  
+**9. Cami:** Yo creo que sí está bien, porque 40.000 presos son 40 grupos de mil, y 56 cruces repartidas en 40 grupos da un poquito más de una por grupo, o sea 1,4. [dibujo: 40 cajitas con una cruz cada una y sobran unas pocas] ¿Hacemos lo mismo con las amenazas, 62 ÷ 40 y 548 ÷ 40?  
+**10. Fran:** Ya, hago las cuentas: 62 ÷ 40 = 1,55 y 548 ÷ 40 = 13,7. [dibujo: 40 cajitas, en la primera tanda con poquitas burbujas y en la última casi 14 burbujas por caja] O sea que las amenazas se multiplican casi por 9, ¿no?  
+**11. Cami:** Sí, casi 9 veces: 9 × 62 = 558, que está cerquita de 548. Pero fíjate que como usamos 40.000 en los dos años, da lo mismo que dividir, así que igual necesitamos los presos reales de la profe.  
+**12. Fran:** Claro, si son 40.000 en los dos años, es como si no hubiera cambiado nada, y los homicidios igual bajan a la mitad y las amenazas se multiplican por 9. ¿Y si probamos con otro número en el último año, tipo 60.000, para ver si cambia la conclusión?  
+**13. Cami:** Ya, con 60.000 son 60 grupos de mil: 27 ÷ 60 = 0,45 y 548 ÷ 60 = 9,13. Los homicidios bajan más, pero las amenazas igual suben, de 1,55 a 9,13. ¿Entonces da lo mismo cuántos presos haya?  
+**14. Fran:** Mmm, yo creo que sí importa, porque si hubiera como 9 veces más presos, las amenazas por cada mil quedarían parecidas. [dibujo: un edificio gigante con 9 pisos llenos de personitas] Pero 9 veces más gente me parece demasiado, ¿no?  
+**15. Cami:** Sí, 9 veces más presos me parece harto, así que igual creo que las amenazas subieron aunque haya más gente. [dibujo: un edificio apenas más grande, con muchas más burbujas de diálogo] ¿Pero y si ahora solo se denuncian más y por eso salen 548? Eso también habría que preguntárselo a la profe.  
+**16. Fran:** Ah, no había pensado eso: a lo mejor antes nadie se atrevía a avisar y por eso eran solo 62. [dibujo: una burbuja chica tapada con la mano en el primer año y muchas burbujas sueltas en el último] Entonces le pedimos a la profe los presos de cada año y si cambió la forma de anotar las amenazas, ¿ya?  
+**17. Cami:** Ya, se lo pedimos. Y mientras tanto, ¿qué ponemos en la nota si la profe no sabe? Yo diría que los homicidios bajaron, pero que no podemos asegurar que sea más seguro porque las amenazas subieron harto.  
+**18. Fran:** Ya, como la balanza del dibujo: un lado bajó y el otro subió, así que no podemos decir que sea claramente más segura. ¿Lo escribimos así y aclaramos que faltan los presos de cada año y cómo anotaban las amenazas?  
+**19. Cami:** ENTREGAMOS: Los homicidios bajaron (56 a 27) pero las amenazas subieron (62 a 548), así que no podemos decir que sea más segura ni más peligrosa; faltan los presos de cada año y saber si cambió cómo se anotan las amenazas. ¿Te parece?  
+**20. Fran:** DE ACUERDO. Igual podríamos agregar que, aunque no sepamos todo, los homicidios bajaron casi a la mitad y las amenazas subieron casi 9 veces, para que se vea bien la diferencia.  

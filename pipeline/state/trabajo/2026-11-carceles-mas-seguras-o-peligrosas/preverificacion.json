@@ -2,36 +2,7 @@
   "tarea_id": "2026-11-carceles-mas-seguras-o-peligrosas",
   "aprobado": true,
   "alcance": "tarea",
-  "hallazgos": [
-    {
-      "invariante": "semantica",
-      "severidad": "advertencia",
-      "ubicacion": "tarea.estudiante.recursos_a_solicitud[R2]",
-      "descripcion": "no se pudo contrastar con el texto: el ciclo no entregó `texto_noticia`; la afirmación del recurso solo se juzgó contra título, resumen y cifras",
-      "origen": "codigo"
-    },
-    {
-      "invariante": "semantica",
-      "severidad": "advertencia",
-      "ubicacion": "tarea.estudiante.recursos_a_solicitud[R3]",
-      "descripcion": "no se pudo contrastar con el texto: el ciclo no entregó `texto_noticia`; la afirmación del recurso solo se juzgó contra título, resumen y cifras",
-      "origen": "codigo"
-    },
-    {
-      "invariante": "semantica",
-      "severidad": "advertencia",
-      "ubicacion": "tarea.estudiante.recursos_a_solicitud[R4]",
-      "descripcion": "no se pudo contrastar con el texto: el ciclo no entregó `texto_noticia`; la afirmación del recurso solo se juzgó contra título, resumen y cifras",
-      "origen": "codigo"
-    },
-    {
-      "invariante": "semantica",
-      "severidad": "advertencia",
-      "ubicacion": "tarea.recursos_de_entrada[R1]",
-      "descripcion": "no se pudo contrastar con el texto: el ciclo no entregó `texto_noticia`; la afirmación del recurso solo se juzgó contra título, resumen y cifras",
-      "origen": "codigo"
-    }
-  ],
+  "hallazgos": [],
   "cifras_contrastadas": [
     {
       "indice": 0,
@@ -44,7 +15,7 @@
       "metodo": "codigo",
       "valor_fuente": 27,
       "resultado": "coincide",
-      "nota": "valor igual al de la noticia"
+      "nota": "valor presente en el párrafo 3 de la noticia"
     },
     {
       "indice": 1,
@@ -57,7 +28,7 @@
       "metodo": "codigo",
       "valor_fuente": 491,
       "resultado": "coincide",
-      "nota": "valor igual al de la noticia"
+      "nota": "valor presente en el párrafo 4 de la noticia"
     },
     {
       "indice": 2,
@@ -70,7 +41,7 @@
       "metodo": "codigo",
       "valor_fuente": 56,
       "resultado": "coincide",
-      "nota": "valor igual al de la noticia"
+      "nota": "valor presente en el párrafo 4 de la noticia"
     },
     {
       "indice": 3,
@@ -83,7 +54,7 @@
       "metodo": "codigo",
       "valor_fuente": 61,
       "resultado": "coincide",
-      "nota": "valor igual al de la noticia"
+      "nota": "valor presente en el párrafo 4 de la noticia"
     },
     {
       "indice": 4,
@@ -96,7 +67,7 @@
       "metodo": "codigo",
       "valor_fuente": 48,
       "resultado": "coincide",
-      "nota": "valor igual al de la noticia"
+      "nota": "valor presente en el párrafo 4 de la noticia"
     },
     {
       "indice": 5,
@@ -109,7 +80,7 @@
       "metodo": "codigo",
       "valor_fuente": "2.322",
       "resultado": "coincide",
-      "nota": "valor igual al de la noticia"
+      "nota": "valor presente en el párrafo 7 de la noticia"
     },
     {
       "indice": 6,
@@ -122,7 +93,7 @@
       "metodo": "codigo",
       "valor_fuente": 62,
       "resultado": "coincide",
-      "nota": "valor igual al de la noticia"
+      "nota": "valor presente en el párrafo 7 de la noticia"
     },
     {
       "indice": 7,
@@ -135,7 +106,7 @@
       "metodo": "codigo",
       "valor_fuente": 235,
       "resultado": "coincide",
-      "nota": "valor igual al de la noticia"
+      "nota": "valor presente en el párrafo 7 de la noticia"
     },
     {
       "indice": 8,
@@ -148,7 +119,7 @@
       "metodo": "codigo",
       "valor_fuente": 548,
       "resultado": "coincide",
-      "nota": "valor igual al de la noticia"
+      "nota": "valor presente en el párrafo 7 de la noticia"
     },
     {
       "indice": 9,
@@ -161,7 +132,7 @@
       "metodo": "codigo",
       "valor_fuente": "6.365",
       "resultado": "coincide",
-      "nota": "valor igual al de la noticia"
+      "nota": "valor presente en el párrafo 10 de la noticia"
     },
     {
       "indice": 10,
@@ -174,7 +145,7 @@
       "metodo": "codigo",
       "valor_fuente": "9,3%",
       "resultado": "coincide",
-      "nota": "valor igual al de la noticia"
+      "nota": "valor presente en el párrafo 10 de la noticia"
     }
   ],
   "meta": {
@@ -182,9 +153,8 @@
     "version_prompt": "1.1",
     "modelo_llamado": false,
     "costo_usd": 0.0,
-    "texto_noticia_recibido": false,
-    "fecha": "2026-11-17T12:29:33+00:00",
-    "nota": "solo código y sin el texto de la noticia (corrección manual; La Tercera no se puede leer desde el entorno de Claude). El tramo B vuelve a preverificar con el texto."
+    "texto_noticia_recibido": true,
+    "fecha": "2026-11-17T12:45:36+00:00"
   },
   "localizadores_corregidos": {}
 }

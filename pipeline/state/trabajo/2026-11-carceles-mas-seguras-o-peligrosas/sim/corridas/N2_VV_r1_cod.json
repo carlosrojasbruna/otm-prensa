@@ -1,0 +1,132 @@
+{
+  "run": {
+    "id": "N2_VV_r1",
+    "nivel": "N2",
+    "composicion": "VV",
+    "rep": 1,
+    "estilos": [
+      "V",
+      "V"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.056884,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 2,
+        "fase": "P2-RM",
+        "fase_secundaria": "EMK",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P2-RM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P4-WM",
+        "fase_secundaria": "EMK",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P2-RM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "STRAT",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 6,
+        "fase": "P3-MM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P2-RM",
+        "fase_secundaria": "EMK",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 8,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 9,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 10,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P7-EXP",
+        "eventos": []
+      },
+      {
+        "n": 11,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 12,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      }
+    ],
+    "bloqueos": [
+      {
+        "codigo": "B23",
+        "turnos": [
+          7,
+          8,
+          9,
+          10
+        ],
+        "resolucion": "unresolved",
+        "descripcion": "El par no logra fijar cuánto pesa un homicidio frente a una amenaza. B obtiene unas 17 amenazas por cada muerte menos, pero A objeta que no sabe si una muerte vale eso. B lo acepta ('peras con manzanas') y ambos abandonan la ponderación sin construir un índice."
+      }
+    ],
+    "supuestos": [
+      "la población de internos puede haber cambiado (comparar por cada 1000 presos)",
+      "la forma de denunciar o registrar puede haber cambiado",
+      "un homicidio es mucho más grave que una amenaza"
+    ],
+    "modelo": "comparación por indicador",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "No podemos decir \"más segura\" ni \"más peligrosa\" a secas: los homicidios bajaron de 56 a 27, pero las amenazas subieron de 62 a 548, así que cambió el tipo de peligro. Para decidir falta saber cuántos presos había cada año y si cambió la forma de registrar, y con eso comparar casos por cada 1000 presos."
+    },
+    "ruta_principal": "R1",
+    "rutas": [
+      "R1",
+      "R2"
+    ]
+  }
+}
