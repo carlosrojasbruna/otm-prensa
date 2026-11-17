@@ -142,11 +142,19 @@ def cifra_verificada(valor: str, parrafos: list[str], n: int) -> bool:
     return bool(vn) and vn <= _nums(parrafos[n - 1])
 
 
-def _valor(v: str):
+_MILES_CON_PUNTO = re.compile(r"-?[1-9]\d{0,2}(\.\d{3})+")
+
+
+def _valor(v: str, idioma: str = "es"):
+    """Valor de una cifra: número si es un entero o un decimal puro; si no, la cadena tal como aparece.
+    En un medio en español «2.322» son dos mil trescientos veintidós, no 2,322: se conserva como cadena
+    (los lectores de cifras del pipeline leen «2.322» como 2322). En inglés el punto es decimal."""
     s = v.strip()
     if re.fullmatch(r"-?\d+", s):
         return int(s)
     if re.fullmatch(r"-?\d+\.\d+", s):
+        if idioma != "en" and _MILES_CON_PUNTO.fullmatch(s):
+            return s
         return float(s)
     return s
 
@@ -472,7 +480,7 @@ def explorar_noticia(c: dict, *, cliente=None, ahora: datetime | None = None, ba
         cifras = []
         for ci in s["cifras"]:
             if cifra_verificada(ci["valor"], parrafos, ci["parrafo"]) and ci["que_es"].strip():
-                cifras.append({"valor": _valor(ci["valor"]), "unidad": ci["unidad"].strip(),
+                cifras.append({"valor": _valor(ci["valor"], c.get("idioma", "es")), "unidad": ci["unidad"].strip(),
                                "que_es": ci["que_es"].strip()[:200],
                                "localizador": {"fuente": "noticia", "ubicacion": f"párrafo {ci['parrafo']}"}})
         if not cifras:
