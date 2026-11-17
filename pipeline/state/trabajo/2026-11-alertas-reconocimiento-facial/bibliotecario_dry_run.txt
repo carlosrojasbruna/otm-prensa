@@ -1,0 +1,29 @@
+# DRY-RUN: no se escribe ningún archivo ni se ejecuta ningún comando
+# tarea 2026-11-alertas-reconocimiento-facial v1 -> tareas/2026-11/alertas-reconocimiento-facial/
+#   escribiría tareas/2026-11/alertas-reconocimiento-facial/tarea_v1.0_2026-11-17.json
+#   escribiría tareas/2026-11/alertas-reconocimiento-facial/tarea_v1.0_2026-11-17.md
+#   escribiría tareas/2026-11/alertas-reconocimiento-facial/guia_v1.0_2026-11-17.json
+#   escribiría tareas/2026-11/alertas-reconocimiento-facial/guia_v1.0_2026-11-17.md
+#   escribiría tareas/2026-11/alertas-reconocimiento-facial/evaluacion_v1.0_2026-11-17.json
+#   escribiría tareas/2026-11/alertas-reconocimiento-facial/trazas_v1.0_2026-11-17.json
+#   actualizaría tareas/catalogo.json (14 tarea(s); valida contra `catalogo`)
+#   el commit del catálogo es el real tras el primer commit (aquí 0000000)
+$ git switch -c tareas/semana-2026-W47
+$ git add -- tareas/2026-11/alertas-reconocimiento-facial/
+$ git commit -m 'tareas: publica 2026-11-alertas-reconocimiento-facial v1'
+$ git add -- tareas/catalogo.json
+$ git commit -m 'tareas: catálogo: 2026-11-alertas-reconocimiento-facial v1'
+$ git push -u origin tareas/semana-2026-W47
+$ gh pr create --base main --head tareas/semana-2026-W47 --title 'Tareas de la semana 2026-W47' --body '<cuerpo del PR, ver abajo>'
+# cuerpo del PR:
+#   ## Tareas incluidas
+#   
+#   - `2026-11-alertas-reconocimiento-facial` v1 · nivel U · RUB01 24/24
+#     - Noticia: La Tercera, «Cómo Israel cargó 3,5 millones de fotografías en plataforma de Amazon para rastrear a palestinos», 2026-11-16, https://www.latercera.com/mundo/noticia/como-israel-cargo-35-millones-de-fotografias-en-plataforma-de-amazon-para-rastrear-a-palestinos/
+#   
+#   ## Revisión (GOB01 §2)
+#   - [ ] Quien revisó la guía aprueba el merge.
+#   - [ ] Cifras con localizador; ningún texto literal de noticia > 25 palabras.
+#   - [ ] Productos bajo CC BY-NC-SA 4.0.
+#   
+#   Generado por el agente bibliotecario (script determinista).

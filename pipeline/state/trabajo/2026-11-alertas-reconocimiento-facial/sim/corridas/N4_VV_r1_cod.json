@@ -1,0 +1,101 @@
+{
+  "run": {
+    "id": "N4_VV_r1",
+    "nivel": "N4",
+    "composicion": "VV",
+    "rep": 1,
+    "estilos": [
+      "V",
+      "V"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.049108,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P2-RM",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P2-RM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P4-WM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P5-INT",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 6,
+        "fase": "P6-VAL",
+        "fase_secundaria": "EMK",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 8,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      }
+    ],
+    "bloqueos": [],
+    "supuestos": [
+      "10.000 personas pasan por día",
+      "1 persona buscada cada 10.000",
+      "error del 1% en el primer escenario",
+      "tasa de falsa coincidencia de 1e-6 por comparación",
+      "cada cara se compara con los 3,5 millones de imágenes",
+      "las falsas coincidencias se acumulan con el número de comparaciones",
+      "el error puede ser mayor según la calidad de la foto o el grupo de personas"
+    ],
+    "modelo": "proporcional (conteo esperado)",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Una alerta sola es poco confiable: con 1e-6 de error por comparación salen unos 3,5 falsos candidatos por persona, o sea ~35.000 falsas alertas al día con 10.000 personas, y más si la foto es mala. Solo la tomaríamos en serio con umbral alto, lista chica, tasas de error conocidas y otra evidencia, siempre como pista y no como prueba."
+    },
+    "ruta_principal": "R1",
+    "rutas": [
+      "R1"
+    ]
+  }
+}

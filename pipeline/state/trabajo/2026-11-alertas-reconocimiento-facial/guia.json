@@ -1,0 +1,428 @@
+{
+  "tarea_id": "2026-11-alertas-reconocimiento-facial",
+  "version": 1,
+  "fecha": "2026-11-17",
+  "ficha": {
+    "titulo": "¿Cuánto creerle a una alerta de reconocimiento facial?",
+    "noticia": {
+      "medio": "La Tercera",
+      "titulo": "Cómo Israel cargó 3,5 millones de fotografías en plataforma de Amazon para rastrear a palestinos",
+      "fecha": "2026-11-16",
+      "url": "https://www.latercera.com/mundo/noticia/como-israel-cargo-35-millones-de-fotografias-en-plataforma-de-amazon-para-rastrear-a-palestinos/"
+    },
+    "nivel_principal": "U",
+    "variantes": [
+      "S"
+    ],
+    "contenidos": [
+      "probabilidad condicional y teorema de Bayes",
+      "distribución binomial y aproximación de Poisson",
+      "tasas de error y curvas ROC",
+      "análisis de sensibilidad",
+      "órdenes de magnitud"
+    ],
+    "tiempo": "2 sesiones de 90 min",
+    "puntaje_rub01": 24,
+    "version": 1,
+    "fecha": "2026-11-17",
+    "cambios": "rev. 1 de la guía: correcciones de texto de la revisión humana 2 (Carlos Rojas Bruna): alcance de la ruta R1 en E2 y redacción de las variantes"
+  },
+  "meta": {
+    "que_observar": "Cómo el grupo define qué significa que una alerta de reconocimiento facial sea confiable y si lo distingue de la exactitud declarada del sistema. También se observa cómo decide, justifica y varía sus supuestos (comparaciones por persona, tasa de falsa coincidencia, proporción de personas buscadas, sensibilidad), y si contrasta sus rangos con una referencia externa antes de recomendar.",
+    "contenido": "Probabilidad condicional y teorema de Bayes, distribución binomial y aproximación de Poisson, tasas de error y curvas ROC, análisis de sensibilidad y órdenes de magnitud, aplicados a las alertas de un puesto de control que compara cada rostro con una base del tamaño de la colección de 3,5 millones de imágenes.",
+    "subcompetencias": [
+      "Comprender la situación y precisar qué significa confiable (P1-MRS)",
+      "Simplificar y justificar supuestos con rangos cuando no hay cifras (P2-RM)",
+      "Matematizar la falsa coincidencia entre muchas comparaciones y la probabilidad condicional de que una alerta sea acierto (P3-MM)",
+      "Calcular para varios valores de los parámetros con aproximaciones o software (P4-WM)",
+      "Interpretar resultados en contexto y formular condiciones para confiar (P5-INT)",
+      "Validar contrastando con evaluaciones independientes y discutir los límites del modelo (P6-VAL)",
+      "Comunicar una recomendación con rangos y advertencias (P7-EXP)"
+    ],
+    "meta_social": "Trabajo cooperativo en el que el grupo argumenta sus rangos ante sus pares y ante el curso, y asesora a ciudadanos como lo haría una organización de derechos digitales: la recomendación debe poder defenderse con sus supuestos a la vista.",
+    "evidencia": [
+      "Reformulación escrita de la pregunta y lista de la información que piden (P1-MRS)",
+      "Hoja de supuestos con valores o rangos justificados (P2-RM)",
+      "Expresiones con símbolos definidos para tasa de error, número de comparaciones y tasa base (P3-MM)",
+      "Tabla o gráfico de la confiabilidad de la alerta según los parámetros (P4-WM)",
+      "Frases en contexto sobre qué condiciones harían razonable confiar en una alerta (P5-INT)",
+      "Comparación explícita entre sus rangos y la referencia externa, con los supuestos ajustados (P6-VAL)",
+      "Informe breve o presentación con recomendación, supuestos y sensibilidad (P7-EXP)"
+    ]
+  },
+  "analisis_a_priori": {
+    "rutas": [
+      {
+        "id": "R1",
+        "nombre": "Estimación por órdenes de magnitud",
+        "nivel": "S",
+        "modelo": "Falsas alertas esperadas = (personas que pasan) × N × f, comparando con el número esperado de personas realmente buscadas."
+      },
+      {
+        "id": "R2",
+        "nombre": "Probabilidad de al menos una falsa coincidencia",
+        "nivel": "S2",
+        "modelo": "q = 1-(1-f)^N con aproximación de Poisson 1-exp(-N f); tabla según f."
+      },
+      {
+        "id": "R3",
+        "nombre": "Teorema de Bayes con tasa base",
+        "nivel": "U",
+        "modelo": "VPP = s·pi / (s·pi + (1-pi)·q), con análisis de sensibilidad en pi, q y s."
+      },
+      {
+        "id": "R4",
+        "nombre": "Modelo de umbral con distribuciones de puntajes",
+        "nivel": "U",
+        "modelo": "Puntajes de similitud con distribuciones para pares iguales y distintos; el umbral fija f y s (curva ROC); se optimiza el umbral con costos asimétricos de error."
+      }
+    ],
+    "modelo_inadecuado": {
+      "id": "RX",
+      "por_que_falla": "Tomar la exactitud alta declarada de un sistema como la probabilidad de que una alerta sea correcta: confunde sensibilidad o exactitud global con valor predictivo, ignora la tasa base y que cada persona se compara con millones de imágenes."
+    },
+    "solucion_referencia": "1) Sea N el número de comparaciones por persona (como máximo 3,5 millones si cada imagen cuenta como una identidad) y f la probabilidad de falsa coincidencia por comparación. 2) Probabilidad de falsa alerta para una persona no buscada: q = 1-(1-f)^N, aproximadamente 1-exp(-N f). 3) Sea pi la proporción de personas buscadas entre quienes pasan y s la sensibilidad. 4) Valor predictivo de la alerta (Bayes): VPP = s·pi / (s·pi + (1-pi)·q). 5) Variar f, pi y N (sensibilidad) y observar que VPP es muy bajo si q es mayor que pi. 6) Condición para VPP mayor o igual a 0,5: q menor o igual a s·pi/(1-pi), o sea f aproximadamente menor que s·pi/N. Resultado: Ejemplo ilustrativo: con f = 10^-7, N = 3,5 millones, q aproximadamente 0,29; con pi = una persona buscada cada diez mil y s = 0,9, el VPP es aproximadamente 0,0003, es decir, casi todas las alertas serían falsas. Para que la mitad de las alertas fueran ciertas, f debería ser del orden de 10^-11 o menor. La conclusión robusta: la confiabilidad de una alerta depende más de la tasa base y del número de comparaciones que de la exactitud declarada.",
+    "rango_aceptable": "Cualquier conclusión cualitativa que muestre VPP bajo cuando la tasa de falsa alerta por persona supera la tasa base es aceptable; los valores numéricos dependen de los rangos supuestos para f (varios órdenes de magnitud), pi y s. Si se supone una sola identidad por persona y menos identidades que imágenes, N baja y el VPP sube, pero sigue siendo bajo para tasas base pequeñas.",
+    "barreras_por_fase": [
+      {
+        "fase": "P1-MRS",
+        "barrera": "Confundir las imágenes de la base con las personas que pasan por el puesto, y leer confiable como la exactitud alta que declara un sistema. Esa lectura es el modelo inadecuado de la tarea, porque deja fuera la proporción de personas buscadas y el hecho de que cada persona se compara con una colección enorme (bloqueo probable B12)."
+      },
+      {
+        "fase": "P2-RM",
+        "barrera": "No hay cifras públicas confiables sobre el flujo de personas ni sobre cuántas son realmente buscadas (recurso R3), de modo que el grupo debe proponer rangos y justificarlos. Puede quedarse esperando un dato o fijar un valor sin argumento. También cuesta decidir si hay una imagen por persona o varias, y aceptar que las comparaciones son independientes y que la tasa de falsa coincidencia es constante (bloqueo probable B23)."
+      },
+      {
+        "fase": "P3-MM",
+        "barrera": "Pasar de una tasa de falsa coincidencia por comparación a la probabilidad de falsa alerta por persona, que acumula muchas comparaciones. Después, distinguir sensibilidad, tasa de falsa alerta y tasa base al armar la probabilidad condicional de que una alerta sea acierto, sin intercambiar unas por otras (bloqueo probable B34)."
+      },
+      {
+        "fase": "P4-WM",
+        "barrera": "Operar con tasas de error muy pequeñas y números de comparaciones muy grandes, donde cambiar el valor en unas pocas potencias de diez altera el resultado por completo. Cuesta elegir aproximaciones, usar el software con orden y barrer los parámetros de forma sistemática en vez de probar valores sueltos (bloqueo probable B45)."
+      },
+      {
+        "fase": "P5-INT",
+        "barrera": "Traducir el resultado a frases sobre cuántas de cada cien alertas serían ciertas y qué condiciones harían razonable confiar. Un valor muy bajo puede parecer un error de cálculo al contrastarlo con la exactitud declarada, y el grupo puede descartarlo en vez de interpretarlo (bloqueo probable B56)."
+      },
+      {
+        "fase": "P6-VAL",
+        "barrera": "Contrastar sus tasas de error supuestas con evaluaciones independientes medidas en pruebas controladas (recurso R4), que cambian según la calidad de la imagen y el grupo de personas. La dificultad está en reconocer que esas pruebas no replican un puesto de control, en discutir los límites del modelo (imágenes frente a personas distintas, calidad de captura) y en ajustar supuestos sin abandonar el modelo (bloqueo probable B67)."
+      }
+    ]
+  },
+  "organizacion": {
+    "momentos": [
+      {
+        "momento": "Comprensión y trabajo grupal (sesión 1): lectura, reformulación y supuestos",
+        "tiempo": "70 min",
+        "estudiantes": "Leen el enunciado y el recurso de entrada, reformulan la pregunta con sus palabras y definen qué entienden por confiable. Piden la información que necesiten (descripción del funcionamiento del puesto, flujo de personas y proporción de buscadas). Redactan su hoja de supuestos con rangos justificados y comienzan a expresar el modelo con símbolos definidos.",
+        "docente": "Entrega los recursos a solicitud solo cuando el grupo los pide. Circula y diagnostica preguntando qué han hecho, qué entienden por alerta confiable y de dónde sale cada valor supuesto. Anota qué ruta sigue cada grupo y dónde se traba, pero aún no interviene."
+      },
+      {
+        "momento": "Puesta en común (sesión 1): supuestos y definición de confiable",
+        "tiempo": "20 min",
+        "estudiantes": "Los portavoces presentan su definición de alerta confiable y sus supuestos con los rangos elegidos. Comparan cómo trataron imágenes frente a personas distintas y la proporción de buscadas.",
+        "docente": "Modera y pide justificar cada supuesto. Hace visibles las diferencias entre grupos sin señalar cuál es la correcta. No muestra ningún modelo ni resultado de referencia."
+      },
+      {
+        "momento": "Comprensión y trabajo grupal (sesión 2): modelo, cálculo e interpretación",
+        "tiempo": "40 min",
+        "estudiantes": "Completan el modelo con símbolos definidos y calculan variando tasa de error y tasa base, con aproximaciones o software. Producen una tabla o gráfico y escriben frases en contexto sobre qué condiciones harían razonable confiar.",
+        "docente": "Circula y diagnostica con preguntas sobre qué representa cada símbolo y qué cambió al variar cada parámetro. Aplica la ayuda mínima primero y solo si hay bloqueo sostenido. Nunca entrega la expresión del modelo ni el resultado."
+      },
+      {
+        "momento": "Puesta en común (sesión 2): resultados y condiciones para confiar",
+        "tiempo": "20 min",
+        "estudiantes": "Exponen tablas o gráficos y sus frases de interpretación. Comparan rutas distintas (estimación por órdenes de magnitud, probabilidad de al menos una falsa coincidencia, Bayes con tasa base, modelo de umbral) y explican por qué sus conclusiones coinciden o difieren.",
+        "docente": "Ordena las presentaciones de la ruta más simple a la más elaborada. Pregunta qué parámetro pesa más en cada conclusión y qué pasaría con otros valores."
+      },
+      {
+        "momento": "Validación y cierre: contraste con referencia externa y recomendación",
+        "tiempo": "30 min",
+        "estudiantes": "Contrastan sus rangos de tasa de error con la referencia externa sobre desempeño medido (recurso R4) y, si disponen de ella, con una simulación. Discuten límites del modelo y ajustan supuestos. Redactan o presentan la recomendación a la organización con rangos y advertencias.",
+        "docente": "Entrega el recurso R4 cuando el grupo llega a validar o lo pide. Pregunta qué cambia de su recomendación tras el contraste. Cierra retomando la distinción entre exactitud declarada y confiabilidad de una alerta, a partir de lo que los grupos produjeron."
+      }
+    ],
+    "agrupamiento": "Grupos pequeños y estables durante las dos sesiones, para que cada integrante pueda verbalizar y defender decisiones. Las puestas en común son con todo el curso.",
+    "roles": "Portavoz, que presenta los supuestos y la recomendación. Registrador de supuestos, que mantiene la hoja actualizada con el origen de cada valor. Responsable de cálculo, que documenta los parámetros que se varían. Responsable de contraste, que compara con la referencia externa. Los roles rotan entre sesiones.",
+    "producciones": [
+      "Hoja de supuestos con valores o rangos justificados",
+      "Expresiones con símbolos definidos para tasa de error, número de comparaciones y tasa base",
+      "Tabla o gráfico de la confiabilidad de la alerta según los parámetros",
+      "Frases en contexto sobre condiciones para confiar y decisión recomendada",
+      "Comparación entre los rangos del grupo y la referencia externa, con supuestos ajustados",
+      "Informe breve o presentación con recomendación, supuestos y sensibilidad"
+    ],
+    "tecnologia": "Calculadora científica, planilla o software de cálculo se permiten en P4-WM para calcular con muchos valores y aproximar, y en P6-VAL para simular distribuciones de puntajes y contrastar. No se usan para definir qué significa confiable, elegir supuestos ni interpretar resultados, que son decisiones de modelación del grupo. La referencia externa la entrega el docente como recurso a solicitud."
+  },
+  "escenarios": [
+    {
+      "id": "E1",
+      "nombre": "ruta esperada",
+      "corridas": [
+        "N3_AA_r1"
+      ],
+      "perfil": "Tramo U, nivel N3, estilo AA.",
+      "ruta": [
+        "P1-MRS",
+        "P3-MM",
+        "P2-RM",
+        "P4-WM",
+        "P2-RM",
+        "P3-MM",
+        "P6-VAL",
+        "P5-INT",
+        "P4-WM",
+        "P7-EXP",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "supuestos": [
+        "sensibilidad S = 0,9",
+        "proporción de buscados p = 1/100.000",
+        "cada cara se compara con N = 3,5 millones de fotos",
+        "tasa de falsa coincidencia por comparación f constante e independiente",
+        "f = 10^-6 y luego f = 10^-9",
+        "f, p y N son supuestos hasta tener datos reales"
+      ],
+      "modelo": "bayes probabilístico",
+      "bloqueos": [],
+      "que_aprende": "Es la corrida que llega al modelo previsto (ruta R3 con la conversión de R2). Al compararla con E2, el curso ve por qué el número esperado de falsas coincidencias por persona debe convertirse en una probabilidad de falsa alerta antes de entrar en Bayes. Al compararla con E3 y E4, ve que la condición para confiar se deja como fórmula que depende de N, f y p, y no como un umbral fijo. También ve que el grupo marca sus parámetros como supuestos hasta tener datos reales.",
+      "extracto_dialogo": [
+        {
+          "hablante": "Fran",
+          "texto": "Buena, si f es por comparación, F por persona ≈ 1−(1−f)^N ≈ N·f, con N = 3,5·10⁶. Con f = 10⁻⁶ serían como 3,5 falsas coincidencias esperadas por persona, así que sí hay que pedir ese dato."
+        },
+        {
+          "hablante": "Cami",
+          "texto": "Ojo, N·f = 3,5 es el número esperado de falsos, pero F es una probabilidad: 1−e^(−3,5) ≈ 0,97, así que casi todos dispararían alerta y N·f solo sirve si es mucho menor que 1. O sea que con f = 10⁻⁶ el sistema sería inútil, y hay que pedir f real, o el umbral que usan."
+        },
+        {
+          "hablante": "Fran",
+          "texto": "Tienes razón, 1−e^(−3,5) ≈ 0,97, me pasé con la aproximación. Para que valga la pena necesitaríamos N·f ≪ 1, o sea f ~ 10⁻⁹ o menos, y aun así queda por ver p, porque con p chica la alerta igual sale falsa casi siempre."
+        }
+      ]
+    },
+    {
+      "id": "E2",
+      "nombre": "conteo esperado como alertas",
+      "corridas": [
+        "N4_VV_r1"
+      ],
+      "perfil": "Tramo U, nivel N4, estilo VV.",
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P4-WM",
+        "P5-INT",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "supuestos": [
+        "10.000 personas pasan por día",
+        "1 persona buscada cada 10.000",
+        "tasa de falsa coincidencia de 1e-6 por comparación",
+        "cada cara se compara con los 3,5 millones de imágenes",
+        "las falsas coincidencias se acumulan con el número de comparaciones",
+        "el error puede ser mayor según la calidad de la foto o el grupo de personas"
+      ],
+      "modelo": "proporcional (conteo esperado)",
+      "bloqueos": [],
+      "que_aprende": "El grupo detecta bien que el error por comparación se multiplica con la base y hace la cuenta de la ruta R1 (personas × N × f). Esa estimación sirve como orden de magnitud solo mientras N·f sea mucho menor que 1. Aquí N·f = 3,5: el grupo cuenta cada falso candidato esperado como una alerta y obtiene 35.000 falsas alertas con 10.000 personas, más alertas que personas. Además salta de P2-RM a P4-WM sin pasar por P3-MM. Al contrastarlo con E1, el curso discute la diferencia entre número esperado de coincidencias y probabilidad de que una persona dispare alerta. La conclusión cualitativa coincide, pero con estos valores la cuenta de R1 deja de ser válida.",
+      "extracto_dialogo": [
+        {
+          "hablante": "Fran",
+          "texto": "Buen punto, Cami. Si la tasa fuera 1 en un millón por comparación, igual saldrían 1e-6 × 3.500.000 ≈ 3,5 falsos candidatos por persona. [dibujo: una cara a la izquierda con flechas hacia una nube enorme de caras, varias flechas marcadas en rojo] Entonces tendríamos que pedir el error por comparación y también por persona."
+        },
+        {
+          "hablante": "Cami",
+          "texto": "Exacto, y con 10.000 personas serían unas 35.000 falsas alertas por día, así que sin más datos ni una segunda verificación humana no la tomaría en serio. Propongo recomendar tomarla en serio solo si el umbral es muy alto, la lista es chica y hay otra evidencia además del rostro. ¿Armamos la respuesta así?"
+        },
+        {
+          "hablante": "Fran",
+          "texto": "Armémosla así, pero aclarando que las 35.000 salen de suponer 1e-6 por comparación, y que el error puede ser mayor según la calidad de la foto o el grupo de personas. Y que la alerta sirva solo como pista, nunca como prueba."
+        }
+      ]
+    },
+    {
+      "id": "E3",
+      "nombre": "bloqueo en validar",
+      "corridas": [
+        "N1_VV_r1"
+      ],
+      "perfil": "Tramo U, nivel N1, estilo VV.",
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P5-INT",
+        "P6-VAL",
+        "P2-RM",
+        "P5-INT",
+        "P7-EXP"
+      ],
+      "supuestos": [
+        "1000 personas por día",
+        "error del 1% sobre los inocentes",
+        "1 buscado entre 1000",
+        "el sistema detecta al buscado",
+        "números inventados a confirmar con datos pedidos"
+      ],
+      "modelo": "frecuencias naturales",
+      "bloqueos": [
+        {
+          "transicion": "B56",
+          "como_se_destrabo": "Resolución entre pares (peer). Cami duda de si el error supuesto ya incluye la comparación con la base de 3,5 millones y no sabe cómo validar su resultado. Fran propone pedir ese dato, porque si el error es por comparación saldrían muchas más falsas. El grupo vuelve a simplificar (P2-RM) y deja ese punto como dato a solicitar, sin rehacer el modelo."
+        }
+      ],
+      "que_aprende": "Con frecuencias naturales sobre una fila imaginada, el grupo llega a la idea central: las falsas alertas superan a las verdaderas cuando los buscados son raros. Al validar, nota que su supuesto de error por persona puede no reflejar las comparaciones con la base, pero lo resuelve pidiendo el dato en vez de modelarlo. Frente a E1, el curso ve qué cambia cuando la duda sobre N se incorpora al modelo.",
+      "extracto_dialogo": [
+        {
+          "hablante": "Fran",
+          "texto": "Ya, o sea que de 11 alertas solo 1 sería de verdad, como un 9%, y eso con 1000 por día. Pero ojo, si el sistema a veces no pilla al buscado, sería menos aún, ¿no? Y con una base de 3,5 millones, ¿eso cambiaría algo o no?"
+        },
+        {
+          "hablante": "Cami",
+          "texto": "Mmm, me imagino cada cara de la fila comparándose con 3,5 millones de fotos, o sea hay muchísimas más chances de confundirla con alguien, así que las falsas subirían, ¿no? Pero no sé si ese 1% ya incluye eso, ¿lo pedimos?"
+        },
+        {
+          "hablante": "Fran",
+          "texto": "Sí, pidámoslo, porque si ese 1% es por cada comparación y no por persona, con 3,5 millones de fotos saldrían muchísimas más falsas. [dibujo: una cara en el centro con flechas hacia una nube enorme de fotos] ¿Anotamos qué datos pedir: cuánta gente pasa, cuántos buscados hay, y cómo miden el error?"
+        }
+      ]
+    },
+    {
+      "id": "E4",
+      "nombre": "bloqueo en comunicar",
+      "corridas": [
+        "N1_AA_r1"
+      ],
+      "perfil": "Tramo U, nivel N1, estilo AA.",
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P4-WM",
+        "P5-INT",
+        "P4-WM",
+        "P5-INT",
+        "P6-VAL",
+        "P7-EXP",
+        "P6-VAL",
+        "P3-MM",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "supuestos": [
+        "1 de cada 10.000 personas buscadas (también 1 de cada 1.000)",
+        "sensibilidad 90%",
+        "falsas alarmas 1% (también 0,01%)",
+        "falsa alarma por persona; si es por comparación se multiplica por 3.500.000",
+        "la alerta siempre la verifica una persona"
+      ],
+      "modelo": "bayes (valor predictivo)",
+      "bloqueos": [
+        {
+          "transicion": "B67",
+          "como_se_destrabo": "Resolución entre pares (peer). Al redactar la recomendación, Cami propone exigir un umbral fijo de probabilidad para tomar en serio la alerta. Fran objeta que ese umbral es arbitrario y que depende de qué se haga con la alerta y de que siempre la verifique una persona. El grupo descarta el umbral inventado, vuelve a validar y escribe la fórmula general (P3-MM) antes de entregar."
+        }
+      ],
+      "que_aprende": "El grupo calcula primero con casos numéricos, varía la tasa base y la falsa alarma, y recién al final escribe la fórmula de Bayes. Así muestra que la ruta R3 puede alcanzarse desde abajo. El bloqueo aparece al comunicar: la tentación es fijar un criterio de confianza sin justificarlo. Comparado con E1 y E3, el curso discute que la recomendación debe atarse a supuestos explícitos y al uso de la alerta, no a un número elegido a gusto.",
+      "extracto_dialogo": [
+        {
+          "hablante": "Cami",
+          "texto": "Dale, armémosla: pedimos acierto con buscados, falsas alarmas (por comparación o por persona), proporción de buscados y la base. ¿Ponemos que la alerta solo vale si la probabilidad de que sea real pasa, no sé, 90%?"
+        },
+        {
+          "hablante": "Fran",
+          "texto": "Lo del 90% no sé, es medio arbitrario; yo diría que depende de qué se haga con la alerta, y que siempre la verifique una persona. ¿Escribimos la fórmula P(real) = acertados/(acertados + falsas) con los cuatro datos?"
+        },
+        {
+          "hablante": "Cami",
+          "texto": "Ya, tienes razón, mejor no inventar el 90% y que dependa de qué se haga con la alerta y de que siempre la verifique una persona. Pongamos P(real) = a·p / (a·p + f·(1−p)), con a = acierto con buscados, f = falsas alarmas y p = proporción de buscados, ¿te parece?"
+        }
+      ]
+    }
+  ],
+  "tabla_bloqueos": {
+    "B56": 0.17,
+    "B67": 0.17
+  },
+  "intervenciones": [
+    {
+      "bloqueo": "B56",
+      "z1_z2": "Pregunten primero qué han hecho: '¿Qué resultado tienen y cómo saben si es razonable para el puesto de control?'. Reconozcan que dudar del propio supuesto de error ya es validar. Así se destrabó el grupo de E3: Cami dudó de si su error ya incluía la comparación con la base y Fran propuso pedir ese dato.",
+      "z3": "Sugieran volver a la situación y dibujarla: una cara en el centro con flechas hacia la nube de imágenes de la base, y una fila de personas esperando. Que marquen en el dibujo dónde puede aparecer una falsa coincidencia.",
+      "z4": "Pregunten: '¿Su tasa de error es por persona o por comparación? ¿Qué cambia si cada persona se compara con los 3,5 millones de imágenes? ¿Y si las personas realmente buscadas son muy pocas entre quienes pasan?'. No digan cómo corregir la cuenta. Que decidan si deben pedir un dato o ajustar un supuesto.",
+      "z5": "Ofrezcan el recurso a solicitud R3 (no hay cifras públicas sobre flujo ni proporción de buscados) para que propongan rangos propios. Luego pidan que imaginen una fila de personas con sus propios supuestos y cuenten cuántas alertas serían de personas buscadas y cuántas no. Que redacten una frase en contexto con su conclusión. No entreguen la fórmula ni el valor esperado."
+    },
+    {
+      "bloqueo": "B67",
+      "z1_z2": "Pregunten qué contrastaron hasta ahora y con qué: '¿De dónde salen sus valores de error y qué los respalda?'. Valoren que revisen la recomendación antes de entregarla. En E4 el bloqueo apareció al redactar: Cami propuso un umbral fijo y Fran objetó que era arbitrario.",
+      "z3": "Pidan una lista de sus supuestos (tasa de error, flujo de personas, proporción de buscadas, imágenes frente a personas distintas) y que anoten al lado qué evidencia independiente podría confirmarlos o refutarlos.",
+      "z4": "Pregunten: '¿Sus rangos de error son compatibles con lo que se mide en pruebas independientes? ¿Qué pasa con la recomendación si la calidad de la captura empeora? Si fijan un criterio para tomar en serio la alerta, ¿de qué depende que sea razonable?'. No den el criterio. Que lo justifiquen con sus supuestos y con el uso que se haga de la alerta.",
+      "z5": "Entreguen el recurso a solicitud R4 (referencia externa del NIST sobre desempeño medido de algoritmos). Pidan que comparen por escrito sus rangos de error con esa referencia y que indiquen qué supuesto ajustarían. No den valores de error ni digan qué rango es el correcto."
+    },
+    {
+      "bloqueo": "B34",
+      "z1_z2": "Pregunten qué quiere responder su cuenta: '¿Están contando falsas coincidencias o la probabilidad de que una persona dispare una alerta?'. En E2 el grupo pasó de simplificar a calcular sin matematizar, y eso exigió esta pregunta.",
+      "z3": "Pidan que nombren con símbolos cada cantidad de su situación (tasa de error, número de comparaciones, proporción de buscadas) y que escriban en palabras qué mide cada uno.",
+      "z4": "Pregunten: '¿Un número esperado de coincidencias puede leerse siempre como una probabilidad? ¿Qué pasa cuando ese número es grande? Entre todas las alertas, ¿de qué depende cuántas correspondan a personas buscadas?'. Que las respondan con sus símbolos, sin que ustedes escriban la expresión.",
+      "z5": "Propongan separar dos preguntas: la probabilidad de que una persona no buscada dispare alerta y, entre todas las alertas, qué parte corresponde a personas buscadas. Que escriban cada una con sus símbolos y la comparen con su cuenta anterior. No entreguen las expresiones ni los resultados."
+    }
+  ],
+  "puesta_en_comun": {
+    "seleccion_y_orden": [
+      "Anticipar y monitorear: mientras los grupos trabajan, el docente anota quién usa conteos, quién usa frecuencias naturales y quién llega a Bayes. No presenta su propia ruta primero y elige las producciones a partir de lo observado.",
+      "Presentar primero E2 (conteo esperado como alertas): es una ruta accesible y su conclusión cualitativa es razonable, pero suma coincidencias esperadas como si fueran alertas. Deja a la vista el problema que los demás escenarios resolverán.",
+      "Seguir con E3 (frecuencias naturales): la fila imaginada muestra por qué las falsas alertas superan a las verdaderas cuando los buscados son raros. Aquí aparece la duda sobre si el error ya incluye la comparación con la base y se resuelve pidiendo el dato.",
+      "Continuar con E4 (Bayes alcanzado desde casos numéricos): conecta los cálculos con la fórmula general. Muestra además por qué un umbral de confianza elegido a gusto no se sostiene sin supuestos ni uso de la alerta.",
+      "Cerrar con E1 (ruta esperada): conecta todo. Se ve por qué el número esperado de falsas coincidencias debe convertirse en probabilidad de falsa alerta antes de usar Bayes. La condición para confiar queda como relación entre N, f y p, y no como un valor fijo."
+    ],
+    "preguntas": [
+      "En E2, ¿qué cuenta realmente la suma de falsos candidatos: alertas o coincidencias esperadas? ¿Qué cambia al pasar a probabilidad?",
+      "¿Qué supuestos comparten todos los escenarios (independencia entre comparaciones, tasa de error constante, imágenes frente a personas distintas)? ¿Cuál es el más débil?",
+      "En E3 y E4, ¿el error se refiere a la persona o a cada comparación con la base? ¿Qué pasa con la conclusión si se equivocan?",
+      "¿Qué ruta fue más eficiente para llegar a la conclusión cualitativa y cuál para fijar una condición de confianza?",
+      "¿Por qué la exactitud declarada de un sistema no dice cuánto creerle a una alerta?",
+      "Si los buscados fueran todavía más raros, ¿qué le pasaría a la confiabilidad de la alerta? ¿Y si la base fuera menor?",
+      "¿Qué cambia en la recomendación si la calidad de la captura es mala o si siempre hay una persona que verifica la alerta?",
+      "¿Dónde dejan de valer sus modelos (varias imágenes de una misma persona, error que varía según el grupo de personas)?"
+    ],
+    "contraste_validacion": "Pidan a cada grupo que fije por escrito sus rangos de tasa de falsa coincidencia antes de ver ninguna referencia. Después entreguen el recurso a solicitud R4 y la evidencia independiente de la tarea: las evaluaciones del NIST (FRVT), con tasas medidas en pruebas controladas. Cada grupo compara sus rangos con esas tasas y dice si los mantiene, los ajusta o los descarta. Esa comparación es el momento de validar. Como segunda comparación, el curso puede contrastar sus rangos con una simulación en computador con distribuciones de puntajes, un dato no usado al construir el modelo. Concluyan con cómo cambió la recomendación al ajustar los supuestos. No se agregan cifras externas: solo se usa lo que la referencia y la simulación muestren."
+  },
+  "variantes_y_continuidad": {
+    "uso_variantes": "Variante hacia abajo (tramo S): conviene si el grupo no maneja probabilidad condicional o si el bloqueo en P3-MM impide avanzar. Se pide solo estimar cuántas falsas alertas esperaría el puesto en una jornada, sin exigir la probabilidad de que una alerta sea correcta. El grupo estima por su cuenta la tasa de error y compara dos o tres valores, como comparación de escenarios sin Bayes formal. El contexto no cambia. Corresponde a la ruta de estimación por órdenes de magnitud. Variante hacia arriba: la tarea no tiene. Para un grupo que avanza rápido, la propia tarea ofrece la ruta del modelo de umbral con distribuciones de puntajes y curva ROC, pero eso es una ruta del nivel principal y no una variante.",
+    "acostumbramiento": "Si el grupo nunca ha modelado, conviene una actividad breve previa: estimar una cantidad sin datos exactos a partir de un titular, anotando supuestos con rangos y justificándolos. Así se ejercita P2-RM y se acepta trabajar con rangos antes de esta tarea. En una secuencia, esta tarea es una parte avanzada del nivel universitario y no un diagnóstico ni una iniciación: exige simplificar, matematizar con probabilidad condicional, validar con una referencia externa y comunicar, en dos sesiones. Con un grupo sin experiencia en modelación, conviene empezar por la variante hacia abajo.",
+    "tarea_siguiente": null
+  },
+  "materiales": {
+    "tarea_pdf": "tarea.pdf",
+    "recursos_tarjetas": "recursos.pdf",
+    "notebook": "escenarios.ipynb",
+    "icono": "icono.svg"
+  },
+  "trazabilidad": {
+    "noticia_url": "https://www.latercera.com/mundo/noticia/como-israel-cargo-35-millones-de-fotografias-en-plataforma-de-amazon-para-rastrear-a-palestinos/",
+    "diseno": {
+      "modelo": "claude-sonnet-5-5",
+      "version_prompt": "1.1"
+    },
+    "rub01_total": 24,
+    "revision_humana_1": {
+      "revisor": "Carlos Rojas Bruna",
+      "fecha": "2026-11-17"
+    },
+    "simulacion": {
+      "n_grupos": 6,
+      "diseno": "diseno_otm"
+    },
+    "revision_humana_2": null,
+    "commit": null
+  },
+  "modelo_y_prompt": {
+    "redactor": "claude-sonnet-5-5",
+    "redactor_escenarios": "claude-opus-5-5",
+    "version_prompt": "1.0"
+  }
+}

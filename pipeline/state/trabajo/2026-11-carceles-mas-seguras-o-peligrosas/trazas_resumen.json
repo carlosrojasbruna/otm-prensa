@@ -1,0 +1,233 @@
+{
+  "tarea_id": "2026-11-carceles-mas-seguras-o-peligrosas",
+  "diseno": "diseno_otm",
+  "corridas": 6,
+  "modelo": "claude-sonnet-5-5",
+  "costo_usd": 0.7168,
+  "por_corrida": [
+    {
+      "id": "N1_VV_r1",
+      "perfil": {
+        "nivel_edad": "S1",
+        "nivel": "N1",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P2-RM",
+        "P4-WM",
+        "P6-VAL",
+        "P5-INT",
+        "P4-WM",
+        "P6-VAL",
+        "P5-INT",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "Morir es más grave que ser amenazado",
+        "Misma población de internos en ambos años (40.000, para probar)",
+        "Población mayor en el último año (60.000, para probar)",
+        "Posible cambio en la denuncia o registro de amenazas"
+      ],
+      "modelo": "tasa por mil",
+      "respuesta_final": "Los homicidios bajaron (56 a 27, casi a la mitad) pero las amenazas subieron (62 a 548, casi 9 veces), así que no se puede decir que las cárceles sean más seguras ni más peligrosas; faltan los presos de cada año y saber si cambió la forma de anotar las amenazas.",
+      "validacion": true,
+      "archivo": "N1_VV_r1.json",
+      "costo_usd": 0.16536
+    },
+    {
+      "id": "N1_AA_r1",
+      "perfil": {
+        "nivel_edad": "S1",
+        "nivel": "N1",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P3-MM",
+        "P4-WM",
+        "P3-MM",
+        "P4-WM",
+        "P6-VAL",
+        "P3-MM",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P5-INT",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B23",
+          "turnos": [
+            10,
+            11,
+            12
+          ],
+          "resolucion": "self"
+        }
+      ],
+      "supuestos": [
+        "homicidio más grave que amenaza",
+        "tasa por cada mil internos, cada año con su propia población",
+        "si los internos no cambiaron, el cambio es el cociente de casos",
+        "las amenazas pueden haber subido por más denuncias"
+      ],
+      "modelo": "razón de cambio",
+      "respuesta_final": "Conclusión mixta: los homicidios bajaron casi a la mitad (cociente ≈ 0,48) y las amenazas subieron cerca de nueve veces (≈ 8,8), suponiendo igual número de internos; no afirman 'más seguro' ni 'más peligroso' hasta conocer los internos de cada año y si cambió la denuncia de amenazas.",
+      "validacion": true,
+      "archivo": "N1_AA_r1.json",
+      "costo_usd": 0.15228
+    },
+    {
+      "id": "N2_VV_r1",
+      "perfil": {
+        "nivel_edad": "S1",
+        "nivel": "N2",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P4-WM",
+        "P2-RM",
+        "P3-MM",
+        "P2-RM",
+        "P4-WM",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B23",
+          "turnos": [
+            7,
+            8,
+            9,
+            10
+          ],
+          "resolucion": "sin_resolver"
+        }
+      ],
+      "supuestos": [
+        "la población de internos puede haber cambiado (comparar por cada 1000 presos)",
+        "la forma de denunciar o registrar puede haber cambiado",
+        "un homicidio es mucho más grave que una amenaza"
+      ],
+      "modelo": "comparación por indicador",
+      "respuesta_final": "No podemos decir \"más segura\" ni \"más peligrosa\" a secas: los homicidios bajaron de 56 a 27, pero las amenazas subieron de 62 a 548, así que cambió el tipo de peligro. Para decidir falta saber cuántos presos había cada año y si cambió la forma de registrar, y con eso comparar casos por cada 1000 presos.",
+      "validacion": true,
+      "archivo": "N2_VV_r1.json",
+      "costo_usd": 0.110584
+    },
+    {
+      "id": "N3_AA_r1",
+      "perfil": {
+        "nivel_edad": "S1",
+        "nivel": "N3",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P4-WM",
+        "P2-RM",
+        "P3-MM",
+        "P6-VAL",
+        "P5-INT",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "un homicidio equivale a w amenazas (peso de gravedad)",
+        "misma cantidad de internos ambos años en el modelo sin tasas (N₁ = N₂)",
+        "el registro de amenazas pudo cambiar porque ahora se denuncia más",
+        "opinión declarada: un homicidio pesa más que 17 amenazas"
+      ],
+      "modelo": "índice ponderado",
+      "respuesta_final": "Los homicidios bajaron ≈52% (de 56 a 27) y las amenazas subieron ≈784% (de 62 a 548). Sin datos de internos ni un criterio de peso no hay una conclusión firme. El umbral es de unas 17 amenazas por homicidio: si un homicidio pesa más que eso, las cárceles serían más seguras; si pesa menos, más peligrosas. Las amenazas pudieron subir porque ahora se denuncian más, y pedirían tasas por 1.000 internos.",
+      "validacion": true,
+      "archivo": "N3_AA_r1.json",
+      "costo_usd": 0.098016
+    },
+    {
+      "id": "N4_VV_r1",
+      "perfil": {
+        "nivel_edad": "S1",
+        "nivel": "N4",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "un homicidio pesa más que una amenaza",
+        "la población de internos pudo cambiar entre años",
+        "el registro o denuncia de amenazas pudo cambiar",
+        "el dato de homicidios es más confiable porque es difícil de esconder"
+      ],
+      "modelo": "razón de cambio",
+      "respuesta_final": "Los homicidios bajaron casi a la mitad (56 a 27), pero las amenazas subieron cerca de nueve veces (62 a 548), así que no podemos decir \"más seguras\" en todo. Antes de concluir más, pedimos cuántos internos había cada año y si ahora se registran más las amenazas.",
+      "validacion": true,
+      "archivo": "N4_VV_r1.json",
+      "costo_usd": 0.087224
+    },
+    {
+      "id": "N4_AA_r1",
+      "perfil": {
+        "nivel_edad": "S1",
+        "nivel": "N4",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P4-WM",
+        "P2-RM",
+        "P3-MM",
+        "P5-INT",
+        "P4-WM",
+        "P7-EXP"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B23",
+          "turnos": [
+            5,
+            6
+          ],
+          "resolucion": "peer"
+        }
+      ],
+      "supuestos": [
+        "Registro de amenazas igual al inicio y al final de la década",
+        "Un homicidio equivale a k amenazas (peso de gravedad)",
+        "Un homicidio pesa más de 17 amenazas (ejemplo k = 100)",
+        "Se trabaja con datos crudos sin corregir por población, de forma provisional"
+      ],
+      "modelo": "índice ponderado",
+      "respuesta_final": "Con los datos crudos, las cárceles serían más seguras si un homicidio pesa más de unas 17 amenazas (29k = 486, k ≈ 16,8); el par se inclina por más seguras (por ejemplo, con k = 100: 3248 frente a 5662), condicionado a calcular tasas por 10.000 internos y a confirmar que el registro de amenazas no cambió.",
+      "validacion": true,
+      "archivo": "N4_AA_r1.json",
+      "costo_usd": 0.103312
+    }
+  ],
+  "agregado": {
+    "pct_bloqueo_por_transicion": {
+      "B23": 0.5
+    },
+    "modelos_observados": {
+      "tasa por mil": 1,
+      "razón de cambio": 2,
+      "comparación por indicador": 1,
+      "índice ponderado": 2
+    },
+    "pct_validan": 1.0
+  },
+  "fecha": "2026-11-17T12:47:53Z"
+}

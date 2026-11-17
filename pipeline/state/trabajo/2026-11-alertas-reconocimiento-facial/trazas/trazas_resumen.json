@@ -1,0 +1,241 @@
+{
+  "tarea_id": "2026-11-alertas-reconocimiento-facial",
+  "diseno": "diseno_otm",
+  "corridas": 6,
+  "modelo": "claude-sonnet-5-5",
+  "costo_usd": 0.8275,
+  "por_corrida": [
+    {
+      "id": "N1_VV_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N1",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P5-INT",
+        "P6-VAL",
+        "P2-RM",
+        "P5-INT",
+        "P7-EXP"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B56",
+          "turnos": [
+            7,
+            8
+          ],
+          "resolucion": "peer"
+        }
+      ],
+      "supuestos": [
+        "1000 personas por día",
+        "error del 1% sobre los inocentes",
+        "1 buscado entre 1000",
+        "el sistema detecta al buscado",
+        "números inventados a confirmar con datos pedidos"
+      ],
+      "modelo": "frecuencias naturales",
+      "respuesta_final": "Piden datos de personas por día, número de buscados y cómo se mide el error. Con números inventados (1000 personas, 1 buscado, 1% de error sobre inocentes) salen 10 alertas falsas por 1 verdadera, cerca de 9% de acierto; con base más grande o buscado más raro empeora. La alerta debe tomarse solo como pista y confirmarse con otra cosa.",
+      "validacion": true,
+      "archivo": "N1_VV_r1.json",
+      "costo_usd": 0.14808
+    },
+    {
+      "id": "N1_AA_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N1",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P4-WM",
+        "P5-INT",
+        "P4-WM",
+        "P5-INT",
+        "P6-VAL",
+        "P7-EXP",
+        "P6-VAL",
+        "P3-MM",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B67",
+          "turnos": [
+            15,
+            16
+          ],
+          "resolucion": "peer"
+        }
+      ],
+      "supuestos": [
+        "1 de cada 10.000 personas buscadas (también 1 de cada 1.000)",
+        "sensibilidad 90%",
+        "falsas alarmas 1% (también 0,01%)",
+        "pasan 100.000 personas",
+        "falsa alarma por persona; si es por comparación se multiplica por 3.500.000",
+        "la alerta siempre la verifica una persona"
+      ],
+      "modelo": "bayes (valor predictivo)",
+      "respuesta_final": "Pedimos acierto con buscados (a), falsas alarmas por persona (f; si viene por comparación, multiplicar por 3.500.000) y proporción de buscados (p). P(real) = a·p/(a·p + f·(1−p)); la alerta se toma en serio solo si P(real) es alta y siempre la verifica una persona.",
+      "validacion": true,
+      "archivo": "N1_AA_r1.json",
+      "costo_usd": 0.196628
+    },
+    {
+      "id": "N2_VV_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N2",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P4-WM",
+        "P6-VAL",
+        "P5-INT",
+        "P7-EXP",
+        "P5-INT"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "10.000 personas pasan por día",
+        "error de 1 en 100 por persona",
+        "5 buscados entre 10.000",
+        "el sistema detecta a todos los buscados",
+        "el error podría subir con una base de 3,5 millones"
+      ],
+      "modelo": "proporcional (conteo de alertas)",
+      "respuesta_final": "Con números inventados (10.000 personas, error de 1 en 100, 5 buscados) solo 1 de cada 21 alertas sería real, así que una alerta sola no basta y se toma en serio solo si un agente la confirma con documentos. Se piden datos reales: cuántos buscados pasan, el error con 3,5 millones de caras y si cambia según el grupo. Si pasan muchos más buscados la alerta sería más confiable; si casi ninguno, mucho menos.",
+      "validacion": true,
+      "archivo": "N2_VV_r1.json",
+      "costo_usd": 0.109836
+    },
+    {
+      "id": "N3_AA_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N3",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P3-MM",
+        "P2-RM",
+        "P4-WM",
+        "P2-RM",
+        "P3-MM",
+        "P6-VAL",
+        "P5-INT",
+        "P4-WM",
+        "P7-EXP",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "sensibilidad S = 0,9",
+        "tasa de falsos positivos F = 0,001 (inicial)",
+        "proporción de buscados p = 1/100.000",
+        "cada cara se compara con N = 3,5 millones de fotos",
+        "tasa de falsa coincidencia por comparación f constante e independiente",
+        "f = 10^-6 y luego f = 10^-9",
+        "f, p y N son supuestos hasta tener datos reales"
+      ],
+      "modelo": "bayes probabilístico",
+      "respuesta_final": "Una alerta no es una identificación. P(B|A) = S·p/(S·p + F·(1−p)) con F ≈ 1−e^(−N·f); con N = 3,5·10⁶ y p ~ 10⁻⁵ casi todas las alertas serían falsas (≈0,003). Solo la tomarían en serio si N·f ≪ 1, p ≳ N·f/S y hay verificación independiente, con f, p y N como supuestos hasta tener datos reales.",
+      "validacion": true,
+      "archivo": "N3_AA_r1.json",
+      "costo_usd": 0.162944
+    },
+    {
+      "id": "N4_VV_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N4",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P4-WM",
+        "P5-INT",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "10.000 personas pasan por día",
+        "1 persona buscada cada 10.000",
+        "error del 1% en el primer escenario",
+        "tasa de falsa coincidencia de 1e-6 por comparación",
+        "cada cara se compara con los 3,5 millones de imágenes",
+        "las falsas coincidencias se acumulan con el número de comparaciones",
+        "el error puede ser mayor según la calidad de la foto o el grupo de personas"
+      ],
+      "modelo": "proporcional (conteo esperado)",
+      "respuesta_final": "Una alerta sola es poco confiable: con 1e-6 de error por comparación salen unos 3,5 falsos candidatos por persona, o sea ~35.000 falsas alertas al día con 10.000 personas, y más si la foto es mala. Solo la tomaríamos en serio con umbral alto, lista chica, tasas de error conocidas y otra evidencia, siempre como pista y no como prueba.",
+      "validacion": true,
+      "archivo": "N4_VV_r1.json",
+      "costo_usd": 0.093908
+    },
+    {
+      "id": "N4_AA_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N4",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P3-MM",
+        "P2-RM",
+        "P4-WM",
+        "P6-VAL",
+        "P5-INT",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "cada persona se compara con las 3,5 millones de caras",
+        "FPR por comparación hipotética de 0,001",
+        "prevalencia de buscados 1/10.000",
+        "sensibilidad 0,9",
+        "falsa alarma por persona 1% (y luego 10⁻⁶)",
+        "errores independientes y uniformes"
+      ],
+      "modelo": "bayes",
+      "respuesta_final": "La alerta es solo una pista, no una prueba: con prevalencia baja la mayoría de las alertas son falsas (≈99 de cada 100 con falsa alarma por persona de 1%). Se tomaría en serio solo si la falsa alarma por persona es mucho menor que P(B) (≈10⁻⁶ con P(B) ≈ 10⁻⁴) y hay verificación humana independiente. Se pediría la FPR por grupo y calidad de imagen, la prevalencia real y qué significa estar en la base.",
+      "validacion": true,
+      "archivo": "N4_AA_r1.json",
+      "costo_usd": 0.116108
+    }
+  ],
+  "agregado": {
+    "pct_bloqueo_por_transicion": {
+      "B56": 0.17,
+      "B67": 0.17
+    },
+    "modelos_observados": {
+      "frecuencias naturales": 1,
+      "bayes (valor predictivo)": 1,
+      "proporcional (conteo de alertas)": 1,
+      "bayes probabilístico": 1,
+      "proporcional (conteo esperado)": 1,
+      "bayes": 1
+    },
+    "pct_validan": 1.0
+  },
+  "fecha": "2026-11-17T12:42:15Z"
+}

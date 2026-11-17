@@ -1,0 +1,208 @@
+{
+  "tarea_id": "2026-11-carceles-mas-seguras-o-peligrosas",
+  "aprobado": true,
+  "estado_destino": "verificada",
+  "hallazgos": [
+    {
+      "invariante": "notebook",
+      "severidad": "advertencia",
+      "ubicacion": "guia.materiales.notebook",
+      "descripcion": "notebook escenarios.ipynb no encontrado: ",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "tarea.estudiante.recursos_a_solicitud[R2]",
+      "descripcion": "afirmación no respaldada por los párrafos citados (noticia, párrafo 11): El párrafo 11 citado es una declaración del coordinador y no menciona agresiones. El dato está en el párrafo 10; el localizador está mal.",
+      "origen": "modelo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "tarea.estudiante.recursos_a_solicitud[R3]",
+      "descripcion": "afirmación no respaldada por los párrafos citados (noticia, párrafo 4; noticia, párrafo 8): Los homicidios de 61 y 48 están en el párrafo 4. Las 235 amenazas de 2024 no figuran en el párrafo 8, que trata de amenazas por región; el dato está en el párrafo 7.",
+      "origen": "modelo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "tarea.estudiante.recursos_a_solicitud[R4]",
+      "descripcion": "afirmación no respaldada por los párrafos citados (noticia, párrafo 4; noticia, párrafo 8): Los 491 homicidios están en el párrafo 4. Las 2.322 amenazas no aparecen en el párrafo 8 citado, sino en el párrafo 7.",
+      "origen": "modelo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "tarea.recursos_de_entrada[R1]",
+      "descripcion": "afirmación no respaldada por los párrafos citados (noticia, párrafo 4; noticia, párrafo 3; noticia, párrafo 8): Los homicidios 56 y 27 están en los párrafos 3 y 4. Las amenazas 62 y 548 no aparecen en el párrafo 8 citado; están en el párrafo 7.",
+      "origen": "modelo"
+    }
+  ],
+  "cifras_contrastadas": [
+    {
+      "indice": 0,
+      "que_es": "Homicidios al interior de penales en 2025, la cifra más baja del periodo analizado",
+      "valor_tarea": 27,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 3"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": 27,
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 3 de la noticia; modelo: El párrafo 3 da 27 homicidios en 2025, la cifra más baja del periodo."
+    },
+    {
+      "indice": 1,
+      "que_es": "Total de homicidios en cárceles entre 2015 y 2025",
+      "valor_tarea": 491,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 4"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": 491,
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 4 de la noticia; modelo: El párrafo 4 da el total de homicidios entre 2015 y 2025."
+    },
+    {
+      "indice": 2,
+      "que_es": "Homicidios en cárceles registrados en 2015",
+      "valor_tarea": 56,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 4"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": 56,
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 4 de la noticia; modelo: El párrafo 4 da los homicidios de 2015."
+    },
+    {
+      "indice": 3,
+      "que_es": "Máximo de homicidios en cárceles del periodo, registrado en 2020",
+      "valor_tarea": 61,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 4"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": 61,
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 4 de la noticia; modelo: El párrafo 4 da el máximo del periodo, en 2020."
+    },
+    {
+      "indice": 4,
+      "que_es": "Homicidios en cárceles registrados en 2024",
+      "valor_tarea": 48,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 4"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": 48,
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 4 de la noticia; modelo: El párrafo 4 da los homicidios de 2024."
+    },
+    {
+      "indice": 5,
+      "que_es": "Registros de amenazas entre 2015 y 2025",
+      "valor_tarea": "2.322",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 7"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "2.322",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 7 de la noticia; modelo: El párrafo 7 da el total de amenazas a internos entre 2015 y 2025."
+    },
+    {
+      "indice": 6,
+      "que_es": "Casos de amenazas a internos en 2015",
+      "valor_tarea": 62,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 7"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": 62,
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 7 de la noticia; modelo: El párrafo 7 da las amenazas de 2015."
+    },
+    {
+      "indice": 7,
+      "que_es": "Casos de amenazas a internos en 2024",
+      "valor_tarea": 235,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 7"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": 235,
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 7 de la noticia; modelo: El párrafo 7 da las amenazas de 2024."
+    },
+    {
+      "indice": 8,
+      "que_es": "Casos de amenazas a internos en 2025",
+      "valor_tarea": 548,
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 7"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": 548,
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 7 de la noticia; modelo: El párrafo 7 da las amenazas de 2025."
+    },
+    {
+      "indice": 9,
+      "que_es": "Agresiones a internos registradas en 2025, máximo histórico",
+      "valor_tarea": "6.365",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 10"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "6.365",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 10 de la noticia; modelo: El párrafo 10 da las agresiones de 2025 como máximo histórico."
+    },
+    {
+      "indice": 10,
+      "que_es": "Aumento de agresiones en 2025 respecto de 2024",
+      "valor_tarea": "9,3%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 10"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "9,3%",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 10 de la noticia; modelo: El párrafo 10 da el alza de agresiones respecto de 2024."
+    }
+  ],
+  "notebook": {
+    "estado": "no_encontrado",
+    "ruta": "escenarios.ipynb",
+    "salida_resumen": ""
+  },
+  "meta": {
+    "agente": "verificador",
+    "version_prompt": "1.1",
+    "modelo": "claude-opus-5-5",
+    "request_id": "req_011Ch8XexMQP6QSpTA6gMAKv",
+    "fecha": "2026-11-17T12:50:58+00:00",
+    "costo_usd": 0.147872,
+    "modelo_llamado": true,
+    "texto_noticia_recibido": true,
+    "uso": {
+      "input_tokens": 18323,
+      "output_tokens": 3149,
+      "cache_creation_input_tokens": 2320,
+      "cache_read_input_tokens": 0
+    }
+  }
+}

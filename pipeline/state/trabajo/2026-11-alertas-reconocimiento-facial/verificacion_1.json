@@ -1,0 +1,50 @@
+{
+  "tarea_id": "2026-11-alertas-reconocimiento-facial",
+  "aprobado": true,
+  "estado_destino": "verificada",
+  "hallazgos": [
+    {
+      "invariante": "notebook",
+      "severidad": "advertencia",
+      "ubicacion": "guia.materiales.notebook",
+      "descripcion": "notebook escenarios.ipynb no encontrado: ",
+      "origen": "codigo"
+    }
+  ],
+  "cifras_contrastadas": [
+    {
+      "indice": 0,
+      "que_es": "Cantidad de imágenes subidas a la plataforma Rekognition de Amazon, cuya procedencia no está clara",
+      "valor_tarea": "3,5 millones",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 8"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "3,5 millones",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 8 de la noticia; modelo: El párrafo 8 habla de 3,5 millones de imágenes subidas a Rekognition de Amazon y dice que no está claro si se tomaron en los puestos de control. Coinciden el valor, la unidad y el significado."
+    }
+  ],
+  "notebook": {
+    "estado": "no_encontrado",
+    "ruta": "escenarios.ipynb",
+    "salida_resumen": ""
+  },
+  "meta": {
+    "agente": "verificador",
+    "version_prompt": "1.1",
+    "modelo": "claude-opus-5-5",
+    "request_id": "req_011Ch8XDa9DU8KXndnChLwET",
+    "fecha": "2026-11-17T12:45:05+00:00",
+    "costo_usd": 0.118584,
+    "modelo_llamado": true,
+    "texto_noticia_recibido": true,
+    "uso": {
+      "input_tokens": 15701,
+      "output_tokens": 2209,
+      "cache_creation_input_tokens": 2320,
+      "cache_read_input_tokens": 0
+    }
+  }
+}
