@@ -1,0 +1,53 @@
+{
+  "tarea_id": "2026-11-alertas-reconocimiento-facial",
+  "aprobado": true,
+  "estado_destino": "verificada",
+  "hallazgos": [
+    {
+      "invariante": "notebook",
+      "severidad": "advertencia",
+      "ubicacion": "guia.materiales.notebook",
+      "descripcion": "notebook escenarios.ipynb no encontrado: ",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "tarea.recursos_de_entrada[R1]",
+      "descripcion": "no se pudo contrastar con el texto: el ciclo no entregó `texto_noticia`; la afirmación del recurso solo se juzgó contra título, resumen y cifras",
+      "origen": "codigo"
+    }
+  ],
+  "cifras_contrastadas": [
+    {
+      "indice": 0,
+      "que_es": "Cantidad de imágenes subidas a la plataforma Rekognition de Amazon, cuya procedencia no está clara",
+      "valor_tarea": "3,5 millones",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 8"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "3,5 millones",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia"
+    }
+  ],
+  "notebook": {
+    "estado": "no_encontrado",
+    "ruta": "escenarios.ipynb",
+    "salida_resumen": ""
+  },
+  "meta": {
+    "agente": "verificador",
+    "version_prompt": "1.1",
+    "modelo": null,
+    "request_id": null,
+    "fecha": "2026-11-17T13:02:00+00:00",
+    "costo_usd": 0.0,
+    "modelo_llamado": false,
+    "texto_noticia_recibido": false,
+    "uso": null,
+    "nota": "solo código, sin contraste semántico y sin el texto de la noticia (corrección manual de la guía; La Tercera no se puede leer desde el entorno de Claude)"
+  }
+}

@@ -25,7 +25,7 @@
     "puntaje_rub01": 24,
     "version": 1,
     "fecha": "2026-11-17",
-    "cambios": ""
+    "cambios": "rev. 1 de la guía: correcciones de texto de la revisión humana 2 (Carlos Rojas Bruna): alcance de la ruta R1 en E2 y redacción de las variantes"
   },
   "meta": {
     "que_observar": "Cómo el grupo define qué significa que una alerta de reconocimiento facial sea confiable y si lo distingue de la exactitud declarada del sistema. También se observa cómo decide, justifica y varía sus supuestos (comparaciones por persona, tasa de falsa coincidencia, proporción de personas buscadas, sensibilidad), y si contrasta sus rangos con una referencia externa antes de recomendar.",
@@ -228,7 +228,7 @@
       ],
       "modelo": "proporcional (conteo esperado)",
       "bloqueos": [],
-      "que_aprende": "El grupo detecta bien que el error por comparación se multiplica con la base (idea de R1). Sin embargo, suma los falsos candidatos esperados por persona como si cada uno fuera una alerta, y salta de P2-RM a P4-WM sin pasar por P3-MM. Al contrastarlo con E1, el curso discute la diferencia entre número esperado de coincidencias y probabilidad de que una persona dispare alerta. La conclusión cualitativa coincide, pero la cuenta que la respalda no es la que corresponde.",
+      "que_aprende": "El grupo detecta bien que el error por comparación se multiplica con la base y hace la cuenta de la ruta R1 (personas × N × f). Esa estimación sirve como orden de magnitud solo mientras N·f sea mucho menor que 1. Aquí N·f = 3,5: el grupo cuenta cada falso candidato esperado como una alerta y obtiene 35.000 falsas alertas con 10.000 personas, más alertas que personas. Además salta de P2-RM a P4-WM sin pasar por P3-MM. Al contrastarlo con E1, el curso discute la diferencia entre número esperado de coincidencias y probabilidad de que una persona dispare alerta. La conclusión cualitativa coincide, pero con estos valores la cuenta de R1 deja de ser válida.",
       "extracto_dialogo": [
         {
           "hablante": "Fran",
@@ -392,7 +392,7 @@
     "contraste_validacion": "Pidan a cada grupo que fije por escrito sus rangos de tasa de falsa coincidencia antes de ver ninguna referencia. Después entreguen el recurso a solicitud R4 y la evidencia independiente de la tarea: las evaluaciones del NIST (FRVT), con tasas medidas en pruebas controladas. Cada grupo compara sus rangos con esas tasas y dice si los mantiene, los ajusta o los descarta. Esa comparación es el momento de validar. Como segunda comparación, el curso puede contrastar sus rangos con una simulación en computador con distribuciones de puntajes, un dato no usado al construir el modelo. Concluyan con cómo cambió la recomendación al ajustar los supuestos. No se agregan cifras externas: solo se usa lo que la referencia y la simulación muestren."
   },
   "variantes_y_continuidad": {
-    "uso_variantes": "Variante hacia abajo (tramo S): conviene si el grupo no maneja probabilidad condicional o si el bloqueo en P3-MM impide avanzar. Se pide solo estimar cuántas falsas alertas esperaría el puesto en una jornada, sin exigir la probabilidad de que una alerta sea correcta. El grupo estima por su cuenta la tasa de error y compara dos o tres valores, como comparación de escenarios sin Bayes formal. El contexto no cambia. Corresponde a la ruta de estimación por órdenes de magnitud. Variante hacia arriba: no existe, porque `variantes_detalle` la declara null. Para un grupo que avanza rápido, la propia tarea ofrece la ruta del modelo de umbral con distribuciones de puntajes y curva ROC, pero eso es una ruta del nivel principal y no una variante.",
+    "uso_variantes": "Variante hacia abajo (tramo S): conviene si el grupo no maneja probabilidad condicional o si el bloqueo en P3-MM impide avanzar. Se pide solo estimar cuántas falsas alertas esperaría el puesto en una jornada, sin exigir la probabilidad de que una alerta sea correcta. El grupo estima por su cuenta la tasa de error y compara dos o tres valores, como comparación de escenarios sin Bayes formal. El contexto no cambia. Corresponde a la ruta de estimación por órdenes de magnitud. Variante hacia arriba: la tarea no tiene. Para un grupo que avanza rápido, la propia tarea ofrece la ruta del modelo de umbral con distribuciones de puntajes y curva ROC, pero eso es una ruta del nivel principal y no una variante.",
     "acostumbramiento": "Si el grupo nunca ha modelado, conviene una actividad breve previa: estimar una cantidad sin datos exactos a partir de un titular, anotando supuestos con rangos y justificándolos. Así se ejercita P2-RM y se acepta trabajar con rangos antes de esta tarea. En una secuencia, esta tarea es una parte avanzada del nivel universitario y no un diagnóstico ni una iniciación: exige simplificar, matematizar con probabilidad condicional, validar con una referencia externa y comunicar, en dos sesiones. Con un grupo sin experiencia en modelación, conviene empezar por la variante hacia abajo.",
     "tarea_siguiente": null
   },
