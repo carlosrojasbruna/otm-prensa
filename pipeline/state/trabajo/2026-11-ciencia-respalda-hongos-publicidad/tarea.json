@@ -1,0 +1,232 @@
+{
+  "id": "2026-11-ciencia-respalda-hongos-publicidad",
+  "titulo": "¿Es cierto que «la ciencia respalda los hongos medicinales»?",
+  "estado": "archivada",
+  "version": 1,
+  "fecha": "2026-11-23",
+  "noticia": {
+    "noticia_id": "2026-11-23-npr-mushroom-supplements-promise-health-benefits-what",
+    "medio": "NPR",
+    "titulo": "Mushroom supplements promise health benefits. What does the science say?",
+    "fecha": "2026-11-23",
+    "url": "https://www.npr.org/2026/11/23/nx-s1-6047791/mushroom-supplements-health-research",
+    "resumen_propio": "A science reporter examines popular claims that mushroom supplements improve gut health, focus and immunity, and contrasts them with the thin clinical evidence. She describes a Japanese mushroom extract tested in gastric cancer surgery patients, where a pooled analysis linked it to lower mortality, and a 2023 review that screened thousands of papers and kept only a small fraction, with mixed outcomes.",
+    "cifras_usadas": [
+      {
+        "valor": "2,349",
+        "unidad": "estudios",
+        "que_es": "estudios revisados sobre hongos medicinales y cáncer",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 101"
+        }
+      },
+      {
+        "valor": 39,
+        "unidad": "estudios",
+        "que_es": "estudios considerados suficientemente robustos para el análisis de 2023",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 101"
+        }
+      },
+      {
+        "valor": 31,
+        "unidad": "estudios",
+        "que_es": "estudios que mostraron efectos beneficiosos de los hongos",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 101"
+        }
+      }
+    ]
+  },
+  "nivel_principal": "U",
+  "variantes": {
+    "abajo": "S",
+    "arriba": null
+  },
+  "area": "salud",
+  "contenidos_matematicos": [
+    "probabilidad condicional",
+    "inferencia binomial y beta",
+    "intervalos de confianza",
+    "análisis de sensibilidad",
+    "modelo de sesgo de selección"
+  ],
+  "tiempo_estimado": "2 sesiones de 90 min",
+  "estudiante": {
+    "enunciado_es": "Una revisión reciente de la literatura sobre hongos medicinales y cáncer encontró 2.349 estudios. Solo 39 se consideraron suficientemente robustos para el análisis, y de esos, 31 mostraron efectos beneficiosos de los hongos. Una tienda en línea de suplementos cita esta revisión en su publicidad con la frase «la ciencia respalda los hongos medicinales». La agencia de protección al consumidor debe decidir si esa frase es aceptable o engañosa. Quienes revisan el caso no saben cómo se eligieron los estudios ni cómo se publican los resultados de este tipo de investigación. Pueden pedir información adicional. ¿Qué tan fuerte es el respaldo que entregan estos números a la frase de la tienda y qué le recomendarían a la agencia?",
+    "foto_descripcion": "Ícono de un frasco de suplemento con un hongo dibujado, junto a una lupa sobre una pila de artículos científicos.",
+    "recursos_a_solicitud": [
+      {
+        "id": "R2",
+        "que_es": "Tarjeta sobre cómo se publican los resultados",
+        "contenido": "Supuesto del escenario: los estudios con resultado favorable se publican con más frecuencia que los que no encuentran efecto, pero la agencia no sabe cuánto más.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P2-RM",
+        "fuente": "supuesto del escenario"
+      },
+      {
+        "id": "R3",
+        "que_es": "Tarjeta sobre el criterio de selección de la revisión",
+        "contenido": "Supuesto del escenario: los autores dejaron fuera estudios con diseño débil, por ejemplo sin grupo de comparación, con muestras muy pequeñas o con resultados incompletos. No se sabe si los descartados tenían más o menos resultados favorables que los retenidos.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P2-RM",
+        "fuente": "supuesto del escenario"
+      },
+      {
+        "id": "R4",
+        "que_es": "Tarjeta de evidencia independiente sobre ensayos preinscritos",
+        "contenido": "Supuesto del escenario: entre los ensayos clínicos inscritos en un registro público antes de comenzar, la proporción con resultado favorable es claramente menor que entre los estudios que no se inscribieron.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P6-VAL",
+        "fuente": "supuesto del escenario"
+      }
+    ]
+  },
+  "variantes_detalle": {
+    "abajo": {
+      "tramo": "S2",
+      "cambios": "Se pide solo estimar qué proporción de los estudios robustos fue favorable y compararla con la proporción sobre el total revisado, con un intervalo informal (¿cuánto cambiaría si hubiera dos estudios más en contra?). Sin modelo explícito de sesgo de publicación; el sesgo se discute cualitativamente."
+    },
+    "arriba": null
+  },
+  "recursos_de_entrada": [
+    {
+      "id": "R1",
+      "que_es": "Datos de la revisión tal como se entregan en el enunciado",
+      "contenido": "La revisión encontró 2.349 estudios sobre hongos medicinales y cáncer; 39 se consideraron suficientemente robustos y 31 de ellos mostraron efectos beneficiosos.",
+      "disponibilidad": "de_entrada",
+      "fase": "P1-MRS",
+      "fuente": "noticia, párrafo 101"
+    }
+  ],
+  "mapa_ciclo": {
+    "P1-MRS": {
+      "decision": "Notar que las cifras cuentan estudios y no pacientes, y traducir la frase publicitaria a una pregunta medible (¿qué tan probable es que un estudio sólido encuentre beneficio?).",
+      "evidencia": "Reformulación escrita de la afirmación y lista de lo que las cifras sí y no dicen.",
+      "bloqueo_probable": "B12"
+    },
+    "P2-RM": {
+      "decision": "Elegir la unidad de análisis (el estudio), decidir cómo tratar los estudios descartados y qué suponer sobre la publicación selectiva.",
+      "evidencia": "Lista de supuestos jerarquizados y tarjetas solicitadas (R2, R3).",
+      "bloqueo_probable": "B23"
+    },
+    "P3-MM": {
+      "decision": "Modelar la proporción de estudios favorables como binomial con incertidumbre (beta o intervalo) y añadir un parámetro de sesgo: razón entre la probabilidad de que se retenga un estudio favorable y uno sin efecto.",
+      "evidencia": "Ecuaciones o código con parámetros nombrados y su significado en el contexto.",
+      "bloqueo_probable": "B34"
+    },
+    "P4-WM": {
+      "decision": "Calcular la proporción observada, su intervalo y la proporción corregida para varias razones de sesgo.",
+      "evidencia": "Tabla o gráfico de la proporción corregida según la razón de sesgo.",
+      "bloqueo_probable": "B45"
+    },
+    "P5-INT": {
+      "decision": "Distinguir «proporción de estudios favorables» de «probabilidad de que el hongo funcione» y decidir cuánto respaldo queda tras el sesgo.",
+      "evidencia": "Frase interpretativa que declara qué se puede afirmar y con qué cautela.",
+      "bloqueo_probable": "B56"
+    },
+    "P6-VAL": {
+      "decision": "Contrastar la razón de sesgo supuesta con la evidencia independiente sobre ensayos preinscritos y revisar el modelo.",
+      "evidencia": "Comparación escrita entre la dirección del sesgo en el modelo y la tarjeta R4; revisión de supuestos.",
+      "bloqueo_probable": "B67"
+    },
+    "P7-EXP": {
+      "decision": "Redactar una recomendación a la agencia con la incertidumbre y los límites del modelo.",
+      "evidencia": "Informe breve o presentación con gráfico de sensibilidad y recomendación sobre la frase.",
+      "bloqueo_probable": null
+    }
+  },
+  "task_space": {
+    "required_assumptions": [
+      "La frase publicitaria de la tienda es un escenario ilustrativo basado en las afirmaciones comerciales que menciona la noticia.",
+      "Los estudios se tratan como ensayos independientes con el mismo peso, ignorando tamaño de muestra y magnitud del efecto.",
+      "Los estudios descartados se consideran un grupo de composición desconocida.",
+      "La publicación selectiva se resume en una razón constante de retención entre estudios favorables y sin efecto.",
+      "«Efecto beneficioso» se interpreta como resultado favorable en el estudio, sin juzgar su relevancia clínica."
+    ],
+    "reference_solution": {
+      "steps": "1) Proporción observada de estudios robustos favorables: 31/39 ≈ 0,795; sobre el total revisado, 31/2.349 ≈ 0,013, que no es una tasa de fracaso porque los descartados no se evaluaron. 2) Incertidumbre: con prior uniforme, posterior Beta(32, 9), media ≈ 0,78 e intervalo creíble al 95 % aproximado de 0,65 a 0,89 (Wilson: 0,65 a 0,89). 3) Sesgo: si el odds observado es 31/8 ≈ 3,9 y la razón de retención favorable/sin efecto es r, el odds verdadero es 3,9/r. Con r = 1 la proporción verdadera es ≈ 0,80; con r = 2, ≈ 0,66; con r = 4, ≈ 0,49; con r = 8, ≈ 0,33. 4) Se contrasta la dirección del sesgo con la evidencia de ensayos preinscritos. 5) Conclusión condicional a r.",
+      "result": "La proporción de estudios robustos favorables es cercana a 0,8 (intervalo de 0,65 a 0,89), pero si los resultados favorables se retienen o publican el doble o más que los neutros, la proporción verdadera cae a 0,66 o menos, y con r = 4 se aproxima a 0,5. «La ciencia respalda» es una afirmación demasiado fuerte: lo defendible es «hay señales en parte de los estudios, con evidencia limitada». Se esperan matices sobre el tipo de cáncer, el hongo y la dosis.",
+      "acceptable_range": "Proporción corregida entre 0,3 y 0,8 según r entre 1 y 8; cualquier recomendación que declare la dependencia de r y no afirme causalidad clínica es aceptable. Una decisión de aceptar la frase solo es defendible si se explicita r cercano a 1 y se justifica."
+    },
+    "routes": [
+      {
+        "id": "R1",
+        "nombre": "Proporción simple y comparación con el total",
+        "nivel": "S2",
+        "modelo": "Cociente 31/39 y 31/2.349, discusión cualitativa de lo que cada uno significa y de por qué el segundo no mide fracaso",
+        "resultado": "≈ 79 % de los estudios robustos son favorables; ≈ 1,3 % sobre el total, interpretado con cautela"
+      },
+      {
+        "id": "R2",
+        "nombre": "Inferencia binomial con intervalo",
+        "nivel": "U",
+        "modelo": "Binomial con posterior Beta(32, 9) o intervalo de Wilson, con prior discutido",
+        "resultado": "Media ≈ 0,78 e intervalo al 95 % ≈ 0,65 a 0,89"
+      },
+      {
+        "id": "R3",
+        "nombre": "Modelo de sesgo de selección con razón de retención",
+        "nivel": "U",
+        "modelo": "Odds verdadero = odds observado / r, barrido de r y propagación de la incertidumbre binomial",
+        "resultado": "Proporción verdadera ≈ 0,80 (r=1), 0,66 (r=2), 0,49 (r=4), 0,33 (r=8)"
+      },
+      {
+        "id": "R4",
+        "nombre": "Prior jerárquico informado por registros",
+        "nivel": "U",
+        "modelo": "Distribución para r informada por la comparación entre ensayos preinscritos y no preinscritos, con simulación de Monte Carlo",
+        "resultado": "Distribución de la proporción verdadera con probabilidad de que supere 0,5 según el prior elegido"
+      }
+    ],
+    "modelo_inadecuado": {
+      "id": "RX: interpretar 31/39 como la probabilidad de que un paciente mejore con hongos medicinales.",
+      "por_que_falla": "Las cifras cuentan estudios, no pacientes; no informan tamaño de efecto, tipo de cáncer, ni cuántos estudios favorables lo son por azar o sesgo. Además ignora la selección de los 39 y la publicación selectiva, y no cuantifica la incertidumbre."
+    },
+    "validation_evidence": "Evidencia independiente que el grupo recibe después de modelar (R4) y puede contrastar con literatura externa: Kaplan y Irvin (2015, PLoS ONE) mostraron que la proporción de resultados favorables en grandes ensayos clínicos de los NHLBI bajó fuertemente tras exigirse preinscripción. Esto respalda r mayor que 1 y permite contrastar el rango de r elegido por el grupo con la dirección y magnitud del sesgo observado.",
+    "agent_visibility": {
+      "students": [
+        "enunciado_es",
+        "foto_descripcion",
+        "recursos_a_solicitud"
+      ],
+      "coder": [
+        "enunciado_es",
+        "task_space"
+      ],
+      "guide": [
+        "all"
+      ]
+    }
+  },
+  "rubrica_rub01": {
+    "total": 23,
+    "por_criterio": {
+      "genuino": 2,
+      "abierta": 2,
+      "decisiones": 2,
+      "realismo": 2,
+      "autenticidad": 2,
+      "contexto": 2,
+      "ciclo": 2,
+      "validacion": 2,
+      "nivel": 2,
+      "autodiferenciacion": 2,
+      "fecundidad": 2,
+      "recursos": 1
+    }
+  },
+  "rubrica_rub02": {
+    "P": null,
+    "S": null,
+    "U": null
+  },
+  "modelo_y_prompt": {
+    "diseñador": "claude-sonnet-5-5",
+    "version_prompt": "1.1",
+    "version_rubrica": "4.0"
+  }
+}

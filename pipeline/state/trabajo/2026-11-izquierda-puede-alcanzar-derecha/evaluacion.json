@@ -1,0 +1,104 @@
+{
+  "tarea_id": "2026-11-izquierda-puede-alcanzar-derecha",
+  "fecha": "2026-11-23T21:50:35Z",
+  "rub01": {
+    "version_rubrica": "4.0",
+    "criterios": {
+      "genuino": {
+        "puntaje": 2,
+        "justificacion": "Plantea una necesidad real de un equipo de análisis: saber si la izquierda puede alcanzar a la derecha. No entrega ninguna regla ni modelo de transferencia de votos para aplicar.",
+        "cita": "Ustedes asesoran a ese equipo: ¿qué tendría que ocurrir con los votantes para que eso pase y les parece verosímil?"
+      },
+      "abierta": {
+        "puntaje": 2,
+        "justificacion": "La pregunta no prescribe procedimiento. Admite varios modelos defendibles: indecisos, fuga de votantes de derecha, abstención, margen de error o combinaciones de escenarios.",
+        "cita": "¿qué tendría que ocurrir con los votantes para que eso pase y les parece verosímil? Pueden pedir información adicional."
+      },
+      "decisiones": {
+        "puntaje": 2,
+        "justificacion": "El grupo debe suponer adónde van los votantes que no repiten y cómo se comporta el 12,8% no asignado. También debe seleccionar qué datos usar y estimar escenarios.",
+        "cita": "la noticia no informa a qué partido o decisión (otro partido, voto en blanco, abstención) irían quienes no repiten su voto; el grupo debe decidir …"
+      },
+      "realismo": {
+        "puntaje": 2,
+        "justificacion": "Se trata de una elección real con una encuesta real, y la pregunta es la que se hacen efectivamente los analistas políticos.",
+        "cita": "Faltan pocos días para las elecciones en España y una encuesta online de Ateneo del Dato muestra que las derechas superan a la izquierda"
+      },
+      "autenticidad": {
+        "puntaje": 2,
+        "justificacion": "Los datos de una encuesta citada en la prensa son el núcleo de la tarea y no fueron creados para enseñar el contenido.",
+        "cita": "La misma encuesta indica que 86,6% de quienes votaron a Vox en las elecciones anteriores repetirían su voto, y 76,1% de quienes votaron al PP"
+      },
+      "contexto": {
+        "puntaje": 2,
+        "justificacion": "El contexto electoral condiciona los supuestos: quién es móvil, cómo se reparten los votos y el margen de error. Además, es indispensable para juzgar si el escenario es verosímil.",
+        "cita": "con parte del electorado todavía móvil, la izquierda podría alcanzar a la derecha el día de la votación"
+      },
+      "ciclo": {
+        "puntaje": 2,
+        "justificacion": "Para responder hay que comprender la encuesta, simplificar con supuestos de transferencia, matematizar escenarios, calcular, interpretar el resultado y juzgar su verosimilitud. El enunciado no deja hecha ninguna fase.",
+        "cita": "¿qué tendría que ocurrir con los votantes para que eso pase y les parece verosímil?"
+      },
+      "validacion": {
+        "puntaje": 2,
+        "justificacion": "Hay evidencia independiente accesible para contrastar los escenarios: el margen de error, otras encuestas públicas, los resultados de la elección anterior y el resultado real posterior.",
+        "cita": "La encuesta hizo 2.000 entrevistas y su margen de error para el conjunto de la muestra es ±2,2%."
+      },
+      "nivel": {
+        "puntaje": 2,
+        "justificacion": "El contexto electoral es comprensible para estudiantes de 16 a 18 años. La demanda de comparar varios supuestos en competencia y analizar qué pasa si, considerando el margen de error, es adecuada para S2.",
+        "cita": "el PP tendría 32,1% y Vox 17,6%, lo que suma 49,7% de intención de voto, mientras que los partidos de izquierda sumarían 37,5%"
+      },
+      "autodiferenciacion": {
+        "puntaje": 2,
+        "justificacion": "El piso es razonable: basta comparar las cifras y repartir los indecisos con porcentajes. El techo es alto: admite matrices de transferencia, uso de resultados previos, análisis de sensibilidad e incertidumbre muestral.",
+        "cita": "Pueden pedir información adicional."
+      },
+      "fecundidad": {
+        "puntaje": 2,
+        "justificacion": "Los distintos supuestos de transferencia producen escenarios comparables. Abren preguntas sobre los límites de las encuestas, la abstención y el margen de error.",
+        "cita": "y les parece verosímil?"
+      },
+      "recursos": {
+        "puntaje": 2,
+        "justificacion": "La información necesaria se entrega o puede solicitarse, sin revelar el modelo; R2 deja la decisión al grupo. Los resultados de la elección anterior se obtienen con una búsqueda simple.",
+        "cita": "R2 (Información sobre el destino de quienes cambian su voto), disponible a solicitud del grupo"
+      }
+    },
+    "total": 24,
+    "mejoras": []
+  },
+  "reproducibilidad": {
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.353399,
+        "version_prompt": "1.1"
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.197174,
+        "version_prompt": "1.3"
+      },
+      "filtro": {
+        "modelo": "claude-haiku-5-5",
+        "version_modelo": "claude-haiku-5-5",
+        "costo_usd": 0.000459,
+        "version_prompt": "1.0"
+      }
+    },
+    "version_prompt": {
+      "disenador": "1.1",
+      "evaluador": "1.3",
+      "filtro": "1.0"
+    },
+    "version_rubrica": "4.0",
+    "version_MAR03": "1.0",
+    "version_MED01": "1.5",
+    "diseno_simulador": null,
+    "fecha": "2026-11-23T21:50:35Z",
+    "costo_usd": 0.551032
+  }
+}

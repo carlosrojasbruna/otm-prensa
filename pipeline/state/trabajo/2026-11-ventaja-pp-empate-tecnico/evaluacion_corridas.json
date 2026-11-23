@@ -1,0 +1,316 @@
+{
+  "tarea_id": "2026-11-ventaja-pp-empate-tecnico",
+  "evaluaciones": [
+    {
+      "iteracion": 1,
+      "version_tarea": 1,
+      "fecha": "2026-11-23T21:49:16Z",
+      "modelo": "claude-opus-5-5",
+      "version_prompt": "1.3",
+      "version_rubrica": "4.0",
+      "corridas": [
+        {
+          "n": 1,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La situación plantea una necesidad real: decidir un titular honesto. No se entrega ninguna regla para comparar la diferencia con el margen de error; esa forma de comparar la debe construir el grupo.",
+                "cita": "deben decidir si su titular puede decir que el PP va adelante, o si es más honesto decir otra cosa"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe procedimiento. Admite varios caminos defendibles: solapamiento de intervalos, margen de la diferencia, tendencia respecto del estudio anterior o crítica al muestreo online.",
+                "cita": "¿Qué dirían y cómo lo justificarían? Pueden pedir información adicional."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige seleccionar información (pedir o no R2 y R3), suponer cómo se eligió la muestra, decidir qué cuenta como «ir adelante» y qué grado de seguridad es aceptable.",
+                "cita": "Pueden pedir información adicional."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Interpretar encuestas con márgenes de error para titular una noticia es una práctica periodística real, y el encuadre no se percibe forzado.",
+                "cita": "Ustedes forman parte del equipo de datos de otro medio y deben decidir si su titular puede decir que el PP va adelante"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los datos de una encuesta publicada y citada en prensa son el núcleo de la tarea. Constituyen un componente auténtico integrado de manera sustantiva.",
+                "cita": "Un medio español publicó que el PP le saca muy poca ventaja al PSOE, apoyándose en una encuesta online de Ateneo del Dato"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona decisiones (encuesta online, honestidad del titular, público lego). También es necesario para interpretar y comunicar el resultado.",
+                "cita": "redactar una nota breve para lectores sin estudios de estadística que explique su conclusión y con qué grado de seguridad la sostienen"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a comprender la encuesta, suponer el tipo de muestreo, matematizar la comparación con el margen, calcular, volver al titular y juzgar su seguridad. El margen ya calculado no vuelve trivial la matematización de la comparación.",
+                "cita": "explique su conclusión y con qué grado de seguridad la sostienen"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existe evidencia independiente accesible para contrastar la conclusión: el estudio anterior, otras encuestas públicas y, más adelante, el resultado electoral.",
+                "cita": "En el estudio anterior de Ateneo del Dato, el PSOE tenía 28,6% de intención de voto y el PP, 31,5%."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto electoral y el lenguaje son comprensibles en secundaria. La matemática mínima (porcentajes, sumar y restar el margen, comparar intervalos) está al alcance de todo el tramo S.",
+                "cita": "el PP tendría 32,1% de intención de voto y el PSOE, 30,8%. La encuesta informa además un margen de error de ±2,2%"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es razonable: se puede comparar la diferencia de 1,3 puntos con ±2,2 usando aritmética. El techo es alto: margen de la diferencia, probabilidad de ventaja, tendencia y sesgo del muestreo online.",
+                "cita": "¿Qué dirían y cómo lo justificarían?"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las conclusiones abren preguntas sustantivas: cómo comunicar incertidumbre, qué tamaño de muestra haría falta, si hay tendencia entre estudios y qué sesgos tiene una encuesta online. También permiten comparar titulares.",
+                "cita": "si su titular puede decir que el PP va adelante, o si es más honesto decir otra cosa"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "La información necesaria está disponible o puede solicitarse. Sin embargo, la imagen con segmentos de incertidumbre sobre cada barra sugiere la estructura de solución (comparar intervalos que se solapan), lo que es una sobreorientación parcial; dudé entre 1 y 2 y asigné el menor.",
+                "cita": "Dos barras verticales de altura casi igual, una apenas más alta que la otra, con un pequeño segmento vertical de incertidumbre sobre cada barra."
+              }
+            },
+            "total": 23,
+            "mejoras": [
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Reemplazar la imagen por un gráfico de barras sin segmentos de incertidumbre, como el que publicaría el medio, para que el grupo decida por sí mismo cómo representar el margen de error."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011ChLbT1oSCBuxG9kjQn7au",
+            "fecha": "2026-11-23T21:47:59+00:00",
+            "intentos": 1,
+            "costo_usd": 0.127372,
+            "avisos": []
+          }
+        },
+        {
+          "n": 2,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "Plantea una necesidad real: decidir un titular honesto. No entrega una regla para juzgar si la diferencia es significativa, aunque la imagen sugiere la idea de incertidumbre; eso se considera en el criterio 12.",
+                "cita": "deben decidir si su titular puede decir que el PP va adelante, o si es más honesto decir otra cosa"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe el método. Admite varias rutas defendibles: comparar intervalos, estimar el margen de la diferencia, usar la tendencia del estudio anterior o cuestionar la muestra online.",
+                "cita": "¿Qué dirían y cómo lo justificarían? Pueden pedir información adicional."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Hay que decidir cómo interpretar un margen informado para el conjunto de la muestra y qué supuesto adoptar sobre el muestreo online. También hay que decidir si conviene solicitar el estudio anterior y cómo expresar el grado de seguridad.",
+                "cita": "La encuesta informa además un margen de error de ±2,2% para el conjunto de la muestra."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Decidir el titular de una encuesta electoral es una situación periodística real y habitual.",
+                "cita": "Un medio español publicó que el PP le saca muy poca ventaja al PSOE, apoyándose en una encuesta online de Ateneo del Dato"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los datos provienen, según la tarea, de una encuesta publicada por un medio y constituyen el núcleo de la tarea. El componente auténtico está integrado de manera sustantiva.",
+                "cita": "Se realizaron 2.000 entrevistas. Según ella, el PP tendría 32,1% de intención de voto y el PSOE, 30,8%."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona las decisiones: qué es honesto afirmar, qué hacer con una muestra online y cómo comunicarlo a un público lego. También es necesario para interpretar y validar la conclusión.",
+                "cita": "Tienen que redactar una nota breve para lectores sin estudios de estadística que explique su conclusión"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a comprender la encuesta, asumir un tipo de muestreo, matematizar la incertidumbre, calcular y volver a la situación para formular y juzgar un titular. El margen viene dado, pero interpretar la incertidumbre de la diferencia no es trivial.",
+                "cita": "explique su conclusión y con qué grado de seguridad la sostienen"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "La conclusión puede contrastarse con evidencia independiente: el estudio anterior, otras encuestas publicadas y el resultado electoral posterior.",
+                "cita": "En el estudio anterior de Ateneo del Dato, el PSOE tenía 28,6% de intención de voto y el PP, 31,5%."
+              },
+              "nivel": {
+                "puntaje": 1,
+                "justificacion": "El contexto es comprensible. Sin embargo, interpretar un margen de error y un grado de seguridad excede las herramientas de S1 (13–15) en MAR03 y encaja en S2, aunque la tarea declara todo S. Dudo entre 1 y 2 y asigno el menor.",
+                "cita": "La encuesta informa además un margen de error de ±2,2% para el conjunto de la muestra."
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es razonable: se puede sumar y restar el margen a cada porcentaje. El techo es alto: estimar el margen de la diferencia, ajustar el margen a p≈0,32, analizar la tendencia o el sesgo del muestreo online.",
+                "cita": "¿Qué dirían y cómo lo justificarían? Pueden pedir información adicional."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "La tarea abre preguntas sobre la representatividad, la tendencia entre estudios y el tamaño de muestra necesario. También permite comparar titulares alternativos y sus límites.",
+                "cita": "R3 (Información sobre cómo se escogió a las personas entrevistadas), disponible a solicitud del grupo"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "La información necesaria está disponible o puede solicitarse. Pero la imagen con barras de incertidumbre sobre cada partido sugiere la estructura de solución (comparar intervalos), lo que es una sobreorientación parcial.",
+                "cita": "Dos barras verticales de altura casi igual, una apenas más alta que la otra, con un pequeño segmento vertical de incertidumbre sobre cada barra."
+              }
+            },
+            "total": 22,
+            "mejoras": [
+              {
+                "criterio": "nivel",
+                "mejora_minima": "Declarar el sub-tramo S2, donde la interpretación de márgenes de error e incertidumbre está al alcance esperable."
+              },
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Reemplazar la imagen por una que muestre solo las dos barras sin segmentos de incertidumbre (o por el titular del medio), para que los estudiantes decidan por sí mismos cómo representar la incertidumbre."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011ChLbViRWJv4EpqM5MRCwC",
+            "fecha": "2026-11-23T21:48:33+00:00",
+            "intentos": 1,
+            "costo_usd": 0.078938,
+            "avisos": []
+          }
+        },
+        {
+          "n": 3,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "Plantea una necesidad real: decidir y comunicar un titular honesto. No entrega una regla ni un modelo para comparar la ventaja con la incertidumbre. El margen es un dato de la noticia, no el procedimiento.",
+                "cita": "deben decidir si su titular puede decir que el PP va adelante, o si es más honesto decir otra cosa"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe el método. Caben varias rutas defendibles: comparar la ventaja con el margen, solapar intervalos, estimar el margen de la diferencia o considerar la tendencia respecto del estudio anterior.",
+                "cita": "¿Qué dirían y cómo lo justificarían? Pueden pedir información adicional."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige decidir cómo interpretar el margen para una diferencia y suponer algo sobre una muestra online. También exige elegir si solicitar R2 o R3 y qué grado de seguridad declarar.",
+                "cita": "si el grupo lo necesita, puede acordar tratarlas como si hubieran sido escogidas al azar entre todo el electorado"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Decidir un titular a partir de una encuesta electoral es una situación que existe tal cual en los medios.",
+                "cita": "Un medio español publicó que el PP le saca muy poca ventaja al PSOE, apoyándose en una encuesta online de Ateneo del Dato"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "La noticia y la encuesta publicadas son el núcleo de los datos. La actividad de un equipo de datos que redacta para lectores es extraescolar e integrada de manera sustantiva.",
+                "cita": "Se realizaron 2.000 entrevistas. Según ella, el PP tendría 32,1% de intención de voto y el PSOE, 30,8%."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona los supuestos (encuesta online, muestreo). También es necesario para interpretar el resultado como titular honesto y para comunicar la incertidumbre.",
+                "cita": "redactar una nota breve para lectores sin estudios de estadística que explique su conclusión y con qué grado de seguridad la sostienen"
+              },
+              "ciclo": {
+                "puntaje": 1,
+                "justificacion": "Hay comprensión, supuestos e interpretación no triviales. Pero con el margen ya entregado, el trabajo matemático puede reducirse a comparar 1,3 con 2,2. Dudo entre 1 y 2 y asigno el menor.",
+                "cita": "La encuesta informa además un margen de error de ±2,2% para el conjunto de la muestra."
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "La conclusión puede contrastarse con evidencia independiente: el estudio anterior, otras encuestas públicas y el resultado de las elecciones próximas.",
+                "cita": "En el estudio anterior de Ateneo del Dato, el PSOE tenía 28,6% de intención de voto y el PP, 31,5%."
+              },
+              "nivel": {
+                "puntaje": 1,
+                "justificacion": "El contexto es comprensible. Pero interpretar un margen de error muestral es inferencia y excede las herramientas de S1 (MAR03), por lo que para todo S requiere ajustes menores. Hay duda entre 1 y 2; asigno el menor.",
+                "cita": "La encuesta informa además un margen de error de ±2,2% para el conjunto de la muestra."
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es bajo: basta comparar la ventaja con el margen. El techo es alto: margen de la diferencia, probabilidad de que el PP lidere, sesgo de la muestra online y tendencia con el estudio anterior.",
+                "cita": "¿Qué dirían y cómo lo justificarían?"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Abre la comparación de titulares y de criterios de 'empate técnico'. También abre preguntas sobre muestreo online, tendencia entre estudios y comunicación de la incertidumbre.",
+                "cita": "si es más honesto decir otra cosa"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "La información es suficiente u obtenible a solicitud. Pero la imagen ya representa la incertidumbre como intervalos sobre cada barra, lo que orienta parcialmente hacia la ruta de solapamiento. Hay duda entre 1 y 2; asigno el menor.",
+                "cita": "con un pequeño segmento vertical de incertidumbre sobre cada barra"
+              }
+            },
+            "total": 21,
+            "mejoras": [
+              {
+                "criterio": "ciclo",
+                "mejora_minima": "Pedir que la nota indique qué tan seguros están de que el PP supera al PSOE (no solo si cada cifra cae dentro del margen). Así el margen entregado no basta y hay que razonar sobre la incertidumbre de la diferencia."
+              },
+              {
+                "criterio": "nivel",
+                "mejora_minima": "Declarar el sub-tramo S2, donde la estadística y la interpretación del margen de error están al alcance esperable."
+              },
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Reemplazar la imagen por dos barras sin segmentos de incertidumbre, para no sugerir la representación por intervalos."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011ChLbYFxdCgXyLyUs2wmDZ",
+            "fecha": "2026-11-23T21:49:16+00:00",
+            "intentos": 1,
+            "costo_usd": 0.094998,
+            "avisos": []
+          }
+        }
+      ],
+      "totales": [
+        23,
+        22,
+        21
+      ],
+      "rango_total": 2,
+      "rango_inestable": 4,
+      "evaluacion_inestable": false,
+      "mediana": {
+        "regla": "mediana por criterio (n par: mediana inferior)",
+        "total": 22,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 1,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 1
+        },
+        "corrida_fuente": {
+          "genuino": 1,
+          "abierta": 1,
+          "decisiones": 1,
+          "realismo": 1,
+          "autenticidad": 1,
+          "contexto": 1,
+          "ciclo": 1,
+          "validacion": 1,
+          "nivel": 2,
+          "autodiferenciacion": 1,
+          "fecundidad": 1,
+          "recursos": 1
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,223 @@
+{
+  "id": "2026-11-extracto-hongo-cirugia-gastrica",
+  "titulo": "¿Cuántas muertes evitaría un extracto de hongo en nuestro hospital?",
+  "estado": "evaluada",
+  "version": 1,
+  "fecha": "2026-11-23",
+  "noticia": {
+    "noticia_id": "2026-11-23-npr-mushroom-supplements-promise-health-benefits-what",
+    "medio": "NPR",
+    "titulo": "Mushroom supplements promise health benefits. What does the science say?",
+    "fecha": "2026-11-23",
+    "url": "https://www.npr.org/2026/11/23/nx-s1-6047791/mushroom-supplements-health-research",
+    "resumen_propio": "A science reporter examines popular claims that mushroom supplements improve gut health, focus and immunity, and contrasts them with the thin clinical evidence. She describes a Japanese mushroom extract tested in gastric cancer surgery patients, where a pooled analysis linked it to lower mortality, and a 2023 review that screened thousands of papers and kept only a small fraction, with mixed outcomes.",
+    "cifras_usadas": [
+      {
+        "valor": "8,009",
+        "unidad": "pacientes",
+        "que_es": "pacientes incluidos en el metaanálisis sobre PSK tras cirugía de tumor gástrico",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 97"
+        }
+      },
+      {
+        "valor": "12%",
+        "unidad": "porcentaje de reducción del riesgo de muerte",
+        "que_es": "reducción del riesgo de muerte en pacientes que recibieron PSK",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 97"
+        }
+      }
+    ]
+  },
+  "nivel_principal": "U",
+  "variantes": {
+    "abajo": "S",
+    "arriba": null
+  },
+  "area": "salud",
+  "contenidos_matematicos": [
+    "riesgo relativo y absoluto",
+    "número necesario a tratar",
+    "incertidumbre y simulación",
+    "análisis de sensibilidad",
+    "decisión bajo incertidumbre"
+  ],
+  "tiempo_estimado": "2 sesiones de 90 min",
+  "estudiante": {
+    "enunciado_es": "Un extracto de hongo japonés, llamado PSK, se ha probado en pacientes operados de un tumor gástrico. Un metaanálisis que reunió a 8.009 pacientes asoció el extracto con una reducción de 12 % en el riesgo de muerte. El comité de un hospital chileno debe decidir si incorpora el extracto al tratamiento posterior a la cirugía. Nadie en el comité sabe cuántos de sus pacientes mueren hoy, cuánto costaría el extracto ni si sus pacientes se parecen a los del estudio. Pueden pedir información adicional. ¿Cuántas muertes podría evitar el extracto en los pacientes del hospital, qué tan segura es esa cifra y qué le recomendarían al comité?",
+    "foto_descripcion": "Ícono de un hongo junto a una balanza que compara un frasco de cápsulas con una silueta de paciente en camilla.",
+    "recursos_a_solicitud": [
+      {
+        "id": "R2",
+        "que_es": "Tarjeta con la mortalidad del hospital",
+        "contenido": "Supuesto del escenario: el hospital tiene registros de la mortalidad observada de sus pacientes operados de tumor gástrico en años anteriores, medida como proporción que fallece dentro de un plazo. El comité pide que el grupo decida qué plazo usar y qué valor adoptar, o que lo estime con estadísticas públicas de cáncer gástrico.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P2-RM",
+        "fuente": "supuesto del escenario"
+      },
+      {
+        "id": "R3",
+        "que_es": "Tarjeta sobre la comparabilidad de los pacientes",
+        "contenido": "Supuesto del escenario: los pacientes del metaanálisis fueron tratados principalmente en Japón y recibieron además el tratamiento complementario habitual de su centro. Se desconoce si los pacientes del hospital chileno tienen etapas de enfermedad similares.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P2-RM",
+        "fuente": "supuesto del escenario"
+      },
+      {
+        "id": "R4",
+        "que_es": "Tarjeta de contraste con un ensayo individual",
+        "contenido": "Supuesto del escenario: después de que el grupo presente su estimación, el comité puede consultar la diferencia absoluta de supervivencia observada en un ensayo individual de seguimiento largo con pacientes comparables, no usado para construir el modelo, para contrastarla con la predicción.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P6-VAL",
+        "fuente": "supuesto del escenario"
+      }
+    ]
+  },
+  "variantes_detalle": {
+    "abajo": {
+      "tramo": "S2",
+      "cambios": "Se pide estimar cuántas muertes se evitarían en un grupo de pacientes del hospital con una sola mortalidad basal acordada, sin intervalo de incertidumbre; la cuestión central es distinguir reducción relativa de absoluta y comparar dos mortalidades basales."
+    },
+    "arriba": null
+  },
+  "recursos_de_entrada": [
+    {
+      "id": "R1",
+      "que_es": "Datos del metaanálisis tal como se entregan en el enunciado",
+      "contenido": "El metaanálisis incluyó a 8.009 pacientes operados de tumor gástrico y asoció el extracto PSK con una reducción de 12 % en el riesgo de muerte.",
+      "disponibilidad": "de_entrada",
+      "fase": "P1-MRS",
+      "fuente": "noticia, párrafo 97"
+    }
+  ],
+  "mapa_ciclo": {
+    "P1-MRS": {
+      "decision": "Entender que la reducción de 12 % es relativa al riesgo de partida y que depende del plazo y de la población; precisar qué decide el comité.",
+      "evidencia": "Reformulación escrita de la cifra y de las variables que faltan (mortalidad basal, tamaño del grupo, costo).",
+      "bloqueo_probable": "B12"
+    },
+    "P2-RM": {
+      "decision": "Elegir mortalidad basal y plazo, suponer comparabilidad con los pacientes del estudio, suponer reparto entre tratados y controles y eventos.",
+      "evidencia": "Supuestos explícitos con valores o rangos y tarjetas solicitadas (R2, R3).",
+      "bloqueo_probable": "B23"
+    },
+    "P3-MM": {
+      "decision": "Construir el modelo de riesgo: riesgo tratado = riesgo basal por el factor de reducción; muertes evitadas = pacientes por diferencia de riesgo; número necesario a tratar; incertidumbre con el error del logaritmo del riesgo relativo.",
+      "evidencia": "Expresiones con parámetros definidos y distribución elegida para el riesgo basal y el efecto.",
+      "bloqueo_probable": "B34"
+    },
+    "P4-WM": {
+      "decision": "Calcular muertes evitadas por cada mil pacientes, el número necesario a tratar, un intervalo y la sensibilidad a la mortalidad basal, con simulación si lo desean.",
+      "evidencia": "Tabla o gráfico de muertes evitadas en función del riesgo basal, con banda de incertidumbre.",
+      "bloqueo_probable": "B45"
+    },
+    "P5-INT": {
+      "decision": "Interpretar el resultado para el hospital, separando beneficio esperado, incertidumbre y límites de transferir el estudio.",
+      "evidencia": "Frase que traduce el resultado a pacientes del hospital y declara qué no se sabe.",
+      "bloqueo_probable": "B56"
+    },
+    "P6-VAL": {
+      "decision": "Contrastar la predicción con el ensayo individual (R4) y con la cota lógica de que no se pueden evitar más muertes que las que ocurrirían.",
+      "evidencia": "Comparación numérica entre muertes evitadas predichas y diferencia observada; revisión de supuestos.",
+      "bloqueo_probable": "B67"
+    },
+    "P7-EXP": {
+      "decision": "Recomendar al comité con criterio explícito (por ejemplo, costo por muerte evitada) y con sensibilidad a la mortalidad basal.",
+      "evidencia": "Informe breve con tabla de escenarios y recomendación condicional.",
+      "bloqueo_probable": null
+    }
+  },
+  "task_space": {
+    "required_assumptions": [
+      "La reducción de 12 % se interpreta como reducción relativa del riesgo de muerte en un plazo común.",
+      "La mortalidad basal del hospital debe estimarse o solicitarse; no se entrega.",
+      "El tamaño del grupo de pacientes del hospital debe estimarse.",
+      "Los pacientes del hospital se parecen a los del metaanálisis, supuesto discutible.",
+      "Para el intervalo se supone un reparto entre tratados y controles y un número de muertes derivado de la mortalidad basal."
+    ],
+    "reference_solution": {
+      "steps": "1) Interpretar 12 % como reducción relativa: riesgo tratado = 0,88 por riesgo basal p0. 2) Reducción absoluta ARR = 0,12 por p0; número necesario a tratar NNT = 1/ARR. 3) Con p0 = 0,40 (supuesto): ARR = 0,048, NNT ≈ 21, y por cada mil pacientes ≈ 48 muertes evitadas. Con p0 = 0,20: ARR = 0,024, NNT ≈ 42, 24 por mil. Con p0 = 0,60: ARR = 0,072, NNT ≈ 14, 72 por mil. 4) Incertidumbre: si se supone que los 8.009 pacientes se repartieron en mitades con p0 = 0,40, los eventos son ≈ 1.602 (control) y ≈ 1.409 (tratados); el error del log del riesgo relativo ≈ sqrt(1/1.602 + 1/1.409) ≈ 0,037, con RR entre 0,82 y 0,95 al 95 %. Eso da ARR entre 0,022 y 0,072, es decir 22 a 72 muertes evitadas por mil. 5) Se contrasta con el ensayo individual y se añade costo y comparabilidad para la recomendación.",
+      "result": "Con una mortalidad basal intermedia (por ejemplo 40 % en el plazo elegido) se evitarían unas 48 muertes por cada mil pacientes tratados (NNT ≈ 21), con intervalo plausible entre 22 y 72 por mil; el resultado es proporcional a la mortalidad basal y cae si los pacientes del hospital difieren de los del estudio. La recomendación debe ser condicional al costo, a la comparabilidad y a la mortalidad basal real.",
+      "acceptable_range": "Muertes evitadas entre ≈ 24 y 72 por mil para mortalidad basal entre 0,20 y 0,60; cualquier cifra coherente con el supuesto de mortalidad basal declarado y la lógica relativa vs absoluta es aceptable. Resultados que usen 12 puntos porcentuales no son aceptables."
+    },
+    "routes": [
+      {
+        "id": "R1",
+        "nombre": "Conversión directa de riesgo relativo a absoluto",
+        "nivel": "S2",
+        "modelo": "Muertes evitadas = pacientes por mortalidad basal por 0,12, para dos o tres mortalidades basales",
+        "resultado": "Por cada mil pacientes: 24, 48 y 72 muertes evitadas con mortalidad basal de 0,20, 0,40 y 0,60"
+      },
+      {
+        "id": "R2",
+        "nombre": "NNT con intervalo por aproximación normal del log RR",
+        "nivel": "U",
+        "modelo": "ARR = p0(1 − RR), NNT = 1/ARR, error del log RR a partir de eventos supuestos en cada brazo",
+        "resultado": "NNT ≈ 21 con ARR entre 0,022 y 0,072 para p0 = 0,40"
+      },
+      {
+        "id": "R3",
+        "nombre": "Simulación de Monte Carlo con incertidumbre en riesgo basal y efecto",
+        "nivel": "U",
+        "modelo": "Distribuciones para p0 (según registros del hospital) y RR (normal en escala log) y simulación de muertes evitadas en un grupo del hospital",
+        "resultado": "Distribución de muertes evitadas con mediana y percentiles 2,5 y 97,5; probabilidad de superar un umbral de decisión"
+      },
+      {
+        "id": "R4",
+        "nombre": "Análisis de decisión con costo",
+        "nivel": "U",
+        "modelo": "Costo por muerte evitada = costo por paciente por NNT, comparado con un umbral del comité y con sensibilidad a p0",
+        "resultado": "Recomendación condicionada: el extracto es atractivo si el costo por paciente por NNT es menor que el umbral aceptado por el comité"
+      }
+    ],
+    "modelo_inadecuado": {
+      "id": "RX: restar 12 puntos porcentuales a la mortalidad (por ejemplo, de 40 % a 28 %).",
+      "por_que_falla": "Confunde reducción relativa con absoluta: el 12 % se aplica al riesgo de partida, por lo que con 40 % de mortalidad el riesgo baja a 35,2 % y no a 28 %. Sobrestima el beneficio unas 2,5 veces y ignora la incertidumbre y la dependencia de la mortalidad basal."
+    },
+    "validation_evidence": "Contraste con evidencia independiente: la diferencia absoluta de supervivencia observada en un ensayo individual de seguimiento largo, como el de Nakazato y colaboradores (Lancet, 1994) sobre PSK adyuvante tras cirugía de cáncer gástrico, no usada para construir el modelo; y la cota lógica de que las muertes evitadas no pueden exceder las muertes esperadas sin tratamiento. Si la predicción queda fuera del rango observado, se revisa la comparabilidad y la mortalidad basal.",
+    "agent_visibility": {
+      "students": [
+        "enunciado_es",
+        "foto_descripcion",
+        "recursos_a_solicitud"
+      ],
+      "coder": [
+        "enunciado_es",
+        "task_space"
+      ],
+      "guide": [
+        "all"
+      ]
+    }
+  },
+  "rubrica_rub01": {
+    "total": 24,
+    "por_criterio": {
+      "genuino": 2,
+      "abierta": 2,
+      "decisiones": 2,
+      "realismo": 2,
+      "autenticidad": 2,
+      "contexto": 2,
+      "ciclo": 2,
+      "validacion": 2,
+      "nivel": 2,
+      "autodiferenciacion": 2,
+      "fecundidad": 2,
+      "recursos": 2
+    }
+  },
+  "rubrica_rub02": {
+    "P": null,
+    "S": null,
+    "U": null
+  },
+  "modelo_y_prompt": {
+    "diseñador": "claude-sonnet-5-5",
+    "version_prompt": "1.1",
+    "version_rubrica": "4.0"
+  }
+}

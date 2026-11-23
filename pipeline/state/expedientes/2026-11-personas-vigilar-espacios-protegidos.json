@@ -1,0 +1,463 @@
+{
+  "tarea_id": "2026-11-personas-vigilar-espacios-protegidos",
+  "estado": "evaluada",
+  "iteraciones": 1,
+  "artefactos": {
+    "tarea": {
+      "id": "2026-11-personas-vigilar-espacios-protegidos",
+      "titulo": "¿Cuántas personas para vigilar los espacios protegidos?",
+      "estado": "evaluada",
+      "version": 1,
+      "fecha": "2026-11-23",
+      "noticia": {
+        "noticia_id": "2026-11-23-guardian-scapegoating-green-groups-condemn-plan-to",
+        "medio": "The Guardian",
+        "titulo": "‘Scapegoating’: green groups condemn plan to axe Environment Agency and Natural England",
+        "fecha": "2026-11-23",
+        "url": "https://www.theguardian.com/politics/2026/nov/23/natural-england-could-be-abolished-quango-cull-louise-haigh",
+        "resumen_propio": "El gobierno británico plantea eliminar la Agencia de Medio Ambiente y Natural England para que los políticos tengan más control sobre qué se construye y dónde. Organizaciones ecologistas y científicos acusan al gobierno de culpar a la naturaleza, mientras un análisis oficial encuentra poca evidencia de que la protección ambiental frene el desarrollo. La noticia recoge la meta de viviendas, el número de espacios naturales protegidos y las críticas a la reducción de presupuestos de estos organismos.",
+        "cifras_usadas": [
+          {
+            "valor": "5,000",
+            "unidad": "espacios naturales protegidos",
+            "que_es": "Cantidad de sitios naturales más protegidos de Inglaterra que Natural England supervisa",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 112"
+            }
+          }
+        ]
+      },
+      "nivel_principal": "P",
+      "variantes": {
+        "abajo": null,
+        "arriba": "S"
+      },
+      "area": "medio_ambiente",
+      "contenidos_matematicos": [
+        "multiplicación y división",
+        "estimación",
+        "proporcionalidad directa",
+        "números grandes"
+      ],
+      "tiempo_estimado": "2 sesiones de 90 min",
+      "estudiante": {
+        "enunciado_es": "Natural England es el organismo que supervisa los espacios naturales más protegidos de Inglaterra, que son 5.000 sitios. Pueden ser humedales, bosques o costas. El gobierno quiere eliminar este organismo, y los grupos ecologistas temen que esos lugares queden sin vigilancia. Ustedes son un club de ciencias y quieren enviar una carta al ministerio con una propuesta realista para que nadie pierda de vista esos lugares. Su propuesta debe decir cuántas personas debería tener el equipo que visite los 5.000 espacios naturales protegidos y cada cuánto tiempo debería visitar cada uno. ¿Qué proponen y cómo lo justifican? Pueden pedir información adicional.",
+        "foto_descripcion": "Ícono de un mapa con puntos verdes y una persona con binoculares y mochila.",
+        "recursos_a_solicitud": [
+          {
+            "id": "R2",
+            "que_es": "En qué consiste una visita",
+            "contenido": "Supuesto del escenario: una visita incluye el viaje, un recorrido para observar plantas, animales y agua, y un informe escrito. Los sitios grandes o lejanos toman más tiempo que los pequeños y cercanos.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P2-RM",
+            "fuente": "supuesto del escenario"
+          },
+          {
+            "id": "R3",
+            "que_es": "Tiempo de trabajo del personal",
+            "contenido": "Supuesto del escenario: el personal no trabaja todos los días del año. Hay fines de semana, feriados, vacaciones y días de oficina para escribir informes.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P2-RM",
+            "fuente": "supuesto del escenario"
+          },
+          {
+            "id": "R4",
+            "que_es": "Cómo están repartidos los sitios",
+            "contenido": "Supuesto del escenario: algunos sitios están cerca unos de otros y a veces se pueden visitar varios en una misma jornada. Otros están lejos y exigen viajar un día completo.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P3-MM",
+            "fuente": "supuesto del escenario"
+          },
+          {
+            "id": "R5",
+            "que_es": "Dónde contrastar la propuesta",
+            "contenido": "Dato para contrastar: Natural England publica un informe anual con información sobre su personal y su trabajo. El grupo puede buscarlo para comparar su propuesta.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P6-VAL",
+            "fuente": "otra fuente: Natural England, Annual Report and Accounts"
+          }
+        ]
+      },
+      "variantes_detalle": {
+        "abajo": null,
+        "arriba": {
+          "tramo": "S1",
+          "cambios": "Se pide comparar dos políticas de visita: todos los sitios con la misma frecuencia frente a sitios frágiles con más frecuencia y el resto con menos. Se incorpora el tiempo de viaje con una velocidad promedio que el grupo debe estimar, y se expresa el resultado como razón de personas por sitio. El contexto no cambia."
+        }
+      },
+      "recursos_de_entrada": [
+        {
+          "id": "R1",
+          "que_es": "Cantidad de espacios protegidos que está en el enunciado",
+          "contenido": "Natural England supervisa 5.000 espacios naturales protegidos.",
+          "disponibilidad": "de_entrada",
+          "fase": "P1-MRS",
+          "fuente": "noticia, párrafo 112"
+        }
+      ],
+      "mapa_ciclo": {
+        "P1-MRS": {
+          "decision": "Entender qué significa supervisar un espacio y qué quiere decir visitar.",
+          "evidencia": "El grupo explica con sus palabras qué debe decidir su carta: número de personas y frecuencia de visita.",
+          "bloqueo_probable": "B12"
+        },
+        "P2-RM": {
+          "decision": "Elegir la frecuencia de visita, estimar el tiempo de una visita y de su informe, y estimar cuántos días al año puede trabajar una persona en terreno.",
+          "evidencia": "Lista escrita de supuestos con los valores elegidos y sus razones.",
+          "bloqueo_probable": "B23"
+        },
+        "P3-MM": {
+          "decision": "Armar la relación: sitios por frecuencia por tiempo de visita da jornadas necesarias; jornadas necesarias divididas por jornadas por persona da personas.",
+          "evidencia": "Expresión, esquema o tabla con las cantidades y sus operaciones.",
+          "bloqueo_probable": "B34"
+        },
+        "P4-WM": {
+          "decision": "Multiplicar y dividir números grandes, con estimaciones y redondeos razonables.",
+          "evidencia": "Cálculos con el total de jornadas y el número de personas.",
+          "bloqueo_probable": "B45"
+        },
+        "P5-INT": {
+          "decision": "Interpretar el número: redondear hacia arriba a personas enteras y decidir si es razonable para una oficina real.",
+          "evidencia": "Frase que traduce el resultado a personas y sitios por persona.",
+          "bloqueo_probable": "B56"
+        },
+        "P6-VAL": {
+          "decision": "Comparar con la información real sobre el personal de Natural England, y con otro caso conocido, como guardaparques de un parque nacional.",
+          "evidencia": "Comparación escrita y ajuste de supuestos si el resultado no es plausible.",
+          "bloqueo_probable": "B67"
+        },
+        "P7-EXP": {
+          "decision": "Redactar la carta con la propuesta, los supuestos y lo que cambiaría si se visitaran más o menos veces los sitios.",
+          "evidencia": "Carta o cartel con el número de personas, la frecuencia elegida y los supuestos explicados.",
+          "bloqueo_probable": null
+        }
+      },
+      "task_space": {
+        "required_assumptions": [
+          "Frecuencia de visita por sitio elegida por el grupo, por ejemplo una vez al año.",
+          "Duración promedio de una visita y de su informe, estimada por el grupo.",
+          "Días de trabajo al año por persona, descontando fines de semana, feriados y vacaciones.",
+          "Todos los sitios se tratan con la misma duración promedio, o se justifica una diferencia.",
+          "La propuesta cubre solo las visitas, sin otras tareas de la oficina."
+        ],
+        "reference_solution": {
+          "steps": "1) Elegir una frecuencia, por ejemplo una visita por sitio al año. 2) Estimar una jornada de visita más media jornada de informe, es decir, 1,5 jornadas por sitio. 3) Calcular las jornadas totales: 5.000 × 1,5 = 7.500. 4) Estimar los días disponibles por persona, por ejemplo 200 al año. 5) Dividir: 7.500 ÷ 200 = 37,5, es decir, 38 personas. 6) Interpretar, contrastar con el informe anual y con otro caso conocido, y escribir la propuesta.",
+          "result": "Con una visita al año por sitio, 1,5 jornadas por sitio y 200 días por persona: unas 38 personas. Con visita cada tres años: unas 13 personas.",
+          "acceptable_range": "Entre 10 y 80 personas según frecuencia, duración de la visita y días disponibles. Es aceptable cualquier valor coherente con sus supuestos explícitos."
+        },
+        "routes": [
+          {
+            "id": "R1",
+            "nombre": "Jornadas totales dividido jornadas por persona",
+            "nivel": "P",
+            "modelo": "Multiplicación y división: sitios × jornadas por sitio ÷ jornadas por persona.",
+            "resultado": "Unas 38 personas con visita anual: 5.000 × 1,5 = 7.500 jornadas, entre 200."
+          },
+          {
+            "id": "R2",
+            "nombre": "Cambiar la frecuencia de visita",
+            "nivel": "P",
+            "modelo": "Proporcionalidad: si cada sitio se visita cada tres años, las visitas por año son un tercio de los sitios.",
+            "resultado": "Unas 1.667 visitas al año × 1,5 jornadas = 2.500 jornadas, entre 200: unas 13 personas."
+          },
+          {
+            "id": "R3",
+            "nombre": "Promedio ponderado de tiempos",
+            "nivel": "S1",
+            "modelo": "Sitios grandes (20 %) con 3 jornadas y pequeños (80 %) con 1 jornada, más media jornada de informe.",
+            "resultado": "0,2×3 + 0,8×1 = 1,4 jornadas, más 0,5 da 1,9 por sitio. Total 9.500 jornadas, entre 200: unas 48 personas."
+          },
+          {
+            "id": "R4",
+            "nombre": "Visita priorizada por fragilidad",
+            "nivel": "S2",
+            "modelo": "Optimización simple: sitios frágiles todos los años y el resto cada tres años.",
+            "resultado": "Con 1.000 sitios frágiles: 1.000 + 4.000/3 ≈ 2.333 visitas al año × 1,5 ≈ 3.500 jornadas, entre 200: unas 18 personas."
+          }
+        ],
+        "modelo_inadecuado": {
+          "id": "RX: suponer que una persona visita un sitio cada día del año, sin descontar fines de semana ni feriados y sin contar el informe: 5.000 ÷ 365 ≈ 14 personas.",
+          "por_que_falla": "Cuenta todos los días del año como días de trabajo en terreno e ignora el tiempo del informe, el viaje y las vacaciones. Subestima mucho la cantidad de personas, que sale del orden de 38 y no de 14."
+        },
+        "validation_evidence": "Dato independiente que el grupo puede buscar o recibir después de modelar: el informe anual de Natural England (Annual Report and Accounts) con su dotación total de personal, que incluye muchas tareas además de las visitas, para ver si la estimación es una fracción plausible. También sirve comparar con la cantidad de guardaparques por área protegida en un parque conocido de Chile, como los que administra CONAF.",
+        "agent_visibility": {
+          "students": [
+            "enunciado_es",
+            "foto_descripcion",
+            "recursos_a_solicitud"
+          ],
+          "coder": [
+            "enunciado_es",
+            "task_space"
+          ],
+          "guide": [
+            "all"
+          ]
+        }
+      },
+      "rubrica_rub01": {
+        "total": 24,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 2
+        }
+      },
+      "rubrica_rub02": {
+        "P": null,
+        "S": null,
+        "U": null
+      },
+      "modelo_y_prompt": {
+        "diseñador": "claude-sonnet-5-5",
+        "version_prompt": "1.1",
+        "version_rubrica": "4.0"
+      }
+    },
+    "noticia": {
+      "id": "2026-11-23-guardian-scapegoating-green-groups-condemn-plan-to",
+      "medio_id": "guardian",
+      "medio": "The Guardian",
+      "idioma": "en",
+      "titulo": "‘Scapegoating’: green groups condemn plan to axe Environment Agency and Natural England",
+      "fecha": "2026-11-23",
+      "url": "https://www.theguardian.com/politics/2026/nov/23/natural-england-could-be-abolished-quango-cull-louise-haigh",
+      "area": "medio_ambiente",
+      "resumen_propio": "El gobierno británico plantea eliminar la Agencia de Medio Ambiente y Natural England para que los políticos tengan más control sobre qué se construye y dónde. Organizaciones ecologistas y científicos acusan al gobierno de culpar a la naturaleza, mientras un análisis oficial encuentra poca evidencia de que la protección ambiental frene el desarrollo. La noticia recoge la meta de viviendas, el número de espacios naturales protegidos y las críticas a la reducción de presupuestos de estos organismos.",
+      "cifras": [
+        {
+          "valor": "1.5m",
+          "unidad": "viviendas nuevas",
+          "que_es": "Meta de construcción de viviendas nuevas hasta el fin de la legislatura",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 103"
+          }
+        },
+        {
+          "valor": 20,
+          "unidad": "consultores legales estatutarios",
+          "que_es": "Número de organismos consultivos con poder de veto en la planificación, según la ministra",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 105"
+          }
+        },
+        {
+          "valor": "5,000",
+          "unidad": "espacios naturales protegidos",
+          "que_es": "Cantidad de sitios naturales más protegidos de Inglaterra que Natural England supervisa",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 112"
+          }
+        },
+        {
+          "valor": 16,
+          "unidad": "años",
+          "que_es": "Período en que, según Craig Bennett, los políticos han presentado a los reguladores como obstáculo",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 120"
+          }
+        }
+      ],
+      "recuperada_en": "2026-11-23T21:28:42Z",
+      "filtro": {
+        "version_rubrica": "4.0",
+        "puntajes": {
+          "genuino": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "validacion": 2
+        },
+        "total": 10,
+        "pasa": true,
+        "justificacion": "Noticia muy modelable: combina una meta de construcción con cifras de espacios protegidos y consultores, deja preguntas abiertas sobre supuestos y permite contraste con datos futuros de vivienda."
+      }
+    },
+    "evaluacion": {
+      "tarea_id": "2026-11-personas-vigilar-espacios-protegidos",
+      "fecha": "2026-11-23T21:56:43Z",
+      "rub01": {
+        "version_rubrica": "4.0",
+        "criterios": {
+          "genuino": {
+            "puntaje": 2,
+            "justificacion": "La tarea plantea una necesidad real: evitar que los sitios queden sin vigilancia. No entrega ninguna regla ni modelo; el grupo debe construir la relación entre personal, visitas y frecuencia.",
+            "cita": "Su propuesta debe decir cuántas personas debería tener el equipo que visite los 5.000 espacios naturales protegidos y cada cuánto tiempo debería visitar cada uno."
+          },
+          "abierta": {
+            "puntaje": 2,
+            "justificacion": "La pregunta no prescribe un procedimiento. Admite varias propuestas defendibles, por ejemplo fijar la frecuencia y calcular el personal o al revés, o distinguir tipos de sitios.",
+            "cita": "¿Qué proponen y cómo lo justifican? Pueden pedir información adicional."
+          },
+          "decisiones": {
+            "puntaje": 2,
+            "justificacion": "Para resolver hay que estimar la duración de una visita, los días laborables al año y una frecuencia razonable, y decidir si se agrupan sitios. Son supuestos y estimaciones no automáticos.",
+            "cita": "Pueden pedir información adicional."
+          },
+          "realismo": {
+            "puntaje": 2,
+            "justificacion": "La situación corresponde a un hecho real y plausible: un organismo existente, sitios protegidos reales y una controversia pública. Un club de ciencias que escribe a una autoridad es un encuadre verosímil.",
+            "cita": "El gobierno quiere eliminar este organismo, y los grupos ecologistas temen que esos lugares queden sin vigilancia."
+          },
+          "autenticidad": {
+            "puntaje": 2,
+            "justificacion": "El núcleo de la tarea proviene de un tema y un dato extraescolares auténticos: Natural England, sus 5.000 sitios y la amenaza de eliminarlo. A eso se suma un documento real, el informe anual, integrado para contrastar la propuesta.",
+            "cita": "Natural England publica un informe anual con información sobre su personal y su trabajo. El grupo puede buscarlo para comparar su propuesta."
+          },
+          "contexto": {
+            "puntaje": 2,
+            "justificacion": "El contexto condiciona las decisiones: tamaño y lejanía de los sitios, días de trabajo y frecuencia necesaria. También hace falta para juzgar si la propuesta es «realista» y compararla con el personal real.",
+            "cita": "Los sitios grandes o lejanos toman más tiempo que los pequeños y cercanos."
+          },
+          "ciclo": {
+            "puntaje": 2,
+            "justificacion": "La tarea obliga a recorrer todas las fases: comprender qué implica vigilar, simplificar con supuestos sobre visitas y jornadas, plantear la relación multiplicativa, calcular y volver a la situación para justificar una propuesta realista. Los recursos a solicitud son cualitativos y no dejan hecha ninguna fase.",
+            "cita": "Ustedes son un club de ciencias y quieren enviar una carta al ministerio con una propuesta realista para que nadie pierda de vista esos lugares."
+          },
+          "validacion": {
+            "puntaje": 2,
+            "justificacion": "Existe evidencia independiente y pública para contrastar el tamaño del equipo propuesto: el personal real informado en el informe anual.",
+            "cita": "Dato para contrastar: Natural England publica un informe anual con información sobre su personal y su trabajo."
+          },
+          "nivel": {
+            "puntaje": 2,
+            "justificacion": "El contexto y el lenguaje son comprensibles para 10–12 años. La matemática requerida (operatoria, proporcionalidad, estimación y conversión de unidades de tiempo) está dentro de las herramientas esperables de P.",
+            "cita": "Pueden ser humedales, bosques o costas."
+          },
+          "autodiferenciacion": {
+            "puntaje": 2,
+            "justificacion": "El piso es accesible: basta suponer una visita diaria por persona y un número de días de trabajo. La propia tarea admite soluciones más sofisticadas, que distinguen tamaños de sitio, agrupan sitios cercanos o fijan frecuencias diferenciadas.",
+            "cita": "Su propuesta debe decir cuántas personas debería tener el equipo que visite los 5.000 espacios naturales protegidos y cada cuánto tiempo debería visitar cada uno."
+          },
+          "fecundidad": {
+            "puntaje": 2,
+            "justificacion": "Las propuestas pueden compararse entre grupos y con el personal real. También abren preguntas nuevas, como prioridades por tipo de sitio, costos o el efecto de cambiar la frecuencia.",
+            "cita": "Otros están lejos y exigen viajar un día completo."
+          },
+          "recursos": {
+            "puntaje": 2,
+            "justificacion": "Los recursos se entregan a solicitud y describen la situación sin cifras ni relaciones, así que no revelan el modelo. Los datos imprescindibles (duración de una visita, días laborables) pueden estimarse con conocimiento cotidiano.",
+            "cita": "Supuesto del escenario: el personal no trabaja todos los días del año. Hay fines de semana, feriados, vacaciones y días de oficina para escribir informes."
+          }
+        },
+        "total": 24,
+        "mejoras": []
+      },
+      "reproducibilidad": {
+        "agentes": {
+          "disenador": {
+            "modelo": "claude-sonnet-5-5",
+            "version_modelo": "claude-sonnet-5-5",
+            "costo_usd": 0.186151,
+            "version_prompt": "1.1"
+          },
+          "evaluador": {
+            "modelo": "claude-opus-5-5",
+            "version_modelo": "claude-opus-5-5",
+            "costo_usd": 0.236086,
+            "version_prompt": "1.3"
+          },
+          "filtro": {
+            "modelo": "claude-haiku-5-5",
+            "version_modelo": "claude-haiku-5-5",
+            "costo_usd": 0.000338,
+            "version_prompt": "1.0"
+          }
+        },
+        "version_prompt": {
+          "disenador": "1.1",
+          "evaluador": "1.3",
+          "filtro": "1.0"
+        },
+        "version_rubrica": "4.0",
+        "version_MAR03": "1.0",
+        "version_MED01": "1.5",
+        "diseno_simulador": null,
+        "fecha": "2026-11-23T21:56:43Z",
+        "costo_usd": 0.422575
+      }
+    }
+  },
+  "historial": [
+    {
+      "fecha": "2026-11-23T21:52:48+00:00",
+      "de": null,
+      "a": "borrador"
+    },
+    {
+      "fecha": "2026-11-23T21:56:43+00:00",
+      "de": "borrador",
+      "a": "evaluada",
+      "iteracion": 1,
+      "rub01_total": 24
+    }
+  ],
+  "marcas": {
+    "ciclo_id": "ciclo_20261123T212842668713Z",
+    "noticia_id": "2026-11-23-guardian-scapegoating-green-groups-condemn-plan-to",
+    "nivel_objetivo": "P",
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "versiones_modelo": [
+          "claude-sonnet-5-5"
+        ],
+        "costo_usd": 0.186151,
+        "llamadas": 1
+      },
+      "filtro": {
+        "modelo": "claude-haiku-5-5",
+        "versiones_modelo": [
+          "claude-haiku-5-5"
+        ],
+        "costo_usd": 0.000338,
+        "llamadas": 1
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "versiones_modelo": [
+          "claude-opus-5-5"
+        ],
+        "costo_usd": 0.236086,
+        "llamadas": 3
+      }
+    },
+    "costos_compartidos": [
+      "disenador",
+      "filtro"
+    ],
+    "version_MAR03": "1.0",
+    "evaluacion_inestable": false,
+    "evaluacion_rango_total": 1,
+    "evaluacion_corridas": "pipeline/state/trabajo/2026-11-personas-vigilar-espacios-protegidos/evaluacion_corridas.json",
+    "preverificacion": {
+      "fecha": "2026-11-23T21:56:44Z",
+      "version_tarea": 1,
+      "aprobado": false,
+      "criticos": [
+        "[4] estudiante.enunciado_es: cifra 5000 sin localizador (no figura en noticia.cifras_usadas)",
+        "[4] estudiante.enunciado_es: cifra 5000 sin localizador (no figura en noticia.cifras_usadas)"
+      ],
+      "texto_noticia": true
+    },
+    "hallazgos_tarea": [
+      "[4] estudiante.enunciado_es: cifra 5000 sin localizador (no figura en noticia.cifras_usadas)",
+      "[4] estudiante.enunciado_es: cifra 5000 sin localizador (no figura en noticia.cifras_usadas)"
+    ],
+    "pendiente": "revision_humana_1"
+  }
+}

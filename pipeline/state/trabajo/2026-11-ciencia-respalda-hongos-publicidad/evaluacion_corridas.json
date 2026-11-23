@@ -1,0 +1,303 @@
+{
+  "tarea_id": "2026-11-ciencia-respalda-hongos-publicidad",
+  "evaluaciones": [
+    {
+      "iteracion": 1,
+      "version_tarea": 1,
+      "fecha": "2026-11-23T22:00:37Z",
+      "modelo": "claude-opus-5-5",
+      "version_prompt": "1.3",
+      "version_rubrica": "4.0",
+      "corridas": [
+        {
+          "n": 1,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La situación plantea una necesidad real de decisión y no entrega ninguna regla ni modelo para juzgar la fuerza del respaldo. El grupo debe construir el criterio por su cuenta.",
+                "cita": "La agencia de protección al consumidor debe decidir si esa frase es aceptable o engañosa."
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe un método. Admite varios modelos defendibles: comparar proporciones, modelar el sesgo de publicación, razonar de forma bayesiana o hacer escenarios de sensibilidad.",
+                "cita": "¿Qué tan fuerte es el respaldo que entregan estos números a la frase de la tienda y qué le recomendarían a la agencia?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige decidir qué información solicitar y formular supuestos sobre la magnitud del sesgo de publicación y de selección, que no se cuantifica. También exige decidir qué cuenta como «respaldo».",
+                "cita": "Quienes revisan el caso no saben cómo se eligieron los estudios ni cómo se publican los resultados de este tipo de investigación. Pueden pedir información …"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Evaluar publicidad de suplementos que invoca estudios científicos es una situación existente y plausible fuera de la escuela.",
+                "cita": "Una tienda en línea de suplementos cita esta revisión en su publicidad con la frase «la ciencia respalda los hongos medicinales»."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "El tema y los datos de una revisión presentada como real son el núcleo de la tarea, aunque las tarjetas R2–R4 son supuestos fabricados. Hay una duda menor porque la revisión no se cita con precisión, pero se toma como cierta la procedencia declarada.",
+                "cita": "Una revisión reciente de la literatura sobre hongos medicinales y cáncer encontró 2.349 estudios. Solo 39 se consideraron suficientemente robustos"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto condiciona los supuestos sobre cómo se seleccionan y publican los estudios. También es indispensable para interpretar el resultado como recomendación regulatoria.",
+                "cita": "La agencia de protección al consumidor debe decidir si esa frase es aceptable o engañosa."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a comprender la situación, simplificar mediante supuestos sobre los sesgos, matematizar con proporciones o probabilidades, calcular, interpretar para la agencia y contrastar. Ninguna fase queda hecha en el enunciado.",
+                "cita": "¿Qué tan fuerte es el respaldo que entregan estos números a la frase de la tienda y qué le recomendarían a la agencia?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existe evidencia independiente, no usada para construir el modelo, para contrastarlo: la tarjeta R4 y los registros públicos de ensayos accesibles para estudiantes universitarios.",
+                "cita": "entre los ensayos clínicos inscritos en un registro público antes de comenzar, la proporción con resultado favorable es claramente menor"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto y el lenguaje son comprensibles para universitarios. Probabilidad, razonamiento condicional y análisis de sensibilidad están dentro de las herramientas esperables en U.",
+                "cita": "Solo 39 se consideraron suficientemente robustos para el análisis, y de esos, 31 mostraron efectos beneficiosos de los hongos."
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es accesible: basta comparar proporciones simples (31/39 frente a 31/2.349). El techo es alto: admite modelos probabilísticos del sesgo de publicación con análisis de sensibilidad.",
+                "cita": "La revisión encontró 2.349 estudios sobre hongos medicinales y cáncer; 39 se consideraron suficientemente robustos y 31 de ellos mostraron efectos beneficiosos."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las distintas cuantificaciones del sesgo permiten comparar recomendaciones y discutir límites de los modelos. También abren preguntas sobre qué umbral de evidencia justifica una afirmación publicitaria.",
+                "cita": "¿Qué tan fuerte es el respaldo que entregan estos números a la frase de la tienda y qué le recomendarían a la agencia?"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "La información está disponible a solicitud, pero hay sobreorientación parcial. El enunciado nombra de antemano los dos mecanismos clave (selección y publicación), y la tarjeta R4 se rotula como «evidencia independiente», lo que adelanta parte de la estructuración y de la validación.",
+                "cita": "Quienes revisan el caso no saben cómo se eligieron los estudios ni cómo se publican los resultados de este tipo de investigación."
+              }
+            },
+            "total": 23,
+            "mejoras": [
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Eliminar del enunciado la oración que nombra los dos desconocidos (selección y publicación), dejando solo «Pueden pedir información adicional». Además, rotular las tarjetas de forma neutra (por ejemplo, «Tarjeta sobre registros de ensayos» en lugar de «evidencia independiente»), para que sean los grupos quienes identifiquen qué preguntar."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011ChLcK2ZyTi7BoS3b9geYD",
+            "fecha": "2026-11-23T21:59:21+00:00",
+            "intentos": 1,
+            "costo_usd": 0.094378,
+            "avisos": [
+              "cita_recortada_25:decisiones"
+            ]
+          }
+        },
+        {
+          "n": 2,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La situación plantea una necesidad real de decisión y no entrega ninguna regla ni modelo para medir la fuerza del respaldo. Corresponde al descriptor de 2.",
+                "cita": "La agencia de protección al consumidor debe decidir si esa frase es aceptable o engañosa."
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe procedimiento. Admite varios modelos defendibles, como proporciones, sensibilidad a estudios no publicados o razonamiento bayesiano.",
+                "cita": "¿Qué tan fuerte es el respaldo que entregan estos números a la frase de la tienda y qué le recomendarían a la agencia?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige formular supuestos sobre el sesgo de publicación y de selección, estimar su magnitud y solicitar información pertinente.",
+                "cita": "Quienes revisan el caso no saben cómo se eligieron los estudios ni cómo se publican los resultados de este tipo de investigación. Pueden pedir información …"
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "La evaluación de afirmaciones publicitarias de salud por una agencia de consumidores es una situación claramente plausible fuera de la escuela.",
+                "cita": "Una tienda en línea de suplementos cita esta revisión en su publicidad con la frase «la ciencia respalda los hongos medicinales»."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los datos de la revisión se presentan como reales y son el núcleo de la tarea, igual que el tema de los reclamos de salud en publicidad. Aunque las tarjetas R2–R4 son supuestos del escenario, hay un componente auténtico integrado de manera sustantiva.",
+                "cita": "Una revisión reciente de la literatura sobre hongos medicinales y cáncer encontró 2.349 estudios."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto (selección de estudios, publicación favorable) condiciona qué denominador y qué supuestos usar. También es necesario para interpretar la recomendación a la agencia.",
+                "cita": "Solo 39 se consideraron suficientemente robustos para el análisis, y de esos, 31 mostraron efectos beneficiosos de los hongos."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder exige comprender los sesgos, simplificarlos en supuestos y cuantificar su efecto en un modelo. Luego hay que interpretar el resultado en una recomendación y contrastarlo; ninguna fase viene hecha.",
+                "cita": "¿Qué tan fuerte es el respaldo que entregan estos números a la frase de la tienda y qué le recomendarían a la agencia?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "R4 ofrece evidencia independiente, no usada en la construcción del modelo, para contrastar el supuesto de sesgo de publicación.",
+                "cita": "entre los ensayos clínicos inscritos en un registro público antes de comenzar, la proporción con resultado favorable es claramente menor"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto y el lenguaje son comprensibles para estudiantes universitarios. La demanda (probabilidad, sensibilidad, crítica del modelo) se ajusta a las herramientas esperables del nivel U.",
+                "cita": "No se sabe si los descartados tenían más o menos resultados favorables que los retenidos."
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Se puede empezar con proporciones elementales. La tarea admite soluciones mucho más sofisticadas: análisis de cuántos estudios nulos ocultos anularían el efecto, modelos bayesianos o sensibilidad.",
+                "cita": "La revisión encontró 2.349 estudios sobre hongos medicinales y cáncer; 39 se consideraron suficientemente robustos y 31 de ellos mostraron efectos beneficiosos."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las distintas suposiciones sobre el sesgo llevan a recomendaciones comparables. Abren preguntas sobre umbrales regulatorios y sobre los límites de la evidencia publicada.",
+                "cita": "qué le recomendarían a la agencia?"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información adicional está disponible a solicitud y es cualitativa, sin revelar el modelo ni la magnitud del sesgo. Lo que falta se puede estimar o buscar.",
+                "cita": "los estudios con resultado favorable se publican con más frecuencia que los que no encuentran efecto, pero la agencia no sabe cuánto más."
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011ChLcMzxKCfaB2TcLf9wgv",
+            "fecha": "2026-11-23T21:59:56+00:00",
+            "intentos": 1,
+            "costo_usd": 0.081638,
+            "avisos": [
+              "cita_recortada_25:decisiones"
+            ]
+          }
+        },
+        {
+          "n": 3,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "Plantea una necesidad real de decisión sin entregar ninguna regla, fórmula ni modelo para juzgar la fuerza de la evidencia.",
+                "cita": "La agencia de protección al consumidor debe decidir si esa frase es aceptable o engañosa."
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe un método. Admite varios modelos defendibles: proporciones, modelos de sesgo de publicación o de selección, análisis bayesiano o de sensibilidad, con recomendaciones distintas.",
+                "cita": "¿Qué tan fuerte es el respaldo que entregan estos números a la frase de la tienda y qué le recomendarían a la agencia?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Hay que formular supuestos sobre la magnitud del sesgo de publicación y de selección, decidir qué información pedir y estimar lo que se desconoce.",
+                "cita": "pero la agencia no sabe cuánto más."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Evaluar si una publicidad que invoca evidencia científica es engañosa es una situación claramente plausible fuera de la escuela.",
+                "cita": "Una tienda en línea de suplementos cita esta revisión en su publicidad con la frase «la ciencia respalda los hongos medicinales»."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los datos se presentan como provenientes de una revisión real y son el núcleo de la tarea. Con ellos se integra de forma sustantiva un componente auténtico: datos y tema de salud pública.",
+                "cita": "Una revisión reciente de la literatura sobre hongos medicinales y cáncer encontró 2.349 estudios."
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto de selección y publicación de estudios condiciona los supuestos del modelo. También es indispensable para interpretar el resultado como recomendación a la agencia.",
+                "cita": "Quienes revisan el caso no saben cómo se eligieron los estudios ni cómo se publican los resultados de este tipo de investigación."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a comprender cómo se generan los datos, simplificar con supuestos sobre sesgos y matematizar la relación entre proporción observada y efecto real. Luego hay que interpretar en términos de la decisión regulatoria y validar.",
+                "cita": "¿Qué tan fuerte es el respaldo que entregan estos números a la frase de la tienda y qué le recomendarían a la agencia?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "R4 aporta evidencia independiente, no usada en la construcción del modelo, para contrastar la predicción de que el sesgo infla la proporción favorable. Además existen registros públicos consultables a nivel U.",
+                "cita": "la proporción con resultado favorable es claramente menor que entre los estudios que no se inscribieron."
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto y el lenguaje son comprensibles para universitarios. Cuantificar el respaldo bajo sesgos desconocidos pide modelos probabilísticos y sensibilidad, propios del nivel U.",
+                "cita": "Solo 39 se consideraron suficientemente robustos para el análisis, y de esos, 31 mostraron efectos beneficiosos de los hongos."
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es accesible: comparar proporciones y argumentar cualitativamente. El techo es alto: modelos de sesgo de publicación, razonamiento bayesiano y análisis de sensibilidad sobre la tasa desconocida.",
+                "cita": "2.349 estudios. Solo 39 se consideraron suficientemente robustos para el análisis, y de esos, 31"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Las distintas suposiciones sobre los sesgos llevan a recomendaciones distintas. Eso permite comparar soluciones, discutir los límites de la evidencia y plantear qué datos harían falta.",
+                "cita": "qué le recomendarían a la agencia?"
+              },
+              "recursos": {
+                "puntaje": 1,
+                "justificacion": "La información puede solicitarse y no revela un modelo cuantitativo. Pero el enunciado y los títulos de las tarjetas señalan de antemano los dos mecanismos de sesgo clave, lo que constituye una sobreorientación parcial. Hay duda entre 1 y 2, y se asigna el menor.",
+                "cita": "Quienes revisan el caso no saben cómo se eligieron los estudios ni cómo se publican los resultados de este tipo de investigación."
+              }
+            },
+            "total": 23,
+            "mejoras": [
+              {
+                "criterio": "recursos",
+                "mejora_minima": "Eliminar la oración «Quienes revisan el caso no saben cómo se eligieron los estudios ni cómo se publican los resultados…» y dejar solo «Pueden pedir información adicional». Las tarjetas se entregarían solo cuando el grupo formule la pregunta correspondiente, con títulos neutros (Tarjeta A, B, C)."
+              }
+            ]
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011ChLcQZmb16HKfyzfy2dNq",
+            "fecha": "2026-11-23T22:00:37+00:00",
+            "intentos": 1,
+            "costo_usd": 0.095518,
+            "avisos": []
+          }
+        }
+      ],
+      "totales": [
+        23,
+        24,
+        23
+      ],
+      "rango_total": 1,
+      "rango_inestable": 4,
+      "evaluacion_inestable": false,
+      "mediana": {
+        "regla": "mediana por criterio (n par: mediana inferior)",
+        "total": 23,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 1
+        },
+        "corrida_fuente": {
+          "genuino": 1,
+          "abierta": 1,
+          "decisiones": 1,
+          "realismo": 1,
+          "autenticidad": 1,
+          "contexto": 1,
+          "ciclo": 1,
+          "validacion": 1,
+          "nivel": 1,
+          "autodiferenciacion": 1,
+          "fecundidad": 1,
+          "recursos": 1
+        }
+      }
+    }
+  ]
+}

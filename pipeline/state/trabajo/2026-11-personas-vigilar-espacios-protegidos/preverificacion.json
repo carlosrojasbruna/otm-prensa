@@ -1,0 +1,45 @@
+{
+  "tarea_id": "2026-11-personas-vigilar-espacios-protegidos",
+  "aprobado": false,
+  "alcance": "tarea",
+  "hallazgos": [
+    {
+      "invariante": "4",
+      "severidad": "critico",
+      "ubicacion": "estudiante.enunciado_es",
+      "descripcion": "cifra 5000 sin localizador (no figura en noticia.cifras_usadas)",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "4",
+      "severidad": "critico",
+      "ubicacion": "estudiante.enunciado_es",
+      "descripcion": "cifra 5000 sin localizador (no figura en noticia.cifras_usadas)",
+      "origen": "codigo"
+    }
+  ],
+  "cifras_contrastadas": [
+    {
+      "indice": 0,
+      "que_es": "Cantidad de sitios naturales más protegidos de Inglaterra que Natural England supervisa",
+      "valor_tarea": "5,000",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 112"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "5,000",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 112 de la noticia"
+    }
+  ],
+  "meta": {
+    "agente": "verificador",
+    "version_prompt": "1.1",
+    "modelo_llamado": false,
+    "costo_usd": 0.0,
+    "texto_noticia_recibido": true,
+    "fecha": "2026-11-23T21:56:44+00:00"
+  },
+  "localizadores_corregidos": {}
+}

@@ -1,0 +1,603 @@
+{
+  "tarea_id": "2026-11-izquierda-puede-alcanzar-derecha",
+  "estado": "evaluada",
+  "iteraciones": 1,
+  "artefactos": {
+    "tarea": {
+      "id": "2026-11-izquierda-puede-alcanzar-derecha",
+      "titulo": "¿Puede la izquierda dar vuelta el resultado?",
+      "estado": "evaluada",
+      "version": 1,
+      "fecha": "2026-11-23",
+      "noticia": {
+        "noticia_id": "2026-11-23-eldiario-el-pp-gana-por-la-minima",
+        "medio": "elDiario.es",
+        "titulo": "El PP gana por la mínima al PSOE y la derecha supera a la izquierda en la última encuesta antes del 29N",
+        "fecha": "2026-11-23",
+        "url": "https://www.eldiario.es/politica/pp-gana-minima-psoe-derecha-supera-izquierda-ultima-encuesta-29n_1_13684963.html",
+        "resumen_propio": "Un sondeo de Ateneo del Dato, con 2.000 entrevistas online hechas a días de las elecciones, sitúa al PP apenas por delante del PSOE y a las derechas por encima de la izquierda gracias a Vox. También recoge quién prefieren como presidente los votantes, cuánta gente repite su voto de 2023 en cada partido y cómo valoran a los principales candidatos.",
+        "cifras_usadas": [
+          {
+            "valor": "32,1%",
+            "unidad": "porcentaje de votos",
+            "que_es": "intención de voto estimada para el PP en la encuesta de Ateneo del Dato",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 7"
+            }
+          },
+          {
+            "valor": "17,6%",
+            "unidad": "porcentaje de votos",
+            "que_es": "intención de voto estimada para Vox",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 10"
+            }
+          },
+          {
+            "valor": "49,7%",
+            "unidad": "porcentaje de votos",
+            "que_es": "suma de los votos estimados para las derechas (PP y Vox)",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 10"
+            }
+          },
+          {
+            "valor": "37,5%",
+            "unidad": "porcentaje de votos",
+            "que_es": "suma de los votos estimados para la izquierda (PSOE, Frente Amplio y Podemos)",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 10"
+            }
+          },
+          {
+            "valor": "86,6%",
+            "unidad": "porcentaje de votantes de 2023",
+            "que_es": "votantes de Vox en 2023 que repetirían su voto",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 13"
+            }
+          },
+          {
+            "valor": "76,1%",
+            "unidad": "porcentaje de votantes de 2023",
+            "que_es": "votantes del PP en 2023 que repetirían su voto",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 13"
+            }
+          }
+        ]
+      },
+      "nivel_principal": "S",
+      "variantes": {
+        "abajo": null,
+        "arriba": "U"
+      },
+      "area": "sociedad_datos",
+      "contenidos_matematicos": [
+        "porcentajes",
+        "análisis de escenarios",
+        "sensibilidad",
+        "fracciones",
+        "proporcionalidad"
+      ],
+      "tiempo_estimado": "2 sesiones de 90 min",
+      "estudiante": {
+        "enunciado_es": "Faltan pocos días para las elecciones en España y una encuesta online de Ateneo del Dato muestra que las derechas superan a la izquierda: el PP tendría 32,1% y Vox 17,6%, lo que suma 49,7% de intención de voto, mientras que los partidos de izquierda sumarían 37,5%. La misma encuesta indica que 86,6% de quienes votaron a Vox en las elecciones anteriores repetirían su voto, y 76,1% de quienes votaron al PP en esas mismas elecciones también. Un equipo de análisis político se pregunta si, con parte del electorado todavía móvil, la izquierda podría alcanzar a la derecha el día de la votación. Ustedes asesoran a ese equipo: ¿qué tendría que ocurrir con los votantes para que eso pase y les parece verosímil? Pueden pedir información adicional.",
+        "foto_descripcion": "Una balanza inclinada hacia un lado con una pila de figuras de personas en cada platillo; algunas figuras están en el aire, entre los dos platillos.",
+        "recursos_a_solicitud": [
+          {
+            "id": "R2",
+            "que_es": "Información sobre el destino de quienes cambian su voto",
+            "contenido": "Supuesto del escenario: la noticia no informa a qué partido o decisión (otro partido, voto en blanco, abstención) irían quienes no repiten su voto; el grupo debe decidir cómo repartirlos.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P2-RM",
+            "fuente": "supuesto del escenario"
+          },
+          {
+            "id": "R3",
+            "que_es": "Intención de voto del PSOE en la misma encuesta",
+            "contenido": "Intención de voto estimada para el PSOE: 30,8%.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P1-MRS",
+            "fuente": "noticia, párrafo 7"
+          },
+          {
+            "id": "R4",
+            "que_es": "Tamaño de la muestra y margen de error",
+            "contenido": "La encuesta hizo 2.000 entrevistas y su margen de error para el conjunto de la muestra es ±2,2%.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P6-VAL",
+            "fuente": "noticia, párrafos 8 y 24"
+          }
+        ]
+      },
+      "variantes_detalle": {
+        "abajo": null,
+        "arriba": {
+          "tramo": "U",
+          "cambios": "Se pide un modelo dinámico con matriz de transferencia entre partidos y abstención, análisis de sensibilidad de los resultados a cada fracción de traspaso, y crítica del supuesto de que el porcentaje de fidelidad de las elecciones anteriores se aplica a la intención de voto actual. La exigencia matemática no se escribe en el enunciado."
+        }
+      },
+      "recursos_de_entrada": [
+        {
+          "id": "R1",
+          "que_es": "Datos de la encuesta que ya tiene el grupo",
+          "contenido": "Intención de voto estimada: PP 32,1%, Vox 17,6%, suma de las derechas 49,7% y suma de los partidos de izquierda 37,5%. Repetirían su voto de las elecciones anteriores: 86,6% de los votantes de Vox y 76,1% de los votantes del PP.",
+          "disponibilidad": "de_entrada",
+          "fase": "P1-MRS",
+          "fuente": "noticia, párrafos 7, 10 y 13"
+        }
+      ],
+      "mapa_ciclo": {
+        "P1-MRS": {
+          "decision": "Entender qué significa que la izquierda alcance a la derecha y qué datos de la encuesta sirven: bloques, porcentajes y fidelidad de voto.",
+          "evidencia": "El grupo explica con sus palabras qué cantidad quiere conocer y lista los datos a usar y los que pedirá.",
+          "bloqueo_probable": null
+        },
+        "P2-RM": {
+          "decision": "Decidir cómo tratar a quienes no repiten el voto (adónde van), si el porcentaje de fidelidad se aplica al tamaño actual de cada partido y si se considera al resto del electorado.",
+          "evidencia": "Lista de supuestos explícitos, por ejemplo que la fidelidad se aplica al porcentaje actual y que solo cambia el voto de las derechas.",
+          "bloqueo_probable": "B12"
+        },
+        "P3-MM": {
+          "decision": "Construir un modelo de traspaso: diferencia entre bloques, cantidad de votantes móviles y fracción de ellos que va a la izquierda.",
+          "evidencia": "Expresión o tabla que relaciona la fracción de traspaso con la nueva diferencia entre bloques.",
+          "bloqueo_probable": "B23"
+        },
+        "P4-WM": {
+          "decision": "Calcular el traspaso necesario para igualar, la cantidad de votantes móviles y la fracción que debe ir a la izquierda; probar varias fracciones.",
+          "evidencia": "Cálculos con la diferencia de 12,2 puntos, el traspaso necesario y una tabla de escenarios.",
+          "bloqueo_probable": "B34"
+        },
+        "P5-INT": {
+          "decision": "Interpretar el resultado: qué proporción de los que no repiten tendría que elegir izquierda y si eso es verosímil.",
+          "evidencia": "Frase en lenguaje cotidiano que compara lo necesario con lo que parece razonable.",
+          "bloqueo_probable": "B45"
+        },
+        "P6-VAL": {
+          "decision": "Contrastar el modelo con el margen de error de la encuesta y con otros datos independientes, como encuestas de otras empresas y el resultado real.",
+          "evidencia": "El grupo compara la diferencia entre bloques con el error de la muestra y dice qué resultado real refutaría su conclusión.",
+          "bloqueo_probable": "B56"
+        },
+        "P7-EXP": {
+          "decision": "Presentar el escenario más plausible, sus supuestos y su sensibilidad.",
+          "evidencia": "Cartel o informe breve con tabla de escenarios y una recomendación para el equipo.",
+          "bloqueo_probable": "B67"
+        }
+      },
+      "task_space": {
+        "required_assumptions": [
+          "El porcentaje de fidelidad de las elecciones anteriores se aplica a la intención de voto actual de cada partido (se usa como aproximación del tamaño de su electorado).",
+          "Quienes no repiten su voto cambian a otro destino que el grupo debe decidir (izquierda, otros, blanco o abstención).",
+          "Solo se mueve el voto de la derecha; los demás votos quedan fijos en el escenario base.",
+          "La intención de voto de la encuesta es una buena aproximación del voto real, con el margen de error informado.",
+          "Se ignora cómo se traducen los votos en cargos."
+        ],
+        "reference_solution": {
+          "steps": "1) Diferencia entre bloques: 49,7 − 37,5 = 12,2 puntos. 2) Si x puntos pasan de la derecha a la izquierda, la diferencia queda 12,2 − 2x; para igualar, x = 6,1 puntos. 3) Votantes móviles de la derecha, usando 100 − fidelidad aplicada al porcentaje actual: PP, 23,9% de 32,1 ≈ 7,7 puntos; Vox, 13,4% de 17,6 ≈ 2,4 puntos; total ≈ 10,0 puntos. 4) Fracción necesaria de los móviles que debe ir a la izquierda: 6,1 / 10,0 ≈ 61%. 5) Sensibilidad: si va el 30% de los móviles, pasan cerca de 3,0 puntos y la diferencia queda cerca de 6,2; si va el 50%, pasan cerca de 5,0 y la diferencia queda cerca de 2,2; si va el 70%, la diferencia pasa a ser negativa (cerca de −1,8). 6) Alternativa con el resto del electorado: las demás opciones suman 100 − 49,7 − 37,5 = 12,8 puntos; para igualar basta que la izquierda capte la gran mayoría de ese resto, lo que es poco verosímil porque incluye votos de otros partidos. 7) Margen de error: el error de la diferencia entre bloques es cerca de ±4,1 puntos a 95% de confianza, bastante menor que 12,2 puntos. 8) Conclusión: que la izquierda alcance a la derecha exigiría que cerca de dos de cada tres votantes móviles de la derecha opten por la izquierda.",
+          "result": "Para igualar, la izquierda necesitaría ganar unos 6,1 puntos de la derecha, es decir, cerca del 61% de quienes no repiten su voto (cerca de 10 puntos en total). Ese escenario es poco verosímil, y la ventaja de 12,2 puntos es unas tres veces el error de la diferencia (cerca de ±4,1 puntos), por lo que la ventaja de las derechas es sólida según la encuesta.",
+          "acceptable_range": "Traspaso necesario entre 6 y 6,5 puntos; fracción necesaria de los móviles entre 55% y 70% según la base elegida para aplicar la fidelidad; error de la diferencia entre bloques entre ±3,5 y ±4,5 puntos. Cualquier respuesta con supuestos explícitos y sensibilidad es defendible."
+        },
+        "routes": [
+          {
+            "id": "R1",
+            "nombre": "Traspaso directo entre bloques",
+            "nivel": "S1",
+            "modelo": "Con la diferencia de 12,2 puntos y un traspaso x de la derecha a la izquierda, resolver 12,2 − 2x = 0.",
+            "resultado": "Se necesitan 6,1 puntos de traspaso para igualar."
+          },
+          {
+            "id": "R2",
+            "nombre": "Fidelidad como reserva de votantes móviles",
+            "nivel": "S2",
+            "modelo": "Calcular los votantes móviles como (100 − fidelidad) por el porcentaje actual de cada partido y la fracción que debe ir a la izquierda.",
+            "resultado": "Cerca de 10 puntos móviles; se necesita que cerca del 61% vaya a la izquierda."
+          },
+          {
+            "id": "R3",
+            "nombre": "Tabla de sensibilidad",
+            "nivel": "S2",
+            "modelo": "Variar la fracción de móviles que va a la izquierda (por ejemplo 0%, 30%, 50%, 70%) y calcular la diferencia resultante entre bloques.",
+            "resultado": "La diferencia es cerca de 12,2; 6,2; 2,2 y −1,8, respectivamente; el empate aparece alrededor del 61%."
+          },
+          {
+            "id": "R4",
+            "nombre": "Balance con el resto del electorado",
+            "nivel": "S2",
+            "modelo": "Calcular el resto (100 − 49,7 − 37,5) y cuántos de esos puntos tendría que captar la izquierda para alcanzar a la derecha.",
+            "resultado": "El resto suma 12,8 puntos; la izquierda necesitaría casi todo ese resto, lo que es poco verosímil."
+          }
+        ],
+        "modelo_inadecuado": {
+          "id": "R5",
+          "por_que_falla": "Suponer que todos los votantes que no repiten su voto se pasan a la izquierda y concluir que la izquierda puede ganar porque sumaría cerca de 10 puntos. Es una cota máxima, no un escenario plausible: ignora que los que cambian pueden irse a otro partido, al voto en blanco o a la abstención."
+        },
+        "validation_evidence": "Resultados oficiales de la elección por bloques (otra fuente: resultados oficiales publicados por el Ministerio del Interior de España) y otras encuestas de otras empresas, que el grupo puede revisar después de modelar. Se compara el traspaso real entre bloques con el que su modelo consideró verosímil y con el margen de error. No se usan para construir el modelo.",
+        "agent_visibility": {
+          "students": [
+            "enunciado_es",
+            "foto_descripcion",
+            "recursos_a_solicitud"
+          ],
+          "coder": [
+            "enunciado_es",
+            "task_space"
+          ],
+          "guide": [
+            "all"
+          ]
+        }
+      },
+      "rubrica_rub01": {
+        "total": 24,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 2
+        }
+      },
+      "rubrica_rub02": {
+        "P": null,
+        "S": null,
+        "U": null
+      },
+      "modelo_y_prompt": {
+        "diseñador": "claude-sonnet-5-5",
+        "version_prompt": "1.1",
+        "version_rubrica": "4.0"
+      },
+      "sub_tramo": "S2"
+    },
+    "noticia": {
+      "id": "2026-11-23-eldiario-el-pp-gana-por-la-minima",
+      "medio_id": "eldiario",
+      "medio": "elDiario.es",
+      "idioma": "es",
+      "titulo": "El PP gana por la mínima al PSOE y la derecha supera a la izquierda en la última encuesta antes del 29N",
+      "fecha": "2026-11-23",
+      "url": "https://www.eldiario.es/politica/pp-gana-minima-psoe-derecha-supera-izquierda-ultima-encuesta-29n_1_13684963.html",
+      "area": "sociedad_datos",
+      "resumen_propio": "Un sondeo de Ateneo del Dato, con 2.000 entrevistas online hechas a días de las elecciones, sitúa al PP apenas por delante del PSOE y a las derechas por encima de la izquierda gracias a Vox. También recoge quién prefieren como presidente los votantes, cuánta gente repite su voto de 2023 en cada partido y cómo valoran a los principales candidatos.",
+      "cifras": [
+        {
+          "valor": "32,1%",
+          "unidad": "porcentaje de votos",
+          "que_es": "intención de voto estimada para el PP en la encuesta de Ateneo del Dato",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 7"
+          }
+        },
+        {
+          "valor": "30,8%",
+          "unidad": "porcentaje de votos",
+          "que_es": "intención de voto estimada para el PSOE en la encuesta de Ateneo del Dato",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 7"
+          }
+        },
+        {
+          "valor": "28,6%",
+          "unidad": "porcentaje de votos",
+          "que_es": "intención de voto del PSOE en el estudio anterior publicado el día 6",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 8"
+          }
+        },
+        {
+          "valor": "31,5%",
+          "unidad": "porcentaje de votos",
+          "que_es": "intención de voto del PP en la encuesta anterior de Ateneo del Dato",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 8"
+          }
+        },
+        {
+          "valor": "2.000 entrevistas",
+          "unidad": "personas entrevistadas",
+          "que_es": "tamaño de la muestra de la encuesta",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 8"
+          }
+        },
+        {
+          "valor": "17,6%",
+          "unidad": "porcentaje de votos",
+          "que_es": "intención de voto estimada para Vox",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 10"
+          }
+        },
+        {
+          "valor": "49,7%",
+          "unidad": "porcentaje de votos",
+          "que_es": "suma de los votos estimados para las derechas (PP y Vox)",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 10"
+          }
+        },
+        {
+          "valor": "37,5%",
+          "unidad": "porcentaje de votos",
+          "que_es": "suma de los votos estimados para la izquierda (PSOE, Frente Amplio y Podemos)",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 10"
+          }
+        },
+        {
+          "valor": "34%",
+          "unidad": "porcentaje de encuestados",
+          "que_es": "encuestados que prefieren a Pedro Sánchez como próximo presidente del Gobierno",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 11"
+          }
+        },
+        {
+          "valor": "26%",
+          "unidad": "porcentaje de encuestados",
+          "que_es": "encuestados que prefieren a Alberto Núñez Feijóo como próximo presidente del Gobierno",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 11"
+          }
+        },
+        {
+          "valor": "86,6%",
+          "unidad": "porcentaje de votantes de 2023",
+          "que_es": "votantes de Vox en 2023 que repetirían su voto",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 13"
+          }
+        },
+        {
+          "valor": "76,1%",
+          "unidad": "porcentaje de votantes de 2023",
+          "que_es": "votantes del PP en 2023 que repetirían su voto",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 13"
+          }
+        },
+        {
+          "valor": "45,3%",
+          "unidad": "porcentaje de encuestados",
+          "que_es": "encuestados que dan una nota buena o muy buena a Feijóo",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 17"
+          }
+        },
+        {
+          "valor": "65,4%",
+          "unidad": "porcentaje de encuestados",
+          "que_es": "encuestados que califican de mala o muy mala la actuación de Irene Montero",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 17"
+          }
+        },
+        {
+          "valor": "±2,2%",
+          "unidad": "margen de error",
+          "que_es": "error muestral para el conjunto de la muestra con nivel de confianza del 95,5%",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 24"
+          }
+        }
+      ],
+      "recuperada_en": "2026-11-23T21:28:42Z",
+      "filtro": {
+        "version_rubrica": "4.0",
+        "puntajes": {
+          "genuino": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "validacion": 2
+        },
+        "total": 10,
+        "pasa": true,
+        "justificacion": "Noticia muy modelable: pregunta abierta sobre reparto de votos, cifras de sondeo con muestra y margen de error, y resultados oficiales posteriores para contrastar el modelo. Alta potencia para una tarea de estimación."
+      }
+    },
+    "evaluacion": {
+      "tarea_id": "2026-11-izquierda-puede-alcanzar-derecha",
+      "fecha": "2026-11-23T21:50:35Z",
+      "rub01": {
+        "version_rubrica": "4.0",
+        "criterios": {
+          "genuino": {
+            "puntaje": 2,
+            "justificacion": "Plantea una necesidad real de un equipo de análisis: saber si la izquierda puede alcanzar a la derecha. No entrega ninguna regla ni modelo de transferencia de votos para aplicar.",
+            "cita": "Ustedes asesoran a ese equipo: ¿qué tendría que ocurrir con los votantes para que eso pase y les parece verosímil?"
+          },
+          "abierta": {
+            "puntaje": 2,
+            "justificacion": "La pregunta no prescribe procedimiento. Admite varios modelos defendibles: indecisos, fuga de votantes de derecha, abstención, margen de error o combinaciones de escenarios.",
+            "cita": "¿qué tendría que ocurrir con los votantes para que eso pase y les parece verosímil? Pueden pedir información adicional."
+          },
+          "decisiones": {
+            "puntaje": 2,
+            "justificacion": "El grupo debe suponer adónde van los votantes que no repiten y cómo se comporta el 12,8% no asignado. También debe seleccionar qué datos usar y estimar escenarios.",
+            "cita": "la noticia no informa a qué partido o decisión (otro partido, voto en blanco, abstención) irían quienes no repiten su voto; el grupo debe decidir …"
+          },
+          "realismo": {
+            "puntaje": 2,
+            "justificacion": "Se trata de una elección real con una encuesta real, y la pregunta es la que se hacen efectivamente los analistas políticos.",
+            "cita": "Faltan pocos días para las elecciones en España y una encuesta online de Ateneo del Dato muestra que las derechas superan a la izquierda"
+          },
+          "autenticidad": {
+            "puntaje": 2,
+            "justificacion": "Los datos de una encuesta citada en la prensa son el núcleo de la tarea y no fueron creados para enseñar el contenido.",
+            "cita": "La misma encuesta indica que 86,6% de quienes votaron a Vox en las elecciones anteriores repetirían su voto, y 76,1% de quienes votaron al PP"
+          },
+          "contexto": {
+            "puntaje": 2,
+            "justificacion": "El contexto electoral condiciona los supuestos: quién es móvil, cómo se reparten los votos y el margen de error. Además, es indispensable para juzgar si el escenario es verosímil.",
+            "cita": "con parte del electorado todavía móvil, la izquierda podría alcanzar a la derecha el día de la votación"
+          },
+          "ciclo": {
+            "puntaje": 2,
+            "justificacion": "Para responder hay que comprender la encuesta, simplificar con supuestos de transferencia, matematizar escenarios, calcular, interpretar el resultado y juzgar su verosimilitud. El enunciado no deja hecha ninguna fase.",
+            "cita": "¿qué tendría que ocurrir con los votantes para que eso pase y les parece verosímil?"
+          },
+          "validacion": {
+            "puntaje": 2,
+            "justificacion": "Hay evidencia independiente accesible para contrastar los escenarios: el margen de error, otras encuestas públicas, los resultados de la elección anterior y el resultado real posterior.",
+            "cita": "La encuesta hizo 2.000 entrevistas y su margen de error para el conjunto de la muestra es ±2,2%."
+          },
+          "nivel": {
+            "puntaje": 2,
+            "justificacion": "El contexto electoral es comprensible para estudiantes de 16 a 18 años. La demanda de comparar varios supuestos en competencia y analizar qué pasa si, considerando el margen de error, es adecuada para S2.",
+            "cita": "el PP tendría 32,1% y Vox 17,6%, lo que suma 49,7% de intención de voto, mientras que los partidos de izquierda sumarían 37,5%"
+          },
+          "autodiferenciacion": {
+            "puntaje": 2,
+            "justificacion": "El piso es razonable: basta comparar las cifras y repartir los indecisos con porcentajes. El techo es alto: admite matrices de transferencia, uso de resultados previos, análisis de sensibilidad e incertidumbre muestral.",
+            "cita": "Pueden pedir información adicional."
+          },
+          "fecundidad": {
+            "puntaje": 2,
+            "justificacion": "Los distintos supuestos de transferencia producen escenarios comparables. Abren preguntas sobre los límites de las encuestas, la abstención y el margen de error.",
+            "cita": "y les parece verosímil?"
+          },
+          "recursos": {
+            "puntaje": 2,
+            "justificacion": "La información necesaria se entrega o puede solicitarse, sin revelar el modelo; R2 deja la decisión al grupo. Los resultados de la elección anterior se obtienen con una búsqueda simple.",
+            "cita": "R2 (Información sobre el destino de quienes cambian su voto), disponible a solicitud del grupo"
+          }
+        },
+        "total": 24,
+        "mejoras": []
+      },
+      "reproducibilidad": {
+        "agentes": {
+          "disenador": {
+            "modelo": "claude-sonnet-5-5",
+            "version_modelo": "claude-sonnet-5-5",
+            "costo_usd": 0.353399,
+            "version_prompt": "1.1"
+          },
+          "evaluador": {
+            "modelo": "claude-opus-5-5",
+            "version_modelo": "claude-opus-5-5",
+            "costo_usd": 0.197174,
+            "version_prompt": "1.3"
+          },
+          "filtro": {
+            "modelo": "claude-haiku-5-5",
+            "version_modelo": "claude-haiku-5-5",
+            "costo_usd": 0.000459,
+            "version_prompt": "1.0"
+          }
+        },
+        "version_prompt": {
+          "disenador": "1.1",
+          "evaluador": "1.3",
+          "filtro": "1.0"
+        },
+        "version_rubrica": "4.0",
+        "version_MAR03": "1.0",
+        "version_MED01": "1.5",
+        "diseno_simulador": null,
+        "fecha": "2026-11-23T21:50:35Z",
+        "costo_usd": 0.551032
+      }
+    }
+  },
+  "historial": [
+    {
+      "fecha": "2026-11-23T21:47:22+00:00",
+      "de": null,
+      "a": "borrador"
+    },
+    {
+      "fecha": "2026-11-23T21:50:35+00:00",
+      "de": "borrador",
+      "a": "evaluada",
+      "iteracion": 1,
+      "rub01_total": 24
+    }
+  ],
+  "marcas": {
+    "ciclo_id": "ciclo_20261123T212842668713Z",
+    "noticia_id": "2026-11-23-eldiario-el-pp-gana-por-la-minima",
+    "nivel_objetivo": "S",
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "versiones_modelo": [
+          "claude-sonnet-5-5"
+        ],
+        "costo_usd": 0.353399,
+        "llamadas": 2
+      },
+      "filtro": {
+        "modelo": "claude-haiku-5-5",
+        "versiones_modelo": [
+          "claude-haiku-5-5"
+        ],
+        "costo_usd": 0.000459,
+        "llamadas": 1
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "versiones_modelo": [
+          "claude-opus-5-5"
+        ],
+        "costo_usd": 0.197174,
+        "llamadas": 3
+      }
+    },
+    "costos_compartidos": [
+      "disenador",
+      "filtro"
+    ],
+    "version_MAR03": "1.0",
+    "evaluacion_inestable": false,
+    "evaluacion_rango_total": 0,
+    "evaluacion_corridas": "pipeline/state/trabajo/2026-11-izquierda-puede-alcanzar-derecha/evaluacion_corridas.json",
+    "preverificacion": {
+      "fecha": "2026-11-23T21:50:36Z",
+      "version_tarea": 1,
+      "aprobado": false,
+      "criticos": [
+        "[4] estudiante.recursos_a_solicitud[R3]: cifra 30.8 sin localizador (no figura en noticia.cifras_usadas)",
+        "[4] estudiante.recursos_a_solicitud[R4]: cifra 2000 sin localizador (no figura en noticia.cifras_usadas)",
+        "[4] estudiante.recursos_a_solicitud[R4]: cifra 2.2 sin localizador (no figura en noticia.cifras_usadas)"
+      ],
+      "texto_noticia": true
+    },
+    "hallazgos_tarea": [
+      "[4] estudiante.recursos_a_solicitud[R3]: cifra 30.8 sin localizador (no figura en noticia.cifras_usadas)",
+      "[4] estudiante.recursos_a_solicitud[R4]: cifra 2000 sin localizador (no figura en noticia.cifras_usadas)",
+      "[4] estudiante.recursos_a_solicitud[R4]: cifra 2.2 sin localizador (no figura en noticia.cifras_usadas)"
+    ],
+    "pendiente": "revision_humana_1"
+  }
+}
