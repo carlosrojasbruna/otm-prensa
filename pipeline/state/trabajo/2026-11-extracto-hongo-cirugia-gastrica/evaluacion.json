@@ -1,0 +1,104 @@
+{
+  "tarea_id": "2026-11-extracto-hongo-cirugia-gastrica",
+  "fecha": "2026-11-23T22:02:33Z",
+  "rub01": {
+    "version_rubrica": "4.0",
+    "criterios": {
+      "genuino": {
+        "puntaje": 2,
+        "justificacion": "La situación plantea una decisión real que hay que resolver. No se entrega ninguna regla para pasar de la reducción relativa de 12 % a muertes evitadas en el hospital.",
+        "cita": "El comité de un hospital chileno debe decidir si incorpora el extracto al tratamiento posterior a la cirugía."
+      },
+      "abierta": {
+        "puntaje": 2,
+        "justificacion": "La pregunta no prescribe procedimiento. Admite varios modelos defendibles según el plazo, la mortalidad base, el volumen de pacientes y la forma de tratar la incertidumbre.",
+        "cita": "¿Cuántas muertes podría evitar el extracto en los pacientes del hospital, qué tan segura es esa cifra y qué le recomendarían al comité?"
+      },
+      "decisiones": {
+        "puntaje": 2,
+        "justificacion": "Resolver exige solicitar u obtener información, elegir plazo y valor de mortalidad base, estimar el número de pacientes y formular supuestos de comparabilidad.",
+        "cita": "Nadie en el comité sabe cuántos de sus pacientes mueren hoy, cuánto costaría el extracto ni si sus pacientes se parecen a los del estudio."
+      },
+      "realismo": {
+        "puntaje": 2,
+        "justificacion": "La decisión de un comité hospitalario sobre incorporar un tratamiento a partir de evidencia publicada es una situación plausible fuera de la escuela, sin encuadre forzado.",
+        "cita": "Un metaanálisis que reunió a 8.009 pacientes asoció el extracto con una reducción de 12 % en el riesgo de muerte."
+      },
+      "autenticidad": {
+        "puntaje": 2,
+        "justificacion": "Los datos del metaanálisis se presentan como resultado real y son el núcleo de la tarea. Por eso el componente auténtico está integrado de manera sustantiva, aunque el escenario del hospital es construido.",
+        "cita": "Un metaanálisis que reunió a 8.009 pacientes asoció el extracto con una reducción de 12 % en el riesgo de muerte."
+      },
+      "contexto": {
+        "puntaje": 2,
+        "justificacion": "Varios elementos del contexto condicionan las decisiones de modelación y son necesarios para juzgar la incertidumbre y formular la recomendación: la comparabilidad de pacientes, el tratamiento complementario y el plazo de mortalidad.",
+        "cita": "Se desconoce si los pacientes del hospital chileno tienen etapas de enfermedad similares."
+      },
+      "ciclo": {
+        "puntaje": 2,
+        "justificacion": "Responder obliga a recorrer todas las fases del ciclo:\n- comprender la diferencia entre riesgo relativo y absoluto;\n- simplificar y elegir datos;\n- matematizar y calcular;\n- interpretar la cifra para el comité;\n- juzgar su seguridad.\nEl enunciado no deja ninguna fase hecha.",
+        "cita": "¿Cuántas muertes podría evitar el extracto en los pacientes del hospital, qué tan segura es esa cifra y qué le recomendarían al comité?"
+      },
+      "validacion": {
+        "puntaje": 2,
+        "justificacion": "R4 ofrece evidencia independiente, no usada en la construcción, para contrastar la predicción del modelo.",
+        "cita": "el comité puede consultar la diferencia absoluta de supervivencia observada en un ensayo individual de seguimiento largo con pacientes comparables, no usado para construir el …"
+      },
+      "nivel": {
+        "puntaje": 2,
+        "justificacion": "El contexto médico y el lenguaje son comprensibles para universitarios de 1°–2° año. La demanda de cuantificar la incertidumbre y razonar con probabilidades corresponde a las herramientas esperables del nivel U.",
+        "cita": "¿Cuántas muertes podría evitar el extracto en los pacientes del hospital, qué tan segura es esa cifra"
+      },
+      "autodiferenciacion": {
+        "puntaje": 2,
+        "justificacion": "El piso es razonable, porque basta un cálculo proporcional de pacientes × mortalidad base × 12 %. El techo es alto: la tarea admite intervalos, análisis de sensibilidad, número necesario a tratar o consideraciones de costo-efectividad.",
+        "cita": "Pueden pedir información adicional."
+      },
+      "fecundidad": {
+        "puntaje": 2,
+        "justificacion": "Las decisiones sobre plazo, mortalidad base y comparabilidad producen soluciones distintas que se pueden comparar. Además, la tarea abre preguntas nuevas sobre costo, transferibilidad de la evidencia y límites del modelo.",
+        "cita": "cuánto costaría el extracto ni si sus pacientes se parecen a los del estudio"
+      },
+      "recursos": {
+        "puntaje": 2,
+        "justificacion": "La información se obtiene a solicitud o con una búsqueda accesible para el nivel U, y las tarjetas no revelan el modelo. Persiste una duda menor: R2 no entrega un valor concreto, aunque sí indica cómo conseguirlo.",
+        "cita": "El comité pide que el grupo decida qué plazo usar y qué valor adoptar, o que lo estime con estadísticas públicas de cáncer gástrico."
+      }
+    },
+    "total": 24,
+    "mejoras": []
+  },
+  "reproducibilidad": {
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.205236,
+        "version_prompt": "1.1"
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.277318,
+        "version_prompt": "1.3"
+      },
+      "filtro": {
+        "modelo": "claude-haiku-5-5",
+        "version_modelo": "claude-haiku-5-5",
+        "costo_usd": 0.000363,
+        "version_prompt": "1.0"
+      }
+    },
+    "version_prompt": {
+      "disenador": "1.1",
+      "evaluador": "1.3",
+      "filtro": "1.0"
+    },
+    "version_rubrica": "4.0",
+    "version_MAR03": "1.0",
+    "version_MED01": "1.5",
+    "diseno_simulador": null,
+    "fecha": "2026-11-23T22:02:33Z",
+    "costo_usd": 0.482917
+  }
+}

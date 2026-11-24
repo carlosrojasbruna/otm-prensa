@@ -1,0 +1,117 @@
+{
+  "tarea_id": "2026-11-izquierda-puede-alcanzar-derecha",
+  "aprobado": false,
+  "alcance": "tarea",
+  "hallazgos": [
+    {
+      "invariante": "4",
+      "severidad": "critico",
+      "ubicacion": "estudiante.recursos_a_solicitud[R3]",
+      "descripcion": "cifra 30.8 sin localizador (no figura en noticia.cifras_usadas)",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "4",
+      "severidad": "critico",
+      "ubicacion": "estudiante.recursos_a_solicitud[R4]",
+      "descripcion": "cifra 2000 sin localizador (no figura en noticia.cifras_usadas)",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "4",
+      "severidad": "critico",
+      "ubicacion": "estudiante.recursos_a_solicitud[R4]",
+      "descripcion": "cifra 2.2 sin localizador (no figura en noticia.cifras_usadas)",
+      "origen": "codigo"
+    }
+  ],
+  "cifras_contrastadas": [
+    {
+      "indice": 0,
+      "que_es": "intención de voto estimada para el PP en la encuesta de Ateneo del Dato",
+      "valor_tarea": "32,1%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 7"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "32,1%",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 7 de la noticia"
+    },
+    {
+      "indice": 1,
+      "que_es": "intención de voto estimada para Vox",
+      "valor_tarea": "17,6%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 10"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "17,6%",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 10 de la noticia"
+    },
+    {
+      "indice": 2,
+      "que_es": "suma de los votos estimados para las derechas (PP y Vox)",
+      "valor_tarea": "49,7%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 10"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "49,7%",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 10 de la noticia"
+    },
+    {
+      "indice": 3,
+      "que_es": "suma de los votos estimados para la izquierda (PSOE, Frente Amplio y Podemos)",
+      "valor_tarea": "37,5%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 10"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "37,5%",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 10 de la noticia"
+    },
+    {
+      "indice": 4,
+      "que_es": "votantes de Vox en 2023 que repetirían su voto",
+      "valor_tarea": "86,6%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 13"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "86,6%",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 13 de la noticia"
+    },
+    {
+      "indice": 5,
+      "que_es": "votantes del PP en 2023 que repetirían su voto",
+      "valor_tarea": "76,1%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 13"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "76,1%",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 13 de la noticia"
+    }
+  ],
+  "meta": {
+    "agente": "verificador",
+    "version_prompt": "1.1",
+    "modelo_llamado": false,
+    "costo_usd": 0.0,
+    "texto_noticia_recibido": true,
+    "fecha": "2026-11-23T21:50:36+00:00"
+  },
+  "localizadores_corregidos": {}
+}

@@ -1,0 +1,254 @@
+{
+  "id": "2026-11-ventaja-pp-empate-tecnico",
+  "titulo": "¿Va realmente adelante el PP o es un empate?",
+  "estado": "archivada",
+  "version": 1,
+  "fecha": "2026-11-23",
+  "noticia": {
+    "noticia_id": "2026-11-23-eldiario-el-pp-gana-por-la-minima",
+    "medio": "elDiario.es",
+    "titulo": "El PP gana por la mínima al PSOE y la derecha supera a la izquierda en la última encuesta antes del 29N",
+    "fecha": "2026-11-23",
+    "url": "https://www.eldiario.es/politica/pp-gana-minima-psoe-derecha-supera-izquierda-ultima-encuesta-29n_1_13684963.html",
+    "resumen_propio": "Un sondeo de Ateneo del Dato, con 2.000 entrevistas online hechas a días de las elecciones, sitúa al PP apenas por delante del PSOE y a las derechas por encima de la izquierda gracias a Vox. También recoge quién prefieren como presidente los votantes, cuánta gente repite su voto de 2023 en cada partido y cómo valoran a los principales candidatos.",
+    "cifras_usadas": [
+      {
+        "valor": "32,1%",
+        "unidad": "porcentaje de votos",
+        "que_es": "intención de voto estimada para el PP en la encuesta de Ateneo del Dato",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 7"
+        }
+      },
+      {
+        "valor": "30,8%",
+        "unidad": "porcentaje de votos",
+        "que_es": "intención de voto estimada para el PSOE en la encuesta de Ateneo del Dato",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 7"
+        }
+      },
+      {
+        "valor": "28,6%",
+        "unidad": "porcentaje de votos",
+        "que_es": "intención de voto del PSOE en el estudio anterior publicado el día 6",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 8"
+        }
+      },
+      {
+        "valor": "31,5%",
+        "unidad": "porcentaje de votos",
+        "que_es": "intención de voto del PP en la encuesta anterior de Ateneo del Dato",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 8"
+        }
+      },
+      {
+        "valor": "2.000 entrevistas",
+        "unidad": "personas entrevistadas",
+        "que_es": "tamaño de la muestra de la encuesta",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 8"
+        }
+      },
+      {
+        "valor": "±2,2%",
+        "unidad": "margen de error",
+        "que_es": "error muestral para el conjunto de la muestra con nivel de confianza del 95,5%",
+        "localizador": {
+          "fuente": "noticia",
+          "ubicacion": "párrafo 24"
+        }
+      }
+    ]
+  },
+  "nivel_principal": "S",
+  "variantes": {
+    "abajo": "P",
+    "arriba": "U"
+  },
+  "area": "sociedad_datos",
+  "contenidos_matematicos": [
+    "porcentajes",
+    "margen de error",
+    "estadística descriptiva",
+    "probabilidad",
+    "intervalos"
+  ],
+  "tiempo_estimado": "2 sesiones de 90 min",
+  "estudiante": {
+    "enunciado_es": "Un medio español publicó que el PP le saca muy poca ventaja al PSOE, apoyándose en una encuesta online de Ateneo del Dato hecha pocos días antes de las próximas elecciones en España. Se realizaron 2.000 entrevistas. Según ella, el PP tendría 32,1% de intención de voto y el PSOE, 30,8%. La encuesta informa además un margen de error de ±2,2% para el conjunto de la muestra. Ustedes forman parte del equipo de datos de otro medio y deben decidir si su titular puede decir que el PP va adelante, o si es más honesto decir otra cosa. Tienen que redactar una nota breve para lectores sin estudios de estadística que explique su conclusión y con qué grado de seguridad la sostienen. ¿Qué dirían y cómo lo justificarían? Pueden pedir información adicional.",
+    "foto_descripcion": "Dos barras verticales de altura casi igual, una apenas más alta que la otra, con un pequeño segmento vertical de incertidumbre sobre cada barra.",
+    "recursos_a_solicitud": [
+      {
+        "id": "R2",
+        "que_es": "Resultados del estudio anterior de la misma empresa",
+        "contenido": "En el estudio anterior de Ateneo del Dato, el PSOE tenía 28,6% de intención de voto y el PP, 31,5%.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P5-INT",
+        "fuente": "noticia, párrafo 8"
+      },
+      {
+        "id": "R3",
+        "que_es": "Información sobre cómo se escogió a las personas entrevistadas",
+        "contenido": "Supuesto del escenario: la noticia no explica cómo se escogió a las personas entrevistadas; si el grupo lo necesita, puede acordar tratarlas como si hubieran sido escogidas al azar entre todo el electorado.",
+        "disponibilidad": "a_solicitud",
+        "fase": "P2-RM",
+        "fuente": "supuesto del escenario"
+      }
+    ]
+  },
+  "variantes_detalle": {
+    "abajo": {
+      "tramo": "P",
+      "cambios": "Misma noticia y misma pregunta general, pero se pide pasar los porcentajes a cantidad de personas entrevistadas y comparar cuántas personas separan a los dos partidos con el margen de error, sin hablar de probabilidades. Se entrega la tarjeta del estudio anterior desde el inicio y la validación es comparar con él."
+    },
+    "arriba": {
+      "tramo": "U",
+      "cambios": "Se pide estimar la probabilidad de que el PP vaya realmente adelante con un modelo multinomial o una simulación, discutir los límites del muestreo online y decidir cuántas entrevistas harían falta para distinguir esa diferencia. Se exige crítica del modelo ante datos nuevos."
+    }
+  },
+  "recursos_de_entrada": [
+    {
+      "id": "R1",
+      "que_es": "Datos de la encuesta que ya tiene el grupo",
+      "contenido": "Intención de voto estimada: PP 32,1% y PSOE 30,8%. La encuesta hizo 2.000 entrevistas y su margen de error para el conjunto de la muestra es ±2,2%.",
+      "disponibilidad": "de_entrada",
+      "fase": "P1-MRS",
+      "fuente": "noticia, párrafos 7, 8 y 24"
+    }
+  ],
+  "mapa_ciclo": {
+    "P1-MRS": {
+      "decision": "Identificar qué afirma el titular (el PP va adelante) y cuáles son los datos pertinentes: los dos porcentajes, la cantidad de entrevistas y el margen de error.",
+      "evidencia": "El grupo reformula con sus palabras qué se quiere saber y lista qué datos usará y cuáles pedirá.",
+      "bloqueo_probable": null
+    },
+    "P2-RM": {
+      "decision": "Decidir si tratan las entrevistas como muestra al azar, si el margen vale para cada partido o para la diferencia, y si miran solo esta encuesta o también la anterior.",
+      "evidencia": "Lista escrita de supuestos acordados (por ejemplo, muestra al azar, el voto declarado es el voto real).",
+      "bloqueo_probable": "B12"
+    },
+    "P3-MM": {
+      "decision": "Elegir cómo expresar la incertidumbre: intervalos para cada partido, error de la diferencia, probabilidad por simulación o comparación con el estudio anterior.",
+      "evidencia": "Esquema o expresión que relaciona la diferencia de porcentajes con el margen de error.",
+      "bloqueo_probable": "B23"
+    },
+    "P4-WM": {
+      "decision": "Calcular la diferencia, los intervalos y, según la ruta, el error de la diferencia o una simulación.",
+      "evidencia": "Cálculos con intervalos que se traslapan o con un error de la diferencia mayor que la diferencia observada.",
+      "bloqueo_probable": "B34"
+    },
+    "P5-INT": {
+      "decision": "Traducir el resultado a una frase para lectores: ventaja del PP posible pero no segura.",
+      "evidencia": "Borrador de titular o nota que expresa grado de seguridad en palabras.",
+      "bloqueo_probable": "B45"
+    },
+    "P6-VAL": {
+      "decision": "Contrastar con el estudio anterior pedido al equipo y discutir qué ocurrirá cuando se conozca el resultado real de la elección.",
+      "evidencia": "El grupo compara cómo cambió la diferencia entre estudios y dice qué resultado real confirmaría o refutaría su conclusión.",
+      "bloqueo_probable": "B56"
+    },
+    "P7-EXP": {
+      "decision": "Redactar y presentar la nota con la conclusión, los supuestos y los límites.",
+      "evidencia": "Nota breve que incluye cifras, supuestos y una advertencia sobre la incertidumbre.",
+      "bloqueo_probable": "B67"
+    }
+  },
+  "task_space": {
+    "required_assumptions": [
+      "Las 2.000 entrevistas se tratan como una muestra al azar del electorado.",
+      "El margen de error de ±2,2% se aplica a cada porcentaje por separado.",
+      "La intención de voto declarada equivale al voto el día de la elección.",
+      "No hay cambio de opinión entre la encuesta y la elección.",
+      "Los dos partidos se miden en la misma muestra, por lo que sus porcentajes no son independientes."
+    ],
+    "reference_solution": {
+      "steps": "1) Diferencia observada: 32,1 − 30,8 = 1,3 puntos. 2) Intervalos con el margen de cada porcentaje: PP entre 29,9% y 34,3%; PSOE entre 28,6% y 33,0%; se traslapan casi por completo, lo que indica un empate técnico. 3) Refinamiento: como ambos porcentajes salen de la misma muestra, la varianza de la diferencia de proporciones es (p1 + p2 − (p1 − p2)^2) / n, es decir (0,321 + 0,308 − 0,0169) / 2.000 ≈ 0,000306; su raíz da un error típico cercano a 1,75 puntos y, con 95% de confianza, cerca de ±3,4 puntos. 4) Como 1,3 es menor que 3,4, no se puede afirmar con ese nivel de confianza que el PP vaya adelante. La razón entre 1,3 y 1,75 es cerca de 0,74, lo que da una probabilidad aproximada de 77% de que el PP esté realmente adelante bajo muestreo al azar. 5) Con el estudio anterior: la diferencia pasó de 2,9 puntos (31,5 − 28,6) a 1,3 puntos; el PSOE subió 2,2 puntos y el PP 0,6, cambios del orden del margen de error. 6) Titular honesto: ventaja pequeña e incierta del PP.",
+      "result": "No se puede afirmar con seguridad que el PP vaya adelante. La diferencia de 1,3 puntos es menor que el error de la diferencia (cerca de 3,4 puntos a 95% de confianza). Bajo muestreo aleatorio simple, la probabilidad de ventaja real del PP es cerca de 77%. Conclusión adecuada: empate técnico con ligera ventaja estimada para el PP.",
+      "acceptable_range": "Error de la diferencia entre ±2,2 y ±4,4 puntos según el modelo elegido; probabilidad de ventaja real del PP entre 70% y 80% si se calcula; cualquier conclusión que reconozca la incertidumbre y declare sus supuestos es defendible, pero no lo es 'el PP gana claramente' ni 'el PSOE va adelante'."
+    },
+    "routes": [
+      {
+        "id": "R1",
+        "nombre": "Intervalos que se traslapan",
+        "nivel": "S1",
+        "modelo": "Dibujar para cada partido el intervalo porcentaje ± margen de error y ver si se traslapan.",
+        "resultado": "PP entre 29,9% y 34,3% y PSOE entre 28,6% y 33,0%: se traslapan, hay empate técnico."
+      },
+      {
+        "id": "R2",
+        "nombre": "Error de la diferencia",
+        "nivel": "S2",
+        "modelo": "Estimar la desviación de la diferencia entre dos proporciones de la misma muestra y compararla con la diferencia observada (distribución aproximadamente normal).",
+        "resultado": "Error de la diferencia cerca de ±3,4 puntos a 95% de confianza; probabilidad de ventaja real del PP cerca de 77%."
+      },
+      {
+        "id": "R3",
+        "nombre": "Simulación de muchas encuestas",
+        "nivel": "S2",
+        "modelo": "Simular muchas encuestas del mismo tamaño con probabilidades iguales a los porcentajes observados y contar en qué fracción el PP queda por delante.",
+        "resultado": "El PP queda por delante en cerca de tres de cada cuatro encuestas simuladas, no en todas."
+      },
+      {
+        "id": "R4",
+        "nombre": "Tendencia entre estudios",
+        "nivel": "S1",
+        "modelo": "Comparar la diferencia actual con la del estudio anterior y medir el cambio en relación con el margen de error.",
+        "resultado": "La diferencia bajó de 2,9 a 1,3 puntos; los cambios de cada partido son del orden del margen de error, así que no hay tendencia firme."
+      }
+    ],
+    "modelo_inadecuado": {
+      "id": "R5",
+      "por_que_falla": "Declarar ganador al PP solo porque 32,1 es mayor que 30,8, tratando la encuesta como un resultado exacto. Falla porque ignora que la encuesta es una muestra y que la diferencia de 1,3 puntos cabe dentro del error. Una variante también inadecuada es exigir que la diferencia supere el doble del margen para cada partido; es demasiado exigente y no usa que ambos se miden en la misma muestra."
+    },
+    "validation_evidence": "Resultado oficial de la elección (otra fuente: resultados oficiales publicados por el Ministerio del Interior de España) y otras encuestas independientes de otras empresas, que el grupo puede revisar después de modelar. Se compara la diferencia real entre PP y PSOE con la estimada y con el error calculado. Ningún dato de esta evidencia se usa para construir el modelo.",
+    "agent_visibility": {
+      "students": [
+        "enunciado_es",
+        "foto_descripcion",
+        "recursos_a_solicitud"
+      ],
+      "coder": [
+        "enunciado_es",
+        "task_space"
+      ],
+      "guide": [
+        "all"
+      ]
+    }
+  },
+  "rubrica_rub01": {
+    "total": 22,
+    "por_criterio": {
+      "genuino": 2,
+      "abierta": 2,
+      "decisiones": 2,
+      "realismo": 2,
+      "autenticidad": 2,
+      "contexto": 2,
+      "ciclo": 2,
+      "validacion": 2,
+      "nivel": 1,
+      "autodiferenciacion": 2,
+      "fecundidad": 2,
+      "recursos": 1
+    }
+  },
+  "rubrica_rub02": {
+    "P": null,
+    "S": null,
+    "U": null
+  },
+  "modelo_y_prompt": {
+    "diseñador": "claude-sonnet-5-5",
+    "version_prompt": "1.1",
+    "version_rubrica": "4.0"
+  }
+}

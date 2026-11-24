@@ -1,0 +1,16 @@
+{
+  "2026-11-izquierda-puede-alcanzar-derecha": [
+    {
+      "criterio": "recursos",
+      "mejora_minima": "R2 afirma que la noticia no informa a dónde irían quienes no repiten su voto, y sí lo informa (párrafo 13): de los votantes del PP en 2023, 18,2% votaría ahora a Vox y 1,2% al PSOE; de los de Vox, 6,1% votaría al PP; de los del PSOE, 70,6% repetiría, 8% iría al PP, 5,7% a Vox y 3,9% al Frente Amplio. Reescribir R2 con esos datos y fuente «noticia, párrafo 13», como recurso de contraste que se entrega después de que el grupo presente su primer modelo (decirlo en que_es). La noticia no informa abstención ni voto en blanco: eso sigue siendo un supuesto del grupo y, si hace falta, va en otro recurso rotulado «Supuesto del escenario». Registrar en noticia.cifras_usadas todas las cifras de la noticia que aparezcan en los recursos: 30,8% (R3), 2.000 entrevistas y ±2,2% (R4) y las de R2; hoy R3 y R4 las usan sin registrarlas y la verificación previa las marca «sin localizador»."
+    },
+    {
+      "criterio": "validacion",
+      "mejora_minima": "Usar esos traspasos como evidencia de validación ya disponible en task_space.validation_evidence, junto a los resultados oficiales, que solo existirán después del 29 de noviembre de 2026. Ajustar reference_solution y routes: hoy la referencia trata como «móviles» cerca de 10 puntos de la derecha que podrían pasar a la izquierda, pero según la noticia casi todo ese movimiento queda dentro del bloque (del PP a Vox 18,2%; del PP al PSOE 1,2%). La solución debe distinguir entre cambiar de partido y cambiar de bloque, y decir de dónde tendrían que salir los votos que le faltan a la izquierda."
+    },
+    {
+      "criterio": "contexto",
+      "mejora_minima": "Fechar el enunciado para que no caduque: en vez de «Faltan pocos días para las elecciones», decir que la encuesta se publicó el 23 de noviembre de 2026, seis días antes de las elecciones generales del 29 de noviembre. No cambiar la pregunta que se le hace al grupo ni el nivel."
+    }
+  ]
+}

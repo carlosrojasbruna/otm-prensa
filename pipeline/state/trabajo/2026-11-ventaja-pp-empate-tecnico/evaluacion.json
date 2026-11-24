@@ -1,0 +1,113 @@
+{
+  "tarea_id": "2026-11-ventaja-pp-empate-tecnico",
+  "fecha": "2026-11-23T21:49:16Z",
+  "rub01": {
+    "version_rubrica": "4.0",
+    "criterios": {
+      "genuino": {
+        "puntaje": 2,
+        "justificacion": "La situación plantea una necesidad real: decidir un titular honesto. No se entrega ninguna regla para comparar la diferencia con el margen de error; esa forma de comparar la debe construir el grupo.",
+        "cita": "deben decidir si su titular puede decir que el PP va adelante, o si es más honesto decir otra cosa"
+      },
+      "abierta": {
+        "puntaje": 2,
+        "justificacion": "La pregunta no prescribe procedimiento. Admite varios caminos defendibles: solapamiento de intervalos, margen de la diferencia, tendencia respecto del estudio anterior o crítica al muestreo online.",
+        "cita": "¿Qué dirían y cómo lo justificarían? Pueden pedir información adicional."
+      },
+      "decisiones": {
+        "puntaje": 2,
+        "justificacion": "Resolver exige seleccionar información (pedir o no R2 y R3), suponer cómo se eligió la muestra, decidir qué cuenta como «ir adelante» y qué grado de seguridad es aceptable.",
+        "cita": "Pueden pedir información adicional."
+      },
+      "realismo": {
+        "puntaje": 2,
+        "justificacion": "Interpretar encuestas con márgenes de error para titular una noticia es una práctica periodística real, y el encuadre no se percibe forzado.",
+        "cita": "Ustedes forman parte del equipo de datos de otro medio y deben decidir si su titular puede decir que el PP va adelante"
+      },
+      "autenticidad": {
+        "puntaje": 2,
+        "justificacion": "Los datos de una encuesta publicada y citada en prensa son el núcleo de la tarea. Constituyen un componente auténtico integrado de manera sustantiva.",
+        "cita": "Un medio español publicó que el PP le saca muy poca ventaja al PSOE, apoyándose en una encuesta online de Ateneo del Dato"
+      },
+      "contexto": {
+        "puntaje": 2,
+        "justificacion": "El contexto condiciona decisiones (encuesta online, honestidad del titular, público lego). También es necesario para interpretar y comunicar el resultado.",
+        "cita": "redactar una nota breve para lectores sin estudios de estadística que explique su conclusión y con qué grado de seguridad la sostienen"
+      },
+      "ciclo": {
+        "puntaje": 2,
+        "justificacion": "Responder obliga a comprender la encuesta, suponer el tipo de muestreo, matematizar la comparación con el margen, calcular, volver al titular y juzgar su seguridad. El margen ya calculado no vuelve trivial la matematización de la comparación.",
+        "cita": "explique su conclusión y con qué grado de seguridad la sostienen"
+      },
+      "validacion": {
+        "puntaje": 2,
+        "justificacion": "Existe evidencia independiente accesible para contrastar la conclusión: el estudio anterior, otras encuestas públicas y, más adelante, el resultado electoral.",
+        "cita": "En el estudio anterior de Ateneo del Dato, el PSOE tenía 28,6% de intención de voto y el PP, 31,5%."
+      },
+      "nivel": {
+        "puntaje": 1,
+        "justificacion": "El contexto es comprensible. Sin embargo, interpretar un margen de error y un grado de seguridad excede las herramientas de S1 (13–15) en MAR03 y encaja en S2, aunque la tarea declara todo S. Dudo entre 1 y 2 y asigno el menor.",
+        "cita": "La encuesta informa además un margen de error de ±2,2% para el conjunto de la muestra."
+      },
+      "autodiferenciacion": {
+        "puntaje": 2,
+        "justificacion": "El piso es razonable: se puede comparar la diferencia de 1,3 puntos con ±2,2 usando aritmética. El techo es alto: margen de la diferencia, probabilidad de ventaja, tendencia y sesgo del muestreo online.",
+        "cita": "¿Qué dirían y cómo lo justificarían?"
+      },
+      "fecundidad": {
+        "puntaje": 2,
+        "justificacion": "Las conclusiones abren preguntas sustantivas: cómo comunicar incertidumbre, qué tamaño de muestra haría falta, si hay tendencia entre estudios y qué sesgos tiene una encuesta online. También permiten comparar titulares.",
+        "cita": "si su titular puede decir que el PP va adelante, o si es más honesto decir otra cosa"
+      },
+      "recursos": {
+        "puntaje": 1,
+        "justificacion": "La información necesaria está disponible o puede solicitarse. Sin embargo, la imagen con segmentos de incertidumbre sobre cada barra sugiere la estructura de solución (comparar intervalos que se solapan), lo que es una sobreorientación parcial; dudé entre 1 y 2 y asigné el menor.",
+        "cita": "Dos barras verticales de altura casi igual, una apenas más alta que la otra, con un pequeño segmento vertical de incertidumbre sobre cada barra."
+      }
+    },
+    "total": 22,
+    "mejoras": [
+      {
+        "criterio": "nivel",
+        "mejora_minima": "Declarar el sub-tramo S2, donde la interpretación de márgenes de error e incertidumbre está al alcance esperable."
+      },
+      {
+        "criterio": "recursos",
+        "mejora_minima": "Reemplazar la imagen por un gráfico de barras sin segmentos de incertidumbre, como el que publicaría el medio, para que el grupo decida por sí mismo cómo representar el margen de error."
+      }
+    ]
+  },
+  "reproducibilidad": {
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.353399,
+        "version_prompt": "1.1"
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.301308,
+        "version_prompt": "1.3"
+      },
+      "filtro": {
+        "modelo": "claude-haiku-5-5",
+        "version_modelo": "claude-haiku-5-5",
+        "costo_usd": 0.000459,
+        "version_prompt": "1.0"
+      }
+    },
+    "version_prompt": {
+      "disenador": "1.1",
+      "evaluador": "1.3",
+      "filtro": "1.0"
+    },
+    "version_rubrica": "4.0",
+    "version_MAR03": "1.0",
+    "version_MED01": "1.5",
+    "diseno_simulador": null,
+    "fecha": "2026-11-23T21:49:16Z",
+    "costo_usd": 0.655166
+  }
+}

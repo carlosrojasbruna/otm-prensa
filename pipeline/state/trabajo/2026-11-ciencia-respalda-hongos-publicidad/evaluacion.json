@@ -1,0 +1,109 @@
+{
+  "tarea_id": "2026-11-ciencia-respalda-hongos-publicidad",
+  "fecha": "2026-11-23T22:00:37Z",
+  "rub01": {
+    "version_rubrica": "4.0",
+    "criterios": {
+      "genuino": {
+        "puntaje": 2,
+        "justificacion": "La situación plantea una necesidad real de decisión y no entrega ninguna regla ni modelo para juzgar la fuerza del respaldo. El grupo debe construir el criterio por su cuenta.",
+        "cita": "La agencia de protección al consumidor debe decidir si esa frase es aceptable o engañosa."
+      },
+      "abierta": {
+        "puntaje": 2,
+        "justificacion": "La pregunta no prescribe un método. Admite varios modelos defendibles: comparar proporciones, modelar el sesgo de publicación, razonar de forma bayesiana o hacer escenarios de sensibilidad.",
+        "cita": "¿Qué tan fuerte es el respaldo que entregan estos números a la frase de la tienda y qué le recomendarían a la agencia?"
+      },
+      "decisiones": {
+        "puntaje": 2,
+        "justificacion": "Resolver exige decidir qué información solicitar y formular supuestos sobre la magnitud del sesgo de publicación y de selección, que no se cuantifica. También exige decidir qué cuenta como «respaldo».",
+        "cita": "Quienes revisan el caso no saben cómo se eligieron los estudios ni cómo se publican los resultados de este tipo de investigación. Pueden pedir información …"
+      },
+      "realismo": {
+        "puntaje": 2,
+        "justificacion": "Evaluar publicidad de suplementos que invoca estudios científicos es una situación existente y plausible fuera de la escuela.",
+        "cita": "Una tienda en línea de suplementos cita esta revisión en su publicidad con la frase «la ciencia respalda los hongos medicinales»."
+      },
+      "autenticidad": {
+        "puntaje": 2,
+        "justificacion": "El tema y los datos de una revisión presentada como real son el núcleo de la tarea, aunque las tarjetas R2–R4 son supuestos fabricados. Hay una duda menor porque la revisión no se cita con precisión, pero se toma como cierta la procedencia declarada.",
+        "cita": "Una revisión reciente de la literatura sobre hongos medicinales y cáncer encontró 2.349 estudios. Solo 39 se consideraron suficientemente robustos"
+      },
+      "contexto": {
+        "puntaje": 2,
+        "justificacion": "El contexto condiciona los supuestos sobre cómo se seleccionan y publican los estudios. También es indispensable para interpretar el resultado como recomendación regulatoria.",
+        "cita": "La agencia de protección al consumidor debe decidir si esa frase es aceptable o engañosa."
+      },
+      "ciclo": {
+        "puntaje": 2,
+        "justificacion": "Responder obliga a comprender la situación, simplificar mediante supuestos sobre los sesgos, matematizar con proporciones o probabilidades, calcular, interpretar para la agencia y contrastar. Ninguna fase queda hecha en el enunciado.",
+        "cita": "¿Qué tan fuerte es el respaldo que entregan estos números a la frase de la tienda y qué le recomendarían a la agencia?"
+      },
+      "validacion": {
+        "puntaje": 2,
+        "justificacion": "Existe evidencia independiente, no usada para construir el modelo, para contrastarlo: la tarjeta R4 y los registros públicos de ensayos accesibles para estudiantes universitarios.",
+        "cita": "entre los ensayos clínicos inscritos en un registro público antes de comenzar, la proporción con resultado favorable es claramente menor"
+      },
+      "nivel": {
+        "puntaje": 2,
+        "justificacion": "El contexto y el lenguaje son comprensibles para universitarios. Probabilidad, razonamiento condicional y análisis de sensibilidad están dentro de las herramientas esperables en U.",
+        "cita": "Solo 39 se consideraron suficientemente robustos para el análisis, y de esos, 31 mostraron efectos beneficiosos de los hongos."
+      },
+      "autodiferenciacion": {
+        "puntaje": 2,
+        "justificacion": "El piso es accesible: basta comparar proporciones simples (31/39 frente a 31/2.349). El techo es alto: admite modelos probabilísticos del sesgo de publicación con análisis de sensibilidad.",
+        "cita": "La revisión encontró 2.349 estudios sobre hongos medicinales y cáncer; 39 se consideraron suficientemente robustos y 31 de ellos mostraron efectos beneficiosos."
+      },
+      "fecundidad": {
+        "puntaje": 2,
+        "justificacion": "Las distintas cuantificaciones del sesgo permiten comparar recomendaciones y discutir límites de los modelos. También abren preguntas sobre qué umbral de evidencia justifica una afirmación publicitaria.",
+        "cita": "¿Qué tan fuerte es el respaldo que entregan estos números a la frase de la tienda y qué le recomendarían a la agencia?"
+      },
+      "recursos": {
+        "puntaje": 1,
+        "justificacion": "La información está disponible a solicitud, pero hay sobreorientación parcial. El enunciado nombra de antemano los dos mecanismos clave (selección y publicación), y la tarjeta R4 se rotula como «evidencia independiente», lo que adelanta parte de la estructuración y de la validación.",
+        "cita": "Quienes revisan el caso no saben cómo se eligieron los estudios ni cómo se publican los resultados de este tipo de investigación."
+      }
+    },
+    "total": 23,
+    "mejoras": [
+      {
+        "criterio": "recursos",
+        "mejora_minima": "Eliminar del enunciado la oración que nombra los dos desconocidos (selección y publicación), dejando solo «Pueden pedir información adicional». Además, rotular las tarjetas de forma neutra (por ejemplo, «Tarjeta sobre registros de ensayos» en lugar de «evidencia independiente»), para que sean los grupos quienes identifiquen qué preguntar."
+      }
+    ]
+  },
+  "reproducibilidad": {
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.205236,
+        "version_prompt": "1.1"
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.271534,
+        "version_prompt": "1.3"
+      },
+      "filtro": {
+        "modelo": "claude-haiku-5-5",
+        "version_modelo": "claude-haiku-5-5",
+        "costo_usd": 0.000363,
+        "version_prompt": "1.0"
+      }
+    },
+    "version_prompt": {
+      "disenador": "1.1",
+      "evaluador": "1.3",
+      "filtro": "1.0"
+    },
+    "version_rubrica": "4.0",
+    "version_MAR03": "1.0",
+    "version_MED01": "1.5",
+    "diseno_simulador": null,
+    "fecha": "2026-11-23T22:00:37Z",
+    "costo_usd": 0.477133
+  }
+}
