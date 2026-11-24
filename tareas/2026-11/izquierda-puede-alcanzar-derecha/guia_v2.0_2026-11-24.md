@@ -1,0 +1,264 @@
+# Guía docente · ¿Puede la izquierda dar vuelta el resultado?
+
+Tarea `2026-11-izquierda-puede-alcanzar-derecha-v2` · guía versión 2 · 2026-11-24. Licencia CC BY-NC-SA 4.0. Generado desde `guia` (JSON, fuente de verdad).
+
+## 0. Ficha
+
+| Campo | Valor |
+|---|---|
+| Título | ¿Puede la izquierda dar vuelta el resultado? |
+| Noticia | elDiario.es, «El PP gana por la mínima al PSOE y la derecha supera a la izquierda en la última encuesta antes del 29N», 2026-11-23, https://www.eldiario.es/politica/pp-gana-minima-psoe-derecha-supera-izquierda-ultima-encuesta-29n_1_13684963.html |
+| Nivel principal | S (S2) |
+| Variantes | U |
+| Contenidos | porcentajes; análisis de escenarios; sensibilidad; proporcionalidad; margen de error |
+| Tiempo | 2 sesiones de 90 min |
+| Puntaje RUB01 | 24/24 |
+| Versión y fecha | v2 · 2026-11-24 |
+| Cambios | rev. 2 de la guía: correcciones de texto de la revisión humana 2 (Carlos Rojas Bruna): E1, E3 y el orden de la puesta en común ya no atribuyen a los grupos citados el declarar la fidelidad como aproximación, y redacción de las variantes |
+
+## 1. Meta de la clase (C1)
+
+Cómo el grupo convierte la pregunta «¿puede la izquierda alcanzar a la derecha?» en un modelo de traspaso de votantes. Se observa si explicita adónde van quienes no repiten su voto, si prueba varias fracciones de traspaso y si contrasta el resultado con los traspasos observados y con el margen de error, distinguiendo cambiar de partido de cambiar de bloque.
+
+**Contenido.** Porcentajes, proporcionalidad, análisis de escenarios, sensibilidad y margen de error, aplicados a la intención de voto por bloques y a la fidelidad de voto de la encuesta.
+
+**Subcompetencias de modelación.**
+
+- Comprender la situación: qué significa «alcanzar» y qué datos de la encuesta sirven (P1-MRS)
+- Simplificar: fijar supuestos sobre el destino de quienes no repiten su voto, la base de la fidelidad y el resto del electorado (P2-RM)
+- Matematizar: relacionar la diferencia entre bloques con una fracción de traspaso (P3-MM)
+- Trabajar con el modelo: calcular el traspaso necesario y probar escenarios (P4-WM)
+- Interpretar el resultado en lenguaje cotidiano (P5-INT)
+- Validar con los traspasos observados y con el margen de error (P6-VAL)
+- Comunicar escenario, supuestos, sensibilidad y recomendación (P7-EXP)
+
+**Meta social.** Trabajo cooperativo en grupos que verbalizan y justifican sus supuestos ante sus pares y ante el curso, y que deciden en conjunto si ajustan o mantienen el modelo tras el contraste.
+
+**Evidencia que se recoge.**
+
+- Explicación escrita de lo que se quiere conocer y lista de datos disponibles y datos que se pedirán (P1-MRS)
+- Hoja de supuestos explícitos (P2-RM)
+- Expresión o tabla que relaciona la fracción de traspaso con la nueva diferencia entre bloques (P3-MM)
+- Cálculos y tabla de escenarios (P4-WM)
+- Frase en lenguaje cotidiano que compara lo necesario con lo que parece razonable (P5-INT)
+- Tabla que compara la fracción que el modelo hacía ir a la izquierda con la observada, y decisión escrita de ajustar o mantener supuestos, con la comparación de la brecha frente al error muestral (P6-VAL)
+- Cartel o informe breve con tabla de escenarios y recomendación al equipo de análisis; exposición oral (P7-EXP)
+
+## 2. Análisis a priori del espacio de soluciones (C2)
+
+### Rutas
+
+| Ruta | Nombre | Nivel | Modelo |
+|---|---|---|---|
+| R1 | Traspaso directo entre bloques | S1 | Con la diferencia de 12,2 puntos y un traspaso x de la derecha a la izquierda, resolver 12,2 − 2x = 0. |
+| R2 | Fidelidad como reserva de votantes móviles | S2 | Calcular los votantes móviles como (100 − fidelidad) por el porcentaje actual de cada partido y la fracción que debe ir a la izquierda. |
+| R3 | Tabla de sensibilidad | S2 | Variar la fracción de móviles que va a la izquierda (por ejemplo 0%, 30%, 50%, 70%) y calcular la brecha resultante entre bloques. |
+| R4 | Balance con el resto del electorado | S2 | Calcular el resto (100 − 49,7 − 37,5) y combinar traspasos desde la derecha (x, que restan 2 por punto) y desde el resto (y, que restan 1 por punto) en 2x + y = 12,2. |
+| R5 | Flujos observados entre partidos y bloques | S2 | Con los traspasos de R2 aplicados al tamaño actual de cada partido, separar los votantes móviles en los que se quedan en el bloque, los que van a la izquierda y los sin destino informado, y calcular la brecha en el caso extremo en que todos los no asignados van a la izquierda. |
+
+### Modelo inadecuado (R6)
+
+Suponer que todos los votantes que no repiten su voto se pasan a la izquierda y concluir que la izquierda puede ganar porque sumaría cerca de 10 puntos. Es una cota máxima, no un escenario plausible: confunde cambiar de partido con cambiar de bloque (la mayoría de quienes dejan el PP se va a Vox, que sigue en la derecha) e ignora el voto en blanco y la abstención.
+
+### Solución de referencia
+
+1) Brecha entre bloques: 49,7 − 37,5 = 12,2 puntos. 2) Si x puntos pasan de la derecha a la izquierda, la brecha queda 12,2 − 2x; para igualar, x = 6,1 puntos. Si los puntos vienen del resto del electorado (100 − 49,7 − 37,5 = 12,8 puntos), cada punto reduce la brecha en 1; para igualar solo con el resto, la izquierda tendría que captar cerca de 12,2 de esos 12,8 puntos (cerca del 95%). Combinaciones: 2x + y = 12,2, con x desde la derecha e y desde el resto. 3) Votantes móviles de la derecha, aplicando 100 − fidelidad al porcentaje actual: PP, 23,9% de 32,1 ≈ 7,7 puntos; Vox, 13,4% de 17,6 ≈ 2,4 puntos; total ≈ 10,0 puntos. Fracción de móviles que debe ir a la izquierda: 6,1 / 10,0 ≈ 61%. 4) Sensibilidad: con 0%, 30%, 50% y 70% de los móviles yendo a la izquierda, la brecha queda cerca de 12,2; 6,2; 2,2 y −1,8. 5) Margen de error: el error de la brecha entre bloques es cerca de ±4,1 puntos con 95,5% de confianza, bastante menor que 12,2 puntos. 6) Contraste con R2, después del primer modelo, distinguiendo cambiar de partido de cambiar de bloque. De los cerca de 10,0 puntos móviles: del PP, 18,2% va a Vox (≈ 5,8 puntos) y 1,2% al PSOE (≈ 0,4 puntos), y el 4,5% restante (≈ 1,4 puntos) no tiene destino informado; de Vox, 6,1% va al PP (≈ 1,1 puntos) y el 7,3% restante (≈ 1,3 puntos) no tiene destino informado. Es decir, ≈ 6,9 puntos se quedan dentro del bloque de la derecha, ≈ 0,4 van al PSOE y ≈ 2,7 no tienen destino conocido. Solo ≈ 5% de quienes dejan el PP (1,2 de 23,9) va al PSOE, frente al 61% que exigía el modelo. En sentido contrario, del PSOE 8% va al PP y 5,7% a Vox (≈ 4,2 puntos hacia la derecha). 7) Cota extrema: aunque los ≈ 2,7 puntos no asignados y los ≈ 0,4 puntos al PSOE fueran todos a la izquierda (≈ 3,1 puntos), la brecha bajaría solo a ≈ 12,2 − 6,2 = 6,0 puntos; los votos que faltarían (≈ 6 puntos) tendrían que venir del resto del electorado, cerca del 47% de ese resto, o de una abstención muy desigual entre bloques. 8) Cuando existan, comparar con los resultados oficiales por bloques y con el traspaso real, sin usarlos para construir el modelo. Resultado: Para igualar, la izquierda necesitaría ganar unos 6,1 puntos desde la derecha (cerca del 61% de quienes no repiten su voto, que son cerca de 10 puntos) o casi todo el resto del electorado. Según los traspasos observados, la mayoría de quienes dejan el PP o Vox se queda dentro del bloque de la derecha y solo cerca del 5% de quienes dejan el PP va al PSOE. Incluso en la cota extrema la brecha seguiría en cerca de 6 puntos. La ventaja de 12,2 puntos es unas tres veces el error de la brecha (cerca de ±4,1 puntos), por lo que que la izquierda alcance a la derecha es poco verosímil según esta encuesta.
+
+**Rango aceptable.** Traspaso necesario entre 6 y 6,5 puntos; fracción necesaria de los móviles entre 55% y 70% según la base elegida para aplicar la fidelidad; móviles de la derecha entre 9,5 y 10,5 puntos; error de la brecha entre ±3,5 y ±4,5 puntos; brecha en la cota extrema entre 5,5 y 6,5 puntos. Cualquier respuesta con supuestos explícitos, sensibilidad y contraste que distinga cambio de partido de cambio de bloque es defendible.
+
+### Barreras anticipadas por fase
+
+| Fase | Barrera |
+|---|---|
+| P1-MRS | El mapa no declara un bloqueo probable en esta fase. Aun así, puede costar leer la fidelidad como porcentaje de los votantes de cada partido en las elecciones anteriores y no como porcentaje de todo el electorado, y entender que se compara la suma de dos bloques y no a un solo partido contra otro. |
+| P2-RM | Bloqueo B12. Cuesta decidir adónde van quienes no repiten su voto (otro partido, otro bloque, blanco o abstención) cuando no hay datos de abstención y el grupo debe fijar un supuesto propio. También cuesta decidir si la fidelidad de las elecciones anteriores se aplica al porcentaje actual de cada partido y si solo se mueve el voto de la derecha. Un modelo inadecuado previsible es suponer que todos los que no repiten pasan a la izquierda: confunde cambiar de partido con cambiar de bloque. |
+| P3-MM | Bloqueo B23. Dificultad para pasar de la diferencia entre bloques a una relación con la fracción de traspaso. Puede tratarse el traspaso como si solo restara a un bloque sin sumar al otro, o mezclarse puntos porcentuales con fracciones de los votantes móviles. |
+| P4-WM | Bloqueo B34. Los cálculos encadenan porcentajes de porcentajes (cien menos la fidelidad, aplicado al tamaño actual de cada partido) y cuesta elegir la base. También cuesta pasar de un único cálculo a una tabla de escenarios con varias fracciones. |
+| P5-INT | Bloqueo B45. Se puede confundir la cantidad de puntos que deben pasar con la proporción de los votantes móviles que debe elegir izquierda. Y cuesta decidir con qué criterio algo «parece razonable» sin recurrir solo a la intuición política. |
+| P6-VAL | Bloqueo B56. Cuesta usar el contraste para cuestionar un modelo ya terminado: distinguir cambio de partido de cambio de bloque en los traspasos observados, y comparar la brecha entre bloques con el margen de error de la encuesta. Los resultados oficiales de la elección pueden no estar disponibles al momento de la clase, y hay que decidir cómo contrastar sin ellos. |
+| P7-EXP | Bloqueo B67. Tendencia a comunicar solo un número o una cota máxima como si fuera el escenario más plausible, sin mostrar supuestos, sensibilidad ni lo que cambió tras el contraste. |
+
+## 3. Organización (C3, C4, C7)
+
+| Momento | Tiempo | Qué hacen los estudiantes | Qué hace el docente |
+|---|---|---|---|
+| Comprensión y trabajo grupal (primera sesión) | 70 min | Leen el enunciado, explican con sus palabras qué quieren conocer, listan los datos que tienen y los que pedirán, escriben sus supuestos, construyen un primer modelo de traspaso y lo calculan, probando al menos una fracción. | Circula y diagnostica: pregunta qué han hecho, qué cantidad buscan y adónde van, según su modelo, quienes no repiten su voto. Responde las solicitudes de información: entrega R3 y R5 cuando las piden (R5 solo confirma que no hay datos y que el grupo debe fijar y justificar su supuesto). No entrega la regla, el modelo ni el resultado, y no entrega R2 todavía. |
+| Puesta en común (primera sesión) | 20 min | Cada grupo presenta su primer modelo, sus supuestos y lo que concluye hasta ahora. Los demás comparan los destinos supuestos para quienes no repiten su voto. | Modera, pide que cada grupo diga qué supuesto sostiene su modelo y registra las diferencias entre grupos sin valorarlas. Al terminar la presentación de cada grupo, le entrega R2 para la siguiente sesión. |
+| Validación y cierre: contraste con datos observados (segunda sesión) | 40 min | Con R2 comparan la fracción que su modelo hacía ir a la izquierda con la observada, y distinguen cambiar de partido de cambiar de bloque. Piden R4 para comparar la brecha con el margen de error. Deciden y justifican si ajustan o mantienen sus supuestos. | Circula y primero pregunta qué comparan y con qué criterio. Ayuda mínima antes que explicación: señala dónde mirar en los datos sin decir qué concluir. No entrega el resultado de la solución de referencia. |
+| Validación y cierre: elaboración del cartel o informe (segunda sesión) | 30 min | Preparan un cartel o informe breve con el escenario que consideran más plausible, sus supuestos, la tabla de escenarios, lo que cambió tras el contraste y una recomendación al equipo de análisis. | Pregunta qué quedó fuera del cartel y si se ve cómo cambiaría la conclusión al cambiar un supuesto. No redacta por los grupos. |
+| Validación y cierre: exposición y cierre (segunda sesión) | 20 min | Exponen su recomendación y se comparan los escenarios. Discuten qué supuestos explican las diferencias y qué habría que contrastar cuando existan los resultados oficiales por bloques. | Conduce el cierre, recoge las producciones y destaca la diferencia entre una cota máxima y un escenario plausible, sin imponer una única respuesta: es defendible cualquier conclusión con supuestos explícitos, sensibilidad y contraste. |
+
+**Agrupamiento.** Grupos pequeños y estables durante las dos sesiones, para que puedan discutir y escribir sus supuestos. Se mantiene el mismo grupo en la puesta en común y en la validación.
+
+**Roles.** Dentro de cada grupo se rotan entre sesiones: quien registra los supuestos, quien calcula y arma la tabla, y quien verbaliza ante el curso lo que el grupo decidió y por qué. Las solicitudes de información las formula el grupo, no el docente.
+
+**Producciones que se registran.**
+
+- Hoja de supuestos del grupo
+- Primer modelo con su expresión o tabla de traspaso
+- Tabla de escenarios con varias fracciones de traspaso
+- Tabla de contraste entre la fracción del modelo y la observada, con la decisión de ajustar o mantener
+- Cartel o informe breve con recomendación
+- Exposición oral
+
+**Tecnología.** Calculadora u hoja de cálculo permitidas en el trabajo con el modelo y en la tabla de escenarios (P4-WM) y para ordenar la tabla de contraste (P6-VAL). No se usan para decidir los supuestos de P2-RM ni para construir el modelo de P3-MM, que son decisiones del grupo. No se usan herramientas que entreguen la respuesta.
+
+## 4. Escenarios simulados (C2, C6)
+
+Derivados de las trazas del simulador; cada escenario cita las corridas que lo respaldan.
+
+### E1 · ruta esperada
+
+| Campo | Valor |
+|---|---|
+| Corridas | N4_AA_r1 |
+| Perfil del grupo | Tramo S2, nivel N4, estilo AA. |
+| Ruta observada | P3-MM → P4-WM → P3-MM → P6-VAL → P3-MM → P4-WM → P3-MM → P6-VAL → P7-EXP |
+| Supuestos que emergieron | retención de las elecciones anteriores aplicada a los porcentajes actuales de la encuesta; los móviles pueden ir a otros partidos o a abstención, no solo a la izquierda; un voto que cambia de bloque reduce o aumenta la diferencia en 2; un voto que pasa a abstención u otros, o que llega desde el resto, cambia la diferencia en 1 |
+| Modelo al que llegaron | balance lineal |
+| Dónde se trabaron y cómo se destrabaron | sin bloqueos |
+
+**Qué aprende el curso.** El curso ve cómo un grupo vuelve varias veces a matematizar para separar el efecto de cada movimiento: cambiar de bloque cuenta doble, ir a la abstención o llegar desde el resto cuenta simple. Comparado con los otros escenarios, muestra que distinguir destinos (otro bloque, otro partido, abstención) es una decisión de simplificación que cambia el modelo. El grupo aplica la retención anterior a los porcentajes actuales sin discutir si eso es válido.
+
+**Extracto de diálogo simulado.**
+
+> **Cami:** Ojo, esos 10 puntos no se van todos a la izquierda. Si x es lo que pasa de derecha a izquierda, la diferencia queda 12,2 − 2x, y para empatar x = 6,1, o sea más de la mitad de los 10 móviles, ¿te parece verosímil?  
+> **Fran:** Más del 60% de los móviles de la derecha yendo justo a la izquierda me parece poco verosímil, porque también pueden irse a otros partidos o a abstención. Habría que pedir a dónde fue ese 12,8% de resto y cuánto retiene la izquierda.  
+> **Cami:** Ojo, que si w se va a la derecha cuenta doble: 12,2 − 2x − y − z + 2w. Con x = 3, y = 1, z = 4 y w = 0 da 12,2 − 6 − 1 − 4 = 1,2, o sea ni así empatan.  
+> **Fran:** Tienes razón, la w cuenta doble, la mía estaba mal. Con x = 4, y = 2, z = 4 da 12,2 − 8 − 2 − 4 = −1,8 y la izquierda pasa, pero falta saber cuánto del resto se va a la derecha.  
+
+### E2 · bloqueo al matematizar
+
+| Campo | Valor |
+|---|---|
+| Corridas | N1_AA_r1 |
+| Perfil del grupo | Tramo S2, nivel N1, estilo AA. |
+| Ruta observada | P1-MRS → P3-MM → P4-WM → P5-INT → P6-VAL → P7-EXP → P6-VAL |
+| Supuestos que emergieron | un votante que cambia resta a la derecha y suma a la izquierda; fidelidad aplicada a la intención de voto actual de cada partido; votos de la izquierda fijos (solo se mueve la derecha); los que no repiten podrían ir a otros partidos o a la abstención |
+| Modelo al que llegaron | lineal |
+| Dónde se trabaron y cómo se destrabaron | B23: Resolución entre pares (peer). Con la diferencia ya calculada, Fran no sabe si la izquierda debe ganar toda la diferencia o la mitad; Cami razona que quien se pasa resta a un bloque y suma al otro, plantea una ecuación con x y Fran la comprueba sustituyendo el valor en ambos lados. |
+
+**Qué aprende el curso.** El curso ve que la traba no está en calcular la diferencia sino en convertirla en un modelo: decidir que un traspaso afecta a los dos bloques a la vez. También muestra un grupo que recién después de entregar se pregunta si la fidelidad se mide sobre los votantes anteriores y no sobre la encuesta actual; al compararlo con E3, donde esa duda aparece temprano y lleva a revisar el supuesto, se discute en qué momento conviene validar los supuestos.
+
+**Extracto de diálogo simulado.**
+
+> **Fran:** Sí, 49,7 menos 37,5 da 12,2, eso está bien. Pero no sé qué hacemos con esa diferencia, ¿la izquierda tendría que ganar 12,2 puntos o la mitad cada uno?  
+> **Cami:** Mmm, creo que si un votante pasa de la derecha a la izquierda, uno pierde y el otro gana, o sea que sería la mitad. Probemos con una ecuación: 49,7 − x = 37,5 + x, y ahí x sería 6,1, ¿te parece?  
+> **Fran:** Dale, 49,7 − 6,1 = 43,6 y 37,5 + 6,1 = 43,6, así que x = 6,1 puntos cuadra. Pero ¿ese 6,1 es de los votantes de la derecha que se pasan a la izquierda? ¿Eso es mucho o poco si usamos el 76,1% y el 86,6% que repiten?  
+> **Cami:** DE ACUERDO. Aunque ahora que lo pienso, ¿no habría que aclarar que esos porcentajes de repetición son de los votantes de las elecciones anteriores y no de la encuesta de ahora?  
+
+### E3 · supuesto cuestionado
+
+| Campo | Valor |
+|---|---|
+| Corridas | N3_AA_r1 |
+| Perfil del grupo | Tramo S2, nivel N3, estilo AA. |
+| Ruta observada | P1-MRS → P3-MM → P4-WM → P6-VAL → P2-RM → P4-WM → P6-VAL → P7-EXP |
+| Supuestos que emergieron | traspaso directo de x puntos de la derecha a la izquierda (cada punto reduce la brecha en 2); fidelidad aplicada a la intención de voto actual (luego cuestionado y abandonado); escenario extremo: todo el 12,8% restante va a la izquierda; los demás votos quedan fijos |
+| Modelo al que llegaron | lineal |
+| Dónde se trabaron y cómo se destrabaron | sin bloqueos |
+
+**Qué aprende el curso.** El curso ve una validación que regresa a simplificar: tras calcular los votantes móviles, el grupo advierte que la fidelidad se refiere a quienes votaron antes y abandona ese supuesto en lugar de seguir usándolo, como hacen E1 y E2. Además usa el caso extremo del resto del electorado como cota y no como escenario plausible, y pide el margen de error. Otro grupo simulado, que no figura entre los escenarios, mantuvo el supuesto y advirtió que por eso sus cifras eran aproximadas. La comparación abre la discusión: ¿es mejor abandonar un supuesto dudoso o mantenerlo declarándolo aproximado?
+
+**Extracto de diálogo simulado.**
+
+> **Cami:** Vale, 6,1 puntos. Con lo de la retención, Vox puede perder 17,6·0,134 ≈ 2,4 y el PP 32,1·0,239 ≈ 7,7, o sea unos 10 puntos que cambian, pero ¿cuántos irían justo a la izquierda?  
+> **Fran:** Ojo, Cami, el 86,6 y el 76,1 son de quienes votaron antes a Vox y al PP, no de los 17,6 y 32,1 de ahora, así que ese 10 es medio inventado. Y aunque fuera, 6,1 de 10 sería que el 61% de los que se mueven vaya justo a la izquierda, y me parece mucho.  
+> **Cami:** Tienes razón, el 86,6 y el 76,1 se aplican al voto de la elección anterior, y no tengo esos datos. Pidamos cuánto sacó cada partido antes y qué es el 12,8% restante (100 − 87,2): ¿indecisos u otros partidos?  
+
+### E4 · balance ampliado
+
+| Campo | Valor |
+|---|---|
+| Corridas | N4_VV_r1 |
+| Perfil del grupo | Tramo S2, nivel N4, estilo VV. |
+| Ruta observada | P1-MRS → P3-MM → P4-WM → P5-INT → P4-WM → P2-RM → P4-WM → P6-VAL → P7-EXP |
+| Supuestos que emergieron | cada punto que pasa de la derecha a la izquierda reduce la brecha en 2; el 12,8% restante del electorado está disponible para los bloques; votantes que se fugan = (100 − fidelidad) × porcentaje actual de cada partido; la izquierda retendría su voto como Vox (86,6%); todo lo que está en el aire se reparte entre los dos bloques, sin otros partidos ni abstención (resultado como mínimo) |
+| Modelo al que llegaron | lineal (balance de bloques) |
+| Dónde se trabaron y cómo se destrabaron | sin bloqueos |
+
+**Qué aprende el curso.** El curso ve a un grupo que, después de interpretar, vuelve a simplificar para dejar de suponer que la izquierda no pierde votos: inventa un supuesto de retención para la izquierda y junta en un solo total todo lo que está en el aire. Frente a E1, donde los destinos se separan, aquí se reparte todo entre los dos bloques y el grupo declara que su resultado es un mínimo. Sirve para discutir qué ocurre cuando se introduce un supuesto sin dato y cómo comunicar que un resultado es cota y no escenario plausible.
+
+**Extracto de diálogo simulado.**
+
+> **Cami:** Hagamos que la izquierda también suelte gente en el dibujo: si retuviera como Vox (86,6%), perdería 37,5·0,134 ≈ 5 puntos, y entonces necesitaría captar bastante más de esos 10 de la derecha. Yo diría que no es muy verosímil sin saber a dónde van los indecisos, ¿te parece?  
+> **Fran:** Sí, hice la cuenta con todo lo suelto: 12,8 + 10 + 5 = 27,8 puntos en el aire. Para empatar, la izquierda tendría que llevarse unos 17,5 (63%) y la derecha solo 10,3, y eso me parece mucho.  
+> **Cami:** DE ACUERDO, me cuadra: con esos supuestos la izquierda necesita como 63% de lo que está en el aire, y eso en seis días se ve difícil. Ojo, parte de ese 12,8 puede ser de otros partidos o abstención, así que lo dejamos dicho como el mínimo.  
+
+
+Tabla agregada de bloqueos (6 grupos simulados):
+
+| Transición | Grupos que se trabaron | % |
+|---|---|---|
+| B23 | 2/6 | 33 % |
+
+## 5. Intervenciones graduadas por bloqueo anticipado (C5, C6)
+
+La ayuda mínima primero; diagnosticar antes de intervenir. Ninguna ayuda entrega la regla.
+
+| Bloqueo | Z1–Z2 motivación / retroalimentación | Z3 estratégica general | Z4 estratégica de contenido | Z5 contenido (último recurso) |
+|---|---|---|---|---|
+| B23 | Pregunten qué han calculado hasta ahora y qué significa para ellos la diferencia entre bloques. Pidan que expliquen con sus palabras qué quieren averiguar con esa diferencia. Reconozcan lo ya hecho antes de seguir. | Pidan que dibujen dos barras, una por bloque, y una flecha que muestre a un votante que cambia de bloque. Que anoten junto a cada barra qué le pasa. | Pregunten: si un votante pasa de un bloque al otro, ¿qué le ocurre a cada bloque? ¿Qué le ocurre entonces a la diferencia entre ellos? ¿Qué letra pondrían a la cantidad que se traspasa y cómo la escribirían en una igualdad entre bloques? | Sugieran que planteen una igualdad entre las dos intenciones de voto después del traspaso y que la comprueben sustituyendo su valor en ambos lados, como hizo el grupo simulado de E2. Si dudan entre ganar toda la diferencia o solo una parte, pidan que prueben con un traspaso de ejemplo y miren qué pasa con cada bloque. No les digan la expresión. |
+| B12 | Pregunten qué datos de la encuesta están usando y qué suponen que hacen quienes no repiten su voto. Que digan si eso es un dato o una suposición. | Pidan que hagan una lista de los destinos posibles de un votante que no repite (otro partido, otro bloque, blanco, abstención) y que marquen cuáles les parecen relevantes. | Pregunten: el porcentaje de fidelidad se midió entre quienes votaron antes, ¿se puede aplicar al tamaño actual de cada partido? ¿Qué pasa si lo hacen, y cómo lo dirían en su informe? ¿Se mueve solo la derecha o también otros votos? | Si piden información sobre abstención y voto en blanco, entreguen el recurso R5: no hay datos y deben fijar un supuesto propio y justificarlo. Si quieren más datos de partida, está el recurso R3 (intención de voto del PSOE). No les indiquen qué supuesto elegir. |
+| B34 | Pregunten qué cuentas han hecho y qué cantidades tienen ya escritas. Que expliquen qué quieren obtener con el siguiente cálculo. | Propongan que ordenen los datos en una tabla con lo que ya conocen y lo que falta calcular. | Pregunten: ¿qué cantidades necesitan comparar para saber si lo que se necesita traspasar es mucho o poco respecto de quienes podrían cambiar? ¿Cómo obtendrían esa reserva a partir de la fidelidad y del tamaño de cada partido? | Sugieran que armen una tabla con varias fracciones de votantes móviles que van a la izquierda y calculen en cada caso la diferencia entre bloques, como en la ruta R3. No les den los valores ni la fracción de empate. |
+| B45 | Pregunten qué resultado obtuvieron y qué creen que dice sobre la pregunta del equipo de análisis. | Pidan que expliquen el resultado como si se lo contaran a alguien que no vio la encuesta, sin usar fórmulas. | Pregunten: ¿qué parte de quienes no repiten su voto tendría que elegir la izquierda? ¿Les parece razonable con lo que saben de esos votantes y de a dónde pueden ir? | Pidan que escriban una frase que compare lo necesario con lo que consideran razonable. Después pregunten qué dato les gustaría pedir para decidir si esa frase se sostiene, y recuérdenles que pueden pedir información adicional. |
+| B56 | Pregunten qué han hecho para comprobar su modelo y qué evidencia distinta de la que usaron para construirlo tienen o podrían pedir. | Pidan que escriban qué supuestos del modelo les generan más dudas y qué información los pondría a prueba. | Pregunten: ¿cambiar de partido es lo mismo que cambiar de bloque? ¿Qué diría sobre su modelo saber a dónde fue realmente quien dejó su partido? ¿Cómo compararían la distancia entre bloques con el error de la encuesta? | Una vez presentado el primer modelo, entreguen el recurso R2 (traspasos observados) y, si lo piden, R4 (tamaño de la muestra y margen de error). Pidan que comparen la fracción que su modelo hacía ir a la izquierda con la observada y que decidan por escrito si ajustan o mantienen sus supuestos. No les digan cuál es la conclusión. |
+| B67 | Pregunten qué quieren que entienda el equipo de análisis político al leer su informe y qué decidieron tras el contraste. | Propongan que hagan un esquema del cartel con tres espacios: supuestos, escenarios y recomendación. | Pregunten: ¿qué escenario presentan como más plausible y por qué? ¿Qué cambió en su modelo tras el contraste? ¿Cómo muestran qué tan sensible es su conclusión a lo que suponen? | Pidan que incluyan una tabla de escenarios y que señalen cuáles resultados son cota extrema y cuáles escenario plausible, como discute E4. La recomendación y el escenario elegido deben ser decisión del grupo. |
+
+## 6. Puesta en común: orquestar soluciones múltiples (C8)
+
+### Selección y orden
+
+1. Primero E2 (bloqueo al matematizar): se parte de un modelo lineal sencillo y de la traba que muchos grupos comparten, la de convertir la diferencia en un modelo en el que un traspaso afecta a los dos bloques. Sirve para monitorear y dar entrada a los grupos que se trabaron en B23 sin privilegiar la ruta del docente.
+2. Segundo E3 (supuesto cuestionado): se muestra un grupo que duda pronto de aplicar la fidelidad al tamaño actual y abandona ese supuesto. Permite conectar con E2, donde la duda llegó después de entregar, y discutir cuándo conviene validar los supuestos.
+3. Tercero E1 (ruta esperada): se separan los destinos de los móviles (otro bloque, otro partido, abstención) y se aplica la fidelidad a los porcentajes actuales sin discutirla. Secuencia el paso de un modelo con un solo destino a uno con varios, y contrasta con E3, que abandona ese supuesto en lugar de seguir usándolo.
+4. Cuarto E4 (balance ampliado): introduce un supuesto sin dato sobre la retención de la izquierda y comunica el resultado como mínimo. Conecta con el modelo inadecuado R6, que toma la cota máxima como escenario plausible. Anticipen esa confusión y pregunten a quienes la cometieron sin corregirla de entrada.
+5. Cierre con los grupos reales que hayan llegado a una conclusión distinta de las anteriores, para comparar sus supuestos con los de E1 a E4.
+
+### Preguntas
+
+- ¿Qué supusieron sobre el destino de quienes no repiten su voto y dónde se ve en su modelo?
+- ¿Aplicar la fidelidad de las elecciones anteriores al tamaño actual de cada partido es razonable? ¿Qué cambia si se abandona ese supuesto o si se mantiene como aproximación?
+- ¿Por qué un traspaso de un bloque a otro pesa distinto que un voto que va a la abstención o llega desde el resto?
+- ¿Qué diferencia hay entre cambiar de partido y cambiar de bloque? ¿Dónde aparece esa diferencia en su modelo?
+- ¿Su resultado es un escenario plausible o una cota? ¿Cómo lo comunicarían al equipo de análisis?
+- ¿Qué ruta les pareció más eficiente para decidir si el empate es verosímil y qué información adicional pedirían para mejorarla?
+- ¿Qué cambió en su modelo tras recibir los traspasos observados y qué límites sigue teniendo?
+
+### Contraste con la evidencia independiente
+
+Tras presentar sus modelos, entregue la primera evidencia independiente: los traspasos observados entre partidos (recurso R2). Pida a cada grupo que compare la fracción de móviles que su modelo hacía ir a la izquierda con la observada, por ejemplo cerca del 5% de quienes dejan el PP que van al PSOE, y que decida si ajusta o mantiene sus supuestos, distinguiendo cambio de partido de cambio de bloque. Luego compare la brecha entre bloques con el margen de error de la encuesta, usando R4 si lo solicitan. La segunda evidencia son los resultados oficiales por bloques de la elección del 29 de noviembre de 2026, publicados por el Ministerio del Interior de España. Solo existirán después de esa fecha. Se usan para comparar el traspaso real entre bloques con el que el modelo consideró verosímil, nunca para construir el modelo. Si aún no existen, deje la comparación como cierre pendiente de la clase.
+
+## 7. Evaluación del trabajo del estudiante
+
+Pendiente en PLT02 v0.1 (rúbrica por fase del ciclo); esta versión de la guía no la incluye.
+
+## 8. Variantes y continuidad (P3, C9)
+
+**Uso de variantes.** La tarea no tiene variante hacia abajo, por lo que no hay una versión simplificada. Si un grupo se traba, conviene usar la ayuda mínima de diagnóstico (preguntar qué han hecho) y dejar que pida R3 o R5. Además, la ruta de traspaso directo entre bloques, de nivel S1, permite un acceso más simple al mismo modelo sin cambiar el enunciado. Variante hacia arriba (U): para grupos que ya cerraron el ciclo con tabla de escenarios y contraste, o para cursos universitarios. Pide un modelo dinámico con matriz de transferencia entre partidos y abstención, análisis de sensibilidad de los resultados a cada fracción de traspaso, y crítica del supuesto de que la fidelidad de las elecciones anteriores se aplica a la intención de voto actual. Esa exigencia matemática no se escribe en el enunciado: se plantea como pregunta del docente una vez que el grupo ha presentado su modelo.
+
+**Acostumbramiento.** Si el grupo nunca ha modelado, conviene una actividad previa breve con un dato de prensa sobre porcentajes, en la que solo listen qué datos usarían, qué supuestos harían y cuáles no pueden afirmar, sin calcular aún. Así practican P1-MRS y P2-RM antes de esta tarea. Esta tarea funciona mejor como parte de una secuencia que como primera experiencia: exige explicitar supuestos y contrastar con dos evidencias independientes. También puede servir como diagnóstico de cómo simplifican (B12) y validan (B56) los grupos.
+
+**Tarea siguiente.** No definida.
+
+## 9. Materiales
+
+| Material | Archivo |
+|---|---|
+| tarea_pdf | tarea.pdf |
+| recursos_tarjetas | recursos.pdf |
+| notebook | escenarios.ipynb |
+| icono | icono.svg |
+
+## 10. Trazabilidad
+
+| Paso | Registro |
+|---|---|
+| Noticia | https://www.eldiario.es/politica/pp-gana-minima-psoe-derecha-supera-izquierda-ultima-encuesta-29n_1_13684963.html |
+| Diseño | claude-sonnet-5-5, prompt 1.1 |
+| RUB01 | 24/24 |
+| Revisión humana 1 | Carlos Rojas Bruna (2026-11-24) |
+| Simulación | 6 grupos, diseño diseno_otm |
+| Guía | redactor: claude-sonnet-5-5, redactor_escenarios: claude-opus-5-5, version_prompt: 1.0 |
+| Revisión humana 2 | Carlos Rojas Bruna (2026-11-24) |
+| Commit | — |
