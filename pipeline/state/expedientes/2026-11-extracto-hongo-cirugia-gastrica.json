@@ -1,12 +1,12 @@
 {
   "tarea_id": "2026-11-extracto-hongo-cirugia-gastrica",
-  "estado": "evaluada",
+  "estado": "archivada",
   "iteraciones": 1,
   "artefactos": {
     "tarea": {
       "id": "2026-11-extracto-hongo-cirugia-gastrica",
       "titulo": "¿Cuántas muertes evitaría un extracto de hongo en nuestro hospital?",
-      "estado": "evaluada",
+      "estado": "archivada",
       "version": 1,
       "fecha": "2026-11-23",
       "noticia": {
@@ -693,6 +693,12 @@
       "de": "con_guia",
       "a": "evaluada",
       "motivo": "el verificador encontró hallazgos sobre la tarea: [semantica] tarea.task_space.validation_evidence: Ensayo de Nakazato y colaboradores (Lancet, 1994) sobre PSK adyuvante tras cirugía de cáncer gástrico — Es una referencia bibliográfica concreta (autores, revista y año) que no aparece en las fuentes ni en las trazas.; [semantica] guia.puesta_en_comun.contraste_validacion: Se cita como ejemplo el ensayo de Nakazato y colaboradores, Lancet, 1994 — Repite la referencia externa sin respaldo en las fuentes. Además contradice la propia instrucción de no agregar datos del ensayo que no estén en la tarea."
+    },
+    {
+      "fecha": "2026-11-24T15:21:11+00:00",
+      "de": "evaluada",
+      "a": "archivada",
+      "motivo": "reemplazada por la v2 (2026-11-extracto-hongo-cirugia-gastrica-v2), publicada el 2026-11-24 (PR #38) (Carlos Rojas Bruna)"
     }
   ],
   "marcas": {
@@ -819,6 +825,11 @@
     "hallazgos_tarea": [
       "[semantica] tarea.task_space.validation_evidence: Ensayo de Nakazato y colaboradores (Lancet, 1994) sobre PSK adyuvante tras cirugía de cáncer gástrico — Es una referencia bibliográfica concreta (autores, revista y año) que no aparece en las fuentes ni en las trazas."
     ],
-    "pendiente": "revision_humana_1"
+    "revision_humana_1": {
+      "resultado": "negativa",
+      "revisor": "Carlos Rojas Bruna",
+      "fecha": "2026-11-24T15:21:11Z",
+      "motivo": "reemplazada por la v2 (2026-11-extracto-hongo-cirugia-gastrica-v2), publicada el 2026-11-24 (PR #38)"
+    }
   }
 }

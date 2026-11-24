@@ -428,3 +428,9 @@ Encargo de Carlos Rojas Bruna, tras su revisión humana 1 positiva de los tres e
   - Guía validada contra su esquema; verificador solo con código: aprobado, sin críticos; ensayo del bibliotecario sin errores. **No publicada todavía:** falta la orden de Carlos.
   - **Defecto nuevo del pipeline:** las rutas de `task_space` y los recursos usan los mismos identificadores (R1, R2…), y el redactor los mezcla en la guía.
   - **Gasto de W48:** 7,2158 USD registrados; 8,3800 reales con la corrida perdida (tope 31,50).
+
+- 2026-11-24 · Claude (encargo de Carlos) · **Publicada `2026-11-extracto-hongo-cirugia-gastrica-v2`; v1 archivada. Cierre del ciclo W48.**
+  - **Publicación (orden de Carlos: «publica»):** PR #37 mergeado en `main` con la guía corregida; `publicar.yml` en ensayo y luego real; PR #38 revisado (la guía trae las correcciones y las cifras del ensayo, sin jerga interna; la tarea del estudiante no contiene cifras del ensayo; catálogo con 17 tareas) y mergeado. Expediente en `publicada`, revisión humana 2 a nombre de Carlos Rojas Bruna. Despliegue del sitio correcto.
+  - **v1 archivada** (`2026-11-extracto-hongo-cirugia-gastrica`): reemplazada por la v2; nunca se publicó.
+  - **Balance de W48:** tres noticias seleccionadas (elDiario.es, The Guardian, NPR); dos tareas publicadas, ambas como v2 (elecciones, nivel S; extracto de hongo, nivel U); una archivada en la revisión humana 1 (The Guardian, nivel P). Gasto: 7,2158 USD registrados, 8,3800 reales con el tramo B perdido (tope 31,50).
+  - **Pendientes que no son de este ciclo:** endurecer `tramo_b.yml` y `semanal.yml` (integrar la rama antes del push y subir el estado como artefacto si falla); prohibir al diseñador las referencias bibliográficas de memoria; separar los identificadores de rutas y de recursos; jerga interna del redactor; `resumen_propio` en inglés y localizadores inflados en medios en inglés; saturación del filtro; cuatro medios sin acceso.
