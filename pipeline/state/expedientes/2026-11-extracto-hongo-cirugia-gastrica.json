@@ -15,7 +15,7 @@
         "titulo": "Mushroom supplements promise health benefits. What does the science say?",
         "fecha": "2026-11-23",
         "url": "https://www.npr.org/2026/11/23/nx-s1-6047791/mushroom-supplements-health-research",
-        "resumen_propio": "A science reporter examines popular claims that mushroom supplements improve gut health, focus and immunity, and contrasts them with the thin clinical evidence. She describes a Japanese mushroom extract tested in gastric cancer surgery patients, where a pooled analysis linked it to lower mortality, and a 2023 review that screened thousands of papers and kept only a small fraction, with mixed outcomes.",
+        "resumen_propio": "Un reportaje de ciencia examina las promesas de los suplementos de hongos (salud intestinal, concentración, inmunidad) y las contrasta con la escasa evidencia clínica. Describe un extracto del hongo cola de pavo, estudiado en Japón en pacientes operados de cáncer gástrico, que un metaanálisis asoció con menor mortalidad, y una revisión de 2023 que examinó miles de estudios, conservó solo una pequeña parte y obtuvo resultados mixtos.",
         "cifras_usadas": [
           {
             "valor": "8,009",
@@ -235,7 +235,7 @@
       "fecha": "2026-11-23",
       "url": "https://www.npr.org/2026/11/23/nx-s1-6047791/mushroom-supplements-health-research",
       "area": "salud",
-      "resumen_propio": "A science reporter examines popular claims that mushroom supplements improve gut health, focus and immunity, and contrasts them with the thin clinical evidence. She describes a Japanese mushroom extract tested in gastric cancer surgery patients, where a pooled analysis linked it to lower mortality, and a 2023 review that screened thousands of papers and kept only a small fraction, with mixed outcomes.",
+      "resumen_propio": "Un reportaje de ciencia examina las promesas de los suplementos de hongos (salud intestinal, concentración, inmunidad) y las contrasta con la escasa evidencia clínica. Describe un extracto del hongo cola de pavo, estudiado en Japón en pacientes operados de cáncer gástrico, que un metaanálisis asoció con menor mortalidad, y una revisión de 2023 que examinó miles de estudios, conservó solo una pequeña parte y obtuvo resultados mixtos.",
       "cifras": [
         {
           "valor": "8,009",
@@ -456,17 +456,22 @@
     "evaluacion_rango_total": 1,
     "evaluacion_corridas": "pipeline/state/trabajo/2026-11-extracto-hongo-cirugia-gastrica/evaluacion_corridas.json",
     "preverificacion": {
-      "fecha": "2026-11-23T22:02:34Z",
+      "fecha": "2026-11-24T12:35:01Z",
       "version_tarea": 1,
-      "aprobado": false,
-      "criticos": [
-        "[4] estudiante.enunciado_es: cifra 8009 sin localizador (no figura en noticia.cifras_usadas)"
-      ],
-      "texto_noticia": true
+      "aprobado": true,
+      "criticos": [],
+      "texto_noticia": false
     },
-    "hallazgos_tarea": [
-      "[4] estudiante.enunciado_es: cifra 8009 sin localizador (no figura en noticia.cifras_usadas)"
+    "pendiente": "revision_humana_1",
+    "hallazgos_resueltos": [
+      {
+        "fecha": "2026-11-24T12:35:01Z",
+        "por": "lector de cifras según el idioma de la noticia (PR #32): «8,009» en inglés es 8009",
+        "hallazgos": [
+          "[4] estudiante.enunciado_es: cifra 8009 sin localizador (no figura en noticia.cifras_usadas)"
+        ]
+      }
     ],
-    "pendiente": "revision_humana_1"
+    "correccion_manual_resumen": "resumen_propio estaba en inglés; traducido a mano al español en tarea.noticia y en noticia (revisión humana 1, Carlos Rojas Bruna, 2026-11-24), contrastado con el texto de la nota que Carlos pegó en el chat; ver decisiones.md"
   }
 }
