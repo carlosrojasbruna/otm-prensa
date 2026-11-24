@@ -1,12 +1,12 @@
 {
   "tarea_id": "2026-11-extracto-hongo-cirugia-gastrica-v2",
-  "estado": "evaluada",
+  "estado": "verificada",
   "iteraciones": 1,
   "artefactos": {
     "tarea": {
       "id": "2026-11-extracto-hongo-cirugia-gastrica-v2",
       "titulo": "¿Cuántas muertes evitaría un extracto de hongo en nuestro hospital?",
-      "estado": "evaluada",
+      "estado": "verificada",
       "version": 2,
       "fecha": "2026-11-24",
       "noticia": {
@@ -381,18 +381,677 @@
             "version_modelo": "claude-opus-5-5",
             "costo_usd": 0.31692,
             "version_prompt": "1.3"
+          },
+          "ilustrador": {
+            "modelo": "claude-sonnet-5-5",
+            "version_modelo": "claude-sonnet-5-5",
+            "costo_usd": 0.01242,
+            "version_prompt": "1.0"
+          },
+          "redactor": {
+            "modelo": "claude-sonnet-5-5",
+            "version_modelo": "claude-sonnet-5-5",
+            "costo_usd": 0.166413,
+            "version_prompt": "1.0"
+          },
+          "redactor_escenarios": {
+            "modelo": "claude-opus-5-5",
+            "version_modelo": "claude-opus-5-5",
+            "costo_usd": 0.185224,
+            "version_prompt": "1.0"
+          },
+          "simulador": {
+            "modelo": "claude-sonnet-5-5",
+            "version_modelo": "claude-sonnet-5-5",
+            "costo_usd": 0.281049,
+            "version_prompt": "PROMPTS.md"
+          },
+          "simulador_codificador": {
+            "modelo": "claude-opus-5-5",
+            "version_modelo": "claude-opus-5-5",
+            "costo_usd": 0.307152,
+            "version_prompt": "PROMPTS.md"
+          },
+          "verificador": {
+            "modelo": "claude-opus-5-5",
+            "version_modelo": "claude-opus-5-5",
+            "costo_usd": 0.140328,
+            "version_prompt": "1.1"
           }
         },
         "version_prompt": {
           "disenador": "1.1",
-          "evaluador": "1.3"
+          "evaluador": "1.3",
+          "ilustrador": "1.0",
+          "redactor": "1.0",
+          "redactor_escenarios": "1.0",
+          "simulador": "PROMPTS.md",
+          "simulador_codificador": "PROMPTS.md",
+          "verificador": "1.1"
         },
         "version_rubrica": "4.0",
         "version_MAR03": "1.0",
         "version_MED01": "1.5",
-        "diseno_simulador": null,
-        "fecha": "2026-11-24T13:27:31Z",
-        "costo_usd": 0.581112
+        "diseno_simulador": "diseno_otm",
+        "fecha": "2026-11-24T13:50:47Z",
+        "costo_usd": 1.673698
+      }
+    },
+    "trazas_resumen": {
+      "tarea_id": "2026-11-extracto-hongo-cirugia-gastrica-v2",
+      "diseno": "diseno_otm",
+      "corridas": 6,
+      "modelo": "claude-sonnet-5-5",
+      "costo_usd": 0.5884,
+      "por_corrida": [
+        {
+          "id": "N1_VV_r1",
+          "perfil": {
+            "nivel_edad": "U",
+            "nivel": "N1",
+            "estilo": "VV"
+          },
+          "ruta": [
+            "P1-MRS",
+            "P2-RM",
+            "P4-WM",
+            "P2-RM",
+            "P6-VAL",
+            "P4-WM",
+            "P5-INT",
+            "P7-EXP"
+          ],
+          "bloqueos": [],
+          "supuestos": [
+            "12 % es reducción relativa sobre los que mueren",
+            "mortalidad basal de 40 de cada 100 (inventada)",
+            "efecto entre 5 % y 18 % (rango inventado, a ojo)",
+            "comparabilidad con pacientes japoneses incierta"
+          ],
+          "modelo": "proporcional",
+          "respuesta_final": "Con 40 muertes por 100 (dato inventado) se evitarían unas 5, entre 2 y 7, pero poco segura. Que el comité pida sus datos, el costo y si los pacientes se parecen a los japoneses.",
+          "validacion": true,
+          "archivo": "N1_VV_r1.json",
+          "costo_usd": 0.106316
+        },
+        {
+          "id": "N1_AA_r1",
+          "perfil": {
+            "nivel_edad": "U",
+            "nivel": "N1",
+            "estilo": "AA"
+          },
+          "ruta": [
+            "P1-MRS",
+            "P3-MM",
+            "P4-WM",
+            "P2-RM",
+            "P6-VAL",
+            "P2-RM",
+            "P6-VAL",
+            "P7-EXP",
+            "P6-VAL"
+          ],
+          "bloqueos": [],
+          "supuestos": [
+            "N = 100 pacientes (ejemplo)",
+            "mortalidad actual m = 0,5 (y 0,3 para comparar)",
+            "12 % como reducción relativa del riesgo",
+            "efecto en un rango de 0,05 a 0,15 en lugar de 0,12 fijo",
+            "comparabilidad con pacientes japoneses con quimioterapia, puesta en duda"
+          ],
+          "modelo": "proporcional",
+          "respuesta_final": "Muertes evitadas ≈ N × m × 0,12, usando el intervalo de confianza del estudio en vez de 0,12 fijo (ej.: N = 100, m = 0,5 → 6 muertes evitadas; con m = 0,3 → 3,6). La cifra es incierta y depende de la mortalidad actual; el comité debería pedir N, m, costo, efectos secundarios y si sus pacientes se parecen a los del estudio antes de decidir.",
+          "validacion": true,
+          "archivo": "N1_AA_r1.json",
+          "costo_usd": 0.101256
+        },
+        {
+          "id": "N2_VV_r1",
+          "perfil": {
+            "nivel_edad": "U",
+            "nivel": "N2",
+            "estilo": "VV"
+          },
+          "ruta": [
+            "P1-MRS",
+            "P2-RM",
+            "P4-WM",
+            "P6-VAL",
+            "P4-WM",
+            "P5-INT",
+            "P7-EXP"
+          ],
+          "bloqueos": [],
+          "supuestos": [
+            "el 12 % se aplica a los que mueren (reducción relativa)",
+            "mortalidad basal de 40 de cada 100 operados (inventada)",
+            "intervalo del efecto entre 6 % y 18 % (inventado)",
+            "comparabilidad con pacientes del estudio puesta en duda (edad, etapa, quimioterapia)"
+          ],
+          "modelo": "proporcional",
+          "respuesta_final": "Con una mortalidad supuesta de 40 de cada 100 operados, el extracto evitaría unas 5 muertes por cada 100 (4,8), entre 2 y 7 si el efecto fuera de 6 % a 18 % (rango inventado). Recomiendan no decidir aún y pedir mortalidad actual, costo, edad, etapa, uso de quimioterapia y margen de error del estudio.",
+          "validacion": true,
+          "archivo": "N2_VV_r1.json",
+          "costo_usd": 0.110124
+        },
+        {
+          "id": "N3_AA_r1",
+          "perfil": {
+            "nivel_edad": "U",
+            "nivel": "N3",
+            "estilo": "AA"
+          },
+          "ruta": [
+            "P3-MM",
+            "P4-WM",
+            "P6-VAL",
+            "P7-EXP",
+            "P6-VAL"
+          ],
+          "bloqueos": [],
+          "supuestos": [
+            "12 % como reducción relativa del riesgo",
+            "el efecto del 12 % se mantiene en los pacientes del hospital",
+            "N = 100 operados (ejemplo)",
+            "mortalidad basal p = 0,4 (ejemplo)"
+          ],
+          "modelo": "proporcional",
+          "respuesta_final": "Las muertes evitadas serían 0,12·p·N, o sea 4,8 si N = 100 y p = 0,4 (solo ejemplo), y esa cifra es incierta: falta el intervalo de confianza, y \"asoció\" no prueba causalidad. Recomendamos no decidir aún y pedir p, N, el intervalo, el costo, los efectos adversos y si sus pacientes se parecen a los del estudio.",
+          "validacion": true,
+          "archivo": "N3_AA_r1.json",
+          "costo_usd": 0.067492
+        },
+        {
+          "id": "N4_VV_r1",
+          "perfil": {
+            "nivel_edad": "U",
+            "nivel": "N4",
+            "estilo": "VV"
+          },
+          "ruta": [
+            "P1-MRS",
+            "P4-WM",
+            "P6-VAL",
+            "P7-EXP",
+            "P6-VAL"
+          ],
+          "bloqueos": [],
+          "supuestos": [
+            "12 % es reducción relativa del riesgo",
+            "riesgo base del hospital supuesto (40 %, rango 20 a 60 %)",
+            "comparabilidad con pacientes japoneses en duda",
+            "efecto podría depender del uso de quimioterapia"
+          ],
+          "modelo": "proporcional",
+          "respuesta_final": "Si el riesgo base fuera de 20 a 60 % (supuesto nuestro), el extracto evitaría entre 2 y 7 muertes por cada 100 operados; cifra incierta. Piden riesgo base del hospital, intervalo del 12 %, uso de quimio, costo, efectos adversos y si los pacientes se parecen a los japoneses (edad, etapa del tumor); recomiendan no decidir aún y aprobarlo solo si el beneficio compensa costo y riesgos.",
+          "validacion": true,
+          "archivo": "N4_VV_r1.json",
+          "costo_usd": 0.093636
+        },
+        {
+          "id": "N4_AA_r1",
+          "perfil": {
+            "nivel_edad": "U",
+            "nivel": "N4",
+            "estilo": "AA"
+          },
+          "ruta": [
+            "P3-MM",
+            "P4-WM",
+            "P6-VAL",
+            "P4-WM",
+            "P6-VAL",
+            "P4-WM",
+            "P6-VAL",
+            "P7-EXP"
+          ],
+          "bloqueos": [],
+          "supuestos": [
+            "12 % como reducción relativa (RR ≈ 0,88)",
+            "grupo ejemplo de 100 pacientes",
+            "mortalidad basal 40 % a cinco años",
+            "mortalidad basal entre 20 % y 50 %",
+            "efecto como hazard ratio (riesgos proporcionales)",
+            "plazo fijo de seguimiento (cinco años)"
+          ],
+          "modelo": "proporcional (hazard ratio)",
+          "respuesta_final": "Con HR ≈ 0,88 y mortalidad base de 20–50 %, unas 2 a 4 muertes evitadas por cada 100 operados, a un plazo fijo (tipo cinco años). La cifra es incierta porque faltan el IC del efecto (si cruza 1 el beneficio podría ser cero), la mortalidad real del hospital, la comparabilidad de los pacientes, el costo y los efectos adversos; recomiendan pedir esos datos antes de decidir.",
+          "validacion": true,
+          "archivo": "N4_AA_r1.json",
+          "costo_usd": 0.109528
+        }
+      ],
+      "agregado": {
+        "pct_bloqueo_por_transicion": {},
+        "modelos_observados": {
+          "proporcional": 5,
+          "proporcional (hazard ratio)": 1
+        },
+        "pct_validan": 1.0
+      },
+      "fecha": "2026-11-24T13:47:59Z"
+    },
+    "guia": {
+      "tarea_id": "2026-11-extracto-hongo-cirugia-gastrica-v2",
+      "version": 2,
+      "fecha": "2026-11-24",
+      "ficha": {
+        "titulo": "¿Cuántas muertes evitaría un extracto de hongo en nuestro hospital?",
+        "noticia": {
+          "medio": "NPR",
+          "titulo": "Mushroom supplements promise health benefits. What does the science say?",
+          "fecha": "2026-11-23",
+          "url": "https://www.npr.org/2026/11/23/nx-s1-6047791/mushroom-supplements-health-research"
+        },
+        "nivel_principal": "U",
+        "variantes": [
+          "S"
+        ],
+        "contenidos": [
+          "riesgo relativo y absoluto",
+          "número necesario a tratar",
+          "incertidumbre y simulación",
+          "análisis de sensibilidad",
+          "decisión bajo incertidumbre"
+        ],
+        "tiempo": "2 sesiones de 90 min",
+        "puntaje_rub01": 24,
+        "version": 2,
+        "fecha": "2026-11-24",
+        "cambios": ""
+      },
+      "meta": {
+        "que_observar": "Observar si el grupo distingue la reducción relativa de 12 % de una reducción absoluta, declara sus supuestos (mortalidad basal, plazo, tamaño del grupo, comparabilidad con los pacientes del estudio), expresa cuánta confianza merece su cifra y contrasta su estimación con la ficha R4 sin ajustar el modelo para que calce. Se busca fomentar una recomendación condicional al comité, no una cifra única.",
+        "contenido": "Riesgo relativo y absoluto, número necesario a tratar, incertidumbre y simulación, análisis de sensibilidad y decisión bajo incertidumbre.",
+        "subcompetencias": [
+          "Comprender la situación y precisar qué decide el comité (P1-MRS)",
+          "Simplificar: elegir mortalidad basal y plazo, y suponer comparabilidad y reparto de eventos (P2-RM)",
+          "Matematizar el riesgo tratado, las muertes evitadas, el número necesario a tratar y la incertidumbre (P3-MM)",
+          "Trabajar el modelo: tabla de sensibilidad, intervalo y simulación opcional (P4-WM)",
+          "Interpretar el resultado para el hospital separando beneficio esperado, incertidumbre y límites de transferencia (P5-INT)",
+          "Validar contra R4 y contra la cota lógica de las muertes esperadas sin tratamiento (P6-VAL)",
+          "Comunicar una recomendación con criterio explícito, como el costo por muerte evitada (P7-EXP)"
+        ],
+        "meta_social": "Trabajo cooperativo en pequeños grupos, con verbalización de supuestos y discusión argumentada de la recomendación ante el resto del curso.",
+        "evidencia": [
+          "Reformulación escrita de la cifra de 12 % y de las variables que faltan (P1-MRS)",
+          "Hoja de supuestos con valores o rangos, y registro de las tarjetas solicitadas R2 y R3 (P2-RM)",
+          "Expresiones del modelo con parámetros definidos y distribución elegida para riesgo basal y efecto (P3-MM)",
+          "Tabla o gráfico de muertes evitadas en función del riesgo basal, con banda de incertidumbre (P4-WM)",
+          "Frase que traduce el resultado a pacientes del hospital y declara qué no se sabe (P5-INT)",
+          "Comparación escrita entre muertes evitadas predichas y diferencia observada en R4, con explicación de la discrepancia (P6-VAL)",
+          "Informe breve con tabla de escenarios y recomendación condicional, expuesto en la puesta en común (P7-EXP)"
+        ]
+      },
+      "analisis_a_priori": {
+        "rutas": [
+          {
+            "id": "R1",
+            "nombre": "Conversión directa de riesgo relativo a absoluto",
+            "nivel": "S2",
+            "modelo": "Muertes evitadas = pacientes por mortalidad basal por 0,12, para dos o tres mortalidades basales"
+          },
+          {
+            "id": "R2",
+            "nombre": "NNT con intervalo por aproximación normal del log RR",
+            "nivel": "U",
+            "modelo": "ARR = p0(1 − RR), NNT = 1/ARR; error estándar del log RR = sqrt(1/a − 1/n1 + 1/c − 1/n2), con eventos supuestos en cada brazo de igual tamaño"
+          },
+          {
+            "id": "R3",
+            "nombre": "Simulación de Monte Carlo con incertidumbre en riesgo basal y efecto",
+            "nivel": "U",
+            "modelo": "Distribuciones para p0 (según registros del hospital) y RR (normal en escala log, con error estándar cercano a 0,029 como piso optimista) y simulación de muertes evitadas en un grupo del hospital"
+          },
+          {
+            "id": "R4",
+            "nombre": "Análisis de decisión con costo",
+            "nivel": "U",
+            "modelo": "Costo por muerte evitada = costo por paciente por NNT, comparado con un umbral del comité y con sensibilidad a p0"
+          }
+        ],
+        "modelo_inadecuado": {
+          "id": "RX: restar 12 puntos porcentuales a la mortalidad (por ejemplo, de 40 % a 28 %).",
+          "por_que_falla": "Confunde reducción relativa con absoluta: el 12 % se aplica al riesgo de partida, por lo que con 40 % de mortalidad el riesgo baja a 35,2 % y no a 28 %. Sobrestima el beneficio unas 2,5 veces y ignora la incertidumbre y la dependencia de la mortalidad basal."
+        },
+        "solucion_referencia": "1) Interpretar 12 % como reducción relativa: riesgo tratado = 0,88 por riesgo basal p0. 2) Reducción absoluta ARR = 0,12 por p0; número necesario a tratar NNT = 1/ARR. 3) Con p0 = 0,40 (supuesto): ARR = 0,048, NNT ≈ 21 y por cada mil pacientes ≈ 48 muertes evitadas. Con p0 = 0,20: ARR = 0,024, NNT ≈ 42, 24 por mil. Con p0 = 0,60: ARR = 0,072, NNT ≈ 14, 72 por mil. 4) Incertidumbre: se supone, de forma simplificada, un solo ensayo con los 8.009 pacientes repartidos en mitades de unos 4.005 y p0 = 0,40. Las muertes son ≈ 1.602 en el control (a) y ≈ 1.410 en los tratados (c). El error estándar del log del riesgo relativo es sqrt(1/a − 1/n1 + 1/c − 1/n2) ≈ sqrt(0,000624 − 0,000250 + 0,000709 − 0,000250) ≈ 0,029. El RR queda entre 0,83 y 0,93 al 95 %, y la reducción absoluta entre 0,027 y 0,067, es decir, 27 a 67 muertes evitadas por mil (NNT entre 15 y 36). Este intervalo sale de supuestos simplificadores (un solo ensayo de dos grupos iguales, un mismo plazo) y subestima la incertidumbre real, porque el metaanálisis reúne varios ensayos distintos: es una cota optimista de qué tan segura es la cifra. 5) Después de presentar la estimación, se compara con la ficha R4 y con la cota lógica, y se añaden costo y comparabilidad para la recomendación. Resultado: Con una mortalidad basal intermedia (por ejemplo 40 % en el plazo elegido) se evitarían unas 48 muertes por cada mil pacientes tratados (NNT ≈ 21), con un intervalo, bajo supuestos simplificadores, de entre 27 y 67 por mil. Esa banda es una cota optimista de la incertidumbre real. El resultado es proporcional a la mortalidad basal y cae si los pacientes del hospital difieren de los del estudio. La recomendación debe ser condicional al costo, a la comparabilidad y a la mortalidad basal real.",
+        "rango_aceptable": "Muertes evitadas entre ≈ 24 y 72 por mil para mortalidad basal entre 0,20 y 0,60; cualquier cifra coherente con el supuesto de mortalidad basal declarado y con la lógica relativa vs. absoluta es aceptable. Con mortalidad basal de 0,40 y el intervalo simplificado, entre ≈ 27 y 67 por mil. Resultados que usen 12 puntos porcentuales no son aceptables.",
+        "barreras_por_fase": [
+          {
+            "fase": "P1-MRS",
+            "barrera": "Es probable que lean el 12 % como una caída de 12 puntos porcentuales o como una cifra que ya se aplica al hospital. También que no noten que faltan mortalidad basal, plazo, tamaño del grupo y costo, y pasen a calcular con datos que no tienen (bloqueo B12)."
+          },
+          {
+            "fase": "P2-RM",
+            "barrera": "Les cuesta elegir una mortalidad basal y un plazo sin que se los den, y fijar un valor sin justificarlo. Pueden dar por hecho que los pacientes del hospital son iguales a los del estudio sin cuestionarlo. Pueden no pedir las tarjetas R2 y R3, o pedirlas y no incorporarlas al modelo. También deben suponer cómo se reparten los pacientes y los eventos entre tratados y controles (bloqueo B23)."
+          },
+          {
+            "fase": "P3-MM",
+            "barrera": "Aparece el modelo inadecuado RX: restar 12 puntos porcentuales a la mortalidad en lugar de aplicar el 12 % al riesgo de partida. Además, plantear la incertidumbre con el error del logaritmo del riesgo relativo exige un salto conceptual que muchos grupos no darán solos, y pueden dejar el modelo sin incertidumbre (bloqueo B34)."
+          },
+          {
+            "fase": "P4-WM",
+            "barrera": "Pasar de una estimación puntual a una tabla de sensibilidad con banda de incertidumbre requiere organizar varios cálculos. El intervalo parte de supuestos simplificadores (un solo ensayo, grupos iguales, un mismo plazo) y puede leerse como más seguro de lo que es. Quienes simulen pueden centrarse en la herramienta y descuidar los parámetros elegidos (bloqueo B45)."
+          },
+          {
+            "fase": "P5-INT",
+            "barrera": "Tienden a presentar un número único como si fuera una certeza para el hospital, o a mezclar beneficio esperado, incertidumbre y límites de transferir el estudio en una sola afirmación. Les cuesta decir con claridad qué no se sabe (bloqueo B56)."
+          },
+          {
+            "fase": "P6-VAL",
+            "barrera": "Solo se puede validar después de presentar la estimación y recibir R4, y no todos los grupos buscarán contrastar. La ficha informa una diferencia absoluta mayor que la que predice el modelo, lo que tienta a subir la mortalidad basal para que calce. Cuesta explicar primero la discrepancia con el tamaño del ensayo, su intervalo amplio, la selección de pacientes, el plazo y la ausencia de placebo, y aplicar la cota lógica de que no se evitan más muertes que las esperadas sin tratamiento (bloqueo B67)."
+          },
+          {
+            "fase": "P7-EXP",
+            "barrera": "El mapa del ciclo no prevé un bloqueo probable en esta fase. Aun así, puede aparecer una recomendación de sí o no sin criterio explícito (como el costo por muerte evitada) y sin condicionarla a la mortalidad basal, al costo y a la comparabilidad."
+          }
+        ]
+      },
+      "organizacion": {
+        "momentos": [
+          {
+            "momento": "Comprensión y trabajo grupal (sesión 1, parte a: P1-MRS a P3-MM)",
+            "tiempo": "60 min",
+            "estudiantes": "Leen el enunciado, reformulan por escrito qué dice la cifra de 12 % y qué falta saber, piden las tarjetas R2 y R3 si las necesitan, escriben la hoja de supuestos y construyen su modelo de riesgo.",
+            "docente": "Presenta la tarea sin explicar la solución. Circula y diagnostica preguntando qué han hecho y qué supusieron. No interviene aún con ayudas; solo toma nota de rutas y bloqueos (B12, B23, B34) para la puesta en común. Entrega R2 y R3 solo cuando las piden."
+          },
+          {
+            "momento": "Comprensión y trabajo grupal (sesión 1, parte b: P4-WM)",
+            "tiempo": "30 min",
+            "estudiantes": "Calculan muertes evitadas con su modelo, construyen la tabla o gráfico en función de la mortalidad basal y estiman un intervalo, con simulación si la ruta elegida lo incluye.",
+            "docente": "Sigue circulando y preguntando por qué eligieron esos valores y cómo calcularon. Si un grupo está detenido, ofrece primero la ayuda mínima: devolverle su propia hoja de supuestos y pedirle que explique su paso. No entrega la regla, el modelo ni el resultado. Pide a cada grupo preparar su estimación para presentarla en la sesión siguiente."
+          },
+          {
+            "momento": "Puesta en común (sesión 2)",
+            "tiempo": "25 min",
+            "estudiantes": "Cada grupo presenta su estimación, sus supuestos y qué tan segura la consideran. Comparan rutas y cifras entre grupos antes de ver R4.",
+            "docente": "Modera y ordena las presentaciones para que se vean rutas distintas (conversión directa, NNT con intervalo, simulación, análisis con costo). Pregunta cómo llegaron a cada cifra y qué supuesto pesa más. No dice cuál es la correcta. Entrega R4 solo cuando el grupo ya presentó su estimación."
+          },
+          {
+            "momento": "Validación y cierre (sesión 2, parte a: contraste con R4)",
+            "tiempo": "30 min",
+            "estudiantes": "Reciben R4 y comparan la reducción absoluta que predice su modelo con la diferencia de supervivencia del ensayo. Verifican la cota lógica y explican por escrito cualquier discrepancia usando lo que R4 dice del ensayo, antes de tocar la mortalidad basal.",
+            "docente": "Diagnostica preguntando qué comparan y qué dice R4 sobre el ensayo. Si un grupo ajusta la mortalidad basal para calzar, le pide que explique primero la discrepancia con los rasgos del ensayo. Recuerda que el contraste sirve para discutir los límites del modelo, no para ajustarlo al resultado."
+          },
+          {
+            "momento": "Validación y cierre (sesión 2, parte b: informe y recomendación)",
+            "tiempo": "35 min",
+            "estudiantes": "Redactan un informe breve con tabla de escenarios y una recomendación condicional al comité, con criterio explícito y sensibilidad a la mortalidad basal. Algunos grupos lo exponen.",
+            "docente": "Pide que la recomendación nombre el criterio usado y qué cambiaría si variaran la mortalidad basal, el costo o la comparabilidad. Cierra recogiendo qué supuestos pesaron más y qué quedó sin saberse. No evalúa con nota ni puntaje."
+          }
+        ],
+        "agrupamiento": "Grupos pequeños, estables en las dos sesiones, para que haya conversación sobre supuestos y cada integrante deba explicar sus decisiones.",
+        "roles": "Roles rotativos dentro del grupo: quien registra supuestos y decisiones, quien calcula y quien cuestiona (pregunta por qué ese valor y qué pasa si cambia). Quien presenta en la puesta en común no es quien calculó.",
+        "producciones": [
+          "Reformulación escrita de la cifra de 12 % y de lo que falta saber",
+          "Hoja de supuestos con valores o rangos y registro de las tarjetas pedidas",
+          "Modelo con parámetros definidos",
+          "Tabla o gráfico de muertes evitadas según riesgo basal, con banda de incertidumbre",
+          "Frase de interpretación para pacientes del hospital con lo que no se sabe",
+          "Comparación escrita con R4 y explicación de la discrepancia",
+          "Informe breve con tabla de escenarios y recomendación condicional"
+        ],
+        "tecnologia": "Se permite calculadora y hoja de cálculo para el trabajo matemático (P4-WM), incluida una simulación si el grupo la elige. Se permite consultar estadísticas públicas de cáncer gástrico solo si el grupo opta por estimar así la mortalidad basal (P2-RM). La herramienta no reemplaza decisiones de modelación: los supuestos, la elección del modelo y la recomendación los toma el grupo."
+      },
+      "escenarios": [
+        {
+          "id": "E1",
+          "nombre": "ruta esperada",
+          "corridas": [
+            "N4_VV_r1"
+          ],
+          "perfil": "Tramo U, nivel N4, estilo VV.",
+          "ruta": [
+            "P1-MRS",
+            "P4-WM",
+            "P6-VAL",
+            "P7-EXP",
+            "P6-VAL"
+          ],
+          "supuestos": [
+            "12 % es reducción relativa del riesgo",
+            "riesgo base del hospital supuesto (40 %, rango 20 a 60 %)",
+            "comparabilidad con pacientes japoneses en duda",
+            "efecto podría depender del uso de quimioterapia"
+          ],
+          "modelo": "proporcional",
+          "bloqueos": [],
+          "que_aprende": "Muestra la conversión directa de riesgo relativo a absoluto (ruta R1) con un rango declarado de riesgo base en lugar de un solo valor. El grupo marca ese rango como supuesto propio y lista qué pedir: riesgo base, intervalo del efecto, uso de quimioterapia, costo, efectos adversos y comparabilidad. Comparado con E3, la incertidumbre aquí viene del riesgo base y no de un rango de efecto inventado. Comparado con E4, el modelo no distingue el tipo de medida del efecto. Ningún grupo pidió la ficha R4. Por eso la validación queda en revisar supuestos y no llega a contrastar con el ensayo.",
+          "extracto_dialogo": [
+            {
+              "hablante": "Cami",
+              "texto": "Con 20 serían como 2,4 menos y con 60 como 7, o sea que va de 2 a 7 por cada 100. Y pidamos el intervalo del 12 %, porque si llega hasta cero reducción, la cifra no es tan segura."
+            },
+            {
+              "hablante": "Fran",
+              "texto": "Falta una cosa: pedir también si nuestros pacientes se parecen a los japoneses (edad, etapa del tumor), porque eso afecta qué tan segura es la cifra. Agrégalo a la lista y ahí sí, DE ACUERDO."
+            }
+          ]
+        },
+        {
+          "id": "E2",
+          "nombre": "relativo frente a puntos porcentuales",
+          "corridas": [
+            "N1_AA_r1"
+          ],
+          "perfil": "Tramo U, nivel N1, estilo AA.",
+          "ruta": [
+            "P1-MRS",
+            "P3-MM",
+            "P4-WM",
+            "P2-RM",
+            "P6-VAL",
+            "P2-RM",
+            "P6-VAL",
+            "P7-EXP",
+            "P6-VAL"
+          ],
+          "supuestos": [
+            "N = 100 pacientes (ejemplo)",
+            "mortalidad actual m = 0,5 (y 0,3 para comparar)",
+            "12 % como reducción relativa del riesgo",
+            "efecto en un rango de 0,05 a 0,15 en lugar de 0,12 fijo",
+            "comparabilidad con pacientes japoneses con quimioterapia, puesta en duda"
+          ],
+          "modelo": "proporcional",
+          "bloqueos": [],
+          "que_aprende": "Es la única corrida que pone sobre la mesa el modelo inadecuado (restar 12 puntos porcentuales) y lo descarta. Lo hace comparando ambas lecturas y juzgando que la absoluta da un beneficio demasiado grande. También corrige su propio rango de efecto: propone pedir el intervalo de confianza del estudio en vez de inventarlo. Sus idas y vueltas entre simplificar y validar muestran que revisar el supuesto sobre el 12 % es una decisión de modelación, no un detalle de cálculo.",
+          "extracto_dialogo": [
+            {
+              "hablante": "Cami",
+              "texto": "Mmm, yo creo que es relativo: si hoy muere el 50 %, quedaría en 0,5 × 0,88 = 0,44, o sea 6 menos de cada 100. Pero si fueran 12 puntos porcentuales, bajaría a 0,38 y serían 12 menos, así que habría que ver cómo lo dice el estudio, ¿no?"
+            },
+            {
+              "hablante": "Fran",
+              "texto": "Ya, entonces lo más probable es que sea relativo, como dijiste, porque si no sería un montón. Pero igual falta ver qué tan segura es la cifra: ¿qué hacemos con que los pacientes japoneses quizás no se parecen a los del hospital, y que casi todos tenían quimio?"
+            },
+            {
+              "hablante": "Cami",
+              "texto": "Sí, estoy de acuerdo, pero yo agregaría pedir también el intervalo de confianza del 12 % en el estudio, para no inventar nosotros el 0,05 a 0,15. ¿Armamos la respuesta así: pedir N, m, costo, efectos secundarios y si se parecen a los pacientes japoneses, y recién ahí decidir?"
+            }
+          ]
+        },
+        {
+          "id": "E3",
+          "nombre": "incertidumbre a ojo",
+          "corridas": [
+            "N1_VV_r1",
+            "N2_VV_r1"
+          ],
+          "perfil": "Tramo U, niveles N1 y N2, estilo VV.",
+          "ruta": [
+            "P1-MRS",
+            "P2-RM",
+            "P4-WM",
+            "P2-RM",
+            "P6-VAL",
+            "P4-WM",
+            "P5-INT",
+            "P7-EXP"
+          ],
+          "supuestos": [
+            "12 % es reducción relativa sobre los que mueren",
+            "mortalidad basal de 40 de cada 100 (inventada)",
+            "efecto entre 5 % y 18 % (rango inventado, a ojo)",
+            "intervalo del efecto entre 6 % y 18 % (inventado)",
+            "comparabilidad con pacientes del estudio puesta en duda (edad, etapa, quimioterapia)"
+          ],
+          "modelo": "proporcional",
+          "bloqueos": [],
+          "que_aprende": "Ambos grupos llegan a la lectura relativa apoyándose en dibujos de pacientes. Responden la pregunta sobre qué tan segura es la cifra con una franja de efecto inventada, en lugar de derivarla del estudio o pedirla. Lo valioso es que declaran qué datos son inventados. Frente a E2 y E4, el curso puede discutir la diferencia entre una incertidumbre supuesta a ojo y una que se pide al estudio o se razona desde el tamaño y el plazo. Ninguna corrida registró bloqueos en simplificar (B12): los grupos avanzaron inventando valores de ejemplo en lugar de quedarse detenidos.",
+          "extracto_dialogo": [
+            {
+              "hablante": "Fran",
+              "texto": "Sí, como cifra a ojo, y creo que el 12 % tampoco es exacto: me imagino como una franja, tipo entre 5 y 18, así que habría que pedir ese rango. ¿Y con eso le diríamos al comité que esperen a tener los datos del hospital y el costo antes de decidir?"
+            },
+            {
+              "hablante": "Cami",
+              "texto": "Si la franja es de 5 a 18 %, en mis 100 dibujados serían entre 2 y 7 rojos menos (0,05 × 40 y 0,18 × 40). ¿Le decimos que esperen los datos, o que decidan según cuántos mueren hoy y cuánto cuesta?"
+            },
+            {
+              "hablante": "Fran",
+              "texto": "DE ACUERDO. Solo que ojalá el comité entienda que el 5 a 18 % también lo inventamos nosotras, pero eso ya lo anotamos como a ojo, ¿no?"
+            }
+          ]
+        },
+        {
+          "id": "E4",
+          "nombre": "refinar el tipo de efecto",
+          "corridas": [
+            "N4_AA_r1"
+          ],
+          "perfil": "Tramo U, nivel N4, estilo AA.",
+          "ruta": [
+            "P3-MM",
+            "P4-WM",
+            "P6-VAL",
+            "P4-WM",
+            "P6-VAL",
+            "P4-WM",
+            "P6-VAL",
+            "P7-EXP"
+          ],
+          "supuestos": [
+            "12 % como reducción relativa (RR ≈ 0,88)",
+            "grupo ejemplo de 100 pacientes",
+            "mortalidad basal 40 % a cinco años",
+            "mortalidad basal entre 20 % y 50 %",
+            "efecto como hazard ratio (riesgos proporcionales)",
+            "plazo fijo de seguimiento (cinco años)"
+          ],
+          "modelo": "proporcional (hazard ratio)",
+          "bloqueos": [],
+          "que_aprende": "Muestra ciclos repetidos de trabajar y validar en los que el grupo cuestiona su propio modelo. Fija el plazo y trata el efecto como hazard ratio, lo que cambia la fórmula y baja la estimación respecto del modelo proporcional simple. Además separa dos fuentes de incertidumbre: el riesgo base y el intervalo del efecto, que aún no tienen. Frente a E1 y E3, el curso ve que precisar plazo y tipo de medida es un supuesto que modifica el resultado.",
+          "extracto_dialogo": [
+            {
+              "hablante": "Cami",
+              "texto": "Ojo que con HR el cálculo es aproximado, porque 0,12 aplicado directo a la mortalidad solo vale si el riesgo es chico. Además, el rango 2–6 solo mide la incertidumbre de p₀; falta el IC del efecto, y también si los pacientes de acá se parecen a los japoneses (estadio, edad, quimio)."
+            },
+            {
+              "hablante": "Fran",
+              "texto": "Tienes razón: con HR conviene usar p₁ = 1 − (1−p₀)^0,88. Con p₀ = 0,40 da 1 − 0,6^0,88 ≈ 0,362, o sea unas 3,8 evitadas por cada 100 y no 4,8, y en el rango 20–50 % serían como 2 a 4. Entonces recomendaría no decidir todavía y pedir el IC, p₀ y el costo."
+            }
+          ]
+        }
+      ],
+      "tabla_bloqueos": {},
+      "intervenciones": [
+        {
+          "bloqueo": "B12",
+          "z1_z2": "Pregunten: «¿Cómo entienden la cifra de 12 %? ¿Qué le falta saber al comité para decidir?». Escuchen antes de ayudar. Reconozcan que preguntar por lo que falta ya es parte de la tarea.",
+          "z3": "Pidan que dibujen un grupo de pacientes del hospital y marquen quiénes mueren hoy. Así lo hicieron los grupos de E3.",
+          "z4": "Pregunten: «¿12 % de qué cantidad? ¿Qué cambia en su dibujo si hoy muere una proporción mayor o menor de pacientes?». Si alguien propone restar 12 puntos, pidan que comparen las dos lecturas de «12 %» con un grupo pequeño y decidan cuál es razonable, como hizo E2.",
+          "z5": "Último recurso: pidan que anoten en una lista qué datos faltan (mortalidad del hospital, tamaño del grupo, costo, comparabilidad) y que los soliciten. Pueden entregar las tarjetas R2 y R3. No digan cómo se aplica el 12 %: que lo decidan comparando lecturas."
+        },
+        {
+          "bloqueo": "B23",
+          "z1_z2": "Pregunten: «¿Qué valores o supuestos han elegido hasta ahora y cuáles aún no?». Valoren que nombren lo que no saben.",
+          "z3": "Sugieran una lista de supuestos con tres columnas: dato de la tarea, valor que ponemos nosotros y dato que pedimos.",
+          "z4": "Pregunten: «¿Qué plazo y qué mortalidad de partida usarían? ¿Cómo muestran que no es un valor único? ¿Qué pasa con su resultado si los pacientes del hospital no se parecen a los del estudio?». E1 y E4 declararon un rango de mortalidad de partida.",
+          "z5": "Último recurso: entreguen R2 (mortalidad del hospital) y R3 (comparabilidad). Pidan que escriban con letras definidas cómo relacionan el 12 % con la mortalidad del hospital y que lo prueben con un grupo pequeño. No escriban la expresión por ellos."
+        },
+        {
+          "bloqueo": "B34",
+          "z1_z2": "Pregunten: «¿Qué quieren calcular y con qué datos cuentan?». Pidan que lo cuenten con sus palabras antes de usar símbolos.",
+          "z3": "Pidan que escriban con palabras la cantidad que buscan y las que conocen, y que hagan un esquema con flechas entre ellas.",
+          "z4": "Pregunten: «¿Cómo pasan de la proporción de pacientes que muere hoy a la que moriría con el extracto? ¿Y cómo llegan de ahí a un número de pacientes del hospital?». Para la incertidumbre: «¿qué dos cosas no conocen con seguridad?». E4 separó la incertidumbre del riesgo base de la del efecto.",
+          "z5": "Último recurso: pidan que prueben su expresión con un grupo dibujado de pocos pacientes y la comparen con el recuento a mano, y que definan cada letra. Si no coinciden, que busquen dónde se separan. No les den la expresión."
+        },
+        {
+          "bloqueo": "B45",
+          "z1_z2": "Pregunten: «¿Qué cálculo han hecho y en qué paso se detuvieron?». Revisen primero si la traba es de cálculo o de lo que van a calcular.",
+          "z3": "Propongan una tabla con unos pocos valores de mortalidad de partida, uno por fila, y el resultado de cada uno.",
+          "z4": "Pregunten: «¿Cómo cambia el resultado cuando cambia la mortalidad de partida? ¿La incertidumbre que representan viene de la mortalidad de partida, del efecto o de ambos?».",
+          "z5": "Último recurso: si quieren un intervalo, sugieran que repitan el cálculo muchas veces con valores distintos de mortalidad de partida y de efecto, a mano o en una planilla, y observen el rango que resulta. Pidan que declaren los supuestos simplificadores que usan. No den la fórmula del intervalo ni sus cifras."
+        },
+        {
+          "bloqueo": "B56",
+          "z1_z2": "Pidan que lean su resultado en voz alta como se lo dirían al comité y pregunten: «¿Qué entiende alguien que no hizo las cuentas?».",
+          "z3": "Pidan dos frases: una que empiece con «En nuestro hospital…» y otra con «No sabemos…».",
+          "z4": "Pregunten: «¿Qué parte de lo que dicen es beneficio esperado, cuál es incertidumbre y cuál depende de que los pacientes se parezcan a los del estudio?». Recuerden que E3 declaró qué datos eran inventados.",
+          "z5": "Último recurso: pidan que redacten una frase en tres partes (beneficio esperado para pacientes del hospital, qué tan segura es la cifra, qué no se sabe). Si no pidieron R3, entréguenla. Recuerden que el intervalo que calcularon cubre solo parte de la incertidumbre. No les dicten la frase ni el número."
+        },
+        {
+          "bloqueo": "B67",
+          "z1_z2": "Pregunten: «¿Qué han hecho para comprobar su resultado y contra qué lo compararon?». En E1 nadie pidió R4, por lo que la validación quedó en revisar supuestos.",
+          "z3": "Pidan que armen una lista de comprobaciones: una de coherencia lógica y otra de comparación con información independiente de su modelo.",
+          "z4": "Pregunten: «¿Pueden evitarse más muertes que las esperadas sin tratamiento? ¿Su resultado calza con lo que informa una fuente independiente? Si no calza, ¿qué diferencias entre ese estudio y su modelo podrían explicarlo?».",
+          "z5": "Último recurso: entreguen la ficha R4 solo después de que presenten su estimación. Pidan que comparen la diferencia de supervivencia que informa con lo que predice su modelo y que expliquen la discrepancia con lo que R4 dice del ensayo (tamaño, amplitud del intervalo, selección de pacientes, plazo, ausencia de placebo) antes de cambiar su mortalidad de partida. No digan cuál debería ser el resultado."
+        }
+      ],
+      "puesta_en_comun": {
+        "seleccion_y_orden": [
+          "Primero E3 (incertidumbre a ojo): es accesible, parte de dibujos de pacientes y declara qué datos son inventados. Permite anticipar la distinción entre incertidumbre supuesta y derivada de evidencia.",
+          "Segundo E2 (relativo frente a puntos porcentuales): es la única que pone y descarta la lectura en puntos porcentuales. Se monitorea si algún grupo del aula la usó y se selecciona para hacer visible el error sin señalar a nadie. También muestra cómo pasa de inventar el rango del efecto a pedirlo al estudio.",
+          "Tercero E1 (ruta esperada): se conecta con E2 y E3 porque la incertidumbre viene del rango de riesgo base, declarado como supuesto propio, y pide intervalo del efecto, comparabilidad y costo. El docente no abre con esta ruta ni con la suya: va después de ver otras lecturas.",
+          "Cuarto E4 (refinar el tipo de efecto): secuencia final para conectar. Muestra que precisar plazo y tipo de medida cambia la estimación, y que el grupo cuestiona su propio modelo tras validar. Cierra con la pregunta de qué se debe pedir antes de recomendar."
+        ],
+        "preguntas": [
+          "¿Qué significa para ustedes «12 %» y de qué cantidad es ese 12 %? ¿Qué cambiaría si lo leyeran de otra manera?",
+          "¿Qué valores supusieron ustedes y cuáles vienen de la tarea? ¿Cuáles inventaron o declararon como ejemplo?",
+          "¿Cómo cambia su resultado al variar la mortalidad de partida del hospital? ¿Qué le diría eso al comité?",
+          "¿Qué fuente de incertidumbre incluyó cada grupo (mortalidad de partida, efecto, plazo, tipo de medida) y cuál quedó fuera?",
+          "¿En qué se parece y en qué se diferencia una franja de efecto supuesta a ojo de una que se pide al estudio?",
+          "¿Qué supuestos hacen más eficiente o más frágil el modelo de cada grupo? ¿Qué se pierde al simplificar?",
+          "¿Qué comprobaciones hicieron para validar, y contra qué evidencia independiente?",
+          "¿Para qué pacientes dejaría de valer el modelo? ¿Qué recomendarían al comité y bajo qué condiciones cambiaría?"
+        ],
+        "contraste_validacion": "Después de que cada grupo presente su estimación, entreguen la ficha R4 y pidan que comparen la reducción absoluta que predice su modelo (con su rango de mortalidad de partida y su intervalo) con la diferencia de supervivencia que informa el ensayo. Mantengan la cota lógica: las muertes evitadas no pueden superar las esperadas sin tratamiento. Si no calzan, el grupo explica primero la discrepancia con lo que R4 dice del ensayo (tamaño, amplitud de su intervalo de confianza, selección de pacientes, plazo de seguimiento, ausencia de placebo) y solo después revisa su mortalidad de partida o su supuesto de comparabilidad. Usen el contraste para discutir el alcance y los límites de cada modelo, no para ajustarlo al resultado del ensayo. Las cifras del ensayo están en el resumen público del artículo citado en R4; el docente las entrega desde allí."
+      },
+      "variantes_y_continuidad": {
+        "uso_variantes": "Variante hacia abajo (tramo S2): úsela con grupos de secundaria alta o con un grupo universitario que se bloquee de forma persistente en B12 o B23. Según `variantes_detalle`, se pide estimar cuántas muertes se evitarían en un grupo de pacientes del hospital con una sola mortalidad basal acordada, sin intervalo de incertidumbre. La cuestión central pasa a ser distinguir reducción relativa de absoluta y comparar dos mortalidades basales. Corresponde a la ruta R1 (conversión directa), y deja fuera la simulación y el análisis con costo. El detalle de la variante no precisa cómo se usaría R4 en ese caso, así que decida usted si lo incorpora. Variante hacia arriba: es null, no existe una variante diseñada. Para grupos que avanzan rápido, la propia tarea ya ofrece las rutas R2 (NNT con intervalo), R3 (simulación) y R4 (análisis con costo), que no requieren cambiar el enunciado.",
+        "acostumbramiento": "Si el grupo nunca ha modelado, conviene antes una actividad breve con otra noticia de salud, en la que solo deban listar qué datos faltan y qué supuestos harían antes de calcular, y practicar con ejemplos sencillos la lectura de una reducción relativa frente a una absoluta, sin llegar a los cálculos de esta tarea. Con esta tarea no conviene iniciar a un grupo sin experiencia: tiene dos sesiones, varias rutas y una fase de validación posterior. Su función es ser parte de una secuencia, después de una tarea de modelación más corta; también puede servir como diagnóstico de supuestos e incertidumbre en un grupo que ya modeló.",
+        "tarea_siguiente": null
+      },
+      "materiales": {
+        "tarea_pdf": "tarea.pdf",
+        "recursos_tarjetas": "recursos.pdf",
+        "notebook": "escenarios.ipynb",
+        "icono": "icono.svg"
+      },
+      "trazabilidad": {
+        "noticia_url": "https://www.npr.org/2026/11/23/nx-s1-6047791/mushroom-supplements-health-research",
+        "diseno": {
+          "modelo": "claude-sonnet-5-5",
+          "version_prompt": "1.1"
+        },
+        "rub01_total": 24,
+        "revision_humana_1": {
+          "revisor": "Carlos Rojas Bruna",
+          "fecha": "2026-11-24"
+        },
+        "simulacion": {
+          "n_grupos": 6,
+          "diseno": "diseno_otm"
+        },
+        "revision_humana_2": null,
+        "commit": null
+      },
+      "modelo_y_prompt": {
+        "redactor": "claude-sonnet-5-5",
+        "redactor_escenarios": "claude-opus-5-5",
+        "version_prompt": "1.0"
       }
     }
   },
@@ -408,6 +1067,27 @@
       "a": "evaluada",
       "iteracion": 1,
       "rub01_total": 24
+    },
+    {
+      "fecha": "2026-11-24T13:46:27+00:00",
+      "de": "evaluada",
+      "a": "revisada",
+      "revisor": "Carlos Rojas Bruna"
+    },
+    {
+      "fecha": "2026-11-24T13:47:59+00:00",
+      "de": "revisada",
+      "a": "simulada"
+    },
+    {
+      "fecha": "2026-11-24T13:50:15+00:00",
+      "de": "simulada",
+      "a": "con_guia"
+    },
+    {
+      "fecha": "2026-11-24T13:50:47+00:00",
+      "de": "con_guia",
+      "a": "verificada"
     }
   ],
   "marcas": {
@@ -452,6 +1132,54 @@
         ],
         "costo_usd": 0.31692,
         "llamadas": 3
+      },
+      "simulador": {
+        "modelo": "claude-sonnet-5-5",
+        "versiones_modelo": [
+          "claude-sonnet-5-5"
+        ],
+        "costo_usd": 0.281049,
+        "llamadas": 65
+      },
+      "simulador_codificador": {
+        "modelo": "claude-opus-5-5",
+        "versiones_modelo": [
+          "claude-opus-5-5"
+        ],
+        "costo_usd": 0.307152,
+        "llamadas": 6
+      },
+      "redactor": {
+        "modelo": "claude-sonnet-5-5",
+        "versiones_modelo": [
+          "claude-sonnet-5-5"
+        ],
+        "costo_usd": 0.166413,
+        "llamadas": 2
+      },
+      "redactor_escenarios": {
+        "modelo": "claude-opus-5-5",
+        "versiones_modelo": [
+          "claude-opus-5-5"
+        ],
+        "costo_usd": 0.185224,
+        "llamadas": 1
+      },
+      "ilustrador": {
+        "modelo": "claude-sonnet-5-5",
+        "versiones_modelo": [
+          "claude-sonnet-5-5"
+        ],
+        "costo_usd": 0.01242,
+        "llamadas": 1
+      },
+      "verificador": {
+        "modelo": "claude-opus-5-5",
+        "versiones_modelo": [
+          "claude-opus-5-5"
+        ],
+        "costo_usd": 0.140328,
+        "llamadas": 1
       }
     },
     "version_MAR03": "1.0",
@@ -459,12 +1187,35 @@
     "evaluacion_rango_total": 0,
     "evaluacion_corridas": "pipeline/state/trabajo/2026-11-extracto-hongo-cirugia-gastrica-v2/evaluacion_corridas.json",
     "preverificacion": {
-      "fecha": "2026-11-24T13:27:31Z",
+      "fecha": "2026-11-24T13:46:27Z",
       "version_tarea": 2,
       "aprobado": true,
       "criticos": [],
       "texto_noticia": true
     },
-    "pendiente": "revision_humana_1"
+    "simulador_manifiesto": {
+      "tarea_id": "2026-11-extracto-hongo-cirugia-gastrica-v2",
+      "version_tarea": 2,
+      "tramo": "U",
+      "backend": "api",
+      "diseno": "diseno_otm",
+      "corridas": 6,
+      "modelo_estudiantes": "claude-sonnet-5-5",
+      "modelo_codificador": "claude-opus-5-5",
+      "insumos_simulador": {
+        "INS08": "PERFILES.md",
+        "INS09": "PROMPTS.md"
+      },
+      "marco_niveles": "MAR03 v1.0 §3",
+      "fecha": "2026-11-24T13:46:27Z"
+    },
+    "dir_transcripciones": "pipeline/state/trabajo/2026-11-extracto-hongo-cirugia-gastrica-v2/sim/corridas",
+    "icono": "pipeline/state/trabajo/2026-11-extracto-hongo-cirugia-gastrica-v2/icono.svg",
+    "bibliotecario_dry_run": {
+      "ok": true,
+      "ruta": "tareas/2026-11/extracto-hongo-cirugia-gastrica/",
+      "rama": "tareas/semana-2026-W48"
+    },
+    "pendiente": "revision_humana_2"
   }
 }

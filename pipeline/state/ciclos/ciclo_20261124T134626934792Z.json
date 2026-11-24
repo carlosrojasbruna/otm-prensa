@@ -1,0 +1,143 @@
+{
+  "ciclo_id": "ciclo_20261124T134626934792Z",
+  "inicio": "2026-11-24T13:46:26Z",
+  "fin": "2026-11-24T13:50:48Z",
+  "semana": "2026-W48",
+  "parametros": {
+    "tope_semanal_usd": 35.0,
+    "fraccion_detencion": 0.9,
+    "presupuesto_ciclo_usd": null,
+    "limite_usd": 31.5,
+    "gasto_semana_previo_usd": 6.123256,
+    "corridas_evaluador": 3,
+    "rango_inestable": 4,
+    "corridas_simulador": 6,
+    "ids": [
+      "2026-11-extracto-hongo-cirugia-gastrica-v2"
+    ],
+    "revisor": "Carlos Rojas Bruna",
+    "aceptar_hallazgos": false
+  },
+  "detenido_por_tope": false,
+  "eventos": [
+    {
+      "fecha": "2026-11-24T13:46:27Z",
+      "tipo": "preverificacion",
+      "tarea_id": "2026-11-extracto-hongo-cirugia-gastrica-v2",
+      "aprobado": true,
+      "criticos": 0,
+      "pendientes": 0,
+      "localizadores_corregidos": 0
+    },
+    {
+      "fecha": "2026-11-24T13:46:27Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-extracto-hongo-cirugia-gastrica-v2",
+      "de": "evaluada",
+      "a": "revisada"
+    },
+    {
+      "fecha": "2026-11-24T13:46:27Z",
+      "tipo": "preverificacion",
+      "tarea_id": "2026-11-extracto-hongo-cirugia-gastrica-v2",
+      "aprobado": true,
+      "criticos": 0,
+      "pendientes": 0,
+      "localizadores_corregidos": 0
+    },
+    {
+      "fecha": "2026-11-24T13:46:27Z",
+      "tipo": "simulacion_no_reutilizable",
+      "tarea_id": "2026-11-extracto-hongo-cirugia-gastrica-v2",
+      "origen": "2026-11-extracto-hongo-cirugia-gastrica"
+    },
+    {
+      "fecha": "2026-11-24T13:47:59Z",
+      "tipo": "agente",
+      "agente": "simulador",
+      "tareas": [
+        "2026-11-extracto-hongo-cirugia-gastrica-v2"
+      ],
+      "llamadas": 71,
+      "usd": 0.588201
+    },
+    {
+      "fecha": "2026-11-24T13:47:59Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-extracto-hongo-cirugia-gastrica-v2",
+      "de": "revisada",
+      "a": "simulada"
+    },
+    {
+      "fecha": "2026-11-24T13:50:15Z",
+      "tipo": "agente",
+      "agente": "redactor",
+      "tareas": [
+        "2026-11-extracto-hongo-cirugia-gastrica-v2"
+      ],
+      "llamadas": 3,
+      "usd": 0.351637
+    },
+    {
+      "fecha": "2026-11-24T13:50:15Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-extracto-hongo-cirugia-gastrica-v2",
+      "de": "simulada",
+      "a": "con_guia"
+    },
+    {
+      "fecha": "2026-11-24T13:50:21Z",
+      "tipo": "agente",
+      "agente": "ilustrador",
+      "tareas": [
+        "2026-11-extracto-hongo-cirugia-gastrica-v2"
+      ],
+      "llamadas": 1,
+      "usd": 0.01242
+    },
+    {
+      "fecha": "2026-11-24T13:50:47Z",
+      "tipo": "agente",
+      "agente": "verificador",
+      "tareas": [
+        "2026-11-extracto-hongo-cirugia-gastrica-v2"
+      ],
+      "llamadas": 1,
+      "usd": 0.140328
+    },
+    {
+      "fecha": "2026-11-24T13:50:47Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-extracto-hongo-cirugia-gastrica-v2",
+      "de": "con_guia",
+      "a": "verificada"
+    },
+    {
+      "fecha": "2026-11-24T13:50:48Z",
+      "tipo": "bibliotecario_dry_run",
+      "tarea_id": "2026-11-extracto-hongo-cirugia-gastrica-v2",
+      "ok": true,
+      "ruta": "tareas/2026-11/extracto-hongo-cirugia-gastrica/",
+      "rama": "tareas/semana-2026-W48"
+    }
+  ],
+  "expedientes": {
+    "2026-11-extracto-hongo-cirugia-gastrica-v2": "verificada"
+  },
+  "noticias": [],
+  "pendientes_humanos": [
+    {
+      "tarea_id": "2026-11-extracto-hongo-cirugia-gastrica-v2",
+      "pendiente": "revision_humana_2",
+      "estado": "verificada"
+    }
+  ],
+  "errores": [],
+  "orden": "tramo_b",
+  "gasto": {
+    "ciclo_usd": 1.092586,
+    "semana_usd": 7.215842,
+    "limite_usd": 31.5,
+    "llamadas": 76
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "run": {
+    "id": "N4_AA_r1",
+    "nivel": "N4",
+    "composicion": "AA",
+    "rep": 1,
+    "estilos": [
+      "A",
+      "A"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.053728,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P3-MM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P4-WM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 5,
+        "fase": "P6-VAL",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 6,
+        "fase": "P4-WM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 8,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 9,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "ASSUME"
+        ]
+      }
+    ],
+    "bloqueos": [],
+    "supuestos": [
+      "12 % como reducción relativa (RR ≈ 0,88)",
+      "grupo ejemplo de 100 pacientes",
+      "mortalidad basal 40 % a cinco años",
+      "mortalidad basal entre 20 % y 50 %",
+      "efecto como hazard ratio (riesgos proporcionales)",
+      "plazo fijo de seguimiento (cinco años)"
+    ],
+    "modelo": "proporcional (hazard ratio)",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Con HR ≈ 0,88 y mortalidad base de 20–50 %, unas 2 a 4 muertes evitadas por cada 100 operados, a un plazo fijo (tipo cinco años). La cifra es incierta porque faltan el IC del efecto (si cruza 1 el beneficio podría ser cero), la mortalidad real del hospital, la comparabilidad de los pacientes, el costo y los efectos adversos; recomiendan pedir esos datos antes de decidir."
+    },
+    "ruta_principal": "R1",
+    "rutas": [
+      "R1"
+    ]
+  }
+}
