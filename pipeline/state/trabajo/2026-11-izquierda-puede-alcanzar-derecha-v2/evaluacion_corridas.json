@@ -1,0 +1,293 @@
+{
+  "tarea_id": "2026-11-izquierda-puede-alcanzar-derecha-v2",
+  "evaluaciones": [
+    {
+      "iteracion": 1,
+      "version_tarea": 2,
+      "fecha": "2026-11-24T12:41:49Z",
+      "modelo": "claude-opus-5-5",
+      "version_prompt": "1.3",
+      "version_rubrica": "4.0",
+      "corridas": [
+        {
+          "n": 1,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "Plantea una necesidad real de asesoría sin entregar una regla ni un modelo. Quien resuelve debe construir cómo se trasladarían los votos.",
+                "cita": "Un equipo de análisis político se pregunta si, con parte del electorado todavía móvil, la izquierda podría alcanzar a la derecha el día de la …"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe procedimiento. Admite varios modelos defendibles: diferencia de puntos, transferencias entre partidos, captación de indecisos o abstención.",
+                "cita": "¿qué tendría que ocurrir con los votantes para que eso pase y les parece verosímil?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige seleccionar datos, decidir qué hacer con el 12,8% restante, suponer transferencias y destino de quienes no repiten el voto, y solicitar información.",
+                "cita": "tiene que fijar un supuesto propio y justificarlo."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Analizar si una encuesta preelectoral puede revertirse es una situación que existe en el análisis político y periodístico.",
+                "cita": "seis días antes de las elecciones generales del veintinueve de noviembre, se publicó una encuesta online de Ateneo del Dato"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los datos de una encuesta publicada en prensa son el núcleo de la tarea y no fueron creados para enseñar matemática.",
+                "cita": "se publicó una encuesta online de Ateneo del Dato que muestra a las derechas por delante de la izquierda"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto electoral condiciona los supuestos sobre fidelidad y transferencia de votos. También es necesario para juzgar la verosimilitud del escenario.",
+                "cita": "con parte del electorado todavía móvil"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Hay que comprender la encuesta, simplificar el electorado, matematizar los traspasos, calcular y volver a la situación para juzgar la verosimilitud. Ninguna fase viene hecha.",
+                "cita": "¿qué tendría que ocurrir con los votantes para que eso pase y les parece verosímil?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "R2 ofrece evidencia independiente, no usada en la construcción, para contrastar el modelo. Además existirá el resultado real de la elección.",
+                "cita": "Datos de contraste sobre el destino de quienes votaron en las elecciones anteriores. Se entrega solo después de que el grupo presente su primer modelo"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "Los porcentajes, los escenarios en competencia y la interpretación del margen de error están al alcance de S2. El lenguaje es comprensible para ese nivel.",
+                "cita": "el PP tendría 32,1% y Vox 17,6%, lo que suma 49,7% de intención de voto"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "Hay un piso accesible: calcular la brecha de 12,2 puntos y cuánto debe moverse. El techo es alto: matrices de transferencia, margen de error y sensibilidad a supuestos de abstención.",
+                "cita": "los partidos de izquierda (PSOE, Frente Amplio y Podemos) sumarían 37,5%"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Los distintos escenarios de traspaso y abstención permiten comparar soluciones. También abren preguntas sobre la confiabilidad de las encuestas y los límites del modelo.",
+                "cita": "La encuesta hizo 2.000 entrevistas y su margen de error para el conjunto de la muestra es ±2,2%."
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información adicional está disponible a solicitud (R2 a R5) y no revela la estructura de la solución. R5 obliga a fijar un supuesto propio en lugar de entregarlo.",
+                "cita": "Pueden pedir información adicional."
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011ChMmZFnQ9H9BXL9dLS3HT",
+            "fecha": "2026-11-24T12:40:53+00:00",
+            "intentos": 1,
+            "costo_usd": 0.108228,
+            "avisos": [
+              "cita_recortada_25:genuino"
+            ]
+          }
+        },
+        {
+          "n": 2,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La tarea plantea una necesidad real de asesoría y no entrega ninguna regla ni modelo de transferencia de votos. Los estudiantes deben construir el modelo.",
+                "cita": "¿qué tendría que ocurrir con los votantes para que eso pase y les parece verosímil?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe el procedimiento. Admite varios modelos defendibles: reparto de indecisos, transferencias entre bloques, abstención diferencial o margen de error.",
+                "cita": "Ustedes asesoran a ese equipo: ¿qué tendría que ocurrir con los votantes para que eso pase y les parece verosímil?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige varias decisiones: qué hacer con el 12,8% no asignado, qué fracción del voto móvil cambia de bloque y qué supuesto adoptar sobre abstención. También hay que decidir qué información adicional solicitar.",
+                "cita": "tiene que fijar un supuesto propio y justificarlo."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Analizar escenarios a partir de una encuesta preelectoral es una práctica real y habitual fuera de la escuela.",
+                "cita": "Un equipo de análisis político se pregunta si, con parte del electorado todavía móvil, la izquierda podría alcanzar a la derecha el día de la …"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Según la procedencia declarada, los datos provienen de una encuesta publicada y constituyen el núcleo de la tarea. Son un componente auténtico integrado de forma sustantiva.",
+                "cita": "se publicó una encuesta online de Ateneo del Dato que muestra a las derechas por delante de la izquierda"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto electoral condiciona los supuestos de transferencia y fidelidad de voto. También es necesario para juzgar si el escenario resultante es verosímil.",
+                "cita": "La misma encuesta indica que 86,6% de quienes votaron a Vox en las elecciones anteriores repetirían su voto"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a recorrer todas las fases: comprender la situación, simplificarla en flujos de votantes, matematizarla con porcentajes, calcular escenarios, interpretarlos y juzgar su verosimilitud. Ninguna de estas fases viene hecha por el enunciado.",
+                "cita": "¿qué tendría que ocurrir con los votantes para que eso pase y les parece verosímil?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Existe evidencia independiente para contrastar el modelo: la matriz de transferencias R2, el margen de error R4 y, a futuro, el resultado real de la elección.",
+                "cita": "Datos de contraste sobre el destino de quienes votaron en las elecciones anteriores. Se entrega solo después de que el grupo presente su primer modelo"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "La tarea requiere porcentajes, comparación de escenarios y análisis informal de margen de error, herramientas al alcance de S2. El contexto electoral es comprensible y pertinente para estudiantes de 16 a 18 años.",
+                "cita": "el PP tendría 32,1% y Vox 17,6%, lo que suma 49,7% de intención de voto"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es accesible: comparar la brecha de 12,2 puntos con el electorado no asignado. El techo es alto: se pueden modelar matrices de transferencia, abstención diferencial y sensibilidad al margen de error.",
+                "cita": "mientras que los partidos de izquierda (PSOE, Frente Amplio y Podemos) sumarían 37,5%."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Los distintos escenarios permiten comparar soluciones y discutir sus límites. Abren preguntas nuevas sobre la confiabilidad de las encuestas, el margen de error y la movilidad del voto.",
+                "cita": "La encuesta hizo 2.000 entrevistas y su margen de error para el conjunto de la muestra es ±2,2%."
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información adicional se obtiene a solicitud o se fija mediante supuestos justificados. Ningún recurso revela el modelo, y los datos de contraste se entregan recién después del primer modelo.",
+                "cita": "disponible a solicitud del grupo"
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011ChMmauQcUvwJEym57842T",
+            "fecha": "2026-11-24T12:41:17+00:00",
+            "intentos": 1,
+            "costo_usd": 0.061734,
+            "avisos": [
+              "cita_recortada_25:realismo"
+            ]
+          }
+        },
+        {
+          "n": 3,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La tarea plantea una necesidad real de asesoría: estimar si la izquierda puede alcanzar a la derecha. No entrega una regla ni un modelo de transferencia de votos listo para aplicar.",
+                "cita": "¿qué tendría que ocurrir con los votantes para que eso pase y les parece verosímil?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta admite varios modelos defendibles: reparto de indecisos, transferencias entre bloques o escenarios con abstención. No hay instrucciones que prescriban el procedimiento.",
+                "cita": "¿qué tendría que ocurrir con los votantes para que eso pase y les parece verosímil? Pueden pedir información adicional."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolverla exige varias cosas: decidir qué parte del electorado es móvil, suponer adónde van quienes no repiten su voto, tratar el 12,8% restante y solicitar información pertinente.",
+                "cita": "tiene que fijar un supuesto propio y justificarlo."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Analizar si una encuesta preelectoral deja margen para revertir el resultado es una situación real del análisis político. Los datos no se ven forzados para insertar un cálculo.",
+                "cita": "seis días antes de las elecciones generales del veintinueve de noviembre, se publicó una encuesta online de Ateneo del Dato"
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los datos de una encuesta publicada, cuya procedencia se toma como declarada, son el núcleo de la tarea y no fueron creados para enseñar el contenido.",
+                "cita": "se publicó una encuesta online de Ateneo del Dato que muestra a las derechas por delante de la izquierda"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto electoral condiciona los supuestos: fidelidad de voto, transferencias y abstención. También es indispensable para juzgar si el escenario obtenido es verosímil.",
+                "cita": "Un equipo de análisis político se pregunta si, con parte del electorado todavía móvil, la izquierda podría alcanzar a la derecha"
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a recorrer el ciclo completo: comprender la encuesta, simplificar el electorado móvil, matematizar los flujos, calcular escenarios y volver a la situación para juzgar su verosimilitud. Ninguna fase queda hecha por el enunciado.",
+                "cita": "¿qué tendría que ocurrir con los votantes para que eso pase y les parece verosímil?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "Hay evidencia independiente para contrastar el modelo: la matriz de transferencias de R2, que no se usa en su construcción, el margen de error de R4 y el resultado electoral posterior.",
+                "cita": "Datos de contraste sobre el destino de quienes votaron en las elecciones anteriores. Se entrega solo después de que el grupo presente su primer modelo"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto electoral y el lenguaje son comprensibles para S2. La matemática requerida (porcentajes de porcentajes, escenarios, sensibilidad informal al margen de error) está al alcance de ese tramo.",
+                "cita": "el PP tendría 32,1% y Vox 17,6%, lo que suma 49,7% de intención de voto"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es accesible: basta comparar la brecha de 12,2 puntos con el electorado no asignado. El techo es alto, pues admite matrices de transferencia, varios escenarios y análisis con el margen de error.",
+                "cita": "los partidos de izquierda (PSOE, Frente Amplio y Podemos) sumarían 37,5%"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "Los distintos supuestos sobre fidelidad, transferencias y abstención producen escenarios comparables. Además abren preguntas sobre la fiabilidad de la encuesta y los límites del modelo.",
+                "cita": "La encuesta hizo 2.000 entrevistas y su margen de error para el conjunto de la muestra es ±2,2%."
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información necesaria está en el enunciado o se entrega a solicitud, y lo que falta se declara como supuesto a justificar. R2 se entrega solo después del primer modelo, por lo que no revela la estructura de la solución.",
+                "cita": "el grupo no dispone de datos sobre cuántas de las personas que no repiten su voto irían a la abstención o al voto en blanco"
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011ChMmchof6yzMgpgpy7mho",
+            "fecha": "2026-11-24T12:41:49+00:00",
+            "intentos": 1,
+            "costo_usd": 0.078594,
+            "avisos": []
+          }
+        }
+      ],
+      "totales": [
+        24,
+        24,
+        24
+      ],
+      "rango_total": 0,
+      "rango_inestable": 4,
+      "evaluacion_inestable": false,
+      "mediana": {
+        "regla": "mediana por criterio (n par: mediana inferior)",
+        "total": 24,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 2
+        },
+        "corrida_fuente": {
+          "genuino": 1,
+          "abierta": 1,
+          "decisiones": 1,
+          "realismo": 1,
+          "autenticidad": 1,
+          "contexto": 1,
+          "ciclo": 1,
+          "validacion": 1,
+          "nivel": 1,
+          "autodiferenciacion": 1,
+          "fecundidad": 1,
+          "recursos": 1
+        }
+      }
+    }
+  ]
+}
