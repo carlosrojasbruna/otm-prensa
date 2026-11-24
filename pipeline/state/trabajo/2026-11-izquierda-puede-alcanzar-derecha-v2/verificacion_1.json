@@ -1,0 +1,259 @@
+{
+  "tarea_id": "2026-11-izquierda-puede-alcanzar-derecha-v2",
+  "aprobado": true,
+  "estado_destino": "verificada",
+  "hallazgos": [
+    {
+      "invariante": "notebook",
+      "severidad": "advertencia",
+      "ubicacion": "guia.materiales.notebook",
+      "descripcion": "notebook escenarios.ipynb no encontrado: ",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "guia.escenarios[E1].que_aprende y guia.puesta_en_comun.seleccion_y_orden[2]",
+      "descripcion": "El grupo declara explícitamente que aplicar la retención anterior a los porcentajes actuales es solo una aproximación. — La corrida N4_AA_r1 aplica la retención a los porcentajes actuales, pero ni sus supuestos ni su respuesta final registran que la declare como aproximación (eso aparece en N1_VV_r1, no citada).",
+      "origen": "modelo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "guia.escenarios[E3].que_aprende",
+      "descripcion": "E1 y E2 sostienen la fidelidad como aproximación. — La corrida N1_AA_r1 (E2) aplica la fidelidad a la intención actual sin declararla aproximación; la caracterización sobreinterpreta la traza.",
+      "origen": "modelo"
+    }
+  ],
+  "cifras_contrastadas": [
+    {
+      "indice": 0,
+      "que_es": "intención de voto estimada para el PP en la encuesta de Ateneo del Dato",
+      "valor_tarea": "32,1%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 7"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "32,1%",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 7 de la noticia; modelo: Intención de voto del PP en el párrafo 7."
+    },
+    {
+      "indice": 1,
+      "que_es": "intención de voto estimada para el PSOE en la encuesta de Ateneo del Dato",
+      "valor_tarea": "30,8%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 7"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "30,8%",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 7 de la noticia; modelo: Intención de voto del PSOE en el párrafo 7."
+    },
+    {
+      "indice": 2,
+      "que_es": "tamaño de la muestra de la encuesta",
+      "valor_tarea": "2.000 entrevistas",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 8"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "2.000 entrevistas",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 8 de la noticia; modelo: Tamaño de muestra en el párrafo 8."
+    },
+    {
+      "indice": 3,
+      "que_es": "intención de voto estimada para Vox",
+      "valor_tarea": "17,6%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 10"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "17,6%",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 10 de la noticia; modelo: Intención de voto de Vox en el párrafo 10."
+    },
+    {
+      "indice": 4,
+      "que_es": "suma de los votos estimados para las derechas (PP y Vox)",
+      "valor_tarea": "49,7%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 10"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "49,7%",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 10 de la noticia; modelo: Suma PP + Vox en el párrafo 10."
+    },
+    {
+      "indice": 5,
+      "que_es": "suma de los votos estimados para la izquierda (PSOE, Frente Amplio y Podemos)",
+      "valor_tarea": "37,5%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 10"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "37,5%",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 10 de la noticia; modelo: Suma PSOE, Frente Amplio y Podemos en el párrafo 10."
+    },
+    {
+      "indice": 6,
+      "que_es": "votantes de Vox en 2023 que repetirían su voto",
+      "valor_tarea": "86,6%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 13"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "86,6%",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 13 de la noticia; modelo: Fidelidad de votantes de Vox de 2023, párrafo 13."
+    },
+    {
+      "indice": 7,
+      "que_es": "votantes del PP en 2023 que repetirían su voto",
+      "valor_tarea": "76,1%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 13"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "76,1%",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 13 de la noticia; modelo: Fidelidad de votantes del PP de 2023, párrafo 13."
+    },
+    {
+      "indice": 8,
+      "que_es": "error muestral para el conjunto de la muestra con nivel de confianza del 95,5%",
+      "valor_tarea": "±2,2%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 24"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "±2,2%",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 24 de la noticia; modelo: Error muestral global al 95,5%, párrafo 24."
+    },
+    {
+      "indice": 9,
+      "que_es": "votantes del PP en 2023 que ahora votarían a Vox",
+      "valor_tarea": "18,2%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 13"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "18,2%",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 13 de la noticia; modelo: Traspaso PP→Vox, párrafo 13."
+    },
+    {
+      "indice": 10,
+      "que_es": "votantes del PP en 2023 que ahora votarían al PSOE",
+      "valor_tarea": "1,2%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 13"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "1,2%",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 13 de la noticia; modelo: Traspaso PP→PSOE, párrafo 13."
+    },
+    {
+      "indice": 11,
+      "que_es": "votantes de Vox en 2023 que ahora votarían al PP",
+      "valor_tarea": "6,1%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 13"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "6,1%",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 13 de la noticia; modelo: Traspaso Vox→PP, párrafo 13."
+    },
+    {
+      "indice": 12,
+      "que_es": "votantes del PSOE en 2023 que repetirían su voto",
+      "valor_tarea": "70,6%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 13"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "70,6%",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 13 de la noticia; modelo: Fidelidad de votantes del PSOE de 2023, párrafo 13."
+    },
+    {
+      "indice": 13,
+      "que_es": "votantes del PSOE en 2023 que ahora votarían al PP",
+      "valor_tarea": "8%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 13"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "8%",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 13 de la noticia; modelo: Traspaso PSOE→PP, párrafo 13."
+    },
+    {
+      "indice": 14,
+      "que_es": "votantes del PSOE en 2023 que ahora votarían a Vox",
+      "valor_tarea": "5,7%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 13"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "5,7%",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 13 de la noticia; modelo: Traspaso PSOE→Vox, párrafo 13."
+    },
+    {
+      "indice": 15,
+      "que_es": "votantes del PSOE en 2023 que ahora votarían al Frente Amplio",
+      "valor_tarea": "3,9%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 13"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "3,9%",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 13 de la noticia; modelo: Traspaso PSOE→Frente Amplio, párrafo 13."
+    }
+  ],
+  "notebook": {
+    "estado": "no_encontrado",
+    "ruta": "escenarios.ipynb",
+    "salida_resumen": ""
+  },
+  "meta": {
+    "agente": "verificador",
+    "version_prompt": "1.1",
+    "modelo": "claude-opus-5-5",
+    "request_id": "req_011ChMnoH9GngbDGp1UchxKs",
+    "fecha": "2026-11-24T12:57:23+00:00",
+    "costo_usd": 0.19196,
+    "modelo_llamado": true,
+    "texto_noticia_recibido": true,
+    "uso": {
+      "input_tokens": 23705,
+      "output_tokens": 4277,
+      "cache_creation_input_tokens": 2320,
+      "cache_read_input_tokens": 0
+    }
+  }
+}

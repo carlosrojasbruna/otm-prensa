@@ -1,0 +1,231 @@
+{
+  "ciclo_id": "ciclo_20261124T125206199035Z",
+  "inicio": "2026-11-24T12:52:06Z",
+  "fin": "2026-11-24T13:01:25Z",
+  "semana": "2026-W48",
+  "parametros": {
+    "tope_semanal_usd": 35.0,
+    "fraccion_detencion": 0.9,
+    "presupuesto_ciclo_usd": null,
+    "limite_usd": 31.5,
+    "gasto_semana_previo_usd": 2.997053,
+    "corridas_evaluador": 3,
+    "rango_inestable": 4,
+    "corridas_simulador": 6,
+    "ids": [
+      "2026-11-izquierda-puede-alcanzar-derecha-v2",
+      "2026-11-extracto-hongo-cirugia-gastrica"
+    ],
+    "revisor": "Carlos Rojas Bruna",
+    "aceptar_hallazgos": false
+  },
+  "detenido_por_tope": false,
+  "eventos": [
+    {
+      "fecha": "2026-11-24T12:52:07Z",
+      "tipo": "preverificacion",
+      "tarea_id": "2026-11-izquierda-puede-alcanzar-derecha-v2",
+      "aprobado": true,
+      "criticos": 0,
+      "pendientes": 0,
+      "localizadores_corregidos": 0
+    },
+    {
+      "fecha": "2026-11-24T12:52:07Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-izquierda-puede-alcanzar-derecha-v2",
+      "de": "evaluada",
+      "a": "revisada"
+    },
+    {
+      "fecha": "2026-11-24T12:52:08Z",
+      "tipo": "preverificacion",
+      "tarea_id": "2026-11-izquierda-puede-alcanzar-derecha-v2",
+      "aprobado": true,
+      "criticos": 0,
+      "pendientes": 0,
+      "localizadores_corregidos": 0
+    },
+    {
+      "fecha": "2026-11-24T12:54:32Z",
+      "tipo": "agente",
+      "agente": "simulador",
+      "tareas": [
+        "2026-11-izquierda-puede-alcanzar-derecha-v2"
+      ],
+      "llamadas": 89,
+      "usd": 0.905457
+    },
+    {
+      "fecha": "2026-11-24T12:54:32Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-izquierda-puede-alcanzar-derecha-v2",
+      "de": "revisada",
+      "a": "simulada"
+    },
+    {
+      "fecha": "2026-11-24T12:56:41Z",
+      "tipo": "agente",
+      "agente": "redactor",
+      "tareas": [
+        "2026-11-izquierda-puede-alcanzar-derecha-v2"
+      ],
+      "llamadas": 3,
+      "usd": 0.360378
+    },
+    {
+      "fecha": "2026-11-24T12:56:42Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-izquierda-puede-alcanzar-derecha-v2",
+      "de": "simulada",
+      "a": "con_guia"
+    },
+    {
+      "fecha": "2026-11-24T12:56:47Z",
+      "tipo": "agente",
+      "agente": "ilustrador",
+      "tareas": [
+        "2026-11-izquierda-puede-alcanzar-derecha-v2"
+      ],
+      "llamadas": 1,
+      "usd": 0.011432
+    },
+    {
+      "fecha": "2026-11-24T12:57:23Z",
+      "tipo": "agente",
+      "agente": "verificador",
+      "tareas": [
+        "2026-11-izquierda-puede-alcanzar-derecha-v2"
+      ],
+      "llamadas": 1,
+      "usd": 0.19196
+    },
+    {
+      "fecha": "2026-11-24T12:57:24Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-izquierda-puede-alcanzar-derecha-v2",
+      "de": "con_guia",
+      "a": "verificada"
+    },
+    {
+      "fecha": "2026-11-24T12:57:25Z",
+      "tipo": "bibliotecario_dry_run",
+      "tarea_id": "2026-11-izquierda-puede-alcanzar-derecha-v2",
+      "ok": true,
+      "ruta": "tareas/2026-11/izquierda-puede-alcanzar-derecha/",
+      "rama": "tareas/semana-2026-W48"
+    },
+    {
+      "fecha": "2026-11-24T12:57:26Z",
+      "tipo": "preverificacion",
+      "tarea_id": "2026-11-extracto-hongo-cirugia-gastrica",
+      "aprobado": true,
+      "criticos": 0,
+      "pendientes": 0,
+      "localizadores_corregidos": 0
+    },
+    {
+      "fecha": "2026-11-24T12:57:26Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-extracto-hongo-cirugia-gastrica",
+      "de": "evaluada",
+      "a": "revisada"
+    },
+    {
+      "fecha": "2026-11-24T12:57:26Z",
+      "tipo": "preverificacion",
+      "tarea_id": "2026-11-extracto-hongo-cirugia-gastrica",
+      "aprobado": true,
+      "criticos": 0,
+      "pendientes": 0,
+      "localizadores_corregidos": 0
+    },
+    {
+      "fecha": "2026-11-24T12:58:48Z",
+      "tipo": "agente",
+      "agente": "simulador",
+      "tareas": [
+        "2026-11-extracto-hongo-cirugia-gastrica"
+      ],
+      "llamadas": 73,
+      "usd": 0.622658
+    },
+    {
+      "fecha": "2026-11-24T12:58:49Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-extracto-hongo-cirugia-gastrica",
+      "de": "revisada",
+      "a": "simulada"
+    },
+    {
+      "fecha": "2026-11-24T13:00:54Z",
+      "tipo": "agente",
+      "agente": "redactor",
+      "tareas": [
+        "2026-11-extracto-hongo-cirugia-gastrica"
+      ],
+      "llamadas": 3,
+      "usd": 0.323792
+    },
+    {
+      "fecha": "2026-11-24T13:00:55Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-extracto-hongo-cirugia-gastrica",
+      "de": "simulada",
+      "a": "con_guia"
+    },
+    {
+      "fecha": "2026-11-24T13:01:01Z",
+      "tipo": "agente",
+      "agente": "ilustrador",
+      "tareas": [
+        "2026-11-extracto-hongo-cirugia-gastrica"
+      ],
+      "llamadas": 1,
+      "usd": 0.00937
+    },
+    {
+      "fecha": "2026-11-24T13:01:25Z",
+      "tipo": "agente",
+      "agente": "verificador",
+      "tareas": [
+        "2026-11-extracto-hongo-cirugia-gastrica"
+      ],
+      "llamadas": 1,
+      "usd": 0.120044
+    },
+    {
+      "fecha": "2026-11-24T13:01:25Z",
+      "tipo": "transicion",
+      "tarea_id": "2026-11-extracto-hongo-cirugia-gastrica",
+      "de": "con_guia",
+      "a": "evaluada",
+      "motivo": "el verificador encontró hallazgos sobre la tarea: [semantica] tarea.task_space.validation_evidence: Ensayo de Nakazato y colaboradores (Lancet, 1994) sobre PSK adyuvante tras cirugía de cáncer gástrico — Es una referencia bibliográfica concreta (autores, revista y año) que no aparece en las fuentes ni en las trazas.; [semantica] guia.puesta_en_comun.contraste_validacion: Se cita como ejemplo el ensayo de Nakazato y colaboradores, Lancet, 1994 — Repite la referencia externa sin respaldo en las fuentes. Además contradice la propia instrucción de no agregar datos del ensayo que no estén en la tarea."
+    }
+  ],
+  "expedientes": {
+    "2026-11-izquierda-puede-alcanzar-derecha-v2": "verificada",
+    "2026-11-extracto-hongo-cirugia-gastrica": "evaluada"
+  },
+  "noticias": [],
+  "pendientes_humanos": [
+    {
+      "tarea_id": "2026-11-izquierda-puede-alcanzar-derecha-v2",
+      "pendiente": "revision_humana_2",
+      "estado": "verificada"
+    },
+    {
+      "tarea_id": "2026-11-extracto-hongo-cirugia-gastrica",
+      "pendiente": "revision_humana_1",
+      "estado": "evaluada"
+    }
+  ],
+  "errores": [],
+  "orden": "tramo_b",
+  "gasto": {
+    "ciclo_usd": 2.545091,
+    "semana_usd": 5.542144,
+    "limite_usd": 31.5,
+    "llamadas": 172
+  }
+}

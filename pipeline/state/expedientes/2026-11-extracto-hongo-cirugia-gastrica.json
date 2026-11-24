@@ -387,20 +387,276 @@
             "version_modelo": "claude-haiku-5-5",
             "costo_usd": 0.000363,
             "version_prompt": "1.0"
+          },
+          "ilustrador": {
+            "modelo": "claude-sonnet-5-5",
+            "version_modelo": "claude-sonnet-5-5",
+            "costo_usd": 0.00937,
+            "version_prompt": "1.0"
+          },
+          "redactor": {
+            "modelo": "claude-sonnet-5-5",
+            "version_modelo": "claude-sonnet-5-5",
+            "costo_usd": 0.133178,
+            "version_prompt": "1.0"
+          },
+          "redactor_escenarios": {
+            "modelo": "claude-opus-5-5",
+            "version_modelo": "claude-opus-5-5",
+            "costo_usd": 0.190614,
+            "version_prompt": "1.0"
+          },
+          "simulador": {
+            "modelo": "claude-sonnet-5-5",
+            "version_modelo": "claude-sonnet-5-5",
+            "costo_usd": 0.306758,
+            "version_prompt": "PROMPTS.md"
+          },
+          "simulador_codificador": {
+            "modelo": "claude-opus-5-5",
+            "version_modelo": "claude-opus-5-5",
+            "costo_usd": 0.3159,
+            "version_prompt": "PROMPTS.md"
+          },
+          "verificador": {
+            "modelo": "claude-opus-5-5",
+            "version_modelo": "claude-opus-5-5",
+            "costo_usd": 0.120044,
+            "version_prompt": "1.1"
           }
         },
         "version_prompt": {
           "disenador": "1.1",
           "evaluador": "1.3",
-          "filtro": "1.0"
+          "filtro": "1.0",
+          "ilustrador": "1.0",
+          "redactor": "1.0",
+          "redactor_escenarios": "1.0",
+          "simulador": "PROMPTS.md",
+          "simulador_codificador": "PROMPTS.md",
+          "verificador": "1.1"
         },
         "version_rubrica": "4.0",
         "version_MAR03": "1.0",
         "version_MED01": "1.5",
-        "diseno_simulador": null,
-        "fecha": "2026-11-23T22:02:33Z",
-        "costo_usd": 0.482917
+        "diseno_simulador": "diseno_otm",
+        "fecha": "2026-11-24T13:01:25Z",
+        "costo_usd": 1.558781
       }
+    },
+    "trazas_resumen": {
+      "tarea_id": "2026-11-extracto-hongo-cirugia-gastrica",
+      "diseno": "diseno_otm",
+      "corridas": 6,
+      "modelo": "claude-sonnet-5-5",
+      "costo_usd": 0.6227,
+      "por_corrida": [
+        {
+          "id": "N1_VV_r1",
+          "perfil": {
+            "nivel_edad": "U",
+            "nivel": "N1",
+            "estilo": "VV"
+          },
+          "ruta": [
+            "P1-MRS",
+            "P2-RM",
+            "P3-MM",
+            "P6-VAL",
+            "P3-MM",
+            "P6-VAL",
+            "P7-EXP",
+            "P6-VAL"
+          ],
+          "bloqueos": [],
+          "supuestos": [
+            "12 % aplicado a los que mueren (reducción relativa)",
+            "mortalidad basal hipotética de 20 % o 50 %",
+            "grupo de 100 o 200 pacientes",
+            "comparabilidad con el estudio (cuestionada)"
+          ],
+          "modelo": "proporcional",
+          "respuesta_final": "Muertes evitadas = pacientes × proporción que muere hoy × 0,12; por ejemplo 200 × 0,5 × 0,12 = 12. Es incierto por el intervalo y porque no se sabe si los pacientes se parecen a los del estudio. Recomiendan no decidir todavía y pedir mortalidad actual, costo, efectos secundarios e intervalo.",
+          "validacion": true,
+          "archivo": "N1_VV_r1.json",
+          "costo_usd": 0.10586
+        },
+        {
+          "id": "N1_AA_r1",
+          "perfil": {
+            "nivel_edad": "U",
+            "nivel": "N1",
+            "estilo": "AA"
+          },
+          "ruta": [
+            "P1-MRS",
+            "P2-RM",
+            "P3-MM",
+            "P6-VAL",
+            "P4-WM",
+            "P6-VAL",
+            "P3-MM",
+            "P4-WM",
+            "P6-VAL",
+            "P7-EXP",
+            "P6-VAL"
+          ],
+          "bloqueos": [
+            {
+              "transicion": "B23",
+              "turnos": [
+                4,
+                5
+              ],
+              "resolucion": "self"
+            }
+          ],
+          "supuestos": [
+            "reducción relativa del riesgo (factor 0,88)",
+            "N pacientes y mortalidad p desconocidos",
+            "ejemplo N = 100",
+            "mortalidad basal 0,40",
+            "intervalo de confianza inventado 5 %–18 %",
+            "pacientes comparables a los del estudio (puesto como duda)"
+          ],
+          "modelo": "proporcional",
+          "respuesta_final": "Muertes evitadas ≈ 0,12·N·p. Por ejemplo, con N = 100 y p = 0,40 da 4,8, y entre 2 y 7,2 si el intervalo fuera 5 %–18 % (inventado). Recomiendan pedir N, p, el intervalo real, costo, efectos secundarios y si los pacientes se parecen, antes de decidir.",
+          "validacion": true,
+          "archivo": "N1_AA_r1.json",
+          "costo_usd": 0.121128
+        },
+        {
+          "id": "N2_VV_r1",
+          "perfil": {
+            "nivel_edad": "U",
+            "nivel": "N2",
+            "estilo": "VV"
+          },
+          "ruta": [
+            "P1-MRS",
+            "P2-RM",
+            "P4-WM",
+            "P6-VAL",
+            "P7-EXP",
+            "P3-MM",
+            "P7-EXP"
+          ],
+          "bloqueos": [],
+          "supuestos": [
+            "grupo de 100 pacientes",
+            "mortalidad basal de 40 de cada 100",
+            "mortalidad basal alternativa de 20 de cada 100",
+            "el 12 % se aplica sobre los que mueren (reducción relativa)"
+          ],
+          "modelo": "proporcional",
+          "respuesta_final": "El extracto evitaría 0,12 · m muertes por cada 100 pacientes, donde m es el número de muertes actuales por cada 100 (con m = 40, unas 5; con m = 20, unas 2 o 3). La cifra no es exacta: es un promedio del estudio y podría salir distinta en el hospital. Recomiendan no decidir hasta tener m, el costo, el intervalo de confianza, los efectos secundarios y si los pacientes del hospital se parecen a los del estudio.",
+          "validacion": true,
+          "archivo": "N2_VV_r1.json",
+          "costo_usd": 0.106644
+        },
+        {
+          "id": "N3_AA_r1",
+          "perfil": {
+            "nivel_edad": "U",
+            "nivel": "N3",
+            "estilo": "AA"
+          },
+          "ruta": [
+            "P3-MM",
+            "P2-RM",
+            "P5-INT",
+            "P4-WM",
+            "P5-INT",
+            "P3-MM",
+            "P4-WM",
+            "P7-EXP",
+            "P6-VAL",
+            "P7-EXP",
+            "P6-VAL"
+          ],
+          "bloqueos": [],
+          "supuestos": [
+            "12 % como reducción relativa",
+            "mortalidad p medida en el mismo plazo que el estudio",
+            "N = 100 pacientes como ejemplo",
+            "mortalidad basal 0,2; 0,4 y 0,6",
+            "intervalo de confianza de ejemplo de 5 % a 18 %"
+          ],
+          "modelo": "proporcional",
+          "respuesta_final": "Muertes evitadas ≈ N·p·0,12, con p en el mismo plazo del estudio. Con N = 100 y p = 0,2 / 0,4 / 0,6 se evitan 2,4 / 4,8 / 7,2 muertes. El rango depende del intervalo de confianza, que hay que pedir; con un intervalo de ejemplo de 5 % a 18 % y p = 0,4, el rango va de 2 a 7,2. Recomiendan no incorporarlo todavía y pedir N, p, costo, efectos adversos, intervalo y características de los pacientes del estudio.",
+          "validacion": true,
+          "archivo": "N3_AA_r1.json",
+          "costo_usd": 0.106272
+        },
+        {
+          "id": "N4_VV_r1",
+          "perfil": {
+            "nivel_edad": "U",
+            "nivel": "N4",
+            "estilo": "VV"
+          },
+          "ruta": [
+            "P1-MRS",
+            "P2-RM",
+            "P4-WM",
+            "P3-MM",
+            "P6-VAL",
+            "P7-EXP"
+          ],
+          "bloqueos": [],
+          "supuestos": [
+            "12 % como reducción relativa del riesgo",
+            "mortalidad base de ejemplo 40 de 100 y 10 de 100",
+            "grupo de ejemplo de 100 operados",
+            "mortalidad base al mismo plazo que el estudio",
+            "comparabilidad de pacientes y quimioterapia (cuestionada)"
+          ],
+          "modelo": "proporcional",
+          "respuesta_final": "Muertes evitadas ≈ N operados × mortalidad base (al mismo plazo del estudio) × 0,12: unas 5 de cada 100 si mueren 40 y unas 1 si mueren 10, con un rango dado por el intervalo del metaanálisis y más incierto si los pacientes o la quimioterapia difieren. Recomiendan no decidir aún y pedir mortalidad actual, número anual de operados, costo y efectos adversos.",
+          "validacion": true,
+          "archivo": "N4_VV_r1.json",
+          "costo_usd": 0.091128
+        },
+        {
+          "id": "N4_AA_r1",
+          "perfil": {
+            "nivel_edad": "U",
+            "nivel": "N4",
+            "estilo": "AA"
+          },
+          "ruta": [
+            "P3-MM",
+            "P2-RM",
+            "P4-WM",
+            "P6-VAL",
+            "P7-EXP"
+          ],
+          "bloqueos": [],
+          "supuestos": [
+            "12 % es reducción relativa (RR ≈ 0,88)",
+            "el efecto se traslada igual a los pacientes del hospital",
+            "mortalidad base en el mismo horizonte de tiempo del estudio",
+            "N = 100 pacientes (ejemplo)",
+            "mortalidad base 40 % (ejemplo)",
+            "mortalidad base entre 20 % y 50 %"
+          ],
+          "modelo": "proporcional",
+          "respuesta_final": "Se evitarían ≈ N·m·0,12 muertes (con m = 40 %, unas 5 por cada 100 pacientes, NNT ≈ 21), con rango según m (2,4 a 6 por cada 100 con m entre 20 % y 50 %) y el IC del RR, que no tienen. Recomiendan pedir N, m, costo, IC, efectos adversos y ver si los pacientes se parecen al estudio, y decidir según el costo por muerte evitada (NNT × costo por paciente). La cifra es una estimación condicional a que el 12 % sea relativo y se traslade a los pacientes del hospital, no una predicción segura.",
+          "validacion": true,
+          "archivo": "N4_AA_r1.json",
+          "costo_usd": 0.091668
+        }
+      ],
+      "agregado": {
+        "pct_bloqueo_por_transicion": {
+          "B23": 0.17
+        },
+        "modelos_observados": {
+          "proporcional": 6
+        },
+        "pct_validan": 1.0
+      },
+      "fecha": "2026-11-24T12:58:48Z"
     }
   },
   "historial": [
@@ -415,6 +671,28 @@
       "a": "evaluada",
       "iteracion": 1,
       "rub01_total": 24
+    },
+    {
+      "fecha": "2026-11-24T12:57:26+00:00",
+      "de": "evaluada",
+      "a": "revisada",
+      "revisor": "Carlos Rojas Bruna"
+    },
+    {
+      "fecha": "2026-11-24T12:58:49+00:00",
+      "de": "revisada",
+      "a": "simulada"
+    },
+    {
+      "fecha": "2026-11-24T13:00:55+00:00",
+      "de": "simulada",
+      "a": "con_guia"
+    },
+    {
+      "fecha": "2026-11-24T13:01:25+00:00",
+      "de": "con_guia",
+      "a": "evaluada",
+      "motivo": "el verificador encontró hallazgos sobre la tarea: [semantica] tarea.task_space.validation_evidence: Ensayo de Nakazato y colaboradores (Lancet, 1994) sobre PSK adyuvante tras cirugía de cáncer gástrico — Es una referencia bibliográfica concreta (autores, revista y año) que no aparece en las fuentes ni en las trazas.; [semantica] guia.puesta_en_comun.contraste_validacion: Se cita como ejemplo el ensayo de Nakazato y colaboradores, Lancet, 1994 — Repite la referencia externa sin respaldo en las fuentes. Además contradice la propia instrucción de no agregar datos del ensayo que no estén en la tarea."
     }
   ],
   "marcas": {
@@ -445,6 +723,54 @@
         ],
         "costo_usd": 0.277318,
         "llamadas": 3
+      },
+      "simulador": {
+        "modelo": "claude-sonnet-5-5",
+        "versiones_modelo": [
+          "claude-sonnet-5-5"
+        ],
+        "costo_usd": 0.306758,
+        "llamadas": 67
+      },
+      "simulador_codificador": {
+        "modelo": "claude-opus-5-5",
+        "versiones_modelo": [
+          "claude-opus-5-5"
+        ],
+        "costo_usd": 0.3159,
+        "llamadas": 6
+      },
+      "redactor": {
+        "modelo": "claude-sonnet-5-5",
+        "versiones_modelo": [
+          "claude-sonnet-5-5"
+        ],
+        "costo_usd": 0.133178,
+        "llamadas": 2
+      },
+      "redactor_escenarios": {
+        "modelo": "claude-opus-5-5",
+        "versiones_modelo": [
+          "claude-opus-5-5"
+        ],
+        "costo_usd": 0.190614,
+        "llamadas": 1
+      },
+      "ilustrador": {
+        "modelo": "claude-sonnet-5-5",
+        "versiones_modelo": [
+          "claude-sonnet-5-5"
+        ],
+        "costo_usd": 0.00937,
+        "llamadas": 1
+      },
+      "verificador": {
+        "modelo": "claude-opus-5-5",
+        "versiones_modelo": [
+          "claude-opus-5-5"
+        ],
+        "costo_usd": 0.120044,
+        "llamadas": 1
       }
     },
     "costos_compartidos": [
@@ -456,13 +782,12 @@
     "evaluacion_rango_total": 1,
     "evaluacion_corridas": "pipeline/state/trabajo/2026-11-extracto-hongo-cirugia-gastrica/evaluacion_corridas.json",
     "preverificacion": {
-      "fecha": "2026-11-24T12:35:01Z",
+      "fecha": "2026-11-24T12:57:26Z",
       "version_tarea": 1,
       "aprobado": true,
       "criticos": [],
-      "texto_noticia": false
+      "texto_noticia": true
     },
-    "pendiente": "revision_humana_1",
     "hallazgos_resueltos": [
       {
         "fecha": "2026-11-24T12:35:01Z",
@@ -472,6 +797,28 @@
         ]
       }
     ],
-    "correccion_manual_resumen": "resumen_propio estaba en inglés; traducido a mano al español en tarea.noticia y en noticia (revisión humana 1, Carlos Rojas Bruna, 2026-11-24), contrastado con el texto de la nota que Carlos pegó en el chat; ver decisiones.md"
+    "correccion_manual_resumen": "resumen_propio estaba en inglés; traducido a mano al español en tarea.noticia y en noticia (revisión humana 1, Carlos Rojas Bruna, 2026-11-24), contrastado con el texto de la nota que Carlos pegó en el chat; ver decisiones.md",
+    "simulador_manifiesto": {
+      "tarea_id": "2026-11-extracto-hongo-cirugia-gastrica",
+      "version_tarea": 1,
+      "tramo": "U",
+      "backend": "api",
+      "diseno": "diseno_otm",
+      "corridas": 6,
+      "modelo_estudiantes": "claude-sonnet-5-5",
+      "modelo_codificador": "claude-opus-5-5",
+      "insumos_simulador": {
+        "INS08": "PERFILES.md",
+        "INS09": "PROMPTS.md"
+      },
+      "marco_niveles": "MAR03 v1.0 §3",
+      "fecha": "2026-11-24T12:57:26Z"
+    },
+    "dir_transcripciones": "pipeline/state/trabajo/2026-11-extracto-hongo-cirugia-gastrica/sim/corridas",
+    "icono": "pipeline/state/trabajo/2026-11-extracto-hongo-cirugia-gastrica/icono.svg",
+    "hallazgos_tarea": [
+      "[semantica] tarea.task_space.validation_evidence: Ensayo de Nakazato y colaboradores (Lancet, 1994) sobre PSK adyuvante tras cirugía de cáncer gástrico — Es una referencia bibliográfica concreta (autores, revista y año) que no aparece en las fuentes ni en las trazas."
+    ],
+    "pendiente": "revision_humana_1"
   }
 }

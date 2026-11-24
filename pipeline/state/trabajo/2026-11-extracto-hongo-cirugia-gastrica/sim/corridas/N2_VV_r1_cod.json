@@ -1,0 +1,115 @@
+{
+  "run": {
+    "id": "N2_VV_r1",
+    "nivel": "N2",
+    "composicion": "VV",
+    "rep": 1,
+    "estilos": [
+      "V",
+      "V"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.056144,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "fase_secundaria": "P2-RM",
+        "eventos": []
+      },
+      {
+        "n": 2,
+        "fase": "P2-RM",
+        "fase_secundaria": "P3-MM",
+        "eventos": [
+          "STRAT",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P6-VAL",
+        "fase_secundaria": "EMK",
+        "eventos": []
+      },
+      {
+        "n": 6,
+        "fase": "P6-VAL",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P6-VAL",
+        "fase_secundaria": null,
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 8,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT",
+          "DIST"
+        ]
+      },
+      {
+        "n": 9,
+        "fase": "P3-MM",
+        "fase_secundaria": "P7-EXP",
+        "eventos": []
+      },
+      {
+        "n": 10,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 11,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      }
+    ],
+    "bloqueos": [],
+    "supuestos": [
+      "grupo de 100 pacientes",
+      "mortalidad basal de 40 de cada 100",
+      "mortalidad basal alternativa de 20 de cada 100",
+      "el 12 % se aplica sobre los que mueren (reducción relativa)"
+    ],
+    "modelo": "proporcional",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "El extracto evitaría 0,12 · m muertes por cada 100 pacientes, donde m es el número de muertes actuales por cada 100 (con m = 40, unas 5; con m = 20, unas 2 o 3). La cifra no es exacta: es un promedio del estudio y podría salir distinta en el hospital. Recomiendan no decidir hasta tener m, el costo, el intervalo de confianza, los efectos secundarios y si los pacientes del hospital se parecen a los del estudio."
+    },
+    "ruta_principal": "R1",
+    "rutas": [
+      "R1"
+    ]
+  }
+}

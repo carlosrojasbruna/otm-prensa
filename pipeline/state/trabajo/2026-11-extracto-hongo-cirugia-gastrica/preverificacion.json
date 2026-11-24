@@ -2,15 +2,7 @@
   "tarea_id": "2026-11-extracto-hongo-cirugia-gastrica",
   "aprobado": true,
   "alcance": "tarea",
-  "hallazgos": [
-    {
-      "invariante": "semantica",
-      "severidad": "advertencia",
-      "ubicacion": "tarea.recursos_de_entrada[R1]",
-      "descripcion": "no se pudo contrastar con el texto: el ciclo no entregó `texto_noticia`; la afirmación del recurso solo se juzgó contra título, resumen y cifras",
-      "origen": "codigo"
-    }
-  ],
+  "hallazgos": [],
   "cifras_contrastadas": [
     {
       "indice": 0,
@@ -23,7 +15,7 @@
       "metodo": "codigo",
       "valor_fuente": "8,009",
       "resultado": "coincide",
-      "nota": "valor igual al de la noticia"
+      "nota": "valor presente en el párrafo 97 de la noticia"
     },
     {
       "indice": 1,
@@ -36,7 +28,7 @@
       "metodo": "codigo",
       "valor_fuente": "12%",
       "resultado": "coincide",
-      "nota": "valor igual al de la noticia"
+      "nota": "valor presente en el párrafo 97 de la noticia"
     }
   ],
   "meta": {
@@ -44,9 +36,8 @@
     "version_prompt": "1.1",
     "modelo_llamado": false,
     "costo_usd": 0.0,
-    "texto_noticia_recibido": false,
-    "fecha": "2026-11-24T12:35:01+00:00",
-    "nota": "solo código, con el lector de cifras del PR #32 (miles en inglés) y sin el texto de la noticia. El tramo B vuelve a preverificar con el texto; necesita el PR #32 en main."
+    "texto_noticia_recibido": true,
+    "fecha": "2026-11-24T12:57:26+00:00"
   },
   "localizadores_corregidos": {}
 }

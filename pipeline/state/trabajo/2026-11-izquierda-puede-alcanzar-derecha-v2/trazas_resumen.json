@@ -1,0 +1,238 @@
+{
+  "tarea_id": "2026-11-izquierda-puede-alcanzar-derecha-v2",
+  "diseno": "diseno_otm",
+  "corridas": 6,
+  "modelo": "claude-sonnet-5-5",
+  "costo_usd": 0.9055,
+  "por_corrida": [
+    {
+      "id": "N1_VV_r1",
+      "perfil": {
+        "nivel_edad": "S2",
+        "nivel": "N1",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P3-MM",
+        "P4-WM",
+        "P2-RM",
+        "P6-VAL",
+        "P2-RM",
+        "P4-WM",
+        "P2-RM",
+        "P5-INT",
+        "P6-VAL",
+        "P4-WM",
+        "P5-INT",
+        "P7-EXP"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B23",
+          "turnos": [
+            7,
+            8,
+            9
+          ],
+          "resolucion": "peer"
+        }
+      ],
+      "supuestos": [
+        "un traspaso de derecha a izquierda reduce la brecha el doble",
+        "los 12,8 puntos restantes son indecisos, otros partidos o blanco",
+        "fidelidad aplicada a la intención de voto actual como aproximación",
+        "ningún votante de la izquierda se pasa a la derecha"
+      ],
+      "modelo": "lineal",
+      "respuesta_final": "Con unos 6 puntos que pasen de la derecha a la izquierda habría empate. Sin embargo, de los cerca de 10 puntos que podrían moverse desde PP y Vox, unos 6 tendrían que ir a la izquierda, y ningún votante de la izquierda tendría que irse a la derecha. Eso parece poco verosímil. Las cifras son aproximadas porque la fidelidad se aplicó a los porcentajes actuales. Faltan datos del voto anterior, del destino de quienes se mueven y de cuántos votantes de la izquierda podrían pasar a la derecha.",
+      "validacion": true,
+      "archivo": "N1_VV_r1.json",
+      "costo_usd": 0.160104
+    },
+    {
+      "id": "N1_AA_r1",
+      "perfil": {
+        "nivel_edad": "S2",
+        "nivel": "N1",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P3-MM",
+        "P4-WM",
+        "P5-INT",
+        "P6-VAL",
+        "P7-EXP",
+        "P6-VAL"
+      ],
+      "bloqueos": [
+        {
+          "transicion": "B23",
+          "turnos": [
+            1,
+            2
+          ],
+          "resolucion": "peer"
+        }
+      ],
+      "supuestos": [
+        "un votante que cambia resta a la derecha y suma a la izquierda",
+        "fidelidad aplicada a la intención de voto actual de cada partido",
+        "votos de la izquierda fijos (solo se mueve la derecha)",
+        "los que no repiten podrían ir a otros partidos o a la abstención"
+      ],
+      "modelo": "lineal",
+      "respuesta_final": "Para empatar, 6,1 puntos tendrían que pasar de la derecha a la izquierda, o sea el 61% de los 10 puntos que no repiten, y eso parece poco verosímil. Piden adónde van los que dudan, cuánto repite la izquierda, cuántos no votaron antes y cuántos respondieron la encuesta.",
+      "validacion": true,
+      "archivo": "N1_AA_r1.json",
+      "costo_usd": 0.123192
+    },
+    {
+      "id": "N2_VV_r1",
+      "perfil": {
+        "nivel_edad": "S2",
+        "nivel": "N2",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P4-WM",
+        "P3-MM",
+        "P4-WM",
+        "P2-RM",
+        "P4-WM",
+        "P6-VAL",
+        "P2-RM",
+        "P3-MM",
+        "P4-WM",
+        "P6-VAL",
+        "P7-EXP",
+        "P6-VAL",
+        "P7-EXP",
+        "P6-VAL"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "un punto que pasa de derecha a izquierda cambia la diferencia en 2",
+        "la fidelidad se aplica al porcentaje actual de cada partido",
+        "no todos los que no repiten van a la izquierda (otro partido o abstención)",
+        "el resto del electorado (12,8%) solo suma a la izquierda, cambia la diferencia de a 1",
+        "escenario: la mitad del resto va a la izquierda",
+        "la izquierda no pierde votantes (se cuestiona y se pide información)"
+      ],
+      "modelo": "lineal",
+      "respuesta_final": "Se puede, pero haría falta mucho movimiento: que 6 de cada 10 de los que se sueltan de PP y Vox (unos 10 puntos) se vayan a la izquierda, o que la mitad del 12,8% de indecisos se sume más unos 3 de cada 10 de los que se sueltan. Les parece poco verosímil, y piden a dónde van los que se sueltan, si la izquierda también pierde votantes y qué tan representativa es una encuesta online.",
+      "validacion": true,
+      "archivo": "N2_VV_r1.json",
+      "costo_usd": 0.188428
+    },
+    {
+      "id": "N3_AA_r1",
+      "perfil": {
+        "nivel_edad": "S2",
+        "nivel": "N3",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P3-MM",
+        "P4-WM",
+        "P6-VAL",
+        "P2-RM",
+        "P4-WM",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "traspaso directo de x puntos de la derecha a la izquierda (cada punto reduce la brecha en 2)",
+        "fidelidad aplicada a la intención de voto actual (luego cuestionado y abandonado)",
+        "escenario extremo: todo el 12,8% restante va a la izquierda",
+        "los demás votos quedan fijos"
+      ],
+      "modelo": "lineal",
+      "respuesta_final": "La izquierda necesita recortar 12,2 puntos: o 6,1 puntos netos que pasen de la derecha a la izquierda, o casi todo el 12,8% restante del electorado; no parece verosímil. Piden datos de indecisos, voto en la elección anterior, margen de error y ponderación de la encuesta online.",
+      "validacion": true,
+      "archivo": "N3_AA_r1.json",
+      "costo_usd": 0.127388
+    },
+    {
+      "id": "N4_VV_r1",
+      "perfil": {
+        "nivel_edad": "S2",
+        "nivel": "N4",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P3-MM",
+        "P4-WM",
+        "P5-INT",
+        "P4-WM",
+        "P2-RM",
+        "P4-WM",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "cada punto que pasa de la derecha a la izquierda reduce la brecha en 2",
+        "el 12,8% restante del electorado está disponible para los bloques",
+        "votantes que se fugan = (100 − fidelidad) × porcentaje actual de cada partido",
+        "la derecha no recibe votos de otros (en el cálculo del 61%)",
+        "escenario: la izquierda capta la mitad del 12,8 restante",
+        "la izquierda retendría su voto como Vox (86,6%)",
+        "todo lo que está en el aire se reparte entre los dos bloques, sin otros partidos ni abstención (resultado como mínimo)"
+      ],
+      "modelo": "lineal (balance de bloques)",
+      "respuesta_final": "Juntando todo lo que está en el aire (12,8 puntos del resto, unos 10 puntos que se fugan de la derecha y unos 5 que perdería la izquierda si retuviera como Vox, total 27,8 puntos), la izquierda necesitaría llevarse cerca del 63% (unos 17,5 puntos) para empatar, y eso es un mínimo porque no cuenta otros partidos ni la abstención. Les parece poco verosímil en seis días; piden saber a dónde van los indecisos y cuánto retiene la izquierda.",
+      "validacion": true,
+      "archivo": "N4_VV_r1.json",
+      "costo_usd": 0.155104
+    },
+    {
+      "id": "N4_AA_r1",
+      "perfil": {
+        "nivel_edad": "S2",
+        "nivel": "N4",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P3-MM",
+        "P4-WM",
+        "P3-MM",
+        "P6-VAL",
+        "P3-MM",
+        "P4-WM",
+        "P3-MM",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "retención de las elecciones anteriores aplicada a los porcentajes actuales de la encuesta",
+        "los móviles pueden ir a otros partidos o a abstención, no solo a la izquierda",
+        "un voto que cambia de bloque reduce o aumenta la diferencia en 2",
+        "un voto que pasa a abstención u otros, o que llega desde el resto, cambia la diferencia en 1"
+      ],
+      "modelo": "balance lineal",
+      "respuesta_final": "La izquierda necesita unos 6 puntos netos para empatar (la mitad de la diferencia de 12,2). Solo con los móviles de la derecha (unos 10 puntos) alcanzaría si más del 60% pasara a la izquierda, lo que ven poco verosímil; por tanto dependería también de los indecisos (12,8%). Lo consideran poco verosímil y piden la retención de la izquierda, el destino del 12,8% y el margen de error.",
+      "validacion": true,
+      "archivo": "N4_AA_r1.json",
+      "costo_usd": 0.151264
+    }
+  ],
+  "agregado": {
+    "pct_bloqueo_por_transicion": {
+      "B23": 0.33
+    },
+    "modelos_observados": {
+      "lineal": 4,
+      "lineal (balance de bloques)": 1,
+      "balance lineal": 1
+    },
+    "pct_validan": 1.0
+  },
+  "fecha": "2026-11-24T12:54:32Z"
+}
