@@ -1,12 +1,12 @@
 {
   "tarea_id": "2026-11-izquierda-puede-alcanzar-derecha",
-  "estado": "evaluada",
+  "estado": "archivada",
   "iteraciones": 1,
   "artefactos": {
     "tarea": {
       "id": "2026-11-izquierda-puede-alcanzar-derecha",
       "titulo": "¿Puede la izquierda dar vuelta el resultado?",
-      "estado": "evaluada",
+      "estado": "archivada",
       "version": 1,
       "fecha": "2026-11-23",
       "noticia": {
@@ -605,6 +605,12 @@
       "a": "evaluada",
       "iteracion": 1,
       "rub01_total": 24
+    },
+    {
+      "fecha": "2026-11-24T13:33:56+00:00",
+      "de": "evaluada",
+      "a": "archivada",
+      "motivo": "reemplazada por la v2 (2026-11-izquierda-puede-alcanzar-derecha-v2), publicada el 2026-11-24 (PR #35) (Carlos Rojas Bruna)"
     }
   ],
   "marcas": {
@@ -661,7 +667,12 @@
       "[4] estudiante.recursos_a_solicitud[R4]: cifra 2000 sin localizador (no figura en noticia.cifras_usadas)",
       "[4] estudiante.recursos_a_solicitud[R4]: cifra 2.2 sin localizador (no figura en noticia.cifras_usadas)"
     ],
-    "pendiente": "revision_humana_1",
-    "correccion_manual_cifra": "se agregaron a noticia.cifras 7 cifras de traspaso de voto que la nota entrega en el párrafo 13 y el explorador no había extraído (18,2%, 1,2%, 6,1%, 70,6%, 8%, 5,7% y 3,9%), tomadas del texto de la nota que Carlos pegó en el chat el 2026-11-24, para que la v2 pueda usarlas; la tarea v1 no cambia; ver decisiones.md"
+    "correccion_manual_cifra": "se agregaron a noticia.cifras 7 cifras de traspaso de voto que la nota entrega en el párrafo 13 y el explorador no había extraído (18,2%, 1,2%, 6,1%, 70,6%, 8%, 5,7% y 3,9%), tomadas del texto de la nota que Carlos pegó en el chat el 2026-11-24, para que la v2 pueda usarlas; la tarea v1 no cambia; ver decisiones.md",
+    "revision_humana_1": {
+      "resultado": "negativa",
+      "revisor": "Carlos Rojas Bruna",
+      "fecha": "2026-11-24T13:33:56Z",
+      "motivo": "reemplazada por la v2 (2026-11-izquierda-puede-alcanzar-derecha-v2), publicada el 2026-11-24 (PR #35)"
+    }
   }
 }

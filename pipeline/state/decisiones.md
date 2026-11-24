@@ -413,3 +413,9 @@ Encargo de Carlos Rojas Bruna, tras su revisión humana 1 positiva de los tres e
   - **Variantes:** «no existe (es null)» pasa a «La tarea no tiene variante hacia abajo». Es la jerga interna del redactor, ya anotada como defecto.
   - Rutas, corridas, extractos, bloqueos, preguntas y contraste de validación sin cambio (comprobado campo a campo). Guía validada contra su esquema; verificador solo con código: aprobado, sin críticos; ensayo del bibliotecario sin errores.
   - Observación sin cambio: ninguna corrida muestra al grupo recibiendo R2 y revisando su modelo; la guía trae la pregunta, pero el paso no está ejemplificado.
+
+- 2026-11-24 · Claude (encargo de Carlos) · **Publicada `2026-11-izquierda-puede-alcanzar-derecha-v2`; v1 archivada; v2 de la tarea de NPR creada.**
+  - **Publicación (orden de Carlos: «aplica y publica»):** PR #34 mergeado en `main` con la guía corregida; `publicar.yml` en ensayo y luego real; PR #35 revisado (la guía publicada trae las tres correcciones y no contiene jerga interna; catálogo con 16 tareas) y mergeado. Expediente en `publicada`, revisión humana 2 a nombre de Carlos Rojas Bruna.
+  - **v1 archivada** (`2026-11-izquierda-puede-alcanzar-derecha`): reemplazada por la v2. Nunca se publicó; su R2 afirmaba que la noticia no informaba los traspasos.
+  - **`2026-11-extracto-hongo-cirugia-gastrica-v2`:** Carlos la corrió en su máquina (ciclo `ciclo_20261124T132401691105Z`, 0,5811 USD) con las mejoras reescritas tras leer el artículo. RUB01 24/24; verificación previa aprobada sin críticos. R4 es ahora un recurso con «otra fuente: Nakazato…» y contenido sin cifras; `validation_evidence` ya no nombra el ensayo; el diseñador quitó el doi de `fuente` porque su punto se lee como decimal. Pendiente de la revisión humana 1 de Carlos; ya está en `main`, así que el tramo B se puede lanzar cuando la apruebe.
+  - **Gasto de W48:** 6,1233 USD registrados; 7,2875 reales con la corrida perdida (tope 31,50).
