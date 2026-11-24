@@ -25,7 +25,7 @@
     "puntaje_rub01": 24,
     "version": 2,
     "fecha": "2026-11-24",
-    "cambios": "",
+    "cambios": "rev. 2 de la guía: correcciones de texto de la revisión humana 2 (Carlos Rojas Bruna): E1, E3 y el orden de la puesta en común ya no atribuyen a los grupos citados el declarar la fidelidad como aproximación, y redacción de las variantes",
     "sub_tramo": "S2"
   },
   "meta": {
@@ -193,7 +193,7 @@
       ],
       "modelo": "balance lineal",
       "bloqueos": [],
-      "que_aprende": "El curso ve cómo un grupo vuelve varias veces a matematizar para separar el efecto de cada movimiento: cambiar de bloque cuenta doble, ir a la abstención o llegar desde el resto cuenta simple. Comparado con los otros escenarios, muestra que distinguir destinos (otro bloque, otro partido, abstención) es una decisión de simplificación que cambia el modelo, y que el grupo declara explícitamente que aplicar la retención anterior a los porcentajes actuales es solo una aproximación.",
+      "que_aprende": "El curso ve cómo un grupo vuelve varias veces a matematizar para separar el efecto de cada movimiento: cambiar de bloque cuenta doble, ir a la abstención o llegar desde el resto cuenta simple. Comparado con los otros escenarios, muestra que distinguir destinos (otro bloque, otro partido, abstención) es una decisión de simplificación que cambia el modelo. El grupo aplica la retención anterior a los porcentajes actuales sin discutir si eso es válido.",
       "extracto_dialogo": [
         {
           "hablante": "Cami",
@@ -287,7 +287,7 @@
       ],
       "modelo": "lineal",
       "bloqueos": [],
-      "que_aprende": "El curso ve una validación que regresa a simplificar: tras calcular los votantes móviles, el grupo advierte que la fidelidad se refiere a quienes votaron antes y abandona ese supuesto en lugar de sostenerlo como aproximación, como hacen E1 y E2. Además usa el caso extremo del resto del electorado como cota y no como escenario plausible, y pide el margen de error. La comparación abre la discusión: ¿es mejor abandonar un supuesto dudoso o mantenerlo declarándolo aproximado?",
+      "que_aprende": "El curso ve una validación que regresa a simplificar: tras calcular los votantes móviles, el grupo advierte que la fidelidad se refiere a quienes votaron antes y abandona ese supuesto en lugar de seguir usándolo, como hacen E1 y E2. Además usa el caso extremo del resto del electorado como cota y no como escenario plausible, y pide el margen de error. Otro grupo simulado, que no figura entre los escenarios, mantuvo el supuesto y advirtió que por eso sus cifras eran aproximadas. La comparación abre la discusión: ¿es mejor abandonar un supuesto dudoso o mantenerlo declarándolo aproximado?",
       "extracto_dialogo": [
         {
           "hablante": "Cami",
@@ -398,7 +398,7 @@
     "seleccion_y_orden": [
       "Primero E2 (bloqueo al matematizar): se parte de un modelo lineal sencillo y de la traba que muchos grupos comparten, la de convertir la diferencia en un modelo en el que un traspaso afecta a los dos bloques. Sirve para monitorear y dar entrada a los grupos que se trabaron en B23 sin privilegiar la ruta del docente.",
       "Segundo E3 (supuesto cuestionado): se muestra un grupo que duda pronto de aplicar la fidelidad al tamaño actual y abandona ese supuesto. Permite conectar con E2, donde la duda llegó después de entregar, y discutir cuándo conviene validar los supuestos.",
-      "Tercero E1 (ruta esperada): se separan los destinos de los móviles (otro bloque, otro partido, abstención) y se declara la fidelidad como aproximación. Secuencia el paso de un modelo con un solo destino a uno con varios, y contrasta con E3, que abandona el supuesto en lugar de mantenerlo como aproximación.",
+      "Tercero E1 (ruta esperada): se separan los destinos de los móviles (otro bloque, otro partido, abstención) y se aplica la fidelidad a los porcentajes actuales sin discutirla. Secuencia el paso de un modelo con un solo destino a uno con varios, y contrasta con E3, que abandona ese supuesto en lugar de seguir usándolo.",
       "Cuarto E4 (balance ampliado): introduce un supuesto sin dato sobre la retención de la izquierda y comunica el resultado como mínimo. Conecta con el modelo inadecuado R6, que toma la cota máxima como escenario plausible. Anticipen esa confusión y pregunten a quienes la cometieron sin corregirla de entrada.",
       "Cierre con los grupos reales que hayan llegado a una conclusión distinta de las anteriores, para comparar sus supuestos con los de E1 a E4."
     ],
@@ -414,7 +414,7 @@
     "contraste_validacion": "Tras presentar sus modelos, entregue la primera evidencia independiente: los traspasos observados entre partidos (recurso R2). Pida a cada grupo que compare la fracción de móviles que su modelo hacía ir a la izquierda con la observada, por ejemplo cerca del 5% de quienes dejan el PP que van al PSOE, y que decida si ajusta o mantiene sus supuestos, distinguiendo cambio de partido de cambio de bloque. Luego compare la brecha entre bloques con el margen de error de la encuesta, usando R4 si lo solicitan. La segunda evidencia son los resultados oficiales por bloques de la elección del 29 de noviembre de 2026, publicados por el Ministerio del Interior de España. Solo existirán después de esa fecha. Se usan para comparar el traspaso real entre bloques con el que el modelo consideró verosímil, nunca para construir el modelo. Si aún no existen, deje la comparación como cierre pendiente de la clase."
   },
   "variantes_y_continuidad": {
-    "uso_variantes": "Variante hacia abajo: no existe (es null), por lo que no hay una versión simplificada de la tarea. Si un grupo se traba, conviene usar la ayuda mínima de diagnóstico (preguntar qué han hecho) y dejar que pida R3 o R5. Además, la ruta de traspaso directo entre bloques, de nivel S1, permite un acceso más simple al mismo modelo sin cambiar el enunciado. Variante hacia arriba (U): para grupos que ya cerraron el ciclo con tabla de escenarios y contraste, o para cursos universitarios. Pide un modelo dinámico con matriz de transferencia entre partidos y abstención, análisis de sensibilidad de los resultados a cada fracción de traspaso, y crítica del supuesto de que la fidelidad de las elecciones anteriores se aplica a la intención de voto actual. Esa exigencia matemática no se escribe en el enunciado: se plantea como pregunta del docente una vez que el grupo ha presentado su modelo.",
+    "uso_variantes": "La tarea no tiene variante hacia abajo, por lo que no hay una versión simplificada. Si un grupo se traba, conviene usar la ayuda mínima de diagnóstico (preguntar qué han hecho) y dejar que pida R3 o R5. Además, la ruta de traspaso directo entre bloques, de nivel S1, permite un acceso más simple al mismo modelo sin cambiar el enunciado. Variante hacia arriba (U): para grupos que ya cerraron el ciclo con tabla de escenarios y contraste, o para cursos universitarios. Pide un modelo dinámico con matriz de transferencia entre partidos y abstención, análisis de sensibilidad de los resultados a cada fracción de traspaso, y crítica del supuesto de que la fidelidad de las elecciones anteriores se aplica a la intención de voto actual. Esa exigencia matemática no se escribe en el enunciado: se plantea como pregunta del docente una vez que el grupo ha presentado su modelo.",
     "acostumbramiento": "Si el grupo nunca ha modelado, conviene una actividad previa breve con un dato de prensa sobre porcentajes, en la que solo listen qué datos usarían, qué supuestos harían y cuáles no pueden afirmar, sin calcular aún. Así practican P1-MRS y P2-RM antes de esta tarea. Esta tarea funciona mejor como parte de una secuencia que como primera experiencia: exige explicitar supuestos y contrastar con dos evidencias independientes. También puede servir como diagnóstico de cómo simplifican (B12) y validan (B56) los grupos.",
     "tarea_siguiente": null
   },
