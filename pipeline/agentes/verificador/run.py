@@ -78,17 +78,37 @@ _PRELUDIO_SIN_RED = (
 
 
 # --------------------------------------------------------------------------- utilidades
-def parsear_numero(x) -> float | None:
-    """'38 %' -> 38.0; '1.234,5' -> 1234.5; 220 -> 220.0; sin número -> None."""
+def parsear_numero(x, idioma: str = "es") -> float | None:
+    """'38 %' -> 38.0; '1.234,5' -> 1234.5; 220 -> 220.0; sin número -> None.
+    `idioma` es el de la noticia de donde sale el valor: con "en", '5,000' -> 5000.0 y '1,234.5' -> 1234.5."""
     if isinstance(x, bool):
         return None
     if isinstance(x, (int, float)):
         return float(x)
     m = _NUM.search(str(x))
-    return _a_float(m.group(0)) if m else None
+    return _a_float(m.group(0), idioma) if m else None
 
 
-def _a_float(tok: str) -> float:
+_MILES_EN = re.compile(r"\d{1,3}(,\d{3})+(\.\d+)?")
+
+
+def idioma_de(noticia: dict | None) -> str:
+    """Idioma con que se leen las cifras de una noticia (sus valores y su texto). Sin noticia: español."""
+    return "en" if (noticia or {}).get("idioma") == "en" else "es"
+
+
+def _a_float(tok: str, idioma: str = "es") -> float:
+    """Número escrito → float. En español el punto agrupa miles y la coma es decimal («2.322», «9,3»); en una
+    noticia en inglés es al revés («5,000», «8,009», «1,234.5», «3.5»). 2026-W48: las dos tareas de medios en
+    inglés quedaron con «cifra 5000 / 8009 sin localizador» porque «5,000» se leía como 5,0."""
+    if idioma == "en":
+        if _MILES_EN.fullmatch(tok):
+            return float(tok.replace(",", ""))
+        if "," not in tok:
+            try:
+                return float(tok)
+            except ValueError:
+                pass
     if "." in tok and "," in tok:
         return float(tok.replace(".", "").replace(",", "."))
     if "," in tok:
@@ -111,13 +131,13 @@ def marcador(x) -> tuple[int, int] | None:
     return (int(m.group(1)), int(m.group(2))) if m else None
 
 
-def numeros_de_valor(x) -> list[float]:
+def numeros_de_valor(x, idioma: str = "es") -> list[float]:
     """Todos los números que registra el valor de una cifra: los dos de un marcador «N-M»; si no, el de
-    `parsear_numero` (o ninguno)."""
+    `parsear_numero` (o ninguno). `idioma`: el de la noticia."""
     mc = marcador(x)
     if mc:
         return [float(mc[0]), float(mc[1])]
-    v = parsear_numero(x)
+    v = parsear_numero(x, idioma)
     return [] if v is None else [v]
 
 
@@ -140,12 +160,13 @@ def expandir_marcadores(cifras: list[dict]) -> list[dict]:
     return out
 
 
-def numeros_en(texto: str) -> list[float]:
-    """Números del texto. Un marcador «2-1» da los dos números (2 y 1): el guion no forma parte del número."""
+def numeros_en(texto: str, idioma: str = "es") -> list[float]:
+    """Números del texto. Un marcador «2-1» da los dos números (2 y 1): el guion no forma parte del número.
+    `idioma`: "en" solo para el texto de una noticia en inglés; la tarea y la guía siempre se leen en español."""
     out = []
     for t in _NUM.findall(texto):
         try:
-            out.append(_a_float(t))
+            out.append(_a_float(t, idioma))
         except ValueError:   # «0.5.8» (versiones, fechas con puntos): no es una cifra
             continue
     return out
@@ -298,15 +319,15 @@ def _invariante3(inf, tarea, guia, noticia, texto_noticia):
 TOLERANCIA_PARRAFOS = 1   # un localizador corrido en ±1 párrafo se corrige como advertencia (ciclo 2026-10-26)
 
 
-def _en_parrafo(valor, parrafo: str) -> bool:
+def _en_parrafo(valor, parrafo: str, idioma: str = "es") -> bool:
     """`valor` aparece en el párrafo, también escrito en unidades («4 mil» = 4.000, «5 millones» = 5.000.000).
     Un marcador (tupla (N, M)) se busca como «N-M» (o «N – M»), no como el número N suelto."""
     if isinstance(valor, tuple):
         return re.search(rf"(?<![\w.,]){valor[0]}\s*[-–]\s*{valor[1]}(?![\d])", parrafo) is not None
-    return any(_iguales(valor * f, x) for x in numeros_en(parrafo) for f in (1, 1e3, 1e6, 1e9))
+    return any(_iguales(valor * f, x) for x in numeros_en(parrafo, idioma) for f in (1, 1e3, 1e6, 1e9))
 
 
-def parrafos_alineados(texto: str, cifras: list[dict]) -> tuple[list[str], int]:
+def parrafos_alineados(texto: str, cifras: list[dict], idioma: str = "es") -> tuple[list[str], int]:
     """Párrafos del texto numerados como los numeró el explorador. El explorador numera el cuerpo que leyó (en
     La Tercera, el del feed RSS); el ciclo relee la página completa, con menús y avisos antes del cuerpo, y la
     numeración se corre (2026-10-cuanto-pagar-cada-mes: «párrafo 5» del feed = párrafo 151 de la página). Se
@@ -316,10 +337,10 @@ def parrafos_alineados(texto: str, cifras: list[dict]) -> tuple[list[str], int]:
     votos: dict[int, int] = {}
     for c in cifras:
         ns = _numeros_parrafo(_norm(str((c.get("localizador") or {}).get("ubicacion", ""))))
-        v = marcador(c.get("valor")) or parsear_numero(c.get("valor"))
+        v = marcador(c.get("valor")) or parsear_numero(c.get("valor"), idioma)
         if len(ns) != 1 or v is None:
             continue
-        for k in {i - ns[0] for i, p in enumerate(ps, start=1) if _en_parrafo(v, p)}:
+        for k in {i - ns[0] for i, p in enumerate(ps, start=1) if _en_parrafo(v, p, idioma)}:
             votos[k] = votos.get(k, 0) + 1
     k = max(votos, key=lambda d: (votos[d], -abs(d)), default=0)
     if votos.get(k, 0) < 2 or votos[k] <= votos.get(0, 0):
@@ -331,13 +352,13 @@ def _parrafos(texto_noticia: str | None, tarea: dict, noticia: dict | None) -> l
     if not texto_noticia:
         return None
     cifras = (noticia or {}).get("cifras") or tarea.get("noticia", {}).get("cifras_usadas", [])
-    return parrafos_alineados(texto_noticia, cifras)[0]
+    return parrafos_alineados(texto_noticia, cifras, idioma_de(noticia))[0]
 
 
-def buscar_cifra(valor, parrafos: list[str], citados: list[int]) -> tuple[str, int | None]:
+def buscar_cifra(valor, parrafos: list[str], citados: list[int], idioma: str = "es") -> tuple[str, int | None]:
     """Busca `valor` en toda la nota. Devuelve ("citado", n) si está en un párrafo citado, ("vecino", n) si está a
     ±TOLERANCIA_PARRAFOS de uno citado, ("lejos", n) si está en otro párrafo y ("ausente", None) si no aparece."""
-    donde = [i for i, p in enumerate(parrafos, start=1) if _en_parrafo(valor, p)]
+    donde = [i for i, p in enumerate(parrafos, start=1) if _en_parrafo(valor, p, idioma)]
     for n in citados:
         if n in donde:
             return "citado", n
@@ -356,6 +377,7 @@ def _cifras(inf, tarea, noticia, nb, parrafos: list[str] | None = None) -> list[
     localizador se corrige como advertencia (`localizador_corregido`); si está más lejos o no está, es crítico."""
     out = []
     por_ubic: dict = {}
+    idioma = idioma_de(noticia)   # valores de las cifras y párrafos de la nota; la tarea se lee en español
     if noticia is not None:
         # varias cifras pueden compartir párrafo: antes se guardaba solo la última y «48 cuotas (párrafo 5)» se
         # comparaba con «5 millones (párrafo 5)» (2026-10-cuanto-pagar-cada-mes)
@@ -373,7 +395,7 @@ def _cifras(inf, tarea, noticia, nb, parrafos: list[str] | None = None) -> list[
             inf.add("4", "critico", ub, f"cifra {c.get('valor')!r} ({c.get('que_es')}) sin localizador")
             out.append({**base, "resultado": "sin_localizador", "nota": "falta localizador"})
             continue
-        v = parsear_numero(c.get("valor"))
+        v = parsear_numero(c.get("valor"), idioma)
         mc = marcador(c.get("valor"))
         if loc["fuente"] == "noticia":
             if noticia is None:
@@ -385,11 +407,11 @@ def _cifras(inf, tarea, noticia, nb, parrafos: list[str] | None = None) -> list[
             if mc:
                 f = next((x for x in candidatas if marcador(x.get("valor")) == mc), None)
             else:
-                f = next((x for x in candidatas if v is not None and parsear_numero(x.get("valor")) is not None
-                          and _iguales(v, parsear_numero(x.get("valor")))), None)
+                f = next((x for x in candidatas if v is not None and parsear_numero(x.get("valor"), idioma) is not None
+                          and _iguales(v, parsear_numero(x.get("valor"), idioma))), None)
             citados = _numeros_parrafo(_norm(str(loc["ubicacion"])))
             if parrafos is not None and v is not None and citados:
-                donde, n = buscar_cifra(mc or v, parrafos, citados)
+                donde, n = buscar_cifra(mc or v, parrafos, citados, idioma)
                 if donde == "citado":
                     base["valor_fuente"] = c.get("valor")
                     out.append({**base, "resultado": "coincide", "nota": f"valor presente en el párrafo {n} de la noticia"})
@@ -443,7 +465,7 @@ def _cifras(inf, tarea, noticia, nb, parrafos: list[str] | None = None) -> list[
                 inf.add("4", "critico", ub, f"valor {c.get('valor')!r} no aparece en la salida del notebook")
                 out.append({**base, "resultado": "distinto", "nota": "valor ausente en la salida del notebook"})
     # cifras en el texto que ve el estudiante sin entrada en cifras_usadas
-    permitidas = [p for c in cifras for p in numeros_de_valor(c.get("valor"))]   # «2-1» permite el 2 y el 1
+    permitidas = [p for c in cifras for p in numeros_de_valor(c.get("valor"), idioma)]   # «2-1» permite el 2 y el 1
     est = tarea.get("estudiante", {})
     textos = [("estudiante.enunciado_es", est.get("enunciado_es", ""))]
     textos += [(f"estudiante.recursos_a_solicitud[{r.get('id')}]", r.get("contenido", ""))

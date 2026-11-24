@@ -298,3 +298,51 @@ def test_hallazgos_del_modelo_no_reproducen_mas_de_25_palabras_de_la_noticia():
     informe, _ = _verificar(ej, resp, texto)
     from pipeline import invariantes as inv
     assert inv.cumple_limite_literal(informe, texto)
+
+
+# --------------------------------------------------------------------------- cifras de noticias en inglés (W48)
+def test_parsear_numero_segun_el_idioma_de_la_noticia():
+    assert V.parsear_numero("5,000", "en") == 5000 and V.parsear_numero("8,009", "en") == 8009
+    assert V.parsear_numero("1,234.5", "en") == 1234.5 and V.parsear_numero("1,234,567", "en") == 1234567
+    assert V.parsear_numero("3.5", "en") == 3.5 and V.parsear_numero("2.322", "en") == 2.322
+    assert V.parsear_numero("12%", "en") == 12 and V.parsear_numero("1.5m", "en") == 1.5
+    # en español nada cambia: el punto agrupa miles y la coma es decimal
+    assert V.parsear_numero("5,000") == 5.0 and V.parsear_numero("2.322") == 2322
+    assert V.parsear_numero("1.234,5") == 1234.5 and V.parsear_numero("9,3%") == 9.3
+    assert V.numeros_en("It oversees 5,000 sites and 2,349 studies; 3.5 million.", "en") == [5000, 2349, 3.5]
+    assert V.numeros_de_valor("8,009", "en") == [8009] and V.numeros_de_valor("2-1", "en") == [2, 1]
+    assert V.idioma_de({"idioma": "en"}) == "en" and V.idioma_de({"idioma": "es"}) == "es" and V.idioma_de(None) == "es"
+
+
+def _ej_en():
+    """El ejemplo del contrato como si viniera de un medio en inglés: «5,000» en la noticia, «5.000» en la tarea."""
+    ej = _ej()
+    cifra = {"valor": "5,000", "unidad": "sites", "que_es": "sitios protegidos que supervisa el organismo",
+             "localizador": {"fuente": "noticia", "ubicacion": "párrafo 3"}}
+    ej["noticia"]["idioma"] = "en"
+    ej["noticia"]["cifras"].append(dict(cifra))
+    ej["tarea"]["noticia"]["cifras_usadas"].append(dict(cifra))
+    ej["tarea"]["estudiante"]["enunciado_es"] += " El organismo supervisa 5.000 sitios."
+    return ej
+
+
+def test_miles_en_ingles_no_dejan_la_cifra_sin_localizador():
+    ej = _ej_en()
+    inf = V.verificar_tarea(ej["tarea"], ej["noticia"])
+    assert not [h for h in inf["hallazgos"] if "sin localizador" in h["descripcion"]], inf["hallazgos"]
+    assert inf["aprobado"]
+    # la misma tarea con una noticia en español sí queda sin localizador: «5,000» ahí es cinco
+    ej["noticia"]["idioma"] = "es"
+    inf = V.verificar_tarea(ej["tarea"], ej["noticia"])
+    assert any("cifra 5000 sin localizador" in h["descripcion"] for h in inf["hallazgos"])
+
+
+def test_miles_en_ingles_se_encuentran_en_el_parrafo_de_la_nota():
+    ej = _ej_en()
+    texto = ("Reservoir levels are low.\n\nThe reservoir holds 220 million cubic metres.\n\n"
+             "The agency oversees 5,000 protected sites across the country.")
+    inf = V.verificar_tarea(ej["tarea"], ej["noticia"], texto_noticia=texto)
+    fila = next(c for c in inf["cifras_contrastadas"] if c["valor_tarea"] == "5,000")
+    assert fila["resultado"] == "coincide", fila
+    assert not [h for h in inf["hallazgos"] if h["severidad"] == "critico" and "5,000" in h["descripcion"]]
+
