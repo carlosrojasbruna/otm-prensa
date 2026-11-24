@@ -1,0 +1,121 @@
+{
+  "run": {
+    "id": "N1_VV_r1",
+    "nivel": "N1",
+    "composicion": "VV",
+    "rep": 1,
+    "estilos": [
+      "V",
+      "V"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.05116,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "fase_secundaria": null,
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P2-RM",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "STRAT",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P3-MM",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "STRAT",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P6-VAL",
+        "fase_secundaria": "EMK",
+        "eventos": []
+      },
+      {
+        "n": 6,
+        "fase": "P6-VAL",
+        "fase_secundaria": "EMK",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "EMK",
+        "fase_secundaria": "P7-EXP",
+        "eventos": [
+          "DIST",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 8,
+        "fase": "P3-MM",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 9,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P7-EXP",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 10,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 11,
+        "fase": "P6-VAL",
+        "fase_secundaria": null,
+        "eventos": []
+      }
+    ],
+    "bloqueos": [],
+    "supuestos": [
+      "12 % aplicado a los que mueren (reducción relativa)",
+      "mortalidad basal hipotética de 20 % o 50 %",
+      "grupo de 100 o 200 pacientes",
+      "comparabilidad con el estudio (cuestionada)"
+    ],
+    "modelo": "proporcional",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Muertes evitadas = pacientes × proporción que muere hoy × 0,12; por ejemplo 200 × 0,5 × 0,12 = 12. Es incierto por el intervalo y porque no se sabe si los pacientes se parecen a los del estudio. Recomiendan no decidir todavía y pedir mortalidad actual, costo, efectos secundarios e intervalo."
+    },
+    "ruta_principal": "R1",
+    "rutas": [
+      "R1"
+    ]
+  }
+}

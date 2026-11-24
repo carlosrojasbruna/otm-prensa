@@ -1,0 +1,296 @@
+{
+  "tarea_id": "2026-11-extracto-hongo-cirugia-gastrica-v2",
+  "evaluaciones": [
+    {
+      "iteracion": 1,
+      "version_tarea": 2,
+      "fecha": "2026-11-24T13:27:31Z",
+      "modelo": "claude-opus-5-5",
+      "version_prompt": "1.3",
+      "version_rubrica": "4.0",
+      "corridas": [
+        {
+          "n": 1,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "Hay una necesidad real de decisión y no se entrega ningún modelo. Quien resuelve debe pasar por su cuenta de la reducción relativa a muertes absolutas. Que el enunciado nombre lo que se desconoce (mortalidad, costo, comparabilidad) orienta, pero no fija la estructura del cálculo.",
+                "cita": "El comité de un hospital chileno debe decidir si lo incorpora al tratamiento posterior a la cirugía."
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe ningún procedimiento. Admite varios modelos defendibles: distintos plazos, valores basales, ajustes por comparabilidad y formas de expresar la incertidumbre.",
+                "cita": "¿Cuántas muertes podría evitar el extracto en los pacientes del hospital, qué tan segura es esa cifra y qué le recomendarían al comité?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige varias decisiones: elegir un plazo y una mortalidad basal, estimar el volumen de pacientes, suponer cuánto se trasladan los resultados japoneses y pedir información (R2, R3). Son decisiones de modelación sustantivas.",
+                "cita": "Nadie en el comité sabe cuántos de sus pacientes mueren hoy, cuánto costaría el extracto ni si sus pacientes se parecen a los del estudio."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Que un comité hospitalario evalúe incorporar un tratamiento a partir de evidencia publicada es una situación claramente plausible fuera de la escuela.",
+                "cita": "El comité de un hospital chileno debe decidir si lo incorpora al tratamiento posterior a la cirugía."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los datos del metaanálisis y del ensayo aleatorizado (R4, cuyas cifras salen de un resumen público) son componentes auténticos. Constituyen el núcleo de la tarea y no fueron creados para enseñar.",
+                "cita": "Un metaanálisis que reunió a 8.009 pacientes, que recibieron en casi todos los casos quimioterapia, asoció el extracto con una reducción de 12 % en …"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto clínico condiciona las decisiones, como el plazo, la mortalidad basal y la transferibilidad. También es indispensable para juzgar la seguridad de la cifra y formular la recomendación.",
+                "cita": "Se desconoce si los pacientes del hospital chileno tienen etapas de enfermedad similares."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Responder obliga a recorrer todo el ciclo: comprender la situación clínica, simplificar con supuestos, matematizar el paso de riesgo relativo a muertes absolutas, calcular con incertidumbre, interpretar para el comité y validar. Ninguna fase viene hecha por el enunciado.",
+                "cita": "qué tan segura es esa cifra y qué le recomendarían al comité?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "R4 aporta un ensayo independiente, no usado en la construcción del modelo, para contrastar la estimación y discutir sus límites. A eso se suman las estadísticas públicas de mortalidad.",
+                "cita": "se entrega después de que el grupo presente su estimación"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto y el lenguaje son comprensibles para estudiantes universitarios. La demanda corresponde a la descrita en MAR03 para U: modelo probabilístico, análisis de sensibilidad y crítica del modelo frente a datos nuevos.",
+                "cita": "¿Cuántas muertes podría evitar el extracto en los pacientes del hospital, qué tan segura es esa cifra"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es accesible: basta multiplicar una mortalidad basal estimada por el 12 % y por un número de pacientes. El techo es alto, con intervalos de incertidumbre, ajustes por heterogeneidad, análisis de sensibilidad y comparación de escenarios.",
+                "cita": "Pueden pedir información adicional."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "La discrepancia con R4 abre preguntas sobre selección de pacientes, generalizabilidad, costo y límites del modelo. También permite comparar las soluciones de distintos grupos.",
+                "cita": "La supervivencia fue mayor en el grupo con PSK, y la diferencia absoluta observada es bastante mayor que la que resulta de aplicar la reducción …"
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información necesaria se obtiene a solicitud o mediante estadísticas públicas accesibles para el nivel U. R4, que contiene una pista sobre el modelo, se entrega solo después de la estimación, así que no revela la solución. El volumen de pacientes no se entrega, pero puede suponerse como parte del modelo.",
+                "cita": "El comité pide que el grupo decida qué plazo usar y qué valor adoptar, o que lo estime con estadísticas públicas de cáncer gástrico."
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011ChMpzwSRB9KZuTnmgA7qQ",
+            "fecha": "2026-11-24T13:26:23+00:00",
+            "intentos": 1,
+            "costo_usd": 0.154396,
+            "avisos": [
+              "cita_recortada_25:autenticidad",
+              "cita_recortada_25:fecundidad"
+            ]
+          }
+        },
+        {
+          "n": 2,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "La tarea plantea una decisión real de un comité y no entrega ninguna regla. Solo da una reducción relativa del 12 %; quien resuelve debe construir cómo traducirla a muertes evitadas en otra población.",
+                "cita": "¿Cuántas muertes podría evitar el extracto en los pacientes del hospital, qué tan segura es esa cifra y qué le recomendarían al comité?"
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe procedimiento. Admite varios caminos defendibles, según el plazo y la mortalidad base elegidos, el ajuste por comparabilidad, el tratamiento de la incertidumbre y el criterio de recomendación.",
+                "cita": "Nadie en el comité sabe cuántos de sus pacientes mueren hoy, cuánto costaría el extracto ni si sus pacientes se parecen a los del estudio."
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige varias decisiones de modelación: elegir el plazo, estimar la mortalidad base y el número de pacientes, suponer la transferibilidad desde Japón y solicitar información.",
+                "cita": "El comité pide que el grupo decida qué plazo usar y qué valor adoptar, o que lo estime con estadísticas públicas de cáncer gástrico."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Un comité hospitalario que evalúa incorporar un tratamiento a partir de un metaanálisis es una situación real del mundo clínico, no un encuadre forzado.",
+                "cita": "El comité de un hospital chileno debe decidir si lo incorpora al tratamiento posterior a la cirugía."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los datos de un metaanálisis publicado y el ensayo de R4, con cifras tomadas de su resumen público, son componentes auténticos. Ambos forman el núcleo de la tarea.",
+                "cita": "Un metaanálisis que reunió a 8.009 pacientes, que recibieron en casi todos los casos quimioterapia, asoció el extracto con una reducción de 12 % en …"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto clínico condiciona decisiones como el plazo, la mortalidad base y la comparabilidad de los pacientes. También es necesario para juzgar la seguridad de la cifra y formular la recomendación.",
+                "cita": "Se desconoce si los pacientes del hospital chileno tienen etapas de enfermedad similares."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "Para responder hay que comprender la situación, simplificar mediante supuestos de transferibilidad, convertir el riesgo relativo en muertes absolutas, calcular, interpretar la incertidumbre y validar. El enunciado no deja hecha ninguna de esas fases.",
+                "cita": "¿Cuántas muertes podría evitar el extracto en los pacientes del hospital, qué tan segura es esa cifra y qué le recomendarían al comité?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "R4 es evidencia independiente, un ensayo distinto que se entrega después de la estimación. Permite contrastar el modelo y discutir los límites de la transferencia.",
+                "cita": "la diferencia absoluta observada es bastante mayor que la que resulta de aplicar la reducción relativa del metaanálisis a la mortalidad del grupo sin PSK"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "El contexto de decisión clínica es comprensible y pertinente para el nivel universitario. La demanda calza con lo esperable en U según MAR03: un modelo probabilístico de riesgo, sensibilidad a supuestos y crítica del modelo.",
+                "cita": "¿Cuántas muertes podría evitar el extracto en los pacientes del hospital, qué tan segura es esa cifra y qué le recomendarían al comité?"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es accesible: basta aplicar el 12 % a una mortalidad base estimada. El techo es alto, porque la tarea admite análisis de sensibilidad, intervalos, ajustes por comparabilidad y un análisis de costo por muerte evitada.",
+                "cita": "qué tan segura es esa cifra"
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "La discrepancia entre las fuentes, la selección de pacientes y el costo abren preguntas nuevas. También permiten comparar las recomendaciones y los supuestos de los distintos grupos.",
+                "cita": "Fue un ensayo pequeño frente al metaanálisis y su intervalo de confianza es amplio e incluye la reducción del metaanálisis."
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información necesaria es obtenible: tarjetas a solicitud y estadísticas públicas de cáncer gástrico accesibles para universitarios. El único material que deja ver el procedimiento (R4) se entrega después de la estimación. Queda una duda menor: no hay dato de costo, pero no es imprescindible para estimar ni para recomendar de forma condicional.",
+                "cita": "Pueden pedir información adicional."
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011ChMq4BdXiriqxqW9aJVVu",
+            "fecha": "2026-11-24T13:27:01+00:00",
+            "intentos": 1,
+            "costo_usd": 0.087362,
+            "avisos": [
+              "cita_recortada_25:autenticidad"
+            ]
+          }
+        },
+        {
+          "n": 3,
+          "rub01": {
+            "version_rubrica": "4.0",
+            "criterios": {
+              "genuino": {
+                "puntaje": 2,
+                "justificacion": "Hay una necesidad de decisión real. El enunciado solo entrega una reducción relativa del riesgo, sin la regla para convertirla en muertes evitadas en el hospital: esa relación debe construirla el grupo.",
+                "cita": "El comité de un hospital chileno debe decidir si lo incorpora al tratamiento posterior a la cirugía."
+              },
+              "abierta": {
+                "puntaje": 2,
+                "justificacion": "La pregunta no prescribe el procedimiento. Admite varios caminos defendibles: qué plazo y qué mortalidad base adoptar, cómo tratar la incertidumbre y qué recomendación dar.",
+                "cita": "¿Cuántas muertes podría evitar el extracto en los pacientes del hospital, qué tan segura es esa cifra y qué le recomendarían al comité?"
+              },
+              "decisiones": {
+                "puntaje": 2,
+                "justificacion": "Resolver exige solicitar u obtener información, como la mortalidad base, y formular supuestos sobre el plazo, el número de pacientes y la comparabilidad con la población japonesa.",
+                "cita": "Nadie en el comité sabe cuántos de sus pacientes mueren hoy, cuánto costaría el extracto ni si sus pacientes se parecen a los del estudio."
+              },
+              "realismo": {
+                "puntaje": 2,
+                "justificacion": "Un comité hospitalario que evalúa si incorporar una terapia a partir de un metaanálisis es una situación que existe fuera de la escuela.",
+                "cita": "El comité de un hospital chileno debe decidir si lo incorpora al tratamiento posterior a la cirugía."
+              },
+              "autenticidad": {
+                "puntaje": 2,
+                "justificacion": "Los datos de un metaanálisis publicado y de un ensayo con resumen público (R4) son el núcleo de la tarea. Constituyen componentes auténticos integrados de manera sustantiva.",
+                "cita": "Un metaanálisis que reunió a 8.009 pacientes, que recibieron en casi todos los casos quimioterapia, asoció el extracto con una reducción de 12 % en …"
+              },
+              "contexto": {
+                "puntaje": 2,
+                "justificacion": "El contexto clínico condiciona la elección del plazo y de la mortalidad base. También es necesario para juzgar la seguridad de la cifra y la transferibilidad del resultado a la recomendación.",
+                "cita": "Se desconoce si los pacientes del hospital chileno tienen etapas de enfermedad similares."
+              },
+              "ciclo": {
+                "puntaje": 2,
+                "justificacion": "La tarea obliga a comprender la diferencia entre riesgo relativo y absoluto, simplificar con supuestos, matematizar y calcular. Luego exige interpretar la cifra para recomendar y validarla frente a R4; ninguna fase viene hecha.",
+                "cita": "¿Cuántas muertes podría evitar el extracto en los pacientes del hospital, qué tan segura es esa cifra y qué le recomendarían al comité?"
+              },
+              "validacion": {
+                "puntaje": 2,
+                "justificacion": "R4 es evidencia independiente: un ensayo distinto que se entrega después de la estimación. Permite contrastar el modelo y discutir la selección de pacientes y la amplitud del intervalo de confianza.",
+                "cita": "la diferencia absoluta observada es bastante mayor que la que resulta de aplicar la reducción relativa del metaanálisis a la mortalidad del grupo sin PSK"
+              },
+              "nivel": {
+                "puntaje": 2,
+                "justificacion": "Riesgo relativo y absoluto, incertidumbre e intervalos de confianza son herramientas de probabilidad esperables en nivel U. El contexto de decisión clínica es comprensible y pertinente para ese nivel.",
+                "cita": "reducción de 12 % en el riesgo de muerte"
+              },
+              "autodiferenciacion": {
+                "puntaje": 2,
+                "justificacion": "El piso es accesible: basta multiplicar una mortalidad base por la reducción. El techo es alto, porque admite análisis de sensibilidad, propagación de intervalos, transferibilidad y comparación con R4.",
+                "cita": "El comité pide que el grupo decida qué plazo usar y qué valor adoptar, o que lo estime con estadísticas públicas de cáncer gástrico."
+              },
+              "fecundidad": {
+                "puntaje": 2,
+                "justificacion": "La discrepancia con R4 abre preguntas sobre la selección de pacientes, la validez externa, los costos y los límites del modelo. También permite comparar las soluciones de los grupos.",
+                "cita": "Sus pacientes estaban seleccionados (tumores de extensión intermedia, límite de edad y una prueba cutánea que indicaba respuesta inmune conservada) y no hubo placebo."
+              },
+              "recursos": {
+                "puntaje": 2,
+                "justificacion": "La información clave puede solicitarse o estimarse con estadísticas públicas y una búsqueda simple al alcance de U, y R4 se entrega solo después de la estimación, de modo que no revela el modelo. Tengo una duda menor: el costo del extracto en Chile es difícil de obtener, pero la pregunta no exige un análisis de costos, por lo que se mantiene el 2.",
+                "cita": "R2 (Tarjeta con la mortalidad del hospital), disponible a solicitud del grupo"
+              }
+            },
+            "total": 24,
+            "mejoras": []
+          },
+          "meta": {
+            "modelo_respuesta": "claude-opus-5-5",
+            "request_id": "req_011ChMq6wkCEwNg3MnYvnxRT",
+            "fecha": "2026-11-24T13:27:31+00:00",
+            "intentos": 1,
+            "costo_usd": 0.075162,
+            "avisos": [
+              "cita_recortada_25:autenticidad"
+            ]
+          }
+        }
+      ],
+      "totales": [
+        24,
+        24,
+        24
+      ],
+      "rango_total": 0,
+      "rango_inestable": 4,
+      "evaluacion_inestable": false,
+      "mediana": {
+        "regla": "mediana por criterio (n par: mediana inferior)",
+        "total": 24,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 2
+        },
+        "corrida_fuente": {
+          "genuino": 1,
+          "abierta": 1,
+          "decisiones": 1,
+          "realismo": 1,
+          "autenticidad": 1,
+          "contexto": 1,
+          "ciclo": 1,
+          "validacion": 1,
+          "nivel": 1,
+          "autodiferenciacion": 1,
+          "fecundidad": 1,
+          "recursos": 1
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "tarea_id": "2026-11-extracto-hongo-cirugia-gastrica-v2",
+  "fecha": "2026-11-24T13:27:31Z",
+  "rub01": {
+    "version_rubrica": "4.0",
+    "criterios": {
+      "genuino": {
+        "puntaje": 2,
+        "justificacion": "Hay una necesidad real de decisión y no se entrega ningún modelo. Quien resuelve debe pasar por su cuenta de la reducción relativa a muertes absolutas. Que el enunciado nombre lo que se desconoce (mortalidad, costo, comparabilidad) orienta, pero no fija la estructura del cálculo.",
+        "cita": "El comité de un hospital chileno debe decidir si lo incorpora al tratamiento posterior a la cirugía."
+      },
+      "abierta": {
+        "puntaje": 2,
+        "justificacion": "La pregunta no prescribe ningún procedimiento. Admite varios modelos defendibles: distintos plazos, valores basales, ajustes por comparabilidad y formas de expresar la incertidumbre.",
+        "cita": "¿Cuántas muertes podría evitar el extracto en los pacientes del hospital, qué tan segura es esa cifra y qué le recomendarían al comité?"
+      },
+      "decisiones": {
+        "puntaje": 2,
+        "justificacion": "Resolver exige varias decisiones: elegir un plazo y una mortalidad basal, estimar el volumen de pacientes, suponer cuánto se trasladan los resultados japoneses y pedir información (R2, R3). Son decisiones de modelación sustantivas.",
+        "cita": "Nadie en el comité sabe cuántos de sus pacientes mueren hoy, cuánto costaría el extracto ni si sus pacientes se parecen a los del estudio."
+      },
+      "realismo": {
+        "puntaje": 2,
+        "justificacion": "Que un comité hospitalario evalúe incorporar un tratamiento a partir de evidencia publicada es una situación claramente plausible fuera de la escuela.",
+        "cita": "El comité de un hospital chileno debe decidir si lo incorpora al tratamiento posterior a la cirugía."
+      },
+      "autenticidad": {
+        "puntaje": 2,
+        "justificacion": "Los datos del metaanálisis y del ensayo aleatorizado (R4, cuyas cifras salen de un resumen público) son componentes auténticos. Constituyen el núcleo de la tarea y no fueron creados para enseñar.",
+        "cita": "Un metaanálisis que reunió a 8.009 pacientes, que recibieron en casi todos los casos quimioterapia, asoció el extracto con una reducción de 12 % en …"
+      },
+      "contexto": {
+        "puntaje": 2,
+        "justificacion": "El contexto clínico condiciona las decisiones, como el plazo, la mortalidad basal y la transferibilidad. También es indispensable para juzgar la seguridad de la cifra y formular la recomendación.",
+        "cita": "Se desconoce si los pacientes del hospital chileno tienen etapas de enfermedad similares."
+      },
+      "ciclo": {
+        "puntaje": 2,
+        "justificacion": "Responder obliga a recorrer todo el ciclo: comprender la situación clínica, simplificar con supuestos, matematizar el paso de riesgo relativo a muertes absolutas, calcular con incertidumbre, interpretar para el comité y validar. Ninguna fase viene hecha por el enunciado.",
+        "cita": "qué tan segura es esa cifra y qué le recomendarían al comité?"
+      },
+      "validacion": {
+        "puntaje": 2,
+        "justificacion": "R4 aporta un ensayo independiente, no usado en la construcción del modelo, para contrastar la estimación y discutir sus límites. A eso se suman las estadísticas públicas de mortalidad.",
+        "cita": "se entrega después de que el grupo presente su estimación"
+      },
+      "nivel": {
+        "puntaje": 2,
+        "justificacion": "El contexto y el lenguaje son comprensibles para estudiantes universitarios. La demanda corresponde a la descrita en MAR03 para U: modelo probabilístico, análisis de sensibilidad y crítica del modelo frente a datos nuevos.",
+        "cita": "¿Cuántas muertes podría evitar el extracto en los pacientes del hospital, qué tan segura es esa cifra"
+      },
+      "autodiferenciacion": {
+        "puntaje": 2,
+        "justificacion": "El piso es accesible: basta multiplicar una mortalidad basal estimada por el 12 % y por un número de pacientes. El techo es alto, con intervalos de incertidumbre, ajustes por heterogeneidad, análisis de sensibilidad y comparación de escenarios.",
+        "cita": "Pueden pedir información adicional."
+      },
+      "fecundidad": {
+        "puntaje": 2,
+        "justificacion": "La discrepancia con R4 abre preguntas sobre selección de pacientes, generalizabilidad, costo y límites del modelo. También permite comparar las soluciones de distintos grupos.",
+        "cita": "La supervivencia fue mayor en el grupo con PSK, y la diferencia absoluta observada es bastante mayor que la que resulta de aplicar la reducción …"
+      },
+      "recursos": {
+        "puntaje": 2,
+        "justificacion": "La información necesaria se obtiene a solicitud o mediante estadísticas públicas accesibles para el nivel U. R4, que contiene una pista sobre el modelo, se entrega solo después de la estimación, así que no revela la solución. El volumen de pacientes no se entrega, pero puede suponerse como parte del modelo.",
+        "cita": "El comité pide que el grupo decida qué plazo usar y qué valor adoptar, o que lo estime con estadísticas públicas de cáncer gástrico."
+      }
+    },
+    "total": 24,
+    "mejoras": []
+  },
+  "reproducibilidad": {
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "version_modelo": "claude-sonnet-5-5",
+        "costo_usd": 0.264192,
+        "version_prompt": "1.1"
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "version_modelo": "claude-opus-5-5",
+        "costo_usd": 0.31692,
+        "version_prompt": "1.3"
+      }
+    },
+    "version_prompt": {
+      "disenador": "1.1",
+      "evaluador": "1.3"
+    },
+    "version_rubrica": "4.0",
+    "version_MAR03": "1.0",
+    "version_MED01": "1.5",
+    "diseno_simulador": null,
+    "fecha": "2026-11-24T13:27:31Z",
+    "costo_usd": 0.581112
+  }
+}

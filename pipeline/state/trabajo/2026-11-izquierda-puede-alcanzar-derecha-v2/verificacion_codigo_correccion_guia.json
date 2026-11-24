@@ -1,0 +1,268 @@
+{
+  "tarea_id": "2026-11-izquierda-puede-alcanzar-derecha-v2",
+  "aprobado": true,
+  "estado_destino": "verificada",
+  "hallazgos": [
+    {
+      "invariante": "notebook",
+      "severidad": "advertencia",
+      "ubicacion": "guia.materiales.notebook",
+      "descripcion": "notebook escenarios.ipynb no encontrado: ",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "tarea.estudiante.recursos_a_solicitud[R2]",
+      "descripcion": "no se pudo contrastar con el texto: el ciclo no entregó `texto_noticia`; la afirmación del recurso solo se juzgó contra título, resumen y cifras",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "tarea.estudiante.recursos_a_solicitud[R3]",
+      "descripcion": "no se pudo contrastar con el texto: el ciclo no entregó `texto_noticia`; la afirmación del recurso solo se juzgó contra título, resumen y cifras",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "tarea.estudiante.recursos_a_solicitud[R4]",
+      "descripcion": "no se pudo contrastar con el texto: el ciclo no entregó `texto_noticia`; la afirmación del recurso solo se juzgó contra título, resumen y cifras",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "tarea.recursos_de_entrada[R1]",
+      "descripcion": "no se pudo contrastar con el texto: el ciclo no entregó `texto_noticia`; la afirmación del recurso solo se juzgó contra título, resumen y cifras",
+      "origen": "codigo"
+    }
+  ],
+  "cifras_contrastadas": [
+    {
+      "indice": 0,
+      "que_es": "intención de voto estimada para el PP en la encuesta de Ateneo del Dato",
+      "valor_tarea": "32,1%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 7"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "32,1%",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia"
+    },
+    {
+      "indice": 1,
+      "que_es": "intención de voto estimada para el PSOE en la encuesta de Ateneo del Dato",
+      "valor_tarea": "30,8%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 7"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "30,8%",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia"
+    },
+    {
+      "indice": 2,
+      "que_es": "tamaño de la muestra de la encuesta",
+      "valor_tarea": "2.000 entrevistas",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 8"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "2.000 entrevistas",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia"
+    },
+    {
+      "indice": 3,
+      "que_es": "intención de voto estimada para Vox",
+      "valor_tarea": "17,6%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 10"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "17,6%",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia"
+    },
+    {
+      "indice": 4,
+      "que_es": "suma de los votos estimados para las derechas (PP y Vox)",
+      "valor_tarea": "49,7%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 10"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "49,7%",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia"
+    },
+    {
+      "indice": 5,
+      "que_es": "suma de los votos estimados para la izquierda (PSOE, Frente Amplio y Podemos)",
+      "valor_tarea": "37,5%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 10"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "37,5%",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia"
+    },
+    {
+      "indice": 6,
+      "que_es": "votantes de Vox en 2023 que repetirían su voto",
+      "valor_tarea": "86,6%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 13"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "86,6%",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia"
+    },
+    {
+      "indice": 7,
+      "que_es": "votantes del PP en 2023 que repetirían su voto",
+      "valor_tarea": "76,1%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 13"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "76,1%",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia"
+    },
+    {
+      "indice": 8,
+      "que_es": "error muestral para el conjunto de la muestra con nivel de confianza del 95,5%",
+      "valor_tarea": "±2,2%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 24"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "±2,2%",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia"
+    },
+    {
+      "indice": 9,
+      "que_es": "votantes del PP en 2023 que ahora votarían a Vox",
+      "valor_tarea": "18,2%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 13"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "18,2%",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia"
+    },
+    {
+      "indice": 10,
+      "que_es": "votantes del PP en 2023 que ahora votarían al PSOE",
+      "valor_tarea": "1,2%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 13"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "1,2%",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia"
+    },
+    {
+      "indice": 11,
+      "que_es": "votantes de Vox en 2023 que ahora votarían al PP",
+      "valor_tarea": "6,1%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 13"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "6,1%",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia"
+    },
+    {
+      "indice": 12,
+      "que_es": "votantes del PSOE en 2023 que repetirían su voto",
+      "valor_tarea": "70,6%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 13"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "70,6%",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia"
+    },
+    {
+      "indice": 13,
+      "que_es": "votantes del PSOE en 2023 que ahora votarían al PP",
+      "valor_tarea": "8%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 13"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "8%",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia"
+    },
+    {
+      "indice": 14,
+      "que_es": "votantes del PSOE en 2023 que ahora votarían a Vox",
+      "valor_tarea": "5,7%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 13"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "5,7%",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia"
+    },
+    {
+      "indice": 15,
+      "que_es": "votantes del PSOE en 2023 que ahora votarían al Frente Amplio",
+      "valor_tarea": "3,9%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 13"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "3,9%",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia"
+    }
+  ],
+  "notebook": {
+    "estado": "no_encontrado",
+    "ruta": "escenarios.ipynb",
+    "salida_resumen": ""
+  },
+  "meta": {
+    "agente": "verificador",
+    "version_prompt": "1.1",
+    "modelo": null,
+    "request_id": null,
+    "fecha": "2026-11-24T13:26:01+00:00",
+    "costo_usd": 0.0,
+    "modelo_llamado": true,
+    "texto_noticia_recibido": false,
+    "uso": null
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "run": {
+    "id": "N4_AA_r1",
+    "nivel": "N4",
+    "composicion": "AA",
+    "rep": 1,
+    "estilos": [
+      "A",
+      "A"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.063364,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P3-MM",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P4-WM",
+        "fase_secundaria": "P3-MM",
+        "eventos": []
+      },
+      {
+        "n": 3,
+        "fase": "P3-MM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 4,
+        "fase": "P6-VAL",
+        "fase_secundaria": "EMK",
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P3-MM",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 6,
+        "fase": "P3-MM",
+        "fase_secundaria": null,
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P3-MM",
+        "fase_secundaria": "P4-WM",
+        "eventos": []
+      },
+      {
+        "n": 8,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 9,
+        "fase": "P3-MM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 10,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P7-EXP",
+        "eventos": [
+          "ASSUME",
+          "STRAT"
+        ]
+      },
+      {
+        "n": 11,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 12,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      }
+    ],
+    "bloqueos": [],
+    "supuestos": [
+      "retención de las elecciones anteriores aplicada a los porcentajes actuales de la encuesta",
+      "los móviles pueden ir a otros partidos o a abstención, no solo a la izquierda",
+      "un voto que cambia de bloque reduce o aumenta la diferencia en 2",
+      "un voto que pasa a abstención u otros, o que llega desde el resto, cambia la diferencia en 1"
+    ],
+    "modelo": "balance lineal",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "La izquierda necesita unos 6 puntos netos para empatar (la mitad de la diferencia de 12,2). Solo con los móviles de la derecha (unos 10 puntos) alcanzaría si más del 60% pasara a la izquierda, lo que ven poco verosímil; por tanto dependería también de los indecisos (12,8%). Lo consideran poco verosímil y piden la retención de la izquierda, el destino del 12,8% y el margen de error."
+    },
+    "ruta_principal": "R4",
+    "rutas": [
+      "R1",
+      "R2",
+      "R4"
+    ]
+  }
+}

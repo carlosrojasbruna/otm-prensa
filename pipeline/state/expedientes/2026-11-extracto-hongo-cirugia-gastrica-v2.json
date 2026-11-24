@@ -1,0 +1,470 @@
+{
+  "tarea_id": "2026-11-extracto-hongo-cirugia-gastrica-v2",
+  "estado": "evaluada",
+  "iteraciones": 1,
+  "artefactos": {
+    "tarea": {
+      "id": "2026-11-extracto-hongo-cirugia-gastrica-v2",
+      "titulo": "¿Cuántas muertes evitaría un extracto de hongo en nuestro hospital?",
+      "estado": "evaluada",
+      "version": 2,
+      "fecha": "2026-11-24",
+      "noticia": {
+        "noticia_id": "2026-11-23-npr-mushroom-supplements-promise-health-benefits-what",
+        "medio": "NPR",
+        "titulo": "Mushroom supplements promise health benefits. What does the science say?",
+        "fecha": "2026-11-23",
+        "url": "https://www.npr.org/2026/11/23/nx-s1-6047791/mushroom-supplements-health-research",
+        "resumen_propio": "Un reportaje de ciencia examina las promesas de los suplementos de hongos (salud intestinal, concentración, inmunidad) y las contrasta con la escasa evidencia clínica. Describe un extracto del hongo cola de pavo, estudiado en Japón en pacientes operados de cáncer gástrico, que un metaanálisis asoció con menor mortalidad, y una revisión de 2023 que examinó miles de estudios, conservó solo una pequeña parte y obtuvo resultados mixtos.",
+        "cifras_usadas": [
+          {
+            "valor": "8,009",
+            "unidad": "pacientes",
+            "que_es": "pacientes incluidos en el metaanálisis sobre PSK tras cirugía de tumor gástrico",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 97"
+            }
+          },
+          {
+            "valor": "12%",
+            "unidad": "porcentaje de reducción del riesgo de muerte",
+            "que_es": "reducción del riesgo de muerte en pacientes que recibieron PSK",
+            "localizador": {
+              "fuente": "noticia",
+              "ubicacion": "párrafo 97"
+            }
+          }
+        ]
+      },
+      "nivel_principal": "U",
+      "variantes": {
+        "abajo": "S",
+        "arriba": null
+      },
+      "area": "salud",
+      "contenidos_matematicos": [
+        "riesgo relativo y absoluto",
+        "número necesario a tratar",
+        "incertidumbre y simulación",
+        "análisis de sensibilidad",
+        "decisión bajo incertidumbre"
+      ],
+      "tiempo_estimado": "2 sesiones de 90 min",
+      "estudiante": {
+        "enunciado_es": "El PSK es un extracto purificado del hongo cola de pavo, estudiado en Japón en personas operadas de un tumor gástrico. Un metaanálisis que reunió a 8.009 pacientes, que recibieron en casi todos los casos quimioterapia, asoció el extracto con una reducción de 12 % en el riesgo de muerte. El comité de un hospital chileno debe decidir si lo incorpora al tratamiento posterior a la cirugía. Nadie en el comité sabe cuántos de sus pacientes mueren hoy, cuánto costaría el extracto ni si sus pacientes se parecen a los del estudio. Pueden pedir información adicional. ¿Cuántas muertes podría evitar el extracto en los pacientes del hospital, qué tan segura es esa cifra y qué le recomendarían al comité?",
+        "foto_descripcion": "Ícono de un hongo junto a una balanza que compara un frasco de cápsulas con una silueta de paciente en camilla.",
+        "recursos_a_solicitud": [
+          {
+            "id": "R2",
+            "que_es": "Tarjeta con la mortalidad del hospital",
+            "contenido": "Supuesto del escenario: el hospital tiene registros de la mortalidad observada de sus pacientes operados de tumor gástrico en años anteriores, medida como proporción que fallece dentro de un plazo. El comité pide que el grupo decida qué plazo usar y qué valor adoptar, o que lo estime con estadísticas públicas de cáncer gástrico.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P2-RM",
+            "fuente": "supuesto del escenario"
+          },
+          {
+            "id": "R3",
+            "que_es": "Tarjeta sobre la comparabilidad de los pacientes",
+            "contenido": "Supuesto del escenario: los pacientes del metaanálisis fueron tratados principalmente en Japón y recibieron además el tratamiento complementario habitual de su centro. Se desconoce si los pacientes del hospital chileno tienen etapas de enfermedad similares.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P2-RM",
+            "fuente": "supuesto del escenario"
+          },
+          {
+            "id": "R4",
+            "que_es": "Ficha de un ensayo aleatorizado de seguimiento largo con PSK; se entrega después de que el grupo presente su estimación",
+            "contenido": "Ensayo aleatorizado hecho en hospitales del centro de Japón con pacientes operados de cáncer gástrico con intención curativa. Todos recibieron quimioterapia y a un grupo se le añadió PSK. El seguimiento duró varios años. La supervivencia fue mayor en el grupo con PSK, y la diferencia absoluta observada es bastante mayor que la que resulta de aplicar la reducción relativa del metaanálisis a la mortalidad del grupo sin PSK. Fue un ensayo pequeño frente al metaanálisis y su intervalo de confianza es amplio e incluye la reducción del metaanálisis. Sus pacientes estaban seleccionados (tumores de extensión intermedia, límite de edad y una prueba cutánea que indicaba respuesta inmune conservada) y no hubo placebo. Las cifras están en el resumen público del artículo y el docente las entrega desde ahí.",
+            "disponibilidad": "a_solicitud",
+            "fase": "P6-VAL",
+            "fuente": "otra fuente: Nakazato H. y colaboradores, «Efficacy of immunochemotherapy as adjuvant treatment after curative resection of gastric cancer», The Lancet 343(8906):1122-1126, 1994"
+          }
+        ]
+      },
+      "variantes_detalle": {
+        "abajo": {
+          "tramo": "S2",
+          "cambios": "Se pide estimar cuántas muertes se evitarían en un grupo de pacientes del hospital con una sola mortalidad basal acordada, sin intervalo de incertidumbre; la cuestión central es distinguir reducción relativa de absoluta y comparar dos mortalidades basales."
+        },
+        "arriba": null
+      },
+      "recursos_de_entrada": [
+        {
+          "id": "R1",
+          "que_es": "Datos del metaanálisis tal como se entregan en el enunciado",
+          "contenido": "El PSK es un extracto purificado del hongo cola de pavo, estudiado en Japón. El metaanálisis incluyó a 8.009 pacientes operados de tumor gástrico, que recibieron en casi todos los casos quimioterapia, y asoció el extracto con una reducción de 12 % en el riesgo de muerte.",
+          "disponibilidad": "de_entrada",
+          "fase": "P1-MRS",
+          "fuente": "noticia, párrafo 97"
+        }
+      ],
+      "mapa_ciclo": {
+        "P1-MRS": {
+          "decision": "Entender que la reducción de 12 % es relativa al riesgo de partida y que depende del plazo y de la población; precisar qué decide el comité.",
+          "evidencia": "Reformulación escrita de la cifra y de las variables que faltan (mortalidad basal, tamaño del grupo, costo).",
+          "bloqueo_probable": "B12"
+        },
+        "P2-RM": {
+          "decision": "Elegir mortalidad basal y plazo, suponer comparabilidad con los pacientes del estudio, suponer reparto entre tratados y controles y eventos.",
+          "evidencia": "Supuestos explícitos con valores o rangos y tarjetas solicitadas (R2, R3).",
+          "bloqueo_probable": "B23"
+        },
+        "P3-MM": {
+          "decision": "Construir el modelo de riesgo: riesgo tratado = riesgo basal por el factor de reducción; muertes evitadas = pacientes por diferencia de riesgo; número necesario a tratar; incertidumbre con el error del logaritmo del riesgo relativo.",
+          "evidencia": "Expresiones con parámetros definidos y distribución elegida para el riesgo basal y el efecto.",
+          "bloqueo_probable": "B34"
+        },
+        "P4-WM": {
+          "decision": "Calcular muertes evitadas por cada mil pacientes, el número necesario a tratar, un intervalo y la sensibilidad a la mortalidad basal, con simulación si lo desean.",
+          "evidencia": "Tabla o gráfico de muertes evitadas en función del riesgo basal, con banda de incertidumbre.",
+          "bloqueo_probable": "B45"
+        },
+        "P5-INT": {
+          "decision": "Interpretar el resultado para el hospital, separando beneficio esperado, incertidumbre y límites de transferir el estudio.",
+          "evidencia": "Frase que traduce el resultado a pacientes del hospital y declara qué no se sabe.",
+          "bloqueo_probable": "B56"
+        },
+        "P6-VAL": {
+          "decision": "Pedir R4 tras presentar la estimación y comprobar la coherencia: comparar la reducción absoluta que predice el modelo con la diferencia de supervivencia que informa el ensayo, y verificar la cota lógica de que no se pueden evitar más muertes que las esperadas sin tratamiento. Si no calzan, explicar la discrepancia con lo que R4 dice del ensayo antes de cambiar la mortalidad basal.",
+          "evidencia": "Comparación escrita entre muertes evitadas predichas y diferencia observada, con una explicación de la discrepancia (tamaño, intervalo, selección de pacientes, plazo, ausencia de placebo) y revisión de supuestos.",
+          "bloqueo_probable": "B67"
+        },
+        "P7-EXP": {
+          "decision": "Recomendar al comité con criterio explícito (por ejemplo, costo por muerte evitada) y con sensibilidad a la mortalidad basal.",
+          "evidencia": "Informe breve con tabla de escenarios y recomendación condicional.",
+          "bloqueo_probable": null
+        }
+      },
+      "task_space": {
+        "required_assumptions": [
+          "La reducción de 12 % se interpreta como reducción relativa del riesgo de muerte en un plazo común.",
+          "La mortalidad basal del hospital debe estimarse o solicitarse; no se entrega.",
+          "El tamaño del grupo de pacientes del hospital debe estimarse.",
+          "Los pacientes del hospital se parecen a los del metaanálisis, supuesto discutible.",
+          "Para el intervalo se supone un solo ensayo de dos grupos iguales, un mismo plazo de seguimiento y un número de muertes derivado de la mortalidad basal."
+        ],
+        "reference_solution": {
+          "steps": "1) Interpretar 12 % como reducción relativa: riesgo tratado = 0,88 por riesgo basal p0. 2) Reducción absoluta ARR = 0,12 por p0; número necesario a tratar NNT = 1/ARR. 3) Con p0 = 0,40 (supuesto): ARR = 0,048, NNT ≈ 21 y por cada mil pacientes ≈ 48 muertes evitadas. Con p0 = 0,20: ARR = 0,024, NNT ≈ 42, 24 por mil. Con p0 = 0,60: ARR = 0,072, NNT ≈ 14, 72 por mil. 4) Incertidumbre: se supone, de forma simplificada, un solo ensayo con los 8.009 pacientes repartidos en mitades de unos 4.005 y p0 = 0,40. Las muertes son ≈ 1.602 en el control (a) y ≈ 1.410 en los tratados (c). El error estándar del log del riesgo relativo es sqrt(1/a − 1/n1 + 1/c − 1/n2) ≈ sqrt(0,000624 − 0,000250 + 0,000709 − 0,000250) ≈ 0,029. El RR queda entre 0,83 y 0,93 al 95 %, y la reducción absoluta entre 0,027 y 0,067, es decir, 27 a 67 muertes evitadas por mil (NNT entre 15 y 36). Este intervalo sale de supuestos simplificadores (un solo ensayo de dos grupos iguales, un mismo plazo) y subestima la incertidumbre real, porque el metaanálisis reúne varios ensayos distintos: es una cota optimista de qué tan segura es la cifra. 5) Después de presentar la estimación, se compara con la ficha R4 y con la cota lógica, y se añaden costo y comparabilidad para la recomendación.",
+          "result": "Con una mortalidad basal intermedia (por ejemplo 40 % en el plazo elegido) se evitarían unas 48 muertes por cada mil pacientes tratados (NNT ≈ 21), con un intervalo, bajo supuestos simplificadores, de entre 27 y 67 por mil. Esa banda es una cota optimista de la incertidumbre real. El resultado es proporcional a la mortalidad basal y cae si los pacientes del hospital difieren de los del estudio. La recomendación debe ser condicional al costo, a la comparabilidad y a la mortalidad basal real.",
+          "acceptable_range": "Muertes evitadas entre ≈ 24 y 72 por mil para mortalidad basal entre 0,20 y 0,60; cualquier cifra coherente con el supuesto de mortalidad basal declarado y con la lógica relativa vs. absoluta es aceptable. Con mortalidad basal de 0,40 y el intervalo simplificado, entre ≈ 27 y 67 por mil. Resultados que usen 12 puntos porcentuales no son aceptables."
+        },
+        "routes": [
+          {
+            "id": "R1",
+            "nombre": "Conversión directa de riesgo relativo a absoluto",
+            "nivel": "S2",
+            "modelo": "Muertes evitadas = pacientes por mortalidad basal por 0,12, para dos o tres mortalidades basales",
+            "resultado": "Por cada mil pacientes: 24, 48 y 72 muertes evitadas con mortalidad basal de 0,20, 0,40 y 0,60"
+          },
+          {
+            "id": "R2",
+            "nombre": "NNT con intervalo por aproximación normal del log RR",
+            "nivel": "U",
+            "modelo": "ARR = p0(1 − RR), NNT = 1/ARR; error estándar del log RR = sqrt(1/a − 1/n1 + 1/c − 1/n2), con eventos supuestos en cada brazo de igual tamaño",
+            "resultado": "Con p0 = 0,40: NNT ≈ 21, ARR entre 0,027 y 0,067 (27 a 67 muertes evitadas por mil), intervalo que subestima la incertidumbre real"
+          },
+          {
+            "id": "R3",
+            "nombre": "Simulación de Monte Carlo con incertidumbre en riesgo basal y efecto",
+            "nivel": "U",
+            "modelo": "Distribuciones para p0 (según registros del hospital) y RR (normal en escala log, con error estándar cercano a 0,029 como piso optimista) y simulación de muertes evitadas en un grupo del hospital",
+            "resultado": "Distribución de muertes evitadas con mediana y percentiles 2,5 y 97,5; probabilidad de superar un umbral de decisión"
+          },
+          {
+            "id": "R4",
+            "nombre": "Análisis de decisión con costo",
+            "nivel": "U",
+            "modelo": "Costo por muerte evitada = costo por paciente por NNT, comparado con un umbral del comité y con sensibilidad a p0",
+            "resultado": "Recomendación condicionada: el extracto es atractivo si el costo por paciente por NNT es menor que el umbral aceptado por el comité"
+          }
+        ],
+        "modelo_inadecuado": {
+          "id": "RX: restar 12 puntos porcentuales a la mortalidad (por ejemplo, de 40 % a 28 %).",
+          "por_que_falla": "Confunde reducción relativa con absoluta: el 12 % se aplica al riesgo de partida, por lo que con 40 % de mortalidad el riesgo baja a 35,2 % y no a 28 %. Sobrestima el beneficio unas 2,5 veces y ignora la incertidumbre y la dependencia de la mortalidad basal."
+        },
+        "validation_evidence": "Comprobación de coherencia con la ficha que entrega R4 después de que el grupo presente su estimación: comparar la reducción absoluta que predice el modelo (con su rango de mortalidad basal y su intervalo) con la diferencia de supervivencia que observó el ensayo descrito en R4, y mantener la cota lógica de que las muertes evitadas no pueden exceder las muertes esperadas sin tratamiento. Si las cifras no calzan, el grupo primero explica la discrepancia con lo que R4 informa del ensayo (su tamaño, la amplitud de su intervalo de confianza, la selección de pacientes, el plazo de seguimiento y la ausencia de placebo) y solo después revisa su mortalidad basal o su supuesto de comparabilidad. El contraste sirve para discutir el alcance y los límites del modelo, no para ajustarlo a ese resultado.",
+        "agent_visibility": {
+          "students": [
+            "enunciado_es",
+            "foto_descripcion",
+            "recursos_a_solicitud"
+          ],
+          "coder": [
+            "enunciado_es",
+            "task_space"
+          ],
+          "guide": [
+            "all"
+          ]
+        }
+      },
+      "rubrica_rub01": {
+        "total": 24,
+        "por_criterio": {
+          "genuino": 2,
+          "abierta": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "contexto": 2,
+          "ciclo": 2,
+          "validacion": 2,
+          "nivel": 2,
+          "autodiferenciacion": 2,
+          "fecundidad": 2,
+          "recursos": 2
+        }
+      },
+      "rubrica_rub02": {
+        "P": null,
+        "S": null,
+        "U": null
+      },
+      "modelo_y_prompt": {
+        "diseñador": "claude-sonnet-5-5",
+        "version_prompt": "1.1",
+        "version_rubrica": "4.0"
+      }
+    },
+    "noticia": {
+      "id": "2026-11-23-npr-mushroom-supplements-promise-health-benefits-what",
+      "medio_id": "npr",
+      "medio": "NPR",
+      "idioma": "en",
+      "titulo": "Mushroom supplements promise health benefits. What does the science say?",
+      "fecha": "2026-11-23",
+      "url": "https://www.npr.org/2026/11/23/nx-s1-6047791/mushroom-supplements-health-research",
+      "area": "salud",
+      "resumen_propio": "Un reportaje de ciencia examina las promesas de los suplementos de hongos (salud intestinal, concentración, inmunidad) y las contrasta con la escasa evidencia clínica. Describe un extracto del hongo cola de pavo, estudiado en Japón en pacientes operados de cáncer gástrico, que un metaanálisis asoció con menor mortalidad, y una revisión de 2023 que examinó miles de estudios, conservó solo una pequeña parte y obtuvo resultados mixtos.",
+      "cifras": [
+        {
+          "valor": "8,009",
+          "unidad": "pacientes",
+          "que_es": "pacientes incluidos en el metaanálisis sobre PSK tras cirugía de tumor gástrico",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 97"
+          }
+        },
+        {
+          "valor": "12%",
+          "unidad": "porcentaje de reducción del riesgo de muerte",
+          "que_es": "reducción del riesgo de muerte en pacientes que recibieron PSK",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 97"
+          }
+        },
+        {
+          "valor": "2,349",
+          "unidad": "estudios",
+          "que_es": "estudios revisados sobre hongos medicinales y cáncer",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 101"
+          }
+        },
+        {
+          "valor": 39,
+          "unidad": "estudios",
+          "que_es": "estudios considerados suficientemente robustos para el análisis de 2023",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 101"
+          }
+        },
+        {
+          "valor": 31,
+          "unidad": "estudios",
+          "que_es": "estudios que mostraron efectos beneficiosos de los hongos",
+          "localizador": {
+            "fuente": "noticia",
+            "ubicacion": "párrafo 101"
+          }
+        }
+      ],
+      "recuperada_en": "2026-11-23T21:28:42Z",
+      "filtro": {
+        "version_rubrica": "4.0",
+        "puntajes": {
+          "genuino": 2,
+          "decisiones": 2,
+          "realismo": 2,
+          "autenticidad": 2,
+          "validacion": 2
+        },
+        "total": 10,
+        "pasa": true,
+        "justificacion": "Noticia con problema genuino sobre evidencia de suplementos y cifras reales de metaanálisis y revisión que permiten decisiones de modelación y contraste externo. Las cifras provienen de la noticia y deberían verificarse en las fuentes originales."
+      }
+    },
+    "evaluacion": {
+      "tarea_id": "2026-11-extracto-hongo-cirugia-gastrica-v2",
+      "fecha": "2026-11-24T13:27:31Z",
+      "rub01": {
+        "version_rubrica": "4.0",
+        "criterios": {
+          "genuino": {
+            "puntaje": 2,
+            "justificacion": "Hay una necesidad real de decisión y no se entrega ningún modelo. Quien resuelve debe pasar por su cuenta de la reducción relativa a muertes absolutas. Que el enunciado nombre lo que se desconoce (mortalidad, costo, comparabilidad) orienta, pero no fija la estructura del cálculo.",
+            "cita": "El comité de un hospital chileno debe decidir si lo incorpora al tratamiento posterior a la cirugía."
+          },
+          "abierta": {
+            "puntaje": 2,
+            "justificacion": "La pregunta no prescribe ningún procedimiento. Admite varios modelos defendibles: distintos plazos, valores basales, ajustes por comparabilidad y formas de expresar la incertidumbre.",
+            "cita": "¿Cuántas muertes podría evitar el extracto en los pacientes del hospital, qué tan segura es esa cifra y qué le recomendarían al comité?"
+          },
+          "decisiones": {
+            "puntaje": 2,
+            "justificacion": "Resolver exige varias decisiones: elegir un plazo y una mortalidad basal, estimar el volumen de pacientes, suponer cuánto se trasladan los resultados japoneses y pedir información (R2, R3). Son decisiones de modelación sustantivas.",
+            "cita": "Nadie en el comité sabe cuántos de sus pacientes mueren hoy, cuánto costaría el extracto ni si sus pacientes se parecen a los del estudio."
+          },
+          "realismo": {
+            "puntaje": 2,
+            "justificacion": "Que un comité hospitalario evalúe incorporar un tratamiento a partir de evidencia publicada es una situación claramente plausible fuera de la escuela.",
+            "cita": "El comité de un hospital chileno debe decidir si lo incorpora al tratamiento posterior a la cirugía."
+          },
+          "autenticidad": {
+            "puntaje": 2,
+            "justificacion": "Los datos del metaanálisis y del ensayo aleatorizado (R4, cuyas cifras salen de un resumen público) son componentes auténticos. Constituyen el núcleo de la tarea y no fueron creados para enseñar.",
+            "cita": "Un metaanálisis que reunió a 8.009 pacientes, que recibieron en casi todos los casos quimioterapia, asoció el extracto con una reducción de 12 % en …"
+          },
+          "contexto": {
+            "puntaje": 2,
+            "justificacion": "El contexto clínico condiciona las decisiones, como el plazo, la mortalidad basal y la transferibilidad. También es indispensable para juzgar la seguridad de la cifra y formular la recomendación.",
+            "cita": "Se desconoce si los pacientes del hospital chileno tienen etapas de enfermedad similares."
+          },
+          "ciclo": {
+            "puntaje": 2,
+            "justificacion": "Responder obliga a recorrer todo el ciclo: comprender la situación clínica, simplificar con supuestos, matematizar el paso de riesgo relativo a muertes absolutas, calcular con incertidumbre, interpretar para el comité y validar. Ninguna fase viene hecha por el enunciado.",
+            "cita": "qué tan segura es esa cifra y qué le recomendarían al comité?"
+          },
+          "validacion": {
+            "puntaje": 2,
+            "justificacion": "R4 aporta un ensayo independiente, no usado en la construcción del modelo, para contrastar la estimación y discutir sus límites. A eso se suman las estadísticas públicas de mortalidad.",
+            "cita": "se entrega después de que el grupo presente su estimación"
+          },
+          "nivel": {
+            "puntaje": 2,
+            "justificacion": "El contexto y el lenguaje son comprensibles para estudiantes universitarios. La demanda corresponde a la descrita en MAR03 para U: modelo probabilístico, análisis de sensibilidad y crítica del modelo frente a datos nuevos.",
+            "cita": "¿Cuántas muertes podría evitar el extracto en los pacientes del hospital, qué tan segura es esa cifra"
+          },
+          "autodiferenciacion": {
+            "puntaje": 2,
+            "justificacion": "El piso es accesible: basta multiplicar una mortalidad basal estimada por el 12 % y por un número de pacientes. El techo es alto, con intervalos de incertidumbre, ajustes por heterogeneidad, análisis de sensibilidad y comparación de escenarios.",
+            "cita": "Pueden pedir información adicional."
+          },
+          "fecundidad": {
+            "puntaje": 2,
+            "justificacion": "La discrepancia con R4 abre preguntas sobre selección de pacientes, generalizabilidad, costo y límites del modelo. También permite comparar las soluciones de distintos grupos.",
+            "cita": "La supervivencia fue mayor en el grupo con PSK, y la diferencia absoluta observada es bastante mayor que la que resulta de aplicar la reducción …"
+          },
+          "recursos": {
+            "puntaje": 2,
+            "justificacion": "La información necesaria se obtiene a solicitud o mediante estadísticas públicas accesibles para el nivel U. R4, que contiene una pista sobre el modelo, se entrega solo después de la estimación, así que no revela la solución. El volumen de pacientes no se entrega, pero puede suponerse como parte del modelo.",
+            "cita": "El comité pide que el grupo decida qué plazo usar y qué valor adoptar, o que lo estime con estadísticas públicas de cáncer gástrico."
+          }
+        },
+        "total": 24,
+        "mejoras": []
+      },
+      "reproducibilidad": {
+        "agentes": {
+          "disenador": {
+            "modelo": "claude-sonnet-5-5",
+            "version_modelo": "claude-sonnet-5-5",
+            "costo_usd": 0.264192,
+            "version_prompt": "1.1"
+          },
+          "evaluador": {
+            "modelo": "claude-opus-5-5",
+            "version_modelo": "claude-opus-5-5",
+            "costo_usd": 0.31692,
+            "version_prompt": "1.3"
+          }
+        },
+        "version_prompt": {
+          "disenador": "1.1",
+          "evaluador": "1.3"
+        },
+        "version_rubrica": "4.0",
+        "version_MAR03": "1.0",
+        "version_MED01": "1.5",
+        "diseno_simulador": null,
+        "fecha": "2026-11-24T13:27:31Z",
+        "costo_usd": 0.581112
+      }
+    }
+  },
+  "historial": [
+    {
+      "fecha": "2026-11-24T13:25:39+00:00",
+      "de": null,
+      "a": "borrador"
+    },
+    {
+      "fecha": "2026-11-24T13:27:31+00:00",
+      "de": "borrador",
+      "a": "evaluada",
+      "iteracion": 1,
+      "rub01_total": 24
+    }
+  ],
+  "marcas": {
+    "ciclo_id": "ciclo_20261124T132401691105Z",
+    "noticia_id": "2026-11-23-npr-mushroom-supplements-promise-health-benefits-what",
+    "nivel_objetivo": "U",
+    "origen": "v2 de 2026-11-extracto-hongo-cirugia-gastrica (revisión humana)",
+    "version_de": "2026-11-extracto-hongo-cirugia-gastrica",
+    "reusar_simulacion_de": "2026-11-extracto-hongo-cirugia-gastrica",
+    "guia_base_de": null,
+    "atencion_mejoras": [
+      {
+        "criterio": "validacion",
+        "que_cambio": "Reescribí validation_evidence y la fila P6-VAL del mapa del ciclo. Ya no nombran el ensayo ni lo llaman «independiente» o «no usado para construir el modelo»; remiten a R4. El contraste queda como comprobación de coherencia: la reducción absoluta que predice el modelo frente a la diferencia de supervivencia que informa R4, más la cota lógica de que las muertes evitadas no pueden exceder las esperadas sin tratamiento. Si no calzan, el grupo explica la discrepancia con lo que R4 dice del ensayo (tamaño, amplitud del intervalo, selección de pacientes, plazo, ausencia de placebo) antes de tocar su mortalidad basal. No escribí resultados ni cifras del ensayo fuera de R4."
+      },
+      {
+        "criterio": "recursos",
+        "que_cambio": "R4 deja de ser un «supuesto del escenario». Sigue a solicitud y en fase P6-VAL, y su que_es dice que se entrega después de que el grupo presente su estimación. Su fuente ahora es Nakazato H. y colaboradores, The Lancet 343(8906):1122-1126, 1994; omití el identificador doi del campo fuente porque su punto se confunde con un decimal, y la referencia queda completa y verificable por revista, volumen y páginas. El contenido describe el ensayo sin dígitos ni cifras en palabras ni cifras del artículo: ensayo aleatorizado en hospitales del centro de Japón, pacientes seleccionados, quimioterapia con o sin PSK, seguimiento de varios años, diferencia absoluta mayor que la que da la reducción relativa del metaanálisis, ensayo pequeño con intervalo amplio, sin placebo. Cierra diciendo que las cifras están en el resumen público y que el docente las entrega. R1, R2 y R3 no cambian."
+      },
+      {
+        "criterio": "autenticidad",
+        "que_cambio": "En el enunciado (enunciado_es) y en el recurso R1 ya no se habla de «un extracto de hongo japonés». Ahora dice que el PSK es un extracto purificado del hongo cola de pavo, estudiado en Japón, y que los pacientes del metaanálisis recibieron en casi todos los casos quimioterapia (noticia, párrafo 97). Mantuve las cifras 8.009 pacientes y 12 %, la decisión del comité y el nivel U."
+      },
+      {
+        "criterio": "nivel",
+        "que_cambio": "En solucion_pasos corregí el error estándar del log del riesgo relativo a sqrt(1/a − 1/n1 + 1/c − 1/n2). Con mitades de unos 4.005 pacientes y mortalidad basal de 0,40 da cerca de 0,029, RR entre 0,83 y 0,93 al 95 %, reducción absoluta entre 0,027 y 0,067 (27 a 67 muertes evitadas por mil) y NNT entre 15 y 36. Actualicé solucion_resultado, solucion_rango y las rutas R2 y R3. Agregué que ese intervalo sale de supuestos simplificadores (un solo ensayo de dos grupos iguales, un mismo plazo) y subestima la incertidumbre real, porque el metaanálisis reúne varios ensayos distintos; es una cota optimista."
+      }
+    ],
+    "agentes": {
+      "disenador": {
+        "modelo": "claude-sonnet-5-5",
+        "versiones_modelo": [
+          "claude-sonnet-5-5"
+        ],
+        "costo_usd": 0.264192,
+        "llamadas": 2
+      },
+      "evaluador": {
+        "modelo": "claude-opus-5-5",
+        "versiones_modelo": [
+          "claude-opus-5-5"
+        ],
+        "costo_usd": 0.31692,
+        "llamadas": 3
+      }
+    },
+    "version_MAR03": "1.0",
+    "evaluacion_inestable": false,
+    "evaluacion_rango_total": 0,
+    "evaluacion_corridas": "pipeline/state/trabajo/2026-11-extracto-hongo-cirugia-gastrica-v2/evaluacion_corridas.json",
+    "preverificacion": {
+      "fecha": "2026-11-24T13:27:31Z",
+      "version_tarea": 2,
+      "aprobado": true,
+      "criticos": [],
+      "texto_noticia": true
+    },
+    "pendiente": "revision_humana_1"
+  }
+}

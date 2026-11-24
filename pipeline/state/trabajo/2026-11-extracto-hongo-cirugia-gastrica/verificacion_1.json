@@ -1,0 +1,98 @@
+{
+  "tarea_id": "2026-11-extracto-hongo-cirugia-gastrica",
+  "aprobado": false,
+  "estado_destino": "evaluada",
+  "hallazgos": [
+    {
+      "invariante": "notebook",
+      "severidad": "advertencia",
+      "ubicacion": "guia.materiales.notebook",
+      "descripcion": "notebook escenarios.ipynb no encontrado: ",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "critico",
+      "ubicacion": "tarea.task_space.validation_evidence",
+      "descripcion": "Ensayo de Nakazato y colaboradores (Lancet, 1994) sobre PSK adyuvante tras cirugía de cáncer gástrico — Es una referencia bibliográfica concreta (autores, revista y año) que no aparece en las fuentes ni en las trazas.",
+      "origen": "modelo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "critico",
+      "ubicacion": "guia.puesta_en_comun.contraste_validacion",
+      "descripcion": "Se cita como ejemplo el ensayo de Nakazato y colaboradores, Lancet, 1994 — Repite la referencia externa sin respaldo en las fuentes. Además contradice la propia instrucción de no agregar datos del ensayo que no estén en la tarea.",
+      "origen": "modelo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "guia.escenarios[E3].que_aprende",
+      "descripcion": "El grupo pregunta por el plazo del estudio, un supuesto que otros grupos no mencionan — Las trazas lo contradicen: N3_AA_r1, N4_VV_r1 y N4_AA_r1 también suponen una mortalidad medida en el mismo plazo que el estudio.",
+      "origen": "modelo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "guia.escenarios[E1].que_aprende",
+      "descripcion": "Pasa al número necesario a tratar y al costo por muerte evitada (rutas R2 y R4) — La corrida N4_AA_r1 calcula el NNT y el costo por muerte evitada, pero no construye el intervalo por log RR que define la ruta R2. Atribuirle la ruta R2 sobreinterpreta lo que hizo.",
+      "origen": "modelo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "tarea.estudiante.enunciado_es",
+      "descripcion": "Un extracto de hongo japonés, llamado PSK — La fuente dice que los estudios se hicieron en Japón, no que el hongo sea japonés. Es una imprecisión menor.",
+      "origen": "modelo"
+    }
+  ],
+  "cifras_contrastadas": [
+    {
+      "indice": 0,
+      "que_es": "pacientes incluidos en el metaanálisis sobre PSK tras cirugía de tumor gástrico",
+      "valor_tarea": "8,009",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 97"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "8,009",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 97 de la noticia; modelo: El párrafo 97 da ese número de pacientes operados de tumor gástrico incluidos en el metaanálisis; 8.009 es la misma cifra con otra notación."
+    },
+    {
+      "indice": 1,
+      "que_es": "reducción del riesgo de muerte en pacientes que recibieron PSK",
+      "valor_tarea": "12%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 97"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "12%",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 97 de la noticia; modelo: El párrafo 97 atribuye esa reducción del riesgo de muerte a quienes recibieron PSK. El valor, la unidad y el significado coinciden."
+    }
+  ],
+  "notebook": {
+    "estado": "no_encontrado",
+    "ruta": "escenarios.ipynb",
+    "salida_resumen": ""
+  },
+  "meta": {
+    "agente": "verificador",
+    "version_prompt": "1.1",
+    "modelo": "claude-opus-5-5",
+    "request_id": "req_011ChMo7wY5e8iNSUrmneyfq",
+    "fecha": "2026-11-24T13:01:25+00:00",
+    "costo_usd": 0.120044,
+    "modelo_llamado": true,
+    "texto_noticia_recibido": true,
+    "uso": {
+      "input_tokens": 16270,
+      "output_tokens": 2725,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 2320
+    }
+  }
+}

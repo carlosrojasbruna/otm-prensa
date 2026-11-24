@@ -1,0 +1,22 @@
+# Corrida N2_VV_r1
+
+Nivel N2 · estilos V/V · rep 1 · 18 turnos · término: acuerdo · modelo claude-sonnet-5-5
+
+**1. Cami:** Mmm, yo veo la balanza del dibujo: la derecha pesa más, 49,7 contra 37,5, y la idea es que algunas personas "en el aire" se pasen de un lado al otro. ¿Y si primero sacamos cuánta diferencia hay, o sea 49,7 − 37,5, para ver cuánto tendría que moverse?  
+**2. Fran:** Dale, 49,7 − 37,5 da 12,2 de diferencia. Pero si alguien se pasa de un platillo al otro, uno baja y el otro sube, ¿no? Creo que no habría que mover los 12,2 completos, tal vez la mitad.  
+**3. Cami:** Ah, tiene sentido: si paso un punto de la derecha a la izquierda, la derecha baja 1 y la izquierda sube 1, así que la diferencia cambia en 2. Entonces con 6,1 puntos que se cambien (12,2 ÷ 2) quedarían parejos, ¿te cuadra?  
+**4. Fran:** Sí, me cuadra, me lo imagino en la balanza: sacas 6,1 de un platillo y los pones en el otro. Ahora, ¿qué tan posible es? Si solo el 76,1% del PP repite, se podrían mover 23,9% de 32,1, ¿lo calculamos?  
+**5. Cami:** Dale: 0,239 × 32,1 = 7,67, o sea que del PP se podrían mover unos 7,7 puntos, más que los 6,1 que necesitamos. Pero ojo, que si no repiten, no todos caen en el platillo de la izquierda, ¿o sí?  
+**6. Fran:** Claro que no, ¿no? Me imagino a las figuras que están en el aire: unas caen a la izquierda, pero otras se van a otro partido o se quedan en casa sin votar. Habría que pedirle al equipo cuántos de los que dejan el PP terminan en la izquierda.  
+**7. Cami:** Si solo se movieran los del PP, tendrían que irse a la izquierda casi 8 de cada 10 (6,1 ÷ 7,67 ≈ 0,8), y eso me parece mucho. ¿Y si sumamos los de Vox, 0,134 × 17,6 ≈ 2,4, a ver cuánto cambia?  
+**8. Fran:** Dale, sumemos: 7,67 + 2,36 da unos 10 puntos que podrían moverse en total, así que para llegar a los 6,1 tendría que irse a la izquierda más o menos 6 de cada 10 de los que se sueltan. Igual me sigue pareciendo bastante, ¿no?  
+**9. Cami:** Sí, 6 de cada 10 es mucho, porque los que se sueltan también pueden irse a otro partido de derecha o quedarse en casa. Habría que preguntarle al equipo a dónde dicen que irían, y si a la izquierda también se le sueltan figuras.  
+**10. Fran:** Mirando el dibujo, me di cuenta de que hay gente que ni está en la balanza: 100 − 49,7 − 37,5 = 12,8% que son otros partidos o indecisos. Si buena parte de esos cayera a la izquierda, no haría falta sacar tanto de la derecha, ¿lo pedimos también?  
+**11. Cami:** Buena, pero ojo: si esos 12,8 caen a la izquierda, solo sube la izquierda y la derecha no baja, así que la diferencia se achica de a 1, no de a 2. Para cerrar los 12,2 casi todos tendrían que irse para allá, y eso me suena imposible, ¿no?  
+**12. Fran:** Casi imposible si solo vienen de ahí, pero me imagino mezclando: si la mitad de esos 12,8 (6,4) cae a la izquierda, quedan 12,2 − 6,4 = 5,8 de diferencia, y bastaría con que se pasen 2,9 desde la derecha. ¿Te parece más verosímil así?  
+**13. Cami:** Ahí sí se ve más posible: 2,9 de los 10 que se sueltan son unos 3 de cada 10, no 6. Pero todo depende de que la mitad de esos 12,8 se vaya a la izquierda, y eso también habría que preguntarlo, ¿no?  
+**14. Fran:** Entonces podríamos decir que se puede, pero necesita mucho movimiento: o 6 de cada 10 de los que se sueltan se van a la izquierda, o la mitad de los 12,8 indecisos más unos 3 de cada 10. ¿Lo escribimos así, pidiendo también a dónde van esos indecisos y los que se sueltan?  
+**15. Cami:** Sí, escribámoslo así, y agreguemos que la encuesta es online, así que también habría que preguntar qué tan representativa es. ¿Armo yo la respuesta y la lees?  
+**16. Fran:** Dale, armala vos y yo la leo. Acordate de poner también que hay que preguntar si a la izquierda se le sueltan votantes, porque eso cambiaría las cuentas.  
+**17. Cami:** ENTREGAMOS: Se puede, pero haría falta mucho movimiento: que 6 de cada 10 de los que se sueltan de PP y Vox se vayan a la izquierda, o que la mitad del 12,8% de indecisos se sume más unos 3 de cada 10 de los que se sueltan. Nos parece poco verosímil, y pediríamos a dónde van los que se sueltan, si a la izquierda también se le sueltan votantes y qué tan representativa es una encuesta online.  
+**18. Fran:** DE ACUERDO. Solo una duda: dijimos que "poco verosímil", pero con el 12,8% de indecisos puede que sea más posible de lo que parece, así que está bien que lo pidamos todo.  

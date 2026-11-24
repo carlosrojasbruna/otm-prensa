@@ -1,0 +1,152 @@
+{
+  "run": {
+    "id": "N1_VV_r1",
+    "nivel": "N1",
+    "composicion": "VV",
+    "rep": 1,
+    "estilos": [
+      "V",
+      "V"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.073104,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P3-MM",
+        "fase_secundaria": "P4-WM",
+        "eventos": []
+      },
+      {
+        "n": 3,
+        "fase": "P4-WM",
+        "fase_secundaria": "P1-MRS",
+        "eventos": []
+      },
+      {
+        "n": 4,
+        "fase": "P2-RM",
+        "fase_secundaria": "P4-WM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P6-VAL",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 6,
+        "fase": "P2-RM",
+        "fase_secundaria": "P1-MRS",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P4-WM",
+        "fase_secundaria": "P2-RM",
+        "eventos": []
+      },
+      {
+        "n": 8,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 9,
+        "fase": "P2-RM",
+        "fase_secundaria": null,
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 10,
+        "fase": "P5-INT",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 11,
+        "fase": "P6-VAL",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 12,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 13,
+        "fase": "P5-INT",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 14,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": []
+      },
+      {
+        "n": 15,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P2-RM",
+        "eventos": []
+      }
+    ],
+    "bloqueos": [
+      {
+        "codigo": "B23",
+        "turnos": [
+          7,
+          8,
+          9
+        ],
+        "resolucion": "peer",
+        "descripcion": "Duda explícita sobre si el 76,1% de fidelidad se aplica a la intención actual del PP o al voto anterior; durante tres turnos no se avanza en el cálculo. B propone en el turno 10 anotar la solicitud de datos y seguir con una respuesta provisoria, y luego se usan los porcentajes actuales como aproximación."
+      }
+    ],
+    "supuestos": [
+      "un traspaso de derecha a izquierda reduce la brecha el doble",
+      "los 12,8 puntos restantes son indecisos, otros partidos o blanco",
+      "fidelidad aplicada a la intención de voto actual como aproximación",
+      "ningún votante de la izquierda se pasa a la derecha"
+    ],
+    "modelo": "lineal",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Con unos 6 puntos que pasen de la derecha a la izquierda habría empate. Sin embargo, de los cerca de 10 puntos que podrían moverse desde PP y Vox, unos 6 tendrían que ir a la izquierda, y ningún votante de la izquierda tendría que irse a la derecha. Eso parece poco verosímil. Las cifras son aproximadas porque la fidelidad se aplicó a los porcentajes actuales. Faltan datos del voto anterior, del destino de quienes se mueven y de cuántos votantes de la izquierda podrían pasar a la derecha."
+    },
+    "ruta_principal": "R1",
+    "rutas": [
+      "R1",
+      "R2",
+      "R4"
+    ]
+  }
+}

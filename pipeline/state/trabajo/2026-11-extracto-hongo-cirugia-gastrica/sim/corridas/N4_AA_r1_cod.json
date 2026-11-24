@@ -1,0 +1,108 @@
+{
+  "run": {
+    "id": "N4_AA_r1",
+    "nivel": "N4",
+    "composicion": "AA",
+    "rep": 1,
+    "estilos": [
+      "A",
+      "A"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.051068,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P3-MM",
+        "fase_secundaria": "P1-MRS",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P2-RM",
+        "fase_secundaria": "EMK",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 3,
+        "fase": "P2-RM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "STRAT",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P4-WM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 5,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 6,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 7,
+        "fase": "P6-VAL",
+        "fase_secundaria": "EMK",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 8,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": [
+          "DIST"
+        ]
+      },
+      {
+        "n": 9,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      }
+    ],
+    "bloqueos": [],
+    "supuestos": [
+      "12 % es reducción relativa (RR ≈ 0,88)",
+      "el efecto se traslada igual a los pacientes del hospital",
+      "mortalidad base en el mismo horizonte de tiempo del estudio",
+      "N = 100 pacientes (ejemplo)",
+      "mortalidad base 40 % (ejemplo)",
+      "mortalidad base entre 20 % y 50 %"
+    ],
+    "modelo": "proporcional",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Se evitarían ≈ N·m·0,12 muertes (con m = 40 %, unas 5 por cada 100 pacientes, NNT ≈ 21), con rango según m (2,4 a 6 por cada 100 con m entre 20 % y 50 %) y el IC del RR, que no tienen. Recomiendan pedir N, m, costo, IC, efectos adversos y ver si los pacientes se parecen al estudio, y decidir según el costo por muerte evitada (NNT × costo por paciente). La cifra es una estimación condicional a que el 12 % sea relativo y se traslade a los pacientes del hospital, no una predicción segura."
+    },
+    "ruta_principal": "R1",
+    "rutas": [
+      "R1",
+      "R2",
+      "R4"
+    ]
+  }
+}

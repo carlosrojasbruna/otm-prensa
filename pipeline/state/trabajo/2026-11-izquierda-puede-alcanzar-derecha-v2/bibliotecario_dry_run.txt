@@ -1,0 +1,29 @@
+# DRY-RUN: no se escribe ningún archivo ni se ejecuta ningún comando
+# tarea 2026-11-izquierda-puede-alcanzar-derecha-v2 v2 -> tareas/2026-11/izquierda-puede-alcanzar-derecha/
+#   escribiría tareas/2026-11/izquierda-puede-alcanzar-derecha/tarea_v2.0_2026-11-24.json
+#   escribiría tareas/2026-11/izquierda-puede-alcanzar-derecha/tarea_v2.0_2026-11-24.md
+#   escribiría tareas/2026-11/izquierda-puede-alcanzar-derecha/guia_v2.0_2026-11-24.json
+#   escribiría tareas/2026-11/izquierda-puede-alcanzar-derecha/guia_v2.0_2026-11-24.md
+#   escribiría tareas/2026-11/izquierda-puede-alcanzar-derecha/evaluacion_v2.0_2026-11-24.json
+#   escribiría tareas/2026-11/izquierda-puede-alcanzar-derecha/trazas_v2.0_2026-11-24.json
+#   actualizaría tareas/catalogo.json (16 tarea(s); valida contra `catalogo`)
+#   el commit del catálogo es el real tras el primer commit (aquí 0000000)
+$ git switch -c tareas/semana-2026-W48
+$ git add -- tareas/2026-11/izquierda-puede-alcanzar-derecha/
+$ git commit -m 'tareas: publica 2026-11-izquierda-puede-alcanzar-derecha-v2 v2'
+$ git add -- tareas/catalogo.json
+$ git commit -m 'tareas: catálogo: 2026-11-izquierda-puede-alcanzar-derecha-v2 v2'
+$ git push -u origin tareas/semana-2026-W48
+$ gh pr create --base main --head tareas/semana-2026-W48 --title 'Tareas de la semana 2026-W48' --body '<cuerpo del PR, ver abajo>'
+# cuerpo del PR:
+#   ## Tareas incluidas
+#   
+#   - `2026-11-izquierda-puede-alcanzar-derecha` v2 · nivel S · RUB01 24/24
+#     - Noticia: elDiario.es, «El PP gana por la mínima al PSOE y la derecha supera a la izquierda en la última encuesta antes del 29N», 2026-11-23, https://www.eldiario.es/politica/pp-gana-minima-psoe-derecha-supera-izquierda-ultima-encuesta-29n_1_13684963.html
+#   
+#   ## Revisión (GOB01 §2)
+#   - [ ] Quien revisó la guía aprueba el merge.
+#   - [ ] Cifras con localizador; ningún texto literal de noticia > 25 palabras.
+#   - [ ] Productos bajo CC BY-NC-SA 4.0.
+#   
+#   Generado por el agente bibliotecario (script determinista).

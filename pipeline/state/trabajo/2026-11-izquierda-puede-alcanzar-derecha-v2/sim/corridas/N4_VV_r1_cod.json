@@ -1,0 +1,122 @@
+{
+  "run": {
+    "id": "N4_VV_r1",
+    "nivel": "N4",
+    "composicion": "VV",
+    "rep": 1,
+    "estilos": [
+      "V",
+      "V"
+    ],
+    "empieza": 0
+  },
+  "modelo": "claude-opus-5-5",
+  "costo_usd": 0.068104,
+  "codificacion": {
+    "turnos": [
+      {
+        "n": 1,
+        "fase": "P1-MRS",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 2,
+        "fase": "P3-MM",
+        "fase_secundaria": "P4-WM",
+        "eventos": []
+      },
+      {
+        "n": 3,
+        "fase": "P3-MM",
+        "fase_secundaria": "P5-INT",
+        "eventos": [
+          "STRAT"
+        ]
+      },
+      {
+        "n": 4,
+        "fase": "P4-WM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": []
+      },
+      {
+        "n": 5,
+        "fase": "P5-INT",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 6,
+        "fase": "P4-WM",
+        "fase_secundaria": "P2-RM",
+        "eventos": [
+          "STRAT",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 7,
+        "fase": "P2-RM",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "STRAT",
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 8,
+        "fase": "P4-WM",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 9,
+        "fase": "P6-VAL",
+        "fase_secundaria": "P5-INT",
+        "eventos": []
+      },
+      {
+        "n": 10,
+        "fase": "P7-EXP",
+        "fase_secundaria": null,
+        "eventos": [
+          "ASSUME"
+        ]
+      },
+      {
+        "n": 11,
+        "fase": "P7-EXP",
+        "fase_secundaria": "P6-VAL",
+        "eventos": [
+          "ASSUME"
+        ]
+      }
+    ],
+    "bloqueos": [],
+    "supuestos": [
+      "cada punto que pasa de la derecha a la izquierda reduce la brecha en 2",
+      "el 12,8% restante del electorado está disponible para los bloques",
+      "votantes que se fugan = (100 − fidelidad) × porcentaje actual de cada partido",
+      "la derecha no recibe votos de otros (en el cálculo del 61%)",
+      "escenario: la izquierda capta la mitad del 12,8 restante",
+      "la izquierda retendría su voto como Vox (86,6%)",
+      "todo lo que está en el aire se reparte entre los dos bloques, sin otros partidos ni abstención (resultado como mínimo)"
+    ],
+    "modelo": "lineal (balance de bloques)",
+    "validacion": true,
+    "respuesta_final": {
+      "texto": "Juntando todo lo que está en el aire (12,8 puntos del resto, unos 10 puntos que se fugan de la derecha y unos 5 que perdería la izquierda si retuviera como Vox, total 27,8 puntos), la izquierda necesitaría llevarse cerca del 63% (unos 17,5 puntos) para empatar, y eso es un mínimo porque no cuenta otros partidos ni la abstención. Les parece poco verosímil en seis días; piden saber a dónde van los indecisos y cuánto retiene la izquierda."
+    },
+    "ruta_principal": "R2",
+    "rutas": [
+      "R1",
+      "R2",
+      "R4"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+# Corrida N1_VV_r1
+
+Nivel N1 · estilos V/V · rep 1 · 11 turnos · término: acuerdo · modelo claude-sonnet-5-5
+
+**1. Cami:** Mmm, yo me imagino al hospital con, no sé, cien pacientes operados en una sala, y el hongo salvando a algunos... pero no nos dan cuántos se mueren hoy. ¿Tú qué entendiste del 12 %, que de cada 100 se salvan 12?  
+**2. Fran:** Yo también pensé eso al tiro, pero me suena raro. [dibujo: cien monitos, y tacho los que se mueren hoy] Si se mueren 20, el 12 % sería de esos 20, o sea como 2 o 3 salvados, ¿no?  
+**3. Cami:** Ah, ya te pillé, el 12 % es de los que se mueren, no de los cien. [dibujo: cien monitos, con los que se mueren pintados, y una flechita que dice "12 % de estos"] Entonces si se murieran 50, salvaríamos 6, así que lo primero que hay que pedir es cuántos mueren hoy, ¿cachai?  
+**4. Fran:** Sí, y con esos 50 de cada 100 serían 6 salvados, pero ojo que eso depende de que mis pacientes se parezcan a los del estudio, que tampoco sabemos. [dibujo: dos grupos de monitos, uno con una etiqueta "estudio" y otro "hospital", con un signo de pregunta en el medio]  
+**5. Cami:** Claro, y también habría que pedir cuánto cuesta el extracto, porque si salva a 6 de cada 100 pero es carísimo, quizás no conviene. ¿Y qué tan segura es la cifra? Yo creo que no mucho, porque el 12 % es un promedio de 8.009 pacientes y puede variar.  
+**6. Fran:** Sí, además dice "asoció", o sea que no es seguro que el hongo sea el que salva, y el 12 % tiene un margen que no nos dan. [dibujo: la cifra 6 con una rayita de lado a lado, como un rango de "entre tanto y tanto"] ¿Pedimos también el intervalo de confianza del estudio?  
+**7. Cami:** Sí, pidámoslo, y también si el hongo tiene efectos secundarios, porque no sacamos nada con salvar a 6 si a otros les cae mal. [dibujo: los cien monitos, 6 con una cruz verde y unos pocos con una carita enferma] ¿Armamos la respuesta con "depende de cuántos mueren hoy" y listo?  
+**8. Fran:** Dale, pero pongamos la cuenta para que no quede en el aire: muertes evitadas = pacientes × proporción que muere × 0,12, por ejemplo 200 × 0,5 × 0,12 = 12. Y la recomendación sería no decidir todavía hasta tener esos datos, el costo, los efectos secundarios y el intervalo, ¿te parece?  
+**9. Cami:** Me parece, y lo chequeé con el dibujo: 200 monitos, 100 pintados que se mueren, y el 12 % de esos 100 son 12, calza. Entonces escribamos eso, que la cifra es incierta por el intervalo y porque no sabemos si nuestros pacientes se parecen a los del estudio, y que recomendamos esperar esos datos.  
+**10. Fran:** ENTREGAMOS: Las muertes evitadas son pacientes × proporción que muere hoy × 0,12, por ejemplo 200 × 0,5 × 0,12 = 12, pero es incierto por el intervalo y porque no sabemos si nuestros pacientes se parecen a los del estudio. Recomendamos no decidir todavía y pedir mortalidad actual, costo, efectos secundarios e intervalo.  
+**11. Cami:** DE ACUERDO. Aunque ahora que lo pienso, ¿no deberíamos aclarar que el 12 % puede ser riesgo relativo? Igual lo dejamos así, creo que está bien.  
