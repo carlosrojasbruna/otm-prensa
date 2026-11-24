@@ -1,0 +1,16 @@
+{
+  "2026-11-extracto-hongo-cirugia-gastrica": [
+    {
+      "criterio": "validacion",
+      "mejora_minima": "task_space.validation_evidence nombra «el de Nakazato y colaboradores (Lancet, 1994)» sin declararlo como fuente, y el verificador lo marcó como referencia sin respaldo. Declararlo como otra fuente concreta y sin cifras: «otra fuente: Nakazato H. y colaboradores, «Efficacy of immunochemotherapy as adjuvant treatment after curative resection of gastric cancer», The Lancet 343(8906):1122-1126, 1994, doi:10.1016/S0140-6736(94)90233-X». La referencia existe (comprobada en Crossref y Scite el 2026-11-24), pero su contenido no se leyó: no atribuirle ninguna cifra ni resultado; el docente la consulta para el contraste. Mantener la cota lógica (las muertes evitadas no pueden exceder las esperadas sin tratamiento). R4 sigue siendo un supuesto del escenario y no debe nombrar el ensayo."
+    },
+    {
+      "criterio": "autenticidad",
+      "mejora_minima": "El enunciado dice «un extracto de hongo japonés, llamado PSK». Según la noticia, lo japonés es la investigación: PSK es un extracto purificado del hongo cola de pavo, estudiado en Japón. Corregirlo en el enunciado y donde se repita. Se puede agregar, porque está en el mismo párrafo de la noticia, que los pacientes del metaanálisis recibieron en casi todos los casos quimioterapia. No cambiar las cifras (8.009 pacientes y 12 %), la decisión que se pide ni el nivel."
+    },
+    {
+      "criterio": "nivel",
+      "mejora_minima": "En reference_solution, el error estándar del logaritmo del riesgo relativo se calcula como sqrt(1/a + 1/c) y omite dos términos. La fórmula es sqrt(1/a − 1/n1 + 1/c − 1/n2), con a y c las muertes y n1 y n2 los tamaños de cada grupo. Con los supuestos de la propia referencia (mitades de 8.009 y mortalidad basal de 0,40) da cerca de 0,029 y un riesgo relativo entre 0,83 y 0,93 al 95 %, en vez de 0,037 y de 0,82 a 0,95. Rehacer con eso el intervalo de la reducción absoluta y de las muertes evitadas por mil, y revisar las rutas que lo usan."
+    }
+  ]
+}
