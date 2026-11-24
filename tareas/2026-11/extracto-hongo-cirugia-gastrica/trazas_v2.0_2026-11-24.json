@@ -1,0 +1,195 @@
+{
+  "tarea_id": "2026-11-extracto-hongo-cirugia-gastrica-v2",
+  "diseno": "diseno_otm",
+  "corridas": 6,
+  "modelo": "claude-sonnet-5-5",
+  "costo_usd": 0.5884,
+  "por_corrida": [
+    {
+      "id": "N1_VV_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N1",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P4-WM",
+        "P2-RM",
+        "P6-VAL",
+        "P4-WM",
+        "P5-INT",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "12 % es reducción relativa sobre los que mueren",
+        "mortalidad basal de 40 de cada 100 (inventada)",
+        "efecto entre 5 % y 18 % (rango inventado, a ojo)",
+        "comparabilidad con pacientes japoneses incierta"
+      ],
+      "modelo": "proporcional",
+      "respuesta_final": "Con 40 muertes por 100 (dato inventado) se evitarían unas 5, entre 2 y 7, pero poco segura. Que el comité pida sus datos, el costo y si los pacientes se parecen a los japoneses.",
+      "validacion": true,
+      "archivo": "N1_VV_r1.json",
+      "costo_usd": 0.106316
+    },
+    {
+      "id": "N1_AA_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N1",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P3-MM",
+        "P4-WM",
+        "P2-RM",
+        "P6-VAL",
+        "P2-RM",
+        "P6-VAL",
+        "P7-EXP",
+        "P6-VAL"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "N = 100 pacientes (ejemplo)",
+        "mortalidad actual m = 0,5 (y 0,3 para comparar)",
+        "12 % como reducción relativa del riesgo",
+        "efecto en un rango de 0,05 a 0,15 en lugar de 0,12 fijo",
+        "comparabilidad con pacientes japoneses con quimioterapia, puesta en duda"
+      ],
+      "modelo": "proporcional",
+      "respuesta_final": "Muertes evitadas ≈ N × m × 0,12, usando el intervalo de confianza del estudio en vez de 0,12 fijo (ej.: N = 100, m = 0,5 → 6 muertes evitadas; con m = 0,3 → 3,6). La cifra es incierta y depende de la mortalidad actual; el comité debería pedir N, m, costo, efectos secundarios y si sus pacientes se parecen a los del estudio antes de decidir.",
+      "validacion": true,
+      "archivo": "N1_AA_r1.json",
+      "costo_usd": 0.101256
+    },
+    {
+      "id": "N2_VV_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N2",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P2-RM",
+        "P4-WM",
+        "P6-VAL",
+        "P4-WM",
+        "P5-INT",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "el 12 % se aplica a los que mueren (reducción relativa)",
+        "mortalidad basal de 40 de cada 100 operados (inventada)",
+        "intervalo del efecto entre 6 % y 18 % (inventado)",
+        "comparabilidad con pacientes del estudio puesta en duda (edad, etapa, quimioterapia)"
+      ],
+      "modelo": "proporcional",
+      "respuesta_final": "Con una mortalidad supuesta de 40 de cada 100 operados, el extracto evitaría unas 5 muertes por cada 100 (4,8), entre 2 y 7 si el efecto fuera de 6 % a 18 % (rango inventado). Recomiendan no decidir aún y pedir mortalidad actual, costo, edad, etapa, uso de quimioterapia y margen de error del estudio.",
+      "validacion": true,
+      "archivo": "N2_VV_r1.json",
+      "costo_usd": 0.110124
+    },
+    {
+      "id": "N3_AA_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N3",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P3-MM",
+        "P4-WM",
+        "P6-VAL",
+        "P7-EXP",
+        "P6-VAL"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "12 % como reducción relativa del riesgo",
+        "el efecto del 12 % se mantiene en los pacientes del hospital",
+        "N = 100 operados (ejemplo)",
+        "mortalidad basal p = 0,4 (ejemplo)"
+      ],
+      "modelo": "proporcional",
+      "respuesta_final": "Las muertes evitadas serían 0,12·p·N, o sea 4,8 si N = 100 y p = 0,4 (solo ejemplo), y esa cifra es incierta: falta el intervalo de confianza, y \"asoció\" no prueba causalidad. Recomendamos no decidir aún y pedir p, N, el intervalo, el costo, los efectos adversos y si sus pacientes se parecen a los del estudio.",
+      "validacion": true,
+      "archivo": "N3_AA_r1.json",
+      "costo_usd": 0.067492
+    },
+    {
+      "id": "N4_VV_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N4",
+        "estilo": "VV"
+      },
+      "ruta": [
+        "P1-MRS",
+        "P4-WM",
+        "P6-VAL",
+        "P7-EXP",
+        "P6-VAL"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "12 % es reducción relativa del riesgo",
+        "riesgo base del hospital supuesto (40 %, rango 20 a 60 %)",
+        "comparabilidad con pacientes japoneses en duda",
+        "efecto podría depender del uso de quimioterapia"
+      ],
+      "modelo": "proporcional",
+      "respuesta_final": "Si el riesgo base fuera de 20 a 60 % (supuesto nuestro), el extracto evitaría entre 2 y 7 muertes por cada 100 operados; cifra incierta. Piden riesgo base del hospital, intervalo del 12 %, uso de quimio, costo, efectos adversos y si los pacientes se parecen a los japoneses (edad, etapa del tumor); recomiendan no decidir aún y aprobarlo solo si el beneficio compensa costo y riesgos.",
+      "validacion": true,
+      "archivo": "N4_VV_r1.json",
+      "costo_usd": 0.093636
+    },
+    {
+      "id": "N4_AA_r1",
+      "perfil": {
+        "nivel_edad": "U",
+        "nivel": "N4",
+        "estilo": "AA"
+      },
+      "ruta": [
+        "P3-MM",
+        "P4-WM",
+        "P6-VAL",
+        "P4-WM",
+        "P6-VAL",
+        "P4-WM",
+        "P6-VAL",
+        "P7-EXP"
+      ],
+      "bloqueos": [],
+      "supuestos": [
+        "12 % como reducción relativa (RR ≈ 0,88)",
+        "grupo ejemplo de 100 pacientes",
+        "mortalidad basal 40 % a cinco años",
+        "mortalidad basal entre 20 % y 50 %",
+        "efecto como hazard ratio (riesgos proporcionales)",
+        "plazo fijo de seguimiento (cinco años)"
+      ],
+      "modelo": "proporcional (hazard ratio)",
+      "respuesta_final": "Con HR ≈ 0,88 y mortalidad base de 20–50 %, unas 2 a 4 muertes evitadas por cada 100 operados, a un plazo fijo (tipo cinco años). La cifra es incierta porque faltan el IC del efecto (si cruza 1 el beneficio podría ser cero), la mortalidad real del hospital, la comparabilidad de los pacientes, el costo y los efectos adversos; recomiendan pedir esos datos antes de decidir.",
+      "validacion": true,
+      "archivo": "N4_AA_r1.json",
+      "costo_usd": 0.109528
+    }
+  ],
+  "agregado": {
+    "pct_bloqueo_por_transicion": {},
+    "modelos_observados": {
+      "proporcional": 5,
+      "proporcional (hazard ratio)": 1
+    },
+    "pct_validan": 1.0
+  },
+  "fecha": "2026-11-24T13:47:59Z"
+}
