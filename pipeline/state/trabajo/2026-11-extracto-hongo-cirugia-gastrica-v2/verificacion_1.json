@@ -1,0 +1,77 @@
+{
+  "tarea_id": "2026-11-extracto-hongo-cirugia-gastrica-v2",
+  "aprobado": true,
+  "estado_destino": "verificada",
+  "hallazgos": [
+    {
+      "invariante": "notebook",
+      "severidad": "advertencia",
+      "ubicacion": "guia.materiales.notebook",
+      "descripcion": "notebook escenarios.ipynb no encontrado: ",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "tarea.estudiante.recursos_a_solicitud[R3]",
+      "descripcion": "los pacientes del metaanálisis fueron tratados principalmente en Japón y recibieron además el tratamiento complementario habitual de su centro — La tarjeta está rotulada como supuesto del escenario, pero hace una afirmación factual sobre el metaanálisis. La noticia solo sitúa en Japón la investigación sobre PSK, no el lugar de tratamiento de los pacientes de los ocho ensayos.",
+      "origen": "modelo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "guia.escenarios[E3].que_aprende",
+      "descripcion": "Responden la pregunta sobre qué tan segura es la cifra con una franja de efecto inventada, en lugar de derivarla del estudio o pedirla — Las corridas citadas sí piden información sobre la precisión del efecto. En el extracto se propone pedir ese rango, y N2_VV_r1 solicita el margen de error del estudio. El relato sobreinterpreta.",
+      "origen": "modelo"
+    }
+  ],
+  "cifras_contrastadas": [
+    {
+      "indice": 0,
+      "que_es": "pacientes incluidos en el metaanálisis sobre PSK tras cirugía de tumor gástrico",
+      "valor_tarea": "8,009",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 97"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "8,009",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 97 de la noticia; modelo: La tarea escribe 8.009 con separador de miles en español. Son los pacientes del metaanálisis operados de tumor gástrico, tal como indica el párrafo 97."
+    },
+    {
+      "indice": 1,
+      "que_es": "reducción del riesgo de muerte en pacientes que recibieron PSK",
+      "valor_tarea": "12%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 97"
+      },
+      "metodo": "codigo+modelo",
+      "valor_fuente": "12%",
+      "resultado": "coincide",
+      "nota": "valor presente en el párrafo 97 de la noticia; modelo: Es la reducción del riesgo de muerte en quienes recibieron PSK, según el párrafo 97."
+    }
+  ],
+  "notebook": {
+    "estado": "no_encontrado",
+    "ruta": "escenarios.ipynb",
+    "salida_resumen": ""
+  },
+  "meta": {
+    "agente": "verificador",
+    "version_prompt": "1.1",
+    "modelo": "claude-opus-5-5",
+    "request_id": "req_011ChMrtA3jHJ9pRTDBzpeuk",
+    "fecha": "2026-11-24T13:50:47+00:00",
+    "costo_usd": 0.140328,
+    "modelo_llamado": true,
+    "texto_noticia_recibido": true,
+    "uso": {
+      "input_tokens": 18007,
+      "output_tokens": 2835,
+      "cache_creation_input_tokens": 2320,
+      "cache_read_input_tokens": 0
+    }
+  }
+}

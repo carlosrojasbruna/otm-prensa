@@ -1,0 +1,65 @@
+{
+  "tarea_id": "2026-11-extracto-hongo-cirugia-gastrica-v2",
+  "aprobado": true,
+  "estado_destino": "verificada",
+  "hallazgos": [
+    {
+      "invariante": "notebook",
+      "severidad": "advertencia",
+      "ubicacion": "guia.materiales.notebook",
+      "descripcion": "notebook escenarios.ipynb no encontrado: ",
+      "origen": "codigo"
+    },
+    {
+      "invariante": "semantica",
+      "severidad": "advertencia",
+      "ubicacion": "tarea.recursos_de_entrada[R1]",
+      "descripcion": "no se pudo contrastar con el texto: el ciclo no entregó `texto_noticia`; la afirmación del recurso solo se juzgó contra título, resumen y cifras",
+      "origen": "codigo"
+    }
+  ],
+  "cifras_contrastadas": [
+    {
+      "indice": 0,
+      "que_es": "pacientes incluidos en el metaanálisis sobre PSK tras cirugía de tumor gástrico",
+      "valor_tarea": "8,009",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 97"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "8,009",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia"
+    },
+    {
+      "indice": 1,
+      "que_es": "reducción del riesgo de muerte en pacientes que recibieron PSK",
+      "valor_tarea": "12%",
+      "localizador": {
+        "fuente": "noticia",
+        "ubicacion": "párrafo 97"
+      },
+      "metodo": "codigo",
+      "valor_fuente": "12%",
+      "resultado": "coincide",
+      "nota": "valor igual al de la noticia"
+    }
+  ],
+  "notebook": {
+    "estado": "no_encontrado",
+    "ruta": "escenarios.ipynb",
+    "salida_resumen": ""
+  },
+  "meta": {
+    "agente": "verificador",
+    "version_prompt": "1.1",
+    "modelo": null,
+    "request_id": null,
+    "fecha": "2026-11-24T14:45:45+00:00",
+    "costo_usd": 0.0,
+    "modelo_llamado": true,
+    "texto_noticia_recibido": false,
+    "uso": null
+  }
+}
